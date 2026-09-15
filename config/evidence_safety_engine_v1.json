@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "schema_id": "evidence_safety_engine_v1",
+  "status": "SAFETY_ENGINE_IMPLEMENTED_NOT_PRODUCTION_WIRED",
+  "purpose": "Select verified company evidence against diagnosed customer objections while blocking unsupported trust claims.",
+  "verification_statuses": ["VERIFIED", "UNKNOWN", "REJECTED"],
+  "rights_statuses": ["CLEARED", "NOT_APPLICABLE", "RESEARCH_ONLY", "UNKNOWN", "REJECTED"],
+  "blocking_statuses": ["BLOCKING", "NON_BLOCKING"],
+  "conversion_goals": [
+    "inquiry",
+    "quote_request",
+    "consultation",
+    "reservation",
+    "visit",
+    "purchase",
+    "application"
+  ],
+  "objections": {
+    "O1_ABILITY": {
+      "label": "ABILITY",
+      "description": "本当にできるのか。",
+      "customer_fear": "経験・資格・技術が不足していないか。",
+      "preferred_evidence_types": ["VERIFIED_METRIC", "QUALIFICATION", "EXPERIENCE", "RESULT_CASE", "PRODUCT_DETAIL"],
+      "forbidden_inference": ["必ず結果が出る", "地域No.1"],
+      "fallback": "HEARING_REQUIRED",
+      "hearing_field_candidate": "ability_proof"
+    },
+    "O2_ACCOUNTABILITY": {
+      "label": "ACCOUNTABILITY",
+      "description": "誰が責任を持つのか。",
+      "customer_fear": "担当主体や責任範囲が見えない。",
+      "preferred_evidence_types": ["OWNER_IDENTITY", "TEAM_IDENTITY", "ACCOUNTABILITY_SCOPE"],
+      "forbidden_inference": ["必ず代表が担当"],
+      "fallback": "HEARING_REQUIRED",
+      "hearing_field_candidate": "responsible_person_or_team"
+    },
+    "O3_PROCESS": {
+      "label": "PROCESS",
+      "description": "何をしてくれるのか。",
+      "customer_fear": "相談・制作・提供の中身が分からない。",
+      "preferred_evidence_types": ["SERVICE_PROCESS", "CRAFT_ACTION", "PLACE_EXPERIENCE"],
+      "forbidden_inference": [],
+      "fallback": "HEARING_REQUIRED",
+      "hearing_field_candidate": "service_process"
+    },
+    "O4_NEXT": {
+      "label": "NEXT",
+      "description": "問い合わせ・予約後どうなるか。",
+      "customer_fear": "クリック後に何が起きるか分からない。",
+      "preferred_evidence_types": ["POST_CLICK_FLOW", "RESPONSE_EXPECTATION", "CTA_CHANNEL"],
+      "forbidden_inference": ["返信○時間以内"],
+      "fallback": "HEARING_REQUIRED",
+      "hearing_field_candidate": "post_click_flow"
+    },
+    "O5_DECISION": {
+      "label": "DECISION",
+      "description": "いつ判断を求められるか。",
+      "customer_fear": "早い契約・購入・転職を迫られそう。",
+      "preferred_evidence_types": ["DECISION_BOUNDARY", "SCOPE_BOUNDARY", "PRICE"],
+      "forbidden_inference": ["契約義務なし"],
+      "fallback": "HEARING_REQUIRED",
+      "hearing_field_candidate": "decision_boundary"
+    },
+    "O6_COST": {
+      "label": "COST",
+      "description": "料金・無料条件・追加料金。",
+      "customer_fear": "費用と発生条件が予測できない。",
+      "preferred_evidence_types": ["PRICE", "FEE_CONDITION", "SCOPE_BOUNDARY"],
+      "forbidden_inference": ["完全無料", "追加料金なし"],
+      "fallback": "HEARING_REQUIRED",
+      "hearing_field_candidate": "fee_conditions"
+    },
+    "O7_RISK": {
+      "label": "RISK",
+      "description": "行動することで不利益がないか。",
+      "customer_fear": "勧誘・情報漏えい・キャンセル等の不利益が怖い。",
+      "preferred_evidence_types": ["RISK_POLICY", "PRIVACY_POLICY", "CANCELLATION_POLICY"],
+      "forbidden_inference": ["無理な勧誘はありません", "秘密厳守", "キャンセル無料"],
+      "fallback": "HEARING_REQUIRED",
+      "hearing_field_candidate": "risk_and_privacy_policy"
+    },
+    "O8_CONTINUITY": {
+      "label": "CONTINUITY",
+      "description": "その後の支援・保守・フォロー。",
+      "customer_fear": "購入・相談後に放置されないか。",
+      "preferred_evidence_types": ["CONTINUITY_POLICY", "AFTERCARE", "RESULT_CASE"],
+      "forbidden_inference": ["保証"],
+      "fallback": "HEARING_REQUIRED",
+      "hearing_field_candidate": "continuity_or_aftercare"
+    }
+  },
+  "evidence_record_required_fields": [
+    "evidence_id",
+    "company_id",
+    "case_id",
+    "evidence_type",
+    "evidence_strength",
+    "target_objections",
+    "claim",
+    "source",
+    "source_type",
+    "verification_status",
+    "verification_date",
+    "usage_status",
+    "placement_candidates",
+    "rights_status",
+    "hearing_required",
+    "blocking_status",
+    "notes"
+  ],
+  "placement_values": ["HERO", "EARLY_PROOF", "MIDDLE", "BEFORE_CTA", "CTA_ZONE", "AFTER_CTA", "QUIET_CHAPTER"],
+  "blocked_claim_rules": [
+    {"claim_id": "NO_PRESSURE", "patterns": ["無理な勧誘はありません", "勧誘しません", "no pressure"], "target_objections": ["O7_RISK"], "required_evidence_types": ["RISK_POLICY"]},
+    {"claim_id": "CONFIDENTIALITY", "patterns": ["秘密厳守", "守秘", "confidential"], "target_objections": ["O7_RISK"], "required_evidence_types": ["RISK_POLICY", "PRIVACY_POLICY"]},
+    {"claim_id": "RESPONSE_TIME", "patterns": ["返信.*時間", "○時間以内返信", "within.*hour"], "target_objections": ["O4_NEXT"], "required_evidence_types": ["RESPONSE_EXPECTATION"]},
+    {"claim_id": "ASSIGNED_PERSON", "patterns": ["必ず代表.*担当", "必ず.*が担当"], "target_objections": ["O2_ACCOUNTABILITY"], "required_evidence_types": ["ACCOUNTABILITY_SCOPE", "OWNER_IDENTITY"]},
+    {"claim_id": "FULLY_FREE", "patterns": ["完全無料", "すべて無料", "fully free"], "target_objections": ["O6_COST"], "required_evidence_types": ["PRICE", "FEE_CONDITION"]},
+    {"claim_id": "NO_OBLIGATION", "patterns": ["契約義務なし", "no obligation"], "target_objections": ["O5_DECISION", "O7_RISK"], "required_evidence_types": ["DECISION_BOUNDARY", "RISK_POLICY"]},
+    {"claim_id": "FREE_CANCELLATION", "patterns": ["キャンセル無料", "無料キャンセル"], "target_objections": ["O7_RISK", "O6_COST"], "required_evidence_types": ["CANCELLATION_POLICY"]},
+    {"claim_id": "NO_EXTRA_FEES", "patterns": ["追加料金なし", "no extra fees"], "target_objections": ["O6_COST"], "required_evidence_types": ["FEE_CONDITION"]},
+    {"claim_id": "REFUND", "patterns": ["全額返金", "返金保証"], "target_objections": ["O7_RISK"], "required_evidence_types": ["REFUND_POLICY"]},
+    {"claim_id": "GUARANTEE", "patterns": ["保証", "必ず結果が出る", "必ず○○できる"], "target_objections": ["O1_ABILITY", "O8_CONTINUITY"], "required_evidence_types": ["GUARANTEE_POLICY", "RESULT_CASE"]}
+  ],
+  "decision": {
+    "eligible_when": [
+      "record has all required fields",
+      "verification_status is VERIFIED",
+      "source and verification_date are present",
+      "rights_status is CLEARED or NOT_APPLICABLE",
+      "target_objections intersects primary_objections"
+    ],
+    "mismatch_rule": "Evidence targeted at a different objection is not universal reassurance and is not eligible for the requested objection.",
+    "missing_rule": "If a primary objection has no eligible evidence, emit HEARING_REQUIRED; never invent reassurance.",
+    "non_blocking_rule": "A missing non-primary objection does not stop LP generation.",
+    "safety_statuses": ["PASS", "HEARING_REQUIRED", "BLOCKED", "INVALID_INPUT"]
+  },
+  "routing": {
+    "missing_evidence": "HEARING_REQUIRED",
+    "unknown_evidence": "HEARING_REQUIRED",
+    "unverified_evidence": "HEARING_REQUIRED",
+    "rights_unknown_visual": "BLOCKED",
+    "unsupported_claim": "BLOCKED"
+  }
+}
