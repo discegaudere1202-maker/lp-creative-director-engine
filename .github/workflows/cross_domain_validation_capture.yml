@@ -1,0 +1,39 @@
+name: Cross-domain validation capture
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "examples/cross_domain_cases/**"
+      - "examples/prototypes/p09_price_transparency_v1.html"
+      - "config/cross_domain_validation_targets_v1.json"
+      - "scripts/capture_prototype_frames.py"
+      - ".github/workflows/cross_domain_validation_capture.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install capture dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Capture exact comparison frames
+        run: |
+          python scripts/capture_prototype_frames.py \
+            --config config/cross_domain_validation_targets_v1.json \
+            --output artifacts/cross_domain_validation_capture
+      - name: Upload cross-domain capture
+        uses: actions/upload-artifact@v4
+        with:
+          name: cross-domain-validation-capture-v1
+          path: artifacts/cross_domain_validation_capture
