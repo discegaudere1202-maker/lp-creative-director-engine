@@ -2,11 +2,13 @@
 
 Updated: 2026-09-15
 
-対象Prototype:
-- P01 Japanese Monumental Type v3
-- P03 Fact-to-Visual Hero v3
-- P05 Evidence Monument v3
-- P15 Quiet Chapter v3
+> Historical naming note: the `P01 / P03 / P05 / P15` identifiers in this document are **LEGACY PRE-REGISTRY prototype IDs**. They must not be mapped to the current `config/prototype_registry_v1.json` P01–P12 IDs. This document is retained as research history only.
+
+対象Prototype（legacy pre-registry）:
+- LEGACY-P01 Japanese Monumental Type v3
+- LEGACY-P03 Fact-to-Visual Hero v3
+- LEGACY-P05 Evidence Monument v3
+- LEGACY-P15 Quiet Chapter v3
 
 注意:
 これは正式なBlind Tournament前のCreative Red Team preliminary。
@@ -22,7 +24,7 @@ References considered:
 
 ---
 
-## P01 Japanese Monumental Type
+## LEGACY-P01 Japanese Monumental Type
 
 ### Preliminary
 **REVIEW — close, not Supremacy yet**
@@ -36,7 +38,7 @@ References considered:
 ### Why not PASS
 Reference群は、Typographyだけでなく
 **ブランド固有の“癖”や態度が一画面で残る。**
-P01はまだ「良いEditorial design」と説明できてしまう。
+LEGACY-P01はまだ「良いEditorial design」と説明できてしまう。
 
 ### Required upgrade
 Mahora固有のCraft Catchが必要。
@@ -49,7 +51,7 @@ Generic Japanese vertical typeを追加するだけでは不可。
 
 ---
 
-## P03 Fact-to-Visual Hero
+## LEGACY-P03 Fact-to-Visual Hero
 
 ### Preliminary
 **REWORK**
@@ -76,7 +78,7 @@ YESならFAIL。
 
 ---
 
-## P05 Evidence Monument
+## LEGACY-P05 Evidence Monument
 
 ### Preliminary
 **CRAFT STRONG / OWNER-SPECIFICITY REVIEW**
@@ -104,7 +106,7 @@ visual behaviorとして統合する。
 
 ---
 
-## P15 Quiet Chapter
+## LEGACY-P15 Quiet Chapter
 
 ### Preliminary
 **ROLE PASS / Supremacy score対象外**
