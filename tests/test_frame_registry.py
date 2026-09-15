@@ -15,7 +15,7 @@ def record(**kw):
         source_support="Official case study describes the design rationale.",
         visual_verified=True,
         mobile_verified=True,
-        mobile_evidence_grade="M2",
+        mobile_evidence_grade="M3",
         stage="CORE",
     )
     base.update(kw)
@@ -41,11 +41,23 @@ class FrameRegistryTest(unittest.TestCase):
     def test_core_requires_mobile(self):
         issues = validate_frame(record(mobile_verified=False, mobile_evidence_grade="M0"))
         self.assertIn("CORE requires mobile_verified=true", issues)
-        self.assertIn("CORE requires mobile evidence grade M2 or M3", issues)
+        self.assertIn("CORE requires live/captured 390px mobile evidence grade M3", issues)
 
     def test_mobile_verified_requires_m2_or_m3(self):
-        issues = validate_frame(record(mobile_evidence_grade="M1"))
+        issues = validate_frame(
+            record(stage="VERIFIED", mobile_evidence_grade="M1")
+        )
         self.assertIn("mobile_verified=true requires mobile evidence grade M2 or M3", issues)
+
+    def test_m2_is_valid_mobile_research_but_not_core(self):
+        verified = record(stage="VERIFIED", mobile_evidence_grade="M2")
+        self.assertEqual(validate_frame(verified), [])
+        result = audit_registry([verified])
+        self.assertEqual(result["mobile_verified_m2_count"], 1)
+        self.assertEqual(result["core_count"], 0)
+
+        core_issues = validate_frame(record(mobile_evidence_grade="M2"))
+        self.assertIn("CORE requires live/captured 390px mobile evidence grade M3", core_issues)
 
     def test_m3_core_count_is_separate(self):
         result = audit_registry([record(mobile_evidence_grade="M3")])
