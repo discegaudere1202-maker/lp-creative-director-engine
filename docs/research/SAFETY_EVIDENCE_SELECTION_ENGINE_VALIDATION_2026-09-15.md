@@ -33,7 +33,7 @@ Engineは、未検証の安心コピー、保証、人物・実績の推測、�
 | P09 | quote_request | ACCOUNTABILITY / PROCESS / NEXT / COST | 3 | 1 | 1 | BLOCKED |
 | P10 | consultation | ACCOUNTABILITY / PROCESS / DECISION / CONTINUITY | 4 | 2 | 2 | BLOCKED |
 | MORIBITO | visit | ABILITY / PROCESS / NEXT / COST | 3 | 1 | 1 | BLOCKED |
-| INDEPENDENT_KOKORO_SEITAI | reservation | ACCOUNTABILITY / PROCESS / NEXT / COST | 2 | 2 | 2 | BLOCKED |
+| INDEPENDENT_KOKORO_SEITAI | reservation | ACCOUNTABILITY / PROCESS / NEXT / COST | 2 | 1 | 1 | BLOCKED |
 
 森人のDry Runでは、公式サイトで確認できない返信時間を要求Claimにしたため、危険ClaimとしてBlocked、必要情報をHearingへ回した。これは「来店できる」事実と「予約後の応答保証」を混同しないための境界である。
 
