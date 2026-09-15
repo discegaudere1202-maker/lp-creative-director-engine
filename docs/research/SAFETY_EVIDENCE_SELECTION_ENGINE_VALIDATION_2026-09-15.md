@@ -117,3 +117,18 @@ P02/P10の相談型構造を、P09の見積型、森人の来店型、独立ケ�
 ## Next phase decision
 
 最優先は **B｜Safety / Evidence Selection Engine実装の継続統合**。理由は、Provenance・UNKNOWN・Rights・Hearing routingが異業種4ケースで同じ安全境界として再現し、Trust最適化より実装確度が高いからである。次は既存のEvidence Ledger形式をcanonical adapterへ統合し、Production EngineへのSafety-only接続と回帰テストを行う。Trust自動最適化・Hearing UI・Golden Sample 03はまだ進めない。
+
+
+## Safety-only pipeline integration
+
+The validated safety boundary is now available as an optional gate in the existing creative pipeline:
+
+- Python API: `run_pipeline(..., evidence_safety=spec)`
+- CLI: `lp-engine <project-spec> --evidence-safety <safety-input.json>`
+- Gate: `EvidenceSafetyGate`
+- `PASS` remains `PASS`; `HEARING_REQUIRED` maps to pipeline `HOLD`; `BLOCKED` and `INVALID_INPUT` map to pipeline `FAIL`.
+- Without the optional input, the existing Creative Direction pipeline is unchanged.
+
+This is a safety integration, not Trust Optimization automation. The gate returns verified claims and evidence records only; it does not write copy, infer reassurance, expand conditional claims, or approve unknown-rights visuals.
+
+The wiring was covered by three pipeline tests: verified evidence passes, a blocked confidentiality request fails without approved copy and emits hearing data, and the legacy pipeline remains unchanged without safety input. The full repository QA remains the SSOT for final regression.
