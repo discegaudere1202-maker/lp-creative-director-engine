@@ -22,6 +22,26 @@ class BenchmarkPoolConfigTest(unittest.TestCase):
         cls.catalog_by_id = {item["id"]: item for item in cls.catalog["benchmarks"]}
         cls.mobile_by_id = {item["benchmark_id"]: item for item in cls.mobile["records"]}
 
+    def _is_traceable_m3(self, benchmark_id):
+        catalog = self.catalog_by_id[benchmark_id]
+        mobile = self.mobile_by_id.get(benchmark_id)
+        if not mobile:
+            return False
+        review = mobile.get("mobile_review", {})
+        capture = mobile.get("live_capture", {})
+        return (
+            catalog.get("stage") in {"VERIFIED", "CORE"}
+            and catalog.get("desktop_verified") is True
+            and catalog.get("mobile_verified") is True
+            and catalog.get("mobile_evidence_grade") == "M3"
+            and review.get("evidence_grade") == "M3"
+            and capture.get("review_status") == "PASS"
+            and capture.get("viewport") == "390x844"
+            and capture.get("http_status") == 200
+            and bool(capture.get("screenshot_sha256"))
+            and bool(capture.get("desktop_screenshot_sha256"))
+        )
+
     def test_catalog_ids_are_unique(self):
         ids = [item["id"] for item in self.catalog["benchmarks"]]
         self.assertEqual(len(ids), len(set(ids)))
@@ -45,33 +65,40 @@ class BenchmarkPoolConfigTest(unittest.TestCase):
             with self.subTest(pool=name):
                 self.assertGreaterEqual(len(pool.get("critical_axes", [])), 2)
 
+    def test_every_catalog_m3_is_traceable_to_human_review(self):
+        for item in self.catalog["benchmarks"]:
+            if item.get("mobile_evidence_grade") != "M3":
+                continue
+            with self.subTest(benchmark=item["id"]):
+                self.assertTrue(
+                    self._is_traceable_m3(item["id"]),
+                    f"{item['id']} claims M3 but lacks a traceable human-reviewed 390x844 PASS capture",
+                )
+
     def test_local_sme_transfer_has_three_traceable_m3_benchmarks(self):
         pool_ids = self.pools["pools"]["LOCAL_SME_TRANSFER"]["benchmark_ids"]
-        ready = []
-        for benchmark_id in pool_ids:
-            catalog = self.catalog_by_id[benchmark_id]
-            mobile = self.mobile_by_id.get(benchmark_id)
-            if not mobile:
-                continue
-            review = mobile.get("mobile_review", {})
-            capture = mobile.get("live_capture", {})
-            if (
-                catalog.get("stage") in {"VERIFIED", "CORE"}
-                and catalog.get("desktop_verified") is True
-                and catalog.get("mobile_verified") is True
-                and catalog.get("mobile_evidence_grade") == "M3"
-                and review.get("evidence_grade") == "M3"
-                and capture.get("review_status") == "PASS"
-                and capture.get("viewport") == "390x844"
-                and capture.get("http_status") == 200
-            ):
-                ready.append(benchmark_id)
-
+        ready = [benchmark_id for benchmark_id in pool_ids if self._is_traceable_m3(benchmark_id)]
         self.assertGreaterEqual(
             len(ready),
             3,
             "LOCAL_SME_TRANSFER must contain at least three visually reviewed, traceable M3 benchmarks before formal SME tournament use",
         )
+
+    def test_problem_specific_tournament_pools_are_m3_ready(self):
+        required = {
+            "CUSTOMER_WORLD_TRANSLATION": 3,
+            "PRICE_TRANSPARENCY": 3,
+            "CUSTOMER_STATE_TRANSITION": 3,
+        }
+        for pool_name, minimum in required.items():
+            pool_ids = self.pools["pools"][pool_name]["benchmark_ids"]
+            ready = [benchmark_id for benchmark_id in pool_ids if self._is_traceable_m3(benchmark_id)]
+            with self.subTest(pool=pool_name):
+                self.assertGreaterEqual(
+                    len(ready),
+                    minimum,
+                    f"{pool_name} needs at least {minimum} visually reviewed, traceable M3 opponents before formal tournament use",
+                )
 
 
 if __name__ == "__main__":
