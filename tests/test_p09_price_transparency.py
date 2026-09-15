@@ -117,6 +117,22 @@ class P09PriceTransparencyTest(unittest.TestCase):
                 finally:
                     page.close()
 
+    def test_real_400_by_300_dimension_causes_four_by_three_form(self):
+        for width in (390, 1440):
+            with self.subTest(width=width):
+                page = self._page(width)
+                try:
+                    rect = page.locator(".panel-object").bounding_box()
+                    self.assertIsNotNone(rect)
+                    ratio = rect["width"] / rect["height"]
+                    self.assertAlmostEqual(ratio, 4 / 3, delta=0.03)
+                    self.assertIn(
+                        "400×300mm",
+                        page.locator("body").inner_text().replace(" ", ""),
+                    )
+                finally:
+                    page.close()
+
     def test_mobile_re_art_direction_changes_structure(self):
         desktop = self._page(1440)
         mobile = self._page(390)
