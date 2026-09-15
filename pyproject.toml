@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lp-creative-director-engine"
-version = "0.3.0"
+version = "0.4.0"
 description = "Rule-driven creative direction and QA engine for premium LP automation."
 requires-python = ">=3.11"
 dependencies = ["playwright>=1.55", "Pillow>=10"]
