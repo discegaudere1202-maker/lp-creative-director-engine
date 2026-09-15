@@ -4,6 +4,7 @@ from pathlib import Path
 
 from lp_engine.loader import from_dict
 from lp_engine.pipeline import run_pipeline
+from lp_engine.evidence_safety import production_approved
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -92,6 +93,9 @@ class PipelineEvidenceSafetyTest(unittest.TestCase):
         gate = self.safety_gate(report)
         self.assertEqual(gate.status, "HOLD")
         self.assertEqual(gate.details["eligible_evidence"], [])
+
+    def test_research_only_evidence_is_not_production_approved(self):
+        self.assertFalse(production_approved(safety_evidence(usage_status="RESEARCH_ONLY")))
 
 
 if __name__ == "__main__":
