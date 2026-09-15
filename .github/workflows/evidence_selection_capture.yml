@@ -1,0 +1,42 @@
+name: Evidence Selection Capture
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "examples/prototypes/*_accountability_v1.html"
+      - "examples/prototypes/*_continuity_v1.html"
+      - "examples/prototypes/*_business_model_v1.html"
+      - "examples/prototypes/*_process_v1.html"
+      - "examples/prototypes/*_authority_v1.html"
+      - "config/evidence_selection_capture_targets_v1.json"
+      - "scripts/capture_prototype_frames.py"
+      - ".github/workflows/evidence_selection_capture.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install capture dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Capture evidence selection variants
+        run: |
+          python scripts/capture_prototype_frames.py \
+            --config config/evidence_selection_capture_targets_v1.json \
+            --output artifacts/evidence_selection_capture
+      - name: Upload evidence selection capture
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-selection-capture-v1
+          path: artifacts/evidence_selection_capture

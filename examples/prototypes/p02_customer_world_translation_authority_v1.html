@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P02 Customer-world Translation v3</title>
+<style>
+:root{
+  --ink:#171812;
+  --paper:#f0eee5;
+  --muted:#77786f;
+  --line:#b9b7ad;
+  --accent:#b93b2f;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",YuGothic,sans-serif}
+body{min-height:100vh}
+.frame{height:100vh;min-height:720px;padding:32px 42px 30px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}
+.topline{display:grid;grid-template-columns:1fr auto auto;gap:28px;align-items:center;border-top:1px solid var(--ink);padding-top:9px;font-size:10px;letter-spacing:.12em}
+.topline .promise{color:var(--muted);letter-spacing:.05em}.topline .proof{font-variant-numeric:tabular-nums;color:#4d4f48}
+.hero{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:5vw;align-items:stretch;padding:6vh 0 4.5vh;min-height:0}
+.copy{display:flex;flex-direction:column;min-height:0}
+.kicker{display:flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:700;margin-bottom:20px}
+.kicker:before{content:"";width:22px;height:1px;background:var(--accent)}
+h1{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-weight:500;font-size:clamp(62px,5vw,82px);line-height:1.01;letter-spacing:-.065em}
+h1 span,h1 em{display:block} h1 em{font-style:normal;color:var(--accent);margin-left:.42em;white-space:nowrap}
+.lead{margin:34px 0 0;max-width:34em;font-size:14px;line-height:2;color:#45473f}
+.logic{margin-top:auto;padding-top:28px;border-top:1px solid var(--line)}
+.logic-label{font-size:9px;letter-spacing:.13em;color:var(--muted);margin-bottom:12px}
+.logic-flow{display:grid;grid-template-columns:auto 34px auto 34px auto;align-items:center;width:max-content;max-width:100%;font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:18px;letter-spacing:-.03em}
+.logic-flow i{height:1px;background:var(--accent);position:relative;margin:0 8px}.logic-flow i:after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid var(--accent);border-right:1px solid var(--accent);transform:rotate(45deg)}
+.logic-flow b{font-weight:500;color:var(--accent)}
+.translation{position:relative;border-top:1px solid var(--ink);display:grid;grid-template-rows:auto repeat(3,1fr);min-height:0}
+.labels{display:grid;grid-template-columns:31% 69%;font-size:10px;letter-spacing:.12em;color:var(--muted);padding:14px 0 10px}
+.labels span:last-child{padding-left:56px;color:var(--accent)}
+.row{display:grid;grid-template-columns:31% 69%;border-top:1px solid var(--line);align-items:center;position:relative;min-height:0}
+.row:last-child{border-bottom:1px solid var(--ink)}
+.term{font-size:12px;line-height:1.65;color:#676962;padding:0 42px 0 0;letter-spacing:.02em}
+.term strong{display:block;font-size:9px;font-weight:500;letter-spacing:.12em;color:#9a9b94;margin-bottom:6px}
+.world{position:relative;padding:0 12px 0 56px;font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:clamp(34px,2.7vw,45px);line-height:1.23;letter-spacing:-.045em}
+.row:before{content:"";position:absolute;left:31%;top:50%;width:31px;height:1px;background:var(--accent);transform:translate(-1px,-50%)}
+.row:after{content:"";position:absolute;left:calc(31% + 24px);top:calc(50% - 3px);width:6px;height:6px;border-right:1px solid var(--accent);border-top:1px solid var(--accent);transform:rotate(45deg)}
+.closure{border-top:1px solid var(--ink);display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;padding-top:17px}
+.closure .small{font-size:11px;line-height:1.7;color:#575951}.closure .proof-line{display:block;margin-bottom:2px;font-size:10px;color:#4d4f48;letter-spacing:.02em}.closure .big{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:26px;letter-spacing:-.035em;white-space:nowrap}.closure .big b{font-weight:500;color:var(--accent)}
+.closure .process{display:block;margin-top:5px;font-size:10px;line-height:1.5;color:#77786f;letter-spacing:.02em}
+.closure-actions{display:flex;align-items:center;gap:24px}.closure .cta{display:inline-flex;align-items:center;gap:13px;border:1px solid var(--accent);padding:11px 14px 10px;color:var(--accent);font-size:11px;letter-spacing:.08em;text-decoration:none;white-space:nowrap}.closure .cta span{font-size:17px;line-height:.7}
+.medium-break{display:none}
+.narrow-break{display:none}
+
+@media (min-width:701px) and (max-width:1100px){
+  .frame{padding:28px 32px 28px}
+  .topline{grid-template-columns:1fr auto;gap:18px}.topline .promise{display:none}
+  .hero{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;padding:5vh 0 4vh}
+  h1{font-size:54px}.lead{font-size:13px;line-height:1.9;margin-top:26px}
+  .translation{grid-template-rows:auto repeat(3,1fr)}
+  .labels{grid-template-columns:30% 70%}.labels span:last-child{padding-left:42px}
+  .row{grid-template-columns:30% 70%}.term{font-size:11px;padding-right:26px}
+  .world{padding-left:42px;font-size:28px;line-height:1.28}
+  .row:before{left:30%;width:23px}.row:after{left:calc(30% + 17px)}
+  .closure .big{font-size:20px}.closure .cta{font-size:10px;padding:9px 11px}.logic-flow{font-size:16px}
+  .medium-break{display:inline}
+}
+@media (min-width:701px) and (max-width:860px){
+  .frame{height:auto;min-height:100vh;display:block;overflow:visible}
+  .hero{display:block;padding:5vh 0 4vh}
+  .copy{display:block}.logic{margin-top:42px}
+  .translation{margin-top:42px;display:grid;grid-template-rows:auto repeat(3,minmax(126px,auto))}
+  .world{font-size:30px}
+  .closure{margin-top:26px;padding-bottom:8px}
+}
+
+@media(max-width:700px){
+  .frame{height:auto;min-height:100svh;padding:18px 17px 22px;display:block;overflow:visible}
+  .topline{grid-template-columns:1fr auto;font-size:8px;padding-top:7px}.topline .promise{display:none}.topline .proof{font-size:8px}
+  .hero{display:block;padding:4.3vh 0 3vh}
+  .kicker{font-size:9px;margin-bottom:13px}
+  h1{font-size:46px;line-height:1.04;letter-spacing:-.06em}
+  h1 em{margin-left:0;white-space:nowrap}
+  .lead{font-size:12px;line-height:1.85;margin-top:18px;max-width:27em}
+  .logic{display:none}
+  .translation{display:block;border-top:1px solid var(--ink);margin-top:22px}
+  .labels{display:none}
+  .row{display:block;padding:11px 0 13px;border-top:1px solid var(--line)}
+  .term{font-size:10px;line-height:1.45;padding:0 0 12px;color:#6b6c65}.term strong{display:inline;margin-right:7px;font-size:8px}
+  .world{padding:0 0 0 28px;font-size:22px;line-height:1.28;letter-spacing:-.035em}
+  .row:before{left:3px;top:39px;width:1px;height:21px;transform:none}
+  .row:after{left:1px;top:54px;width:5px;height:5px;transform:rotate(135deg);border-right:1px solid var(--accent);border-top:1px solid var(--accent)}
+  .medium-break{display:inline}
+  .closure{margin-top:13px;padding-top:11px;display:block}.closure .small{font-size:9px;line-height:1.55}.closure-actions{display:block}.closure .big{font-size:14px;white-space:normal;margin-top:8px}.closure .cta{margin-top:11px;font-size:9px;padding:9px 11px}
+}
+@media(max-width:340px){
+  .narrow-break{display:inline}
+  h1{font-size:40px;letter-spacing:-.055em}
+}
+</style>
+</head>
+<body>
+<main class="frame">
+  <div class="topline">
+    <span>まほら社会保険労務士事務所</span>
+    <span class="promise">労務の疑問を、分かる言葉に。</span>
+    <span class="proof">20年 / 300社以上の支援経験</span>
+  </div>
+  <section class="hero">
+    <div class="copy">
+      <div>
+        <div class="kicker">制度名より先に、困りごとを置く</div>
+        <h1><span>専門語を、</span><em>相談の言葉へ。</em></h1>
+        <p class="lead">労務の悩みは、制度名が分からない<span class="narrow-break"><br></span>ところから始まります。<br>だから入口は、<span style="white-space:nowrap">「今、何に困っているか」から。</span></p>
+      </div>
+      <div class="logic" aria-label="相談の整理順">
+        <div class="logic-label">MAHORA'S EXPLANATION LOGIC</div>
+        <div class="logic-flow"><span>制度</span><i></i><span>状況</span><i></i><b>相談</b></div>
+      </div>
+    </div>
+    <div class="translation" aria-label="専門用語から相談の言葉への翻訳例">
+      <div class="labels"><span>専門家側の分類</span><span>お客様が感じていること</span></div>
+      <div class="row"><div class="term"><strong>01</strong>36協定・時間外労働</div><div class="world">残業、このままで<br>大丈夫でしょうか。</div></div>
+      <div class="row"><div class="term"><strong>02</strong>就業規則・服務規律</div><div class="world">社内のルールを、<br>一度きちんと整えたい。</div></div>
+      <div class="row"><div class="term"><strong>03</strong>算定基礎・月額変更</div><div class="world">給与が変わった。<br>必要な手続きは<span class="medium-break"><br></span>何ですか。</div></div>
+    </div>
+  </section>
+  <footer class="closure">
+    <div class="small"><span class="proof-line">緒方 幸一 / 社会保険労務士｜20年勤務・300社以上を支援</span>制度名が分からなくても大丈夫です。<br>お困りごとの状況を、そのままお聞かせください。</div>
+    <div class="closure-actions"><div class="big">制度名ではなく、<b>いまの状況を。</b></div><a class="cta" href="#contact">状況から相談する <span>→</span></a></div>
+  </footer>
+</main>
+</body>
+</html>

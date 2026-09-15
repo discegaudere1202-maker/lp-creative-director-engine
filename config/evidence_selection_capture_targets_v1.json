@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "study": "Evidence Selection Logic Validation",
+  "purpose": "Isolate verified Evidence deltas against customer objections without changing the authored creative structure.",
+  "baseline_capture_artifact_id": 10393223767,
+  "full_capture_artifact_id": 10397341100,
+  "viewports": [
+    {"name": "mobile_390", "width": 390, "height": 844},
+    {"name": "desktop_1440", "width": 1440, "height": 1000}
+  ],
+  "variants": [
+    {
+      "prototype_id": "P10_ACCOUNTABILITY",
+      "baseline_id": "P10_CORE",
+      "path": "examples/prototypes/p10_customer_state_transition_accountability_v1.html",
+      "frame_role": "EMOTIONAL_BARRIER_ACCOUNTABILITY",
+      "evidence_delta": ["OWNER_IDENTITY"],
+      "target_objections": ["ACCOUNTABILITY"]
+    },
+    {
+      "prototype_id": "P10_CONTINUITY",
+      "baseline_id": "P10_CORE",
+      "path": "examples/prototypes/p10_customer_state_transition_continuity_v1.html",
+      "frame_role": "EMOTIONAL_BARRIER_CONTINUITY",
+      "evidence_delta": ["CONTINUITY_POLICY"],
+      "target_objections": ["CONTINUITY", "RISK"]
+    },
+    {
+      "prototype_id": "P10_BUSINESS_MODEL",
+      "baseline_id": "P10_CORE",
+      "path": "examples/prototypes/p10_customer_state_transition_business_model_v1.html",
+      "frame_role": "EMOTIONAL_BARRIER_BUSINESS_MODEL",
+      "evidence_delta": ["FEE_CONDITION", "BUSINESS_MODEL"],
+      "target_objections": ["COST", "RISK"]
+    },
+    {
+      "prototype_id": "P02_PROCESS",
+      "baseline_id": "P02_CORE",
+      "path": "examples/prototypes/p02_customer_world_translation_process_v1.html",
+      "frame_role": "B2B_EXPLAINER_PROCESS",
+      "evidence_delta": ["POST_CLICK_FLOW", "DECISION_BOUNDARY"],
+      "target_objections": ["PROCESS", "NEXT", "DECISION"]
+    },
+    {
+      "prototype_id": "P02_AUTHORITY",
+      "baseline_id": "P02_CORE",
+      "path": "examples/prototypes/p02_customer_world_translation_authority_v1.html",
+      "frame_role": "B2B_EXPLAINER_AUTHORITY",
+      "evidence_delta": ["OWNER_IDENTITY", "VERIFIED_METRIC"],
+      "target_objections": ["ABILITY", "ACCOUNTABILITY"]
+    }
+  ],
+  "targets": [
+    {"prototype_id": "P10_ACCOUNTABILITY", "path": "examples/prototypes/p10_customer_state_transition_accountability_v1.html", "frame_role": "EMOTIONAL_BARRIER_ACCOUNTABILITY", "wait_ms": 250},
+    {"prototype_id": "P10_CONTINUITY", "path": "examples/prototypes/p10_customer_state_transition_continuity_v1.html", "frame_role": "EMOTIONAL_BARRIER_CONTINUITY", "wait_ms": 250},
+    {"prototype_id": "P10_BUSINESS_MODEL", "path": "examples/prototypes/p10_customer_state_transition_business_model_v1.html", "frame_role": "EMOTIONAL_BARRIER_BUSINESS_MODEL", "wait_ms": 250},
+    {"prototype_id": "P02_PROCESS", "path": "examples/prototypes/p02_customer_world_translation_process_v1.html", "frame_role": "B2B_EXPLAINER_PROCESS", "wait_ms": 250},
+    {"prototype_id": "P02_AUTHORITY", "path": "examples/prototypes/p02_customer_world_translation_authority_v1.html", "frame_role": "B2B_EXPLAINER_AUTHORITY", "wait_ms": 250}
+  ]
+}
