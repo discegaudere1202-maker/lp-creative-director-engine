@@ -1,0 +1,34 @@
+{
+  "schema_version": 2,
+  "schema_id": "hearing_requirements_schema_v2",
+  "status": "SCHEMA_AND_PLANNER_IMPLEMENTED_NO_APP",
+  "purpose": "Ask only for missing facts required to complete a Production LP, then return the answer to Evidence verification and Safety.",
+  "requirement_classes": ["UNIVERSAL_REQUIRED", "DOMAIN_REQUIRED", "CONDITIONAL_REQUIRED", "HIGH_VALUE", "OPTIONAL"],
+  "blocking_levels": ["CLAIM_BLOCKING", "SECTION_BLOCKING", "PAGE_BLOCKING", "NON_BLOCKING"],
+  "answer_types": ["boolean", "short_text", "long_text", "number", "currency", "duration", "select", "multi_select", "URL", "file_reference", "date", "structured_steps"],
+  "verification_classes": ["SELF_DECLARABLE", "DOCUMENT_REQUIRED", "THIRD_PARTY_EVIDENCE_REQUIRED", "RIGHTS_REQUIRED"],
+  "fields": [
+    {"field_id":"responsible_person_or_team","label":"担当主体","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O2_ACCOUNTABILITY"],"target_evidence_types":["OWNER_IDENTITY","TEAM_IDENTITY","ACCOUNTABILITY_SCOPE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"short_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"service_scope","label":"対応範囲","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O3_PROCESS","O5_DECISION"],"target_evidence_types":["SCOPE_BOUNDARY"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"long_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"service_process","label":"提供工程","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O3_PROCESS"],"target_evidence_types":["SERVICE_PROCESS","CRAFT_ACTION","PLACE_EXPERIENCE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"structured_steps","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"post_click_flow","label":"問い合わせ後の流れ","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O4_NEXT"],"target_evidence_types":["POST_CLICK_FLOW","RESPONSE_EXPECTATION","CTA_CHANNEL"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"structured_steps","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"primary_evidence_source","label":"主要Evidenceの出典","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O1_ABILITY","O2_ACCOUNTABILITY","O3_PROCESS","O4_NEXT"],"target_evidence_types":["VERIFIED_METRIC","EXPERIENCE","QUALIFICATION","RESULT_CASE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"URL","verification_class":"DOCUMENT_REQUIRED","priority":"P1"},
+    {"field_id":"ability_proof","label":"能力の根拠","requirement_class":"DOMAIN_REQUIRED","target_objections":["O1_ABILITY"],"target_evidence_types":["VERIFIED_METRIC","QUALIFICATION","EXPERIENCE","RESULT_CASE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"long_text","verification_class":"DOCUMENT_REQUIRED","priority":"P1"},
+    {"field_id":"fee_conditions","label":"費用条件","requirement_class":"DOMAIN_REQUIRED","target_objections":["O6_COST"],"target_evidence_types":["PRICE","FEE_CONDITION","SCOPE_BOUNDARY"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"currency","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"continuity_or_aftercare","label":"継続・アフター対応","requirement_class":"DOMAIN_REQUIRED","target_objections":["O8_CONTINUITY"],"target_evidence_types":["CONTINUITY_POLICY","AFTERCARE","RESULT_CASE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"long_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"decision_boundary","label":"判断のタイミング","requirement_class":"CONDITIONAL_REQUIRED","target_objections":["O5_DECISION"],"target_evidence_types":["DECISION_BOUNDARY","SCOPE_BOUNDARY","PRICE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"short_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"risk_and_privacy_policy","label":"不利益・個人情報の扱い","requirement_class":"CONDITIONAL_REQUIRED","target_objections":["O7_RISK"],"target_evidence_types":["RISK_POLICY","PRIVACY_POLICY","CANCELLATION_POLICY"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"long_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"response_expectation","label":"返信・対応目安","requirement_class":"CONDITIONAL_REQUIRED","target_objections":["O4_NEXT"],"target_evidence_types":["RESPONSE_EXPECTATION"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"short_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
+    {"field_id":"visual_rights","label":"素材利用権","requirement_class":"CONDITIONAL_REQUIRED","target_objections":[],"target_evidence_types":["OWNER_PORTRAIT","PLACE_WIDE","PRODUCT_DETAIL","CRAFT_ACTION"],"trigger_condition":"VISUAL IS NEEDED AND RIGHTS ARE MISSING","blocking_level":"CLAIM_BLOCKING","answer_type":"file_reference","verification_class":"RIGHTS_REQUIRED","priority":"P1"},
+    {"field_id":"customer_state","label":"顧客の現在の状況","requirement_class":"HIGH_VALUE","target_objections":[],"target_evidence_types":["HERO_REALITY"],"trigger_condition":"HIGH_VALUE GAP ONLY","blocking_level":"NON_BLOCKING","answer_type":"long_text","verification_class":"SELF_DECLARABLE","priority":"P2"}
+  ],
+  "completion_statuses": ["ANSWERED", "NEEDS_VERIFICATION", "NEEDS_DOCUMENT", "NEEDS_RIGHTS", "COMPLETE", "CONFLICT", "HEARING_REQUIRED"],
+  "answer_boundary": {
+    "customer_answer_default": "UNVERIFIED_CUSTOMER_INPUT",
+    "objective_claims": "DOCUMENT_REQUIRED or THIRD_PARTY_EVIDENCE_REQUIRED",
+    "self_declared_operation": "May remain a customer statement until independently verified; Safety recheck remains mandatory",
+    "rights_claim": "RIGHTS_REQUIRED; site presence does not grant reuse permission"
+  },
+  "flow": ["HEARING_REQUIRED", "QUESTION", "CUSTOMER_ANSWER", "EVIDENCE_CANDIDATE", "PROVENANCE_VERIFICATION", "RIGHTS_CHECK", "SAFETY_RECHECK", "PRODUCTION_ELIGIBLE_OR_HOLD"],
+  "app_status": "NO_UI_IMPLEMENTED"
+}
