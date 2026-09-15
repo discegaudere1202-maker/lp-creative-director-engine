@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>P09 Price Transparency v1</title>
+<title>有限会社シーベ | Price Transparency Prototype</title>
 <style>
 :root{
   --ink:#10201b;
@@ -11,7 +11,6 @@
   --muted:#70766f;
   --line:#aeb4ab;
   --accent:#17654d;
-  --soft:#d9ded5;
 }
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;min-height:100%;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",YuGothic,sans-serif}
@@ -22,45 +21,47 @@ body{min-height:100vh}
 .topline .proof{font-variant-numeric:tabular-nums;color:#465048}
 .hero{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:5vw;align-items:stretch;padding:5.8vh 0 4.2vh;min-height:0}
 .copy{display:flex;flex-direction:column;min-width:0}
-.kicker{display:flex;align-items:center;gap:9px;color:var(--accent);font-size:10px;letter-spacing:.12em;font-weight:700;margin-bottom:20px}
+.kicker{display:flex;align-items:center;gap:9px;color:var(--accent);font-size:10px;letter-spacing:.1em;font-weight:700;margin-bottom:20px}
 .kicker:before{content:"";width:24px;height:1px;background:var(--accent)}
 h1{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-weight:500;font-size:clamp(56px,4.2vw,68px);line-height:1.01;letter-spacing:-.06em}
 h1 span{display:block;white-space:nowrap}
-h1 .mid{margin-left:.22em}
-h1 .accent-line{color:var(--accent);margin-left:.58em}
+h1 .mid{margin-left:.2em}
+h1 .accent-line{color:var(--accent);margin-left:.55em}
 .lead{margin:30px 0 0;max-width:35em;font-size:13px;line-height:1.95;color:#465048}
-.source-note{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-size:9px;line-height:1.75;color:var(--muted)}
+.source-note{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-size:10px;line-height:1.8;color:#626960;max-width:44em}
 .equation{position:relative;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);display:grid;grid-template-rows:auto 1fr;min-height:0}
-.formula-head{display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:end;padding:14px 0 12px;border-bottom:1px solid var(--line);font-size:9px;letter-spacing:.12em;color:var(--muted)}
+.formula-head{display:grid;grid-template-columns:180px 1fr auto;gap:24px;align-items:end;padding:14px 0 12px;border-bottom:1px solid var(--line);font-size:9px;letter-spacing:.12em;color:var(--muted)}
 .formula-head .accent{color:var(--accent)}
-.price-body{display:grid;grid-template-columns:150px 1fr;min-height:0}
-.price-anchor{border-right:1px solid var(--line);padding:28px 20px 20px 0;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
-.price-anchor .label{font-size:9px;line-height:1.6;letter-spacing:.1em;color:var(--muted)}
-.price-anchor .number{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:clamp(42px,4vw,64px);letter-spacing:-.06em;line-height:.95;color:var(--accent);white-space:nowrap}
-.price-anchor .number small{font-family:inherit;font-size:.34em;letter-spacing:-.02em;color:var(--ink)}
-.price-anchor .spec{font-size:10px;line-height:1.7;color:#596159}
+.price-body{display:grid;grid-template-columns:180px 1fr;min-height:0}
+.price-anchor{border-right:1px solid var(--line);padding:22px 22px 20px 0;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.price-anchor .label{font-size:9px;line-height:1.55;letter-spacing:.1em;color:var(--muted)}
+.panel-object{width:142px;aspect-ratio:4/3;border:1px solid var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;align-self:flex-start;position:relative;background:rgba(255,255,255,.08)}
+.panel-object:before{content:"400 × 300 mm";position:absolute;left:8px;top:7px;font-size:7px;letter-spacing:.08em;color:var(--muted)}
+.panel-object .number{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:34px;letter-spacing:-.06em;line-height:.95;color:var(--accent);white-space:nowrap;margin-top:7px}
+.panel-object .number small{font-family:inherit;font-size:.38em;letter-spacing:-.02em;color:var(--ink)}
+.price-anchor .spec{font-size:9px;line-height:1.65;color:#596159}
 .factors{display:grid;grid-template-rows:repeat(3,1fr);min-height:0}
-.factor{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:20px;align-items:center;padding:12px 0 12px 30px;border-bottom:1px solid var(--line);min-height:0}
+.factor{display:grid;grid-template-columns:62px minmax(0,1fr) 34px;gap:18px;align-items:center;padding:12px 0 12px 28px;border-bottom:1px solid var(--line);min-height:0}
 .factor:last-child{border-bottom:0}
 .factor .index{font-size:9px;letter-spacing:.12em;color:var(--muted)}
 .factor strong{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:clamp(27px,2.4vw,39px);font-weight:500;line-height:1.18;letter-spacing:-.04em;white-space:nowrap}
-.factor p{margin:0;max-width:21em;font-size:10px;line-height:1.7;color:#687068}
-.factor .mark{width:34px;height:34px;border:1px solid var(--accent);border-radius:50%;display:grid;place-items:center;font-size:18px;color:var(--accent);margin-right:4px}
+.factor p{margin:0;max-width:23em;font-size:10px;line-height:1.7;color:#687068}
+.factor .mark{width:30px;height:30px;border:1px solid var(--accent);border-radius:50%;display:grid;place-items:center;font-size:14px;color:var(--accent)}
 .mobile-summary{display:none}
 .closing{border-top:1px solid var(--ink);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;padding-top:15px}
 .closing .small{font-size:10px;line-height:1.7;color:#596159}
-.closing .big{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:24px;letter-spacing:-.04em;white-space:nowrap}
+.closing .big{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:23px;letter-spacing:-.04em;white-space:nowrap}
 .closing .big b{font-weight:500;color:var(--accent)}
 
 @media (min-width:701px) and (max-width:1100px){
   .frame{padding:28px 32px 26px}
   .topline{grid-template-columns:1fr auto}.topline .type{display:none}
   .hero{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:34px;padding:5vh 0 4vh}
-  h1{font-size:50px}.lead{font-size:12px;line-height:1.85;margin-top:24px}
-  .formula-head{grid-template-columns:120px 1fr auto}
-  .price-body{grid-template-columns:120px 1fr}
-  .price-anchor{padding-right:14px}.price-anchor .number{font-size:42px}
-  .factor{grid-template-columns:50px minmax(0,1fr);gap:10px 16px;padding-left:22px}
+  h1{font-size:49px}.lead{font-size:12px;line-height:1.85;margin-top:24px}
+  .formula-head{grid-template-columns:145px 1fr auto}
+  .price-body{grid-template-columns:145px 1fr}
+  .price-anchor{padding-right:14px}.panel-object{width:118px}.panel-object .number{font-size:28px}
+  .factor{grid-template-columns:44px minmax(0,1fr);gap:9px 14px;padding-left:20px}
   .factor strong{font-size:26px}.factor p{grid-column:2}.factor .mark{display:none}
   .closing .big{font-size:19px}
 }
@@ -84,8 +85,8 @@ h1 .accent-line{color:var(--accent);margin-left:.58em}
   .equation{display:block;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:22px}
   .formula-head{display:none}
   .price-body{display:block}
-  .price-anchor{border-right:0;border-bottom:1px solid var(--line);padding:15px 0 16px;display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:end}
-  .price-anchor .label{font-size:8px}.price-anchor .number{font-size:45px;grid-column:2;grid-row:1 / span 2}.price-anchor .spec{font-size:9px;line-height:1.5}
+  .price-anchor{border-right:0;border-bottom:1px solid var(--line);padding:14px 0 15px;display:grid;grid-template-columns:1fr auto;gap:7px 14px;align-items:center}
+  .price-anchor .label{font-size:8px}.panel-object{width:130px;grid-column:2;grid-row:1 / span 2}.panel-object .number{font-size:31px}.price-anchor .spec{font-size:9px;line-height:1.5}
   .factors{display:block}
   .factor{display:grid;grid-template-columns:30px minmax(0,1fr);gap:6px 10px;padding:12px 0 13px;border-bottom:1px solid var(--line)}
   .factor .index{font-size:8px;padding-top:4px}.factor strong{font-size:24px;line-height:1.18}.factor p{grid-column:2;font-size:9px;line-height:1.55}.factor .mark{display:none}
@@ -94,7 +95,7 @@ h1 .accent-line{color:var(--accent);margin-left:.58em}
 }
 @media(max-width:340px){
   h1{font-size:38px}
-  .price-anchor .number{font-size:40px}
+  .panel-object{width:116px}.panel-object .number{font-size:27px}
   .topline{gap:10px}
 }
 </style>
@@ -103,32 +104,32 @@ h1 .accent-line{color:var(--accent);margin-left:.58em}
 <main class="frame">
   <div class="topline">
     <span>有限会社シーベ</span>
-    <span class="type">P09 / PRICE TRANSPARENCY RESEARCH</span>
+    <span class="type">看板製作 / デザイン・施工</span>
     <span class="proof">パネルサイン 400×300mm / 4,158円（税込）</span>
   </div>
 
   <section class="hero">
     <div class="copy">
       <div>
-        <div class="kicker">価格表より先に、総額の理由を見せる</div>
-        <h1><span>見積もりは、</span><span class="mid">足し算で</span><span class="accent-line">見える。</span></h1>
+        <div class="kicker">表示価格から、依頼全体の条件へ</div>
+        <h1><span>見積もりは、</span><span class="mid">条件から</span><span class="accent-line">見えてくる。</span></h1>
         <p class="lead">400×300mmのパネルサインは4,158円（税込）。ただし、公開価格表にはデザイン・編集などのデータ制作費は含まれていません。</p>
       </div>
-      <div class="source-note">公開情報では、看板の費用はサイズ・仕様・設置場所によって変わると説明されています。数字だけでなく「何が金額を動かすか」まで同じ画面で理解できることを、Trustの主役にします。</div>
+      <div class="source-note">価格表の金額だけで、依頼全体の総額は決まりません。サイズ・仕様・設置場所など、必要な条件を確認して見積もりへ進みます。</div>
     </div>
 
     <div class="equation" aria-label="価格決定ロジック">
       <div class="formula-head"><span>公開価格の起点</span><span class="accent">総額を動かす3つの条件</span><span>→ 見積もり</span></div>
       <div class="price-body">
         <div class="price-anchor">
-          <div class="label">PANEL SIGN<br>400 × 300 mm</div>
-          <div class="number">4,158<small>円</small></div>
+          <div class="label">PANEL SIGN<br>PUBLIC PRICE</div>
+          <div class="panel-object" aria-label="400×300mmのパネルサインを4対3の比率で表現"><div class="number">4,158<small>円</small></div></div>
           <div class="spec">アルミ複合板<br>インクジェット出力 + UVラミネート</div>
         </div>
         <div class="factors">
-          <div class="factor"><span class="index">01</span><strong>サイズ</strong><p>既成サイズか、別注サイズか。面積が変われば価格の起点も変わる。</p><span class="mark">＋</span></div>
-          <div class="factor"><span class="index">02</span><strong>仕様</strong><p>素材・加工方法など、用途に合わせた仕様で必要な工程が変わる。</p><span class="mark">＋</span></div>
-          <div class="factor"><span class="index">03</span><strong>設置場所</strong><p>どこへ、どう取り付けるか。施工条件まで含めて依頼全体の金額を見る。</p><span class="mark">＝</span></div>
+          <div class="factor"><span class="index">01</span><strong>サイズ</strong><p>既成サイズか、別注サイズか。面積が変われば価格の起点も変わる。</p><span class="mark">→</span></div>
+          <div class="factor"><span class="index">02</span><strong>仕様</strong><p>素材・加工方法など、用途に合わせた仕様で必要な工程が変わる。</p><span class="mark">→</span></div>
+          <div class="factor"><span class="index">03</span><strong>設置場所</strong><p>どこへ、どう取り付けるか。施工条件まで含めて依頼全体の金額を見る。</p><span class="mark">→</span></div>
         </div>
       </div>
       <div class="mobile-summary">「4,158円」だけで終わらせず、変動条件まで先に見せる。</div>
@@ -136,8 +137,8 @@ h1 .accent-line{color:var(--accent);margin-left:.58em}
   </section>
 
   <footer class="closing">
-    <div class="small">価格を安く見せるのではなく、見積もりの理由を分かる状態にする。</div>
-    <div class="big">Price transparency = <b>decision clarity.</b></div>
+    <div class="small">表示価格に加え、金額が変わる条件も確認できます。</div>
+    <div class="big">金額だけでなく、<b>見積もりの理由まで。</b></div>
   </footer>
 </main>
 </body>
