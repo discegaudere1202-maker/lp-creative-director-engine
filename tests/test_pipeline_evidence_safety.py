@@ -73,6 +73,16 @@ class PipelineEvidenceSafetyTest(unittest.TestCase):
         report = run_pipeline(*self.args)
         self.assertFalse(any(result.gate == "EvidenceSafetyGate" for result in report.results))
 
+    def test_malformed_ledger_is_reported_as_invalid_input_not_a_crash(self):
+        report = self.run_with_safety({
+            "conversion_goal": "consultation",
+            "primary_objections": ["O3_PROCESS"],
+            "evidence_ledger": ["not-an-evidence-object"],
+        })
+        gate = self.safety_gate(report)
+        self.assertEqual(gate.status, "HOLD")
+        self.assertTrue(gate.details["issues"])
+
 
 if __name__ == "__main__":
     unittest.main()
