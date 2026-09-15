@@ -191,6 +191,7 @@ def run_pipeline(
 
 def run_production_pipeline(profile, concept, sections, motions, screenshot_scores, **kwargs):
     """Explicit Production entry point; Safety input cannot be omitted."""
+    kwargs.pop("mode", None)
     return run_pipeline(
         profile,
         concept,
