@@ -7,7 +7,12 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from lp_engine.benchmark_review import build_review_manifest, render_review_html, write_review_bundle
+from lp_engine.benchmark_review import (
+    build_review_manifest,
+    render_review_html,
+    review_readiness_issues,
+    write_review_bundle,
+)
 
 
 PAYLOAD = {
@@ -26,6 +31,9 @@ PAYLOAD = {
 
 
 class BenchmarkReviewTest(unittest.TestCase):
+    def test_ready_payload_has_no_issues(self):
+        self.assertEqual(review_readiness_issues(PAYLOAD), [])
+
     def test_manifest_has_both_viewports_and_randomized_candidate_side(self):
         manifest = build_review_manifest(PAYLOAD, seed=7)
         self.assertEqual(len(manifest["rows"]), 6)
@@ -52,8 +60,27 @@ class BenchmarkReviewTest(unittest.TestCase):
     def test_missing_viewport_image_raises(self):
         payload = json.loads(json.dumps(PAYLOAD))
         del payload["benchmarks"][0]["images"]["390"]
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "missing screenshot for viewport 390"):
             build_review_manifest(payload)
+
+    def test_too_few_benchmarks_is_not_formal_tournament(self):
+        payload = json.loads(json.dumps(PAYLOAD))
+        payload["benchmarks"] = payload["benchmarks"][:2]
+        issues = review_readiness_issues(payload)
+        self.assertIn("formal tournament requires 3-5 benchmarks", issues)
+        with self.assertRaisesRegex(ValueError, "formal tournament requires 3-5 benchmarks"):
+            build_review_manifest(payload)
+
+    def test_extra_or_missing_viewport_is_rejected(self):
+        payload = json.loads(json.dumps(PAYLOAD))
+        payload["viewports"] = [1440, 768, 390]
+        issues = review_readiness_issues(payload)
+        self.assertIn("formal tournament requires exactly 1440px and 390px viewports", issues)
+
+    def test_duplicate_benchmark_ids_are_rejected(self):
+        payload = json.loads(json.dumps(PAYLOAD))
+        payload["benchmarks"][1]["id"] = payload["benchmarks"][0]["id"]
+        self.assertIn("benchmark ids must be unique", review_readiness_issues(payload))
 
 
 if __name__ == "__main__":
