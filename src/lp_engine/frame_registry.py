@@ -60,8 +60,8 @@ def validate_frame(frame: FrameRecord) -> list[str]:
     if frame.stage == "CORE":
         if not frame.mobile_verified:
             issues.append("CORE requires mobile_verified=true")
-        if frame.mobile_evidence_grade not in {"M2", "M3"}:
-            issues.append("CORE requires mobile evidence grade M2 or M3")
+        if frame.mobile_evidence_grade != "M3":
+            issues.append("CORE requires live/captured 390px mobile evidence grade M3")
 
     if frame.stage == "REJECTED" and not frame.rejection_reason.strip():
         issues.append("REJECTED requires rejection_reason")
@@ -94,6 +94,10 @@ def audit_registry(records: list[FrameRecord]) -> dict[str, Any]:
         1 for r in records
         if r.stage in {"VERIFIED", "CORE"} and not validate_frame(r)
     )
+    mobile_verified_m2 = sum(
+        1 for r in records
+        if r.mobile_verified and r.mobile_evidence_grade == "M2" and not validate_frame(r)
+    )
     core_m2 = sum(
         1 for r in records
         if r.stage == "CORE" and r.mobile_evidence_grade == "M2" and not validate_frame(r)
@@ -109,7 +113,8 @@ def audit_registry(records: list[FrameRecord]) -> dict[str, Any]:
         "valid_records": valid_count,
         "candidate_count": counts.get("CANDIDATE", 0),
         "strict_verified_count": strict_verified,
-        "core_count": core_m2 + core_m3,
+        "mobile_verified_m2_count": mobile_verified_m2,
+        "core_count": core_m3,
         "core_m2_count": core_m2,
         "core_m3_count": core_m3,
         "rejected_count": counts.get("REJECTED", 0),
@@ -117,6 +122,7 @@ def audit_registry(records: list[FrameRecord]) -> dict[str, Any]:
         "records": rows,
         "rule": (
             "Research volume and strict quality count are separate. VERIFIED is desktop/source verified. "
-            "CORE additionally requires explicit mobile evidence: M2 published mobile visual review or M3 live 390px review."
+            "M2 means a trustworthy published mobile visual was explicitly reviewed. "
+            "CORE requires M3: a live/captured 390px review that preserves hierarchy, action and Company Truth -> Form causality."
         ),
     }
