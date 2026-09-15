@@ -52,14 +52,34 @@ class MobileBenchmarkVerificationTest(unittest.TestCase):
             if benchmark.get("stage") == "CORE":
                 self.assertEqual(grade, "M3")
 
-    def test_m3_is_not_claimed_without_live_review(self):
+    def test_m3_requires_traceable_live_capture_and_visual_pass(self):
         mobile = json.loads(
             (ROOT / "config/mobile_benchmark_verification_v1.json").read_text(encoding="utf-8")
         )
-        grades = [record["mobile_review"]["evidence_grade"] for record in mobile["records"]]
-        self.assertTrue(all(grade in {"M2", "M3"} for grade in grades))
-        # Current corpus intentionally remains M2 until live/captured 390px review is performed.
-        self.assertNotIn("M3", grades)
+        m3_records = [
+            record for record in mobile["records"]
+            if record["mobile_review"]["evidence_grade"] == "M3"
+        ]
+        self.assertGreaterEqual(len(m3_records), 1)
+        for record in m3_records:
+            capture = record.get("live_capture")
+            self.assertIsInstance(capture, dict)
+            self.assertIsInstance(capture.get("run_id"), int)
+            self.assertIsInstance(capture.get("artifact_id"), int)
+            self.assertEqual(capture.get("viewport"), "390x844")
+            self.assertEqual(capture.get("http_status"), 200)
+            self.assertEqual(capture.get("review_status"), "PASS")
+            self.assertEqual(len(capture.get("screenshot_sha256", "")), 64)
+            self.assertEqual(len(capture.get("desktop_screenshot_sha256", "")), 64)
+
+    def test_failed_or_uncertain_live_capture_does_not_auto_promote_m3(self):
+        mobile = json.loads(
+            (ROOT / "config/mobile_benchmark_verification_v1.json").read_text(encoding="utf-8")
+        )
+        for record in mobile["records"]:
+            capture = record.get("live_capture")
+            if capture and capture.get("review_status") != "PASS":
+                self.assertNotEqual(record["mobile_review"]["evidence_grade"], "M3")
 
 
 if __name__ == "__main__":
