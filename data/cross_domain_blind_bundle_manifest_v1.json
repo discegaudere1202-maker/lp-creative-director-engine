@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "bundle_id": "CROSS_DOMAIN_BLIND_BUNDLE_2026-09-15",
+  "review_scope": "Internal structured comparison only; reviewer-visible bundle contains no company, case, baseline, variant or source identity.",
+  "capture_artifact_id": 10400574684,
+  "masking": {"status":"PASS","method":"top identity strip blurred before review bundle assembly","identity_mapping":"stored outside reviewer-visible bundle in Work notes"},
+  "reviewer_visible_pairs":[
+    {"pair_id":"pair-001","viewports":["desktop_1440","mobile_390"],"left":"LEFT","right":"RIGHT"},
+    {"pair_id":"pair-002","viewports":["desktop_1440","mobile_390"],"left":"LEFT","right":"RIGHT"}
+  ],
+  "randomization": {"seed":20260915,"candidate_side_is_not_fixed":true},
+  "identity_mapping_not_in_bundle": true
+}
