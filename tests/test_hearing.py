@@ -105,6 +105,28 @@ class HearingPlannerTest(unittest.TestCase):
         decision = evaluate_evidence_selection("consultation", ["O3_PROCESS"], [completed])
         self.assertEqual(decision.safety_status, "PASS")
 
+    def test_three_valid_answers_round_trip_through_safety(self):
+        cases = [
+            ("service_process", "consultation", "O3_PROCESS", "公式工程を説明します。"),
+            ("post_click_flow", "inquiry", "O4_NEXT", "内容確認後に日程を案内します。"),
+            ("fee_conditions", "quote_request", "O6_COST", "見積確認後に費用が発生します。"),
+        ]
+        for field_id, goal, objection, answer in cases:
+            with self.subTest(field_id=field_id):
+                candidate = answer_to_evidence_candidate(field_id, answer)
+                completed = complete_evidence_candidate(
+                    candidate,
+                    source="https://example.com/official",
+                    source_type="official_company_site",
+                    verification_status="VERIFIED",
+                    verification_date="2026-09-16",
+                    rights_status="NOT_APPLICABLE",
+                    usage_status="PRODUCTION_ELIGIBLE",
+                )
+                self.assertEqual(completed["completion_status"], "COMPLETE")
+                decision = evaluate_evidence_selection(goal, [objection], [completed])
+                self.assertEqual(decision.safety_status, "PASS")
+
     def test_third_party_claim_does_not_pass_with_customer_statement(self):
         candidate = answer_to_evidence_candidate("ability_proof", "昔から地域No.1と言われています")
         completed = complete_evidence_candidate(
