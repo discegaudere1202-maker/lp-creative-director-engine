@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P09 Price Transparency v1</title>
+<style>
+:root{
+  --ink:#10201b;
+  --paper:#ebe7dc;
+  --muted:#70766f;
+  --line:#aeb4ab;
+  --accent:#17654d;
+  --soft:#d9ded5;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",YuGothic,sans-serif}
+body{min-height:100vh}
+.frame{height:100vh;min-height:720px;padding:30px 42px 28px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}
+.topline{border-top:1px solid var(--ink);padding-top:9px;display:grid;grid-template-columns:1fr auto auto;gap:26px;align-items:center;font-size:9px;letter-spacing:.12em}
+.topline .type{color:var(--muted)}
+.topline .proof{font-variant-numeric:tabular-nums;color:#465048}
+.hero{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:5vw;align-items:stretch;padding:5.8vh 0 4.2vh;min-height:0}
+.copy{display:flex;flex-direction:column;min-width:0}
+.kicker{display:flex;align-items:center;gap:9px;color:var(--accent);font-size:10px;letter-spacing:.12em;font-weight:700;margin-bottom:20px}
+.kicker:before{content:"";width:24px;height:1px;background:var(--accent)}
+h1{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-weight:500;font-size:clamp(58px,4.8vw,78px);line-height:1.02;letter-spacing:-.06em}
+h1 span{display:block}
+h1 span:last-child{color:var(--accent);margin-left:.45em}
+.lead{margin:30px 0 0;max-width:35em;font-size:13px;line-height:1.95;color:#465048}
+.source-note{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-size:9px;line-height:1.75;color:var(--muted)}
+.equation{position:relative;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);display:grid;grid-template-rows:auto 1fr;min-height:0}
+.formula-head{display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:end;padding:14px 0 12px;border-bottom:1px solid var(--line);font-size:9px;letter-spacing:.12em;color:var(--muted)}
+.formula-head .accent{color:var(--accent)}
+.price-body{display:grid;grid-template-columns:150px 1fr;min-height:0}
+.price-anchor{border-right:1px solid var(--line);padding:28px 20px 20px 0;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.price-anchor .label{font-size:9px;line-height:1.6;letter-spacing:.1em;color:var(--muted)}
+.price-anchor .number{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:clamp(42px,4vw,64px);letter-spacing:-.06em;line-height:.95;color:var(--accent);white-space:nowrap}
+.price-anchor .number small{font-family:inherit;font-size:.34em;letter-spacing:-.02em;color:var(--ink)}
+.price-anchor .spec{font-size:10px;line-height:1.7;color:#596159}
+.factors{display:grid;grid-template-rows:repeat(3,1fr);min-height:0}
+.factor{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:20px;align-items:center;padding:12px 0 12px 30px;border-bottom:1px solid var(--line);min-height:0}
+.factor:last-child{border-bottom:0}
+.factor .index{font-size:9px;letter-spacing:.12em;color:var(--muted)}
+.factor strong{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:clamp(27px,2.4vw,39px);font-weight:500;line-height:1.18;letter-spacing:-.04em}
+.factor p{margin:0;max-width:21em;font-size:10px;line-height:1.7;color:#687068}
+.factor .mark{width:34px;height:34px;border:1px solid var(--accent);border-radius:50%;display:grid;place-items:center;font-size:18px;color:var(--accent);margin-right:4px}
+.mobile-summary{display:none}
+.closing{border-top:1px solid var(--ink);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;padding-top:15px}
+.closing .small{font-size:10px;line-height:1.7;color:#596159}
+.closing .big{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:24px;letter-spacing:-.04em;white-space:nowrap}
+.closing .big b{font-weight:500;color:var(--accent)}
+
+@media (min-width:701px) and (max-width:1100px){
+  .frame{padding:28px 32px 26px}
+  .topline{grid-template-columns:1fr auto}.topline .type{display:none}
+  .hero{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:34px;padding:5vh 0 4vh}
+  h1{font-size:52px}.lead{font-size:12px;line-height:1.85;margin-top:24px}
+  .formula-head{grid-template-columns:120px 1fr auto}
+  .price-body{grid-template-columns:120px 1fr}
+  .price-anchor{padding-right:14px}.price-anchor .number{font-size:42px}
+  .factor{grid-template-columns:50px minmax(0,1fr);gap:10px 16px;padding-left:22px}
+  .factor strong{font-size:26px}.factor p{grid-column:2}.factor .mark{display:none}
+  .closing .big{font-size:19px}
+}
+@media (min-width:701px) and (max-width:860px){
+  .frame{height:auto;min-height:100vh;display:block;overflow:visible}
+  .hero{display:block;padding:5vh 0 4vh}
+  .source-note{margin-top:34px}
+  .equation{margin-top:38px;min-height:590px}
+  .closing{margin-top:28px;padding-bottom:6px}
+}
+
+@media(max-width:700px){
+  .frame{height:auto;min-height:100svh;padding:18px 17px 22px;display:block;overflow:visible}
+  .topline{grid-template-columns:1fr auto;font-size:8px;padding-top:7px}.topline .type{display:none}.topline .proof{font-size:8px;text-align:right}
+  .hero{display:block;padding:4.2vh 0 3vh}
+  .kicker{font-size:9px;margin-bottom:13px}
+  h1{font-size:43px;line-height:1.04;letter-spacing:-.055em}
+  h1 span:last-child{margin-left:0}
+  .lead{font-size:12px;line-height:1.82;margin-top:18px;max-width:28em}
+  .source-note{display:none}
+  .equation{display:block;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:22px}
+  .formula-head{display:none}
+  .price-body{display:block}
+  .price-anchor{border-right:0;border-bottom:1px solid var(--line);padding:15px 0 16px;display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:end}
+  .price-anchor .label{font-size:8px}.price-anchor .number{font-size:45px;grid-column:2;grid-row:1 / span 2}.price-anchor .spec{font-size:9px;line-height:1.5}
+  .factors{display:block}
+  .factor{display:grid;grid-template-columns:30px minmax(0,1fr);gap:6px 10px;padding:12px 0 13px;border-bottom:1px solid var(--line)}
+  .factor .index{font-size:8px;padding-top:4px}.factor strong{font-size:24px;line-height:1.18}.factor p{grid-column:2;font-size:9px;line-height:1.55}.factor .mark{display:none}
+  .mobile-summary{display:block;padding:12px 0 13px;font-size:10px;line-height:1.65;color:var(--accent)}
+  .closing{margin-top:14px;padding-top:11px;display:block}.closing .small{font-size:9px;line-height:1.55}.closing .big{font-size:15px;white-space:normal;margin-top:7px}
+}
+@media(max-width:340px){
+  h1{font-size:38px}
+  .price-anchor .number{font-size:40px}
+  .topline{gap:10px}
+}
+</style>
+</head>
+<body>
+<main class="frame">
+  <div class="topline">
+    <span>有限会社シーベ</span>
+    <span class="type">P09 / PRICE TRANSPARENCY RESEARCH</span>
+    <span class="proof">パネルサイン 400×300mm / 4,158円（税込）</span>
+  </div>
+
+  <section class="hero">
+    <div class="copy">
+      <div>
+        <div class="kicker">価格表より先に、総額の理由を見せる</div>
+        <h1><span>見積もりは、</span><span>足し算で見える。</span></h1>
+        <p class="lead">400×300mmのパネルサインは4,158円（税込）。ただし、公開価格表にはデザイン・編集などのデータ制作費は含まれていません。</p>
+      </div>
+      <div class="source-note">公開情報では、看板の費用はサイズ・仕様・設置場所によって変わると説明されています。数字だけでなく「何が金額を動かすか」まで同じ画面で理解できることを、Trustの主役にします。</div>
+    </div>
+
+    <div class="equation" aria-label="価格決定ロジック">
+      <div class="formula-head"><span>公開価格の起点</span><span class="accent">総額を動かす3つの条件</span><span>→ 見積もり</span></div>
+      <div class="price-body">
+        <div class="price-anchor">
+          <div class="label">PANEL SIGN<br>400 × 300 mm</div>
+          <div class="number">4,158<small>円</small></div>
+          <div class="spec">アルミ複合板<br>インクジェット出力 + UVラミネート</div>
+        </div>
+        <div class="factors">
+          <div class="factor"><span class="index">01</span><strong>サイズ</strong><p>既成サイズか、別注サイズか。面積が変われば価格の起点も変わる。</p><span class="mark">＋</span></div>
+          <div class="factor"><span class="index">02</span><strong>仕様</strong><p>素材・加工方法など、用途に合わせた仕様で必要な工程が変わる。</p><span class="mark">＋</span></div>
+          <div class="factor"><span class="index">03</span><strong>設置場所</strong><p>どこへ、どう取り付けるか。施工条件まで含めて依頼全体の金額を見る。</p><span class="mark">＝</span></div>
+        </div>
+      </div>
+      <div class="mobile-summary">「4,158円」だけで終わらせず、変動条件まで先に見せる。</div>
+    </div>
+  </section>
+
+  <footer class="closing">
+    <div class="small">価格を安く見せるのではなく、見積もりの理由を分かる状態にする。</div>
+    <div class="big">Price transparency = <b>decision clarity.</b></div>
+  </footer>
+</main>
+</body>
+</html>
