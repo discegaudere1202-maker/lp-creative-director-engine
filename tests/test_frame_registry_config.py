@@ -15,11 +15,31 @@ class FrameRegistryConfigTest(unittest.TestCase):
         )
         records = [FrameRecord(**item) for item in payload["frames"]]
         audit = audit_registry(records)
+
+        expected = payload.get("expected_counts", {})
+        stage_counts = {
+            "CANDIDATE": sum(1 for item in payload["frames"] if item["stage"] == "CANDIDATE"),
+            "VERIFIED": sum(1 for item in payload["frames"] if item["stage"] == "VERIFIED"),
+            "CORE": sum(1 for item in payload["frames"] if item["stage"] == "CORE"),
+            "REJECTED": sum(1 for item in payload["frames"] if item["stage"] == "REJECTED"),
+        }
+
         self.assertEqual(audit["status"], "PASS")
-        self.assertEqual(audit["total_records"], 15)
-        self.assertEqual(audit["strict_verified_count"], 11)
-        self.assertEqual(audit["candidate_count"], 4)
-        self.assertEqual(audit["core_count"], 0)
+        self.assertEqual(audit["total_records"], len(payload["frames"]))
+        self.assertEqual(
+            audit["strict_verified_count"],
+            stage_counts["VERIFIED"] + stage_counts["CORE"],
+        )
+        self.assertEqual(audit["candidate_count"], stage_counts["CANDIDATE"])
+        self.assertEqual(audit["core_count"], stage_counts["CORE"])
+        self.assertEqual(audit["rejected_count"], stage_counts["REJECTED"])
+
+        if expected:
+            self.assertEqual(expected.get("total_records"), len(payload["frames"]))
+            self.assertEqual(expected.get("candidate_count"), stage_counts["CANDIDATE"])
+            self.assertEqual(expected.get("verified_count"), stage_counts["VERIFIED"])
+            self.assertEqual(expected.get("core_count"), stage_counts["CORE"])
+            self.assertEqual(expected.get("rejected_count"), stage_counts["REJECTED"])
 
     def test_core_requires_mobile_verification(self):
         payload = json.loads(
