@@ -16,11 +16,33 @@
         "https://www.atpress.ne.jp/news/444379"
       ],
       "mobile_review": {
+        "evidence_grade": "M2",
         "hierarchy_preserved": true,
         "purposeful_recomposition": true,
         "primary_message_survives": true,
         "cta_or_next_action_survives": true,
-        "notes": "Treat as the first candidate for CORE promotion once the central registry is updated."
+        "notes": "Strong mobile-first editorial benchmark. M3 still requires a live/captured 390px review."
+      }
+    },
+    {
+      "frame_id": "ima-brand-verb-01",
+      "status": "MOBILE_VERIFIED_CANDIDATE",
+      "evidence": [
+        "Studio Design Award nominee page explicitly states that the visual design explored how to express the verb 'かき混ぜる' and highlights the rotating-circle key visual.",
+        "ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the IMA site.",
+        "The core brand message and the circular/mixing visual grammar remain observable across device states."
+      ],
+      "sources": [
+        "https://designaward2025.studio.design/nominate/ima-inc",
+        "https://asi.co.jp/gallery/sites/?slug=ima-inc"
+      ],
+      "mobile_review": {
+        "evidence_grade": "M2",
+        "hierarchy_preserved": true,
+        "purposeful_recomposition": true,
+        "primary_message_survives": true,
+        "cta_or_next_action_survives": true,
+        "notes": "Useful benchmark for Business Verb -> Form. M3 still requires a live/captured 390px review."
       }
     }
   ]
