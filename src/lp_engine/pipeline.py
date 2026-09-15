@@ -3,6 +3,7 @@ from collections.abc import Mapping
 from .authority import choose_primary_authority
 from .models import GateResult, PipelineReport
 from .evidence_safety import evaluate_evidence_selection
+from .hearing import plan_hearing
 from .gates.owner import OwnerSpecificityGate
 from .gates.screenshot import ScreenshotPeakGate
 from .gates.rhythm import RhythmGate
@@ -131,6 +132,7 @@ def run_pipeline(
             safety_decision = safety_result.details
     evidence_manifest = []
     hearing_requirements = []
+    hearing_plan = {}
     blocked_claims = []
     if safety_decision:
         evidence_manifest = [
@@ -146,6 +148,12 @@ def run_pipeline(
         ]
         hearing_requirements = safety_decision.get("hearing_required", [])
         blocked_claims = safety_decision.get("blocked_claims", [])
+        hearing_plan = plan_hearing(
+            safety_decision,
+            conversion_goal=safety_decision.get("conversion_goal", ""),
+            primary_objections=safety_decision.get("primary_objections", []),
+            domain=getattr(profile, "industry", ""),
+        ).to_dict()
     primary_objections = set((safety_decision or {}).get("primary_objections", []))
     primary_hearing = [
         item for item in hearing_requirements
@@ -185,6 +193,7 @@ def run_pipeline(
         safety_scope=safety_scope,
         evidence_manifest=evidence_manifest,
         hearing_requirements=hearing_requirements,
+        hearing_plan=hearing_plan,
         blocked_claims=blocked_claims,
     )
 
