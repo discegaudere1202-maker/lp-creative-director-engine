@@ -2,6 +2,7 @@ import unittest
 
 from lp_engine.evidence_safety import (
     evaluate_evidence_selection,
+    normalize_evidence_record,
     production_approved,
 )
 
@@ -120,6 +121,27 @@ class EvidenceSafetyTest(unittest.TestCase):
     def test_invalid_goal_is_rejected(self):
         result = evaluate_evidence_selection("lead_generation", ["O3_PROCESS"], [evidence()])
         self.assertEqual(result.safety_status, "INVALID_INPUT")
+
+    def test_legacy_ledger_is_normalized_without_inference(self):
+        normalized = normalize_evidence_record(
+            {
+                "id": "LEGACY-1",
+                "claim": "公式サイトの事実",
+                "source_url": "https://example.com",
+                "verified": True,
+                "strength": "E2_SPECIFIC",
+                "slot": "OWNER_IDENTITY",
+                "placement": "MIDDLE / CTA_ZONE",
+                "captured_at": "2026-09-15T00:00:00Z",
+            },
+            company_id="legacy-company",
+            case_id="legacy-case",
+        )
+        self.assertEqual(normalized.evidence_id, "LEGACY-1")
+        self.assertEqual(normalized.verification_status, "VERIFIED")
+        self.assertEqual(normalized.verification_date, "2026-09-15")
+        self.assertEqual(normalized.target_objections, ())
+        self.assertFalse(production_approved(normalized))
 
 
 if __name__ == "__main__":
