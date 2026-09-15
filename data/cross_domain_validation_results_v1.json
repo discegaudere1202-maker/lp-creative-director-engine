@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "study": "CROSS_DOMAIN_EVIDENCE_VALIDATION",
+  "review_scope": "Internal blind baseline-versus-objection-selected comparison. Structured review evidence; not causal proof or live CVR evidence.",
+  "created_at": "2026-09-15T14:30:00Z",
+  "provenance": {
+    "capture_run_id": 34981119495,
+    "capture_artifact_id": 10400574684,
+    "capture_artifact_name": "cross-domain-validation-capture-v1",
+    "capture_digest": "sha256:51428c3bc15c9b1f06eeb9b1151fa9b05153e8f338f0d732fdfd33f2dcc91214",
+    "capture_report_sha256": "f3034a829d4754e7b2c0f46b677a30876d12f4c22005023a4aa9f79f8fb18228",
+    "viewports": {"desktop":[1440,1000],"mobile":[390,844]},
+    "blind_bundle": {"seed":20260915,"reviewer_visible":"opaque pair id, LEFT/RIGHT, viewport and redacted screenshots only","identity_mapping":"work-only mapping stored outside reviewer-visible bundle","pair_ids":["pair-001","pair-002"]}
+  },
+  "axes":["immediate_read","distinctness","owner_specificity","visual_hierarchy","craft_detail","emotional_pull","trust","share_impulse","mobile_quality","conversion_intent"],
+  "reviewer_types": {
+    "creative_art_direction":"Distinctness, Owner Specificity, hierarchy, craft, emotion, share impulse; protect Company Truth → Form.",
+    "business_owner_conversion":"Immediate Read, Trust, Owner Specificity, Conversion Intent, Mobile Quality, emotional safety; check next-step clarity."
+  },
+  "cases": [
+    {
+      "case_id":"CROSS_P09_SIGNAGE",
+      "domain":"construction_craft",
+      "company":"有限会社シーベ",
+      "conversion_goal":"見積相談",
+      "baseline":"P09_BASELINE",
+      "variant":"P09_OBJECTION_SELECTED",
+      "primary_objections":["O2_ACCOUNTABILITY","O3_PROCESS","O4_NEXT"],
+      "selected_evidence":["デザイン・製作・施工まで、ワンストップで対応。"],
+      "placement":"CTA Zone / closing quiet chapter",
+      "capture_records":{
+        "baseline":{"source_sha256":"6822a71310cbe9fe6d5d28a04c9f6faff787c72064dd763f364ab30e27f443fd","desktop_screenshot_sha256":"89c4e022f2b467136c410361644aa39c21e123b58099637da57d0ec8ab2f5120","mobile_screenshot_sha256":"d62c6cbdd61bf275b538455cf0dc666607ba5519711285720f8279daa292f524","scroll_width":{"desktop":1440,"mobile":390},"scroll_height":{"desktop":1000,"mobile":883}},
+        "variant":{"source_sha256":"e731078322a43c2bfa08059fedfe02d26d1105e23a67dd48731cfd6a3afb3425","desktop_screenshot_sha256":"2428b7cc25c0d09a0624fe06b7d5e0df5b9fec00a933468e3ec3d7c1cd7412a6","mobile_screenshot_sha256":"33dead27706c0f37d31ab0161092c24ed7fd628d3c36bdc50273de59bb21039f","scroll_width":{"desktop":1440,"mobile":390},"scroll_height":{"desktop":1000,"mobile":903}}
+      },
+      "votes":[
+        {"viewport":"1440","reviewer_type":"creative_art_direction","variant_over_baseline":{"immediate_read":0,"distinctness":0,"owner_specificity":1,"visual_hierarchy":0,"craft_detail":0,"emotional_pull":0,"trust":1,"share_impulse":0,"mobile_quality":0,"conversion_intent":0},"overall":0,"reason":"The one-stop production fact is company-specific and credible, but the page is already visually resolved; the added line does not create a new creative peak."},
+        {"viewport":"390","reviewer_type":"creative_art_direction","variant_over_baseline":{"immediate_read":0,"distinctness":0,"owner_specificity":0,"visual_hierarchy":0,"craft_detail":0,"emotional_pull":0,"trust":0,"share_impulse":0,"mobile_quality":-1,"conversion_intent":0},"overall":-1,"reason":"The selected proof is below the main mobile decision frame and increases page height; it does not earn back the mobile action budget."},
+        {"viewport":"1440","reviewer_type":"business_owner_conversion","variant_over_baseline":{"immediate_read":0,"distinctness":0,"owner_specificity":1,"visual_hierarchy":0,"craft_detail":0,"emotional_pull":0,"trust":1,"share_impulse":0,"mobile_quality":0,"conversion_intent":1},"overall":1,"reason":"Responsibility is clearer: one company can carry design, production and installation. That reduces handoff uncertainty before a quote inquiry."},
+        {"viewport":"390","reviewer_type":"business_owner_conversion","variant_over_baseline":{"immediate_read":0,"distinctness":0,"owner_specificity":0,"visual_hierarchy":0,"craft_detail":0,"emotional_pull":0,"trust":0,"share_impulse":0,"mobile_quality":-1,"conversion_intent":0},"overall":0,"reason":"The added fact is not visible in the first mobile frame where the action decision is made; the existing page still lacks a concrete clickable inquiry step."}
+      ],
+      "summary":{"comparisons":4,"overall":{"wins":1,"ties":2,"losses":1,"win_rate":0.5},"axis_win_rate":{"immediate_read":0.0,"distinctness":0.0,"owner_specificity":0.5,"visual_hierarchy":0.0,"craft_detail":0.0,"emotional_pull":0.0,"trust":0.5,"share_impulse":0.0,"mobile_quality":0.0,"conversion_intent":0.25},"reviewer_type_win_rate":{"creative_art_direction":0.5,"business_owner_conversion":0.75},"viewport_win_rate":{"1440":0.75,"390":0.25}}
+    },
+    {
+      "case_id":"CROSS_MORIBITO_VISIT",
+      "domain":"craft_furniture",
+      "company":"手作り家具 森人",
+      "conversion_goal":"実物確認を伴う来店・購入相談",
+      "baseline":"MORIBITO_BASELINE",
+      "variant":"MORIBITO_OBJECTION_SELECTED",
+      "primary_objections":["O1_ABILITY","O3_PROCESS","O4_NEXT","O6_COST"],
+      "selected_evidence":["店内展示の実物に触れて相談できます。","オーダーメイドは、できるだけご予算内で。"],
+      "placement":"CTA Zone / before action",
+      "capture_records":{
+        "baseline":{"source_sha256":"bca966985fde38221b47f593203845700f243b6d6f89d94b57a8f121e0b7ee50","desktop_screenshot_sha256":"1c97a0627e6d2da8103d108541fde7d1f86864d32b7cc8496272e39f75f628ef","mobile_screenshot_sha256":"92c3f70f2d4652e82841994803c87a9e3b7d7d9ac9454f3aa80ea19ff505ddad","scroll_width":{"desktop":1440,"mobile":390},"scroll_height":{"desktop":1000,"mobile":844}},
+        "variant":{"source_sha256":"e08ab4e8f0c366fd998fea3a031f3a504a2e8f4ff1b247908ee534adb0252e0b","desktop_screenshot_sha256":"b7c1ee783a2c3f65f5f017df2f27746f96f6df5a17d6e8ca005616cc8320a7c4","mobile_screenshot_sha256":"d132ef986555acdd123d9c5a34084f8577972310f57e21637d90228b9645d9a6","scroll_width":{"desktop":1440,"mobile":390},"scroll_height":{"desktop":1000,"mobile":844}}
+      },
+      "votes":[
+        {"viewport":"1440","reviewer_type":"creative_art_direction","variant_over_baseline":{"immediate_read":0,"distinctness":0,"owner_specificity":1,"visual_hierarchy":0,"craft_detail":0,"emotional_pull":0,"trust":1,"share_impulse":0,"mobile_quality":0,"conversion_intent":1},"overall":1,"reason":"The added visit and budget facts make the quiet material concept feel lived-in rather than decorative; the hero and material peak stay unchanged."},
+        {"viewport":"390","reviewer_type":"creative_art_direction","variant_over_baseline":{"immediate_read":0,"distinctness":0,"owner_specificity":1,"visual_hierarchy":0,"craft_detail":0,"emotional_pull":0,"share_impulse":0,"mobile_quality":0,"conversion_intent":1},"overall":1,"reason":"The evidence arrives in the existing closing zone, remains legible, and gives the mobile ending a specific reason to visit without adding a card wall."},
+        {"viewport":"1440","reviewer_type":"business_owner_conversion","variant_over_baseline":{"immediate_read":0,"distinctness":0,"owner_specificity":1,"visual_hierarchy":0,"craft_detail":0,"emotional_pull":0,"trust":1,"share_impulse":0,"mobile_quality":0,"conversion_intent":1},"overall":1,"reason":"The visitor can understand what a visit is for: touch displayed furniture and discuss a custom piece within a budget boundary. No unsupported booking promise is needed."},
+        {"viewport":"390","reviewer_type":"business_owner_conversion","variant_over_baseline":{"immediate_read":0,"distinctness":0,"owner_specificity":1,"visual_hierarchy":0,"craft_detail":0,"emotional_pull":0,"trust":1,"share_impulse":0,"mobile_quality":0,"conversion_intent":1},"overall":1,"reason":"The evidence sits inside the first mobile screen and answers the practical next question. Reservation mechanics remain unknown, so the gain is permission to visit or inquire, not a proven reservation lift."}
+      ],
+      "summary":{"comparisons":4,"overall":{"wins":4,"ties":0,"losses":0,"win_rate":1.0},"axis_win_rate":{"immediate_read":0.0,"distinctness":0.0,"owner_specificity":1.0,"visual_hierarchy":0.0,"craft_detail":0.0,"emotional_pull":0.0,"trust":1.0,"share_impulse":0.0,"mobile_quality":1.0,"conversion_intent":1.0},"reviewer_type_win_rate":{"creative_art_direction":1.0,"business_owner_conversion":1.0},"viewport_win_rate":{"1440":1.0,"390":1.0}}
+    }
+  ],
+  "cross_domain_interpretation":{"objection_first_selection":"OBSERVED across two non-consultation domains, but P09 shows that correct evidence can improve Trust without producing an overall win when its placement misses the first mobile action frame.","objection_coverage_sequence":"REPLICATED directionally only when the selected evidence covers a concrete visit/quote decision; not enough evidence for ENGINE_READY.","accountability_with_process":"CONDITIONAL: strong in P09 desktop, but the proof must be visible at the decision point.","who_how_next_bridge":"CONDITIONAL: Moribito supports a domain-specific SEE/TOUCH/CONSULT sequence; do not force WHO/HOW/NEXT wording into every LP.","causal_limit":"Small internal structured review sample; no independent human reviewers and no live conversion data."}
+}
