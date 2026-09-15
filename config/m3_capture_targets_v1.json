@@ -1,19 +1,24 @@
 {
   "version": 1,
   "updated": "2026-09-15",
-  "rule": "Capture is evidence acquisition only. A successful screenshot never auto-promotes a benchmark to M3; visual review is still required.",
+  "rule": "Capture is evidence acquisition only. A successful screenshot never auto-promotes a benchmark to M3; visual review is still required. Formal tournament screenshots must match frame roles rather than compare unrelated hero and mid-page frames.",
   "viewports": [
     {"name": "mobile_390", "width": 390, "height": 844},
     {"name": "desktop_1440", "width": 1440, "height": 1000}
   ],
   "targets": [
-    {"benchmark_id":"ima-inc","url":"https://ima-inc.world/","wait_ms":3500},
-    {"benchmark_id":"jikkanokoto","url":"https://jikkanokoto.com/","wait_ms":6000},
-    {"benchmark_id":"smarthr-recruit","url":"https://recruit.smarthr.co.jp/","wait_ms":3500},
-    {"benchmark_id":"jmc-recruit","url":"https://recruit.jmc-ltd.co.jp/","wait_ms":4000},
-    {"benchmark_id":"nakasokaitai-recruit","url":"https://nakasokaitai.co.jp/recruit","wait_ms":4000},
-    {"benchmark_id":"maruyoshi-car","url":"https://maruyoshi-car.com/","wait_ms":4000},
-    {"benchmark_id":"nisshin-kasei","url":"https://www.e-nisshin.com/","wait_ms":4000},
-    {"benchmark_id":"hearts","url":"https://hearts.co.jp/","wait_ms":4000}
+    {"benchmark_id":"ima-inc","url":"https://ima-inc.world/","wait_ms":3500,"frame_role":"HERO"},
+    {"benchmark_id":"jikkanokoto","url":"https://jikkanokoto.com/","wait_ms":6000,"frame_role":"HERO"},
+    {"benchmark_id":"smarthr-recruit","url":"https://recruit.smarthr.co.jp/","wait_ms":3500,"frame_role":"HERO"},
+    {"benchmark_id":"jmc-recruit","url":"https://recruit.jmc-ltd.co.jp/","wait_ms":4000,"frame_role":"HERO"},
+    {"benchmark_id":"nakasokaitai-recruit","url":"https://nakasokaitai.co.jp/recruit","wait_ms":4000,"frame_role":"HERO"},
+    {"benchmark_id":"maruyoshi-car","url":"https://maruyoshi-car.com/","wait_ms":4000,"frame_role":"HERO"},
+    {"benchmark_id":"nisshin-kasei","url":"https://www.e-nisshin.com/","wait_ms":4000,"frame_role":"EXPLAINER_HERO"},
+    {"benchmark_id":"hearts","url":"https://hearts.co.jp/","wait_ms":4000,"frame_role":"HERO"},
+    {"benchmark_id":"startpass","url":"https://startpass.jp/","wait_ms":4500,"frame_role":"B2B_EXPLAINER_HERO"},
+    {"benchmark_id":"kagami","url":"https://jp.is-kagami.com/","wait_ms":4500,"frame_role":"B2B_EXPLAINER_HERO"},
+    {"benchmark_id":"mhand-price","url":"https://www.m-hand.co.jp/tokyo/price/","wait_ms":3500,"frame_role":"PRICE_TRANSPARENCY","focus_text":"料金表","focus_top_offset":110},
+    {"benchmark_id":"aki-design-price","url":"https://akidesign.site/service/","wait_ms":3500,"frame_role":"PRICE_TRANSPARENCY","focus_text":"STARTER プラン","focus_top_offset":130},
+    {"benchmark_id":"alotof-price","url":"https://www.alotof.tokyo/service","wait_ms":3500,"frame_role":"PRICE_TRANSPARENCY","focus_text":"ブランドサイトデザイン","focus_top_offset":130}
   ]
 }
