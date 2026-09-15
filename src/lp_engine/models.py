@@ -95,6 +95,11 @@ class PipelineReport:
     company_name: str
     primary_authority: str
     results: list[GateResult]
+    mode: str = "production"
+    production_output_allowed: bool = False
+    evidence_manifest: list[dict[str, Any]] = field(default_factory=list)
+    hearing_requirements: list[dict[str, Any]] = field(default_factory=list)
+    blocked_claims: list[dict[str, Any]] = field(default_factory=list)
 
     @property
     def status(self) -> str:
@@ -109,6 +114,11 @@ class PipelineReport:
         return {
             "company_name": self.company_name,
             "primary_authority": self.primary_authority,
+            "mode": self.mode,
             "status": self.status,
+            "production_output_allowed": self.production_output_allowed,
+            "evidence_manifest": self.evidence_manifest,
+            "hearing_requirements": self.hearing_requirements,
+            "blocked_claims": self.blocked_claims,
             "results": [asdict(r) for r in self.results],
         }
