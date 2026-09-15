@@ -37,27 +37,30 @@ def load_benchmark_catalog(path: str | Path) -> dict[str, dict[str, Any]]:
 
 
 def recommend_pool_names(tags: list[str]) -> list[str]:
-    """Map project authority tags to benchmark comparison pools.
+    """Map project/problem tags to benchmark comparison pools.
 
-    This is intentionally conservative. It returns comparison families,
-    not design templates or automatic art-direction choices.
+    This chooses opponents only. It must never choose the candidate's style.
+    Problem/behavior tags are deliberately allowed so SME prototypes can be
+    compared by the problem they solve rather than by superficial visual similarity.
     """
     normalized = {t.strip().upper() for t in tags if t and t.strip()}
     ranked: list[str] = []
 
     rules: list[tuple[set[str], str]] = [
-        ({"PERSON", "EDITORIAL", "AUTHORSHIP"}, "PERSON_EDITORIAL"),
+        ({"PERSON", "EDITORIAL", "AUTHORSHIP", "OWNER_VOICE"}, "PERSON_EDITORIAL"),
         ({"MATERIAL", "PHOTO", "CRAFT"}, "MATERIAL_PHOTO_CRAFT"),
         ({"PRODUCT", "PRODUCT_BEHAVIOR", "DEMO"}, "PRODUCT_BEHAVIOR"),
         ({"PLACE", "HOSPITALITY", "SHOP", "RESTAURANT"}, "PLACE_HOSPITALITY"),
-        ({"B2B", "DOCUMENT", "EXPLAINER", "TECHNICAL"}, "B2B_EXPLAINER_DOCUMENT"),
+        ({"B2B", "DOCUMENT", "EXPLAINER", "TECHNICAL", "TRANSLATION"}, "B2B_EXPLAINER_DOCUMENT"),
         ({"WORLD", "CATEGORY", "CATEGORY_REFRAME", "SYSTEM"}, "WORLD_CATEGORY"),
         ({"TYPOGRAPHY", "TYPE", "MOTION", "SEMANTIC_MOTION"}, "TYPOGRAPHY_MOTION"),
         ({"UTILITY", "ACCESSIBILITY", "TRUST"}, "UTILITY_ACCESSIBILITY_TRUST"),
-        ({"CONVERSION", "CTA", "ACTION", "CRO"}, "CONVERSION_ACTION"),
-        ({"MOBILE", "MOBILE_FIRST"}, "MOBILE_FIRST"),
+        ({"CONVERSION", "CTA", "ACTION", "CRO", "PRICE_TRANSPARENCY"}, "CONVERSION_ACTION"),
+        ({"MOBILE", "MOBILE_FIRST", "RESPONSIVE"}, "MOBILE_FIRST"),
         ({"ASSET_LIGHT", "NO_WEB"}, "ASSET_LIGHT"),
         ({"SME", "LOCAL", "NO_WEB", "WEAK_WEB"}, "LOCAL_SME_TRANSFER"),
+        ({"BUSINESS_VERB", "BRAND_VERB", "BEHAVIOR_GRAMMAR"}, "BUSINESS_VERB"),
+        ({"EMOTIONAL_BARRIER", "HESITATION", "PSYCHOLOGICAL_FRICTION", "TRUST_HEAVY"}, "EMOTIONAL_BARRIER"),
     ]
 
     for trigger_tags, pool_name in rules:
