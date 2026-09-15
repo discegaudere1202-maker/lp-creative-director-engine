@@ -21,13 +21,17 @@ A frame can be promoted to mobile-verified only when all of the following are su
 No mobile evidence.
 
 ### M1 — Responsive claim only
-Source says responsive/mobile-first but no usable mobile visual has been reviewed. Not enough for CORE.
+Source says responsive/mobile-first but no usable mobile visual has been reviewed. Not enough for mobile verification or CORE.
 
-### M2 — Mobile visual reviewed
-Real mobile visual available and hierarchy/art direction reviewed. Eligible for `mobile_verified=true`.
+### M2 — Published mobile visual reviewed
+A real mobile visual from a trustworthy source has been reviewed for hierarchy and art direction. Eligible for `mobile_verified=true` as research evidence, but **not eligible for CORE**.
 
-### M3 — Live 390px review
-Live/captured 390px page has additionally passed copy, hierarchy and interaction review. Preferred for production-grade Benchmark Supremacy.
+### M3 — Live / captured 390px review
+A live or faithfully captured 390px page has passed copy, hierarchy, interaction and Company Truth → Form review. **M3 is required for CORE.**
+
+This deliberately separates:
+- mobile evidence strong enough to learn from (M2)
+- production-grade benchmark evidence strong enough to certify as CORE (M3)
 
 ## First M2 candidate: 実家のこと。
 
@@ -40,5 +44,18 @@ Sources:
 - https://designaward2025.studio.design/nominate/jikkanokoto
 - https://www.atpress.ne.jp/news/444379
 
-## Rule
-CORE research count must report M2 and M3 separately until enough M3 benchmarks exist.
+## CORE rule
+CORE promotion requires all of the following:
+
+- desktop/source visual verification
+- `mobile_verified=true`
+- `mobile_evidence_grade=M3`
+- the primary message survives at 390px
+- CTA / next action survives at 390px
+- the dominant authority is preserved or purposefully re-art-directed
+- Company Truth → Form causality survives mobile
+
+Responsive existence, device mockups, award commentary, gallery SP screenshots, or M2 evidence alone are insufficient for CORE.
+
+## Reporting rule
+Until the M3 corpus is large enough, research reports must show M2 and M3 separately. Never combine M2 into the CORE count.
