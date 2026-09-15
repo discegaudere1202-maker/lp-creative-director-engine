@@ -187,6 +187,8 @@ def normalize_evidence_record(
     """
     if isinstance(raw, EvidenceRecord):
         return raw
+    if not isinstance(raw, Mapping):
+        raise ValueError("evidence record must be a JSON object")
     verification = raw.get("verification_status")
     if verification is None:
         verification = "VERIFIED" if raw.get("verified") is True else "UNKNOWN"
@@ -295,10 +297,12 @@ def evaluate_evidence_selection(
         return SafetyDecision(goal, objections, safety_status="INVALID_INPUT", issues=issues)
 
     records: list[EvidenceRecord] = []
+    if evidence_ledger is None:
+        evidence_ledger = []
     for raw in evidence_ledger:
         try:
             records.append(_as_record(raw))
-        except (TypeError, ValueError) as exc:
+        except (AttributeError, TypeError, ValueError) as exc:
             issues.append(str(exc))
 
     eligible: list[dict[str, Any]] = []
