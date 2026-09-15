@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from fnmatch import fnmatch
 import re
 from typing import Any, Iterable, Mapping
 
@@ -113,6 +112,7 @@ class EvidenceRecord:
 class SafetyDecision:
     conversion_goal: str
     primary_objections: tuple[str, ...]
+    approved_claims: list[str] = field(default_factory=list)
     eligible_evidence: list[dict[str, Any]] = field(default_factory=list)
     missing_evidence: list[dict[str, Any]] = field(default_factory=list)
     blocked_claims: list[dict[str, Any]] = field(default_factory=list)
@@ -125,6 +125,7 @@ class SafetyDecision:
         return {
             "conversion_goal": self.conversion_goal,
             "primary_objections": list(self.primary_objections),
+            "approved_claims": self.approved_claims,
             "eligible_evidence": self.eligible_evidence,
             "missing_evidence": self.missing_evidence,
             "blocked_claims": self.blocked_claims,
@@ -331,6 +332,7 @@ def evaluate_evidence_selection(
     return SafetyDecision(
         goal,
         objections,
+        approved_claims=[item["claim"] for item in eligible],
         eligible_evidence=eligible,
         missing_evidence=missing,
         blocked_claims=blocked_claims,
