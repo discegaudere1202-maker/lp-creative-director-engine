@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "rule": "Tournament readiness is not a tournament result. A prototype may enter blind review only when it has at least three mobile-verified benchmark opponents and candidate screenshots at both 1440px and 390px. Never fabricate scores when screenshot assets are missing.",
+  "plans": [
+    {
+      "prototype_id": "P02",
+      "name": "Customer-world Translation",
+      "problem_tags": ["NO_WEB", "B2B", "TRANSLATION"],
+      "benchmark_ids": ["smarthr-recruit", "kagami-education-dx", "ima-inc", "sakuma-office", "jikkanokoto", "jmc-recruit"],
+      "required_viewports": [1440, 390],
+      "candidate_screenshot_status": "MISSING_FROM_REPOSITORY",
+      "plan_status": "READY_FOR_SCREENSHOT_BUNDLE"
+    },
+    {
+      "prototype_id": "P04",
+      "name": "Evidence Landscape",
+      "problem_tags": ["NO_WEB", "B2B", "DATA", "TRUST"],
+      "benchmark_ids": ["smarthr-recruit", "kagami-education-dx", "jikkanokoto", "ima-inc", "sakuma-office", "jmc-recruit"],
+      "required_viewports": [1440, 390],
+      "candidate_screenshot_status": "MISSING_FROM_REPOSITORY",
+      "plan_status": "READY_FOR_SCREENSHOT_BUNDLE"
+    },
+    {
+      "prototype_id": "P05",
+      "name": "Work Style Scene",
+      "problem_tags": ["NO_WEB", "SME", "PERSON", "EDITORIAL"],
+      "benchmark_ids": ["sakuma-office", "smarthr-recruit", "ima-inc", "jikkanokoto", "jmc-recruit"],
+      "required_viewports": [1440, 390],
+      "candidate_screenshot_status": "MISSING_FROM_REPOSITORY",
+      "plan_status": "READY_FOR_SCREENSHOT_BUNDLE"
+    },
+    {
+      "prototype_id": "P09",
+      "name": "Price Transparency",
+      "problem_tags": ["NO_WEB", "PRICE_TRANSPARENCY", "TRUST", "LOCAL"],
+      "benchmark_ids": ["jikkanokoto", "smarthr-recruit", "kagami-education-dx", "ima-inc", "sakuma-office", "jmc-recruit"],
+      "required_viewports": [1440, 390],
+      "candidate_screenshot_status": "MISSING_FROM_REPOSITORY",
+      "plan_status": "READY_FOR_SCREENSHOT_BUNDLE"
+    },
+    {
+      "prototype_id": "P10",
+      "name": "Customer State Transition",
+      "problem_tags": ["NO_WEB", "EMOTIONAL_BARRIER", "TRUST_HEAVY", "CONVERSION", "LOCAL"],
+      "benchmark_ids": ["smarthr-recruit", "jikkanokoto", "kagami-education-dx", "ima-inc", "sakuma-office", "jmc-recruit"],
+      "required_viewports": [1440, 390],
+      "candidate_screenshot_status": "MISSING_FROM_REPOSITORY",
+      "plan_status": "READY_FOR_SCREENSHOT_BUNDLE"
+    }
+  ]
+}
