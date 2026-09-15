@@ -122,6 +122,13 @@ class EvidenceSafetyTest(unittest.TestCase):
         result = evaluate_evidence_selection("lead_generation", ["O3_PROCESS"], [evidence()])
         self.assertEqual(result.safety_status, "INVALID_INPUT")
 
+    def test_ledger_blocking_status_overrides_verified_fact(self):
+        result = evaluate_evidence_selection(
+            "inquiry", ["O3_PROCESS"], [evidence(blocking_status="BLOCKING")]
+        )
+        self.assertEqual(result.safety_status, "HEARING_REQUIRED")
+        self.assertEqual(result.eligible_evidence, [])
+
     def test_legacy_ledger_is_normalized_without_inference(self):
         normalized = normalize_evidence_record(
             {
