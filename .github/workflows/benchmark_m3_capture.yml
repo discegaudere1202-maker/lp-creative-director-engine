@@ -1,0 +1,42 @@
+name: Benchmark M3 Capture
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'config/m3_capture_targets_v1.json'
+      - 'scripts/capture_m3_benchmarks.py'
+      - '.github/workflows/benchmark_m3_capture.yml'
+
+concurrency:
+  group: benchmark-m3-capture-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install capture dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Capture live benchmark evidence
+        run: |
+          python scripts/capture_m3_benchmarks.py \
+            --config config/m3_capture_targets_v1.json \
+            --output artifacts/m3_capture
+      - name: Upload M3 evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: m3-benchmark-evidence-${{ github.run_number }}
+          path: artifacts/m3_capture
+          if-no-files-found: error
+          retention-days: 30
