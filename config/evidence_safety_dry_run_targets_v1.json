@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "run_id": "safety-dry-run-2026-09-15",
+  "research_only": true,
+  "targets": [
+    {
+      "case_id": "P02",
+      "company_id": "mahora_sr",
+      "conversion_goal": "consultation",
+      "primary_objections": ["O2_ACCOUNTABILITY", "O3_PROCESS", "O4_NEXT", "O5_DECISION"],
+      "requested_claims": ["秘密厳守", "完全無料"],
+      "ledger": [
+        {"evidence_id":"P02-E01","company_id":"mahora_sr","case_id":"P02","evidence_type":"OWNER_IDENTITY","evidence_strength":"E2_SPECIFIC","target_objections":["O2_ACCOUNTABILITY"],"claim":"代表者は緒方幸一。","source":"https://www.mahora-sr.jp/page_001.html","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["MIDDLE","BEFORE_CTA"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Text fact; no portrait reused."},
+        {"evidence_id":"P02-E02","company_id":"mahora_sr","case_id":"P02","evidence_type":"VERIFIED_METRIC","evidence_strength":"E2_SPECIFIC","target_objections":["O1_ABILITY"],"claim":"社労士事務所で20年勤務し、300社以上を支援。","source":"https://www.mahora-sr.jp/page_001.html","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["HERO","EARLY_PROOF"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official published experience."},
+        {"evidence_id":"P02-E04","company_id":"mahora_sr","case_id":"P02","evidence_type":"POST_CLICK_FLOW","evidence_strength":"E5_DECISION_ENABLING","target_objections":["O3_PROCESS","O4_NEXT","O5_DECISION"],"claim":"問い合わせ→内容確認・日程調整→相談とサービス説明→見積→納得後契約。","source":"https://www.mahora-sr.jp/page_009.html","source_type":"official_process_page","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["CTA_ZONE","BEFORE_CTA"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official contract flow."},
+        {"evidence_id":"P02-E06","company_id":"mahora_sr","case_id":"P02","evidence_type":"FEE_CONDITION","evidence_strength":"E4_RISK_REDUCING","target_objections":["O6_COST"],"claim":"初回相談は原則無料。報酬が必要な場合は事前に告知。","source":"https://www.mahora-sr.jp/page_009.html","source_type":"official_process_page","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Conditional wording retained."}
+      ]
+    },
+    {
+      "case_id": "P09",
+      "company_id": "cbe_signage",
+      "conversion_goal": "quote_request",
+      "primary_objections": ["O2_ACCOUNTABILITY", "O3_PROCESS", "O4_NEXT", "O6_COST"],
+      "requested_claims": ["返信は○時間以内"],
+      "ledger": [
+        {"evidence_id":"P09-E01","company_id":"cbe_signage","case_id":"P09","evidence_type":"SERVICE_PROCESS","evidence_strength":"E3_OPERATIONAL","target_objections":["O3_PROCESS","O4_NEXT"],"claim":"相談→提案→製作→施工までワンストップで対応。","source":"https://sign-ya.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["MIDDLE","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official process fact."},
+        {"evidence_id":"P09-E02","company_id":"cbe_signage","case_id":"P09","evidence_type":"ACCOUNTABILITY_SCOPE","evidence_strength":"E3_OPERATIONAL","target_objections":["O2_ACCOUNTABILITY"],"claim":"デザイン・製作・施工まで一つの窓口で対応。","source":"https://sign-ya.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["BEFORE_CTA","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"No external logo or image reused."},
+        {"evidence_id":"P09-E03","company_id":"cbe_signage","case_id":"P09","evidence_type":"PRICE","evidence_strength":"E5_DECISION_ENABLING","target_objections":["O6_COST"],"claim":"400×300mmの看板を4,158円（税込）から。仕様条件を併記。","source":"https://sign-ya.jp/menu/","source_type":"official_pricing_page","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["HERO","MIDDLE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Published price, not a guarantee for all jobs."},
+        {"evidence_id":"P09-E04","company_id":"cbe_signage","case_id":"P09","evidence_type":"RESPONSE_EXPECTATION","evidence_strength":"UNKNOWN","target_objections":["O4_NEXT"],"claim":"返信は○時間以内。","source":"https://sign-ya.jp/","source_type":"official_company_site","verification_status":"UNKNOWN","verification_date":"","usage_status":"BLOCKED","placement_candidates":["CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":true,"blocking_status":"BLOCKING","notes":"No verified response-time policy."}
+      ]
+    },
+    {
+      "case_id": "P10",
+      "company_id": "tsubudateru",
+      "conversion_goal": "consultation",
+      "primary_objections": ["O2_ACCOUNTABILITY", "O3_PROCESS", "O5_DECISION", "O8_CONTINUITY"],
+      "requested_claims": ["無理な勧誘はありません", "完全無料"],
+      "ledger": [
+        {"evidence_id":"P10-E01","company_id":"tsubudateru","case_id":"P10","evidence_type":"SCOPE_BOUNDARY","evidence_strength":"E4_RISK_REDUCING","target_objections":["O5_DECISION"],"claim":"転職意思が固まっていない段階から相談できる。","source":"https://www.tsubudateru.com/lp","source_type":"official_landing_page","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["BEFORE_CTA","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Permission to consult before decision."},
+        {"evidence_id":"P10-E02","company_id":"tsubudateru","case_id":"P10","evidence_type":"SERVICE_PROCESS","evidence_strength":"E3_OPERATIONAL","target_objections":["O3_PROCESS"],"claim":"価値観の整理やキャリアプランの立て方から伴走する。","source":"https://www.tsubudateru.com/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["MIDDLE","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Operational support claim."},
+        {"evidence_id":"P10-E03","company_id":"tsubudateru","case_id":"P10","evidence_type":"OWNER_IDENTITY","evidence_strength":"E2_SPECIFIC","target_objections":["O2_ACCOUNTABILITY"],"claim":"キャリアコンサルタントとして宮原彩乃を公式紹介。","source":"https://www.tsubudateru.com/member/ayano-miyahara","source_type":"official_profile","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["MIDDLE","BEFORE_CTA"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Profile does not imply guaranteed assignment."},
+        {"evidence_id":"P10-E04","company_id":"tsubudateru","case_id":"P10","evidence_type":"CONTINUITY_POLICY","evidence_strength":"E4_RISK_REDUCING","target_objections":["O8_CONTINUITY"],"claim":"転職後もキャリアの伴走を無料で行う。","source":"https://www.tsubudateru.com/service","source_type":"official_service_page","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["MIDDLE","AFTER_CTA"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Scope is limited to people who changed jobs through the service."},
+        {"evidence_id":"P10-E05","company_id":"tsubudateru","case_id":"P10","evidence_type":"FEE_CONDITION","evidence_strength":"E5_DECISION_ENABLING","target_objections":["O6_COST"],"claim":"個人向け相談を無料で案内している。","source":"https://www.tsubudateru.com/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["BEFORE_CTA"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Free condition is not expanded to all services."}
+      ]
+    },
+    {
+      "case_id": "MORIBITO",
+      "company_id": "moribito",
+      "conversion_goal": "visit",
+      "primary_objections": ["O1_ABILITY", "O3_PROCESS", "O4_NEXT", "O6_COST"],
+      "requested_claims": ["予約後すぐ返信"],
+      "ledger": [
+        {"evidence_id":"MORIBITO-E01","company_id":"moribito","case_id":"MORIBITO","evidence_type":"PRODUCT_DETAIL","evidence_strength":"E2_SPECIFIC","target_objections":["O1_ABILITY"],"claim":"楠の木の香りにこだわり、一枚板で家具を作る。","source":"https://moribito.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["HERO"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"CSS material abstraction; official image not reused."},
+        {"evidence_id":"MORIBITO-E02","company_id":"moribito","case_id":"MORIBITO","evidence_type":"PLACE_EXPERIENCE","evidence_strength":"E3_OPERATIONAL","target_objections":["O3_PROCESS","O4_NEXT"],"claim":"店内展示の家具に触れて、香りや温かみを体験できる。","source":"https://moribito.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["MIDDLE","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Visit experience fact."},
+        {"evidence_id":"MORIBITO-E03","company_id":"moribito","case_id":"MORIBITO","evidence_type":"SCOPE_BOUNDARY","evidence_strength":"E5_DECISION_ENABLING","target_objections":["O6_COST"],"claim":"オーダーメイドを承り、できるだけ予算内で制作する。","source":"https://moribito.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"No price number inferred."},
+        {"evidence_id":"MORIBITO-E04","company_id":"moribito","case_id":"MORIBITO","evidence_type":"OWNER_IDENTITY","evidence_strength":"E2_SPECIFIC","target_objections":["O2_ACCOUNTABILITY"],"claim":"家具職人として黨幸男を公式紹介。","source":"https://moribito.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["MIDDLE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Text fact only; portrait not reused."},
+        {"evidence_id":"MORIBITO-E05","company_id":"moribito","case_id":"MORIBITO","evidence_type":"POST_CLICK_FLOW","evidence_strength":"UNKNOWN","target_objections":["O4_NEXT"],"claim":"予約後すぐ返信。","source":"https://moribito.jp/","source_type":"official_company_site","verification_status":"UNKNOWN","verification_date":"","usage_status":"BLOCKED","placement_candidates":["CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":true,"blocking_status":"BLOCKING","notes":"Official homepage does not verify reservation or response expectation."}
+      ]
+    }
+  ]
+}
