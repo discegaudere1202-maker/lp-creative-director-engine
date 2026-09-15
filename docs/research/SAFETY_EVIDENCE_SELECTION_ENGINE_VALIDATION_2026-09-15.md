@@ -23,7 +23,7 @@ Engineは、未検証の安心コピー、保証、人物・実績の推測、�
 
 `approved_claims` は生成コピーではなく、EligibleなEvidence LedgerのVerified Claim原文一覧である。
 
-## Four-case dry run
+## Five-case dry run
 
 | Case | Goal | Primary objections | Eligible | Blocked claims | Hearing | Status |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
@@ -31,8 +31,11 @@ Engineは、未検証の安心コピー、保証、人物・実績の推測、�
 | P09 | quote_request | ACCOUNTABILITY / PROCESS / NEXT / COST | 3 | 1 | 1 | BLOCKED |
 | P10 | consultation | ACCOUNTABILITY / PROCESS / DECISION / CONTINUITY | 4 | 2 | 2 | BLOCKED |
 | MORIBITO | visit | ABILITY / PROCESS / NEXT / COST | 3 | 1 | 1 | BLOCKED |
+| INDEPENDENT_KOKORO_SEITAI | reservation | ACCOUNTABILITY / PROCESS / NEXT / COST | 2 | 2 | 2 | BLOCKED |
 
 森人のDry Runでは、公式サイトで確認できない返信時間を要求Claimにしたため、危険ClaimとしてBlocked、必要情報をHearingへ回した。これは「来店できる」事実と「予約後の応答保証」を混同しないための境界である。
+
+独立ケースのこころ整体院グループでは、公式サイト上の施術工程と料金条件をVerifiedとして選択できた一方、予約後の返信時間は確認できないためHearingへ回した。公式サイトには、初回の分析・施術の流れ、料金の院別差、無理な勧誘をしない旨、返金条件が併記されているが、Safety層はそれらを治療効果や予約後の保証へ拡張していない。
 
 P02/P09/P10のBlockedは、秘密厳守、完全無料、返信時間、無理な勧誘等を一次確認なしに出さないことを表す。これはLP全体の生成失敗ではなく、危険Claimの承認停止と不足情報のHearing化である。
 
@@ -95,7 +98,7 @@ Hearing Appは未実装。今回保存したのは、ObjectionをTriggerにし�
 
 ## Overfitting check
 
-P02/P10の相談型構造を、P09の見積型、森人の来店型へそのまま移植していない。P09はPrice / Specification / Scopeを中心に、森人はMaterial / Place Experience / Budget Boundaryを中心に選択した。固定CTA、固定WHO/HOW/NEXT、Benchmark固有UIや文言はSafety判断に使用していない。
+P02/P10の相談型構造を、P09の見積型、森人の来店型、独立ケースの予約型へそのまま移植していない。P09はPrice / Specification / Scope、森人はMaterial / Place Experience / Budget Boundary、独立ケースはTreatment Process / Clinic-specific Cost / Risk Policyを中心に選択した。固定CTA、固定WHO/HOW/NEXT、Benchmark固有UIや文言はSafety判断に使用していない。
 
 ## Sources used for fixtures
 
