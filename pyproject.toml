@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lp-creative-director-engine"
-version = "0.6.0"
+version = "0.7.0"
 description = "Rule-driven creative direction and QA engine for premium LP automation."
 requires-python = ">=3.11"
 dependencies = ["playwright>=1.55", "Pillow>=10"]
@@ -15,6 +15,7 @@ lp-browser-qa = "lp_engine.browser_cli:main"
 lp-visual-qa = "lp_engine.visual_cli:main"
 lp-rhythm = "lp_engine.rhythm_cli:main"
 lp-rhythm-regression = "lp_engine.rhythm_regression_cli:main"
+lp-benchmark-review = "lp_engine.benchmark_review_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
