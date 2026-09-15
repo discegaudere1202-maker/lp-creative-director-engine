@@ -172,6 +172,19 @@ def _claim_rule_matches(claim: str, rule: Mapping[str, Any]) -> bool:
     return False
 
 
+def _supports_claim(record: EvidenceRecord, rule: Mapping[str, Any]) -> bool:
+    """Require semantic claim support for high-risk expansions.
+
+    A fee condition such as "初回相談原則無料" is not evidence for the
+    stronger customer-facing claim "完全無料". The selector therefore needs
+    an exact-strength claim for that rule, not merely the same evidence type.
+    """
+    claim = record.claim
+    if rule.get("claim_id") == "FULLY_FREE":
+        return "完全無料" in claim and "条件" not in claim
+    return True
+
+
 def _hearing_item(objection: str, *, blocked_claims: Iterable[str] = ()) -> dict[str, Any]:
     spec = DEFAULT_OBJECTION_FIELDS[objection]
     blocked = list(blocked_claims)
@@ -254,7 +267,68 @@ def evaluate_evidence_selection(
                 and record.rights_status in ACCEPTED_RIGHTS
                 and not record.hearing_required
                 and record.usage_status not in {"BLOCKED", "REJECTED"}
+                and _supports_claim(record, rule)
             ]
             if not supporting:
                 blocked_claims.append({
                     "claim": claim,
+                    "claim_id": rule["claim_id"],
+                    "target_objections": rule["target_objections"],
+                    "required_evidence_types": rule["required_evidence_types"],
+                    "status": "BLOCKED",
+                    "reason": "No verified, production-eligible policy/fact supports this claim.",
+                })
+                for objection in rule["target_objections"]:
+                    if objection in hearing_claims_by_objection:
+                        hearing_claims_by_objection[objection].append(claim)
+            break
+
+    missing: list[dict[str, Any]] = []
+    hearing: list[dict[str, Any]] = []
+    for objection in objections:
+        if eligible_by_objection[objection]:
+            continue
+        item = _hearing_item(objection, blocked_claims=hearing_claims_by_objection[objection])
+        missing.append({
+            "target_objection": objection,
+            "preferred_evidence_types": item["missing_evidence_type"],
+            "status": "MISSING",
+        })
+        hearing.append(item)
+
+    placements = sorted({
+        placement
+        for item in eligible
+        for placement in item["placement_candidates"]
+    })
+    if blocked_claims:
+        status = "BLOCKED"
+    elif hearing:
+        status = "HEARING_REQUIRED"
+    elif issues:
+        status = "INVALID_INPUT"
+    else:
+        status = "PASS"
+    return SafetyDecision(
+        goal,
+        objections,
+        eligible_evidence=eligible,
+        missing_evidence=missing,
+        blocked_claims=blocked_claims,
+        hearing_required=hearing,
+        allowed_placements=placements,
+        safety_status=status,
+        issues=issues,
+    )
+
+
+def production_approved(record: EvidenceRecord | Mapping[str, Any]) -> bool:
+    """Return whether one record may be used as production evidence."""
+    item = _as_record(record)
+    return (
+        item.verification_status in ACCEPTED_VERIFICATION
+        and bool(item.source.strip() and item.verification_date.strip())
+        and item.rights_status in ACCEPTED_RIGHTS
+        and not item.hearing_required
+        and item.usage_status not in {"BLOCKED", "REJECTED"}
+    )
