@@ -38,6 +38,33 @@
       "sources": ["https://designaward2025.studio.design/nominate/recruit-jmc-ltd","https://asi.co.jp/gallery/sites/?slug=recruit-11","https://recruit.jmc-ltd.co.jp/"],
       "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Live 390px evidence acquired, but strict M3 is HOLD because the initial viewport does not preserve enough of the people-led trust hierarchy. Keep M2 until a stronger verified mobile frame is captured or the intended responsive behavior is confirmed."},
       "live_capture": {"run_id":34940774441,"artifact_id":10385262072,"viewport":"390x844","http_status":200,"screenshot_sha256":"f7efa25186b5eb78e025cf02240ffe8b85e2d54e6ed4e67b2b1c2458b27065c2","desktop_screenshot_sha256":"3c099e93154b2c7326a93fa08134d956047fed7e1d1beba86b245365fb8c941b","review_status":"HOLD"}
+    },
+    {
+      "frame_id": "nakasokaitai-recruit-hero-01",
+      "benchmark_id": "nakasokaitai-recruit",
+      "status": "MOBILE_VERIFIED_CANDIDATE",
+      "evidence": ["Studio Design Award 2025 selected the site among 50 nominees from more than 300 entries.","Studio Experts lists the recruiting site as a production work for the local recycling company.","Live 390px review preserves actual machinery/work photography, the 'Scrap Makes Future.' message, employment proof and industrial identity while recomposing the dense desktop collage into a narrow vertical poster."],
+      "sources": ["https://nakasokaitai.co.jp/recruit","https://prtimes.jp/main/html/rd/p/000000063.000025503.html","https://studio.design/ja/experts/works/detail/nakasokaitai"],
+      "mobile_review": {"evidence_grade":"M3","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Strong LOCAL_SME_TRANSFER evidence. Mobile keeps real work, employer facts and the core industrial statement visible without collapsing the collage into generic cards."},
+      "live_capture": {"run_id":34940774441,"artifact_id":10385262072,"viewport":"390x844","http_status":200,"screenshot_sha256":"726c17f21ffe8c9d243b939163c567ff44c946e163b33b57f264cf2efb91729f","desktop_screenshot_sha256":"3a4fdd661c64d48b4a27b73043cbc33c7997b033170e45c0866bbb29b0978496","review_status":"PASS"}
+    },
+    {
+      "frame_id": "maruyoshi-car-hero-01",
+      "benchmark_id": "maruyoshi-car",
+      "status": "MOBILE_VERIFIED_CANDIDATE",
+      "evidence": ["The production case states that the site translates the company's friendly, sincere service and professional car-maintenance skill into illustration, red/blue brand color, signboard headings and traffic-light motifs.","ASI Design Gallery publishes PC, tablet and smartphone states.","Live 390px review preserves the mechanic character, car motifs, brand split, trust copy and immediate menu/contact actions while substantially reflowing the desktop scene."],
+      "sources": ["https://maruyoshi-car.com/","https://www.re-d.jp/works/article/13711/","https://asi.co.jp/gallery/sites/?slug=maruyoshi-car"],
+      "mobile_review": {"evidence_grade":"M3","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Strong local-service mobile benchmark: recognizable owner/service personality survives without stock photography, and conversion actions remain immediate."},
+      "live_capture": {"run_id":34940774441,"artifact_id":10385262072,"viewport":"390x844","http_status":200,"screenshot_sha256":"fe5c72014acd618cdab6aacbae4f391a3f7623cc4f40f23f53f4640e76989bd1","desktop_screenshot_sha256":"fe8db515212c42ba8a58573ef1803b819911eef72f9a4c39dd1fae6a0913e714","review_status":"PASS"}
+    },
+    {
+      "frame_id": "hearts-photo-trust-hero-01",
+      "benchmark_id": "hearts",
+      "status": "MOBILE_VERIFIED_CANDIDATE",
+      "evidence": ["Studio Design Award project notes describe on-site interviewing and photography intended to carry the employees' warmth and sincere attitude toward mushrooms into the site.","The production story describes an axis of human warmth, approachability and trust rather than detached food-brand polish.","Live 390px review preserves the real worker/mushroom image, mountain/region grammar, company promise and content entry while changing the desktop crop and navigation for mobile."],
+      "sources": ["https://hearts.co.jp/","https://designaward2025.studio.design/nominate/hearts","https://studio-spoon.co.jp/blog/20260608-hearts-corporate-renewal/"],
+      "mobile_review": {"evidence_grade":"M3","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Strong PHOTO/PERSON/MATERIAL benchmark for regional SMEs. Authentic company evidence remains the visual authority on mobile instead of being replaced by UI decoration."},
+      "live_capture": {"run_id":34940774441,"artifact_id":10385262072,"viewport":"390x844","http_status":200,"screenshot_sha256":"2767d2b15bcf1991357929b52ec0d10e53f35d986403d01e99b6d2b937156ac9","desktop_screenshot_sha256":"cb9056f2afe24dd815139068aee32b9301a00045975ea3fa9fdd240b704bec24","review_status":"PASS"}
     }
   ]
 }
