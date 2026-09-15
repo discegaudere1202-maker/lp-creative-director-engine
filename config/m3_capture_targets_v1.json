@@ -13,12 +13,21 @@
     {"benchmark_id":"jmc-recruit","url":"https://recruit.jmc-ltd.co.jp/","wait_ms":4000,"frame_role":"HERO"},
     {"benchmark_id":"nakasokaitai-recruit","url":"https://nakasokaitai.co.jp/recruit","wait_ms":4000,"frame_role":"HERO"},
     {"benchmark_id":"maruyoshi-car","url":"https://maruyoshi-car.com/","wait_ms":4000,"frame_role":"HERO"},
-    {"benchmark_id":"nisshin-kasei","url":"https://www.e-nisshin.com/","wait_ms":4000,"frame_role":"EXPLAINER_HERO"},
+    {"benchmark_id":"nisshin-kasei","url":"https://www.e-nisshin.com/","wait_ms":4000,"frame_role":"B2B_EXPLAINER"},
     {"benchmark_id":"hearts","url":"https://hearts.co.jp/","wait_ms":4000,"frame_role":"HERO"},
-    {"benchmark_id":"startpass","url":"https://startpass.jp/","wait_ms":4500,"frame_role":"B2B_EXPLAINER_HERO"},
-    {"benchmark_id":"kagami","url":"https://jp.is-kagami.com/","wait_ms":4500,"frame_role":"B2B_EXPLAINER_HERO"},
+    {"benchmark_id":"startpass","url":"https://startpass.jp/","wait_ms":4500,"frame_role":"B2B_EXPLAINER"},
+    {"benchmark_id":"kagami","url":"https://jp.is-kagami.com/","wait_ms":4500,"frame_role":"B2B_EXPLAINER"},
+    {"benchmark_id":"smarthr-product","url":"https://smarthr.jp/","wait_ms":4500,"frame_role":"B2B_EXPLAINER"},
+    {"benchmark_id":"kintone-product","url":"https://kintone.cybozu.co.jp/","wait_ms":4500,"frame_role":"B2B_EXPLAINER"},
+    {"benchmark_id":"freee-erp","url":"https://www.freee.co.jp/sales-management/togo-erp/","wait_ms":4500,"frame_role":"B2B_EXPLAINER"},
     {"benchmark_id":"mhand-price","url":"https://www.m-hand.co.jp/tokyo/price/","wait_ms":3500,"frame_role":"PRICE_TRANSPARENCY","focus_text":"料金表","focus_top_offset":110},
     {"benchmark_id":"aki-design-price","url":"https://akidesign.site/service/","wait_ms":3500,"frame_role":"PRICE_TRANSPARENCY","focus_text":"STARTER プラン","focus_top_offset":130},
-    {"benchmark_id":"alotof-price","url":"https://www.alotof.tokyo/service","wait_ms":3500,"frame_role":"PRICE_TRANSPARENCY","focus_text":"ブランドサイトデザイン","focus_top_offset":130}
+    {"benchmark_id":"alotof-price","url":"https://www.alotof.tokyo/service","wait_ms":3500,"frame_role":"PRICE_TRANSPARENCY","focus_text":"FEE GUIDE","focus_top_offset":100},
+    {"benchmark_id":"jimdo-hp-pack","url":"https://www.jimdo.com/jp/homepage-pack/","wait_ms":4000,"frame_role":"PRICE_TRANSPARENCY","focus_text":"料金プラン","focus_top_offset":100},
+    {"benchmark_id":"rals-homepage-price","url":"https://www.rals.co.jp/service/homepage/","wait_ms":4000,"frame_role":"PRICE_TRANSPARENCY","focus_text":"制作プラン","focus_top_offset":110},
+    {"benchmark_id":"cndoor-price","url":"https://www.cn-door.com/","wait_ms":4000,"frame_role":"PRICE_TRANSPARENCY","focus_text":"CASE 01","focus_top_offset":120},
+    {"benchmark_id":"u-do-u","url":"https://www.u-do-u-tokyo.com/","wait_ms":4500,"frame_role":"EMOTIONAL_BARRIER_HERO"},
+    {"benchmark_id":"carigaku-career","url":"https://carigaku.jp/caricon/","wait_ms":4500,"frame_role":"EMOTIONAL_BARRIER_HERO"},
+    {"benchmark_id":"lfu-career","url":"https://lfu-inc.com/service/career","wait_ms":4500,"frame_role":"EMOTIONAL_BARRIER_HERO"}
   ]
 }
