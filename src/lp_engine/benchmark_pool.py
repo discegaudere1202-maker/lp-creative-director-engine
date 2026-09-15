@@ -6,6 +6,9 @@ from pathlib import Path
 from typing import Any
 
 
+MAX_FORMAL_BENCHMARKS = 5
+
+
 @dataclass
 class BenchmarkPool:
     name: str
@@ -74,7 +77,7 @@ def build_tournament_plan(
     tags: list[str],
     pools: dict[str, BenchmarkPool],
     *,
-    max_benchmarks: int = 7,
+    max_benchmarks: int = MAX_FORMAL_BENCHMARKS,
     minimum_benchmarks: int = 3,
     catalog: dict[str, dict[str, Any]] | None = None,
     require_mobile_verified: bool = True,
@@ -85,6 +88,8 @@ def build_tournament_plan(
     benchmarks that are actually ready for the requested tournament are selected.
     Production Benchmark Supremacy requires M3 live/captured 390px evidence.
     M2 remains useful research evidence but is intentionally blocked here.
+    A formal tournament always uses at most five opponents, even when a wider
+    research pool is available.
     """
     pool_names = [name for name in recommend_pool_names(tags) if name in pools]
     research_ids: list[str] = []
@@ -127,7 +132,9 @@ def build_tournament_plan(
         else:
             ready_ids.append(benchmark_id)
 
-    selected = ready_ids[:max_benchmarks]
+    requested_limit = max(0, int(max_benchmarks))
+    selection_limit = min(requested_limit, MAX_FORMAL_BENCHMARKS)
+    selected = ready_ids[:selection_limit]
     return {
         "pool_names": pool_names,
         "research_benchmark_ids": research_ids,
@@ -137,7 +144,7 @@ def build_tournament_plan(
         "status": "READY" if len(selected) >= minimum_benchmarks else "REVIEW",
         "warning": (
             "Research pool membership does not mean tournament readiness. Production blind review "
-            "requires M3 live/captured 390px evidence plus verified comparison assets for all required "
-            "viewports. Benchmark pools choose opponents only; they must never determine style."
+            "requires 3-5 M3 benchmarks with live/captured 390px evidence plus verified comparison "
+            "assets for all required viewports. Benchmark pools choose opponents only; they must never determine style."
         ),
     }
