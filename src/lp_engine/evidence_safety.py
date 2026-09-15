@@ -20,6 +20,7 @@ OBJECTION_IDS = {f"O{i}_{label}" for i, label in enumerate(
 )}
 ACCEPTED_VERIFICATION = {"VERIFIED"}
 ACCEPTED_RIGHTS = {"CLEARED", "NOT_APPLICABLE"}
+ACCEPTED_PRODUCTION_USAGE = {"ELIGIBLE", "PRODUCTION_ELIGIBLE"}
 REQUIRED_FIELDS = (
     "evidence_id",
     "company_id",
@@ -278,6 +279,7 @@ def evaluate_evidence_selection(
     evidence_ledger: Iterable[EvidenceRecord | Mapping[str, Any]],
     *,
     requested_claims: Iterable[str] = (),
+    require_production_clearance: bool = False,
 ) -> SafetyDecision:
     """Evaluate evidence eligibility without generating customer-facing copy.
 
@@ -319,6 +321,10 @@ def evaluate_evidence_selection(
             and not record.hearing_required
             and record.blocking_status != "BLOCKING"
             and record.usage_status not in {"BLOCKED", "REJECTED"}
+            and (
+                not require_production_clearance
+                or record.usage_status in ACCEPTED_PRODUCTION_USAGE
+            )
         ):
             item = record.to_dict()
             eligible.append(item)
@@ -422,5 +428,6 @@ def production_approved(record: EvidenceRecord | Mapping[str, Any]) -> bool:
         and bool(item.source.strip() and item.verification_date.strip())
         and item.rights_status in ACCEPTED_RIGHTS
         and not item.hearing_required
+        and item.usage_status in ACCEPTED_PRODUCTION_USAGE
         and item.usage_status not in {"BLOCKED", "REJECTED"}
     )
