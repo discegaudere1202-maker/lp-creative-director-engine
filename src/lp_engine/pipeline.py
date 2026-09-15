@@ -98,7 +98,24 @@ def run_pipeline(
                 details={"safety_status": "INVALID_INPUT"},
             ))
         else:
-            safety_result = _evidence_safety_gate(evidence_safety)
+            try:
+                safety_result = _evidence_safety_gate(evidence_safety)
+            except Exception as exc:
+                safety_result = GateResult(
+                    gate="EvidenceSafetyGate",
+                    status="FAIL",
+                    message="Safety-layer error; production output is blocked.",
+                    details={
+                        "safety_status": "INVALID_INPUT",
+                        "blocked_claims": [],
+                        "hearing_required": [{
+                            "status": "HEARING_REQUIRED",
+                            "missing_field": "evidence_safety_input",
+                            "priority": "HIGH",
+                        }],
+                        "issues": [f"safety selector error: {exc}"],
+                    },
+                )
             results.append(safety_result)
             safety_decision = safety_result.details
     evidence_manifest = []
