@@ -23,13 +23,13 @@ DEFAULT_GATES = [
 PIPELINE_MODES = {"production", "research", "test"}
 
 
-def _evidence_safety_gate(spec: Mapping) -> GateResult:
+def _evidence_safety_gate(spec: Mapping, *, require_production_clearance: bool) -> GateResult:
     decision = evaluate_evidence_selection(
         spec.get("conversion_goal", ""),
         spec.get("primary_objections") or [],
         spec.get("evidence_ledger") or [],
         requested_claims=spec.get("requested_claims") or [],
-        require_production_clearance=True,
+        require_production_clearance=require_production_clearance,
     )
     status_map = {
         "PASS": "PASS",
@@ -95,11 +95,22 @@ def run_pipeline(
                 gate="EvidenceSafetyGate",
                 status="FAIL",
                 message="Safety input must be a JSON object.",
-                details={"safety_status": "INVALID_INPUT"},
+                details={
+                    "safety_status": "INVALID_INPUT",
+                    "blocked_claims": [],
+                    "hearing_required": [{
+                        "status": "HEARING_REQUIRED",
+                        "missing_field": "evidence_safety_input",
+                        "priority": "HIGH",
+                    }],
+                },
             ))
         else:
             try:
-                safety_result = _evidence_safety_gate(evidence_safety)
+                safety_result = _evidence_safety_gate(
+                    evidence_safety,
+                    require_production_clearance=mode == "production",
+                )
             except Exception as exc:
                 safety_result = GateResult(
                     gate="EvidenceSafetyGate",
@@ -135,14 +146,29 @@ def run_pipeline(
         ]
         hearing_requirements = safety_decision.get("hearing_required", [])
         blocked_claims = safety_decision.get("blocked_claims", [])
-    safety_pass = bool(safety_decision and safety_decision.get("safety_status") == "PASS")
-    production_output_allowed = mode == "production" and safety_pass
+    primary_objections = set((safety_decision or {}).get("primary_objections", []))
+    primary_hearing = [
+        item for item in hearing_requirements
+        if item.get("target_objection") in primary_objections
+    ]
+    if mode != "production":
+        safety_scope = "NOT_PRODUCTION_MODE"
+    elif not safety_decision or safety_decision.get("safety_status") == "INVALID_INPUT":
+        safety_scope = "PAGE_BLOCK"
+    elif primary_hearing:
+        safety_scope = "SECTION_HOLD"
+    elif blocked_claims:
+        safety_scope = "CLAIM_BLOCK"
+    else:
+        safety_scope = "NONE"
+    production_output_allowed = mode == "production" and safety_scope in {"NONE", "CLAIM_BLOCK"}
     return PipelineReport(
         company_name=profile.company_name,
         primary_authority=primary,
         results=results,
         mode=mode,
         production_output_allowed=production_output_allowed,
+        safety_scope=safety_scope,
         evidence_manifest=evidence_manifest,
         hearing_requirements=hearing_requirements,
         blocked_claims=blocked_claims,
