@@ -16,7 +16,10 @@ import sys
 DEFAULT_WIDTHS = [320, 360, 375, 390, 430, 768, 1024, 1280, 1440]
 
 
-FORBIDDEN_UNSUPPORTED = ("無理な勧誘", "秘密厳守", "完全無料", "No.1", "満足度", "全額返金", "保証")
+FORBIDDEN_UNSUPPORTED = (
+    "無理な勧誘", "秘密厳守", "完全無料", "No.1", "満足度", "全額返金", "保証",
+    "決めきらなくても", "決めてからでなく", "まとまっていなくても",
+)
 
 
 def static_report(output_dir: Path) -> dict:

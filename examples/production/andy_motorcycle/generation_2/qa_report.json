@@ -23,17 +23,17 @@
   "browser_qa": {
     "status": "PASS",
     "workflow": "Production Generation QA",
-    "run_number": 3,
-    "run_id": 35033983101,
-    "head_sha": "06f84fb692583cb086ff4d39c3b525a8b6bf8bb7",
+    "run_number": 4,
+    "run_id": 35034255440,
+    "head_sha": "a1002fa71da1e23719cd503466076074b24da335",
     "all_required_widths": "PASS",
     "horizontal_overflow": "PASS",
     "line_shape": "PASS",
     "console_and_page_errors": "PASS",
     "exact_captures": ["390x844", "1440x1000"],
-    "artifact_id": 10422841297,
+    "artifact_id": 10422527987,
     "artifact_name": "andy-production-generation-qa",
-    "artifact_digest": "sha256:553abea8ab9aa5e60c70f3ed81dd53e6f88ec7898a98a5a7d558ae23a689c713"
+    "artifact_digest": "sha256:0e609f58769d2bebc28011651062ebe27d8a8e7457412c024300b8f3f5322686"
   },
   "exact_capture": {
     "desktop": "1440x1000",

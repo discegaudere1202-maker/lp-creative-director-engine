@@ -11,8 +11,10 @@
     1280,
     1440
   ],
-  "status": "PASS",
-  "issues": [],
+  "status": "FAIL",
+  "issues": [
+    "unsupported reassurance or guarantee marker found"
+  ],
   "manual_intervention": [],
   "approved_evidence_ids": [
     "andy-e-001",
