@@ -162,6 +162,8 @@ def run_pipeline(
     else:
         safety_scope = "NONE"
     production_output_allowed = mode == "production" and safety_scope in {"NONE", "CLAIM_BLOCK"}
+    if mode == "production" and not production_output_allowed:
+        evidence_manifest = []
     return PipelineReport(
         company_name=profile.company_name,
         primary_authority=primary,
