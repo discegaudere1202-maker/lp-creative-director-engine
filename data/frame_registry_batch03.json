@@ -1,0 +1,90 @@
+{
+  "updated": "2026-09-15",
+  "policy": "Candidate volume and strict quality count are separate. VERIFIED requires source-backed visual confirmation. CORE additionally requires mobile verification and benchmark usefulness.",
+  "records": [
+    {
+      "frame_id": "f086-maigawara-abstract-hero",
+      "site_name": "勅使川原真衣 公式Webサイト",
+      "source_url": "https://designaward2025.studio.design/nominate/maigawara",
+      "frame_role": "HERO",
+      "visual_authority": ["TYPOGRAPHY", "ABSTRACT_CONCEPT"],
+      "lesson": "難しいテーマの深い読解を、もやもやした生き物という固有Visualへ変換している。",
+      "transfer_to_sales_sample": "抽象表現を使う場合は業界イメージではなく、公開情報から抽出したCompany Truthを造形原因にする。",
+      "source_support": "Studio Design Award公式ページで全著書の読解と能力主義テーマのVisual化が説明され、Hero画像も確認済み。",
+      "visual_verified": true,
+      "mobile_verified": false,
+      "stage": "VERIFIED",
+      "rejection_reason": ""
+    },
+    {
+      "frame_id": "f084-tokyu-paper-craft-hero",
+      "site_name": "東急株式会社 新卒採用サイト",
+      "source_url": "https://designaward2025.studio.design/nominate/tokyu-recruit",
+      "frame_role": "HERO",
+      "visual_authority": ["WORLD", "ILLUSTRATION", "TYPOGRAPHY"],
+      "lesson": "東急の複数事業とまちづくりという本質を、ペーパークラフトの世界として一つのVisualへ統合している。",
+      "transfer_to_sales_sample": "複数サービス企業ではサービスカードを並べる前に、事業全体を一つに見せる固有メタファーを検討する。",
+      "source_support": "Studio Design Award公式ページの制作背景とHero画像で、問いとペーパークラフト表現の対応を確認済み。",
+      "visual_verified": true,
+      "mobile_verified": false,
+      "stage": "VERIFIED",
+      "rejection_reason": ""
+    },
+    {
+      "frame_id": "f080-hyakuyozu-material-pattern",
+      "site_name": "大丸松坂屋 百様図 特設サイト",
+      "source_url": "https://www.mount.jp/projects/daimaru-matsuzakaya-hyakuyozu/",
+      "frame_role": "SIGNATURE_VISUAL",
+      "visual_authority": ["MATERIAL", "VI", "MOTION"],
+      "lesson": "5枚の紙が重なり少し動くと柄が無限に生まれるVI原理を、Webの主要構成原理へそのまま昇格している。",
+      "transfer_to_sales_sample": "ロゴや素材に固有原理がある場合、装飾として貼るのではなくレイアウトやInteractionのRuleへ変換する。",
+      "source_support": "mount公式ケースでVI原理とWeb体験の狙いが明記され、紙の重なりVisualも確認済み。",
+      "visual_verified": true,
+      "mobile_verified": false,
+      "stage": "VERIFIED",
+      "rejection_reason": ""
+    },
+    {
+      "frame_id": "f081-hyakuyozu-physical-interaction",
+      "site_name": "大丸松坂屋 百様図 特設サイト",
+      "source_url": "https://www.mount.jp/projects/daimaru-matsuzakaya-hyakuyozu/",
+      "frame_role": "INTERACTION_PEAK",
+      "visual_authority": ["MATERIAL", "PHYSICAL_MOTION"],
+      "lesson": "紙の重なり・ずれ・抵抗感・テクスチャまで追求し、WebGLで実物の物性をInteractionへ翻訳している。",
+      "transfer_to_sales_sample": "素材系LPのMotionはfadeやparallaxではなく、実物の重さ・摩擦・層・変形をBusiness Truthとして扱う。",
+      "source_support": "mount公式ケースで紙の抵抗感・質感・WebGL専用ツールの設計理由を確認済み。",
+      "visual_verified": true,
+      "mobile_verified": false,
+      "stage": "VERIFIED",
+      "rejection_reason": ""
+    },
+    {
+      "frame_id": "f082-sakuma-personality-hero",
+      "site_name": "佐久間宣行事務所",
+      "source_url": "https://goodpatch.com/ja/work/sakuma-nobuyuki",
+      "frame_role": "HERO",
+      "visual_authority": ["PERSON", "EDITORIAL", "MOTION"],
+      "lesson": "情報効率だけでなく、人物の仕事観や温度感が触れるほど滲む体験をHeroからサイト全体へ通している。",
+      "transfer_to_sales_sample": "人物性が強い事業者では肩書き説明より、公開発言・仕事観・判断軸からVisual rhythmを作る。",
+      "source_support": "Goodpatch公式ケースで人物理解、余白、視線、細かな動き、感情を判断軸にした設計が詳細に説明されている。",
+      "visual_verified": true,
+      "mobile_verified": false,
+      "stage": "VERIFIED",
+      "rejection_reason": ""
+    },
+    {
+      "frame_id": "f083-sakuma-motion-rhythm",
+      "site_name": "佐久間宣行事務所",
+      "source_url": "https://goodpatch.com/ja/work/sakuma-nobuyuki",
+      "frame_role": "MOTION_RHYTHM",
+      "visual_authority": ["PERSON", "SEMANTIC_MOTION", "EDITORIAL"],
+      "lesson": "あえて動かさない瞬間と見せる瞬間を選び、人物らしい間とリズムをMotion Directionとして設計している。",
+      "transfer_to_sales_sample": "営業Sampleでも全要素fade-upを避け、会社の人格や仕事速度に合わせてStillとMotionの配分を決める。",
+      "source_support": "Goodpatch公式ケースで『あえて動かさない』『この瞬間だけはしっかり見せる』という取捨選択を確認済み。",
+      "visual_verified": true,
+      "mobile_verified": false,
+      "stage": "VERIFIED",
+      "rejection_reason": ""
+    }
+  ]
+}
