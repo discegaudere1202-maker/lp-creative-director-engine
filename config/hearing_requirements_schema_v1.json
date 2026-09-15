@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "schema_id": "hearing_requirements_schema_v1",
+  "status": "SCHEMA_ONLY_NO_APP",
+  "purpose": "Ask only for missing facts required to resolve a diagnosed customer objection.",
+  "categories": {
+    "UNIVERSAL_REQUIRED": [
+      {"field":"responsible_person_or_team","trigger":["O2_ACCOUNTABILITY"],"priority":"HIGH"},
+      {"field":"service_process","trigger":["O3_PROCESS"],"priority":"HIGH"},
+      {"field":"post_click_flow","trigger":["O4_NEXT"],"priority":"HIGH"}
+    ],
+    "DOMAIN_REQUIRED": [
+      {"field":"ability_proof","trigger":["O1_ABILITY"],"priority":"DOMAIN_DEPENDENT"},
+      {"field":"fee_conditions","trigger":["O6_COST"],"priority":"DOMAIN_DEPENDENT"},
+      {"field":"continuity_or_aftercare","trigger":["O8_CONTINUITY"],"priority":"DOMAIN_DEPENDENT"}
+    ],
+    "CONDITIONAL_REQUIRED": [
+      {"field":"decision_boundary","trigger":["O5_DECISION"],"priority":"HIGH"},
+      {"field":"risk_and_privacy_policy","trigger":["O7_RISK"],"priority":"HIGH"}
+    ],
+    "HIGH_VALUE": [
+      {"field":"verification_date_and_source","trigger":["any_evidence_claim"],"priority":"HIGH"},
+      {"field":"rights_permission_for_visual_assets","trigger":["visual_evidence_selected"],"priority":"HIGH"}
+    ],
+    "OPTIONAL": [
+      {"field":"owner_portrait","trigger":["ACCOUNTABILITY_CAN_BE_SHOWN_VISUALLY"],"priority":"OPTIONAL"},
+      {"field":"testimonial_or_result_case","trigger":["ABILITY_OR_RISK_NEEDS_REINFORCEMENT"],"priority":"OPTIONAL"}
+    ]
+  },
+  "policy": "Absence routes to HEARING_REQUIRED; the engine must not fill a missing field with reassurance copy."
+}
