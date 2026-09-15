@@ -151,6 +151,18 @@ def run_pipeline(
         item for item in hearing_requirements
         if item.get("target_objection") in primary_objections
     ]
+    if (
+        mode == "production"
+        and safety_decision
+        and safety_decision.get("safety_status") == "BLOCKED"
+        and evidence_manifest
+        and not primary_hearing
+    ):
+        for result in results:
+            if result.gate == "EvidenceSafetyGate":
+                result.status = "HOLD"
+                result.message = "Unsupported claim blocked; safe evidence may continue."
+                break
     if mode != "production":
         safety_scope = "NOT_PRODUCTION_MODE"
     elif not safety_decision or safety_decision.get("safety_status") == "INVALID_INPUT":
