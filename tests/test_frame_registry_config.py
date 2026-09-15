@@ -41,13 +41,17 @@ class FrameRegistryConfigTest(unittest.TestCase):
             self.assertEqual(expected.get("core_count"), stage_counts["CORE"])
             self.assertEqual(expected.get("rejected_count"), stage_counts["REJECTED"])
 
-    def test_core_requires_mobile_verification(self):
+    def test_core_requires_live_390px_m3_verification(self):
         payload = json.loads(
             (ROOT / "config/frame_registry_v1.json").read_text(encoding="utf-8")
         )
         self.assertTrue(
             all(
-                item["stage"] != "CORE" or item["mobile_verified"]
+                item["stage"] != "CORE"
+                or (
+                    item["mobile_verified"]
+                    and item.get("mobile_evidence_grade", "M0") == "M3"
+                )
                 for item in payload["frames"]
             )
         )
