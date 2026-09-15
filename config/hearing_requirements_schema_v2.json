@@ -3,32 +3,413 @@
   "schema_id": "hearing_requirements_schema_v2",
   "status": "SCHEMA_AND_PLANNER_IMPLEMENTED_NO_APP",
   "purpose": "Ask only for missing facts required to complete a Production LP, then return the answer to Evidence verification and Safety.",
-  "requirement_classes": ["UNIVERSAL_REQUIRED", "DOMAIN_REQUIRED", "CONDITIONAL_REQUIRED", "HIGH_VALUE", "OPTIONAL"],
-  "blocking_levels": ["CLAIM_BLOCKING", "SECTION_BLOCKING", "PAGE_BLOCKING", "NON_BLOCKING"],
-  "answer_types": ["boolean", "short_text", "long_text", "number", "currency", "duration", "select", "multi_select", "URL", "file_reference", "date", "structured_steps"],
-  "verification_classes": ["SELF_DECLARABLE", "DOCUMENT_REQUIRED", "THIRD_PARTY_EVIDENCE_REQUIRED", "RIGHTS_REQUIRED"],
-  "fields": [
-    {"field_id":"responsible_person_or_team","label":"担当主体","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O2_ACCOUNTABILITY"],"target_evidence_types":["OWNER_IDENTITY","TEAM_IDENTITY","ACCOUNTABILITY_SCOPE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"short_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"service_scope","label":"対応範囲","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O3_PROCESS","O5_DECISION"],"target_evidence_types":["SCOPE_BOUNDARY"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"long_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"service_process","label":"提供工程","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O3_PROCESS"],"target_evidence_types":["SERVICE_PROCESS","CRAFT_ACTION","PLACE_EXPERIENCE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"structured_steps","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"post_click_flow","label":"問い合わせ後の流れ","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O4_NEXT"],"target_evidence_types":["POST_CLICK_FLOW","RESPONSE_EXPECTATION","CTA_CHANNEL"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"structured_steps","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"primary_evidence_source","label":"主要Evidenceの出典","requirement_class":"UNIVERSAL_REQUIRED","target_objections":["O1_ABILITY","O2_ACCOUNTABILITY","O3_PROCESS","O4_NEXT"],"target_evidence_types":["VERIFIED_METRIC","EXPERIENCE","QUALIFICATION","RESULT_CASE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"URL","verification_class":"DOCUMENT_REQUIRED","priority":"P1"},
-    {"field_id":"ability_proof","label":"能力の根拠","requirement_class":"DOMAIN_REQUIRED","target_objections":["O1_ABILITY"],"target_evidence_types":["VERIFIED_METRIC","QUALIFICATION","EXPERIENCE","RESULT_CASE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"long_text","verification_class":"DOCUMENT_REQUIRED","priority":"P1"},
-    {"field_id":"fee_conditions","label":"費用条件","requirement_class":"DOMAIN_REQUIRED","target_objections":["O6_COST"],"target_evidence_types":["PRICE","FEE_CONDITION","SCOPE_BOUNDARY"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"currency","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"continuity_or_aftercare","label":"継続・アフター対応","requirement_class":"DOMAIN_REQUIRED","target_objections":["O8_CONTINUITY"],"target_evidence_types":["CONTINUITY_POLICY","AFTERCARE","RESULT_CASE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"SECTION_BLOCKING","answer_type":"long_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"decision_boundary","label":"判断のタイミング","requirement_class":"CONDITIONAL_REQUIRED","target_objections":["O5_DECISION"],"target_evidence_types":["DECISION_BOUNDARY","SCOPE_BOUNDARY","PRICE"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"short_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"risk_and_privacy_policy","label":"不利益・個人情報の扱い","requirement_class":"CONDITIONAL_REQUIRED","target_objections":["O7_RISK"],"target_evidence_types":["RISK_POLICY","PRIVACY_POLICY","CANCELLATION_POLICY"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"long_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"response_expectation","label":"返信・対応目安","requirement_class":"CONDITIONAL_REQUIRED","target_objections":["O4_NEXT"],"target_evidence_types":["RESPONSE_EXPECTATION"],"trigger_condition":"NEED AND MISSING AND RELEVANT","blocking_level":"CLAIM_BLOCKING","answer_type":"short_text","verification_class":"SELF_DECLARABLE","priority":"P1"},
-    {"field_id":"visual_rights","label":"素材利用権","requirement_class":"CONDITIONAL_REQUIRED","target_objections":[],"target_evidence_types":["OWNER_PORTRAIT","PLACE_WIDE","PRODUCT_DETAIL","CRAFT_ACTION"],"trigger_condition":"VISUAL IS NEEDED AND RIGHTS ARE MISSING","blocking_level":"CLAIM_BLOCKING","answer_type":"file_reference","verification_class":"RIGHTS_REQUIRED","priority":"P1"},
-    {"field_id":"customer_state","label":"顧客の現在の状況","requirement_class":"HIGH_VALUE","target_objections":[],"target_evidence_types":["HERO_REALITY"],"trigger_condition":"HIGH_VALUE GAP ONLY","blocking_level":"NON_BLOCKING","answer_type":"long_text","verification_class":"SELF_DECLARABLE","priority":"P2"}
+  "requirement_classes": [
+    "UNIVERSAL_REQUIRED",
+    "DOMAIN_REQUIRED",
+    "CONDITIONAL_REQUIRED",
+    "HIGH_VALUE",
+    "OPTIONAL"
   ],
-  "completion_statuses": ["ANSWERED", "NEEDS_VERIFICATION", "NEEDS_DOCUMENT", "NEEDS_RIGHTS", "COMPLETE", "CONFLICT", "HEARING_REQUIRED"],
+  "blocking_levels": [
+    "CLAIM_BLOCKING",
+    "SECTION_BLOCKING",
+    "PAGE_BLOCKING",
+    "NON_BLOCKING"
+  ],
+  "answer_types": [
+    "boolean",
+    "short_text",
+    "long_text",
+    "number",
+    "currency",
+    "duration",
+    "select",
+    "multi_select",
+    "URL",
+    "file_reference",
+    "date",
+    "structured_steps"
+  ],
+  "verification_classes": [
+    "SELF_DECLARABLE",
+    "DOCUMENT_REQUIRED",
+    "THIRD_PARTY_EVIDENCE_REQUIRED",
+    "RIGHTS_REQUIRED"
+  ],
+  "fields": [
+    {
+      "field_id": "responsible_person_or_team",
+      "label": "担当主体",
+      "description": "問い合わせ後に責任を持って対応する人またはチーム",
+      "requirement_class": "UNIVERSAL_REQUIRED",
+      "target_objections": [
+        "O2_ACCOUNTABILITY"
+      ],
+      "target_evidence_types": [
+        "OWNER_IDENTITY",
+        "TEAM_IDENTITY",
+        "ACCOUNTABILITY_SCOPE"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "SECTION_BLOCKING",
+      "question_template": "お問い合わせ後は、どなた、またはどのチームが主に対応されますか？",
+      "answer_type": "short_text",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "responsible_party",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "service_scope",
+      "label": "対応範囲",
+      "description": "何を依頼でき、何が対象外か",
+      "requirement_class": "UNIVERSAL_REQUIRED",
+      "target_objections": [
+        "O3_PROCESS",
+        "O5_DECISION"
+      ],
+      "target_evidence_types": [
+        "SCOPE_BOUNDARY"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "SECTION_BLOCKING",
+      "question_template": "対応できることと、対応の対象外になることを教えてください。",
+      "answer_type": "long_text",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "scope",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "service_process",
+      "label": "提供工程",
+      "description": "相談・制作・施術などの実際の進み方",
+      "requirement_class": "UNIVERSAL_REQUIRED",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "target_evidence_types": [
+        "SERVICE_PROCESS",
+        "CRAFT_ACTION",
+        "PLACE_EXPERIENCE"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "SECTION_BLOCKING",
+      "question_template": "お問い合わせから提供完了まで、主な流れを教えてください。",
+      "answer_type": "structured_steps",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "process",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "post_click_flow",
+      "label": "問い合わせ後の流れ",
+      "description": "クリック後に起きることと次の連絡",
+      "requirement_class": "UNIVERSAL_REQUIRED",
+      "target_objections": [
+        "O4_NEXT"
+      ],
+      "target_evidence_types": [
+        "POST_CLICK_FLOW",
+        "RESPONSE_EXPECTATION",
+        "CTA_CHANNEL"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "SECTION_BLOCKING",
+      "question_template": "お問い合わせ・予約をした後、最初に何が起きますか？",
+      "answer_type": "structured_steps",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "next",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "primary_evidence_source",
+      "label": "主要Evidenceの出典",
+      "description": "公開または確認可能な会社固有事実の出典",
+      "requirement_class": "UNIVERSAL_REQUIRED",
+      "target_objections": [
+        "O1_ABILITY",
+        "O2_ACCOUNTABILITY",
+        "O3_PROCESS",
+        "O4_NEXT"
+      ],
+      "target_evidence_types": [
+        "VERIFIED_METRIC",
+        "EXPERIENCE",
+        "QUALIFICATION",
+        "RESULT_CASE"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "CLAIM_BLOCKING",
+      "question_template": "この内容を確認できる公式ページ、資料、または記録はありますか？",
+      "answer_type": "URL",
+      "verification_requirement": "Provide a source or document that can be checked.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "Source permission must be confirmed if a file or image is supplied.",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "evidence_source",
+      "verification_class": "DOCUMENT_REQUIRED"
+    },
+    {
+      "field_id": "ability_proof",
+      "label": "能力の根拠",
+      "description": "資格・許認可・経験・実績などの検証可能な根拠",
+      "requirement_class": "DOMAIN_REQUIRED",
+      "target_objections": [
+        "O1_ABILITY"
+      ],
+      "target_evidence_types": [
+        "VERIFIED_METRIC",
+        "QUALIFICATION",
+        "EXPERIENCE",
+        "RESULT_CASE"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "CLAIM_BLOCKING",
+      "question_template": "資格、経験、実績など、確認できる根拠を教えてください。",
+      "answer_type": "long_text",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "ability",
+      "verification_class": "DOCUMENT_REQUIRED"
+    },
+    {
+      "field_id": "fee_conditions",
+      "label": "費用条件",
+      "description": "料金、無料範囲、費用発生のタイミング",
+      "requirement_class": "DOMAIN_REQUIRED",
+      "target_objections": [
+        "O6_COST"
+      ],
+      "target_evidence_types": [
+        "PRICE",
+        "FEE_CONDITION",
+        "SCOPE_BOUNDARY"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "SECTION_BLOCKING",
+      "question_template": "料金はいくらで、どの時点から費用が発生しますか？条件があれば教えてください。",
+      "answer_type": "currency",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "cost",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "continuity_or_aftercare",
+      "label": "継続・アフター対応",
+      "description": "購入・相談・提供後の支援や保守",
+      "requirement_class": "DOMAIN_REQUIRED",
+      "target_objections": [
+        "O8_CONTINUITY"
+      ],
+      "target_evidence_types": [
+        "CONTINUITY_POLICY",
+        "AFTERCARE",
+        "RESULT_CASE"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "SECTION_BLOCKING",
+      "question_template": "提供後や相談後に、継続する支援・保守・フォローはありますか？",
+      "answer_type": "long_text",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "continuity",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "decision_boundary",
+      "label": "判断のタイミング",
+      "description": "契約・購入・申込を判断する時点",
+      "requirement_class": "CONDITIONAL_REQUIRED",
+      "target_objections": [
+        "O5_DECISION"
+      ],
+      "target_evidence_types": [
+        "DECISION_BOUNDARY",
+        "SCOPE_BOUNDARY",
+        "PRICE"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "CLAIM_BLOCKING",
+      "question_template": "契約・購入・申込みを判断するのは、どの段階ですか？",
+      "answer_type": "short_text",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "decision",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "risk_and_privacy_policy",
+      "label": "不利益・個人情報の扱い",
+      "description": "勧誘、守秘、個人情報、キャンセル等の実際の方針",
+      "requirement_class": "CONDITIONAL_REQUIRED",
+      "target_objections": [
+        "O7_RISK"
+      ],
+      "target_evidence_types": [
+        "RISK_POLICY",
+        "PRIVACY_POLICY",
+        "CANCELLATION_POLICY"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "CLAIM_BLOCKING",
+      "question_template": "相談後に契約しない場合や、個人情報・キャンセルについて、実際にはどのような対応になりますか？",
+      "answer_type": "long_text",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "risk",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "response_expectation",
+      "label": "返信・対応目安",
+      "description": "返信方法と対応の目安。時間を約束する場合の根拠",
+      "requirement_class": "CONDITIONAL_REQUIRED",
+      "target_objections": [
+        "O4_NEXT"
+      ],
+      "target_evidence_types": [
+        "RESPONSE_EXPECTATION"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "CLAIM_BLOCKING",
+      "question_template": "お問い合わせ後の連絡方法と、案内できる対応目安があれば教えてください。",
+      "answer_type": "short_text",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "next",
+      "verification_class": "SELF_DECLARABLE"
+    },
+    {
+      "field_id": "visual_rights",
+      "label": "素材利用権",
+      "description": "人物写真、現場写真、ロゴ等の利用許諾",
+      "requirement_class": "CONDITIONAL_REQUIRED",
+      "target_objections": [],
+      "target_evidence_types": [
+        "OWNER_PORTRAIT",
+        "PLACE_WIDE",
+        "PRODUCT_DETAIL",
+        "CRAFT_ACTION"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "CLAIM_BLOCKING",
+      "question_template": "掲載する写真・ロゴ・資料について、LPで利用してよい範囲を確認できますか？",
+      "answer_type": "file_reference",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "Explicit client permission or a documented production license is required.",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P1",
+      "answer_group": "rights",
+      "verification_class": "RIGHTS_REQUIRED"
+    },
+    {
+      "field_id": "customer_state",
+      "label": "顧客の現在の状況",
+      "description": "誰のどの状態をLPで扱うか",
+      "requirement_class": "HIGH_VALUE",
+      "target_objections": [],
+      "target_evidence_types": [
+        "HERO_REALITY"
+      ],
+      "trigger_condition": {
+        "expression": "NEED_AND_MISSING_AND_RELEVANT"
+      },
+      "blocking_level": "NON_BLOCKING",
+      "question_template": "今回のLPを見てほしいお客様は、どのような状況で相談・予約・購入を検討されますか？",
+      "answer_type": "long_text",
+      "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+      "provenance_requirement": "source, source_type and verification_date are required",
+      "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+      "fallback": "HEARING_REQUIRED",
+      "priority": "P2",
+      "answer_group": "customer_state",
+      "verification_class": "SELF_DECLARABLE"
+    }
+  ],
+  "completion_statuses": [
+    "ANSWERED",
+    "NEEDS_VERIFICATION",
+    "NEEDS_DOCUMENT",
+    "NEEDS_RIGHTS",
+    "COMPLETE",
+    "CONFLICT",
+    "HEARING_REQUIRED"
+  ],
   "answer_boundary": {
     "customer_answer_default": "UNVERIFIED_CUSTOMER_INPUT",
     "objective_claims": "DOCUMENT_REQUIRED or THIRD_PARTY_EVIDENCE_REQUIRED",
     "self_declared_operation": "May remain a customer statement until independently verified; Safety recheck remains mandatory",
     "rights_claim": "RIGHTS_REQUIRED; site presence does not grant reuse permission"
   },
-  "flow": ["HEARING_REQUIRED", "QUESTION", "CUSTOMER_ANSWER", "EVIDENCE_CANDIDATE", "PROVENANCE_VERIFICATION", "RIGHTS_CHECK", "SAFETY_RECHECK", "PRODUCTION_ELIGIBLE_OR_HOLD"],
+  "flow": [
+    "HEARING_REQUIRED",
+    "QUESTION",
+    "CUSTOMER_ANSWER",
+    "EVIDENCE_CANDIDATE",
+    "PROVENANCE_VERIFICATION",
+    "RIGHTS_CHECK",
+    "SAFETY_RECHECK",
+    "PRODUCTION_ELIGIBLE_OR_HOLD"
+  ],
   "app_status": "NO_UI_IMPLEMENTED"
 }
