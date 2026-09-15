@@ -165,7 +165,70 @@ DEFAULT_BLOCKED_CLAIMS = [
 
 
 def _as_record(raw: EvidenceRecord | Mapping[str, Any]) -> EvidenceRecord:
-    return raw if isinstance(raw, EvidenceRecord) else EvidenceRecord.from_mapping(raw)
+    if isinstance(raw, EvidenceRecord):
+        return raw
+    if all(field in raw for field in REQUIRED_FIELDS):
+        return EvidenceRecord.from_mapping(raw)
+    return normalize_evidence_record(raw)
+
+
+def normalize_evidence_record(
+    raw: EvidenceRecord | Mapping[str, Any],
+    *,
+    company_id: str = "",
+    case_id: str = "",
+) -> EvidenceRecord:
+    """Convert legacy research-ledger fields to the canonical safety shape.
+
+    This adapter is intentionally loss-averse: absent fields become empty or
+    UNKNOWN and therefore cannot pass the production gate. It accepts the
+    earlier ``id/source_url/verified/strength/placement`` ledger vocabulary
+    used by research fixtures without inferring a missing objection target.
+    """
+    if isinstance(raw, EvidenceRecord):
+        return raw
+    verification = raw.get("verification_status")
+    if verification is None:
+        verification = "VERIFIED" if raw.get("verified") is True else "UNKNOWN"
+    evidence_id = raw.get("evidence_id", raw.get("id", ""))
+    source = raw.get("source", raw.get("source_url", ""))
+    verification_date = raw.get("verification_date", "")
+    if not verification_date:
+        for date_key in ("captured_at", "updated"):
+            value = str(raw.get(date_key, ""))
+            if value:
+                verification_date = value[:10]
+                break
+    placement = raw.get("placement_candidates", raw.get("placement_candidate", raw.get("placement", [])))
+    if isinstance(placement, str):
+        placement = [x.strip() for x in re.split(r"[/,]", placement) if x.strip()]
+    targets = raw.get("target_objections", [])
+    if isinstance(targets, str):
+        targets = [targets]
+    rights = raw.get("rights_status", raw.get("rights", "NOT_APPLICABLE"))
+    status = str(verification).upper()
+    usage = raw.get("usage_status")
+    if usage is None:
+        usage = "ELIGIBLE" if status == "VERIFIED" else "UNKNOWN"
+    return EvidenceRecord.from_mapping({
+        "evidence_id": str(evidence_id),
+        "company_id": str(raw.get("company_id", company_id)),
+        "case_id": str(raw.get("case_id", case_id)),
+        "evidence_type": str(raw.get("evidence_type", raw.get("slot", ""))),
+        "evidence_strength": str(raw.get("evidence_strength", raw.get("strength", "UNKNOWN"))),
+        "target_objections": list(targets),
+        "claim": str(raw.get("claim", "")),
+        "source": str(source),
+        "source_type": str(raw.get("source_type", "research_ledger")),
+        "verification_status": status,
+        "verification_date": str(verification_date),
+        "usage_status": str(usage),
+        "placement_candidates": list(placement or []),
+        "rights_status": str(rights),
+        "hearing_required": bool(raw.get("hearing_required", status != "VERIFIED")),
+        "blocking_status": str(raw.get("blocking_status", "NON_BLOCKING" if status == "VERIFIED" else "BLOCKING")),
+        "notes": str(raw.get("notes", raw.get("rights_usage_note", raw.get("provenance", "")))),
+    })
 
 
 def _claim_rule_matches(claim: str, rule: Mapping[str, Any]) -> bool:
@@ -347,6 +410,8 @@ def production_approved(record: EvidenceRecord | Mapping[str, Any]) -> bool:
     """Return whether one record may be used as production evidence."""
     item = _as_record(record)
     return (
+        bool(item.evidence_id.strip() and item.claim.strip() and item.evidence_type.strip() and item.target_objections)
+        and
         item.verification_status in ACCEPTED_VERIFICATION
         and bool(item.source.strip() and item.verification_date.strip())
         and item.rights_status in ACCEPTED_RIGHTS
