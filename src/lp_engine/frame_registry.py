@@ -5,6 +5,7 @@ from typing import Any
 
 
 VALID_STAGES = {"CANDIDATE", "VERIFIED", "CORE", "REJECTED"}
+VALID_MOBILE_GRADES = {"M0", "M1", "M2", "M3"}
 
 
 @dataclass
@@ -19,6 +20,7 @@ class FrameRecord:
     source_support: str
     visual_verified: bool = False
     mobile_verified: bool = False
+    mobile_evidence_grade: str = "M0"
     stage: str = "CANDIDATE"
     rejection_reason: str = ""
 
@@ -44,11 +46,23 @@ def validate_frame(frame: FrameRecord) -> list[str]:
         issues.append("source_support is insufficient")
     if frame.stage not in VALID_STAGES:
         issues.append(f"invalid stage: {frame.stage}")
+    if frame.mobile_evidence_grade not in VALID_MOBILE_GRADES:
+        issues.append(f"invalid mobile_evidence_grade: {frame.mobile_evidence_grade}")
 
     if frame.stage in {"VERIFIED", "CORE"} and not frame.visual_verified:
         issues.append("VERIFIED/CORE requires visual_verified=true")
-    if frame.stage == "CORE" and not frame.mobile_verified:
-        issues.append("CORE requires mobile_verified=true")
+
+    if frame.mobile_verified and frame.mobile_evidence_grade not in {"M2", "M3"}:
+        issues.append("mobile_verified=true requires mobile evidence grade M2 or M3")
+    if frame.mobile_evidence_grade in {"M2", "M3"} and not frame.mobile_verified:
+        issues.append("M2/M3 requires mobile_verified=true")
+
+    if frame.stage == "CORE":
+        if not frame.mobile_verified:
+            issues.append("CORE requires mobile_verified=true")
+        if frame.mobile_evidence_grade not in {"M2", "M3"}:
+            issues.append("CORE requires mobile evidence grade M2 or M3")
+
     if frame.stage == "REJECTED" and not frame.rejection_reason.strip():
         issues.append("REJECTED requires rejection_reason")
 
@@ -71,6 +85,7 @@ def audit_registry(records: list[FrameRecord]) -> dict[str, Any]:
         rows.append({
             "frame_id": record.frame_id,
             "stage": record.stage,
+            "mobile_evidence_grade": record.mobile_evidence_grade,
             "valid": not issues,
             "issues": issues,
         })
@@ -79,9 +94,13 @@ def audit_registry(records: list[FrameRecord]) -> dict[str, Any]:
         1 for r in records
         if r.stage in {"VERIFIED", "CORE"} and not validate_frame(r)
     )
-    core_count = sum(
+    core_m2 = sum(
         1 for r in records
-        if r.stage == "CORE" and not validate_frame(r)
+        if r.stage == "CORE" and r.mobile_evidence_grade == "M2" and not validate_frame(r)
+    )
+    core_m3 = sum(
+        1 for r in records
+        if r.stage == "CORE" and r.mobile_evidence_grade == "M3" and not validate_frame(r)
     )
 
     return {
@@ -90,12 +109,14 @@ def audit_registry(records: list[FrameRecord]) -> dict[str, Any]:
         "valid_records": valid_count,
         "candidate_count": counts.get("CANDIDATE", 0),
         "strict_verified_count": strict_verified,
-        "core_count": core_count,
+        "core_count": core_m2 + core_m3,
+        "core_m2_count": core_m2,
+        "core_m3_count": core_m3,
         "rejected_count": counts.get("REJECTED", 0),
         "duplicate_ids": duplicates,
         "records": rows,
         "rule": (
-            "Research volume and strict quality count are separate. "
-            "Only VERIFIED/CORE records passing the schema count toward the quality corpus."
+            "Research volume and strict quality count are separate. VERIFIED is desktop/source verified. "
+            "CORE additionally requires explicit mobile evidence: M2 published mobile visual review or M3 live 390px review."
         ),
     }
