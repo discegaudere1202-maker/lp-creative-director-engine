@@ -5,6 +5,7 @@ from unittest.mock import patch
 
 from lp_engine.loader import from_dict
 from lp_engine.pipeline import run_pipeline
+from lp_engine.evidence_safety import evaluate_evidence_selection
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,6 +60,18 @@ class ProductionSafetyBoundaryTest(unittest.TestCase):
         })
         self.assertFalse(report.production_output_allowed)
         self.assertEqual(report.evidence_manifest, [])
+
+    def test_low_level_selector_is_fail_closed_by_default(self):
+        record = evidence(usage_status="RESEARCH_ONLY")
+        default = evaluate_evidence_selection("consultation", ["O3_PROCESS"], [record])
+        research = evaluate_evidence_selection(
+            "consultation",
+            ["O3_PROCESS"],
+            [record],
+            require_production_clearance=False,
+        )
+        self.assertEqual(default.eligible_evidence, [])
+        self.assertEqual(research.eligible_evidence[0]["evidence_id"], "BOUNDARY-001")
 
     def test_raw_unsupported_claim_is_blocked(self):
         report = self.run_production({
