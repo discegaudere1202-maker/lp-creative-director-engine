@@ -296,6 +296,19 @@ def evaluate_evidence_selection(
         })
         hearing.append(item)
 
+    # A blocked claim is itself a missing-evidence request even when its
+    # objection was not selected as a page-level primary objection. This keeps
+    # customer-facing claim requests from silently disappearing at the edge of
+    # the selector.
+    hearing_ids = {item["target_objection"] for item in hearing}
+    for blocked in blocked_claims:
+        for objection in blocked["target_objections"]:
+            if objection not in OBJECTION_IDS or objection in hearing_ids:
+                continue
+            item = _hearing_item(objection, blocked_claims=[blocked["claim"]])
+            hearing.append(item)
+            hearing_ids.add(objection)
+
     placements = sorted({
         placement
         for item in eligible
