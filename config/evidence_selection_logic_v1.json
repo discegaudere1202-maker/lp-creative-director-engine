@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-09-15",
-  "status": "SCHEMA_CANDIDATE_NOT_PRODUCTION_IMPLEMENTED",
+  "status": "SAFETY_LAYER_IMPLEMENTED_TESTED_OPTIONAL_PIPELINE_WIRED",
   "purpose": "Select evidence from customer objections, not from evidence availability alone.",
   "objection_model": [
     {
@@ -308,7 +308,7 @@
     "schema_ref": "config/evidence_safety_engine_v1.json",
     "implementation_ref": "src/lp_engine/evidence_safety.py",
     "contract_ref": "config/evidence_selection_engine_contract_v1.json",
-    "status": "IMPLEMENTED_TESTED_NOT_PRODUCTION_WIRED",
+    "status": "IMPLEMENTED_TESTED_OPTIONAL_PIPELINE_WIRED",
     "allowed": [
       "verified_evidence_selection",
       "provenance_check",
@@ -322,7 +322,9 @@
       "trust_copy_generation",
       "guarantee_inference",
       "unknown_rights_production_approval"
-    ]
+    ],
+    "pipeline_ref": "src/lp_engine/pipeline.py",
+    "cli_ref": "src/lp_engine/cli.py"
   },
   "hearing_requirements_schema_ref": "config/hearing_requirements_schema_v1.json"
 }
