@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "case_id": "INDEPENDENT_KOKORO_SEITAI",
+  "company_id": "kokoro_seitai_givers",
+  "company": "こころ整体院グループ",
+  "conversion_goal": "reservation",
+  "source_urls": ["https://seitai.co.jp/"],
+  "primary_objections": ["O2_ACCOUNTABILITY", "O3_PROCESS", "O4_NEXT", "O6_COST"],
+  "ledger": [
+    {"evidence_id":"KOKORO-E01","company_id":"kokoro_seitai_givers","case_id":"INDEPENDENT_KOKORO_SEITAI","evidence_type":"VERIFIED_METRIC","evidence_strength":"E2_SPECIFIC","target_objections":["O1_ABILITY"],"claim":"代表者は臨床28年・施術実績15万人超と公式掲載。","source":"https://seitai.co.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"RESEARCH_ONLY","placement_candidates":["EARLY_PROOF"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Text fact only; no medical outcome inferred."},
+    {"evidence_id":"KOKORO-E02","company_id":"kokoro_seitai_givers","case_id":"INDEPENDENT_KOKORO_SEITAI","evidence_type":"SERVICE_PROCESS","evidence_strength":"E3_OPERATIONAL","target_objections":["O3_PROCESS"],"claim":"初回はAI姿勢分析・問診・施術、以後は検査と手技を行う公式の流れ。","source":"https://seitai.co.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"RESEARCH_ONLY","placement_candidates":["MIDDLE","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Process description retained without efficacy promise."},
+    {"evidence_id":"KOKORO-E03","company_id":"kokoro_seitai_givers","case_id":"INDEPENDENT_KOKORO_SEITAI","evidence_type":"FEE_CONDITION","evidence_strength":"E5_DECISION_ENABLING","target_objections":["O6_COST"],"claim":"初回料金は院により異なり、回数券・月額プランの公開価格がある。","source":"https://seitai.co.jp/","source_type":"official_pricing_section","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"RESEARCH_ONLY","placement_candidates":["BEFORE_CTA"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Variation by clinic is preserved; no universal price inferred."},
+    {"evidence_id":"KOKORO-E04","company_id":"kokoro_seitai_givers","case_id":"INDEPENDENT_KOKORO_SEITAI","evidence_type":"RISK_POLICY","evidence_strength":"E4_RISK_REDUCING","target_objections":["O7_RISK"],"claim":"公式サイトに無理な勧誘をしない旨と、初回費用の返金条件を記載。","source":"https://seitai.co.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"RESEARCH_ONLY","placement_candidates":["CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Conditioned wording must be retained; not expanded to all plans."},
+    {"evidence_id":"KOKORO-E05","company_id":"kokoro_seitai_givers","case_id":"INDEPENDENT_KOKORO_SEITAI","evidence_type":"POST_CLICK_FLOW","evidence_strength":"UNKNOWN","target_objections":["O4_NEXT"],"claim":"予約後の返信時間・担当院の確定手順。","source":"https://seitai.co.jp/","source_type":"official_company_site","verification_status":"UNKNOWN","verification_date":"","usage_status":"BLOCKED","placement_candidates":["CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":true,"blocking_status":"BLOCKING","notes":"Homepage links to stores but does not verify a universal post-click expectation."}
+  ],
+  "selection_rationale":"Reservation requires process, local/store next step and cost clarity; risk policy is valuable only when its stated conditions remain intact."
+}
