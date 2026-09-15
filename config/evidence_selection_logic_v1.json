@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-09-15",
-  "status": "SAFETY_LAYER_IMPLEMENTED_TESTED_OPTIONAL_PIPELINE_WIRED",
+  "status": "SAFETY_MANDATORY_IN_PRODUCTION",
   "purpose": "Select evidence from customer objections, not from evidence availability alone.",
   "objection_model": [
     {
@@ -308,7 +308,7 @@
     "schema_ref": "config/evidence_safety_engine_v1.json",
     "implementation_ref": "src/lp_engine/evidence_safety.py",
     "contract_ref": "config/evidence_selection_engine_contract_v1.json",
-    "status": "IMPLEMENTED_TESTED_OPTIONAL_PIPELINE_WIRED",
+    "status": "MANDATORY_IN_PRODUCTION_TESTED",
     "allowed": [
       "verified_evidence_selection",
       "provenance_check",
@@ -324,7 +324,13 @@
       "unknown_rights_production_approval"
     ],
     "pipeline_ref": "src/lp_engine/pipeline.py",
-    "cli_ref": "src/lp_engine/cli.py"
+    "cli_ref": "src/lp_engine/cli.py",
+    "mode_boundary": {
+      "production": "mandatory_safety",
+      "research": "not_production_approved",
+      "test": "fixture_only"
+    },
+    "production_invariant": "Customer-facing evidence must be traceable to a Safety-approved manifest item."
   },
   "hearing_requirements_schema_ref": "config/hearing_requirements_schema_v1.json"
 }
