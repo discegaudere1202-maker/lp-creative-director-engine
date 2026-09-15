@@ -83,6 +83,16 @@ class PipelineEvidenceSafetyTest(unittest.TestCase):
         self.assertEqual(gate.status, "HOLD")
         self.assertTrue(gate.details["issues"])
 
+    def test_research_only_evidence_does_not_pass_production_pipeline(self):
+        report = self.run_with_safety({
+            "conversion_goal": "consultation",
+            "primary_objections": ["O3_PROCESS"],
+            "evidence_ledger": [safety_evidence(usage_status="RESEARCH_ONLY")],
+        })
+        gate = self.safety_gate(report)
+        self.assertEqual(gate.status, "HOLD")
+        self.assertEqual(gate.details["eligible_evidence"], [])
+
 
 if __name__ == "__main__":
     unittest.main()
