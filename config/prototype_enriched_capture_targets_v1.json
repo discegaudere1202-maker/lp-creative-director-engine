@@ -33,5 +33,21 @@
       "frame_role": "EMOTIONAL_BARRIER_HERO_ENRICHED",
       "evidence_ledger": "data/evidence_ledgers/P10_company_evidence_2026-09-15.json"
     }
+  ],
+  "targets": [
+    {
+      "prototype_id": "P02_ENRICHED",
+      "path": "examples/prototypes/p02_customer_world_translation_enriched_v1.html",
+      "frame_role": "B2B_EXPLAINER_ENRICHED",
+      "opponent_pool": "CUSTOMER_WORLD_TRANSLATION",
+      "wait_ms": 250
+    },
+    {
+      "prototype_id": "P10_ENRICHED",
+      "path": "examples/prototypes/p10_customer_state_transition_enriched_v1.html",
+      "frame_role": "EMOTIONAL_BARRIER_HERO_ENRICHED",
+      "opponent_pool": "CUSTOMER_STATE_TRANSITION",
+      "wait_ms": 250
+    }
   ]
 }
