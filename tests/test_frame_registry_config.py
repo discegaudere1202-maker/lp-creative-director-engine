@@ -16,8 +16,9 @@ class FrameRegistryConfigTest(unittest.TestCase):
         records = [FrameRecord(**item) for item in payload["frames"]]
         audit = audit_registry(records)
         self.assertEqual(audit["status"], "PASS")
-        self.assertEqual(audit["total_records"], 10)
-        self.assertEqual(audit["strict_verified_count"], 6)
+        self.assertEqual(audit["total_records"], 15)
+        self.assertEqual(audit["strict_verified_count"], 11)
+        self.assertEqual(audit["candidate_count"], 4)
         self.assertEqual(audit["core_count"], 0)
 
     def test_core_requires_mobile_verification(self):
