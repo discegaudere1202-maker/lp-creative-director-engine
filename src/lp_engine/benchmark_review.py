@@ -21,6 +21,10 @@ AXES = [
     ("conversion_intent", "Conversion Intent"),
 ]
 
+REQUIRED_VIEWPORTS = {1440, 390}
+MIN_BENCHMARKS = 3
+MAX_BENCHMARKS = 5
+
 
 def _image_for(item: dict[str, Any], viewport: int) -> str:
     images = item.get("images") or {}
@@ -30,10 +34,57 @@ def _image_for(item: dict[str, Any], viewport: int) -> str:
     return str(value)
 
 
+def review_readiness_issues(payload: dict[str, Any]) -> list[str]:
+    """Return blockers that make a formal blind comparison invalid.
+
+    This gate intentionally checks the comparison package before any reviewer sees it.
+    It does not inspect visual quality; it ensures that a result cannot be called a
+    formal tournament when the candidate/benchmarks or required viewports are absent.
+    """
+    issues: list[str] = []
+    candidate = payload.get("candidate") or {}
+    benchmarks = payload.get("benchmarks") or []
+    viewports = {int(v) for v in payload.get("viewports", [1440, 390])}
+
+    candidate_id = str(candidate.get("id") or "").strip()
+    if not candidate_id:
+        issues.append("candidate id is required")
+
+    if not (MIN_BENCHMARKS <= len(benchmarks) <= MAX_BENCHMARKS):
+        issues.append(f"formal tournament requires {MIN_BENCHMARKS}-{MAX_BENCHMARKS} benchmarks")
+
+    benchmark_ids = [str(item.get("id") or "").strip() for item in benchmarks]
+    if any(not x for x in benchmark_ids):
+        issues.append("every benchmark requires an id")
+    if len(set(benchmark_ids)) != len(benchmark_ids):
+        issues.append("benchmark ids must be unique")
+    if candidate_id and candidate_id in benchmark_ids:
+        issues.append("candidate id must not also appear as a benchmark id")
+
+    if viewports != REQUIRED_VIEWPORTS:
+        issues.append("formal tournament requires exactly 1440px and 390px viewports")
+
+    items = [candidate] + list(benchmarks)
+    for item in items:
+        item_id = str(item.get("id") or "unknown")
+        images = item.get("images") or {}
+        for viewport in sorted(REQUIRED_VIEWPORTS, reverse=True):
+            value = images.get(str(viewport)) or images.get(viewport)
+            if not value or not str(value).strip():
+                issues.append(f"missing screenshot for viewport {viewport}: {item_id}")
+
+    return issues
+
+
 def build_review_manifest(payload: dict[str, Any], *, seed: int = 0) -> dict[str, Any]:
+    readiness_issues = review_readiness_issues(payload)
+    if readiness_issues:
+        raise ValueError("tournament not ready: " + "; ".join(readiness_issues))
+
     candidate = payload["candidate"]
     benchmarks = payload.get("benchmarks", [])
-    viewports = [int(v) for v in payload.get("viewports", [1440, 390])]
+    # Formal benchmark tournament is deliberately fixed to these two views.
+    viewports = [1440, 390]
     pairings = make_blind_pairings(
         str(candidate["id"]),
         [str(b["id"]) for b in benchmarks],
