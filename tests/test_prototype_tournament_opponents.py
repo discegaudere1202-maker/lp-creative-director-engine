@@ -29,13 +29,18 @@ class PrototypeTournamentOpponentsTest(unittest.TestCase):
             with self.subTest(prototype_id=prototype_id):
                 self.assertEqual(item["frame_role"], self.capture_roles[prototype_id])
 
+    def test_all_research_sets_are_formal_ready(self):
+        self.assertTrue(
+            all(item["status"] == "READY" for item in self.payload["prototypes"].values()),
+            "P02/P09/P10 must all have explicit human-approved formal opponent sets before blind package generation",
+        )
+
     def test_ready_sets_have_three_to_five_unique_human_approved_m3_opponents(self):
         for prototype_id, item in self.payload["prototypes"].items():
-            if item["status"] != "READY":
-                continue
             benchmarks = item["benchmarks"]
             ids = [b["benchmark_id"] for b in benchmarks]
             with self.subTest(prototype_id=prototype_id):
+                self.assertEqual(item["status"], "READY")
                 self.assertGreaterEqual(len(ids), 3)
                 self.assertLessEqual(len(ids), 5)
                 self.assertEqual(len(ids), len(set(ids)))
@@ -48,12 +53,6 @@ class PrototypeTournamentOpponentsTest(unittest.TestCase):
                     self.assertRegex(benchmark["desktop_sha256"], SHA256)
                     self.assertTrue(benchmark["review_note"].strip())
 
-    def test_pending_set_cannot_masquerade_as_formal_ready(self):
-        p09 = self.payload["prototypes"]["P09"]
-        self.assertEqual(p09["status"], "PENDING_M3_REVIEW")
-        self.assertLess(len(p09["benchmarks"]), 3)
-        self.assertGreaterEqual(len(p09.get("pending_candidates", [])), 1)
-
     def test_known_invalid_mobile_capture_is_not_an_approved_opponent(self):
         approved = {
             benchmark["benchmark_id"]
@@ -61,6 +60,9 @@ class PrototypeTournamentOpponentsTest(unittest.TestCase):
             for benchmark in item["benchmarks"]
         }
         self.assertNotIn("u-do-u", approved)
+        self.assertNotIn("mhand-price", approved)
+        self.assertNotIn("alotof-price", approved)
+        self.assertNotIn("cndoor-price", approved)
 
 
 if __name__ == "__main__":
