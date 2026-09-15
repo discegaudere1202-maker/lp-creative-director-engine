@@ -1,0 +1,1207 @@
+{
+  "schema_version": 1,
+  "study": "EVIDENCE_ABLATION_ENGINE_READY_VALIDATION",
+  "created_at": "2026-09-15T12:53:31.793368+00:00",
+  "capture_provenance": {
+    "baseline": {
+      "artifact_id": 10393223767,
+      "run_id": 34962756565,
+      "artifact_name": "prototype-tournament-evidence-11"
+    },
+    "core_and_full": {
+      "artifact_id": 10397341100,
+      "run_id": 34970228505,
+      "artifact_name": "enriched-evidence-capture-v1",
+      "capture_report_captured_at": "2026-09-15T12:40:49.326962+00:00"
+    },
+    "exact_viewports": {
+      "desktop": [
+        1440,
+        1000
+      ],
+      "mobile": [
+        390,
+        844
+      ]
+    }
+  },
+  "comparisons": [
+    {
+      "comparison_id": "P02_BASELINE_VS_CORE",
+      "prototype_id": "P02",
+      "earlier_variant": "P02",
+      "later_variant": "P02_CORE",
+      "benchmark_ids": [
+        "kagami",
+        "smarthr-product",
+        "kintone-product"
+      ],
+      "viewports": {
+        "desktop": [
+          1440,
+          1000
+        ],
+        "mobile": [
+          390,
+          844
+        ]
+      },
+      "reviewer_types": [
+        "creative_art_direction",
+        "business_owner_conversion"
+      ],
+      "votes": [
+        {
+          "benchmark_id": "kagami",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P02_CORE keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kagami",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P02_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kagami",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P02_CORE keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kagami",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P02_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "smarthr-product",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P02_CORE keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "smarthr-product",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P02_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "smarthr-product",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P02_CORE keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "smarthr-product",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P02_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kintone-product",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P02_CORE keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kintone-product",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P02_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kintone-product",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P02_CORE keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kintone-product",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02",
+          "later_variant": "P02_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P02_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        }
+      ],
+      "axis_win_rates_later_vs_earlier": {
+        "immediate_read": 0.5,
+        "distinctness": 0.5,
+        "owner_specificity": 0.5,
+        "visual_hierarchy": 0.5,
+        "craft_detail": 0.5,
+        "emotional_pull": 0.5,
+        "trust": 0.75,
+        "share_impulse": 0.5,
+        "mobile_quality": 0.5,
+        "conversion_intent": 0.75
+      },
+      "overall_axis_win_rate_later_vs_earlier": 0.55,
+      "method_note": "Pairwise ablation is a structured internal Work review, not a statistical experiment and not independent human-third-party evidence."
+    },
+    {
+      "comparison_id": "P02_CORE_VS_FULL",
+      "prototype_id": "P02",
+      "earlier_variant": "P02_CORE",
+      "later_variant": "P02_ENRICHED",
+      "benchmark_ids": [
+        "kagami",
+        "smarthr-product",
+        "kintone-product"
+      ],
+      "viewports": {
+        "desktop": [
+          1440,
+          1000
+        ],
+        "mobile": [
+          390,
+          844
+        ]
+      },
+      "reviewer_types": [
+        "creative_art_direction",
+        "business_owner_conversion"
+      ],
+      "votes": [
+        {
+          "benchmark_id": "kagami",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P02_ENRICHED keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kagami",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P02_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kagami",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P02_ENRICHED keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kagami",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P02_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "smarthr-product",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P02_ENRICHED keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "smarthr-product",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P02_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "smarthr-product",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P02_ENRICHED keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "smarthr-product",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P02_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kintone-product",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P02_ENRICHED keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kintone-product",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P02_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kintone-product",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P02_ENRICHED keeps the authored P02 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "kintone-product",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P02_CORE",
+          "later_variant": "P02_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P02_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        }
+      ],
+      "axis_win_rates_later_vs_earlier": {
+        "immediate_read": 0.5,
+        "distinctness": 0.5,
+        "owner_specificity": 0.5,
+        "visual_hierarchy": 0.5,
+        "craft_detail": 0.5,
+        "emotional_pull": 0.5,
+        "trust": 0.8333,
+        "share_impulse": 0.5,
+        "mobile_quality": 0.5,
+        "conversion_intent": 0.8333
+      },
+      "overall_axis_win_rate_later_vs_earlier": 0.5667,
+      "method_note": "Pairwise ablation is a structured internal Work review, not a statistical experiment and not independent human-third-party evidence."
+    },
+    {
+      "comparison_id": "P10_BASELINE_VS_CORE",
+      "prototype_id": "P10",
+      "earlier_variant": "P10",
+      "later_variant": "P10_CORE",
+      "benchmark_ids": [
+        "carigaku-career",
+        "sell-step-career",
+        "lfu-career"
+      ],
+      "viewports": {
+        "desktop": [
+          1440,
+          1000
+        ],
+        "mobile": [
+          390,
+          844
+        ]
+      },
+      "reviewer_types": [
+        "creative_art_direction",
+        "business_owner_conversion"
+      ],
+      "votes": [
+        {
+          "benchmark_id": "carigaku-career",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_CORE keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "carigaku-career",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_CORE keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "carigaku-career",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "carigaku-career",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "sell-step-career",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_CORE keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "sell-step-career",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_CORE keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "sell-step-career",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "sell-step-career",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "lfu-career",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_CORE keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "lfu-career",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_CORE keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "lfu-career",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "lfu-career",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10",
+          "later_variant": "P10_CORE",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_CORE is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        }
+      ],
+      "axis_win_rates_later_vs_earlier": {
+        "immediate_read": 0.5,
+        "distinctness": 0.5,
+        "owner_specificity": 0.5,
+        "visual_hierarchy": 0.5,
+        "craft_detail": 0.5,
+        "emotional_pull": 0.5,
+        "trust": 0.5,
+        "share_impulse": 0.5,
+        "mobile_quality": 0.5,
+        "conversion_intent": 0.5
+      },
+      "overall_axis_win_rate_later_vs_earlier": 0.5,
+      "method_note": "Pairwise ablation is a structured internal Work review, not a statistical experiment and not independent human-third-party evidence."
+    },
+    {
+      "comparison_id": "P10_CORE_VS_FULL",
+      "prototype_id": "P10",
+      "earlier_variant": "P10_CORE",
+      "later_variant": "P10_ENRICHED",
+      "benchmark_ids": [
+        "carigaku-career",
+        "sell-step-career",
+        "lfu-career"
+      ],
+      "viewports": {
+        "desktop": [
+          1440,
+          1000
+        ],
+        "mobile": [
+          390,
+          844
+        ]
+      },
+      "reviewer_types": [
+        "creative_art_direction",
+        "business_owner_conversion"
+      ],
+      "votes": [
+        {
+          "benchmark_id": "carigaku-career",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P10_ENRICHED keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "carigaku-career",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P10_ENRICHED keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "carigaku-career",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P10_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "carigaku-career",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P10_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "sell-step-career",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_ENRICHED keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "sell-step-career",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Creative role: P10_ENRICHED keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "sell-step-career",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "sell-step-career",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 1,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 1
+          },
+          "reason": "Business role: P10_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "lfu-career",
+          "viewport": "1440",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_ENRICHED keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "lfu-career",
+          "viewport": "390",
+          "reviewer_type": "creative_art_direction",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Creative role: P10_ENRICHED keeps the authored P10 concept; this comparison isolates evidence placement and gives no credit for generic polish.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "lfu-career",
+          "viewport": "1440",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        },
+        {
+          "benchmark_id": "lfu-career",
+          "viewport": "390",
+          "reviewer_type": "business_owner_conversion",
+          "earlier_variant": "P10_CORE",
+          "later_variant": "P10_ENRICHED",
+          "axis_scores_later_vs_earlier": {
+            "immediate_read": 0,
+            "distinctness": 0,
+            "owner_specificity": 0,
+            "visual_hierarchy": 0,
+            "craft_detail": 0,
+            "emotional_pull": 0,
+            "trust": 0,
+            "share_impulse": 0,
+            "mobile_quality": 0,
+            "conversion_intent": 0
+          },
+          "reason": "Business role: P10_ENRICHED is judged only on whether verified evidence reduces uncertainty before action; unknown policies remain unknown.",
+          "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+        }
+      ],
+      "axis_win_rates_later_vs_earlier": {
+        "immediate_read": 0.5,
+        "distinctness": 0.5,
+        "owner_specificity": 0.5,
+        "visual_hierarchy": 0.5,
+        "craft_detail": 0.5,
+        "emotional_pull": 0.5,
+        "trust": 0.75,
+        "share_impulse": 0.5,
+        "mobile_quality": 0.5,
+        "conversion_intent": 0.75
+      },
+      "overall_axis_win_rate_later_vs_earlier": 0.55,
+      "method_note": "Pairwise ablation is a structured internal Work review, not a statistical experiment and not independent human-third-party evidence."
+    }
+  ],
+  "interpretation": {
+    "p02": "Core lifts the process/boundary axes over baseline, but Full's additional verified authority/risk evidence adds further Trust; Evidence Economy is not proven as equivalence.",
+    "p10": "Core is intentionally the baseline minimum; the observed lift appears when the named accountable person and continuity/business-model evidence are added together, not from the minimum CTA copy alone.",
+    "causal_limit": "Structured role comparisons are directional research evidence. They do not establish causal effect size or real-world conversion lift."
+  }
+}

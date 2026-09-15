@@ -1,0 +1,413 @@
+{
+  "schema_version": 1,
+  "tournament_type": "FORMAL_BLIND_TOURNAMENT",
+  "study": "EVIDENCE_ABLATION_ENGINE_READY_VALIDATION",
+  "variant_id": "P10_CORE",
+  "baseline_prototype_id": "P10",
+  "full_enriched_id": "P10_ENRICHED",
+  "variant_role": "TRUST_CORE",
+  "created_at": "2026-09-15T12:51:47.419618+00:00",
+  "candidate_source": {
+    "path": "examples/prototypes/p10_customer_state_transition_core_v1.html",
+    "sha256": "7087cdbcffa933ceab77c61fc7f7cae809273d216e3d53122f508c710f0f9fe5"
+  },
+  "candidate_capture": {
+    "run_id": 34970228505,
+    "artifact_id": 10397341100,
+    "artifact_name": "enriched-evidence-capture-v1",
+    "capture_report_captured_at": "2026-09-15T12:40:49.326962+00:00",
+    "viewport_standard": {
+      "desktop": [
+        1440,
+        1000
+      ],
+      "mobile": [
+        390,
+        844
+      ]
+    },
+    "records": {
+      "desktop_1440": {
+        "scroll_width": 1440,
+        "scroll_height": 1000,
+        "dpr": 1
+      },
+      "mobile_390": {
+        "scroll_width": 390,
+        "scroll_height": 844,
+        "dpr": 1
+      }
+    }
+  },
+  "benchmark_set": {
+    "benchmark_ids": [
+      "carigaku-career",
+      "sell-step-career",
+      "lfu-career"
+    ],
+    "capture_artifacts": [
+      {
+        "run_id": 34953096999,
+        "artifact_id": 10389977402,
+        "artifact_name": "m3-benchmark-evidence-8",
+        "digest": "sha256:b582e809bb4464c437ac0094ec239f1f0e4bfc266057a9950beb377c741acaee"
+      },
+      {
+        "run_id": 0,
+        "artifact_id": 10388641096,
+        "artifact_name": "M3 benchmark evidence Run 6",
+        "digest": "sha256:7cb1a74e24fa279af155310e0ddb4b027498b27de1ebd559bd8711993830e8fa"
+      }
+    ]
+  },
+  "blind_bundle": {
+    "reviewer_visible_bundle": "formal_work/core_blind_bundles/bundle-10/review.html",
+    "manifest": "formal_work/core_blind_bundles/bundle-10/review.manifest.json",
+    "identity_mapping": "formal_work/core_identity_mapping/P10_CORE.json (stored outside reviewer-visible bundle)",
+    "identity_masking": "PASS",
+    "candidate_side_randomized": true,
+    "reviewer_visible_ids": "opaque item IDs only"
+  },
+  "structured_review_roles": {
+    "creative_art_direction": "Reviewer A — Creative / Art Direction structured role",
+    "business_owner_conversion": "Reviewer B — Business Owner / Conversion structured role"
+  },
+  "axes": [
+    "immediate_read",
+    "distinctness",
+    "owner_specificity",
+    "visual_hierarchy",
+    "craft_detail",
+    "emotional_pull",
+    "trust",
+    "share_impulse",
+    "mobile_quality",
+    "conversion_intent"
+  ],
+  "votes": [
+    {
+      "benchmark_id": "carigaku-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Creative role, desktop: the before→整理→after state transition and the undecided entry remain unchanged; the compact free/process/boundary close does not add visual noise. Against carigaku-career, the candidate retains its stronger mental model; no credit is given for an unverified named-person claim.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "carigaku-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 1,
+        "emotional_pull": 0,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": -1
+      },
+      "reason": "Creative role, mobile: the before→整理→after state transition and the undecided entry remain unchanged; the compact free/process/boundary close does not add visual noise. Against carigaku-career, the candidate does not overcome the benchmark’s proof or action advantage; no credit is given for an unverified named-person claim.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "carigaku-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": -1,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": -1,
+        "share_impulse": 0,
+        "mobile_quality": -1,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, desktop: the Core keeps only verified free consultation, value sorting and the decision boundary. It is a safe minimum but adds no new accountable-person or continuity proof beyond the baseline; against carigaku-career, the benchmark reduces uncertainty faster.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "carigaku-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": -1,
+      "axes": {
+        "immediate_read": -1,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": -1,
+        "emotional_pull": -1,
+        "trust": -1,
+        "share_impulse": 0,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, mobile: the Core keeps only verified free consultation, value sorting and the decision boundary. It is a safe minimum but adds no new accountable-person or continuity proof beyond the baseline; against carigaku-career, the benchmark reduces uncertainty faster.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "sell-step-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Creative role, desktop: the before→整理→after state transition and the undecided entry remain unchanged; the compact free/process/boundary close does not add visual noise. Against sell-step-career, the candidate retains its stronger mental model; no credit is given for an unverified named-person claim.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "sell-step-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "Creative role, mobile: the before→整理→after state transition and the undecided entry remain unchanged; the compact free/process/boundary close does not add visual noise. Against sell-step-career, the candidate retains its stronger mental model; no credit is given for an unverified named-person claim.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "sell-step-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, desktop: the Core keeps only verified free consultation, value sorting and the decision boundary. It is a safe minimum but adds no new accountable-person or continuity proof beyond the baseline; against sell-step-career, the candidate earns empathy but not decisive trust.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "sell-step-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": 0,
+        "emotional_pull": -1,
+        "trust": 0,
+        "share_impulse": 0,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, mobile: the Core keeps only verified free consultation, value sorting and the decision boundary. It is a safe minimum but adds no new accountable-person or continuity proof beyond the baseline; against sell-step-career, the candidate earns empathy but not decisive trust.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "lfu-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Creative role, desktop: the before→整理→after state transition and the undecided entry remain unchanged; the compact free/process/boundary close does not add visual noise. Against lfu-career, the candidate retains its stronger mental model; no credit is given for an unverified named-person claim.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "lfu-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "Creative role, mobile: the before→整理→after state transition and the undecided entry remain unchanged; the compact free/process/boundary close does not add visual noise. Against lfu-career, the candidate retains its stronger mental model; no credit is given for an unverified named-person claim.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "lfu-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, desktop: the Core keeps only verified free consultation, value sorting and the decision boundary. It is a safe minimum but adds no new accountable-person or continuity proof beyond the baseline; against lfu-career, the candidate earns empathy but not decisive trust.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "lfu-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 1
+      },
+      "reason": "Business role, mobile: the Core keeps only verified free consultation, value sorting and the decision boundary. It is a safe minimum but adds no new accountable-person or continuity proof beyond the baseline; against lfu-career, the candidate earns empathy but not decisive trust.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    }
+  ],
+  "aggregate": {
+    "status": "PASS",
+    "classification": "COMPETITIVE_OR_SUPERIOR",
+    "win_rate": 0.625,
+    "wins": 5,
+    "ties": 5,
+    "losses": 2,
+    "benchmark_count": 3,
+    "reviewer_types": [
+      "business_owner_conversion",
+      "creative_art_direction"
+    ],
+    "viewport_results": {
+      "1440": {
+        "wins": 3,
+        "ties": 2,
+        "losses": 1,
+        "win_rate": 0.6667
+      },
+      "390": {
+        "wins": 2,
+        "ties": 3,
+        "losses": 1,
+        "win_rate": 0.5833
+      }
+    },
+    "axis_means": {
+      "conversion_intent": 0.0,
+      "craft_detail": 0.4167,
+      "distinctness": 0.75,
+      "emotional_pull": 0.3333,
+      "immediate_read": 0.3333,
+      "mobile_quality": 0.1667,
+      "owner_specificity": 1.0,
+      "share_impulse": 0.75,
+      "trust": -0.3333,
+      "visual_hierarchy": 0.25
+    },
+    "review_reasons": []
+  },
+  "metrics": {
+    "axis_win_rates": {
+      "immediate_read": 0.6667,
+      "distinctness": 0.875,
+      "owner_specificity": 1.0,
+      "visual_hierarchy": 0.625,
+      "craft_detail": 0.7083,
+      "emotional_pull": 0.6667,
+      "trust": 0.3333,
+      "share_impulse": 0.875,
+      "mobile_quality": 0.5833,
+      "conversion_intent": 0.5
+    },
+    "desktop_win_rate": 0.6667,
+    "mobile_win_rate": 0.5833,
+    "reviewer_type_win_rates": {
+      "business_owner_conversion": 0.3333,
+      "creative_art_direction": 0.9167
+    },
+    "benchmark_win_rates": {
+      "carigaku-career": 0.375,
+      "lfu-career": 0.75,
+      "sell-step-career": 0.75
+    }
+  },
+  "formal_completeness": {
+    "all_opponents": true,
+    "desktop": true,
+    "mobile": true,
+    "two_reviewer_types": true,
+    "ten_axes": true,
+    "owner_specificity": true,
+    "share_impulse": true,
+    "score_recorded": true,
+    "provenance": true,
+    "identity_masking": true
+  },
+  "evidence_used": [
+    "POST_CLICK_FLOW",
+    "SCOPE_BOUNDARY",
+    "RISK_POLICY"
+  ],
+  "ablation_note": "Core is intentionally limited to one company fact, one operational path and one decision/risk boundary. The P10 control is content-equivalent to the existing minimum CTA evidence, so a non-lift is a valid result.",
+  "method_note": "Formal review is a structured internal Work review with two explicitly different roles. It is not independent human-third-party evidence."
+}

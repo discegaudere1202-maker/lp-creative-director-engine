@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "prototype_id": "P10_CORE",
+  "candidate": {
+    "opaque_id": "item-a",
+    "source_path": "examples/prototypes/p10_customer_state_transition_core_v1.html",
+    "source_sha256": "7087cdbcffa933ceab77c61fc7f7cae809273d216e3d53122f508c710f0f9fe5",
+    "capture_run_id": 34970228505,
+    "capture_artifact_id": 10397341100,
+    "asset_sha256": {
+      "1440": {
+        "path": "formal_work/core_blind_bundles/bundle-10/assets/item-a__1440.png",
+        "sha256": "ed4569c082bbbfaa3e7b7b3e512e4a86bfe9f92c2c410918b7407a541f9f20a9"
+      },
+      "390": {
+        "path": "formal_work/core_blind_bundles/bundle-10/assets/item-a__390.png",
+        "sha256": "548dab90acc8ece5d9461a85b1dd03d090e8e6f824112e89cac1cc9fb7ddd913"
+      }
+    }
+  },
+  "benchmarks": [
+    {
+      "opaque_id": "item-b",
+      "benchmark_id": "carigaku-career",
+      "source_artifact": "M3 benchmark evidence Run 6",
+      "asset_sha256": {
+        "1440": {
+          "path": "formal_work/core_blind_bundles/bundle-10/assets/item-b__1440.png",
+          "sha256": "1f02d0e91d72731b32367b25a9b869966229eda0e78d9f3f991d24d3e8ba86b4"
+        },
+        "390": {
+          "path": "formal_work/core_blind_bundles/bundle-10/assets/item-b__390.png",
+          "sha256": "f9722bb338f06e36327a8f3cb983cf2f7cb92402e9d9d683604631bb23f089ac"
+        }
+      }
+    },
+    {
+      "opaque_id": "item-c",
+      "benchmark_id": "sell-step-career",
+      "source_artifact": "M3 benchmark evidence Run 6",
+      "asset_sha256": {
+        "1440": {
+          "path": "formal_work/core_blind_bundles/bundle-10/assets/item-c__1440.png",
+          "sha256": "3246d5f997e32a971df281d186891914d03763baa0562910375e5975e41c0340"
+        },
+        "390": {
+          "path": "formal_work/core_blind_bundles/bundle-10/assets/item-c__390.png",
+          "sha256": "7d952f7509084552c1aba9b3ce507069dd46f784cf5cf40bcd4d44da8dc5dbe7"
+        }
+      }
+    },
+    {
+      "opaque_id": "item-d",
+      "benchmark_id": "lfu-career",
+      "source_artifact": "M3 benchmark evidence Run 6",
+      "asset_sha256": {
+        "1440": {
+          "path": "formal_work/core_blind_bundles/bundle-10/assets/item-d__1440.png",
+          "sha256": "933d81e2e736003a2ff5526f37ecb8b9920319b27e470aa41cd6da0aeee173b9"
+        },
+        "390": {
+          "path": "formal_work/core_blind_bundles/bundle-10/assets/item-d__390.png",
+          "sha256": "6d70ac79333b61773b03bc86773f8d4da4ca6084ab65a192d067dc124830ebf3"
+        }
+      }
+    }
+  ],
+  "blind_manifest": "formal_work/core_blind_bundles/bundle-10/review.manifest.json",
+  "seed": 20260918,
+  "provenance_rule": "Reviewer-visible bundle contains only opaque item IDs, anonymous labels and screenshots. Identity mapping is stored outside the reviewer bundle."
+}

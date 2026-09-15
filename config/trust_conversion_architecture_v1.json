@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updated": "2026-09-15",
   "name": "Trust / Conversion Architecture",
   "purpose": "Connect company-specific creative form to a trustworthy, psychologically safe next action without evidence bloat.",
@@ -73,7 +73,59 @@
     "SCOPE_BOUNDARY",
     "OWNER_IDENTITY"
   ],
-  "status": "OBSERVED_NOT_ENGINE_IMPLEMENTED",
+  "status": "REPLICATED_NOT_ENGINE_IMPLEMENTED",
+  "rule_status": {
+    "PROOF_TO_PROCESS": "OBSERVED",
+    "PERMISSION_BEFORE_ASK": "OBSERVED",
+    "AFTER_CLICK_CERTAINTY": "OBSERVED",
+    "EVIDENCE_ECONOMY": "HYPOTHESIS",
+    "MOBILE_ACTION_BUDGET": "REPLICATED",
+    "WHO_HOW_NEXT_BRIDGE": "OBSERVED",
+    "UNKNOWN_BOUNDARY": "REPLICATED",
+    "EVIDENCE_STRENGTH_MODEL": "OBSERVED"
+  },
+  "ablation_validation": {
+    "result_file": "data/evidence_ablation_results_v1.json",
+    "design": "Three states per prototype: unchanged Formal PASS baseline, Trust Core, and unchanged Full Enriched. Core uses one company fact, one operational path, and one decision/risk boundary.",
+    "findings": {
+      "P02": "Trust Core improved Trust/Conversion directionally over Baseline, while Full Enriched remained stronger on Trust. The process plus decision boundary appears useful; 20年/300社 alone is not isolated as the cause.",
+      "P10": "Trust Core was equivalent to the existing minimum CTA evidence, while Full Enriched improved over Core. Named accountable-person and continuity/business-model evidence appear complementary; person-only causality is not isolated.",
+      "evidence_economy": "Not validated as Core equals Full. Use precision and sequence, but retain additional verified evidence when it resolves a distinct objection.",
+      "causal_limit": "Structured role comparisons are directional research evidence, not a statistical experiment or real-world conversion measurement."
+    },
+    "rule_cards": [
+      {
+        "id": "EVIDENCE_SEQUENCE_GATE",
+        "status": "OBSERVED",
+        "when": "The page has a verified company fact but the visitor must infer how service delivery works or when to decide.",
+        "require": ["one verified company-specific fact", "one verified operational step", "one verified decision or risk boundary"],
+        "do": "Connect WHO, HOW and NEXT in one short proof-to-action sequence.",
+        "place": "Middle to Before CTA, with the decision boundary in the CTA Zone.",
+        "limit": "Do not treat a metric, name or credential as sufficient trust by itself.",
+        "fallback": "If any required fact is UNKNOWN, keep the slot labeled HEARING_REQUIRED and do not generate reassurance."
+      },
+      {
+        "id": "EVIDENCE_PLACEMENT_GATE",
+        "status": "OBSERVED",
+        "when": "A verified fact is selected for Trust or Conversion.",
+        "require": ["evidence strength", "customer objection", "placement intent"],
+        "do": "Place E2 identity near the service explanation, E3 process before the action, and E4/E5 boundary or expectation immediately around the CTA.",
+        "place": "Hero only when it changes immediate understanding; otherwise Middle or CTA Zone.",
+        "limit": "Do not create a proof-card wall or move every evidence item into the Hero.",
+        "fallback": "When placement intent is unclear, keep the evidence in a quiet chapter and route the missing placement decision to review."
+      },
+      {
+        "id": "MISSING_EVIDENCE_GATE",
+        "status": "REPLICATED",
+        "when": "A trust-relevant policy, response expectation, scope, fee condition or accountability fact cannot be verified.",
+        "require": ["explicit UNKNOWN record", "source provenance", "hearing requirement"],
+        "do": "Block reassuring copy and preserve an evidence slot for hearing.",
+        "place": "Internal evidence ledger and production handoff; never as invented customer-facing proof.",
+        "limit": "Never infer no-pressure, confidentiality, guarantee, response time or assigned-person claims.",
+        "fallback": "Use neutral copy that does not promise the unknown and mark HEARING_REQUIRED."
+      }
+    ]
+  },
   "provenance": "Derived from the 2026-09-15 P02/P09/P10 formal blind tournament and official external-page research. Structured Work review, not independent human-third-party evidence.",
   "evidence_strength_model": [
     {
@@ -150,12 +202,7 @@
       "現場・オフィス写真"
     ]
   },
-  "validation_note": "P02/P10の2 Enriched Variantsで、WHO/HOW/NEXTまたは相談継続性をCTA Zoneに精密配置したStructured Work Review上の観測。一般則のVALIDATED/ENGINE_READY昇格ではない。",
-  "engine_ready_candidate_rules": [
-    "PROOF_TO_PROCESS",
-    "AFTER_CLICK_CERTAINTY",
-    "EVIDENCE_ECONOMY",
-    "MOBILE_ACTION_BUDGET",
-    "WHO_HOW_NEXT_BRIDGE"
-  ]
+  "validation_note": "P02/P10のBaseline／Trust Core／Full Enrichedを同一Capture系統で比較したStructured Work Review。P02はCoreでTrust/Conversionの方向改善、P10はCoreがBaseline同等でFullの追加Evidenceに改善が残った。したがってTrust RuleはREPLICATEDまたはENGINE_READYへ一括昇格しない。",
+  "engine_ready_candidate_rules": [],
+  "engine_ready_candidate_note": "今回の6条件を満たすTrust Ruleはなし。UNKNOWN_BOUNDARYとMOBILE_ACTION_BUDGETは実装安全策として再利用しやすいが、Trust因果のENGINE_READY_CANDIDATEにはまだ昇格しない。"
 }

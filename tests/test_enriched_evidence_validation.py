@@ -32,6 +32,7 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
 
     def test_enriched_formal_results_are_complete(self):
         for name in ("P02_ENRICHED", "P10_ENRICHED"):
+            
             path = ROOT / "data" / "formal_tournament_results" / f"{name}_formal_blind_tournament_v1.json"
             payload = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(payload["tournament_type"], "FORMAL_BLIND_TOURNAMENT")
@@ -39,6 +40,25 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
             self.assertEqual(len(payload["votes"]), 12)
             self.assertEqual(payload["candidate_capture"]["artifact_id"], 10394593910)
             self.assertEqual(payload["blind_bundle"]["identity_masking"], "PASS")
+
+    def test_core_formal_results_are_complete_and_traceable(self):
+        for name in ("P02_CORE", "P10_CORE"):
+            path = ROOT / "data" / "formal_tournament_results" / f"{name}_formal_blind_tournament_v1.json"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(payload["tournament_type"], "FORMAL_BLIND_TOURNAMENT")
+            self.assertEqual(payload["variant_role"], "TRUST_CORE")
+            self.assertTrue(all(payload["formal_completeness"].values()))
+            self.assertEqual(len(payload["votes"]), 12)
+            self.assertEqual(payload["candidate_capture"]["artifact_id"], 10397341100)
+            self.assertEqual(payload["blind_bundle"]["identity_masking"], "PASS")
+
+    def test_ablation_record_has_baseline_core_full_pairs(self):
+        payload = json.loads((ROOT / "data/evidence_ablation_results_v1.json").read_text(encoding="utf-8"))
+        self.assertEqual({item["comparison_id"] for item in payload["comparisons"]}, {
+            "P02_BASELINE_VS_CORE", "P02_CORE_VS_FULL", "P10_BASELINE_VS_CORE", "P10_CORE_VS_FULL"
+        })
+        self.assertTrue(all(len(item["votes"]) == 12 for item in payload["comparisons"]))
+        self.assertTrue(all(item["viewports"]["desktop"] == [1440, 1000] for item in payload["comparisons"]))
 
     def test_variant_copy_contains_only_researched_proof_hooks(self):
         p02 = (ROOT / "examples/prototypes/p02_customer_world_translation_enriched_v1.html").read_text(encoding="utf-8")

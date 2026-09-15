@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "prototype_id": "P02_CORE",
+  "candidate": {
+    "opaque_id": "item-a",
+    "source_path": "examples/prototypes/p02_customer_world_translation_core_v1.html",
+    "source_sha256": "a78e79cad3379de3f3e6a238f2d46f3afdfaa30d0d8af6fa06bce9d2879645ae",
+    "capture_run_id": 34970228505,
+    "capture_artifact_id": 10397341100,
+    "asset_sha256": {
+      "1440": {
+        "path": "formal_work/core_blind_bundles/bundle-02/assets/item-a__1440.png",
+        "sha256": "edbaa14f568a2b3e125469e0e79bf15e5ffba931056a5e2d9e8214e4d6181f4f"
+      },
+      "390": {
+        "path": "formal_work/core_blind_bundles/bundle-02/assets/item-a__390.png",
+        "sha256": "f1ea72f6c639c9eefb83306a08b13da26c2834ce22c4aa3de563b50cf1d6e49d"
+      }
+    }
+  },
+  "benchmarks": [
+    {
+      "opaque_id": "item-b",
+      "benchmark_id": "kagami",
+      "source_artifact": "M3 benchmark evidence Run 6",
+      "asset_sha256": {
+        "1440": {
+          "path": "formal_work/core_blind_bundles/bundle-02/assets/item-b__1440.png",
+          "sha256": "5d5f2a8db9f0c96a36c4cf6956ebf2e27ba946121822c1e8a1ed6bc243cd6fab"
+        },
+        "390": {
+          "path": "formal_work/core_blind_bundles/bundle-02/assets/item-b__390.png",
+          "sha256": "8c6be4a0f703b4909e7e15110d9c7b0a4890487cfd10e1b8d7370401e108a7c2"
+        }
+      }
+    },
+    {
+      "opaque_id": "item-c",
+      "benchmark_id": "smarthr-product",
+      "source_artifact": "M3 benchmark evidence Run 6",
+      "asset_sha256": {
+        "1440": {
+          "path": "formal_work/core_blind_bundles/bundle-02/assets/item-c__1440.png",
+          "sha256": "a4f5b6c5d0dbaa5aac7d026effbb2dec129d13b18c0fd699519f81e2d54e0e6a"
+        },
+        "390": {
+          "path": "formal_work/core_blind_bundles/bundle-02/assets/item-c__390.png",
+          "sha256": "3d7943dbec41c19b681d32e845305436440d52def99c1e287cf494f22a683c8e"
+        }
+      }
+    },
+    {
+      "opaque_id": "item-d",
+      "benchmark_id": "kintone-product",
+      "source_artifact": "M3 benchmark evidence Run 6",
+      "asset_sha256": {
+        "1440": {
+          "path": "formal_work/core_blind_bundles/bundle-02/assets/item-d__1440.png",
+          "sha256": "7356c5e2b2ac0939a9af7956cfe2cf37f922b7273c82d31280bf0f89ade7f8f0"
+        },
+        "390": {
+          "path": "formal_work/core_blind_bundles/bundle-02/assets/item-d__390.png",
+          "sha256": "3bfb22b6c66c6fb2edcffde5ec08dead3be1280674a1cfce6abe9854d3c4a9c3"
+        }
+      }
+    }
+  ],
+  "blind_manifest": "formal_work/core_blind_bundles/bundle-02/review.manifest.json",
+  "seed": 20260917,
+  "provenance_rule": "Reviewer-visible bundle contains only opaque item IDs, anonymous labels and screenshots. Identity mapping is stored outside the reviewer bundle."
+}

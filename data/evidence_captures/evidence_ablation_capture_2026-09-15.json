@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-15T12:40:49.326962+00:00",
+  "config": "config/prototype_enriched_capture_targets_v1.json",
+  "rule": "",
+  "records": [
+    {
+      "prototype_id": "P02_ENRICHED",
+      "frame_role": "B2B_EXPLAINER_ENRICHED",
+      "source_path": "examples/prototypes/p02_customer_world_translation_enriched_v1.html",
+      "source_sha256": "bdda9b4775398675febfd68f15bba88bd339ed7c2e14cfbaa6ae9cdc1ef67f81",
+      "viewport": {
+        "name": "mobile_390",
+        "width": 390,
+        "height": 844
+      },
+      "status": "CAPTURED",
+      "metrics": {
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "clientWidth": 390,
+        "clientHeight": 844,
+        "dpr": 1
+      },
+      "screenshot": "P02_ENRICHED__mobile_390.png",
+      "screenshot_sha256": "b7be531e77831137acfb9ec94e99c519f190368f7d081d65ddc49ad109895882"
+    },
+    {
+      "prototype_id": "P02_ENRICHED",
+      "frame_role": "B2B_EXPLAINER_ENRICHED",
+      "source_path": "examples/prototypes/p02_customer_world_translation_enriched_v1.html",
+      "source_sha256": "bdda9b4775398675febfd68f15bba88bd339ed7c2e14cfbaa6ae9cdc1ef67f81",
+      "viewport": {
+        "name": "desktop_1440",
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "CAPTURED",
+      "metrics": {
+        "scrollWidth": 1440,
+        "scrollHeight": 1000,
+        "clientWidth": 1440,
+        "clientHeight": 1000,
+        "dpr": 1
+      },
+      "screenshot": "P02_ENRICHED__desktop_1440.png",
+      "screenshot_sha256": "092185ed289f10f2a3b1598f7c5d903675c88866f42ada52b48dcd9c330f96f6"
+    },
+    {
+      "prototype_id": "P10_ENRICHED",
+      "frame_role": "EMOTIONAL_BARRIER_HERO_ENRICHED",
+      "source_path": "examples/prototypes/p10_customer_state_transition_enriched_v1.html",
+      "source_sha256": "809299ee6689d7c9a7fadca025cdbdd5fe3f16e4f739bb5c18c55201309706f3",
+      "viewport": {
+        "name": "mobile_390",
+        "width": 390,
+        "height": 844
+      },
+      "status": "CAPTURED",
+      "metrics": {
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "clientWidth": 390,
+        "clientHeight": 844,
+        "dpr": 1
+      },
+      "screenshot": "P10_ENRICHED__mobile_390.png",
+      "screenshot_sha256": "00b1a054784efdc77567ac24d194896daeb0dddec9f5896b61dd9f8486e881cd"
+    },
+    {
+      "prototype_id": "P10_ENRICHED",
+      "frame_role": "EMOTIONAL_BARRIER_HERO_ENRICHED",
+      "source_path": "examples/prototypes/p10_customer_state_transition_enriched_v1.html",
+      "source_sha256": "809299ee6689d7c9a7fadca025cdbdd5fe3f16e4f739bb5c18c55201309706f3",
+      "viewport": {
+        "name": "desktop_1440",
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "CAPTURED",
+      "metrics": {
+        "scrollWidth": 1440,
+        "scrollHeight": 1000,
+        "clientWidth": 1440,
+        "clientHeight": 1000,
+        "dpr": 1
+      },
+      "screenshot": "P10_ENRICHED__desktop_1440.png",
+      "screenshot_sha256": "00e23ad8a92b1b21648fa6eaaa66b8498ccd71bd58fd68112409adcdc9046a6a"
+    },
+    {
+      "prototype_id": "P02_CORE",
+      "frame_role": "B2B_EXPLAINER_TRUST_CORE",
+      "source_path": "examples/prototypes/p02_customer_world_translation_core_v1.html",
+      "source_sha256": "a78e79cad3379de3f3e6a238f2d46f3afdfaa30d0d8af6fa06bce9d2879645ae",
+      "viewport": {
+        "name": "mobile_390",
+        "width": 390,
+        "height": 844
+      },
+      "status": "CAPTURED",
+      "metrics": {
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "clientWidth": 390,
+        "clientHeight": 844,
+        "dpr": 1
+      },
+      "screenshot": "P02_CORE__mobile_390.png",
+      "screenshot_sha256": "f1ea72f6c639c9eefb83306a08b13da26c2834ce22c4aa3de563b50cf1d6e49d"
+    },
+    {
+      "prototype_id": "P02_CORE",
+      "frame_role": "B2B_EXPLAINER_TRUST_CORE",
+      "source_path": "examples/prototypes/p02_customer_world_translation_core_v1.html",
+      "source_sha256": "a78e79cad3379de3f3e6a238f2d46f3afdfaa30d0d8af6fa06bce9d2879645ae",
+      "viewport": {
+        "name": "desktop_1440",
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "CAPTURED",
+      "metrics": {
+        "scrollWidth": 1440,
+        "scrollHeight": 1000,
+        "clientWidth": 1440,
+        "clientHeight": 1000,
+        "dpr": 1
+      },
+      "screenshot": "P02_CORE__desktop_1440.png",
+      "screenshot_sha256": "edbaa14f568a2b3e125469e0e79bf15e5ffba931056a5e2d9e8214e4d6181f4f"
+    },
+    {
+      "prototype_id": "P10_CORE",
+      "frame_role": "EMOTIONAL_BARRIER_HERO_TRUST_CORE",
+      "source_path": "examples/prototypes/p10_customer_state_transition_core_v1.html",
+      "source_sha256": "7087cdbcffa933ceab77c61fc7f7cae809273d216e3d53122f508c710f0f9fe5",
+      "viewport": {
+        "name": "mobile_390",
+        "width": 390,
+        "height": 844
+      },
+      "status": "CAPTURED",
+      "metrics": {
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "clientWidth": 390,
+        "clientHeight": 844,
+        "dpr": 1
+      },
+      "screenshot": "P10_CORE__mobile_390.png",
+      "screenshot_sha256": "548dab90acc8ece5d9461a85b1dd03d090e8e6f824112e89cac1cc9fb7ddd913"
+    },
+    {
+      "prototype_id": "P10_CORE",
+      "frame_role": "EMOTIONAL_BARRIER_HERO_TRUST_CORE",
+      "source_path": "examples/prototypes/p10_customer_state_transition_core_v1.html",
+      "source_sha256": "7087cdbcffa933ceab77c61fc7f7cae809273d216e3d53122f508c710f0f9fe5",
+      "viewport": {
+        "name": "desktop_1440",
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "CAPTURED",
+      "metrics": {
+        "scrollWidth": 1440,
+        "scrollHeight": 1000,
+        "clientWidth": 1440,
+        "clientHeight": 1000,
+        "dpr": 1
+      },
+      "screenshot": "P10_CORE__desktop_1440.png",
+      "screenshot_sha256": "ed4569c082bbbfaa3e7b7b3e512e4a86bfe9f92c2c410918b7407a541f9f20a9"
+    }
+  ]
+}
