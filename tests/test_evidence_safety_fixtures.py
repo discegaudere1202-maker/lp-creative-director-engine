@@ -26,7 +26,7 @@ class EvidenceSafetyFixtureTest(unittest.TestCase):
     def test_contract_keeps_copy_generation_out_of_scope(self):
         payload = json.loads((ROOT / "config/evidence_selection_engine_contract_v1.json").read_text(encoding="utf-8"))
         self.assertIn("generate_unsupported_reassurance", payload["responsibility_boundary"]["engine_must_not"])
-        self.assertIn("full production engine wiring", payload["not_yet_implemented"])
+        self.assertIn("future batch/render caller integration", payload["not_yet_implemented"])
 
 
 if __name__ == "__main__":
