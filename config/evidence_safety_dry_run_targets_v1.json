@@ -48,7 +48,7 @@
       "company_id": "moribito",
       "conversion_goal": "visit",
       "primary_objections": ["O1_ABILITY", "O3_PROCESS", "O4_NEXT", "O6_COST"],
-      "requested_claims": ["予約後すぐ返信"],
+      "requested_claims": ["返信は24時間以内"],
       "ledger": [
         {"evidence_id":"MORIBITO-E01","company_id":"moribito","case_id":"MORIBITO","evidence_type":"PRODUCT_DETAIL","evidence_strength":"E2_SPECIFIC","target_objections":["O1_ABILITY"],"claim":"楠の木の香りにこだわり、一枚板で家具を作る。","source":"https://moribito.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["HERO"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"CSS material abstraction; official image not reused."},
         {"evidence_id":"MORIBITO-E02","company_id":"moribito","case_id":"MORIBITO","evidence_type":"PLACE_EXPERIENCE","evidence_strength":"E3_OPERATIONAL","target_objections":["O3_PROCESS","O4_NEXT"],"claim":"店内展示の家具に触れて、香りや温かみを体験できる。","source":"https://moribito.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"ELIGIBLE","placement_candidates":["MIDDLE","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Visit experience fact."},
