@@ -83,6 +83,21 @@ class ProductionSafetyBoundaryTest(unittest.TestCase):
         self.assertFalse(report.production_output_allowed)
         self.assertEqual(report.blocked_claims[0]["claim_id"], "CONFIDENTIALITY")
 
+    def test_research_only_evidence_cannot_support_production_claim(self):
+        report = self.run_production({
+            "conversion_goal": "consultation",
+            "primary_objections": ["O7_RISK"],
+            "evidence_ledger": [evidence(
+                evidence_type="RISK_POLICY",
+                target_objections=["O7_RISK"],
+                claim="秘密厳守",
+                usage_status="RESEARCH_ONLY",
+            )],
+            "requested_claims": ["秘密厳守"],
+        })
+        self.assertFalse(report.production_output_allowed)
+        self.assertEqual(report.blocked_claims[0]["claim_id"], "CONFIDENTIALITY")
+
     def test_claim_block_can_continue_with_other_safe_evidence(self):
         report = self.run_production({
             "conversion_goal": "consultation",
