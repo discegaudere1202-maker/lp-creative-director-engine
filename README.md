@@ -34,6 +34,7 @@ AI利用・自動生成であることは顧客価値と無関係。
 - Blind Benchmark Tournament aggregation
 - Blind Benchmark Review UI generator
 - Strict Form Causality checks
+- Safety-only Evidence Selection Gate with provenance, rights and hearing routing
 - GitHub Actions CI
 
 ## Current R&D priority — Quality Ceiling
@@ -155,6 +156,21 @@ Required checks:
 
 Rule:
 **If the company truth changes, the form should have to change.**
+
+## Evidence Safety Gate
+
+The optional pipeline safety input selects only verified, production-eligible
+evidence. It checks provenance, verification date, usage status and rights,
+blocks unsupported reassurance, and routes missing evidence to
+`HEARING_REQUIRED`. It never generates trust copy.
+
+```bash
+lp-engine examples/mahora_v2.json --evidence-safety evidence_safety_input.json
+```
+
+The safety input contains `conversion_goal`, `primary_objections`, an
+`evidence_ledger`, and optional `requested_claims`. Without this option, the
+existing creative-direction pipeline is unchanged.
 
 ## QA tiers
 
