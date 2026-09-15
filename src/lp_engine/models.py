@@ -100,6 +100,7 @@ class PipelineReport:
     safety_scope: str = "UNASSESSED"
     evidence_manifest: list[dict[str, Any]] = field(default_factory=list)
     hearing_requirements: list[dict[str, Any]] = field(default_factory=list)
+    hearing_plan: dict[str, Any] = field(default_factory=dict)
     blocked_claims: list[dict[str, Any]] = field(default_factory=list)
 
     @property
@@ -122,6 +123,7 @@ class PipelineReport:
             "safety_scope": self.safety_scope,
             "evidence_manifest": self.evidence_manifest,
             "hearing_requirements": self.hearing_requirements,
+            "hearing_plan": self.hearing_plan,
             "blocked_claims": self.blocked_claims,
             "results": [asdict(r) for r in self.results],
         }
