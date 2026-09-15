@@ -56,9 +56,26 @@
           "mobile_sha256": "5d3ec89e42dec112dad9fbc5e27079b761d3e1d843e5a231db3f46701df53abc",
           "desktop_sha256": "6b7384d2fe925ef11ae28c1fd62c396ed3119f977ef284d6db35fa86cdc16028",
           "review_note": "Strong current P09 opponent: price is a designed information object, not a buried table, and the mobile pricing frame remains composed."
+        },
+        {
+          "benchmark_id": "studio-price",
+          "evidence_grade": "M3",
+          "review_status": "PASS",
+          "run_id": 34953096999,
+          "artifact_id": 10389977402,
+          "mobile_sha256": "4c4a82ac4a995242f326b797e9da9aac59592ae11ff902d75d593476c5058cff",
+          "desktop_sha256": "8caaccb723885a11ba1a3b2e67d5c6c2d1f67678d261b350145dd33e3c1a901c",
+          "review_note": "Monthly and annual price, audience fit, feature drivers and conversion action coexist in a deliberately recomposed 390px pricing frame without horizontal overflow."
         }
       ],
-      "pending_candidates": ["studio-price", "kintone-price", "ourphoto-price", "lshort-price"]
+      "pending_candidates": ["kintone-price"],
+      "rejected_or_held": [
+        {"benchmark_id": "ourphoto-price", "decision": "REJECT", "reason": "Run 8 returned HTTP 403 for desktop and mobile; focus text was not captured."},
+        {"benchmark_id": "lshort-price", "decision": "HOLD", "reason": "Price and feature differences are clear, but visual/craft strength is more conventional than the desired primary opponent ceiling."},
+        {"benchmark_id": "mhand-price", "decision": "HOLD", "reason": "Mobile pricing readability and fixed-UI interference are not strong enough for strict M3 promotion."},
+        {"benchmark_id": "alotof-price", "decision": "REJECT", "reason": "The captured frame did not reliably reach the intended pricing section."},
+        {"benchmark_id": "cndoor-price", "decision": "REJECT", "reason": "The captured frame did not reliably reach the intended pricing section."}
+      ]
     },
     "P10": {
       "concept": "Customer State Transition",
