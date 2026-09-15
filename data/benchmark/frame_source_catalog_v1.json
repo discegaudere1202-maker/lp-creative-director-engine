@@ -25,5 +25,7 @@
   {"name":"Studio.Business","authority":["B2B","INTERFACE"],"jobs":["HERO_STOP","EVIDENCE_MONUMENT"],"lesson":"Web制作を成果基盤として再定義し、実UI/実績へ接続。","source":"https://studio.design/ja/business"},
   {"name":"NPO法人アクション","authority":["PERSON","STORY"],"jobs":["VALUE_REFRAME","CTA_CLOSURE"],"lesson":"成果だけでなく活動理由と個人の関わりを可視化し、共感から行動へつなぐ。","source":"https://designaward2025.studio.design/nominate/action"},
   {"name":"IMA","authority":["MOTION","TYPOGRAPHY"],"jobs":["HERO_STOP","VALUE_REFRAME"],"lesson":"『かきまぜる』というBusiness Verbを円運動とレイアウトに変換。","source":"https://designaward2025.studio.design/nominate/ima-inc"},
-  {"name":"文化ノ台所","authority":["PLACE","SENSORY"],"jobs":["PLACE_DESIRE","HERO_STOP"],"lesson":"食・仕事・宿泊が共存する場所の体験価値を中心に構成。","source":"https://designaward2025.studio.design/nominate/bunkanodaidokoro"}
+  {"name":"文化ノ台所","authority":["PLACE","SENSORY"],"jobs":["PLACE_DESIRE","HERO_STOP"],"lesson":"食・仕事・宿泊が共存する場所の体験価値を中心に構成。","source":"https://designaward2025.studio.design/nominate/bunkanodaidokoro"},
+  {"name":"岩崎電気 企業サイト","authority":["DOCUMENT","UTILITY","TRUST"],"jobs":["PROCESS_EXPLAIN","OBJECTION_RESOLVE"],"lesson":"業界と社風に合う抑制された表現を保ちながら、多様なナビゲーションと検索で複雑なB2B情報を使いやすくする。派手さより継続改善を品質に含める。","source":"https://award.dmi.jaa.or.jp/winner/gp13c_report"},
+  {"name":"地域共創メディア Lumiarch","authority":["EDITORIAL","DOCUMENT","UTILITY"],"jobs":["VALUE_REFRAME","PROCESS_EXPLAIN"],"lesson":"広告感を抑えた編集品質、理解しやすいカテゴリ名、タグ検索を組み合わせ、長い情報探索そのものを信頼体験へ変える。","source":"https://award.dmi.jaa.or.jp/winner/gp13c_report"}
 ]
