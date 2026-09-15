@@ -7,6 +7,11 @@ from typing import Any
 
 
 CRITICAL_AXES = {"owner_specificity", "share_impulse"}
+REQUIRED_VIEWPORTS = {"1440", "390"}
+VALID_VOTE_VALUES = {-1, 0, 1}
+MIN_BENCHMARKS = 3
+MAX_BENCHMARKS = 5
+MIN_REVIEWER_TYPES = 2
 
 
 @dataclass
@@ -63,7 +68,7 @@ def _mean(values: list[float]) -> float:
 
 
 def aggregate_tournament(payload: dict[str, Any]) -> TournamentResult:
-    """Aggregate blind pairwise votes.
+    """Aggregate formal blind pairwise votes.
 
     Vote schema:
     {
@@ -75,33 +80,89 @@ def aggregate_tournament(payload: dict[str, Any]) -> TournamentResult:
     }
 
     +1 means candidate wins, 0 tie, -1 benchmark wins.
+
+    A formal verdict requires a complete comparison matrix:
+    - 3–5 benchmarks
+    - at least two reviewer types
+    - every benchmark reviewed at both 1440 and 390
+    - every benchmark × viewport cell reviewed by at least two reviewer types
+    - Owner Specificity and Share Impulse present in every vote
+    - all vote values are -1 / 0 / +1
+
+    Incomplete evidence always returns HOLD. It must never become PASS or FAIL merely
+    because the partial votes happen to be strong or weak.
     """
     votes = payload.get("votes", [])
-    benchmark_ids = sorted({str(v.get("benchmark_id")) for v in votes if v.get("benchmark_id")})
-    reviewer_types = sorted({str(v.get("reviewer_type")) for v in votes if v.get("reviewer_type")})
+    benchmark_ids = sorted({
+        str(v.get("benchmark_id"))
+        for v in votes
+        if str(v.get("benchmark_id") or "").strip()
+    })
+    reviewer_types = sorted({
+        str(v.get("reviewer_type"))
+        for v in votes
+        if str(v.get("reviewer_type") or "").strip()
+    })
 
-    wins = sum(1 for v in votes if int(v.get("overall", 0)) > 0)
-    ties = sum(1 for v in votes if int(v.get("overall", 0)) == 0)
-    losses = sum(1 for v in votes if int(v.get("overall", 0)) < 0)
-    comparisons = wins + ties + losses
-    win_rate = (wins + ties * 0.5) / comparisons if comparisons else 0.0
-
+    valid_overall_values: list[int] = []
     axis_values: dict[str, list[float]] = defaultdict(list)
     viewport_values: dict[str, list[int]] = defaultdict(list)
     per_benchmark: dict[str, list[int]] = defaultdict(list)
+    cell_reviewers: dict[tuple[str, str], set[str]] = defaultdict(set)
+    review_reasons: list[str] = []
+
+    malformed_vote_count = 0
+    missing_critical_axis_count = 0
 
     for vote in votes:
+        benchmark_id = str(vote.get("benchmark_id") or "").strip()
+        reviewer_type = str(vote.get("reviewer_type") or "").strip()
         viewport = str(vote.get("viewport") or "unknown")
-        overall = int(vote.get("overall", 0))
+
+        try:
+            overall = int(vote.get("overall", 0))
+        except (TypeError, ValueError):
+            overall = 99
+
+        if overall not in VALID_VOTE_VALUES:
+            malformed_vote_count += 1
+            continue
+
+        valid_overall_values.append(overall)
         viewport_values[viewport].append(overall)
-        benchmark_id = str(vote.get("benchmark_id") or "unknown")
-        per_benchmark[benchmark_id].append(overall)
-        for axis, value in (vote.get("axes") or {}).items():
+        if benchmark_id:
+            per_benchmark[benchmark_id].append(overall)
+        if benchmark_id and reviewer_type:
+            cell_reviewers[(benchmark_id, viewport)].add(reviewer_type)
+
+        axes = vote.get("axes") or {}
+        if not CRITICAL_AXES.issubset(set(axes)):
+            missing_critical_axis_count += 1
+
+        for axis, value in axes.items():
             if value is None:
                 continue
-            axis_values[str(axis)].append(float(value))
+            try:
+                numeric = float(value)
+            except (TypeError, ValueError):
+                malformed_vote_count += 1
+                continue
+            if numeric not in VALID_VOTE_VALUES:
+                malformed_vote_count += 1
+                continue
+            axis_values[str(axis)].append(numeric)
 
-    axis_means = {axis: round(_mean(vals), 4) for axis, vals in sorted(axis_values.items())}
+    wins = sum(1 for x in valid_overall_values if x > 0)
+    ties = sum(1 for x in valid_overall_values if x == 0)
+    losses = sum(1 for x in valid_overall_values if x < 0)
+    comparisons = len(valid_overall_values)
+    win_rate = (wins + ties * 0.5) / comparisons if comparisons else 0.0
+
+    axis_means = {
+        axis: round(_mean(vals), 4)
+        for axis, vals in sorted(axis_values.items())
+    }
+
     viewport_results: dict[str, Any] = {}
     for viewport, vals in sorted(viewport_values.items()):
         vp_wins = sum(1 for x in vals if x > 0)
@@ -115,23 +176,44 @@ def aggregate_tournament(payload: dict[str, Any]) -> TournamentResult:
             "win_rate": round((vp_wins + vp_ties * 0.5) / total, 4) if total else 0.0,
         }
 
-    clearly_lost_benchmarks = 0
-    for vals in per_benchmark.values():
-        if _mean(vals) <= -0.5:
-            clearly_lost_benchmarks += 1
+    clearly_lost_benchmarks = sum(
+        1 for vals in per_benchmark.values()
+        if vals and _mean(vals) <= -0.5
+    )
 
-    review_reasons: list[str] = []
+    if len(benchmark_ids) < MIN_BENCHMARKS:
+        review_reasons.append(f"fewer than {MIN_BENCHMARKS} benchmarks")
+    if len(benchmark_ids) > MAX_BENCHMARKS:
+        review_reasons.append(f"more than {MAX_BENCHMARKS} benchmarks")
+    if len(reviewer_types) < MIN_REVIEWER_TYPES:
+        review_reasons.append(f"fewer than {MIN_REVIEWER_TYPES} reviewer types")
 
-    if len(benchmark_ids) < 3:
-        review_reasons.append("fewer than 3 benchmarks")
-    if len(reviewer_types) < 2:
-        review_reasons.append("fewer than 2 reviewer types")
-
-    for viewport in ("1440", "390"):
+    for viewport in sorted(REQUIRED_VIEWPORTS, reverse=True):
         if viewport not in viewport_results:
             review_reasons.append(f"missing required viewport {viewport}")
 
-    critical_losses = [axis for axis in CRITICAL_AXES if axis_means.get(axis, 0.0) <= -0.35]
+    incomplete_cells: list[str] = []
+    for benchmark_id in benchmark_ids:
+        for viewport in sorted(REQUIRED_VIEWPORTS, reverse=True):
+            reviewers = cell_reviewers.get((benchmark_id, viewport), set())
+            if len(reviewers) < MIN_REVIEWER_TYPES:
+                incomplete_cells.append(f"{benchmark_id}@{viewport}")
+    if incomplete_cells:
+        review_reasons.append("incomplete reviewer matrix: " + ", ".join(incomplete_cells))
+
+    if missing_critical_axis_count:
+        review_reasons.append(
+            "votes missing critical axes owner_specificity/share_impulse: "
+            f"{missing_critical_axis_count}"
+        )
+    if malformed_vote_count:
+        review_reasons.append(f"invalid vote values: {malformed_vote_count}")
+
+    critical_losses = [
+        axis
+        for axis in CRITICAL_AXES
+        if axis_means.get(axis, 0.0) <= -0.35
+    ]
     if critical_losses:
         review_reasons.append("critical axis loss: " + ", ".join(sorted(critical_losses)))
 
@@ -144,13 +226,18 @@ def aggregate_tournament(payload: dict[str, Any]) -> TournamentResult:
         review_reasons.append("desktop competitive but mobile outclassed")
 
     requirements_complete = (
-        len(benchmark_ids) >= 3
-        and len(reviewer_types) >= 2
-        and "1440" in viewport_results
-        and "390" in viewport_results
+        MIN_BENCHMARKS <= len(benchmark_ids) <= MAX_BENCHMARKS
+        and len(reviewer_types) >= MIN_REVIEWER_TYPES
+        and REQUIRED_VIEWPORTS.issubset(viewport_results)
+        and not incomplete_cells
+        and missing_critical_axis_count == 0
+        and malformed_vote_count == 0
     )
 
-    if requirements_complete and win_rate >= 0.60 and not critical_losses and clearly_lost_benchmarks < 2:
+    if not requirements_complete:
+        status = "HOLD"
+        classification = "REVIEW_REQUIRED"
+    elif win_rate >= 0.60 and not critical_losses and clearly_lost_benchmarks < 2:
         status = "PASS"
         classification = "COMPETITIVE_OR_SUPERIOR"
     elif win_rate < 0.45 or clearly_lost_benchmarks >= 2 or len(critical_losses) >= 2:
