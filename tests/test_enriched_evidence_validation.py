@@ -15,9 +15,10 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
                 self.assertTrue((ROOT / item["baseline_path"]).is_file())
                 self.assertNotEqual(item["path"], item["baseline_path"])
 
-    def test_capture_config_has_formal_viewports(self):
+    def test_capture_config_has_formal_viewports_and_targets(self):
         self.assertEqual({(v["width"], v["height"]) for v in self.config["viewports"]}, {(390, 844), (1440, 1000)})
         self.assertEqual({v["prototype_id"] for v in self.config["variants"]}, {"P02_ENRICHED", "P10_ENRICHED"})
+        self.assertEqual({t["prototype_id"] for t in self.config["targets"]}, {"P02_ENRICHED", "P10_ENRICHED"})
 
     def test_evidence_ledgers_are_source_bound_and_unknown_safe(self):
         for item in self.config["variants"]:
@@ -28,6 +29,16 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
                     self.assertTrue(fact["source_url"].startswith("https://"))
                     self.assertTrue(fact["source_excerpt"].strip())
             self.assertTrue(payload["unknowns"])
+
+    def test_enriched_formal_results_are_complete(self):
+        for name in ("P02_ENRICHED", "P10_ENRICHED"):
+            path = ROOT / "data" / "formal_tournament_results" / f"{name}_formal_blind_tournament_v1.json"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(payload["tournament_type"], "FORMAL_BLIND_TOURNAMENT")
+            self.assertTrue(all(payload["formal_completeness"].values()))
+            self.assertEqual(len(payload["votes"]), 12)
+            self.assertEqual(payload["candidate_capture"]["artifact_id"], 10394593910)
+            self.assertEqual(payload["blind_bundle"]["identity_masking"], "PASS")
 
     def test_variant_copy_contains_only_researched_proof_hooks(self):
         p02 = (ROOT / "examples/prototypes/p02_customer_world_translation_enriched_v1.html").read_text(encoding="utf-8")

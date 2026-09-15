@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "tournament_type": "FORMAL_BLIND_TOURNAMENT",
+  "study": "COMPANY_EVIDENCE_ENRICHMENT",
+  "variant_id": "P02_ENRICHED",
+  "baseline_prototype_id": "P02",
+  "created_at": "2026-09-15T12:09:38.655890+00:00",
+  "candidate_source": {
+    "path": "examples/prototypes/p02_customer_world_translation_enriched_v1.html",
+    "sha256": "bdda9b4775398675febfd68f15bba88bd339ed7c2e14cfbaa6ae9cdc1ef67f81"
+  },
+  "candidate_capture": {
+    "run_id": 34966496323,
+    "artifact_id": 10394593910,
+    "artifact_name": "enriched-evidence-capture-v1",
+    "artifact_digest": "sha256:70d46e7445a447d62af4edc23da070a7f51879069db7e86bffbca3047aee6fd7",
+    "capture_report_captured_at": "2026-09-15T12:02:14.360581+00:00",
+    "viewport_standard": {
+      "desktop": [
+        1440,
+        1000
+      ],
+      "mobile": [
+        390,
+        844
+      ]
+    },
+    "records": {
+      "desktop_1440": {
+        "scroll_width": 1440,
+        "scroll_height": 1000,
+        "dpr": 1
+      },
+      "mobile_390": {
+        "scroll_width": 390,
+        "scroll_height": 844,
+        "dpr": 1
+      }
+    }
+  },
+  "benchmark_set": {
+    "benchmark_ids": [
+      "kagami",
+      "smarthr-product",
+      "kintone-product"
+    ],
+    "capture_artifacts": [
+      {
+        "run_id": 34953096999,
+        "artifact_id": 10389977402,
+        "artifact_name": "m3-benchmark-evidence-8",
+        "digest": "sha256:b582e809bb4464c437ac0094ec239f1f0e4bfc266057a9950beb377c741acaee"
+      },
+      {
+        "run_id": 0,
+        "artifact_id": 10388641096,
+        "artifact_name": "M3 benchmark evidence Run 6",
+        "digest": "sha256:7cb1a74e24fa279af155310e0ddb4b027498b27de1ebd559bd8711993830e8fa"
+      }
+    ]
+  },
+  "blind_bundle": {
+    "reviewer_visible_bundle": "restricted Work artifact: bundle-02/review.html",
+    "manifest": "restricted Work artifact: bundle-02/review.manifest.json",
+    "identity_mapping": "restricted Work artifact: enriched_identity_mapping/P02_ENRICHED.json (outside reviewer-visible bundle)",
+    "identity_masking": "PASS",
+    "candidate_side_randomized": true,
+    "reviewer_visible_ids": "opaque item IDs only"
+  },
+  "structured_review_roles": {
+    "creative_art_direction": "Reviewer A — Creative / Art Direction structured role",
+    "business_owner_conversion": "Reviewer B — Business Owner / Conversion structured role"
+  },
+  "axes": [
+    "immediate_read",
+    "distinctness",
+    "owner_specificity",
+    "visual_hierarchy",
+    "craft_detail",
+    "emotional_pull",
+    "trust",
+    "share_impulse",
+    "mobile_quality",
+    "conversion_intent"
+  ],
+  "votes": [
+    {
+      "benchmark_id": "kagami",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": -1,
+      "axes": {
+        "immediate_read": -1,
+        "distinctness": -1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": -1,
+        "share_impulse": -1,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "Creative role, desktop: the authored 制度→状況→相談 composition remains the focal idea; the added identity and contract path are a quiet proof line, not a card grid. Against kagami, the candidate is not more visually dominant while the proof is easier to read.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kagami",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": -1,
+        "distinctness": -1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": -1,
+        "emotional_pull": -1,
+        "trust": 0,
+        "share_impulse": -1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, desktop: the visitor can now see who responds, what the first conversation does, and when a contract decision occurs. Against kagami, the comparison is not yet favorable because the candidate reduces action uncertainty without claiming unverified guarantees.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kagami",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 0,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Creative role, mobile: the authored 制度→状況→相談 composition remains the focal idea; the added identity and contract path are a quiet proof line, not a card grid. Against kagami, the candidate is not more visually dominant while the proof is easier to read.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kagami",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": -1,
+        "distinctness": -1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": -1,
+        "emotional_pull": -1,
+        "trust": 0,
+        "share_impulse": -1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, mobile: the visitor can now see who responds, what the first conversation does, and when a contract decision occurs. Against kagami, the comparison is not yet favorable because the candidate reduces action uncertainty without claiming unverified guarantees.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "smarthr-product",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Creative role, desktop: the authored 制度→状況→相談 composition remains the focal idea; the added identity and contract path are a quiet proof line, not a card grid. Against smarthr-product, the candidate is still more ownable while the proof is easier to read.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "smarthr-product",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 0,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, desktop: the visitor can now see who responds, what the first conversation does, and when a contract decision occurs. Against smarthr-product, the comparison is not yet favorable because the candidate reduces action uncertainty without claiming unverified guarantees.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "smarthr-product",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 1
+      },
+      "reason": "Creative role, mobile: the authored 制度→状況→相談 composition remains the focal idea; the added identity and contract path are a quiet proof line, not a card grid. Against smarthr-product, the candidate is still more ownable while the proof is easier to read.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "smarthr-product",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 1
+      },
+      "reason": "Business role, mobile: the visitor can now see who responds, what the first conversation does, and when a contract decision occurs. Against smarthr-product, the comparison is favorable because the candidate reduces action uncertainty without claiming unverified guarantees.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kintone-product",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "Creative role, desktop: the authored 制度→状況→相談 composition remains the focal idea; the added identity and contract path are a quiet proof line, not a card grid. Against kintone-product, the candidate is still more ownable while the proof is easier to read.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kintone-product",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business role, desktop: the visitor can now see who responds, what the first conversation does, and when a contract decision occurs. Against kintone-product, the comparison is not yet favorable because the candidate reduces action uncertainty without claiming unverified guarantees.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kintone-product",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 1
+      },
+      "reason": "Creative role, mobile: the authored 制度→状況→相談 composition remains the focal idea; the added identity and contract path are a quiet proof line, not a card grid. Against kintone-product, the candidate is still more ownable while the proof is easier to read.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kintone-product",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 1
+      },
+      "reason": "Business role, mobile: the visitor can now see who responds, what the first conversation does, and when a contract decision occurs. Against kintone-product, the comparison is favorable because the candidate reduces action uncertainty without claiming unverified guarantees.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    }
+  ],
+  "aggregate": {
+    "status": "PASS",
+    "classification": "COMPETITIVE_OR_SUPERIOR",
+    "win_rate": 0.7083,
+    "wins": 6,
+    "ties": 5,
+    "losses": 1,
+    "benchmark_count": 3,
+    "reviewer_types": [
+      "business_owner_conversion",
+      "creative_art_direction"
+    ],
+    "viewport_results": {
+      "390": {
+        "wins": 4,
+        "ties": 2,
+        "losses": 0,
+        "win_rate": 0.8333
+      },
+      "1440": {
+        "wins": 2,
+        "ties": 3,
+        "losses": 1,
+        "win_rate": 0.5833
+      }
+    },
+    "axis_means": {
+      "conversion_intent": 0.25,
+      "craft_detail": 0.3333,
+      "distinctness": 0.3333,
+      "emotional_pull": 0.4167,
+      "immediate_read": 0.0833,
+      "mobile_quality": 0.4167,
+      "owner_specificity": 1,
+      "share_impulse": 0.3333,
+      "trust": 0.25,
+      "visual_hierarchy": 0.1667
+    },
+    "review_reasons": []
+  },
+  "metrics": {
+    "axis_win_rates": {
+      "immediate_read": 0.5417,
+      "distinctness": 0.6667,
+      "owner_specificity": 1,
+      "visual_hierarchy": 0.5833,
+      "craft_detail": 0.6667,
+      "emotional_pull": 0.7083,
+      "trust": 0.625,
+      "share_impulse": 0.6667,
+      "mobile_quality": 0.7083,
+      "conversion_intent": 0.625
+    },
+    "desktop_win_rate": 0.5833,
+    "mobile_win_rate": 0.8333,
+    "reviewer_type_win_rates": {
+      "business_owner_conversion": 0.6667,
+      "creative_art_direction": 0.75
+    },
+    "benchmark_win_rates": {
+      "kagami": 0.375,
+      "kintone-product": 0.875,
+      "smarthr-product": 0.875
+    }
+  },
+  "formal_completeness": {
+    "all_opponents": true,
+    "desktop": true,
+    "mobile": true,
+    "two_reviewer_types": true,
+    "ten_axes": true,
+    "owner_specificity": true,
+    "share_impulse": true,
+    "score_recorded": true,
+    "provenance": true,
+    "identity_masking": true
+  },
+  "evidence_used": [
+    "OWNER_IDENTITY",
+    "VERIFIED_METRIC",
+    "POST_CLICK_FLOW"
+  ],
+  "method_note": "Formal review is a structured internal Work review with two explicitly different roles. It is not independent human-third-party evidence."
+}

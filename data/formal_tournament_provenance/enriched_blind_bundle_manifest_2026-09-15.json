@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "study": "Company Evidence Enrichment",
+  "bundles": [
+    {
+      "variant_id": "P02_ENRICHED",
+      "reviewer_visible_bundle": "restricted Work artifact bundle-02",
+      "pair_count": 6,
+      "seed": 20260915,
+      "candidate_id": "item-a",
+      "benchmark_ids": [
+        "item-b",
+        "item-c",
+        "item-d"
+      ],
+      "identity_mapping": "separate restricted Work artifact",
+      "candidate_side_randomized": true,
+      "axes": 10
+    },
+    {
+      "variant_id": "P10_ENRICHED",
+      "reviewer_visible_bundle": "restricted Work artifact bundle-10",
+      "pair_count": 6,
+      "seed": 20260916,
+      "candidate_id": "item-a",
+      "benchmark_ids": [
+        "item-b",
+        "item-c",
+        "item-d"
+      ],
+      "identity_mapping": "separate restricted Work artifact",
+      "candidate_side_randomized": true,
+      "axes": 10
+    }
+  ],
+  "rule": "Reviewer-visible bundle contains only anonymous item IDs, LEFT/RIGHT labels, exact viewport screenshots and ten axis labels. Candidate/benchmark identity mapping is not in the reviewer bundle.",
+  "roles": [
+    "Creative / Art Direction structured review role",
+    "Business Owner / Conversion structured review role"
+  ],
+  "note": "No independent human-third-party claim is made."
+}

@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "study": "Company Evidence Enrichment",
+  "baseline_results": {
+    "P02": {
+      "result_path": "data/formal_tournament_results/P02_formal_blind_tournament_v1.json",
+      "win_rate": 0.625,
+      "trust": 0.3333,
+      "conversion_intent": 0.3333,
+      "reviewer_b": 0.5,
+      "desktop": 0.5,
+      "mobile": 0.75,
+      "distinctness": 0.6667,
+      "owner_specificity": 1,
+      "share_impulse": 0.6667,
+      "emotional_pull": 0.7083
+    },
+    "P09": {
+      "status": "COMPETITIVE",
+      "win_rate": 0.6875,
+      "changed": false
+    },
+    "P10": {
+      "result_path": "data/formal_tournament_results/P10_formal_blind_tournament_v1.json",
+      "win_rate": 0.625,
+      "trust": 0.3333,
+      "conversion_intent": 0.5,
+      "reviewer_b": 0.3333,
+      "desktop": 0.6667,
+      "mobile": 0.5833,
+      "distinctness": 0.875,
+      "owner_specificity": 1,
+      "share_impulse": 0.875,
+      "emotional_pull": 0.6667
+    }
+  },
+  "enriched_results": {
+    "P02": {
+      "result_path": "data/formal_tournament_results/P02_ENRICHED_formal_blind_tournament_v1.json",
+      "win_rate": 0.7083,
+      "trust": 0.625,
+      "conversion_intent": 0.625,
+      "reviewer_b": 0.6667,
+      "desktop": 0.5833,
+      "mobile": 0.8333,
+      "distinctness": 0.6667,
+      "owner_specificity": 1,
+      "share_impulse": 0.6667,
+      "emotional_pull": 0.7083,
+      "benchmark_results": {
+        "kagami": "0W/3T/1L",
+        "smarthr_product": "3W/1T/0L",
+        "kintone_product": "3W/1T/0L"
+      }
+    },
+    "P10": {
+      "result_path": "data/formal_tournament_results/P10_ENRICHED_formal_blind_tournament_v1.json",
+      "win_rate": 0.7083,
+      "trust": 0.5417,
+      "conversion_intent": 0.5417,
+      "reviewer_b": 0.5,
+      "desktop": 0.75,
+      "mobile": 0.6667,
+      "distinctness": 0.875,
+      "owner_specificity": 1,
+      "share_impulse": 0.875,
+      "emotional_pull": 0.6667,
+      "benchmark_results": {
+        "carigaku_career": "1W/2T/1L",
+        "sell_step_career": "2W/2T/0L",
+        "lfu_career": "3W/1T/0L"
+      }
+    }
+  },
+  "creative_protection": "No decline in Owner Specificity, Distinctness, Share Impulse, Emotional Pull or Mobile Quality in the Enriched structured comparison; this is a review observation, not live conversion data.",
+  "evidence_ids": {
+    "P02": [
+      "P02-E01",
+      "P02-E02",
+      "P02-E04"
+    ],
+    "P10": [
+      "P10-E02",
+      "P10-E03",
+      "P10-E04"
+    ]
+  },
+  "status": "FORMAL_COMPLETE_STRUCTURED_REVIEW"
+}

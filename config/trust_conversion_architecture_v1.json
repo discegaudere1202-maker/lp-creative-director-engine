@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-09-15",
   "name": "Trust / Conversion Architecture",
   "purpose": "Connect company-specific creative form to a trustworthy, psychologically safe next action without evidence bloat.",
@@ -41,6 +41,24 @@
       "when": "Trust copy is added to a desktop-first composition.",
       "do": "Re-art the mobile CTA Zone and preserve a visible action at 390x844.",
       "limit": "Run widths 320, 360, 375, 390, 430, 768, 1024, 1280 and 1440; no horizontal overflow or forbidden Japanese line shapes."
+    },
+    {
+      "id": "WHO_HOW_NEXT_BRIDGE",
+      "when": "Verified owner or service evidence is present and the visitor still has to infer what happens next.",
+      "do": "Connect one identity fact to one operational action and one decision boundary in the CTA Zone.",
+      "limit": "Use only facts verified for this company; do not imply a named person is assigned unless confirmed."
+    },
+    {
+      "id": "UNKNOWN_BOUNDARY",
+      "when": "Trust research exposes an absent policy, response time, confidentiality promise or guarantee.",
+      "do": "Record UNKNOWN and reserve an evidence slot for future hearing.",
+      "limit": "Never convert an UNKNOWN into reassuring marketing copy."
+    },
+    {
+      "id": "EVIDENCE_STRENGTH_MODEL",
+      "when": "Selecting which company facts to place in a Sales Sample.",
+      "do": "Score evidence from E1 Weak through E5 Decision Enabling and prefer the smallest connected sequence.",
+      "limit": "Strength describes decision usefulness, not the amount of copy or prestige of the claim."
     }
   ],
   "evidence_slots": [
@@ -52,8 +70,92 @@
     "RESPONSE_EXPECTATION",
     "POST_CLICK_FLOW",
     "RISK_POLICY",
-    "SCOPE_BOUNDARY"
+    "SCOPE_BOUNDARY",
+    "OWNER_IDENTITY"
   ],
-  "status": "RESEARCH_RULE_READY_NOT_ENGINE_IMPLEMENTED",
-  "provenance": "Derived from the 2026-09-15 P02/P09/P10 formal blind tournament and official external-page research. Structured Work review, not independent human-third-party evidence."
+  "status": "OBSERVED_NOT_ENGINE_IMPLEMENTED",
+  "provenance": "Derived from the 2026-09-15 P02/P09/P10 formal blind tournament and official external-page research. Structured Work review, not independent human-third-party evidence.",
+  "evidence_strength_model": [
+    {
+      "level": "E1_WEAK",
+      "definition": "一般的説明で、会社固有性がない。",
+      "placement": "原則LPのTrust proofには使わない。"
+    },
+    {
+      "level": "E2_SPECIFIC",
+      "definition": "会社固有の氏名、資格、経歴、実績、対応範囲。",
+      "placement": "入口付近またはQuiet Chapterで1点。"
+    },
+    {
+      "level": "E3_OPERATIONAL",
+      "definition": "誰が何をするかが分かる実務・プロセス情報。",
+      "placement": "ProofとCTAの間に短く接続。"
+    },
+    {
+      "level": "E4_RISK_REDUCING",
+      "definition": "顧客の不利益や心理的不安を直接減らす確認済み情報。",
+      "placement": "CTA直前のPermission／境界として使う。"
+    },
+    {
+      "level": "E5_DECISION_ENABLING",
+      "definition": "次に進むか、どの条件で進むかを判断できる情報。",
+      "placement": "CTA ZoneのAfter CTAに置く。"
+    }
+  ],
+  "evidence_contract": {
+    "REQUIRED": [
+      "responsible_person_or_team",
+      "service_scope_boundary",
+      "first_action_and_post_click_flow",
+      "fee_or_free_condition_or_explicit_UNKNOWN",
+      "source_url_or_provenance_for_each_claim"
+    ],
+    "HIGH_VALUE": [
+      "response_expectation",
+      "consultation_method",
+      "process_steps",
+      "risk_or_solicitation_policy",
+      "confidentiality_or_privacy_boundary",
+      "verified_case_or_testimonial",
+      "owner_quote"
+    ],
+    "OPTIONAL": [
+      "rights-cleared_owner_portrait",
+      "verified_metric",
+      "result_case_detail",
+      "office_or_place_photo"
+    ]
+  },
+  "hearing_requirements": {
+    "REQUIRED": [
+      "誰が対応するか（担当者または担当チーム）",
+      "対応範囲と対象外",
+      "最初の相談／問い合わせ後に何が起きるか",
+      "料金・無料条件と費用発生タイミング",
+      "公開可能な一次EvidenceのURLまたは確認方法"
+    ],
+    "HIGH_VALUE": [
+      "返信目安",
+      "相談方法・時間・場所",
+      "守秘／個人情報の扱い",
+      "無理な勧誘をしない場合の明示方針",
+      "契約・転職を進めない場合の扱い",
+      "顧客が選べること・断れること",
+      "代表者の言葉・実在事例"
+    ],
+    "OPTIONAL": [
+      "権利許諾済みの人物写真",
+      "検証可能な実績数値",
+      "詳細な結果事例",
+      "現場・オフィス写真"
+    ]
+  },
+  "validation_note": "P02/P10の2 Enriched Variantsで、WHO/HOW/NEXTまたは相談継続性をCTA Zoneに精密配置したStructured Work Review上の観測。一般則のVALIDATED/ENGINE_READY昇格ではない。",
+  "engine_ready_candidate_rules": [
+    "PROOF_TO_PROCESS",
+    "AFTER_CLICK_CERTAINTY",
+    "EVIDENCE_ECONOMY",
+    "MOBILE_ACTION_BUDGET",
+    "WHO_HOW_NEXT_BRIDGE"
+  ]
 }
