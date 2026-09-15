@@ -23,7 +23,7 @@ class PrototypeRegistryTest(unittest.TestCase):
         audit = audit_prototypes(records)
         self.assertEqual(audit["status"], "PASS")
         self.assertEqual(audit["total"], len(payload["prototypes"]))
-        self.assertEqual(audit["counts"]["COMPETITIVE"], 0)
+        self.assertEqual(audit["counts"]["COMPETITIVE"], 1)\n        self.assertIn("P09", audit["golden_sample_importable"])
 
     def test_competitive_requires_benchmark_pass(self):
         record = PrototypeRecord(
