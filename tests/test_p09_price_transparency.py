@@ -75,8 +75,11 @@ class P09PriceTransparencyTest(unittest.TestCase):
                 finally:
                     page.close()
 
-    def test_meaning_units_do_not_collapse_into_fragments(self):
-        selectors = ["h1 span", ".lead", ".factor strong", ".factor p", ".closing .small"]
+    def test_prose_meaning_units_do_not_collapse_into_fragments(self):
+        # Category labels such as "仕様" are intentionally short nouns. They follow
+        # a label rule, not the prose/headline rule. This selector list therefore
+        # contains only copy-bearing prose/headline elements.
+        selectors = ["h1 span", ".lead", ".factor p", ".closing .small"]
         for width in WIDTHS:
             with self.subTest(width=width):
                 page = self._page(width)
@@ -98,6 +101,19 @@ class P09PriceTransparencyTest(unittest.TestCase):
                                     self.fail(
                                         f"short Japanese fragment at {width}px in {selector}: {line}"
                                     )
+                finally:
+                    page.close()
+
+    def test_factor_labels_remain_single_semantic_tokens(self):
+        expected = ["サイズ", "仕様", "設置場所"]
+        for width in WIDTHS:
+            with self.subTest(width=width):
+                page = self._page(width)
+                try:
+                    labels = page.locator(".factor strong").all_inner_texts()
+                    self.assertEqual(labels, expected)
+                    wraps = page.evaluate(LINE_TEXT_JS, ".factor strong")
+                    self.assertTrue(all(len(lines) == 1 for lines in wraps))
                 finally:
                     page.close()
 
