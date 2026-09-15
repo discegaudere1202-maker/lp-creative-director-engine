@@ -132,3 +132,8 @@ The validated safety boundary is now available as an optional gate in the existi
 This is a safety integration, not Trust Optimization automation. The gate returns verified claims and evidence records only; it does not write copy, infer reassurance, expand conditional claims, or approve unknown-rights visuals.
 
 The wiring was covered by three pipeline tests: verified evidence passes, a blocked confidentiality request fails without approved copy and emits hearing data, and the legacy pipeline remains unchanged without safety input. The full repository QA remains the SSOT for final regression.
+
+
+## Research-only versus production usage
+
+The Safety Gate distinguishes a verified research candidate from customer-facing production evidence. A record with `usage_status=RESEARCH_ONLY` may remain visible in research/dry-run outputs, but the production pipeline requires `ELIGIBLE` or `PRODUCTION_ELIGIBLE`. Unknown or unconfirmed usage therefore routes to permission review/hearing; it is never silently promoted by a verified claim or by `NOT_APPLICABLE` rights alone.
