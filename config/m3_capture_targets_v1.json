@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "rule": "Capture is evidence acquisition only. A successful screenshot never auto-promotes a benchmark to M3; visual review is still required.",
+  "viewports": [
+    {"name": "mobile_390", "width": 390, "height": 844},
+    {"name": "desktop_1440", "width": 1440, "height": 1000}
+  ],
+  "targets": [
+    {
+      "benchmark_id": "ima-inc",
+      "url": "https://ima-inc.world/",
+      "wait_ms": 3500
+    },
+    {
+      "benchmark_id": "jikkanokoto",
+      "url": "https://jikkanokoto.com/",
+      "wait_ms": 3500
+    },
+    {
+      "benchmark_id": "smarthr-recruit",
+      "url": "https://recruit.smarthr.co.jp/",
+      "wait_ms": 3500
+    }
+  ]
+}
