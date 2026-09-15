@@ -1,0 +1,53 @@
+{
+  "schema_version": "production_generation_v1",
+  "creative_problem": "どこへ相談すればよいか分からないを、相談の入口をひらくへ変える。",
+  "target_customer_state": {
+    "before": "どこへ相談すればよいか分からない",
+    "after": "まず状況を伝えてみようと思える",
+    "barrier": "車種や状態をうまく説明できるか分からない"
+  },
+  "desired_customer_transition": "まず状況を伝えてみようと思える",
+  "core_message": "バイクの事なら何でもお気軽にご相談下さい。",
+  "big_idea": "バイクの事なら何でもお気軽にご相談下さい。を、相談の入口をひらくの入口として見せる。",
+  "emotional_barrier": "車種や状態をうまく説明できるか分からない",
+  "trust_strategy": {
+    "approved_proof": [
+      "バイクの事なら何でもお気軽にご相談下さい。",
+      "福岡市南区若久にあるAndy motorcycle。",
+      "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号"
+    ],
+    "sequence": [
+      "Company Truth",
+      "Operational clarity",
+      "Action"
+    ],
+    "unsupported_claim_policy": "Use only Safety-approved evidence; do not generate reassurance from missing facts."
+  },
+  "conversion_strategy": {
+    "goal": "inquiry",
+    "cta_role": "permission_to_start",
+    "before_cta": "相談してよい対象と入口を短く明示する",
+    "after_cta": "確認できる連絡手段と次に起きることだけを表示する"
+  },
+  "form_causality": [
+    {
+      "company_truth": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+      "form_decision": "PRODUCTを主役にし、バイクの相談窓口の入口を一枚の流れとして見せる。"
+    },
+    {
+      "company_truth": "バイクの事なら何でもお気軽にご相談下さい。",
+      "form_decision": "Evidenceをカードの壁ではなく、見出し・工程・CTAの同じリズムへ接続する。"
+    }
+  ],
+  "visual_authority_priority": [
+    "PRODUCT",
+    "MATERIAL",
+    "PLACE",
+    "TYPOGRAPHY"
+  ],
+  "anti_template_notes": [
+    "No generic three-card grid as the primary composition.",
+    "No unsupported reassurance or invented metrics.",
+    "Peak screens are limited; quiet chapters carry orientation."
+  ]
+}

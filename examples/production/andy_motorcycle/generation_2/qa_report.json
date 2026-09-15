@@ -1,0 +1,27 @@
+{
+  "mode": "static_only",
+  "required_widths": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "status": "PASS",
+  "issues": [],
+  "manual_intervention": [],
+  "approved_evidence_ids": [
+    "andy-e-001",
+    "andy-e-002",
+    "andy-e-003"
+  ],
+  "html_bytes": 9294,
+  "exact_capture": {
+    "desktop": "1440x1000_pending_browser_qa",
+    "mobile": "390x844_pending_browser_qa"
+  }
+}

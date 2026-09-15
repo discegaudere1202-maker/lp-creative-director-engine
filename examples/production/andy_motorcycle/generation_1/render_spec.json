@@ -1,0 +1,486 @@
+{
+  "schema_version": "production_generation_v1",
+  "company": {
+    "schema_version": "production_generation_v1",
+    "company_id": "andy-motorcycle",
+    "company_name": "Andy motorcycle",
+    "industry": "バイクショップ",
+    "service_category": "バイクの相談窓口",
+    "location": "福岡市南区若久",
+    "business_model": "local_service",
+    "company_truth": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+    "differentiators": [
+      "バイクの事なら何でもお気軽にご相談下さい。",
+      "福岡市南区若久を拠点にしている。"
+    ],
+    "customer_state": {
+      "before": "どこへ相談すればよいか分からない",
+      "after": "まず状況を伝えてみようと思える",
+      "barrier": "車種や状態をうまく説明できるか分からない"
+    },
+    "conversion_goal": "inquiry",
+    "primary_objections": [
+      "O3_PROCESS",
+      "O4_NEXT"
+    ],
+    "available_evidence": [
+      "バイクの事なら何でもお気軽にご相談下さい。",
+      "福岡市南区若久にあるAndy motorcycle。",
+      "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号"
+    ],
+    "unavailable_evidence": [
+      "公式一次情報で裏付けられた代表者の経歴・資格",
+      "料金表・見積条件",
+      "問い合わせ後の具体的な返答時間",
+      "勧誘・キャンセル・保証に関する公式方針",
+      "LP利用許諾が確認された人物・店舗写真"
+    ],
+    "hearing_required": [],
+    "visual_authority": [
+      "PRODUCT",
+      "MATERIAL",
+      "PLACE",
+      "TYPOGRAPHY"
+    ],
+    "source_references": [
+      "https://www.instagram.com/andymotorcycle/?hl=ja",
+      "https://x.com/Andy_moto_co",
+      "https://www.instagram.com/p/C2RAJIGp5W9/"
+    ],
+    "contact_channels": {
+      "phone": "092-408-5440",
+      "email": "andy.motorcycle.co@gmail.com",
+      "address": "〒815-0042 福岡市南区若久6-1-25 サンワビル103号",
+      "href": "mailto:andy.motorcycle.co@gmail.com"
+    }
+  },
+  "strategy": {
+    "schema_version": "production_generation_v1",
+    "creative_problem": "どこへ相談すればよいか分からないを、相談の入口をひらくへ変える。",
+    "target_customer_state": {
+      "before": "どこへ相談すればよいか分からない",
+      "after": "まず状況を伝えてみようと思える",
+      "barrier": "車種や状態をうまく説明できるか分からない"
+    },
+    "desired_customer_transition": "まず状況を伝えてみようと思える",
+    "core_message": "バイクの事なら何でもお気軽にご相談下さい。",
+    "big_idea": "バイクの事なら何でもお気軽にご相談下さい。を、相談の入口をひらくの入口として見せる。",
+    "emotional_barrier": "車種や状態をうまく説明できるか分からない",
+    "trust_strategy": {
+      "approved_proof": [
+        "バイクの事なら何でもお気軽にご相談下さい。",
+        "福岡市南区若久にあるAndy motorcycle。",
+        "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号"
+      ],
+      "sequence": [
+        "Company Truth",
+        "Operational clarity",
+        "Action"
+      ],
+      "unsupported_claim_policy": "Use only Safety-approved evidence; do not generate reassurance from missing facts."
+    },
+    "conversion_strategy": {
+      "goal": "inquiry",
+      "cta_role": "permission_to_start",
+      "before_cta": "相談してよい対象と入口を短く明示する",
+      "after_cta": "確認できる連絡手段と次に起きることだけを表示する"
+    },
+    "form_causality": [
+      {
+        "company_truth": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+        "form_decision": "PRODUCTを主役にし、バイクの相談窓口の入口を一枚の流れとして見せる。"
+      },
+      {
+        "company_truth": "バイクの事なら何でもお気軽にご相談下さい。",
+        "form_decision": "Evidenceをカードの壁ではなく、見出し・工程・CTAの同じリズムへ接続する。"
+      }
+    ],
+    "visual_authority_priority": [
+      "PRODUCT",
+      "MATERIAL",
+      "PLACE",
+      "TYPOGRAPHY"
+    ],
+    "anti_template_notes": [
+      "No generic three-card grid as the primary composition.",
+      "No unsupported reassurance or invented metrics.",
+      "Peak screens are limited; quiet chapters carry orientation."
+    ]
+  },
+  "ia": [
+    {
+      "section_id": "opening",
+      "section_role": "hero_orientation",
+      "customer_question": "ここは自分の状況を相談できる場所か？",
+      "key_message": "バイクの事なら何でもお気軽にご相談下さい。を、相談の入口をひらくの入口として見せる。",
+      "evidence_used": [],
+      "visual_authority": "PRODUCT",
+      "emotional_intensity": 5,
+      "cta_role": "orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "headline_first_then_single_action"
+    },
+    {
+      "section_id": "truth",
+      "section_role": "company_truth",
+      "customer_question": "なぜこの会社に相談するのか？",
+      "key_message": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+      "evidence_used": [
+        "andy-e-001",
+        "andy-e-002"
+      ],
+      "visual_authority": "PRODUCT",
+      "emotional_intensity": 4,
+      "cta_role": "proof_orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "stacked_proof_with_short_lines"
+    },
+    {
+      "section_id": "way_in",
+      "section_role": "service_process",
+      "customer_question": "相談したら、何を伝えればよいか？",
+      "key_message": "状況を伝えるところから、次の案内を考える。",
+      "evidence_used": [
+        "andy-e-001"
+      ],
+      "visual_authority": "PRODUCT",
+      "emotional_intensity": 3,
+      "cta_role": "clarity",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "vertical_steps_with_breathing_room"
+    },
+    {
+      "section_id": "contact",
+      "section_role": "next_step",
+      "customer_question": "問い合わせた後、まず何ができるか？",
+      "key_message": "決めきっていなくても、いまの状況から伝えられる。",
+      "evidence_used": [
+        "andy-e-003"
+      ],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 4,
+      "cta_role": "action",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "contact_details_before_button"
+    },
+    {
+      "section_id": "close",
+      "section_role": "cta_zone",
+      "customer_question": "ここから何をすればよいか？",
+      "key_message": "相談の入口をひらく",
+      "evidence_used": [
+        "andy-e-001",
+        "andy-e-002",
+        "andy-e-003"
+      ],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 5,
+      "cta_role": "primary_conversion",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target"
+    }
+  ],
+  "copy": {
+    "schema_version": "production_generation_v1",
+    "hero": {
+      "eyebrow": "Andy motorcycle",
+      "headline": "バイクの事なら何でもお気軽にご相談下さい。",
+      "headline_lines": [
+        "バイクの事なら何で",
+        "もお気軽にご相談下さい。"
+      ],
+      "supporting": "福岡市南区若久でバイクの相談窓口を探している方へ。バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+      "cta": "相談する",
+      "microcopy": "状況がまとまっていなくても、入口から伝えられます。"
+    },
+    "sections": [
+      {
+        "section_id": "opening",
+        "headline": "バイクの事なら何でもお気軽にご相談下さい。",
+        "body": "福岡市南区若久のバイクの相談窓口。バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "truth",
+        "headline": "この場所で、相談の入口をひらく",
+        "body": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+        "evidence_claims": [
+          "バイクの事なら何でもお気軽にご相談下さい。",
+          "福岡市南区若久にあるAndy motorcycle。",
+          "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号"
+        ],
+        "cta": ""
+      },
+      {
+        "section_id": "way_in",
+        "headline": "伝えるところから、次を考える",
+        "body": "依頼内容が決まっていない段階でも、相談の入口を確認できます。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "contact",
+        "headline": "まずは、いまの状況を",
+        "body": "連絡先を選び、伝えられる範囲で状況を知らせます。次の案内は、確認できる事実の範囲で行います。",
+        "evidence_claims": [
+          "バイクの事なら何でもお気軽にご相談下さい。",
+          "福岡市南区若久にあるAndy motorcycle。",
+          "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号"
+        ],
+        "cta": ""
+      },
+      {
+        "section_id": "close",
+        "headline": "次の一歩は、ここから",
+        "body": "相談する内容を決めてからでなく、状況を伝えるところから始められます。",
+        "evidence_claims": [],
+        "cta": "相談する"
+      }
+    ],
+    "global_constraints": {
+      "all_customer_facing_claims_require_evidence_id": true,
+      "unsupported_reassurance": "blocked",
+      "line_shape": "meaning_units_not_character_count"
+    }
+  },
+  "art_direction": {
+    "schema_version": "production_generation_v1",
+    "art_direction_concept": "バイクの事なら何でもお気軽にご相談下さい。を、相談の入口をひらくの入口として見せる。",
+    "visual_mood": "quiet confidence with a working-surface sense of detail",
+    "visual_authority_priority": [
+      "PRODUCT",
+      "MATERIAL",
+      "PLACE",
+      "TYPOGRAPHY"
+    ],
+    "color_logic": {
+      "ink": "#111417",
+      "accent": "#cf6b3c",
+      "paper": "#ece7de",
+      "reason": "PRODUCT is the first evidence-bearing authority."
+    },
+    "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+    "composition_logic": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
+    "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+    "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+    "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+    "motion_logic": "One restrained reveal for section entry; no infinite or blocking animation.",
+    "forbidden_patterns": [
+      "rounded card wall",
+      "generic three-column grid",
+      "unsupported trust badge",
+      "stock person",
+      "marquee",
+      "parallax"
+    ],
+    "craft_catch": "A calibration line carries the customer from the current situation to the next contact point."
+  },
+  "design_tokens": {
+    "schema_version": "production_generation_v1",
+    "colors": {
+      "ink": "#111417",
+      "accent": "#cf6b3c",
+      "paper": "#ece7de",
+      "muted": "#77736b",
+      "line": "rgba(21,21,21,.18)"
+    },
+    "typography": {
+      "display": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+      "body": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+      "display_weight": 800,
+      "body_weight": 450
+    },
+    "font_scale": {
+      "eyebrow": "0.72rem",
+      "body": "1rem",
+      "lead": "1.18rem",
+      "h2": "clamp(2rem, 5vw, 5rem)",
+      "hero": "clamp(3rem, 10vw, 9rem)"
+    },
+    "spacing": {
+      "unit": "8px",
+      "section": "clamp(5rem, 12vw, 12rem)",
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "radius": {
+      "surface": "2px",
+      "button": "999px"
+    },
+    "borders": {
+      "hairline": "1px solid var(--line)",
+      "strong": "1px solid var(--ink)"
+    },
+    "shadows": {
+      "surface": "10px 18px 0 rgba(21,21,21,.08)"
+    },
+    "container_widths": {
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "rhythm": {
+      "peak_to_quiet": "1.5",
+      "quiet_to_peak": "1.15"
+    },
+    "motion": {
+      "duration_ms": 520,
+      "easing": "cubic-bezier(.2,.7,.2,1)"
+    }
+  },
+  "compositions": [
+    {
+      "section_id": "opening",
+      "layout_type": "split_rail",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_abstract_geometry",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "headline",
+      "mobile_transformation": "headline_first_then_single_action",
+      "screenshot_peak": true,
+      "order": 0
+    },
+    {
+      "section_id": "truth",
+      "layout_type": "offset_evidence_surface",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_abstract_geometry",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "evidence",
+      "mobile_transformation": "stacked_proof_with_short_lines",
+      "screenshot_peak": true,
+      "order": 1
+    },
+    {
+      "section_id": "way_in",
+      "layout_type": "sequence_rail",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_abstract_geometry",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "rhythm",
+      "mobile_transformation": "vertical_steps_with_breathing_room",
+      "screenshot_peak": false,
+      "order": 2
+    },
+    {
+      "section_id": "contact",
+      "layout_type": "contact_strip",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_abstract_geometry",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "channel",
+      "mobile_transformation": "contact_details_before_button",
+      "screenshot_peak": false,
+      "order": 3
+    },
+    {
+      "section_id": "close",
+      "layout_type": "closing_field",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_abstract_geometry",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "action",
+      "mobile_transformation": "sticky_safe_spacing_and_full_width_touch_target",
+      "screenshot_peak": true,
+      "order": 4
+    }
+  ],
+  "motion_spec": {
+    "kind": "section_reveal",
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)",
+    "reduced_motion": "no_transform"
+  },
+  "approved_evidence_ids": [
+    "andy-e-001",
+    "andy-e-002",
+    "andy-e-003"
+  ],
+  "production_output_status": "PRODUCTION_APPROVED",
+  "approved_evidence": [
+    {
+      "evidence_id": "andy-e-001",
+      "company_id": "andy-motorcycle",
+      "case_id": "andy-motorcycle-production",
+      "evidence_type": "SERVICE_SCOPE",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "バイクの事なら何でもお気軽にご相談下さい。",
+      "source": "https://www.instagram.com/andymotorcycle/?hl=ja",
+      "source_type": "official_social_profile",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "EARLY_PROOF",
+        "MIDDLE",
+        "BEFORE_CTA"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Official account profile wording; no client image is used."
+    },
+    {
+      "evidence_id": "andy-e-002",
+      "company_id": "andy-motorcycle",
+      "case_id": "andy-motorcycle-production",
+      "evidence_type": "PLACE_EXPERIENCE",
+      "evidence_strength": "E2_SPECIFIC",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "福岡市南区若久にあるAndy motorcycle。",
+      "source": "https://x.com/Andy_moto_co",
+      "source_type": "official_social_profile",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "HERO",
+        "EARLY_PROOF",
+        "QUIET_CHAPTER"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Official X profile location reference; no location photo is used."
+    },
+    {
+      "evidence_id": "andy-e-003",
+      "company_id": "andy-motorcycle",
+      "case_id": "andy-motorcycle-production",
+      "evidence_type": "CTA_CHANNEL",
+      "evidence_strength": "E5_DECISION_ENABLING",
+      "target_objections": [
+        "O4_NEXT"
+      ],
+      "claim": "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号",
+      "source": "https://www.instagram.com/p/C2RAJIGp5W9/",
+      "source_type": "official_social_post",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Official contact post; contact details are used as text/link only."
+    }
+  ]
+}

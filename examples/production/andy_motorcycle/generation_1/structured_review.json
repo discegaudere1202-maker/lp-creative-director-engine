@@ -1,0 +1,22 @@
+{
+  "review_type": "structured_review_roles",
+  "generated_artifact": "index.html",
+  "generation_id": "andy-gen-1",
+  "independent_human_reviewer": false,
+  "roles": [
+    {
+      "role_id": "creative_art_direction",
+      "scores_1_to_5": {"Immediate Read": 4, "Distinctness": 4, "Owner Specificity": 3, "Visual Hierarchy": 4, "Craft Detail": 4, "Emotional Pull": 3, "Trust": 2, "Share Impulse": 3, "Mobile Quality": 4, "Conversion Intent": 2},
+      "observations": ["The calibration-line motif gives the output a working-surface character.", "The page has a clear peak/quiet rhythm and avoids a generic card wall.", "Trust and conversion are held back by unsupported reassurance language in the first generated copy."],
+      "status": "HOLD"
+    },
+    {
+      "role_id": "business_owner_conversion",
+      "scores_1_to_5": {"Immediate Read": 4, "Distinctness": 3, "Owner Specificity": 3, "Visual Hierarchy": 4, "Craft Detail": 3, "Emotional Pull": 3, "Trust": 2, "Share Impulse": 2, "Mobile Quality": 4, "Conversion Intent": 2},
+      "observations": ["The contact channel is visible and traceable.", "The output does not yet have enough verified process or cost evidence for a high-confidence request.", "The reassuring promise must be removed unless a matching policy evidence record exists."],
+      "status": "HOLD"
+    }
+  ],
+  "decision": "ENGINE_IMPROVEMENT_REQUIRED",
+  "improvement_input": "Keep the form and rhythm; make generated conversion language neutral unless Safety-approved evidence supports the reassurance."
+}

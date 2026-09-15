@@ -1,0 +1,64 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "Andy motorcycle",
+    "headline": "バイクの事なら何でもお気軽にご相談下さい。",
+    "headline_lines": [
+      "バイクの事なら",
+      "何でもお気軽にご相談下さい。"
+    ],
+    "supporting": "福岡市南区若久でバイクの相談窓口を探している方へ。バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+    "cta": "相談する",
+    "microcopy": "連絡手段と所在地を確認できます。"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "バイクの事なら何でもお気軽にご相談下さい。",
+      "body": "福岡市南区若久のバイクの相談窓口。バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "この場所で、相談の入口をひらく",
+      "body": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+      "evidence_claims": [
+        "バイクの事なら何でもお気軽にご相談下さい。",
+        "福岡市南区若久にあるAndy motorcycle。",
+        "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "伝えるところから、次を考える",
+      "body": "依頼前に、相談の入口と確認できる連絡手段を整理します。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "まずは、いまの状況を",
+      "body": "連絡先を選び、確認したい内容を知らせるための入口を用意します。",
+      "evidence_claims": [
+        "バイクの事なら何でもお気軽にご相談下さい。",
+        "福岡市南区若久にあるAndy motorcycle。",
+        "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "次の一歩は、ここから",
+      "body": "相談内容を伝えるための連絡先を、ここで確認できます。",
+      "evidence_claims": [],
+      "cta": "相談する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "meaning_units_not_character_count"
+  }
+}

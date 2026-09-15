@@ -1,0 +1,75 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "andy-gen-2",
+  "company_id": "andy-motorcycle",
+  "company_name": "Andy motorcycle",
+  "mode": "production",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "input_digest": "17e3e34fd91048e34f272ea6f606e3019e334229e4233ee5d9b83fb69e2a1533",
+  "input_references": {
+    "input_file": "examples/production/andy_motorcycle/andy_motorcycle_production_input_v1.json",
+    "source_urls": [
+      "https://www.instagram.com/andymotorcycle/?hl=ja",
+      "https://x.com/Andy_moto_co",
+      "https://www.instagram.com/p/C2RAJIGp5W9/"
+    ]
+  },
+  "strategy_output": "creative_strategy.json",
+  "evidence_used": [
+    {
+      "claim": "バイクの事なら何でもお気軽にご相談下さい。",
+      "evidence_id": "andy-e-001",
+      "source": "https://www.instagram.com/andymotorcycle/?hl=ja",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "EARLY_PROOF",
+        "MIDDLE",
+        "BEFORE_CTA"
+      ]
+    },
+    {
+      "claim": "福岡市南区若久にあるAndy motorcycle。",
+      "evidence_id": "andy-e-002",
+      "source": "https://x.com/Andy_moto_co",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "EARLY_PROOF",
+        "QUIET_CHAPTER"
+      ]
+    },
+    {
+      "claim": "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号",
+      "evidence_id": "andy-e-003",
+      "source": "https://www.instagram.com/p/C2RAJIGp5W9/",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ]
+    }
+  ],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "information_architecture.json",
+    "copy.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "generated_at": "2026-09-15T22:49:12.761553+00:00"
+}

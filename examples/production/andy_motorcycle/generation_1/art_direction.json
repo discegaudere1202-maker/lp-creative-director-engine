@@ -1,0 +1,32 @@
+{
+  "schema_version": "production_generation_v1",
+  "art_direction_concept": "バイクの事なら何でもお気軽にご相談下さい。を、相談の入口をひらくの入口として見せる。",
+  "visual_mood": "quiet confidence with a working-surface sense of detail",
+  "visual_authority_priority": [
+    "PRODUCT",
+    "MATERIAL",
+    "PLACE",
+    "TYPOGRAPHY"
+  ],
+  "color_logic": {
+    "ink": "#111417",
+    "accent": "#cf6b3c",
+    "paper": "#ece7de",
+    "reason": "PRODUCT is the first evidence-bearing authority."
+  },
+  "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+  "composition_logic": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
+  "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+  "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+  "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+  "motion_logic": "One restrained reveal for section entry; no infinite or blocking animation.",
+  "forbidden_patterns": [
+    "rounded card wall",
+    "generic three-column grid",
+    "unsupported trust badge",
+    "stock person",
+    "marquee",
+    "parallax"
+  ],
+  "craft_catch": "A calibration line carries the customer from the current situation to the next contact point."
+}

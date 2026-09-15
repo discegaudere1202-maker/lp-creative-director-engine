@@ -1,0 +1,67 @@
+[
+  {
+    "section_id": "opening",
+    "layout_type": "split_rail",
+    "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+    "alignment": "left",
+    "image_role": "generated_abstract_geometry",
+    "text_width": "min(90vw, 720px)",
+    "whitespace": "large",
+    "emphasis": "headline",
+    "mobile_transformation": "headline_first_then_single_action",
+    "screenshot_peak": true,
+    "order": 0
+  },
+  {
+    "section_id": "truth",
+    "layout_type": "offset_evidence_surface",
+    "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+    "alignment": "left",
+    "image_role": "generated_abstract_geometry",
+    "text_width": "min(90vw, 720px)",
+    "whitespace": "large",
+    "emphasis": "evidence",
+    "mobile_transformation": "stacked_proof_with_short_lines",
+    "screenshot_peak": true,
+    "order": 1
+  },
+  {
+    "section_id": "way_in",
+    "layout_type": "sequence_rail",
+    "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+    "alignment": "left",
+    "image_role": "generated_abstract_geometry",
+    "text_width": "min(90vw, 720px)",
+    "whitespace": "medium",
+    "emphasis": "rhythm",
+    "mobile_transformation": "vertical_steps_with_breathing_room",
+    "screenshot_peak": false,
+    "order": 2
+  },
+  {
+    "section_id": "contact",
+    "layout_type": "contact_strip",
+    "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+    "alignment": "left",
+    "image_role": "generated_abstract_geometry",
+    "text_width": "min(90vw, 720px)",
+    "whitespace": "medium",
+    "emphasis": "channel",
+    "mobile_transformation": "contact_details_before_button",
+    "screenshot_peak": false,
+    "order": 3
+  },
+  {
+    "section_id": "close",
+    "layout_type": "closing_field",
+    "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+    "alignment": "left",
+    "image_role": "generated_abstract_geometry",
+    "text_width": "min(90vw, 720px)",
+    "whitespace": "large",
+    "emphasis": "action",
+    "mobile_transformation": "sticky_safe_spacing_and_full_width_touch_target",
+    "screenshot_peak": true,
+    "order": 4
+  }
+]

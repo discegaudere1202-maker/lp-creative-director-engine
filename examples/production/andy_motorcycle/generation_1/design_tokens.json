@@ -1,0 +1,52 @@
+{
+  "schema_version": "production_generation_v1",
+  "colors": {
+    "ink": "#111417",
+    "accent": "#cf6b3c",
+    "paper": "#ece7de",
+    "muted": "#77736b",
+    "line": "rgba(21,21,21,.18)"
+  },
+  "typography": {
+    "display": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+    "body": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+    "display_weight": 800,
+    "body_weight": 450
+  },
+  "font_scale": {
+    "eyebrow": "0.72rem",
+    "body": "1rem",
+    "lead": "1.18rem",
+    "h2": "clamp(2rem, 5vw, 5rem)",
+    "hero": "clamp(3rem, 10vw, 9rem)"
+  },
+  "spacing": {
+    "unit": "8px",
+    "section": "clamp(5rem, 12vw, 12rem)",
+    "rail": "min(90vw, 1180px)",
+    "text": "min(90vw, 720px)"
+  },
+  "radius": {
+    "surface": "2px",
+    "button": "999px"
+  },
+  "borders": {
+    "hairline": "1px solid var(--line)",
+    "strong": "1px solid var(--ink)"
+  },
+  "shadows": {
+    "surface": "10px 18px 0 rgba(21,21,21,.08)"
+  },
+  "container_widths": {
+    "rail": "min(90vw, 1180px)",
+    "text": "min(90vw, 720px)"
+  },
+  "rhythm": {
+    "peak_to_quiet": "1.5",
+    "quiet_to_peak": "1.15"
+  },
+  "motion": {
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)"
+  }
+}

@@ -1,0 +1,28 @@
+name: Production Generation QA
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  production-generation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine
+        run: pip install -e .
+      - name: Install browser
+        run: python -m playwright install --with-deps chromium
+      - name: Generate Andy Production Output
+        run: python scripts/run_production_generation.py examples/production/andy_motorcycle/andy_motorcycle_production_input_v1.json --out /tmp/andy-production --generation-id ci-andy-${GITHUB_SHA::12}
+      - name: Run static and real-browser QA
+        run: python scripts/run_production_qa.py /tmp/andy-production --out /tmp/andy-production/qa_report.json
+      - name: Upload exact captures and manifests
+        uses: actions/upload-artifact@v4
+        with:
+          name: andy-production-generation-qa
+          path: /tmp/andy-production

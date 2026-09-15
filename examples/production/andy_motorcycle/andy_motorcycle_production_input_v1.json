@@ -1,0 +1,116 @@
+{
+  "schema_version": "production_generation_input_v1",
+  "company_id": "andy-motorcycle",
+  "company": {
+    "company_name": "Andy motorcycle",
+    "industry": "バイクショップ",
+    "service_category": "バイクの相談窓口",
+    "location": "福岡市南区若久",
+    "business_model": "local_service",
+    "company_truth": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+    "differentiators": [
+      "バイクの事なら何でもお気軽にご相談下さい。",
+      "福岡市南区若久を拠点にしている。"
+    ],
+    "visual_authority_candidates": ["PRODUCT", "MATERIAL", "PLACE", "TYPOGRAPHY"],
+    "contact_channels": {
+      "phone": "092-408-5440",
+      "email": "andy.motorcycle.co@gmail.com",
+      "address": "〒815-0042 福岡市南区若久6-1-25 サンワビル103号",
+      "href": "mailto:andy.motorcycle.co@gmail.com"
+    }
+  },
+  "customer_state": {
+    "before": "どこへ相談すればよいか分からない",
+    "after": "まず状況を伝えてみようと思える",
+    "barrier": "車種や状態をうまく説明できるか分からない"
+  },
+  "conversion_goal": "inquiry",
+  "primary_objections": ["O3_PROCESS", "O4_NEXT"],
+  "requested_claims": [],
+  "unavailable_evidence": [
+    "公式一次情報で裏付けられた代表者の経歴・資格",
+    "料金表・見積条件",
+    "問い合わせ後の具体的な返答時間",
+    "勧誘・キャンセル・保証に関する公式方針",
+    "LP利用許諾が確認された人物・店舗写真"
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "andy-e-001",
+      "company_id": "andy-motorcycle",
+      "case_id": "andy-motorcycle-production",
+      "evidence_type": "SERVICE_SCOPE",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": ["O3_PROCESS"],
+      "claim": "バイクの事なら何でもお気軽にご相談下さい。",
+      "source": "https://www.instagram.com/andymotorcycle/?hl=ja",
+      "source_type": "official_social_profile",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": ["EARLY_PROOF", "MIDDLE", "BEFORE_CTA"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Official account profile wording; no client image is used."
+    },
+    {
+      "evidence_id": "andy-e-002",
+      "company_id": "andy-motorcycle",
+      "case_id": "andy-motorcycle-production",
+      "evidence_type": "PLACE_EXPERIENCE",
+      "evidence_strength": "E2_SPECIFIC",
+      "target_objections": ["O3_PROCESS"],
+      "claim": "福岡市南区若久にあるAndy motorcycle。",
+      "source": "https://x.com/Andy_moto_co",
+      "source_type": "official_social_profile",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": ["HERO", "EARLY_PROOF", "QUIET_CHAPTER"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Official X profile location reference; no location photo is used."
+    },
+    {
+      "evidence_id": "andy-e-003",
+      "company_id": "andy-motorcycle",
+      "case_id": "andy-motorcycle-production",
+      "evidence_type": "CTA_CHANNEL",
+      "evidence_strength": "E5_DECISION_ENABLING",
+      "target_objections": ["O4_NEXT"],
+      "claim": "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号",
+      "source": "https://www.instagram.com/p/C2RAJIGp5W9/",
+      "source_type": "official_social_post",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": ["BEFORE_CTA", "CTA_ZONE"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Official contact post; contact details are used as text/link only."
+    },
+    {
+      "evidence_id": "andy-e-research-001",
+      "company_id": "andy-motorcycle",
+      "case_id": "andy-motorcycle-production",
+      "evidence_type": "EXPERIENCE",
+      "evidence_strength": "E2_SPECIFIC",
+      "target_objections": ["O1_ABILITY"],
+      "claim": "ヤマハのディーラーに10年勤めた経験がある。",
+      "source": "https://moto.webike.net/shop-navi/shop/25060/",
+      "source_type": "third_party_shop_listing",
+      "verification_status": "UNKNOWN",
+      "verification_date": "2026-09-15",
+      "usage_status": "RESEARCH_ONLY",
+      "placement_candidates": ["EARLY_PROOF"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": true,
+      "blocking_status": "BLOCKING",
+      "notes": "Third-party listing, not promoted to customer-facing production without first-party confirmation."
+    }
+  ]
+}

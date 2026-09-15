@@ -1,0 +1,23 @@
+{
+  "review_type": "structured_review_roles",
+  "generated_artifact": "index.html",
+  "generation_id": "andy-gen-2",
+  "independent_human_reviewer": false,
+  "roles": [
+    {
+      "role_id": "creative_art_direction",
+      "scores_1_to_5": {"Immediate Read": 4, "Distinctness": 4, "Owner Specificity": 3, "Visual Hierarchy": 4, "Craft Detail": 4, "Emotional Pull": 3, "Trust": 3, "Share Impulse": 3, "Mobile Quality": 4, "Conversion Intent": 3},
+      "observations": ["Product/material authority is expressed through the generated geometry and offset evidence surface, not through a stock photograph.", "The peak/quiet rhythm is legible and the process sequence stays restrained.", "The result is a credible generic MVP direction, but not yet a premium final art direction because owner and workshop evidence remain unavailable."],
+      "status": "HOLD"
+    },
+    {
+      "role_id": "business_owner_conversion",
+      "scores_1_to_5": {"Immediate Read": 4, "Distinctness": 3, "Owner Specificity": 3, "Visual Hierarchy": 4, "Craft Detail": 3, "Emotional Pull": 3, "Trust": 3, "Share Impulse": 2, "Mobile Quality": 4, "Conversion Intent": 3},
+      "observations": ["The page gives a verified service invitation, location and contact channel before the CTA.", "No unsupported privacy, price, response-time, guarantee or no-pressure promise is present.", "A formal sales sample still needs verified service scope/process and rights-cleared real-world evidence to reach the 100万円価値Gate."],
+      "status": "HOLD"
+    }
+  ],
+  "decision": "SALES_SAMPLE_MVP_HOLD",
+  "strengths": ["Company Truth to Form is explicit", "Safety-approved evidence is traceable", "No manual intervention"],
+  "remaining_gap": "The Engine can generate a safe, coherent sample from sparse evidence; premium confidence is bounded by missing official ability, cost, process and rights evidence."
+}

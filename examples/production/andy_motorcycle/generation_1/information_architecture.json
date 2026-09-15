@@ -1,0 +1,73 @@
+[
+  {
+    "section_id": "opening",
+    "section_role": "hero_orientation",
+    "customer_question": "ここは自分の状況を相談できる場所か？",
+    "key_message": "バイクの事なら何でもお気軽にご相談下さい。を、相談の入口をひらくの入口として見せる。",
+    "evidence_used": [],
+    "visual_authority": "PRODUCT",
+    "emotional_intensity": 5,
+    "cta_role": "orientation",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "headline_first_then_single_action"
+  },
+  {
+    "section_id": "truth",
+    "section_role": "company_truth",
+    "customer_question": "なぜこの会社に相談するのか？",
+    "key_message": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+    "evidence_used": [
+      "andy-e-001",
+      "andy-e-002"
+    ],
+    "visual_authority": "PRODUCT",
+    "emotional_intensity": 4,
+    "cta_role": "proof_orientation",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "stacked_proof_with_short_lines"
+  },
+  {
+    "section_id": "way_in",
+    "section_role": "service_process",
+    "customer_question": "相談したら、何を伝えればよいか？",
+    "key_message": "状況を伝えるところから、次の案内を考える。",
+    "evidence_used": [
+      "andy-e-001"
+    ],
+    "visual_authority": "PRODUCT",
+    "emotional_intensity": 3,
+    "cta_role": "clarity",
+    "quiet_or_peak": "quiet",
+    "mobile_behavior": "vertical_steps_with_breathing_room"
+  },
+  {
+    "section_id": "contact",
+    "section_role": "next_step",
+    "customer_question": "問い合わせた後、まず何ができるか？",
+    "key_message": "決めきっていなくても、いまの状況から伝えられる。",
+    "evidence_used": [
+      "andy-e-003"
+    ],
+    "visual_authority": "TYPOGRAPHY",
+    "emotional_intensity": 4,
+    "cta_role": "action",
+    "quiet_or_peak": "quiet",
+    "mobile_behavior": "contact_details_before_button"
+  },
+  {
+    "section_id": "close",
+    "section_role": "cta_zone",
+    "customer_question": "ここから何をすればよいか？",
+    "key_message": "相談の入口をひらく",
+    "evidence_used": [
+      "andy-e-001",
+      "andy-e-002",
+      "andy-e-003"
+    ],
+    "visual_authority": "TYPOGRAPHY",
+    "emotional_intensity": 5,
+    "cta_role": "primary_conversion",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target"
+  }
+]

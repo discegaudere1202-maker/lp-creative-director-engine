@@ -1,0 +1,54 @@
+{
+  "schema_version": "production_generation_v1",
+  "company_id": "andy-motorcycle",
+  "company_name": "Andy motorcycle",
+  "industry": "バイクショップ",
+  "service_category": "バイクの相談窓口",
+  "location": "福岡市南区若久",
+  "business_model": "local_service",
+  "company_truth": "バイクの相談をひらいている、福岡市南区若久のローカル窓口。",
+  "differentiators": [
+    "バイクの事なら何でもお気軽にご相談下さい。",
+    "福岡市南区若久を拠点にしている。"
+  ],
+  "customer_state": {
+    "before": "どこへ相談すればよいか分からない",
+    "after": "まず状況を伝えてみようと思える",
+    "barrier": "車種や状態をうまく説明できるか分からない"
+  },
+  "conversion_goal": "inquiry",
+  "primary_objections": [
+    "O3_PROCESS",
+    "O4_NEXT"
+  ],
+  "available_evidence": [
+    "バイクの事なら何でもお気軽にご相談下さい。",
+    "福岡市南区若久にあるAndy motorcycle。",
+    "電話 092-408-5440 / メール andy.motorcycle.co@gmail.com / 〒815-0042 福岡市南区若久6-1-25 サンワビル103号"
+  ],
+  "unavailable_evidence": [
+    "公式一次情報で裏付けられた代表者の経歴・資格",
+    "料金表・見積条件",
+    "問い合わせ後の具体的な返答時間",
+    "勧誘・キャンセル・保証に関する公式方針",
+    "LP利用許諾が確認された人物・店舗写真"
+  ],
+  "hearing_required": [],
+  "visual_authority": [
+    "PRODUCT",
+    "MATERIAL",
+    "PLACE",
+    "TYPOGRAPHY"
+  ],
+  "source_references": [
+    "https://www.instagram.com/andymotorcycle/?hl=ja",
+    "https://x.com/Andy_moto_co",
+    "https://www.instagram.com/p/C2RAJIGp5W9/"
+  ],
+  "contact_channels": {
+    "phone": "092-408-5440",
+    "email": "andy.motorcycle.co@gmail.com",
+    "address": "〒815-0042 福岡市南区若久6-1-25 サンワビル103号",
+    "href": "mailto:andy.motorcycle.co@gmail.com"
+  }
+}
