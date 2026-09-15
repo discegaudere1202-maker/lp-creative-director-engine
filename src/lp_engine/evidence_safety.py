@@ -279,7 +279,7 @@ def evaluate_evidence_selection(
     evidence_ledger: Iterable[EvidenceRecord | Mapping[str, Any]],
     *,
     requested_claims: Iterable[str] = (),
-    require_production_clearance: bool = False,
+    require_production_clearance: bool = True,
 ) -> SafetyDecision:
     """Evaluate evidence eligibility without generating customer-facing copy.
 
