@@ -20,7 +20,7 @@ def main():
     )
     parser.add_argument(
         "--evidence-safety",
-        help="Optional JSON Safety-layer input (verified evidence is selected; copy is never generated).",
+        help="JSON Safety-layer input; required in production mode (verified evidence is selected; copy is never generated).",
     )
     args = parser.parse_args()
 
