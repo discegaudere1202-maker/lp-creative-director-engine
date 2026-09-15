@@ -9,7 +9,7 @@ from typing import Any
 
 from PIL import Image, ImageFilter, ImageOps
 from playwright.async_api import async_playwright
-from .visual_metrics import analyze_vertical_rhythm
+from .visual_metrics import analyze_vertical_rhythm, analyze_regions
 
 
 @dataclass
@@ -23,6 +23,7 @@ class VisualArtifact:
     console_errors: list[str] = field(default_factory=list)
     page_errors: list[str] = field(default_factory=list)
     rhythm_metrics: dict[str, Any] = field(default_factory=dict)
+    section_pixel_metrics: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -123,6 +124,25 @@ async def run_visual_qa(
             await _load(page, prepared)
             await _warm_scroll(page)
 
+            region_bounds = await page.evaluate("""() => {
+              const total = Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0) || 1;
+              const els = [...document.querySelectorAll('section')].filter(el => {
+                const r = el.getBoundingClientRect();
+                const s = getComputedStyle(el);
+                return r.height > 2 && s.display !== 'none' && s.visibility !== 'hidden';
+              });
+              return els.map((el, i) => {
+                const r = el.getBoundingClientRect();
+                const top = r.top + window.scrollY;
+                const bottom = top + r.height;
+                return {
+                  id: el.id || el.getAttribute('data-section-id') || `section-${i+1}`,
+                  y_start_ratio: Math.max(0, Math.min(1, top / total)),
+                  y_end_ratio: Math.max(0, Math.min(1, bottom / total)),
+                };
+              });
+            }""")
+
             full = out_dir / f"{width}_fullpage.png"
             gray = out_dir / f"{width}_grayscale.jpg"
             blur = out_dir / f"{width}_blur.jpg"
@@ -131,6 +151,7 @@ async def run_visual_qa(
             await page.screenshot(path=str(full), full_page=True)
             _make_variants(full, gray, blur)
             rhythm_metrics = analyze_vertical_rhythm(full)
+            section_pixel_metrics = analyze_regions(full, region_bounds)
 
             style_id = await page.evaluate(
                 """(selector) => {
@@ -178,6 +199,7 @@ async def run_visual_qa(
                     console_errors=console_errors,
                     page_errors=page_errors,
                     rhythm_metrics=rhythm_metrics,
+                    section_pixel_metrics=section_pixel_metrics,
                 )
             )
             await page.close()
