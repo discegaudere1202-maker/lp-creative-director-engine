@@ -12,6 +12,9 @@ VALID_STAGES = {
     "REJECTED",
 }
 
+REQUIRED_RUNTIME_WIDTHS = {320, 360, 375, 390, 430, 768, 1024, 1280, 1440}
+VALID_RUNTIME_QA = {"NOT_RUN", "PASS", "FAIL"}
+
 
 @dataclass
 class PrototypeRecord:
@@ -27,9 +30,30 @@ class PrototypeRecord:
     benchmark_win_rate: float | None = None
     stage: str = "DRAFT"
     rejection_reason: str = ""
+    artifact_path: str = ""
+    runtime_qa_status: str = "NOT_RUN"
+    runtime_qa_widths: list[int] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+def reproducibility_issues(record: PrototypeRecord) -> list[str]:
+    issues: list[str] = []
+    if not record.artifact_path.strip():
+        issues.append("missing reproducible artifact_path")
+    if record.runtime_qa_status not in VALID_RUNTIME_QA:
+        issues.append(f"invalid runtime_qa_status: {record.runtime_qa_status}")
+    elif record.runtime_qa_status != "PASS":
+        issues.append("runtime QA has not passed")
+    missing_widths = sorted(REQUIRED_RUNTIME_WIDTHS - set(record.runtime_qa_widths))
+    if missing_widths:
+        issues.append("missing runtime QA widths: " + ", ".join(map(str, missing_widths)))
+    return issues
+
+
+def is_reproducible(record: PrototypeRecord) -> bool:
+    return not reproducibility_issues(record)
 
 
 def validate_prototype(record: PrototypeRecord) -> list[str]:
@@ -46,6 +70,8 @@ def validate_prototype(record: PrototypeRecord) -> list[str]:
         issues.append("visual_authority is empty")
     if record.stage not in VALID_STAGES:
         issues.append(f"invalid stage: {record.stage}")
+    if record.runtime_qa_status not in VALID_RUNTIME_QA:
+        issues.append(f"invalid runtime_qa_status: {record.runtime_qa_status}")
 
     if record.stage in {"CRAFT_VERIFIED", "BENCHMARK_CHALLENGED", "COMPETITIVE"}:
         if not record.desktop_verified:
@@ -64,6 +90,8 @@ def validate_prototype(record: PrototypeRecord) -> list[str]:
             issues.append("COMPETITIVE requires tournament PASS")
         if record.benchmark_win_rate is None or record.benchmark_win_rate < 0.60:
             issues.append("COMPETITIVE requires benchmark_win_rate >= 0.60")
+        if not is_reproducible(record):
+            issues.append("COMPETITIVE requires a reproducible artifact with 9-width runtime QA PASS")
 
     if record.stage == "REJECTED" and not record.rejection_reason.strip():
         issues.append("REJECTED requires rejection_reason")
@@ -80,6 +108,7 @@ def audit_prototypes(records: list[PrototypeRecord]) -> dict[str, Any]:
 
     for record in records:
         issues = validate_prototype(record)
+        repro_issues = reproducibility_issues(record)
         counts[record.stage] = counts.get(record.stage, 0) + 1
         if not issues:
             valid += 1
@@ -88,19 +117,27 @@ def audit_prototypes(records: list[PrototypeRecord]) -> dict[str, Any]:
             "stage": record.stage,
             "valid": not issues,
             "issues": issues,
+            "reproducible": not repro_issues,
+            "reproducibility_issues": repro_issues,
         })
 
+    reproducible_ids = [r.prototype_id for r in records if is_reproducible(r)]
     return {
         "status": "PASS" if valid == len(records) and not duplicates else "REVIEW",
         "total": len(records),
         "valid": valid,
         "counts": counts,
         "duplicate_ids": duplicates,
+        "reproducible_count": len(reproducible_ids),
+        "reproducible_ids": reproducible_ids,
         "golden_sample_importable": [
             r.prototype_id
             for r in records
             if r.stage == "COMPETITIVE" and not validate_prototype(r)
         ],
         "records": rows,
-        "rule": "Only COMPETITIVE prototypes may be imported into new Golden Samples as validated craft patterns.",
+        "rule": (
+            "CRAFT_VERIFIED may preserve historical research evidence. Only COMPETITIVE prototypes "
+            "with a repository artifact and 9-width runtime QA PASS may be imported into new Golden Samples."
+        ),
     }
