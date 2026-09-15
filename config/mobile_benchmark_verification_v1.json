@@ -1,39 +1,140 @@
 {
   "version": 1,
   "updated": "2026-09-15",
-  "rule": "Mobile CORE requires explicit mobile visual evidence, hierarchy preservation and purposeful mobile composition. Responsive existence alone is insufficient.",
+  "rule": "Mobile CORE requires explicit mobile visual evidence, hierarchy preservation and purposeful mobile composition. Responsive existence alone is insufficient. Every M2/M3 record must link to both the strict frame registry and benchmark catalog.",
   "records": [
     {
       "frame_id": "jikkanokoto-mobile-editorial-01",
       "benchmark_id": "jikkanokoto",
-      "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Studio Design Award nominee page explicitly states mobile-first layout because mobile users are the majority.","The official renewal press release publishes a smartphone TOP-page image alongside the PC TOP-page image.","The mobile-first design supports the same emotional-barrier goal: bright color, curves, readable article discovery and low-friction exploration."],
-      "sources": ["https://designaward2025.studio.design/nominate/jikkanokoto","https://www.atpress.ne.jp/news/444379"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Strong mobile-first editorial benchmark. M3 still requires a live/captured 390px review."}
+      "status": "MOBILE_VERIFIED",
+      "evidence": [
+        "Studio Design Award nominee page explicitly states mobile-first layout because mobile users are the majority.",
+        "The official renewal press release publishes a smartphone TOP-page image alongside the PC TOP-page image.",
+        "The mobile-first design supports the same emotional-barrier goal: bright color, curves, readable article discovery and low-friction exploration."
+      ],
+      "sources": [
+        "https://designaward2025.studio.design/nominate/jikkanokoto",
+        "https://www.atpress.ne.jp/news/444379"
+      ],
+      "mobile_review": {
+        "evidence_grade": "M2",
+        "hierarchy_preserved": true,
+        "purposeful_recomposition": true,
+        "primary_message_survives": true,
+        "cta_or_next_action_survives": true,
+        "notes": "Strong mobile-first editorial benchmark. M3 still requires a live/captured 390px review."
+      }
     },
     {
       "frame_id": "ima-brand-verb-01",
       "benchmark_id": "ima-inc",
-      "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Studio Design Award nominee page explicitly states that the visual design explored how to express the verb 'かき混ぜる' and highlights the rotating-circle key visual.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the IMA site.","The core brand message and the circular/mixing visual grammar remain observable across device states."],
-      "sources": ["https://designaward2025.studio.design/nominate/ima-inc","https://asi.co.jp/gallery/sites/?slug=ima-inc"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Useful benchmark for Business Verb -> Form. M3 still requires a live/captured 390px review."}
+      "status": "MOBILE_VERIFIED",
+      "evidence": [
+        "Studio Design Award nominee page explicitly states that the visual design explored how to express the verb 'かき混ぜる' and highlights the rotating-circle key visual.",
+        "ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the IMA site.",
+        "The core brand message and the circular/mixing visual grammar remain observable across device states."
+      ],
+      "sources": [
+        "https://designaward2025.studio.design/nominate/ima-inc",
+        "https://asi.co.jp/gallery/sites/?slug=ima-inc"
+      ],
+      "mobile_review": {
+        "evidence_grade": "M2",
+        "hierarchy_preserved": true,
+        "purposeful_recomposition": true,
+        "primary_message_survives": true,
+        "cta_or_next_action_survives": true,
+        "notes": "Useful benchmark for Business Verb -> Form. M3 still requires a live/captured 390px review."
+      }
     },
     {
       "frame_id": "smarthr-recruit-hero-01",
       "benchmark_id": "smarthr-recruit",
-      "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Web Grand Prix evidence supports the trust/accessibility and low-friction recruitment rationale.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the SmartHR recruitment site.","The mobile state retains message hierarchy, recruitment navigation and low-friction casual-interview/action paths."],
-      "sources": ["https://award.dmi.jaa.or.jp/winner/gp12c_detail/596","https://asi.co.jp/gallery/sites/?slug=recruit-mtw0kxgo"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Trust-first mobile benchmark. M3 still requires a live/captured 390px review."}
+      "status": "MOBILE_VERIFIED",
+      "evidence": [
+        "Web Grand Prix evidence supports the trust/accessibility and low-friction recruitment rationale.",
+        "ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the SmartHR recruitment site.",
+        "The mobile state retains message hierarchy, recruitment navigation and low-friction casual-interview/action paths."
+      ],
+      "sources": [
+        "https://award.dmi.jaa.or.jp/winner/gp12c_detail/596",
+        "https://asi.co.jp/gallery/sites/?slug=recruit-mtw0kxgo"
+      ],
+      "mobile_review": {
+        "evidence_grade": "M2",
+        "hierarchy_preserved": true,
+        "purposeful_recomposition": true,
+        "primary_message_survives": true,
+        "cta_or_next_action_survives": true,
+        "notes": "Trust-first mobile benchmark. M3 still requires a live/captured 390px review."
+      }
     },
     {
       "frame_id": "jmc-recruit-hero-01",
       "benchmark_id": "jmc-recruit",
-      "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Studio Design Award research supports the multi-business comprehension and people-focused rationale.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the JMC recruitment site.","The smartphone state keeps the core company-understanding message and recruitment path visible."],
-      "sources": ["https://designaward2025.studio.design/nominate/recruit-jmc-ltd","https://asi.co.jp/gallery/sites/?slug=recruit-11"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Multi-business SME-transfer benchmark. M3 still requires a live/captured 390px review."}
+      "status": "MOBILE_VERIFIED",
+      "evidence": [
+        "Studio Design Award research supports the multi-business comprehension and people-focused rationale.",
+        "ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the JMC recruitment site.",
+        "The smartphone state keeps the core company-understanding message and recruitment path visible."
+      ],
+      "sources": [
+        "https://designaward2025.studio.design/nominate/recruit-jmc-ltd",
+        "https://asi.co.jp/gallery/sites/?slug=recruit-11"
+      ],
+      "mobile_review": {
+        "evidence_grade": "M2",
+        "hierarchy_preserved": true,
+        "purposeful_recomposition": true,
+        "primary_message_survives": true,
+        "cta_or_next_action_survives": true,
+        "notes": "Multi-business SME-transfer benchmark. M3 still requires a live/captured 390px review."
+      }
+    },
+    {
+      "frame_id": "sakuma-hero-01",
+      "benchmark_id": "sakuma-office",
+      "status": "MOBILE_VERIFIED",
+      "evidence": [
+        "Studio Design Award/Goodpatch research supports the personality-led experience and editorial rationale.",
+        "ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the official site.",
+        "The smartphone state preserves the personal-authority hierarchy, authored voice and route into works/content rather than collapsing into a generic profile page."
+      ],
+      "sources": [
+        "https://designaward2025.studio.design/nominate/nob-sakuma",
+        "https://asi.co.jp/gallery/sites/?slug=nob-sakuma"
+      ],
+      "mobile_review": {
+        "evidence_grade": "M2",
+        "hierarchy_preserved": true,
+        "purposeful_recomposition": true,
+        "primary_message_survives": true,
+        "cta_or_next_action_survives": true,
+        "notes": "Personality/editorial mobile benchmark with published smartphone capture. M3 still requires a live/captured 390px review."
+      }
+    },
+    {
+      "frame_id": "kagami-glass-proof-01",
+      "benchmark_id": "kagami-education-dx",
+      "status": "MOBILE_VERIFIED",
+      "evidence": [
+        "Studio Design Award research supports the reflection/glass concept and information-design rationale for the education DX service.",
+        "ASI Design Gallery publishes separate PC, tablet and smartphone display captures for KAGAMI.",
+        "The live site preserves the primary promise '離職防止と人材強化を同時に実現する' and keeps document-download/contact actions available alongside long-form product proof."
+      ],
+      "sources": [
+        "https://designaward2025.studio.design/nominate/is-kagami",
+        "https://asi.co.jp/gallery/sites/?slug=jp-kagami-1-100-dx",
+        "https://jp.is-kagami.com/"
+      ],
+      "mobile_review": {
+        "evidence_grade": "M2",
+        "hierarchy_preserved": true,
+        "purposeful_recomposition": true,
+        "primary_message_survives": true,
+        "cta_or_next_action_survives": true,
+        "notes": "Strong B2B explainer/lead-generation mobile benchmark. M3 still requires a live/captured 390px review."
+      }
     }
   ]
 }
