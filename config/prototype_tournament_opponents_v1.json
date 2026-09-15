@@ -9,72 +9,28 @@
       "status": "READY",
       "selection_reason": "Compare information translation and customer comprehension, not generic visual polish.",
       "benchmarks": [
-        {
-          "benchmark_id": "kagami",
-          "evidence_grade": "M3",
-          "review_status": "PASS",
-          "run_id": 34948153359,
-          "artifact_id": 10388641096,
-          "mobile_sha256": "8c6be4a0f703b4909e7e15110d9c7b0a4890487cfd10e1b8d7370401e108a7c2",
-          "desktop_sha256": "5d5f2a8db9f0c96a36c4cf6956ebf2e27ba946121822c1e8a1ed6bc243cd6fab",
-          "review_note": "Strongest P02 match: complex information is translated into a clear customer-facing explanatory system with strong mobile composition."
-        },
-        {
-          "benchmark_id": "smarthr-product",
-          "evidence_grade": "M3",
-          "review_status": "PASS",
-          "run_id": 34948153359,
-          "artifact_id": 10388641096,
-          "mobile_sha256": "3d7943dbec41c19b681d32e845305436440d52def99c1e287cf494f22a683c8e",
-          "desktop_sha256": "a4f5b6c5d0dbaa5aac7d026effbb2dec129d13b18c0fd699519f81e2d54e0e6a",
-          "review_note": "Product complexity is reduced into plain-language benefit and utility hierarchy without losing trust."
-        },
-        {
-          "benchmark_id": "kintone-product",
-          "evidence_grade": "M3",
-          "review_status": "PASS",
-          "run_id": 34948153359,
-          "artifact_id": 10388641096,
-          "mobile_sha256": "3bfb22b6c66c6fb2edcffde5ec08dead3be1280674a1cfce6abe9854d3c4a9c3",
-          "desktop_sha256": "7356c5e2b2ac0939a9af7956cfe2cf37f922b7273c82d31280bf0f89ade7f8f0",
-          "review_note": "Strong explanatory hierarchy and user-world framing make it a relevant translation/comprehension opponent."
-        }
+        {"benchmark_id":"kagami","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"8c6be4a0f703b4909e7e15110d9c7b0a4890487cfd10e1b8d7370401e108a7c2","desktop_sha256":"5d5f2a8db9f0c96a36c4cf6956ebf2e27ba946121822c1e8a1ed6bc243cd6fab","review_note":"Strongest P02 match: complex information is translated into a clear customer-facing explanatory system with strong mobile composition."},
+        {"benchmark_id":"smarthr-product","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"3d7943dbec41c19b681d32e845305436440d52def99c1e287cf494f22a683c8e","desktop_sha256":"a4f5b6c5d0dbaa5aac7d026effbb2dec129d13b18c0fd699519f81e2d54e0e6a","review_note":"Product complexity is reduced into plain-language benefit and utility hierarchy without losing trust."},
+        {"benchmark_id":"kintone-product","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"3bfb22b6c66c6fb2edcffde5ec08dead3be1280674a1cfce6abe9854d3c4a9c3","desktop_sha256":"7356c5e2b2ac0939a9af7956cfe2cf37f922b7273c82d31280bf0f89ade7f8f0","review_note":"Strong explanatory hierarchy and user-world framing make it a relevant translation/comprehension opponent."}
       ]
     },
     "P09": {
       "concept": "Price Transparency",
       "frame_role": "PRICE_TRANSPARENCY",
-      "status": "PENDING_M3_REVIEW",
-      "selection_reason": "Need 3-5 top-class opponents that expose public price, price drivers and quote clarity. Same-industry similarity alone is not enough.",
+      "status": "READY",
+      "selection_reason": "Compare whether public price, price drivers, scope and next-step clarity become a designed decision aid rather than a buried table. Four M3 references intentionally span bespoke, packaged-service and SaaS pricing patterns.",
       "benchmarks": [
-        {
-          "benchmark_id": "aki-design-price",
-          "evidence_grade": "M3",
-          "review_status": "PASS",
-          "run_id": 34948153359,
-          "artifact_id": 10388641096,
-          "mobile_sha256": "5d3ec89e42dec112dad9fbc5e27079b761d3e1d843e5a231db3f46701df53abc",
-          "desktop_sha256": "6b7384d2fe925ef11ae28c1fd62c396ed3119f977ef284d6db35fa86cdc16028",
-          "review_note": "Strong current P09 opponent: price is a designed information object, not a buried table, and the mobile pricing frame remains composed."
-        },
-        {
-          "benchmark_id": "studio-price",
-          "evidence_grade": "M3",
-          "review_status": "PASS",
-          "run_id": 34953096999,
-          "artifact_id": 10389977402,
-          "mobile_sha256": "4c4a82ac4a995242f326b797e9da9aac59592ae11ff902d75d593476c5058cff",
-          "desktop_sha256": "8caaccb723885a11ba1a3b2e67d5c6c2d1f67678d261b350145dd33e3c1a901c",
-          "review_note": "Monthly and annual price, audience fit, feature drivers and conversion action coexist in a deliberately recomposed 390px pricing frame without horizontal overflow."
-        }
+        {"benchmark_id":"aki-design-price","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"5d3ec89e42dec112dad9fbc5e27079b761d3e1d843e5a231db3f46701df53abc","desktop_sha256":"6b7384d2fe925ef11ae28c1fd62c396ed3119f977ef284d6db35fa86cdc16028","review_note":"Price is treated as a designed information object rather than a buried table, with calm mobile hierarchy."},
+        {"benchmark_id":"jimdo-hp-pack","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"a4f2fe8f181aebf111db2537e65bcaf9a305b84ba2ffe157ed38777aee7a86ee","desktop_sha256":"6601e026b3bea585fecfa2cb561dedaf3f1b6e7d9e8a76009eb63fa74b2d8b3b","review_note":"Packaged service plans expose price and included scope clearly while maintaining a conversion-oriented 390px composition."},
+        {"benchmark_id":"rals-homepage-price","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"56eb2662ee7d16d90143ab35c60008032cec5c639bcd7ebd9e97f749cf52dcc6","desktop_sha256":"44b5b19e28a1935133ebc6457638fb3f1f20b783c0db7e3770f31a7c3ac94e75","review_note":"Plan hierarchy and price-driver comparison remain intentional on mobile, including a deliberate continuation cue without page overflow."},
+        {"benchmark_id":"studio-price","evidence_grade":"M3","review_status":"PASS","run_id":34953096999,"artifact_id":10389977402,"mobile_sha256":"4c4a82ac4a995242f326b797e9da9aac59592ae11ff902d75d593476c5058cff","desktop_sha256":"8caaccb723885a11ba1a3b2e67d5c6c2d1f67678d261b350145dd33e3c1a901c","review_note":"Annual/monthly price, audience fit, feature drivers and conversion action coexist in a deliberately recomposed 390px pricing frame without horizontal overflow."}
       ],
-      "pending_candidates": ["kintone-price"],
       "rejected_or_held": [
-        {"benchmark_id": "ourphoto-price", "decision": "REJECT", "reason": "Run 8 returned HTTP 403 for desktop and mobile; focus text was not captured."},
-        {"benchmark_id": "lshort-price", "decision": "HOLD", "reason": "Price and feature differences are clear, but visual/craft strength is more conventional than the desired primary opponent ceiling."},
-        {"benchmark_id": "mhand-price", "decision": "HOLD", "reason": "Mobile pricing readability and fixed-UI interference are not strong enough for strict M3 promotion."},
-        {"benchmark_id": "alotof-price", "decision": "REJECT", "reason": "The captured frame did not reliably reach the intended pricing section."},
-        {"benchmark_id": "cndoor-price", "decision": "REJECT", "reason": "The captured frame did not reliably reach the intended pricing section."}
+        {"benchmark_id":"ourphoto-price","decision":"REJECT","reason":"Run 8 returned HTTP 403 for desktop and mobile; focus text was not captured."},
+        {"benchmark_id":"lshort-price","decision":"HOLD","reason":"Price and feature differences are clear, but visual/craft strength is more conventional than the desired primary opponent ceiling."},
+        {"benchmark_id":"mhand-price","decision":"HOLD","reason":"Mobile pricing readability and fixed-UI interference are not strong enough for strict M3 promotion."},
+        {"benchmark_id":"alotof-price","decision":"REJECT","reason":"The captured frame did not reliably reach the intended pricing section."},
+        {"benchmark_id":"cndoor-price","decision":"REJECT","reason":"The captured frame did not reliably reach the intended pricing section."}
       ]
     },
     "P10": {
@@ -83,40 +39,13 @@
       "status": "READY",
       "selection_reason": "Compare pre-consultation hesitation, articulation through dialogue and permission to decide rather than generic career-service design.",
       "benchmarks": [
-        {
-          "benchmark_id": "carigaku-career",
-          "evidence_grade": "M3",
-          "review_status": "PASS",
-          "run_id": 34948153359,
-          "artifact_id": 10388641096,
-          "mobile_sha256": "f9722bb338f06e36327a8f3cb983cf2f7cb92402e9d9d683604631bb23f089ac",
-          "desktop_sha256": "1f02d0e91d72731b32367b25a9b869966229eda0e78d9f3f991d24d3e8ba86b4",
-          "review_note": "Strong consultation-before-decision framing with a credible mobile emotional entry point."
-        },
-        {
-          "benchmark_id": "sell-step-career",
-          "evidence_grade": "M3",
-          "review_status": "PASS",
-          "run_id": 34948153359,
-          "artifact_id": 10388641096,
-          "mobile_sha256": "7d952f7509084552c1aba9b3ce507069dd46f784cf5cf40bcd4d44da8dc5dbe7",
-          "desktop_sha256": "3246d5f997e32a971df281d186891914d03763baa0562910375e5975e41c0340",
-          "review_note": "Strong psychological-friction and next-step framing with stable 390px composition."
-        },
-        {
-          "benchmark_id": "lfu-career",
-          "evidence_grade": "M3",
-          "review_status": "PASS",
-          "run_id": 34948153359,
-          "artifact_id": 10388641096,
-          "mobile_sha256": "6d70ac79333b61773b03bc86773f8d4da4ca6084ab65a192d067dc124830ebf3",
-          "desktop_sha256": "933d81e2e736003a2ff5526f37ecb8b9920319b27e470aa41cd6da0aeee173b9",
-          "review_note": "Relevant emotional-barrier opponent that keeps consultation and decision support legible on mobile."
-        }
+        {"benchmark_id":"carigaku-career","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"f9722bb338f06e36327a8f3cb983cf2f7cb92402e9d9d683604631bb23f089ac","desktop_sha256":"1f02d0e91d72731b32367b25a9b869966229eda0e78d9f3f991d24d3e8ba86b4","review_note":"Strong consultation-before-decision framing with a credible mobile emotional entry point."},
+        {"benchmark_id":"sell-step-career","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"7d952f7509084552c1aba9b3ce507069dd46f784cf5cf40bcd4d44da8dc5dbe7","desktop_sha256":"3246d5f997e32a971df281d186891914d03763baa0562910375e5975e41c0340","review_note":"Strong psychological-friction and next-step framing with stable 390px composition."},
+        {"benchmark_id":"lfu-career","evidence_grade":"M3","review_status":"PASS","run_id":34948153359,"artifact_id":10388641096,"mobile_sha256":"6d70ac79333b61773b03bc86773f8d4da4ca6084ab65a192d067dc124830ebf3","desktop_sha256":"933d81e2e736003a2ff5526f37ecb8b9920319b27e470aa41cd6da0aeee173b9","review_note":"Relevant emotional-barrier opponent that keeps consultation and decision support legible on mobile."}
       ],
       "rejected_or_held": [
-        {"benchmark_id": "u-do-u", "decision": "HOLD", "reason": "390px capture had scrollWidth 980 and cannot be promoted to M3 despite excellent conceptual fit."},
-        {"benchmark_id": "doda-x-career-coaching", "decision": "HOLD", "reason": "Expired-application state contaminates the current comparison frame."}
+        {"benchmark_id":"u-do-u","decision":"HOLD","reason":"390px capture had scrollWidth 980 and cannot be promoted to M3 despite excellent conceptual fit."},
+        {"benchmark_id":"doda-x-career-coaching","decision":"HOLD","reason":"The current comparison frame is less explicit about before-dialogue-after state change than the selected opponents."}
       ]
     }
   }
