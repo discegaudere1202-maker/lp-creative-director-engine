@@ -34,7 +34,7 @@ class EnrichedEvidenceRuntimeQA(unittest.TestCase):
                         if width in (390, 1440):
                             box = page.locator(action_selector).bounding_box()
                             self.assertIsNotNone(box)
-                            self.assertLessEqual(box["bottom"], height + 2)
+                            self.assertLessEqual(box["y"] + box["height"], height + 2)
                     finally:
                         page.close()
 
