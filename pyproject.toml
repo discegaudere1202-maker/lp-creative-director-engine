@@ -16,6 +16,7 @@ lp-visual-qa = "lp_engine.visual_cli:main"
 lp-rhythm = "lp_engine.rhythm_cli:main"
 lp-rhythm-regression = "lp_engine.rhythm_regression_cli:main"
 lp-benchmark-review = "lp_engine.benchmark_review_cli:main"
+lp-engine-generate = "lp_engine.production_generation:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

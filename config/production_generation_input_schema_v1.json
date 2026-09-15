@@ -1,0 +1,52 @@
+{
+  "schema_version": "production_generation_input_v1",
+  "purpose": "Company facts and Safety-approved evidence are transformed through structured creative stages before rendering.",
+  "required": [
+    "company_id",
+    "company",
+    "conversion_goal",
+    "customer_state",
+    "primary_objections",
+    "evidence_ledger"
+  ],
+  "company_fields": [
+    "company_name",
+    "industry",
+    "service_category",
+    "location",
+    "business_model",
+    "company_truth",
+    "differentiators",
+    "visual_authority_candidates",
+    "contact_channels"
+  ],
+  "stages": [
+    "company_understanding",
+    "creative_strategy",
+    "information_architecture",
+    "copy",
+    "art_direction",
+    "design_tokens",
+    "compositions",
+    "render_spec",
+    "renderer_output"
+  ],
+  "modes": {
+    "production": "Safety is mandatory; only PRODUCTION_ELIGIBLE evidence can reach the renderer.",
+    "research": "Structured output may be inspected but is NOT_PRODUCTION_APPROVED.",
+    "test": "Fixtures may exercise boundaries but are NOT_PRODUCTION_APPROVED."
+  },
+  "safety_contract": {
+    "input": ["conversion_goal", "primary_objections", "evidence_ledger", "requested_claims"],
+    "required_evidence_fields": ["evidence_id", "source", "source_type", "verification_status", "verification_date", "rights_status", "claim"],
+    "missing_behavior": "HEARING_REQUIRED",
+    "unverified_behavior": "BLOCK",
+    "rights_unknown_behavior": "BLOCK",
+    "copy_boundary": "Renderer never invents reassurance, authority, metric, policy, testimonial or guarantee."
+  },
+  "output_contract": {
+    "files": ["index.html", "generation_manifest.json", "evidence_manifest.json", "stage JSON files"],
+    "traceability": "output claim -> evidence_id -> source",
+    "manual_intervention": "must remain an empty list for a valid MVP generation"
+  }
+}
