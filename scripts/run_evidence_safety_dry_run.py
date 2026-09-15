@@ -21,6 +21,7 @@ def main() -> int:
             target["primary_objections"],
             target["ledger"],
             requested_claims=target.get("requested_claims", []),
+            require_production_clearance=False,
         )
         results.append({
             "case_id": target["case_id"],
