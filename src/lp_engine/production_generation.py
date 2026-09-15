@@ -95,7 +95,7 @@ def _first_claim(evidence: Sequence[Mapping[str, Any]], *types: str, fallback: s
     return _text(items[0].get("claim")) if items else fallback
 
 
-def _line_shape(text: str, *, max_chars: int = 16) -> list[str]:
+def _line_shape(text: str, *, max_chars: int = 12) -> list[str]:
     """Create meaning-oriented headline lines, never a one-character tail."""
     value = re.sub(r"\s+", " ", _text(text))
     if len(value) <= max_chars:
@@ -108,11 +108,13 @@ def _line_shape(text: str, *, max_chars: int = 16) -> list[str]:
         index = value.find(separator, 3, max_chars + 1)
         if index >= 3 and len(value) - index - len(separator) >= 3:
             cut = index + len(separator)
-            return [value[:cut], value[cut:]]
+            head, tail = value[:cut], value[cut:]
+            return [head] + _line_shape(tail, max_chars=max_chars)
     # Keep semantic chunks roughly balanced; this is only a fallback for
     # generated copy and is validated again by the existing text gates.
-    cut = max(4, min(len(value) - 3, len(value) // 2))
-    return [value[:cut], value[cut:]]
+    cut = max(4, min(len(value) - 3, max_chars))
+    head, tail = value[:cut], value[cut:]
+    return [head] + _line_shape(tail, max_chars=max_chars)
 
 
 def _authority_order(raw: Mapping[str, Any], evidence: Sequence[Mapping[str, Any]]) -> list[str]:
@@ -295,7 +297,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
         "hero": {
             "eyebrow": company_name,
             "headline": headline,
-            "headline_lines": _line_shape(headline),
+            "headline_lines": _line_shape(headline, max_chars=9),
             "supporting": f"{location}で{category}を探している方へ。{truth}",
             "cta": cta,
             "microcopy": "連絡手段と所在地を確認できます。",
@@ -310,6 +312,13 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                     "contact": "まずは、いまの状況を",
                     "close": "次の一歩は、ここから",
                 }.get(item["section_id"], item["key_message"]),
+                "headline_lines": _line_shape({
+                    "opening": headline,
+                    "truth": "この場所で、相談の入口をひらく",
+                    "way_in": "伝えるところから、次を考える",
+                    "contact": "まずは、いまの状況を",
+                    "close": "次の一歩は、ここから",
+                }.get(item["section_id"], item["key_message"]), max_chars=12),
                 "body": {
                     "opening": f"{location}の{category}。{truth}",
                     "truth": truth,
@@ -444,13 +453,13 @@ def _render_styles(tokens: Mapping[str, Any]) -> str:
     * {{ box-sizing:border-box; }} html {{ scroll-behavior:smooth; }} body {{ margin:0; background:var(--paper); color:var(--ink); font-family:{typo['body']}; font-weight:{typo['body_weight']}; line-height:1.75; }}
     a {{ color:inherit; }} .site-shell {{ overflow:hidden; }} .topline {{ width:var(--rail); margin:auto; padding:24px 0; display:flex; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }}
     .section {{ width:var(--rail); margin:auto; padding:var(--section, {spacing['section']}) 0; position:relative; }} .section--quiet {{ padding-top:clamp(4rem,8vw,8rem); padding-bottom:clamp(4rem,8vw,8rem); }} .section--peak {{ min-height:min(92vh, 860px); display:grid; align-content:center; }}
-    .hero-grid {{ display:grid; grid-template-columns:minmax(0, 1.25fr) minmax(180px, .75fr); gap:clamp(2rem, 8vw, 9rem); align-items:end; }} .eyebrow {{ color:var(--accent); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }} h1,h2,p {{ margin:0; }} h1 {{ max-width:11ch; font-size:{scale['hero']}; line-height:.95; letter-spacing:-.07em; }} h2 {{ max-width:12ch; font-size:{scale['h2']}; line-height:1; letter-spacing:-.06em; }} .lead {{ max-width:34rem; font-size:{scale['lead']}; }} .small {{ color:var(--muted); font-size:.82rem; }} .section-header {{ display:flex; justify-content:space-between; gap:2rem; align-items:flex-end; border-top:1px solid var(--line); padding-top:18px; margin-bottom:clamp(2rem,5vw,5rem); }}
+    .hero-grid {{ display:grid; grid-template-columns:minmax(0, 1.4fr) minmax(160px, .6fr); gap:clamp(1.5rem, 5vw, 6rem); align-items:end; }} .eyebrow {{ color:var(--accent); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }} h1,h2,p {{ margin:0; }} h1 {{ max-width:none; font-size:clamp(2.6rem, 6vw, 6.5rem); line-height:.95; letter-spacing:-.07em; }} h1 .headline-line,h2 .headline-line {{ display:block; white-space:nowrap; }} h2 {{ max-width:none; font-size:clamp(2rem, 4vw, 4rem); line-height:1; letter-spacing:-.06em; }} .lead {{ max-width:34rem; font-size:{scale['lead']}; }} .small {{ color:var(--muted); font-size:.82rem; }} .section-header {{ display:flex; justify-content:space-between; gap:2rem; align-items:flex-end; border-top:1px solid var(--line); padding-top:18px; margin-bottom:clamp(2rem,5vw,5rem); }}
     .hero-mark {{ aspect-ratio:1; border:1px solid var(--ink); position:relative; background:linear-gradient(135deg, transparent 48%, var(--accent) 49%, var(--accent) 51%, transparent 52%), repeating-linear-gradient(0deg, transparent 0 19px, var(--line) 20px); }} .hero-mark::before,.hero-mark::after {{ content:""; position:absolute; border:1px solid var(--ink); border-radius:50%; width:28%; aspect-ratio:1; left:14%; top:18%; }} .hero-mark::after {{ left:auto; top:auto; right:14%; bottom:18%; }}
     .proof-surface {{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(2rem,8vw,8rem); padding:clamp(2rem,5vw,5rem); background:var(--ink); color:var(--paper); box-shadow:10px 18px 0 var(--accent); }} .proof-surface .eyebrow {{ color:var(--accent); }} .claim-list {{ display:grid; gap:0; border-top:1px solid rgba(243,239,231,.3); }} .claim {{ padding:18px 0; border-bottom:1px solid rgba(243,239,231,.3); }} .claim-id {{ display:block; color:var(--accent); font-size:.72rem; letter-spacing:.1em; }}
     .sequence {{ display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }} .step {{ min-height:220px; padding:18px 22px 24px 0; border-bottom:1px solid var(--line); border-right:1px solid var(--line); }} .step:last-child {{ border-right:0; padding-left:22px; }} .step + .step {{ padding-left:22px; }} .step-number {{ font-size:3rem; line-height:1; color:var(--accent); }}
     .contact-strip {{ display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:center; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); padding:28px 0; }} .contact-lines {{ display:grid; gap:4px; }} .button {{ display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:12px 26px; border-radius:999px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }} .button:hover {{ background:var(--ink); }} .footer-note {{ padding:24px 0 48px; font-size:.76rem; color:var(--muted); border-top:1px solid var(--line); }} .calibration {{ position:absolute; right:0; top:18%; width:18vw; max-width:220px; height:1px; background:var(--accent); }} .calibration::after {{ content:""; position:absolute; right:0; top:-4px; width:9px; height:9px; border-radius:50%; background:var(--accent); }}
     [data-reveal] {{ opacity:0; transform:translateY(18px); transition:opacity 520ms var(--ease), transform 520ms var(--ease); }} [data-reveal].is-visible {{ opacity:1; transform:none; }} @media (prefers-reduced-motion:reduce) {{ html {{ scroll-behavior:auto; }} [data-reveal] {{ opacity:1; transform:none; transition:none; }} }}
-    @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:clamp(4rem,16vw,7rem) 0; }} .section--peak {{ min-height:auto; }} h1 {{ max-width:9ch; }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
+    @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:clamp(4rem,16vw,7rem) 0; }} .section--peak {{ min-height:auto; }} h1 {{ font-size:clamp(2.35rem, 8vw, 3.8rem); }} h2 {{ font-size:clamp(1.9rem, 7vw, 3.2rem); }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
     """
 
 
@@ -472,7 +481,7 @@ def render_html(spec: Mapping[str, Any]) -> str:
     contact_markup = "".join(f'<div>{_esc(item.get("claim"))}</div>' for item in contact_claims)
     steps = ["状況を伝える", "対応できることを確認する", "次の案内を考える"]
     steps_markup = "".join(f'<div class="step"><div class="step-number">0{idx}</div><p>{_esc(label)}</p></div>' for idx, label in enumerate(steps, 1))
-    lines_markup = "<br>".join(_esc(line) for line in hero["headline_lines"])
+    lines_markup = "".join(f'<span class="headline-line">{_esc(line)}</span>' for line in hero["headline_lines"])
     location = _esc(company.get("location"))
     category = _esc(company.get("service_category"))
     name = _esc(company.get("company_name"))
@@ -485,10 +494,10 @@ def render_html(spec: Mapping[str, Any]) -> str:
 <header class="topline"><span>{name}</span><span>{location}</span></header>
 <main>
 <section class="section section--peak" data-reveal data-role="hero_orientation"><div class="calibration"></div><div class="hero-grid"><div><div class="eyebrow">{_esc(hero["eyebrow"])}</div><h1>{lines_markup}</h1><p class="lead" style="margin-top:28px">{_esc(hero["supporting"])}</p><a class="button" href="#contact" style="margin-top:34px">{cta}<span aria-hidden="true" style="margin-left:14px">→</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div><div class="hero-mark" aria-hidden="true"></div></div></section>
-<section class="section section--peak" data-reveal data-role="company_truth"><div class="section-header"><span class="eyebrow">01 / 会社の輪郭</span><span class="small">{location}</span></div><div class="proof-surface"><div><h2>{_esc(copy_sections["truth"]["headline"])}</h2></div><div><p class="lead">{_esc(copy_sections["truth"]["body"])}</p><div class="claim-list" style="margin-top:34px">{claims_markup}</div></div></div></section>
-<section class="section section--quiet" data-reveal data-role="service_process"><div class="section-header"><span class="eyebrow">02 / 入口のリズム</span><span class="small">相談の前に、入口を確認する</span></div><div class="hero-grid"><div><h2>{_esc(copy_sections["way_in"]["headline"])}</h2></div><div><p class="lead">{_esc(copy_sections["way_in"]["body"])}</p></div></div><div class="sequence" style="margin-top:64px">{steps_markup}</div></section>
-<section class="section section--quiet" id="contact" data-reveal data-role="next_step"><div class="section-header"><span class="eyebrow">03 / 次の案内</span><span class="small">{location}</span></div><div class="contact-strip"><div><h2>{_esc(copy_sections["contact"]["headline"])}</h2><p class="lead" style="margin-top:24px">{_esc(copy_sections["contact"]["body"])}</p><div class="contact-lines" style="margin-top:28px">{contact_markup}</div></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a></div></div></section>
-<section class="section section--peak" data-reveal data-role="cta_zone"><div class="hero-grid"><div><div class="eyebrow">04 / {category}</div><h2>{_esc(copy_sections["close"]["headline"])}</h2><p class="lead" style="margin-top:28px">{_esc(copy_sections["close"]["body"])}</p></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div></div></section>
+<section class="section section--peak" data-reveal data-role="company_truth"><div class="section-header"><span class="eyebrow">01 / 会社の輪郭</span><span class="small">{location}</span></div><div class="proof-surface"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["truth"]["headline_lines"])}</h2></div><div><p class="lead">{_esc(copy_sections["truth"]["body"])}</p><div class="claim-list" style="margin-top:34px">{claims_markup}</div></div></div></section>
+<section class="section section--quiet" data-reveal data-role="service_process"><div class="section-header"><span class="eyebrow">02 / 入口のリズム</span><span class="small">相談の前に、入口を確認する</span></div><div class="hero-grid"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["way_in"]["headline_lines"])}</h2></div><div><p class="lead">{_esc(copy_sections["way_in"]["body"])}</p></div></div><div class="sequence" style="margin-top:64px">{steps_markup}</div></section>
+<section class="section section--quiet" id="contact" data-reveal data-role="next_step"><div class="section-header"><span class="eyebrow">03 / 次の案内</span><span class="small">{location}</span></div><div class="contact-strip"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["contact"]["headline_lines"])}</h2><p class="lead" style="margin-top:24px">{_esc(copy_sections["contact"]["body"])}</p><div class="contact-lines" style="margin-top:28px">{contact_markup}</div></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a></div></div></section>
+<section class="section section--peak" data-reveal data-role="cta_zone"><div class="hero-grid"><div><div class="eyebrow">04 / {category}</div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["close"]["headline_lines"])}</h2><p class="lead" style="margin-top:28px">{_esc(copy_sections["close"]["body"])}</p></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div></div></section>
 </main><footer class="topline footer-note"><span>{name}</span><span>事実確認済みの内容のみで構成</span></footer>
 </div><script>for (const node of document.querySelectorAll('[data-reveal]')) {{ const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {{ if (entry.isIntersecting) {{ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }} }}), {{ threshold: 0.12 }}); observer.observe(node); }}</script></body></html>'''
 
