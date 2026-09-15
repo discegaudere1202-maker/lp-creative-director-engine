@@ -8,5 +8,11 @@
   "cases": [
     {"case_id":"CROSS_P09_SIGNAGE","domain":"construction_craft","company":"有限会社シーベ","conversion_goal":"見積相談","baseline_path":"examples/prototypes/p09_price_transparency_v1.html","variant_id":"P09_OBJECTION_SELECTED","variant_path":"examples/cross_domain_cases/p09_signage_process_variant_v1.html","primary_objections":["O2_ACCOUNTABILITY","O3_PROCESS","O4_NEXT"],"selected_evidence":["デザイン・企画・製作・施工を一社で一貫対応","相談から完成まで一つの窓口で進行"],"placement":"CTA Zone / closing quiet chapter"},
     {"case_id":"CROSS_MORIBITO_VISIT","domain":"craft_furniture","company":"手作り家具 森人","conversion_goal":"実物確認を伴う来店・購入相談","baseline_path":"examples/cross_domain_cases/moribito_visit_baseline_v1.html","variant_id":"MORIBITO_OBJECTION_SELECTED","variant_path":"examples/cross_domain_cases/moribito_visit_selected_v1.html","primary_objections":["O1_ABILITY","O3_PROCESS","O4_NEXT","O6_COST"],"selected_evidence":["店内展示の実物に触れられる","オーダーメイドはできるだけ予算内で制作"],"placement":"CTA Zone / before action"}
+  ],
+  "targets": [
+    {"prototype_id":"P09_BASELINE","path":"examples/prototypes/p09_price_transparency_v1.html","frame_role":"CROSS_DOMAIN_BASELINE","wait_ms":250},
+    {"prototype_id":"P09_OBJECTION_SELECTED","path":"examples/cross_domain_cases/p09_signage_process_variant_v1.html","frame_role":"CROSS_DOMAIN_EVIDENCE_SELECTED","wait_ms":250},
+    {"prototype_id":"MORIBITO_BASELINE","path":"examples/cross_domain_cases/moribito_visit_baseline_v1.html","frame_role":"CROSS_DOMAIN_BASELINE","wait_ms":250},
+    {"prototype_id":"MORIBITO_OBJECTION_SELECTED","path":"examples/cross_domain_cases/moribito_visit_selected_v1.html","frame_role":"CROSS_DOMAIN_EVIDENCE_SELECTED","wait_ms":250}
   ]
 }
