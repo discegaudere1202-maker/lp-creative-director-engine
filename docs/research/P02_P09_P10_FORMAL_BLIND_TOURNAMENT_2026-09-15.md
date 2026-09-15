@@ -29,7 +29,7 @@ P02/P10は、前回の0.5833からCTA ZoneのTrust / Conversion Architectureを�
 
 - kagami: 0勝 / 1分 / 3敗（candidate win rate 0.1250）
 - smarthr-product: 3勝 / 1分 / 0敗（0.8750）
-- kintone-product: 3勝 / 0分 / 1敗（0.8750）
+- kintone-product: 3勝 / 1分 / 0敗（0.8750）
 - strongest axes: Owner Specificity 1.0000, Emotional Pull 0.7083, Mobile Quality 0.7083
 - weakest axes: Trust 0.3333, Conversion Intent 0.3333
 
