@@ -23,6 +23,7 @@
   {"name":"Chakin","authority":["CATEGORY","DATA"],"jobs":["VALUE_REFRAME","EVIDENCE_MONUMENT","OBJECTION_RESOLVE"],"lesson":"『貯金以上、投資未満』で選択肢の見方を変え、数字と理由で不安を解消。","source":"https://www.sumitomolife.co.jp/chakin/"},
   {"name":"Yoom","authority":["CATEGORY","INTERFACE"],"jobs":["VALUE_REFRAME","PRODUCT_BEHAVIOR"],"lesson":"『AI社員』という新カテゴリーからプロダクト証拠へつなぐ。","source":"https://lp.yoom.fun/"},
   {"name":"Studio.Business","authority":["B2B","INTERFACE"],"jobs":["HERO_STOP","EVIDENCE_MONUMENT"],"lesson":"Web制作を成果基盤として再定義し、実UI/実績へ接続。","source":"https://studio.design/ja/business"},
+  {"name":"Payn","authority":["DATA","UTILITY","TRUST"],"jobs":["OBJECTION_RESOLVE","CONVERSION_ACTION","PROCESS_EXPLAIN"],"lesson":"初期・月額0円、回収時のみ手数料という料金構造を導入不安の解消と同時に伝える。価格を安さではなく意思決定の明瞭さとして扱う比較相手。","source":"https://asi.co.jp/gallery/sites/?slug=payn"},
   {"name":"NPO法人アクション","authority":["PERSON","STORY"],"jobs":["VALUE_REFRAME","CTA_CLOSURE"],"lesson":"成果だけでなく活動理由と個人の関わりを可視化し、共感から行動へつなぐ。","source":"https://designaward2025.studio.design/nominate/action"},
   {"name":"IMA","authority":["MOTION","TYPOGRAPHY"],"jobs":["HERO_STOP","VALUE_REFRAME"],"lesson":"『かきまぜる』というBusiness Verbを円運動とレイアウトに変換。","source":"https://designaward2025.studio.design/nominate/ima-inc"},
   {"name":"文化ノ台所","authority":["PLACE","SENSORY"],"jobs":["PLACE_DESIRE","HERO_STOP"],"lesson":"食・仕事・宿泊が共存する場所の体験価値を中心に構成。","source":"https://designaward2025.studio.design/nominate/bunkanodaidokoro"},
