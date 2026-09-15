@@ -79,6 +79,7 @@ class ProductionSafetyBoundaryTest(unittest.TestCase):
         })
         self.assertEqual(report.safety_scope, "CLAIM_BLOCK")
         self.assertTrue(report.production_output_allowed)
+        self.assertEqual(report.status, "HOLD")
         self.assertEqual(report.evidence_manifest[0]["evidence_id"], "BOUNDARY-001")
 
     def test_missing_provenance_blocks_output(self):
