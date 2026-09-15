@@ -1,0 +1,44 @@
+{
+  "profile": {
+    "company_name": "まほら社会保険労務士事務所",
+    "industry": "社会保険労務士",
+    "facts": [
+      {"key": "experience_years", "value": "社労士事務所勤務20年", "source": "official"},
+      {"key": "supported_companies", "value": "300社以上の支援経験", "source": "official"},
+      {"key": "explanation_policy", "value": "どなたにでも分かりやすい説明", "source": "official"},
+      {"key": "services", "value": "手続き・就業規則・給与計算・助成金等", "source": "official"}
+    ],
+    "has_owner_photos": false,
+    "has_place_photos": false,
+    "has_material_photos": false,
+    "has_product_behavior": false,
+    "has_strong_numeric_evidence": true,
+    "has_complex_documents_or_rules": true,
+    "has_distinct_founder_voice": true
+  },
+  "concept": {
+    "name": "TRANSLATION",
+    "insight": "経営者は制度名を知りたいのではなく、自社で今起きていることを理解して解決したい。",
+    "big_idea": "難しい労務を、分かる言葉に翻訳する。",
+    "visual_authority": "DOCUMENT",
+    "business_verb": "翻訳する",
+    "owner_truth_keys": ["experience_years", "supported_companies", "explanation_policy", "services"]
+  },
+  "sections": [
+    {"id": "hero", "mode": "Interactive Diagram", "authority": "DOCUMENT", "energy": 5, "density": 2, "motion": 4, "screenshot_peak": true, "copy": ["労務の疑問を、\n分かる言葉に。"]},
+    {"id": "orient", "mode": "Quiet Text", "authority": "TYPOGRAPHY", "energy": 2, "density": 2, "motion": 0, "quiet": true, "copy": ["制度名が分からなくても、いま起きていることから話せます。"]},
+    {"id": "evidence", "mode": "Dense Evidence", "authority": "DATA", "energy": 4, "density": 4, "motion": 1, "screenshot_peak": true, "copy": ["20年。300社以上。"]},
+    {"id": "services", "mode": "Editorial Split", "authority": "DOCUMENT", "energy": 3, "density": 3, "motion": 2, "copy": ["経営者の質問から、任せられることへ。"]},
+    {"id": "rules", "mode": "Annotated Document", "authority": "DOCUMENT", "energy": 3, "density": 3, "motion": 1, "copy": ["就業規則を、会社で使える言葉に。"]},
+    {"id": "price", "mode": "Normal Content", "authority": "DATA", "energy": 2, "density": 3, "motion": 0, "copy": ["費用も、相談の前に見通せる。"]},
+    {"id": "cta", "mode": "Monumental Type", "authority": "TYPOGRAPHY", "energy": 4, "density": 2, "motion": 2, "copy": ["制度名ではなく、\nいまの状況を。"]}
+  ],
+  "motions": [
+    {"id": "translation-sequence", "kind": "signature", "duration_ms": 1200, "stagger_ms": 90, "child_count": 5, "blocking": false, "infinite": false, "semantic_reason": "専門語を経営者が分かる言葉へ翻訳する価値を見せる"},
+    {"id": "cta-hover", "kind": "state", "duration_ms": 180, "child_count": 1, "blocking": false, "infinite": false, "semantic_reason": "操作応答"}
+  ],
+  "screenshot_scores": [
+    {"frame_id": "hero", "distinctness": 9, "owner_specificity": 9, "immediate_read": 9, "visual_tension": 8, "craft_detail": 8, "share_impulse": 9},
+    {"frame_id": "evidence", "distinctness": 8, "owner_specificity": 9, "immediate_read": 9, "visual_tension": 8, "craft_detail": 8, "share_impulse": 8}
+  ]
+}
