@@ -4,32 +4,169 @@
   "status": "SCHEMA_CANDIDATE_NOT_PRODUCTION_IMPLEMENTED",
   "purpose": "Select evidence from customer objections, not from evidence availability alone.",
   "objection_model": [
-    {"id": "O1_ABILITY", "question": "本当にできるのか。", "preferred_evidence": ["VERIFIED_METRIC", "EXPERIENCE", "QUALIFICATION", "RESULT_CASE"]},
-    {"id": "O2_ACCOUNTABILITY", "question": "誰が責任を持つのか。", "preferred_evidence": ["OWNER_IDENTITY", "TEAM_IDENTITY", "OWNER_PORTRAIT"]},
-    {"id": "O3_PROCESS", "question": "何をしてくれるのか。", "preferred_evidence": ["SERVICE_PROCESS", "POST_CLICK_FLOW", "SCOPE_BOUNDARY"]},
-    {"id": "O4_NEXT", "question": "問い合わせ後に何が起きるのか。", "preferred_evidence": ["POST_CLICK_FLOW", "RESPONSE_EXPECTATION", "CONSULTATION_METHOD"]},
-    {"id": "O5_DECISION", "question": "いつ決断しなければならないのか。", "preferred_evidence": ["DECISION_BOUNDARY", "POST_CLICK_FLOW", "SCOPE_BOUNDARY"]},
-    {"id": "O6_COST", "question": "何に、いつ費用が発生するのか。", "preferred_evidence": ["PRICE", "FEE_CONDITION", "BUSINESS_MODEL"]},
-    {"id": "O7_RISK", "question": "相談したことで不利益が起きないか。", "preferred_evidence": ["RISK_POLICY", "SCOPE_BOUNDARY", "FEE_CONDITION", "PRIVACY_POLICY"]},
-    {"id": "O8_CONTINUITY", "question": "一回きりなのか、継続支援があるのか。", "preferred_evidence": ["CONTINUITY_POLICY", "POST_CLICK_FLOW", "SERVICE_SCOPE"]}
+    {
+      "id": "O1_ABILITY",
+      "question": "本当にできるのか。",
+      "preferred_evidence": [
+        "VERIFIED_METRIC",
+        "EXPERIENCE",
+        "QUALIFICATION",
+        "RESULT_CASE"
+      ]
+    },
+    {
+      "id": "O2_ACCOUNTABILITY",
+      "question": "誰が責任を持つのか。",
+      "preferred_evidence": [
+        "OWNER_IDENTITY",
+        "TEAM_IDENTITY",
+        "OWNER_PORTRAIT"
+      ]
+    },
+    {
+      "id": "O3_PROCESS",
+      "question": "何をしてくれるのか。",
+      "preferred_evidence": [
+        "SERVICE_PROCESS",
+        "POST_CLICK_FLOW",
+        "SCOPE_BOUNDARY"
+      ]
+    },
+    {
+      "id": "O4_NEXT",
+      "question": "問い合わせ後に何が起きるのか。",
+      "preferred_evidence": [
+        "POST_CLICK_FLOW",
+        "RESPONSE_EXPECTATION",
+        "CONSULTATION_METHOD"
+      ]
+    },
+    {
+      "id": "O5_DECISION",
+      "question": "いつ決断しなければならないのか。",
+      "preferred_evidence": [
+        "DECISION_BOUNDARY",
+        "POST_CLICK_FLOW",
+        "SCOPE_BOUNDARY"
+      ]
+    },
+    {
+      "id": "O6_COST",
+      "question": "何に、いつ費用が発生するのか。",
+      "preferred_evidence": [
+        "PRICE",
+        "FEE_CONDITION",
+        "BUSINESS_MODEL"
+      ]
+    },
+    {
+      "id": "O7_RISK",
+      "question": "相談したことで不利益が起きないか。",
+      "preferred_evidence": [
+        "RISK_POLICY",
+        "SCOPE_BOUNDARY",
+        "FEE_CONDITION",
+        "PRIVACY_POLICY"
+      ]
+    },
+    {
+      "id": "O8_CONTINUITY",
+      "question": "一回きりなのか、継続支援があるのか。",
+      "preferred_evidence": [
+        "CONTINUITY_POLICY",
+        "POST_CLICK_FLOW",
+        "SERVICE_SCOPE"
+      ]
+    }
   ],
   "evidence_record_schema": {
-    "required_fields": ["type", "strength", "target_objection", "verification_status", "source_url", "placement", "fallback"],
-    "verification_status": ["VERIFIED", "UNKNOWN", "REJECTED"],
-    "strength": ["E1_WEAK", "E2_SPECIFIC", "E3_OPERATIONAL", "E4_RISK_REDUCING", "E5_DECISION_ENABLING"]
+    "required_fields": [
+      "type",
+      "strength",
+      "target_objection",
+      "verification_status",
+      "source_url",
+      "placement",
+      "fallback"
+    ],
+    "verification_status": [
+      "VERIFIED",
+      "UNKNOWN",
+      "REJECTED"
+    ],
+    "strength": [
+      "E1_WEAK",
+      "E2_SPECIFIC",
+      "E3_OPERATIONAL",
+      "E4_RISK_REDUCING",
+      "E5_DECISION_ENABLING"
+    ]
   },
   "objection_to_evidence_mapping": [
-    {"objection": "O1_ABILITY", "evidence_type": "VERIFIED_METRIC / EXPERIENCE / QUALIFICATION", "minimum_strength": "E2_SPECIFIC", "preferred_placement": "Hero or Early proof only when it improves immediate understanding", "fallback": "HEARING_REQUIRED"},
-    {"objection": "O2_ACCOUNTABILITY", "evidence_type": "OWNER_IDENTITY / TEAM_IDENTITY", "minimum_strength": "E2_SPECIFIC", "preferred_placement": "Middle or Before CTA, adjacent to role/process", "fallback": "HEARING_REQUIRED; never imply assignment"},
-    {"objection": "O3_PROCESS", "evidence_type": "SERVICE_PROCESS", "minimum_strength": "E3_OPERATIONAL", "preferred_placement": "Middle to Before CTA", "fallback": "HEARING_REQUIRED; do not invent steps"},
-    {"objection": "O4_NEXT", "evidence_type": "POST_CLICK_FLOW / RESPONSE_EXPECTATION", "minimum_strength": "E3_OPERATIONAL", "preferred_placement": "CTA Zone Before/After CTA", "fallback": "HEARING_REQUIRED; no invented response time"},
-    {"objection": "O5_DECISION", "evidence_type": "DECISION_BOUNDARY", "minimum_strength": "E4_RISK_REDUCING", "preferred_placement": "After CTA", "fallback": "HEARING_REQUIRED; no implied opt-out"},
-    {"objection": "O6_COST", "evidence_type": "PRICE / FEE_CONDITION / BUSINESS_MODEL", "minimum_strength": "E4_RISK_REDUCING", "preferred_placement": "Before CTA or CTA Zone", "fallback": "HEARING_REQUIRED; no '完全無料' inference"},
-    {"objection": "O7_RISK", "evidence_type": "RISK_POLICY / PRIVACY_POLICY / SCOPE_BOUNDARY", "minimum_strength": "E4_RISK_REDUCING", "preferred_placement": "Before CTA", "fallback": "UNKNOWN; emit HEARING_REQUIRED and block reassurance"},
-    {"objection": "O8_CONTINUITY", "evidence_type": "CONTINUITY_POLICY / SERVICE_SCOPE", "minimum_strength": "E3_OPERATIONAL", "preferred_placement": "CTA Zone or post-action expectation", "fallback": "HEARING_REQUIRED; no continuity promise"}
+    {
+      "objection": "O1_ABILITY",
+      "evidence_type": "VERIFIED_METRIC / EXPERIENCE / QUALIFICATION",
+      "minimum_strength": "E2_SPECIFIC",
+      "preferred_placement": "Hero or Early proof only when it improves immediate understanding",
+      "fallback": "HEARING_REQUIRED"
+    },
+    {
+      "objection": "O2_ACCOUNTABILITY",
+      "evidence_type": "OWNER_IDENTITY / TEAM_IDENTITY",
+      "minimum_strength": "E2_SPECIFIC",
+      "preferred_placement": "Middle or Before CTA, adjacent to role/process",
+      "fallback": "HEARING_REQUIRED; never imply assignment"
+    },
+    {
+      "objection": "O3_PROCESS",
+      "evidence_type": "SERVICE_PROCESS",
+      "minimum_strength": "E3_OPERATIONAL",
+      "preferred_placement": "Middle to Before CTA",
+      "fallback": "HEARING_REQUIRED; do not invent steps"
+    },
+    {
+      "objection": "O4_NEXT",
+      "evidence_type": "POST_CLICK_FLOW / RESPONSE_EXPECTATION",
+      "minimum_strength": "E3_OPERATIONAL",
+      "preferred_placement": "CTA Zone Before/After CTA",
+      "fallback": "HEARING_REQUIRED; no invented response time"
+    },
+    {
+      "objection": "O5_DECISION",
+      "evidence_type": "DECISION_BOUNDARY",
+      "minimum_strength": "E4_RISK_REDUCING",
+      "preferred_placement": "After CTA",
+      "fallback": "HEARING_REQUIRED; no implied opt-out"
+    },
+    {
+      "objection": "O6_COST",
+      "evidence_type": "PRICE / FEE_CONDITION / BUSINESS_MODEL",
+      "minimum_strength": "E4_RISK_REDUCING",
+      "preferred_placement": "Before CTA or CTA Zone",
+      "fallback": "HEARING_REQUIRED; no '完全無料' inference"
+    },
+    {
+      "objection": "O7_RISK",
+      "evidence_type": "RISK_POLICY / PRIVACY_POLICY / SCOPE_BOUNDARY",
+      "minimum_strength": "E4_RISK_REDUCING",
+      "preferred_placement": "Before CTA",
+      "fallback": "UNKNOWN; emit HEARING_REQUIRED and block reassurance"
+    },
+    {
+      "objection": "O8_CONTINUITY",
+      "evidence_type": "CONTINUITY_POLICY / SERVICE_SCOPE",
+      "minimum_strength": "E3_OPERATIONAL",
+      "preferred_placement": "CTA Zone or post-action expectation",
+      "fallback": "HEARING_REQUIRED; no continuity promise"
+    }
   ],
   "selection_algorithm": {
-    "input": ["conversion_goal", "customer_context", "identified_objections", "evidence_ledger"],
+    "input": [
+      "conversion_goal",
+      "customer_context",
+      "identified_objections",
+      "evidence_ledger"
+    ],
     "steps": [
       "Identify the conversion goal and the decision the visitor is being asked to make.",
       "List the customer objections that block that decision.",
@@ -41,25 +178,130 @@
       "If a required record is UNKNOWN, emit HEARING_REQUIRED and neutral copy.",
       "Run Creative Protection and 9-width QA before promotion."
     ],
-    "output": ["selected_evidence", "target_objection", "strength", "placement", "blocked_claims", "hearing_required"],
-    "hard_constraints": ["no_fake_evidence", "no_fake_reassurance", "no_benchmark_layout_copy", "no_cta_displacement", "no_creative_protection_regression"]
+    "output": [
+      "selected_evidence",
+      "target_objection",
+      "strength",
+      "placement",
+      "blocked_claims",
+      "hearing_required"
+    ],
+    "hard_constraints": [
+      "no_fake_evidence",
+      "no_fake_reassurance",
+      "no_benchmark_layout_copy",
+      "no_cta_displacement",
+      "no_creative_protection_regression"
+    ]
   },
   "rules": {
     "safety_integrity": [
-      {"id": "UNKNOWN_BOUNDARY", "status": "REPLICATED", "when": "A required risk, privacy, response, guarantee or accountability record is UNKNOWN.", "do": "Block reassuring copy and emit HEARING_REQUIRED.", "fallback": "Use neutral language that does not promise the missing fact."},
-      {"id": "PROVENANCE_REQUIRED", "status": "REPLICATED", "when": "A record is selected for customer-facing proof.", "do": "Require source URL, excerpt and verification status.", "fallback": "Do not place the record."},
-      {"id": "MOBILE_ACTION_BUDGET", "status": "REPLICATED", "when": "Evidence is added near a CTA.", "do": "Re-art mobile and keep the action visible at 390×844; test all nine widths.", "fallback": "Reduce or relocate evidence, never hide the CTA."}
+      {
+        "id": "UNKNOWN_BOUNDARY",
+        "status": "REPLICATED",
+        "when": "A required risk, privacy, response, guarantee or accountability record is UNKNOWN.",
+        "do": "Block reassuring copy and emit HEARING_REQUIRED.",
+        "fallback": "Use neutral language that does not promise the missing fact."
+      },
+      {
+        "id": "PROVENANCE_REQUIRED",
+        "status": "REPLICATED",
+        "when": "A record is selected for customer-facing proof.",
+        "do": "Require source URL, excerpt and verification status.",
+        "fallback": "Do not place the record."
+      },
+      {
+        "id": "MOBILE_ACTION_BUDGET",
+        "status": "REPLICATED",
+        "when": "Evidence is added near a CTA.",
+        "do": "Re-art mobile and keep the action visible at 390×844; test all nine widths.",
+        "fallback": "Reduce or relocate evidence, never hide the CTA."
+      }
     ],
     "trust_optimization": [
-      {"id": "OBJECTION_FIRST_SELECTION", "status": "HYPOTHESIS", "when": "A conversion-blocking customer objection can be named.", "require": ["target objection", "verified evidence", "placement intent"], "do": "Select evidence to cover the objection and connect it to the action.", "place": "At the point where the objection blocks the decision.", "limit": "Do not rank evidence by prestige or quantity.", "fallback": "HEARING_REQUIRED."},
-      {"id": "ACCOUNTABILITY_WITH_PROCESS", "status": "OBSERVED", "when": "The visitor needs to know who will help and what that person does.", "require": ["OWNER_IDENTITY or TEAM_IDENTITY", "SERVICE_PROCESS or POST_CLICK_FLOW"], "do": "Place identity beside role/process; do not present a name as a guarantee of assignment.", "place": "Middle or Before CTA.", "limit": "No person-only proof claim.", "fallback": "HEARING_REQUIRED."},
-      {"id": "OBJECTION_COVERAGE_SEQUENCE", "status": "HYPOTHESIS", "when": "More than one objection blocks action.", "require": ["one evidence record per distinct high-risk objection"], "do": "Sequence proof, risk reduction and decision boundary without creating a card wall.", "place": "Middle → CTA Zone.", "limit": "Strong Screen + Quiet Chapter; 2–4 peak screens.", "fallback": "Cover only verified objections and route the rest to hearing."}
+      {
+        "id": "OBJECTION_FIRST_SELECTION",
+        "status": "HYPOTHESIS",
+        "when": "A conversion-blocking customer objection can be named.",
+        "require": [
+          "target objection",
+          "verified evidence",
+          "placement intent"
+        ],
+        "do": "Select evidence to cover the objection and connect it to the action.",
+        "place": "At the point where the objection blocks the decision.",
+        "limit": "Do not rank evidence by prestige or quantity.",
+        "fallback": "HEARING_REQUIRED."
+      },
+      {
+        "id": "ACCOUNTABILITY_WITH_PROCESS",
+        "status": "OBSERVED",
+        "when": "The visitor needs to know who will help and what that person does.",
+        "require": [
+          "OWNER_IDENTITY or TEAM_IDENTITY",
+          "SERVICE_PROCESS or POST_CLICK_FLOW"
+        ],
+        "do": "Place identity beside role/process; do not present a name as a guarantee of assignment.",
+        "place": "Middle or Before CTA.",
+        "limit": "No person-only proof claim.",
+        "fallback": "HEARING_REQUIRED."
+      },
+      {
+        "id": "OBJECTION_COVERAGE_SEQUENCE",
+        "status": "HYPOTHESIS",
+        "when": "More than one objection blocks action.",
+        "require": [
+          "one evidence record per distinct high-risk objection"
+        ],
+        "do": "Sequence proof, risk reduction and decision boundary without creating a card wall.",
+        "place": "Middle → CTA Zone.",
+        "limit": "Strong Screen + Quiet Chapter; 2–4 peak screens.",
+        "fallback": "Cover only verified objections and route the rest to hearing."
+      }
     ]
   },
   "validation_scope": {
-    "p10_variants": ["P10_ACCOUNTABILITY", "P10_CONTINUITY", "P10_BUSINESS_MODEL"],
-    "p02_variants": ["P02_PROCESS", "P02_AUTHORITY"],
+    "p10_variants": [
+      "P10_ACCOUNTABILITY",
+      "P10_CONTINUITY",
+      "P10_BUSINESS_MODEL"
+    ],
+    "p02_variants": [
+      "P02_PROCESS",
+      "P02_AUTHORITY"
+    ],
     "review_type": "structured internal Work review; not independent human-third-party evidence",
     "formal_promotion": "Only the best internal Variant proceeds to the existing opponent set."
+  },
+  "cross_domain_validation": {
+    "result_file": "data/cross_domain_validation_results_v1.json",
+    "status": "OBSERVED_CROSS_DOMAIN_CONDITIONAL",
+    "cases": [
+      "CROSS_P09_SIGNAGE",
+      "CROSS_MORIBITO_VISIT"
+    ],
+    "findings": {
+      "objection_first_selection": "Direction reproduced across two non-consultation cases, but P09 mobile shows selection without first-action placement is insufficient.",
+      "objection_coverage_sequence": "REPLICATED_CONDITIONAL; selected evidence must cover the blocking objection and reach the action frame.",
+      "accountability_with_process": "CONDITIONAL; responsibility plus process helped P09 desktop, while person-only generalization remains untested.",
+      "who_how_next_bridge": "CONDITIONAL; use domain-native experience sequence rather than fixed WHO/HOW/NEXT copy."
+    },
+    "hard_gate": "No ENGINE_READY_CANDIDATE until cross-domain evidence is repeated with stronger sample and live conversion remains out of scope.",
+    "hearing_schema_scoped": {
+      "universal_required": [
+        "conversion_goal",
+        "primary_objections",
+        "responsible_person_or_team",
+        "service_scope_or_process",
+        "next_action_or_post_click_flow",
+        "fee_or_price_condition",
+        "source_url_and_verification_status"
+      ],
+      "domain_required": [
+        "quote_or_installation_conditions",
+        "visit_or_appointment_conditions",
+        "consultation_business_model_and_continuity"
+      ]
+    }
   }
 }
