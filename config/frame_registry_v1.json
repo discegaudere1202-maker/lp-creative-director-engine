@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-09-15",
-  "rule": "Research notes do not automatically count as verified frames. VERIFIED requires explicit visual review. CORE additionally requires mobile review and is eligible for blind benchmark tournaments.",
+  "rule": "Research notes do not automatically count as verified frames. VERIFIED requires explicit visual review. CORE additionally requires visually reviewed live 390px M3 evidence and is eligible for blind benchmark tournaments.",
   "frames": [
     {
       "frame_id": "sakuma-hero-01",
@@ -67,10 +67,11 @@
       "visual_authority": ["TRUST", "TYPOGRAPHY", "PERSON", "ACCESSIBILITY"],
       "lesson": "派手さではなく、求職者視点の明快さ・余白・アクセシビリティ・不安を下げる導線によってPremiumな信頼を作っている。",
       "transfer_to_sales_sample": "士業や地域サービスでは、演出量を増やすより、判断しやすさと不安解消を一画面の美しさとして成立させる。",
-      "source_support": "Web Grand Prix page and report explicitly evaluate simple layout, accessibility, trust and low-friction casual interview design.",
+      "source_support": "Web Grand Prix evidence plus live 1440/390 review confirms message hierarchy, people-led trust and mobile re-composition.",
       "visual_verified": true,
-      "mobile_verified": false,
-      "stage": "VERIFIED",
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M3",
+      "stage": "CORE",
       "rejection_reason": ""
     },
     {
@@ -165,9 +166,10 @@
       "visual_authority": ["PERSON", "EDITORIAL", "TRUST"],
       "lesson": "性質の異なる二事業を整理しながら、人の柔らかさと清潔感を写真と余白で両立させ、企業理解への入口を作っている。",
       "transfer_to_sales_sample": "複数事業を持つ中小企業では全部を同列カード化せず、共通理解軸を先に作り、人や現場の印象を補助証拠として使う。",
-      "source_support": "Studio nominee page explains the two-business comprehension problem and people-focused expression; visual search confirmed the recruitment hero layout.",
+      "source_support": "Studio nominee page explains the two-business comprehension problem and people-focused expression; live 390px review is retained as M2 because the initial mobile viewport under-represents people evidence.",
       "visual_verified": true,
-      "mobile_verified": false,
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M2",
       "stage": "VERIFIED",
       "rejection_reason": ""
     },
@@ -179,10 +181,11 @@
       "visual_authority": ["EDITORIAL", "MOBILE_FIRST", "EMOTIONAL_TEMPERATURE"],
       "lesson": "重くなりやすい実家や終活のテーマを、明るい色・曲線・読みやすい記事構成で、軽くしすぎず前向きに向き合える距離感へ変えている。",
       "transfer_to_sales_sample": "問い合わせ自体が心理的に重い業種では、サービス機能より先に顧客が前へ進める温度と読みやすさを設計する。",
-      "source_support": "Studio nominee page states the emotional-barrier concept, bright colors, curves and mobile-first layout; award imagery visually confirms the editorial/mobile composition.",
+      "source_support": "Studio evidence plus a second stable live 390px capture confirms people photography, editorial hierarchy, content action and mobile-first composition.",
       "visual_verified": true,
-      "mobile_verified": false,
-      "stage": "VERIFIED",
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M3",
+      "stage": "CORE",
       "rejection_reason": ""
     },
     {
@@ -197,6 +200,21 @@
       "visual_verified": true,
       "mobile_verified": false,
       "stage": "VERIFIED",
+      "rejection_reason": ""
+    },
+    {
+      "frame_id": "ima-brand-verb-01",
+      "site_name": "IMA株式会社 | 今をかきまぜろ。",
+      "source_url": "https://designaward2025.studio.design/nominate/ima-inc",
+      "frame_role": "BUSINESS_VERB_HERO",
+      "visual_authority": ["TYPOGRAPHY", "MOTION", "BRAND_VERB", "EDITORIAL"],
+      "lesson": "『かきまぜる』という会社固有のBusiness Verbをコピーで説明するだけでなく、円運動・文字配置・画面の混ざり方へ変換し、会社の姿勢そのものをFormにしている。",
+      "transfer_to_sales_sample": "実際のBusiness Verbや仕事の振る舞いが固有な会社では、その動詞を見出しに置くだけでなく、CompositionやMotionの原因として使う。",
+      "source_support": "Studio nominee explicitly explains the visual exploration of the verb 'かき混ぜる'; live 1440/390 review confirms the same verb-led identity survives deliberate mobile simplification.",
+      "visual_verified": true,
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M3",
+      "stage": "CORE",
       "rejection_reason": ""
     }
   ]
