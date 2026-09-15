@@ -34,7 +34,7 @@ AI利用・自動生成であることは顧客価値と無関係。
 - Blind Benchmark Tournament aggregation
 - Blind Benchmark Review UI generator
 - Strict Form Causality checks
-- Safety-only Evidence Selection Gate with provenance, rights and hearing routing
+- Mandatory Production Evidence Safety Gate with provenance, rights and hearing routing
 - GitHub Actions CI
 
 ## Current R&D priority — Quality Ceiling
@@ -159,8 +159,7 @@ Rule:
 
 ## Evidence Safety Gate
 
-The optional pipeline safety input selects only verified, production-eligible
-evidence. It checks provenance, verification date, usage status and rights,
+Production mode requires a Safety-layer input and selects only verified, production-eligible evidence. It checks provenance, verification date, usage status and rights,
 blocks unsupported reassurance, and routes missing evidence to
 `HEARING_REQUIRED`. It never generates trust copy.
 
@@ -169,8 +168,7 @@ lp-engine examples/mahora_v2.json --evidence-safety evidence_safety_input.json
 ```
 
 The safety input contains `conversion_goal`, `primary_objections`, an
-`evidence_ledger`, and optional `requested_claims`. Without this option, the
-existing creative-direction pipeline is unchanged.
+`evidence_ledger`, and optional `requested_claims`. In explicit research/test mode, evidence may be inspected but output is marked `NOT_PRODUCTION_APPROVED`; the existing Creative Direction gates remain available without a production claim manifest.
 
 ## QA tiers
 
@@ -219,3 +217,6 @@ Current target priority:
 1. **NO_WEB** — highest priority
 2. **WEAK_WEB** — second priority
 3. **GOOD_WEB** — benchmark only by default
+
+
+Production mode is fail-closed: omitting the Safety input, malformed records, unknown rights, missing provenance, or selector errors cannot produce customer-facing output. Research and test modes are explicit and never delivery-approved.
