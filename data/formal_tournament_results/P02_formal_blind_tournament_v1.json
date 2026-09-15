@@ -1,0 +1,393 @@
+{
+  "schema_version": 1,
+  "tournament_type": "FORMAL_BLIND_TOURNAMENT",
+  "prototype_id": "P02",
+  "created_at": "2026-09-15T10:40:56.567473+00:00",
+  "candidate_source": {
+    "path": "examples/prototypes/p02_customer_world_translation_v3.html",
+    "sha256": "8675d1b036df0e683e41b06ce5a58abd2ce482257e8f285255ea07ebae6735d9"
+  },
+  "candidate_capture": {
+    "run_id": 34958882921,
+    "artifact_id": 10392184712,
+    "artifact_name": "prototype-tournament-evidence-5",
+    "artifact_digest": "sha256:41f7108ab3ea5aba678329f076bd7da28377cf6a5834477220762dd6f4c60d6c",
+    "viewport_standard": {
+      "desktop": [
+        1440,
+        1000
+      ],
+      "mobile": [
+        390,
+        844
+      ]
+    }
+  },
+  "benchmark_capture_artifacts": {
+    "run_6": {
+      "artifact_id": 10388641096,
+      "digest": "sha256:7cb1a74e24fa279af155310e0ddb4b027498b27de1ebd559bd8711993830e8fa"
+    },
+    "run_8": {
+      "artifact_id": 10389977402,
+      "digest": "sha256:b582e809bb4464c437ac0094ec239f1f0e4bfc266057a9950beb377c741acaee"
+    }
+  },
+  "blind_bundle": {
+    "path": "formal_work/bundles/P02/review.html",
+    "manifest_path": "formal_work/bundles/P02/review.manifest.json",
+    "identity_mapping_path": "formal_work/identity_mapping/P02.json",
+    "identity_masking": "PASS",
+    "candidate_side_randomized": true,
+    "reviewer_visible_ids": "opaque item IDs only"
+  },
+  "structured_review_roles": {
+    "creative_art_direction": "Reviewer A — Creative / Art Direction structured role",
+    "business_owner_conversion": "Reviewer B — Business Owner / Conversion structured role"
+  },
+  "axes": [
+    "immediate_read",
+    "distinctness",
+    "owner_specificity",
+    "visual_hierarchy",
+    "craft_detail",
+    "emotional_pull",
+    "trust",
+    "share_impulse",
+    "mobile_quality",
+    "conversion_intent"
+  ],
+  "votes": [
+    {
+      "benchmark_id": "kagami",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": -1,
+      "axes": {
+        "immediate_read": -1,
+        "distinctness": -1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": -1,
+        "share_impulse": -1,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "Kagami lands a product promise, layered UI proof and download action faster; the candidate's situation translation is more authored but the first screen feels like a concept without a next step.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kagami",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": -1,
+      "axes": {
+        "immediate_read": -1,
+        "distinctness": -1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": -1,
+        "emotional_pull": -1,
+        "trust": -1,
+        "share_impulse": -1,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "A business owner can recognize the service, but Kagami provides clearer proof, trust and an immediate action.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kagami",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": -1,
+        "share_impulse": 0,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "The candidate's quiet translation and Kagami's demonstrative mobile frame solve different problems; neither clearly dominates craft, although the candidate loses next-step clarity.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kagami",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": -1,
+      "axes": {
+        "immediate_read": -1,
+        "distinctness": -1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": -1,
+        "emotional_pull": -1,
+        "trust": -1,
+        "share_impulse": -1,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "At 390px Kagami keeps a visual product story and CTA; the candidate explains the idea but asks the visitor to infer action.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "smarthr-product",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "The candidate's制度→状況→相談 system is a more distinctive editorial translation than SmartHR's corporate product hero; SmartHR is stronger in proof and CTA.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "smarthr-product",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": -1,
+        "share_impulse": 0,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "The candidate now presents a visible consultation entry and more specific problem language; SmartHR still wins practical trust and proof, so the overall decision is even.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "smarthr-product",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "The mobile sequence preserves the three situations without collapsing into cards; the new visible entry point removes the former action gap.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "smarthr-product",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "The candidate is calmer and more problem-specific with a clear entry action; SmartHR's people and proof still carry more trust.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kintone-product",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": -1
+      },
+      "reason": "The candidate turns domain language into three customer moments; Kintone is competent but its generic platform breadth dilutes the focal problem.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kintone-product",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 1,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "The candidate earns specificity and emotional relevance and now exposes a consultation action; Kintone still has clearer product proof.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kintone-product",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "The candidate's vertically stacked situation lines remain legible and visually ownable; the visible entry action strengthens the mobile close.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "kintone-product",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": -1,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "For a worried worker, the candidate explains the entry point more directly and now offers a visible action than the platform-led frame; trust remains weaker.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    }
+  ],
+  "aggregate": {
+    "status": "HOLD",
+    "classification": "REVIEW_REQUIRED",
+    "win_rate": 0.5833,
+    "wins": 5,
+    "ties": 4,
+    "losses": 3,
+    "benchmark_count": 3,
+    "reviewer_types": [
+      "business_owner_conversion",
+      "creative_art_direction"
+    ],
+    "viewport_results": {
+      "1440": {
+        "wins": 2,
+        "ties": 2,
+        "losses": 2,
+        "win_rate": 0.5
+      },
+      "390": {
+        "wins": 3,
+        "ties": 2,
+        "losses": 1,
+        "win_rate": 0.6667
+      }
+    },
+    "axis_means": {
+      "conversion_intent": -0.5,
+      "craft_detail": 0.3333,
+      "distinctness": 0.3333,
+      "emotional_pull": 0.4167,
+      "immediate_read": 0.0833,
+      "mobile_quality": 0.4167,
+      "owner_specificity": 1.0,
+      "share_impulse": 0.3333,
+      "trust": -1.0,
+      "visual_hierarchy": 0.1667
+    },
+    "review_reasons": []
+  },
+  "metrics": {
+    "axis_win_rates": {
+      "immediate_read": 0.5417,
+      "distinctness": 0.6667,
+      "owner_specificity": 1.0,
+      "visual_hierarchy": 0.5833,
+      "craft_detail": 0.6667,
+      "emotional_pull": 0.7083,
+      "trust": 0.0,
+      "share_impulse": 0.6667,
+      "mobile_quality": 0.7083,
+      "conversion_intent": 0.25
+    },
+    "desktop_win_rate": 0.5,
+    "mobile_win_rate": 0.6667,
+    "reviewer_type_win_rates": {
+      "business_owner_conversion": 0.4167,
+      "creative_art_direction": 0.75
+    },
+    "benchmark_win_rates": {
+      "kagami": 0.125,
+      "kintone-product": 0.875,
+      "smarthr-product": 0.75
+    }
+  },
+  "formal_completeness": {
+    "all_opponents": true,
+    "desktop": true,
+    "mobile": true,
+    "two_reviewer_types": true,
+    "ten_axes": true,
+    "owner_specificity": true,
+    "share_impulse": true,
+    "score_recorded": true,
+    "provenance": true,
+    "identity_masking": true
+  },
+  "method_note": "This is a structured internal Work review using two explicitly different review roles. It is not represented as independent human-third-party evidence.",
+  "revision_history": {
+    "before": {
+      "capture_artifact_id": 10391022848,
+      "formal_win_rate": 0.5417,
+      "status": "HOLD"
+    },
+    "change": "Added a visible situation-based consultation entry at the closure while preserving the制度→状況→相談 structure.",
+    "after": {
+      "capture_artifact_id": 10392184712,
+      "formal_win_rate": 0.5833,
+      "status": "HOLD"
+    }
+  }
+}

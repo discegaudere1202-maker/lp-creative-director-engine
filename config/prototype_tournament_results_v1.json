@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "rule": "Formal blind tournament results are complete only with all task-specific M3 opponents, 1440/390 captures, two structured review roles, all ten axes, provenance and identity masking.",
+  "results": [
+    {
+      "prototype_id": "P02",
+      "status": "HOLD",
+      "win_rate": 0.5833,
+      "result_path": "data/formal_tournament_results/P02_formal_blind_tournament_v1.json",
+      "candidate_capture_run_id": 34958882921,
+      "candidate_capture_artifact_id": 10392184712
+    },
+    {
+      "prototype_id": "P09",
+      "status": "PASS",
+      "win_rate": 0.6875,
+      "result_path": "data/formal_tournament_results/P09_formal_blind_tournament_v1.json",
+      "candidate_capture_run_id": 34958882921,
+      "candidate_capture_artifact_id": 10392184712
+    },
+    {
+      "prototype_id": "P10",
+      "status": "HOLD",
+      "win_rate": 0.5833,
+      "result_path": "data/formal_tournament_results/P10_formal_blind_tournament_v1.json",
+      "candidate_capture_run_id": 34958882921,
+      "candidate_capture_artifact_id": 10392184712
+    }
+  ]
+}

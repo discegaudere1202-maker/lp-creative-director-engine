@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "tournament_type": "FORMAL_BLIND_TOURNAMENT",
+  "prototype_id": "P09",
+  "created_at": "2026-09-15T10:40:56.568293+00:00",
+  "candidate_source": {
+    "path": "examples/prototypes/p09_price_transparency_v1.html",
+    "sha256": "6822a71310cbe9fe6d5d28a04c9f6faff787c72064dd763f364ab30e27f443fd"
+  },
+  "candidate_capture": {
+    "run_id": 34958882921,
+    "artifact_id": 10392184712,
+    "artifact_name": "prototype-tournament-evidence-5",
+    "artifact_digest": "sha256:41f7108ab3ea5aba678329f076bd7da28377cf6a5834477220762dd6f4c60d6c",
+    "viewport_standard": {
+      "desktop": [
+        1440,
+        1000
+      ],
+      "mobile": [
+        390,
+        844
+      ]
+    }
+  },
+  "benchmark_capture_artifacts": {
+    "run_6": {
+      "artifact_id": 10388641096,
+      "digest": "sha256:7cb1a74e24fa279af155310e0ddb4b027498b27de1ebd559bd8711993830e8fa"
+    },
+    "run_8": {
+      "artifact_id": 10389977402,
+      "digest": "sha256:b582e809bb4464c437ac0094ec239f1f0e4bfc266057a9950beb377c741acaee"
+    }
+  },
+  "blind_bundle": {
+    "path": "formal_work/bundles/P09/review.html",
+    "manifest_path": "formal_work/bundles/P09/review.manifest.json",
+    "identity_mapping_path": "formal_work/identity_mapping/P09.json",
+    "identity_masking": "PASS",
+    "candidate_side_randomized": true,
+    "reviewer_visible_ids": "opaque item IDs only"
+  },
+  "structured_review_roles": {
+    "creative_art_direction": "Reviewer A — Creative / Art Direction structured role",
+    "business_owner_conversion": "Reviewer B — Business Owner / Conversion structured role"
+  },
+  "axes": [
+    "immediate_read",
+    "distinctness",
+    "owner_specificity",
+    "visual_hierarchy",
+    "craft_detail",
+    "emotional_pull",
+    "trust",
+    "share_impulse",
+    "mobile_quality",
+    "conversion_intent"
+  ],
+  "votes": [
+    {
+      "benchmark_id": "aki-design-price",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 1,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "The public-price object and physical 400×300mm anchor make the candidate more authored and specific than Aki's restrained recommendation page; next-step action remains less explicit.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "aki-design-price",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 1,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "The number, scope caveat and price drivers answer the owner's first question faster; Aki is calm but makes the decision wait for more reading.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "aki-design-price",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "At 390px the price tile and three drivers survive as a clear decision aid; it has more memorable specificity than the plain mobile price list.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "aki-design-price",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 1,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "The candidate surfaces why price changes, while Aki exposes more direct plan detail; candidate wins transparency but not decisively the next step.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "jimdo-hp-pack",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "The candidate makes one real product size and price the visual peak instead of a row of packages; Jimdo communicates inclusions but feels more replaceable.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "jimdo-hp-pack",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "Mobile keeps the physical-size cue, price and drivers together; it has a stronger authored read than Jimdo's standard plan stack.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "jimdo-hp-pack",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "Candidate earns transparency and specificity, but Jimdo has clearer package selection and CTA mechanics for a ready-to-buy owner.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "jimdo-hp-pack",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": -1,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 0,
+        "mobile_quality": -1,
+        "conversion_intent": -1
+      },
+      "reason": "The candidate is readable but the visible frame ends before a decisive action; Jimdo's mobile plan cards make the next choice more obvious.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "rals-homepage-price",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "The candidate's cost-driver sequence is a stronger authored explanation than Rals' plan comparison; the 4,158 price is a screenshot-worthy factual anchor.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "rals-homepage-price",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "The mobile composition turns a single product spec into a calm narrative; Rals' card system is more conventional and denser.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "rals-homepage-price",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "The candidate explains uncertainty better, but Rals offers more explicit package choice and action affordances.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "rals-homepage-price",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "At 390px the candidate retains the price and all three drivers without overload; Rals' plan frame asks more comparison work.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "studio-price",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "The candidate's price drivers and physical product detail form a distinctive information object; Studio's black plan block is polished but more generic.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "studio-price",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 1,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "Candidate is more specific and editorial; Studio's mobile plan cards deliver stronger productized craft and action, so neither wins overall.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "studio-price",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": -1,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": -1,
+        "share_impulse": 0,
+        "mobile_quality": -1,
+        "conversion_intent": -1
+      },
+      "reason": "Studio makes price tiers, audience fit and start action visible; the candidate's transparent logic is valuable but not enough for conversion.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    },
+    {
+      "benchmark_id": "studio-price",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": -1,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": -1,
+        "share_impulse": 0,
+        "mobile_quality": -1,
+        "conversion_intent": -1
+      },
+      "reason": "On mobile the candidate shows the answer but not the next action; Studio's tiered path is easier to choose and trust.",
+      "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
+    }
+  ],
+  "aggregate": {
+    "status": "PASS",
+    "classification": "COMPETITIVE_OR_SUPERIOR",
+    "win_rate": 0.6875,
+    "wins": 9,
+    "ties": 4,
+    "losses": 3,
+    "benchmark_count": 4,
+    "reviewer_types": [
+      "business_owner_conversion",
+      "creative_art_direction"
+    ],
+    "viewport_results": {
+      "1440": {
+        "wins": 5,
+        "ties": 2,
+        "losses": 1,
+        "win_rate": 0.75
+      },
+      "390": {
+        "wins": 4,
+        "ties": 2,
+        "losses": 2,
+        "win_rate": 0.625
+      }
+    },
+    "axis_means": {
+      "conversion_intent": -0.375,
+      "craft_detail": 0.6875,
+      "distinctness": 1.0,
+      "emotional_pull": 0.5625,
+      "immediate_read": 0.5625,
+      "mobile_quality": 0.25,
+      "owner_specificity": 1.0,
+      "share_impulse": 0.8125,
+      "trust": 0.0,
+      "visual_hierarchy": 0.375
+    },
+    "review_reasons": []
+  },
+  "metrics": {
+    "axis_win_rates": {
+      "immediate_read": 0.7812,
+      "distinctness": 1.0,
+      "owner_specificity": 1.0,
+      "visual_hierarchy": 0.6875,
+      "craft_detail": 0.8438,
+      "emotional_pull": 0.7812,
+      "trust": 0.5,
+      "share_impulse": 0.9062,
+      "mobile_quality": 0.625,
+      "conversion_intent": 0.3125
+    },
+    "desktop_win_rate": 0.75,
+    "mobile_win_rate": 0.625,
+    "reviewer_type_win_rates": {
+      "business_owner_conversion": 0.4375,
+      "creative_art_direction": 0.9375
+    },
+    "benchmark_win_rates": {
+      "aki-design-price": 0.875,
+      "jimdo-hp-pack": 0.625,
+      "rals-homepage-price": 0.875,
+      "studio-price": 0.375
+    }
+  },
+  "formal_completeness": {
+    "all_opponents": true,
+    "desktop": true,
+    "mobile": true,
+    "two_reviewer_types": true,
+    "ten_axes": true,
+    "owner_specificity": true,
+    "share_impulse": true,
+    "score_recorded": true,
+    "provenance": true,
+    "identity_masking": true
+  },
+  "method_note": "This is a structured internal Work review using two explicitly different review roles. It is not represented as independent human-third-party evidence.",
+  "revision_history": {
+    "before": null,
+    "change": "No candidate change after initial formal review.",
+    "after": {
+      "capture_artifact_id": 10392184712,
+      "formal_win_rate": 0.6875,
+      "status": "PASS"
+    }
+  }
+}
