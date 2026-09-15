@@ -1,31 +1,34 @@
 {
   "version": 1,
   "updated": "2026-09-15",
-  "rule": "Mobile CORE requires explicit mobile visual evidence, hierarchy preservation and purposeful mobile composition. Responsive existence alone is insufficient.",
+  "rule": "Mobile CORE requires explicit mobile visual evidence, hierarchy preservation and purposeful mobile composition. Responsive existence alone is insufficient. M3 requires a live 390px capture plus human visual review; capture success alone is not M3.",
   "records": [
     {
       "frame_id": "jikkanokoto-mobile-editorial-01",
       "benchmark_id": "jikkanokoto",
       "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Studio Design Award nominee page explicitly states mobile-first layout because mobile users are the majority.","The official renewal press release publishes a smartphone TOP-page image alongside the PC TOP-page image.","The mobile-first design supports the same emotional-barrier goal: bright color, curves, readable article discovery and low-friction exploration."],
+      "evidence": ["Studio Design Award nominee page explicitly states mobile-first layout because mobile users are the majority.","The official renewal press release publishes a smartphone TOP-page image alongside the PC TOP-page image.","The first live 390px evidence capture returned HTTP 200 and no horizontal overflow, but the hero media region was blank while the 1440px capture displayed the intended photograph. This live capture is therefore not accepted as stable M3 visual evidence."],
       "sources": ["https://designaward2025.studio.design/nominate/jikkanokoto","https://www.atpress.ne.jp/news/444379"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Strong mobile-first editorial benchmark. M3 still requires a live/captured 390px review."}
+      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"M2 remains valid from published mobile evidence. Live capture run 34940215253 is HOLD for M3 because the 390px hero media area rendered blank while desktop rendered the photo."},
+      "live_capture": {"run_id":34940215253,"artifact_id":10385061547,"viewport":"390x844","http_status":200,"screenshot_sha256":"a9b26dbc65af9859b3036199dd1f5653868168ef194cea64ba6a53cdef01f42b","review_status":"HOLD"}
     },
     {
       "frame_id": "ima-brand-verb-01",
       "benchmark_id": "ima-inc",
       "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Studio Design Award nominee page explicitly states that the visual design explored how to express the verb 'かき混ぜる' and highlights the rotating-circle key visual.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the IMA site.","The core brand message and the circular/mixing visual grammar remain observable across device states."],
-      "sources": ["https://designaward2025.studio.design/nominate/ima-inc","https://asi.co.jp/gallery/sites/?slug=ima-inc"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Useful benchmark for Business Verb -> Form. M3 still requires a live/captured 390px review."}
+      "evidence": ["Studio Design Award nominee page explicitly states that the visual design explored how to express the verb 'かき混ぜる' and highlights the rotating-circle key visual.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the IMA site.","Live 390px and 1440px captures were acquired from the current official site. The desktop state combines the brand verb with the circular IMA mark; the mobile state deliberately removes the side composition and concentrates the same brand verb into a single red field without horizontal overflow."],
+      "sources": ["https://designaward2025.studio.design/nominate/ima-inc","https://asi.co.jp/gallery/sites/?slug=ima-inc","https://ima-inc.world/"],
+      "mobile_review": {"evidence_grade":"M3","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Live 390px visual review passed. The Business Verb remains the dominant idea while desktop-only logo/circle complexity is intentionally reduced on mobile."},
+      "live_capture": {"run_id":34940215253,"artifact_id":10385061547,"viewport":"390x844","http_status":200,"screenshot_sha256":"0b5b21ca28a70d7c773ce3bb13449192d512188e6840b4a27b4745b1103bf161","desktop_screenshot_sha256":"653c590a06f174d849ef6c5704e3350567e507ff5edb62635c9dba370c231364","review_status":"PASS"}
     },
     {
       "frame_id": "smarthr-recruit-hero-01",
       "benchmark_id": "smarthr-recruit",
       "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Web Grand Prix evidence supports the trust/accessibility and low-friction recruitment rationale.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the SmartHR recruitment site.","The mobile state retains message hierarchy, recruitment navigation and low-friction casual-interview/action paths."],
-      "sources": ["https://award.dmi.jaa.or.jp/winner/gp12c_detail/596","https://asi.co.jp/gallery/sites/?slug=recruit-mtw0kxgo"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Trust-first mobile benchmark. M3 still requires a live/captured 390px review."}
+      "evidence": ["Web Grand Prix evidence supports the trust/accessibility and low-friction recruitment rationale.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the SmartHR recruitment site.","Live 390px and 1440px captures were acquired from the current official recruiting site. The mobile state preserves the core headline, people imagery and brand grammar while reorganizing the desktop composition into a vertical reading sequence with menu access."],
+      "sources": ["https://award.dmi.jaa.or.jp/winner/gp12c_detail/596","https://asi.co.jp/gallery/sites/?slug=recruit-mtw0kxgo","https://recruit.smarthr.co.jp/"],
+      "mobile_review": {"evidence_grade":"M3","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Live 390px visual review passed. The message and people-first trust hierarchy survive while desktop navigation is compressed into a mobile navigation state."},
+      "live_capture": {"run_id":34940215253,"artifact_id":10385061547,"viewport":"390x844","http_status":200,"screenshot_sha256":"c869338946d303ce5206f57686f7e0f50d340f61541d130a27abc38c9f3317bf","desktop_screenshot_sha256":"45faf179c765c4217e08b8b1cfd55155476634126dcc45d10928491af910e720","review_status":"PASS"}
     },
     {
       "frame_id": "jmc-recruit-hero-01",
