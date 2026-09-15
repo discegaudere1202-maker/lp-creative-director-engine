@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "prototype_id": "P10",
+  "source_company": "株式会社つぶだてる",
+  "research_policy": "Only official tsubudateru.com pages were used. Unconfirmed claims remain UNKNOWN and are absent from the variant.",
+  "facts": [
+    {
+      "id": "P10-E01",
+      "claim": "転職意思が固まっていない段階・モヤモヤの段階から相談できる。",
+      "source_url": "https://www.tsubudateru.com/lp",
+      "source_excerpt": "公式LPの公開内容に『転職意思が固まってない方、これから転職を考えたいという方もご相談可能』。",
+      "verification_status": "VERIFIED",
+      "strength": "E4_RISK_REDUCING",
+      "slot": "SCOPE_BOUNDARY",
+      "used_in_variant": false
+    },
+    {
+      "id": "P10-E02",
+      "claim": "価値観の整理やキャリアプランの立て方から伴走するサービスを掲げている。",
+      "source_url": "https://www.tsubudateru.com/",
+      "source_excerpt": "公式サイトのサービス説明に、市場価値の把握やキャリアプランの立て方から伴走する相談を記載。",
+      "verification_status": "VERIFIED",
+      "strength": "E3_OPERATIONAL",
+      "slot": "POST_CLICK_FLOW",
+      "used_in_variant": true
+    },
+    {
+      "id": "P10-E03",
+      "claim": "公式のキャリアコンサルタント紹介に宮原彩乃を掲載し、営業職・海外就業希望者を主対象に支援。",
+      "source_url": "https://www.tsubudateru.com/member/ayano-miyahara",
+      "source_excerpt": "公式プロフィールの公開内容に、キャリアコンサルタントとして営業職・海外就業希望者を主に支援と記載。",
+      "verification_status": "VERIFIED",
+      "strength": "E2_SPECIFIC",
+      "slot": "OWNER_IDENTITY",
+      "used_in_variant": true
+    },
+    {
+      "id": "P10-E04",
+      "claim": "つぶだてるで転職した人には、転職後もキャリアの伴走を無料で行う。",
+      "source_url": "https://www.tsubudateru.com/service",
+      "source_excerpt": "公式サービス一覧に、転職後もキャリアの伴走を無料で行う旨を記載。",
+      "verification_status": "VERIFIED",
+      "strength": "E4_RISK_REDUCING",
+      "slot": "POST_CLICK_FLOW",
+      "used_in_variant": true
+    },
+    {
+      "id": "P10-E05",
+      "claim": "個人向け相談を無料で案内している。",
+      "source_url": "https://www.tsubudateru.com/",
+      "source_excerpt": "公式サイトに『無料で転職相談』『モヤモヤ相談』の導線。",
+      "verification_status": "VERIFIED",
+      "strength": "E5_DECISION_ENABLING",
+      "slot": "SCOPE_BOUNDARY",
+      "used_in_variant": false
+    }
+  ],
+  "unknowns": [
+    "特定の相談者に誰が担当するかはUNKNOWN。宮原彩乃の掲載は担当確約を意味しない。",
+    "相談時間、予約後の具体的な返信・面談フロー、個人情報・守秘の扱いはUNKNOWN。",
+    "無理な転職勧誘をしないという明示方針は今回の公式確認範囲ではUNKNOWN。",
+    "写真の正式再利用許諾はUNKNOWNのため、画像は使用しない。"
+  ],
+  "captured_at": "2026-09-15T00:00:00Z",
+  "provenance_note": "Web research performed against official tsubudateru.com pages on 2026-09-15; page content may change."
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "study": "Company Evidence Enrichment",
+  "purpose": "Compare verified Company Evidence variants with unchanged Formal PASS baselines without promoting the variants to registry candidates.",
+  "baseline_capture_artifact_id": 10393223767,
+  "viewports": [
+    {
+      "name": "mobile_390",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "desktop_1440",
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "variants": [
+    {
+      "prototype_id": "P02_ENRICHED",
+      "baseline_id": "P02",
+      "baseline_path": "examples/prototypes/p02_customer_world_translation_v3.html",
+      "path": "examples/prototypes/p02_customer_world_translation_enriched_v1.html",
+      "frame_role": "B2B_EXPLAINER_ENRICHED",
+      "evidence_ledger": "data/evidence_ledgers/P02_company_evidence_2026-09-15.json"
+    },
+    {
+      "prototype_id": "P10_ENRICHED",
+      "baseline_id": "P10",
+      "baseline_path": "examples/prototypes/p10_customer_state_transition_v1.html",
+      "path": "examples/prototypes/p10_customer_state_transition_enriched_v1.html",
+      "frame_role": "EMOTIONAL_BARRIER_HERO_ENRICHED",
+      "evidence_ledger": "data/evidence_ledgers/P10_company_evidence_2026-09-15.json"
+    }
+  ]
+}

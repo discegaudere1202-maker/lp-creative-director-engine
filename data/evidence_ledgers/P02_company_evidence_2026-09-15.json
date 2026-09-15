@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "prototype_id": "P02",
+  "source_company": "まほら社会保険労務士事務所",
+  "research_policy": "Only official pages were used. Unconfirmed claims remain UNKNOWN and are absent from the variant.",
+  "facts": [
+    {
+      "id": "P02-E01",
+      "claim": "代表者は緒方幸一。",
+      "source_url": "https://www.mahora-sr.jp/page_001.html",
+      "source_excerpt": "ページ末尾に『まほら社会保険労務士事務所 緒方 幸一』と記載。",
+      "verification_status": "VERIFIED",
+      "strength": "E2_SPECIFIC",
+      "slot": "OWNER_IDENTITY",
+      "used_in_variant": true
+    },
+    {
+      "id": "P02-E02",
+      "claim": "長崎市内の社労士事務所で20年勤務し、300社以上の事業所を支援した。",
+      "source_url": "https://www.mahora-sr.jp/page_001.html",
+      "source_excerpt": "長崎市内の社労士事務所で20年勤務。幅広い労務課題を300社以上の事業所と支援。",
+      "verification_status": "VERIFIED",
+      "strength": "E2_SPECIFIC",
+      "slot": "VERIFIED_METRIC",
+      "used_in_variant": true
+    },
+    {
+      "id": "P02-E03",
+      "claim": "社会保険・労働保険手続、労務アドバイス、就業規則、給与計算、助成金申請、調査立会、スポット相談等に対応。",
+      "source_url": "https://www.mahora-sr.jp/",
+      "source_excerpt": "公式トップの業務内容と対応地域の記載。",
+      "verification_status": "VERIFIED",
+      "strength": "E3_OPERATIONAL",
+      "slot": "SCOPE_BOUNDARY",
+      "used_in_variant": false
+    },
+    {
+      "id": "P02-E04",
+      "claim": "問い合わせ後、内容確認・日程調整、相談とサービス説明、見積、納得後の契約という流れ。初回相談は原則無料で、報酬が必要な場合は事前に告知。",
+      "source_url": "https://www.mahora-sr.jp/page_009.html",
+      "source_excerpt": "契約までの流れ①〜④。",
+      "verification_status": "VERIFIED",
+      "strength": "E5_DECISION_ENABLING",
+      "slot": "POST_CLICK_FLOW",
+      "used_in_variant": true
+    },
+    {
+      "id": "P02-E05",
+      "claim": "顧問契約を結ばずに相談・依頼できるスポット相談を案内している。",
+      "source_url": "https://www.mahora-sr.jp/page_008.html",
+      "source_excerpt": "『顧問契約を結ばずに 気軽に社労士に相談』。",
+      "verification_status": "VERIFIED",
+      "strength": "E4_RISK_REDUCING",
+      "slot": "SCOPE_BOUNDARY",
+      "used_in_variant": false
+    }
+  ],
+  "unknowns": [
+    "守秘義務・個人情報保護のLP掲載方針は今回の公式確認範囲ではUNKNOWN。",
+    "返信時間、電話以外の具体的相談手段、契約しない場合の扱いはUNKNOWN。",
+    "代表者写真の正式再利用許諾はUNKNOWNのため、画像は使用しない。"
+  ],
+  "captured_at": "2026-09-15T00:00:00Z",
+  "provenance_note": "Web research performed against official mahora-sr.jp pages on 2026-09-15; page content may change."
+}
