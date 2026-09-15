@@ -58,7 +58,8 @@
       "production_output_allowed",
       "output_status",
       "safety_scope",
-      "evidence_manifest"
+      "evidence_manifest",
+      "hearing_plan"
     ],
     "safety_status_enum": [
       "PASS",
