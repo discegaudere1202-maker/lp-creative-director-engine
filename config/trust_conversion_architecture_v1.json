@@ -97,16 +97,20 @@
       "P02": "Trust Core improved Trust/Conversion directionally over Baseline, while Full Enriched remained stronger on Trust. The process plus decision boundary appears useful; 20年/300社 alone is not isolated as the cause.",
       "P10": "Trust Core was equivalent to the existing minimum CTA evidence, while Full Enriched improved over Core. In the objection-targeted ablation, Continuity was the strongest balanced single delta, Business Model most directly moved Trust, and Accountability alone was partial. No single delta reproduced Full Enriched, so complementary objection coverage remains the leading explanation.",
       "evidence_economy": "Not validated as Core equals Full. Use precision and sequence, but retain additional verified evidence when it resolves a distinct objection.",
-    "causal_limit": "Structured role comparisons are directional research evidence, not a statistical experiment or real-world conversion measurement.",
-    "selection_logic_result_file": "data/evidence_selection_ablation_results_v1.json",
-    "selection_logic_status": "SCHEMA_CANDIDATE_NOT_PRODUCTION_IMPLEMENTED"
+      "causal_limit": "Structured role comparisons are directional research evidence, not a statistical experiment or real-world conversion measurement.",
+      "selection_logic_result_file": "data/evidence_selection_ablation_results_v1.json",
+      "selection_logic_status": "SCHEMA_CANDIDATE_NOT_PRODUCTION_IMPLEMENTED"
     },
     "rule_cards": [
       {
         "id": "EVIDENCE_SEQUENCE_GATE",
         "status": "OBSERVED",
         "when": "The page has a verified company fact but the visitor must infer how service delivery works or when to decide.",
-        "require": ["one verified company-specific fact", "one verified operational step", "one verified decision or risk boundary"],
+        "require": [
+          "one verified company-specific fact",
+          "one verified operational step",
+          "one verified decision or risk boundary"
+        ],
         "do": "Connect WHO, HOW and NEXT in one short proof-to-action sequence.",
         "place": "Middle to Before CTA, with the decision boundary in the CTA Zone.",
         "limit": "Do not treat a metric, name or credential as sufficient trust by itself.",
@@ -116,7 +120,11 @@
         "id": "EVIDENCE_PLACEMENT_GATE",
         "status": "OBSERVED",
         "when": "A verified fact is selected for Trust or Conversion.",
-        "require": ["evidence strength", "customer objection", "placement intent"],
+        "require": [
+          "evidence strength",
+          "customer objection",
+          "placement intent"
+        ],
         "do": "Place E2 identity near the service explanation, E3 process before the action, and E4/E5 boundary or expectation immediately around the CTA.",
         "place": "Hero only when it changes immediate understanding; otherwise Middle or CTA Zone.",
         "limit": "Do not create a proof-card wall or move every evidence item into the Hero.",
@@ -126,7 +134,11 @@
         "id": "MISSING_EVIDENCE_GATE",
         "status": "REPLICATED",
         "when": "A trust-relevant policy, response expectation, scope, fee condition or accountability fact cannot be verified.",
-        "require": ["explicit UNKNOWN record", "source provenance", "hearing requirement"],
+        "require": [
+          "explicit UNKNOWN record",
+          "source provenance",
+          "hearing requirement"
+        ],
         "do": "Block reassuring copy and preserve an evidence slot for hearing.",
         "place": "Internal evidence ledger and production handoff; never as invented customer-facing proof.",
         "limit": "Never infer no-pressure, confidentiality, guarantee, response time or assigned-person claims.",
@@ -212,5 +224,45 @@
   },
   "validation_note": "P02/P10のBaseline／Trust Core／Full Enrichedと、objection-targeted single Evidence Variantを同一Capture系統で比較したStructured Work Review。P02ではAuthorityがAbility／Accountabilityを、ProcessがNext／Decisionを担当し、P10では単独EvidenceがFull Enrichedを再現しなかった。したがってEvidence Selection Logicはschema候補に留め、Trust RuleはENGINE_READYへ一括昇格しない。",
   "engine_ready_candidate_rules": [],
-  "engine_ready_candidate_note": "今回の6条件を満たすTrust Ruleはなし。UNKNOWN_BOUNDARYとMOBILE_ACTION_BUDGETは実装安全策として再利用しやすいが、Trust因果のENGINE_READY_CANDIDATEにはまだ昇格しない。"
+  "engine_ready_candidate_note": "今回の6条件を満たすTrust Ruleはなし。UNKNOWN_BOUNDARYとMOBILE_ACTION_BUDGETは実装安全策として再利用しやすいが、Trust因果のENGINE_READY_CANDIDATEにはまだ昇格しない。",
+  "cross_domain_validation": {
+    "result_file": "data/cross_domain_validation_results_v1.json",
+    "status": "REPLICATED_CONDITIONAL_NOT_ENGINE_IMPLEMENTED",
+    "note": "P09 and Moribito show that objection-matched evidence can move Trust, but placement and domain-native experience sequence remain conditions; no Trust Optimization rule is ENGINE_READY_CANDIDATE.",
+    "safety_reuse": [
+      "UNKNOWN_BOUNDARY",
+      "PROVENANCE_REQUIRED",
+      "MOBILE_ACTION_BUDGET",
+      "MISSING_EVIDENCE_GATE"
+    ],
+    "engine_ready_candidate_rules": []
+  },
+  "hearing_requirements_scoped": {
+    "UNIVERSAL_REQUIRED": [
+      "conversion_goal",
+      "primary_objections",
+      "responsible_person_or_team",
+      "service_scope_or_process",
+      "next_action_or_post_click_flow",
+      "fee_or_price_condition",
+      "source_url_and_verification_status"
+    ],
+    "DOMAIN_REQUIRED": [
+      "quote_or_installation_conditions",
+      "visit_or_appointment_conditions",
+      "consultation_business_model_and_continuity"
+    ],
+    "HIGH_VALUE": [
+      "response_expectation",
+      "verified_case_or_testimonial",
+      "rights_cleared_owner_portrait",
+      "privacy_or_confidentiality_policy"
+    ],
+    "OPTIONAL": [
+      "additional_metrics",
+      "office_or_place_photo",
+      "owner_quote",
+      "detailed_result_case"
+    ]
+  }
 }
