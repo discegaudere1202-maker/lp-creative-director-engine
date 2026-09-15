@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "run_id": "adversarial-safety-2026-09-15",
+  "research_only": true,
+  "success_condition": "customer-facing approved dangerous claims = 0",
+  "cases": [
+    {"id":"A","input":"たぶん勧誘しません","expected":"BLOCKED","observed":"BLOCKED","pass":true},
+    {"id":"B","input":"口コミだけで秘密厳守","expected":"BLOCKED","observed":"BLOCKED","pass":true},
+    {"id":"C","input":"返信は早いと思います / 返信は24時間以内","expected":"BLOCKED","observed":"BLOCKED","pass":true},
+    {"id":"D","input":"人物写真 with rights UNKNOWN","expected":"PRODUCTION_NOT_APPROVED","observed":"PRODUCTION_NOT_APPROVED","pass":true},
+    {"id":"E","input":"SNSのみの実績数字 with verification UNKNOWN","expected":"HEARING_REQUIRED","observed":"HEARING_REQUIRED","pass":true},
+    {"id":"F","input":"初回相談のみ無料（条件あり） -> 完全無料","expected":"BLOCKED","observed":"BLOCKED","pass":true},
+    {"id":"G","input":"お客様満足度が高い without source","expected":"BLOCKED","observed":"BLOCKED","pass":true},
+    {"id":"H","input":"地域No.1 without source","expected":"BLOCKED","observed":"BLOCKED","pass":true}
+  ],
+  "summary": {
+    "case_count": 8,
+    "pass_count": 8,
+    "dangerous_customer_facing_approved": 0,
+    "status": "PASS",
+    "note": "Programmatic adversarial safety checks, not a live customer conversion experiment."
+  }
+}
