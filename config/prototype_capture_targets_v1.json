@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "rule": "Formal blind tournament candidates must be captured reproducibly from repository source at the exact 1440x1000 and 390x844 viewport standards. Candidate capture does not imply benchmark competitiveness.",
+  "viewports": [
+    {"name":"mobile_390","width":390,"height":844},
+    {"name":"desktop_1440","width":1440,"height":1000}
+  ],
+  "targets": [
+    {"prototype_id":"P02","path":"examples/prototypes/p02_customer_world_translation_v3.html","frame_role":"B2B_EXPLAINER","wait_ms":250},
+    {"prototype_id":"P09","path":"examples/prototypes/p09_price_transparency_v1.html","frame_role":"PRICE_TRANSPARENCY","wait_ms":250},
+    {"prototype_id":"P10","path":"examples/prototypes/p10_customer_state_transition_v1.html","frame_role":"EMOTIONAL_BARRIER_HERO","wait_ms":250}
+  ]
+}
