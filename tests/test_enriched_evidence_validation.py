@@ -17,7 +17,7 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
 
     def test_capture_config_has_formal_viewports_and_targets(self):
         self.assertEqual({(v["width"], v["height"]) for v in self.config["viewports"]}, {(390, 844), (1440, 1000)})
-        self.assertEqual({v["prototype_id"] for v in self.config["variants"]}, {"P02_ENRICHED", "P10_ENRICHED"})
+        self.assertEqual({v["prototype_id"] for v in self.config["variants"]}, {"P02_ENRICHED", "P10_ENRICHED", "P02_CORE", "P10_CORE"})
         self.assertEqual({t["prototype_id"] for t in self.config["targets"]}, {"P02_ENRICHED", "P10_ENRICHED"})
 
     def test_evidence_ledgers_are_source_bound_and_unknown_safe(self):
@@ -32,6 +32,7 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
 
     def test_enriched_formal_results_are_complete(self):
         for name in ("P02_ENRICHED", "P10_ENRICHED"):
+            
             path = ROOT / "data" / "formal_tournament_results" / f"{name}_formal_blind_tournament_v1.json"
             payload = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(payload["tournament_type"], "FORMAL_BLIND_TOURNAMENT")
@@ -44,6 +45,13 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
         p02 = (ROOT / "examples/prototypes/p02_customer_world_translation_enriched_v1.html").read_text(encoding="utf-8")
         p10 = (ROOT / "examples/prototypes/p10_customer_state_transition_enriched_v1.html").read_text(encoding="utf-8")
         self.assertIn("緒方 幸一", p02)
+        core02 = (ROOT / "examples/prototypes/p02_customer_world_translation_core_v1.html").read_text(encoding="utf-8")
+        core10 = (ROOT / "examples/prototypes/p10_customer_state_transition_core_v1.html").read_text(encoding="utf-8")
+        self.assertIn("サービス説明・見積", core02)
+        self.assertIn("納得いただいた段階で契約へ。", core02)
+        self.assertIn("相談では、モヤモヤを聞き、価値観を整理します。", core10)
+        self.assertNotIn("宮原 彩乃", core10)
+        self.assertNotIn("転職後もキャリアに無料で伴走します。", core10)
         self.assertIn("サービス説明・見積", p02)
         self.assertNotIn("守秘", p02)
         self.assertIn("宮原 彩乃", p10)

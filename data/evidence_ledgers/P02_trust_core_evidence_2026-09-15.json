@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "prototype_id": "P02_CORE",
+  "baseline_id": "P02",
+  "full_enriched_id": "P02_ENRICHED",
+  "design": "Core keeps one WHO, one operational path and one decision boundary; it omits Full's duplicated metric line and initial-free reassurance to test whether the process/boundary carries the gain.",
+  "facts": [
+    {
+      "id": "P02-E01",
+      "claim": "緒方幸一／社会保険労務士事務所の代表者として掲載。",
+      "source_url": "https://www.mahora-sr.jp/page_001.html",
+      "source_excerpt": "公式代表挨拶の末尾に事務所名と緒方幸一を掲載。",
+      "verification_status": "VERIFIED",
+      "strength": "E2_SPECIFIC",
+      "role": "WHO",
+      "placement": "BEFORE_CTA",
+      "used_in_variant": true
+    },
+    {
+      "id": "P02-E04",
+      "claim": "問い合わせ→相談内容の確認→サービス説明・見積→納得後契約の流れ。",
+      "source_url": "https://www.mahora-sr.jp/page_009.html",
+      "source_excerpt": "公式の契約までの流れ①〜④。",
+      "verification_status": "VERIFIED",
+      "strength": "E5_DECISION_ENABLING",
+      "role": "HOW_NEXT_DECISION",
+      "placement": "CTA_ZONE",
+      "used_in_variant": true
+    },
+    {
+      "id": "P02-E02",
+      "claim": "20年勤務・300社以上の支援。",
+      "source_url": "https://www.mahora-sr.jp/page_001.html",
+      "source_excerpt": "公式代表挨拶に記載。Baselineから保持する既存Evidence。",
+      "verification_status": "VERIFIED",
+      "strength": "E2_SPECIFIC",
+      "role": "BASELINE_HELD_CONSTANT",
+      "placement": "HERO",
+      "used_in_variant": false
+    }
+  ],
+  "unknowns": [
+    "初回相談無料はCoreでは意図的に外した。",
+    "守秘・返信時間・契約しない場合の扱いはUNKNOWN。"
+  ],
+  "provenance": "Official mahora-sr.jp evidence ledger; Core is a research ablation, not a production claim set."
+}

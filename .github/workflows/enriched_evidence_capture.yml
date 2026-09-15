@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "examples/prototypes/*_enriched_v1.html"
+      - "examples/prototypes/*_core_v1.html"
       - "config/prototype_enriched_capture_targets_v1.json"
       - "scripts/capture_prototype_frames.py"
       - ".github/workflows/enriched_evidence_capture.yml"

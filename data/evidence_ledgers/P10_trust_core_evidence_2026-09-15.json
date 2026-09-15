@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "prototype_id": "P10_CORE",
+  "baseline_id": "P10",
+  "full_enriched_id": "P10_ENRICHED",
+  "design": "Core keeps one risk/Company fact, one operational process and one decision boundary; it removes the named consultant and post-transition continuity used by Full.",
+  "facts": [
+    {
+      "id": "P10-E05",
+      "claim": "個人向け相談を無料で案内している。",
+      "source_url": "https://www.tsubudateru.com/",
+      "source_excerpt": "公式サイトに無料の転職相談・モヤモヤ相談導線。",
+      "verification_status": "VERIFIED",
+      "strength": "E5_DECISION_ENABLING",
+      "role": "RISK_COMPANY_FACT",
+      "placement": "BEFORE_CTA",
+      "used_in_variant": true
+    },
+    {
+      "id": "P10-E02",
+      "claim": "モヤモヤから価値観を整理する相談を案内している。",
+      "source_url": "https://www.tsubudateru.com/lp",
+      "source_excerpt": "公式LPに転職意思未確定の相談と価値観をもとにした支援を記載。",
+      "verification_status": "VERIFIED",
+      "strength": "E3_OPERATIONAL",
+      "role": "HOW",
+      "placement": "CTA_ZONE",
+      "used_in_variant": true
+    },
+    {
+      "id": "P10-E01",
+      "claim": "転職意思が固まっていない段階から相談可能。",
+      "source_url": "https://www.tsubudateru.com/lp",
+      "source_excerpt": "公式LPの公開内容。CoreではCTAのDecision Boundaryとして表現。",
+      "verification_status": "VERIFIED",
+      "strength": "E4_RISK_REDUCING",
+      "role": "DECISION_BOUNDARY",
+      "placement": "AFTER_CTA",
+      "used_in_variant": true
+    }
+  ],
+  "unknowns": [
+    "Coreでは担当者名と転職後の無料伴走を意図的に外した。",
+    "相談時間・担当確約・守秘・無理な勧誘方針はUNKNOWN。"
+  ],
+  "provenance": "Official tsubudateru.com evidence ledger; Core is a research ablation, not a production claim set."
+}
