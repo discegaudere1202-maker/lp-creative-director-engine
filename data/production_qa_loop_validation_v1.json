@@ -1,6 +1,6 @@
 {
   "schema_version": "production_qa_loop_validation_v1",
-  "purpose": "Persist the Phase 2 cross-fixture QA loop decision without treating local static-only output as browser validation.",
+  "purpose": "Persist the Phase 2 cross-fixture QA loop decision and its authoritative GitHub Actions browser validation.",
   "fixtures": [
     {"company_id":"chikushi-industries","domain":"metal fabrication / B2B","conversion_goal":"quote_request","evidence_density":"HIGH","layout_profile":"technical_drawing"},
     {"company_id":"lovst-photo-studio","domain":"photo studio","conversion_goal":"reservation","evidence_density":"HIGH","layout_profile":"experience_calendar"},
@@ -9,18 +9,40 @@
   "gen1_to_gen2": {
     "gen1_diagnosis": "COPY state bridge issue recorded for all three fixtures",
     "generic_engine_change": "customer_state_bridge_and_profile_composition",
-    "gen2_diagnosis": "PASS in static loop for all three fixtures",
-    "improved_fixture_count_static": 3,
+    "gen2_diagnosis": {
+      "chikushi-industries": "PASS",
+      "lovst-photo-studio": "PASS",
+      "aoyama-flower-market-hakata": "IMPROVEMENT_REQUIRED_NON_BLOCKING_SPARSE_EVIDENCE"
+    },
+    "improved_fixture_count": 3,
     "manual_intervention": 0,
     "creative_regression_observed": false
   },
   "browser_validation": {
-    "status": "PENDING_GITHUB_ACTIONS",
+    "status": "PASS",
+    "workflow_run_id": 35036544098,
+    "workflow_run_number": 1,
+    "head_sha": "a169bf59bdf86a70839a328a9b285948c8492587",
     "required_widths": [320,360,375,390,430,768,1024,1280,1440],
     "exact_capture": ["1440x1000", "390x844"],
-    "note": "The authoritative browser result is produced by .github/workflows/production_qa_loop.yml."
+    "qa_mode": "static_and_browser",
+    "artifact_id": 10423154849,
+    "artifact_name": "production-qa-loop",
+    "artifact_digest": "sha256:7cde0720a8bbdb21c59bc72b0ac084c17e43ffdd7bb2ca978ac8c089c93dda29"
+  },
+  "andy_regression": {
+    "status": "PASS",
+    "workflow_run_id": 35036544098,
+    "generation_id": "qa-andy-regression"
+  },
+  "existing_regression": {
+    "status": "PASS",
+    "qa_workflow_run_id": 35036544072,
+    "qa_run_number": 374,
+    "tests": 193
   },
   "manual_intervention": [],
   "sales_sample_gate": "HOLD",
-  "reason": "Structured QA loop is technically valid, but this deterministic MVP does not yet meet the 100万円 sales-sample bar without richer company evidence and stronger bespoke creative review."
+  "phase2_decision": "HOLD",
+  "reason": "The automated QA loop, browser validation, Safety, and regression gates are green, but all three deterministic sales-sample gates remain HOLD and the sparse-evidence fixture retains a non-blocking evidence-quality issue. The next step is generic Phase 2 quality improvement, not a direct Phase 3 promotion."
 }
