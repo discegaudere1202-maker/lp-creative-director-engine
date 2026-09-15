@@ -1,5 +1,5 @@
 {
-  "mode": "static_only",
+  "mode": "static_and_browser_ci",
   "required_widths": [
     320,
     360,
@@ -20,8 +20,23 @@
     "andy-e-003"
   ],
   "html_bytes": 9752,
+  "browser_qa": {
+    "status": "PASS",
+    "workflow": "Production Generation QA",
+    "run_number": 3,
+    "run_id": 35033983101,
+    "head_sha": "06f84fb692583cb086ff4d39c3b525a8b6bf8bb7",
+    "all_required_widths": "PASS",
+    "horizontal_overflow": "PASS",
+    "line_shape": "PASS",
+    "console_and_page_errors": "PASS",
+    "exact_captures": ["390x844", "1440x1000"],
+    "artifact_id": 10422841297,
+    "artifact_name": "andy-production-generation-qa",
+    "artifact_digest": "sha256:553abea8ab9aa5e60c70f3ed81dd53e6f88ec7898a98a5a7d558ae23a689c713"
+  },
   "exact_capture": {
-    "desktop": "1440x1000_pending_browser_qa",
-    "mobile": "390x844_pending_browser_qa"
+    "desktop": "1440x1000",
+    "mobile": "390x844"
   }
 }

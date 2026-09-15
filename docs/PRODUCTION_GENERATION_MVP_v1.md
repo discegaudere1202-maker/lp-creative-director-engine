@@ -62,8 +62,13 @@ Generation 2 was regenerated from the input; its HTML was not manually edited.
 evidence traceability, unsupported reassurance markers, responsive rule
 presence and section count. When Playwright is available it invokes the
 existing real-browser QA and captures exact `390×844` and `1440×1000` views.
-The GitHub Actions workflow runs this browser QA with Chromium and uploads the
-captures and manifests.
+The GitHub Actions workflow ran this browser QA with Chromium successfully at
+Run 3 (`35033983101`) on head
+`06f84fb692583cb086ff4d39c3b525a8b6bf8bb7` and uploaded the captures and
+manifests as Artifact `10422841297`
+(`sha256:553abea8ab9aa5e60c70f3ed81dd53e6f88ec7898a98a5a7d558ae23a689c713`).
+The existing LP Engine regression was also successful at Run 371
+(`35033983094`).
 
 The reviews in each generation directory are structured review roles only:
 Creative / Art Direction and Business Owner / Conversion. They are not claims

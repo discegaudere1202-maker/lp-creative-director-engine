@@ -1,0 +1,36 @@
+{
+  "schema_version": "production_generation_validation_v1",
+  "status": "MVP_VALIDATED_WITH_HOLD_ON_PREMIUM_VALUE_GATE",
+  "head_sha": "06f84fb692583cb086ff4d39c3b525a8b6bf8bb7",
+  "production_generation_qa": {
+    "run_id": 35033983101,
+    "run_number": 3,
+    "conclusion": "success",
+    "artifact_id": 10422841297,
+    "artifact_name": "andy-production-generation-qa",
+    "artifact_digest": "sha256:553abea8ab9aa5e60c70f3ed81dd53e6f88ec7898a98a5a7d558ae23a689c713",
+    "capture_viewports": ["390x844", "1440x1000"],
+    "qa_widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440]
+  },
+  "regression_qa": {
+    "workflow": "LP Engine QA",
+    "run_id": 35033983094,
+    "run_number": 371,
+    "conclusion": "success"
+  },
+  "generations": {
+    "generation_1": {
+      "generation_id": "andy-gen-1",
+      "decision": "ENGINE_IMPROVEMENT_REQUIRED",
+      "problem": "Generated reassurance was not backed by an approved policy evidence record."
+    },
+    "generation_2": {
+      "generation_id": "andy-gen-2",
+      "decision": "SALES_SAMPLE_MVP_HOLD",
+      "safety_status": "PASS",
+      "manual_intervention": [],
+      "remaining_gap": "Official owner, detailed service/process, price/policy and image-rights evidence are not yet available."
+    }
+  },
+  "structured_review_boundary": "Creative / Art Direction and Business Owner / Conversion are structured review roles, not independent human reviewers and not a live CVR experiment."
+}
