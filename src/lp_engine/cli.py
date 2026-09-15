@@ -13,6 +13,12 @@ def main():
     parser.add_argument("spec", help="Path to a JSON project spec")
     parser.add_argument("--out", help="Optional JSON report path")
     parser.add_argument(
+        "--mode",
+        choices=("production", "research", "test"),
+        default="production",
+        help="Production is fail-closed and requires --evidence-safety; research/test are not production-approved.",
+    )
+    parser.add_argument(
         "--evidence-safety",
         help="Optional JSON Safety-layer input (verified evidence is selected; copy is never generated).",
     )
@@ -27,6 +33,7 @@ def main():
         sections,
         motions,
         screenshots,
+        mode=args.mode,
         evidence_safety=safety_spec,
     )
     payload = report.to_dict()
