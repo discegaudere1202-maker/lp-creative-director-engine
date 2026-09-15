@@ -97,6 +97,7 @@ class PipelineReport:
     results: list[GateResult]
     mode: str = "production"
     production_output_allowed: bool = False
+    safety_scope: str = "UNASSESSED"
     evidence_manifest: list[dict[str, Any]] = field(default_factory=list)
     hearing_requirements: list[dict[str, Any]] = field(default_factory=list)
     blocked_claims: list[dict[str, Any]] = field(default_factory=list)
@@ -117,6 +118,8 @@ class PipelineReport:
             "mode": self.mode,
             "status": self.status,
             "production_output_allowed": self.production_output_allowed,
+            "output_status": "PRODUCTION_APPROVED" if self.production_output_allowed else "NOT_PRODUCTION_APPROVED",
+            "safety_scope": self.safety_scope,
             "evidence_manifest": self.evidence_manifest,
             "hearing_requirements": self.hearing_requirements,
             "blocked_claims": self.blocked_claims,
