@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "contract_id": "evidence_selection_engine_contract_v1",
+  "status": "SAFETY_LAYER_IMPLEMENTED_NOT_PRODUCTION_WIRED",
+  "scope": "Verified evidence selection, provenance/rights safety, missing-evidence detection and hearing routing only.",
+  "input": {
+    "required": ["company_facts", "conversion_goal", "customer_state", "primary_objections", "evidence_ledger"],
+    "conversion_goal_enum": ["inquiry", "quote_request", "consultation", "reservation", "visit", "purchase", "application"],
+    "objection_enum": ["O1_ABILITY", "O2_ACCOUNTABILITY", "O3_PROCESS", "O4_NEXT", "O5_DECISION", "O6_COST", "O7_RISK", "O8_CONTINUITY"]
+  },
+  "decision": [
+    "validate conversion goal and primary objections",
+    "match evidence to target objections",
+    "require complete provenance and verification date",
+    "require production-cleared rights for visual evidence",
+    "classify eligible evidence and placement candidates",
+    "detect missing evidence and blocked claims",
+    "route missing evidence to HEARING_REQUIRED"
+  ],
+  "output": {
+    "fields": ["approved_claims", "eligible_evidence", "missing_evidence", "blocked_claims", "allowed_placements", "hearing_required", "safety_status"],
+    "safety_status_enum": ["PASS", "HEARING_REQUIRED", "BLOCKED", "INVALID_INPUT"]
+  },
+  "responsibility_boundary": {
+    "engine_may": ["select_verified_facts", "check_provenance", "check_rights", "suggest_placements", "route_hearing"],
+    "engine_must_not": ["generate_unsupported_reassurance", "infer_guarantees", "expand_conditional_claims", "approve_unknown_rights_visuals", "invent_testimonials_or_metrics"]
+  },
+  "fallback": {
+    "missing_or_unknown_evidence": "HEARING_REQUIRED",
+    "unsupported_customer_facing_claim": "BLOCKED",
+    "unknown_visual_rights": "BLOCKED",
+    "non_primary_objection_missing": "NON_BLOCKING"
+  },
+  "not_yet_implemented": ["automated trust copy generation", "full production engine wiring", "hearing app UI"]
+}
