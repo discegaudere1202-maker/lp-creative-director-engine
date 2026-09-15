@@ -83,7 +83,8 @@ def build_tournament_plan(
 
     Pool membership is a research classification. If a catalog is supplied, only
     benchmarks that are actually ready for the requested tournament are selected.
-    For production Benchmark Supremacy, mobile verification is required by default.
+    Production Benchmark Supremacy requires M3 live/captured 390px evidence.
+    M2 remains useful research evidence but is intentionally blocked here.
     """
     pool_names = [name for name in recommend_pool_names(tags) if name in pools]
     research_ids: list[str] = []
@@ -115,8 +116,11 @@ def build_tournament_plan(
                 reasons.append("not source/desktop verified")
             if not item.get("desktop_verified", False):
                 reasons.append("desktop not verified")
-            if require_mobile_verified and not item.get("mobile_verified", False):
-                reasons.append("mobile not verified")
+            if require_mobile_verified:
+                if not item.get("mobile_verified", False):
+                    reasons.append("mobile not verified")
+                if item.get("mobile_evidence_grade", "M0") != "M3":
+                    reasons.append("production tournament requires M3 live/captured 390px evidence")
 
         if reasons:
             blocked.append({"benchmark_id": benchmark_id, "reasons": reasons})
@@ -133,7 +137,7 @@ def build_tournament_plan(
         "status": "READY" if len(selected) >= minimum_benchmarks else "REVIEW",
         "warning": (
             "Research pool membership does not mean tournament readiness. Production blind review "
-            "requires verified comparison assets for all required viewports. Benchmark pools choose "
-            "opponents only; they must never determine style."
+            "requires M3 live/captured 390px evidence plus verified comparison assets for all required "
+            "viewports. Benchmark pools choose opponents only; they must never determine style."
         ),
     }
