@@ -42,6 +42,7 @@ h1 span,h1 em{display:block} h1 em{font-style:normal;color:var(--accent);margin-
 .row:after{content:"";position:absolute;left:calc(31% + 24px);top:calc(50% - 3px);width:6px;height:6px;border-right:1px solid var(--accent);border-top:1px solid var(--accent);transform:rotate(45deg)}
 .closure{border-top:1px solid var(--ink);display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;padding-top:17px}
 .closure .small{font-size:11px;line-height:1.7;color:#575951}.closure .big{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:26px;letter-spacing:-.035em;white-space:nowrap}.closure .big b{font-weight:500;color:var(--accent)}
+.closure-actions{display:flex;align-items:center;gap:24px}.closure .cta{display:inline-flex;align-items:center;gap:13px;border:1px solid var(--accent);padding:11px 14px 10px;color:var(--accent);font-size:11px;letter-spacing:.08em;text-decoration:none;white-space:nowrap}.closure .cta span{font-size:17px;line-height:.7}
 .medium-break{display:none}
 .narrow-break{display:none}
 
@@ -55,7 +56,7 @@ h1 span,h1 em{display:block} h1 em{font-style:normal;color:var(--accent);margin-
   .row{grid-template-columns:30% 70%}.term{font-size:11px;padding-right:26px}
   .world{padding-left:42px;font-size:28px;line-height:1.28}
   .row:before{left:30%;width:23px}.row:after{left:calc(30% + 17px)}
-  .closure .big{font-size:20px}.logic-flow{font-size:16px}
+  .closure .big{font-size:20px}.closure .cta{font-size:10px;padding:9px 11px}.logic-flow{font-size:16px}
   .medium-break{display:inline}
 }
 @media (min-width:701px) and (max-width:860px){
@@ -84,7 +85,7 @@ h1 span,h1 em{display:block} h1 em{font-style:normal;color:var(--accent);margin-
   .row:before{left:3px;top:39px;width:1px;height:21px;transform:none}
   .row:after{left:1px;top:54px;width:5px;height:5px;transform:rotate(135deg);border-right:1px solid var(--accent);border-top:1px solid var(--accent)}
   .medium-break{display:inline}
-  .closure{margin-top:13px;padding-top:11px;display:block}.closure .small{font-size:9px;line-height:1.55}.closure .big{font-size:14px;white-space:normal;margin-top:8px}
+  .closure{margin-top:13px;padding-top:11px;display:block}.closure .small{font-size:9px;line-height:1.55}.closure-actions{display:block}.closure .big{font-size:14px;white-space:normal;margin-top:8px}.closure .cta{margin-top:11px;font-size:9px;padding:9px 11px}
 }
 @media(max-width:340px){
   .narrow-break{display:inline}
@@ -120,7 +121,7 @@ h1 span,h1 em{display:block} h1 em{font-style:normal;color:var(--accent);margin-
   </section>
   <footer class="closure">
     <div class="small">制度名が分からなくても大丈夫です。<br>お困りごとの状況を、そのままお聞かせください。</div>
-    <div class="big">制度名ではなく、<b>いまの状況を。</b></div>
+    <div class="closure-actions"><div class="big">制度名ではなく、<b>いまの状況を。</b></div><a class="cta" href="#contact">状況から相談する <span>→</span></a></div>
   </footer>
 </main>
 </body>
