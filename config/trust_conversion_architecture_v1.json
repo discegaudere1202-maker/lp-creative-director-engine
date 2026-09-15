@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "name": "Trust / Conversion Architecture",
+  "purpose": "Connect company-specific creative form to a trustworthy, psychologically safe next action without evidence bloat.",
+  "causal_chain": [
+    "COMPANY_TRUTH",
+    "TRUST_EVIDENCE",
+    "CUSTOMER_RELEVANCE",
+    "REASON_TO_CONSULT",
+    "PSYCHOLOGICAL_SAFETY",
+    "ACTION"
+  ],
+  "rules": [
+    {
+      "id": "PROOF_TO_PROCESS",
+      "when": "A verified company fact is present but not adjacent to a service action.",
+      "do": "Place the fact beside one company-specific sentence describing what happens during the consultation.",
+      "limit": "One or two verified facts; do not add a metric merely to decorate the CTA."
+    },
+    {
+      "id": "PERMISSION_BEFORE_ASK",
+      "when": "The customer's hesitation is part of the problem.",
+      "do": "State before the CTA that the customer may consult before deciding, using only a verified company policy or service truth.",
+      "limit": "Permission must not imply a no-pressure policy unless the client has confirmed it."
+    },
+    {
+      "id": "AFTER_CLICK_CERTAINTY",
+      "when": "The action is a consultation, inquiry or application.",
+      "do": "Design a CTA Zone with Before CTA reason, the action itself, and After CTA expectation or decision boundary.",
+      "limit": "Unknown post-click details become an evidence slot, never invented copy."
+    },
+    {
+      "id": "EVIDENCE_ECONOMY",
+      "when": "Trust improvement suggests adding cards, FAQs or many proof points.",
+      "do": "Prefer one connected proof sequence over quantity.",
+      "limit": "Keep Strong Screen + Quiet Chapter and Screenshot Peak Budget at 2-4 screens."
+    },
+    {
+      "id": "MOBILE_ACTION_BUDGET",
+      "when": "Trust copy is added to a desktop-first composition.",
+      "do": "Re-art the mobile CTA Zone and preserve a visible action at 390x844.",
+      "limit": "Run widths 320, 360, 375, 390, 430, 768, 1024, 1280 and 1440; no horizontal overflow or forbidden Japanese line shapes."
+    }
+  ],
+  "evidence_slots": [
+    "OWNER_PORTRAIT",
+    "OWNER_QUOTE",
+    "RESULT_CASE",
+    "TESTIMONIAL",
+    "VERIFIED_METRIC",
+    "RESPONSE_EXPECTATION",
+    "POST_CLICK_FLOW",
+    "RISK_POLICY",
+    "SCOPE_BOUNDARY"
+  ],
+  "status": "RESEARCH_RULE_READY_NOT_ENGINE_IMPLEMENTED",
+  "provenance": "Derived from the 2026-09-15 P02/P09/P10 formal blind tournament and official external-page research. Structured Work review, not independent human-third-party evidence."
+}

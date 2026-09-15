@@ -2,16 +2,16 @@
   "schema_version": 1,
   "tournament_type": "FORMAL_BLIND_TOURNAMENT",
   "prototype_id": "P09",
-  "created_at": "2026-09-15T10:40:56.568293+00:00",
+  "created_at": "2026-09-15T11:26:03.154488+00:00",
   "candidate_source": {
     "path": "examples/prototypes/p09_price_transparency_v1.html",
     "sha256": "6822a71310cbe9fe6d5d28a04c9f6faff787c72064dd763f364ab30e27f443fd"
   },
   "candidate_capture": {
-    "run_id": 34958882921,
-    "artifact_id": 10392184712,
-    "artifact_name": "prototype-tournament-evidence-5",
-    "artifact_digest": "sha256:41f7108ab3ea5aba678329f076bd7da28377cf6a5834477220762dd6f4c60d6c",
+    "run_id": 34962756565,
+    "artifact_id": 10393223767,
+    "artifact_name": "prototype-tournament-evidence-11",
+    "artifact_digest": "sha256:97721d230783c019611c0f92c26ea0813d738f309875bfdca05169a47b777ee8",
     "viewport_standard": {
       "desktop": [
         1440,

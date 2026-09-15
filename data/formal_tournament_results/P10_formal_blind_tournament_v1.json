@@ -2,16 +2,16 @@
   "schema_version": 1,
   "tournament_type": "FORMAL_BLIND_TOURNAMENT",
   "prototype_id": "P10",
-  "created_at": "2026-09-15T10:40:56.569608+00:00",
+  "created_at": "2026-09-15T11:26:03.164982+00:00",
   "candidate_source": {
     "path": "examples/prototypes/p10_customer_state_transition_v1.html",
-    "sha256": "afda7fdd348e1123ff853c6cc08ecd7e3a04ff2c86097df4af355cb62a8e24e0"
+    "sha256": "7a41d812ad034986b6a6d08483ee4dcc61ca62b14d7705eb59e20bf1ef5d1971"
   },
   "candidate_capture": {
-    "run_id": 34958882921,
-    "artifact_id": 10392184712,
-    "artifact_name": "prototype-tournament-evidence-5",
-    "artifact_digest": "sha256:41f7108ab3ea5aba678329f076bd7da28377cf6a5834477220762dd6f4c60d6c",
+    "run_id": 34962756565,
+    "artifact_id": 10393223767,
+    "artifact_name": "prototype-tournament-evidence-11",
+    "artifact_digest": "sha256:97721d230783c019611c0f92c26ea0813d738f309875bfdca05169a47b777ee8",
     "viewport_standard": {
       "desktop": [
         1440,
@@ -75,7 +75,7 @@
         "mobile_quality": 0,
         "conversion_intent": 0
       },
-      "reason": "The candidate's before→dialogue→after structure is more conceptually specific and less campaign-like; Carigaku has stronger human proof and a clearer CTA.",
+      "reason": "The revised CTA explains that consultation can precede the decision and shows what is discussed, but Carigaku still supplies more visible human and institutional reassurance for a cautious visitor.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -95,7 +95,7 @@
         "mobile_quality": 1,
         "conversion_intent": -1
       },
-      "reason": "Candidate's state list is cleaner; Carigaku's faces and consultation button create stronger emotional entry and action, balancing the comparison.",
+      "reason": "The revised CTA explains that consultation can precede the decision and shows what is discussed, but Carigaku still supplies more visible human and institutional reassurance for a cautious visitor.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -115,7 +115,7 @@
         "mobile_quality": -1,
         "conversion_intent": 0
       },
-      "reason": "A hesitant visitor can understand the candidate and see its entry action, but Carigaku supplies stronger proof, reassurance and a concrete free-consultation action.",
+      "reason": "The revised CTA explains that consultation can precede the decision and shows what is discussed, but Carigaku still supplies more visible human and institutional reassurance for a cautious visitor.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -135,7 +135,7 @@
         "mobile_quality": 0,
         "conversion_intent": 0
       },
-      "reason": "At 390px the candidate now exposes an action, but Carigaku's people, proof and stronger CTA reduce uncertainty faster.",
+      "reason": "The revised CTA explains that consultation can precede the decision and shows what is discussed, but Carigaku still supplies more visible human and institutional reassurance for a cautious visitor.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -150,12 +150,12 @@
         "visual_hierarchy": 1,
         "craft_detail": 1,
         "emotional_pull": 1,
-        "trust": -1,
+        "trust": 0,
         "share_impulse": 1,
         "mobile_quality": 0,
         "conversion_intent": 0
       },
-      "reason": "The candidate makes indecision the composition itself; Sell-Step's photo-led page is persuasive but visually familiar.",
+      "reason": "The candidate's explicit permission to stay undecided and its short process line reduce pressure; Sell-Step remains more direct for a visitor already ready to act.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -170,12 +170,12 @@
         "visual_hierarchy": 1,
         "craft_detail": 1,
         "emotional_pull": 1,
-        "trust": -1,
+        "trust": 0,
         "share_impulse": 1,
         "mobile_quality": 1,
         "conversion_intent": 0
       },
-      "reason": "The candidate's vertical articulation of doubts survives the re-art and feels more ownable than a stock-like success image.",
+      "reason": "The candidate's explicit permission to stay undecided and its short process line reduce pressure; Sell-Step remains more direct for a visitor already ready to act.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -195,14 +195,14 @@
         "mobile_quality": 0,
         "conversion_intent": 0
       },
-      "reason": "Candidate earns psychological specificity and now has a visible entry action; Sell-Step still has stronger immediate service recognition and CTA clarity.",
+      "reason": "The candidate's explicit permission to stay undecided and its short process line reduce pressure; Sell-Step remains more direct for a visitor already ready to act.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
       "benchmark_id": "sell-step-career",
       "reviewer_type": "business_owner_conversion",
       "viewport": "390",
-      "overall": -1,
+      "overall": 0,
       "axes": {
         "immediate_read": 0,
         "distinctness": 0,
@@ -215,7 +215,7 @@
         "mobile_quality": 0,
         "conversion_intent": 0
       },
-      "reason": "The candidate's action is visible and the state copy is clear, but Sell-Step's mobile hero and contact buttons remain more decisive.",
+      "reason": "The candidate's explicit permission to stay undecided and its short process line reduce pressure; Sell-Step remains more direct for a visitor already ready to act.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -235,7 +235,7 @@
         "mobile_quality": 0,
         "conversion_intent": 0
       },
-      "reason": "The candidate visualizes a change in state rather than listing career support; LFU is elegant but its path diagram is less emotionally legible.",
+      "reason": "The candidate makes the emotional entry and the decision boundary unusually clear. LFU feels more established, so the result is a tie overall even though the candidate's consultation permission is easier to understand.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -255,7 +255,7 @@
         "mobile_quality": 1,
         "conversion_intent": 0
       },
-      "reason": "Candidate's before/after wording and closure create a more shareable mental model than LFU's restrained service frame.",
+      "reason": "The candidate makes the emotional entry and the decision boundary unusually clear. LFU feels more established, so the result is a tie overall even though the candidate's consultation permission is easier to understand.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -270,12 +270,12 @@
         "visual_hierarchy": 0,
         "craft_detail": 0,
         "emotional_pull": 1,
-        "trust": 1,
+        "trust": 0,
         "share_impulse": 1,
         "mobile_quality": 0,
         "conversion_intent": 0
       },
-      "reason": "Candidate makes the first emotional step easier and now shows an entry action; LFU supplies stronger service credibility, navigation and contact readiness.",
+      "reason": "The candidate makes the emotional entry and the decision boundary unusually clear. LFU feels more established, so the result is a tie overall even though the candidate's consultation permission is easier to understand.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     },
     {
@@ -290,22 +290,22 @@
         "visual_hierarchy": 0,
         "craft_detail": 0,
         "emotional_pull": 0,
-        "trust": 1,
+        "trust": 0,
         "share_impulse": 1,
         "mobile_quality": 0,
-        "conversion_intent": 0
+        "conversion_intent": 1
       },
-      "reason": "Candidate is more empathetic with a visible action, while LFU feels more established and actionable; neither fully solves both hesitation and trust.",
+      "reason": "The candidate makes the emotional entry and the decision boundary unusually clear. LFU feels more established, so the result is a tie overall even though the candidate's consultation permission is easier to understand.",
       "provenance": "structured review role performed in this Work execution; not an independent human third-party review"
     }
   ],
   "aggregate": {
-    "status": "HOLD",
-    "classification": "REVIEW_REQUIRED",
-    "win_rate": 0.5833,
+    "status": "PASS",
+    "classification": "COMPETITIVE_OR_SUPERIOR",
+    "win_rate": 0.625,
     "wins": 5,
-    "ties": 4,
-    "losses": 3,
+    "ties": 5,
+    "losses": 2,
     "benchmark_count": 3,
     "reviewer_types": [
       "business_owner_conversion",
@@ -320,13 +320,13 @@
       },
       "390": {
         "wins": 2,
-        "ties": 2,
-        "losses": 2,
-        "win_rate": 0.5
+        "ties": 3,
+        "losses": 1,
+        "win_rate": 0.5833
       }
     },
     "axis_means": {
-      "conversion_intent": -0.0833,
+      "conversion_intent": 0.0,
       "craft_detail": 0.4167,
       "distinctness": 0.75,
       "emotional_pull": 0.3333,
@@ -350,18 +350,18 @@
       "trust": 0.3333,
       "share_impulse": 0.875,
       "mobile_quality": 0.5833,
-      "conversion_intent": 0.4583
+      "conversion_intent": 0.5
     },
     "desktop_win_rate": 0.6667,
-    "mobile_win_rate": 0.5,
+    "mobile_win_rate": 0.5833,
     "reviewer_type_win_rates": {
-      "business_owner_conversion": 0.25,
+      "business_owner_conversion": 0.3333,
       "creative_art_direction": 0.9167
     },
     "benchmark_win_rates": {
       "carigaku-career": 0.375,
       "lfu-career": 0.75,
-      "sell-step-career": 0.625
+      "sell-step-career": 0.75
     }
   },
   "formal_completeness": {
@@ -379,16 +379,15 @@
   "method_note": "This is a structured internal Work review using two explicitly different review roles. It is not represented as independent human-third-party evidence.",
   "revision_history": {
     "before": {
-      "capture_artifact_id": 10391022848,
-      "formal_win_rate": 0.5833,
-      "status": "HOLD",
-      "mobile_cta_visibility": "partial at viewport bottom"
-    },
-    "change": "Added a visible consultation entry and compressed mobile spacing so the action remains fully inside the 390×844 frame.",
-    "after": {
       "capture_artifact_id": 10392184712,
       "formal_win_rate": 0.5833,
-      "status": "HOLD",
+      "status": "HOLD"
+    },
+    "change": "Added CTA-zone permission and process certainty using the existing free-use and referral-fee facts; compressed only the added mobile spacing so the action remains fully inside the 390×844 frame.",
+    "after": {
+      "capture_artifact_id": 10393223767,
+      "formal_win_rate": 0.625,
+      "status": "PASS",
       "mobile_cta_visibility": "fully visible"
     }
   }

@@ -5,27 +5,28 @@
   "results": [
     {
       "prototype_id": "P02",
-      "status": "HOLD",
-      "win_rate": 0.5833,
+      "status": "PASS",
+      "win_rate": 0.625,
       "result_path": "data/formal_tournament_results/P02_formal_blind_tournament_v1.json",
-      "candidate_capture_run_id": 34958882921,
-      "candidate_capture_artifact_id": 10392184712
+      "candidate_capture_run_id": 34962756565,
+      "candidate_capture_artifact_id": 10393223767
     },
     {
       "prototype_id": "P09",
       "status": "PASS",
       "win_rate": 0.6875,
       "result_path": "data/formal_tournament_results/P09_formal_blind_tournament_v1.json",
-      "candidate_capture_run_id": 34958882921,
-      "candidate_capture_artifact_id": 10392184712
+      "candidate_capture_run_id": 34962756565,
+      "candidate_capture_artifact_id": 10393223767
     },
     {
       "prototype_id": "P10",
-      "status": "HOLD",
-      "win_rate": 0.5833,
+      "status": "PASS",
+      "win_rate": 0.625,
       "result_path": "data/formal_tournament_results/P10_formal_blind_tournament_v1.json",
-      "candidate_capture_run_id": 34958882921,
-      "candidate_capture_artifact_id": 10392184712
+      "candidate_capture_run_id": 34962756565,
+      "candidate_capture_artifact_id": 10393223767
     }
-  ]
+  ],
+  "architecture_rule_path": "config/trust_conversion_architecture_v1.json"
 }
