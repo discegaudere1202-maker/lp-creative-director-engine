@@ -3,7 +3,6 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from lp_engine.evidence_safety import production_approved
 from lp_engine.loader import from_dict
 from lp_engine.pipeline import run_pipeline
 
@@ -70,6 +69,17 @@ class ProductionSafetyBoundaryTest(unittest.TestCase):
         })
         self.assertFalse(report.production_output_allowed)
         self.assertEqual(report.blocked_claims[0]["claim_id"], "CONFIDENTIALITY")
+
+    def test_claim_block_can_continue_with_other_safe_evidence(self):
+        report = self.run_production({
+            "conversion_goal": "consultation",
+            "primary_objections": ["O3_PROCESS"],
+            "evidence_ledger": [evidence()],
+            "requested_claims": ["無理な勧誘はありません"],
+        })
+        self.assertEqual(report.safety_scope, "CLAIM_BLOCK")
+        self.assertTrue(report.production_output_allowed)
+        self.assertEqual(report.evidence_manifest[0]["evidence_id"], "BOUNDARY-001")
 
     def test_missing_provenance_blocks_output(self):
         report = self.run_production({
