@@ -30,7 +30,7 @@ class BenchmarkPoolTest(unittest.TestCase):
         self.assertIn("ASSET_LIGHT", names)
         self.assertIn("LOCAL_SME_TRANSFER", names)
 
-    def test_build_plan_dedupes_benchmarks(self):
+    def test_build_plan_dedupes_and_caps_formal_benchmarks(self):
         data = {
             "pools": {
                 "B2B_EXPLAINER_DOCUMENT": {
@@ -56,6 +56,8 @@ class BenchmarkPoolTest(unittest.TestCase):
             )
         self.assertEqual(plan["status"], "READY")
         self.assertEqual(len(plan["benchmark_ids"]), len(set(plan["benchmark_ids"])))
+        self.assertLessEqual(len(plan["benchmark_ids"]), 5)
+        self.assertEqual(len(plan["benchmark_ids"]), 5)
         self.assertIn("trust", plan["critical_axes"])
         self.assertIn("owner_specificity", plan["critical_axes"])
 
