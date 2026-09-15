@@ -42,9 +42,30 @@ class HearingPlannerTest(unittest.TestCase):
     def test_existing_evidence_suppresses_question(self):
         plan = plan_hearing(
             safety_gap("reservation", ["O4_NEXT"], [("O4_NEXT", ["POST_CLICK_FLOW"])]),
-            current_ledger=[{"evidence_type": "POST_CLICK_FLOW", "verification_status": "VERIFIED"}],
+            current_ledger=[{
+                "evidence_type": "POST_CLICK_FLOW",
+                "verification_status": "VERIFIED",
+                "source": "https://example.com/official",
+                "verification_date": "2026-09-16",
+                "rights_status": "NOT_APPLICABLE",
+                "usage_status": "PRODUCTION_ELIGIBLE",
+            }],
         )
         self.assertEqual(plan.minimum_question_set, [])
+
+    def test_research_only_evidence_does_not_suppress_question(self):
+        plan = plan_hearing(
+            safety_gap("reservation", ["O4_NEXT"], [("O4_NEXT", ["POST_CLICK_FLOW"])]),
+            current_ledger=[{
+                "evidence_type": "POST_CLICK_FLOW",
+                "verification_status": "VERIFIED",
+                "source": "https://example.com/official",
+                "verification_date": "2026-09-16",
+                "rights_status": "NOT_APPLICABLE",
+                "usage_status": "RESEARCH_ONLY",
+            }],
+        )
+        self.assertEqual(len(plan.minimum_question_set), 1)
 
     def test_question_dedup_uses_answerable_meaning_unit(self):
         plan = plan_hearing(safety_gap("inquiry", ["O4_NEXT"], [("O4_NEXT", ["POST_CLICK_FLOW", "RESPONSE_EXPECTATION"])]))
@@ -59,6 +80,10 @@ class HearingPlannerTest(unittest.TestCase):
 
     def test_vague_answer_stays_unverified(self):
         candidate = answer_to_evidence_candidate("risk_and_privacy_policy", "たぶん勧誘はしません")
+        self.assertEqual(candidate["completion_status"], "NEEDS_VERIFICATION")
+
+    def test_conditional_free_answer_stays_unverified(self):
+        candidate = answer_to_evidence_candidate("fee_conditions", "だいたい無料です")
         self.assertEqual(candidate["completion_status"], "NEEDS_VERIFICATION")
 
     def test_document_required_answer_requests_document(self):
