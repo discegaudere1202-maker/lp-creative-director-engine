@@ -313,6 +313,7 @@ def evaluate_evidence_selection(
             and record.verification_date.strip()
             and record.rights_status in ACCEPTED_RIGHTS
             and not record.hearing_required
+            and record.blocking_status != "BLOCKING"
             and record.usage_status not in {"BLOCKED", "REJECTED"}
         ):
             item = record.to_dict()
@@ -336,6 +337,7 @@ def evaluate_evidence_selection(
                 and record.verification_date.strip()
                 and record.rights_status in ACCEPTED_RIGHTS
                 and not record.hearing_required
+                and record.blocking_status != "BLOCKING"
                 and record.usage_status not in {"BLOCKED", "REJECTED"}
                 and _supports_claim(record, rule)
             ]
