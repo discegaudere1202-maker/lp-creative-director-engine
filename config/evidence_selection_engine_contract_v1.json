@@ -93,7 +93,7 @@
   },
   "not_yet_implemented": [
     "automated trust copy generation",
-    "full production engine wiring",
+    "future batch/render caller integration",
     "hearing app UI"
   ],
   "integration": {
