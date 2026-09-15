@@ -21,6 +21,15 @@ class BenchmarkPoolTest(unittest.TestCase):
         self.assertIn("ASSET_LIGHT", names)
         self.assertIn("LOCAL_SME_TRANSFER", names)
 
+    def test_problem_tags_choose_problem_pools(self):
+        names = recommend_pool_names([
+            "NO_WEB", "SME", "BUSINESS_VERB", "EMOTIONAL_BARRIER"
+        ])
+        self.assertIn("BUSINESS_VERB", names)
+        self.assertIn("EMOTIONAL_BARRIER", names)
+        self.assertIn("ASSET_LIGHT", names)
+        self.assertIn("LOCAL_SME_TRANSFER", names)
+
     def test_build_plan_dedupes_benchmarks(self):
         data = {
             "pools": {
