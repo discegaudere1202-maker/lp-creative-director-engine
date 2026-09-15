@@ -303,5 +303,26 @@
         "consultation_business_model_and_continuity"
       ]
     }
-  }
+  },
+  "safety_integrity_layer": {
+    "schema_ref": "config/evidence_safety_engine_v1.json",
+    "implementation_ref": "src/lp_engine/evidence_safety.py",
+    "contract_ref": "config/evidence_selection_engine_contract_v1.json",
+    "status": "IMPLEMENTED_TESTED_NOT_PRODUCTION_WIRED",
+    "allowed": [
+      "verified_evidence_selection",
+      "provenance_check",
+      "rights_check",
+      "missing_detection",
+      "hearing_routing",
+      "placement_candidates"
+    ],
+    "forbidden": [
+      "unsupported_reassurance",
+      "trust_copy_generation",
+      "guarantee_inference",
+      "unknown_rights_production_approval"
+    ]
+  },
+  "hearing_requirements_schema_ref": "config/hearing_requirements_schema_v1.json"
 }
