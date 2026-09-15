@@ -18,7 +18,7 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
     def test_capture_config_has_formal_viewports_and_targets(self):
         self.assertEqual({(v["width"], v["height"]) for v in self.config["viewports"]}, {(390, 844), (1440, 1000)})
         self.assertEqual({v["prototype_id"] for v in self.config["variants"]}, {"P02_ENRICHED", "P10_ENRICHED", "P02_CORE", "P10_CORE"})
-        self.assertEqual({t["prototype_id"] for t in self.config["targets"]}, {"P02_ENRICHED", "P10_ENRICHED"})
+        self.assertEqual({t["prototype_id"] for t in self.config["targets"]}, {"P02_ENRICHED", "P10_ENRICHED", "P02_CORE", "P10_CORE"})
 
     def test_evidence_ledgers_are_source_bound_and_unknown_safe(self):
         for item in self.config["variants"]:
@@ -32,7 +32,6 @@ class EnrichedEvidenceValidationTest(unittest.TestCase):
 
     def test_enriched_formal_results_are_complete(self):
         for name in ("P02_ENRICHED", "P10_ENRICHED"):
-            
             path = ROOT / "data" / "formal_tournament_results" / f"{name}_formal_blind_tournament_v1.json"
             payload = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(payload["tournament_type"], "FORMAL_BLIND_TOURNAMENT")

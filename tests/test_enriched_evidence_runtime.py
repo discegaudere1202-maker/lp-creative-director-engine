@@ -7,6 +7,8 @@ WIDTHS = [320, 360, 375, 390, 430, 768, 1024, 1280, 1440]
 VARIANTS = {
     "P02_ENRICHED": ("examples/prototypes/p02_customer_world_translation_enriched_v1.html", ".cta"),
     "P10_ENRICHED": ("examples/prototypes/p10_customer_state_transition_enriched_v1.html", ".action"),
+    "P02_CORE": ("examples/prototypes/p02_customer_world_translation_core_v1.html", ".cta"),
+    "P10_CORE": ("examples/prototypes/p10_customer_state_transition_core_v1.html", ".action"),
 }
 
 class EnrichedEvidenceRuntimeQA(unittest.TestCase):
