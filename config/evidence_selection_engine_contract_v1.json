@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "contract_id": "evidence_selection_engine_contract_v1",
-  "status": "SAFETY_LAYER_IMPLEMENTED_TESTED_OPTIONAL_PIPELINE_WIRED",
-  "scope": "Verified evidence selection, provenance/rights safety, missing-evidence detection and hearing routing only.",
+  "status": "MANDATORY_IN_PRODUCTION",
+  "scope": "Production Safety Gate for verified evidence selection, provenance/rights safety, missing-evidence detection and hearing routing. Trust copy generation remains out of scope.",
   "input": {
     "required": [
       "company_facts",
@@ -29,6 +29,11 @@
       "O6_COST",
       "O7_RISK",
       "O8_CONTINUITY"
+    ],
+    "mode_enum": [
+      "production",
+      "research",
+      "test"
     ]
   },
   "decision": [
@@ -49,7 +54,11 @@
       "blocked_claims",
       "allowed_placements",
       "hearing_required",
-      "safety_status"
+      "safety_status",
+      "production_output_allowed",
+      "output_status",
+      "safety_scope",
+      "evidence_manifest"
     ],
     "safety_status_enum": [
       "PASS",
@@ -88,15 +97,21 @@
     "hearing app UI"
   ],
   "integration": {
-    "mode": "optional_pipeline_gate",
+    "production_mode": "Safety input mandatory; no input is PAGE_BLOCK.",
+    "research_mode": "May inspect research-only records; output_status is NOT_PRODUCTION_APPROVED.",
+    "test_mode": "Fixtures allowed for tests only; never delivery evidence.",
     "pipeline_ref": "src/lp_engine/pipeline.py",
     "cli_flag": "--evidence-safety",
-    "without_input": "existing creative-direction gates remain unchanged",
     "status_mapping": {
       "PASS": "PASS",
       "HEARING_REQUIRED": "HOLD",
-      "BLOCKED": "FAIL",
-      "INVALID_INPUT": "FAIL"
+      "BLOCKED": "CLAIM_BLOCK_OR_SECTION_HOLD",
+      "INVALID_INPUT": "PAGE_BLOCK"
     }
-  }
+  },
+  "invariants": [
+    "Production output evidence_manifest contains only Safety-selected production-eligible records.",
+    "No raw unsupported customer-facing claim is approved.",
+    "Missing Safety input or selector failure never produces Production output."
+  ]
 }
