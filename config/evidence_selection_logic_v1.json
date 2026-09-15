@@ -25,7 +25,7 @@
     {"objection": "O4_NEXT", "evidence_type": "POST_CLICK_FLOW / RESPONSE_EXPECTATION", "minimum_strength": "E3_OPERATIONAL", "preferred_placement": "CTA Zone Before/After CTA", "fallback": "HEARING_REQUIRED; no invented response time"},
     {"objection": "O5_DECISION", "evidence_type": "DECISION_BOUNDARY", "minimum_strength": "E4_RISK_REDUCING", "preferred_placement": "After CTA", "fallback": "HEARING_REQUIRED; no implied opt-out"},
     {"objection": "O6_COST", "evidence_type": "PRICE / FEE_CONDITION / BUSINESS_MODEL", "minimum_strength": "E4_RISK_REDUCING", "preferred_placement": "Before CTA or CTA Zone", "fallback": "HEARING_REQUIRED; no '完全無料' inference"},
-    {"objection": "O7_RISK", "evidence_type": "RISK_POLICY / PRIVACY_POLICY / SCOPE_BOUNDARY", "minimum_strength": "E4_RISK_REDUCING", "preferred_placement": "Before CTA", "fallback": "UNKNOWN; block reassurance"},
+    {"objection": "O7_RISK", "evidence_type": "RISK_POLICY / PRIVACY_POLICY / SCOPE_BOUNDARY", "minimum_strength": "E4_RISK_REDUCING", "preferred_placement": "Before CTA", "fallback": "UNKNOWN; emit HEARING_REQUIRED and block reassurance"},
     {"objection": "O8_CONTINUITY", "evidence_type": "CONTINUITY_POLICY / SERVICE_SCOPE", "minimum_strength": "E3_OPERATIONAL", "preferred_placement": "CTA Zone or post-action expectation", "fallback": "HEARING_REQUIRED; no continuity promise"}
   ],
   "selection_algorithm": {

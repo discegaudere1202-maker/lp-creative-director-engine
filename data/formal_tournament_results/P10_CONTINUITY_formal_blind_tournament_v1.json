@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "tournament_type": "FORMAL_BLIND_TOURNAMENT",
+  "study": "EVIDENCE_SELECTION_LOGIC_VALIDATION",
+  "variant_id": "P10_CONTINUITY",
+  "baseline_prototype_id": "P10",
+  "created_at": "2026-09-15T13:50:00Z",
+  "candidate_source": {
+    "path": "examples/prototypes/p10_customer_state_transition_continuity_v1.html",
+    "sha256": "80a5f8bb3eb8a3867deacc651ad2165d5cc4b61daa6b4a13dcd8ff49ceafa6ef"
+  },
+  "candidate_capture": {
+    "run_id": 34974786412,
+    "artifact_id": 10398639415,
+    "artifact_name": "evidence-selection-capture-v1",
+    "artifact_digest": "sha256:fcc25d79e93f6e0e24e273ee82d5f920f3dda71ad88d410d3c5b81397ca5a80d",
+    "capture_report_captured_at": "2026-09-15T13:25:12.344766+00:00",
+    "viewport_standard": {
+      "desktop": [
+        1440,
+        1000
+      ],
+      "mobile": [
+        390,
+        844
+      ]
+    },
+    "records": {
+      "desktop_1440": {
+        "scroll_width": 1440,
+        "scroll_height": 1000,
+        "client_width": 1440,
+        "client_height": 1000,
+        "dpr": 1
+      },
+      "mobile_390": {
+        "scroll_width": 390,
+        "scroll_height": 844,
+        "client_width": 390,
+        "client_height": 844,
+        "dpr": 1
+      }
+    },
+    "evidence_delta": [
+      "CONTINUITY_POLICY"
+    ],
+    "target_objections": [
+      "O8_CONTINUITY",
+      "O7_RISK"
+    ]
+  },
+  "benchmark_set": {
+    "benchmark_ids": [
+      "carigaku-career",
+      "sell-step-career",
+      "lfu-career"
+    ],
+    "capture_artifacts": [
+      {
+        "run_id": 34953096999,
+        "artifact_id": 10389977402,
+        "artifact_name": "m3-benchmark-evidence-8",
+        "digest": "sha256:b582e809bb4464c437ac0094ec239f1f0e4bfc266057a9950beb377c741acaee"
+      },
+      {
+        "run_id": 0,
+        "artifact_id": 10388641096,
+        "artifact_name": "M3 benchmark evidence Run 6",
+        "digest": "sha256:7cb1a74e24fa279af155310e0ddb4b027498b27de1ebd559bd8711993830e8fa"
+      }
+    ]
+  },
+  "blind_bundle": {
+    "reviewer_visible_bundle": "work-only opaque bundle; no candidate/prototype/benchmark/company/URL labels",
+    "identity_mapping": "work-only mapping outside reviewer-visible bundle",
+    "identity_masking": "PASS",
+    "candidate_side_randomized": true,
+    "candidate_side_seed": 1,
+    "reviewer_visible_ids": "opaque item IDs and LEFT/RIGHT only"
+  },
+  "structured_review_roles": {
+    "creative_art_direction": "Reviewer A — Creative / Art Direction structured role",
+    "business_owner_conversion": "Reviewer B — Business Owner / Conversion structured role"
+  },
+  "variant_role": "OBJECTION_TARGETED_SINGLE",
+  "formal_completeness": {
+    "all_opponents": true,
+    "desktop": true,
+    "mobile": true,
+    "reviewer_types": true,
+    "ten_axes": true,
+    "owner_specificity": true,
+    "share_impulse": true,
+    "score_recorded": true,
+    "provenance": true,
+    "identity_masking": true
+  },
+  "axes": [
+    "immediate_read",
+    "distinctness",
+    "owner_specificity",
+    "visual_hierarchy",
+    "craft_detail",
+    "emotional_pull",
+    "trust",
+    "share_impulse",
+    "mobile_quality",
+    "conversion_intent"
+  ],
+  "votes": [
+    {
+      "benchmark_id": "carigaku-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Creative / Art Direction structured role: the authored Before →整理→After transition is judged for distinctness, hierarchy, craft and emotional memory; continuity evidence is credited only when it supports the concept. Desktop: the state-transition model remains clearer and more ownable.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "carigaku-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 1,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "Creative / Art Direction structured role: the authored Before →整理→After transition is judged for distinctness, hierarchy, craft and emotional memory; continuity evidence is credited only when it supports the concept. Mobile: the candidate preserves its concept, but does not clearly exceed the benchmark’s proof density.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "carigaku-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 0,
+        "mobile_quality": -1,
+        "conversion_intent": 0
+      },
+      "reason": "Business Owner / Conversion structured role: the evidence is judged for reducing a named decision objection; no unverified no-pressure, response-time or guarantee claim is assumed. Desktop: continuity reduces abandonment anxiety, but the benchmark still communicates service reassurance more directly.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "carigaku-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": -1,
+      "axes": {
+        "immediate_read": -1,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": -1,
+        "emotional_pull": -1,
+        "trust": -1,
+        "share_impulse": 0,
+        "mobile_quality": 0,
+        "conversion_intent": -1
+      },
+      "reason": "Business Owner / Conversion structured role: the evidence is judged for reducing a named decision objection; no unverified no-pressure, response-time or guarantee claim is assumed. Mobile: the candidate has a relevant after-state, but lacks verified no-pressure and response details; the benchmark is safer.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "sell-step-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Creative / Art Direction structured role: the authored Before →整理→After transition is judged for distinctness, hierarchy, craft and emotional memory; continuity evidence is credited only when it supports the concept. Desktop: the linear state change creates a more memorable reading path.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "sell-step-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "Creative / Art Direction structured role: the authored Before →整理→After transition is judged for distinctness, hierarchy, craft and emotional memory; continuity evidence is credited only when it supports the concept. Mobile: re-art direction remains legible and the continuity line stays subordinate.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "sell-step-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business Owner / Conversion structured role: the evidence is judged for reducing a named decision objection; no unverified no-pressure, response-time or guarantee claim is assumed. Desktop: the candidate is more specific, but neither side makes the post-click decision materially safer.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "sell-step-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 0,
+        "owner_specificity": 1,
+        "visual_hierarchy": -1,
+        "craft_detail": 0,
+        "emotional_pull": -1,
+        "trust": 0,
+        "share_impulse": 0,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business Owner / Conversion structured role: the evidence is judged for reducing a named decision objection; no unverified no-pressure, response-time or guarantee claim is assumed. Mobile: continuity is useful, but the compact footer creates a small density trade-off; overall remains equivalent.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "lfu-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "1440",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Creative / Art Direction structured role: the authored Before →整理→After transition is judged for distinctness, hierarchy, craft and emotional memory; continuity evidence is credited only when it supports the concept. Desktop: the emotional permission to consult is more distinctive and continuity supports the narrative.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "lfu-career",
+      "reviewer_type": "creative_art_direction",
+      "viewport": "390",
+      "overall": 1,
+      "axes": {
+        "immediate_read": 1,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 1,
+        "craft_detail": 1,
+        "emotional_pull": 1,
+        "trust": 0,
+        "share_impulse": 1,
+        "mobile_quality": 1,
+        "conversion_intent": 0
+      },
+      "reason": "Creative / Art Direction structured role: the authored Before →整理→After transition is judged for distinctness, hierarchy, craft and emotional memory; continuity evidence is credited only when it supports the concept. Mobile: the state sequence and CTA remain more ownable.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "lfu-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "1440",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 1,
+        "trust": 1,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 1
+      },
+      "reason": "Business Owner / Conversion structured role: the evidence is judged for reducing a named decision objection; no unverified no-pressure, response-time or guarantee claim is assumed. Desktop: verified post-transition accompaniment covers continuity/risk and brings the candidate to parity on action confidence.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    },
+    {
+      "benchmark_id": "lfu-career",
+      "reviewer_type": "business_owner_conversion",
+      "viewport": "390",
+      "overall": 0,
+      "axes": {
+        "immediate_read": 0,
+        "distinctness": 1,
+        "owner_specificity": 1,
+        "visual_hierarchy": 0,
+        "craft_detail": 0,
+        "emotional_pull": 0,
+        "trust": 1,
+        "share_impulse": 1,
+        "mobile_quality": 0,
+        "conversion_intent": 0
+      },
+      "reason": "Business Owner / Conversion structured role: the evidence is judged for reducing a named decision objection; no unverified no-pressure, response-time or guarantee claim is assumed. Mobile: continuity reduces abandonment fear, but the candidate still lacks a fully verified after-click flow; conversion remains a tie.",
+      "provenance": "structured internal Work review role; not an independent human-third-party review"
+    }
+  ],
+  "summary": {
+    "total_comparisons": 12,
+    "wins": 5,
+    "ties": 6,
+    "losses": 1,
+    "win_rate": 0.6667,
+    "axis_win_rate": {
+      "immediate_read": 0.6667,
+      "distinctness": 0.875,
+      "owner_specificity": 1.0,
+      "visual_hierarchy": 0.625,
+      "craft_detail": 0.7083,
+      "emotional_pull": 0.6667,
+      "trust": 0.5417,
+      "share_impulse": 0.875,
+      "mobile_quality": 0.5833,
+      "conversion_intent": 0.5
+    },
+    "desktop_win_rate": 0.75,
+    "mobile_win_rate": 0.5833,
+    "reviewer_type_win_rate": {
+      "creative_art_direction": 0.9167,
+      "business_owner_conversion": 0.4167
+    },
+    "benchmark_win_rate": {
+      "carigaku-career": 0.5,
+      "sell-step-career": 0.75,
+      "lfu-career": 0.75
+    }
+  },
+  "judgement": {
+    "gate": "PASS",
+    "gate_rule": "win_rate >= 0.60",
+    "interpretation": "The single Continuity variant remains competitive against the existing opponent set, but this does not prove it is better than Full Enriched or establish live conversion impact. Full Enriched remains the strongest previously validated P10 candidate at 0.7083.",
+    "structured_review_limitation": "Directional structured review, not causal inference or real CVR evidence."
+  }
+}

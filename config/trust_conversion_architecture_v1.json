@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "updated": "2026-09-15",
   "name": "Trust / Conversion Architecture",
   "purpose": "Connect company-specific creative form to a trustworthy, psychologically safe next action without evidence bloat.",
@@ -71,8 +71,14 @@
     "POST_CLICK_FLOW",
     "RISK_POLICY",
     "SCOPE_BOUNDARY",
-    "OWNER_IDENTITY"
+    "OWNER_IDENTITY",
+    "SERVICE_PROCESS",
+    "FEE_CONDITION",
+    "BUSINESS_MODEL",
+    "CONTINUITY_POLICY",
+    "DECISION_BOUNDARY"
   ],
+  "evidence_selection_logic": "config/evidence_selection_logic_v1.json",
   "status": "REPLICATED_NOT_ENGINE_IMPLEMENTED",
   "rule_status": {
     "PROOF_TO_PROCESS": "OBSERVED",
@@ -89,9 +95,11 @@
     "design": "Three states per prototype: unchanged Formal PASS baseline, Trust Core, and unchanged Full Enriched. Core uses one company fact, one operational path, and one decision/risk boundary.",
     "findings": {
       "P02": "Trust Core improved Trust/Conversion directionally over Baseline, while Full Enriched remained stronger on Trust. The process plus decision boundary appears useful; 20年/300社 alone is not isolated as the cause.",
-      "P10": "Trust Core was equivalent to the existing minimum CTA evidence, while Full Enriched improved over Core. Named accountable-person and continuity/business-model evidence appear complementary; person-only causality is not isolated.",
+      "P10": "Trust Core was equivalent to the existing minimum CTA evidence, while Full Enriched improved over Core. In the objection-targeted ablation, Continuity was the strongest balanced single delta, Business Model most directly moved Trust, and Accountability alone was partial. No single delta reproduced Full Enriched, so complementary objection coverage remains the leading explanation.",
       "evidence_economy": "Not validated as Core equals Full. Use precision and sequence, but retain additional verified evidence when it resolves a distinct objection.",
-      "causal_limit": "Structured role comparisons are directional research evidence, not a statistical experiment or real-world conversion measurement."
+    "causal_limit": "Structured role comparisons are directional research evidence, not a statistical experiment or real-world conversion measurement.",
+    "selection_logic_result_file": "data/evidence_selection_ablation_results_v1.json",
+    "selection_logic_status": "SCHEMA_CANDIDATE_NOT_PRODUCTION_IMPLEMENTED"
     },
     "rule_cards": [
       {
@@ -202,7 +210,7 @@
       "現場・オフィス写真"
     ]
   },
-  "validation_note": "P02/P10のBaseline／Trust Core／Full Enrichedを同一Capture系統で比較したStructured Work Review。P02はCoreでTrust/Conversionの方向改善、P10はCoreがBaseline同等でFullの追加Evidenceに改善が残った。したがってTrust RuleはREPLICATEDまたはENGINE_READYへ一括昇格しない。",
+  "validation_note": "P02/P10のBaseline／Trust Core／Full Enrichedと、objection-targeted single Evidence Variantを同一Capture系統で比較したStructured Work Review。P02ではAuthorityがAbility／Accountabilityを、ProcessがNext／Decisionを担当し、P10では単独EvidenceがFull Enrichedを再現しなかった。したがってEvidence Selection Logicはschema候補に留め、Trust RuleはENGINE_READYへ一括昇格しない。",
   "engine_ready_candidate_rules": [],
   "engine_ready_candidate_note": "今回の6条件を満たすTrust Ruleはなし。UNKNOWN_BOUNDARYとMOBILE_ACTION_BUDGETは実装安全策として再利用しやすいが、Trust因果のENGINE_READY_CANDIDATEにはまだ昇格しない。"
 }

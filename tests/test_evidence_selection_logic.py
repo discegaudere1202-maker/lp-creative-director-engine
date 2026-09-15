@@ -22,6 +22,19 @@ class EvidenceSelectionLogicTest(unittest.TestCase):
         self.assertTrue(all(item["status"] == "REPLICATED" for item in payload["rules"]["safety_integrity"]))
         self.assertTrue(any(item["status"] == "HYPOTHESIS" for item in payload["rules"]["trust_optimization"]))
 
+    def test_ablation_and_external_result_are_traceable(self):
+        ablation = json.loads((ROOT / "data/evidence_selection_ablation_results_v1.json").read_text(encoding="utf-8"))
+        self.assertEqual({item["variant_id"] for item in ablation["variants"]}, {
+            "P10_ACCOUNTABILITY", "P10_CONTINUITY", "P10_BUSINESS_MODEL", "P02_PROCESS", "P02_AUTHORITY"
+        })
+        self.assertEqual(len(ablation["comparisons"]), 6)
+        self.assertTrue(all(len(item["votes"]) == 4 for item in ablation["comparisons"][:5]))
+        formal = json.loads((ROOT / "data/formal_tournament_results/P10_CONTINUITY_formal_blind_tournament_v1.json").read_text(encoding="utf-8"))
+        self.assertTrue(all(formal["formal_completeness"].values()))
+        self.assertEqual(len(formal["votes"]), 12)
+        self.assertEqual(formal["candidate_capture"]["artifact_id"], 10398639415)
+        self.assertEqual(formal["blind_bundle"]["identity_masking"], "PASS")
+
 
 if __name__ == "__main__":
     unittest.main()
