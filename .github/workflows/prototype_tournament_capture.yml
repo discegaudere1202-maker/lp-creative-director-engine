@@ -1,0 +1,43 @@
+name: Prototype Tournament Capture
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'config/prototype_capture_targets_v1.json'
+      - 'scripts/capture_prototype_frames.py'
+      - 'examples/prototypes/**'
+      - '.github/workflows/prototype_tournament_capture.yml'
+
+concurrency:
+  group: prototype-tournament-capture-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install capture dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Capture prototype tournament frames
+        run: |
+          python scripts/capture_prototype_frames.py \
+            --config config/prototype_capture_targets_v1.json \
+            --output artifacts/prototype_capture
+      - name: Upload prototype tournament evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: prototype-tournament-evidence-${{ github.run_number }}
+          path: artifacts/prototype_capture
+          if-no-files-found: error
+          retention-days: 30
