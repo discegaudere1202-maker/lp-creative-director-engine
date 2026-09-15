@@ -21,6 +21,10 @@
           "O4_NEXT",
           "O5_DECISION"
         ],
+        "approved_claims": [
+          "代表者は緒方幸一。",
+          "問い合わせ→内容確認・日程調整→相談とサービス説明→見積→納得後契約。"
+        ],
         "eligible_evidence": [
           {
             "evidence_id": "P02-E01",
@@ -164,6 +168,11 @@
           "O4_NEXT",
           "O6_COST"
         ],
+        "approved_claims": [
+          "相談→提案→製作→施工までワンストップで対応。",
+          "デザイン・製作・施工まで一つの窓口で対応。",
+          "400×300mmの看板を4,158円（税込）から。仕様条件を併記。"
+        ],
         "eligible_evidence": [
           {
             "evidence_id": "P09-E01",
@@ -300,6 +309,12 @@
           "O3_PROCESS",
           "O5_DECISION",
           "O8_CONTINUITY"
+        ],
+        "approved_claims": [
+          "転職意思が固まっていない段階から相談できる。",
+          "価値観の整理やキャリアプランの立て方から伴走する。",
+          "キャリアコンサルタントとして宮原彩乃を公式紹介。",
+          "転職後もキャリアの伴走を無料で行う。"
         ],
         "eligible_evidence": [
           {
@@ -490,6 +505,11 @@
           "O4_NEXT",
           "O6_COST"
         ],
+        "approved_claims": [
+          "楠の木の香りにこだわり、一枚板で家具を作る。",
+          "店内展示の家具に触れて、香りや温かみを体験できる。",
+          "オーダーメイドを承り、できるだけ予算内で制作する。"
+        ],
         "eligible_evidence": [
           {
             "evidence_id": "MORIBITO-E01",
@@ -518,3 +538,98 @@
             "evidence_id": "MORIBITO-E02",
             "company_id": "moribito",
             "case_id": "MORIBITO",
+            "evidence_type": "PLACE_EXPERIENCE",
+            "evidence_strength": "E3_OPERATIONAL",
+            "target_objections": [
+              "O3_PROCESS",
+              "O4_NEXT"
+            ],
+            "claim": "店内展示の家具に触れて、香りや温かみを体験できる。",
+            "source": "https://moribito.jp/",
+            "source_type": "official_company_site",
+            "verification_status": "VERIFIED",
+            "verification_date": "2026-09-15",
+            "usage_status": "ELIGIBLE",
+            "placement_candidates": [
+              "MIDDLE",
+              "CTA_ZONE"
+            ],
+            "rights_status": "NOT_APPLICABLE",
+            "hearing_required": false,
+            "blocking_status": "NON_BLOCKING",
+            "notes": "Visit experience fact."
+          },
+          {
+            "evidence_id": "MORIBITO-E03",
+            "company_id": "moribito",
+            "case_id": "MORIBITO",
+            "evidence_type": "SCOPE_BOUNDARY",
+            "evidence_strength": "E5_DECISION_ENABLING",
+            "target_objections": [
+              "O6_COST"
+            ],
+            "claim": "オーダーメイドを承り、できるだけ予算内で制作する。",
+            "source": "https://moribito.jp/",
+            "source_type": "official_company_site",
+            "verification_status": "VERIFIED",
+            "verification_date": "2026-09-15",
+            "usage_status": "ELIGIBLE",
+            "placement_candidates": [
+              "CTA_ZONE"
+            ],
+            "rights_status": "NOT_APPLICABLE",
+            "hearing_required": false,
+            "blocking_status": "NON_BLOCKING",
+            "notes": "No price number inferred."
+          }
+        ],
+        "missing_evidence": [],
+        "blocked_claims": [
+          {
+            "claim": "返信は24時間以内",
+            "claim_id": "RESPONSE_TIME",
+            "target_objections": [
+              "O4_NEXT"
+            ],
+            "required_evidence_types": [
+              "RESPONSE_EXPECTATION"
+            ],
+            "status": "BLOCKED",
+            "reason": "No verified, production-eligible policy/fact supports this claim."
+          }
+        ],
+        "hearing_required": [
+          {
+            "target_objection": "O4_NEXT",
+            "missing_evidence_type": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "missing_field": "post_click_flow",
+            "why_needed": "Primary objection O4_NEXT has no verified, production-eligible evidence.",
+            "priority": "HIGH",
+            "blocked_claims": [
+              "返信は24時間以内"
+            ],
+            "suggested_hearing_field": "post_click_flow",
+            "status": "HEARING_REQUIRED"
+          }
+        ],
+        "allowed_placements": [
+          "CTA_ZONE",
+          "HERO",
+          "MIDDLE"
+        ],
+        "safety_status": "BLOCKED",
+        "issues": []
+      },
+      "research_note": "Programmatic safety dry run; not a live conversion or causal experiment."
+    }
+  ],
+  "summary": {
+    "case_count": 4,
+    "all_have_decisions": true,
+    "customer_facing_approved_blocked_claims": 6
+  }
+}
