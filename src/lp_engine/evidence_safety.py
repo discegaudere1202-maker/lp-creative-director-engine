@@ -349,6 +349,10 @@ def evaluate_evidence_selection(
                 and not record.hearing_required
                 and record.blocking_status != "BLOCKING"
                 and record.usage_status not in {"BLOCKED", "REJECTED"}
+                and (
+                    not require_production_clearance
+                    or record.usage_status in ACCEPTED_PRODUCTION_USAGE
+                )
                 and _supports_claim(record, rule)
             ]
             if not supporting:
