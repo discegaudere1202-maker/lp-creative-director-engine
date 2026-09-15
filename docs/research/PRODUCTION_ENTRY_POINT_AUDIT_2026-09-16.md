@@ -70,3 +70,13 @@ traceability. The expected Production bypass count is zero.
 Live conversion, stale-source policy and conflicting official evidence remain
 review workflows rather than automatic truth resolution. The conservative
 fallback is `HOLD` / `HEARING_REQUIRED`.
+
+
+## Production E2E
+
+The E2E suite exercises five named cases (P02, P09, P10, 森人 and
+INDEPENDENT_KOKORO_SEITAI) through the actual Pipeline entry. Positive
+fixtures produce a traceable manifest. Negative fixtures verify that
+unsupported claims are omitted, while missing provenance or unknown rights
+produce no Production manifest. Research-mode output remains explicitly
+`NOT_PRODUCTION_APPROVED`.
