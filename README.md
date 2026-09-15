@@ -3,7 +3,17 @@
 1000件のLP自動生成を「テンプレ生成」ではなく、
 **AI Creative Director System**として実装するためのPythonエンジン。
 
-現在: **v0.6.0**
+現在: **v0.6.0 + Quality Ceiling Research Phase**
+
+## North Star
+
+AI利用・自動生成であることは顧客価値と無関係。
+営業サンプルの時点で、
+**「腕のいいアートディレクターとデザイナーが、その会社のためだけに設計した」**
+と思われる品質を目指す。
+
+営業サンプルは途中版ではなく、
+**Client Evidenceだけが未追加の完成LP**として扱う。
 
 ## 現在実装済み
 - Sales Eligibility / Existing Site Baseline Gate
@@ -21,6 +31,26 @@
 - Golden Sample regression baselines
 - GitHub Actions CI
 
+## Current R&D priority — Quality Ceiling
+
+量産最適化より先に品質上限を引き上げる。
+
+Research goals:
+- 100 Screenshot-worthy Frame catalog
+- 24+ Craft Prototypes
+- Benchmark Supremacy Tournament
+- 3 NO_WEB / WEAK_WEB Golden Samples
+- Sales State → Enriched State検証
+- Client Evidence Upgrade Slot確定
+
+See:
+- `docs/research/QUALITY_CEILING_RESEARCH_PHASE_v1.md`
+- `docs/research/SALES_SAMPLE_COMPLETION_CONTRACT_v1.md`
+- `docs/research/BENCHMARK_SUPREMACY_GATE_v1.md`
+- `docs/research/FRAME_ANALYSIS_BATCH_01.md`
+- `docs/research/CRAFT_PROTOTYPE_BACKLOG_v1.md`
+- `data/benchmark/frame_source_catalog_v1.json`
+
 ## Pipeline
 
 ```text
@@ -33,8 +63,9 @@ Candidate
 → Fact Ledger
 → Company Truth
 → Visual Authority
-→ 3 Creative Concept Competition
-→ Hero/Mid Frame Build
+→ 3–5 Creative Concept Competition
+→ Hero/Mid/CTA Frame Build
+→ Benchmark Supremacy
 → Screenshot Gate
 → Full LP
 → Rhythm/Motion/Copy QA
@@ -42,7 +73,10 @@ Candidate
 → Creative Red Team
 → CRO Red Team
 → Owner Simulation
-→ Premium Gate
+→ Sales Sample Premium Gate
+→ Client Evidence collection
+→ Enriched State
+→ Delivery Premium Gate
 ```
 
 **Creative production must not start before Sales Eligibility.**
@@ -85,6 +119,7 @@ See `docs/SALES_ELIGIBILITY_GATE_v1.md` and `docs/research/MORIBITO_POSTMORTEM_v
 - Reduced Motion
 - runtime errors
 - final visual review
+- Benchmark Supremacy Desktop/Mobile comparison
 
 ## Pixel Rhythm
 
