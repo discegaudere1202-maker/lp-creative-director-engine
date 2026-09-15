@@ -7,7 +7,9 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 HTML_PATH = ROOT / "examples/prototypes/p10_customer_state_transition_v1.html"
 WIDTHS = [320, 360, 375, 390, 430, 768, 1024, 1280, 1440]
-DISALLOWED = {"は、", "で、", "を。", "る。", "か。", "い？", "たい？", "する。", "れる。"}
+MOBILE_WIDTHS = [320, 360, 375, 390, 430]
+DESKTOP_WIDTHS = [768, 1024, 1280, 1440]
+DISALLOWED = {"は、", "で、", "を。", "る。", "か。", "い？", "たい？", "する。", "れる。", "す。"}
 
 LINE_TEXT_JS = r"""
 (selector) => {
@@ -63,6 +65,23 @@ class P10CustomerStateTransitionTest(unittest.TestCase):
         page.set_content(self.html, wait_until="load")
         return page
 
+    def _assert_line_shape(self, page, width: int, selector: str):
+        for lines in page.evaluate(LINE_TEXT_JS, selector):
+            for line in lines:
+                self.assertNotIn(
+                    line,
+                    DISALLOWED,
+                    f"semantic fragment at {width}px in {selector}: {line}",
+                )
+                jp = [
+                    ch for ch in line
+                    if "\u3040" <= ch <= "\u30ff" or "\u4e00" <= ch <= "\u9fff"
+                ]
+                if 0 < len(jp) <= 2:
+                    self.fail(
+                        f"short Japanese fragment at {width}px in {selector}: {line}"
+                    )
+
     def test_no_horizontal_overflow_across_nine_widths(self):
         for width in WIDTHS:
             with self.subTest(width=width):
@@ -75,29 +94,42 @@ class P10CustomerStateTransitionTest(unittest.TestCase):
                     page.close()
 
     def test_customer_copy_keeps_semantic_line_shape(self):
-        selectors = [
-            "h1 span", ".intro-note", ".fragment", ".resolved-row strong", 
-            ".resolved-row small", ".closing .proof", ".closing .cta"
+        prose_selectors = [
+            "h1 span", ".intro-note", ".resolved-row strong",
+            ".resolved-row small", ".closing .proof span", ".closing .cta"
         ]
         for width in WIDTHS:
             with self.subTest(width=width):
                 page = self._page(width)
                 try:
-                    for selector in selectors:
-                        for lines in page.evaluate(LINE_TEXT_JS, selector):
-                            for line in lines:
-                                self.assertNotIn(
-                                    line, DISALLOWED,
-                                    f"semantic fragment at {width}px in {selector}: {line}",
-                                )
-                                jp = [
-                                    ch for ch in line
-                                    if "\u3040" <= ch <= "\u30ff" or "\u4e00" <= ch <= "\u9fff"
-                                ]
-                                if 0 < len(jp) <= 2:
-                                    self.fail(
-                                        f"short Japanese fragment at {width}px in {selector}: {line}"
-                                    )
+                    for selector in prose_selectors:
+                        self._assert_line_shape(page, width, selector)
+                    # On mobile the scattered thoughts become a normal reading list,
+                    # so they must obey ordinary line-shape rules.
+                    if width in MOBILE_WIDTHS:
+                        self._assert_line_shape(page, width, ".fragment")
+                finally:
+                    page.close()
+
+    def test_desktop_fragment_cloud_stays_spatially_intact(self):
+        # Desktop deliberately rotates the BEFORE thoughts. Character line boxes are
+        # therefore not a valid semantic-line signal; spatial containment is.
+        for width in DESKTOP_WIDTHS:
+            with self.subTest(width=width):
+                page = self._page(width)
+                try:
+                    before = page.locator(".before").bounding_box()
+                    self.assertIsNotNone(before)
+                    fragment_rects = page.locator(".fragment").evaluate_all(
+                        "els => els.map(e => { const r=e.getBoundingClientRect(); return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,whiteSpace:getComputedStyle(e).whiteSpace}; })"
+                    )
+                    self.assertEqual(len(fragment_rects), 4)
+                    for rect in fragment_rects:
+                        self.assertEqual(rect["whiteSpace"], "nowrap")
+                        self.assertGreaterEqual(rect["left"], before["x"] - 2)
+                        self.assertLessEqual(rect["right"], before["x"] + before["width"] + 2)
+                        self.assertGreaterEqual(rect["top"], before["y"] - 2)
+                        self.assertLessEqual(rect["bottom"], before["y"] + before["height"] + 2)
                 finally:
                     page.close()
 
