@@ -24,9 +24,10 @@ DEFAULT_GATES = [
 def _evidence_safety_gate(spec: Mapping) -> GateResult:
     decision = evaluate_evidence_selection(
         spec.get("conversion_goal", ""),
-        spec.get("primary_objections", []),
-        spec.get("evidence_ledger", []),
-        requested_claims=spec.get("requested_claims", []),
+        spec.get("primary_objections") or [],
+        spec.get("evidence_ledger") or [],
+        requested_claims=spec.get("requested_claims") or [],
+        require_production_clearance=True,
     )
     status_map = {
         "PASS": "PASS",
