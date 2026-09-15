@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-15",
+  "principle": "Benchmark pools are comparison sets, never style templates.",
+  "pools": {
+    "PERSON_EDITORIAL": {
+      "description": "人物・人柄・編集・本人性を主役にする案件",
+      "benchmark_ids": ["C01", "C03", "C06", "C07", "C08"],
+      "critical_axes": ["owner_specificity", "emotional_pull", "share_impulse"]
+    },
+    "MATERIAL_PHOTO_CRAFT": {
+      "description": "素材・職人・工房・空間・写真Directionが主役の案件",
+      "benchmark_ids": ["C09", "C10", "C11", "C13", "C14"],
+      "critical_axes": ["craft_detail", "visual_hierarchy", "owner_specificity"]
+    },
+    "PRODUCT_BEHAVIOR": {
+      "description": "商品の動き・使い方・体験が強い案件",
+      "benchmark_ids": ["C17", "C18", "C19", "C20", "C21"],
+      "critical_axes": ["immediate_read", "emotional_pull", "conversion_intent"]
+    },
+    "PLACE_HOSPITALITY": {
+      "description": "店舗・施設・宿泊・地域・来店体験を主役にする案件",
+      "benchmark_ids": ["C10", "C11", "C15", "C16", "C08"],
+      "critical_axes": ["emotional_pull", "trust", "conversion_intent"]
+    },
+    "B2B_EXPLAINER_DOCUMENT": {
+      "description": "専門性・見えない仕事・複雑サービスを理解可能にする案件",
+      "benchmark_ids": ["C23", "C24", "C25", "C26", "C27", "C28"],
+      "critical_axes": ["immediate_read", "owner_specificity", "trust"]
+    },
+    "WORLD_CATEGORY": {
+      "description": "世界観・Category Reframe・会社固有Conceptが主役の案件",
+      "benchmark_ids": ["C31", "C32", "C33", "C34", "C37", "C38", "C39"],
+      "critical_axes": ["distinctness", "owner_specificity", "share_impulse"]
+    },
+    "TYPOGRAPHY_MOTION": {
+      "description": "文字・余白・Semantic Motion・組版が主役の案件",
+      "benchmark_ids": ["C41", "C42", "C43", "C12", "C45"],
+      "critical_axes": ["visual_hierarchy", "craft_detail", "share_impulse"]
+    },
+    "UTILITY_ACCESSIBILITY_TRUST": {
+      "description": "信頼・分かりやすさ・Utility・Accessibilityが品質の中心になる案件",
+      "benchmark_ids": ["C51", "C52", "C53", "C54", "C55", "C56"],
+      "critical_axes": ["trust", "immediate_read", "mobile_quality"]
+    },
+    "CONVERSION_ACTION": {
+      "description": "相談・問い合わせ・購入・参加などActionへ感情と理解を運ぶ案件",
+      "benchmark_ids": ["C21", "C22", "C46", "C47", "C48", "C49", "C59"],
+      "critical_axes": ["conversion_intent", "trust", "emotional_pull"]
+    },
+    "MOBILE_FIRST": {
+      "description": "390pxでPrimary Experienceを再構成する案件",
+      "benchmark_ids": ["C44", "C45", "C48", "C51", "C54"],
+      "critical_axes": ["mobile_quality", "immediate_read", "visual_hierarchy"]
+    },
+    "ASSET_LIGHT": {
+      "description": "営業Sampleで本人写真が乏しくてもCompany Truthから固有性を作る案件",
+      "benchmark_ids": ["C23", "C24", "C26", "C31", "C32", "C33"],
+      "critical_axes": ["owner_specificity", "distinctness", "immediate_read"]
+    },
+    "LOCAL_SME_TRANSFER": {
+      "description": "NO_WEB/WEAK_WEBの地域中小企業へ特に判断を移植しやすい案件",
+      "benchmark_ids": ["C04", "C07", "C11", "C23", "C46", "C47"],
+      "critical_axes": ["owner_specificity", "trust", "conversion_intent"]
+    }
+  }
+}
