@@ -3,9 +3,11 @@
 1000件のLP自動生成を「テンプレ生成」ではなく、
 **AI Creative Director System**として実装するためのPythonエンジン。
 
-現在: **v0.5.0**
+現在: **v0.6.0**
 
 ## 現在実装済み
+- Sales Eligibility / Existing Site Baseline Gate
+- Asset Reality classification
 - Visual Authority classifier
 - Owner-specificity Gate
 - Screenshot Peak Gate
@@ -22,7 +24,12 @@
 ## Pipeline
 
 ```text
-Source Depth
+Candidate
+→ Existing Site Check
+→ Existing Site Baseline Score
+→ Asset Reality Check
+→ Sales Eligibility
+→ Source Depth
 → Fact Ledger
 → Company Truth
 → Visual Authority
@@ -37,6 +44,22 @@ Source Depth
 → Owner Simulation
 → Premium Gate
 ```
+
+**Creative production must not start before Sales Eligibility.**
+A company can be an excellent design benchmark and still be the wrong sales-sample target.
+
+## Sales Eligibility
+
+- `SALES_CANDIDATE` — no site, or an existing site with at least two concrete improvement gaps
+- `BENCHMARK_ONLY` — existing site is already strong; study it, do not automatically redesign it
+- `REDESIGN_CHALLENGE` — explicit R&D challenge to beat a strong existing baseline, separated from sales targeting
+- `REVIEW` — redesign value has not yet been proven
+
+Asset access is also separated from business asset reality:
+
+`ACCESS_CONSTRAINT_NOT_ASSET_POOR` means the company owns strong real assets, but we cannot currently access/use them well. This must never be treated as an asset-poor brand.
+
+See `docs/SALES_ELIGIBILITY_GATE_v1.md` and `docs/research/MORIBITO_POSTMORTEM_v1.md`.
 
 ## QA tiers
 
@@ -100,3 +123,5 @@ PYTHONPATH=src python -m lp_engine.cli examples/mahora_v2.json --out out/mahora_
 
 A new Gate re-certifies old Golden Samples. A previous PASS is not permanent.
 The engine should become stricter as the portfolio grows, while preserving company-specific creative direction.
+
+A Golden Sample is not selected only because the company is visually interesting. It must first be eligible as a real sales-sample target, or be explicitly labeled as an R&D redesign challenge.
