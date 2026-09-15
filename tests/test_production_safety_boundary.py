@@ -161,6 +161,16 @@ class ProductionSafetyBoundaryTest(unittest.TestCase):
         self.assertEqual(report.status, "PASS")
         self.assertEqual(report.evidence_manifest[0]["evidence_id"], "BOUNDARY-001")
 
+    def test_hearing_required_is_connected_to_minimum_question_plan(self):
+        report = self.run_production({
+            "conversion_goal": "consultation",
+            "primary_objections": ["O7_RISK"],
+            "evidence_ledger": [],
+            "requested_claims": ["秘密厳守"],
+        })
+        self.assertEqual(report.hearing_plan["question_count"], 1)
+        self.assertEqual(report.hearing_plan["minimum_question_set"][0]["field_id"], "risk_and_privacy_policy")
+
     def test_legacy_path_still_requires_safety_selection(self):
         report = self.run_production({
             "conversion_goal": "consultation",
