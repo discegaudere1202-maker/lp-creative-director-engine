@@ -374,7 +374,14 @@
       "HEARING_REQUIRED",
       "BLOCKED",
       "INVALID_INPUT"
-    ]
+    ],
+    "production_gate": {
+      "requires_usage_status": [
+        "ELIGIBLE",
+        "PRODUCTION_ELIGIBLE"
+      ],
+      "research_only_behavior": "May remain in research selection output but is not customer-facing production approved."
+    }
   },
   "routing": {
     "missing_evidence": "HEARING_REQUIRED",
@@ -382,5 +389,13 @@
     "unverified_evidence": "HEARING_REQUIRED",
     "rights_unknown_visual": "BLOCKED",
     "unsupported_claim": "BLOCKED"
-  }
+  },
+  "usage_statuses": [
+    "ELIGIBLE",
+    "PRODUCTION_ELIGIBLE",
+    "RESEARCH_ONLY",
+    "UNKNOWN",
+    "BLOCKED",
+    "REJECTED"
+  ]
 }
