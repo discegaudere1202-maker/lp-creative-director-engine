@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "schema_id": "evidence_safety_engine_v1",
-  "status": "SAFETY_ENGINE_IMPLEMENTED_TESTED_OPTIONAL_PIPELINE_WIRED",
+  "status": "SAFETY_ENGINE_MANDATORY_IN_PRODUCTION",
   "purpose": "Select verified company evidence against diagnosed customer objections while blocking unsupported trust claims.",
   "verification_statuses": [
     "VERIFIED",
@@ -381,7 +381,8 @@
         "PRODUCTION_ELIGIBLE"
       ],
       "research_only_behavior": "May remain in research selection output but is not customer-facing production approved."
-    }
+    },
+    "production_output_invariant": "Every production evidence manifest item must come from a Safety-selected eligible record."
   },
   "routing": {
     "missing_evidence": "HEARING_REQUIRED",
@@ -399,8 +400,9 @@
     "REJECTED"
   ],
   "pipeline_integration": {
-    "mode": "optional",
+    "mode": "mandatory_in_production_optional_in_research_test",
     "ref": "src/lp_engine/pipeline.py",
+    "production_requires_safety_input": true,
     "production_usage_required": [
       "ELIGIBLE",
       "PRODUCTION_ELIGIBLE"
