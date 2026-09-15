@@ -1,7 +1,14 @@
 {
   "version": 1,
   "updated": "2026-09-15",
-  "rule": "Research notes do not automatically count as verified frames. VERIFIED requires explicit visual review. CORE additionally requires mobile review and is eligible for blind benchmark tournaments.",
+  "rule": "Research notes do not automatically count as verified frames. VERIFIED requires explicit visual review. CORE additionally requires mobile review and is eligible for blind benchmark tournaments. M2 and M3 mobile evidence must be synchronized with the mobile verification registry.",
+  "expected_counts": {
+    "total_records": 15,
+    "candidate_count": 3,
+    "verified_count": 6,
+    "core_count": 6,
+    "rejected_count": 0
+  },
   "frames": [
     {
       "frame_id": "sakuma-hero-01",
@@ -11,10 +18,11 @@
       "visual_authority": ["PERSON", "TYPOGRAPHY", "EDITORIAL"],
       "lesson": "人物の多面性とエンターテインメント性を、情報整理ではなく人格の期待感として一画面へ統合している。",
       "transfer_to_sales_sample": "代表者本人の仕事観や固有の語彙が確認できる案件では、肩書き説明より人格の期待感を先に設計する。",
-      "source_support": "Studio Design Award nominee page and Goodpatch award/case explanation describe the personality-led experience and art direction.",
+      "source_support": "Studio Design Award nominee page and Goodpatch award/case explanation describe the personality-led experience and art direction. ASI Design Gallery publishes separate PC, tablet and smartphone captures, allowing explicit mobile hierarchy review.",
       "visual_verified": true,
-      "mobile_verified": false,
-      "stage": "VERIFIED",
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M2",
+      "stage": "CORE",
       "rejection_reason": ""
     },
     {
@@ -28,6 +36,7 @@
       "source_support": "Mount project page explicitly explains five paper layers, overlap, displacement, resistance and the custom WebGL implementation.",
       "visual_verified": true,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "VERIFIED",
       "rejection_reason": ""
     },
@@ -42,6 +51,7 @@
       "source_support": "Studio nominee page states the recognition gap, the question '東急はなぜまちをつくるのか。' and the paper-craft art direction.",
       "visual_verified": true,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "VERIFIED",
       "rejection_reason": ""
     },
@@ -56,6 +66,7 @@
       "source_support": "Web Grand Prix report praises the warm visual world, readable structure, accessibility and controlled motion.",
       "visual_verified": true,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "VERIFIED",
       "rejection_reason": ""
     },
@@ -67,10 +78,11 @@
       "visual_authority": ["TRUST", "TYPOGRAPHY", "PERSON", "ACCESSIBILITY"],
       "lesson": "派手さではなく、求職者視点の明快さ・余白・アクセシビリティ・不安を下げる導線によってPremiumな信頼を作っている。",
       "transfer_to_sales_sample": "士業や地域サービスでは、演出量を増やすより、判断しやすさと不安解消を一画面の美しさとして成立させる。",
-      "source_support": "Web Grand Prix page and report explicitly evaluate simple layout, accessibility, trust and low-friction casual interview design.",
+      "source_support": "Web Grand Prix page/report support the trust and accessibility rationale; ASI Design Gallery publishes PC, tablet and smartphone captures for explicit mobile review.",
       "visual_verified": true,
-      "mobile_verified": false,
-      "stage": "VERIFIED",
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M2",
+      "stage": "CORE",
       "rejection_reason": ""
     },
     {
@@ -84,6 +96,7 @@
       "source_support": "Web Grand Prix report highlights both the worldview and user-problem-solving/consultation experience as business contribution.",
       "visual_verified": true,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "VERIFIED",
       "rejection_reason": ""
     },
@@ -98,6 +111,7 @@
       "source_support": "Studio nominee page explicitly describes reading all books and translating meritocracy into a fuzzy creature visual.",
       "visual_verified": false,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "CANDIDATE",
       "rejection_reason": ""
     },
@@ -112,6 +126,7 @@
       "source_support": "Studio nominee page explicitly states the whitespace-led minimal structure and organized relationship of grid, typography and motion.",
       "visual_verified": false,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "CANDIDATE",
       "rejection_reason": ""
     },
@@ -126,6 +141,7 @@
       "source_support": "Web Grand Prix report specifically praises high-quality visuals and storytelling that convey the delicacy and depth of craftsmanship.",
       "visual_verified": false,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "CANDIDATE",
       "rejection_reason": ""
     },
@@ -140,6 +156,7 @@
       "source_support": "Studio nominee page explains the customer-world editorial axis, soft illustration and deliberately restrained animation.",
       "visual_verified": true,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "VERIFIED",
       "rejection_reason": ""
     },
@@ -154,6 +171,7 @@
       "source_support": "Studio nominee page explicitly states the shared-planning philosophy, paper-around scene motif and drawing animation; visual search confirmed the frame composition.",
       "visual_verified": true,
       "mobile_verified": false,
+      "mobile_evidence_grade": "M0",
       "stage": "VERIFIED",
       "rejection_reason": ""
     },
@@ -165,10 +183,11 @@
       "visual_authority": ["PERSON", "EDITORIAL", "TRUST"],
       "lesson": "性質の異なる二事業を整理しながら、人の柔らかさと清潔感を写真と余白で両立させ、企業理解への入口を作っている。",
       "transfer_to_sales_sample": "複数事業を持つ中小企業では全部を同列カード化せず、共通理解軸を先に作り、人や現場の印象を補助証拠として使う。",
-      "source_support": "Studio nominee page explains the two-business comprehension problem and people-focused expression; visual search confirmed the recruitment hero layout.",
+      "source_support": "Studio nominee page explains the two-business comprehension problem and people-focused expression; ASI Design Gallery provides PC, tablet and smartphone captures for explicit mobile review.",
       "visual_verified": true,
-      "mobile_verified": false,
-      "stage": "VERIFIED",
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M2",
+      "stage": "CORE",
       "rejection_reason": ""
     },
     {
@@ -179,10 +198,26 @@
       "visual_authority": ["EDITORIAL", "MOBILE_FIRST", "EMOTIONAL_TEMPERATURE"],
       "lesson": "重くなりやすい実家や終活のテーマを、明るい色・曲線・読みやすい記事構成で、軽くしすぎず前向きに向き合える距離感へ変えている。",
       "transfer_to_sales_sample": "問い合わせ自体が心理的に重い業種では、サービス機能より先に顧客が前へ進める温度と読みやすさを設計する。",
-      "source_support": "Studio nominee page states the emotional-barrier concept, bright colors, curves and mobile-first layout; award imagery visually confirms the editorial/mobile composition.",
+      "source_support": "Studio nominee page states the emotional-barrier concept and mobile-first layout; the official renewal release publishes both PC and smartphone TOP visuals.",
       "visual_verified": true,
-      "mobile_verified": false,
-      "stage": "VERIFIED",
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M2",
+      "stage": "CORE",
+      "rejection_reason": ""
+    },
+    {
+      "frame_id": "ima-brand-verb-01",
+      "site_name": "IMA株式会社 | 今をかきまぜろ。",
+      "source_url": "https://designaward2025.studio.design/nominate/ima-inc",
+      "frame_role": "BUSINESS_VERB_HERO",
+      "visual_authority": ["TYPOGRAPHY", "MOTION", "BRAND_VERB", "EDITORIAL"],
+      "lesson": "『かきまぜる』という事業姿勢を、コピーの比喩で終わらせず、円運動とレイアウトの視覚文法へ変換している。",
+      "transfer_to_sales_sample": "会社固有のBusiness Verbが確認できる場合、装飾的な図形を足すのではなく、Verbの挙動を構図・Motion・読み順の原因にする。",
+      "source_support": "Studio Design Award nominee page explains the 'かき混ぜる' visual concept; ASI Design Gallery publishes separate PC, tablet and smartphone captures that preserve the circular/mixing grammar.",
+      "visual_verified": true,
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M2",
+      "stage": "CORE",
       "rejection_reason": ""
     },
     {
@@ -193,10 +228,11 @@
       "visual_authority": ["PRODUCT", "DATA", "3D", "EDITORIAL"],
       "lesson": "振り返りという概念を透明なガラス・鏡・反射へ変換しつつ、長い説明・機能図・事例を省略せず、理解と営業信頼を両立している。",
       "transfer_to_sales_sample": "高単価B2Bでは短文だけをPremiumとせず、Conceptual Visualと長いProofを読みやすい階層へ統合する。",
-      "source_support": "Studio nominee and necco case describe the reflection metaphor, full explanation, diagrams and cases; visual search confirmed desktop and mobile design assets.",
+      "source_support": "Studio nominee/necco rationale supports the reflection metaphor and long-form proof; ASI Design Gallery publishes PC, tablet and smartphone captures, and the live site preserves the primary promise plus document-download/contact actions.",
       "visual_verified": true,
-      "mobile_verified": false,
-      "stage": "VERIFIED",
+      "mobile_verified": true,
+      "mobile_evidence_grade": "M2",
+      "stage": "CORE",
       "rejection_reason": ""
     }
   ]
