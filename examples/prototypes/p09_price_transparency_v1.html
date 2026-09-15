@@ -24,9 +24,10 @@ body{min-height:100vh}
 .copy{display:flex;flex-direction:column;min-width:0}
 .kicker{display:flex;align-items:center;gap:9px;color:var(--accent);font-size:10px;letter-spacing:.12em;font-weight:700;margin-bottom:20px}
 .kicker:before{content:"";width:24px;height:1px;background:var(--accent)}
-h1{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-weight:500;font-size:clamp(58px,4.8vw,78px);line-height:1.02;letter-spacing:-.06em}
-h1 span{display:block}
-h1 span:last-child{color:var(--accent);margin-left:.45em}
+h1{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-weight:500;font-size:clamp(56px,4.2vw,68px);line-height:1.01;letter-spacing:-.06em}
+h1 span{display:block;white-space:nowrap}
+h1 .mid{margin-left:.22em}
+h1 .accent-line{color:var(--accent);margin-left:.58em}
 .lead{margin:30px 0 0;max-width:35em;font-size:13px;line-height:1.95;color:#465048}
 .source-note{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-size:9px;line-height:1.75;color:var(--muted)}
 .equation{position:relative;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);display:grid;grid-template-rows:auto 1fr;min-height:0}
@@ -42,7 +43,7 @@ h1 span:last-child{color:var(--accent);margin-left:.45em}
 .factor{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:20px;align-items:center;padding:12px 0 12px 30px;border-bottom:1px solid var(--line);min-height:0}
 .factor:last-child{border-bottom:0}
 .factor .index{font-size:9px;letter-spacing:.12em;color:var(--muted)}
-.factor strong{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:clamp(27px,2.4vw,39px);font-weight:500;line-height:1.18;letter-spacing:-.04em}
+.factor strong{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;font-size:clamp(27px,2.4vw,39px);font-weight:500;line-height:1.18;letter-spacing:-.04em;white-space:nowrap}
 .factor p{margin:0;max-width:21em;font-size:10px;line-height:1.7;color:#687068}
 .factor .mark{width:34px;height:34px;border:1px solid var(--accent);border-radius:50%;display:grid;place-items:center;font-size:18px;color:var(--accent);margin-right:4px}
 .mobile-summary{display:none}
@@ -55,7 +56,7 @@ h1 span:last-child{color:var(--accent);margin-left:.45em}
   .frame{padding:28px 32px 26px}
   .topline{grid-template-columns:1fr auto}.topline .type{display:none}
   .hero{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:34px;padding:5vh 0 4vh}
-  h1{font-size:52px}.lead{font-size:12px;line-height:1.85;margin-top:24px}
+  h1{font-size:50px}.lead{font-size:12px;line-height:1.85;margin-top:24px}
   .formula-head{grid-template-columns:120px 1fr auto}
   .price-body{grid-template-columns:120px 1fr}
   .price-anchor{padding-right:14px}.price-anchor .number{font-size:42px}
@@ -76,8 +77,8 @@ h1 span:last-child{color:var(--accent);margin-left:.45em}
   .topline{grid-template-columns:1fr auto;font-size:8px;padding-top:7px}.topline .type{display:none}.topline .proof{font-size:8px;text-align:right}
   .hero{display:block;padding:4.2vh 0 3vh}
   .kicker{font-size:9px;margin-bottom:13px}
-  h1{font-size:43px;line-height:1.04;letter-spacing:-.055em}
-  h1 span:last-child{margin-left:0}
+  h1{font-size:43px;line-height:1.02;letter-spacing:-.055em}
+  h1 .mid,h1 .accent-line{margin-left:0}
   .lead{font-size:12px;line-height:1.82;margin-top:18px;max-width:28em}
   .source-note{display:none}
   .equation{display:block;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:22px}
@@ -110,7 +111,7 @@ h1 span:last-child{color:var(--accent);margin-left:.45em}
     <div class="copy">
       <div>
         <div class="kicker">価格表より先に、総額の理由を見せる</div>
-        <h1><span>見積もりは、</span><span>足し算で見える。</span></h1>
+        <h1><span>見積もりは、</span><span class="mid">足し算で</span><span class="accent-line">見える。</span></h1>
         <p class="lead">400×300mmのパネルサインは4,158円（税込）。ただし、公開価格表にはデザイン・編集などのデータ制作費は含まれていません。</p>
       </div>
       <div class="source-note">公開情報では、看板の費用はサイズ・仕様・設置場所によって変わると説明されています。数字だけでなく「何が金額を動かすか」まで同じ画面で理解できることを、Trustの主役にします。</div>
