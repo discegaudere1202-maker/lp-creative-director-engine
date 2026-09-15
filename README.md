@@ -3,7 +3,7 @@
 1000件のLP自動生成を「テンプレ生成」ではなく、
 **AI Creative Director System**として実装するためのPythonエンジン。
 
-現在: **v0.6.0 + Quality Ceiling Research Phase**
+現在: **v0.7.0 + Quality Ceiling Research Phase**
 
 ## North Star
 
@@ -29,27 +29,37 @@ AI利用・自動生成であることは顧客価値と無関係。
 - Pixel Rhythm / Section Pixel Rhythm
 - Advisory Rhythm Regression
 - Golden Sample regression baselines
+- 100-record source-backed quality research ledger
+- Core60 benchmark decision dictionary
+- Authority-specific benchmark pools
+- Blind Benchmark Tournament aggregation
+- Blind Benchmark Review UI generator
 - GitHub Actions CI
 
 ## Current R&D priority — Quality Ceiling
 
 量産最適化より先に品質上限を引き上げる。
 
-Research goals:
-- 100 Screenshot-worthy Frame catalog
-- 24+ Craft Prototypes
-- Benchmark Supremacy Tournament
-- 3 NO_WEB / WEAK_WEB Golden Samples
-- Sales State → Enriched State検証
-- Client Evidence Upgrade Slot確定
+Research status:
+- [x] 100 source-backed benchmark records
+- [x] 100 → Core60 selection
+- [x] Authority-specific benchmark pools
+- [x] Blind Tournament aggregation logic
+- [x] Blind reviewer UI generator
+- [ ] 20–30 externally challenged Craft Prototypes
+- [ ] 3 NO_WEB / WEAK_WEB Golden Samples passing Benchmark Supremacy
+- [x] Sales State → Enriched State layout hypothesis validated
+- [ ] Client Evidence Upgrade Slot library finalized
 
 See:
 - `docs/research/QUALITY_CEILING_RESEARCH_PHASE_v1.md`
 - `docs/research/SALES_SAMPLE_COMPLETION_CONTRACT_v1.md`
 - `docs/research/BENCHMARK_SUPREMACY_GATE_v1.md`
-- `docs/research/FRAME_ANALYSIS_BATCH_01.md`
+- `docs/research/CORE_FRAME_SELECTION_RULES_v1.md`
+- `docs/research/CORE_FRAME_SELECTION_v1.md`
+- `docs/research/FRAME_ANALYSIS_BATCH_01.md` … `FRAME_ANALYSIS_BATCH_06.md`
 - `docs/research/CRAFT_PROTOTYPE_BACKLOG_v1.md`
-- `data/benchmark/frame_source_catalog_v1.json`
+- `benchmarks/core_benchmark_pool_v1.json`
 
 ## Pipeline
 
@@ -65,6 +75,8 @@ Candidate
 → Visual Authority
 → 3–5 Creative Concept Competition
 → Hero/Mid/CTA Frame Build
+→ Benchmark Pool Selection
+→ Blind Benchmark Tournament (1440 / 390)
 → Benchmark Supremacy
 → Screenshot Gate
 → Full LP
@@ -94,6 +106,34 @@ Asset access is also separated from business asset reality:
 `ACCESS_CONSTRAINT_NOT_ASSET_POOR` means the company owns strong real assets, but we cannot currently access/use them well. This must never be treated as an asset-poor brand.
 
 See `docs/SALES_ELIGIBILITY_GATE_v1.md` and `docs/research/MORIBITO_POSTMORTEM_v1.md`.
+
+## Benchmark Supremacy
+
+Core60 is a **decision dictionary**, not a template library.
+`benchmarks/core_benchmark_pool_v1.json` groups Core examples by comparison purpose such as:
+- PERSON / EDITORIAL
+- MATERIAL / PHOTO / CRAFT
+- PRODUCT BEHAVIOR
+- B2B / EXPLAINER / DOCUMENT
+- WORLD / CATEGORY
+- TYPOGRAPHY / MOTION
+- UTILITY / ACCESSIBILITY / TRUST
+- CONVERSION / ACTION
+- MOBILE FIRST
+- ASSET LIGHT
+- LOCAL SME TRANSFER
+
+Pool selection chooses **who the candidate must compete against**, never what the candidate should look like.
+
+Generate an anonymous reviewer UI:
+
+```bash
+lp-benchmark-review review_manifest.json --out out/blind_review.html --seed 42
+```
+
+The reviewer only sees anonymous LEFT/RIGHT screenshots at 1440px and 390px.
+Scores are converted to candidate-relative `-1 / 0 / +1` JSON and passed to the tournament aggregator.
+Company names, production company names, award labels and candidate/benchmark identity must not be exposed during review.
 
 ## QA tiers
 
