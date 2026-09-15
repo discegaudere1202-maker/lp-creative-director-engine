@@ -29,37 +29,51 @@ AI利用・自動生成であることは顧客価値と無関係。
 - Pixel Rhythm / Section Pixel Rhythm
 - Advisory Rhythm Regression
 - Golden Sample regression baselines
-- 100-record source-backed quality research ledger
-- Core60 benchmark decision dictionary
-- Authority-specific benchmark pools
+- Strict Frame Registry (`CANDIDATE / VERIFIED / CORE / REJECTED`)
+- Authority-specific Benchmark Pool config
 - Blind Benchmark Tournament aggregation
 - Blind Benchmark Review UI generator
+- Strict Form Causality checks
 - GitHub Actions CI
 
 ## Current R&D priority — Quality Ceiling
 
 量産最適化より先に品質上限を引き上げる。
 
-Research status:
-- [x] 100 source-backed benchmark records
-- [x] 100 → Core60 selection
-- [x] Authority-specific benchmark pools
+### Official research counter
+
+**研究Markdownに書かれた候補数と、正式に品質比較へ使えるFrame数を分離する。**
+
+公式カウンターは `config/frame_registry_v1.json` のみ。
+
+2026-09-15時点:
+- Registry records: **15**
+- Strict desktop VERIFIED: **11**
+- CANDIDATE: **4**
+- CORE: **0**
+
+`CORE`へ昇格するには、少なくとも:
+- Source rationale確認
+- Desktop visual確認
+- Mobile visual確認
+- Sales-sample transfer principle明文化
+- Benchmarkとして何を比較するか明確
+
+が必要。
+
+以前の研究ノートにある「100 Frame」「Core60」は**探索・仮分類の研究資産**であり、Strict Verified/Core完了を意味しない。
+今後「100件到達」と報告する際は、Registry上のStageを明示する。
+
+### Quality Ceiling exit criteria
+
+- [ ] Strict VERIFIED Frames: 100
+- [ ] Visual AuthorityごとにCORE Benchmark 3件以上
 - [x] Blind Tournament aggregation logic
 - [x] Blind reviewer UI generator
 - [ ] 20–30 externally challenged Craft Prototypes
 - [ ] 3 NO_WEB / WEAK_WEB Golden Samples passing Benchmark Supremacy
 - [x] Sales State → Enriched State layout hypothesis validated
 - [ ] Client Evidence Upgrade Slot library finalized
-
-See:
-- `docs/research/QUALITY_CEILING_RESEARCH_PHASE_v1.md`
-- `docs/research/SALES_SAMPLE_COMPLETION_CONTRACT_v1.md`
-- `docs/research/BENCHMARK_SUPREMACY_GATE_v1.md`
-- `docs/research/CORE_FRAME_SELECTION_RULES_v1.md`
-- `docs/research/CORE_FRAME_SELECTION_v1.md`
-- `docs/research/FRAME_ANALYSIS_BATCH_01.md` … `FRAME_ANALYSIS_BATCH_06.md`
-- `docs/research/CRAFT_PROTOTYPE_BACKLOG_v1.md`
-- `benchmarks/core_benchmark_pool_v1.json`
 
 ## Pipeline
 
@@ -78,6 +92,7 @@ Candidate
 → Benchmark Pool Selection
 → Blind Benchmark Tournament (1440 / 390)
 → Benchmark Supremacy
+→ Form Causality
 → Screenshot Gate
 → Full LP
 → Rhythm/Motion/Copy QA
@@ -109,19 +124,11 @@ See `docs/SALES_ELIGIBILITY_GATE_v1.md` and `docs/research/MORIBITO_POSTMORTEM_v
 
 ## Benchmark Supremacy
 
-Core60 is a **decision dictionary**, not a template library.
-`benchmarks/core_benchmark_pool_v1.json` groups Core examples by comparison purpose such as:
-- PERSON / EDITORIAL
-- MATERIAL / PHOTO / CRAFT
-- PRODUCT BEHAVIOR
-- B2B / EXPLAINER / DOCUMENT
-- WORLD / CATEGORY
-- TYPOGRAPHY / MOTION
-- UTILITY / ACCESSIBILITY / TRUST
-- CONVERSION / ACTION
-- MOBILE FIRST
-- ASSET LIGHT
-- LOCAL SME TRANSFER
+Benchmark data is a **comparison dictionary, not a template library**.
+
+- `config/benchmark_pool_v1.json` — individual benchmark candidates
+- `config/benchmark_pools_v1.json` — comparison families by authority/purpose
+- `config/frame_registry_v1.json` — strict verification status
 
 Pool selection chooses **who the candidate must compete against**, never what the candidate should look like.
 
@@ -134,6 +141,20 @@ lp-benchmark-review review_manifest.json --out out/blind_review.html --seed 42
 The reviewer only sees anonymous LEFT/RIGHT screenshots at 1440px and 390px.
 Scores are converted to candidate-relative `-1 / 0 / +1` JSON and passed to the tournament aggregator.
 Company names, production company names, award labels and candidate/benchmark identity must not be exposed during review.
+
+## Form Causality
+
+Premium candidateは、Company TruthをCopyに載せるだけでは不十分。
+主要なVisual Decisionが、確認済みCompany Truthによって**実際に形を変えていること**を要求する。
+
+Required checks:
+- confirmed truth → form decision
+- Hero/MidなどRequired Frameに因果がある
+- Mobileでも因果が残る
+- 社名だけ差し替えて他社へ転用できない
+
+Rule:
+**If the company truth changes, the form should have to change.**
 
 ## QA tiers
 
@@ -159,40 +180,17 @@ Company names, production company names, award labels and candidate/benchmark id
 - Reduced Motion
 - runtime errors
 - final visual review
-- Benchmark Supremacy Desktop/Mobile comparison
 
 ## Pixel Rhythm
 
-```bash
-lp-rhythm path/to/fullpage.png
-lp-rhythm sample_a.png sample_b.png --out out/rhythm_compare.json
-```
-
 Pixel Rhythm observes Peak / Quiet clusters, visual-density transitions and flatness risk.
 It is **not** a standalone creative-quality score.
-
-Section-level visual QA also maps real DOM section boundaries back to rendered pixels so that
-quietest/densest sections and the strongest visual gear-change can be observed.
-
-## Rhythm Regression
-
-```bash
-lp-rhythm-regression baseline.json current.json
-```
 
 Regression is deliberately advisory:
 - `STABLE` — no large unintended shift detected
 - `REVIEW` — Creative Red Team should inspect the changed section(s)
 
-It never returns creative `FAIL`. Different companies should retain different breathing patterns.
-See `docs/SECTION_ID_CONTRACT_v1.md` for stable machine-readable section IDs.
-
-## Run
-
-```bash
-python -m unittest discover -s tests -v
-PYTHONPATH=src python -m lp_engine.cli examples/mahora_v2.json --out out/mahora_report.json
-```
+Different companies should retain different breathing patterns.
 
 ## Golden Sample principle
 
@@ -200,3 +198,8 @@ A new Gate re-certifies old Golden Samples. A previous PASS is not permanent.
 The engine should become stricter as the portfolio grows, while preserving company-specific creative direction.
 
 A Golden Sample is not selected only because the company is visually interesting. It must first be eligible as a real sales-sample target, or be explicitly labeled as an R&D redesign challenge.
+
+Current target priority:
+1. **NO_WEB** — highest priority
+2. **WEAK_WEB** — second priority
+3. **GOOD_WEB** — benchmark only by default
