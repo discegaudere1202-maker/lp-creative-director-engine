@@ -20,6 +20,8 @@ DEFAULT_GATES = [
     StaticTextGate(),
 ]
 
+PIPELINE_MODES = {"production", "research", "test"}
+
 
 def _evidence_safety_gate(spec: Mapping) -> GateResult:
     decision = evaluate_evidence_selection(
@@ -55,8 +57,11 @@ def run_pipeline(
     screenshot_scores,
     gates=None,
     *,
+    mode="production",
     evidence_safety=None,
 ):
+    if mode not in PIPELINE_MODES:
+        raise ValueError(f"unsupported pipeline mode: {mode}")
     primary, authority_scores = choose_primary_authority(profile)
     ctx = {
         "profile": profile,
@@ -68,7 +73,23 @@ def run_pipeline(
         "authority_scores": authority_scores,
     }
     results = [gate.evaluate(ctx) for gate in (gates or DEFAULT_GATES)]
-    if evidence_safety is not None:
+    safety_decision = None
+    if mode == "production" and evidence_safety is None:
+        results.append(GateResult(
+            gate="EvidenceSafetyGate",
+            status="FAIL",
+            message="Production mode requires a Safety-layer input.",
+            details={
+                "safety_status": "INVALID_INPUT",
+                "blocked_claims": [],
+                "hearing_required": [{
+                    "status": "HEARING_REQUIRED",
+                    "missing_field": "evidence_safety_input",
+                    "priority": "HIGH",
+                }],
+            },
+        ))
+    elif evidence_safety is not None:
         if not isinstance(evidence_safety, Mapping):
             results.append(GateResult(
                 gate="EvidenceSafetyGate",
@@ -77,9 +98,48 @@ def run_pipeline(
                 details={"safety_status": "INVALID_INPUT"},
             ))
         else:
-            results.append(_evidence_safety_gate(evidence_safety))
+            safety_result = _evidence_safety_gate(evidence_safety)
+            results.append(safety_result)
+            safety_decision = safety_result.details
+    evidence_manifest = []
+    hearing_requirements = []
+    blocked_claims = []
+    if safety_decision:
+        evidence_manifest = [
+            {
+                "claim": item["claim"],
+                "evidence_id": item["evidence_id"],
+                "source": item["source"],
+                "verification_status": item["verification_status"],
+                "rights_status": item["rights_status"],
+                "placement_candidates": item["placement_candidates"],
+            }
+            for item in safety_decision.get("eligible_evidence", [])
+        ]
+        hearing_requirements = safety_decision.get("hearing_required", [])
+        blocked_claims = safety_decision.get("blocked_claims", [])
+    safety_pass = bool(safety_decision and safety_decision.get("safety_status") == "PASS")
+    production_output_allowed = mode == "production" and safety_pass
     return PipelineReport(
         company_name=profile.company_name,
         primary_authority=primary,
         results=results,
+        mode=mode,
+        production_output_allowed=production_output_allowed,
+        evidence_manifest=evidence_manifest,
+        hearing_requirements=hearing_requirements,
+        blocked_claims=blocked_claims,
+    )
+
+
+def run_production_pipeline(profile, concept, sections, motions, screenshot_scores, **kwargs):
+    """Explicit Production entry point; Safety input cannot be omitted."""
+    return run_pipeline(
+        profile,
+        concept,
+        sections,
+        motions,
+        screenshot_scores,
+        mode="production",
+        **kwargs,
     )
