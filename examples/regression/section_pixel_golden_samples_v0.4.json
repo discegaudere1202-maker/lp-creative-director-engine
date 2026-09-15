@@ -1,0 +1,61 @@
+{
+  "mahora_v2_1_1440": {
+    "visual_status": "PASS",
+    "section_pixel_metrics": {
+      "summary": {
+        "region_count": 9,
+        "quietest_region": "section-5",
+        "densest_region": "section-1",
+        "transition_energy_avg": 0.1068,
+        "strongest_transition": {
+          "from": "section-1",
+          "to": "section-2",
+          "transition_energy": 0.3935,
+          "direction": {"edge": "down", "quiet": "up"}
+        }
+      },
+      "regions": [
+        {"id":"section-1","edge_mean":0.0453,"luminance_std":0.3407,"quiet_score":0.31,"height_ratio":0.1245},
+        {"id":"section-2","edge_mean":0.0403,"luminance_std":0.1276,"quiet_score":0.6667,"height_ratio":0.0892},
+        {"id":"section-3","edge_mean":0.0193,"luminance_std":0.1205,"quiet_score":0.7455,"height_ratio":0.1245},
+        {"id":"services","edge_mean":0.0049,"luminance_std":0.0015,"quiet_score":0.9818,"height_ratio":0.1822},
+        {"id":"section-5","edge_mean":0.0026,"luminance_std":0.0012,"quiet_score":0.9896,"height_ratio":0.1157},
+        {"id":"price","edge_mean":0.0046,"luminance_std":0.0086,"quiet_score":0.9714,"height_ratio":0.1423},
+        {"id":"start","edge_mean":0.0032,"luminance_std":0.0002,"quiet_score":0.9895,"height_ratio":0.0883},
+        {"id":"section-8","edge_mean":0.0091,"luminance_std":0.0037,"quiet_score":0.9649,"height_ratio":0.0538},
+        {"id":"section-9","edge_mean":0.0011,"luminance_std":0.0052,"quiet_score":0.9882,"height_ratio":0.0708}
+      ]
+    },
+    "console_error_count": 0,
+    "page_error_count": 0
+  },
+  "tominaga_v37_1440": {
+    "visual_status": "HOLD",
+    "section_pixel_metrics": {
+      "summary": {
+        "region_count": 7,
+        "quietest_region": "process",
+        "densest_region": "section-1",
+        "transition_energy_avg": 0.2496,
+        "strongest_transition": {
+          "from": "section-1",
+          "to": "section-2",
+          "transition_energy": 0.565,
+          "direction": {"edge": "down", "quiet": "up"}
+        }
+      },
+      "regions": [
+        {"id":"section-1","edge_mean":0.1016,"luminance_std":0.3343,"quiet_score":0.1401,"height_ratio":0.1701},
+        {"id":"section-2","edge_mean":0.0596,"luminance_std":0.102,"quiet_score":0.6461,"height_ratio":0.022},
+        {"id":"value","edge_mean":0.0716,"luminance_std":0.2239,"quiet_score":0.4127,"height_ratio":0.1338},
+        {"id":"why","edge_mean":0.0384,"luminance_std":0.1255,"quiet_score":0.6763,"height_ratio":0.2344},
+        {"id":"process","edge_mean":0.0059,"luminance_std":0.0008,"quiet_score":0.9799,"height_ratio":0.1755},
+        {"id":"trust","edge_mean":0.0075,"luminance_std":0.002,"quiet_score":0.9726,"height_ratio":0.1343},
+        {"id":"section-7","edge_mean":0.0041,"luminance_std":0.0182,"quiet_score":0.9577,"height_ratio":0.112}
+      ]
+    },
+    "console_error_count": 4,
+    "page_error_count": 0,
+    "note": "HOLD is caused by external resource DNS errors in the preview environment, not by page errors. Rhythm data remains usable as an observation baseline."
+  }
+}
