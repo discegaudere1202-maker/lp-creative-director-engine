@@ -21,6 +21,15 @@ class CrossDomainValidationRuntimeTest(unittest.TestCase):
             self.assertTrue((ROOT/case["baseline_path"]).is_file())
             self.assertTrue((ROOT/case["variant_path"]).is_file())
             self.assertGreaterEqual(len(case["primary_objections"]),2)
+    def test_result_is_traceable_and_keeps_structured_review_boundary(self):
+        result=json.loads((ROOT/"data/cross_domain_validation_results_v1.json").read_text(encoding="utf-8"))
+        self.assertEqual({case["case_id"] for case in result["cases"]},{"CROSS_P09_SIGNAGE","CROSS_MORIBITO_VISIT"})
+        self.assertEqual(result["provenance"]["capture_artifact_id"],10400574684)
+        self.assertIn("not causal",result["review_scope"])
+        for case in result["cases"]:
+            self.assertEqual(len(case["votes"]),4)
+            self.assertEqual(set(case["summary"]["axis_win_rate"]),set(result["axes"]))
+            self.assertTrue(case["primary_objections"])
     def test_nine_widths_have_no_overflow_and_action_zone_survives(self):
         config=json.loads((ROOT/"config/cross_domain_validation_targets_v1.json").read_text(encoding="utf-8"))
         for case in config["cases"]:
