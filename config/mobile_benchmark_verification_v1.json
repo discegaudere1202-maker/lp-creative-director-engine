@@ -7,10 +7,10 @@
       "frame_id": "jikkanokoto-mobile-editorial-01",
       "benchmark_id": "jikkanokoto",
       "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Studio Design Award nominee page explicitly states mobile-first layout because mobile users are the majority.","The official renewal press release publishes a smartphone TOP-page image alongside the PC TOP-page image.","The first live 390px evidence capture returned HTTP 200 and no horizontal overflow, but the hero media region was blank while the 1440px capture displayed the intended photograph. This live capture is therefore not accepted as stable M3 visual evidence."],
-      "sources": ["https://designaward2025.studio.design/nominate/jikkanokoto","https://www.atpress.ne.jp/news/444379"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"M2 remains valid from published mobile evidence. Live capture run 34940215253 is HOLD for M3 because the 390px hero media area rendered blank while desktop rendered the photo."},
-      "live_capture": {"run_id":34940215253,"artifact_id":10385061547,"viewport":"390x844","http_status":200,"screenshot_sha256":"a9b26dbc65af9859b3036199dd1f5653868168ef194cea64ba6a53cdef01f42b","review_status":"HOLD"}
+      "evidence": ["Studio Design Award nominee page explicitly states mobile-first layout because mobile users are the majority.","The official renewal press release publishes a smartphone TOP-page image alongside the PC TOP-page image.","A first live 390px capture was held because the hero media did not render. A second capture with a longer wait rendered the intended people photograph, article card and editorial hierarchy at 390px while the 1440px state retained the broader discovery composition."],
+      "sources": ["https://designaward2025.studio.design/nominate/jikkanokoto","https://www.atpress.ne.jp/news/444379","https://jikkanokoto.com/"],
+      "mobile_review": {"evidence_grade":"M3","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Second live 390px capture passed visual review after the first unstable capture was rejected. Mobile preserves the emotional/editorial entry point, people photography, article action and brand grammar in a deliberately narrower sequence."},
+      "live_capture": {"run_id":34940774441,"artifact_id":10385262072,"viewport":"390x844","http_status":200,"screenshot_sha256":"8ecdc97c34ba335e08bf58aa012d4b360bdabfa6fe9c2282f3326e83d864eff8","desktop_screenshot_sha256":"4744fa26caf67a831d787e3ada3e368882b45486dd5be64be1130302891acaab","review_status":"PASS"}
     },
     {
       "frame_id": "ima-brand-verb-01",
@@ -34,9 +34,10 @@
       "frame_id": "jmc-recruit-hero-01",
       "benchmark_id": "jmc-recruit",
       "status": "MOBILE_VERIFIED_CANDIDATE",
-      "evidence": ["Studio Design Award research supports the multi-business comprehension and people-focused rationale.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the JMC recruitment site.","The smartphone state keeps the core company-understanding message and recruitment path visible."],
-      "sources": ["https://designaward2025.studio.design/nominate/recruit-jmc-ltd","https://asi.co.jp/gallery/sites/?slug=recruit-11"],
-      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Multi-business SME-transfer benchmark. M3 still requires a live/captured 390px review."}
+      "evidence": ["Studio Design Award research supports the multi-business comprehension and people-focused rationale.","ASI Design Gallery publishes separate PC, tablet and smartphone display captures for the JMC recruitment site.","A live 390px capture preserved the headline but showed only a small fragment of the people imagery in the first viewport, so the people-trust hierarchy is not yet strong enough for strict M3 promotion."],
+      "sources": ["https://designaward2025.studio.design/nominate/recruit-jmc-ltd","https://asi.co.jp/gallery/sites/?slug=recruit-11","https://recruit.jmc-ltd.co.jp/"],
+      "mobile_review": {"evidence_grade":"M2","hierarchy_preserved":true,"purposeful_recomposition":true,"primary_message_survives":true,"cta_or_next_action_survives":true,"notes":"Live 390px evidence acquired, but strict M3 is HOLD because the initial viewport does not preserve enough of the people-led trust hierarchy. Keep M2 until a stronger verified mobile frame is captured or the intended responsive behavior is confirmed."},
+      "live_capture": {"run_id":34940774441,"artifact_id":10385262072,"viewport":"390x844","http_status":200,"screenshot_sha256":"f7efa25186b5eb78e025cf02240ffe8b85e2d54e6ed4e67b2b1c2458b27065c2","desktop_screenshot_sha256":"3c099e93154b2c7326a93fa08134d956047fed7e1d1beba86b245365fb8c941b","review_status":"HOLD"}
     }
   ]
 }
