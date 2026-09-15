@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "pools": {
+    "PERSON_EDITORIAL": {
+      "benchmark_ids": ["sakuma-office", "shueisha-recruit-2026", "smarthr-recruit"],
+      "critical_axes": ["owner_specificity", "emotional_pull", "share_impulse"],
+      "description": "Personality, authorship and editorial rhythm."
+    },
+    "MATERIAL_PHOTO_CRAFT": {
+      "benchmark_ids": ["hyakuyozu", "ando-shippo", "nikka"],
+      "critical_axes": ["craft_detail", "materiality", "photo_direction", "share_impulse"],
+      "description": "Material, craft, authentic asset and photo direction."
+    },
+    "B2B_EXPLAINER_DOCUMENT": {
+      "benchmark_ids": ["maigawara", "smarthr-recruit", "takenaka-teien"],
+      "critical_axes": ["immediate_read", "trust", "concept_specificity", "conversion_intent"],
+      "description": "Complex topics translated into understandable, trustworthy experiences."
+    },
+    "WORLD_CATEGORY": {
+      "benchmark_ids": ["tokyu-recruit", "takenaka-teien", "hyakuyozu"],
+      "critical_axes": ["distinctness", "concept_coherence", "emotional_pull", "discovery_motivation"],
+      "description": "World-building and category/strategic reframing."
+    },
+    "TYPOGRAPHY_MOTION": {
+      "benchmark_ids": ["sakuma-office", "ryden", "maigawara"],
+      "critical_axes": ["visual_hierarchy", "motion_meaning", "pause_power", "share_impulse"],
+      "description": "Typography, semantic motion and authored rhythm."
+    },
+    "UTILITY_ACCESSIBILITY_TRUST": {
+      "benchmark_ids": ["shueisha-recruit-2026", "smarthr-recruit", "takenaka-teien"],
+      "critical_axes": ["trust", "mobile_quality", "accessibility", "information_clarity"],
+      "description": "Premium through clarity, trust and accessible utility rather than visual excess."
+    },
+    "CONVERSION_ACTION": {
+      "benchmark_ids": ["smarthr-recruit", "takenaka-teien", "shueisha-recruit-2026"],
+      "critical_axes": ["conversion_intent", "trust", "immediate_read"],
+      "description": "Action design and low-friction next steps."
+    },
+    "MOBILE_FIRST": {
+      "benchmark_ids": ["shueisha-recruit-2026", "smarthr-recruit", "tokyu-recruit"],
+      "critical_axes": ["mobile_quality", "information_clarity", "visual_hierarchy"],
+      "description": "Mobile composition quality and responsive re-art-direction."
+    },
+    "ASSET_LIGHT": {
+      "benchmark_ids": ["maigawara", "ryden", "sakuma-office"],
+      "critical_axes": ["owner_specificity", "concept_specificity", "visual_hierarchy"],
+      "description": "Concept/typography-led references for limited-asset sales samples; not templates."
+    },
+    "LOCAL_SME_TRANSFER": {
+      "benchmark_ids": ["takenaka-teien", "ando-shippo", "smarthr-recruit"],
+      "critical_axes": ["trust", "owner_specificity", "conversion_intent", "immediate_read"],
+      "description": "Transferable principles for NO_WEB/WEAK_WEB local SME sales samples."
+    }
+  }
+}
