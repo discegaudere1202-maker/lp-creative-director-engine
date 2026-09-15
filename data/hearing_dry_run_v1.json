@@ -1,0 +1,681 @@
+{
+  "schema": "hearing_requirements_schema_v2",
+  "status": "RESEARCH_DRY_RUN_NOT_PRODUCTION_OUTPUT",
+  "cases": {
+    "P02": {
+      "conversion_goal": "consultation",
+      "domain": "社労士・相談",
+      "primary_objections": [
+        "O7_RISK",
+        "O4_NEXT"
+      ],
+      "missing_evidence_count": 2,
+      "plan": {
+        "conversion_goal": "consultation",
+        "domain": "社労士・相談",
+        "required_hearing_fields": [
+          {
+            "field_id": "post_click_flow",
+            "label": "問い合わせ後の流れ",
+            "description": "クリック後に起きることと次の連絡",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "target_objections": [
+              "O4_NEXT"
+            ],
+            "target_evidence_types": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "SECTION_BLOCKING",
+            "question_template": "お問い合わせ・予約をした後、最初に何が起きますか？",
+            "answer_type": "structured_steps",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "next",
+            "verification_class": "SELF_DECLARABLE"
+          },
+          {
+            "field_id": "risk_and_privacy_policy",
+            "label": "不利益・個人情報の扱い",
+            "description": "勧誘、守秘、個人情報、キャンセル等の実際の方針",
+            "requirement_class": "CONDITIONAL_REQUIRED",
+            "target_objections": [
+              "O7_RISK"
+            ],
+            "target_evidence_types": [
+              "RISK_POLICY",
+              "PRIVACY_POLICY",
+              "CANCELLATION_POLICY"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "CLAIM_BLOCKING",
+            "question_template": "相談後に契約しない場合や、個人情報・キャンセルについて、実際にはどのような対応になりますか？",
+            "answer_type": "long_text",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "risk",
+            "verification_class": "SELF_DECLARABLE"
+          }
+        ],
+        "minimum_question_set": [
+          {
+            "field_id": "post_click_flow",
+            "question": "お問い合わせ・予約をした後、最初に何が起きますか？",
+            "reason": "クリック後に起きることと次の連絡",
+            "priority": "P1",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "blocking_level": "SECTION_BLOCKING",
+            "answer_type": "structured_steps",
+            "target_objections": [
+              "O4_NEXT"
+            ],
+            "target_evidence_types": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "POST_CLICK_FLOW",
+            "status": "QUESTION_REQUIRED"
+          },
+          {
+            "field_id": "risk_and_privacy_policy",
+            "question": "相談後に契約しない場合や、個人情報・キャンセルについて、実際にはどのような対応になりますか？",
+            "reason": "勧誘、守秘、個人情報、キャンセル等の実際の方針",
+            "priority": "P1",
+            "requirement_class": "CONDITIONAL_REQUIRED",
+            "blocking_level": "CLAIM_BLOCKING",
+            "answer_type": "long_text",
+            "target_objections": [
+              "O7_RISK"
+            ],
+            "target_evidence_types": [
+              "RISK_POLICY",
+              "PRIVACY_POLICY",
+              "CANCELLATION_POLICY"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "RISK_POLICY",
+            "status": "QUESTION_REQUIRED"
+          }
+        ],
+        "blocking_questions": [
+          "post_click_flow",
+          "risk_and_privacy_policy"
+        ],
+        "optional_questions": [],
+        "redundant_questions": [],
+        "resulting_evidence_candidates": [],
+        "completion_status": "PLANNED",
+        "question_count": 2,
+        "hearing_burden": {
+          "p0_questions": 0,
+          "p1_questions": 2,
+          "optional_questions": 0,
+          "total_questions": 2,
+          "evidence_filled_per_question": 3.0
+        }
+      },
+      "resulting_evidence_candidates": [],
+      "notes": "Synthetic dry-run fixture; no customer answer or Production claim is created."
+    },
+    "P09": {
+      "conversion_goal": "quote_request",
+      "domain": "看板・見積",
+      "primary_objections": [
+        "O6_COST",
+        "O4_NEXT"
+      ],
+      "missing_evidence_count": 2,
+      "plan": {
+        "conversion_goal": "quote_request",
+        "domain": "看板・見積",
+        "required_hearing_fields": [
+          {
+            "field_id": "fee_conditions",
+            "label": "費用条件",
+            "description": "料金、無料範囲、費用発生のタイミング",
+            "requirement_class": "DOMAIN_REQUIRED",
+            "target_objections": [
+              "O6_COST"
+            ],
+            "target_evidence_types": [
+              "PRICE",
+              "FEE_CONDITION",
+              "SCOPE_BOUNDARY"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "SECTION_BLOCKING",
+            "question_template": "料金はいくらで、どの時点から費用が発生しますか？条件があれば教えてください。",
+            "answer_type": "currency",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "cost",
+            "verification_class": "SELF_DECLARABLE"
+          },
+          {
+            "field_id": "post_click_flow",
+            "label": "問い合わせ後の流れ",
+            "description": "クリック後に起きることと次の連絡",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "target_objections": [
+              "O4_NEXT"
+            ],
+            "target_evidence_types": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "SECTION_BLOCKING",
+            "question_template": "お問い合わせ・予約をした後、最初に何が起きますか？",
+            "answer_type": "structured_steps",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "next",
+            "verification_class": "SELF_DECLARABLE"
+          }
+        ],
+        "minimum_question_set": [
+          {
+            "field_id": "fee_conditions",
+            "question": "料金はいくらで、どの時点から費用が発生しますか？条件があれば教えてください。",
+            "reason": "料金、無料範囲、費用発生のタイミング",
+            "priority": "P1",
+            "requirement_class": "DOMAIN_REQUIRED",
+            "blocking_level": "SECTION_BLOCKING",
+            "answer_type": "currency",
+            "target_objections": [
+              "O6_COST"
+            ],
+            "target_evidence_types": [
+              "PRICE",
+              "FEE_CONDITION",
+              "SCOPE_BOUNDARY"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "PRICE",
+            "status": "QUESTION_REQUIRED"
+          },
+          {
+            "field_id": "post_click_flow",
+            "question": "お問い合わせ・予約をした後、最初に何が起きますか？",
+            "reason": "クリック後に起きることと次の連絡",
+            "priority": "P1",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "blocking_level": "SECTION_BLOCKING",
+            "answer_type": "structured_steps",
+            "target_objections": [
+              "O4_NEXT"
+            ],
+            "target_evidence_types": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "POST_CLICK_FLOW",
+            "status": "QUESTION_REQUIRED"
+          }
+        ],
+        "blocking_questions": [
+          "fee_conditions",
+          "post_click_flow"
+        ],
+        "optional_questions": [],
+        "redundant_questions": [],
+        "resulting_evidence_candidates": [],
+        "completion_status": "PLANNED",
+        "question_count": 2,
+        "hearing_burden": {
+          "p0_questions": 0,
+          "p1_questions": 2,
+          "optional_questions": 0,
+          "total_questions": 2,
+          "evidence_filled_per_question": 3.0
+        }
+      },
+      "resulting_evidence_candidates": [],
+      "notes": "Synthetic dry-run fixture; no customer answer or Production claim is created."
+    },
+    "P10": {
+      "conversion_goal": "consultation",
+      "domain": "キャリア相談・伴走",
+      "primary_objections": [
+        "O7_RISK",
+        "O8_CONTINUITY"
+      ],
+      "missing_evidence_count": 2,
+      "plan": {
+        "conversion_goal": "consultation",
+        "domain": "キャリア相談・伴走",
+        "required_hearing_fields": [
+          {
+            "field_id": "continuity_or_aftercare",
+            "label": "継続・アフター対応",
+            "description": "購入・相談・提供後の支援や保守",
+            "requirement_class": "DOMAIN_REQUIRED",
+            "target_objections": [
+              "O8_CONTINUITY"
+            ],
+            "target_evidence_types": [
+              "CONTINUITY_POLICY",
+              "AFTERCARE",
+              "RESULT_CASE"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "SECTION_BLOCKING",
+            "question_template": "提供後や相談後に、継続する支援・保守・フォローはありますか？",
+            "answer_type": "long_text",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "continuity",
+            "verification_class": "SELF_DECLARABLE"
+          },
+          {
+            "field_id": "risk_and_privacy_policy",
+            "label": "不利益・個人情報の扱い",
+            "description": "勧誘、守秘、個人情報、キャンセル等の実際の方針",
+            "requirement_class": "CONDITIONAL_REQUIRED",
+            "target_objections": [
+              "O7_RISK"
+            ],
+            "target_evidence_types": [
+              "RISK_POLICY",
+              "PRIVACY_POLICY",
+              "CANCELLATION_POLICY"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "CLAIM_BLOCKING",
+            "question_template": "相談後に契約しない場合や、個人情報・キャンセルについて、実際にはどのような対応になりますか？",
+            "answer_type": "long_text",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "risk",
+            "verification_class": "SELF_DECLARABLE"
+          }
+        ],
+        "minimum_question_set": [
+          {
+            "field_id": "continuity_or_aftercare",
+            "question": "提供後や相談後に、継続する支援・保守・フォローはありますか？",
+            "reason": "購入・相談・提供後の支援や保守",
+            "priority": "P1",
+            "requirement_class": "DOMAIN_REQUIRED",
+            "blocking_level": "SECTION_BLOCKING",
+            "answer_type": "long_text",
+            "target_objections": [
+              "O8_CONTINUITY"
+            ],
+            "target_evidence_types": [
+              "CONTINUITY_POLICY",
+              "AFTERCARE",
+              "RESULT_CASE"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "CONTINUITY_POLICY",
+            "status": "QUESTION_REQUIRED"
+          },
+          {
+            "field_id": "risk_and_privacy_policy",
+            "question": "相談後に契約しない場合や、個人情報・キャンセルについて、実際にはどのような対応になりますか？",
+            "reason": "勧誘、守秘、個人情報、キャンセル等の実際の方針",
+            "priority": "P1",
+            "requirement_class": "CONDITIONAL_REQUIRED",
+            "blocking_level": "CLAIM_BLOCKING",
+            "answer_type": "long_text",
+            "target_objections": [
+              "O7_RISK"
+            ],
+            "target_evidence_types": [
+              "RISK_POLICY",
+              "PRIVACY_POLICY",
+              "CANCELLATION_POLICY"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "RISK_POLICY",
+            "status": "QUESTION_REQUIRED"
+          }
+        ],
+        "blocking_questions": [
+          "continuity_or_aftercare",
+          "risk_and_privacy_policy"
+        ],
+        "optional_questions": [],
+        "redundant_questions": [],
+        "resulting_evidence_candidates": [],
+        "completion_status": "PLANNED",
+        "question_count": 2,
+        "hearing_burden": {
+          "p0_questions": 0,
+          "p1_questions": 2,
+          "optional_questions": 0,
+          "total_questions": 2,
+          "evidence_filled_per_question": 3.0
+        }
+      },
+      "resulting_evidence_candidates": [],
+      "notes": "Synthetic dry-run fixture; no customer answer or Production claim is created."
+    },
+    "MORIBITO": {
+      "conversion_goal": "visit",
+      "domain": "店舗サービス",
+      "primary_objections": [
+        "O2_ACCOUNTABILITY",
+        "O3_PROCESS"
+      ],
+      "missing_evidence_count": 2,
+      "plan": {
+        "conversion_goal": "visit",
+        "domain": "店舗サービス",
+        "required_hearing_fields": [
+          {
+            "field_id": "responsible_person_or_team",
+            "label": "担当主体",
+            "description": "問い合わせ後に責任を持って対応する人またはチーム",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "target_objections": [
+              "O2_ACCOUNTABILITY"
+            ],
+            "target_evidence_types": [
+              "OWNER_IDENTITY",
+              "TEAM_IDENTITY",
+              "ACCOUNTABILITY_SCOPE"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "SECTION_BLOCKING",
+            "question_template": "お問い合わせ後は、どなた、またはどのチームが主に対応されますか？",
+            "answer_type": "short_text",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "responsible_party",
+            "verification_class": "SELF_DECLARABLE"
+          },
+          {
+            "field_id": "service_process",
+            "label": "提供工程",
+            "description": "相談・制作・施術などの実際の進み方",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "target_objections": [
+              "O3_PROCESS"
+            ],
+            "target_evidence_types": [
+              "SERVICE_PROCESS",
+              "CRAFT_ACTION",
+              "PLACE_EXPERIENCE"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "SECTION_BLOCKING",
+            "question_template": "お問い合わせから提供完了まで、主な流れを教えてください。",
+            "answer_type": "structured_steps",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "process",
+            "verification_class": "SELF_DECLARABLE"
+          }
+        ],
+        "minimum_question_set": [
+          {
+            "field_id": "responsible_person_or_team",
+            "question": "お問い合わせ後は、どなた、またはどのチームが主に対応されますか？",
+            "reason": "問い合わせ後に責任を持って対応する人またはチーム",
+            "priority": "P1",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "blocking_level": "SECTION_BLOCKING",
+            "answer_type": "short_text",
+            "target_objections": [
+              "O2_ACCOUNTABILITY"
+            ],
+            "target_evidence_types": [
+              "OWNER_IDENTITY",
+              "TEAM_IDENTITY",
+              "ACCOUNTABILITY_SCOPE"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "OWNER_IDENTITY",
+            "status": "QUESTION_REQUIRED"
+          },
+          {
+            "field_id": "service_process",
+            "question": "お問い合わせから提供完了まで、主な流れを教えてください。",
+            "reason": "相談・制作・施術などの実際の進み方",
+            "priority": "P1",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "blocking_level": "SECTION_BLOCKING",
+            "answer_type": "structured_steps",
+            "target_objections": [
+              "O3_PROCESS"
+            ],
+            "target_evidence_types": [
+              "SERVICE_PROCESS",
+              "CRAFT_ACTION",
+              "PLACE_EXPERIENCE"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "SERVICE_PROCESS",
+            "status": "QUESTION_REQUIRED"
+          }
+        ],
+        "blocking_questions": [
+          "responsible_person_or_team",
+          "service_process"
+        ],
+        "optional_questions": [],
+        "redundant_questions": [],
+        "resulting_evidence_candidates": [],
+        "completion_status": "PLANNED",
+        "question_count": 2,
+        "hearing_burden": {
+          "p0_questions": 0,
+          "p1_questions": 2,
+          "optional_questions": 0,
+          "total_questions": 2,
+          "evidence_filled_per_question": 3.0
+        }
+      },
+      "resulting_evidence_candidates": [],
+      "notes": "Synthetic dry-run fixture; no customer answer or Production claim is created."
+    },
+    "INDEPENDENT_KOKORO_SEITAI": {
+      "conversion_goal": "reservation",
+      "domain": "整体・予約",
+      "primary_objections": [
+        "O2_ACCOUNTABILITY",
+        "O4_NEXT"
+      ],
+      "missing_evidence_count": 2,
+      "plan": {
+        "conversion_goal": "reservation",
+        "domain": "整体・予約",
+        "required_hearing_fields": [
+          {
+            "field_id": "post_click_flow",
+            "label": "問い合わせ後の流れ",
+            "description": "クリック後に起きることと次の連絡",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "target_objections": [
+              "O4_NEXT"
+            ],
+            "target_evidence_types": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "SECTION_BLOCKING",
+            "question_template": "お問い合わせ・予約をした後、最初に何が起きますか？",
+            "answer_type": "structured_steps",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "next",
+            "verification_class": "SELF_DECLARABLE"
+          },
+          {
+            "field_id": "responsible_person_or_team",
+            "label": "担当主体",
+            "description": "問い合わせ後に責任を持って対応する人またはチーム",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "target_objections": [
+              "O2_ACCOUNTABILITY"
+            ],
+            "target_evidence_types": [
+              "OWNER_IDENTITY",
+              "TEAM_IDENTITY",
+              "ACCOUNTABILITY_SCOPE"
+            ],
+            "trigger_condition": {
+              "expression": "NEED_AND_MISSING_AND_RELEVANT"
+            },
+            "blocking_level": "SECTION_BLOCKING",
+            "question_template": "お問い合わせ後は、どなた、またはどのチームが主に対応されますか？",
+            "answer_type": "short_text",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "fallback": "HEARING_REQUIRED",
+            "priority": "P1",
+            "answer_group": "responsible_party",
+            "verification_class": "SELF_DECLARABLE"
+          }
+        ],
+        "minimum_question_set": [
+          {
+            "field_id": "post_click_flow",
+            "question": "お問い合わせ・予約をした後、最初に何が起きますか？",
+            "reason": "クリック後に起きることと次の連絡",
+            "priority": "P1",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "blocking_level": "SECTION_BLOCKING",
+            "answer_type": "structured_steps",
+            "target_objections": [
+              "O4_NEXT"
+            ],
+            "target_evidence_types": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "POST_CLICK_FLOW",
+            "status": "QUESTION_REQUIRED"
+          },
+          {
+            "field_id": "responsible_person_or_team",
+            "question": "お問い合わせ後は、どなた、またはどのチームが主に対応されますか？",
+            "reason": "問い合わせ後に責任を持って対応する人またはチーム",
+            "priority": "P1",
+            "requirement_class": "UNIVERSAL_REQUIRED",
+            "blocking_level": "SECTION_BLOCKING",
+            "answer_type": "short_text",
+            "target_objections": [
+              "O2_ACCOUNTABILITY"
+            ],
+            "target_evidence_types": [
+              "OWNER_IDENTITY",
+              "TEAM_IDENTITY",
+              "ACCOUNTABILITY_SCOPE"
+            ],
+            "verification_class": "SELF_DECLARABLE",
+            "verification_requirement": "Confirm against an official company source or dated client-approved statement.",
+            "provenance_requirement": "source, source_type and verification_date are required",
+            "rights_requirement": "NOT_APPLICABLE unless the answer references an image, logo or file",
+            "evidence_target": "OWNER_IDENTITY",
+            "status": "QUESTION_REQUIRED"
+          }
+        ],
+        "blocking_questions": [
+          "post_click_flow",
+          "responsible_person_or_team"
+        ],
+        "optional_questions": [],
+        "redundant_questions": [],
+        "resulting_evidence_candidates": [],
+        "completion_status": "PLANNED",
+        "question_count": 2,
+        "hearing_burden": {
+          "p0_questions": 0,
+          "p1_questions": 2,
+          "optional_questions": 0,
+          "total_questions": 2,
+          "evidence_filled_per_question": 3.0
+        }
+      },
+      "resulting_evidence_candidates": [],
+      "notes": "Synthetic dry-run fixture; no customer answer or Production claim is created."
+    }
+  }
+}
