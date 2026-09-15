@@ -219,7 +219,14 @@ def plan_hearing(
     eligible_types.update(
         str(item.get("evidence_type"))
         for item in current_ledger
-        if str(item.get("verification_status", "")) == "VERIFIED"
+        if (
+            str(item.get("verification_status", "")) == "VERIFIED"
+            and str(item.get("source", "")).strip()
+            and str(item.get("verification_date", "")).strip()
+            and str(item.get("rights_status", "NOT_APPLICABLE")) in PRODUCTION_RIGHTS
+            and str(item.get("usage_status", "")) in PRODUCTION_USAGE
+            and not item.get("hearing_required", False)
+        )
     )
 
     selected: dict[str, HearingField] = {}
