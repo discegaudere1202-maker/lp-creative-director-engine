@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "rule": "Mobile CORE requires explicit mobile visual evidence, hierarchy preservation and purposeful mobile composition. Responsive existence alone is insufficient.",
+  "records": [
+    {
+      "frame_id": "jikkanokoto-mobile-editorial-01",
+      "status": "MOBILE_VERIFIED_CANDIDATE",
+      "evidence": [
+        "Studio Design Award nominee page explicitly states mobile-first layout because mobile users are the majority.",
+        "The official renewal press release publishes a smartphone TOP-page image alongside the PC TOP-page image.",
+        "The mobile-first design supports the same emotional-barrier goal: bright color, curves, readable article discovery and low-friction exploration."
+      ],
+      "sources": [
+        "https://designaward2025.studio.design/nominate/jikkanokoto",
+        "https://www.atpress.ne.jp/news/444379"
+      ],
+      "mobile_review": {
+        "hierarchy_preserved": true,
+        "purposeful_recomposition": true,
+        "primary_message_survives": true,
+        "cta_or_next_action_survives": true,
+        "notes": "Treat as the first candidate for CORE promotion once the central registry is updated."
+      }
+    }
+  ]
+}
