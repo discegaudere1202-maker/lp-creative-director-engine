@@ -12,11 +12,23 @@ def main():
     )
     parser.add_argument("spec", help="Path to a JSON project spec")
     parser.add_argument("--out", help="Optional JSON report path")
+    parser.add_argument(
+        "--evidence-safety",
+        help="Optional JSON Safety-layer input (verified evidence is selected; copy is never generated).",
+    )
     args = parser.parse_args()
 
     data = load_json(args.spec)
     profile, concept, sections, motions, screenshots = from_dict(data)
-    report = run_pipeline(profile, concept, sections, motions, screenshots)
+    safety_spec = load_json(args.evidence_safety) if args.evidence_safety else None
+    report = run_pipeline(
+        profile,
+        concept,
+        sections,
+        motions,
+        screenshots,
+        evidence_safety=safety_spec,
+    )
     payload = report.to_dict()
 
     if args.out:
