@@ -19,6 +19,8 @@ Safety / Integrity層は、実装・テスト済み。Trust Optimizationの自�
 
 Engineが行うのは、Conversion GoalとCustomer Objectionに対するVerified Evidenceの選択、Provenance検査、画像等のRights検査、Placement候補提示、Missing検出、HEARING_REQUIRED routingである。
 
+既存研究Ledgerの `id/source_url/verified/strength/placement` 形式は、推測で補完せずUNKNOWNを保持するcanonical adapterでSafety Recordへ正規化する。
+
 Engineは、未検証の安心コピー、保証、人物・実績の推測、条件付きClaimの拡張、権利不明画像のProduction承認を行わない。
 
 `approved_claims` は生成コピーではなく、EligibleなEvidence LedgerのVerified Claim原文一覧である。
