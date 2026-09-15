@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "schema_id": "evidence_safety_engine_v1",
-  "status": "SAFETY_ENGINE_IMPLEMENTED_NOT_PRODUCTION_WIRED",
+  "status": "SAFETY_ENGINE_IMPLEMENTED_TESTED_OPTIONAL_PIPELINE_WIRED",
   "purpose": "Select verified company evidence against diagnosed customer objections while blocking unsupported trust claims.",
   "verification_statuses": [
     "VERIFIED",
@@ -397,5 +397,14 @@
     "UNKNOWN",
     "BLOCKED",
     "REJECTED"
-  ]
+  ],
+  "pipeline_integration": {
+    "mode": "optional",
+    "ref": "src/lp_engine/pipeline.py",
+    "production_usage_required": [
+      "ELIGIBLE",
+      "PRODUCTION_ELIGIBLE"
+    ],
+    "research_only": "not customer-facing production approved"
+  }
 }
