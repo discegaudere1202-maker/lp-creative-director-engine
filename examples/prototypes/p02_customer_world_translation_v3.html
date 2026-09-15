@@ -67,8 +67,6 @@ h1 span,h1 em{display:block} h1 em{font-style:normal;color:var(--accent);margin-
   .closure{margin-top:26px;padding-bottom:8px}
 }
 
-@media(max-width:340px){.narrow-break{display:inline}}
-
 @media(max-width:700px){
   .frame{height:auto;min-height:100svh;padding:18px 17px 22px;display:block;overflow:visible}
   .topline{grid-template-columns:1fr auto;font-size:8px;padding-top:7px}.topline .promise{display:none}.topline .proof{font-size:8px}
@@ -85,7 +83,12 @@ h1 span,h1 em{display:block} h1 em{font-style:normal;color:var(--accent);margin-
   .world{padding:0 0 0 28px;font-size:22px;line-height:1.28;letter-spacing:-.035em}
   .row:before{left:3px;top:39px;width:1px;height:21px;transform:none}
   .row:after{left:1px;top:54px;width:5px;height:5px;transform:rotate(135deg);border-right:1px solid var(--accent);border-top:1px solid var(--accent)}
+  .medium-break{display:inline}
   .closure{margin-top:13px;padding-top:11px;display:block}.closure .small{font-size:9px;line-height:1.55}.closure .big{font-size:14px;white-space:normal;margin-top:8px}
+}
+@media(max-width:340px){
+  .narrow-break{display:inline}
+  h1{font-size:40px;letter-spacing:-.055em}
 }
 </style>
 </head>
