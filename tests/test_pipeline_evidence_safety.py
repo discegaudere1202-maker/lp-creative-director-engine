@@ -71,8 +71,20 @@ class PipelineEvidenceSafetyTest(unittest.TestCase):
         self.assertTrue(gate.details["hearing_required"])
 
     def test_existing_pipeline_is_unchanged_without_safety_input(self):
-        report = run_pipeline(*self.args)
+        report = run_pipeline(*self.args, mode="research")
         self.assertFalse(any(result.gate == "EvidenceSafetyGate" for result in report.results))
+
+    def test_production_requires_safety_input(self):
+        report = run_pipeline(*self.args)
+        gate = self.safety_gate(report)
+        self.assertEqual(gate.status, "FAIL")
+        self.assertFalse(report.production_output_allowed)
+
+    def test_research_mode_is_explicitly_not_production_approved(self):
+        report = run_pipeline(*self.args, mode="research")
+        self.assertEqual(report.mode, "research")
+        self.assertFalse(report.production_output_allowed)
+        self.assertNotEqual(report.mode, "production")
 
     def test_malformed_ledger_is_reported_as_invalid_input_not_a_crash(self):
         report = self.run_with_safety({
