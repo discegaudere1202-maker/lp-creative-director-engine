@@ -4,6 +4,153 @@
   "research_only": true,
   "cases": [
     {
+      "case_id": "INDEPENDENT_KOKORO_SEITAI",
+      "company_id": "kokoro_seitai_givers",
+      "conversion_goal": "reservation",
+      "primary_objections": [
+        "O2_ACCOUNTABILITY",
+        "O3_PROCESS",
+        "O4_NEXT",
+        "O6_COST"
+      ],
+      "decision": {
+        "conversion_goal": "reservation",
+        "primary_objections": [
+          "O2_ACCOUNTABILITY",
+          "O3_PROCESS",
+          "O4_NEXT",
+          "O6_COST"
+        ],
+        "approved_claims": [
+          "初回はAI姿勢分析・問診・施術、以後は検査と手技を行う公式の流れ。",
+          "初回料金は院により異なり、回数券・月額プランの公開価格がある。"
+        ],
+        "eligible_evidence": [
+          {
+            "evidence_id": "KOKORO-E02",
+            "company_id": "kokoro_seitai_givers",
+            "case_id": "INDEPENDENT_KOKORO_SEITAI",
+            "evidence_type": "SERVICE_PROCESS",
+            "evidence_strength": "E3_OPERATIONAL",
+            "target_objections": [
+              "O3_PROCESS"
+            ],
+            "claim": "初回はAI姿勢分析・問診・施術、以後は検査と手技を行う公式の流れ。",
+            "source": "https://seitai.co.jp/",
+            "source_type": "official_company_site",
+            "verification_status": "VERIFIED",
+            "verification_date": "2026-09-15",
+            "usage_status": "RESEARCH_ONLY",
+            "placement_candidates": [
+              "MIDDLE",
+              "CTA_ZONE"
+            ],
+            "rights_status": "NOT_APPLICABLE",
+            "hearing_required": false,
+            "blocking_status": "NON_BLOCKING",
+            "notes": "Process description retained without efficacy promise."
+          },
+          {
+            "evidence_id": "KOKORO-E03",
+            "company_id": "kokoro_seitai_givers",
+            "case_id": "INDEPENDENT_KOKORO_SEITAI",
+            "evidence_type": "FEE_CONDITION",
+            "evidence_strength": "E5_DECISION_ENABLING",
+            "target_objections": [
+              "O6_COST"
+            ],
+            "claim": "初回料金は院により異なり、回数券・月額プランの公開価格がある。",
+            "source": "https://seitai.co.jp/",
+            "source_type": "official_pricing_section",
+            "verification_status": "VERIFIED",
+            "verification_date": "2026-09-15",
+            "usage_status": "RESEARCH_ONLY",
+            "placement_candidates": [
+              "BEFORE_CTA"
+            ],
+            "rights_status": "NOT_APPLICABLE",
+            "hearing_required": false,
+            "blocking_status": "NON_BLOCKING",
+            "notes": "Variation by clinic is preserved; no universal price inferred."
+          }
+        ],
+        "missing_evidence": [
+          {
+            "target_objection": "O2_ACCOUNTABILITY",
+            "preferred_evidence_types": [
+              "OWNER_IDENTITY",
+              "TEAM_IDENTITY",
+              "ACCOUNTABILITY_SCOPE"
+            ],
+            "status": "MISSING"
+          },
+          {
+            "target_objection": "O4_NEXT",
+            "preferred_evidence_types": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "status": "MISSING"
+          }
+        ],
+        "blocked_claims": [
+          {
+            "claim": "返信は24時間以内",
+            "claim_id": "RESPONSE_TIME",
+            "target_objections": [
+              "O4_NEXT"
+            ],
+            "required_evidence_types": [
+              "RESPONSE_EXPECTATION"
+            ],
+            "status": "BLOCKED",
+            "reason": "No verified, production-eligible policy/fact supports this claim."
+          }
+        ],
+        "hearing_required": [
+          {
+            "target_objection": "O2_ACCOUNTABILITY",
+            "missing_evidence_type": [
+              "OWNER_IDENTITY",
+              "TEAM_IDENTITY",
+              "ACCOUNTABILITY_SCOPE"
+            ],
+            "missing_field": "responsible_person_or_team",
+            "why_needed": "Primary objection O2_ACCOUNTABILITY has no verified, production-eligible evidence.",
+            "priority": "MEDIUM",
+            "blocked_claims": [],
+            "suggested_hearing_field": "responsible_person_or_team",
+            "status": "HEARING_REQUIRED"
+          },
+          {
+            "target_objection": "O4_NEXT",
+            "missing_evidence_type": [
+              "POST_CLICK_FLOW",
+              "RESPONSE_EXPECTATION",
+              "CTA_CHANNEL"
+            ],
+            "missing_field": "post_click_flow",
+            "why_needed": "Primary objection O4_NEXT has no verified, production-eligible evidence.",
+            "priority": "HIGH",
+            "blocked_claims": [
+              "返信は24時間以内"
+            ],
+            "suggested_hearing_field": "post_click_flow",
+            "status": "HEARING_REQUIRED"
+          }
+        ],
+        "allowed_placements": [
+          "BEFORE_CTA",
+          "CTA_ZONE",
+          "MIDDLE"
+        ],
+        "safety_status": "BLOCKED",
+        "issues": []
+      },
+      "research_note": "Programmatic safety dry run; not a live conversion or causal experiment."
+    },
+    {
       "case_id": "P02",
       "company_id": "mahora_sr",
       "conversion_goal": "consultation",
@@ -628,8 +775,8 @@
     }
   ],
   "summary": {
-    "case_count": 4,
+    "case_count": 5,
     "all_have_decisions": true,
-    "customer_facing_approved_blocked_claims": 6
+    "customer_facing_approved_blocked_claims": 7
   }
 }
