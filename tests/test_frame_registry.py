@@ -15,6 +15,7 @@ def record(**kw):
         source_support="Official case study describes the design rationale.",
         visual_verified=True,
         mobile_verified=True,
+        mobile_evidence_grade="M2",
         stage="CORE",
     )
     base.update(kw)
@@ -26,13 +27,31 @@ class FrameRegistryTest(unittest.TestCase):
         self.assertEqual(validate_frame(record()), [])
 
     def test_candidate_not_counted_as_verified(self):
-        result = audit_registry([record(stage="CANDIDATE", visual_verified=False, mobile_verified=False)])
+        result = audit_registry([
+            record(
+                stage="CANDIDATE",
+                visual_verified=False,
+                mobile_verified=False,
+                mobile_evidence_grade="M0",
+            )
+        ])
         self.assertEqual(result["strict_verified_count"], 0)
         self.assertEqual(result["candidate_count"], 1)
 
     def test_core_requires_mobile(self):
-        issues = validate_frame(record(mobile_verified=False))
+        issues = validate_frame(record(mobile_verified=False, mobile_evidence_grade="M0"))
         self.assertIn("CORE requires mobile_verified=true", issues)
+        self.assertIn("CORE requires mobile evidence grade M2 or M3", issues)
+
+    def test_mobile_verified_requires_m2_or_m3(self):
+        issues = validate_frame(record(mobile_evidence_grade="M1"))
+        self.assertIn("mobile_verified=true requires mobile evidence grade M2 or M3", issues)
+
+    def test_m3_core_count_is_separate(self):
+        result = audit_registry([record(mobile_evidence_grade="M3")])
+        self.assertEqual(result["core_count"], 1)
+        self.assertEqual(result["core_m2_count"], 0)
+        self.assertEqual(result["core_m3_count"], 1)
 
     def test_duplicate_reviews(self):
         result = audit_registry([record(), record()])
