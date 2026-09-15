@@ -140,6 +140,23 @@ def _authority_order(raw: Mapping[str, Any], evidence: Sequence[Mapping[str, Any
     return result or ["TYPOGRAPHY", "WORLD", "PLACE"]
 
 
+def _layout_profile(goal: str, authorities: Sequence[str]) -> str:
+    """Choose a form family from the customer's action, not the company name.
+
+    This is a diversity rule, not a collection of company templates.  The
+    same profile is available to any fixture with the same conversion need.
+    """
+    if goal in {"quote_request", "inquiry"} and "MATERIAL" in authorities:
+        return "technical_drawing"
+    if goal == "reservation":
+        return "experience_calendar"
+    if goal in {"purchase", "visit"} and "PRODUCT" in authorities:
+        return "catalogue_spread"
+    if goal == "consultation":
+        return "conversation_rail"
+    return "editorial_rail"
+
+
 def build_company_understanding(raw: Mapping[str, Any], approved_evidence: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     company = _company(raw)
     location = _text(company.get("location"))
@@ -147,6 +164,9 @@ def build_company_understanding(raw: Mapping[str, Any], approved_evidence: Seque
     truth = _text(company.get("company_truth"))
     if not truth:
         truth = _first_claim(approved_evidence, "SERVICE_SCOPE", "SCOPE_BOUNDARY", "HERO_REALITY")
+    authorities = _authority_order(raw, approved_evidence)
+    approved_strengths = {_text(item.get("evidence_strength")) for item in approved_evidence}
+    density = "HIGH" if len(approved_evidence) >= 5 else "MEDIUM" if len(approved_evidence) >= 3 else "LOW"
     return {
         "schema_version": SCHEMA_VERSION,
         "company_id": _text(raw.get("company_id")) or _slug(_text(company.get("company_name"))),
@@ -159,11 +179,15 @@ def build_company_understanding(raw: Mapping[str, Any], approved_evidence: Seque
         "differentiators": _unique(company.get("differentiators") or []),
         "customer_state": dict(raw.get("customer_state") or {}),
         "conversion_goal": _text(raw.get("conversion_goal")),
+        "generation_iteration": int(raw.get("generation_iteration", 1) or 1),
         "primary_objections": _unique(raw.get("primary_objections") or []),
         "available_evidence": _approved_claims(approved_evidence),
         "unavailable_evidence": _unique(raw.get("unavailable_evidence") or []),
         "hearing_required": list(raw.get("hearing_required") or []),
-        "visual_authority": _authority_order(raw, approved_evidence),
+        "visual_authority": authorities,
+        "evidence_density": density,
+        "layout_profile": _layout_profile(_text(raw.get("conversion_goal")), authorities),
+        "verified_strengths": sorted(approved_strengths),
         "source_references": _unique([_text(item.get("source")) for item in approved_evidence]),
         "contact_channels": dict(company.get("contact_channels") or {}),
     }
@@ -178,6 +202,8 @@ def build_creative_strategy(understanding: Mapping[str, Any], approved_evidence:
     differentiators = list(understanding.get("differentiators") or [])
     anchor = differentiators[0] if differentiators else truth
     authority = list(understanding.get("visual_authority") or ["TYPOGRAPHY"])
+    profile = _text(understanding.get("layout_profile")) or "editorial_rail"
+    iteration = int(understanding.get("generation_iteration", 1) or 1)
     return {
         "schema_version": SCHEMA_VERSION,
         "creative_problem": f"{_text(understanding.get('customer_state', {}).get('before')) or '依頼前の迷い'}を、{goal_phrase}へ変える。",
@@ -208,6 +234,9 @@ def build_creative_strategy(understanding: Mapping[str, Any], approved_evidence:
             },
         ],
         "visual_authority_priority": authority,
+        "layout_profile": profile,
+        "evidence_density_signal": _text(understanding.get("evidence_density")) or "LOW",
+        "quality_calibration": "customer_state_bridge_and_profile_composition" if iteration >= 2 else "baseline_generation",
         "anti_template_notes": [
             "No generic three-card grid as the primary composition.",
             "No unsupported reassurance or invented metrics.",
@@ -218,12 +247,21 @@ def build_creative_strategy(understanding: Mapping[str, Any], approved_evidence:
 
 def build_information_architecture(understanding: Mapping[str, Any], strategy: Mapping[str, Any], approved_evidence: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
     goal = _text(understanding.get("conversion_goal"))
+    profile = _text(strategy.get("layout_profile")) or "editorial_rail"
+    labels = {
+        "technical_drawing": ("相談を図面にする", "仕様をほどく", "見積の入口"),
+        "experience_calendar": ("時間を選ぶ", "過ごし方を知る", "予約の入口"),
+        "catalogue_spread": ("選ぶ前に見る", "用途から探す", "購入の入口"),
+        "conversation_rail": ("話すところから", "順番を整理する", "相談の入口"),
+        "editorial_rail": ("入口をひらく", "次を考える", "最初の案内"),
+    }.get(profile, ("入口をひらく", "次を考える", "最初の案内"))
     sections: list[dict[str, Any]] = [
         {
             "section_id": "opening",
             "section_role": "hero_orientation",
             "customer_question": "ここは自分の状況を相談できる場所か？",
             "key_message": _text(strategy.get("big_idea")),
+            "layout_hint": profile,
             "evidence_used": [],
             "visual_authority": (strategy.get("visual_authority_priority") or ["TYPOGRAPHY"])[0],
             "emotional_intensity": 5,
@@ -236,6 +274,7 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
             "section_role": "company_truth",
             "customer_question": "なぜこの会社に相談するのか？",
             "key_message": _text(understanding.get("company_truth")),
+            "layout_hint": labels[0],
             "evidence_used": [item.get("evidence_id") for item in approved_evidence[:2]],
             "visual_authority": (strategy.get("visual_authority_priority") or ["WORLD"])[0],
             "emotional_intensity": 4,
@@ -247,7 +286,8 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
             "section_id": "way_in",
             "section_role": "service_process",
             "customer_question": "相談したら、何を伝えればよいか？",
-            "key_message": "状況を伝えるところから、次の案内を考える。",
+            "key_message": f"{labels[1]}。",
+            "layout_hint": labels[1],
             "evidence_used": [item.get("evidence_id") for item in _evidence_for(approved_evidence, "SERVICE_PROCESS", "SERVICE_SCOPE", "CRAFT_ACTION")],
             "visual_authority": "DOCUMENT" if _evidence_for(approved_evidence, "SERVICE_PROCESS") else (strategy.get("visual_authority_priority") or ["TYPOGRAPHY"])[0],
             "emotional_intensity": 3,
@@ -259,7 +299,8 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
             "section_id": "contact",
             "section_role": "next_step",
             "customer_question": "問い合わせた後、まず何ができるか？",
-            "key_message": "決めきっていなくても、いまの状況から伝えられる。",
+            "key_message": f"{labels[2]}。",
+            "layout_hint": labels[2],
             "evidence_used": [item.get("evidence_id") for item in _evidence_for(approved_evidence, "POST_CLICK_FLOW", "CTA_CHANNEL", "ACCOUNTABILITY_SCOPE")],
             "visual_authority": "TYPOGRAPHY",
             "emotional_intensity": 4,
@@ -272,6 +313,7 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
             "section_role": "cta_zone",
             "customer_question": "ここから何をすればよいか？",
             "key_message": GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))[0],
+            "layout_hint": profile,
             "evidence_used": [item.get("evidence_id") for item in approved_evidence],
             "visual_authority": "TYPOGRAPHY",
             "emotional_intensity": 5,
@@ -290,6 +332,8 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     goal = _text(understanding.get("conversion_goal"))
     _, cta = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     truth = _text(understanding.get("company_truth"))
+    iteration = int(understanding.get("generation_iteration", 1) or 1)
+    customer_before = _text(understanding.get("customer_state", {}).get("before"))
     claims = _approved_claims(approved_evidence)
     headline = _text(strategy.get("core_message")) or f"{category}を、{location}から相談する。"
     return {
@@ -298,7 +342,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
             "eyebrow": company_name,
             "headline": headline,
             "headline_lines": _line_shape(headline, max_chars=9),
-            "supporting": f"{location}で{category}を探している方へ。{truth}",
+            "supporting": f"{location}で{category}を探している方へ。{truth}" + (f" いまは{customer_before}という状態からでも、入口を確認できます。" if iteration >= 2 and customer_before else ""),
             "cta": cta,
             "microcopy": "連絡手段と所在地を確認できます。",
         },
@@ -342,6 +386,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
 def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str, Any]) -> dict[str, Any]:
     authorities = list(strategy.get("visual_authority_priority") or ["TYPOGRAPHY"])
     primary = authorities[0]
+    profile = _text(strategy.get("layout_profile")) or "editorial_rail"
     palettes = {
         "MATERIAL": ("#151613", "#d7b27b", "#f1eadc"),
         "PRODUCT": ("#111417", "#cf6b3c", "#ece7de"),
@@ -357,17 +402,36 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
     return {
         "schema_version": SCHEMA_VERSION,
         "art_direction_concept": _text(strategy.get("big_idea")),
-        "visual_mood": "quiet confidence with a working-surface sense of detail",
+        "visual_mood": {
+            "technical_drawing": "measured workshop clarity with visible construction lines",
+            "experience_calendar": "soft daylight rhythm with a sense of chosen time",
+            "catalogue_spread": "tactile selection field with room around each object",
+            "conversation_rail": "quiet editorial pacing with a human reading rail",
+            "editorial_rail": "quiet confidence with a working-surface sense of detail",
+        }.get(profile, "quiet confidence with a working-surface sense of detail"),
         "visual_authority_priority": authorities,
         "color_logic": {"ink": ink, "accent": accent, "paper": paper, "reason": f"{primary} is the first evidence-bearing authority."},
         "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
-        "composition_logic": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
+        "composition_logic": {
+            "technical_drawing": "A measured split rail, specification surface and sequential workbench; peaks are separated by quiet chapters.",
+            "experience_calendar": "A generous invitation field, time-led proof surface and stacked booking path; avoid dashboard density.",
+            "catalogue_spread": "A product-led opening, editorial selection spread and direct purchase path; let whitespace do the sorting.",
+            "conversation_rail": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
+            "editorial_rail": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
+        }.get(profile, "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters."),
         "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
         "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
         "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
         "motion_logic": "One restrained reveal for section entry; no infinite or blocking animation.",
         "forbidden_patterns": ["rounded card wall", "generic three-column grid", "unsupported trust badge", "stock person", "marquee", "parallax"],
-        "craft_catch": "A calibration line carries the customer from the current situation to the next contact point.",
+        "craft_catch": {
+            "technical_drawing": "A measurement line carries the customer from a rough request to a quote-ready next step.",
+            "experience_calendar": "A time marker carries the customer from a remembered occasion to a chosen visit.",
+            "catalogue_spread": "A selection line carries the customer from purpose to a concrete item.",
+            "conversation_rail": "A calibration line carries the customer from the current situation to the next contact point.",
+            "editorial_rail": "A calibration line carries the customer from the current situation to the next contact point.",
+        }.get(profile, "A calibration line carries the customer from the current situation to the next contact point."),
+        "layout_profile": profile,
     }
 
 
@@ -390,18 +454,27 @@ def build_design_tokens(art_direction: Mapping[str, Any]) -> dict[str, Any]:
 
 def build_compositions(ia: Sequence[Mapping[str, Any]], art_direction: Mapping[str, Any]) -> list[dict[str, Any]]:
     compositions: list[dict[str, Any]] = []
+    profile = _text(art_direction.get("layout_profile")) or "editorial_rail"
     for index, section in enumerate(ia):
         role = _text(section.get("section_role"))
-        if role == "hero_orientation":
-            layout, alignment, emphasis = "split_rail", "left", "headline"
-        elif role == "company_truth":
-            layout, alignment, emphasis = "offset_evidence_surface", "left", "evidence"
-        elif role == "service_process":
-            layout, alignment, emphasis = "sequence_rail", "left", "rhythm"
-        elif role == "next_step":
-            layout, alignment, emphasis = "contact_strip", "left", "channel"
-        else:
-            layout, alignment, emphasis = "closing_field", "left", "action"
+        by_profile = {
+            "technical_drawing": {
+                "hero_orientation": ("drawing_split", "left", "headline"), "company_truth": ("spec_surface", "left", "evidence"),
+                "service_process": ("numbered_workbench", "left", "rhythm"), "next_step": ("quote_strip", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+            },
+            "experience_calendar": {
+                "hero_orientation": ("invitation_field", "center", "headline"), "company_truth": ("moment_spread", "left", "evidence"),
+                "service_process": ("visit_sequence", "left", "rhythm"), "next_step": ("booking_strip", "left", "channel"), "cta_zone": ("closing_field", "center", "action"),
+            },
+            "catalogue_spread": {
+                "hero_orientation": ("catalogue_cover", "left", "headline"), "company_truth": ("product_spread", "left", "evidence"),
+                "service_process": ("selection_rail", "left", "rhythm"), "next_step": ("purchase_strip", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+            },
+        }
+        layout, alignment, emphasis = by_profile.get(profile, {}).get(role, {
+            "hero_orientation": ("split_rail", "left", "headline"), "company_truth": ("offset_evidence_surface", "left", "evidence"),
+            "service_process": ("sequence_rail", "left", "rhythm"), "next_step": ("contact_strip", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+        }.get(role, ("closing_field", "left", "action")))
         compositions.append({
             "section_id": section["section_id"],
             "layout_type": layout,
@@ -414,6 +487,7 @@ def build_compositions(ia: Sequence[Mapping[str, Any]], art_direction: Mapping[s
             "mobile_transformation": section.get("mobile_behavior"),
             "screenshot_peak": section.get("quiet_or_peak") == "peak",
             "order": index,
+            "layout_profile": profile,
         })
     return compositions
 
@@ -459,6 +533,9 @@ def _render_styles(tokens: Mapping[str, Any]) -> str:
     .sequence {{ display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }} .step {{ min-height:220px; padding:18px 22px 24px 0; border-bottom:1px solid var(--line); border-right:1px solid var(--line); }} .step:last-child {{ border-right:0; padding-left:22px; }} .step + .step {{ padding-left:22px; }} .step-number {{ font-size:3rem; line-height:1; color:var(--accent); }}
     .contact-strip {{ display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:center; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); padding:28px 0; }} .contact-lines {{ display:grid; gap:4px; }} .button {{ display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:12px 26px; border-radius:999px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }} .button:hover {{ background:var(--ink); }} .footer-note {{ padding:24px 0 48px; font-size:.76rem; color:var(--muted); border-top:1px solid var(--line); }} .calibration {{ position:absolute; right:0; top:18%; width:18vw; max-width:220px; height:1px; background:var(--accent); }} .calibration::after {{ content:""; position:absolute; right:0; top:-4px; width:9px; height:9px; border-radius:50%; background:var(--accent); }}
     [data-reveal] {{ opacity:0; transform:translateY(18px); transition:opacity 520ms var(--ease), transform 520ms var(--ease); }} [data-reveal].is-visible {{ opacity:1; transform:none; }} @media (prefers-reduced-motion:reduce) {{ html {{ scroll-behavior:auto; }} [data-reveal] {{ opacity:1; transform:none; transition:none; }} }}
+    .page-technical_drawing .hero-mark {{ background:linear-gradient(90deg, transparent 49%, var(--accent) 49% 51%, transparent 51%), linear-gradient(0deg, transparent 49%, var(--ink) 49% 51%, transparent 51%); }} .page-technical_drawing .proof-surface {{ box-shadow:10px 18px 0 var(--accent); }} .page-technical_drawing .sequence {{ border-left:8px solid var(--accent); }}
+    .page-experience_calendar .hero-mark {{ border-radius:50%; background:radial-gradient(circle at 35% 35%, var(--accent) 0 8%, transparent 9%), radial-gradient(circle at 68% 68%, var(--ink) 0 7%, transparent 8%), repeating-radial-gradient(circle, transparent 0 24px, var(--line) 25px 26px); }} .page-experience_calendar .section--peak:first-child {{ text-align:center; }} .page-experience_calendar .hero-grid {{ align-items:center; }}
+    .page-catalogue_spread .hero-mark {{ background:linear-gradient(125deg, var(--accent) 0 18%, transparent 19% 56%, var(--ink) 57% 60%, transparent 61%), repeating-linear-gradient(90deg, transparent 0 28px, var(--line) 29px 30px); }} .page-catalogue_spread .proof-surface {{ grid-template-columns:1.2fr .8fr; box-shadow:none; border:1px solid var(--ink); background:transparent; color:var(--ink); }} .page-catalogue_spread .claim-list {{ border-color:var(--line); }} .page-catalogue_spread .claim {{ border-color:var(--line); }}
     @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:clamp(4rem,16vw,7rem) 0; }} .section--peak {{ min-height:auto; }} h1 {{ font-size:clamp(2.35rem, 8vw, 3.8rem); }} h2 {{ font-size:clamp(1.9rem, 7vw, 3.2rem); }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
     """
 
@@ -468,6 +545,8 @@ def render_html(spec: Mapping[str, Any]) -> str:
     copy = spec["copy"]
     tokens = spec["design_tokens"]
     art = spec["art_direction"]
+    profile = _text(spec.get("strategy", {}).get("layout_profile")) or _text(art.get("layout_profile")) or "editorial_rail"
+    composition_by_section = {item.get("section_id"): item for item in spec.get("compositions", [])}
     sections = {item["section_id"]: item for item in spec["ia"]}
     copy_sections = {item["section_id"]: item for item in copy["sections"]}
     evidence = spec.get("approved_evidence", [])
@@ -490,14 +569,14 @@ def render_html(spec: Mapping[str, Any]) -> str:
     contact_href = _esc(contact.get("href") or "#contact")
     return f'''<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>{name}｜{_esc(hero["headline"])}</title><style>{_render_styles(tokens)}</style></head>
-<body><div class="site-shell">
+<body class="page-{_esc(profile)}"><div class="site-shell">
 <header class="topline"><span>{name}</span><span>{location}</span></header>
 <main>
-<section class="section section--peak" data-reveal data-role="hero_orientation"><div class="calibration"></div><div class="hero-grid"><div><div class="eyebrow">{_esc(hero["eyebrow"])}</div><h1>{lines_markup}</h1><p class="lead" style="margin-top:28px">{_esc(hero["supporting"])}</p><a class="button" href="#contact" style="margin-top:34px">{cta}<span aria-hidden="true" style="margin-left:14px">→</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div><div class="hero-mark" aria-hidden="true"></div></div></section>
-<section class="section section--peak" data-reveal data-role="company_truth"><div class="section-header"><span class="eyebrow">01 / 会社の輪郭</span><span class="small">{location}</span></div><div class="proof-surface"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["truth"]["headline_lines"])}</h2></div><div><p class="lead">{_esc(copy_sections["truth"]["body"])}</p><div class="claim-list" style="margin-top:34px">{claims_markup}</div></div></div></section>
-<section class="section section--quiet" data-reveal data-role="service_process"><div class="section-header"><span class="eyebrow">02 / 入口のリズム</span><span class="small">相談の前に、入口を確認する</span></div><div class="hero-grid"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["way_in"]["headline_lines"])}</h2></div><div><p class="lead">{_esc(copy_sections["way_in"]["body"])}</p></div></div><div class="sequence" style="margin-top:64px">{steps_markup}</div></section>
-<section class="section section--quiet" id="contact" data-reveal data-role="next_step"><div class="section-header"><span class="eyebrow">03 / 次の案内</span><span class="small">{location}</span></div><div class="contact-strip"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["contact"]["headline_lines"])}</h2><p class="lead" style="margin-top:24px">{_esc(copy_sections["contact"]["body"])}</p><div class="contact-lines" style="margin-top:28px">{contact_markup}</div></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a></div></div></section>
-<section class="section section--peak" data-reveal data-role="cta_zone"><div class="hero-grid"><div><div class="eyebrow">04 / {category}</div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["close"]["headline_lines"])}</h2><p class="lead" style="margin-top:28px">{_esc(copy_sections["close"]["body"])}</p></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div></div></section>
+<section class="section section--peak" data-reveal data-role="hero_orientation" data-layout="{_esc(composition_by_section.get("opening", {}).get("layout_type", "split_rail"))}"><div class="calibration"></div><div class="hero-grid"><div><div class="eyebrow">{_esc(hero["eyebrow"])}</div><h1>{lines_markup}</h1><p class="lead" style="margin-top:28px">{_esc(hero["supporting"])}</p><a class="button" href="#contact" style="margin-top:34px">{cta}<span aria-hidden="true" style="margin-left:14px">→</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div><div class="hero-mark" aria-hidden="true"></div></div></section>
+<section class="section section--peak" data-reveal data-role="company_truth" data-layout="{_esc(composition_by_section.get("truth", {}).get("layout_type", "offset_evidence_surface"))}"><div class="section-header"><span class="eyebrow">01 / 会社の輪郭</span><span class="small">{location}</span></div><div class="proof-surface"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["truth"]["headline_lines"])}</h2></div><div><p class="lead">{_esc(copy_sections["truth"]["body"])}</p><div class="claim-list" style="margin-top:34px">{claims_markup}</div></div></div></section>
+<section class="section section--quiet" data-reveal data-role="service_process" data-layout="{_esc(composition_by_section.get("way_in", {}).get("layout_type", "sequence_rail"))}"><div class="section-header"><span class="eyebrow">02 / 入口のリズム</span><span class="small">{_esc(ia_label := _text(sections["way_in"].get("layout_hint")) or "次を考える")}</span></div><div class="hero-grid"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["way_in"]["headline_lines"])}</h2></div><div><p class="lead">{_esc(copy_sections["way_in"]["body"])}</p></div></div><div class="sequence" style="margin-top:64px">{steps_markup}</div></section>
+<section class="section section--quiet" id="contact" data-reveal data-role="next_step" data-layout="{_esc(composition_by_section.get("contact", {}).get("layout_type", "contact_strip"))}"><div class="section-header"><span class="eyebrow">03 / 次の案内</span><span class="small">{location}</span></div><div class="contact-strip"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["contact"]["headline_lines"])}</h2><p class="lead" style="margin-top:24px">{_esc(copy_sections["contact"]["body"])}</p><div class="contact-lines" style="margin-top:28px">{contact_markup}</div></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a></div></div></section>
+<section class="section section--peak" data-reveal data-role="cta_zone" data-layout="{_esc(composition_by_section.get("close", {}).get("layout_type", "closing_field"))}"><div class="hero-grid"><div><div class="eyebrow">04 / {category}</div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["close"]["headline_lines"])}</h2><p class="lead" style="margin-top:28px">{_esc(copy_sections["close"]["body"])}</p></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div></div></section>
 </main><footer class="topline footer-note"><span>{name}</span><span>事実確認済みの内容のみで構成</span></footer>
 </div><script>for (const node of document.querySelectorAll('[data-reveal]')) {{ const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {{ if (entry.isIntersecting) {{ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }} }}), {{ threshold: 0.12 }}); observer.observe(node); }}</script></body></html>'''
 
@@ -511,7 +590,7 @@ def _input_digest(raw: Mapping[str, Any]) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
-def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation_id: str | None = None, mode: str = "production") -> GenerationResult:
+def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation_id: str | None = None, mode: str = "production", iteration: int | None = None) -> GenerationResult:
     """Run all structured stages and render only Safety-approved evidence.
 
     Production is fail-closed.  Research/test output is explicitly marked
@@ -521,6 +600,9 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         raise ValueError(f"unsupported generation mode: {mode}")
     if not isinstance(raw, Mapping):
         raise ValueError("production input must be an object")
+    raw = dict(raw)
+    if iteration is not None:
+        raw["generation_iteration"] = iteration
     _company(raw)
     goal = _text(raw.get("conversion_goal"))
     objections = raw.get("primary_objections") or []
@@ -575,6 +657,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         "mode": mode,
         "engine_version": ENGINE_VERSION,
         "renderer_version": RENDERER_VERSION,
+        "generation_iteration": understanding["generation_iteration"],
         "input_digest": _input_digest(raw),
         "input_references": {"input_file": _text(raw.get("input_file")) or "inline_fixture", "source_urls": understanding["source_references"]},
         "strategy_output": "creative_strategy.json",
@@ -610,12 +693,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("input", help="Production input JSON")
     parser.add_argument("--out", required=True, help="Output directory")
     parser.add_argument("--generation-id")
+    parser.add_argument("--iteration", type=int, default=None, help="Generic QA-loop iteration number (1 or 2)")
     parser.add_argument("--mode", choices=("production", "research", "test"), default="production")
     args = parser.parse_args(argv)
     raw = json.loads(Path(args.input).read_text(encoding="utf-8"))
     raw = dict(raw)
     raw["input_file"] = args.input
-    result = run_generation(raw, args.out, generation_id=args.generation_id, mode=args.mode)
+    result = run_generation(raw, args.out, generation_id=args.generation_id, mode=args.mode, iteration=args.iteration)
     print(json.dumps({"generation_id": result.generation_id, "output_dir": result.output_dir, "safety_status": result.safety_report["safety_status"], "production_output_allowed": result.production_output_allowed}, ensure_ascii=False, indent=2))
     return 0
 

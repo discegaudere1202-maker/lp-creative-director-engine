@@ -1,0 +1,26 @@
+{
+  "schema_version": "production_generation_input_v1",
+  "company_id": "aoyama-flower-market-hakata",
+  "company": {
+    "company_name": "青山フラワーマーケット 博多・天神エリア",
+    "industry": "フラワーショップ",
+    "service_category": "花・ギフトの購入",
+    "location": "福岡市博多区・天神エリア",
+    "business_model": "retail_purchase",
+    "company_truth": "用途と予算から花を選び、日常用から贈り物まで具体的な商品へ進める花の店。",
+    "differentiators": ["用途・予算・花の種類から選べる", "自宅用から法人向けまで扱う", "店舗とオンラインショップの両方がある"],
+    "visual_authority_candidates": ["PRODUCT", "SENSORY", "PLACE", "DATA", "TYPOGRAPHY"],
+    "contact_channels": {"href": "https://www.aoyamaflowermarket.com/"}
+  },
+  "customer_state": {"before": "贈る用途は決まっているが、花の種類や予算を決めきれていない", "after": "用途と予算に合う花を選び購入へ進む", "barrier": "価格と商品内容が合うか分からない"},
+  "conversion_goal": "purchase",
+  "primary_objections": ["O3_PROCESS", "O5_DECISION", "O6_COST"],
+  "requested_claims": [],
+  "unavailable_evidence": ["店舗ごとの在庫", "配送日を含む個別納期", "花材の入荷保証", "掲載許諾済みの商品写真"],
+  "evidence_ledger": [
+    {"evidence_id":"aoyama-e-001","company_id":"aoyama-flower-market-hakata","case_id":"aoyama-flower-market-hakata-production","evidence_type":"SERVICE_SCOPE","evidence_strength":"E3_OPERATIONAL","target_objections":["O3_PROCESS"],"claim":"花束・ギフト、観葉植物、花の定期便、法人向けの花などを扱っています。","source":"https://www.aoyamaflowermarket.com/","source_type":"official_online_shop","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["EARLY_PROOF","MIDDLE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official category navigation; no product image reused."},
+    {"evidence_id":"aoyama-e-002","company_id":"aoyama-flower-market-hakata","case_id":"aoyama-flower-market-hakata-production","evidence_type":"PRICE","evidence_strength":"E5_DECISION_ENABLING","target_objections":["O5_DECISION","O6_COST"],"claim":"オンラインショップでは、3,000円未満から30,000円以上まで予算帯を選べます。","source":"https://www.aoyamaflowermarket.com/","source_type":"official_online_shop","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["HERO","BEFORE_CTA","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Budget navigation is shown as a decision aid, not a fixed quote."},
+    {"evidence_id":"aoyama-e-003-research","company_id":"aoyama-flower-market-hakata","case_id":"aoyama-flower-market-hakata-production","evidence_type":"PRODUCT_DETAIL","evidence_strength":"E2_SPECIFIC","target_objections":["O3_PROCESS","O6_COST"],"claim":"商品写真・在庫・個別の配送条件は、今回の公開確認だけではProduction Claimへ昇格しない。","source":"https://www.aoyamaflowermarket.com/","source_type":"official_online_shop","verification_status":"UNKNOWN","verification_date":"2026-09-15","usage_status":"RESEARCH_ONLY","placement_candidates":["MIDDLE","QUIET_CHAPTER"],"rights_status":"UNKNOWN","hearing_required":true,"blocking_status":"BLOCKING","notes":"Sparse-evidence control: imagery and stock conditions remain outside customer-facing output."
+    }
+  ]
+}

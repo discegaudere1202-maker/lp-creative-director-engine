@@ -1,0 +1,10 @@
+{
+  "schema_version": "quality_diagnosis_v1",
+  "purpose": "Turn observable Production output and QA signals into generic Engine improvement hypotheses.",
+  "input": ["generation_manifest", "render_spec", "html", "desktop_capture", "mobile_capture", "nine_width_qa", "structured_review", "safety_report", "hearing_report"],
+  "issue_fields": ["issue_id", "issue_type", "severity", "affected_axis", "viewport", "affected_section", "observed_problem", "likely_root_cause", "recommended_engine_layer", "fix_priority"],
+  "root_causes": ["STRATEGY", "COMPANY_TRUTH", "IA", "COPY", "EVIDENCE", "ART_DIRECTION", "TYPOGRAPHY", "COMPOSITION", "RHYTHM", "MOTION", "MOBILE", "CTA", "RENDERER", "SAFETY"],
+  "severity": {"S0": "critical", "S1": "sales_blocking", "S2": "quality", "S3": "polish"},
+  "review_boundary": "Structured role rubric only; never represented as independent human review.",
+  "repair_boundary": "Issue diagnosis may recommend an Engine layer; generated HTML/CSS/copy is never edited directly."
+}

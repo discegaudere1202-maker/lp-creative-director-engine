@@ -1,0 +1,26 @@
+{
+  "schema_version": "production_generation_input_v1",
+  "company_id": "lovst-photo-studio",
+  "company": {
+    "company_name": "LOVST PHOTO STUDIO",
+    "industry": "子供向けフォトスタジオ",
+    "service_category": "記念日撮影の予約",
+    "location": "ららぽーと福岡店ほか各店舗",
+    "business_model": "reservation_service",
+    "company_truth": "ナルミヤ・インターナショナルが展開し、記念日の瞬間を衣装と撮影で残すフォトスタジオ。",
+    "differentiators": ["七五三・誕生日・入園入学などの記念日撮影", "オリジナルドレスや着物", "店舗とプランから予約を選べる"],
+    "visual_authority_candidates": ["PERSON", "SENSORY", "PLACE", "PRODUCT", "TYPOGRAPHY"],
+    "contact_channels": {"href": "https://reserve.lovstmade.com/"}
+  },
+  "customer_state": {"before": "記念日を残したいが、どのプランや店舗を選べばよいか迷っている", "after": "家族に合う撮影プランと店舗を選んで予約する", "barrier": "子どもが撮影に馴染めるか、当日の流れが想像できない"},
+  "conversion_goal": "reservation",
+  "primary_objections": ["O2_ACCOUNTABILITY", "O3_PROCESS", "O4_NEXT"],
+  "requested_claims": [],
+  "unavailable_evidence": ["店舗ごとの空き状況", "撮影時間の一律条件", "担当カメラマンの指名可否", "写真・人物素材のLP利用許諾"],
+  "evidence_ledger": [
+    {"evidence_id":"lovst-e-001","company_id":"lovst-photo-studio","case_id":"lovst-photo-studio-production","evidence_type":"OWNER_IDENTITY","evidence_strength":"E2_SPECIFIC","target_objections":["O2_ACCOUNTABILITY"],"claim":"LOVST PHOTO STUDIOはナルミヤ・インターナショナルが展開するフォトスタジオです。","source":"https://lovstmade.com/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["EARLY_PROOF","MIDDLE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Corporate identity only; no staff photo reused."},
+    {"evidence_id":"lovst-e-002","company_id":"lovst-photo-studio","case_id":"lovst-photo-studio-production","evidence_type":"SERVICE_SCOPE","evidence_strength":"E3_OPERATIONAL","target_objections":["O3_PROCESS"],"claim":"七五三・誕生日・入園入学・卒園卒業などの大切な記念日を撮影しています。","source":"https://lovstmade.com/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["HERO","EARLY_PROOF","MIDDLE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official service description; no outcome promise inferred."},
+    {"evidence_id":"lovst-e-003","company_id":"lovst-photo-studio","case_id":"lovst-photo-studio-production","evidence_type":"PRODUCT_DETAIL","evidence_strength":"E2_SPECIFIC","target_objections":["O3_PROCESS"],"claim":"フォトスタジオのために制作したナルミヤのオリジナルドレスや着物を用意しています。","source":"https://lovstmade.com/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["MIDDLE","QUIET_CHAPTER"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Wardrobe fact used as text only; images require permission."},
+    {"evidence_id":"lovst-e-004","company_id":"lovst-photo-studio","case_id":"lovst-photo-studio-production","evidence_type":"CTA_CHANNEL","evidence_strength":"E5_DECISION_ENABLING","target_objections":["O4_NEXT"],"claim":"公式サイトでは、店舗またはプランから探して予約へ進めます。","source":"https://lovstmade.com/","source_type":"official_reservation_navigation","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["BEFORE_CTA","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Navigation fact only; availability is not inferred."}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "production_generation_input_v1",
+  "company_id": "chikushi-industries",
+  "company": {
+    "company_name": "有限会社筑紫興産",
+    "industry": "特注金属加工・製缶加工",
+    "service_category": "金属加工の技術相談・見積",
+    "location": "福岡市西区上山門 / 伊万里市立花町",
+    "business_model": "b2b_quote_request",
+    "company_truth": "図面がなくても相談でき、小ロット・試作から特注加工へ進める福岡の加工会社。",
+    "differentiators": ["図面がなくても相談可", "1個から試作OK", "製缶・機械加工・樹脂成形を扱う"],
+    "visual_authority_candidates": ["MATERIAL", "DOCUMENT", "DATA", "PLACE", "TYPOGRAPHY"],
+    "contact_channels": {"phone": "092-892-8666", "email": "info@chikushi-k.co.jp", "href": "https://www.chikushi-k.co.jp/contact/"}
+  },
+  "customer_state": {"before": "図面やロットが固まっておらず、どこまで相談できるか分からない", "after": "仕様を整理して技術相談・見積へ進める", "barrier": "少量や急ぎの相談を断られないか不安"},
+  "conversion_goal": "quote_request",
+  "primary_objections": ["O1_ABILITY", "O3_PROCESS", "O4_NEXT"],
+  "requested_claims": [],
+  "unavailable_evidence": ["案件別の正式見積金額", "納期保証", "担当者個人の経歴", "掲載許諾済みの現場写真"],
+  "evidence_ledger": [
+    {"evidence_id":"chikushi-e-001","company_id":"chikushi-industries","case_id":"chikushi-industries-production","evidence_type":"SERVICE_SCOPE","evidence_strength":"E3_OPERATIONAL","target_objections":["O3_PROCESS"],"claim":"製缶加工・機械加工・プラスチック成形まで、お見積もり・技術相談を承っています。","source":"https://www.chikushi-k.co.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["EARLY_PROOF","MIDDLE","BEFORE_CTA"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official service and contact copy; no photo reused."},
+    {"evidence_id":"chikushi-e-002","company_id":"chikushi-industries","case_id":"chikushi-industries-production","evidence_type":"CRAFT_ACTION","evidence_strength":"E3_OPERATIONAL","target_objections":["O1_ABILITY","O3_PROCESS"],"claim":"図面がなくても相談でき、1個から試作に対応しています。","source":"https://www.chikushi-k.co.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["HERO","EARLY_PROOF","MIDDLE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official strengths section; operational claim only."},
+    {"evidence_id":"chikushi-e-003","company_id":"chikushi-industries","case_id":"chikushi-industries-production","evidence_type":"RESULT_CASE","evidence_strength":"E2_SPECIFIC","target_objections":["O1_ABILITY"],"claim":"新幹線工事への納入実績と、TSMC様向け納入実績を公式サイトで紹介しています。","source":"https://www.chikushi-k.co.jp/","source_type":"official_company_site","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["MIDDLE","BEFORE_CTA"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official trust section; no client logo or photo is rendered."},
+    {"evidence_id":"chikushi-e-004","company_id":"chikushi-industries","case_id":"chikushi-industries-production","evidence_type":"CTA_CHANNEL","evidence_strength":"E5_DECISION_ENABLING","target_objections":["O4_NEXT"],"claim":"福岡営業所への電話・メール・お問い合わせフォームから、見積もり・技術相談を受け付けています。","source":"https://www.chikushi-k.co.jp/contact/","source_type":"official_contact_page","verification_status":"VERIFIED","verification_date":"2026-09-15","usage_status":"PRODUCTION_ELIGIBLE","placement_candidates":["BEFORE_CTA","CTA_ZONE"],"rights_status":"NOT_APPLICABLE","hearing_required":false,"blocking_status":"NON_BLOCKING","notes":"Official contact route; no response-time promise inferred."}
+  ]
+}

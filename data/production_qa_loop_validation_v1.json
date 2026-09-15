@@ -1,0 +1,26 @@
+{
+  "schema_version": "production_qa_loop_validation_v1",
+  "purpose": "Persist the Phase 2 cross-fixture QA loop decision without treating local static-only output as browser validation.",
+  "fixtures": [
+    {"company_id":"chikushi-industries","domain":"metal fabrication / B2B","conversion_goal":"quote_request","evidence_density":"HIGH","layout_profile":"technical_drawing"},
+    {"company_id":"lovst-photo-studio","domain":"photo studio","conversion_goal":"reservation","evidence_density":"HIGH","layout_profile":"experience_calendar"},
+    {"company_id":"aoyama-flower-market-hakata","domain":"flower retail","conversion_goal":"purchase","evidence_density":"LOW","layout_profile":"catalogue_spread"}
+  ],
+  "gen1_to_gen2": {
+    "gen1_diagnosis": "COPY state bridge issue recorded for all three fixtures",
+    "generic_engine_change": "customer_state_bridge_and_profile_composition",
+    "gen2_diagnosis": "PASS in static loop for all three fixtures",
+    "improved_fixture_count_static": 3,
+    "manual_intervention": 0,
+    "creative_regression_observed": false
+  },
+  "browser_validation": {
+    "status": "PENDING_GITHUB_ACTIONS",
+    "required_widths": [320,360,375,390,430,768,1024,1280,1440],
+    "exact_capture": ["1440x1000", "390x844"],
+    "note": "The authoritative browser result is produced by .github/workflows/production_qa_loop.yml."
+  },
+  "manual_intervention": [],
+  "sales_sample_gate": "HOLD",
+  "reason": "Structured QA loop is technically valid, but this deterministic MVP does not yet meet the 100万円 sales-sample bar without richer company evidence and stronger bespoke creative review."
+}
