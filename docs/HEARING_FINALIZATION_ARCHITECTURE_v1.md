@@ -57,6 +57,6 @@ Gate.
 ## Validation
 
 See `data/phase3_hearing_finalization_validation_v1.json`. The Synthetic
-round-trip passes; Aoyama and Worsal correctly remain blocked without real
-client evidence. This is structured engine validation, not real conversion or
-client approval evidence.
+round-trip and CI browser QA pass at all required widths; Aoyama and Worsal
+correctly remain blocked without real client evidence. This is structured
+engine validation, not real conversion or client approval evidence.
