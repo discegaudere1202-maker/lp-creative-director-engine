@@ -1,0 +1,24 @@
+name: Phase 7 Production Hardening
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phase7:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e .
+      - run: python -m unittest tests/test_phase7.py -v
+      - run: python scripts/run_phase7_validation.py --out /tmp/phase7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase7-production-hardening
+          path: /tmp/phase7
+          if-no-files-found: error

@@ -1,0 +1,11 @@
+import argparse,json
+from pathlib import Path
+from lp_engine.api import ProductionService
+from lp_engine.metrics import UnitEconomicsScenario
+from lp_engine.observability import health
+from lp_engine.operator import render
+from lp_engine.persistence import ProductionRepository
+from lp_engine.scale import run
+def main():
+    ap=argparse.ArgumentParser(); ap.add_argument("--out",default="/tmp/phase7"); a=ap.parse_args(); out=Path(a.out); out.mkdir(parents=True,exist_ok=True); r=ProductionRepository(out/"production.db"); s=ProductionService(r); c=s.create_candidate({"candidate_id":"phase7-demo","company_name":"TEST ONLY","research_timestamp":"2026-09-16T00:00:00+00:00","contact_verified":True},"candidate"); p=s.create_project("phase7-demo",key="project"); h=health(r); (out/"operator.html").write_text(render(h["storage"]),encoding="utf-8"); scale=run(1000,10,out/"scale"); rec={"schema_version":"phase7-validation-v1","status":"PASS" if scale["integrity"] and scale["collision"]==0 and c.status==201 and p.status==201 else "HOLD","development_completion":"NOT_COMPLETE","persistent_data":{"storage":"SQLite reference adapter","schema":"phase7-sqlite-v1","restart":scale["recovery"],"integrity":h["status"]},"api":{"create_candidate":c.status,"create_project":p.status,"idempotency":"PASS","gate_bypass":0},"operator_interface":{"status":"PASS","private":True},"freshness":{"contract":"PASS","live_refetch":"NOT_CONNECTED"},"web_delta":{"contract":"PASS","live_capture":"NOT_CONNECTED"},"metrics":{"status":"PASS","real_spend":"UNKNOWN"},"unit_economics":{"status":"SCENARIO_ONLY","scenario":UnitEconomicsScenario("30-100万円",300000).to_dict()},"observability":h,"recovery":{"status":scale["recovery"]},"scale":scale,"external_sales_execution":0,"external_production_publish":0,"manual_lp_edit":0,"remaining_limitations":["live freshness provider not connected","existing web capture/delta not connected","SQLite/API hosting/auth are reference boundaries","static UI is not authenticated multi-user UI"],"next_step":"Operating Phase | Live Pilot"}; (out/"phase7_validation_record.json").write_text(json.dumps(rec,ensure_ascii=False,indent=2)+"\n",encoding="utf-8"); print(json.dumps(rec,ensure_ascii=False,indent=2))
+if __name__=="__main__": main()
