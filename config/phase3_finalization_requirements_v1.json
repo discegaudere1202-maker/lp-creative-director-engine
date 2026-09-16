@@ -1,0 +1,99 @@
+{
+  "schema_version": "phase3_finalization_requirements_v1",
+  "purpose": "Production completion gaps are explicit, company-specific and routed to the Hearing contract.",
+  "cases": {
+    "aoyama-flower-market-hakata": {
+      "fixture": "examples/production/phase2_fixtures/aoyama_flower_market_production_input_v1.json",
+      "mode": "production_public_evidence_only",
+      "requirements": [
+        {
+          "gap_id": "aoyama-purchase-flow",
+          "required_field": "service_process",
+          "required_evidence_types": ["PURCHASE_PROCESS"],
+          "target_objections": ["O3_PROCESS", "O4_NEXT"],
+          "affected_section": "purchase-path",
+          "blocking_level": "SECTION_BLOCKING",
+          "priority": "P1",
+          "verification_class": "SELF_DECLARABLE",
+          "reason": "正式版で購入前後の進み方を具体化するには、公開カテゴリ説明だけでは不足しています。"
+        },
+        {
+          "gap_id": "aoyama-availability-condition",
+          "required_field": "availability_conditions",
+          "required_evidence_types": ["AVAILABILITY_CONDITION"],
+          "target_objections": ["O4_NEXT", "O5_DECISION", "O6_COST"],
+          "affected_section": "decision-support",
+          "blocking_level": "SECTION_BLOCKING",
+          "priority": "P1",
+          "verification_class": "SELF_DECLARABLE",
+          "reason": "在庫・入荷・時期による変動条件を確認できないため、購入判断を誤らせないために必要です。"
+        },
+        {
+          "gap_id": "aoyama-delivery-condition",
+          "required_field": "delivery_conditions",
+          "required_evidence_types": ["DELIVERY_CONDITION"],
+          "target_objections": ["O4_NEXT", "O6_COST"],
+          "affected_section": "decision-support",
+          "blocking_level": "CLAIM_BLOCKING",
+          "priority": "P1",
+          "verification_class": "DOCUMENT_REQUIRED",
+          "reason": "配送日・送料・地域等の条件が不明なまま、確定的な配送表現を生成できません。"
+        },
+        {
+          "gap_id": "aoyama-product-image-rights",
+          "required_field": "visual_rights",
+          "required_evidence_types": ["PRODUCT_DETAIL"],
+          "target_objections": ["O3_PROCESS", "O5_DECISION", "O6_COST"],
+          "affected_section": "product-detail",
+          "blocking_level": "CLAIM_BLOCKING",
+          "priority": "P1",
+          "verification_class": "RIGHTS_REQUIRED",
+          "rights_requirement": "Explicit client permission or documented production license is required.",
+          "requested_asset": "product_detail",
+          "reason": "商品写真は公式サイト上に存在しても、LPへの再利用権が確認されるまでProductionへ持ち込めません。"
+        }
+      ]
+    },
+    "worsal-fukuoka-school": {
+      "fixture": "examples/production/phase2b_holdout/worsal_fukuoka_production_input_v1.json",
+      "mode": "production_public_evidence_only",
+      "requirements": [
+        {
+          "gap_id": "worsal-instructor-profile",
+          "required_field": "instructor_profile",
+          "required_evidence_types": ["INSTRUCTOR_PROFILE"],
+          "target_objections": ["O1_ABILITY", "O2_ACCOUNTABILITY"],
+          "affected_section": "instructor-accountability",
+          "blocking_level": "SECTION_BLOCKING",
+          "priority": "P1",
+          "verification_class": "SELF_DECLARABLE",
+          "reason": "現役講師という公開事実だけでは、誰がどの役割で関わるかを正式版で具体化できません。"
+        },
+        {
+          "gap_id": "worsal-lesson-flow-detail",
+          "required_field": "lesson_flow_detail",
+          "required_evidence_types": ["LESSON_FLOW_DETAIL"],
+          "target_objections": ["O3_PROCESS", "O4_NEXT"],
+          "affected_section": "lesson-flow",
+          "blocking_level": "SECTION_BLOCKING",
+          "priority": "P1",
+          "verification_class": "SELF_DECLARABLE",
+          "reason": "マンツーマンという公開事実に加え、体験当日の進み方を確認しないと行動後の想像を補えません。"
+        },
+        {
+          "gap_id": "worsal-lesson-visual-rights",
+          "required_field": "visual_rights",
+          "required_evidence_types": ["CRAFT_ACTION"],
+          "target_objections": ["O1_ABILITY", "O2_ACCOUNTABILITY", "O3_PROCESS"],
+          "affected_section": "action-proof",
+          "blocking_level": "CLAIM_BLOCKING",
+          "priority": "P1",
+          "verification_class": "RIGHTS_REQUIRED",
+          "rights_requirement": "Explicit client permission or documented production license is required.",
+          "requested_asset": "service_action",
+          "reason": "レッスン・人物写真は公式サイトにあっても、LP利用権が未確認のため研究用途に留めます。"
+        }
+      ]
+    }
+  }
+}

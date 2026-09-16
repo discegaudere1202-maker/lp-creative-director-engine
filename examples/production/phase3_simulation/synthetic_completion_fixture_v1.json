@@ -1,0 +1,46 @@
+{
+  "schema_version": "production_generation_input_v1",
+  "simulation_mode": true,
+  "test_only": true,
+  "company_id": "test-only-hoshi-flower-studio",
+  "company": {
+    "company_name": "TEST_ONLY｜ほし花工房",
+    "industry": "花・ギフト",
+    "service_category": "ギフト相談と購入",
+    "location": "TEST_ONLY",
+    "business_model": "retail_purchase",
+    "company_truth": "用途を聞いて、予算に合わせた花を組み立てる小さなギフト工房。",
+    "differentiators": ["用途と予算から相談できる"],
+    "visual_authority_candidates": ["PRODUCT", "SENSORY", "TYPOGRAPHY"],
+    "contact_channels": {"href": "https://example.invalid/test-only"}
+  },
+  "customer_state": {
+    "before": "贈り物を選びたいが、価格と相談の進め方が分からない",
+    "after": "条件を伝えて相談・購入へ進む",
+    "barrier": "相談した後に何が起きるか不明"
+  },
+  "conversion_goal": "purchase",
+  "primary_objections": ["O3_PROCESS", "O4_NEXT", "O6_COST"],
+  "requested_claims": [],
+  "evidence_ledger": [
+    {
+      "evidence_id": "test-hoshi-e-001",
+      "company_id": "test-only-hoshi-flower-studio",
+      "case_id": "test-only-hoshi-flower-studio",
+      "evidence_type": "SERVICE_SCOPE",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": ["O3_PROCESS"],
+      "claim": "用途と予算を聞いて、花を提案します。",
+      "source": "synthetic://test-only-hoshi-flower-studio/baseline",
+      "source_type": "synthetic_fixture",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": ["MIDDLE"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "TEST_ONLY baseline evidence; never customer-facing production."
+    }
+  ]
+}

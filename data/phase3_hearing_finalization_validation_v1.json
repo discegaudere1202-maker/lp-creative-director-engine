@@ -1,0 +1,54 @@
+{
+  "schema_version": "phase3_hearing_finalization_validation_v1",
+  "status": "PASS",
+  "scope": "Research validation only; no real client contact and no real client answer was used.",
+  "real_cases": {
+    "Aoyama": {
+      "company_id": "aoyama-flower-market-hakata",
+      "production_mode": "public evidence only",
+      "hearing_questions": 4,
+      "production_status": "FINALIZATION_BLOCKED",
+      "gaps": ["purchase process", "availability condition", "delivery condition", "product image rights"],
+      "rights_status": "UNKNOWN / CLIENT_PERMISSION_REQUIRED for images"
+    },
+    "Worsal": {
+      "company_id": "worsal-fukuoka-school",
+      "production_mode": "public evidence only",
+      "hearing_questions": 3,
+      "production_status": "FINALIZATION_BLOCKED",
+      "gaps": ["instructor profile", "lesson flow detail", "lesson/action image rights"],
+      "rights_status": "UNKNOWN / CLIENT_PERMISSION_REQUIRED for images"
+    }
+  },
+  "synthetic_round_trip": {
+    "fixture": "TEST_ONLY｜ほし花工房",
+    "questions": 4,
+    "answer_state_start": "UNVERIFIED_CUSTOMER_INPUT",
+    "finalization_status": "READY_FOR_FINALIZATION",
+    "safety_recheck": "PASS",
+    "final_output_status": "NOT_PRODUCTION_APPROVED",
+    "manual_intervention": 0,
+    "qa": "PASS"
+  },
+  "success_criteria": {
+    "real_hearing_plans": true,
+    "real_finalization_blocked_without_answers": true,
+    "synthetic_finalization_ready": true,
+    "synthetic_safety_recheck": true,
+    "manual_intervention_zero": true,
+    "final_qa": true
+  },
+  "adversarial": {
+    "vague_free": "BLOCKED",
+    "overclaim": "REJECTED",
+    "rights_ambiguity": "NEEDS_RIGHTS",
+    "conflict": "HOLD",
+    "synthetic_answer_in_production": "BLOCKED"
+  },
+  "limitations": [
+    "Synthetic completion proves the backend contract and renderer round-trip, not a real client's production approval.",
+    "Real Aoyama/Worsal finalization correctly remains blocked until actual client evidence and rights confirmation exist.",
+    "Browser dependency was unavailable in the local sandbox; CI browser QA remains the authoritative visual check."
+  ],
+  "next_step": "Phase 4 | Operations"
+}

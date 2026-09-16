@@ -159,7 +159,7 @@ DEFAULT_BLOCKED_CLAIMS = [
     {"claim_id": "FREE_CANCELLATION", "patterns": ["キャンセル無料", "無料キャンセル"], "target_objections": ["O7_RISK", "O6_COST"], "required_evidence_types": ["CANCELLATION_POLICY"]},
     {"claim_id": "NO_EXTRA_FEES", "patterns": ["追加料金なし", "no extra fees"], "target_objections": ["O6_COST"], "required_evidence_types": ["FEE_CONDITION"]},
     {"claim_id": "REFUND", "patterns": ["全額返金", "返金保証"], "target_objections": ["O7_RISK"], "required_evidence_types": ["REFUND_POLICY"]},
-    {"claim_id": "GUARANTEE", "patterns": ["保証", "必ず結果が出る", "必ず○○できる"], "target_objections": ["O1_ABILITY", "O8_CONTINUITY"], "required_evidence_types": ["GUARANTEE_POLICY", "RESULT_CASE"]},
+    {"claim_id": "GUARANTEE", "patterns": ["保証", "必ず結果が出る", "必ず○○できる", "絶対に治ります", "必ず治る", "必ず効果"], "target_objections": ["O1_ABILITY", "O8_CONTINUITY"], "required_evidence_types": ["GUARANTEE_POLICY", "RESULT_CASE"]},
     {"claim_id": "UNSOURCED_RANK", "patterns": ["地域No\\.1", "業界No\\.1", "日本一", "No\\.1"], "target_objections": ["O1_ABILITY"], "required_evidence_types": ["VERIFIED_METRIC", "RANKING_SOURCE"]},
     {"claim_id": "UNSOURCED_SATISFACTION", "patterns": ["お客様満足度", "満足度が高い"], "target_objections": ["O1_ABILITY", "O7_RISK"], "required_evidence_types": ["VERIFIED_METRIC", "TESTIMONIAL"]},
 ]
