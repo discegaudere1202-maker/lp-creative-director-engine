@@ -802,7 +802,9 @@ def _visual_scene_markup(scene: str) -> str:
         "machine_craft": '<div class="scene-object"></div>',
         "local_route": '<div class="scene-route"></div><div class="scene-pin"></div><div class="scene-pin"></div>',
     }
-    # Replacement metadata stays machine-readable; internal production labels\n    # must never leak into a customer-facing sales sample.\n    return f'<div class="visual-scene scene-{scene}" data-visual-source="engine_generated_vector_scene" data-photo-replacement="same-role-approved-real-image" aria-hidden="true">{bodies[scene]}</div>'
+    # Replacement metadata stays machine-readable; internal production labels
+    # must never leak into a customer-facing sales sample.
+    return f'<div class="visual-scene scene-{scene}" data-visual-source="engine_generated_vector_scene" data-photo-replacement="same-role-approved-real-image" aria-hidden="true">{bodies[scene]}</div>'
 
 
 def render_html(spec: Mapping[str, Any]) -> str:
