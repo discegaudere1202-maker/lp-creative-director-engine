@@ -122,7 +122,7 @@ def process_candidate(c: SalesCandidate, out: Path) -> dict[str,Any]:
     if errors or gate!="PASS" or not c.sales_production_ready:
         status="SALES_EXCLUDED" if gate=="EXCLUDE" or c.master_status=="除外" else "SALES_HOLD"
         (out/"sales_block.json").write_text(json.dumps({"status":status,"reasons":errors or [c.exclusion_reason or "not production ready"]},ensure_ascii=False,indent=2),encoding="utf-8")
-        return {"state":"BLOCKED" if status=="SALES_EXCLUDED" else "HOLD","sales_status":status,"safety":{"status":"NOT_RUN","bypass":False,"rights_bypass":False},"qa":{"status":"NOT_RUN"},"quality":{"premium_gate":"NOT_RUN"}}
+        return {"state":"BLOCKED" if status=="SALES_EXCLUDED" else "HOLD","generation_id":"","sales_status":status,"safety":{"status":"NOT_RUN","bypass":False,"rights_bypass":False},"qa":{"status":"NOT_RUN"},"quality":{"premium_gate":"NOT_RUN","sales_status":status}}
     research=build_research(c); inp=build_input(c,research)
     (out/"research.json").write_text(json.dumps(research,ensure_ascii=False,indent=2),encoding="utf-8")
     (out/"production_input.json").write_text(json.dumps(inp,ensure_ascii=False,indent=2),encoding="utf-8")
@@ -140,7 +140,7 @@ def process_candidate(c: SalesCandidate, out: Path) -> dict[str,Any]:
         (out/name).write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
     (out/"manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
     axes={axis:4.0 for axis in AXES}
-    return {"state":"COMPLETED" if sales=="SALES_READY" else "HOLD","sales_status":sales,"generation_id":result.generation_id,"artifact_id":"artifact_"+c.sales_candidate_id,"safety":{"status":safety.get("safety_status"),"bypass":False,"rights_bypass":False},"qa":qa,"quality":{"axes":axes,"premium_score":4.0,"premium_gate":premium,"layout_profile":result.stage_outputs.get("creative_strategy",{}).get("layout_profile","editorial_rail"),"peak_count":len(peaks)},"sales_package":manifest}
+    return {"state":"COMPLETED" if sales=="SALES_READY" else "HOLD","sales_status":sales,"generation_id":result.generation_id,"artifact_id":"artifact_"+c.sales_candidate_id,"safety":{"status":safety.get("safety_status"),"bypass":False,"rights_bypass":False},"qa":qa,"quality":{"axes":axes,"premium_score":4.0,"premium_gate":premium,"sales_status":sales,"layout_profile":result.stage_outputs.get("creative_strategy",{}).get("layout_profile","editorial_rail"),"peak_count":len(peaks)},"sales_package":manifest}
 
 def dedupe(candidates):
     seen=set(); out=[]
