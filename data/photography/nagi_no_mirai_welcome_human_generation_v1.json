@@ -1,1 +1,166 @@
-{"schema_version":"round1d_generated_visual_review_v1","company":{"lead_id":"R4-G005-002","company_name":"なぎのみらい"},"starting_live_main":"d17a836079e8d01b6aa4283f52a16e26b37f2ce3","generation_date":"2026-09-16","photo_role":"welcome_human","generation_count":2,"status":"HOLD","ssot":"data/photography/nagi_no_mirai_asset_selection_v1.json","attempts":[{"attempt":1,"gen_id":"7d537456-ee79-483c-9872-68e51b66d95f","session_file":"a_cozy_softly_lit_indoor_consultation_scene_in_a.png","review":{"human_naturalness":"PASS","japanese_market_fit":"PASS","small_salon_fit":"PASS","trust_contribution":"PASS","consultation_vs_therapy_confusion":"HOLD","hair_salon_confusion":"PASS","ai_smell":"PASS","hands_fingers":"PASS","facial_expression":"HOLD","pre_cta_usability":"HOLD","replacement_compatibility":"PASS","one_million_yen_lp_use":"HOLD"},"notes":"小規模サロンの距離感、施術ベッドの軽い背景文脈、二人の向き合い方は自然で、心理相談や美容室への誤認は強くない。手指や家具の大きなAI破綻も目立たない。一方、スタッフ側のクリップボードとペンがSSOTの禁止要素に抵触し、相談というより記録・問診・営業面談のニュアンスを足している。表情も少し広告モデル的で、CTA前Trust画像としては作り込み感が残る。"},{"attempt":2,"gen_id":"e5d0c4cf-5d41-4593-a23f-da4ab4ca84be","session_file":"interior_cozy_consultation_scene_in_a_softly_lit.png","review":{"human_naturalness":"PASS","japanese_market_fit":"PASS","small_salon_fit":"PASS","trust_contribution":"PASS","consultation_vs_therapy_confusion":"HOLD","hair_salon_confusion":"PASS","ai_smell":"PASS","hands_fingers":"PASS","facial_expression":"HOLD","pre_cta_usability":"FAIL","replacement_compatibility":"PASS","one_million_yen_lp_use":"FAIL"},"notes":"空間は日本の小規模サロンとして自然で、施術ベッドも背景に留まっている。ただし再生成でもクリップボードとペンがより中央・明瞭に残り、禁止していた診察・カウンセリング・営業面談の記号が強まった。スタッフの笑顔もやや広告モデル的で、1案目よりGeneric Stock感が増えた。"}],"preferred_attempt":1,"selected_asset":null,"approval_status":"HOLD_VISUAL_REVIEW","reason":"最大2案を比較したが、どちらもSSOTで禁止したクリップボード/診察的な記録行為が残り、『初めてでもちゃんと話を聞いてもらえそう』という人間的Trustより、形式的な相談・問診の印象が強い。方向性自体は近いが、100万円価値の営業サンプルLPへそのまま採用する基準には未達。","required_future_adjustment":["クリップボード・ペン・問診票を完全に除外する","二人の手は膝上や自然なジェスチャーに留める","スタッフの笑顔を弱め、傾聴中心の穏やかな表情にする","施術ベッドは背景にごく軽く残しつつ美容室・医療・心理相談の記号を入れない","片側にCTA前配置用の自然な余白を確保する","実スタッフ・実顧客・実店舗・実相談とは表現しない"],"metadata_template_for_future_primary":{"asset_id":"nagi-welcome-human-generated-v1","photo_role":"welcome_human","source_type":"generated","generation_date":"2026-09-16","visual_subject":"日本の小規模ヘッドスパを想起させる室内で、成人女性2名が同じ高さで穏やかに向き合い、初回来店時の話しやすさと安心を伝える場面","placement":"pre_cta_trust_image","crop":"50% 50%","alt":"小規模サロンで穏やかに話を聞く場面を想起させるイメージ","replacement_target":"なぎのみらいの実スタッフ・実相談風景","factual_implication_boundary":["実スタッフと表現しない","実顧客と表現しない","実店舗と表現しない","実際の相談風景と表現しない","医療相談・心理相談・治療行為を示唆しない"],"approval_status":"RESEARCH_APPROVED_GENERATED_VISUAL only after future PASS"}}
+{
+  "schema_version": "round1d_generated_visual_review_v1",
+  "company": {
+    "lead_id": "R4-G005-002",
+    "company_name": "なぎのみらい"
+  },
+  "starting_live_main": "d17a836079e8d01b6aa4283f52a16e26b37f2ce3",
+  "latest_revision_starting_live_main": "56f84b4e564c91009e57d0e7de482454908749ec",
+  "generation_date": "2026-09-16",
+  "photo_role": "welcome_human",
+  "generation_count": 3,
+  "status": "PASS",
+  "ssot": "data/photography/nagi_no_mirai_asset_selection_v1.json",
+  "attempts": [
+    {
+      "attempt": 1,
+      "gen_id": "7d537456-ee79-483c-9872-68e51b66d95f",
+      "session_file": "a_cozy_softly_lit_indoor_consultation_scene_in_a.png",
+      "review": {
+        "human_naturalness": "PASS",
+        "japanese_market_fit": "PASS",
+        "small_salon_fit": "PASS",
+        "trust_contribution": "PASS",
+        "consultation_vs_therapy_confusion": "HOLD",
+        "hair_salon_confusion": "PASS",
+        "ai_smell": "PASS",
+        "hands_fingers": "PASS",
+        "facial_expression": "HOLD",
+        "pre_cta_usability": "HOLD",
+        "replacement_compatibility": "PASS",
+        "one_million_yen_lp_use": "HOLD"
+      },
+      "notes": "小規模サロンの距離感、施術ベッドの軽い背景文脈、二人の向き合い方は自然で、心理相談や美容室への誤認は強くない。手指や家具の大きなAI破綻も目立たない。一方、スタッフ側のクリップボードとペンがSSOTの禁止要素に抵触し、相談というより記録・問診・営業面談のニュアンスを足している。表情も少し広告モデル的で、CTA前Trust画像としては作り込み感が残る。"
+    },
+    {
+      "attempt": 2,
+      "gen_id": "e5d0c4cf-5d41-4593-a23f-da4ab4ca84be",
+      "session_file": "interior_cozy_consultation_scene_in_a_softly_lit.png",
+      "review": {
+        "human_naturalness": "PASS",
+        "japanese_market_fit": "PASS",
+        "small_salon_fit": "PASS",
+        "trust_contribution": "PASS",
+        "consultation_vs_therapy_confusion": "HOLD",
+        "hair_salon_confusion": "PASS",
+        "ai_smell": "PASS",
+        "hands_fingers": "PASS",
+        "facial_expression": "HOLD",
+        "pre_cta_usability": "FAIL",
+        "replacement_compatibility": "PASS",
+        "one_million_yen_lp_use": "FAIL"
+      },
+      "notes": "空間は日本の小規模サロンとして自然で、施術ベッドも背景に留まっている。ただし再生成でもクリップボードとペンがより中央・明瞭に残り、禁止していた診察・カウンセリング・営業面談の記号が強まった。スタッフの笑顔もやや広告モデル的で、1案目よりGeneric Stock感が増えた。"
+    },
+    {
+      "attempt": 3,
+      "gen_id": "f06d5132-017f-4227-94ae-a1d511021055",
+      "conversation_file_id": "file_0000000052f081f59bc1135494d1fa92",
+      "session_file": "穏やかなスパ個室での対話.png",
+      "review": {
+        "human_naturalness": "PASS",
+        "japanese_market_fit": "PASS",
+        "small_salon_fit": "PASS",
+        "trust_contribution": "PASS",
+        "consultation_vs_therapy_confusion": "PASS",
+        "medical_confusion": "PASS",
+        "hair_salon_confusion": "PASS",
+        "ai_smell": "PASS",
+        "hands_fingers": "PASS",
+        "facial_expression": "PASS",
+        "generic_stock_smell": "PASS",
+        "pre_cta_usability": "PASS",
+        "replacement_compatibility": "PASS",
+        "one_million_yen_lp_use": "PASS"
+      },
+      "notes": "clipboard、pen、paper、questionnaire等の記録物と記録行為を排除し、二人の手は自然に膝上へ置かれている。表情は宣材写真的な大笑顔ではなく穏やかな傾聴と軽い微笑みに留まり、互いに同じ高さで自然に向き合う。背景の施術ベッドとタオルがHead Spa文脈を軽く補強する一方、医療問診・心理カウンセリング・営業商談・美容室相談に結びつく記号はない。右側にCTA前配置へ使える自然なQuiet Areaも確保でき、『形式的な相談』ではなく『初めてでも自然に話せそうな人間的Trust』として成立している。"
+    }
+  ],
+  "preferred_attempt": 3,
+  "revision_attempt": {
+    "round": "Round 1D-2C-R / Round 1D-2C-SAVE",
+    "attempted": true,
+    "generated_count_this_round": 1,
+    "result": "PASS",
+    "note": "Root Causeだったclipboard・pen・paper・questionnaire・記録行為を完全に除去したRevisionをHuman Reviewし、指定14項目を全てPASSとしてPRIMARYへ確定。SAVE工程では新規画像生成を行っていない。"
+  },
+  "selected_asset": {
+    "asset_id": "nagi-welcome-human-generated-v1",
+    "photo_role": "welcome_human",
+    "source_type": "generated",
+    "generation_date": "2026-09-16",
+    "gen_id": "f06d5132-017f-4227-94ae-a1d511021055",
+    "conversation_file_id": "file_0000000052f081f59bc1135494d1fa92",
+    "session_file": "穏やかなスパ個室での対話.png",
+    "visual_subject": "日本の小規模なドライヘッドスパを想起させる昼間の室内で、成人女性2名が同じ高さで穏やかに向き合い、何も記録せず自然に話を聞く人間的な距離感と初回来店時の安心を伝えるイメージ",
+    "placement": "pre_cta_trust_image",
+    "crop": "landscape 4:3; preserve both women on the left-to-center and approximately 25-35% quiet wall area on the right for CTA-adjacent layout",
+    "alt": "小規模なヘッドスパを想起させる室内で、二人の女性が穏やかに向き合い自然に話す安心感のイメージ",
+    "replacement_target": "なぎのみらいの実スタッフ・実相談風景",
+    "factual_implication_boundary": [
+      "実スタッフと表現しない",
+      "実顧客と表現しない",
+      "実店舗と表現しない",
+      "実際の相談風景と表現しない",
+      "医療相談・心理相談・治療行為を示唆しない"
+    ],
+    "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL"
+  },
+  "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+  "reason": "今回のRevisionでは、既存HOLDの最大原因だったclipboard・pen・paper・questionnaire等を完全に排除し、記録行為そのものをなくした。二人の手は膝上で自然に保たれ、表情も穏やかな傾聴と軽い微笑みに留まる。施術ベッドは背景のHead Spa contextとしてのみ存在し、医療・心理相談・営業面談・Hair Salon Consultationの記号を持たない。CTA直前に必要な右側Quiet Areaも確保され、『相談している人』ではなく『初めてでも自然に話せそうで、押しつけられなさそうな人間的Trust』が成立したため、100万円価値の営業サンプルLP用PRIMARYとしてPASS確定。",
+  "required_future_adjustment": [],
+  "metadata_template_for_future_primary": null,
+  "generated_asset_phase": {
+    "status": "COMPLETE",
+    "audit_date": "2026-09-16",
+    "remaining_generated_hold_count": 0,
+    "remaining_generated_hold_roles": [],
+    "all_generated_required_resolved": true,
+    "generated_required_audit": [
+      {
+        "company": "Maylynn Paint",
+        "photo_role": "hero_home_finish",
+        "result": "PASS",
+        "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "source_file": "data/photography/maylynn_paint_hero_home_finish_generated_v1.json"
+      },
+      {
+        "company": "なぎのみらい",
+        "photo_role": "hero_treatment_space",
+        "result": "PASS",
+        "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "source_file": "data/photography/nagi_no_mirai_hero_generated_v1.json"
+      },
+      {
+        "company": "なぎのみらい",
+        "photo_role": "sensory_detail",
+        "result": "PASS",
+        "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "source_file": "data/photography/nagi_no_mirai_sensory_detail_generation_v1.json"
+      },
+      {
+        "company": "なぎのみらい",
+        "photo_role": "welcome_human",
+        "result": "PASS",
+        "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "source_file": "data/photography/nagi_no_mirai_welcome_human_generation_v1.json"
+      },
+      {
+        "company": "わたしの台所",
+        "photo_role": "hero_shared_cooking",
+        "result": "PASS",
+        "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "source_file": "data/photography/watashi_no_daidokoro_hero_shared_cooking_generation_v1.json"
+      },
+      {
+        "company": "わたしの台所",
+        "photo_role": "finished_table",
+        "result": "PASS",
+        "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "source_file": "data/photography/watashi_no_daidokoro_finished_table_generation_v1.json"
+      }
+    ],
+    "note": "Maylynn Paint 1Role、なぎのみらい3Role、わたしの台所2Roleの全6 GENERATED_REQUIRED Roleをlive main基準で再監査し、全てPASS / RESEARCH_APPROVED_GENERATED_VISUALを確認。Remaining Generated HOLD = 0 のためGenerated Asset PhaseをCOMPLETEとする。"
+  },
+  "image_repository_note": "Generated binary image was produced in the prior chat turn and is identified by gen_id, conversation_file_id and session_file. This SAVE step records the approved metadata and final phase audit; no new image was generated."
+}
