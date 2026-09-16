@@ -2,117 +2,49 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from lp_engine.batch import BatchInput, BatchRegistry, DeterministicBatchError, TransientBatchError, aggregate_quality, run_batch
 
-from lp_engine.batch import (
-    BatchItem,
-    BatchOrchestrator,
-    BatchProcessingError,
-    BatchRegistry,
-    BatchValidationError,
-    validate_batch_items,
-)
+def inputs(batch_id, n):
+    return [BatchInput(batch_id, f"item-{i}", f"company-{i}", f"Company {i}", (f"https://example.test/{i}",), ["建設", "美容", "士業", "飲食", "教育"][i % 5], "福岡", ["inquiry", "reservation", "quote", "purchase", "application"][i % 5], ["LOW", "MEDIUM", "HIGH"][i % 3]) for i in range(n)]
 
+class BatchTest(unittest.TestCase):
+    def test_stage_a_completes_with_isolated_outputs_and_browser_qa(self):
+        with tempfile.TemporaryDirectory() as d:
+            registry = BatchRegistry(d)
+            def process(inp, out):
+                out.mkdir(parents=True); (out / "index.html").write_text(f"<h1>{inp.company_name}</h1>")
+                return {"generation_id": f"gen-{inp.item_id}", "artifact_id": f"art-{inp.item_id}", "quality": {"premium_score": 4.1 + int(inp.item_id[-1]) / 100, "layout_profile": f"profile-{int(inp.item_id[-1]) % 5}"}}
+            m = run_batch(batch_id="stage-a", inputs=inputs("stage-a", 10), registry=registry, processor=process, engine_version="batch-engine-v1", browser_qa=lambda i, o: {"status":"PASS"})
+            self.assertEqual((m.state, m.success_count, m.failed_count), ("COMPLETED", 10, 0)); self.assertEqual(aggregate_quality(registry)["browser_qa"], 10)
+            for item in registry.items.values(): self.assertEqual(Path(item.output_dir, "index.html").read_text(), f"<h1>{item.company_name}</h1>")
 
-def make_item(batch_id: str, index: int, *, company_id: str | None = None) -> BatchItem:
-    company_id = company_id or f"p5-company-{index:03d}"
-    payload = {
-        "company_id": company_id,
-        "company": {
-            "company_name": f"TEST_ONLY Company {index:03d}",
-            "industry": "test",
-            "location": f"福岡市テスト区{index}",
-        },
-    }
-    return BatchItem(
-        batch_id=batch_id,
-        item_id=f"item-{index:03d}",
-        company_id=company_id,
-        company_name=payload["company"]["company_name"],
-        source_urls=[f"synthetic://phase5/{index:03d}"],
-        industry="test",
-        location=payload["company"]["location"],
-        conversion_goal="inquiry",
-        evidence_density="MEDIUM",
-        input_version="test-input-v1",
-        input_payload=payload,
-        test_only=True,
-    )
+    def test_resume_does_not_regenerate_completed_items(self):
+        with tempfile.TemporaryDirectory() as d:
+            registry = BatchRegistry(d); calls = []
+            def process(inp, out): calls.append(inp.item_id); out.mkdir(parents=True, exist_ok=True); return {"quality":{"premium_score":4,"layout_profile":"x"}}
+            run_batch(batch_id="resume", inputs=inputs("resume", 10), registry=registry, processor=process, engine_version="v1", stop_after=4)
+            registry2 = BatchRegistry(d); registry2.load("resume")
+            run_batch(batch_id="resume", inputs=inputs("resume", 10), registry=registry2, processor=process, engine_version="v1")
+            self.assertEqual(len(calls), 10); self.assertEqual(registry2.manifest.success_count, 10)
 
+    def test_transient_retry_and_deterministic_block_are_isolated(self):
+        with tempfile.TemporaryDirectory() as d:
+            registry = BatchRegistry(d); attempts = {}
+            def process(inp, out):
+                if inp.item_id == "item-0":
+                    attempts[inp.item_id] = attempts.get(inp.item_id, 0) + 1
+                    if attempts[inp.item_id] == 1: raise TransientBatchError("temporary")
+                if inp.item_id == "item-1": raise DeterministicBatchError("rights unknown", "RIGHTS_BLOCK", "BLOCKED")
+                return {"quality":{"premium_score":4,"layout_profile":"x"}}
+            m = run_batch(batch_id="failure", inputs=inputs("failure", 3), registry=registry, processor=process, engine_version="v1", max_retries=1)
+            self.assertEqual(m.success_count, 2); self.assertEqual(m.blocked_count, 1); self.assertEqual(registry.items["item-0"].retry_count, 1); self.assertEqual(registry.items["item-1"].failure_type, "RIGHTS_BLOCK")
 
-class BatchContractTest(unittest.TestCase):
-    def test_duplicate_identity_is_rejected(self):
-        items = [make_item("batch", 1), make_item("batch", 2, company_id="p5-company-001")]
-        with self.assertRaises(BatchValidationError):
-            validate_batch_items(items)
+    def test_duplicate_submission_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as d:
+            registry = BatchRegistry(d); calls = []
+            def process(inp, out): calls.append(inp.item_id); return {}
+            run_batch(batch_id="same", inputs=inputs("same", 3), registry=registry, processor=process, engine_version="v1")
+            run_batch(batch_id="same", inputs=inputs("same", 3), registry=registry, processor=process, engine_version="v1")
+            self.assertEqual(len(calls), 3)
 
-    def test_idempotency_resume_and_checkpoint(self):
-        calls: list[str] = []
-
-        def processor(item, output_dir, attempt):
-            calls.append(item.item_id)
-            output_dir.mkdir(parents=True, exist_ok=True)
-            (output_dir / "generation_manifest.json").write_text(json.dumps({"company_id": item.company_id, "evidence_used": []}), encoding="utf-8")
-            return {"status": "COMPLETED", "project_id": f"project-{item.item_id}", "generation_id": f"generation-{item.item_id}", "qa_status": "PASS"}
-
-        with tempfile.TemporaryDirectory() as temp:
-            registry = BatchRegistry(temp)
-            orchestrator = BatchOrchestrator(registry, processor, engine_version="test-engine")
-            orchestrator.create_batch("batch", [make_item("batch", 1), make_item("batch", 2)])
-            first = orchestrator.run_batch("batch")
-            second = orchestrator.run_batch("batch")
-            recovered = registry.recover("batch")
-            self.assertEqual(first["manifest"]["success_count"], 2)
-            self.assertEqual(second["manifest"]["success_count"], 2)
-            self.assertEqual(calls, ["item-001", "item-002"])
-            self.assertEqual(len(recovered["items"]), 2)
-
-    def test_retry_is_bounded_and_non_retryable_block_isolated(self):
-        attempts: dict[str, int] = {}
-
-        def processor(item, output_dir, attempt):
-            attempts[item.item_id] = attempt
-            if item.item_id == "item-001" and attempt == 1:
-                raise BatchProcessingError("temporary browser error", "BROWSER_ERROR")
-            if item.item_id == "item-002":
-                raise BatchProcessingError("claim lacks evidence", "SAFETY_BLOCK", terminal_state="BLOCKED")
-            output_dir.mkdir(parents=True, exist_ok=True)
-            (output_dir / "generation_manifest.json").write_text(json.dumps({"company_id": item.company_id, "evidence_used": []}), encoding="utf-8")
-            return {"status": "COMPLETED", "project_id": f"project-{item.item_id}", "generation_id": f"generation-{item.item_id}"}
-
-        with tempfile.TemporaryDirectory() as temp:
-            registry = BatchRegistry(temp)
-            orchestrator = BatchOrchestrator(registry, processor, max_retries=2)
-            orchestrator.create_batch("batch", [make_item("batch", 1), make_item("batch", 2), make_item("batch", 3)])
-            report = orchestrator.run_batch("batch")
-            statuses = {item["item_id"]: item["status"] for item in report["items"]}
-            self.assertEqual(statuses, {"item-001": "COMPLETED", "item-002": "BLOCKED", "item-003": "COMPLETED"})
-            self.assertEqual(attempts["item-001"], 2)
-            self.assertEqual(report["manifest"]["retry_count"], 1)
-            self.assertEqual(report["isolation"]["status"], "PASS")
-
-    def test_targeted_retry_does_not_regenerate_completed_items(self):
-        calls: list[str] = []
-        permanent = {"item-001": True}
-
-        def processor(item, output_dir, attempt):
-            calls.append(item.item_id)
-            if item.item_id == "item-001" and permanent[item.item_id]:
-                raise BatchProcessingError("temporary generation failure", "GENERATION_ERROR")
-            output_dir.mkdir(parents=True, exist_ok=True)
-            (output_dir / "generation_manifest.json").write_text(json.dumps({"company_id": item.company_id, "evidence_used": []}), encoding="utf-8")
-            return {"status": "COMPLETED", "project_id": f"project-{item.item_id}", "generation_id": f"generation-{item.item_id}"}
-
-        with tempfile.TemporaryDirectory() as temp:
-            registry = BatchRegistry(temp)
-            orchestrator = BatchOrchestrator(registry, processor, max_retries=0)
-            orchestrator.create_batch("batch", [make_item("batch", 1), make_item("batch", 2)])
-            first = orchestrator.run_batch("batch")
-            self.assertEqual(first["manifest"]["failed_count"], 1)
-            permanent["item-001"] = False
-            orchestrator.retry_items("batch", ["item-001"])
-            self.assertEqual(calls, ["item-001", "item-002", "item-001"])
-            self.assertEqual(registry.load_job("batch").status, "COMPLETED")
-
-
-if __name__ == "__main__":
-    unittest.main()
+if __name__ == "__main__": unittest.main()

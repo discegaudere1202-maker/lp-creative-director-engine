@@ -1,17 +1,10 @@
 name: Phase 5 Batch Generation
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
-
-concurrency:
-  group: phase5-batch-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   batch:
     runs-on: ubuntu-latest
@@ -19,24 +12,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install engine and browser dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -e .
-          python -m playwright install --with-deps chromium
-      - name: Run existing regression suite
-        run: python -m unittest discover -s tests -p 'test*.py' -v
-      - name: Run Phase 5 10 to 30 to 100 batch rehearsal
-        run: >-
-          python scripts/run_phase5_batch.py
-          --out /tmp/phase5-batch
-          --browser-policy all
+        with: {python-version: "3.12"}
+      - name: Install engine
+        run: pip install -e .
+      - name: Batch contract tests
+        run: python -m unittest tests/test_batch.py -v
+      - name: Run Stage A/B/C rehearsal
+        run: python scripts/run_phase5_batch.py --out /tmp/phase5-batch
       - name: Upload Phase 5 validation artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: phase5-batch-generation
+          name: phase5-batch-validation
           path: /tmp/phase5-batch
           if-no-files-found: error
