@@ -24,7 +24,7 @@ class ProductionGenerationTest(unittest.TestCase):
             self.assertEqual(result.safety_report["safety_status"], "PASS")
             self.assertEqual(set(result.stage_outputs), {
                 "company_understanding", "creative_strategy", "information_architecture", "copy",
-                "form_causality_manifest", "art_direction", "design_tokens", "compositions", "render_spec",
+                "form_causality_manifest", "photo_role_map", "asset_manifest", "art_direction", "design_tokens", "compositions", "render_spec",
             })
             self.assertTrue((tmp_path / "andy" / "index.html").exists())
             manifest = json.loads((tmp_path / "andy" / "generation_manifest.json").read_text(encoding="utf-8"))

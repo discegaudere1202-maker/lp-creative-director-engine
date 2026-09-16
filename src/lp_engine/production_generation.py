@@ -20,6 +20,15 @@ from typing import Any, Mapping, Sequence
 
 from .evidence_safety import evaluate_evidence_selection
 from .hearing import plan_hearing
+from .photography import (
+    build_asset_manifest,
+    build_photo_role_map,
+    connect_photo_roles_to_compositions,
+    guard_fake_evidence_copy,
+    photography_css,
+    render_photo_asset,
+    select_asset_for_role,
+)
 
 
 SCHEMA_VERSION = "production_generation_v1"
@@ -834,9 +843,15 @@ def render_html(spec: Mapping[str, Any]) -> str:
     cta = _esc(hero["cta"])
     contact = dict(company.get("contact_channels") or {})
     contact_href = _esc(contact.get("href") or "#contact")
-    scene_markup = _visual_scene_markup(_text(art.get("visual_scene")))
+    photo_role_map = dict(spec.get("photo_role_map") or {})
+    asset_manifest = dict(spec.get("asset_manifest") or {})
+    hero_role = _text((photo_role_map.get("section_role_map") or {}).get("hero_orientation"))
+    hero_asset = select_asset_for_role(asset_manifest, hero_role) if hero_role else None
+    photo_markup = render_photo_asset(hero_asset)
+    vector_markup = _visual_scene_markup(_text(art.get("visual_scene")))
+    scene_markup = photo_markup or f'<div data-vector-role="supporting_only">{vector_markup}</div>'
     return f'''<!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>{name}｜{_esc(hero["headline"])}</title><style>{_render_styles(tokens)}</style></head>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>{name}｜{_esc(hero["headline"])}</title><style>{_render_styles(tokens)}{photography_css()}</style></head>
 <body class="page-{_esc(profile)}"><div class="site-shell">
 <header class="topline"><span>{name}</span><span>{location}</span></header>
 <main>
@@ -894,12 +909,36 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     understanding = build_company_understanding(raw, approved)
     strategy = build_creative_strategy(understanding, approved)
     ia = build_information_architecture(understanding, strategy, approved)
-    copy = build_copy(understanding, strategy, ia, approved)
+    copy = guard_fake_evidence_copy(build_copy(understanding, strategy, ia, approved), approved)
+    photo_role_map = build_photo_role_map(understanding, strategy, ia)
+    asset_manifest = build_asset_manifest(raw.get("photo_assets") or [], photo_role_map)
+    understanding["photo_replacement_readiness"] = {
+        **dict(understanding.get("photo_replacement_readiness") or {}),
+        "proxy_role": "role_selected_photography_asset",
+        "source_priority": ["free_stock", "generated", "vector"],
+        "vector_role": "supporting_only",
+    }
     art = build_art_direction(understanding, strategy)
+    art["photo_role_map"] = photo_role_map
+    art["asset_selection_policy"] = {
+        "priority": ["free_stock", "generated", "vector"],
+        "vector_role": "supporting_only_not_primary_photography",
+    }
+    art["visual_source"] = "photography_pipeline"
+    art["vector_role"] = "supporting_only"
+    art["photography_logic"] = "Role-driven photography is the primary visual authority; vector scenes are support only."
     tokens = build_design_tokens(art)
-    compositions = build_compositions(ia, art)
+    base_compositions = build_compositions(ia, art)
+    ia_by_id = {_text(item.get("section_id")): item for item in ia}
+    compositions_with_roles = [
+        {**item, "section_role": _text(ia_by_id.get(_text(item.get("section_id")), {}).get("section_role"))}
+        for item in base_compositions
+    ]
+    compositions = connect_photo_roles_to_compositions(compositions_with_roles, photo_role_map, asset_manifest)
     render_spec = build_render_spec(understanding, strategy, ia, copy, art, tokens, compositions, safety)
     render_spec["approved_evidence"] = approved
+    render_spec["photo_role_map"] = photo_role_map
+    render_spec["asset_manifest"] = asset_manifest
     generation_id = generation_id or f"gen-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}-{_input_digest(raw)[:8]}"
     output = Path(output_dir)
     output.mkdir(parents=True, exist_ok=True)
@@ -913,6 +952,8 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         },
         "information_architecture": ia,
         "copy": copy,
+        "photo_role_map": photo_role_map,
+        "asset_manifest": asset_manifest,
         "art_direction": art,
         "design_tokens": tokens,
         "compositions": compositions,
@@ -934,6 +975,8 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         "input_digest": _input_digest(raw),
         "input_references": {"input_file": _text(raw.get("input_file")) or "inline_fixture", "source_urls": understanding["source_references"]},
         "strategy_output": "creative_strategy.json",
+        "photo_role_map_output": "photo_role_map.json",
+        "asset_manifest_output": "asset_manifest.json",
         "evidence_used": [
             {
                 "claim": item.get("claim"),
