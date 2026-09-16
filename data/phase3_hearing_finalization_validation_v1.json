@@ -39,11 +39,11 @@
     "final_qa": true
   },
   "final_validation": {
-    "commit": "7fb0a634346dca83d917e34887677265ec0802e9",
-    "phase3_workflow_run": 35045649686,
-    "phase3_run_number": 7,
-    "artifact_id": 10426747868,
-    "artifact_digest": "sha256:a0424f23e05cce568777c35083dd760a9fa17ca920f5a5f63d957710e99daa7f",
+    "commit": "d5fb829edfbadc9b352bd548cbc685385be2c59c",
+    "phase3_workflow_run": 35045873428,
+    "phase3_run_number": 9,
+    "artifact_id": 10426727068,
+    "artifact_digest": "sha256:f9eae2255b76db94ebcad8539b9e6e3be060858460b2e97c1bad0ea69fa5f795",
     "browser_qa": "PASS",
     "browser_qa_widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
     "exact_capture": ["1440x1000", "390x844"],

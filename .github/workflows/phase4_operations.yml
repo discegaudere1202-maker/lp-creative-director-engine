@@ -1,0 +1,37 @@
+name: Phase 4 Production Operations
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  operations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine
+        run: pip install -e .
+      - name: Install browser
+        run: python -m playwright install --with-deps chromium
+      - name: Run Operations lifecycle tests
+        run: python -m unittest tests/test_operations.py -v
+      - name: Run Phase 4 simulation and real-fixture dry runs
+        run: >-
+          python scripts/run_phase4_operations.py
+          --out /tmp/phase4-operations
+          --browser-qa
+      - name: Upload Phase 4 validation artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase4-production-operations
+          path: /tmp/phase4-operations
+          if-no-files-found: error
