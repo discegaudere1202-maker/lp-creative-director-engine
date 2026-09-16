@@ -5,7 +5,7 @@ import json
 import re
 import base64
 import struct
-from urllib.parse import quote as urlquote
+from urllib.parse import quote as urlquote, urlparse
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
@@ -36,11 +36,13 @@ class ViewportResult:
     line_issues: list[TextLineIssue] = field(default_factory=list)
     console_errors: list[str] = field(default_factory=list)
     page_errors: list[str] = field(default_factory=list)
+    request_failures: list[str] = field(default_factory=list)
+    non_critical_console_events: list[str] = field(default_factory=list)
     screenshot: str = ""
 
     @property
     def status(self) -> str:
-        if self.horizontal_overflow_px > 1 or self.line_issues or self.console_errors or self.page_errors:
+        if self.horizontal_overflow_px > 1 or self.line_issues or self.console_errors or self.page_errors or self.request_failures:
             return "FAIL"
         return "PASS"
 
@@ -239,6 +241,13 @@ def _jpeg_size(data: bytes) -> tuple[int, int] | None:
     return None
 
 
+def classify_resource_error(url: str, status: int) -> str:
+    """Classify failed responses without weakening required-resource gates."""
+    if urlparse(url).path.lower() == "/favicon.ico" and status == 404:
+        return "BENIGN_NON_CRITICAL_RESOURCE"
+    return "CRITICAL_RESOURCE_ERROR"
+
+
 def _embedded_image_size(uri: str) -> tuple[int, int]:
     try:
         head, payload = uri.split(',', 1)
@@ -290,19 +299,40 @@ async def _load_source(page, prepared: dict[str, str], lightweight: bool = False
 async def _viewport_check(browser, prepared: dict[str, str], width: int, height: int, out_dir: Path, text_selector: str, capture_screenshot: bool = False) -> ViewportResult:
     console_errors: list[str] = []
     page_errors: list[str] = []
+    request_failures: list[str] = []
+    non_critical: list[str] = []
+    benign_favicon_404_seen = False
 
     page = await browser.new_page(viewport={"width": width, "height": height})
     await page.emulate_media(reduced_motion="reduce")
 
     def on_console(msg):
+        nonlocal benign_favicon_404_seen
         if msg.type == "error":
-            console_errors.append(msg.text)
+            if benign_favicon_404_seen and "404" in msg.text and "Failed to load resource" in msg.text:
+                non_critical.append(msg.text)
+            else:
+                console_errors.append(msg.text)
 
     def on_page_error(exc):
         page_errors.append(str(exc))
 
+    def on_response(response):
+        nonlocal benign_favicon_404_seen
+        if response.status >= 400:
+            if classify_resource_error(response.url, response.status) == "BENIGN_NON_CRITICAL_RESOURCE":
+                benign_favicon_404_seen = True
+                non_critical.append(f"{response.status} {response.url}")
+            else:
+                console_errors.append(f"{response.status} {response.url}")
+
+    def on_request_failed(request):
+        request_failures.append(f"{request.method} {request.url}: {request.failure}")
+
     page.on("console", on_console)
     page.on("pageerror", on_page_error)
+    page.on("response", on_response)
+    page.on("requestfailed", on_request_failed)
     await _load_source(page, prepared, lightweight=not capture_screenshot)
 
     dims = await page.evaluate("""
@@ -341,6 +371,8 @@ async def _viewport_check(browser, prepared: dict[str, str], width: int, height:
         line_issues=line_issues,
         console_errors=console_errors,
         page_errors=page_errors,
+        request_failures=request_failures,
+        non_critical_console_events=non_critical,
         screenshot=screenshot_value,
     )
 

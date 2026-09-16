@@ -16,6 +16,33 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "artifacts/round1e_c"
 CASES = {"maylynn_paint": ["hero_home_finish", "craft_handwork", "material_detail", "trust_consultation"], "nagi_no_mirai": ["hero_treatment_space", "hand_technique", "sensory_detail", "welcome_human"], "watashi_no_daidokoro": ["hero_shared_cooking", "ingredient_story", "hands_in_action", "finished_table"]}
 
+
+def aggregate_viewports(results: list[dict]) -> tuple[int, int, int]:
+    total = len(results)
+    passed = sum(item.get("status") == "PASS" for item in results)
+    failed = sum(item.get("status") == "FAIL" for item in results)
+    assert passed + failed == total
+    return total, passed, failed
+
+
+def capture_paths(company: str) -> list[str]:
+    base = OUT / "human_review" / company
+    return [str(base / name) for name in ("desktop_1440.png", "mobile_390.png") if (base / name).is_file()]
+
+
+def build_summary(reports: list[dict], browser: dict[str, str], commit_sha: str) -> dict:
+    total = sum(item["widths"] for item in reports)
+    passed = sum(item["pass_count"] for item in reports)
+    failed = sum(item["fail_count"] for item in reports)
+    assert passed + failed == total
+    paths = [path for company in CASES for path in capture_paths(company)]
+    critical = any(
+        detail.get("console_errors") or detail.get("page_errors") or detail.get("request_failures") or detail.get("horizontal_overflow_px", 0) > 1
+        for company in reports for detail in company.get("results", [])
+    )
+    ready = total == 27 and passed == 27 and failed == 0 and len(paths) == 6 and len(reports) == 3 and all(len(item.get("photo_roles", [])) == 4 for item in reports) and not critical
+    return {"overall_status": "PASS" if ready else "FAIL", "qa_viewport_total": total, "qa_pass_count": passed, "qa_fail_count": failed, "captures_total": len(paths), "capture_paths": paths, "companies": reports, "browser": browser, "commit_sha": commit_sha, "human_review_ready": ready, "remaining_issues": [] if ready else ["one or more browser QA, capture, or technical gates failed"]}
+
 def write_failure(stage: str, exc: BaseException) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     payload = {"overall_status": "FAIL", "stage": stage, "exception_type": type(exc).__name__, "exception_message": str(exc), "commit_sha": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(), "human_review_ready": False}
@@ -51,12 +78,17 @@ def main() -> int:
                 captures.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(out / "1440_fullpage.png", captures / "desktop_1440.png")
                 shutil.copyfile(out / "390_fullpage.png", captures / "mobile_390.png")
-                reports.append({"company": company, "status": report.status, "widths": len(report.results), "desktop_capture": str(captures / "desktop_1440.png"), "mobile_capture": str(captures / "mobile_390.png")})
+                result_items = report.to_dict()["results"]
+                total, passed, failed = aggregate_viewports(result_items)
+                company_report = {"company": company, "status": report.status, "widths": total, "pass_count": passed, "fail_count": failed, "results": result_items, "photo_roles": roles, "desktop_capture": str(captures / "desktop_1440.png"), "mobile_capture": str(captures / "mobile_390.png"), "manual_edit_count": 0}
+                (OUT / "reports").mkdir(parents=True, exist_ok=True)
+                (OUT / "reports" / f"{company}_browser_qa.json").write_text(json.dumps({"browser": browser, **company_report}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                reports.append(company_report)
             except Exception as exc:
                 (OUT / "reports").mkdir(parents=True, exist_ok=True)
                 (OUT / "reports" / f"{company}_browser_qa_failure.json").write_text(json.dumps({"company": company, "status": "FAIL", "exception_type": type(exc).__name__, "exception_message": str(exc)}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-                reports.append({"company": company, "status": "FAIL", "widths": 0, "error": str(exc)})
-        summary = {"overall_status": "PASS" if all(x["status"] == "PASS" for x in reports) else "FAIL", "qa_viewport_total": sum(x["widths"] for x in reports), "qa_pass_count": sum(x["widths"] for x in reports if x["status"] == "PASS"), "qa_fail_count": sum(x["widths"] for x in reports if x["status"] != "PASS"), "captures_total": sum(2 for x in reports if x["status"] == "PASS"), "companies": reports, "browser": browser, "commit_sha": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(), "human_review_ready": all(x["status"] == "PASS" for x in reports), "remaining_issues": [] if all(x["status"] == "PASS" for x in reports) else ["one or more browser QA runs failed"]}
+                reports.append({"company": company, "status": "FAIL", "widths": 0, "pass_count": 0, "fail_count": 0, "results": [], "error": str(exc)})
+        summary = build_summary(reports, browser, subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip())
         (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(summary, ensure_ascii=False, indent=2))
         return 0 if summary["overall_status"] == "PASS" else 1
