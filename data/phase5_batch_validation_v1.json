@@ -29,10 +29,10 @@
     "conversion_goals": ["inquiry", "reservation", "quote", "purchase", "application"]
   },
   "ci": {
-    "workflow_run": 35055452493,
+    "workflow_run": 35055549983,
     "conclusion": "success",
-    "artifact_id": 10430178662,
-    "artifact_digest": "sha256:9e0c6c9f6e9f3cca8ef828adf56e84efcac2125896650ba0d3689e9c6402da04"
+    "artifact_id": 10430168890,
+    "artifact_digest": "sha256:f4524369dcc408ae42223bcd4032d266e7512a80b4d87e95eada614b0323d65c"
   },
   "manual_intervention": 0,
   "next_step": "Phase 6 | Sales Production"
