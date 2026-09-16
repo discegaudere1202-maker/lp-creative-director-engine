@@ -103,7 +103,7 @@ Engine only。Manual LP Edit = 0。Research → Evidence → Safety → Strategy
 
 Repository: `discegaudere1202-maker/lp-creative-director-engine`
 
-Latest main: `3b2bceeccaad4c18b52532a17188fac43c0941d6`
+Latest main: `f04ab1f591ec87a86c8d08124c9c7b796cce7379`
 
 Final validation Run: `35075746574` / success / artifact `10438457004`
 
