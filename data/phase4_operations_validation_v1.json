@@ -43,10 +43,10 @@
     "status": "PASS",
     "required_widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
     "exact_capture": ["1440x1000", "390x844"],
-    "workflow_run": 35049015468,
-    "workflow_run_number": 1,
-    "artifact_id": 10428376536,
-    "artifact_digest": "sha256:98157f5ee156c2430dbd0c3ce0bef794f21fe2a82bdc79980e3b173b6bd971fe",
+    "workflow_run": 35049206051,
+    "workflow_run_number": 2,
+    "artifact_id": 10427344550,
+    "artifact_digest": "sha256:08feddac3e1c01d152b5a055eabe02090fbdd8757277f27c1d3696b6bc58b3c4",
     "conclusion": "success"
   },
   "next_step": "Phase 5 | Batch Generation"
