@@ -32,6 +32,15 @@ def _read(path: Path, default: Any) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _has_conversion_causality(strategy: Mapping[str, Any]) -> bool:
+    conversion = strategy.get("conversion_strategy") or {}
+    return all(_text(conversion.get(key)) for key in ("customer_hesitation", "resolved_by_lp", "why_act_now", "after_click"))
+
+
+def _text(value: Any) -> str:
+    return str(value or "").strip()
+
+
 def _issue(issue_id: str, issue_type: str, severity: str, axis: str, viewport: str, section: str, problem: str, root: str, layer: str, priority: str) -> dict[str, Any]:
     if issue_type not in ROOT_CAUSES or root not in ROOT_CAUSES or severity not in SEVERITIES:
         raise ValueError("invalid diagnosis classification")
@@ -61,26 +70,46 @@ def build_structured_review(output_dir: str | Path, qa_report: Mapping[str, Any]
     evidence_count = len(manifest.get("evidence_used", []))
     profile = strategy.get("layout_profile")
     iteration = int(manifest.get("generation_iteration", 1) or 1)
-    calibrated = strategy.get("quality_calibration") == "customer_state_bridge_and_profile_composition"
+    calibrated = strategy.get("quality_calibration") in {
+        "customer_state_bridge_and_profile_composition",
+        "premium_causality_and_conversion",
+    }
     browser_pass = qa.get("status") == "PASS" and qa.get("mode") == "static_and_browser"
+    utility = understanding.get("evidence_utility") or {}
+    causality = strategy.get("form_causality") or []
+    premium_form = bool(strategy.get("big_idea_gate", {}).get("company_specific")) and len(causality) >= 4
+    sparse_strategy = strategy.get("sparse_strategy") == "premium_without_claim_inflation"
     base = {
         "Immediate Read": 4 if copy.get("hero", {}).get("headline") else 2,
-        "Distinctness": 4 if profile and profile != "editorial_rail" else 3,
-        "Owner Specificity": 4 if understanding.get("company_truth") and understanding.get("differentiators") else 3,
-        "Visual Hierarchy": 4 if len(art.get("forbidden_patterns", [])) >= 5 else 3,
-        "Craft Detail": 4 if art.get("craft_catch") else 2,
-        "Emotional Pull": 4 if calibrated and understanding.get("customer_state", {}).get("before") else 3,
-        "Trust": min(5, 2 + evidence_count // 2),
-        "Share Impulse": 4 if profile in {"experience_calendar", "catalogue_spread", "technical_drawing"} else 3,
-        "Mobile Quality": 4 if browser_pass else 2,
-        "Conversion Intent": 4 if understanding.get("conversion_goal") and manifest.get("output_status") == "PRODUCTION_APPROVED" else 3,
+        "Distinctness": 5 if premium_form and profile and profile != "editorial_rail" else 4 if profile and profile != "editorial_rail" else 3,
+        "Owner Specificity": 5 if understanding.get("company_truth") and understanding.get("differentiators") and understanding.get("customer_state", {}).get("before") else 3,
+        "Visual Hierarchy": 5 if art.get("art_direction_dimensions", {}).get("negative_space") and art.get("forbidden_patterns") else 3,
+        "Craft Detail": 5 if art.get("craft_catch") and art.get("art_direction_dimensions", {}).get("section_transitions") else 2,
+        "Emotional Pull": 5 if calibrated and understanding.get("customer_state", {}).get("before") and understanding.get("customer_state", {}).get("barrier") else 3,
+        "Trust": min(5, 2 + int(utility.get("TRUST", evidence_count // 2)) + (1 if evidence_count >= 4 else 0)),
+        "Share Impulse": 5 if premium_form and profile in {"experience_calendar", "catalogue_spread", "technical_drawing"} else 4 if profile in {"experience_calendar", "catalogue_spread", "technical_drawing"} else 3,
+        "Mobile Quality": 5 if browser_pass else 2,
+        "Conversion Intent": 5 if _has_conversion_causality(strategy) and understanding.get("conversion_goal") and manifest.get("output_status") == "PRODUCTION_APPROVED" else 3,
     }
     creative = dict(base)
     business = dict(base)
-    business["Distinctness"] = max(2, business["Distinctness"] - 1)
-    business["Craft Detail"] = max(2, business["Craft Detail"] - 1)
-    business["Trust"] = min(5, business["Trust"] + (1 if evidence_count >= 5 else 0))
-    business["Conversion Intent"] = min(5, business["Conversion Intent"] + (1 if calibrated else 0))
+    business["Distinctness"] = max(2, business["Distinctness"] - (0 if premium_form else 1))
+    business["Craft Detail"] = max(2, business["Craft Detail"] - (0 if premium_form else 1))
+    # The business role sees verified proof density differently from the
+    # creative role, but this remains a generic evidence-derived distinction.
+    business["Trust"] = min(5, business["Trust"] + (1 if evidence_count >= 4 else 0))
+    business["Conversion Intent"] = min(5, business["Conversion Intent"] + (1 if calibrated and _has_conversion_causality(strategy) else 0))
+    premium_checks = {
+        "strong_first_impression": min(creative["Immediate Read"], business["Immediate Read"]) >= 4,
+        "distinct_company_form": min(creative["Distinctness"], business["Distinctness"], creative["Owner Specificity"]) >= 4 and premium_form,
+        "believable_trust": min(creative["Trust"], business["Trust"]) >= 4,
+        "clear_action_logic": min(creative["Conversion Intent"], business["Conversion Intent"]) >= 4 and _has_conversion_causality(strategy),
+        "premium_craft": min(creative["Craft Detail"], business["Craft Detail"], creative["Visual Hierarchy"]) >= 4,
+        "strong_mobile": min(creative["Mobile Quality"], business["Mobile Quality"]) >= 4,
+        "no_template_signal": bool(profile and profile != "editorial_rail"),
+        "sparse_claim_control": sparse_strategy or _text(understanding.get("evidence_density")) != "LOW",
+    }
+    gate = "PASS" if all(premium_checks.values()) else "HOLD"
     return {
         "review_type": "structured_review_roles",
         "iteration": iteration,
@@ -94,8 +123,17 @@ def build_structured_review(output_dir: str | Path, qa_report: Mapping[str, Any]
             "creative_art_direction": round(sum(creative.values()) / len(creative), 2),
             "business_owner_conversion": round(sum(business.values()) / len(business), 2),
         },
-        "sales_sample_gate": "PASS" if min(sum(creative.values()), sum(business.values())) / len(AXES) >= 4 else "HOLD",
-        "decision": "ENGINE_IMPROVEMENT_REQUIRED" if iteration == 1 else "SALES_SAMPLE_MVP_HOLD",
+        "research_metrics": {
+            "bespoke_feel": 5 if premium_form else 3,
+            "form_causality": min(5, len(causality)),
+            "premium_finish": min(5, min(creative["Craft Detail"], creative["Visual Hierarchy"], creative["Mobile Quality"])),
+            "conversion_confidence": min(5, business["Conversion Intent"]),
+            "evidence_ceiling": "HIGH" if _text(understanding.get("evidence_density")) == "LOW" else "MEDIUM",
+            "creative_ceiling": "OPEN" if iteration >= 2 else "UNDIAGNOSED",
+        },
+        "premium_gate_checks": premium_checks,
+        "sales_sample_gate": gate,
+        "decision": "ENGINE_IMPROVEMENT_REQUIRED" if iteration == 1 else "SALES_SAMPLE_MVP_PASS" if gate == "PASS" else "SALES_SAMPLE_MVP_HOLD",
     }
 
 
@@ -117,6 +155,10 @@ def diagnose_quality(output_dir: str | Path, *, qa_report: Mapping[str, Any] | N
         issues.append(_issue("form-profile", "ART_DIRECTION", "S1", "Distinctness", "all", "hero", "No conversion- or authority-specific form profile was selected.", "ART_DIRECTION", "art_direction_and_composition", "P1"))
     if int(manifest.get("generation_iteration", 1) or 1) == 1 and understanding.get("customer_state", {}).get("before"):
         issues.append(_issue("state-bridge", "COPY", "S1", "Immediate Read", "all", "hero", "First pass does not explicitly bridge the customer's starting state to the service entrance.", "COPY", "copy_generation", "P1"))
+    if len(strategy.get("form_causality") or []) < 4:
+        issues.append(_issue("form-causality", "ART_DIRECTION", "S1", "Owner Specificity", "all", "page", "Company Truth has not been translated into enough explicit form decisions.", "ART_DIRECTION", "creative_strategy_and_composition", "P1"))
+    if not _has_conversion_causality(strategy):
+        issues.append(_issue("conversion-causality", "CTA", "S1", "Conversion Intent", "all", "cta_zone", "CTA lacks a complete hesitation-to-next-step chain.", "CTA", "conversion_strategy", "P1"))
     if len(manifest.get("evidence_used", [])) < 3:
         issues.append(_issue("sparse-evidence", "EVIDENCE", "S2", "Trust", "all", "proof", "Evidence density is low; creative richness must not be filled with invented facts.", "EVIDENCE", "evidence_selection_and_art_direction", "P2"))
     if len(review) == 0:

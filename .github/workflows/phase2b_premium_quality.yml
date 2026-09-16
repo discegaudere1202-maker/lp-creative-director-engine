@@ -1,0 +1,37 @@
+name: Phase 2B Premium Quality
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  premium-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine
+        run: pip install -e .
+      - name: Install browser
+        run: python -m playwright install --with-deps chromium
+      - name: Run Gen2 to Gen3 premium loop and hold-out
+        run: >-
+          python scripts/run_phase2b_quality_uplift.py
+          examples/production/phase2_fixtures/chikushi_industries_production_input_v1.json
+          examples/production/phase2_fixtures/lovst_photo_studio_production_input_v1.json
+          examples/production/phase2_fixtures/aoyama_flower_market_production_input_v1.json
+          --holdout examples/production/phase2b_holdout/worsal_fukuoka_production_input_v1.json
+          --out /tmp/phase2b-premium-quality
+      - name: Check Andy regression
+        run: >-
+          python scripts/run_production_generation.py
+          examples/production/andy_motorcycle/andy_motorcycle_production_input_v1.json
+          --out /tmp/andy-regression --generation-id phase2b-andy-regression --iteration 3
+      - name: Upload premium quality artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase2b-premium-quality
+          path: /tmp/phase2b-premium-quality

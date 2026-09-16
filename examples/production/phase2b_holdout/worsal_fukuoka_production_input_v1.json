@@ -1,0 +1,111 @@
+{
+  "schema_version": "production_generation_input_v1",
+  "company_id": "worsal-fukuoka-school",
+  "company": {
+    "company_name": "ワーサル福岡校",
+    "industry": "アクション・アクロバットスクール",
+    "service_category": "体験レッスンの申込み",
+    "location": "福岡市東区社領",
+    "business_model": "trial_application",
+    "company_truth": "現役アクション俳優・スタントマンの技術を、専用設備と個人向けレッスンで体験できる福岡校。",
+    "differentiators": [
+      "現役アクション俳優・スタントマンが指導する",
+      "一人ひとりに合わせたマンツーマンレッスン",
+      "初回体験は2,000円、バク転体験は60分"
+    ],
+    "visual_authority_candidates": ["PERSON", "MATERIAL", "WORLD", "TYPOGRAPHY", "DATA"],
+    "contact_channels": {"href": "https://f-bakuten.com/", "phone": "092-982-0214"}
+  },
+  "customer_state": {
+    "before": "やってみたい技はあるが、初めてでも参加できるか分からない",
+    "after": "自分に合う体験レッスンを選び申込みへ進む",
+    "barrier": "安全に始められるか、費用と当日の流れが想像できない"
+  },
+  "conversion_goal": "application",
+  "primary_objections": ["O1_ABILITY", "O2_ACCOUNTABILITY", "O3_PROCESS", "O6_COST"],
+  "requested_claims": [],
+  "unavailable_evidence": [
+    "受講者の成果・上達度",
+    "申込み時点の担当講師・空き状況",
+    "安全を保証する表現",
+    "レッスン写真・人物写真の利用許諾"
+  ],
+  "evidence_ledger": [
+    {
+      "evidence_id": "worsal-e-001",
+      "company_id": "worsal-fukuoka-school",
+      "case_id": "worsal-fukuoka-school-production",
+      "evidence_type": "OWNER_IDENTITY",
+      "evidence_strength": "E2_SPECIFIC",
+      "target_objections": ["O1_ABILITY", "O2_ACCOUNTABILITY"],
+      "claim": "ワーサル福岡校では、現役アクション俳優・スタントマンがインストラクターを務めています。",
+      "source": "https://f-bakuten.com/",
+      "source_type": "official_service_site",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": ["EARLY_PROOF", "MIDDLE"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Text claim only; official site photos are not reused."
+    },
+    {
+      "evidence_id": "worsal-e-002",
+      "company_id": "worsal-fukuoka-school",
+      "case_id": "worsal-fukuoka-school-production",
+      "evidence_type": "SERVICE_PROCESS",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": ["O2_ACCOUNTABILITY", "O3_PROCESS"],
+      "claim": "初めての人にも、基礎から一人ひとりに合わせたマンツーマンレッスンを行っています。",
+      "source": "https://f-bakuten.com/",
+      "source_type": "official_service_site",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": ["MIDDLE", "BEFORE_CTA"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Operational description; no safety guarantee inferred."
+    },
+    {
+      "evidence_id": "worsal-e-003",
+      "company_id": "worsal-fukuoka-school",
+      "case_id": "worsal-fukuoka-school-production",
+      "evidence_type": "PRICE",
+      "evidence_strength": "E5_DECISION_ENABLING",
+      "target_objections": ["O6_COST", "O3_PROCESS"],
+      "claim": "体験レッスンは2,000円です。バク転体験の所要時間は60分です。",
+      "source": "https://f-bakuten.com/",
+      "source_type": "official_service_site",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": ["EARLY_PROOF", "CTA_ZONE"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Published trial conditions; no broader free or outcome claim inferred."
+    },
+    {
+      "evidence_id": "worsal-e-004",
+      "company_id": "worsal-fukuoka-school",
+      "case_id": "worsal-fukuoka-school-production",
+      "evidence_type": "CTA_CHANNEL",
+      "evidence_strength": "E5_DECISION_ENABLING",
+      "target_objections": ["O4_NEXT", "O6_COST"],
+      "claim": "体験レッスンは公式フォーム・電話・LINEから予約できます。",
+      "source": "https://f-bakuten.com/",
+      "source_type": "official_service_site",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-15",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": ["BEFORE_CTA", "CTA_ZONE"],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": "Published reservation channels; availability is not inferred."
+    }
+  ]
+}

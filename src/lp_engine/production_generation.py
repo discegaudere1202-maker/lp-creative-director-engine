@@ -157,6 +157,55 @@ def _layout_profile(goal: str, authorities: Sequence[str]) -> str:
     return "editorial_rail"
 
 
+def _evidence_utility(evidence: Sequence[Mapping[str, Any]]) -> dict[str, int]:
+    """Classify approved evidence by the job it can do in a page.
+
+    Utility is intentionally orthogonal to evidence count.  A single verified
+    price can be more useful for purchase than several identity facts, while a
+    sparse case can still be art-directed without inventing claims.
+    """
+    utility = {key: 0 for key in ("TRUST", "CONVERSION", "VISUAL", "PROCESS", "IDENTITY")}
+    for item in evidence:
+        evidence_type = _text(item.get("evidence_type"))
+        strength = _text(item.get("evidence_strength"))
+        mapping = {
+            "OWNER_IDENTITY": ("IDENTITY", "TRUST"),
+            "TEAM_IDENTITY": ("IDENTITY", "TRUST"),
+            "RESULT_CASE": ("TRUST",),
+            "VERIFIED_METRIC": ("TRUST", "CONVERSION"),
+            "SERVICE_SCOPE": ("PROCESS", "CONVERSION"),
+            "SERVICE_PROCESS": ("PROCESS", "TRUST"),
+            "CRAFT_ACTION": ("PROCESS", "VISUAL"),
+            "PRODUCT_DETAIL": ("VISUAL", "CONVERSION"),
+            "PLACE_WIDE": ("VISUAL", "IDENTITY"),
+            "PRICE": ("CONVERSION", "TRUST"),
+            "CTA_CHANNEL": ("CONVERSION",),
+            "POST_CLICK_FLOW": ("CONVERSION", "TRUST"),
+        }
+        for key in mapping.get(evidence_type, ("TRUST",) if strength in {"E4_RISK_REDUCING", "E5_DECISION_ENABLING"} else ("TRUST",)):
+            utility[key] += 1
+    return utility
+
+
+def _form_causality(understanding: Mapping[str, Any], strategy: Mapping[str, Any]) -> list[dict[str, str]]:
+    """Translate Company Truth into observable form decisions.
+
+    These are constraints for the renderer, not a company-specific template.
+    """
+    truth = _text(understanding.get("company_truth"))
+    state = dict(understanding.get("customer_state") or {})
+    profile = _text(strategy.get("layout_profile")) or "editorial_rail"
+    density = _text(understanding.get("evidence_density")) or "LOW"
+    goal = _text(understanding.get("conversion_goal"))
+    return [
+        {"company_truth": truth, "form_decision": f"{profile}の主構造を選び、情報の入口を一つの視線移動にまとめる。", "customer_effect": "最初に何を理解すればよいか迷いにくい。"},
+        {"company_truth": _text(state.get("before")), "form_decision": "Before Stateを最初の見出しとCTA前の説明へ再登場させる。", "customer_effect": "自分の現在地から行動へ移れる。"},
+        {"company_truth": _text(state.get("barrier")), "form_decision": "障壁に対応するEvidenceを、説明・Process・CTAの順で近接配置する。", "customer_effect": "行動前の不確実さが具体的な確認事項へ変わる。"},
+        {"company_truth": goal, "form_decision": "Conversion Goalに合わせてCTAのタイミングと余白を決める。", "customer_effect": "押す理由と次の動作が画面上でつながる。"},
+        {"company_truth": density, "form_decision": "LOW Evidenceでは主張を増やさず、余白・Type・Material abstractionでPeakをつくる。", "customer_effect": "情報不足を誤認させず、見せ場の密度だけを高める。"},
+    ]
+
+
 def build_company_understanding(raw: Mapping[str, Any], approved_evidence: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     company = _company(raw)
     location = _text(company.get("location"))
@@ -166,7 +215,8 @@ def build_company_understanding(raw: Mapping[str, Any], approved_evidence: Seque
         truth = _first_claim(approved_evidence, "SERVICE_SCOPE", "SCOPE_BOUNDARY", "HERO_REALITY")
     authorities = _authority_order(raw, approved_evidence)
     approved_strengths = {_text(item.get("evidence_strength")) for item in approved_evidence}
-    density = "HIGH" if len(approved_evidence) >= 5 else "MEDIUM" if len(approved_evidence) >= 3 else "LOW"
+    utility = _evidence_utility(approved_evidence)
+    density = "HIGH" if utility["TRUST"] >= 4 and utility["CONVERSION"] >= 2 else "MEDIUM" if len(approved_evidence) >= 3 else "LOW"
     return {
         "schema_version": SCHEMA_VERSION,
         "company_id": _text(raw.get("company_id")) or _slug(_text(company.get("company_name"))),
@@ -188,6 +238,8 @@ def build_company_understanding(raw: Mapping[str, Any], approved_evidence: Seque
         "evidence_density": density,
         "layout_profile": _layout_profile(_text(raw.get("conversion_goal")), authorities),
         "verified_strengths": sorted(approved_strengths),
+        "evidence_utility": utility,
+        "evidence_strategy": "premium_without_claim_inflation" if density == "LOW" else "proof_process_action_balance",
         "source_references": _unique([_text(item.get("source")) for item in approved_evidence]),
         "contact_channels": dict(company.get("contact_channels") or {}),
     }
@@ -204,6 +256,7 @@ def build_creative_strategy(understanding: Mapping[str, Any], approved_evidence:
     authority = list(understanding.get("visual_authority") or ["TYPOGRAPHY"])
     profile = _text(understanding.get("layout_profile")) or "editorial_rail"
     iteration = int(understanding.get("generation_iteration", 1) or 1)
+    causality = _form_causality(understanding, {"layout_profile": profile})
     return {
         "schema_version": SCHEMA_VERSION,
         "creative_problem": f"{_text(understanding.get('customer_state', {}).get('before')) or '依頼前の迷い'}を、{goal_phrase}へ変える。",
@@ -221,22 +274,30 @@ def build_creative_strategy(understanding: Mapping[str, Any], approved_evidence:
             "goal": goal,
             "cta_role": "permission_to_start",
             "before_cta": "対象となる状況と確認できる入口を短く明示する",
+            "customer_hesitation": _text(understanding.get("customer_state", {}).get("barrier")) or "何をすればよいか分からない不安",
+            "resolved_by_lp": "会社固有の入口・Process・連絡手段を一続きにする",
+            "why_act_now": f"{goal_phrase}を確認できる入口がここにある",
+            "after_click": "確認済みの連絡手段へ進み、未確認の対応約束は置かない",
             "after_cta": "確認できる連絡手段だけを表示し、未確認の対応約束を置かない",
         },
-        "form_causality": [
-            {
-                "company_truth": truth,
-                "form_decision": f"{authority[0]}を主役にし、{category or 'サービス'}の入口を一枚の流れとして見せる。",
-            },
-            {
-                "company_truth": anchor,
-                "form_decision": "Evidenceをカードの壁ではなく、見出し・工程・CTAの同じリズムへ接続する。",
-            },
-        ],
+        "form_causality": causality,
+        "big_idea_gate": {
+            "company_specific": bool(truth and anchor),
+            "customer_relevant": bool(_text(understanding.get("customer_state", {}).get("before"))),
+            "visualizable": True,
+            "extendable": len(causality) >= 4,
+            "memorable": len(anchor) > 2,
+        },
         "visual_authority_priority": authority,
         "layout_profile": profile,
         "evidence_density_signal": _text(understanding.get("evidence_density")) or "LOW",
-        "quality_calibration": "customer_state_bridge_and_profile_composition" if iteration >= 2 else "baseline_generation",
+        "quality_calibration": "premium_causality_and_conversion" if iteration >= 3 else "customer_state_bridge_and_profile_composition" if iteration >= 2 else "baseline_generation",
+        "sparse_strategy": "premium_without_claim_inflation" if _text(understanding.get("evidence_density")) == "LOW" else "not_required",
+        "premium_quality_strategy": {
+            "enabled": iteration >= 3,
+            "focus": ["form_causality", "conversion_confidence", "quiet_chapters", "mobile_peak"],
+            "not_a_template": True,
+        },
         "anti_template_notes": [
             "No generic three-card grid as the primary composition.",
             "No unsupported reassurance or invented metrics.",
@@ -336,6 +397,14 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     customer_before = _text(understanding.get("customer_state", {}).get("before"))
     claims = _approved_claims(approved_evidence)
     headline = _text(strategy.get("core_message")) or f"{category}を、{location}から相談する。"
+    anchor = _text(strategy.get("core_message")) or category
+    section_headlines = {
+        "opening": headline,
+        "truth": f"{anchor}から、入口をつくる",
+        "way_in": f"{customer_before or 'いまの状況'}を、次へつなぐ",
+        "contact": f"{_text(strategy.get('conversion_strategy', {}).get('why_act_now')) or '次の案内'}",
+        "close": f"{anchor}へ、{_text(strategy.get('conversion_strategy', {}).get('goal')) or '進む'}",
+    }
     return {
         "schema_version": SCHEMA_VERSION,
         "hero": {
@@ -349,26 +418,14 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
         "sections": [
             {
                 "section_id": item["section_id"],
-                "headline": {
-                    "opening": headline,
-                    "truth": "この場所で、相談の入口をひらく",
-                    "way_in": "伝えるところから、次を考える",
-                    "contact": "まずは、いまの状況を",
-                    "close": "次の一歩は、ここから",
-                }.get(item["section_id"], item["key_message"]),
-                "headline_lines": _line_shape({
-                    "opening": headline,
-                    "truth": "この場所で、相談の入口をひらく",
-                    "way_in": "伝えるところから、次を考える",
-                    "contact": "まずは、いまの状況を",
-                    "close": "次の一歩は、ここから",
-                }.get(item["section_id"], item["key_message"]), max_chars=12),
+                "headline": section_headlines.get(item["section_id"], item["key_message"]),
+                "headline_lines": _line_shape(section_headlines.get(item["section_id"], item["key_message"]), max_chars=12),
                 "body": {
                     "opening": f"{location}の{category}。{truth}",
                     "truth": truth,
-                    "way_in": "依頼前に、相談の入口と確認できる連絡手段を整理します。",
+                    "way_in": f"{customer_before or 'いまの状況'}から、確認できる入口と次の手順を整理します。",
                     "contact": "連絡先を選び、確認したい内容を知らせるための入口を用意します。",
-                    "close": "相談内容を伝えるための連絡先を、ここで確認できます。",
+                    "close": f"{_text(strategy.get('conversion_strategy', {}).get('after_click')) or '確認できる連絡先'}。",
                 }.get(item["section_id"], item["key_message"]),
                 "evidence_claims": claims if item["section_id"] in {"truth", "contact"} else [],
                 "cta": cta if item["section_id"] == "close" else "",
@@ -399,6 +456,14 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
         "TYPOGRAPHY": ("#151515", "#ba5e35", "#f3efe7"),
     }
     ink, accent, paper = palettes.get(primary, palettes["TYPOGRAPHY"])
+    density = _text(understanding.get("evidence_density")) or "LOW"
+    dimensional_logic = {
+        "technical_drawing": {"macro_composition": "measured_split", "visual_density": "indexed_precision", "negative_space": "controlled_gaps", "surface": "ruled_work_surface", "section_transitions": "registration_lines", "rhythm": "measure_then_release", "motion": "reveal_the_next_measure"},
+        "experience_calendar": {"macro_composition": "invitation_to_moment", "visual_density": "soft_intervals", "negative_space": "breathing_room", "surface": "daylight_paper", "section_transitions": "time_markers", "rhythm": "anticipate_then_pause", "motion": "reveal_the_chosen_moment"},
+        "catalogue_spread": {"macro_composition": "selection_field", "visual_density": "curated_sparse", "negative_space": "object_isolation", "surface": "quiet_catalogue_stock", "section_transitions": "selection_rules", "rhythm": "scan_then_decide", "motion": "reveal_the_next_choice"},
+        "conversation_rail": {"macro_composition": "reading_rail", "visual_density": "quiet_interruption", "negative_space": "listening_space", "surface": "calibrated_paper", "section_transitions": "question_marks", "rhythm": "ask_then_open", "motion": "reveal_the_next_question"},
+        "editorial_rail": {"macro_composition": "reading_rail", "visual_density": "quiet_interruption", "negative_space": "listening_space", "surface": "calibrated_paper", "section_transitions": "question_marks", "rhythm": "ask_then_open", "motion": "reveal_the_next_question"},
+    }.get(profile, {})
     return {
         "schema_version": SCHEMA_VERSION,
         "art_direction_concept": _text(strategy.get("big_idea")),
@@ -422,7 +487,7 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
         "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
         "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
         "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
-        "motion_logic": "One restrained reveal for section entry; no infinite or blocking animation.",
+        "motion_logic": dimensional_logic.get("motion", "reveal meaning, never decoration") + "; one restrained reveal per section; no infinite or blocking animation.",
         "forbidden_patterns": ["rounded card wall", "generic three-column grid", "unsupported trust badge", "stock person", "marquee", "parallax"],
         "craft_catch": {
             "technical_drawing": "A measurement line carries the customer from a rough request to a quote-ready next step.",
@@ -432,6 +497,12 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
             "editorial_rail": "A calibration line carries the customer from the current situation to the next contact point.",
         }.get(profile, "A calibration line carries the customer from the current situation to the next contact point."),
         "layout_profile": profile,
+        "art_direction_dimensions": {
+            **dimensional_logic,
+            "evidence_density": density,
+            "visual_authority": primary,
+            "crop_logic": "no client image dependency; abstract geometry carries the role",
+        },
     }
 
 
@@ -638,6 +709,11 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     stages = {
         "company_understanding": understanding,
         "creative_strategy": strategy,
+        "form_causality_manifest": {
+            "schema_version": "form_causality_manifest_v1",
+            "items": strategy.get("form_causality", []),
+            "source": "Company Truth + Customer State + Conversion Goal",
+        },
         "information_architecture": ia,
         "copy": copy,
         "art_direction": art,

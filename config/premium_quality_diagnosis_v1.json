@@ -1,0 +1,16 @@
+{
+  "schema_version": "premium_quality_diagnosis_v1",
+  "purpose": "Research rubric for generic Phase 2B quality uplift; not a customer-facing claim generator.",
+  "required_form_causality_dimensions": ["macro_composition", "type_hierarchy", "visual_density", "negative_space", "surface_texture", "visual_authority", "crop_logic", "section_transitions", "rhythm", "motion"],
+  "research_metrics": {
+    "bespoke_feel": "Company Truth to form specificity, not a template or palette score.",
+    "form_causality": "Count of explicit truth/state/goal to form to customer-effect links.",
+    "premium_finish": "Craft, hierarchy and browser/mobile integrity together.",
+    "conversion_confidence": "Hesitation, resolved uncertainty, reason to act and next step are all explicit.",
+    "evidence_ceiling": "Facts unavailable without Hearing; never fill with invented claims.",
+    "creative_ceiling": "Improvements still possible through form, rhythm, type and composition alone."
+  },
+  "sales_sample_gate": {"decision": "PASS only when every hard check is true; otherwise HOLD.", "hard_checks": ["strong_first_impression", "distinct_company_form", "believable_trust", "clear_action_logic", "premium_craft", "strong_mobile", "no_template_signal", "sparse_claim_control"]},
+  "holdout_policy": "Hold-out output is evaluated after generic rules are frozen and is excluded from rule selection.",
+  "manual_intervention": "Generated HTML, CSS and copy are never edited; fixes occur in generic Engine layers and regenerate outputs."
+}
