@@ -1,0 +1,32 @@
+name: NO_WEB Field Validation
+
+on:
+  push:
+    branches: [phase/no-web-field-validation-20260916]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  field-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine
+        run: pip install -e .
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Run NO_WEB field validation
+        run: python scripts/run_no_web_field_validation.py --out /tmp/no-web-field-validation
+      - name: Upload field validation package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: no-web-field-validation
+          path: /tmp/no-web-field-validation
+          if-no-files-found: error
