@@ -1,0 +1,73 @@
+{
+  "schema_version": "photography_asset_preflight_v1",
+  "status": "PASS",
+  "engine_wiring_allowed": true,
+  "generated": [
+    {
+      "company": "maylynn_paint",
+      "photo_role": "hero_home_finish",
+      "gen_id": "c140090c-9549-4fba-8074-c60b0abd32e8",
+      "canonical_local_path": "assets/photography/generated/maylynn_paint/hero_home_finish.png",
+      "status": "AVAILABLE_BINARY",
+      "errors": [],
+      "width": 1586,
+      "height": 992,
+      "file_hash": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "photo_role": "hero_treatment_space",
+      "gen_id": "baf79d66-7fe7-4080-96b4-01aad7cae1fd",
+      "canonical_local_path": "assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+      "status": "AVAILABLE_BINARY",
+      "errors": [],
+      "width": 1586,
+      "height": 992,
+      "file_hash": "39322532de1e831734d09a77e0bd74c779a73264c2ed830d822c273c1a1016ea"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "photo_role": "sensory_detail",
+      "gen_id": "51ba4f8e-4e6c-415d-bc79-df36d8c0e2b1",
+      "canonical_local_path": "assets/photography/generated/nagi_no_mirai/sensory_detail.png",
+      "status": "AVAILABLE_BINARY",
+      "errors": [],
+      "width": 1536,
+      "height": 1024,
+      "file_hash": "94ef39b8bcd6edd802c514f66f6cb3a072e0c3a841c75221f944e637352c318f"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "photo_role": "welcome_human",
+      "gen_id": "f06d5132-017f-4227-94ae-a1d511021055",
+      "canonical_local_path": "assets/photography/generated/nagi_no_mirai/welcome_human.png",
+      "status": "AVAILABLE_BINARY",
+      "errors": [],
+      "width": 1448,
+      "height": 1086,
+      "file_hash": "e6bde4b8a840581877350bec17ce04ec446c93682172a29799f94aff4b3b1225"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "photo_role": "hero_shared_cooking",
+      "gen_id": "76923b73-3b6c-4222-b910-cbd02a00ce39",
+      "canonical_local_path": "assets/photography/generated/watashi_no_daidokoro/hero_shared_cooking.png",
+      "status": "AVAILABLE_BINARY",
+      "errors": [],
+      "width": 1586,
+      "height": 992,
+      "file_hash": "9160f9b280f882c2e17abd8e65244157003c489d4f1cd428f681c3e08e689e8b"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "photo_role": "finished_table",
+      "gen_id": "a7c2d1c5-2e46-433e-a3d4-a6527485fc26",
+      "canonical_local_path": "assets/photography/generated/watashi_no_daidokoro/finished_table.png",
+      "status": "AVAILABLE_BINARY",
+      "errors": [],
+      "width": 1586,
+      "height": 992,
+      "file_hash": "1fcbf58f063aee290aa01bd49a5992b767424bbc5c2b7be3099af3e95a4f1f2b"
+    }
+  ]
+}

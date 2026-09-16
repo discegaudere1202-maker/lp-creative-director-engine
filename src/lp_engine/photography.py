@@ -8,7 +8,9 @@ asset discovery is performed by the following asset-selection round.
 from __future__ import annotations
 
 from copy import deepcopy
+import hashlib
 import html
+from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 PHOTO_ROLE_FIELDS = (
@@ -56,6 +58,9 @@ FAKE_EVIDENCE_TERMS = (
     "お客様写真",
     "実績写真",
 )
+
+APPROVED_GENERATED = "RESEARCH_APPROVED_GENERATED_VISUAL"
+APPROVED_FREE_STOCK = "RESEARCH_APPROVED_FREE_STOCK"
 
 
 def _text(value: Any) -> str:
@@ -142,12 +147,30 @@ def build_asset_manifest(candidates: Sequence[Mapping[str, Any]], photo_role_map
 
 
 def select_asset_for_role(asset_manifest: Mapping[str, Any], photo_role: str) -> dict[str, str] | None:
-    candidates = [dict(item) for item in asset_manifest.get("assets", []) if _text(item.get("photo_role")) == _text(photo_role) and _text(item.get("asset_url"))]
+    candidates = [dict(item) for item in asset_manifest.get("assets", []) if _text(item.get("photo_role")) == _text(photo_role) and (_text(item.get("asset_url")) or _text(item.get("local_asset_path")))]
     if not candidates:
         return None
     candidates.sort(key=lambda item: ASSET_SOURCE_PRIORITY.get(_text(item.get("source_type")), 99))
     primary = [item for item in candidates if _text(item.get("source_type")) != "vector"]
     return primary[0] if primary else candidates[0]
+
+
+def resolve_local_asset(asset_manifest: Mapping[str, Any], photo_role: str, assets_root: str | Path) -> dict[str, Any]:
+    """Resolve an approved role to a local binary, failing closed on missing/unsafe assets."""
+    asset = select_asset_for_role(asset_manifest, photo_role)
+    if not asset:
+        raise FileNotFoundError(f"no approved primary asset for photo_role: {photo_role}")
+    source_type = _text(asset.get("source_type"))
+    expected = APPROVED_GENERATED if source_type == "generated" else APPROVED_FREE_STOCK if source_type == "free_stock" else ""
+    if _text(asset.get("rights_status")) != expected:
+        raise PermissionError(f"asset approval gate failed for {photo_role}")
+    local_path = Path(assets_root) / _text(asset.get("local_asset_path"))
+    if not local_path.is_file() or local_path.stat().st_size == 0:
+        raise FileNotFoundError(f"approved primary binary missing for {photo_role}: {local_path}")
+    resolved = dict(asset)
+    resolved["local_asset_path"] = str(local_path)
+    resolved["file_hash"] = hashlib.sha256(local_path.read_bytes()).hexdigest()
+    return resolved
 
 
 def connect_photo_roles_to_compositions(compositions: Sequence[Mapping[str, Any]], photo_role_map: Mapping[str, Any], asset_manifest: Mapping[str, Any]) -> list[dict[str, Any]]:
@@ -192,7 +215,7 @@ def guard_fake_evidence_copy(payload: Mapping[str, Any], approved_evidence: Sequ
 
 
 def render_photo_asset(asset: Mapping[str, Any] | None) -> str:
-    if not asset or not _text(asset.get("asset_url")):
+    if not asset or not (_text(asset.get("asset_url")) or _text(asset.get("local_asset_path"))):
         return ""
     orientation = _text(asset.get("preferred_orientation")) or _text(asset.get("orientation")) or "landscape"
     crop = _text(asset.get("crop")) or "50% 50%"
@@ -203,7 +226,7 @@ def render_photo_asset(asset: Mapping[str, Any] | None) -> str:
         f'<figure class="photo-frame photo-frame--{html.escape(orientation, quote=True)}" '
         f'data-photo-role="{html.escape(_text(asset.get("photo_role")), quote=True)}" '
         f'data-source-type="{html.escape(source_type, quote=True)}">'
-        f'<img src="{html.escape(_text(asset.get("asset_url")), quote=True)}" '
+        f'<img src="{html.escape(_text(asset.get("asset_url")) or _text(asset.get("local_asset_path")), quote=True)}" '
         f'alt="{html.escape(_text(asset.get("alt")), quote=True)}" loading="eager" '
         f'style="object-position:{html.escape(crop, quote=True)}" /></figure>'
     )
