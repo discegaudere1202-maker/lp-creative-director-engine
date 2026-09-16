@@ -160,12 +160,40 @@ def _authority_order(raw: Mapping[str, Any], evidence: Sequence[Mapping[str, Any
     return result or ["TYPOGRAPHY", "WORLD", "PLACE"]
 
 
-def _layout_profile(goal: str, authorities: Sequence[str]) -> str:
+def _industry_visual_direction(category: str, *, field_validation: bool = False) -> dict[str, Any]:
+    """Select a visual family from the work being bought, not the company name.
+
+    Field validation inputs opt into the wider family set so the final cohort
+    can test real cross-domain re-art direction. Existing golden fixtures keep
+    their certified profiles unless they explicitly opt into this contract.
+    """
+    value = _text(category)
+    if not field_validation:
+        return {"family": "default", "profile": "", "authority": [], "scene": "calibration"}
+    rules = [
+        (("外壁塗装", "屋根", "造園", "害虫", "不用品", "ハウスクリーニング", "エアコンクリーニング"), "material_field", "field_ledger", ["MATERIAL", "PLACE"], "material_field"),
+        (("鍼灸", "脱毛", "ヘッドスパ", "ヨガ", "ピラティス"), "care_experience", "care_rhythm", ["PERSON", "SENSORY"], "care_experience"),
+        (("音楽教室", "ダンス", "料理教室", "フラワー", "ハンドメイド"), "learning_studio", "studio_invitation", ["PERSON", "WORLD"], "studio_invitation"),
+        (("結婚相談", "相談所"), "relationship_consultation", "conversation_rail", ["PERSON", "TYPOGRAPHY"], "conversation"),
+        (("フォトグラファー", "出張撮影", "写真スタジオ"), "image_story", "image_story", ["PERSON", "PLACE"], "image_story"),
+        (("カーコーティング", "car detailing", "バイク", "自動車板金", "デントリペア"), "machine_craft", "machine_catalogue", ["PRODUCT", "MATERIAL"], "machine_craft"),
+        (("家事代行", "生活支援", "ドッグ", "ペット"), "local_care", "local_route", ["PLACE", "PERSON"], "local_route"),
+    ]
+    for needles, family, profile, authorities, scene in rules:
+        if any(needle.casefold() in value.casefold() for needle in needles):
+            return {"family": family, "profile": profile, "authority": authorities, "scene": scene}
+    return {"family": "local_service", "profile": "local_route", "authority": ["PLACE", "WORLD"], "scene": "local_route"}
+
+
+def _layout_profile(goal: str, authorities: Sequence[str], *, category: str = "", field_validation: bool = False) -> str:
     """Choose a form family from the customer's action, not the company name.
 
     This is a diversity rule, not a collection of company templates.  The
     same profile is available to any fixture with the same conversion need.
     """
+    direction = _industry_visual_direction(category, field_validation=field_validation)
+    if direction["profile"]:
+        return direction["profile"]
     if goal in {"quote_request", "inquiry"} and "MATERIAL" in authorities:
         return "technical_drawing"
     if goal == "reservation":
@@ -230,6 +258,8 @@ def build_company_understanding(raw: Mapping[str, Any], approved_evidence: Seque
     company = _company(raw)
     location = _text(company.get("location"))
     category = _text(company.get("service_category")) or _text(company.get("industry"))
+    field_validation = _text(raw.get("validation_context")) == "NO_WEB_FIELD_VALIDATION"
+    direction = _industry_visual_direction(category, field_validation=field_validation)
     truth = _text(company.get("company_truth"))
     if not truth:
         truth = _first_claim(approved_evidence, "SERVICE_SCOPE", "SCOPE_BOUNDARY", "HERO_REALITY")
@@ -254,14 +284,24 @@ def build_company_understanding(raw: Mapping[str, Any], approved_evidence: Seque
         "available_evidence": _approved_claims(approved_evidence),
         "unavailable_evidence": _unique(raw.get("unavailable_evidence") or []),
         "hearing_required": list(raw.get("hearing_required") or []),
-        "visual_authority": authorities,
+        "visual_authority": _unique(direction["authority"] + authorities) if field_validation else authorities,
         "evidence_density": density,
-        "layout_profile": _layout_profile(_text(raw.get("conversion_goal")), authorities),
+        "industry_visual_family": direction["family"],
+        "visual_scene": direction["scene"],
+        "layout_profile": _layout_profile(_text(raw.get("conversion_goal")), direction["authority"] + authorities, category=category, field_validation=field_validation),
+        "field_validation_context": field_validation,
         "verified_strengths": sorted(approved_strengths),
         "evidence_utility": utility,
         "evidence_strategy": "premium_without_claim_inflation" if density == "LOW" else "proof_process_action_balance",
         "source_references": _unique([_text(item.get("source")) for item in approved_evidence]),
         "contact_channels": dict(company.get("contact_channels") or {}),
+        "photo_replacement_readiness": {
+            "status": "READY_WITH_PROXY" if field_validation else "UNSPECIFIED",
+            "proxy_role": "generated_vector_scene",
+            "replacement_targets": ["実店舗・実現場・実商品・実人物写真"],
+            "layout_constraints": ["同一役割の実写真を同じ比率へ差し替え可能", "文字重なりなし", "中央焦点を保持"],
+            "proof_role": "visual_context_only; not evidence of a real result or location",
+        },
     }
 
 
@@ -271,6 +311,7 @@ def build_creative_strategy(understanding: Mapping[str, Any], approved_evidence:
     truth = _text(understanding.get("company_truth"))
     location = _text(understanding.get("location"))
     category = _text(understanding.get("service_category"))
+    scope = _text(understanding.get("company_truth")) or category
     differentiators = list(understanding.get("differentiators") or [])
     anchor = differentiators[0] if differentiators else truth
     authority = list(understanding.get("visual_authority") or ["TYPOGRAPHY"])
@@ -335,6 +376,12 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
         "catalogue_spread": ("選ぶ前に見る", "用途から探す", "購入の入口"),
         "conversation_rail": ("話すところから", "順番を整理する", "相談の入口"),
         "editorial_rail": ("入口をひらく", "次を考える", "最初の案内"),
+        "field_ledger": ("現状を図面にする", "対応範囲をほどく", "見積の入口"),
+        "care_rhythm": ("気になることから", "過ごし方を選ぶ", "予約の入口"),
+        "studio_invitation": ("やってみたいから", "場と内容を知る", "参加の入口"),
+        "image_story": ("残したい場面から", "撮影の輪郭をつくる", "撮影の入口"),
+        "machine_catalogue": ("状態を見せる", "仕上がりを選ぶ", "作業の入口"),
+        "local_route": ("暮らしの困りごとから", "頼める範囲を知る", "支援の入口"),
     }.get(profile, ("入口をひらく", "次を考える", "最初の案内"))
     sections: list[dict[str, Any]] = [
         {
@@ -410,6 +457,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     company_name = _text(understanding.get("company_name"))
     location = _text(understanding.get("location"))
     category = _text(understanding.get("service_category"))
+    scope = _text(understanding.get("company_truth")) or category
     goal = _text(understanding.get("conversion_goal"))
     _, cta = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     truth = _text(understanding.get("company_truth"))
@@ -420,6 +468,17 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     anchor = _text(strategy.get("core_message")) or category
     _, goal_phrase = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     goal_noun = GOAL_NOUNS.get(goal, "相談")
+    channel = _text((understanding.get("contact_channels") or {}).get("label")) or "公開された連絡先"
+    profile = _text(strategy.get("layout_profile")) or "editorial_rail"
+    process_steps = {
+        "field_ledger": ["状態を伝える", "対応範囲を確認する", "見積を相談する"],
+        "care_rhythm": ["気になることを話す", "過ごし方を選ぶ", "予約を相談する"],
+        "studio_invitation": ["やってみたいことを選ぶ", "内容と場所を確認する", "参加を相談する"],
+        "conversation_rail": ["いまの状況を話す", "必要な情報を整理する", "相談の時間をつくる"],
+        "image_story": ["残したい場面を話す", "撮影の場所を考える", "撮影を相談する"],
+        "machine_catalogue": ["状態・用途を伝える", "対応内容を確認する", "作業を相談する"],
+        "local_route": ["困りごとを伝える", "対応できる範囲を確認する", "入口を相談する"],
+    }.get(profile, ["状況を伝える", "対応できることを確認する", "次の案内を考える"])
     section_headlines = {
         "opening": headline,
         # Keep company specificity in the category and body, while keeping
@@ -440,9 +499,9 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
             "eyebrow": company_name,
             "headline": headline,
             "headline_lines": _line_shape(headline, max_chars=7),
-            "supporting": f"{location}で{category}を探している方へ。{truth}" + (f" いまは{customer_before}という状態からでも、入口を確認できます。" if iteration >= 2 and customer_before else ""),
+            "supporting": f"{location}で{category}を探している方へ。{truth}。{customer_before or '気になること'}から、{channel}へ進む入口を整理します。",
             "cta": cta,
-            "microcopy": "連絡手段と所在地を確認できます。",
+            "microcopy": f"{location}｜{channel}の公開導線を確認できます。",
         },
         "sections": [
             {
@@ -452,9 +511,9 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                 "body": {
                     "opening": f"{location}の{category}。{truth}",
                     "truth": truth,
-                    "way_in": f"{customer_before or 'いまの状況'}から、確認できる入口と次の手順を整理します。",
-                    "contact": "連絡先を選び、確認したい内容を知らせるための入口を用意します。",
-                    "close": f"{_text(strategy.get('conversion_strategy', {}).get('after_click')) or '確認できる連絡先'}。",
+                    "way_in": f"{customer_before or 'いまの状況'}。{_text(understanding.get('customer_state', {}).get('barrier')) or '何を伝えるか迷う状態'}から、{scope if scope else category}を確認できる順番へ変えます。",
+                    "contact": f"{channel}で、{scope if scope else category}について確認したいことを知らせる入口です。対応内容や条件は、公開情報で確認できる範囲に限定しています。",
+                    "close": f"{channel}へ進み、{scope if scope else category}について最初の確認をする。未確認の対応約束は置きません。",
                 }.get(item["section_id"], item["key_message"]),
                 "evidence_claims": claims if item["section_id"] in {"truth", "contact"} else [],
                 "cta": cta if item["section_id"] == "close" else "",
@@ -466,6 +525,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
             "unsupported_reassurance": "blocked",
             "line_shape": "meaning_units_not_character_count",
         },
+        "process_steps": process_steps,
     }
 
 
@@ -492,7 +552,24 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
         "catalogue_spread": {"macro_composition": "selection_field", "visual_density": "curated_sparse", "negative_space": "object_isolation", "surface": "quiet_catalogue_stock", "section_transitions": "selection_rules", "rhythm": "scan_then_decide", "motion": "reveal_the_next_choice"},
         "conversation_rail": {"macro_composition": "reading_rail", "visual_density": "quiet_interruption", "negative_space": "listening_space", "surface": "calibrated_paper", "section_transitions": "question_marks", "rhythm": "ask_then_open", "motion": "reveal_the_next_question"},
         "editorial_rail": {"macro_composition": "reading_rail", "visual_density": "quiet_interruption", "negative_space": "listening_space", "surface": "calibrated_paper", "section_transitions": "question_marks", "rhythm": "ask_then_open", "motion": "reveal_the_next_question"},
+        "field_ledger": {"macro_composition": "field_ledger", "visual_density": "measured_material", "negative_space": "inspection_gaps", "surface": "work_surface", "section_transitions": "datum_lines", "rhythm": "inspect_then_release", "motion": "trace_the_work"},
+        "care_rhythm": {"macro_composition": "care_rhythm", "visual_density": "soft_focus", "negative_space": "breathing_intervals", "surface": "warm_matte", "section_transitions": "breath_marks", "rhythm": "arrive_then_settle", "motion": "settle_into_care"},
+        "studio_invitation": {"macro_composition": "studio_invitation", "visual_density": "playful_index", "negative_space": "lesson_pauses", "surface": "studio_table", "section_transitions": "session_marks", "rhythm": "notice_then_try", "motion": "open_the_session"},
+        "image_story": {"macro_composition": "image_story", "visual_density": "framed_moments", "negative_space": "story_breath", "surface": "gallery_wall", "section_transitions": "frame_marks", "rhythm": "remember_then_choose", "motion": "frame_the_moment"},
+        "machine_catalogue": {"macro_composition": "machine_catalogue", "visual_density": "object_precision", "negative_space": "garage_gaps", "surface": "oiled_paper", "section_transitions": "part_marks", "rhythm": "inspect_then_specify", "motion": "reveal_the_detail"},
+        "local_route": {"macro_composition": "local_route", "visual_density": "human_scale", "negative_space": "route_pauses", "surface": "neighborhood_paper", "section_transitions": "route_marks", "rhythm": "recognize_then_reach", "motion": "follow_the_route"},
     }.get(profile, {})
+    scene = _text(understanding.get("visual_scene")) or "calibration"
+    scene_copy = {
+        "material_field": "A generated vector study of surface, edge and measured work; replace with the company’s own site, material or field image after rights clearance.",
+        "care_experience": "A generated vector study of arrival, touch and breathing space; replace with an approved room, treatment or service image after rights clearance.",
+        "studio_invitation": "A generated vector study of tools, hands and a shared table; replace with an approved lesson or workshop image after rights clearance.",
+        "conversation": "A generated vector study of an open conversation path; replace with an approved owner or consultation-space image after rights clearance.",
+        "image_story": "A generated vector study of a framed moment and its surrounding place; replace with an approved portfolio or scene image after rights clearance.",
+        "machine_craft": "A generated vector study of parts, finish and inspection; replace with an approved vehicle, machine or workshop image after rights clearance.",
+        "local_route": "A generated vector study of a local route and a point of care; replace with an approved service-area, home or companion image after rights clearance.",
+        "calibration": "A generated vector calibration study for a future evidence slot.",
+    }.get(scene, "A generated vector calibration study for a future evidence slot.")
     return {
         "schema_version": SCHEMA_VERSION,
         "art_direction_concept": _text(strategy.get("big_idea")),
@@ -502,6 +579,12 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
             "catalogue_spread": "tactile selection field with room around each object",
             "conversation_rail": "quiet editorial pacing with a human reading rail",
             "editorial_rail": "quiet confidence with a working-surface sense of detail",
+            "field_ledger": "precise field intelligence with the warmth of a working craft",
+            "care_rhythm": "soft, tactile care with room to breathe before choosing",
+            "studio_invitation": "open studio energy with tools, hands and an invitation to try",
+            "image_story": "quiet gallery light around a moment worth keeping",
+            "machine_catalogue": "clean mechanical focus with tactile finish and inspection",
+            "local_route": "human-scale local guidance with a clear route to contact",
         }.get(profile, "quiet confidence with a working-surface sense of detail"),
         "visual_authority_priority": authorities,
         "color_logic": {"ink": ink, "accent": accent, "paper": paper, "reason": f"{primary} is the first evidence-bearing authority."},
@@ -512,8 +595,17 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
             "catalogue_spread": "A product-led opening, editorial selection spread and direct purchase path; let whitespace do the sorting.",
             "conversation_rail": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
             "editorial_rail": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
+            "field_ledger": "A datum-led field opening, material inspection surface and measured quote route; evidence sits beside the decision it supports.",
+            "care_rhythm": "A soft arrival opening, tactile care surface and generous booking pause; the page slows before asking for action.",
+            "studio_invitation": "A studio-table opening, shared-tool evidence surface and session path; the page invites a first try rather than listing a menu.",
+            "image_story": "A framed-moment opening, gallery-like evidence spread and quiet shooting path; space protects the emotional decision.",
+            "machine_catalogue": "A machine-detail opening, inspection spread and direct contact route; object logic carries the decision without badge clutter.",
+            "local_route": "A local-route opening, human-scale evidence surface and clear contact path; the page moves from situation to reachability.",
         }.get(profile, "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters."),
-        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "photography_logic": scene_copy,
+        "visual_scene": scene,
+        "visual_source": "engine_generated_vector_scene",
+        "photo_replacement_readiness": understanding.get("photo_replacement_readiness", {}),
         "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
         "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
         "motion_logic": dimensional_logic.get("motion", "reveal meaning, never decoration") + "; one restrained reveal per section; no infinite or blocking animation.",
@@ -524,6 +616,12 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
             "catalogue_spread": "A selection line carries the customer from purpose to a concrete item.",
             "conversation_rail": "A calibration line carries the customer from the current situation to the next contact point.",
             "editorial_rail": "A calibration line carries the customer from the current situation to the next contact point.",
+            "field_ledger": "A datum line carries the customer from a visible condition to the information needed for a quote.",
+            "care_rhythm": "A breath mark carries the customer from a vague need for care to a chosen kind of time.",
+            "studio_invitation": "A session mark carries the customer from curiosity to a first activity they can name.",
+            "image_story": "A frame edge carries the customer from a memory to a concrete place and shooting conversation.",
+            "machine_catalogue": "An inspection line carries the customer from a symptom or finish wish to a specific work conversation.",
+            "local_route": "A route line carries the customer from a daily difficulty to a reachable next contact.",
         }.get(profile, "A calibration line carries the customer from the current situation to the next contact point."),
         "layout_profile": profile,
         "art_direction_dimensions": {
@@ -570,6 +668,30 @@ def build_compositions(ia: Sequence[Mapping[str, Any]], art_direction: Mapping[s
                 "hero_orientation": ("catalogue_cover", "left", "headline"), "company_truth": ("product_spread", "left", "evidence"),
                 "service_process": ("selection_rail", "left", "rhythm"), "next_step": ("purchase_strip", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
             },
+            "field_ledger": {
+                "hero_orientation": ("field_cover", "left", "headline"), "company_truth": ("material_inspection", "left", "evidence"),
+                "service_process": ("work_sequence", "left", "rhythm"), "next_step": ("quote_route", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+            },
+            "care_rhythm": {
+                "hero_orientation": ("care_invitation", "left", "headline"), "company_truth": ("care_surface", "right", "evidence"),
+                "service_process": ("arrival_sequence", "left", "rhythm"), "next_step": ("care_contact", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+            },
+            "studio_invitation": {
+                "hero_orientation": ("studio_cover", "left", "headline"), "company_truth": ("table_spread", "left", "evidence"),
+                "service_process": ("session_sequence", "left", "rhythm"), "next_step": ("lesson_contact", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+            },
+            "image_story": {
+                "hero_orientation": ("frame_cover", "left", "headline"), "company_truth": ("moment_gallery", "left", "evidence"),
+                "service_process": ("story_sequence", "left", "rhythm"), "next_step": ("shoot_contact", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+            },
+            "machine_catalogue": {
+                "hero_orientation": ("machine_cover", "left", "headline"), "company_truth": ("part_spread", "left", "evidence"),
+                "service_process": ("inspection_sequence", "left", "rhythm"), "next_step": ("garage_contact", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+            },
+            "local_route": {
+                "hero_orientation": ("route_cover", "left", "headline"), "company_truth": ("local_map", "right", "evidence"),
+                "service_process": ("route_sequence", "left", "rhythm"), "next_step": ("local_contact", "left", "channel"), "cta_zone": ("closing_field", "left", "action"),
+            },
         }
         layout, alignment, emphasis = by_profile.get(profile, {}).get(role, {
             "hero_orientation": ("split_rail", "left", "headline"), "company_truth": ("offset_evidence_surface", "left", "evidence"),
@@ -580,7 +702,8 @@ def build_compositions(ia: Sequence[Mapping[str, Any]], art_direction: Mapping[s
             "layout_type": layout,
             "column_logic": "12-column reading rail; one dominant field and one supporting field.",
             "alignment": alignment,
-            "image_role": "generated_abstract_geometry",
+            "image_role": f"generated_{_text(art_direction.get('visual_scene')) or 'calibration'}_scene",
+            "photo_replacement_role": "same-role-approved-real-image",
             "text_width": "min(90vw, 720px)",
             "whitespace": "large" if section.get("quiet_or_peak") == "peak" else "medium",
             "emphasis": emphasis,
@@ -629,6 +752,14 @@ def _render_styles(tokens: Mapping[str, Any]) -> str:
     .section {{ width:var(--rail); margin:auto; padding:var(--section, {spacing['section']}) 0; position:relative; }} .section--quiet {{ padding-top:clamp(4rem,8vw,8rem); padding-bottom:clamp(4rem,8vw,8rem); }} .section--peak {{ min-height:min(92vh, 860px); display:grid; align-content:center; }}
     .hero-grid {{ display:grid; grid-template-columns:minmax(0, 1.4fr) minmax(160px, .6fr); gap:clamp(1.5rem, 5vw, 6rem); align-items:end; }} .eyebrow {{ color:var(--accent); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }} h1,h2,p {{ margin:0; }} h1 {{ max-width:none; font-size:clamp(2.6rem, 6vw, 6.5rem); line-height:.95; letter-spacing:-.07em; }} h1 .headline-line,h2 .headline-line {{ display:block; white-space:nowrap; }} h2 {{ max-width:none; font-size:clamp(2rem, 4vw, 4rem); line-height:1; letter-spacing:-.06em; }} .lead {{ max-width:34rem; font-size:{scale['lead']}; }} .small {{ color:var(--muted); font-size:.82rem; }} .section-header {{ display:flex; justify-content:space-between; gap:2rem; align-items:flex-end; border-top:1px solid var(--line); padding-top:18px; margin-bottom:clamp(2rem,5vw,5rem); }}
     .hero-mark {{ aspect-ratio:1; border:1px solid var(--ink); position:relative; background:linear-gradient(135deg, transparent 48%, var(--accent) 49%, var(--accent) 51%, transparent 52%), repeating-linear-gradient(0deg, transparent 0 19px, var(--line) 20px); }} .hero-mark::before,.hero-mark::after {{ content:""; position:absolute; border:1px solid var(--ink); border-radius:50%; width:28%; aspect-ratio:1; left:14%; top:18%; }} .hero-mark::after {{ left:auto; top:auto; right:14%; bottom:18%; }}
+    .visual-scene {{ position:relative; min-height:clamp(240px,34vw,480px); overflow:hidden; border:1px solid var(--ink); background:var(--paper); isolation:isolate; }} .visual-scene::after {{ content:""; position:absolute; inset:10%; border:1px solid color-mix(in srgb, var(--ink) 34%, transparent); pointer-events:none; }} .scene-caption {{ position:absolute; left:18px; bottom:16px; z-index:3; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }}
+    .scene-material_field {{ background:linear-gradient(135deg,var(--paper) 0 48%,var(--accent) 48% 50%,var(--ink) 50% 52%,var(--paper) 52%); }} .scene-material_field .scene-plane {{ position:absolute; width:65%; height:46%; right:10%; top:18%; background:var(--ink); transform:skewY(-12deg); box-shadow:18px 18px 0 var(--accent); }} .scene-material_field .scene-line {{ position:absolute; left:12%; right:12%; bottom:28%; border-top:1px solid var(--ink); }}
+    .scene-care_experience {{ border-radius:48% 48% 8px 8px; background:radial-gradient(circle at 36% 34%,var(--accent) 0 7%,transparent 8%),radial-gradient(circle at 68% 63%,var(--ink) 0 5%,transparent 6%),linear-gradient(145deg,var(--paper),#fff 55%,var(--accent)); }} .scene-care_experience .scene-ring {{ position:absolute; width:58%; aspect-ratio:1; border:1px solid var(--ink); border-radius:50%; left:21%; top:16%; }} .scene-care_experience .scene-ring::after {{ content:""; position:absolute; inset:14%; border:1px solid var(--accent); border-radius:50%; }}
+    .scene-studio_invitation {{ background:linear-gradient(135deg,var(--paper) 0 62%,var(--accent) 62%); }} .scene-studio_invitation .scene-table {{ position:absolute; width:76%; height:27%; left:12%; bottom:22%; background:var(--ink); transform:rotate(-4deg); }} .scene-studio_invitation .scene-tool {{ position:absolute; width:19%; aspect-ratio:1; border:1px solid var(--ink); background:var(--paper); border-radius:50%; top:20%; }} .scene-studio_invitation .scene-tool:nth-child(2) {{ left:22%; }} .scene-studio_invitation .scene-tool:nth-child(3) {{ left:45%; background:var(--accent); }} .scene-studio_invitation .scene-tool:nth-child(4) {{ left:68%; }}
+    .scene-conversation {{ background:linear-gradient(90deg,var(--ink) 0 2%,transparent 2% 98%,var(--ink) 98%),var(--paper); }} .scene-conversation .scene-path {{ position:absolute; width:70%; height:60%; left:15%; top:18%; border:1px solid var(--accent); border-radius:50% 50% 50% 8%; transform:rotate(-15deg); }} .scene-conversation .scene-path::after {{ content:""; position:absolute; width:18px; height:18px; border-radius:50%; background:var(--accent); right:10%; bottom:8%; }}
+    .scene-image_story {{ background:linear-gradient(120deg,var(--ink) 0 18%,var(--paper) 18% 82%,var(--accent) 82%); }} .scene-image_story .scene-frame {{ position:absolute; width:58%; height:62%; left:21%; top:17%; border:12px solid var(--paper); outline:1px solid var(--ink); background:linear-gradient(140deg,var(--accent) 0 38%,transparent 38%),linear-gradient(35deg,var(--ink) 0 44%,transparent 44%); box-shadow:14px 14px 0 var(--ink); }}
+    .scene-machine_craft {{ background:repeating-linear-gradient(90deg,transparent 0 26px,color-mix(in srgb,var(--ink) 20%,transparent) 27px 28px),var(--paper); }} .scene-machine_craft .scene-object {{ position:absolute; width:70%; height:34%; left:15%; top:29%; border:2px solid var(--ink); border-radius:48% 22% 16% 18%; transform:skewX(-12deg); }} .scene-machine_craft .scene-object::before,.scene-machine_craft .scene-object::after {{ content:""; position:absolute; width:18%; aspect-ratio:1; border:2px solid var(--ink); border-radius:50%; bottom:-18%; background:var(--paper); }} .scene-machine_craft .scene-object::before {{ left:14%; }} .scene-machine_craft .scene-object::after {{ right:14%; }}
+    .scene-local_route {{ background:linear-gradient(135deg,var(--paper),#fff 60%,var(--accent)); }} .scene-local_route .scene-route {{ position:absolute; width:62%; height:70%; left:19%; top:14%; border-left:2px solid var(--ink); border-bottom:2px solid var(--accent); border-radius:0 0 0 70%; transform:rotate(-22deg); }} .scene-local_route .scene-pin {{ position:absolute; width:26px; height:26px; border:2px solid var(--ink); border-radius:50% 50% 50% 0; transform:rotate(-45deg); }} .scene-local_route .scene-pin::after {{ content:""; position:absolute; inset:7px; border-radius:50%; background:var(--accent); }} .scene-local_route .scene-pin:nth-child(2) {{ top:18%; left:22%; }} .scene-local_route .scene-pin:nth-child(3) {{ right:20%; bottom:18%; }}
     .proof-surface {{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(2rem,8vw,8rem); padding:clamp(2rem,5vw,5rem); background:var(--ink); color:var(--paper); box-shadow:10px 18px 0 var(--accent); }} .proof-surface .eyebrow {{ color:var(--accent); }} .claim-list {{ display:grid; gap:0; border-top:1px solid rgba(243,239,231,.3); }} .claim {{ padding:18px 0; border-bottom:1px solid rgba(243,239,231,.3); }} .claim-id {{ display:block; color:var(--accent); font-size:.72rem; letter-spacing:.1em; }}
     .sequence {{ display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }} .step {{ min-height:220px; padding:18px 22px 24px 0; border-bottom:1px solid var(--line); border-right:1px solid var(--line); }} .step:last-child {{ border-right:0; padding-left:22px; }} .step + .step {{ padding-left:22px; }} .step-number {{ font-size:3rem; line-height:1; color:var(--accent); }}
     .contact-strip {{ display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:center; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); padding:28px 0; }} .contact-lines {{ display:grid; gap:4px; }} .button {{ display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:12px 26px; border-radius:999px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }} .button:hover {{ background:var(--ink); }} .footer-note {{ padding:24px 0 48px; font-size:.76rem; color:var(--muted); border-top:1px solid var(--line); }} .calibration {{ position:absolute; right:0; top:18%; width:18vw; max-width:220px; height:1px; background:var(--accent); }} .calibration::after {{ content:""; position:absolute; right:0; top:-4px; width:9px; height:9px; border-radius:50%; background:var(--accent); }}
@@ -636,8 +767,25 @@ def _render_styles(tokens: Mapping[str, Any]) -> str:
     .page-technical_drawing .hero-mark {{ background:linear-gradient(90deg, transparent 49%, var(--accent) 49% 51%, transparent 51%), linear-gradient(0deg, transparent 49%, var(--ink) 49% 51%, transparent 51%); }} .page-technical_drawing .proof-surface {{ box-shadow:10px 18px 0 var(--accent); }} .page-technical_drawing .sequence {{ border-left:8px solid var(--accent); }}
     .page-experience_calendar .hero-mark {{ border-radius:50%; background:radial-gradient(circle at 35% 35%, var(--accent) 0 8%, transparent 9%), radial-gradient(circle at 68% 68%, var(--ink) 0 7%, transparent 8%), repeating-radial-gradient(circle, transparent 0 24px, var(--line) 25px 26px); }} .page-experience_calendar .section--peak:first-child {{ text-align:center; }} .page-experience_calendar .hero-grid {{ align-items:center; }}
     .page-catalogue_spread .hero-mark {{ background:linear-gradient(125deg, var(--accent) 0 18%, transparent 19% 56%, var(--ink) 57% 60%, transparent 61%), repeating-linear-gradient(90deg, transparent 0 28px, var(--line) 29px 30px); }} .page-catalogue_spread .proof-surface {{ grid-template-columns:1.2fr .8fr; box-shadow:none; border:1px solid var(--ink); background:transparent; color:var(--ink); }} .page-catalogue_spread .claim-list {{ border-color:var(--line); }} .page-catalogue_spread .claim {{ border-color:var(--line); }}
-    @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:clamp(4rem,16vw,7rem) 0; }} .section--peak {{ min-height:auto; }} h1 {{ font-size:clamp(2.35rem, 8vw, 3.8rem); }} h2 {{ font-size:clamp(1.55rem, 7vw, 3.2rem); }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
+    .page-field_ledger {{ background:#efede6; }} .page-field_ledger .section-header {{ border-top-width:2px; }} .page-field_ledger .proof-surface {{ border-left:10px solid var(--accent); }} .page-care_rhythm {{ background:#f4ece8; }} .page-care_rhythm .section--peak:first-child {{ min-height:84vh; }} .page-care_rhythm .proof-surface {{ border-radius:42% 8px 42% 8px; }} .page-studio_invitation {{ background:#f3efe5; }} .page-studio_invitation .proof-surface {{ transform:rotate(-1deg); }} .page-image_story {{ background:#eeeae4; }} .page-image_story .proof-surface {{ background:var(--paper); color:var(--ink); border:1px solid var(--ink); box-shadow:14px 14px 0 var(--ink); }} .page-image_story .claim-list,.page-image_story .claim {{ border-color:var(--line); }} .page-machine_catalogue {{ background:#e9ecea; }} .page-machine_catalogue .proof-surface {{ box-shadow:none; border:1px solid var(--ink); }} .page-local_route {{ background:#eef1e8; }} .page-local_route .proof-surface {{ border-radius:0 36px 0 36px; }}
+    .proof-surface .visual-scene {{ min-height:220px; margin-top:32px; border-color:rgba(243,239,231,.38); }} .page-image_story .proof-surface .visual-scene {{ border-color:var(--ink); }}
+    @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:clamp(4rem,16vw,7rem) 0; }} .section--peak {{ min-height:auto; }} h1 {{ font-size:clamp(2.35rem, 8vw, 3.8rem); }} h2 {{ font-size:clamp(1.55rem, 7vw, 3.2rem); }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .visual-scene {{ min-height:clamp(210px,64vw,300px); }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .proof-surface .visual-scene {{ min-height:180px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
     """
+
+
+def _visual_scene_markup(scene: str) -> str:
+    """Render a non-factual, deterministic vector proxy for a photo role."""
+    scene = scene if scene in {"material_field", "care_experience", "studio_invitation", "conversation", "image_story", "machine_craft", "local_route"} else "conversation"
+    bodies = {
+        "material_field": '<div class="scene-plane"></div><div class="scene-line"></div>',
+        "care_experience": '<div class="scene-ring"></div>',
+        "studio_invitation": '<div class="scene-table"></div><div class="scene-tool"></div><div class="scene-tool"></div><div class="scene-tool"></div>',
+        "conversation": '<div class="scene-path"></div>',
+        "image_story": '<div class="scene-frame"></div>',
+        "machine_craft": '<div class="scene-object"></div>',
+        "local_route": '<div class="scene-route"></div><div class="scene-pin"></div><div class="scene-pin"></div>',
+    }
+    return f'<div class="visual-scene scene-{scene}" data-visual-source="engine_generated_vector_scene" data-photo-replacement="same-role-approved-real-image" aria-hidden="true">{bodies[scene]}<span class="scene-caption">visual direction / evidence slot</span></div>'
 
 
 def render_html(spec: Mapping[str, Any]) -> str:
@@ -658,7 +806,7 @@ def render_html(spec: Mapping[str, Any]) -> str:
         for item in (service_claims or evidence[:2])
     )
     contact_markup = "".join(f'<div>{_esc(item.get("claim"))}</div>' for item in contact_claims)
-    steps = ["状況を伝える", "対応できることを確認する", "次の案内を考える"]
+    steps = list(copy.get("process_steps") or ["状況を伝える", "対応できることを確認する", "次の案内を考える"])
     steps_markup = "".join(f'<div class="step"><div class="step-number">0{idx}</div><p>{_esc(label)}</p></div>' for idx, label in enumerate(steps, 1))
     lines_markup = "".join(f'<span class="headline-line">{_esc(line)}</span>' for line in hero["headline_lines"])
     location = _esc(company.get("location"))
@@ -667,13 +815,14 @@ def render_html(spec: Mapping[str, Any]) -> str:
     cta = _esc(hero["cta"])
     contact = dict(company.get("contact_channels") or {})
     contact_href = _esc(contact.get("href") or "#contact")
+    scene_markup = _visual_scene_markup(_text(art.get("visual_scene")))
     return f'''<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>{name}｜{_esc(hero["headline"])}</title><style>{_render_styles(tokens)}</style></head>
 <body class="page-{_esc(profile)}"><div class="site-shell">
 <header class="topline"><span>{name}</span><span>{location}</span></header>
 <main>
-<section class="section section--peak" data-reveal data-role="hero_orientation" data-layout="{_esc(composition_by_section.get("opening", {}).get("layout_type", "split_rail"))}"><div class="calibration"></div><div class="hero-grid"><div><div class="eyebrow">{_esc(hero["eyebrow"])}</div><h1>{lines_markup}</h1><p class="lead" style="margin-top:28px">{_esc(hero["supporting"])}</p><a class="button" href="#contact" style="margin-top:34px">{cta}<span aria-hidden="true" style="margin-left:14px">→</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div><div class="hero-mark" aria-hidden="true"></div></div></section>
-<section class="section section--peak" data-reveal data-role="company_truth" data-layout="{_esc(composition_by_section.get("truth", {}).get("layout_type", "offset_evidence_surface"))}"><div class="section-header"><span class="eyebrow">01 / 会社の輪郭</span><span class="small">{location}</span></div><div class="proof-surface"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["truth"]["headline_lines"])}</h2></div><div><p class="lead">{_esc(copy_sections["truth"]["body"])}</p><div class="claim-list" style="margin-top:34px">{claims_markup}</div></div></div></section>
+<section class="section section--peak" data-reveal data-role="hero_orientation" data-layout="{_esc(composition_by_section.get("opening", {}).get("layout_type", "split_rail"))}"><div class="calibration"></div><div class="hero-grid"><div><div class="eyebrow">{_esc(hero["eyebrow"])}</div><h1>{lines_markup}</h1><p class="lead" style="margin-top:28px">{_esc(hero["supporting"])}</p><a class="button" href="#contact" style="margin-top:34px">{cta}<span aria-hidden="true" style="margin-left:14px">→</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div>{scene_markup}</div></section>
+<section class="section section--peak" data-reveal data-role="company_truth" data-layout="{_esc(composition_by_section.get("truth", {}).get("layout_type", "offset_evidence_surface"))}"><div class="section-header"><span class="eyebrow">01 / 会社の輪郭</span><span class="small">{location}</span></div><div class="proof-surface"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["truth"]["headline_lines"])}</h2>{scene_markup}</div><div><p class="lead">{_esc(copy_sections["truth"]["body"])}</p><div class="claim-list" style="margin-top:34px">{claims_markup}</div></div></div></section>
 <section class="section section--quiet" data-reveal data-role="service_process" data-layout="{_esc(composition_by_section.get("way_in", {}).get("layout_type", "sequence_rail"))}"><div class="section-header"><span class="eyebrow">02 / 入口のリズム</span><span class="small">{_esc(ia_label := _text(sections["way_in"].get("layout_hint")) or "次を考える")}</span></div><div class="hero-grid"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["way_in"]["headline_lines"])}</h2></div><div><p class="lead">{_esc(copy_sections["way_in"]["body"])}</p></div></div><div class="sequence" style="margin-top:64px">{steps_markup}</div></section>
 <section class="section section--quiet" id="contact" data-reveal data-role="next_step" data-layout="{_esc(composition_by_section.get("contact", {}).get("layout_type", "contact_strip"))}"><div class="section-header"><span class="eyebrow">03 / 次の案内</span><span class="small">{location}</span></div><div class="contact-strip"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["contact"]["headline_lines"])}</h2><p class="lead" style="margin-top:24px">{_esc(copy_sections["contact"]["body"])}</p><div class="contact-lines" style="margin-top:28px">{contact_markup}</div></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a></div></div></section>
 <section class="section section--peak" data-reveal data-role="cta_zone" data-layout="{_esc(composition_by_section.get("close", {}).get("layout_type", "closing_field"))}"><div class="hero-grid"><div><div class="eyebrow">04 / {category}</div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["close"]["headline_lines"])}</h2><p class="lead" style="margin-top:28px">{_esc(copy_sections["close"]["body"])}</p></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div></div></section>
