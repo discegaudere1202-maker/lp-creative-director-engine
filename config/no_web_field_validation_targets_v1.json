@@ -1,0 +1,157 @@
+{
+  "schema_version": "no_web_field_validation_targets_v1",
+  "verified_from": "第4回1000件 Master + live Web Gate recheck 2026-09-16",
+  "scope": "NO_WEB: no independent official customer-acquisition website confirmed at selection time",
+  "targets": [
+    {
+      "id": "studio-poe",
+      "name": "スタジオポエ",
+      "industry": "ヨガ・ピラティス",
+      "service": "ピラティス・ヨガ・フェムケア",
+      "location": "福岡市早良区小田部",
+      "source": "https://www.instagram.com/studiopoe2025/",
+      "authority": "SERVICE",
+      "barrier": "身体を整える時間を探しているが、自分に合う入口が分からない"
+    },
+    {
+      "id": "yoga-and-peace",
+      "name": "ヨガアンドピース",
+      "industry": "ヨガスタジオ",
+      "service": "少人数制ヨガ・イベント・ワークショップ",
+      "location": "福岡市東区大岳",
+      "source": "https://www.instagram.com/yoga_and_peace_fukuoka/",
+      "authority": "EXPERIENCE",
+      "barrier": "初めてでも参加の雰囲気が分からず、一歩目を決めにくい"
+    },
+    {
+      "id": "lumina-beauty",
+      "name": "Lumina Beauty Salon",
+      "industry": "美容サロン",
+      "service": "脱毛・毛穴洗浄・光フェイシャル",
+      "location": "福岡県みやま市高田町",
+      "source": "https://www.instagram.com/lumina__beautysalon/",
+      "authority": "SERVICE",
+      "barrier": "美容メニューの違いを整理してから予約先を決めたい"
+    },
+    {
+      "id": "plus-beauty",
+      "name": "+Beauty（プラスビューティー）",
+      "industry": "美容サロン",
+      "service": "脱毛・ドライヘッドスパ・よもぎ蒸し・フットリンパ",
+      "location": "福岡市東区",
+      "source": "https://www.instagram.com/plusbeauty_kana/",
+      "authority": "SERVICE",
+      "barrier": "複数メニューの中から自分に合う相談の入口を見つけたい"
+    },
+    {
+      "id": "panda",
+      "name": "Panda",
+      "industry": "美容サロン",
+      "service": "高速脱毛・インディバ",
+      "location": "福岡市東区",
+      "source": "https://www.instagram.com/panda0305panda/",
+      "authority": "SERVICE",
+      "barrier": "施術内容を短時間で理解して相談するか判断したい"
+    },
+    {
+      "id": "nagi-no-mirai",
+      "name": "なぎのみらい",
+      "industry": "ヘッドスパ・スクール",
+      "service": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロン",
+      "location": "福岡市",
+      "source": "https://www.instagram.com/happyfuture_02/",
+      "authority": "EXPERIENCE",
+      "barrier": "サロン利用と学びの違いを整理してから次の行動を決めたい"
+    },
+    {
+      "id": "kannon-healing",
+      "name": "kannon healing ドライヘッドスパ",
+      "industry": "ヘッドスパ",
+      "service": "ドライヘッドスパ・脳疲労ケア・頭痛/肩こりケア",
+      "location": "福岡市東区",
+      "source": "https://www.instagram.com/dryheadspa_enishi/",
+      "authority": "SERVICE",
+      "barrier": "今の悩みを相談できる場所かを分かりやすく確認したい"
+    },
+    {
+      "id": "catbeard",
+      "name": "catbeard",
+      "industry": "ペットサービス",
+      "service": "ペットシッター・ペットホテル・ペット用品",
+      "location": "札幌市北区",
+      "source": "https://www.instagram.com/catbeard2022/",
+      "authority": "TRUST",
+      "barrier": "大切なペットを預ける前に、サービスの輪郭と連絡先を確認したい"
+    },
+    {
+      "id": "no-pets-no-life",
+      "name": "no.pets.no.life",
+      "industry": "ペットシッター",
+      "service": "ペットシッター",
+      "location": "福岡市",
+      "source": "https://www.instagram.com/no.pets_no.life/",
+      "authority": "TRUST",
+      "barrier": "自宅でのお世話を頼む相手として、まず相談先の輪郭を知りたい"
+    },
+    {
+      "id": "maison-clean",
+      "name": "maison_clean0106",
+      "industry": "ハウスクリーニング",
+      "service": "ハウスクリーニング",
+      "location": "福岡市を中心",
+      "source": "https://www.instagram.com/maison_clean0106/",
+      "authority": "SERVICE",
+      "barrier": "どんな清掃を相談できるかを確認してから問い合わせたい"
+    },
+    {
+      "id": "kitahiro-base",
+      "name": "kitahiro_base.2nd",
+      "industry": "生活支援",
+      "service": "不用品回収・遺品整理",
+      "location": "北海道北広島市",
+      "source": "https://www.instagram.com/kitahiro_base.2nd/",
+      "authority": "TRUST",
+      "barrier": "片付けや遺品整理を任せる前に、相談先の実在感を確かめたい"
+    },
+    {
+      "id": "ts-kitchencar",
+      "name": "T'S KITCHENCAR",
+      "industry": "車体製作・板金塗装",
+      "service": "キッチンカー製作・板金塗装",
+      "location": "岐阜県本巣市",
+      "source": "https://www.instagram.com/t_s.kitchencar/",
+      "authority": "CRAFT",
+      "barrier": "製作相談の前に、何を依頼できる事業者かを掴みたい"
+    },
+    {
+      "id": "bike-renger",
+      "name": "bike.renger_03",
+      "industry": "バイク修理",
+      "service": "バイク修理",
+      "location": "兵庫県伊丹市鴻池4丁目",
+      "source": "https://www.instagram.com/bike.renger_03/",
+      "authority": "CRAFT",
+      "barrier": "修理相談の前に、場所とサービスの入口を把握したい"
+    },
+    {
+      "id": "nishizaka-sound",
+      "name": "nishizaka_sound",
+      "industry": "音楽教室",
+      "service": "ピアノ・リトミック・音楽教室",
+      "location": "佐賀県佐賀市",
+      "source": "https://www.instagram.com/nishizaka_sound/",
+      "authority": "EXPERIENCE",
+      "barrier": "教室の対象や雰囲気を知ってから体験・相談を考えたい"
+    },
+    {
+      "id": "soltilo-kyushu",
+      "name": "SOLTILO FSS 九州",
+      "industry": "サッカースクール",
+      "service": "サッカースクール",
+      "location": "福岡県宇美町・筑紫野市・佐賀県小城市",
+      "source": "https://www.instagram.com/soltilo_fss_kyushu/",
+      "authority": "EXPERIENCE",
+      "barrier": "通える地域とスクールの入口を分かりやすく確認したい"
+    }
+  ]
+}
