@@ -263,7 +263,7 @@ async def _exact_captures(html_path: Path, out_dir: Path) -> dict[str, str]:
         for name, (width, height) in captures.items():
             page = await browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
             await page.emulate_media(reduced_motion="reduce")
-            await page.goto(html_path.as_uri(), wait_until="load")
+            await page.goto(html_path.resolve().as_uri(), wait_until="load")
             await page.screenshot(path=str(out_dir / f"{name}_{width}x{height}.png"), full_page=False)
             result[name] = str(out_dir / f"{name}_{width}x{height}.png")
             await page.close()
