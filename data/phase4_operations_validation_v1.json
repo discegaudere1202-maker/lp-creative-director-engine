@@ -1,7 +1,7 @@
 {
   "schema_version": "phase4_operations_validation_v1",
-  "status": "HOLD_CI_BROWSER_PENDING",
-  "scope": "Local contract validation; no external production changes.",
+  "status": "PASS",
+  "scope": "Synthetic Operations validation plus real-fixture dry runs; no external production changes.",
   "implementation_commit": "5cc7bc9f350d64749f39c040a7c757a18ff885b5",
   "preflight": {
     "live_main": "d5fb829edfbadc9b352bd548cbc685385be2c59c",
@@ -40,10 +40,14 @@
     }
   },
   "browser_qa": {
-    "status": "PENDING_CI",
+    "status": "PASS",
     "required_widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
     "exact_capture": ["1440x1000", "390x844"],
-    "reason": "Local Chromium download timed out; Phase 4 workflow is configured to run the authoritative CI browser QA."
+    "workflow_run": 35049015468,
+    "workflow_run_number": 1,
+    "artifact_id": 10428376536,
+    "artifact_digest": "sha256:98157f5ee156c2430dbd0c3ce0bef794f21fe2a82bdc79980e3b173b6bd971fe",
+    "conclusion": "success"
   },
-  "next_step": "Run .github/workflows/phase4_operations.yml and update this record with the successful workflow/artifact evidence."
+  "next_step": "Phase 5 | Batch Generation"
 }
