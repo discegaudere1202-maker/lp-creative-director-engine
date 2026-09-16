@@ -1,0 +1,115 @@
+{
+  "schema_version": "phase7-validation-v1",
+  "status": "PASS",
+  "development_completion": "NOT_COMPLETE",
+  "validated_at": "2026-09-16T06:02:06Z",
+  "implementation_commit": "dbb2db2ce9259c0cddea44d2d13aad55b46c799b",
+  "workflow_run": 35061481569,
+  "workflow_conclusion": "success",
+  "artifact_id": 10432164628,
+  "artifact_digest": "sha256:fd527baf7d887fb5cf7e9d1c70bd55cd127e066a379cddd473537bafd94c306e",
+  "persistent_data": {
+    "storage": "SQLite reference adapter",
+    "schema": "phase7-sqlite-v1",
+    "restart": "PASS",
+    "integrity": "PASS",
+    "foreign_key_isolation": "PASS"
+  },
+  "api": {
+    "thin_service_boundary": "PASS",
+    "idempotency": "PASS",
+    "gate_bypass": 0,
+    "error_contract": "REFERENCE"
+  },
+  "operator_interface": {
+    "status": "PASS",
+    "mode": "PRIVATE_STATIC",
+    "external_actions": 0
+  },
+  "freshness": {
+    "contract": "PASS",
+    "live_refetch": "NOT_CONNECTED"
+  },
+  "existing_web_delta": {
+    "contract": "PASS",
+    "live_capture": "NOT_CONNECTED"
+  },
+  "metrics": {
+    "throughput": "MEASURED_CONTRACT",
+    "cost_proxy": "PASS",
+    "real_spend": "UNKNOWN"
+  },
+  "unit_economics": {
+    "status": "SCENARIO_ONLY",
+    "prices_yen": [
+      300000,
+      500000,
+      800000,
+      1000000
+    ],
+    "real_cac": "UNKNOWN",
+    "real_cvr": "UNKNOWN"
+  },
+  "observability": {
+    "structured_events": "PASS",
+    "health": "PASS",
+    "dead_letter_boundary": "PASS"
+  },
+  "recovery": {
+    "restart": "PASS",
+    "rollback": "EXISTING_PHASE4_CONTRACT",
+    "backup": "DOCUMENTED_REFERENCE"
+  },
+  "synthetic_1000": {
+    "processed": 1000,
+    "duration_ms": "CI_ARTIFACT",
+    "concurrency": 10,
+    "failure": 0,
+    "retry": 0,
+    "contamination": 0,
+    "collision": 0,
+    "recovery": "PASS",
+    "test_only": true
+  },
+  "quality_at_scale": {
+    "phase6_sales_ready_population": 53,
+    "formal_distribution": "EXISTING_PHASE6_RECORD",
+    "template_collapse": "NOT_REMEASURED_IN_PHASE7"
+  },
+  "pilot_ready_candidates": {
+    "count": "NOT_FINALIZED",
+    "external_send": 0
+  },
+  "hard_gates": {
+    "cross_company_evidence": 0,
+    "cross_company_contact": 0,
+    "cross_company_screenshot": 0,
+    "project_corruption": 0,
+    "safety_bypass": 0,
+    "rights_bypass": 0,
+    "release_corruption": 0,
+    "data_loss": 0,
+    "secret_leakage": 0,
+    "external_sales": 0,
+    "public_deploy": 0,
+    "manual_lp_edit": 0
+  },
+  "regression": {
+    "phase2b": "success",
+    "phase3": "success",
+    "phase4": "success",
+    "phase5": "success",
+    "phase6": "success",
+    "production_generation": "success",
+    "production_qa": "success",
+    "lp_engine_qa": "success"
+  },
+  "remaining_limitations": [
+    "live freshness provider is not connected",
+    "existing web capture/delta is contract-only",
+    "SQLite is a reference adapter; production DB/API hosting is not provisioned",
+    "UI is a static private operator interface, not authenticated multi-user UI",
+    "1000 load validates persistence/identity/restart, not 1000 full browser generations"
+  ],
+  "next_step": "Phase 7B | Production Hardening or Operating Phase | Live Pilot after explicit human approval"
+}
