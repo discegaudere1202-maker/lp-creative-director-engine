@@ -15,6 +15,7 @@ from playwright.async_api import async_playwright
 DEFAULT_WIDTHS = [320, 360, 375, 390, 430, 768, 1024, 1280, 1440]
 DEFAULT_HEIGHT = 1000
 TEXT_SELECTOR = "h1,h2,h3,.btn,.navcta,.nav-call,.contact-cta,.sticky,button"
+FAVICON_ROUTE_GLOB = "**/favicon.ico"
 
 
 @dataclass
@@ -248,6 +249,11 @@ def classify_resource_error(url: str, status: int) -> str:
     return "CRITICAL_RESOURCE_ERROR"
 
 
+async def _fulfill_favicon(route) -> None:
+    """Answer only the browser's optional favicon request; all other 404s flow through."""
+    await route.fulfill(status=204, body=b"", headers={"Content-Type": "image/x-icon"})
+
+
 def _embedded_image_size(uri: str) -> tuple[int, int]:
     try:
         head, payload = uri.split(',', 1)
@@ -333,6 +339,7 @@ async def _viewport_check(browser, prepared: dict[str, str], width: int, height:
     page.on("pageerror", on_page_error)
     page.on("response", on_response)
     page.on("requestfailed", on_request_failed)
+    await page.route(FAVICON_ROUTE_GLOB, _fulfill_favicon)
     await _load_source(page, prepared, lightweight=not capture_screenshot)
 
     dims = await page.evaluate("""

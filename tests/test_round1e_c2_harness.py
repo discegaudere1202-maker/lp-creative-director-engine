@@ -2,9 +2,11 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 import tempfile
+from unittest.mock import AsyncMock
+import asyncio
 
 from scripts.run_round1e_c2_validation import aggregate_viewports, build_summary, capture_paths
-from lp_engine.browser_qa import classify_resource_error
+from lp_engine.browser_qa import FAVICON_ROUTE_GLOB, _fulfill_favicon, classify_resource_error
 
 
 class Round1EC2HarnessTest(unittest.TestCase):
@@ -12,6 +14,13 @@ class Round1EC2HarnessTest(unittest.TestCase):
         self.assertEqual(classify_resource_error("http://localhost/favicon.ico", 404), "BENIGN_NON_CRITICAL_RESOURCE")
         self.assertEqual(classify_resource_error("http://localhost/assets/hero.png", 404), "CRITICAL_RESOURCE_ERROR")
         self.assertEqual(classify_resource_error("http://localhost/style.css", 404), "CRITICAL_RESOURCE_ERROR")
+        self.assertEqual(classify_resource_error("http://localhost/app.js", 404), "CRITICAL_RESOURCE_ERROR")
+
+    def test_favicon_route_returns_204(self):
+        route = AsyncMock()
+        asyncio.run(_fulfill_favicon(route))
+        route.fulfill.assert_awaited_once_with(status=204, body=b"", headers={"Content-Type": "image/x-icon"})
+        self.assertEqual(FAVICON_ROUTE_GLOB, "**/favicon.ico")
 
     def test_viewport_aggregation_is_per_result(self):
         total, passed, failed = aggregate_viewports([{"status": "PASS"}] * 26 + [{"status": "FAIL"}])
