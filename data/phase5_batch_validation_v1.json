@@ -1,12 +1,49 @@
 {
-  "schema_version": "phase5-batch-validation-v1",
+  "schema_version": "phase5-batch-validation-v2",
   "status": "PASS",
-  "engine_version": "batch-engine-v1",
-  "implementation_commit": "86d97d28de09687b5b1e2bc8e8a578428b7ef699",
+  "engine_version": "batch-engine-v2",
+  "implementation_commit": "0151be9d9c78f9fbff766fb5967a0f42964043d1",
+  "workflow_run": 35056178123,
+  "workflow_conclusion": "success",
+  "artifact_id": 10430243447,
+  "artifact_digest": "sha256:6e822b61479b9aa786434792de0293eedb85291db1c0622af9767e0249adadff",
   "stages": {
-    "A": {"requested": 10, "completed": 10, "concurrency": 1, "browser_qa": 10, "gate": "PASS"},
-    "B": {"requested": 30, "completed": 30, "concurrency": 3, "browser_qa": 30, "gate": "PASS"},
-    "C": {"requested": 100, "completed": 100, "concurrency": 5, "browser_qa": 100, "gate": "PASS"}
+    "A": {
+      "requested": 10,
+      "concurrency": 1,
+      "browser_qa": "10/10",
+      "gate": "PASS"
+    },
+    "B": {
+      "requested": 30,
+      "concurrency": 3,
+      "browser_qa": "30/30",
+      "gate": "PASS"
+    },
+    "C": {
+      "requested": 100,
+      "concurrency": 5,
+      "browser_qa": "100/100",
+      "gate": "PASS"
+    }
+  },
+  "browser_qa": {
+    "widths": [
+      320,
+      360,
+      375,
+      390,
+      430,
+      768,
+      1024,
+      1280,
+      1440
+    ],
+    "captures": [
+      "1440x1000",
+      "390x844"
+    ],
+    "mode": "real Chromium"
   },
   "hard_gates": {
     "cross_project_contamination": 0,
@@ -21,18 +58,40 @@
     "partial_failure_isolation": "PASS"
   },
   "quality": {
-    "stage_a_premium_gate": "PASS",
-    "stage_b_premium_gate": "PASS",
-    "stage_c_premium_gate": "PASS",
-    "layout_profiles": ["editorial", "split-hero", "proof-led", "immersive", "utility"],
-    "evidence_density": ["LOW", "MEDIUM", "HIGH"],
-    "conversion_goals": ["inquiry", "reservation", "quote", "purchase", "application"]
+    "axes": [
+      "Immediate Read",
+      "Distinctness",
+      "Owner Specificity",
+      "Visual Hierarchy",
+      "Craft Detail",
+      "Emotional Pull",
+      "Trust",
+      "Share Impulse",
+      "Mobile Quality",
+      "Conversion Intent"
+    ],
+    "evidence_density": [
+      "LOW",
+      "MEDIUM",
+      "HIGH"
+    ],
+    "conversion_goals": [
+      "inquiry",
+      "reservation",
+      "quote",
+      "purchase",
+      "application"
+    ],
+    "profile_generation": "deterministic sha256",
+    "quality_drift": "measured per stage report"
   },
-  "ci": {
-    "workflow_run": 35055549983,
-    "conclusion": "success",
-    "artifact_id": 10430168890,
-    "artifact_digest": "sha256:f4524369dcc408ae42223bcd4032d266e7512a80b4d87e95eada614b0323d65c"
+  "regression": {
+    "phase2b": "success",
+    "phase3": "success",
+    "phase4": "success",
+    "production_generation_qa": "success",
+    "production_qa_loop": "success",
+    "lp_engine_qa": "success"
   },
   "manual_intervention": 0,
   "next_step": "Phase 6 | Sales Production"
