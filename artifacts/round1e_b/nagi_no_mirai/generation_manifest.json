@@ -1,0 +1,88 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "round1e-b-nagi_no_mirai",
+  "company_id": "nagi_no_mirai",
+  "company_name": "なぎのみらい",
+  "mode": "research",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "generation_iteration": 1,
+  "input_digest": "e7c236f7e58565ce97483543781926963ad4747e5d018a0c3afe8af36f58dc40",
+  "input_references": {
+    "input_file": "inline_fixture",
+    "source_urls": [
+      "approved-selection-manifest",
+      "phase6-sales-master-snapshot"
+    ]
+  },
+  "strategy_output": "creative_strategy.json",
+  "photo_role_map_output": "photo_role_map.json",
+  "asset_manifest_output": "asset_manifest.json",
+  "evidence_used": [
+    {
+      "claim": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "evidence_id": "nagi_no_mirai-e-001",
+      "source": "approved-selection-manifest",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "MIDDLE"
+      ]
+    },
+    {
+      "claim": "福岡市で活動する事業者。",
+      "evidence_id": "nagi_no_mirai-e-002",
+      "source": "phase6-sales-master-snapshot",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "EARLY_PROOF"
+      ]
+    },
+    {
+      "claim": "対応できる内容を確認してから次の案内へ進む。",
+      "evidence_id": "nagi_no_mirai-e-003",
+      "source": "approved-selection-manifest",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "MIDDLE"
+      ]
+    },
+    {
+      "claim": "公式SNSから相談・予約の入口を確認する。",
+      "evidence_id": "nagi_no_mirai-e-004",
+      "source": "phase6-sales-master-snapshot",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ]
+    }
+  ],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "NOT_PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "form_causality_manifest.json",
+    "information_architecture.json",
+    "copy.json",
+    "photo_role_map.json",
+    "asset_manifest.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "generated_at": "2026-09-16T13:02:22.583238+00:00"
+}

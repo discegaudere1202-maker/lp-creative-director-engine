@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "manual_edit_count": 0,
+  "companies": [
+    {
+      "company": "Maylynn Paint",
+      "output_dir": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1e_b\\maylynn_paint",
+      "generation_success": true,
+      "output_status": "NOT_PRODUCTION_APPROVED",
+      "manual_intervention": [],
+      "photo_roles": [
+        "hero_home_finish",
+        "craft_handwork",
+        "material_detail",
+        "trust_consultation"
+      ]
+    },
+    {
+      "company": "なぎのみらい",
+      "output_dir": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1e_b\\nagi_no_mirai",
+      "generation_success": true,
+      "output_status": "NOT_PRODUCTION_APPROVED",
+      "manual_intervention": [],
+      "photo_roles": [
+        "hero_treatment_space",
+        "hand_technique",
+        "sensory_detail",
+        "welcome_human"
+      ]
+    },
+    {
+      "company": "わたしの台所",
+      "output_dir": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1e_b\\watashi_no_daidokoro",
+      "generation_success": true,
+      "output_status": "NOT_PRODUCTION_APPROVED",
+      "manual_intervention": [],
+      "photo_roles": [
+        "hero_shared_cooking",
+        "ingredient_story",
+        "hands_in_action",
+        "finished_table"
+      ]
+    }
+  ]
+}

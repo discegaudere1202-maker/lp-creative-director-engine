@@ -1,0 +1,80 @@
+[
+  {
+    "section_id": "opening",
+    "section_role": "hero_orientation",
+    "customer_question": "ここは自分の状況を相談できる場所か？",
+    "key_message": "少人数でストウブ無水料理を学ぶ料理教室。を、申込み前の疑問をほどくの入口として見せる。",
+    "layout_hint": "studio_invitation",
+    "evidence_used": [],
+    "visual_authority": "PERSON",
+    "emotional_intensity": 5,
+    "cta_role": "orientation",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "headline_first_then_single_action"
+  },
+  {
+    "section_id": "truth",
+    "section_role": "company_truth",
+    "customer_question": "なぜこの会社に相談するのか？",
+    "key_message": "少人数でストウブ無水料理を学ぶ料理教室。",
+    "layout_hint": "やってみたいから",
+    "evidence_used": [
+      "watashi_no_daidokoro-e-001",
+      "watashi_no_daidokoro-e-002"
+    ],
+    "visual_authority": "PERSON",
+    "emotional_intensity": 4,
+    "cta_role": "proof_orientation",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "stacked_proof_with_short_lines"
+  },
+  {
+    "section_id": "way_in",
+    "section_role": "service_process",
+    "customer_question": "相談したら、何を伝えればよいか？",
+    "key_message": "場と内容を知る。",
+    "layout_hint": "場と内容を知る",
+    "evidence_used": [
+      "watashi_no_daidokoro-e-001",
+      "watashi_no_daidokoro-e-003"
+    ],
+    "visual_authority": "DOCUMENT",
+    "emotional_intensity": 3,
+    "cta_role": "clarity",
+    "quiet_or_peak": "quiet",
+    "mobile_behavior": "vertical_steps_with_breathing_room"
+  },
+  {
+    "section_id": "contact",
+    "section_role": "next_step",
+    "customer_question": "問い合わせた後、まず何ができるか？",
+    "key_message": "参加の入口。",
+    "layout_hint": "参加の入口",
+    "evidence_used": [
+      "watashi_no_daidokoro-e-004"
+    ],
+    "visual_authority": "TYPOGRAPHY",
+    "emotional_intensity": 4,
+    "cta_role": "action",
+    "quiet_or_peak": "quiet",
+    "mobile_behavior": "contact_details_before_button"
+  },
+  {
+    "section_id": "close",
+    "section_role": "cta_zone",
+    "customer_question": "ここから何をすればよいか？",
+    "key_message": "申込み前の疑問をほどく",
+    "layout_hint": "studio_invitation",
+    "evidence_used": [
+      "watashi_no_daidokoro-e-001",
+      "watashi_no_daidokoro-e-002",
+      "watashi_no_daidokoro-e-003",
+      "watashi_no_daidokoro-e-004"
+    ],
+    "visual_authority": "TYPOGRAPHY",
+    "emotional_intensity": 5,
+    "cta_role": "primary_conversion",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target"
+  }
+]

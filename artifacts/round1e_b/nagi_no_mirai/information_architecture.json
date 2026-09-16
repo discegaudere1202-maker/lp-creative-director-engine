@@ -1,0 +1,80 @@
+[
+  {
+    "section_id": "opening",
+    "section_role": "hero_orientation",
+    "customer_question": "ここは自分の状況を相談できる場所か？",
+    "key_message": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。を、予約前の不安をほどくの入口として見せる。",
+    "layout_hint": "care_rhythm",
+    "evidence_used": [],
+    "visual_authority": "PERSON",
+    "emotional_intensity": 5,
+    "cta_role": "orientation",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "headline_first_then_single_action"
+  },
+  {
+    "section_id": "truth",
+    "section_role": "company_truth",
+    "customer_question": "なぜこの会社に相談するのか？",
+    "key_message": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+    "layout_hint": "気になることから",
+    "evidence_used": [
+      "nagi_no_mirai-e-001",
+      "nagi_no_mirai-e-002"
+    ],
+    "visual_authority": "PERSON",
+    "emotional_intensity": 4,
+    "cta_role": "proof_orientation",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "stacked_proof_with_short_lines"
+  },
+  {
+    "section_id": "way_in",
+    "section_role": "service_process",
+    "customer_question": "相談したら、何を伝えればよいか？",
+    "key_message": "過ごし方を選ぶ。",
+    "layout_hint": "過ごし方を選ぶ",
+    "evidence_used": [
+      "nagi_no_mirai-e-001",
+      "nagi_no_mirai-e-003"
+    ],
+    "visual_authority": "DOCUMENT",
+    "emotional_intensity": 3,
+    "cta_role": "clarity",
+    "quiet_or_peak": "quiet",
+    "mobile_behavior": "vertical_steps_with_breathing_room"
+  },
+  {
+    "section_id": "contact",
+    "section_role": "next_step",
+    "customer_question": "問い合わせた後、まず何ができるか？",
+    "key_message": "予約の入口。",
+    "layout_hint": "予約の入口",
+    "evidence_used": [
+      "nagi_no_mirai-e-004"
+    ],
+    "visual_authority": "TYPOGRAPHY",
+    "emotional_intensity": 4,
+    "cta_role": "action",
+    "quiet_or_peak": "quiet",
+    "mobile_behavior": "contact_details_before_button"
+  },
+  {
+    "section_id": "close",
+    "section_role": "cta_zone",
+    "customer_question": "ここから何をすればよいか？",
+    "key_message": "予約前の不安をほどく",
+    "layout_hint": "care_rhythm",
+    "evidence_used": [
+      "nagi_no_mirai-e-001",
+      "nagi_no_mirai-e-002",
+      "nagi_no_mirai-e-003",
+      "nagi_no_mirai-e-004"
+    ],
+    "visual_authority": "TYPOGRAPHY",
+    "emotional_intensity": 5,
+    "cta_role": "primary_conversion",
+    "quiet_or_peak": "peak",
+    "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target"
+  }
+]

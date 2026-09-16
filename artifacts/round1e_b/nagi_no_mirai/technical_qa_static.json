@@ -1,0 +1,29 @@
+{
+  "mode": "static_only",
+  "allow_non_production": true,
+  "required_widths": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "status": "PASS",
+  "issues": [],
+  "manual_intervention": [],
+  "approved_evidence_ids": [
+    "nagi_no_mirai-e-001",
+    "nagi_no_mirai-e-002",
+    "nagi_no_mirai-e-003",
+    "nagi_no_mirai-e-004"
+  ],
+  "html_bytes": 20177,
+  "exact_capture": {
+    "desktop": "1440x1000_pending_browser_qa",
+    "mobile": "390x844_pending_browser_qa"
+  }
+}

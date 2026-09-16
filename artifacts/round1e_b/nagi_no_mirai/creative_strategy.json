@@ -1,0 +1,97 @@
+{
+  "schema_version": "production_generation_v1",
+  "creative_problem": "相談前に何を確認すればよいか分からないを、予約前の不安をほどくへ変える。",
+  "target_customer_state": {
+    "before": "相談前に何を確認すればよいか分からない",
+    "after": "まず状況を伝えてみようと思える",
+    "barrier": "自分に合う入口か分からない"
+  },
+  "desired_customer_transition": "まず状況を伝えてみようと思える",
+  "core_message": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+  "big_idea": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。を、予約前の不安をほどくの入口として見せる。",
+  "emotional_barrier": "自分に合う入口か分からない",
+  "trust_strategy": {
+    "approved_proof": [
+      "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "福岡市で活動する事業者。",
+      "対応できる内容を確認してから次の案内へ進む。"
+    ],
+    "sequence": [
+      "Company Truth",
+      "Operational clarity",
+      "Action"
+    ],
+    "unsupported_claim_policy": "Use only Safety-approved evidence; do not generate reassurance from missing facts."
+  },
+  "conversion_strategy": {
+    "goal": "reservation",
+    "cta_role": "permission_to_start",
+    "before_cta": "対象となる状況と確認できる入口を短く明示する",
+    "customer_hesitation": "自分に合う入口か分からない",
+    "resolved_by_lp": "会社固有の入口・Process・連絡手段を一続きにする",
+    "why_act_now": "予約前の不安をほどくを確認できる入口がここにある",
+    "after_click": "確認済みの連絡手段へ進み、未確認の対応約束は置かない",
+    "after_cta": "確認できる連絡手段だけを表示し、未確認の対応約束を置かない"
+  },
+  "form_causality": [
+    {
+      "company_truth": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "form_decision": "care_rhythmの主構造を選び、情報の入口を一つの視線移動にまとめる。",
+      "customer_effect": "最初に何を理解すればよいか迷いにくい。"
+    },
+    {
+      "company_truth": "相談前に何を確認すればよいか分からない",
+      "form_decision": "Before Stateを最初の見出しとCTA前の説明へ再登場させる。",
+      "customer_effect": "自分の現在地から行動へ移れる。"
+    },
+    {
+      "company_truth": "自分に合う入口か分からない",
+      "form_decision": "障壁に対応するEvidenceを、説明・Process・CTAの順で近接配置する。",
+      "customer_effect": "行動前の不確実さが具体的な確認事項へ変わる。"
+    },
+    {
+      "company_truth": "reservation",
+      "form_decision": "Conversion Goalに合わせてCTAのタイミングと余白を決める。",
+      "customer_effect": "押す理由と次の動作が画面上でつながる。"
+    },
+    {
+      "company_truth": "MEDIUM",
+      "form_decision": "LOW Evidenceでは主張を増やさず、余白・Type・Material abstractionでPeakをつくる。",
+      "customer_effect": "情報不足を誤認させず、見せ場の密度だけを高める。"
+    }
+  ],
+  "big_idea_gate": {
+    "company_specific": true,
+    "customer_relevant": true,
+    "visualizable": true,
+    "extendable": true,
+    "memorable": true
+  },
+  "visual_authority_priority": [
+    "PERSON",
+    "SENSORY",
+    "PLACE",
+    "MATERIAL",
+    "TYPOGRAPHY",
+    "DOCUMENT"
+  ],
+  "layout_profile": "care_rhythm",
+  "evidence_density_signal": "MEDIUM",
+  "quality_calibration": "baseline_generation",
+  "sparse_strategy": "not_required",
+  "premium_quality_strategy": {
+    "enabled": false,
+    "focus": [
+      "form_causality",
+      "conversion_confidence",
+      "quiet_chapters",
+      "mobile_peak"
+    ],
+    "not_a_template": true
+  },
+  "anti_template_notes": [
+    "No generic three-card grid as the primary composition.",
+    "No unsupported reassurance or invented metrics.",
+    "Peak screens are limited; quiet chapters carry orientation."
+  ]
+}
