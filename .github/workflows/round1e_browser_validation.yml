@@ -1,0 +1,47 @@
+name: Round 1E Browser Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/round1e_browser_validation.yml'
+      - 'src/lp_engine/browser_qa.py'
+      - 'src/lp_engine/production_generation.py'
+      - 'scripts/run_round1e_c2_validation.py'
+      - 'scripts/preflight_photography_assets.py'
+      - 'artifacts/round1e_b/**'
+      - 'assets/photography/**'
+
+jobs:
+  browser-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install project
+        run: python -m pip install -e .
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Photography preflight
+        run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
+      - name: Browser smoke and 27 viewport QA
+        run: python scripts/run_round1e_c2_validation.py
+      - name: Related tests
+        run: python -m unittest tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
+      - name: Upload Round 1E-C2 artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round1e-c2-human-review-${{ github.sha }}
+          path: |
+            artifacts/round1e_c/summary.json
+            artifacts/round1e_c/reports/
+            artifacts/round1e_c/browser_qa/
+            artifacts/round1e_c/human_review/
+          if-no-files-found: warn
