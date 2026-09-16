@@ -314,7 +314,7 @@ def main() -> int:
         elif not args.static_only:
             browser_items.update({f"item-{index:03d}" for index in range(1, min(count, 10) + 1)})
         report = orchestrator.run_batch(batch_id, item_ids=[f"item-{index:03d}" for index in range(1, count + 1)], resume=True)
-        gate = stage_gate(report, stage=f"Stage {stage_name}", expected=count, browser_required=(stage_name == "A" and not args.static_only))
+        gate = stage_gate(report, stage=f"Stage {stage_name}", expected=count, browser_required=(not args.static_only and (stage_name == "A" or args.browser_policy == "all")))
         stages.append(gate)
         (output / f"stage_{stage_name.lower()}_report.json").write_text(json.dumps(gate, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         if gate["status"] != "PASS" and not args.static_only:
