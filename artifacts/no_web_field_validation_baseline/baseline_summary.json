@@ -1,0 +1,456 @@
+{
+  "phase": "LP品質最終実地検証Phase",
+  "scope": "NO_WEB only",
+  "population": 15,
+  "engine_only": true,
+  "manual_lp_edit": 0,
+  "widths": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "exact_viewports": [
+    "390x844",
+    "1440x1000"
+  ],
+  "browser_pass": 8,
+  "safety_pass": 15,
+  "layout_profile_counts": {
+    "editorial_rail": 13,
+    "technical_drawing": 2
+  },
+  "photography_logic_counts": {
+    "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.": 15
+  },
+  "image_role_counts": {
+    "generated_abstract_geometry": 15
+  },
+  "cases": [
+    {
+      "index": 1,
+      "company_id": "studio-poe",
+      "company_name": "スタジオポエ",
+      "industry": "ヨガ・ピラティス",
+      "service": "ピラティス・ヨガ・フェムケア",
+      "location": "福岡市早良区小田部",
+      "source": "https://www.instagram.com/studiopoe2025/",
+      "safety_status": "PASS",
+      "browser_qa_status": "FAIL",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/01_studio-poe/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/01_studio-poe/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 2,
+      "company_id": "yoga-and-peace",
+      "company_name": "ヨガアンドピース",
+      "industry": "ヨガスタジオ",
+      "service": "少人数制ヨガ・イベント・ワークショップ",
+      "location": "福岡市東区大岳",
+      "source": "https://www.instagram.com/yoga_and_peace_fukuoka/",
+      "safety_status": "PASS",
+      "browser_qa_status": "PASS",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/02_yoga-and-peace/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/02_yoga-and-peace/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 3,
+      "company_id": "lumina-beauty",
+      "company_name": "Lumina Beauty Salon",
+      "industry": "美容サロン",
+      "service": "脱毛・毛穴洗浄・光フェイシャル",
+      "location": "福岡県みやま市高田町",
+      "source": "https://www.instagram.com/lumina__beautysalon/",
+      "safety_status": "PASS",
+      "browser_qa_status": "FAIL",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/03_lumina-beauty/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/03_lumina-beauty/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 4,
+      "company_id": "plus-beauty",
+      "company_name": "+Beauty（プラスビューティー）",
+      "industry": "美容サロン",
+      "service": "脱毛・ドライヘッドスパ・よもぎ蒸し・フットリンパ",
+      "location": "福岡市東区",
+      "source": "https://www.instagram.com/plusbeauty_kana/",
+      "safety_status": "PASS",
+      "browser_qa_status": "PASS",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/04_plus-beauty/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/04_plus-beauty/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 5,
+      "company_id": "panda",
+      "company_name": "Panda",
+      "industry": "美容サロン",
+      "service": "高速脱毛・インディバ",
+      "location": "福岡市東区",
+      "source": "https://www.instagram.com/panda0305panda/",
+      "safety_status": "PASS",
+      "browser_qa_status": "PASS",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/05_panda/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/05_panda/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 6,
+      "company_id": "nagi-no-mirai",
+      "company_name": "なぎのみらい",
+      "industry": "ヘッドスパ・スクール",
+      "service": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロン",
+      "location": "福岡市",
+      "source": "https://www.instagram.com/happyfuture_02/",
+      "safety_status": "PASS",
+      "browser_qa_status": "PASS",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/06_nagi-no-mirai/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/06_nagi-no-mirai/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 7,
+      "company_id": "kannon-healing",
+      "company_name": "kannon healing ドライヘッドスパ",
+      "industry": "ヘッドスパ",
+      "service": "ドライヘッドスパ・脳疲労ケア・頭痛/肩こりケア",
+      "location": "福岡市東区",
+      "source": "https://www.instagram.com/dryheadspa_enishi/",
+      "safety_status": "PASS",
+      "browser_qa_status": "FAIL",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/07_kannon-healing/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/07_kannon-healing/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 8,
+      "company_id": "catbeard",
+      "company_name": "catbeard",
+      "industry": "ペットサービス",
+      "service": "ペットシッター・ペットホテル・ペット用品",
+      "location": "札幌市北区",
+      "source": "https://www.instagram.com/catbeard2022/",
+      "safety_status": "PASS",
+      "browser_qa_status": "PASS",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/08_catbeard/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/08_catbeard/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 9,
+      "company_id": "no-pets-no-life",
+      "company_name": "no.pets.no.life",
+      "industry": "ペットシッター",
+      "service": "ペットシッター",
+      "location": "福岡市",
+      "source": "https://www.instagram.com/no.pets_no.life/",
+      "safety_status": "PASS",
+      "browser_qa_status": "FAIL",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/09_no-pets-no-life/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/09_no-pets-no-life/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 10,
+      "company_id": "maison-clean",
+      "company_name": "maison_clean0106",
+      "industry": "ハウスクリーニング",
+      "service": "ハウスクリーニング",
+      "location": "福岡市を中心",
+      "source": "https://www.instagram.com/maison_clean0106/",
+      "safety_status": "PASS",
+      "browser_qa_status": "FAIL",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/10_maison-clean/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/10_maison-clean/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 11,
+      "company_id": "kitahiro-base",
+      "company_name": "kitahiro_base.2nd",
+      "industry": "生活支援",
+      "service": "不用品回収・遺品整理",
+      "location": "北海道北広島市",
+      "source": "https://www.instagram.com/kitahiro_base.2nd/",
+      "safety_status": "PASS",
+      "browser_qa_status": "PASS",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/11_kitahiro-base/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/11_kitahiro-base/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 12,
+      "company_id": "ts-kitchencar",
+      "company_name": "T'S KITCHENCAR",
+      "industry": "車体製作・板金塗装",
+      "service": "キッチンカー製作・板金塗装",
+      "location": "岐阜県本巣市",
+      "source": "https://www.instagram.com/t_s.kitchencar/",
+      "safety_status": "PASS",
+      "browser_qa_status": "PASS",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/12_ts-kitchencar/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/12_ts-kitchencar/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "technical_drawing",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 13,
+      "company_id": "bike-renger",
+      "company_name": "bike.renger_03",
+      "industry": "バイク修理",
+      "service": "バイク修理",
+      "location": "兵庫県伊丹市鴻池4丁目",
+      "source": "https://www.instagram.com/bike.renger_03/",
+      "safety_status": "PASS",
+      "browser_qa_status": "PASS",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/13_bike-renger/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/13_bike-renger/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "technical_drawing",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 14,
+      "company_id": "nishizaka-sound",
+      "company_name": "nishizaka_sound",
+      "industry": "音楽教室",
+      "service": "ピアノ・リトミック・音楽教室",
+      "location": "佐賀県佐賀市",
+      "source": "https://www.instagram.com/nishizaka_sound/",
+      "safety_status": "PASS",
+      "browser_qa_status": "FAIL",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/14_nishizaka-sound/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/14_nishizaka-sound/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    },
+    {
+      "index": 15,
+      "company_id": "soltilo-kyushu",
+      "company_name": "SOLTILO FSS 九州",
+      "industry": "サッカースクール",
+      "service": "サッカースクール",
+      "location": "福岡県宇美町・筑紫野市・佐賀県小城市",
+      "source": "https://www.instagram.com/soltilo_fss_kyushu/",
+      "safety_status": "PASS",
+      "browser_qa_status": "FAIL",
+      "exact_capture": {
+        "mobile": "/tmp/no-web-field-validation/15_soltilo-kyushu/exact_capture/mobile_390x844.png",
+        "desktop": "/tmp/no-web-field-validation/15_soltilo-kyushu/exact_capture/desktop_1440x1000.png"
+      },
+      "structural_observations": {
+        "layout_profile": "editorial_rail",
+        "photography_logic": "No client image is required for the sample; use generated SVG/CSS geometry until rights are cleared.",
+        "image_elements": 0,
+        "hero_mark_count": 9,
+        "section_count": 5,
+        "screenshot_peak_count": 3,
+        "image_roles": [
+          "generated_abstract_geometry"
+        ],
+        "cta_points_to_social_profile": true,
+        "manual_intervention": []
+      }
+    }
+  ]
+}
