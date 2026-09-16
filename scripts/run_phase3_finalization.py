@@ -232,7 +232,12 @@ def main(argv=None) -> int:
     report["status"] = "PASS" if all(report["success_criteria"].values()) else "HOLD"
     output = out / "phase3_validation.json"
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"output": str(output), "status": report["status"], "success_criteria": report["success_criteria"]}, ensure_ascii=False, indent=2))
+    print(json.dumps({
+        "output": str(output),
+        "status": report["status"],
+        "success_criteria": report["success_criteria"],
+        "synthetic_qa": report["cases"]["SyntheticFullRoundTrip"]["qa"],
+    }, ensure_ascii=False, indent=2))
     return 0 if report["status"] == "PASS" else 2
 
 
