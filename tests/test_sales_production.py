@@ -20,7 +20,7 @@ class SalesProductionContractTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             m,r,rows=run_sales_stage([c(sales_candidate_id="C1",company_name="A社"),c(sales_candidate_id="C2",company_name="B社")],stage="test",root=Path(td),concurrency=1)
             self.assertEqual(m.success_count,2); self.assertEqual(len(contamination_audit(r)),0)
-            self.assertEqual(r.items["phase6-sales-test-C1"].project_id,"project_phase6-sales-test-C1"); self.assertEqual(r.items["phase6-sales-test-C2"].project_id,"project_phase6-sales-test-C2")
+            self.assertEqual(r.items["phase6-sales-test-C1"].project_id,"project_phase6-sales-test_C1"); self.assertEqual(r.items["phase6-sales-test-C2"].project_id,"project_phase6-sales-test_C2")
     def test_external_action_boundary(self):
         with tempfile.TemporaryDirectory() as td:
             m,r,rows=run_sales_stage([c()],stage="test",root=Path(td),concurrency=1)
