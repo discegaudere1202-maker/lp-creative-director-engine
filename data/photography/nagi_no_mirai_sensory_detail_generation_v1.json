@@ -1,1 +1,120 @@
-{"schema_version":"round1d_generated_visual_review_v1","company":{"lead_id":"R4-G005-002","company_name":"なぎのみらい"},"starting_live_main":"c9395e50dc028831b9fc2f93d8c203a4daf1f7e0","generation_date":"2026-09-16","photo_role":"sensory_detail","generation_count":2,"status":"HOLD","ssot":"data/photography/nagi_no_mirai_asset_selection_v1.json","attempts":[{"attempt":1,"gen_id":"4f32206a-e1ac-40a2-ae20-7ef07c0b3835","session_file":"a_cozy_softly_lit_interior_scene_of_a_spa_massage.png","review":{"sensory_relevance":"PASS","head_spa_causality":"HOLD","japanese_market_fit":"PASS","generic_spa_smell":"HOLD","ai_smell":"PASS","material_naturalness":"PASS","quiet_chapter_quality":"PASS","crop":"PASS","replacement_compatibility":"PASS","one_million_yen_lp_use":"HOLD"},"notes":"枕・タオル・布・自然光の触覚表現は良好。人物なしQuiet Chapterとして自然でAI破綻も目立たない。一方、頭部専用の体験との因果が十分強くなく、一般マッサージ/Spaのベッド周りにも読める。背景の発光ランプ等もGeneric Spa文脈を少し残す。"},{"attempt":2,"gen_id":"5def0bc8-6690-48e1-9ff8-fb58ae1d1d16","session_file":"a_cozy_warm_softly_lit_interior_scene_of_a_spa_t.png","review":{"sensory_relevance":"PASS","head_spa_causality":"HOLD","japanese_market_fit":"PASS","generic_spa_smell":"FAIL","ai_smell":"PASS","material_naturalness":"PASS","quiet_chapter_quality":"PASS","crop":"PASS","replacement_compatibility":"PASS","one_million_yen_lp_use":"HOLD"},"notes":"素材感と静かな構図は良いが、丸い照明・ボトル・Spa stylingが強まり、禁止していたGeneric Spaへの逃げが1案目より増えた。Head Spa専用の場所という因果も弱い。"}],"preferred_attempt":1,"selected_asset":null,"approval_status":"HOLD_VISUAL_REVIEW","reason":"最大2案を比較したが、どちらも『ここで静かに頭を休める体験』まで明確には補強できず、100万円価値の営業サンプルLPへそのまま採用する基準には達していない。1案目の方向性は近いが、Generic Spa smellをさらに削り、頭部を預けるための枕形状・ベッドヘッド周りの因果をより明確にする必要がある。","required_future_adjustment":["発光ランプ・ボトル・Spa装飾をさらに削る","頭部を預ける枕/ヘッドレスト形状を主役にする","Body Massageに見えるベッド全体の見せ方を弱める","off-white/soft-gray/木の小家具中心にしてamberを抑える","実店舗・実設備・実備品とは表現しない"],"metadata_template_for_future_primary":{"asset_id":"nagi-sensory-detail-generated-v1","photo_role":"sensory_detail","source_type":"generated","generation_date":"2026-09-16","visual_subject":"頭を休めるための枕・柔らかなタオル・布・静かな光を中心にした小規模ドライヘッドスパの感覚的ディテール","placement":"quiet_chapter_image","crop":"50% 50%","alt":"頭を休める時間を想起させる枕とタオル、柔らかな光のイメージ","replacement_target":"なぎのみらいの実店舗ディテール","factual_implication_boundary":["実店舗ディテールと表現しない","実設備・実備品と表現しない","衛生性能・医療安全性を示唆しない"],"approval_status":"RESEARCH_APPROVED_GENERATED_VISUAL only after future PASS"}}
+{
+  "schema_version": "round1d_generated_visual_review_v1",
+  "company": {
+    "lead_id": "R4-G005-002",
+    "company_name": "なぎのみらい"
+  },
+  "starting_live_main": "c9395e50dc028831b9fc2f93d8c203a4daf1f7e0",
+  "latest_revision_starting_live_main": "e7151520acdc53bacec335ec4e9937be9c4950fb",
+  "generation_date": "2026-09-16",
+  "photo_role": "sensory_detail",
+  "generation_count": 3,
+  "status": "PASS",
+  "ssot": "data/photography/nagi_no_mirai_asset_selection_v1.json",
+  "attempts": [
+    {
+      "attempt": 1,
+      "gen_id": "4f32206a-e1ac-40a2-ae20-7ef07c0b3835",
+      "session_file": "a_cozy_softly_lit_interior_scene_of_a_spa_massage.png",
+      "review": {
+        "sensory_relevance": "PASS",
+        "head_spa_causality": "HOLD",
+        "japanese_market_fit": "PASS",
+        "generic_spa_smell": "HOLD",
+        "ai_smell": "PASS",
+        "material_naturalness": "PASS",
+        "quiet_chapter_quality": "PASS",
+        "crop": "PASS",
+        "replacement_compatibility": "PASS",
+        "one_million_yen_lp_use": "HOLD"
+      },
+      "notes": "枕・タオル・布・自然光の触覚表現は良好。人物なしQuiet Chapterとして自然でAI破綻も目立たない。一方、頭部専用の体験との因果が十分強くなく、一般マッサージ/Spaのベッド周りにも読める。背景の発光ランプ等もGeneric Spa文脈を少し残す。"
+    },
+    {
+      "attempt": 2,
+      "gen_id": "5def0bc8-6690-48e1-9ff8-fb58ae1d1d16",
+      "session_file": "a_cozy_warm_softly_lit_interior_scene_of_a_spa_t.png",
+      "review": {
+        "sensory_relevance": "PASS",
+        "head_spa_causality": "HOLD",
+        "japanese_market_fit": "PASS",
+        "generic_spa_smell": "FAIL",
+        "ai_smell": "PASS",
+        "material_naturalness": "PASS",
+        "quiet_chapter_quality": "PASS",
+        "crop": "PASS",
+        "replacement_compatibility": "PASS",
+        "one_million_yen_lp_use": "HOLD"
+      },
+      "notes": "素材感と静かな構図は良いが、丸い照明・ボトル・Spa stylingが強まり、禁止していたGeneric Spaへの逃げが1案目より増えた。Head Spa専用の場所という因果も弱い。"
+    },
+    {
+      "attempt": 3,
+      "gen_id": "51ba4f8e-4e6c-415d-bc79-df36d8c0e2b1",
+      "session_file": "a_calm_minimal_softly_lit_interior_close_up_scen.png",
+      "generation_reference": {
+        "conversation_file_id": "file_0000000023888211be4e7f46191f339c",
+        "transient_local_path": "/mnt/data/a_calm_minimal_softly_lit_interior_close_up_scen.png"
+      },
+      "review": {
+        "sensory_relevance": "PASS",
+        "head_spa_causality": "PASS",
+        "generic_spa_smell": "PASS",
+        "japanese_small_salon_fit": "PASS",
+        "ai_smell": "PASS",
+        "material_naturalness": "PASS",
+        "quiet_chapter_quality": "PASS",
+        "replacement_compatibility": "PASS",
+        "one_million_yen_lp_use": "PASS"
+      },
+      "notes": "頭部と首周りを受け止める立体的な柔らかいヘッドレストが画面の主役となり、ベッド全景を見せずに『頭を預けて静かに休む場所』まで因果が読める。発光ランプ、アロマ瓶、精油、キャンドル、花、Spa stone等を排し、off-white、soft-gray、natural woodと自然光だけで構成したためGeneric Spa演出が大きく後退。人物なしのQuiet Chapterとして静かで、小規模な日本のサロン文脈にも無理がない。ヘッドレスト形状はやや造形的だが、頭部・首周りの支持体として自然に読め、画像全体に営業利用を止めるAI破綻は見当たらない。"
+    }
+  ],
+  "preferred_attempt": 3,
+  "revision_attempt": {
+    "round": "Round 1D-2B-R",
+    "attempted": true,
+    "generation_limit": 1,
+    "generated_count_this_round": 1,
+    "result": "PASS",
+    "note": "sensory_detailのみ1案再生成。『Spaの雰囲気』ではなく『頭を預けて休むための場所』を主語にし、Head Spa Causality、Generic Spa Smell、AI Smell、100万円LP Useを含むHuman ReviewをPASSとした。"
+  },
+  "selected_asset": {
+    "asset_id": "nagi-sensory-detail-generated-v1",
+    "photo_role": "sensory_detail",
+    "source_type": "generated",
+    "generation_date": "2026-09-16",
+    "gen_id": "51ba4f8e-4e6c-415d-bc79-df36d8c0e2b1",
+    "session_file": "a_calm_minimal_softly_lit_interior_close_up_scen.png",
+    "generation_reference": {
+      "conversation_file_id": "file_0000000023888211be4e7f46191f339c",
+      "transient_local_path": "/mnt/data/a_calm_minimal_softly_lit_interior_close_up_scen.png",
+      "note": "Generated binary image is conversation-scoped; this GitHub update records the approved generation metadata and handoff identifiers."
+    },
+    "visual_subject": "頭部と首周りを柔らかく支えるヘッドレスト、清潔なタオルと布、自然光、小さな木製サイド家具をClose〜Medium Detailで捉えた、頭を預けて静かに休む時間を想起させるイメージ",
+    "placement": "quiet_chapter_image",
+    "crop": "square; 50% 50%",
+    "alt": "頭と首を支える柔らかなヘッドレストとタオル、自然光の静かな休息イメージ",
+    "replacement_target": "なぎのみらいの実店舗にある頭部周りの施術環境・実ディテール",
+    "factual_implication_boundary": [
+      "実店舗ディテールと表現しない",
+      "実設備・実備品と表現しない",
+      "実際に同形状の枕・ヘッドレストを使用していると示唆しない",
+      "衛生性能・医療安全性・治療効果を示唆しない"
+    ],
+    "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL"
+  },
+  "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+  "reason": "Revisionではヘッドレスト周りへ構図を寄せ、頭部・首周りを支える形状を主役にすることで、一般的な癒やし空間ではなく『頭を預けて静かに休む場所』としてのHead Spa Causalityが成立した。発光ランプ・ボトル・アロマ・キャンドル・花・Spa stone等のGeneric Spa記号を排し、off-white / soft-gray / natural wood / 自然光へ限定。Human Reviewで必須4項目を含む全9項目をPASSとし、Quiet Chapter用PRIMARYへ正式確定。",
+  "required_future_adjustment": [],
+  "metadata_template_for_future_primary": null,
+  "generated_asset_phase": {
+    "nagi_no_mirai_sensory_detail_resolved": true,
+    "remaining_generated_hold_count": 1,
+    "remaining_generated_hold_roles": [
+      "welcome_human"
+    ],
+    "note": "今回のsensory_detail解消後、Generated Asset Phaseで確認できるHOLDはなぎのみらい welcome_human の1Roleのみ。"
+  },
+  "image_repository_note": "Generated binary image was produced in the chat session and identified by gen_id/conversation_file_id/session_file. The connected GitHub writer available in this run persists UTF-8 metadata, not binary image bytes."
+}
