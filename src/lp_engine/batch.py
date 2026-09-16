@@ -169,7 +169,13 @@ def run_batch(*, batch_id: str, inputs: list[BatchInput], registry: BatchRegistr
                 item.generation_id = str(result.get("generation_id", _id("generation"))); item.artifact_id = str(result.get("artifact_id", _id("artifact")))
                 item.safety = dict(result.get("safety", {"status": "PASS"})); item.qa = dict(result.get("qa", {"status": "PASS"})); item.quality = dict(result.get("quality", {}))
                 item.state = str(result.get("state", "COMPLETED")); item.failure_type = None; item.error = None
-                if browser_qa:\n                    item.qa["browser"] = dict(browser_qa(inp, Path(item.output_dir)))\n                    item.qa["browser"]["status"] = item.qa["browser"].get("status", "PASS")\n                    if item.qa["browser"]["status"] != "PASS":\n                        item.state = "HOLD"\n                        item.failure_type = "BROWSER_ERROR"\n                        item.error = "browser QA failed"
+                if browser_qa:
+                    item.qa["browser"] = dict(browser_qa(inp, Path(item.output_dir)))
+                    item.qa["browser"]["status"] = item.qa["browser"].get("status", "PASS")
+                    if item.qa["browser"]["status"] != "PASS":
+                        item.state = "HOLD"
+                        item.failure_type = "BROWSER_ERROR"
+                        item.error = "browser QA failed"
                 registry.checkpoint(item); return item
             except TransientBatchError as exc:
                 item.retry_count += 1; item.retry_audit.append({"reason": str(exc), "failure_type": exc.failure_type, "retry_count": item.retry_count, "at": _now()}); manifest.retry_count += 1
