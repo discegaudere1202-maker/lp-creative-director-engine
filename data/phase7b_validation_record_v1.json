@@ -1,0 +1,121 @@
+{
+  "schema_version": "phase7b-validation-v1",
+  "status": "PASS_WITH_EXTERNAL_BLOCKERS",
+  "development_completion": "NOT_COMPLETE",
+  "validated_run": {
+    "id": 35063719751,
+    "conclusion": "success",
+    "artifact_id": 10433072434,
+    "digest": "sha256:5cb43f94d5a81424ffb026d505cd37bdc4c52253dd8b827793ad60e64ad4c7a0"
+  },
+  "post_validation_regression_runs": {
+    "phase2b": 35063719703,
+    "phase3": 35063719680,
+    "phase4": 35063719678,
+    "phase5": 35063719696,
+    "phase6": 35063719686,
+    "phase7": 35063719674,
+    "production_generation": 35063719731,
+    "production_qa": 35063719673,
+    "lp_engine_qa": 35063719727
+  },
+  "production_infrastructure": {
+    "supabase": "NO_ACTIVE_LP_PROJECT",
+    "vercel": "NO_CONNECTED_TEAM",
+    "status": "BLOCKED_BY_EXTERNAL_SETUP"
+  },
+  "production_database": {
+    "adapter": "SQLite reference",
+    "migration": "PASS",
+    "backup_restore": "PASS",
+    "integrity": "PASS",
+    "restart": "PASS",
+    "cross_company_isolation": "PASS",
+    "data_loss": 0
+  },
+  "hosted_api": {
+    "status": "BLOCKED_BY_EXTERNAL_SETUP",
+    "local_contract": "PASS",
+    "local_e2e": "PASS"
+  },
+  "authentication": {
+    "contract": "PASS",
+    "hosted_identity_provider": "NOT_CONNECTED",
+    "unauthenticated_reject": true,
+    "unauthorized_role_reject": true,
+    "cross_project_protection": true
+  },
+  "operator_interface": {
+    "status": "REFERENCE_PRIVATE",
+    "ui_e2e": "PASS",
+    "external_sales": 0,
+    "public_publish": 0
+  },
+  "freshness": {
+    "contract": "PASS",
+    "live_provider": "BLOCKED_BY_EXTERNAL_SETUP",
+    "checked_candidates": 0
+  },
+  "existing_web_delta": {
+    "contract": "PASS",
+    "live_capture": "BLOCKED_BY_EXTERNAL_SETUP"
+  },
+  "pilot_ready": {
+    "population": "Phase 6 SALES_READY 53",
+    "live_checked": 0,
+    "ready": 0,
+    "hold": 53,
+    "external_send": 0
+  },
+  "quality_at_scale": {
+    "contract": "PASS",
+    "phase6_population": 53,
+    "full_reaggregation": "NOT_COMPLETED"
+  },
+  "synthetic_1000": {
+    "processed": 1000,
+    "failure": 0,
+    "retry": 0,
+    "contamination": 0,
+    "collision": 0,
+    "recovery": "PASS",
+    "test_only": true
+  },
+  "observability": "PASS",
+  "recovery": "PASS",
+  "security": {
+    "secret_leakage": 0,
+    "auth_bypass": 0,
+    "safety_bypass": 0,
+    "rights_bypass": 0
+  },
+  "manual_lp_edit": 0,
+  "external_sales_execution": 0,
+  "external_production_publish": 0,
+  "readiness": {
+    "Generation": "READY",
+    "Safety": "READY",
+    "QA": "READY",
+    "Hearing": "READY_WITH_LIMITATION",
+    "Operations": "READY",
+    "Batch": "READY",
+    "Sales_Production": "READY",
+    "Persistence": "READY_WITH_LIMITATION",
+    "API": "READY_WITH_LIMITATION",
+    "Operator_Interface": "READY_WITH_LIMITATION",
+    "Observability": "READY",
+    "Recovery": "READY",
+    "Scale_Architecture": "READY_WITH_LIMITATION",
+    "Live_Pilot": "NOT_READY"
+  },
+  "remaining_production_blockers": [
+    "Hosted production DB not connected",
+    "Hosted API not connected",
+    "Authentication provider not connected",
+    "Live freshness provider not connected",
+    "Live existing-web capture not connected",
+    "53 SALES_READY candidates not live-rechecked",
+    "Full 53 quality-at-scale reaggregation not completed"
+  ],
+  "next_step": "External setup approval, then Operating Phase | Live Pilot"
+}
