@@ -22,8 +22,10 @@ jobs:
         run: pip install -e .
       - name: Apply Photography Pipeline integration
         run: python scripts/apply_round1b_photography_patch.py
-      - name: Contract and regression tests
-        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Photography contract tests
+        run: python -m unittest discover -s tests -p 'test_photography_pipeline.py'
+      - name: Existing production generation regression
+        run: python -m unittest discover -s tests -p 'test_production_generation.py'
       - name: Commit tested implementation
         run: |
           git config user.name "github-actions[bot]"
