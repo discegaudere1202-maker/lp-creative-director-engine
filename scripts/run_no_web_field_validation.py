@@ -148,7 +148,7 @@ def main() -> int:
 
         result = run_generation(input_payload, case_dir, generation_id=f"field-{index:02d}-{target['id']}")
         qa_dir = case_dir / "browser_qa"
-        qa = run_browser_qa_sync(case_dir / "index.html", qa_dir, widths=DEFAULT_WIDTHS, height=1000, screenshot_widths=[390, 1440])
+        qa = run_browser_qa_sync(str(case_dir / "index.html"), qa_dir, widths=DEFAULT_WIDTHS, height=1000, screenshot_widths=[390, 1440])
         exact = asyncio.run(capture_exact(case_dir / "index.html", case_dir / "exact_capture"))
         obs = structural_observations(case_dir)
 
