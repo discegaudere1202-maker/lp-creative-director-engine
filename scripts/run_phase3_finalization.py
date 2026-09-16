@@ -65,7 +65,14 @@ def _browser_qa(output_dir: Path, *, static_only: bool) -> dict:
     if static_only:
         return _static_qa(output_dir)
     report_path = output_dir / "qa_report.json"
-    command = [sys.executable, str(ROOT / "scripts/run_production_qa.py"), str(output_dir), "--out", str(report_path)]
+    command = [
+        sys.executable,
+        str(ROOT / "scripts/run_production_qa.py"),
+        str(output_dir),
+        "--out",
+        str(report_path),
+        "--allow-non-production",
+    ]
     completed = subprocess.run(command, cwd=ROOT, check=False, capture_output=True, text=True)
     if report_path.exists():
         return _load(report_path)
