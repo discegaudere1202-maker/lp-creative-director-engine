@@ -22,14 +22,15 @@ FORBIDDEN_UNSUPPORTED = (
 )
 
 
-def static_report(output_dir: Path) -> dict:
+def static_report(output_dir: Path, *, allow_non_production: bool = False) -> dict:
     manifest = json.loads((output_dir / "generation_manifest.json").read_text(encoding="utf-8"))
     html = (output_dir / "index.html").read_text(encoding="utf-8")
     approved_ids = {str(item["evidence_id"]) for item in manifest.get("evidence_used", [])}
     referenced_ids = set(re.findall(r"(?:andy|[a-z0-9_-]+)-e-[a-z0-9_-]+", html))
     issues = []
-    if manifest.get("output_status") != "PRODUCTION_APPROVED":
-        issues.append("output is not production approved")
+    expected_status = "NOT_PRODUCTION_APPROVED" if allow_non_production else "PRODUCTION_APPROVED"
+    if manifest.get("output_status") != expected_status:
+        issues.append(f"output status must be {expected_status}")
     if manifest.get("manual_intervention") != []:
         issues.append("manual intervention is not empty")
     if not approved_ids:
@@ -44,6 +45,7 @@ def static_report(output_dir: Path) -> dict:
         issues.append("mobile re-art media rule missing")
     return {
         "mode": "static_only",
+        "allow_non_production": allow_non_production,
         "required_widths": DEFAULT_WIDTHS,
         "status": "PASS" if not issues else "FAIL",
         "issues": issues,
@@ -59,9 +61,14 @@ def main(argv=None):
     parser.add_argument("output_dir")
     parser.add_argument("--out")
     parser.add_argument("--static-only", action="store_true")
+    parser.add_argument(
+        "--allow-non-production",
+        action="store_true",
+        help="Explicit TEST_ONLY/Research QA mode; never approves a production output.",
+    )
     args = parser.parse_args(argv)
     output_dir = Path(args.output_dir)
-    report = static_report(output_dir)
+    report = static_report(output_dir, allow_non_production=args.allow_non_production)
     if not args.static_only:
         from lp_engine.browser_qa import run_browser_qa_sync
         browser = run_browser_qa_sync(
@@ -72,6 +79,7 @@ def main(argv=None):
             screenshot_widths=[390, 1440],
         )
         report["mode"] = "static_and_browser"
+        report["allow_non_production"] = args.allow_non_production
         report["browser"] = browser.to_dict()
         report["status"] = "PASS" if report["status"] == "PASS" and browser.status == "PASS" else "FAIL"
         report["exact_capture"] = {"desktop": "1440x1000", "mobile": "390x844"}
