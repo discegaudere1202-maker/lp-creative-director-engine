@@ -1,0 +1,67 @@
+{
+  "schema_version": "round1d_generated_visual_v1",
+  "company": {
+    "lead_id": "R4-G005-002",
+    "company_name": "なぎのみらい",
+    "industry": "ヘッドスパ専門店",
+    "area": "福岡市"
+  },
+  "starting_live_main": "c7579ab8e2dc40f05e57e34d3d6fb2fa3de9d7ec",
+  "photo_role": "hero_treatment_space",
+  "generation_count": 2,
+  "review_history": [
+    {
+      "generation": 1,
+      "gen_id": "74044328-a6ff-4f98-a7f1-e026b98b2cb4",
+      "decision": "HOLD",
+      "reason": "Head Spa read and copy-safe composition were strong, but amber lighting, spa decor and model/beauty-ad tone were slightly too strong for the intended small, approachable Fukuoka dry-headspa context. Revision used the one allowed regeneration."
+    },
+    {
+      "generation": 2,
+      "gen_id": "baf79d66-7fe7-4080-96b4-01aad7cae1fd",
+      "decision": "PASS",
+      "reason": "Head-to-hand technique is immediately legible, the room reads as a small calm salon rather than a hotel or medical setting, the left side provides natural hero-copy space, and the client/hand/ear/neck/bed geometry is visually coherent at review scale."
+    }
+  ],
+  "selected_asset": {
+    "asset_id": "nagi-hero-treatment-space-generated-v1",
+    "photo_role": "hero_treatment_space",
+    "source_type": "generated",
+    "generation_date": "2026-09-16",
+    "gen_id": "baf79d66-7fe7-4080-96b4-01aad7cae1fd",
+    "chatgpt_generated_filename": "wide_softly_lit_cozy_spa_therapy_room_interior_s.png",
+    "binary_repository_status": "NOT_COMMITTED_METADATA_ONLY",
+    "visual_subject": "服を着た成人客が仰向けで休み、施術者の両手が頭部へ静かに触れる、日本の小規模ドライヘッドスパを想起させる生成ビジュアル。",
+    "placement": "hero_dominant_image",
+    "replacement_target": "なぎのみらいの実店舗・実際の施術シーン",
+    "crop": {
+      "desktop": "16:10 crop; preserve client head and both practitioner hands on right, retain approximately 35-45% quiet copy area on left",
+      "mobile": "4:3 crop-safe; retain head, both hands and enough surrounding room context; do not crop to face-only"
+    },
+    "alt": "静かな小規模サロンで頭部への施術を受けながら休む時間を想起させるイメージ",
+    "factual_implication_boundary": [
+      "なぎのみらいの実店舗と表現しない",
+      "実際の施術風景と表現しない",
+      "実スタッフ・実顧客と表現しない",
+      "治療・症状改善・疾患改善を示唆しない",
+      "店名・ロゴ・看板・制服・ブランドを画像の事実証拠として扱わない"
+    ],
+    "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL"
+  },
+  "visual_review": {
+    "head_spa_read": "PASS",
+    "japanese_market_fit": "PASS",
+    "small_salon_fit": "PASS",
+    "ai_smell": "PASS",
+    "human_naturalness": "PASS",
+    "hand_naturalness": "PASS",
+    "emotional_pull": "PASS",
+    "hero_impact": "PASS",
+    "copy_safe_area": "PASS",
+    "desktop_crop": "PASS",
+    "mobile_crop": "PASS",
+    "replacement_compatibility": "PASS",
+    "million_yen_sales_sample_use": "PASS"
+  },
+  "remaining_concern": "Generated visual remains contextual rather than company evidence. Before final customer publication it should be replaced by an authorized real Nagi no Mirai store/treatment photo when available. The image binary itself was not committed by the connector; this metadata and gen_id identify the approved asset for later wiring."
+}
