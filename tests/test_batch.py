@@ -47,4 +47,13 @@ class BatchTest(unittest.TestCase):
             run_batch(batch_id="same", inputs=inputs("same", 3), registry=registry, processor=process, engine_version="v1")
             self.assertEqual(len(calls), 3)
 
+
+    def test_project_ids_are_batch_scoped(self):
+        with tempfile.TemporaryDirectory() as d:
+            registry = BatchRegistry(d)
+            run_batch(batch_id="scope", inputs=inputs("scope", 2), registry=registry,
+                      processor=lambda i, o: {}, engine_version="v1")
+            ids = {x.project_id for x in registry.items.values()}
+            self.assertEqual(ids, {"project_scope_company-0", "project_scope_company-1"})
+
 if __name__ == "__main__": unittest.main()

@@ -162,14 +162,14 @@ def run_batch(*, batch_id: str, inputs: list[BatchInput], registry: BatchRegistr
     def one(inp: BatchInput) -> BatchItem:
         item = registry.items[inp.item_id]
         if item.state in {"COMPLETED", "HOLD", "BLOCKED"}: return item
-        item.state = "RUNNING"; item.project_id = f"project_{inp.company_id}"; item.output_dir = str(registry.root / inp.item_id); registry.checkpoint(item)
+        item.state = "RUNNING"; item.project_id = f"project_{inp.batch_id}_{inp.company_id}"; item.output_dir = str(registry.root / inp.item_id); registry.checkpoint(item)
         while True:
             try:
                 result = dict(processor(inp, Path(item.output_dir)))
                 item.generation_id = str(result.get("generation_id", _id("generation"))); item.artifact_id = str(result.get("artifact_id", _id("artifact")))
                 item.safety = dict(result.get("safety", {"status": "PASS"})); item.qa = dict(result.get("qa", {"status": "PASS"})); item.quality = dict(result.get("quality", {}))
                 item.state = str(result.get("state", "COMPLETED")); item.failure_type = None; item.error = None
-                if browser_qa: item.qa["browser"] = dict(browser_qa(inp, Path(item.output_dir))); item.qa["browser"]["status"] = item.qa["browser"].get("status", "PASS")
+                if browser_qa:\n                    item.qa["browser"] = dict(browser_qa(inp, Path(item.output_dir)))\n                    item.qa["browser"]["status"] = item.qa["browser"].get("status", "PASS")\n                    if item.qa["browser"]["status"] != "PASS":\n                        item.state = "HOLD"\n                        item.failure_type = "BROWSER_ERROR"\n                        item.error = "browser QA failed"
                 registry.checkpoint(item); return item
             except TransientBatchError as exc:
                 item.retry_count += 1; item.retry_audit.append({"reason": str(exc), "failure_type": exc.failure_type, "retry_count": item.retry_count, "at": _now()}); manifest.retry_count += 1
