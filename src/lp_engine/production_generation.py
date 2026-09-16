@@ -114,7 +114,10 @@ def _line_shape(text: str, *, max_chars: int = 12) -> list[str]:
     # ``を``), leaving a long, awkward remainder and eventually a one- or
     # two-character browser line.  Keeping the boundary attached to the head
     # also prevents particles from becoming isolated lines.
-    separators = ["について", "という", "なら", "から", "まで", "です", "ます", "を", "へ", "で", "の", "、", "。"]
+    # Middle dots are common in service/category names (for example)
+    # ``外壁塗装・屋根・雨漏り・リフォーム``. Treat them as semantic
+    # boundaries so a katakana word is not split by the character fallback.
+    separators = ["について", "という", "なら", "から", "まで", "です", "ます", "を", "へ", "で", "の", "・", "、", "。"]
     candidates: list[int] = []
     for separator in separators:
         start = 3
@@ -122,7 +125,10 @@ def _line_shape(text: str, *, max_chars: int = 12) -> list[str]:
             index = value.find(separator, start, max_chars + 1)
             if index < 0:
                 break
-            cut = index + len(separator)
+            # Keep a middle dot with the following unit. Cutting after the
+            # dot makes a long compound name look like it ends in punctuation
+            # and can still force the next katakana word into a tiny tail.
+            cut = index if separator == "・" else index + len(separator)
             if cut <= max_chars and len(value) - cut >= 3:
                 candidates.append(cut)
             start = index + 1
@@ -465,6 +471,17 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     customer_before = _text(understanding.get("customer_state", {}).get("before"))
     claims = _approved_claims(approved_evidence)
     headline = _text(strategy.get("core_message")) or f"{category}を、{location}から相談する。"
+    # In the NO_WEB field cohort the public service scope can be a long,
+    # slash-like catalogue of offerings. Keep that full scope in the truth
+    # and evidence surfaces, but give the hero one compact, readable service
+    # noun. This preserves specificity through the eyebrow/location/body
+    # while preventing headline-only category lists from dominating the first
+    # screen or breaking a Japanese word across lines.
+    field_validation = understanding.get("validation_context") or understanding.get("field_validation_context")
+    if field_validation is True or _text(field_validation) == "NO_WEB_FIELD_VALIDATION":
+        compact_category = category.split("・", 1)[0].strip() or category
+        if compact_category and (len(_line_shape(headline, max_chars=7)) >= 3 or any(len(line) < 3 for line in _line_shape(headline, max_chars=7))):
+            headline = compact_category
     anchor = _text(strategy.get("core_message")) or category
     _, goal_phrase = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     goal_noun = GOAL_NOUNS.get(goal, "相談")
