@@ -478,8 +478,8 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     # while preventing headline-only category lists from dominating the first
     # screen or breaking a Japanese word across lines.
     field_validation = understanding.get("validation_context") or understanding.get("field_validation_context")
+    compact_category = category.split("・", 1)[0].strip() or category
     if field_validation is True or _text(field_validation) == "NO_WEB_FIELD_VALIDATION":
-        compact_category = category.split("・", 1)[0].strip() or category
         if compact_category and (len(_line_shape(headline, max_chars=7)) >= 3 or any(len(line) < 3 for line in _line_shape(headline, max_chars=7))):
             headline = compact_category
     anchor = _text(strategy.get("core_message")) or category
@@ -502,7 +502,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
         # the heading a complete, compact noun phrase.  Concatenating a full
         # sentence with a particle produced forms such as ``相談できるから、
         # 入口`` and ``分からないを`` in the previous generator.
-        "truth": f"{category or anchor or '会社'}の入口",
+        "truth": f"{(compact_category if field_validation else category or anchor or '会社')}の入口",
         # The full customer state remains in the body copy.  This heading is a
         # grammatical, reusable transition that does not force a domain into
         # a fixed visual or copy template.
@@ -515,7 +515,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
         "hero": {
             "eyebrow": company_name,
             "headline": headline,
-            "headline_lines": _line_shape(headline, max_chars=7),
+            "headline_lines": _line_shape(headline, max_chars=9 if field_validation else 7),
             "supporting": f"{location}で{category}を探している方へ。{truth}。{customer_before or '気になること'}から、{channel}へ進む入口を整理します。",
             "cta": cta,
             "microcopy": f"{location}｜{channel}の公開導線を確認できます。",
