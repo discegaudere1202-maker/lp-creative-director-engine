@@ -1,0 +1,173 @@
+{
+  "schema_version": "phase6-sales-production-validation-v1",
+  "status": "PASS",
+  "validated_at": "2026-09-16T05:24:41Z",
+  "implementation_commit": "78991e020160c0ab7f5726a6390be2134e303b32",
+  "workflow_run": 35059098878,
+  "workflow_conclusion": "success",
+  "artifact_id": 10432011043,
+  "artifact_digest": "sha256:403f398dad5880b7ce279b7d04576a020fbb23b6dac884a60c4d53c3fc390a75",
+  "master": {
+    "source": "第4回1000件_Master_進捗.xlsx",
+    "library_file_id": "libfile_7b76c88a49d481919375e2c353268098",
+    "library_version": 14,
+    "source_rows": 258,
+    "ready_rows": 78,
+    "mutation": "0"
+  },
+  "architecture": {
+    "master_adapter": "PASS",
+    "candidate_project_linkage": "PASS",
+    "freshness": "PASS_BY_MASTER_TIMESTAMP",
+    "web_gate_recheck": "PASS",
+    "research": "PASS",
+    "operations_integration": "REFERENCE_PROJECT_IDS"
+  },
+  "stages": {
+    "A": {
+      "processed": 10,
+      "industries": 5,
+      "generated": 4,
+      "sales_ready": 4,
+      "hold": 1,
+      "excluded": 5,
+      "blocked": 0,
+      "concurrency": 1,
+      "browser_qa": "4/4 generated",
+      "gate": "PASS"
+    },
+    "B": {
+      "processed": 30,
+      "industries": 10,
+      "generated": 10,
+      "sales_ready": 10,
+      "hold": 4,
+      "excluded": 16,
+      "blocked": 0,
+      "concurrency": 3,
+      "browser_qa": "10/10 generated",
+      "gate": "PASS"
+    },
+    "C": {
+      "processed": 100,
+      "industries": 25,
+      "generated": 56,
+      "sales_ready": 53,
+      "hold": 21,
+      "excluded": 26,
+      "blocked": 0,
+      "concurrency": 5,
+      "browser_qa": "56/56 generated",
+      "gate": "PASS"
+    }
+  },
+  "funnel": {
+    "candidate": 100,
+    "verified": 100,
+    "production_ready": 56,
+    "generated": 56,
+    "sales_ready": 53,
+    "sales_ready_yield_of_generated": 0.9464,
+    "sales_ready_yield_of_candidates": 0.53
+  },
+  "quality": {
+    "premium_gate": {
+      "A": {
+        "PASS": 4,
+        "HOLD": 0,
+        "FAIL": 0
+      },
+      "B": {
+        "PASS": 10,
+        "HOLD": 0,
+        "FAIL": 0
+      },
+      "C": {
+        "PASS": 54,
+        "HOLD": 2,
+        "FAIL": 0
+      }
+    },
+    "quality_axes": [
+      "Immediate Read",
+      "Distinctness",
+      "Owner Specificity",
+      "Visual Hierarchy",
+      "Craft Detail",
+      "Emotional Pull",
+      "Trust",
+      "Share Impulse",
+      "Mobile Quality",
+      "Conversion Intent"
+    ],
+    "web_delta": "not_formalized_for_no_web_master_rows"
+  },
+  "screenshots": {
+    "desktop": "1440x1000",
+    "mobile": "390x844",
+    "peaks": "generated per package",
+    "contamination": 0
+  },
+  "contact": {
+    "verified_routes": "only copied from Master; no inference",
+    "wrong_contact": 0
+  },
+  "hard_gates": {
+    "cross_company_contamination": 0,
+    "wrong_contact": 0,
+    "screenshot_contamination": 0,
+    "preview_contamination": 0,
+    "sales_draft_contamination": 0,
+    "duplicate_production": 0,
+    "safety_bypass": 0,
+    "rights_bypass": 0,
+    "manual_lp_edit": 0,
+    "external_sales_execution": 0,
+    "external_production_publish": 0,
+    "master_mutation": 0
+  },
+  "performance": {
+    "stage_a_concurrency": 1,
+    "stage_b_concurrency": 3,
+    "stage_c_concurrency": 5,
+    "artifact_size_bytes": 62685454
+  },
+  "browser_qa": {
+    "mode": "real Chromium",
+    "widths": [
+      320,
+      360,
+      375,
+      390,
+      430,
+      768,
+      1024,
+      1280,
+      1440
+    ],
+    "exact_capture": [
+      "1440x1000",
+      "390x844"
+    ],
+    "coverage": "all generated candidates"
+  },
+  "regression": {
+    "phase5": "success at prior authoritative run",
+    "phase4": "success",
+    "phase3": "success",
+    "phase2b": "success",
+    "production_generation": "success",
+    "production_qa": "success"
+  },
+  "external_actions": {
+    "sales_messages_sent": 0,
+    "public_previews": 0,
+    "customer_site_changes": 0
+  },
+  "remaining_weaknesses": [
+    "Freshness is contract-checked from the 2026-09-15 Master timestamp; live re-fetch is not performed inside CI.",
+    "Formal Existing Web Delta is unavailable for NO_WEB/weak-web rows and remains a Phase 6B refinement.",
+    "Operations linkage uses the existing reference implementation; persistent DB/API remains Phase 7 scope."
+  ],
+  "next_step": "Phase 7 | Scale / Optimization"
+}
