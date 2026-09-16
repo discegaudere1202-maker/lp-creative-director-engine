@@ -3,25 +3,28 @@
   "status": "PASS",
   "engine_version": "batch-engine-v2",
   "implementation_commit": "0151be9d9c78f9fbff766fb5967a0f42964043d1",
-  "workflow_run": 35056178123,
+  "workflow_run": 35056787249,
   "workflow_conclusion": "success",
-  "artifact_id": 10430243447,
-  "artifact_digest": "sha256:6e822b61479b9aa786434792de0293eedb85291db1c0622af9767e0249adadff",
+  "artifact_id": 10430704674,
+  "artifact_digest": "sha256:9bb591d41e8075f34a6759724771446f95559180235084670f4e355e971dc133",
   "stages": {
     "A": {
       "requested": 10,
+      "completed": 10,
       "concurrency": 1,
       "browser_qa": "10/10",
       "gate": "PASS"
     },
     "B": {
       "requested": 30,
+      "completed": 30,
       "concurrency": 3,
       "browser_qa": "30/30",
       "gate": "PASS"
     },
     "C": {
       "requested": 100,
+      "completed": 100,
       "concurrency": 5,
       "browser_qa": "100/100",
       "gate": "PASS"
@@ -52,38 +55,9 @@
     "rights_bypass": 0,
     "manual_lp_edit": 0,
     "external_production_changes": 0,
-    "duplicate_submission_protection": "PASS",
     "resume": "PASS",
     "retry": "PASS",
-    "partial_failure_isolation": "PASS"
-  },
-  "quality": {
-    "axes": [
-      "Immediate Read",
-      "Distinctness",
-      "Owner Specificity",
-      "Visual Hierarchy",
-      "Craft Detail",
-      "Emotional Pull",
-      "Trust",
-      "Share Impulse",
-      "Mobile Quality",
-      "Conversion Intent"
-    ],
-    "evidence_density": [
-      "LOW",
-      "MEDIUM",
-      "HIGH"
-    ],
-    "conversion_goals": [
-      "inquiry",
-      "reservation",
-      "quote",
-      "purchase",
-      "application"
-    ],
-    "profile_generation": "deterministic sha256",
-    "quality_drift": "measured per stage report"
+    "failure_isolation": "PASS"
   },
   "regression": {
     "phase2b": "success",
