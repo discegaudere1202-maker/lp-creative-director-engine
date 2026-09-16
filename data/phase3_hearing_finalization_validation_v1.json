@@ -38,6 +38,23 @@
     "manual_intervention_zero": true,
     "final_qa": true
   },
+  "final_validation": {
+    "commit": "7fb0a634346dca83d917e34887677265ec0802e9",
+    "phase3_workflow_run": 35045649686,
+    "phase3_run_number": 7,
+    "artifact_id": 10426747868,
+    "artifact_digest": "sha256:a0424f23e05cce568777c35083dd760a9fa17ca920f5a5f63d957710e99daa7f",
+    "browser_qa": "PASS",
+    "browser_qa_widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+    "exact_capture": ["1440x1000", "390x844"],
+    "zoom_200_proxy": "PASS",
+    "regression_workflows": {
+      "production_generation_qa": {"run_id": 35045649599, "run_number": 16, "conclusion": "success"},
+      "phase2b_premium_quality": {"run_id": 35045649601, "run_number": 9, "conclusion": "success"},
+      "production_qa_loop": {"run_id": 35045649639, "run_number": 11, "conclusion": "success"},
+      "lp_engine_qa": {"run_id": 35045649595, "run_number": 384, "conclusion": "success"}
+    }
+  },
   "adversarial": {
     "vague_free": "BLOCKED",
     "overclaim": "REJECTED",
