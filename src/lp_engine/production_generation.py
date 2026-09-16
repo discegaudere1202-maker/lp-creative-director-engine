@@ -45,6 +45,15 @@ GOAL_LABELS = {
     "purchase": ("選ぶための材料を揃える", "購入を相談する"),
     "application": ("申込み前の疑問をほどく", "申込みを相談する"),
 }
+GOAL_NOUNS = {
+    "inquiry": "相談",
+    "quote_request": "見積",
+    "consultation": "相談",
+    "reservation": "予約",
+    "visit": "訪問",
+    "purchase": "購入",
+    "application": "申込み",
+}
 
 
 @dataclass(frozen=True)
@@ -100,16 +109,27 @@ def _line_shape(text: str, *, max_chars: int = 12) -> list[str]:
     value = re.sub(r"\s+", " ", _text(text))
     if len(value) <= max_chars:
         return [value]
-    # Prefer complete Japanese meaning units. The ordering matters: a later
-    # phrase boundary such as ``なら`` is safer than breaking a lexical unit
-    # at an earlier one-character particle.
-    separators = ["について", "という", "なら", "から", "まで", "です", "ます", "を", "へ", "で", "の"]
+    # Prefer the furthest complete Japanese meaning unit that still fits.  The
+    # previous first-match implementation could cut too early (for example at
+    # ``を``), leaving a long, awkward remainder and eventually a one- or
+    # two-character browser line.  Keeping the boundary attached to the head
+    # also prevents particles from becoming isolated lines.
+    separators = ["について", "という", "なら", "から", "まで", "です", "ます", "を", "へ", "で", "の", "、", "。"]
+    candidates: list[int] = []
     for separator in separators:
-        index = value.find(separator, 3, max_chars + 1)
-        if index >= 3 and len(value) - index - len(separator) >= 3:
+        start = 3
+        while True:
+            index = value.find(separator, start, max_chars + 1)
+            if index < 0:
+                break
             cut = index + len(separator)
-            head, tail = value[:cut], value[cut:]
-            return [head] + _line_shape(tail, max_chars=max_chars)
+            if cut <= max_chars and len(value) - cut >= 3:
+                candidates.append(cut)
+            start = index + 1
+    if candidates:
+        cut = max(candidates)
+        head, tail = value[:cut], value[cut:]
+        return [head] + _line_shape(tail, max_chars=max_chars)
     # Keep semantic chunks roughly balanced; this is only a fallback for
     # generated copy and is validated again by the existing text gates.
     cut = max(4, min(len(value) - 3, max_chars))
@@ -398,19 +418,28 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     claims = _approved_claims(approved_evidence)
     headline = _text(strategy.get("core_message")) or f"{category}を、{location}から相談する。"
     anchor = _text(strategy.get("core_message")) or category
+    _, goal_phrase = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
+    goal_noun = GOAL_NOUNS.get(goal, "相談")
     section_headlines = {
         "opening": headline,
-        "truth": f"{anchor}から、入口をつくる",
-        "way_in": f"{customer_before or 'いまの状況'}を、次へつなぐ",
-        "contact": f"{_text(strategy.get('conversion_strategy', {}).get('why_act_now')) or '次の案内'}",
-        "close": f"{anchor}へ、{_text(strategy.get('conversion_strategy', {}).get('goal')) or '進む'}",
+        # Keep company specificity in the category and body, while keeping
+        # the heading a complete, compact noun phrase.  Concatenating a full
+        # sentence with a particle produced forms such as ``相談できるから、
+        # 入口`` and ``分からないを`` in the previous generator.
+        "truth": f"{category or anchor or '会社'}の入口",
+        # The full customer state remains in the body copy.  This heading is a
+        # grammatical, reusable transition that does not force a domain into
+        # a fixed visual or copy template.
+        "way_in": "確認の順番を知る",
+        "contact": f"{goal_noun}の入口",
+        "close": f"{goal_noun}の次の一手",
     }
     return {
         "schema_version": SCHEMA_VERSION,
         "hero": {
             "eyebrow": company_name,
             "headline": headline,
-            "headline_lines": _line_shape(headline, max_chars=9),
+            "headline_lines": _line_shape(headline, max_chars=7),
             "supporting": f"{location}で{category}を探している方へ。{truth}" + (f" いまは{customer_before}という状態からでも、入口を確認できます。" if iteration >= 2 and customer_before else ""),
             "cta": cta,
             "microcopy": "連絡手段と所在地を確認できます。",
@@ -419,7 +448,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
             {
                 "section_id": item["section_id"],
                 "headline": section_headlines.get(item["section_id"], item["key_message"]),
-                "headline_lines": _line_shape(section_headlines.get(item["section_id"], item["key_message"]), max_chars=12),
+                "headline_lines": _line_shape(section_headlines.get(item["section_id"], item["key_message"]), max_chars=11),
                 "body": {
                     "opening": f"{location}の{category}。{truth}",
                     "truth": truth,
@@ -607,7 +636,7 @@ def _render_styles(tokens: Mapping[str, Any]) -> str:
     .page-technical_drawing .hero-mark {{ background:linear-gradient(90deg, transparent 49%, var(--accent) 49% 51%, transparent 51%), linear-gradient(0deg, transparent 49%, var(--ink) 49% 51%, transparent 51%); }} .page-technical_drawing .proof-surface {{ box-shadow:10px 18px 0 var(--accent); }} .page-technical_drawing .sequence {{ border-left:8px solid var(--accent); }}
     .page-experience_calendar .hero-mark {{ border-radius:50%; background:radial-gradient(circle at 35% 35%, var(--accent) 0 8%, transparent 9%), radial-gradient(circle at 68% 68%, var(--ink) 0 7%, transparent 8%), repeating-radial-gradient(circle, transparent 0 24px, var(--line) 25px 26px); }} .page-experience_calendar .section--peak:first-child {{ text-align:center; }} .page-experience_calendar .hero-grid {{ align-items:center; }}
     .page-catalogue_spread .hero-mark {{ background:linear-gradient(125deg, var(--accent) 0 18%, transparent 19% 56%, var(--ink) 57% 60%, transparent 61%), repeating-linear-gradient(90deg, transparent 0 28px, var(--line) 29px 30px); }} .page-catalogue_spread .proof-surface {{ grid-template-columns:1.2fr .8fr; box-shadow:none; border:1px solid var(--ink); background:transparent; color:var(--ink); }} .page-catalogue_spread .claim-list {{ border-color:var(--line); }} .page-catalogue_spread .claim {{ border-color:var(--line); }}
-    @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:clamp(4rem,16vw,7rem) 0; }} .section--peak {{ min-height:auto; }} h1 {{ font-size:clamp(2.35rem, 8vw, 3.8rem); }} h2 {{ font-size:clamp(1.9rem, 7vw, 3.2rem); }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
+    @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:clamp(4rem,16vw,7rem) 0; }} .section--peak {{ min-height:auto; }} h1 {{ font-size:clamp(2.35rem, 8vw, 3.8rem); }} h2 {{ font-size:clamp(1.55rem, 7vw, 3.2rem); }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
     """
 
 
