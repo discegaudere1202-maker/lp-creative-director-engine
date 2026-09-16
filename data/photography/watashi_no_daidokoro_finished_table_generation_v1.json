@@ -1,1 +1,84 @@
-{"schema_version":"round1d_generated_visual_review_v1","company":{"lead_id":"R4-G021-001","company_name":"わたしの台所"},"starting_live_main":"2708a9b85317e2246b94dc0550fe2dd1f1351047","generation_date":"2026-09-16","photo_role":"finished_table","generation_count":1,"status":"HOLD","ssot":"data/photography/watashi_no_daidokoro_asset_selection_v1.json","attempts":[{"attempt":1,"gen_id":"033f6064-9260-46e5-a135-06a1979c8a58","session_file":"a_cozy_bright_rustic_dining_table_kitchen_scen.png","review":{"japanese_home_cooking_fit":"PASS","outcome_read":"PASS","food_naturalness":"PASS","ai_smell":"PASS","generic_food_stock_smell":"HOLD","emotional_pull":"PASS","table_composition":"PASS","replacement_compatibility":"PASS","midpage_outcome_section_fit":"PASS","one_million_yen_lp_use":"HOLD"},"notes":"日本の家庭料理としては自然で、木の食卓・陶器・ご飯・汁物・副菜・主菜・鋳物鍋の組み合わせも破綻が少ない。器・箸・鍋・食材に目立つAI破綻は見当たらず、Outcomeは十分読める。一方で料理数と盛り付けがやや整いすぎており、料理広告/雑誌Stockの完成度が前に出る。『みんなで作った後の一瞬』という生活感より、完成したFood Stylingとして読まれる余地が残るため100万円LP基準ではHOLD。"}],"revision_attempt":{"attempted":true,"result":"GENERATION_TOOL_ERROR","retry_allowed_in_current_request":false,"note":"HOLD判定のため1回だけRevision生成を試みたが、画像生成ツール側エラーで生成されなかった。新しいユーザーリクエストがあるまで再試行不可。"},"selected_asset":null,"approval_status":"HOLD_VISUAL_REVIEW","reason":"1案目は品質自体は高く、AI破綻や日本市場Fitに大きな問題はないが、Food Stylingがやや完成されすぎてGeneric Food Stock感が残る。『料理教室でみんなで作った後の達成感』まで一段深く感じさせるには、料理を3〜5品へ絞り、配膳途中の自然さや少しの余白、盛付けの不均一さを入れたRevisionが望ましい。","required_future_adjustment":["料理数を3〜5品程度へ絞る","盛り付けを少し家庭的にしFood広告感を下げる","配膳直前/配膳途中の生活感を入れる","テーブルに少し余白を作る","鋳物鍋はブランド非特定を維持する","人物は入れず、実教室・生徒作品・実食卓とは表現しない"],"metadata_template_for_future_primary":{"asset_id":"watashi-finished-table-generated-v1","photo_role":"finished_table","source_type":"generated","generation_date":"2026-09-16","visual_subject":"少人数料理教室の終了後を想起させる、野菜中心の家庭料理と鋳物鍋が並ぶ日本の食卓","placement":"mid_frame_proof_experience","crop":"50% 50%","alt":"料理教室で作った後の時間を想起させる家庭料理と食卓のイメージ","replacement_target":"わたしの台所の実教室で作った料理・実食卓","factual_implication_boundary":["当教室の料理と表現しない","生徒作品と表現しない","実際のレッスン成果と表現しない","実食卓・実参加者を示唆しない"],"approval_status":"RESEARCH_APPROVED_GENERATED_VISUAL only after future PASS"},"generated_asset_phase":{"all_generated_required_resolved":false,"note":"このRoleはHOLDのまま。さらに、過去のなぎのみらい sensory_detail もHOLD記録があるため、3社のGENERATED_REQUIREDがすべて解消した状態ではない。"}}
+{
+  "schema_version": "round1d_generated_visual_review_v1",
+  "company": {
+    "lead_id": "R4-G021-001",
+    "company_name": "わたしの台所"
+  },
+  "starting_live_main": "2708a9b85317e2246b94dc0550fe2dd1f1351047",
+  "generation_date": "2026-09-16",
+  "photo_role": "finished_table",
+  "generation_count": 2,
+  "status": "PASS",
+  "ssot": "data/photography/watashi_no_daidokoro_asset_selection_v1.json",
+  "attempts": [
+    {
+      "attempt": 1,
+      "gen_id": "033f6064-9260-46e5-a135-06a1979c8a58",
+      "session_file": "a_cozy_bright_rustic_dining_table_kitchen_scen.png",
+      "review": {
+        "japanese_home_cooking_fit": "PASS",
+        "outcome_read": "PASS",
+        "food_naturalness": "PASS",
+        "ai_smell": "PASS",
+        "generic_food_stock_smell": "HOLD",
+        "emotional_pull": "PASS",
+        "table_composition": "PASS",
+        "replacement_compatibility": "PASS",
+        "midpage_outcome_section_fit": "PASS",
+        "one_million_yen_lp_use": "HOLD"
+      },
+      "notes": "日本の家庭料理としては自然で、木の食卓・陶器・ご飯・汁物・副菜・主菜・鋳物鍋の組み合わせも破綻が少ない。器・箸・鍋・食材に目立つAI破綻は見当たらず、Outcomeは十分読める。一方で料理数と盛り付けがやや整いすぎており、料理広告/雑誌Stockの完成度が前に出る。『みんなで作った後の一瞬』という生活感より、完成したFood Stylingとして読まれる余地が残るため100万円LP基準ではHOLD。"
+    },
+    {
+      "attempt": 2,
+      "gen_id": "a7c2d1c5-2e46-433e-a3d4-a6527485fc26",
+      "session_file": "温かな家庭料理の食卓.png",
+      "review": {
+        "japanese_home_cooking_fit": "PASS",
+        "outcome_read": "PASS",
+        "food_naturalness": "PASS",
+        "generic_food_stock_smell": "PASS",
+        "ai_smell": "PASS",
+        "after_class_feeling": "PASS",
+        "table_composition": "PASS",
+        "replacement_compatibility": "PASS",
+        "one_million_yen_lp_use": "PASS"
+      },
+      "notes": "料理数が絞られ、空の取り皿・箸・配膳用スプーン・テーブルの余白が入り、前案よりFood Styling感が低下。単なる料理広告ではなく、『料理教室で作り終え、これから食卓を囲む直前』という時間が読める状態になったためPASS。"
+    }
+  ],
+  "revision_attempt": {
+    "attempted": true,
+    "result": "PASS",
+    "note": "前回ツールエラーで未生成だったRevisionを後続リクエストで1案生成。Human Review全項目PASSとして正式採用。"
+  },
+  "selected_asset": {
+    "asset_id": "watashi-finished-table-generated-v1",
+    "photo_role": "finished_table",
+    "source_type": "generated",
+    "generation_date": "2026-09-16",
+    "gen_id": "a7c2d1c5-2e46-433e-a3d4-a6527485fc26",
+    "session_file": "温かな家庭料理の食卓.png",
+    "visual_subject": "少人数料理教室の終了後を想起させる、野菜中心の家庭料理とブランド非特定の鋳物鍋が並び、これから食卓を囲む直前の自然な時間を感じる日本の食卓",
+    "placement": "mid_frame_proof_experience",
+    "crop": "50% 50%",
+    "alt": "料理教室で作り終えた後の時間を想起させる家庭料理と食卓のイメージ",
+    "replacement_target": "わたしの台所の実教室で作った料理・実食卓",
+    "factual_implication_boundary": [
+      "当教室の料理と表現しない",
+      "生徒作品と表現しない",
+      "実際のレッスン成果と表現しない",
+      "実食卓・実参加者を示唆しない"
+    ],
+    "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL"
+  },
+  "approval_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+  "reason": "Revisionでは料理数・器配置・テーブル余白を抑え、空の取り皿・箸・配膳用スプーンを含むことで、完成されたFood広告ではなく『料理教室で作り終え、これから食卓を囲む直前』のOutcomeと生活感が成立した。Japanese Home Cooking Fit、Food Naturalness、AI Smell、After-Class Feeling、Replacement Compatibility、100万円LP Useを含むHuman ReviewをPASSとしPRIMARYへ正式確定。",
+  "required_future_adjustment": [],
+  "metadata_template_for_future_primary": null,
+  "generated_asset_phase": {
+    "watashi_no_daidokoro_generated_required_resolved": true,
+    "all_three_companies_generated_required_resolved": false,
+    "note": "わたしの台所のhero_shared_cookingとfinished_tableは解消。3社全体では、なぎのみらい sensory_detail のHOLDが残っているため未完了。"
+  }
+}
