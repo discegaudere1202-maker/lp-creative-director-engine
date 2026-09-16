@@ -15,6 +15,8 @@ jobs:
           python-version: "3.12"
       - name: Install engine
         run: pip install -e .
+      - name: Install browser
+        run: python -m playwright install --with-deps chromium
       - name: Run Phase 3 contract tests
         run: >-
           python -m unittest
@@ -25,7 +27,6 @@ jobs:
         run: >-
           python scripts/run_phase3_finalization.py
           --out /tmp/phase3-finalization
-          --static-only
       - name: Upload Phase 3 artifact
         uses: actions/upload-artifact@v4
         with:
