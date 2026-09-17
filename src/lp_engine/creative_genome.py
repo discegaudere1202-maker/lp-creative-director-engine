@@ -53,9 +53,9 @@ def derive_creative_genome(
     composition = forms.get(profile, ["editorial_split", "progressive_story", "human_dialogue", "asymmetric_editorial"])
     goal = _text(understanding.get("conversion_goal")) or "inquiry"
     cta_progression = [
-        {"stage": "discovery", "section_role": "hero_orientation", "user_hesitation": "自分に関係する入口か分からない", "evidence_already_seen": [], "action_reason": "まず状況を見渡す"},
-        {"stage": "reassurance", "section_role": "company_truth", "user_hesitation": "この会社へ相談してよいか迷う", "evidence_already_seen": [item.get("evidence_id") for item in evidence[:2]], "action_reason": "会社固有の範囲を確かめる"},
-        {"stage": "action", "section_role": "cta_zone", "user_hesitation": "何を伝えればよいか分からない", "evidence_already_seen": [item.get("evidence_id") for item in evidence], "action_reason": f"{goal}の確認へ進む"},
+        {"stage": "discovery", "section_role": "hero_orientation", "user_hesitation": "自分に関係する入口か分からない", "evidence_already_seen": [], "required_evidence": [], "action_reason": "まず状況を見渡す", "action_type": "anchor", "label_strategy": "understand_before_contact", "visible_label": "流れを見る", "destination": "#way-in"},
+        {"stage": "reassurance", "section_role": "company_truth", "user_hesitation": "この会社へ相談してよいか迷う", "evidence_already_seen": [item.get("evidence_id") for item in evidence[:2]], "required_evidence": [item.get("evidence_id") for item in evidence[:2]], "action_reason": "会社固有の範囲を確かめる", "action_type": "anchor", "label_strategy": "verify_scope", "visible_label": "できることを見る", "destination": "#contact"},
+        {"stage": "action", "section_role": "cta_zone", "user_hesitation": "何を伝えればよいか分からない", "evidence_already_seen": [item.get("evidence_id") for item in evidence], "required_evidence": [item.get("evidence_id") for item in evidence], "action_reason": f"{goal}の確認へ進む", "action_type": "conversion", "label_strategy": "act_on_seen_evidence", "visible_label": "相談を始める", "destination": "#contact"},
     ]
     return {
         "schema_version": "creative_genome_v1",

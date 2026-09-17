@@ -22,6 +22,8 @@ class CreativeGenomeTest(unittest.TestCase):
         self.assertGreaterEqual(len(genome["composition_logic"]), 4)
         self.assertGreaterEqual(len(genome["screenshot_peak_plan"]), 2)
         self.assertGreaterEqual(len(genome["cta_progression"]), 3)
+        self.assertEqual({item["stage"] for item in genome["cta_progression"]}, {"discovery", "reassurance", "action"})
+        self.assertTrue(all(item.get("destination") and item.get("visible_label") for item in genome["cta_progression"]))
         self.assertGreaterEqual(len(genome["mobile_redirection"]), 2)
 
     def test_public_copy_does_not_leak_internal_fields(self):

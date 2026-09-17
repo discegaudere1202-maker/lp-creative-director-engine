@@ -142,7 +142,12 @@
         "section_role": "hero_orientation",
         "user_hesitation": "自分に関係する入口か分からない",
         "evidence_already_seen": [],
-        "action_reason": "まず状況を見渡す"
+        "required_evidence": [],
+        "action_reason": "まず状況を見渡す",
+        "action_type": "anchor",
+        "label_strategy": "understand_before_contact",
+        "visible_label": "流れを見る",
+        "destination": "#way-in"
       },
       {
         "stage": "reassurance",
@@ -152,7 +157,15 @@
           "watashi_no_daidokoro-e-001",
           "watashi_no_daidokoro-e-002"
         ],
-        "action_reason": "会社固有の範囲を確かめる"
+        "required_evidence": [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        "action_reason": "会社固有の範囲を確かめる",
+        "action_type": "anchor",
+        "label_strategy": "verify_scope",
+        "visible_label": "できることを見る",
+        "destination": "#contact"
       },
       {
         "stage": "action",
@@ -164,7 +177,17 @@
           "watashi_no_daidokoro-e-003",
           "watashi_no_daidokoro-e-004"
         ],
-        "action_reason": "applicationの確認へ進む"
+        "required_evidence": [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002",
+          "watashi_no_daidokoro-e-003",
+          "watashi_no_daidokoro-e-004"
+        ],
+        "action_reason": "applicationの確認へ進む",
+        "action_type": "conversion",
+        "label_strategy": "act_on_seen_evidence",
+        "visible_label": "相談を始める",
+        "destination": "#contact"
       }
     ],
     "mobile_redirection": {
@@ -318,7 +341,12 @@
         "section_role": "hero_orientation",
         "user_hesitation": "自分に関係する入口か分からない",
         "evidence_already_seen": [],
-        "action_reason": "まず状況を見渡す"
+        "required_evidence": [],
+        "action_reason": "まず状況を見渡す",
+        "action_type": "anchor",
+        "label_strategy": "understand_before_contact",
+        "visible_label": "流れを見る",
+        "destination": "#way-in"
       },
       {
         "stage": "reassurance",
@@ -328,7 +356,15 @@
           "watashi_no_daidokoro-e-001",
           "watashi_no_daidokoro-e-002"
         ],
-        "action_reason": "会社固有の範囲を確かめる"
+        "required_evidence": [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        "action_reason": "会社固有の範囲を確かめる",
+        "action_type": "anchor",
+        "label_strategy": "verify_scope",
+        "visible_label": "できることを見る",
+        "destination": "#contact"
       },
       {
         "stage": "action",
@@ -340,7 +376,17 @@
           "watashi_no_daidokoro-e-003",
           "watashi_no_daidokoro-e-004"
         ],
-        "action_reason": "applicationの確認へ進む"
+        "required_evidence": [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002",
+          "watashi_no_daidokoro-e-003",
+          "watashi_no_daidokoro-e-004"
+        ],
+        "action_reason": "applicationの確認へ進む",
+        "action_type": "conversion",
+        "label_strategy": "act_on_seen_evidence",
+        "visible_label": "相談を始める",
+        "destination": "#contact"
       }
     ],
     "section_naming": [
