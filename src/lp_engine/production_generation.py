@@ -524,8 +524,11 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     truth_fragment = truth.rstrip("。.!！？!? ")
     profile = _text(strategy.get("layout_profile")) or "editorial_rail"
     authorities = list(strategy.get("visual_authority_priority") or [])
+    family = _text(strategy.get("narrative_family"))
+    layout_profile = _text(strategy.get("layout_profile"))
     signature_lexicon = {"MATERIAL":"素材の状態と仕上がり","CRAFT":"手を動かす工程","PLACE":"住まいのある場所","SENSORY":"触れられる時間と空間","PERSON":"人の手で寄り添う時間","PRODUCT":"食材とできあがる料理","PARTICIPATION":"一緒に手を動かす時間","WORLD":"食卓へつながる風景"}
-    signature_phrase = next((signature_lexicon[x] for x in authorities if x in signature_lexicon), category or "その人の時間")
+    family_phrase = {"field_ledger":"素材の状態と仕上がり", "care_rhythm":"触れられる時間と空間", "studio_invitation":"食材と手を動かす時間"}
+    signature_phrase = family_phrase.get(layout_profile) or next((signature_lexicon[x] for x in authorities if x in signature_lexicon), category or "その人の時間")
     process_steps = {
         "field_ledger": ["状態を伝える", "対応範囲を確認する", "見積を相談する"],
         "care_rhythm": ["気になることを話す", "過ごし方を選ぶ", "予約を相談する"],
@@ -563,9 +566,9 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                 "body": {
                     "opening": f"{location}の{category}。{truth}",
                     "truth": truth,
-                    "way_in": f"{signature_phrase}を手がかりに、{truth_fragment or scope or category}の輪郭をたどります。",
-                    "contact": f"{signature_phrase}を知り、{truth_fragment or scope or category}と向き合う時間をつくります。",
-                    "close": f"{signature_phrase}から、{truth_fragment or scope or category}の次の一歩へ進みます。",
+                    "way_in": (f"{truth_fragment or scope or category}の現場を見渡し、{signature_phrase}へ目を向けます." if layout_profile == "field_ledger" else f"{signature_phrase}がほどける時間。{truth_fragment or scope or category}を味わいます." if layout_profile == "care_rhythm" else f"{signature_phrase}を選び、{truth_fragment or scope or category}を一緒につくります."),
+                    "contact": (f"表面の変化と手順を並べ、{truth_fragment or scope or category}の仕上がりを思い描きます." if layout_profile == "field_ledger" else f"静かな空間で過ごす時間を、{truth_fragment or scope or category}に合わせて選びます." if layout_profile == "care_rhythm" else f"火を入れ、手を動かし、{truth_fragment or scope or category}が食卓へ向かう流れを楽しみます."),
+                    "close": (f"{truth_fragment or scope or category}の状態を見ながら、次の相談へ進みます." if layout_profile == "field_ledger" else f"{truth_fragment or scope or category}で、自分のための時間を予約します." if layout_profile == "care_rhythm" else f"できあがる一皿を囲む時間へ、参加の一歩を踏み出します."),
                 }.get(item["section_id"], item["key_message"]),
                 "evidence_claims": claims if item["section_id"] in {"truth", "contact"} else [],
                 "cta": cta if item["section_id"] == "close" else "",

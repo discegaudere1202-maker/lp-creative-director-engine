@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "pairs": [
+    {
+      "company_a": "maylynn_paint",
+      "company_b": "nagi_no_mirai",
+      "masked_text_similarity": 0,
+      "skeleton_similarity": 0,
+      "predicate_similarity": 0,
+      "metaphor_similarity": 0,
+      "lexical_contamination": 0,
+      "swap_resistance": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "company_a": "maylynn_paint",
+      "company_b": "watashi_no_daidokoro",
+      "masked_text_similarity": 0,
+      "skeleton_similarity": 0,
+      "predicate_similarity": 0,
+      "metaphor_similarity": 0,
+      "lexical_contamination": 0,
+      "swap_resistance": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "company_a": "nagi_no_mirai",
+      "company_b": "watashi_no_daidokoro",
+      "masked_text_similarity": 0,
+      "skeleton_similarity": 0,
+      "predicate_similarity": 0,
+      "metaphor_similarity": 0,
+      "lexical_contamination": 0,
+      "swap_resistance": "PASS",
+      "verdict": "PASS"
+    }
+  ]
+}

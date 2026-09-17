@@ -1,0 +1,219 @@
+{
+  "status": "PASS",
+  "commit_sha": "15f16853f44aa3b1b173919840823b2034779782",
+  "qa_viewport_total": 27,
+  "qa_pass_count": 27,
+  "qa_fail_count": 0,
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    }
+  ],
+  "render_contracts": [
+    {
+      "company": "maylynn_paint",
+      "scene_count": 5,
+      "contract": {
+        "status": "PASS",
+        "scene_count": {
+          "expected": 5,
+          "rendered": 5
+        },
+        "expected_headings": [
+          "家の輪郭を見つめる",
+          "素材に触れて考える",
+          "手仕事の順番を見る",
+          "仕上がりを思い描く",
+          "状態から相談する"
+        ],
+        "rendered_headings": [
+          "家の輪郭を見つめる",
+          "素材に触れて考える",
+          "手仕事の順番を見る",
+          "仕上がりを思い描く",
+          "状態から相談する"
+        ],
+        "rendered_ctas": [
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "流れを見る"
+          },
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "流れを見る"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#contact",
+            "visible_label": "できることを見る"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#contact",
+            "visible_label": "できることを見る"
+          },
+          {
+            "stage": "action",
+            "destination": "#contact",
+            "visible_label": "相談を始める"
+          }
+        ],
+        "internal_metadata_visible": false,
+        "internal_leakage": [],
+        "editorial_violations": []
+      }
+    },
+    {
+      "company": "nagi_no_mirai",
+      "scene_count": 5,
+      "contract": {
+        "status": "PASS",
+        "scene_count": {
+          "expected": 5,
+          "rendered": 5
+        },
+        "expected_headings": [
+          "空間に入る",
+          "静けさを感じる",
+          "触れられる時間",
+          "過ごし方を選ぶ",
+          "その時間を予約する"
+        ],
+        "rendered_headings": [
+          "空間に入る",
+          "静けさを感じる",
+          "触れられる時間",
+          "過ごし方を選ぶ",
+          "その時間を予約する"
+        ],
+        "rendered_ctas": [
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "流れを見る"
+          },
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "流れを見る"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#contact",
+            "visible_label": "できることを見る"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#contact",
+            "visible_label": "できることを見る"
+          },
+          {
+            "stage": "action",
+            "destination": "#contact",
+            "visible_label": "相談を始める"
+          }
+        ],
+        "internal_metadata_visible": false,
+        "internal_leakage": [],
+        "editorial_violations": []
+      }
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "scene_count": 5,
+      "contract": {
+        "status": "PASS",
+        "scene_count": {
+          "expected": 5,
+          "rendered": 5
+        },
+        "expected_headings": [
+          "食材に出会う",
+          "手を動かしてみる",
+          "料理ができていく",
+          "食卓を囲む",
+          "参加を考える"
+        ],
+        "rendered_headings": [
+          "食材に出会う",
+          "手を動かしてみる",
+          "料理ができていく",
+          "食卓を囲む",
+          "参加を考える"
+        ],
+        "rendered_ctas": [
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "流れを見る"
+          },
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "流れを見る"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#contact",
+            "visible_label": "できることを見る"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#contact",
+            "visible_label": "できることを見る"
+          },
+          {
+            "stage": "action",
+            "destination": "#contact",
+            "visible_label": "相談を始める"
+          }
+        ],
+        "internal_metadata_visible": false,
+        "internal_leakage": [],
+        "editorial_violations": []
+      }
+    }
+  ],
+  "technical_captures_total": 6,
+  "manual_lp_edit": 0,
+  "human_review_capture": false,
+  "human_review_ready": false,
+  "round1k_a2_ready": true,
+  "round1k_a3_ready": true,
+  "round1k_a4_ready": true,
+  "a4_public_copy": {
+    "safety_violations": 0,
+    "verification_leakage": 0,
+    "name_swappable_major_sentence": 0,
+    "signature_companies": 3,
+    "manual_lp_edit": 0
+  },
+  "round1k_a5_ready": true,
+  "a5_semantic_distinctness": {
+    "skeleton_violations": 0,
+    "contamination": 0,
+    "metaphor_reuse": 0,
+    "swap_resistant_companies": 3,
+    "manual_lp_edit": 0
+  }
+}

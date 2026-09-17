@@ -1,0 +1,241 @@
+{
+  "status": "PASS",
+  "pairs": [
+    {
+      "company_a": "maylynn_paint",
+      "company_b": "nagi_no_mirai",
+      "masked_text_similarity": 0,
+      "skeleton_similarity": 0,
+      "predicate_similarity": 0,
+      "metaphor_similarity": 0,
+      "lexical_contamination": 0,
+      "swap_resistance": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "company_a": "maylynn_paint",
+      "company_b": "watashi_no_daidokoro",
+      "masked_text_similarity": 0,
+      "skeleton_similarity": 0,
+      "predicate_similarity": 0,
+      "metaphor_similarity": 0,
+      "lexical_contamination": 0,
+      "swap_resistance": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "company_a": "nagi_no_mirai",
+      "company_b": "watashi_no_daidokoro",
+      "masked_text_similarity": 0,
+      "skeleton_similarity": 0,
+      "predicate_similarity": 0,
+      "metaphor_similarity": 0,
+      "lexical_contamination": 0,
+      "swap_resistance": "PASS",
+      "verdict": "PASS"
+    }
+  ],
+  "major_units": {
+    "maylynn_paint": [
+      {
+        "text": "福岡市の外壁塗装。外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "ENTITYのENTITYPENTITY・屋根・雨漏り・リフォームを相談できる地域の窓口P",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口の現場を見渡し、素材の状態と仕上がりへ目を向けます.",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "ENTITY・屋根・雨漏り・リフォームを相談できる地域の窓口のXを見渡しPXへ目を向けます.",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "表面の変化と手順を並べ、外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口の仕上がりを思い描きます.",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "Xの変化とXを並べPENTITY・屋根・雨漏り・リフォームを相談できる地域の窓口のXを思い描きます.",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口の状態を見ながら、次の相談へ進みます.",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "ENTITY・屋根・雨漏り・リフォームを相談できる地域の窓口の状態を見ながらP次の相談へ進みます.",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      }
+    ],
+    "nagi_no_mirai": [
+      {
+        "text": "福岡市のヘッドスパ。ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "ENTITYのENTITYPドライENTITY・ENTITYスクール・ヒーリングサロンの相談窓口P",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "ドライENTITY・ENTITYスクール・ヒーリングサロンの相談窓口P",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "静かな空間で過ごす時間を、ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口に合わせて選びます.",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "静かなXで過ごすXをPドライENTITY・ENTITYスクール・ヒーリングサロンの相談窓口に合わせて選びます.",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "触れられる時間と空間がほどける時間。ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口を味わいます.",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "XがほどけるXPドライENTITY・ENTITYスクール・ヒーリングサロンの相談窓口を味わいます.",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口で、自分のための時間を予約します.",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "ドライENTITY・ENTITYスクール・ヒーリングサロンの相談窓口でP自分のためのXを予約します.",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      }
+    ],
+    "watashi_no_daidokoro": [
+      {
+        "text": "福岡市西区の料理教室。少人数でストウブ無水料理を学ぶ料理教室。",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "ENTITYのENTITYPENTITYを学ぶENTITYP",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "火を入れ、手を動かし、少人数でストウブ無水料理を学ぶ料理教室が食卓へ向かう流れを楽しみます.",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "火を入れP手を動かしPENTITYを学ぶENTITYがXへ向かう流れを楽しみます.",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "少人数でストウブ無水料理を学ぶ料理教室。",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "ENTITYを学ぶENTITYP",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      },
+      {
+        "text": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します.",
+        "semantic_signature": {
+          "copy_intent": "PUBLIC_EXPRESSION",
+          "narrative_function": "company_context",
+          "subject_role": "company_truth",
+          "primary_verb": "varied",
+          "sentence_pattern": "できあがるXを囲むXへP参加の一歩を踏み出します.",
+          "transition_pattern": "family_derived",
+          "metaphor_family": "signature_derived",
+          "signature_anchor_ids": [],
+          "evidence_role": "verified_scope",
+          "CTA_relation": "supporting"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "Maylynn Paint",
+    "headline": "外壁塗装",
+    "headline_lines": [
+      "外壁塗装"
+    ],
+    "supporting": "福岡市で外壁塗装を探している方へ。外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。。素材の状態と仕上がりを手がかりに、次の一歩を考えます。",
+    "cta": "見積を相談する",
+    "microcopy": "福岡市｜素材の状態と仕上がりから次の案内へ。"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "家の輪郭を見つめる",
+      "headline_lines": [
+        "家の輪郭を見つめる"
+      ],
+      "body": "福岡市の外壁塗装。外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "素材に触れて考える",
+      "headline_lines": [
+        "素材に触れて考える"
+      ],
+      "body": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口の現場を見渡し、素材の状態と仕上がりへ目を向けます.",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "手仕事の順番を見る",
+      "headline_lines": [
+        "手仕事の順番を見る"
+      ],
+      "body": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+      "evidence_claims": [
+        "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+        "福岡市で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "仕上がりを思い描く",
+      "headline_lines": [
+        "仕上がりを思い描く"
+      ],
+      "body": "表面の変化と手順を並べ、外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口の仕上がりを思い描きます.",
+      "evidence_claims": [
+        "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+        "福岡市で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "状態から相談する",
+      "headline_lines": [
+        "状態から相談する"
+      ],
+      "body": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口の状態を見ながら、次の相談へ進みます.",
+      "evidence_claims": [],
+      "cta": "見積を相談する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "meaning_units_not_character_count"
+  },
+  "process_steps": [
+    "状態を伝える",
+    "対応範囲を確認する",
+    "見積を相談する"
+  ],
+  "section_naming_gate": {
+    "status": "PASS",
+    "violations": []
+  }
+}

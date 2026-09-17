@@ -4,7 +4,7 @@ import json, os, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "artifacts" / "round1k_a4"
+OUT = Path(os.environ.get("ROUND_OUTPUT_ROOT", str(ROOT / "artifacts" / "round1k_a4")))
 FORBIDDEN = ["公開された連絡先", "公開情報で確認できる範囲", "未確認の対応約束", "確認できる入口", "最初の確認", "確認したいことを知らせる入口", "公開導線"]
 INTERNAL = ["PUBLIC_CONTACT_ONLY", "UNVERIFIED", "NO_EVIDENCE", "DO_NOT_CLAIM", "OMIT_UNVERIFIED", "hopeful", "warm", "gentle", "grounded", "CREATE_DESIRE", "CREATE_PAUSE"]
 def write(path, value):

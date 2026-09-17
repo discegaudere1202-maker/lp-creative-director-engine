@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "commit_sha": "15f16853f44aa3b1b173919840823b2034779782",
+  "engine_only": true,
+  "manual_lp_edit": 0,
+  "renderer": "premium_scene_renderer"
+}
