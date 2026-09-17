@@ -521,6 +521,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     _, goal_phrase = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     goal_noun = GOAL_NOUNS.get(goal, "相談")
     channel = _text((understanding.get("contact_channels") or {}).get("label")) or "公開された連絡先"
+    truth_fragment = truth.rstrip("。.!！？!? ")
     profile = _text(strategy.get("layout_profile")) or "editorial_rail"
     process_steps = {
         "field_ledger": ["状態を伝える", "対応範囲を確認する", "見積を相談する"],
@@ -559,9 +560,9 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                 "body": {
                     "opening": f"{location}の{category}。{truth}",
                     "truth": truth,
-                    "way_in": f"{customer_before or 'いまの状況'}。{_text(understanding.get('customer_state', {}).get('barrier')) or '何を伝えるか迷う状態'}から、{scope if scope else category}を確認できる順番へ変えます。",
-                    "contact": f"{channel}で、{scope if scope else category}について確認したいことを知らせる入口です。対応内容や条件は、公開情報で確認できる範囲に限定しています。",
-                    "close": f"{channel}へ進み、{scope if scope else category}について最初の確認をする。未確認の対応約束は置きません。",
+                    "way_in": f"{customer_before or 'いまの状況'}。{_text(understanding.get('customer_state', {}).get('barrier')) or '何を伝えるか迷う状態'}から、{truth_fragment or scope or category}を確認できる順番へ変えます。",
+                    "contact": f"{channel}へ進み、{truth_fragment or scope or category}について確認したいことを知らせる入口です。",
+                    "close": f"{channel}へ進み、{truth_fragment or scope or category}について最初の確認をする。",
                 }.get(item["section_id"], item["key_message"]),
                 "evidence_claims": claims if item["section_id"] in {"truth", "contact"} else [],
                 "cta": cta if item["section_id"] == "close" else "",
@@ -858,7 +859,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         scene_photo = render_photo_asset(scene_asset)
         media_content = scene_photo or "<span>" + esc(scene["focal_entity"]) + "</span>"
         media = f'<div class="scene-media scene-media--{esc(grammar["media_scale"])}" aria-hidden="true">{media_content}</div>'
-        if topology == "sequence": inner = f'<div class="scene-sequence"><ol><li>{esc(body)}</li><li>{esc(scene["state_delta"]["after"])}</li></ol></div>'
+        if topology == "sequence": inner = f'<div class="scene-sequence"><h2>{esc(heading)}</h2><ol><li>{esc(body)}</li><li>{esc("次の確認へ進む")}</li></ol></div>'
         elif topology == "inset": inner = f'<div class="scene-inset">{media}<div><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'
         elif topology == "split": inner = f'<div class="scene-split"><div><h2>{esc(heading)}</h2><p>{esc(body)}</p></div>{media}</div>'
         elif topology == "layered": inner = f'<div class="scene-layered">{media}<div class="scene-layered-copy"><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'

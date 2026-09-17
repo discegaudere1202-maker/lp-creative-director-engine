@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "claim_eligibility": [
+        {
+          "claim_trace_id": "maylynn_paint-e-001",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "maylynn_paint-e-001"
+        },
+        {
+          "claim_trace_id": "maylynn_paint-e-002",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "maylynn_paint-e-002"
+        },
+        {
+          "claim_trace_id": "maylynn_paint-e-003",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "maylynn_paint-e-003"
+        },
+        {
+          "claim_trace_id": "maylynn_paint-e-004",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "maylynn_paint-e-004"
+        }
+      ],
+      "omit_unverified": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "claim_eligibility": [
+        {
+          "claim_trace_id": "nagi_no_mirai-e-001",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "nagi_no_mirai-e-001"
+        },
+        {
+          "claim_trace_id": "nagi_no_mirai-e-002",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "nagi_no_mirai-e-002"
+        },
+        {
+          "claim_trace_id": "nagi_no_mirai-e-003",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "nagi_no_mirai-e-003"
+        },
+        {
+          "claim_trace_id": "nagi_no_mirai-e-004",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "nagi_no_mirai-e-004"
+        }
+      ],
+      "omit_unverified": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "claim_eligibility": [
+        {
+          "claim_trace_id": "watashi_no_daidokoro-e-001",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "watashi_no_daidokoro-e-001"
+        },
+        {
+          "claim_trace_id": "watashi_no_daidokoro-e-002",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "watashi_no_daidokoro-e-002"
+        },
+        {
+          "claim_trace_id": "watashi_no_daidokoro-e-003",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "watashi_no_daidokoro-e-003"
+        },
+        {
+          "claim_trace_id": "watashi_no_daidokoro-e-004",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "watashi_no_daidokoro-e-004"
+        }
+      ],
+      "omit_unverified": true
+    }
+  ]
+}
