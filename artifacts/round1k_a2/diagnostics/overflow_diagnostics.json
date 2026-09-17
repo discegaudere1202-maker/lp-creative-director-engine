@@ -1,0 +1,82 @@
+{
+  "root_cause": "Premium scene photo-frame was an unconstrained grid item; intrinsic image min-content width expanded scene rail. Shared CSS fix applies min-width:0, minmax(0,1fr), width/max-width 100%.",
+  "representative_viewports": [
+    390,
+    768,
+    1440
+  ],
+  "records": [
+    {
+      "company": "maylynn_paint",
+      "viewport": 390,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 390,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    },
+    {
+      "company": "maylynn_paint",
+      "viewport": 768,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 768,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    },
+    {
+      "company": "maylynn_paint",
+      "viewport": 1440,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 1440,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "viewport": 390,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 390,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "viewport": 768,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 768,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "viewport": 1440,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 1440,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "viewport": 390,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 390,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "viewport": 768,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 768,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "viewport": 1440,
+      "document_scroll_width": "captured_by_browser_qa",
+      "body_scroll_width": "captured_by_browser_qa",
+      "window_inner_width": 1440,
+      "suspected_root_cause": "photo-frame grid min-content width constrained by shared renderer CSS"
+    }
+  ]
+}

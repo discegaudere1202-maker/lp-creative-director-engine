@@ -1,0 +1,411 @@
+{
+  "schema_version": "premium_scene_plan_v1",
+  "company": {
+    "company_id": "nagi_no_mirai",
+    "company_name": "なぎのみらい"
+  },
+  "derivation_trace": {
+    "inputs": [
+      "Creative Genome",
+      "Narrative Architecture",
+      "Company Truth",
+      "Evidence",
+      "Photography Roles"
+    ],
+    "deterministic": true
+  },
+  "company_signature": [
+    {
+      "anchor": "Place",
+      "value": "福岡市",
+      "channels": [
+        "Copy Lexicon",
+        "Composition",
+        "Photography"
+      ]
+    },
+    {
+      "anchor": "Process",
+      "value": "ヘッドスパ",
+      "channels": [
+        "Copy Lexicon",
+        "Composition",
+        "Photography"
+      ]
+    },
+    {
+      "anchor": "Philosophy",
+      "value": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "channels": [
+        "Copy Lexicon",
+        "Composition",
+        "Photography"
+      ]
+    },
+    {
+      "anchor": "Audience tension",
+      "value": "自分に合う入口か分からない",
+      "channels": [
+        "Copy Lexicon",
+        "Composition",
+        "Photography"
+      ]
+    }
+  ],
+  "scene_plan": [
+    {
+      "scene_id": "scene-01-arrive",
+      "narrative_index": 0,
+      "narrative_state": "arrive",
+      "entry_emotion": "open",
+      "exit_emotion": "calm",
+      "user_question": "どんな空気の中で過ごすのか",
+      "narrative_function": "CREATE_DESIRE",
+      "state_delta": {
+        "before": "どんな空気の中で過ごすのか",
+        "after": "calmへ進める"
+      },
+      "evidence_mode": "non_claim_expression",
+      "evidence_ids": [],
+      "visual_authority": "IMAGE",
+      "focal_entity": "hero_treatment_space",
+      "dominance_level": "immersive",
+      "copy_intent": "ORIENT",
+      "copy_density": "low",
+      "visual_grammar": {
+        "name": "immersive_image",
+        "topology": "full_bleed",
+        "dominant_authority": "IMAGE",
+        "focal_count": 1,
+        "media_scale": "immersive",
+        "type_scale": "display",
+        "spatial_relation": "edge_bleed",
+        "asymmetry": "medium",
+        "negative_space": "perimeter",
+        "sequencing": "simultaneous",
+        "contrast_mode": "scale",
+        "transition": "reveal"
+      },
+      "transition_in": "reveal",
+      "transition_out": "reveal",
+      "peak_role": "candidate",
+      "peak_candidate_reason": "narrative state transition",
+      "cta_stage": "discovery",
+      "desktop_art_direction": {
+        "topology": "full_bleed",
+        "focal_point": "center",
+        "media_scale": "immersive"
+      },
+      "mobile_art_direction": {
+        "crop_strategy": "preserve_focal_entity",
+        "focal_point": "center",
+        "content_order": "copy_then_media",
+        "type_ratio": "0.8",
+        "whitespace": "perimeter",
+        "supporting_content_compression": "moderate",
+        "CTA_timing": "deferred",
+        "transform_mode": "RECOMPOSE"
+      },
+      "reuse_constraints": {
+        "same_role_only": true,
+        "no_cross_company": true
+      },
+      "creative_reason": "arriveをCREATE_DESIREへ翻訳"
+    },
+    {
+      "scene_id": "scene-02-settle",
+      "narrative_index": 1,
+      "narrative_state": "settle",
+      "entry_emotion": "calm",
+      "exit_emotion": "trusting",
+      "user_question": "静けさはどう深まるか",
+      "narrative_function": "CREATE_PAUSE",
+      "state_delta": {
+        "before": "静けさはどう深まるか",
+        "after": "trustingへ進める"
+      },
+      "evidence_mode": "non_claim_expression",
+      "evidence_ids": [],
+      "visual_authority": "SENSORY",
+      "focal_entity": "sensory_detail",
+      "dominance_level": "intimate",
+      "copy_intent": "GUIDE",
+      "copy_density": "low",
+      "visual_grammar": {
+        "name": "sensory_pause",
+        "topology": "inset",
+        "dominant_authority": "SENSORY",
+        "focal_count": 1,
+        "media_scale": "intimate",
+        "type_scale": "quiet",
+        "spatial_relation": "contained",
+        "asymmetry": "low",
+        "negative_space": "central",
+        "sequencing": "pinned",
+        "contrast_mode": "tonal",
+        "transition": "dissolve"
+      },
+      "transition_in": "dissolve",
+      "transition_out": "dissolve",
+      "peak_role": "support",
+      "peak_candidate_reason": "supporting evidence",
+      "cta_stage": "discovery",
+      "desktop_art_direction": {
+        "topology": "inset",
+        "focal_point": "center",
+        "media_scale": "intimate"
+      },
+      "mobile_art_direction": {
+        "crop_strategy": "preserve_focal_entity",
+        "focal_point": "center",
+        "content_order": "copy_then_media",
+        "type_ratio": "0.8",
+        "whitespace": "central",
+        "supporting_content_compression": "moderate",
+        "CTA_timing": "deferred",
+        "transform_mode": "RECOMPOSE"
+      },
+      "reuse_constraints": {
+        "same_role_only": true,
+        "no_cross_company": true
+      },
+      "creative_reason": "settleをCREATE_PAUSEへ翻訳"
+    },
+    {
+      "scene_id": "scene-03-feel_care",
+      "narrative_index": 2,
+      "narrative_state": "feel_care",
+      "entry_emotion": "trusting",
+      "exit_emotion": "certain",
+      "user_question": "どんな時間を受け取るのか",
+      "narrative_function": "SHOW_EXPERIENCE",
+      "state_delta": {
+        "before": "どんな時間を受け取るのか",
+        "after": "certainへ進める"
+      },
+      "evidence_mode": "approved_evidence",
+      "evidence_ids": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "visual_authority": "PERSON",
+      "focal_entity": "welcome_human",
+      "dominance_level": "dominant",
+      "copy_intent": "PROVE",
+      "copy_density": "low",
+      "visual_grammar": {
+        "name": "human_dialogue",
+        "topology": "split",
+        "dominant_authority": "PERSON",
+        "focal_count": 2,
+        "media_scale": "dominant",
+        "type_scale": "editorial",
+        "spatial_relation": "floating",
+        "asymmetry": "medium",
+        "negative_space": "directional",
+        "sequencing": "simultaneous",
+        "contrast_mode": "chromatic",
+        "transition": "reveal"
+      },
+      "transition_in": "reveal",
+      "transition_out": "reveal",
+      "peak_role": "support",
+      "peak_candidate_reason": "supporting evidence",
+      "cta_stage": "reassurance",
+      "desktop_art_direction": {
+        "topology": "split",
+        "focal_point": "center",
+        "media_scale": "dominant"
+      },
+      "mobile_art_direction": {
+        "crop_strategy": "preserve_focal_entity",
+        "focal_point": "center",
+        "content_order": "copy_then_media",
+        "type_ratio": "0.8",
+        "whitespace": "directional",
+        "supporting_content_compression": "moderate",
+        "CTA_timing": "deferred",
+        "transform_mode": "RECOMPOSE"
+      },
+      "reuse_constraints": {
+        "same_role_only": true,
+        "no_cross_company": true
+      },
+      "creative_reason": "feel_careをSHOW_EXPERIENCEへ翻訳"
+    },
+    {
+      "scene_id": "scene-04-choose_time",
+      "narrative_index": 3,
+      "narrative_state": "choose_time",
+      "entry_emotion": "certain",
+      "exit_emotion": "ready",
+      "user_question": "自分の過ごし方を選べるか",
+      "narrative_function": "REDUCE_UNCERTAINTY",
+      "state_delta": {
+        "before": "自分の過ごし方を選べるか",
+        "after": "readyへ進める"
+      },
+      "evidence_mode": "approved_evidence",
+      "evidence_ids": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "visual_authority": "TYPE",
+      "focal_entity": "hand_technique",
+      "dominance_level": "standard",
+      "copy_intent": "GUIDE",
+      "copy_density": "low",
+      "visual_grammar": {
+        "name": "progressive_story",
+        "topology": "layered",
+        "dominant_authority": "TYPE",
+        "focal_count": 2,
+        "media_scale": "standard",
+        "type_scale": "editorial",
+        "spatial_relation": "overlap",
+        "asymmetry": "high",
+        "negative_space": "central",
+        "sequencing": "progressive",
+        "contrast_mode": "scale",
+        "transition": "dissolve"
+      },
+      "transition_in": "dissolve",
+      "transition_out": "dissolve",
+      "peak_role": "support",
+      "peak_candidate_reason": "supporting evidence",
+      "cta_stage": "reassurance",
+      "desktop_art_direction": {
+        "topology": "layered",
+        "focal_point": "center",
+        "media_scale": "standard"
+      },
+      "mobile_art_direction": {
+        "crop_strategy": "preserve_focal_entity",
+        "focal_point": "center",
+        "content_order": "copy_then_media",
+        "type_ratio": "0.8",
+        "whitespace": "central",
+        "supporting_content_compression": "moderate",
+        "CTA_timing": "deferred",
+        "transform_mode": "RECOMPOSE"
+      },
+      "reuse_constraints": {
+        "same_role_only": true,
+        "no_cross_company": true
+      },
+      "creative_reason": "choose_timeをREDUCE_UNCERTAINTYへ翻訳"
+    },
+    {
+      "scene_id": "scene-05-reserve",
+      "narrative_index": 4,
+      "narrative_state": "reserve",
+      "entry_emotion": "ready",
+      "exit_emotion": "ready",
+      "user_question": "いつ、その時間をつくるか",
+      "narrative_function": "ENABLE_ACTION",
+      "state_delta": {
+        "before": "いつ、その時間をつくるか",
+        "after": "readyへ進める"
+      },
+      "evidence_mode": "approved_evidence",
+      "evidence_ids": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "visual_authority": "TYPE",
+      "focal_entity": "hero_treatment_space",
+      "dominance_level": "standard",
+      "copy_intent": "CONVERT",
+      "copy_density": "low",
+      "visual_grammar": {
+        "name": "asymmetric_editorial",
+        "topology": "layered",
+        "dominant_authority": "TYPE",
+        "focal_count": 2,
+        "media_scale": "standard",
+        "type_scale": "editorial",
+        "spatial_relation": "overlap",
+        "asymmetry": "high",
+        "negative_space": "central",
+        "sequencing": "progressive",
+        "contrast_mode": "scale",
+        "transition": "dissolve"
+      },
+      "transition_in": "dissolve",
+      "transition_out": "dissolve",
+      "peak_role": "candidate",
+      "peak_candidate_reason": "narrative state transition",
+      "cta_stage": "action",
+      "desktop_art_direction": {
+        "topology": "layered",
+        "focal_point": "center",
+        "media_scale": "standard"
+      },
+      "mobile_art_direction": {
+        "crop_strategy": "preserve_focal_entity",
+        "focal_point": "center",
+        "content_order": "copy_then_media",
+        "type_ratio": "0.8",
+        "whitespace": "central",
+        "supporting_content_compression": "moderate",
+        "CTA_timing": "after_scene",
+        "transform_mode": "RECOMPOSE"
+      },
+      "reuse_constraints": {
+        "same_role_only": true,
+        "no_cross_company": true
+      },
+      "creative_reason": "reserveをENABLE_ACTIONへ翻訳"
+    }
+  ],
+  "copy_plan": {
+    "claim_eligibility": [
+      {
+        "claim_trace_id": "nagi_no_mirai-e-001",
+        "category": "VERIFIED_FACT",
+        "evidence_id": "nagi_no_mirai-e-001"
+      },
+      {
+        "claim_trace_id": "nagi_no_mirai-e-002",
+        "category": "VERIFIED_FACT",
+        "evidence_id": "nagi_no_mirai-e-002"
+      },
+      {
+        "claim_trace_id": "nagi_no_mirai-e-003",
+        "category": "VERIFIED_FACT",
+        "evidence_id": "nagi_no_mirai-e-003"
+      },
+      {
+        "claim_trace_id": "nagi_no_mirai-e-004",
+        "category": "VERIFIED_FACT",
+        "evidence_id": "nagi_no_mirai-e-004"
+      }
+    ],
+    "omit_unverified": true
+  },
+  "device_plan": {
+    "desktop": "scene-specific foundation",
+    "mobile": "scene-specific foundation"
+  },
+  "reuse_plan": {
+    "policy": "same_role_only"
+  },
+  "qa_expectations": {
+    "gates": [
+      "narrative_order",
+      "state_delta",
+      "grammar_delta",
+      "authority_realization",
+      "claim_trace",
+      "cta_contract"
+    ]
+  },
+  "qa_gates": {
+    "narrative_scene_order_gate": "PASS",
+    "scene_state_delta_gate": "PASS",
+    "rendered_grammar_delta_gate": "PASS",
+    "consecutive_topology_repetition_gate": "PASS",
+    "visual_authority_realization_gate": "PASS",
+    "claim_traceability_gate": "PASS"
+  }
+}

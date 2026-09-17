@@ -1,0 +1,190 @@
+{
+  "schema_version": "narrative_architecture_v1",
+  "narrative_family": "sensory_experience",
+  "narrative_arc": [
+    {
+      "narrative_state": "arrive",
+      "user_question": "どんな空気の中で過ごすのか",
+      "user_emotion": "open",
+      "section_purpose": "CREATE_DESIRE",
+      "evidence_required": [],
+      "preferred_visual_authority": "PERSON",
+      "preferred_composition_grammar": "immersive_image",
+      "copy_density": "low",
+      "cta_eligibility": "none"
+    },
+    {
+      "narrative_state": "settle",
+      "user_question": "静けさはどう深まるか",
+      "user_emotion": "calm",
+      "section_purpose": "CREATE_PAUSE",
+      "evidence_required": [],
+      "preferred_visual_authority": "SENSORY",
+      "preferred_composition_grammar": "sensory_pause",
+      "copy_density": "low",
+      "cta_eligibility": "secondary"
+    },
+    {
+      "narrative_state": "feel_care",
+      "user_question": "どんな時間を受け取るのか",
+      "user_emotion": "trusting",
+      "section_purpose": "SHOW_EXPERIENCE",
+      "evidence_required": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "preferred_visual_authority": "PLACE",
+      "preferred_composition_grammar": "human_dialogue",
+      "copy_density": "low",
+      "cta_eligibility": "secondary"
+    },
+    {
+      "narrative_state": "choose_time",
+      "user_question": "自分の過ごし方を選べるか",
+      "user_emotion": "certain",
+      "section_purpose": "REDUCE_UNCERTAINTY",
+      "evidence_required": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "preferred_visual_authority": "MATERIAL",
+      "preferred_composition_grammar": "progressive_story",
+      "copy_density": "low",
+      "cta_eligibility": "secondary"
+    },
+    {
+      "narrative_state": "reserve",
+      "user_question": "いつ、その時間をつくるか",
+      "user_emotion": "ready",
+      "section_purpose": "ENABLE_ACTION",
+      "evidence_required": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "preferred_visual_authority": "TYPOGRAPHY",
+      "preferred_composition_grammar": "asymmetric_editorial",
+      "copy_density": "low",
+      "cta_eligibility": "primary"
+    }
+  ],
+  "narrative_states": [
+    "arrive",
+    "settle",
+    "feel_care",
+    "choose_time",
+    "reserve"
+  ],
+  "section_purposes": [
+    "CREATE_DESIRE",
+    "CREATE_PAUSE",
+    "SHOW_EXPERIENCE",
+    "REDUCE_UNCERTAINTY",
+    "ENABLE_ACTION"
+  ],
+  "transition_logic": [
+    "arrive→settle",
+    "settle→feel_care",
+    "feel_care→choose_time",
+    "choose_time→reserve"
+  ],
+  "emotional_progression": [
+    "open",
+    "calm",
+    "trusting",
+    "certain",
+    "ready"
+  ],
+  "visual_progression": [
+    "immersive_image",
+    "sensory_pause",
+    "human_dialogue",
+    "progressive_story",
+    "asymmetric_editorial"
+  ],
+  "evidence_progression": [
+    [],
+    [],
+    [
+      "nagi_no_mirai-e-001",
+      "nagi_no_mirai-e-002"
+    ],
+    [
+      "nagi_no_mirai-e-001",
+      "nagi_no_mirai-e-002"
+    ],
+    [
+      "nagi_no_mirai-e-001",
+      "nagi_no_mirai-e-002"
+    ]
+  ],
+  "cta_progression_mapping": [
+    {
+      "stage": "discovery",
+      "section_role": "hero_orientation",
+      "user_hesitation": "自分に関係する入口か分からない",
+      "evidence_already_seen": [],
+      "required_evidence": [],
+      "action_reason": "まず状況を見渡す",
+      "action_type": "anchor",
+      "label_strategy": "understand_before_contact",
+      "visible_label": "流れを見る",
+      "destination": "#way-in"
+    },
+    {
+      "stage": "reassurance",
+      "section_role": "company_truth",
+      "user_hesitation": "この会社へ相談してよいか迷う",
+      "evidence_already_seen": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "required_evidence": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "action_reason": "会社固有の範囲を確かめる",
+      "action_type": "anchor",
+      "label_strategy": "verify_scope",
+      "visible_label": "できることを見る",
+      "destination": "#contact"
+    },
+    {
+      "stage": "action",
+      "section_role": "cta_zone",
+      "user_hesitation": "何を伝えればよいか分からない",
+      "evidence_already_seen": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002",
+        "nagi_no_mirai-e-003",
+        "nagi_no_mirai-e-004"
+      ],
+      "required_evidence": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002",
+        "nagi_no_mirai-e-003",
+        "nagi_no_mirai-e-004"
+      ],
+      "action_reason": "reservationの確認へ進む",
+      "action_type": "conversion",
+      "label_strategy": "act_on_seen_evidence",
+      "visible_label": "相談を始める",
+      "destination": "#contact"
+    }
+  ],
+  "section_naming": [
+    "空間に入る",
+    "静けさを感じる",
+    "触れられる時間",
+    "過ごし方を選ぶ",
+    "その時間を予約する"
+  ],
+  "mobile_redirection": {
+    "hero_crop": "focus_primary_authority",
+    "visual_text_order": "authority_before_explanation",
+    "whitespace": "preserve_tempo_pause",
+    "section_density": "reduce_supporting_density",
+    "image_prominence": "promote_signature_moment",
+    "cta_timing": "after_reassurance"
+  },
+  "derived_from": "Creative Genome + Company Truth + approved Evidence"
+}

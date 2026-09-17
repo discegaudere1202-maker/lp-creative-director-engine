@@ -1,0 +1,58 @@
+{
+  "schema_version": "photo_role_map_v1",
+  "selection_mode": "role_driven_not_fixed_count",
+  "roles": [
+    {
+      "photo_role": "hero_home_finish",
+      "visual_subject": "住宅外観と仕上がりの素材感",
+      "business_purpose": "家を任せる仕事だと瞬時に伝える",
+      "replacement_target": "実施工後の住宅外観",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "none",
+      "proof_intent": "visual_context_only",
+      "placement": "hero_dominant_image"
+    },
+    {
+      "photo_role": "craft_handwork",
+      "visual_subject": "ローラー・刷毛・施工中の手元",
+      "business_purpose": "職人仕事と丁寧さを視覚化する",
+      "replacement_target": "実作業中の手元写真",
+      "preferred_orientation": "portrait",
+      "crop_tolerance": "tight",
+      "people_distance": "close",
+      "proof_intent": "craft_context_only",
+      "placement": "mid_frame_proof_experience"
+    },
+    {
+      "photo_role": "material_detail",
+      "visual_subject": "施工面・素材・仕上げの細部",
+      "business_purpose": "品質をディテールで理解させる",
+      "replacement_target": "実施工ディテール",
+      "preferred_orientation": "square",
+      "crop_tolerance": "tight",
+      "people_distance": "none",
+      "proof_intent": "material_context_only",
+      "placement": "craft_detail_image",
+      "secondary_placement": "quiet_chapter_image"
+    },
+    {
+      "photo_role": "trust_consultation",
+      "visual_subject": "住まいについて相談する人の距離感",
+      "business_purpose": "相談前の心理的ハードルを下げる",
+      "replacement_target": "実打ち合わせ・相談風景",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "mid",
+      "proof_intent": "human_context_only",
+      "placement": "quiet_chapter_image"
+    }
+  ],
+  "section_role_map": {
+    "hero_orientation": "hero_home_finish",
+    "company_truth": "craft_handwork",
+    "service_process": "material_detail",
+    "next_step": "trust_consultation",
+    "cta_zone": "trust_consultation"
+  }
+}

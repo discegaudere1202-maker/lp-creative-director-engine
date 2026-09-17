@@ -1,4 +1,4 @@
-name: Round 1H-C Browser Validation
+name: Round 1K-A2 Browser Validation
 
 on:
   workflow_dispatch:
@@ -10,14 +10,17 @@ on:
       - 'src/lp_engine/production_generation.py'
       - 'src/lp_engine/creative_genome.py'
       - 'src/lp_engine/narrative_architecture.py'
+      - 'src/lp_engine/premium_scene.py'
       - 'src/lp_engine/structural_similarity.py'
       - 'scripts/run_round1f_validation.py'
+      - 'scripts/run_round1k_a2_validation.py'
       - 'scripts/run_round1e_c2_validation.py'
       - 'scripts/preflight_photography_assets.py'
       - 'tests/test_round1e_c2_harness.py'
       - 'tests/test_creative_genome.py'
       - 'tests/test_production_generation.py'
-      - 'artifacts/round1f/**'
+      - 'tests/test_premium_scene.py'
+      - 'artifacts/round1k_a2/**'
       - 'assets/photography/**'
 
 jobs:
@@ -37,32 +40,30 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Photography preflight
         run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
-      - name: Round 1H-C Engine regeneration, smoke, integrity and 27 viewport QA
+      - name: Round 1K-A2 Engine regeneration, diagnostics and 27 viewport QA
         continue-on-error: true
-        env:
-          ROUND_LABEL: round1h
-          ROUND_OUTPUT_ROOT: artifacts/round1h
-          ROUND_BASELINE_ROOT: artifacts/round1f
-        run: python scripts/run_round1f_validation.py
+        run: python scripts/run_round1k_a2_validation.py
       - name: Related tests
         if: always()
         run: python -m unittest tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
-      - name: Upload Round 1H-B human review artifacts
+      - name: Upload Round 1K-A2 technical artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: round1h-c-human-review-${{ github.sha }}
+          name: round1k-a2-technical-${{ github.sha }}
           path: |
-            artifacts/round1h/summary.json
-            artifacts/round1h/reports/
-            artifacts/round1h/browser_qa/
-            artifacts/round1h/human_review/
-            artifacts/round1h/*/index.html
-            artifacts/round1h/*/creative_genome.json
-            artifacts/round1h/*/narrative_architecture.json
-            artifacts/round1h/*/quality_gate_report.json
-            artifacts/round1h/*/safety_replacement_metadata.json
+            artifacts/round1k_a2/summary.json
+            artifacts/round1k_a2/diagnostics/
+            artifacts/round1k_a2/reports/
+            artifacts/round1k_a2/browser_qa/
+            artifacts/round1k_a2/technical_captures/
+            artifacts/round1k_a2/*/index.html
+            artifacts/round1k_a2/*/creative_genome.json
+            artifacts/round1k_a2/*/narrative_architecture.json
+            artifacts/round1k_a2/*/premium_scene_plan.json
+            artifacts/round1k_a2/*/quality_gate_report.json
+            artifacts/round1k_a2/*/safety_replacement_metadata.json
           if-no-files-found: warn
       - name: Final QA gate
         if: always()
-        run: python -c "import json,sys; p=json.load(open('artifacts/round1h/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('overall_status') == 'PASS' and p.get('human_review_ready') else 1)"
+        run: python -c "import json,sys; p=json.load(open('artifacts/round1k_a2/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1k_a2_ready') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 else 1)"
