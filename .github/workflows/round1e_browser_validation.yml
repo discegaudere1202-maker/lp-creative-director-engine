@@ -60,7 +60,7 @@ jobs:
         run: python scripts/run_round1k_b2_validation.py
       - name: Related tests
         if: always()
-        run: python -m unittest tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
+        run: python -m unittest tests.test_premium_scene tests.test_premium_experience tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
       - name: Upload Round 1K-B2 integrity artifacts
         if: always()
         uses: actions/upload-artifact@v4
