@@ -1,0 +1,48 @@
+{
+  "generation_id": "round1f-maylynn_paint",
+  "items": [
+    {
+      "claim": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+      "evidence_id": "maylynn_paint-e-001",
+      "source": "approved-selection-manifest",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "MIDDLE"
+      ]
+    },
+    {
+      "claim": "福岡市で活動する事業者。",
+      "evidence_id": "maylynn_paint-e-002",
+      "source": "phase6-sales-master-snapshot",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "EARLY_PROOF"
+      ]
+    },
+    {
+      "claim": "対応できる内容を確認してから次の案内へ進む。",
+      "evidence_id": "maylynn_paint-e-003",
+      "source": "approved-selection-manifest",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "MIDDLE"
+      ]
+    },
+    {
+      "claim": "公式SNSから相談・予約の入口を確認する。",
+      "evidence_id": "maylynn_paint-e-004",
+      "source": "phase6-sales-master-snapshot",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ]
+    }
+  ]
+}

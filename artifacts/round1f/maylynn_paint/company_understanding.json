@@ -1,0 +1,86 @@
+{
+  "schema_version": "production_generation_v1",
+  "company_id": "maylynn_paint",
+  "company_name": "Maylynn Paint",
+  "industry": "外壁塗装",
+  "service_category": "外壁塗装",
+  "location": "福岡市",
+  "business_model": "local_service",
+  "company_truth": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+  "differentiators": [
+    "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。"
+  ],
+  "customer_state": {
+    "before": "相談前に何を確認すればよいか分からない",
+    "after": "まず状況を伝えてみようと思える",
+    "barrier": "自分に合う入口か分からない"
+  },
+  "conversion_goal": "quote_request",
+  "generation_iteration": 3,
+  "primary_objections": [
+    "O3_PROCESS",
+    "O4_NEXT"
+  ],
+  "available_evidence": [
+    "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+    "福岡市で活動する事業者。",
+    "対応できる内容を確認してから次の案内へ進む。",
+    "公式SNSから相談・予約の入口を確認する。"
+  ],
+  "unavailable_evidence": [
+    "実店舗・実施工・実スタッフ・実顧客・実教室の写真"
+  ],
+  "hearing_required": [],
+  "visual_authority": [
+    "MATERIAL",
+    "PLACE",
+    "PERSON",
+    "TYPOGRAPHY",
+    "DOCUMENT"
+  ],
+  "evidence_density": "MEDIUM",
+  "industry_visual_family": "material_field",
+  "visual_scene": "material_field",
+  "layout_profile": "field_ledger",
+  "field_validation_context": true,
+  "verified_strengths": [
+    "E2_SPECIFIC",
+    "E3_OPERATIONAL",
+    "E5_DECISION_ENABLING"
+  ],
+  "evidence_utility": {
+    "TRUST": 1,
+    "CONVERSION": 2,
+    "VISUAL": 1,
+    "PROCESS": 2,
+    "IDENTITY": 1
+  },
+  "evidence_strategy": "proof_process_action_balance",
+  "source_references": [
+    "approved-selection-manifest",
+    "phase6-sales-master-snapshot"
+  ],
+  "contact_channels": {
+    "href": "#contact",
+    "primary": "公式SNS"
+  },
+  "photo_replacement_readiness": {
+    "status": "READY_WITH_PROXY",
+    "proxy_role": "role_selected_photography_asset",
+    "replacement_targets": [
+      "実店舗・実現場・実商品・実人物写真"
+    ],
+    "layout_constraints": [
+      "同一役割の実写真を同じ比率へ差し替え可能",
+      "文字重なりなし",
+      "中央焦点を保持"
+    ],
+    "proof_role": "visual_context_only; not evidence of a real result or location",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "なぎのみらい",
+    "headline": "ヘッドスパ",
+    "headline_lines": [
+      "ヘッドスパ"
+    ],
+    "supporting": "福岡市でヘッドスパを探している方へ。ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。。相談前に何を確認すればよいか分からないから、公開された連絡先へ進む入口を整理します。",
+    "cta": "予約する",
+    "microcopy": "福岡市｜公開された連絡先の公開導線を確認できます。"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "ヘッドスパ",
+      "headline_lines": [
+        "ヘッドスパ"
+      ],
+      "body": "福岡市のヘッドスパ。ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "ヘッドスパの入口",
+      "headline_lines": [
+        "ヘッドスパの入口"
+      ],
+      "body": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "evidence_claims": [
+        "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "福岡市で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "予約の入口",
+      "headline_lines": [
+        "予約の入口"
+      ],
+      "body": "公開された連絡先で、ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。について確認したいことを知らせる入口です。対応内容や条件は、公開情報で確認できる範囲に限定しています。",
+      "evidence_claims": [
+        "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "福岡市で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "確認の順番を知る",
+      "headline_lines": [
+        "確認の順番を知る"
+      ],
+      "body": "相談前に何を確認すればよいか分からない。自分に合う入口か分からないから、ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。を確認できる順番へ変えます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "予約の次の一手",
+      "headline_lines": [
+        "予約の次の一手"
+      ],
+      "body": "公開された連絡先へ進み、ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。について最初の確認をする。未確認の対応約束は置きません。",
+      "evidence_claims": [],
+      "cta": "予約する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "meaning_units_not_character_count"
+  },
+  "process_steps": [
+    "気になることを話す",
+    "過ごし方を選ぶ",
+    "予約を相談する"
+  ]
+}

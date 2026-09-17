@@ -1,0 +1,11 @@
+{
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "safety_status": "PASS",
+  "asset_reuse": "PASS",
+  "narrative_photography": "PASS",
+  "screenshot_peak_plan": 3,
+  "mobile_redirection_fields": 6
+}

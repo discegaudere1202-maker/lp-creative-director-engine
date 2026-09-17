@@ -1,0 +1,291 @@
+{
+  "schema_version": "baseline_vs_round1f_v1",
+  "baseline": {
+    "signatures": {
+      "maylynn_paint": {
+        "section_sequence": [
+          "hero_orientation",
+          "company_truth",
+          "service_process",
+          "next_step",
+          "cta_zone"
+        ],
+        "composition_sequence": [
+          "field_cover",
+          "material_inspection",
+          "work_sequence",
+          "quote_route",
+          "closing_field"
+        ],
+        "cta_sequence": [
+          "orientation",
+          "proof_orientation",
+          "clarity",
+          "action",
+          "primary_conversion"
+        ],
+        "photo_sequence": [
+          "generated_material_field_scene",
+          "generated_material_field_scene",
+          "generated_material_field_scene",
+          "generated_material_field_scene",
+          "generated_material_field_scene"
+        ],
+        "rhythm_signature": [
+          "peak",
+          "peak",
+          "quiet",
+          "quiet",
+          "peak"
+        ],
+        "card_group_pattern": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      "nagi_no_mirai": {
+        "section_sequence": [
+          "hero_orientation",
+          "company_truth",
+          "service_process",
+          "next_step",
+          "cta_zone"
+        ],
+        "composition_sequence": [
+          "care_invitation",
+          "care_surface",
+          "arrival_sequence",
+          "care_contact",
+          "closing_field"
+        ],
+        "cta_sequence": [
+          "orientation",
+          "proof_orientation",
+          "clarity",
+          "action",
+          "primary_conversion"
+        ],
+        "photo_sequence": [
+          "generated_care_experience_scene",
+          "generated_care_experience_scene",
+          "generated_care_experience_scene",
+          "generated_care_experience_scene",
+          "generated_care_experience_scene"
+        ],
+        "rhythm_signature": [
+          "peak",
+          "peak",
+          "quiet",
+          "quiet",
+          "peak"
+        ],
+        "card_group_pattern": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      "watashi_no_daidokoro": {
+        "section_sequence": [
+          "hero_orientation",
+          "company_truth",
+          "service_process",
+          "next_step",
+          "cta_zone"
+        ],
+        "composition_sequence": [
+          "studio_cover",
+          "table_spread",
+          "session_sequence",
+          "lesson_contact",
+          "closing_field"
+        ],
+        "cta_sequence": [
+          "orientation",
+          "proof_orientation",
+          "clarity",
+          "action",
+          "primary_conversion"
+        ],
+        "photo_sequence": [
+          "generated_studio_invitation_scene",
+          "generated_studio_invitation_scene",
+          "generated_studio_invitation_scene",
+          "generated_studio_invitation_scene",
+          "generated_studio_invitation_scene"
+        ],
+        "rhythm_signature": [
+          "peak",
+          "peak",
+          "quiet",
+          "quiet",
+          "peak"
+        ],
+        "card_group_pattern": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    },
+    "pairwise": {
+      "maylynn_paint__nagi_no_mirai": 0.7,
+      "maylynn_paint__watashi_no_daidokoro": 0.7,
+      "nagi_no_mirai__watashi_no_daidokoro": 0.7
+    },
+    "average": 0.7
+  },
+  "new": {
+    "signatures": {
+      "maylynn_paint": {
+        "section_sequence": [
+          "hero_orientation",
+          "company_truth",
+          "service_process",
+          "next_step",
+          "cta_zone"
+        ],
+        "composition_sequence": [
+          "field_cover",
+          "material_inspection",
+          "work_sequence",
+          "quote_route",
+          "closing_field"
+        ],
+        "cta_sequence": [
+          "orientation",
+          "proof_orientation",
+          "clarity",
+          "action",
+          "primary_conversion"
+        ],
+        "photo_sequence": [
+          "generated_material_field_scene",
+          "generated_material_field_scene",
+          "generated_material_field_scene",
+          "generated_material_field_scene",
+          "generated_material_field_scene"
+        ],
+        "rhythm_signature": [
+          "peak",
+          "peak",
+          "quiet",
+          "quiet",
+          "peak"
+        ],
+        "card_group_pattern": [
+          "editorial_split",
+          "material_detail",
+          "process_sequence",
+          "progressive_story",
+          "editorial_split"
+        ]
+      },
+      "nagi_no_mirai": {
+        "section_sequence": [
+          "hero_orientation",
+          "company_truth",
+          "next_step",
+          "service_process",
+          "cta_zone"
+        ],
+        "composition_sequence": [
+          "care_invitation",
+          "care_surface",
+          "care_contact",
+          "arrival_sequence",
+          "closing_field"
+        ],
+        "cta_sequence": [
+          "orientation",
+          "proof_orientation",
+          "action",
+          "clarity",
+          "primary_conversion"
+        ],
+        "photo_sequence": [
+          "generated_care_experience_scene",
+          "generated_care_experience_scene",
+          "generated_care_experience_scene",
+          "generated_care_experience_scene",
+          "generated_care_experience_scene"
+        ],
+        "rhythm_signature": [
+          "peak",
+          "peak",
+          "quiet",
+          "quiet",
+          "peak"
+        ],
+        "card_group_pattern": [
+          "sensory_pause",
+          "immersive_image",
+          "progressive_story",
+          "human_dialogue",
+          "sensory_pause"
+        ]
+      },
+      "watashi_no_daidokoro": {
+        "section_sequence": [
+          "hero_orientation",
+          "service_process",
+          "company_truth",
+          "next_step",
+          "cta_zone"
+        ],
+        "composition_sequence": [
+          "studio_cover",
+          "session_sequence",
+          "table_spread",
+          "lesson_contact",
+          "closing_field"
+        ],
+        "cta_sequence": [
+          "orientation",
+          "clarity",
+          "proof_orientation",
+          "action",
+          "primary_conversion"
+        ],
+        "photo_sequence": [
+          "generated_studio_invitation_scene",
+          "generated_studio_invitation_scene",
+          "generated_studio_invitation_scene",
+          "generated_studio_invitation_scene",
+          "generated_studio_invitation_scene"
+        ],
+        "rhythm_signature": [
+          "peak",
+          "quiet",
+          "peak",
+          "quiet",
+          "peak"
+        ],
+        "card_group_pattern": [
+          "table_scene",
+          "process_sequence",
+          "human_dialogue",
+          "progressive_story",
+          "table_scene"
+        ]
+      }
+    },
+    "pairwise": {
+      "maylynn_paint__nagi_no_mirai": 0.4,
+      "maylynn_paint__watashi_no_daidokoro": 0.3667,
+      "nagi_no_mirai__watashi_no_daidokoro": 0.2667
+    },
+    "average": 0.3445
+  },
+  "difference": {
+    "average": -0.3555,
+    "lower_than_baseline": true
+  }
+}

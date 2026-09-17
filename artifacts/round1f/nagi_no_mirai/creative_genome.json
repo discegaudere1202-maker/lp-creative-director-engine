@@ -1,0 +1,93 @@
+{
+  "schema_version": "creative_genome_v1",
+  "dominant_narrative": "sensory_experience",
+  "emotional_tempo": "gentle",
+  "visual_authority_priority": [
+    "PERSON",
+    "SENSORY",
+    "PLACE",
+    "MATERIAL",
+    "TYPOGRAPHY",
+    "DOCUMENT"
+  ],
+  "composition_logic": [
+    "sensory_pause",
+    "immersive_image",
+    "human_dialogue",
+    "progressive_story"
+  ],
+  "signature_moment": {
+    "section_role": "company_truth",
+    "reason": "Company Truthと主役のVisual Authorityが同じ画面で結び付く瞬間"
+  },
+  "screenshot_peak_plan": [
+    {
+      "section_role": "hero_orientation",
+      "visual_authority": "PERSON",
+      "composition": "sensory_pause",
+      "reason": "最初の認識を決める"
+    },
+    {
+      "section_role": "company_truth",
+      "visual_authority": "SENSORY",
+      "composition": "immersive_image",
+      "reason": "固有のTruthを記憶に残す"
+    },
+    {
+      "section_role": "service_process",
+      "visual_authority": "PERSON",
+      "composition": "human_dialogue",
+      "reason": "行動の順番を見せる"
+    }
+  ],
+  "cta_progression": [
+    {
+      "stage": "discovery",
+      "section_role": "hero_orientation",
+      "user_hesitation": "自分に関係する入口か分からない",
+      "evidence_already_seen": [],
+      "action_reason": "まず状況を見渡す"
+    },
+    {
+      "stage": "reassurance",
+      "section_role": "company_truth",
+      "user_hesitation": "この会社へ相談してよいか迷う",
+      "evidence_already_seen": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "action_reason": "会社固有の範囲を確かめる"
+    },
+    {
+      "stage": "action",
+      "section_role": "cta_zone",
+      "user_hesitation": "何を伝えればよいか分からない",
+      "evidence_already_seen": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002",
+        "nagi_no_mirai-e-003",
+        "nagi_no_mirai-e-004"
+      ],
+      "action_reason": "reservationの確認へ進む"
+    }
+  ],
+  "mobile_redirection": {
+    "hero_crop": "focus_primary_authority",
+    "visual_text_order": "authority_before_explanation",
+    "whitespace": "preserve_tempo_pause",
+    "section_density": "reduce_supporting_density",
+    "image_prominence": "promote_signature_moment",
+    "cta_timing": "after_reassurance"
+  },
+  "derivation": {
+    "source": "Company Truth + evidence types + conversion goal + visual authority",
+    "profile": "care_rhythm",
+    "evidence_types": [
+      "CTA_CHANNEL",
+      "PLACE_WIDE",
+      "SERVICE_PROCESS",
+      "SERVICE_SCOPE"
+    ],
+    "deterministic": true
+  }
+}

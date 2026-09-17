@@ -19,6 +19,7 @@ import re
 from typing import Any, Mapping, Sequence
 
 from .evidence_safety import evaluate_evidence_selection
+from .creative_genome import derive_creative_genome, public_copy_gate
 from .hearing import plan_hearing
 from .photography import (
     build_asset_manifest,
@@ -398,6 +399,8 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
         "machine_catalogue": ("状態を見せる", "仕上がりを選ぶ", "作業の入口"),
         "local_route": ("暮らしの困りごとから", "頼める範囲を知る", "支援の入口"),
     }.get(profile, ("入口をひらく", "次を考える", "最初の案内"))
+    genome = dict(strategy.get("creative_genome") or {})
+    genome_forms = list(genome.get("composition_logic") or [])
     sections: list[dict[str, Any]] = [
         {
             "section_id": "opening",
@@ -465,6 +468,21 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
             "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target",
         },
     ]
+    for index, section in enumerate(sections):
+        section["composition_grammar"] = genome_forms[index % len(genome_forms)] if genome_forms else "editorial_split"
+        section["genome_tempo"] = _text(genome.get("emotional_tempo")) or "grounded"
+        section["cta_stage"] = next((item.get("stage") for item in genome.get("cta_progression", []) if item.get("section_role") == section["section_role"]), "")
+    section_orders = {
+        "care_rhythm": ["opening", "truth", "contact", "way_in", "close"],
+        "experience_calendar": ["opening", "way_in", "truth", "contact", "close"],
+        "studio_invitation": ["opening", "way_in", "truth", "contact", "close"],
+        "catalogue_spread": ["opening", "truth", "contact", "way_in", "close"],
+        "machine_catalogue": ["opening", "truth", "way_in", "contact", "close"],
+    }
+    order = section_orders.get(profile, [item["section_id"] for item in sections])
+    sections.sort(key=lambda item: order.index(item["section_id"]) if item["section_id"] in order else len(order))
+    for index, section in enumerate(sections):
+        section["order"] = index
     return sections
 
 
@@ -830,7 +848,7 @@ def render_html(spec: Mapping[str, Any]) -> str:
     contact_claims = [item for item in evidence if item.get("evidence_type") in {"CTA_CHANNEL", "POST_CLICK_FLOW", "ACCOUNTABILITY_SCOPE"}]
     service_claims = [item for item in evidence if item.get("evidence_type") in {"SERVICE_SCOPE", "SERVICE_PROCESS", "CRAFT_ACTION"}]
     claims_markup = "".join(
-        f'<div class="claim"><span class="claim-id">{_esc(item.get("evidence_id"))}</span>{_esc(item.get("claim"))}</div>'
+        f'<div class="claim">{_esc(item.get("claim"))}</div>'
         for item in (service_claims or evidence[:2])
     )
     contact_markup = "".join(f'<div>{_esc(item.get("claim"))}</div>' for item in contact_claims)
@@ -867,7 +885,7 @@ def render_html(spec: Mapping[str, Any]) -> str:
 <section class="section section--quiet" data-reveal data-role="service_process" data-layout="{_esc(composition_by_section.get("way_in", {}).get("layout_type", "sequence_rail"))}"><div class="section-header"><span class="eyebrow">02 / 入口のリズム</span><span class="small">{_esc(ia_label := _text(sections["way_in"].get("layout_hint")) or "次を考える")}</span></div><div class="hero-grid"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["way_in"]["headline_lines"])}</h2>{process_photo}</div><div><p class="lead">{_esc(copy_sections["way_in"]["body"])}</p></div></div><div class="sequence" style="margin-top:64px">{steps_markup}</div></section>
 <section class="section section--quiet" id="contact" data-reveal data-role="next_step" data-layout="{_esc(composition_by_section.get("contact", {}).get("layout_type", "contact_strip"))}"><div class="section-header"><span class="eyebrow">03 / 次の案内</span><span class="small">{location}</span></div><div class="contact-strip"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["contact"]["headline_lines"])}</h2><p class="lead" style="margin-top:24px">{_esc(copy_sections["contact"]["body"])}</p>{next_photo}<div class="contact-lines" style="margin-top:28px">{contact_markup}</div></div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a></div></div></section>
 <section class="section section--peak" data-reveal data-role="cta_zone" data-layout="{_esc(composition_by_section.get("close", {}).get("layout_type", "closing_field"))}"><div class="hero-grid"><div><div class="eyebrow">04 / {category}</div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["close"]["headline_lines"])}</h2><p class="lead" style="margin-top:28px">{_esc(copy_sections["close"]["body"])}</p>{cta_photo}</div><div><a class="button" href="{contact_href}">{cta}<span aria-hidden="true" style="margin-left:14px">↗</span></a><p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div></div></section>
-</main><footer class="topline footer-note"><span>{name}</span><span>事実確認済みの内容のみで構成</span></footer>
+</main><footer class="topline footer-note"><span>{name}</span><span>この先の相談へ</span></footer>
 </div><script>for (const node of document.querySelectorAll('[data-reveal]')) {{ const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {{ if (entry.isIntersecting) {{ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }} }}), {{ threshold: 0.12 }}); observer.observe(node); }}</script></body></html>'''
 
 
@@ -915,6 +933,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     approved = list(safety.get("eligible_evidence") or [])
     understanding = build_company_understanding(raw, approved)
     strategy = build_creative_strategy(understanding, approved)
+    strategy["creative_genome"] = derive_creative_genome(understanding, strategy, approved)
     ia = build_information_architecture(understanding, strategy, approved)
     copy = guard_fake_evidence_copy(build_copy(understanding, strategy, ia, approved), approved)
     photo_role_map = build_photo_role_map(understanding, strategy, ia)
@@ -952,6 +971,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     stages = {
         "company_understanding": understanding,
         "creative_strategy": strategy,
+        "creative_genome": strategy["creative_genome"],
         "form_causality_manifest": {
             "schema_version": "form_causality_manifest_v1",
             "items": strategy.get("form_causality", []),
@@ -970,6 +990,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         _write_json(output / f"{name}.json", value)
     html_path = output / "index.html"
     html_path.write_text(render_html(render_spec), encoding="utf-8")
+    presentation_hygiene = public_copy_gate(html_path.read_text(encoding="utf-8"))
     manifest = {
         "schema_version": SCHEMA_VERSION,
         "generation_id": generation_id,
@@ -1002,6 +1023,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         "renderer_output": ["index.html"],
         "stage_outputs": [f"{name}.json" for name in stages],
         "manual_intervention": [],
+        "presentation_hygiene": presentation_hygiene,
         "generated_at": datetime.now(UTC).isoformat(),
     }
     _write_json(output / "evidence_manifest.json", {"generation_id": generation_id, "items": manifest["evidence_used"]})
