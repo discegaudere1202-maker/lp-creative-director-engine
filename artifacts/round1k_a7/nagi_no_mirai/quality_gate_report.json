@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "safety": "PASS",
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "scene_gates": {
+    "narrative_scene_order_gate": "PASS",
+    "scene_state_delta_gate": "PASS",
+    "rendered_grammar_delta_gate": "PASS",
+    "consecutive_topology_repetition_gate": "PASS",
+    "visual_authority_realization_gate": "PASS",
+    "claim_traceability_gate": "PASS"
+  },
+  "render_contract": {
+    "status": "PASS",
+    "scene_count": {
+      "expected": 5,
+      "rendered": 5
+    },
+    "expected_headings": [
+      "空間に入る",
+      "静けさを感じる",
+      "触れられる時間",
+      "過ごし方を選ぶ",
+      "その時間を予約する"
+    ],
+    "rendered_headings": [
+      "空間に入る",
+      "静けさを感じる",
+      "触れられる時間",
+      "過ごし方を選ぶ",
+      "その時間を予約する"
+    ],
+    "rendered_ctas": [
+      {
+        "stage": "discovery",
+        "destination": "#way-in",
+        "visible_label": "流れを見る"
+      },
+      {
+        "stage": "discovery",
+        "destination": "#way-in",
+        "visible_label": "流れを見る"
+      },
+      {
+        "stage": "reassurance",
+        "destination": "#contact",
+        "visible_label": "できることを見る"
+      },
+      {
+        "stage": "reassurance",
+        "destination": "#contact",
+        "visible_label": "できることを見る"
+      },
+      {
+        "stage": "action",
+        "destination": "#contact",
+        "visible_label": "相談を始める"
+      }
+    ],
+    "internal_metadata_visible": false,
+    "internal_leakage": [],
+    "editorial_violations": []
+  },
+  "photography_role_coverage": {
+    "expected": 4,
+    "actual": 4
+  }
+}

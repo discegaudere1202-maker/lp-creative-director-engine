@@ -1,4 +1,4 @@
-name: Round 1K-A6 Rendered Copy Validation
+name: Round 1K-A7 Rendered Copy Editorial Validation
 
 on:
   workflow_dispatch:
@@ -17,6 +17,7 @@ on:
       - 'scripts/run_round1k_a4_validation.py'
       - 'scripts/run_round1k_a5_validation.py'
       - 'scripts/run_round1k_a6_validation.py'
+      - 'scripts/run_round1k_a7_validation.py'
       - 'scripts/run_round1e_c2_validation.py'
       - 'scripts/preflight_photography_assets.py'
       - 'tests/test_round1e_c2_harness.py'
@@ -28,6 +29,7 @@ on:
       - 'artifacts/round1k_a4/**'
       - 'artifacts/round1k_a5/**'
       - 'artifacts/round1k_a6/**'
+      - 'artifacts/round1k_a7/**'
       - 'assets/photography/**'
 
 jobs:
@@ -47,33 +49,33 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Photography preflight
         run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
-      - name: Round 1K-A6 Engine regeneration, rendered copy contracts and 27 viewport QA
+      - name: Round 1K-A7 Engine regeneration, editorial copy contracts and 27 viewport QA
         continue-on-error: true
         env:
-          ROUND_OUTPUT_ROOT: artifacts/round1k_a6
-        run: python scripts/run_round1k_a6_validation.py
+          ROUND_OUTPUT_ROOT: artifacts/round1k_a7
+        run: python scripts/run_round1k_a7_validation.py
       - name: Related tests
         if: always()
         run: python -m unittest tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
-      - name: Upload Round 1K-A6 rendered copy artifacts
+      - name: Upload Round 1K-A7 rendered copy artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: round1k-a6-rendered-copy-${{ github.sha }}
+          name: round1k-a7-rendered-copy-${{ github.sha }}
           path: |
-            artifacts/round1k_a6/summary.json
-            artifacts/round1k_a6/diagnostics/
-            artifacts/round1k_a6/reports/
-            artifacts/round1k_a6/browser_qa/
-            artifacts/round1k_a6/technical_captures/
-            artifacts/round1k_a6/rendered_visible_copy/
-            artifacts/round1k_a6/*/index.html
-            artifacts/round1k_a6/*/creative_genome.json
-            artifacts/round1k_a6/*/narrative_architecture.json
-            artifacts/round1k_a6/*/premium_scene_plan.json
-            artifacts/round1k_a6/*/quality_gate_report.json
-            artifacts/round1k_a6/*/safety_replacement_metadata.json
+            artifacts/round1k_a7/summary.json
+            artifacts/round1k_a7/diagnostics/
+            artifacts/round1k_a7/reports/
+            artifacts/round1k_a7/browser_qa/
+            artifacts/round1k_a7/technical_captures/
+            artifacts/round1k_a7/rendered_visible_copy/
+            artifacts/round1k_a7/*/index.html
+            artifacts/round1k_a7/*/creative_genome.json
+            artifacts/round1k_a7/*/narrative_architecture.json
+            artifacts/round1k_a7/*/premium_scene_plan.json
+            artifacts/round1k_a7/*/quality_gate_report.json
+            artifacts/round1k_a7/*/safety_replacement_metadata.json
           if-no-files-found: warn
       - name: Final QA gate
         if: always()
-        run: python -c "import json,sys; p=json.load(open('artifacts/round1k_a6/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1k_a6_ready') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 else 1)"
+        run: python -c "import json,sys; p=json.load(open('artifacts/round1k_a7/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1k_a7_ready') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 else 1)"

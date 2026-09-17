@@ -521,7 +521,11 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     _, goal_phrase = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     goal_noun = GOAL_NOUNS.get(goal, "相談")
     channel = _text((understanding.get("contact_channels") or {}).get("label")) or ""
-    truth_fragment = truth.rstrip("。.!！？!? ")
+    truth_fragment = truth.rstrip("。.!！？!? ").replace("相談できる地域の窓口", "対応する事業者").replace("の相談窓口", "のサービス")
+    public_truth = truth_fragment
+    if "相談できる地域の窓口" in truth or "の相談窓口" in truth:
+        public_truth = f"{compact_category}を提供する事業者"
+    activity_head = compact_category.replace("教室", "").replace("スクール", "").strip() or compact_category
     profile = _text(strategy.get("layout_profile")) or "editorial_rail"
     authorities = list(strategy.get("visual_authority_priority") or [])
     family = _text(strategy.get("narrative_family"))
@@ -554,7 +558,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
             "eyebrow": company_name,
             "headline": headline,
             "headline_lines": _line_shape(headline, max_chars=9 if field_validation else 7),
-            "supporting": f"{location}で{category}を探している方へ。{truth}。{signature_phrase}を手がかりに、次の一歩を考えます。",
+            "supporting": f"{location}で{category}を探している方へ。{public_truth}。{signature_phrase}を手がかりに、次の一歩を考えます。",
             "cta": cta,
             "microcopy": f"{location}｜{signature_phrase}から次の案内へ。",
         },
@@ -564,11 +568,11 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                 "headline": section_headlines.get(item["section_id"], item["key_message"]),
                 "headline_lines": _line_shape(section_headlines.get(item["section_id"], item["key_message"]), max_chars=11),
                 "body": {
-                    "opening": f"{location}の{category}。{truth}",
-                    "truth": truth,
-                    "way_in": (f"{compact_category}の現場を見渡し、{signature_phrase}へ目を向けます." if layout_profile == "field_ledger" else f"{signature_phrase}がほどける時間。{compact_category}で過ごすひとときを味わいます." if layout_profile == "care_rhythm" else f"{signature_phrase}を選び、{compact_category}を一緒に学びます."),
-                    "contact": (f"表面の変化と手順を並べ、{compact_category}の仕上がりを思い描きます." if layout_profile == "field_ledger" else f"静かな空間で過ごす時間を、{compact_category}のひとときとして選びます." if layout_profile == "care_rhythm" else f"火を入れ、手を動かし、{compact_category}の料理を食卓へ運ぶ流れを楽しみます."),
-                    "close": (f"{compact_category}の状態を見ながら、次の相談へ進みます." if layout_profile == "field_ledger" else f"{compact_category}で、自分のための時間を予約します." if layout_profile == "care_rhythm" else f"できあがる一皿を囲む時間へ、参加の一歩を踏み出します."),
+                    "opening": f"{location}の{category}。{public_truth}",
+                    "truth": public_truth,
+                    "way_in": (f"{compact_category}の現場を見渡し、{signature_phrase}へ目を向けます。" if layout_profile == "field_ledger" else f"静かな空間で、{compact_category}のひとときを味わいます。" if layout_profile == "care_rhythm" else f"{signature_phrase}を選び、{activity_head}の流れを一緒に学びます。"),
+                    "contact": (f"表面の変化と手順を並べ、{compact_category}の仕上がりを思い描きます。" if layout_profile == "field_ledger" else f"静かな空間で過ごすひとときを、{compact_category}に合わせて選びます。" if layout_profile == "care_rhythm" else f"火を入れ、手を動かし、{activity_head}を食卓へ運ぶ流れを楽しみます。"),
+                    "close": (f"{compact_category}の状態を見ながら、相談の準備を整えます。" if layout_profile == "field_ledger" else f"{compact_category}で、自分のための時間を予約します。" if layout_profile == "care_rhythm" else f"できあがる一皿を囲む時間へ、参加の一歩を踏み出します。"),
                 }.get(item["section_id"], item["key_message"]),
                 "evidence_claims": claims if item["section_id"] in {"truth", "contact"} else [],
                 "cta": cta if item["section_id"] == "close" else "",

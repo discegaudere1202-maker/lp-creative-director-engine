@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "missing": 0,
+      "unsupported_claims": 0
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "missing": 0,
+      "unsupported_claims": 0
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "missing": 0,
+      "unsupported_claims": 0
+    }
+  ]
+}

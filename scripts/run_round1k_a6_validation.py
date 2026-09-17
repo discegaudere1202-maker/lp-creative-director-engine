@@ -2,7 +2,7 @@
 from __future__ import annotations
 import json, os, re
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/"artifacts"/"round1k_a6"
+ROOT=Path(__file__).resolve().parents[1]; OUT=Path(os.environ.get("ROUND_OUTPUT_ROOT", str(ROOT/"artifacts"/"round1k_a6")))
 KNOWN=["次の確認へ進む","最初の確認","確認できる順番","公開された連絡先","公開情報で確認","未確認の対応","確認したいことを知らせる入口"]
 BAD=["地域の窓口の現場","相談窓口に合わせて選びます","料理教室が食卓へ向かう","料理教室を一緒につくります"]
 def write(p,v): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
