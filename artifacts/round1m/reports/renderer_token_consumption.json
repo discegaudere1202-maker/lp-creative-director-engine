@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": [
+      "type_voice",
+      "surface_language",
+      "edge_language",
+      "cta_language"
+    ],
+    "nagi_no_mirai": [
+      "type_voice",
+      "surface_language",
+      "edge_language",
+      "cta_language"
+    ],
+    "watashi_no_daidokoro": [
+      "type_voice",
+      "surface_language",
+      "edge_language",
+      "cta_language"
+    ]
+  },
+  "consumed": true
+}

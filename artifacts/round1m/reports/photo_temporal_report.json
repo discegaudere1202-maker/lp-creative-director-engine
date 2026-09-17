@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "inversion_count": 0,
+      "stages": [
+        "arrival",
+        "orientation",
+        "understanding",
+        "practice",
+        "reassurance"
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "inversion_count": 0,
+      "stages": [
+        "arrival",
+        "orientation",
+        "understanding",
+        "practice",
+        "reassurance"
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "inversion_count": 0,
+      "stages": [
+        "arrival",
+        "orientation",
+        "understanding",
+        "practice",
+        "reassurance"
+      ]
+    }
+  }
+}

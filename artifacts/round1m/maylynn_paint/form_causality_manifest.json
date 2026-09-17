@@ -1,0 +1,31 @@
+{
+  "schema_version": "form_causality_manifest_v1",
+  "items": [
+    {
+      "company_truth": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+      "form_decision": "field_ledgerの主構造を選び、情報の入口を一つの視線移動にまとめる。",
+      "customer_effect": "最初に何を理解すればよいか迷いにくい。"
+    },
+    {
+      "company_truth": "相談前に何を確認すればよいか分からない",
+      "form_decision": "Before Stateを最初の見出しとCTA前の説明へ再登場させる。",
+      "customer_effect": "自分の現在地から行動へ移れる。"
+    },
+    {
+      "company_truth": "自分に合う入口か分からない",
+      "form_decision": "障壁に対応するEvidenceを、説明・Process・CTAの順で近接配置する。",
+      "customer_effect": "行動前の不確実さが具体的な確認事項へ変わる。"
+    },
+    {
+      "company_truth": "quote_request",
+      "form_decision": "Conversion Goalに合わせてCTAのタイミングと余白を決める。",
+      "customer_effect": "押す理由と次の動作が画面上でつながる。"
+    },
+    {
+      "company_truth": "MEDIUM",
+      "form_decision": "LOW Evidenceでは主張を増やさず、余白・Type・Material abstractionでPeakをつくる。",
+      "customer_effect": "情報不足を誤認させず、見せ場の密度だけを高める。"
+    }
+  ],
+  "source": "Company Truth + Customer State + Conversion Goal"
+}

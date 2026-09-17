@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "macro_axes": [
+    "type_voice",
+    "surface_language",
+    "edge_language",
+    "image_behavior",
+    "spatial_language",
+    "cta_language",
+    "decorative_grammar",
+    "rhythm_character"
+  ],
+  "pairs": [
+    {
+      "left": "maylynn_paint",
+      "right": "nagi_no_mirai",
+      "different_macro_axes": 8,
+      "status": "PASS"
+    },
+    {
+      "left": "maylynn_paint",
+      "right": "watashi_no_daidokoro",
+      "different_macro_axes": 8,
+      "status": "PASS"
+    },
+    {
+      "left": "nagi_no_mirai",
+      "right": "watashi_no_daidokoro",
+      "different_macro_axes": 8,
+      "status": "PASS"
+    }
+  ],
+  "color_only_difference": false
+}

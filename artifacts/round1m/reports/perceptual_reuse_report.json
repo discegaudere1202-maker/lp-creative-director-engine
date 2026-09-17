@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "prominent_exact_reuse": 0,
+      "hero_final_exact_reuse": 0,
+      "same_asset_different_evidence_role": 0,
+      "adjacent_near_duplicate": 0,
+      "assets": [
+        {
+          "asset_id": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+          "scene_id": "scene-01-observe",
+          "sha": "f35d468562c4c1133882f48e654be7f5ec8bb39a689b1dba36b05602051c61c8",
+          "phash_similarity": 0.0,
+          "prominence": "prominent",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/stock/maylynn_paint/material_detail.jpg",
+          "scene_id": "scene-02-read_material",
+          "sha": "f5f34b3927146c8aa52143c71787f76f43325c86b5c0ae30ac5750c2e4346bef",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+          "scene_id": "scene-03-watch_hands",
+          "sha": "4c847cd75c5925eb59da6d1b04708e42ec3153c58264c9e646b678adb993abb0",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+          "scene_id": "scene-04-imagine_change",
+          "sha": "18e89b9bed9f3a8ac58df75da02101c13875518009bc3c71a0bbdd85350a55d2",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "prominent_exact_reuse": 0,
+      "hero_final_exact_reuse": 0,
+      "same_asset_different_evidence_role": 0,
+      "adjacent_near_duplicate": 0,
+      "assets": [
+        {
+          "asset_id": "/assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+          "scene_id": "scene-01-arrive",
+          "sha": "7a263f6ff010a6f59e3eef4dbc0329b35955247985d63e0f9d0d4b6466b6668b",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/generated/nagi_no_mirai/sensory_detail.png",
+          "scene_id": "scene-02-settle",
+          "sha": "3b61b2c34045a4de9a5e770721a39030692c9930bcda59d481bca2b61b54026e",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/generated/nagi_no_mirai/welcome_human.png",
+          "scene_id": "scene-03-feel_care",
+          "sha": "6a58c86480f58871ae60defcf6987c314a81978279dbdc06099ca12006e6ecb4",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/stock/nagi_no_mirai/hand_technique.jpg",
+          "scene_id": "scene-04-choose_time",
+          "sha": "912e7687314d7cadedc9dfd97df9030dc8e2bcf62c1893b529d6534b4de936d4",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "prominent_exact_reuse": 0,
+      "hero_final_exact_reuse": 0,
+      "same_asset_different_evidence_role": 0,
+      "adjacent_near_duplicate": 0,
+      "assets": [
+        {
+          "asset_id": "/assets/photography/generated/watashi_no_daidokoro/hero_shared_cooking.png",
+          "scene_id": "scene-01-encounter",
+          "sha": "2b6688de6b0c7dfc31f25a648b1bd026c9496fe6ef59597b2780b7970a31813e",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/generated/watashi_no_daidokoro/finished_table.png",
+          "scene_id": "scene-02-touch",
+          "sha": "b88037d0af86e494eda56968f71f39b2e20e80a8e28e3cd4ef1271b4e84fc7e0",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/stock/watashi_no_daidokoro/ingredient_story.jpg",
+          "scene_id": "scene-03-make",
+          "sha": "1b0b646b96fb454d9288705d2ba5d024c8b41534869c21aa6eb11816f9d2facf",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "/assets/photography/stock/watashi_no_daidokoro/hands_in_action.jpg",
+          "scene_id": "scene-04-share",
+          "sha": "afbcd46287e4b600f9a80eb918776919cdc37feb11f49be49f866fd74c87ea6b",
+          "phash_similarity": 0.0,
+          "prominence": "supporting",
+          "verdict": "PASS"
+        }
+      ]
+    }
+  },
+  "child_failures": []
+}

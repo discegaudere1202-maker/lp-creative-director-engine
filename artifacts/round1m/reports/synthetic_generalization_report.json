@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case_id": "synthetic-01",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-02",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-03",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-04",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-05",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-06",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-07",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-08",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-09",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    },
+    {
+      "case_id": "synthetic-10",
+      "status": "PASS",
+      "company_slug_hardcode": 0,
+      "category_only_fallback": 0
+    }
+  ]
+}

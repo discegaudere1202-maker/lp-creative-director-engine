@@ -1,0 +1,222 @@
+{
+  "status": "PASS",
+  "b4_artifact_id": "10488734493",
+  "records": [
+    {
+      "company": "maylynn_paint",
+      "capture": "desktop_full_1440.png",
+      "purpose": "canonical_full",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "2c2c56c054b29136faba42650fcff83628f79ca193d1859e64aafd97d6befbd1",
+      "m_capture_sha": "78eda3469e94e3b5eaaef504e5999e10a15292694fa90be441b415cb82656421",
+      "comparable": true
+    },
+    {
+      "company": "maylynn_paint",
+      "capture": "mobile_full_390.png",
+      "purpose": "canonical_full",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "172bcf712283fe6257db01f122eaf12392550d157286a549e339f41d57c7bfba",
+      "m_capture_sha": "81e5bc6068d3b92404f83c31efc60b5677327e9aebee281041c38b383eeff366",
+      "comparable": true
+    },
+    {
+      "company": "maylynn_paint",
+      "capture": "peak-01-scene-01-observe_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "0f389e554f3c13e0e8e4c1cf65f40079b7f7e2d7d1ed810a533049a4e2269c41",
+      "m_capture_sha": "b47988f1c760da8bdd127a61387a38a323a7ba405164855c75c1a32258574f42",
+      "comparable": true
+    },
+    {
+      "company": "maylynn_paint",
+      "capture": "peak-01-scene-01-observe_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "d75e7c272b1fccb000e005bca0cc24fad241b34ce5752741fdc3e3540007219f",
+      "m_capture_sha": "b25cacd6d7aed7bc42c301bbc3439cd25847c1cae247d0a13b593a7b4ab07ba4",
+      "comparable": true
+    },
+    {
+      "company": "maylynn_paint",
+      "capture": "peak-02-scene-03-watch_hands_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "7080052a14c893d32b671b3742bf46de25520d0cba68fab3bf497a2dd1b6af47",
+      "m_capture_sha": "1cbe14202ba1f0814031113196048336e8fb4589888b88b2f6f551216b1d3643",
+      "comparable": true
+    },
+    {
+      "company": "maylynn_paint",
+      "capture": "peak-02-scene-03-watch_hands_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "214156b12af43b2e8c08806435a8eebb69896f44936cfc4e0005c595c325be2b",
+      "m_capture_sha": "9075ee73f309c7c02255295f9a6d7e14ec15a0442a34debca209ce2c430f9e35",
+      "comparable": true
+    },
+    {
+      "company": "maylynn_paint",
+      "capture": "peak-03-scene-05-consult_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "9bf5b3af7850284d1ffbebf78cfbc76413a4e8053166ae94952928d4b0d6ebd4",
+      "m_capture_sha": "85fb2252a93f7a8578dfdfc82c1691ed003d81ea4088c2a94ff379c3e90fedfe",
+      "comparable": true
+    },
+    {
+      "company": "maylynn_paint",
+      "capture": "peak-03-scene-05-consult_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "96728e6eeb352cf7e17551d35370f11ce027f1cce22c7499f3387ff8046f8a29",
+      "m_capture_sha": "2529577169edf81990cb2f63d9d5b14e16a1c3c753614254b1cd3a7027a3ee60",
+      "comparable": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture": "desktop_full_1440.png",
+      "purpose": "canonical_full",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "49cddb7c68bcb91280f7cf74148896454d0c5fef8edf20e1681727b0e10db2bf",
+      "m_capture_sha": "04308fc3f1a570929e299108950a1e80926641b72848e16cbbbd7216851da2fc",
+      "comparable": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture": "mobile_full_390.png",
+      "purpose": "canonical_full",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "480926507eb23dac4269fa2997a9c5d3768f272c258d7fda1c8e846fd1fb21aa",
+      "m_capture_sha": "6410dbd80958add0d42bf3213d6419d0c436d57234946834ec83e5dca185c4fb",
+      "comparable": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture": "peak-01-scene-01-arrive_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "9d1461621723151dbdc9bad9c382b31355120a86134cbd0414d555c7e2b27442",
+      "m_capture_sha": "75ff70c947926f443e7e140aee2fe803609354e865a23a461dbba27f84018ac6",
+      "comparable": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture": "peak-01-scene-01-arrive_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "c413b06e6a8b057e5a1d3870e9b981f954c56270c6c9d2c0cd96904d23970592",
+      "m_capture_sha": "9132185b8c5c63ff44235639e8a013b1d60fb3fc4ee164d950950545b28db5fa",
+      "comparable": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture": "peak-02-scene-03-feel_care_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "bd82fd310e84c88be6f27aa8acf774d47ebcf64b89fe6b07f14329e086ed9503",
+      "m_capture_sha": "c440e01840ea7931dc5691ec70fb614855797233b4d9292a1694887f5ca40e9f",
+      "comparable": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture": "peak-02-scene-03-feel_care_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "871aadf3e29e9e13e19c23615f9d9fb53166db89152039d6d28bfa178eedda01",
+      "m_capture_sha": "60fc40a81475a024a7e3b2ef19e1b8fc1f47fb9d07eedd40cf4bc056aa3db27d",
+      "comparable": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture": "peak-03-scene-05-reserve_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "8f28762a5041810bccde191e095bb10bdf7665103662f70f781ea7a7f1c9cfe2",
+      "m_capture_sha": "9bbdee91a39b60c5e6b1c8490c30bef93e29ac2dda8d2e6ac9eebdd288cedf59",
+      "comparable": true
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture": "peak-03-scene-05-reserve_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "972250d770cb230b6ea7be3d5c2cd3012584a4811c5af89f9cea6cd6537f9f19",
+      "m_capture_sha": "ef31fda52780d6375a512f63edbf1692d9fbde9ca5a72d0afe13ab0b35b33955",
+      "comparable": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture": "desktop_full_1440.png",
+      "purpose": "canonical_full",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "4846d4660a27d873de9fd13790d22cf87dd73594e2ac4deaf0bbef0ba0b1cc1f",
+      "m_capture_sha": "c9a928f968e43495f663e518b77c315a75a2de85b4835c49f8989fce19c3afa5",
+      "comparable": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture": "mobile_full_390.png",
+      "purpose": "canonical_full",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "8f17f8f7fbf0e4cbd9a9f4c6ef0eed1aa51fa581db831e7a6078648d989d0963",
+      "m_capture_sha": "f576e1b0206f854ade31ad394585709a2dd87b714f0e2cbc9d5e246888a225ab",
+      "comparable": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture": "peak-01-scene-01-encounter_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "3134279407e29c2054e82a3cf845ab00b1263d71e1557899804feb776c2f6787",
+      "m_capture_sha": "a57b70dc5d7fd4ecc0cb7c1ff5165deda6d506e47bbd172418ed5099d0c0d6c9",
+      "comparable": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture": "peak-01-scene-01-encounter_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "a3d0e1aa19551704bee2459ad8677ddc22724e64cd52c82b692c86d2b35fb204",
+      "m_capture_sha": "419a90c48cc526a0244190b26b03223d4edb14efd7b6a1c1e2afb8e797135aee",
+      "comparable": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture": "peak-02-scene-03-make_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "df3c21d8b2eaba44a69cd0e01d800386a76de3cb3e27840b3172ebc091a1afc8",
+      "m_capture_sha": "9f80abda46aefbdcea073f131d2d76c65e5d75be1042ba8692e4efdaca97b0af",
+      "comparable": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture": "peak-02-scene-03-make_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "2723ac37e5d69c1f408a276feeb7195ef4a3963d6481167fe77601a11ce8b344",
+      "m_capture_sha": "c7038f6465ed59eddf9d07fc74cf41cc33bf91ccdb73613f9472907699cb39b3",
+      "comparable": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture": "peak-03-scene-05-join_desktop.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "213baa45859bf50c1dbee3d309bc73ca02f0a03d0f9a40115d650b3faeb8098c",
+      "m_capture_sha": "63a8c3225af53722d582d4f0d8e7a79da63f7c70359998190a5da7c14baec082",
+      "comparable": true
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture": "peak-03-scene-05-join_mobile.png",
+      "purpose": "peak_candidate",
+      "b4_artifact_id": "10488734493",
+      "b4_capture_sha": "f7b5e23109884b5e3c2f436b3a4e55d8be6548ccb426ebced7f34162683eac35",
+      "m_capture_sha": "e6149bcfa716f2c3d8cd4cb28ab4f751c0f7252b5de62d41dfd84157d7884015",
+      "comparable": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "mutation": "copy_swap",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "mutation": "photo_role_swap",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "mutation": "peak_text_only",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "mutation": "cta_missing_href",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "mutation": "token_convergence",
+      "status": "PASS",
+      "rejected": true
+    }
+  ]
+}

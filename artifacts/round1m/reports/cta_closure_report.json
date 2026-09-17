@@ -1,0 +1,199 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "closures": [
+        {
+          "cta_id": "cta-discovery",
+          "stage": "discovery",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "まず状況を見渡す",
+          "destination_type": "PAGE_SECTION",
+          "destination_id": "#way-in",
+          "href": "#way-in",
+          "semantic_payload": "素材の状態を見る",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ORIENTATION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-reassurance",
+          "stage": "reassurance",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "会社固有の範囲を確かめる",
+          "destination_type": "PROCESS_GUIDE",
+          "destination_id": "#reassurance",
+          "href": "#reassurance",
+          "semantic_payload": "対応範囲を確かめる",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ORIENTATION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-action",
+          "stage": "action",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "quote_requestの確認へ進む",
+          "destination_type": "VERIFIED_NATIVE",
+          "destination_id": "#contact",
+          "href": "#contact",
+          "semantic_payload": "見積を相談する",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ACTION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        }
+      ],
+      "destination_logic": "PASS",
+      "action_href_verified": true
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "closures": [
+        {
+          "cta_id": "cta-discovery",
+          "stage": "discovery",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "まず状況を見渡す",
+          "destination_type": "PAGE_SECTION",
+          "destination_id": "#way-in",
+          "href": "#way-in",
+          "semantic_payload": "過ごし方を感じる",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ORIENTATION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-reassurance",
+          "stage": "reassurance",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "会社固有の範囲を確かめる",
+          "destination_type": "PROCESS_GUIDE",
+          "destination_id": "#reassurance",
+          "href": "#reassurance",
+          "semantic_payload": "時間の選び方を見る",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ORIENTATION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-action",
+          "stage": "action",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "reservationの確認へ進む",
+          "destination_type": "VERIFIED_NATIVE",
+          "destination_id": "#contact",
+          "href": "#contact",
+          "semantic_payload": "予約を相談する",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ACTION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        }
+      ],
+      "destination_logic": "PASS",
+      "action_href_verified": true
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "closures": [
+        {
+          "cta_id": "cta-discovery",
+          "stage": "discovery",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "まず状況を見渡す",
+          "destination_type": "PAGE_SECTION",
+          "destination_id": "#way-in",
+          "href": "#way-in",
+          "semantic_payload": "料理の流れを見る",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ORIENTATION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-reassurance",
+          "stage": "reassurance",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "会社固有の範囲を確かめる",
+          "destination_type": "PROCESS_GUIDE",
+          "destination_id": "#reassurance",
+          "href": "#reassurance",
+          "semantic_payload": "場と内容を確かめる",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ORIENTATION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-action",
+          "stage": "action",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "applicationの確認へ進む",
+          "destination_type": "VERIFIED_NATIVE",
+          "destination_id": "#contact",
+          "href": "#contact",
+          "semantic_payload": "参加を相談する",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact"
+          },
+          "actionability": "ACTION",
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        }
+      ],
+      "destination_logic": "PASS",
+      "action_href_verified": true
+    }
+  },
+  "self_anchor_violation": 0,
+  "fake_action": 0
+}

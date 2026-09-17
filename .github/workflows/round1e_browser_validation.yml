@@ -1,4 +1,4 @@
-name: Round 1K-B4 Final Gate Closure
+name: Round 1M Premium Human Translation Validation
 
 on:
   workflow_dispatch:
@@ -13,6 +13,7 @@ on:
       - 'src/lp_engine/premium_scene.py'
       - 'src/lp_engine/structural_similarity.py'
       - 'src/lp_engine/premium_experience.py'
+      - 'src/lp_engine/human_translation.py'
       - 'scripts/run_round1f_validation.py'
       - 'scripts/run_round1k_a2_validation.py'
       - 'scripts/run_round1k_a4_validation.py'
@@ -23,8 +24,10 @@ on:
       - 'scripts/run_round1k_b2_validation.py'
       - 'scripts/run_round1k_b3_validation.py'
       - 'scripts/run_round1k_b4_validation.py'
+      - 'scripts/run_round1m_validation.py'
       - 'tests/test_rendered_reality.py'
       - 'tests/test_round1k_b4.py'
+      - 'tests/test_human_translation.py'
       - 'scripts/run_round1e_c2_validation.py'
       - 'scripts/preflight_photography_assets.py'
       - 'tests/test_round1e_c2_harness.py'
@@ -56,31 +59,33 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Photography preflight
         run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
-      - name: Round 1K-B4 Engine regeneration, rendered reality QA and 27 viewport QA
+      - name: Round 1M Engine regeneration, translation QA and 27 viewport QA
         continue-on-error: true
         env:
-          ROUND_OUTPUT_ROOT: artifacts/round1k_b4
+          ROUND_OUTPUT_ROOT: artifacts/round1m
           SOURCE_HEAD: ${{ github.sha }}
-        run: python scripts/run_round1k_b4_validation.py
+        run: python scripts/run_round1m_validation.py
       - name: Related tests
         if: always()
-        run: python -m unittest tests.test_premium_scene tests.test_premium_experience tests.test_rendered_reality tests.test_round1k_b4 tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
-      - name: Upload Round 1K-B4 final gate artifacts
+        run: python -m unittest tests.test_human_translation tests.test_premium_scene tests.test_premium_experience tests.test_rendered_reality tests.test_round1k_b4 tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
+      - name: Upload Round 1M Premium Human Translation artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: round1k-b4-final-gate-closure-${{ github.sha }}
+          name: round1m-premium-human-translation-${{ github.sha }}
           path: |
-            artifacts/round1k_b4/summary.json
-            artifacts/round1k_b4/diagnostics/
-            artifacts/round1k_b4/reports/
-            artifacts/round1k_b4/browser_qa/
-            artifacts/round1k_b4/technical_captures/
-            artifacts/round1k_b4/rendered_visible_copy/
-            artifacts/round1k_b4/human_review_captures/
-            artifacts/round1k_b4/*/index.html
-            artifacts/round1k_b4/*/*.json
+            artifacts/round1m/summary.json
+            artifacts/round1m/diagnostics/
+            artifacts/round1m/reports/
+            artifacts/round1m/browser_qa/
+            artifacts/round1m/technical_captures/
+            artifacts/round1m/rendered_visible_copy/
+            artifacts/round1m/before_after_copy/
+            artifacts/round1m/human_review_captures/
+            artifacts/round1m/human_review_comparison_manifest.json
+            artifacts/round1m/*/index.html
+            artifacts/round1m/*/*.json
           if-no-files-found: warn
       - name: Final QA gate
         if: always()
-        run: python -c "import json,sys; p=json.load(open('artifacts/round1k_b4/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1k_b4_machine_ready') and p.get('human_review_ready') and p.get('human_review_capture') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 and p.get('capture_provenance') == 'PASS' else 1)"
+        run: python -c "import json,sys; p=json.load(open('artifacts/round1m/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1m_machine_ready') and p.get('human_review_ready') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 and p.get('capture_provenance') == 'PASS' else 1)"

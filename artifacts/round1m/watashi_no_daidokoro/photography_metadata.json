@@ -1,0 +1,10 @@
+{
+  "roles": [
+    "hero_shared_cooking",
+    "ingredient_story",
+    "hands_in_action",
+    "finished_table"
+  ],
+  "reselected": false,
+  "regenerated": false
+}

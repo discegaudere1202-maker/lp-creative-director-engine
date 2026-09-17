@@ -22,6 +22,7 @@ from .evidence_safety import evaluate_evidence_selection
 from .creative_genome import derive_creative_genome, public_copy_gate
 from .narrative_architecture import derive_narrative_architecture, narrative_gates
 from .premium_scene import build_premium_scene_plan, scene_plan_gates
+from .human_translation import build_human_translation
 from .hearing import plan_hearing
 from .photography import (
     build_asset_manifest,
@@ -521,10 +522,11 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     _, goal_phrase = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     goal_noun = GOAL_NOUNS.get(goal, "相談")
     channel = _text((understanding.get("contact_channels") or {}).get("label")) or ""
-    truth_fragment = truth.rstrip("。.!！？!? ").replace("相談できる地域の窓口", "対応する事業者").replace("の相談窓口", "のサービス")
-    public_truth = truth_fragment
-    if "相談できる地域の窓口" in truth or "の相談窓口" in truth:
-        public_truth = f"{compact_category}を提供する事業者"
+    truth_fragment = truth.rstrip("。.!！？!? ").replace("相談できる地域の窓口", "相談内容を確認してから案内へ進む").replace("の相談窓口", "の内容を確認してから案内へ進む")
+    # Preserve the verified truth fragment.  A generic category sentence is
+    # not an acceptable primary definition: the Round 1M translation layer
+    # will omit an unsupported fragment instead of inventing a substitute.
+    public_truth = truth_fragment or ""
     activity_head = compact_category.replace("教室", "").replace("スクール", "").strip() or compact_category
     profile = _text(strategy.get("layout_profile")) or "editorial_rail"
     authorities = list(strategy.get("visual_authority_priority") or [])
@@ -852,6 +854,17 @@ def _visual_scene_markup(scene: str) -> str:
 def _render_premium_html(spec: Mapping[str, Any]) -> str:
     company, copy, tokens = spec["company"], spec["copy"], spec["design_tokens"]
     plan = spec["premium_scene_plan"]
+    translation = spec.get("premium_human_translation") or {}
+    translation_by_id = {x.get("scene_id"): x for x in (translation.get("copy_translation") or {}).get("scenes", [])}
+    cta_closures = {x.get("stage"): x for x in (translation.get("cta_closure") or {}).get("closures", [])}
+    profile = translation.get("art_direction_token_profile") or {}
+    token_values = {
+        "field_ledger": ("18px", "2px", "999px", "1px"),
+        "care_rhythm": ("34px", "1px", "28px", "0px"),
+        "studio_invitation": ("10px", "3px", "12px", "2px"),
+    }
+    radii = token_values.get(profile.get("profile_id"), token_values["field_ledger"])
+    token_css = f'--human-scene-radius:{radii[0]};--human-border-width:{radii[1]};--human-cta-radius:{radii[2]};--human-edge-width:{radii[3]};'
     ia = list(spec.get("ia") or [])
     copy_by_id = {x.get("section_id"): x for x in copy.get("sections", [])}
     names = list(spec.get("strategy", {}).get("narrative_architecture", {}).get("section_naming") or [])
@@ -863,8 +876,9 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         grammar = scene["visual_grammar"]
         topology = grammar["topology"]
         section_id = ia[i].get("section_id") if i < len(ia) else ""
-        body = copy_by_id.get(section_id, {}).get("body", scene["creative_reason"])
-        heading = names[i] if i < len(names) else scene["narrative_state"]
+        translated = translation_by_id.get(scene.get("scene_id"), {})
+        body = _text((translated.get("outputs") or {}).get("body")) or copy_by_id.get(section_id, {}).get("body", scene["creative_reason"])
+        heading = _text((translated.get("outputs") or {}).get("headline")) or (names[i] if i < len(names) else scene["narrative_state"])
         trace = esc(json.dumps({"scene_id":scene["scene_id"],"narrative_index":i,"grammar":grammar,"copy_intent":scene["copy_intent"]}, ensure_ascii=False))
         # The final CTA-led scene is a typography/place moment. Never cycle
         # back to the hero asset when the approved pool is smaller than the
@@ -882,15 +896,16 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         if scene.get("cta_stage") and scene.get("cta_stage") not in rendered_cta_stages:
             item = next((x for x in plan.get("scene_plan", []) if x.get("cta_stage") == scene["cta_stage"]), {})
             genome = next((x for x in spec["strategy"]["creative_genome"].get("cta_progression", []) if x.get("stage") == scene["cta_stage"]), {})
-            cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" href="{esc(genome.get("destination") or "#contact")}">{esc(genome.get("visible_label") or "次へ進む")}</a>'
+            closure = cta_closures.get(scene["cta_stage"], {})
+            cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" href="{esc(closure.get("href") or genome.get("destination") or "#contact")}">{esc(genome.get("visible_label") or "次へ進む")}</a>'
             rendered_cta_stages.add(scene.get("cta_stage"))
         evidence_trace = ",".join(hashlib.sha256(str(x).encode()).hexdigest()[:10] for x in scene["evidence_ids"])
         # Premium pages use the same public anchors as the canonical CTA
         # contract so every rendered destination resolves in the DOM.
         anchor = "way-in" if i == 1 else "reassurance" if i == 2 else "contact" if i == len(plan.get("scene_plan", [])) - 1 else scene.get("scene_id", "")
         anchor_attr = f' id="{anchor}"' if anchor else ""
-        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}">{inner}{cta}</section>')
-    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:1px solid var(--line)}} .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em}} .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0}} .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}} .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%}} .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%;min-width:0}} .scene-full{{min-width:0;display:grid;gap:1.5rem}} .scene-sequence{{min-width:0;border-left:6px solid var(--accent);padding:2rem;overflow-wrap:anywhere}} .premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:999px;text-decoration:none;max-width:100%}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr)}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
+        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}">{inner}{cta}</section>')
+    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:var(--human-border-width) solid var(--line);border-radius:var(--human-scene-radius)}} .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em;border-radius:var(--human-scene-radius)}} .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0}} .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}} .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%}} .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%;min-width:0;border-radius:var(--human-scene-radius)}} .scene-full{{min-width:0;display:grid;gap:1.5rem}} .scene-sequence{{min-width:0;border-left:var(--human-edge-width) solid var(--accent);padding:2rem;overflow-wrap:anywhere}} .premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:var(--human-cta-radius);text-decoration:none;max-width:100%}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr)}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
 
 def render_html(spec: Mapping[str, Any]) -> str:
     if spec.get("premium_scene_plan"):
@@ -1008,6 +1023,8 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     asset_manifest = build_asset_manifest(raw.get("photo_assets") or [], photo_role_map)
     premium_scene_plan = build_premium_scene_plan(understanding, strategy["narrative_architecture"], strategy["creative_genome"], approved, [item.get("photo_role", "") for item in raw.get("photo_assets") or []])
     premium_scene_plan["qa_gates"] = scene_plan_gates(premium_scene_plan)
+    human_translation = build_human_translation(understanding, strategy, premium_scene_plan, approved, asset_manifest, copy)
+    premium_scene_plan["human_translation_ref"] = "premium_human_translation_v1"
     understanding["photo_replacement_readiness"] = {
         **dict(understanding.get("photo_replacement_readiness") or {}),
         "proxy_role": "role_selected_photography_asset",
@@ -1036,6 +1053,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     render_spec["photo_role_map"] = photo_role_map
     render_spec["asset_manifest"] = asset_manifest
     render_spec["premium_scene_plan"] = premium_scene_plan
+    render_spec["premium_human_translation"] = human_translation
     generation_id = generation_id or f"gen-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}-{_input_digest(raw)[:8]}"
     output = Path(output_dir)
     output.mkdir(parents=True, exist_ok=True)
@@ -1061,6 +1079,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     }
     for name, value in stages.items():
         _write_json(output / f"{name}.json", value)
+    _write_json(output / "premium_human_translation.json", human_translation)
     html_path = output / "index.html"
     html_path.write_text(render_html(render_spec), encoding="utf-8")
     presentation_hygiene = public_copy_gate(html_path.read_text(encoding="utf-8"))

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "signature_anchor_preserved": true,
+      "swapped_identity_rejected": true,
+      "lexical_contamination": 0
+    },
+    "nagi_no_mirai": {
+      "signature_anchor_preserved": true,
+      "swapped_identity_rejected": true,
+      "lexical_contamination": 0
+    },
+    "watashi_no_daidokoro": {
+      "signature_anchor_preserved": true,
+      "swapped_identity_rejected": true,
+      "lexical_contamination": 0
+    }
+  }
+}

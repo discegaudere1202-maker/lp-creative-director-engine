@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "anchor_channel_count": {
+        "anchor-01-place": 5,
+        "anchor-02-service": 5,
+        "anchor-03-truth": 5,
+        "anchor-04-barrier": 5,
+        "anchor-05-transition": 5
+      },
+      "channels": [
+        "COPY",
+        "CTA",
+        "PEAK",
+        "PHOTOGRAPHY",
+        "VISUAL"
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "anchor_channel_count": {
+        "anchor-01-place": 5,
+        "anchor-02-service": 5,
+        "anchor-03-truth": 5,
+        "anchor-04-barrier": 5,
+        "anchor-05-transition": 5
+      },
+      "channels": [
+        "COPY",
+        "CTA",
+        "PEAK",
+        "PHOTOGRAPHY",
+        "VISUAL"
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "anchor_channel_count": {
+        "anchor-01-place": 5,
+        "anchor-02-service": 5,
+        "anchor-03-truth": 5,
+        "anchor-04-barrier": 5,
+        "anchor-05-transition": 5
+      },
+      "channels": [
+        "COPY",
+        "CTA",
+        "PEAK",
+        "PHOTOGRAPHY",
+        "VISUAL"
+      ]
+    }
+  },
+  "unexplained_drift": 0
+}

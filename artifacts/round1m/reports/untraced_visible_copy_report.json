@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "untraced": 0,
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "trace_coverage": 100.0,
+      "untraced": 0,
+      "known_phrase_violations": [],
+      "editorial_blocker": 0,
+      "editorial_major": 0
+    },
+    {
+      "company": "nagi_no_mirai",
+      "trace_coverage": 100.0,
+      "untraced": 0,
+      "known_phrase_violations": [],
+      "editorial_blocker": 0,
+      "editorial_major": 0
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "trace_coverage": 100.0,
+      "untraced": 0,
+      "known_phrase_violations": [],
+      "editorial_blocker": 0,
+      "editorial_major": 0
+    }
+  ]
+}

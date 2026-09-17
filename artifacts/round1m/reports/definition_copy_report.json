@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "violations": [],
+      "generic_primary_fallback": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "violations": [],
+      "generic_primary_fallback": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "violations": [],
+      "generic_primary_fallback": 0
+    }
+  }
+}

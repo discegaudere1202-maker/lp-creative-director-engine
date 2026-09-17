@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "atomization": "PASS",
+      "semantic_role_compatibility": "PASS",
+      "subject_predicate_reality": "PASS"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "atomization": "PASS",
+      "semantic_role_compatibility": "PASS",
+      "subject_predicate_reality": "PASS"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "atomization": "PASS",
+      "semantic_role_compatibility": "PASS",
+      "subject_predicate_reality": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "peak_id": "peak-01-observe",
+          "scene_id": "scene-01-observe",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 12,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-02-read_material",
+          "scene_id": "scene-02-read_material",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 2,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 13,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-03-watch_hands",
+          "scene_id": "scene-03-watch_hands",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 12,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-04-imagine_change",
+          "scene_id": "scene-04-imagine_change",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 12,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        }
+      ],
+      "fixed_position_selection": false
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "peak_id": "peak-01-arrive",
+          "scene_id": "scene-01-arrive",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 11,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-02-settle",
+          "scene_id": "scene-02-settle",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 11,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-03-feel_care",
+          "scene_id": "scene-03-feel_care",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-04-choose_time",
+          "scene_id": "scene-04-choose_time",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 12,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        }
+      ],
+      "fixed_position_selection": false
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "peak_id": "peak-01-encounter",
+          "scene_id": "scene-01-encounter",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 11,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-02-touch",
+          "scene_id": "scene-02-touch",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-03-make",
+          "scene_id": "scene-03-make",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 2,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 13,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        },
+        {
+          "peak_id": "peak-04-share",
+          "scene_id": "scene-04-share",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "reason": "multi-axis candidate ranking"
+        }
+      ],
+      "fixed_position_selection": false
+    }
+  },
+  "selection_policy": "ranked_candidates_not_fixed_position"
+}

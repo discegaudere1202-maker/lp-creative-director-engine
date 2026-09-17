@@ -1,0 +1,666 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "scene_count": 5,
+      "scenes": [
+        {
+          "scene_id": "scene-01-observe",
+          "narrative_index": 0,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "maylynn_paint-e-001",
+              "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "まず状況を伝えてみようと思える",
+            "外壁塗装",
+            "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口",
+            "福岡市",
+            "自分に合う入口か分からない"
+          ],
+          "implication_type": "ORIENT",
+          "expression_mode": "DIRECT_VALUE",
+          "visual_dependency": "IMAGE",
+          "claim_trace_ids": [
+            "maylynn_paint-e-001"
+          ],
+          "outputs": {
+            "headline": "家の輪郭を見つめる",
+            "body": "福岡市の外壁塗装。外壁塗装・屋根・雨漏り・リフォームを相談内容を確認してから案内へ進む",
+            "microcopy": "福岡市｜素材の状態と仕上がりから次の案内へ。"
+          },
+          "definition": {
+            "text": "家の輪郭を見つめる福岡市の外壁塗装。外壁塗装・屋根・雨漏り・リフォームを相談内容を確認してから案内へ進む",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "ORIENT"
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "narrative_index": 1,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "maylynn_paint-e-001",
+              "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "maylynn_paint-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "外壁塗装"
+          ],
+          "implication_type": "PROVE",
+          "expression_mode": "CONCRETE_SCENE",
+          "visual_dependency": "MATERIAL",
+          "claim_trace_ids": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "outputs": {
+            "headline": "素材に触れて考える",
+            "body": "外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "素材に触れて考える外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "PROVE"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "narrative_index": 2,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "maylynn_paint-e-001",
+              "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "maylynn_paint-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "外壁塗装"
+          ],
+          "implication_type": "PROVE",
+          "expression_mode": "PROCESS_MEANING",
+          "visual_dependency": "DATA",
+          "claim_trace_ids": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "outputs": {
+            "headline": "手仕事の順番を見る",
+            "body": "外壁塗装・屋根・雨漏り・リフォームを相談内容を確認してから案内へ進む",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "手仕事の順番を見る外壁塗装・屋根・雨漏り・リフォームを相談内容を確認してから案内へ進む",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "PROVE"
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "narrative_index": 3,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "maylynn_paint-e-001",
+              "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "maylynn_paint-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "外壁塗装"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "TYPE",
+          "claim_trace_ids": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "outputs": {
+            "headline": "仕上がりを思い描く",
+            "body": "表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "仕上がりを思い描く表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "narrative_index": 4,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "maylynn_paint-e-001",
+              "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "maylynn_paint-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "外壁塗装"
+          ],
+          "implication_type": "CONVERT",
+          "expression_mode": "INVITATION",
+          "visual_dependency": "TYPOGRAPHY",
+          "claim_trace_ids": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "outputs": {
+            "headline": "状態から相談する",
+            "body": "外壁塗装の状態を見ながら、相談の準備を整えます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "状態から相談する外壁塗装の状態を見ながら、相談の準備を整えます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "CONVERT"
+        }
+      ],
+      "claim_trace_missing": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "scene_count": 5,
+      "scenes": [
+        {
+          "scene_id": "scene-01-arrive",
+          "narrative_index": 0,
+          "truth_atoms": [],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "まず状況を伝えてみようと思える",
+            "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口",
+            "ヘッドスパ",
+            "福岡市",
+            "自分に合う入口か分からない"
+          ],
+          "implication_type": "ORIENT",
+          "expression_mode": "DIRECT_VALUE",
+          "visual_dependency": "IMAGE",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "空間に入る",
+            "body": "福岡市のヘッドスパ。ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの内容を確認してから案内へ進む",
+            "microcopy": "福岡市｜触れられる時間と空間から次の案内へ。"
+          },
+          "definition": {
+            "text": "空間に入る福岡市のヘッドスパ。ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの内容を確認してから案内へ進む",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "ORIENT"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "narrative_index": 1,
+          "truth_atoms": [],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ヘッドスパ"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "CONCRETE_SCENE",
+          "visual_dependency": "SENSORY",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "静けさを感じる",
+            "body": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの内容を確認してから案内へ進む",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "静けさを感じるドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの内容を確認してから案内へ進む",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "narrative_index": 2,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "nagi_no_mirai-e-001",
+              "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "nagi_no_mirai-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ヘッドスパ"
+          ],
+          "implication_type": "PROVE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "PERSON",
+          "claim_trace_ids": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "outputs": {
+            "headline": "触れられる時間",
+            "body": "静かな空間で過ごすひとときを、ヘッドスパに合わせて選びます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "触れられる時間静かな空間で過ごすひとときを、ヘッドスパに合わせて選びます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "PROVE"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "narrative_index": 3,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "nagi_no_mirai-e-001",
+              "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "nagi_no_mirai-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ヘッドスパ"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "TYPE",
+          "claim_trace_ids": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "outputs": {
+            "headline": "過ごし方を選ぶ",
+            "body": "静かな空間で、ヘッドスパのひとときを味わいます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "過ごし方を選ぶ静かな空間で、ヘッドスパのひとときを味わいます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "narrative_index": 4,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "nagi_no_mirai-e-001",
+              "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "nagi_no_mirai-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ヘッドスパ"
+          ],
+          "implication_type": "CONVERT",
+          "expression_mode": "INVITATION",
+          "visual_dependency": "TYPOGRAPHY",
+          "claim_trace_ids": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "outputs": {
+            "headline": "その時間を予約する",
+            "body": "ヘッドスパで、自分のための時間を予約します。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "その時間を予約するヘッドスパで、自分のための時間を予約します。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "CONVERT"
+        }
+      ],
+      "claim_trace_missing": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "scene_count": 5,
+      "scenes": [
+        {
+          "scene_id": "scene-01-encounter",
+          "narrative_index": 0,
+          "truth_atoms": [],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "まず状況を伝えてみようと思える",
+            "少人数でストウブ無水料理を学ぶ料理教室",
+            "料理教室",
+            "福岡市西区",
+            "自分に合う入口か分からない"
+          ],
+          "implication_type": "ORIENT",
+          "expression_mode": "DIRECT_VALUE",
+          "visual_dependency": "WORLD",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "食材に出会う",
+            "body": "福岡市西区の料理教室。少人数でストウブ無水料理を学ぶ料理教室",
+            "microcopy": "福岡市西区｜食材と手を動かす時間から次の案内へ。"
+          },
+          "definition": {
+            "text": "食材に出会う福岡市西区の料理教室。少人数でストウブ無水料理を学ぶ料理教室",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "ORIENT"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "narrative_index": 1,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-001",
+              "fact": "少人数でストウブ無水料理を学ぶ料理教室。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-002",
+              "fact": "福岡市西区で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "料理教室"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "PERSON",
+          "claim_trace_ids": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "outputs": {
+            "headline": "手を動かしてみる",
+            "body": "火を入れ、手を動かし、料理を食卓へ運ぶ流れを楽しみます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "手を動かしてみる火を入れ、手を動かし、料理を食卓へ運ぶ流れを楽しみます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "narrative_index": 2,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-001",
+              "fact": "少人数でストウブ無水料理を学ぶ料理教室。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-002",
+              "fact": "福岡市西区で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "少人数でストウブ無水料理を学ぶ料理教室"
+          ],
+          "implication_type": "PROVE",
+          "expression_mode": "PROCESS_MEANING",
+          "visual_dependency": "DATA",
+          "claim_trace_ids": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "outputs": {
+            "headline": "料理ができていく",
+            "body": "食材と手を動かす時間を選び、料理の流れを一緒に学びます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "料理ができていく食材と手を動かす時間を選び、料理の流れを一緒に学びます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "PROVE"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "narrative_index": 3,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-001",
+              "fact": "少人数でストウブ無水料理を学ぶ料理教室。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-002",
+              "fact": "福岡市西区で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "少人数でストウブ無水料理を学ぶ料理教室",
+            "料理教室"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "WORLD",
+          "claim_trace_ids": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "outputs": {
+            "headline": "食卓を囲む",
+            "body": "少人数でストウブ無水料理を学ぶ料理教室",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "食卓を囲む少人数でストウブ無水料理を学ぶ料理教室",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-05-join",
+          "narrative_index": 4,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-001",
+              "fact": "少人数でストウブ無水料理を学ぶ料理教室。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-002",
+              "fact": "福岡市西区で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "まず状況を伝えてみようと思える"
+          ],
+          "implication_type": "CONVERT",
+          "expression_mode": "INVITATION",
+          "visual_dependency": "TYPOGRAPHY",
+          "claim_trace_ids": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "outputs": {
+            "headline": "参加を考える",
+            "body": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "参加を考えるできあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "CONVERT"
+        }
+      ],
+      "claim_trace_missing": 0
+    }
+  }
+}

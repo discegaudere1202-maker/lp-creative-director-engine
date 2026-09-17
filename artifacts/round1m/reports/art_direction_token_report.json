@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "profile": {
+        "type_voice": "measured",
+        "surface_language": "working_surface",
+        "edge_language": "datum",
+        "image_behavior": "inspect",
+        "spatial_language": "rail_then_offset",
+        "cta_language": "measured_invitation",
+        "decorative_grammar": "registration",
+        "rhythm_character": "inspect_then_release",
+        "motion_character": "trace_the_work",
+        "schema_version": "art_direction_token_profile_v2",
+        "profile_id": "field_ledger",
+        "signature_anchors": [
+          "anchor-01-place",
+          "anchor-02-service",
+          "anchor-03-truth",
+          "anchor-04-barrier",
+          "anchor-05-transition"
+        ],
+        "creative_reason": "bounded tokens derived from narrative profile and signature anchors",
+        "derivation": {
+          "layout_profile": "field_ledger",
+          "anchor_types": [
+            "PLACE",
+            "SERVICE",
+            "TRUTH",
+            "BARRIER",
+            "TRANSITION"
+          ],
+          "slug_dependency": false
+        }
+      },
+      "renderer_consumed_axes": [
+        "type_voice",
+        "surface_language",
+        "edge_language",
+        "cta_language"
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "profile": {
+        "type_voice": "quiet",
+        "surface_language": "warm_matte",
+        "edge_language": "soft_boundary",
+        "image_behavior": "breathe",
+        "spatial_language": "arrival_then_pause",
+        "cta_language": "gentle_booking",
+        "decorative_grammar": "breath_marks",
+        "rhythm_character": "arrive_then_settle",
+        "motion_character": "settle_into_care",
+        "schema_version": "art_direction_token_profile_v2",
+        "profile_id": "care_rhythm",
+        "signature_anchors": [
+          "anchor-01-place",
+          "anchor-02-service",
+          "anchor-03-truth",
+          "anchor-04-barrier",
+          "anchor-05-transition"
+        ],
+        "creative_reason": "bounded tokens derived from narrative profile and signature anchors",
+        "derivation": {
+          "layout_profile": "care_rhythm",
+          "anchor_types": [
+            "PLACE",
+            "SERVICE",
+            "TRUTH",
+            "BARRIER",
+            "TRANSITION"
+          ],
+          "slug_dependency": false
+        }
+      },
+      "renderer_consumed_axes": [
+        "type_voice",
+        "surface_language",
+        "edge_language",
+        "cta_language"
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "profile": {
+        "type_voice": "open",
+        "surface_language": "studio_table",
+        "edge_language": "session_mark",
+        "image_behavior": "shared_focus",
+        "spatial_language": "table_then_path",
+        "cta_language": "try_then_join",
+        "decorative_grammar": "tool_marks",
+        "rhythm_character": "notice_then_try",
+        "motion_character": "open_the_session",
+        "schema_version": "art_direction_token_profile_v2",
+        "profile_id": "studio_invitation",
+        "signature_anchors": [
+          "anchor-01-place",
+          "anchor-02-service",
+          "anchor-03-truth",
+          "anchor-04-barrier",
+          "anchor-05-transition"
+        ],
+        "creative_reason": "bounded tokens derived from narrative profile and signature anchors",
+        "derivation": {
+          "layout_profile": "studio_invitation",
+          "anchor_types": [
+            "PLACE",
+            "SERVICE",
+            "TRUTH",
+            "BARRIER",
+            "TRANSITION"
+          ],
+          "slug_dependency": false
+        }
+      },
+      "renderer_consumed_axes": [
+        "type_voice",
+        "surface_language",
+        "edge_language",
+        "cta_language"
+      ]
+    }
+  },
+  "bounded_token_set": true,
+  "company_slug_hardcode": 0
+}

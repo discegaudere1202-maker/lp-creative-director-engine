@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "bindings": [
+        {
+          "scene_id": "scene-01-observe",
+          "photo_role": "hero_home_finish",
+          "temporal_stage": "arrival",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "immersive_image",
+            "ESTABLISH_CONTEXT",
+            "ORIENT"
+          ]
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "photo_role": "material_detail",
+          "temporal_stage": "orientation",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "material_detail",
+            "SHOW_DETAIL",
+            "PROVE"
+          ]
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "photo_role": "craft_handwork",
+          "temporal_stage": "understanding",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "process_sequence",
+            "SHOW_CRAFT",
+            "PROVE"
+          ]
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "photo_role": "trust_consultation",
+          "temporal_stage": "practice",
+          "compatibility_score": 0.9,
+          "status": "PASS",
+          "reason": "known_role_compatible",
+          "causal_inputs": [
+            "asymmetric_editorial",
+            "SHOW_TRANSFORMATION",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "photo_role": "typography",
+          "temporal_stage": "reassurance",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        }
+      ],
+      "causal_selection": "scene_demand_x_asset_profile",
+      "semantic_mismatch": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "bindings": [
+        {
+          "scene_id": "scene-01-arrive",
+          "photo_role": "hero_treatment_space",
+          "temporal_stage": "arrival",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "immersive_image",
+            "CREATE_DESIRE",
+            "ORIENT"
+          ]
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "photo_role": "sensory_detail",
+          "temporal_stage": "orientation",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "sensory_pause",
+            "CREATE_PAUSE",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "photo_role": "welcome_human",
+          "temporal_stage": "understanding",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "human_dialogue",
+            "SHOW_EXPERIENCE",
+            "PROVE"
+          ]
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "photo_role": "hand_technique",
+          "temporal_stage": "practice",
+          "compatibility_score": 0.9,
+          "status": "PASS",
+          "reason": "known_role_compatible",
+          "causal_inputs": [
+            "progressive_story",
+            "REDUCE_UNCERTAINTY",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "photo_role": "typography",
+          "temporal_stage": "reassurance",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        }
+      ],
+      "causal_selection": "scene_demand_x_asset_profile",
+      "semantic_mismatch": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "bindings": [
+        {
+          "scene_id": "scene-01-encounter",
+          "photo_role": "hero_shared_cooking",
+          "temporal_stage": "arrival",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "table_scene",
+            "CREATE_DESIRE",
+            "ORIENT"
+          ]
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "photo_role": "finished_table",
+          "temporal_stage": "orientation",
+          "compatibility_score": 0.9,
+          "status": "PASS",
+          "reason": "known_role_compatible",
+          "causal_inputs": [
+            "human_dialogue",
+            "SHOW_PARTICIPATION",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-03-make",
+          "photo_role": "ingredient_story",
+          "temporal_stage": "understanding",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "process_sequence",
+            "SHOW_PROCESS",
+            "PROVE"
+          ]
+        },
+        {
+          "scene_id": "scene-04-share",
+          "photo_role": "hands_in_action",
+          "temporal_stage": "practice",
+          "compatibility_score": 0.9,
+          "status": "PASS",
+          "reason": "known_role_compatible",
+          "causal_inputs": [
+            "table_scene",
+            "SHOW_TRANSFORMATION",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-05-join",
+          "photo_role": "typography",
+          "temporal_stage": "reassurance",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        }
+      ],
+      "causal_selection": "scene_demand_x_asset_profile",
+      "semantic_mismatch": 0
+    }
+  }
+}
