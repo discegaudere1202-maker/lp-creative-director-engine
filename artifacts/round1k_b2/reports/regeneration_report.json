@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "max_attempts": 3,
+  "fallback": "OMIT"
+}

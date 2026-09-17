@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "scenes": [
+    {
+      "mode": "simultaneous_spatial_relationship",
+      "topology": "full_bleed",
+      "focal_point": "scene-specific",
+      "media_scale": "immersive",
+      "type_scale": "display",
+      "negative_space": "perimeter",
+      "authority": "IMAGE"
+    },
+    {
+      "mode": "simultaneous_spatial_relationship",
+      "topology": "inset",
+      "focal_point": "scene-specific",
+      "media_scale": "intimate",
+      "type_scale": "quiet",
+      "negative_space": "central",
+      "authority": "SENSORY"
+    },
+    {
+      "mode": "simultaneous_spatial_relationship",
+      "topology": "split",
+      "focal_point": "scene-specific",
+      "media_scale": "dominant",
+      "type_scale": "editorial",
+      "negative_space": "directional",
+      "authority": "PERSON"
+    },
+    {
+      "mode": "simultaneous_spatial_relationship",
+      "topology": "layered",
+      "focal_point": "scene-specific",
+      "media_scale": "standard",
+      "type_scale": "editorial",
+      "negative_space": "central",
+      "authority": "TYPE"
+    },
+    {
+      "mode": "simultaneous_spatial_relationship",
+      "topology": "layered",
+      "focal_point": "scene-specific",
+      "media_scale": "standard",
+      "type_scale": "editorial",
+      "negative_space": "central",
+      "authority": "TYPE"
+    }
+  ]
+}

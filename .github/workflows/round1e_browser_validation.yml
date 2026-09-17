@@ -1,4 +1,4 @@
-name: Round 1K-B Premium Experience Validation
+name: Round 1K-B2 Machine Gate Integrity Validation
 
 on:
   workflow_dispatch:
@@ -20,6 +20,7 @@ on:
       - 'scripts/run_round1k_a6_validation.py'
       - 'scripts/run_round1k_a7_validation.py'
       - 'scripts/run_round1k_b_validation.py'
+      - 'scripts/run_round1k_b2_validation.py'
       - 'scripts/run_round1e_c2_validation.py'
       - 'scripts/preflight_photography_assets.py'
       - 'tests/test_round1e_c2_harness.py'
@@ -51,37 +52,31 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Photography preflight
         run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
-      - name: Round 1K-B Engine regeneration, perceptual QA and 27 viewport QA
+      - name: Round 1K-B2 Engine regeneration, integrity QA and 27 viewport QA
         continue-on-error: true
         env:
-          ROUND_OUTPUT_ROOT: artifacts/round1k_b
-        run: python scripts/run_round1k_b_validation.py
+          ROUND_OUTPUT_ROOT: artifacts/round1k_b2
+          SOURCE_HEAD: ${{ github.sha }}
+        run: python scripts/run_round1k_b2_validation.py
       - name: Related tests
         if: always()
         run: python -m unittest tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
-      - name: Upload Round 1K-B Premium Experience artifacts
+      - name: Upload Round 1K-B2 integrity artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: round1k-b-premium-experience-${{ github.sha }}
+          name: round1k-b2-human-review-integrity-${{ github.sha }}
           path: |
-            artifacts/round1k_b/summary.json
-            artifacts/round1k_b/diagnostics/
-            artifacts/round1k_b/reports/
-            artifacts/round1k_b/browser_qa/
-            artifacts/round1k_b/technical_captures/
-            artifacts/round1k_b/rendered_visible_copy/
-            artifacts/round1k_b/human_review_captures/
-            artifacts/round1k_b/*/index.html
-            artifacts/round1k_b/*/creative_genome.json
-            artifacts/round1k_b/*/narrative_architecture.json
-            artifacts/round1k_b/*/premium_scene_plan.json
-            artifacts/round1k_b/*/peak_plan.json
-            artifacts/round1k_b/*/rhythm_plan.json
-            artifacts/round1k_b/*/desktop_art_direction.json
-            artifacts/round1k_b/*/mobile_art_direction.json
-            artifacts/round1k_b/*/quality_gate_report.json
+            artifacts/round1k_b2/summary.json
+            artifacts/round1k_b2/diagnostics/
+            artifacts/round1k_b2/reports/
+            artifacts/round1k_b2/browser_qa/
+            artifacts/round1k_b2/technical_captures/
+            artifacts/round1k_b2/rendered_visible_copy/
+            artifacts/round1k_b2/human_review_captures/
+            artifacts/round1k_b2/*/index.html
+            artifacts/round1k_b2/*/*.json
           if-no-files-found: warn
       - name: Final QA gate
         if: always()
-        run: python -c "import json,sys; p=json.load(open('artifacts/round1k_b/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1k_b_machine_ready') and p.get('human_review_ready') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 else 1)"
+        run: python -c "import json,sys; p=json.load(open('artifacts/round1k_b2/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1k_b2_machine_ready') and p.get('human_review_ready') and p.get('human_review_capture') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 and p.get('capture_provenance') == 'PASS' else 1)"

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "simple_stack_violations": 0,
+      "focal_preservation": "PASS",
+      "peak_variant": "PASS",
+      "cta_timing": "PASS"
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "simple_stack_violations": 0,
+      "focal_preservation": "PASS",
+      "peak_variant": "PASS",
+      "cta_timing": "PASS"
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "simple_stack_violations": 0,
+      "focal_preservation": "PASS",
+      "peak_variant": "PASS",
+      "cta_timing": "PASS"
+    }
+  }
+}

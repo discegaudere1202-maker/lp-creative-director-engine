@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "calibration": "0.55-0.80 permitted for IMAGE/PERSON/MATERIAL peaks",
+      "scenes": [
+        {
+          "scene_id": "scene-01-observe",
+          "dominant_authority": "IMAGE",
+          "visual_area_ratio": 0.68,
+          "media_area": 0.68,
+          "text_area": 0.32,
+          "dominant_focal_area": 0.68,
+          "viewport_share": 0.68,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "dominant_authority": "MATERIAL",
+          "visual_area_ratio": 0.58,
+          "media_area": 0.58,
+          "text_area": 0.42,
+          "dominant_focal_area": 0.58,
+          "viewport_share": 0.58,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "dominant_authority": "DATA",
+          "visual_area_ratio": 0.42,
+          "media_area": 0.42,
+          "text_area": 0.58,
+          "dominant_focal_area": 0.42,
+          "viewport_share": 0.42,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "dominant_authority": "TYPE",
+          "visual_area_ratio": 0.42,
+          "media_area": 0.42,
+          "text_area": 0.58,
+          "dominant_focal_area": 0.42,
+          "viewport_share": 0.42,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "dominant_authority": "PERSON",
+          "visual_area_ratio": 0.68,
+          "media_area": 0.68,
+          "text_area": 0.32,
+          "dominant_focal_area": 0.68,
+          "viewport_share": 0.68,
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "calibration": "0.55-0.80 permitted for IMAGE/PERSON/MATERIAL peaks",
+      "scenes": [
+        {
+          "scene_id": "scene-01-arrive",
+          "dominant_authority": "IMAGE",
+          "visual_area_ratio": 0.68,
+          "media_area": 0.68,
+          "text_area": 0.32,
+          "dominant_focal_area": 0.68,
+          "viewport_share": 0.68,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "dominant_authority": "SENSORY",
+          "visual_area_ratio": 0.58,
+          "media_area": 0.58,
+          "text_area": 0.42,
+          "dominant_focal_area": 0.58,
+          "viewport_share": 0.58,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "dominant_authority": "PERSON",
+          "visual_area_ratio": 0.68,
+          "media_area": 0.68,
+          "text_area": 0.32,
+          "dominant_focal_area": 0.68,
+          "viewport_share": 0.68,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "dominant_authority": "TYPE",
+          "visual_area_ratio": 0.42,
+          "media_area": 0.42,
+          "text_area": 0.58,
+          "dominant_focal_area": 0.42,
+          "viewport_share": 0.42,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "dominant_authority": "TYPE",
+          "visual_area_ratio": 0.42,
+          "media_area": 0.42,
+          "text_area": 0.58,
+          "dominant_focal_area": 0.42,
+          "viewport_share": 0.42,
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "calibration": "0.55-0.80 permitted for IMAGE/PERSON/MATERIAL peaks",
+      "scenes": [
+        {
+          "scene_id": "scene-01-encounter",
+          "dominant_authority": "WORLD",
+          "visual_area_ratio": 0.68,
+          "media_area": 0.68,
+          "text_area": 0.32,
+          "dominant_focal_area": 0.68,
+          "viewport_share": 0.68,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "dominant_authority": "PERSON",
+          "visual_area_ratio": 0.68,
+          "media_area": 0.68,
+          "text_area": 0.32,
+          "dominant_focal_area": 0.68,
+          "viewport_share": 0.68,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "dominant_authority": "DATA",
+          "visual_area_ratio": 0.42,
+          "media_area": 0.42,
+          "text_area": 0.58,
+          "dominant_focal_area": 0.42,
+          "viewport_share": 0.42,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "dominant_authority": "WORLD",
+          "visual_area_ratio": 0.68,
+          "media_area": 0.68,
+          "text_area": 0.32,
+          "dominant_focal_area": 0.68,
+          "viewport_share": 0.68,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-join",
+          "dominant_authority": "TYPE",
+          "visual_area_ratio": 0.42,
+          "media_area": 0.42,
+          "text_area": 0.58,
+          "dominant_focal_area": 0.42,
+          "viewport_share": 0.42,
+          "verdict": "PASS"
+        }
+      ]
+    }
+  }
+}

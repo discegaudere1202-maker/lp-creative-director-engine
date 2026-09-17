@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "scene_count": {
+    "expected": 5,
+    "rendered": 5
+  },
+  "expected_headings": [
+    "家の輪郭を見つめる",
+    "素材に触れて考える",
+    "手仕事の順番を見る",
+    "仕上がりを思い描く",
+    "状態から相談する"
+  ],
+  "rendered_headings": [
+    "家の輪郭を見つめる",
+    "素材に触れて考える",
+    "手仕事の順番を見る",
+    "仕上がりを思い描く",
+    "状態から相談する"
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "流れを見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#contact",
+      "visible_label": "できることを見る"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "相談を始める"
+    }
+  ],
+  "internal_metadata_visible": false,
+  "internal_leakage": [],
+  "editorial_violations": []
+}

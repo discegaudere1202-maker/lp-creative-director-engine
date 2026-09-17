@@ -858,6 +858,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     ctas = {x.get("stage"): x for x in plan.get("scene_plan", [])}
     def esc(v): return html.escape(str(v or ""), quote=True)
     chunks = []
+    rendered_cta_stages = set()
     for i, scene in enumerate(plan.get("scene_plan", [])):
         grammar = scene["visual_grammar"]
         topology = grammar["topology"]
@@ -865,7 +866,10 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         body = copy_by_id.get(section_id, {}).get("body", scene["creative_reason"])
         heading = names[i] if i < len(names) else scene["narrative_state"]
         trace = esc(json.dumps({"scene_id":scene["scene_id"],"narrative_index":i,"grammar":grammar,"copy_intent":scene["copy_intent"]}, ensure_ascii=False))
-        scene_asset = select_asset_for_role(spec.get("asset_manifest", {}), scene.get("focal_entity"))
+        # The final CTA-led scene is a typography/place moment. Never cycle
+        # back to the hero asset when the approved pool is smaller than the
+        # five-scene narrative.
+        scene_asset = None if i == len(plan.get("scene_plan", [])) - 1 else select_asset_for_role(spec.get("asset_manifest", {}), scene.get("focal_entity"))
         scene_photo = render_photo_asset(scene_asset)
         media_content = scene_photo or "<span>" + esc(scene["focal_entity"]) + "</span>"
         media = f'<div class="scene-media scene-media--{esc(grammar["media_scale"])}" aria-hidden="true">{media_content}</div>'
@@ -875,10 +879,11 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         elif topology == "layered": inner = f'<div class="scene-layered">{media}<div class="scene-layered-copy"><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'
         else: inner = f'<div class="scene-full">{media}<h2>{esc(heading)}</h2><p>{esc(body)}</p></div>'
         cta = ""
-        if scene.get("cta_stage"):
+        if scene.get("cta_stage") and scene.get("cta_stage") not in rendered_cta_stages:
             item = next((x for x in plan.get("scene_plan", []) if x.get("cta_stage") == scene["cta_stage"]), {})
             genome = next((x for x in spec["strategy"]["creative_genome"].get("cta_progression", []) if x.get("stage") == scene["cta_stage"]), {})
             cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" href="{esc(genome.get("destination") or "#contact")}">{esc(genome.get("visible_label") or "次へ進む")}</a>'
+            rendered_cta_stages.add(scene.get("cta_stage"))
         evidence_trace = ",".join(hashlib.sha256(str(x).encode()).hexdigest()[:10] for x in scene["evidence_ids"])
         chunks.append(f'<section class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}">{inner}{cta}</section>')
     return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:1px solid var(--line)}} .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em}} .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0}} .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}} .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%}} .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%;min-width:0}} .scene-full{{min-width:0;display:grid;gap:1.5rem}} .scene-sequence{{min-width:0;border-left:6px solid var(--accent);padding:2rem;overflow-wrap:anywhere}} .premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:999px;text-decoration:none;max-width:100%}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr)}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'

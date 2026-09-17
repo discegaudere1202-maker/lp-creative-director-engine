@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "scene_count": {
+    "expected": 5,
+    "rendered": 5
+  },
+  "expected_headings": [
+    "食材に出会う",
+    "手を動かしてみる",
+    "料理ができていく",
+    "食卓を囲む",
+    "参加を考える"
+  ],
+  "rendered_headings": [
+    "食材に出会う",
+    "手を動かしてみる",
+    "料理ができていく",
+    "食卓を囲む",
+    "参加を考える"
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "流れを見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#contact",
+      "visible_label": "できることを見る"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "相談を始める"
+    }
+  ],
+  "internal_metadata_visible": false,
+  "internal_leakage": [],
+  "editorial_violations": []
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "trace_coverage": 100,
+  "untraced": 0,
+  "blocker": 0,
+  "major": 0,
+  "safety_leakage": 0,
+  "unsupported_claims": 0
+}

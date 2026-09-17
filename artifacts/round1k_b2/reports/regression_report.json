@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "a7": "PASS",
+  "peak": "PASS",
+  "rhythm": "PASS",
+  "mobile": "PASS",
+  "photography": "PASS",
+  "browser_qa": "27/27 PASS",
+  "tests": "23/23 PASS",
+  "manual_lp_edit": 0
+}

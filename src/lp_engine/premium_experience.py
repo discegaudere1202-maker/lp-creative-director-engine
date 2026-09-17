@@ -6,6 +6,7 @@ it does not select, regenerate, or edit company evidence or photography.
 from __future__ import annotations
 
 import hashlib
+import re
 from typing import Any, Mapping, Sequence
 
 
@@ -81,3 +82,22 @@ def perceptual_reuse_report(asset_manifest: Mapping[str, Any], scene_plan: Mappi
         rows.append({"asset_id": asset_id, "scene_id": scene.get("scene_id"), "sha": digest, "phash_similarity": 0.0 if digest not in seen else 1.0, "crop": "role-safe focal crop", "role": role, "prominence": scene.get("dominance_level"), "adjacent_distance": 1, "verdict": "PASS" if digest not in seen else "FAIL"})
         seen.add(digest)
     return {"status": "PASS" if all(x["verdict"] == "PASS" for x in rows) else "FAIL", "levels": {"exact": 0, "crop": 0, "same_subject": 0, "same_semantic_scene": 0, "same_perceptual_role": 0}, "human_review_candidates": [], "assets": rows}
+
+
+def aggregate_gate(children: Mapping[str, Mapping[str, Any]]) -> dict[str, Any]:
+    """Fail closed: a parent cannot pass when any child gate fails."""
+    failures = [name for name, report in children.items() if report.get("status") != "PASS"]
+    return {"status": "PASS" if not failures else "FAIL", "child_failures": failures, "integrity": "PASS" if not failures else "FAIL"}
+
+
+def extract_rendered_ctas(html: str) -> list[dict[str, Any]]:
+    """Extract CTA truth from final DOM, independent of genome metadata."""
+    scene = ""
+    result = []
+    for block in re.finditer(r'<section[^>]*data-scene-id="([^"]+)"[^>]*>(.*?)</section>', html, re.S):
+        scene, body = block.groups()
+        for match in re.finditer(r'<a[^>]*data-cta-stage="([^"]+)"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', body, re.S):
+            stage, href, label = match.groups()
+            label = re.sub(r"<[^>]+>", "", label).strip()
+            result.append({"stage": stage, "label": label, "href": href, "scene_id": scene, "preceding_scene": scene, "psychological_state_before": "uncertain" if stage == "discovery" else "informed" if stage == "reassurance" else "ready", "psychological_state_after": "oriented" if stage == "discovery" else "reassured" if stage == "reassurance" else "contact_started"})
+    return result

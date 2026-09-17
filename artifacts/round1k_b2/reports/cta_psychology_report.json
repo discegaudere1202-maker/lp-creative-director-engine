@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "ctas": [
+        {
+          "stage": "discovery",
+          "label": "流れを見る",
+          "href": "#way-in",
+          "scene_id": "scene-01-observe",
+          "preceding_scene": "scene-01-observe",
+          "psychological_state_before": "uncertain",
+          "psychological_state_after": "oriented",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "reassurance",
+          "label": "できることを見る",
+          "href": "#contact",
+          "scene_id": "scene-03-watch_hands",
+          "preceding_scene": "scene-03-watch_hands",
+          "psychological_state_before": "informed",
+          "psychological_state_after": "reassured",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "action",
+          "label": "相談を始める",
+          "href": "#contact",
+          "scene_id": "scene-05-consult",
+          "preceding_scene": "scene-05-consult",
+          "psychological_state_before": "ready",
+          "psychological_state_after": "contact_started",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        }
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "duplicate_cta_violation": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "ctas": [
+        {
+          "stage": "discovery",
+          "label": "流れを見る",
+          "href": "#way-in",
+          "scene_id": "scene-01-arrive",
+          "preceding_scene": "scene-01-arrive",
+          "psychological_state_before": "uncertain",
+          "psychological_state_after": "oriented",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "reassurance",
+          "label": "できることを見る",
+          "href": "#contact",
+          "scene_id": "scene-03-feel_care",
+          "preceding_scene": "scene-03-feel_care",
+          "psychological_state_before": "informed",
+          "psychological_state_after": "reassured",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "action",
+          "label": "相談を始める",
+          "href": "#contact",
+          "scene_id": "scene-05-reserve",
+          "preceding_scene": "scene-05-reserve",
+          "psychological_state_before": "ready",
+          "psychological_state_after": "contact_started",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        }
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "duplicate_cta_violation": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "ctas": [
+        {
+          "stage": "discovery",
+          "label": "流れを見る",
+          "href": "#way-in",
+          "scene_id": "scene-01-encounter",
+          "preceding_scene": "scene-01-encounter",
+          "psychological_state_before": "uncertain",
+          "psychological_state_after": "oriented",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "reassurance",
+          "label": "できることを見る",
+          "href": "#contact",
+          "scene_id": "scene-03-make",
+          "preceding_scene": "scene-03-make",
+          "psychological_state_before": "informed",
+          "psychological_state_after": "reassured",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "action",
+          "label": "相談を始める",
+          "href": "#contact",
+          "scene_id": "scene-05-join",
+          "preceding_scene": "scene-05-join",
+          "psychological_state_before": "ready",
+          "psychological_state_after": "contact_started",
+          "duplicate_count": 1,
+          "evidence_reference": "rendered_scene_trace",
+          "verdict": "PASS"
+        }
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "duplicate_cta_violation": 0
+    }
+  }
+}

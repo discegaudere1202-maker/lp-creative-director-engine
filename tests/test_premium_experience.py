@@ -1,5 +1,5 @@
 import unittest
-from lp_engine.premium_experience import plan_peaks, plan_rhythm, mobile_direction
+from lp_engine.premium_experience import plan_peaks, plan_rhythm, mobile_direction, aggregate_gate, extract_rendered_ctas
 
 
 class PremiumExperienceTest(unittest.TestCase):
@@ -22,3 +22,10 @@ class PremiumExperienceTest(unittest.TestCase):
         self.assertEqual(result["mode"], "temporal_sequence")
         self.assertEqual(result["mobile_peak_variant"], "dedicated")
         self.assertNotEqual(result["mobile_order"], "media-copy")
+
+    def test_child_failure_cannot_aggregate_to_pass(self):
+        self.assertEqual(aggregate_gate({"reuse": {"status": "FAIL"}})["status"], "FAIL")
+
+    def test_rendered_generic_duplicate_cta_is_visible(self):
+        html = '<section data-scene-id="s1"><a data-cta-stage="discovery" href="#x">見る</a><a data-cta-stage="discovery" href="#x">見る</a></section>'
+        self.assertEqual(len(extract_rendered_ctas(html)), 2)
