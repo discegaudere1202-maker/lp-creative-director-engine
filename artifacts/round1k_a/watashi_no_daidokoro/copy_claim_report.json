@@ -1,0 +1,34 @@
+{
+  "claim_eligibility": [
+    {
+      "claim_trace_id": "watashi_no_daidokoro-e-001",
+      "category": "VERIFIED_FACT",
+      "evidence_id": "watashi_no_daidokoro-e-001"
+    },
+    {
+      "claim_trace_id": "watashi_no_daidokoro-e-002",
+      "category": "VERIFIED_FACT",
+      "evidence_id": "watashi_no_daidokoro-e-002"
+    },
+    {
+      "claim_trace_id": "watashi_no_daidokoro-e-003",
+      "category": "VERIFIED_FACT",
+      "evidence_id": "watashi_no_daidokoro-e-003"
+    },
+    {
+      "claim_trace_id": "watashi_no_daidokoro-e-004",
+      "category": "VERIFIED_FACT",
+      "evidence_id": "watashi_no_daidokoro-e-004"
+    }
+  ],
+  "copy_intents": [
+    "ORIENT",
+    "GUIDE",
+    "PROVE",
+    "GUIDE",
+    "CONVERT"
+  ],
+  "omit_unverified": true,
+  "internal_safety_semantic_leak": "PASS",
+  "claim_traceability": "PASS"
+}

@@ -1,0 +1,26 @@
+{
+  "company": "maylynn_paint",
+  "renderer": "premium_scene_renderer",
+  "scene_count": 5,
+  "scene_renderers": [
+    "full_bleed",
+    "inset",
+    "sequence",
+    "layered",
+    "split"
+  ],
+  "dom_child_patterns": [
+    "scene-full",
+    "scene-inset",
+    "scene-sequence",
+    "scene-layered",
+    "scene-split"
+  ],
+  "topology_signature": [
+    "full_bleed",
+    "inset",
+    "sequence",
+    "layered",
+    "split"
+  ]
+}

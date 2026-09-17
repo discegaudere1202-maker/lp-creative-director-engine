@@ -1,0 +1,23 @@
+{
+  "overall_status": "PASS",
+  "manual_lp_edit": 0,
+  "safety_status": "PASS",
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "photography_role_coverage": {
+    "expected": 4,
+    "actual": 4,
+    "status": "PASS"
+  },
+  "premium_scene_gates": {
+    "narrative_scene_order_gate": "PASS",
+    "scene_state_delta_gate": "PASS",
+    "rendered_grammar_delta_gate": "PASS",
+    "consecutive_topology_repetition_gate": "PASS",
+    "visual_authority_realization_gate": "PASS",
+    "claim_traceability_gate": "PASS"
+  },
+  "no_company_slug_hardcode": "PASS"
+}

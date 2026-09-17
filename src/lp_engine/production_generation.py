@@ -21,6 +21,7 @@ from typing import Any, Mapping, Sequence
 from .evidence_safety import evaluate_evidence_selection
 from .creative_genome import derive_creative_genome, public_copy_gate
 from .narrative_architecture import derive_narrative_architecture, narrative_gates
+from .premium_scene import build_premium_scene_plan, scene_plan_gates
 from .hearing import plan_hearing
 from .photography import (
     build_asset_manifest,
@@ -837,7 +838,43 @@ def _visual_scene_markup(scene: str) -> str:
     return f'<div class="visual-scene scene-{scene}" data-visual-source="engine_generated_vector_scene" data-photo-replacement="same-role-approved-real-image" aria-hidden="true">{bodies[scene]}</div>'
 
 
+def _render_premium_html(spec: Mapping[str, Any]) -> str:
+    company, copy, tokens = spec["company"], spec["copy"], spec["design_tokens"]
+    plan = spec["premium_scene_plan"]
+    ia = list(spec.get("ia") or [])
+    copy_by_id = {x.get("section_id"): x for x in copy.get("sections", [])}
+    names = list(spec.get("strategy", {}).get("narrative_architecture", {}).get("section_naming") or [])
+    ctas = {x.get("stage"): x for x in plan.get("scene_plan", [])}
+    def esc(v): return html.escape(str(v or ""), quote=True)
+    chunks = []
+    for i, scene in enumerate(plan.get("scene_plan", [])):
+        grammar = scene["visual_grammar"]
+        topology = grammar["topology"]
+        section_id = ia[i].get("section_id") if i < len(ia) else ""
+        body = copy_by_id.get(section_id, {}).get("body", scene["creative_reason"])
+        heading = names[i] if i < len(names) else scene["narrative_state"]
+        trace = esc(json.dumps({"scene_id":scene["scene_id"],"narrative_index":i,"grammar":grammar,"copy_intent":scene["copy_intent"]}, ensure_ascii=False))
+        scene_asset = select_asset_for_role(spec.get("asset_manifest", {}), scene.get("focal_entity"))
+        scene_photo = render_photo_asset(scene_asset)
+        media_content = scene_photo or "<span>" + esc(scene["focal_entity"]) + "</span>"
+        media = f'<div class="scene-media scene-media--{esc(grammar["media_scale"])}" aria-hidden="true">{media_content}</div>'
+        if topology == "sequence": inner = f'<div class="scene-sequence"><ol><li>{esc(body)}</li><li>{esc(scene["state_delta"]["after"])}</li></ol></div>'
+        elif topology == "inset": inner = f'<div class="scene-inset">{media}<div><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'
+        elif topology == "split": inner = f'<div class="scene-split"><div><h2>{esc(heading)}</h2><p>{esc(body)}</p></div>{media}</div>'
+        elif topology == "layered": inner = f'<div class="scene-layered">{media}<div class="scene-layered-copy"><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'
+        else: inner = f'<div class="scene-full">{media}<h2>{esc(heading)}</h2><p>{esc(body)}</p></div>'
+        cta = ""
+        if scene.get("cta_stage"):
+            item = next((x for x in plan.get("scene_plan", []) if x.get("cta_stage") == scene["cta_stage"]), {})
+            genome = next((x for x in spec["strategy"]["creative_genome"].get("cta_progression", []) if x.get("stage") == scene["cta_stage"]), {})
+            cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" href="{esc(genome.get("destination") or "#contact")}">{esc(genome.get("visible_label") or "次へ進む")}</a>'
+        evidence_trace = ",".join(hashlib.sha256(str(x).encode()).hexdigest()[:10] for x in scene["evidence_ids"])
+        chunks.append(f'<section class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}">{inner}{cta}</section>')
+    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:1px solid var(--line)}} .scene-media{{background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}} .scene-layered{{position:relative;min-height:420px}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%}} .scene-full{{display:grid;gap:1.5rem}} .scene-sequence{{border-left:6px solid var(--accent);padding:2rem}} .premium-scene h2{{font-size:clamp(2rem,5vw,5rem)}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:999px;text-decoration:none}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:1fr}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
+
 def render_html(spec: Mapping[str, Any]) -> str:
+    if spec.get("premium_scene_plan"):
+        return _render_premium_html(spec)
     company = spec["company"]
     copy = spec["copy"]
     tokens = spec["design_tokens"]
@@ -949,6 +986,8 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     copy["section_naming_gate"] = narrative_gates(strategy["narrative_architecture"], strategy["creative_genome"])["generic_heading_gate"]
     photo_role_map = build_photo_role_map(understanding, strategy, ia)
     asset_manifest = build_asset_manifest(raw.get("photo_assets") or [], photo_role_map)
+    premium_scene_plan = build_premium_scene_plan(understanding, strategy["narrative_architecture"], strategy["creative_genome"], approved, [item.get("photo_role", "") for item in raw.get("photo_assets") or []])
+    premium_scene_plan["qa_gates"] = scene_plan_gates(premium_scene_plan)
     understanding["photo_replacement_readiness"] = {
         **dict(understanding.get("photo_replacement_readiness") or {}),
         "proxy_role": "role_selected_photography_asset",
@@ -976,6 +1015,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     render_spec["approved_evidence"] = approved
     render_spec["photo_role_map"] = photo_role_map
     render_spec["asset_manifest"] = asset_manifest
+    render_spec["premium_scene_plan"] = premium_scene_plan
     generation_id = generation_id or f"gen-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}-{_input_digest(raw)[:8]}"
     output = Path(output_dir)
     output.mkdir(parents=True, exist_ok=True)
@@ -984,6 +1024,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         "creative_strategy": strategy,
         "creative_genome": strategy["creative_genome"],
         "narrative_architecture": strategy["narrative_architecture"],
+        "premium_scene_plan": premium_scene_plan,
         "form_causality_manifest": {
             "schema_version": "form_causality_manifest_v1",
             "items": strategy.get("form_causality", []),

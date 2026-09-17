@@ -1,0 +1,26 @@
+{
+  "company": "watashi_no_daidokoro",
+  "renderer": "premium_scene_renderer",
+  "scene_count": 5,
+  "scene_renderers": [
+    "full_bleed",
+    "split",
+    "sequence",
+    "full_bleed",
+    "layered"
+  ],
+  "dom_child_patterns": [
+    "scene-full",
+    "scene-split",
+    "scene-sequence",
+    "scene-full",
+    "scene-layered"
+  ],
+  "topology_signature": [
+    "full_bleed",
+    "split",
+    "sequence",
+    "full_bleed",
+    "layered"
+  ]
+}

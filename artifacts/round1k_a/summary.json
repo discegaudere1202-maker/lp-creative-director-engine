@@ -1,0 +1,225 @@
+{
+  "schema_version": "round1k_a_summary_v1",
+  "status": "PASS",
+  "commit_sha": "9455fde38d2271ebf49071904dbba86dcb8f082c",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "scene_count": 5,
+      "narrative_order": "PASS",
+      "state_delta": "PASS",
+      "grammar_vector_axes": 11,
+      "topology": [
+        "full_bleed",
+        "inset",
+        "sequence",
+        "layered",
+        "split"
+      ],
+      "copy": {
+        "claim_eligibility": [
+          {
+            "claim_trace_id": "maylynn_paint-e-001",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "maylynn_paint-e-001"
+          },
+          {
+            "claim_trace_id": "maylynn_paint-e-002",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "maylynn_paint-e-002"
+          },
+          {
+            "claim_trace_id": "maylynn_paint-e-003",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "maylynn_paint-e-003"
+          },
+          {
+            "claim_trace_id": "maylynn_paint-e-004",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "maylynn_paint-e-004"
+          }
+        ],
+        "copy_intents": [
+          "ORIENT",
+          "PROVE",
+          "PROVE",
+          "GUIDE",
+          "CONVERT"
+        ],
+        "omit_unverified": true,
+        "internal_safety_semantic_leak": "PASS",
+        "claim_traceability": "PASS"
+      },
+      "quality": {
+        "overall_status": "PASS",
+        "manual_lp_edit": 0,
+        "safety_status": "PASS",
+        "presentation_hygiene": {
+          "status": "PASS",
+          "leaked_visible_internal_fields": []
+        },
+        "photography_role_coverage": {
+          "expected": 4,
+          "actual": 4,
+          "status": "PASS"
+        },
+        "premium_scene_gates": {
+          "narrative_scene_order_gate": "PASS",
+          "scene_state_delta_gate": "PASS",
+          "rendered_grammar_delta_gate": "PASS",
+          "consecutive_topology_repetition_gate": "PASS",
+          "visual_authority_realization_gate": "PASS",
+          "claim_traceability_gate": "PASS"
+        },
+        "no_company_slug_hardcode": "PASS"
+      }
+    },
+    {
+      "company": "nagi_no_mirai",
+      "scene_count": 5,
+      "narrative_order": "PASS",
+      "state_delta": "PASS",
+      "grammar_vector_axes": 11,
+      "topology": [
+        "full_bleed",
+        "inset",
+        "split",
+        "layered",
+        "layered"
+      ],
+      "copy": {
+        "claim_eligibility": [
+          {
+            "claim_trace_id": "nagi_no_mirai-e-001",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "nagi_no_mirai-e-001"
+          },
+          {
+            "claim_trace_id": "nagi_no_mirai-e-002",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "nagi_no_mirai-e-002"
+          },
+          {
+            "claim_trace_id": "nagi_no_mirai-e-003",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "nagi_no_mirai-e-003"
+          },
+          {
+            "claim_trace_id": "nagi_no_mirai-e-004",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "nagi_no_mirai-e-004"
+          }
+        ],
+        "copy_intents": [
+          "ORIENT",
+          "GUIDE",
+          "PROVE",
+          "GUIDE",
+          "CONVERT"
+        ],
+        "omit_unverified": true,
+        "internal_safety_semantic_leak": "PASS",
+        "claim_traceability": "PASS"
+      },
+      "quality": {
+        "overall_status": "PASS",
+        "manual_lp_edit": 0,
+        "safety_status": "PASS",
+        "presentation_hygiene": {
+          "status": "PASS",
+          "leaked_visible_internal_fields": []
+        },
+        "photography_role_coverage": {
+          "expected": 4,
+          "actual": 4,
+          "status": "PASS"
+        },
+        "premium_scene_gates": {
+          "narrative_scene_order_gate": "PASS",
+          "scene_state_delta_gate": "PASS",
+          "rendered_grammar_delta_gate": "PASS",
+          "consecutive_topology_repetition_gate": "PASS",
+          "visual_authority_realization_gate": "PASS",
+          "claim_traceability_gate": "PASS"
+        },
+        "no_company_slug_hardcode": "PASS"
+      }
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "scene_count": 5,
+      "narrative_order": "PASS",
+      "state_delta": "PASS",
+      "grammar_vector_axes": 11,
+      "topology": [
+        "full_bleed",
+        "split",
+        "sequence",
+        "full_bleed",
+        "layered"
+      ],
+      "copy": {
+        "claim_eligibility": [
+          {
+            "claim_trace_id": "watashi_no_daidokoro-e-001",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "watashi_no_daidokoro-e-001"
+          },
+          {
+            "claim_trace_id": "watashi_no_daidokoro-e-002",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "watashi_no_daidokoro-e-002"
+          },
+          {
+            "claim_trace_id": "watashi_no_daidokoro-e-003",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "watashi_no_daidokoro-e-003"
+          },
+          {
+            "claim_trace_id": "watashi_no_daidokoro-e-004",
+            "category": "VERIFIED_FACT",
+            "evidence_id": "watashi_no_daidokoro-e-004"
+          }
+        ],
+        "copy_intents": [
+          "ORIENT",
+          "GUIDE",
+          "PROVE",
+          "GUIDE",
+          "CONVERT"
+        ],
+        "omit_unverified": true,
+        "internal_safety_semantic_leak": "PASS",
+        "claim_traceability": "PASS"
+      },
+      "quality": {
+        "overall_status": "PASS",
+        "manual_lp_edit": 0,
+        "safety_status": "PASS",
+        "presentation_hygiene": {
+          "status": "PASS",
+          "leaked_visible_internal_fields": []
+        },
+        "photography_role_coverage": {
+          "expected": 4,
+          "actual": 4,
+          "status": "PASS"
+        },
+        "premium_scene_gates": {
+          "narrative_scene_order_gate": "PASS",
+          "scene_state_delta_gate": "PASS",
+          "rendered_grammar_delta_gate": "PASS",
+          "consecutive_topology_repetition_gate": "PASS",
+          "visual_authority_realization_gate": "PASS",
+          "claim_traceability_gate": "PASS"
+        },
+        "no_company_slug_hardcode": "PASS"
+      }
+    }
+  ],
+  "engine_only": true,
+  "manual_lp_edit": 0,
+  "human_review_capture": false,
+  "human_review_ready": false,
+  "acceptance_ready": true
+}

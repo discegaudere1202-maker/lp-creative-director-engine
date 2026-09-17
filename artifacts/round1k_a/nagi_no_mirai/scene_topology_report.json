@@ -1,0 +1,26 @@
+{
+  "company": "nagi_no_mirai",
+  "renderer": "premium_scene_renderer",
+  "scene_count": 5,
+  "scene_renderers": [
+    "full_bleed",
+    "inset",
+    "split",
+    "layered",
+    "layered"
+  ],
+  "dom_child_patterns": [
+    "scene-full",
+    "scene-inset",
+    "scene-split",
+    "scene-layered",
+    "scene-layered"
+  ],
+  "topology_signature": [
+    "full_bleed",
+    "inset",
+    "split",
+    "layered",
+    "layered"
+  ]
+}
