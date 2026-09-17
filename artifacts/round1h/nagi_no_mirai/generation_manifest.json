@@ -1,0 +1,117 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "round1h-nagi_no_mirai",
+  "company_id": "nagi_no_mirai",
+  "company_name": "なぎのみらい",
+  "mode": "research",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "generation_iteration": 3,
+  "input_digest": "b5cd768926923728c89f5651576103becb83da0d907176cf7035fad73e4414d1",
+  "input_references": {
+    "input_file": "inline_fixture",
+    "source_urls": [
+      "approved-selection-manifest",
+      "phase6-sales-master-snapshot"
+    ]
+  },
+  "strategy_output": "creative_strategy.json",
+  "photo_role_map_output": "photo_role_map.json",
+  "asset_manifest_output": "asset_manifest.json",
+  "evidence_used": [
+    {
+      "claim": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "evidence_id": "nagi_no_mirai-e-001",
+      "source": "approved-selection-manifest",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "MIDDLE"
+      ]
+    },
+    {
+      "claim": "福岡市で活動する事業者。",
+      "evidence_id": "nagi_no_mirai-e-002",
+      "source": "phase6-sales-master-snapshot",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "EARLY_PROOF"
+      ]
+    },
+    {
+      "claim": "対応できる内容を確認してから次の案内へ進む。",
+      "evidence_id": "nagi_no_mirai-e-003",
+      "source": "approved-selection-manifest",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "MIDDLE"
+      ]
+    },
+    {
+      "claim": "公式SNSから相談・予約の入口を確認する。",
+      "evidence_id": "nagi_no_mirai-e-004",
+      "source": "phase6-sales-master-snapshot",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ]
+    }
+  ],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "NOT_PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "creative_genome.json",
+    "narrative_architecture.json",
+    "form_causality_manifest.json",
+    "information_architecture.json",
+    "copy.json",
+    "photo_role_map.json",
+    "asset_manifest.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "narrative_gates": {
+    "generic_heading_gate": {
+      "status": "PASS",
+      "violations": []
+    },
+    "narrative_distinctness_gate": {
+      "status": "PASS"
+    },
+    "renderer_grammar_diversity_gate": {
+      "status": "PASS",
+      "unique_grammars": 5
+    },
+    "emotional_continuity_gate": {
+      "status": "PASS"
+    },
+    "cta_delta_gate": {
+      "status": "PASS",
+      "cta_count": 3
+    },
+    "mobile_re_art_direction_gate": {
+      "status": "PASS"
+    }
+  },
+  "generated_at": "2026-09-17T01:01:18.361662+00:00"
+}

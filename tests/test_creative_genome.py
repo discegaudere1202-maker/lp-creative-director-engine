@@ -7,6 +7,7 @@ from pathlib import Path
 from lp_engine.creative_genome import derive_creative_genome, public_copy_gate
 from lp_engine.production_generation import run_generation
 from lp_engine.structural_similarity import compare, signature
+from lp_engine.narrative_architecture import derive_narrative_architecture, narrative_gates
 
 FIXTURE = Path(__file__).parents[1] / "examples/production/andy_motorcycle/andy_motorcycle_production_input_v1.json"
 
@@ -59,6 +60,18 @@ class CreativeGenomeTest(unittest.TestCase):
                 result = run_generation(raw, Path(directory) / "out", mode="research", generation_id="synthetic")
                 genomes.append(result.stage_outputs["creative_genome"])
         self.assertNotEqual(genomes[0]["composition_logic"], genomes[1]["composition_logic"])
+
+    def test_narrative_architecture_has_arc_purposes_and_distinct_grammar(self):
+        raw = json.loads(FIXTURE.read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as directory:
+            result = run_generation(raw, Path(directory) / "out", generation_id="narrative-test")
+        architecture = result.stage_outputs["narrative_architecture"]
+        self.assertEqual(len(architecture["narrative_arc"]), 5)
+        self.assertEqual(len(architecture["section_purposes"]), 5)
+        gates = narrative_gates(architecture, result.stage_outputs["creative_genome"])
+        self.assertEqual(gates["generic_heading_gate"]["status"], "PASS")
+        self.assertEqual(gates["renderer_grammar_diversity_gate"]["status"], "PASS")
+        self.assertEqual(gates["cta_delta_gate"]["status"], "PASS")
 
 
 if __name__ == "__main__":

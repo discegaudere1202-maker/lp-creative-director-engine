@@ -1,0 +1,163 @@
+{
+  "safety": {
+    "conversion_goal": "reservation",
+    "primary_objections": [
+      "O3_PROCESS",
+      "O4_NEXT"
+    ],
+    "approved_claims": [
+      "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "福岡市で活動する事業者。",
+      "対応できる内容を確認してから次の案内へ進む。",
+      "公式SNSから相談・予約の入口を確認する。"
+    ],
+    "eligible_evidence": [
+      {
+        "evidence_id": "nagi_no_mirai-e-001",
+        "company_id": "",
+        "case_id": "",
+        "evidence_type": "SERVICE_SCOPE",
+        "evidence_strength": "E3_OPERATIONAL",
+        "target_objections": [
+          "O3_PROCESS"
+        ],
+        "claim": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "source": "approved-selection-manifest",
+        "source_type": "research_ledger",
+        "verification_status": "VERIFIED",
+        "verification_date": "2026-09-16",
+        "usage_status": "PRODUCTION_ELIGIBLE",
+        "placement_candidates": [
+          "HERO",
+          "MIDDLE"
+        ],
+        "rights_status": "NOT_APPLICABLE",
+        "hearing_required": false,
+        "blocking_status": "NON_BLOCKING",
+        "notes": ""
+      },
+      {
+        "evidence_id": "nagi_no_mirai-e-002",
+        "company_id": "",
+        "case_id": "",
+        "evidence_type": "PLACE_WIDE",
+        "evidence_strength": "E2_SPECIFIC",
+        "target_objections": [
+          "O3_PROCESS"
+        ],
+        "claim": "福岡市で活動する事業者。",
+        "source": "phase6-sales-master-snapshot",
+        "source_type": "research_ledger",
+        "verification_status": "VERIFIED",
+        "verification_date": "2026-09-16",
+        "usage_status": "PRODUCTION_ELIGIBLE",
+        "placement_candidates": [
+          "HERO",
+          "EARLY_PROOF"
+        ],
+        "rights_status": "NOT_APPLICABLE",
+        "hearing_required": false,
+        "blocking_status": "NON_BLOCKING",
+        "notes": ""
+      },
+      {
+        "evidence_id": "nagi_no_mirai-e-003",
+        "company_id": "",
+        "case_id": "",
+        "evidence_type": "SERVICE_PROCESS",
+        "evidence_strength": "E3_OPERATIONAL",
+        "target_objections": [
+          "O3_PROCESS"
+        ],
+        "claim": "対応できる内容を確認してから次の案内へ進む。",
+        "source": "approved-selection-manifest",
+        "source_type": "research_ledger",
+        "verification_status": "VERIFIED",
+        "verification_date": "2026-09-16",
+        "usage_status": "PRODUCTION_ELIGIBLE",
+        "placement_candidates": [
+          "MIDDLE"
+        ],
+        "rights_status": "NOT_APPLICABLE",
+        "hearing_required": false,
+        "blocking_status": "NON_BLOCKING",
+        "notes": ""
+      },
+      {
+        "evidence_id": "nagi_no_mirai-e-004",
+        "company_id": "",
+        "case_id": "",
+        "evidence_type": "CTA_CHANNEL",
+        "evidence_strength": "E5_DECISION_ENABLING",
+        "target_objections": [
+          "O4_NEXT"
+        ],
+        "claim": "公式SNSから相談・予約の入口を確認する。",
+        "source": "phase6-sales-master-snapshot",
+        "source_type": "research_ledger",
+        "verification_status": "VERIFIED",
+        "verification_date": "2026-09-16",
+        "usage_status": "PRODUCTION_ELIGIBLE",
+        "placement_candidates": [
+          "BEFORE_CTA",
+          "CTA_ZONE"
+        ],
+        "rights_status": "NOT_APPLICABLE",
+        "hearing_required": false,
+        "blocking_status": "NON_BLOCKING",
+        "notes": ""
+      }
+    ],
+    "missing_evidence": [],
+    "blocked_claims": [],
+    "hearing_required": [],
+    "allowed_placements": [
+      "BEFORE_CTA",
+      "CTA_ZONE",
+      "EARLY_PROOF",
+      "HERO",
+      "MIDDLE"
+    ],
+    "safety_status": "PASS",
+    "issues": [],
+    "hearing_plan": {
+      "conversion_goal": "reservation",
+      "domain": "ヘッドスパ",
+      "required_hearing_fields": [],
+      "minimum_question_set": [],
+      "blocking_questions": [],
+      "optional_questions": [],
+      "redundant_questions": [],
+      "resulting_evidence_candidates": [],
+      "completion_status": "PLANNED",
+      "question_count": 0,
+      "hearing_burden": {
+        "p0_questions": 0,
+        "p1_questions": 0,
+        "optional_questions": 0,
+        "total_questions": 0,
+        "evidence_filled_per_question": 0
+      }
+    }
+  },
+  "replacement": {
+    "status": "READY_WITH_PROXY",
+    "proxy_role": "role_selected_photography_asset",
+    "replacement_targets": [
+      "実店舗・実現場・実商品・実人物写真"
+    ],
+    "layout_constraints": [
+      "同一役割の実写真を同じ比率へ差し替え可能",
+      "文字重なりなし",
+      "中央焦点を保持"
+    ],
+    "proof_role": "visual_context_only; not evidence of a real result or location",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only"
+  },
+  "manual_lp_edit": 0
+}

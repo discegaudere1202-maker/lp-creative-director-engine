@@ -1,0 +1,34 @@
+{
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "safety_status": "PASS",
+  "asset_reuse": "PASS",
+  "narrative_photography": "PASS",
+  "screenshot_peak_plan": 3,
+  "mobile_redirection_fields": 6,
+  "narrative_gates": {
+    "generic_heading_gate": {
+      "status": "PASS",
+      "violations": []
+    },
+    "narrative_distinctness_gate": {
+      "status": "PASS"
+    },
+    "renderer_grammar_diversity_gate": {
+      "status": "PASS",
+      "unique_grammars": 4
+    },
+    "emotional_continuity_gate": {
+      "status": "PASS"
+    },
+    "cta_delta_gate": {
+      "status": "PASS",
+      "cta_count": 3
+    },
+    "mobile_re_art_direction_gate": {
+      "status": "PASS"
+    }
+  }
+}

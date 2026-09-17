@@ -20,6 +20,7 @@ from typing import Any, Mapping, Sequence
 
 from .evidence_safety import evaluate_evidence_selection
 from .creative_genome import derive_creative_genome, public_copy_gate
+from .narrative_architecture import derive_narrative_architecture, narrative_gates
 from .hearing import plan_hearing
 from .photography import (
     build_asset_manifest,
@@ -479,7 +480,13 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
         "catalogue_spread": ["opening", "truth", "contact", "way_in", "close"],
         "machine_catalogue": ["opening", "truth", "way_in", "contact", "close"],
     }
-    order = section_orders.get(profile, [item["section_id"] for item in sections])
+    family_orders = {
+        "craft": ["opening", "way_in", "truth", "contact", "close"],
+        "sensory_experience": ["opening", "truth", "contact", "way_in", "close"],
+        "participation": ["opening", "contact", "way_in", "truth", "close"],
+        "mastery": ["opening", "truth", "way_in", "contact", "close"],
+    }
+    order = family_orders.get(_text(genome.get("dominant_narrative")), section_orders.get(profile, [item["section_id"] for item in sections]))
     sections.sort(key=lambda item: order.index(item["section_id"]) if item["section_id"] in order else len(order))
     for index, section in enumerate(sections):
         section["order"] = index
@@ -523,20 +530,16 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
         "machine_catalogue": ["状態・用途を伝える", "対応内容を確認する", "作業を相談する"],
         "local_route": ["困りごとを伝える", "対応できる範囲を確認する", "入口を相談する"],
     }.get(profile, ["状況を伝える", "対応できることを確認する", "次の案内を考える"])
-    section_headlines = {
-        "opening": headline,
-        # Keep company specificity in the category and body, while keeping
-        # the heading a complete, compact noun phrase.  Concatenating a full
-        # sentence with a particle produced forms such as ``相談できるから、
-        # 入口`` and ``分からないを`` in the previous generator.
-        "truth": f"{(compact_category if field_validation else category or anchor or '会社')}の入口",
-        # The full customer state remains in the body copy.  This heading is a
-        # grammatical, reusable transition that does not force a domain into
-        # a fixed visual or copy template.
-        "way_in": "確認の順番を知る",
-        "contact": f"{goal_noun}の入口",
-        "close": f"{goal_noun}の次の一手",
-    }
+    architecture = dict(strategy.get("narrative_architecture") or {})
+    generated_names = list(architecture.get("section_naming") or [])
+    section_headlines = {"opening": headline}
+    for index, item in enumerate(ia):
+        if index < len(generated_names):
+            section_headlines[item["section_id"]] = generated_names[index]
+    section_headlines.setdefault("truth", f"{compact_category if field_validation else category or anchor or '会社'}の輪郭")
+    section_headlines.setdefault("way_in", "できることを見つける")
+    section_headlines.setdefault("contact", f"{goal_noun}を考える")
+    section_headlines.setdefault("close", "次の時間をつくる")
     return {
         "schema_version": SCHEMA_VERSION,
         "hero": {
@@ -934,8 +937,10 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     understanding = build_company_understanding(raw, approved)
     strategy = build_creative_strategy(understanding, approved)
     strategy["creative_genome"] = derive_creative_genome(understanding, strategy, approved)
+    strategy["narrative_architecture"] = derive_narrative_architecture(strategy["creative_genome"], understanding, approved)
     ia = build_information_architecture(understanding, strategy, approved)
     copy = guard_fake_evidence_copy(build_copy(understanding, strategy, ia, approved), approved)
+    copy["section_naming_gate"] = narrative_gates(strategy["narrative_architecture"], strategy["creative_genome"])["generic_heading_gate"]
     photo_role_map = build_photo_role_map(understanding, strategy, ia)
     asset_manifest = build_asset_manifest(raw.get("photo_assets") or [], photo_role_map)
     understanding["photo_replacement_readiness"] = {
@@ -972,6 +977,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         "company_understanding": understanding,
         "creative_strategy": strategy,
         "creative_genome": strategy["creative_genome"],
+        "narrative_architecture": strategy["narrative_architecture"],
         "form_causality_manifest": {
             "schema_version": "form_causality_manifest_v1",
             "items": strategy.get("form_causality", []),
@@ -1024,6 +1030,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         "stage_outputs": [f"{name}.json" for name in stages],
         "manual_intervention": [],
         "presentation_hygiene": presentation_hygiene,
+        "narrative_gates": narrative_gates(strategy["narrative_architecture"], strategy["creative_genome"]),
         "generated_at": datetime.now(UTC).isoformat(),
     }
     _write_json(output / "evidence_manifest.json", {"generation_id": generation_id, "items": manifest["evidence_used"]})

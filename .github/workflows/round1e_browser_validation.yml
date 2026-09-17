@@ -1,4 +1,4 @@
-name: Round 1F-B Browser Validation
+name: Round 1H-B Browser Validation
 
 on:
   workflow_dispatch:
@@ -36,27 +36,32 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Photography preflight
         run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
-      - name: Round 1F-B Engine regeneration, smoke and 27 viewport QA
+      - name: Round 1H-B Engine regeneration, smoke and 27 viewport QA
         continue-on-error: true
+        env:
+          ROUND_LABEL: round1h
+          ROUND_OUTPUT_ROOT: artifacts/round1h
+          ROUND_BASELINE_ROOT: artifacts/round1f
         run: python scripts/run_round1f_validation.py
       - name: Related tests
         if: always()
         run: python -m unittest tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
-      - name: Upload Round 1F-B human review artifacts
+      - name: Upload Round 1H-B human review artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: round1f-human-review-${{ github.sha }}
+          name: round1h-human-review-${{ github.sha }}
           path: |
-            artifacts/round1f/summary.json
-            artifacts/round1f/reports/
-            artifacts/round1f/browser_qa/
-            artifacts/round1f/human_review/
-            artifacts/round1f/*/index.html
-            artifacts/round1f/*/creative_genome.json
-            artifacts/round1f/*/quality_gate_report.json
-            artifacts/round1f/*/safety_replacement_metadata.json
+            artifacts/round1h/summary.json
+            artifacts/round1h/reports/
+            artifacts/round1h/browser_qa/
+            artifacts/round1h/human_review/
+            artifacts/round1h/*/index.html
+            artifacts/round1h/*/creative_genome.json
+            artifacts/round1h/*/narrative_architecture.json
+            artifacts/round1h/*/quality_gate_report.json
+            artifacts/round1h/*/safety_replacement_metadata.json
           if-no-files-found: warn
       - name: Final QA gate
         if: always()
-        run: python -c "import json,sys; p=json.load(open('artifacts/round1f/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('overall_status') == 'PASS' and p.get('human_review_ready') else 1)"
+        run: python -c "import json,sys; p=json.load(open('artifacts/round1h/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('overall_status') == 'PASS' and p.get('human_review_ready') else 1)"

@@ -1,0 +1,1105 @@
+{
+  "overall_status": "PASS",
+  "qa_viewport_total": 27,
+  "qa_pass_count": 27,
+  "qa_fail_count": 0,
+  "captures_total": 6,
+  "capture_paths": [
+    "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\maylynn_paint\\desktop_1440.png",
+    "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\maylynn_paint\\mobile_390.png",
+    "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\nagi_no_mirai\\desktop_1440.png",
+    "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\nagi_no_mirai\\mobile_390.png",
+    "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\watashi_no_daidokoro\\desktop_1440.png",
+    "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\watashi_no_daidokoro\\mobile_390.png"
+  ],
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "widths": 9,
+      "pass_count": 9,
+      "fail_count": 0,
+      "results": [
+        {
+          "width": 320,
+          "height": 1000,
+          "body_scroll_width": 320.0,
+          "viewport_width": 320.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 360,
+          "height": 1000,
+          "body_scroll_width": 360.0,
+          "viewport_width": 360.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 375,
+          "height": 1000,
+          "body_scroll_width": 375.0,
+          "viewport_width": 375.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 390,
+          "height": 1000,
+          "body_scroll_width": 390.0,
+          "viewport_width": 390.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\browser_qa\\maylynn_paint\\390_fullpage.png",
+          "status": "PASS"
+        },
+        {
+          "width": 430,
+          "height": 1000,
+          "body_scroll_width": 430.0,
+          "viewport_width": 430.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 768,
+          "height": 1000,
+          "body_scroll_width": 768.0,
+          "viewport_width": 768.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1024,
+          "height": 1000,
+          "body_scroll_width": 1024.0,
+          "viewport_width": 1024.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1280,
+          "height": 1000,
+          "body_scroll_width": 1280.0,
+          "viewport_width": 1280.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1440,
+          "height": 1000,
+          "body_scroll_width": 1440.0,
+          "viewport_width": 1440.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\browser_qa\\maylynn_paint\\1440_fullpage.png",
+          "status": "PASS"
+        }
+      ],
+      "photo_roles": [
+        "hero_home_finish",
+        "craft_handwork",
+        "material_detail",
+        "trust_consultation"
+      ],
+      "desktop_capture": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\maylynn_paint\\desktop_1440.png",
+      "mobile_capture": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\maylynn_paint\\mobile_390.png",
+      "manual_edit_count": 0
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "widths": 9,
+      "pass_count": 9,
+      "fail_count": 0,
+      "results": [
+        {
+          "width": 320,
+          "height": 1000,
+          "body_scroll_width": 320.0,
+          "viewport_width": 320.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 360,
+          "height": 1000,
+          "body_scroll_width": 360.0,
+          "viewport_width": 360.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 375,
+          "height": 1000,
+          "body_scroll_width": 375.0,
+          "viewport_width": 375.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 390,
+          "height": 1000,
+          "body_scroll_width": 390.0,
+          "viewport_width": 390.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\browser_qa\\nagi_no_mirai\\390_fullpage.png",
+          "status": "PASS"
+        },
+        {
+          "width": 430,
+          "height": 1000,
+          "body_scroll_width": 430.0,
+          "viewport_width": 430.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 768,
+          "height": 1000,
+          "body_scroll_width": 768.0,
+          "viewport_width": 768.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1024,
+          "height": 1000,
+          "body_scroll_width": 1024.0,
+          "viewport_width": 1024.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1280,
+          "height": 1000,
+          "body_scroll_width": 1280.0,
+          "viewport_width": 1280.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1440,
+          "height": 1000,
+          "body_scroll_width": 1440.0,
+          "viewport_width": 1440.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\browser_qa\\nagi_no_mirai\\1440_fullpage.png",
+          "status": "PASS"
+        }
+      ],
+      "photo_roles": [
+        "hero_treatment_space",
+        "hand_technique",
+        "sensory_detail",
+        "welcome_human"
+      ],
+      "desktop_capture": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\nagi_no_mirai\\desktop_1440.png",
+      "mobile_capture": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\nagi_no_mirai\\mobile_390.png",
+      "manual_edit_count": 0
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "widths": 9,
+      "pass_count": 9,
+      "fail_count": 0,
+      "results": [
+        {
+          "width": 320,
+          "height": 1000,
+          "body_scroll_width": 320.0,
+          "viewport_width": 320.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 360,
+          "height": 1000,
+          "body_scroll_width": 360.0,
+          "viewport_width": 360.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 375,
+          "height": 1000,
+          "body_scroll_width": 375.0,
+          "viewport_width": 375.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 390,
+          "height": 1000,
+          "body_scroll_width": 390.0,
+          "viewport_width": 390.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\browser_qa\\watashi_no_daidokoro\\390_fullpage.png",
+          "status": "PASS"
+        },
+        {
+          "width": 430,
+          "height": 1000,
+          "body_scroll_width": 430.0,
+          "viewport_width": 430.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 768,
+          "height": 1000,
+          "body_scroll_width": 768.0,
+          "viewport_width": 768.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1024,
+          "height": 1000,
+          "body_scroll_width": 1024.0,
+          "viewport_width": 1024.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1280,
+          "height": 1000,
+          "body_scroll_width": 1280.0,
+          "viewport_width": 1280.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "",
+          "status": "PASS"
+        },
+        {
+          "width": 1440,
+          "height": 1000,
+          "body_scroll_width": 1440.0,
+          "viewport_width": 1440.0,
+          "horizontal_overflow_px": 0.0,
+          "line_issues": [],
+          "console_errors": [],
+          "page_errors": [],
+          "request_failures": [],
+          "non_critical_console_events": [],
+          "screenshot": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\browser_qa\\watashi_no_daidokoro\\1440_fullpage.png",
+          "status": "PASS"
+        }
+      ],
+      "photo_roles": [
+        "hero_shared_cooking",
+        "ingredient_story",
+        "hands_in_action",
+        "finished_table"
+      ],
+      "desktop_capture": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\watashi_no_daidokoro\\desktop_1440.png",
+      "mobile_capture": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\watashi_no_daidokoro\\mobile_390.png",
+      "manual_edit_count": 0
+    }
+  ],
+  "browser": {
+    "playwright": "1.63.0",
+    "chromium": "153.0.8010.12"
+  },
+  "structural_similarity": {
+    "schema_version": "baseline_vs_round1h_v1",
+    "baseline": {
+      "signatures": {
+        "maylynn_paint": {
+          "section_sequence": [
+            "hero_orientation",
+            "company_truth",
+            "service_process",
+            "next_step",
+            "cta_zone"
+          ],
+          "composition_sequence": [
+            "field_cover",
+            "material_inspection",
+            "work_sequence",
+            "quote_route",
+            "closing_field"
+          ],
+          "cta_sequence": [
+            "orientation",
+            "proof_orientation",
+            "clarity",
+            "action",
+            "primary_conversion"
+          ],
+          "photo_sequence": [
+            "generated_material_field_scene",
+            "generated_material_field_scene",
+            "generated_material_field_scene",
+            "generated_material_field_scene",
+            "generated_material_field_scene"
+          ],
+          "rhythm_signature": [
+            "peak",
+            "peak",
+            "quiet",
+            "quiet",
+            "peak"
+          ],
+          "card_group_pattern": [
+            "editorial_split",
+            "material_detail",
+            "process_sequence",
+            "progressive_story",
+            "editorial_split"
+          ],
+          "narrative_family": "craft",
+          "narrative_state_sequence": [
+            "hero_orientation",
+            "company_truth",
+            "service_process",
+            "next_step",
+            "cta_zone"
+          ],
+          "section_purpose_sequence": [
+            "hero_orientation",
+            "company_truth",
+            "service_process",
+            "next_step",
+            "cta_zone"
+          ],
+          "section_heading_signature": [
+            "外壁塗装",
+            "外壁塗装の入口",
+            "確認の順番を知る",
+            "見積の入口",
+            "見積の次の一手"
+          ],
+          "visual_grammar_sequence": [
+            "field_cover",
+            "material_inspection",
+            "work_sequence",
+            "quote_route",
+            "closing_field"
+          ],
+          "cta_delta": [
+            [
+              "orientation",
+              "orientation"
+            ],
+            [
+              "proof_orientation",
+              "proof_orientation"
+            ],
+            [
+              "clarity",
+              "clarity"
+            ],
+            [
+              "action",
+              "action"
+            ],
+            [
+              "primary_conversion",
+              "primary_conversion"
+            ]
+          ],
+          "mobile_delta": [
+            "close",
+            "contact",
+            "opening",
+            "truth",
+            "way_in"
+          ],
+          "screenshot_peak_placement": []
+        },
+        "nagi_no_mirai": {
+          "section_sequence": [
+            "hero_orientation",
+            "company_truth",
+            "next_step",
+            "service_process",
+            "cta_zone"
+          ],
+          "composition_sequence": [
+            "care_invitation",
+            "care_surface",
+            "care_contact",
+            "arrival_sequence",
+            "closing_field"
+          ],
+          "cta_sequence": [
+            "orientation",
+            "proof_orientation",
+            "action",
+            "clarity",
+            "primary_conversion"
+          ],
+          "photo_sequence": [
+            "generated_care_experience_scene",
+            "generated_care_experience_scene",
+            "generated_care_experience_scene",
+            "generated_care_experience_scene",
+            "generated_care_experience_scene"
+          ],
+          "rhythm_signature": [
+            "peak",
+            "peak",
+            "quiet",
+            "quiet",
+            "peak"
+          ],
+          "card_group_pattern": [
+            "sensory_pause",
+            "immersive_image",
+            "progressive_story",
+            "human_dialogue",
+            "sensory_pause"
+          ],
+          "narrative_family": "sensory_experience",
+          "narrative_state_sequence": [
+            "hero_orientation",
+            "company_truth",
+            "next_step",
+            "service_process",
+            "cta_zone"
+          ],
+          "section_purpose_sequence": [
+            "hero_orientation",
+            "company_truth",
+            "next_step",
+            "service_process",
+            "cta_zone"
+          ],
+          "section_heading_signature": [
+            "ヘッドスパ",
+            "ヘッドスパの入口",
+            "予約の入口",
+            "確認の順番を知る",
+            "予約の次の一手"
+          ],
+          "visual_grammar_sequence": [
+            "care_invitation",
+            "care_surface",
+            "care_contact",
+            "arrival_sequence",
+            "closing_field"
+          ],
+          "cta_delta": [
+            [
+              "orientation",
+              "orientation"
+            ],
+            [
+              "proof_orientation",
+              "proof_orientation"
+            ],
+            [
+              "action",
+              "action"
+            ],
+            [
+              "clarity",
+              "clarity"
+            ],
+            [
+              "primary_conversion",
+              "primary_conversion"
+            ]
+          ],
+          "mobile_delta": [
+            "close",
+            "contact",
+            "opening",
+            "truth",
+            "way_in"
+          ],
+          "screenshot_peak_placement": []
+        },
+        "watashi_no_daidokoro": {
+          "section_sequence": [
+            "hero_orientation",
+            "service_process",
+            "company_truth",
+            "next_step",
+            "cta_zone"
+          ],
+          "composition_sequence": [
+            "studio_cover",
+            "session_sequence",
+            "table_spread",
+            "lesson_contact",
+            "closing_field"
+          ],
+          "cta_sequence": [
+            "orientation",
+            "clarity",
+            "proof_orientation",
+            "action",
+            "primary_conversion"
+          ],
+          "photo_sequence": [
+            "generated_studio_invitation_scene",
+            "generated_studio_invitation_scene",
+            "generated_studio_invitation_scene",
+            "generated_studio_invitation_scene",
+            "generated_studio_invitation_scene"
+          ],
+          "rhythm_signature": [
+            "peak",
+            "quiet",
+            "peak",
+            "quiet",
+            "peak"
+          ],
+          "card_group_pattern": [
+            "table_scene",
+            "process_sequence",
+            "human_dialogue",
+            "progressive_story",
+            "table_scene"
+          ],
+          "narrative_family": "participation",
+          "narrative_state_sequence": [
+            "hero_orientation",
+            "service_process",
+            "company_truth",
+            "next_step",
+            "cta_zone"
+          ],
+          "section_purpose_sequence": [
+            "hero_orientation",
+            "service_process",
+            "company_truth",
+            "next_step",
+            "cta_zone"
+          ],
+          "section_heading_signature": [
+            "料理教室",
+            "確認の順番を知る",
+            "料理教室の入口",
+            "申込みの入口",
+            "申込みの次の一手"
+          ],
+          "visual_grammar_sequence": [
+            "studio_cover",
+            "session_sequence",
+            "table_spread",
+            "lesson_contact",
+            "closing_field"
+          ],
+          "cta_delta": [
+            [
+              "orientation",
+              "orientation"
+            ],
+            [
+              "clarity",
+              "clarity"
+            ],
+            [
+              "proof_orientation",
+              "proof_orientation"
+            ],
+            [
+              "action",
+              "action"
+            ],
+            [
+              "primary_conversion",
+              "primary_conversion"
+            ]
+          ],
+          "mobile_delta": [
+            "close",
+            "contact",
+            "opening",
+            "truth",
+            "way_in"
+          ],
+          "screenshot_peak_placement": []
+        }
+      },
+      "pairwise": {
+        "maylynn_paint__nagi_no_mirai": 0.4,
+        "maylynn_paint__watashi_no_daidokoro": 0.3667,
+        "nagi_no_mirai__watashi_no_daidokoro": 0.2667
+      },
+      "average": 0.3445,
+      "narrative_pairwise": {
+        "maylynn_paint__nagi_no_mirai": 0.375,
+        "maylynn_paint__watashi_no_daidokoro": 0.375,
+        "nagi_no_mirai__watashi_no_daidokoro": 0.3
+      },
+      "narrative_average": 0.35
+    },
+    "new": {
+      "signatures": {
+        "maylynn_paint": {
+          "section_sequence": [
+            "hero_orientation",
+            "service_process",
+            "company_truth",
+            "next_step",
+            "cta_zone"
+          ],
+          "composition_sequence": [
+            "field_cover",
+            "work_sequence",
+            "material_inspection",
+            "quote_route",
+            "closing_field"
+          ],
+          "cta_sequence": [
+            "orientation",
+            "clarity",
+            "proof_orientation",
+            "action",
+            "primary_conversion"
+          ],
+          "photo_sequence": [
+            "generated_material_field_scene",
+            "generated_material_field_scene",
+            "generated_material_field_scene",
+            "generated_material_field_scene",
+            "generated_material_field_scene"
+          ],
+          "rhythm_signature": [
+            "peak",
+            "quiet",
+            "peak",
+            "quiet",
+            "peak"
+          ],
+          "card_group_pattern": [
+            "editorial_split",
+            "process_sequence",
+            "material_detail",
+            "progressive_story",
+            "editorial_split"
+          ],
+          "narrative_family": "craft",
+          "narrative_state_sequence": [
+            "observe",
+            "read_material",
+            "watch_hands",
+            "imagine_change",
+            "consult"
+          ],
+          "section_purpose_sequence": [
+            "ESTABLISH_CONTEXT",
+            "SHOW_DETAIL",
+            "SHOW_CRAFT",
+            "SHOW_TRANSFORMATION",
+            "ENABLE_ACTION"
+          ],
+          "section_heading_signature": [
+            "家の輪郭を見つめる",
+            "素材に触れて考える",
+            "手仕事の順番を見る",
+            "仕上がりを思い描く",
+            "状態から相談する"
+          ],
+          "visual_grammar_sequence": [
+            "immersive_image",
+            "material_detail",
+            "process_sequence",
+            "asymmetric_editorial",
+            "human_dialogue"
+          ],
+          "cta_delta": [
+            [
+              "discovery",
+              "まず状況を見渡す"
+            ],
+            [
+              "reassurance",
+              "会社固有の範囲を確かめる"
+            ],
+            [
+              "action",
+              "quote_requestの確認へ進む"
+            ]
+          ],
+          "mobile_delta": [
+            "cta_timing",
+            "hero_crop",
+            "image_prominence",
+            "section_density",
+            "visual_text_order",
+            "whitespace"
+          ],
+          "screenshot_peak_placement": [
+            null,
+            null
+          ]
+        },
+        "nagi_no_mirai": {
+          "section_sequence": [
+            "hero_orientation",
+            "company_truth",
+            "next_step",
+            "service_process",
+            "cta_zone"
+          ],
+          "composition_sequence": [
+            "care_invitation",
+            "care_surface",
+            "care_contact",
+            "arrival_sequence",
+            "closing_field"
+          ],
+          "cta_sequence": [
+            "orientation",
+            "proof_orientation",
+            "action",
+            "clarity",
+            "primary_conversion"
+          ],
+          "photo_sequence": [
+            "generated_care_experience_scene",
+            "generated_care_experience_scene",
+            "generated_care_experience_scene",
+            "generated_care_experience_scene",
+            "generated_care_experience_scene"
+          ],
+          "rhythm_signature": [
+            "peak",
+            "peak",
+            "quiet",
+            "quiet",
+            "peak"
+          ],
+          "card_group_pattern": [
+            "sensory_pause",
+            "immersive_image",
+            "progressive_story",
+            "human_dialogue",
+            "sensory_pause"
+          ],
+          "narrative_family": "sensory_experience",
+          "narrative_state_sequence": [
+            "arrive",
+            "settle",
+            "feel_care",
+            "choose_time",
+            "reserve"
+          ],
+          "section_purpose_sequence": [
+            "CREATE_DESIRE",
+            "CREATE_PAUSE",
+            "SHOW_EXPERIENCE",
+            "REDUCE_UNCERTAINTY",
+            "ENABLE_ACTION"
+          ],
+          "section_heading_signature": [
+            "空間に入る",
+            "静けさを感じる",
+            "触れられる時間",
+            "過ごし方を選ぶ",
+            "その時間を予約する"
+          ],
+          "visual_grammar_sequence": [
+            "immersive_image",
+            "sensory_pause",
+            "human_dialogue",
+            "progressive_story",
+            "asymmetric_editorial"
+          ],
+          "cta_delta": [
+            [
+              "discovery",
+              "まず状況を見渡す"
+            ],
+            [
+              "reassurance",
+              "会社固有の範囲を確かめる"
+            ],
+            [
+              "action",
+              "reservationの確認へ進む"
+            ]
+          ],
+          "mobile_delta": [
+            "cta_timing",
+            "hero_crop",
+            "image_prominence",
+            "section_density",
+            "visual_text_order",
+            "whitespace"
+          ],
+          "screenshot_peak_placement": [
+            null,
+            null,
+            null
+          ]
+        },
+        "watashi_no_daidokoro": {
+          "section_sequence": [
+            "hero_orientation",
+            "next_step",
+            "service_process",
+            "company_truth",
+            "cta_zone"
+          ],
+          "composition_sequence": [
+            "studio_cover",
+            "lesson_contact",
+            "session_sequence",
+            "table_spread",
+            "closing_field"
+          ],
+          "cta_sequence": [
+            "orientation",
+            "action",
+            "clarity",
+            "proof_orientation",
+            "primary_conversion"
+          ],
+          "photo_sequence": [
+            "generated_studio_invitation_scene",
+            "generated_studio_invitation_scene",
+            "generated_studio_invitation_scene",
+            "generated_studio_invitation_scene",
+            "generated_studio_invitation_scene"
+          ],
+          "rhythm_signature": [
+            "peak",
+            "quiet",
+            "quiet",
+            "peak",
+            "peak"
+          ],
+          "card_group_pattern": [
+            "table_scene",
+            "progressive_story",
+            "process_sequence",
+            "human_dialogue",
+            "table_scene"
+          ],
+          "narrative_family": "participation",
+          "narrative_state_sequence": [
+            "encounter",
+            "touch",
+            "make",
+            "share",
+            "join"
+          ],
+          "section_purpose_sequence": [
+            "CREATE_DESIRE",
+            "SHOW_PARTICIPATION",
+            "SHOW_PROCESS",
+            "SHOW_TRANSFORMATION",
+            "ENABLE_ACTION"
+          ],
+          "section_heading_signature": [
+            "食材に出会う",
+            "手を動かしてみる",
+            "料理ができていく",
+            "食卓を囲む",
+            "参加を考える"
+          ],
+          "visual_grammar_sequence": [
+            "table_scene",
+            "human_dialogue",
+            "process_sequence",
+            "table_scene",
+            "asymmetric_editorial"
+          ],
+          "cta_delta": [
+            [
+              "discovery",
+              "まず状況を見渡す"
+            ],
+            [
+              "reassurance",
+              "会社固有の範囲を確かめる"
+            ],
+            [
+              "action",
+              "applicationの確認へ進む"
+            ]
+          ],
+          "mobile_delta": [
+            "cta_timing",
+            "hero_crop",
+            "image_prominence",
+            "section_density",
+            "visual_text_order",
+            "whitespace"
+          ],
+          "screenshot_peak_placement": [
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "pairwise": {
+        "maylynn_paint__nagi_no_mirai": 0.2667,
+        "maylynn_paint__watashi_no_daidokoro": 0.2667,
+        "nagi_no_mirai__watashi_no_daidokoro": 0.3
+      },
+      "average": 0.2778,
+      "narrative_pairwise": {
+        "maylynn_paint__nagi_no_mirai": 0.3417,
+        "maylynn_paint__watashi_no_daidokoro": 0.3667,
+        "nagi_no_mirai__watashi_no_daidokoro": 0.4083
+      },
+      "narrative_average": 0.3722
+    },
+    "difference": {
+      "average": -0.0667,
+      "narrative_average": 0.0222,
+      "lower_than_baseline": true,
+      "narrative_distinctness_checked": true
+    }
+  },
+  "human_review_ready": true,
+  "manual_lp_edit": 0,
+  "remaining_issues": []
+}

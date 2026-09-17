@@ -1,0 +1,135 @@
+{
+  "schema_version": "production_generation_v1",
+  "art_direction_concept": "少人数でストウブ無水料理を学ぶ料理教室。を、申込み前の疑問をほどくの入口として見せる。",
+  "visual_mood": "open studio energy with tools, hands and an invitation to try",
+  "visual_authority_priority": [
+    "PERSON",
+    "WORLD",
+    "PLACE",
+    "MATERIAL",
+    "TYPOGRAPHY",
+    "DOCUMENT"
+  ],
+  "color_logic": {
+    "ink": "#1c1917",
+    "accent": "#d8a58c",
+    "paper": "#f6eee7",
+    "reason": "PERSON is the first evidence-bearing authority."
+  },
+  "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+  "composition_logic": "A studio-table opening, shared-tool evidence surface and session path; the page invites a first try rather than listing a menu.",
+  "photography_logic": "Role-driven photography is the primary visual authority; vector scenes are support only.",
+  "visual_scene": "studio_invitation",
+  "visual_source": "photography_pipeline",
+  "photo_replacement_readiness": {
+    "status": "READY_WITH_PROXY",
+    "proxy_role": "role_selected_photography_asset",
+    "replacement_targets": [
+      "実店舗・実現場・実商品・実人物写真"
+    ],
+    "layout_constraints": [
+      "同一役割の実写真を同じ比率へ差し替え可能",
+      "文字重なりなし",
+      "中央焦点を保持"
+    ],
+    "proof_role": "visual_context_only; not evidence of a real result or location",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only"
+  },
+  "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+  "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+  "motion_logic": "open_the_session; one restrained reveal per section; no infinite or blocking animation.",
+  "forbidden_patterns": [
+    "rounded card wall",
+    "generic three-column grid",
+    "unsupported trust badge",
+    "stock person",
+    "marquee",
+    "parallax"
+  ],
+  "craft_catch": "A session mark carries the customer from curiosity to a first activity they can name.",
+  "layout_profile": "studio_invitation",
+  "art_direction_dimensions": {
+    "macro_composition": "studio_invitation",
+    "visual_density": "playful_index",
+    "negative_space": "lesson_pauses",
+    "surface": "studio_table",
+    "section_transitions": "session_marks",
+    "rhythm": "notice_then_try",
+    "motion": "open_the_session",
+    "evidence_density": "MEDIUM",
+    "visual_authority": "PERSON",
+    "crop_logic": "no client image dependency; abstract geometry carries the role"
+  },
+  "photo_role_map": {
+    "schema_version": "photo_role_map_v1",
+    "selection_mode": "role_driven_not_fixed_count",
+    "roles": [
+      {
+        "photo_role": "hero_shared_cooking",
+        "visual_subject": "手を動かしながら学ぶ共有時間",
+        "business_purpose": "完成品だけでなく教室体験を伝える",
+        "replacement_target": "実教室・レッスン風景",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "experience_context_only",
+        "placement": "hero_dominant_image"
+      },
+      {
+        "photo_role": "ingredient_story",
+        "visual_subject": "食材・道具・下準備の手触り",
+        "business_purpose": "素材への関心と暮らしの温度を伝える",
+        "replacement_target": "実食材・実テーブル",
+        "preferred_orientation": "square",
+        "crop_tolerance": "tight",
+        "people_distance": "none",
+        "proof_intent": "material_context_only",
+        "placement": "mid_frame_proof_experience"
+      },
+      {
+        "photo_role": "hands_in_action",
+        "visual_subject": "包丁・混ぜる・盛り付け等の手元",
+        "business_purpose": "学びの具体性を見せる",
+        "replacement_target": "実レッスン中の手元",
+        "preferred_orientation": "portrait",
+        "crop_tolerance": "tight",
+        "people_distance": "close",
+        "proof_intent": "craft_context_only",
+        "placement": "craft_detail_image",
+        "secondary_placement": "quiet_chapter_image"
+      },
+      {
+        "photo_role": "finished_table",
+        "visual_subject": "完成物と共有する場",
+        "business_purpose": "体験後の達成感を想起させる",
+        "replacement_target": "実教室の完成物・食卓",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "far",
+        "proof_intent": "outcome_context_only",
+        "placement": "quiet_chapter_image"
+      }
+    ],
+    "section_role_map": {
+      "hero_orientation": "hero_shared_cooking",
+      "company_truth": "ingredient_story",
+      "service_process": "hands_in_action",
+      "next_step": "finished_table",
+      "cta_zone": "finished_table"
+    }
+  },
+  "asset_selection_policy": {
+    "priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only_not_primary_photography"
+  },
+  "vector_role": "supporting_only"
+}
