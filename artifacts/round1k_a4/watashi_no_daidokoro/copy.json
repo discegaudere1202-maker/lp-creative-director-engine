@@ -1,0 +1,89 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "わたしの台所",
+    "headline": "料理教室",
+    "headline_lines": [
+      "料理教室"
+    ],
+    "supporting": "福岡市西区で料理教室を探している方へ。少人数でストウブ無水料理を学ぶ料理教室。。人の手で寄り添う時間を手がかりに、次の一歩を考えます。",
+    "cta": "申込みを相談する",
+    "microcopy": "福岡市西区｜人の手で寄り添う時間から次の案内へ。"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "食材に出会う",
+      "headline_lines": [
+        "食材に出会う"
+      ],
+      "body": "福岡市西区の料理教室。少人数でストウブ無水料理を学ぶ料理教室。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "手を動かしてみる",
+      "headline_lines": [
+        "手を動かしてみる"
+      ],
+      "body": "人の手で寄り添う時間を知り、少人数でストウブ無水料理を学ぶ料理教室と向き合う時間をつくります。",
+      "evidence_claims": [
+        "少人数でストウブ無水料理を学ぶ料理教室。",
+        "福岡市西区で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "料理ができていく",
+      "headline_lines": [
+        "料理ができていく"
+      ],
+      "body": "人の手で寄り添う時間を手がかりに、少人数でストウブ無水料理を学ぶ料理教室の輪郭をたどります。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "食卓を囲む",
+      "headline_lines": [
+        "食卓を囲む"
+      ],
+      "body": "少人数でストウブ無水料理を学ぶ料理教室。",
+      "evidence_claims": [
+        "少人数でストウブ無水料理を学ぶ料理教室。",
+        "福岡市西区で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "参加を考える",
+      "headline_lines": [
+        "参加を考える"
+      ],
+      "body": "人の手で寄り添う時間から、少人数でストウブ無水料理を学ぶ料理教室の次の一歩へ進みます。",
+      "evidence_claims": [],
+      "cta": "申込みを相談する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "meaning_units_not_character_count"
+  },
+  "process_steps": [
+    "やってみたいことを選ぶ",
+    "内容と場所を確認する",
+    "参加を相談する"
+  ],
+  "section_naming_gate": {
+    "status": "PASS",
+    "violations": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "anchors": [
+        "MATERIAL",
+        "PLACE",
+        "PERSON",
+        "TYPOGRAPHY",
+        "DOCUMENT"
+      ],
+      "visible_lexicon": [
+        "素材",
+        "仕上がり",
+        "手",
+        "時間"
+      ]
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "anchors": [
+        "PERSON",
+        "SENSORY",
+        "PLACE",
+        "MATERIAL",
+        "TYPOGRAPHY",
+        "DOCUMENT"
+      ],
+      "visible_lexicon": [
+        "手",
+        "時間",
+        "空間"
+      ]
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "anchors": [
+        "PERSON",
+        "WORLD",
+        "PLACE",
+        "MATERIAL",
+        "TYPOGRAPHY",
+        "DOCUMENT"
+      ],
+      "visible_lexicon": [
+        "手",
+        "時間",
+        "食材",
+        "料理",
+        "食卓"
+      ]
+    }
+  ]
+}

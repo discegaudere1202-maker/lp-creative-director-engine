@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "pairs": [
+    {
+      "left": "maylynn_paint",
+      "right": "nagi_no_mirai",
+      "normalized_exact_overlap": 0,
+      "status": "PASS"
+    },
+    {
+      "left": "maylynn_paint",
+      "right": "watashi_no_daidokoro",
+      "normalized_exact_overlap": 0,
+      "status": "PASS"
+    },
+    {
+      "left": "nagi_no_mirai",
+      "right": "watashi_no_daidokoro",
+      "normalized_exact_overlap": 0,
+      "status": "PASS"
+    }
+  ],
+  "name_swappable_major_sentence_count": 0
+}

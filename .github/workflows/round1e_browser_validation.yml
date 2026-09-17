@@ -1,4 +1,4 @@
-name: Round 1K-A3 Semantic Render Validation
+name: Round 1K-A4 Public Copy Validation
 
 on:
   workflow_dispatch:
@@ -14,6 +14,7 @@ on:
       - 'src/lp_engine/structural_similarity.py'
       - 'scripts/run_round1f_validation.py'
       - 'scripts/run_round1k_a2_validation.py'
+      - 'scripts/run_round1k_a4_validation.py'
       - 'scripts/run_round1e_c2_validation.py'
       - 'scripts/preflight_photography_assets.py'
       - 'tests/test_round1e_c2_harness.py'
@@ -22,6 +23,7 @@ on:
       - 'tests/test_premium_scene.py'
       - 'artifacts/round1k_a2/**'
       - 'artifacts/round1k_a3/**'
+      - 'artifacts/round1k_a4/**'
       - 'assets/photography/**'
 
 jobs:
@@ -41,32 +43,32 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Photography preflight
         run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
-      - name: Round 1K-A3 Engine regeneration, semantic contracts and 27 viewport QA
+      - name: Round 1K-A4 Engine regeneration, public copy contracts and 27 viewport QA
         continue-on-error: true
         env:
-          ROUND_OUTPUT_ROOT: artifacts/round1k_a3
-        run: python scripts/run_round1k_a2_validation.py
+          ROUND_OUTPUT_ROOT: artifacts/round1k_a4
+        run: python scripts/run_round1k_a4_validation.py
       - name: Related tests
         if: always()
         run: python -m unittest tests.test_creative_genome tests.test_photography_asset_preflight tests.test_photography_pipeline tests.test_production_generation tests.test_pipeline_evidence_safety tests.test_evidence_safety tests.test_evidence_safety_adversarial
-      - name: Upload Round 1K-A3 semantic artifacts
+      - name: Upload Round 1K-A4 public copy artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: round1k-a3-semantic-${{ github.sha }}
+          name: round1k-a4-copy-${{ github.sha }}
           path: |
-            artifacts/round1k_a3/summary.json
-            artifacts/round1k_a3/diagnostics/
-            artifacts/round1k_a3/reports/
-            artifacts/round1k_a3/browser_qa/
-            artifacts/round1k_a3/technical_captures/
-            artifacts/round1k_a3/*/index.html
-            artifacts/round1k_a3/*/creative_genome.json
-            artifacts/round1k_a3/*/narrative_architecture.json
-            artifacts/round1k_a3/*/premium_scene_plan.json
-            artifacts/round1k_a3/*/quality_gate_report.json
-            artifacts/round1k_a3/*/safety_replacement_metadata.json
+            artifacts/round1k_a4/summary.json
+            artifacts/round1k_a4/diagnostics/
+            artifacts/round1k_a4/reports/
+            artifacts/round1k_a4/browser_qa/
+            artifacts/round1k_a4/technical_captures/
+            artifacts/round1k_a4/*/index.html
+            artifacts/round1k_a4/*/creative_genome.json
+            artifacts/round1k_a4/*/narrative_architecture.json
+            artifacts/round1k_a4/*/premium_scene_plan.json
+            artifacts/round1k_a4/*/quality_gate_report.json
+            artifacts/round1k_a4/*/safety_replacement_metadata.json
           if-no-files-found: warn
       - name: Final QA gate
         if: always()
-        run: python -c "import json,sys; p=json.load(open('artifacts/round1k_a3/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1k_a3_ready') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 else 1)"
+        run: python -c "import json,sys; p=json.load(open('artifacts/round1k_a4/summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('round1k_a4_ready') and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 else 1)"

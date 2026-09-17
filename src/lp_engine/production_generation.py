@@ -520,9 +520,12 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     anchor = _text(strategy.get("core_message")) or category
     _, goal_phrase = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     goal_noun = GOAL_NOUNS.get(goal, "相談")
-    channel = _text((understanding.get("contact_channels") or {}).get("label")) or "公開された連絡先"
+    channel = _text((understanding.get("contact_channels") or {}).get("label")) or ""
     truth_fragment = truth.rstrip("。.!！？!? ")
     profile = _text(strategy.get("layout_profile")) or "editorial_rail"
+    authorities = list(strategy.get("visual_authority_priority") or [])
+    signature_lexicon = {"MATERIAL":"素材の状態と仕上がり","CRAFT":"手を動かす工程","PLACE":"住まいのある場所","SENSORY":"触れられる時間と空間","PERSON":"人の手で寄り添う時間","PRODUCT":"食材とできあがる料理","PARTICIPATION":"一緒に手を動かす時間","WORLD":"食卓へつながる風景"}
+    signature_phrase = next((signature_lexicon[x] for x in authorities if x in signature_lexicon), category or "その人の時間")
     process_steps = {
         "field_ledger": ["状態を伝える", "対応範囲を確認する", "見積を相談する"],
         "care_rhythm": ["気になることを話す", "過ごし方を選ぶ", "予約を相談する"],
@@ -548,9 +551,9 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
             "eyebrow": company_name,
             "headline": headline,
             "headline_lines": _line_shape(headline, max_chars=9 if field_validation else 7),
-            "supporting": f"{location}で{category}を探している方へ。{truth}。{customer_before or '気になること'}から、{channel}へ進む入口を整理します。",
+            "supporting": f"{location}で{category}を探している方へ。{truth}。{signature_phrase}を手がかりに、次の一歩を考えます。",
             "cta": cta,
-            "microcopy": f"{location}｜{channel}の公開導線を確認できます。",
+            "microcopy": f"{location}｜{signature_phrase}から次の案内へ。",
         },
         "sections": [
             {
@@ -560,9 +563,9 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                 "body": {
                     "opening": f"{location}の{category}。{truth}",
                     "truth": truth,
-                    "way_in": f"{customer_before or 'いまの状況'}。{_text(understanding.get('customer_state', {}).get('barrier')) or '何を伝えるか迷う状態'}から、{truth_fragment or scope or category}を確認できる順番へ変えます。",
-                    "contact": f"{channel}へ進み、{truth_fragment or scope or category}について確認したいことを知らせる入口です。",
-                    "close": f"{channel}へ進み、{truth_fragment or scope or category}について最初の確認をする。",
+                    "way_in": f"{signature_phrase}を手がかりに、{truth_fragment or scope or category}の輪郭をたどります。",
+                    "contact": f"{signature_phrase}を知り、{truth_fragment or scope or category}と向き合う時間をつくります。",
+                    "close": f"{signature_phrase}から、{truth_fragment or scope or category}の次の一歩へ進みます。",
                 }.get(item["section_id"], item["key_message"]),
                 "evidence_claims": claims if item["section_id"] in {"truth", "contact"} else [],
                 "cta": cta if item["section_id"] == "close" else "",
