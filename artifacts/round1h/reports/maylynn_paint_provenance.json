@@ -1,0 +1,20 @@
+{
+  "company": "maylynn_paint",
+  "commit_sha": "565d2dbdab662f886fd4f8c77983a535ccbbaa9b",
+  "html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\maylynn_paint\\index.html",
+  "html_sha256": "88f7d365521d136800f581cac085653b331c8d9df26a93d690889f2f291b02c9",
+  "creative_genome_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\maylynn_paint\\creative_genome.json",
+  "creative_genome_sha256": "b53d2a867c56ea1206321be077b01322daceb3d42e46c2d596e76965b3030af1",
+  "narrative_architecture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\maylynn_paint\\narrative_architecture.json",
+  "narrative_architecture_sha256": "2a66b5377de9ae9b2d390cffb6a82a8948905384c0eb6c3e679075c73ff5b97d",
+  "desktop_capture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\maylynn_paint\\desktop_1440.png",
+  "desktop_capture_sha256": "d9a2f786e05a3781934378a27a9482c9a1aedfb2f2eb22a1afa0649a731db99f",
+  "mobile_capture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\maylynn_paint\\mobile_390.png",
+  "mobile_capture_sha256": "50854634989099f8ac85ea474ee6403f22a68e121b8dc444c459f3ee3f26fd49",
+  "browser": {
+    "playwright": "1.63.0",
+    "chromium": "153.0.8010.12"
+  },
+  "timestamp": "2026-09-17T01:43:19.705597+00:00",
+  "source_round": "round1h"
+}

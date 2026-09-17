@@ -1,0 +1,52 @@
+{
+  "schema_version": "human_review_provenance_v1",
+  "source_round": "round1h",
+  "commit_sha": "565d2dbdab662f886fd4f8c77983a535ccbbaa9b",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "html_path": "artifacts/round1h/maylynn_paint/index.html",
+      "html_sha256": "88f7d365521d136800f581cac085653b331c8d9df26a93d690889f2f291b02c9",
+      "creative_genome_path": "artifacts/round1h/maylynn_paint/creative_genome.json",
+      "creative_genome_sha256": "b53d2a867c56ea1206321be077b01322daceb3d42e46c2d596e76965b3030af1",
+      "narrative_architecture_path": "artifacts/round1h/maylynn_paint/narrative_architecture.json",
+      "narrative_architecture_sha256": "2a66b5377de9ae9b2d390cffb6a82a8948905384c0eb6c3e679075c73ff5b97d",
+      "desktop_capture_path": "artifacts/round1h/human_review/maylynn_paint/desktop_1440.png",
+      "desktop_capture_sha256": "d9a2f786e05a3781934378a27a9482c9a1aedfb2f2eb22a1afa0649a731db99f",
+      "mobile_capture_path": "artifacts/round1h/human_review/maylynn_paint/mobile_390.png",
+      "mobile_capture_sha256": "50854634989099f8ac85ea474ee6403f22a68e121b8dc444c459f3ee3f26fd49",
+      "browser": {"playwright": "1.63.0", "chromium": "153.0.8010.12"},
+      "source_round": "round1h"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "html_path": "artifacts/round1h/nagi_no_mirai/index.html",
+      "html_sha256": "884eb6af44655b1d0258351bb45b99b7e4f021f489c62d55c4fd8ff9b7cd0f66",
+      "creative_genome_path": "artifacts/round1h/nagi_no_mirai/creative_genome.json",
+      "creative_genome_sha256": "3d32d50a32d6a04d717849bd6c68286045079bb604ff48cd89cb05bcd8219928",
+      "narrative_architecture_path": "artifacts/round1h/nagi_no_mirai/narrative_architecture.json",
+      "narrative_architecture_sha256": "6d520aef8fa2b0e08af409db9f271e7c7939ec0479c6f5a41937a4fba6ee9c42",
+      "desktop_capture_path": "artifacts/round1h/human_review/nagi_no_mirai/desktop_1440.png",
+      "desktop_capture_sha256": "7bac3def152c5d614ae21e5dfb5cfa44bbb219b99947817cd1ecad1d50a04460",
+      "mobile_capture_path": "artifacts/round1h/human_review/nagi_no_mirai/mobile_390.png",
+      "mobile_capture_sha256": "b25514dad22cd11ee7d41ce3aef8ed9959b17faa276e3d050350a2e77894ee19",
+      "browser": {"playwright": "1.63.0", "chromium": "153.0.8010.12"},
+      "source_round": "round1h"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "html_path": "artifacts/round1h/watashi_no_daidokoro/index.html",
+      "html_sha256": "eae9a926935f3bd575316a3d94214e0718231a37df5f98418e88a7216e194c71",
+      "creative_genome_path": "artifacts/round1h/watashi_no_daidokoro/creative_genome.json",
+      "creative_genome_sha256": "3fea115b4b8021747461daf1cdaf1ad73822d95a06bcc0975de6fb6e1777883b",
+      "narrative_architecture_path": "artifacts/round1h/watashi_no_daidokoro/narrative_architecture.json",
+      "narrative_architecture_sha256": "cbfcb0f738a08688b2f50de048c25882975d3023b872bf65b7b3a37edbde6615",
+      "desktop_capture_path": "artifacts/round1h/human_review/watashi_no_daidokoro/desktop_1440.png",
+      "desktop_capture_sha256": "074ef654110878ad967527e45705000339255bfc61215e8bafab960df394692a",
+      "mobile_capture_path": "artifacts/round1h/human_review/watashi_no_daidokoro/mobile_390.png",
+      "mobile_capture_sha256": "8dbd016145080890db7eeda643f89e96f9e3e2b03d281eaffe5227fa10a42c9d",
+      "browser": {"playwright": "1.63.0", "chromium": "153.0.8010.12"},
+      "source_round": "round1h"
+    }
+  ]
+}

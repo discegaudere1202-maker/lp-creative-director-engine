@@ -34,6 +34,8 @@ class ProductionGenerationTest(unittest.TestCase):
             self.assertTrue(all(item["source"] for item in manifest["evidence_used"]))
             html = (tmp_path / "andy" / "index.html").read_text(encoding="utf-8")
             self.assertFalse(any(marker in html for marker in ("無理な勧誘", "秘密厳守", "完全無料", "No.1", "保証", "決めきらなくても")))
+            self.assertEqual(html.count('data-cta-stage="'), 3)
+            self.assertEqual({stage for stage in ("discovery", "reassurance", "action") if f'data-cta-stage="{stage}"' in html}, {"discovery", "reassurance", "action"})
 
 
     def test_research_mode_is_never_production_approved(self):

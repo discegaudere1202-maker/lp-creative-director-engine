@@ -1099,6 +1099,245 @@
       "narrative_distinctness_checked": true
     }
   },
+  "artifact_integrity": {
+    "source_round": "round1h",
+    "baseline_round": "round1f",
+    "records": [
+      {
+        "company": "maylynn_paint",
+        "viewport": "desktop_1440.png",
+        "baseline_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1f\\human_review\\maylynn_paint\\desktop_1440.png",
+        "new_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\maylynn_paint\\desktop_1440.png",
+        "baseline_sha256": "55cd8fbc25c3a0ac972350703c11fceef1547162b6f6562ec57fcac1b0eb5229",
+        "new_sha256": "d9a2f786e05a3781934378a27a9482c9a1aedfb2f2eb22a1afa0649a731db99f",
+        "equal": false
+      },
+      {
+        "company": "maylynn_paint",
+        "viewport": "mobile_390.png",
+        "baseline_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1f\\human_review\\maylynn_paint\\mobile_390.png",
+        "new_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\maylynn_paint\\mobile_390.png",
+        "baseline_sha256": "4f0d9432c93ddf342422debdc4d6be28558a1e9df1445d3c597883edf2db293d",
+        "new_sha256": "50854634989099f8ac85ea474ee6403f22a68e121b8dc444c459f3ee3f26fd49",
+        "equal": false
+      },
+      {
+        "company": "nagi_no_mirai",
+        "viewport": "desktop_1440.png",
+        "baseline_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1f\\human_review\\nagi_no_mirai\\desktop_1440.png",
+        "new_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\nagi_no_mirai\\desktop_1440.png",
+        "baseline_sha256": "83541195d3e2b932789faecec3bc96f239af6d06384c4dcba59cce7515e18d9e",
+        "new_sha256": "7bac3def152c5d614ae21e5dfb5cfa44bbb219b99947817cd1ecad1d50a04460",
+        "equal": false
+      },
+      {
+        "company": "nagi_no_mirai",
+        "viewport": "mobile_390.png",
+        "baseline_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1f\\human_review\\nagi_no_mirai\\mobile_390.png",
+        "new_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\nagi_no_mirai\\mobile_390.png",
+        "baseline_sha256": "3a0d0be5cd2d5ce730549992d28c8c191383dc5db6669571c49fd6e4a40971c3",
+        "new_sha256": "b25514dad22cd11ee7d41ce3aef8ed9959b17faa276e3d050350a2e77894ee19",
+        "equal": false
+      },
+      {
+        "company": "watashi_no_daidokoro",
+        "viewport": "desktop_1440.png",
+        "baseline_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1f\\human_review\\watashi_no_daidokoro\\desktop_1440.png",
+        "new_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\watashi_no_daidokoro\\desktop_1440.png",
+        "baseline_sha256": "40cc6379de210c6d48ebf3f44280c724d79801955dd4fa171ab257509a02eeab",
+        "new_sha256": "074ef654110878ad967527e45705000339255bfc61215e8bafab960df394692a",
+        "equal": false
+      },
+      {
+        "company": "watashi_no_daidokoro",
+        "viewport": "mobile_390.png",
+        "baseline_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1f\\human_review\\watashi_no_daidokoro\\mobile_390.png",
+        "new_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\watashi_no_daidokoro\\mobile_390.png",
+        "baseline_sha256": "013a923b7be6d2cc8b4ee2cd95fbc2e11fa67a3244921efe0a06664f3b491b82",
+        "new_sha256": "8dbd016145080890db7eeda643f89e96f9e3e2b03d281eaffe5227fa10a42c9d",
+        "equal": false
+      }
+    ],
+    "equal_count": 0,
+    "status": "PASS",
+    "failure_code": null
+  },
+  "render_contracts": [
+    {
+      "status": "PASS",
+      "expected_section_naming": [
+        "家の輪郭を見つめる",
+        "素材に触れて考える",
+        "手仕事の順番を見る",
+        "仕上がりを思い描く",
+        "状態から相談する"
+      ],
+      "rendered_headings": [
+        "外壁塗装",
+        "手仕事の順番を見る",
+        "素材に触れて考える",
+        "仕上がりを思い描く",
+        "状態から相談する"
+      ],
+      "expected_rendered_headings": [
+        "素材に触れて考える",
+        "手仕事の順番を見る",
+        "仕上がりを思い描く",
+        "状態から相談する"
+      ],
+      "expected_ctas": [
+        {
+          "stage": "discovery",
+          "destination": "#way-in",
+          "visible_label": "流れを見る"
+        },
+        {
+          "stage": "reassurance",
+          "destination": "#contact",
+          "visible_label": "できることを見る"
+        },
+        {
+          "stage": "action",
+          "destination": "#contact",
+          "visible_label": "相談を始める"
+        }
+      ],
+      "rendered_ctas": [
+        {
+          "stage": "discovery",
+          "destination": "#way-in",
+          "visible_label": "流れを見る"
+        },
+        {
+          "stage": "reassurance",
+          "destination": "#contact",
+          "visible_label": "できることを見る"
+        },
+        {
+          "stage": "action",
+          "destination": "#contact",
+          "visible_label": "相談を始める"
+        }
+      ],
+      "source_html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\maylynn_paint\\index.html"
+    },
+    {
+      "status": "PASS",
+      "expected_section_naming": [
+        "空間に入る",
+        "静けさを感じる",
+        "触れられる時間",
+        "過ごし方を選ぶ",
+        "その時間を予約する"
+      ],
+      "rendered_headings": [
+        "ヘッドスパ",
+        "静けさを感じる",
+        "過ごし方を選ぶ",
+        "触れられる時間",
+        "その時間を予約する"
+      ],
+      "expected_rendered_headings": [
+        "静けさを感じる",
+        "触れられる時間",
+        "過ごし方を選ぶ",
+        "その時間を予約する"
+      ],
+      "expected_ctas": [
+        {
+          "stage": "discovery",
+          "destination": "#way-in",
+          "visible_label": "流れを見る"
+        },
+        {
+          "stage": "reassurance",
+          "destination": "#contact",
+          "visible_label": "できることを見る"
+        },
+        {
+          "stage": "action",
+          "destination": "#contact",
+          "visible_label": "相談を始める"
+        }
+      ],
+      "rendered_ctas": [
+        {
+          "stage": "discovery",
+          "destination": "#way-in",
+          "visible_label": "流れを見る"
+        },
+        {
+          "stage": "reassurance",
+          "destination": "#contact",
+          "visible_label": "できることを見る"
+        },
+        {
+          "stage": "action",
+          "destination": "#contact",
+          "visible_label": "相談を始める"
+        }
+      ],
+      "source_html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\nagi_no_mirai\\index.html"
+    },
+    {
+      "status": "PASS",
+      "expected_section_naming": [
+        "食材に出会う",
+        "手を動かしてみる",
+        "料理ができていく",
+        "食卓を囲む",
+        "参加を考える"
+      ],
+      "rendered_headings": [
+        "料理教室",
+        "食卓を囲む",
+        "料理ができていく",
+        "手を動かしてみる",
+        "参加を考える"
+      ],
+      "expected_rendered_headings": [
+        "手を動かしてみる",
+        "料理ができていく",
+        "食卓を囲む",
+        "参加を考える"
+      ],
+      "expected_ctas": [
+        {
+          "stage": "discovery",
+          "destination": "#way-in",
+          "visible_label": "流れを見る"
+        },
+        {
+          "stage": "reassurance",
+          "destination": "#contact",
+          "visible_label": "できることを見る"
+        },
+        {
+          "stage": "action",
+          "destination": "#contact",
+          "visible_label": "相談を始める"
+        }
+      ],
+      "rendered_ctas": [
+        {
+          "stage": "discovery",
+          "destination": "#way-in",
+          "visible_label": "流れを見る"
+        },
+        {
+          "stage": "reassurance",
+          "destination": "#contact",
+          "visible_label": "できることを見る"
+        },
+        {
+          "stage": "action",
+          "destination": "#contact",
+          "visible_label": "相談を始める"
+        }
+      ],
+      "source_html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\watashi_no_daidokoro\\index.html"
+    }
+  ],
   "human_review_ready": true,
   "manual_lp_edit": 0,
   "remaining_issues": []

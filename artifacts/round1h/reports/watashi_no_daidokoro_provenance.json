@@ -1,0 +1,20 @@
+{
+  "company": "watashi_no_daidokoro",
+  "commit_sha": "565d2dbdab662f886fd4f8c77983a535ccbbaa9b",
+  "html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\watashi_no_daidokoro\\index.html",
+  "html_sha256": "eae9a926935f3bd575316a3d94214e0718231a37df5f98418e88a7216e194c71",
+  "creative_genome_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\watashi_no_daidokoro\\creative_genome.json",
+  "creative_genome_sha256": "3fea115b4b8021747461daf1cdaf1ad73822d95a06bcc0975de6fb6e1777883b",
+  "narrative_architecture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\watashi_no_daidokoro\\narrative_architecture.json",
+  "narrative_architecture_sha256": "cbfcb0f738a08688b2f50de048c25882975d3023b872bf65b7b3a37edbde6615",
+  "desktop_capture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\watashi_no_daidokoro\\desktop_1440.png",
+  "desktop_capture_sha256": "074ef654110878ad967527e45705000339255bfc61215e8bafab960df394692a",
+  "mobile_capture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\watashi_no_daidokoro\\mobile_390.png",
+  "mobile_capture_sha256": "8dbd016145080890db7eeda643f89e96f9e3e2b03d281eaffe5227fa10a42c9d",
+  "browser": {
+    "playwright": "1.63.0",
+    "chromium": "153.0.8010.12"
+  },
+  "timestamp": "2026-09-17T01:42:15.136029+00:00",
+  "source_round": "round1h"
+}

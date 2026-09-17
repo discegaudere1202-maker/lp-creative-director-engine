@@ -1,0 +1,20 @@
+{
+  "company": "nagi_no_mirai",
+  "commit_sha": "565d2dbdab662f886fd4f8c77983a535ccbbaa9b",
+  "html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\nagi_no_mirai\\index.html",
+  "html_sha256": "884eb6af44655b1d0258351bb45b99b7e4f021f489c62d55c4fd8ff9b7cd0f66",
+  "creative_genome_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\nagi_no_mirai\\creative_genome.json",
+  "creative_genome_sha256": "3d32d50a32d6a04d717849bd6c68286045079bb604ff48cd89cb05bcd8219928",
+  "narrative_architecture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\nagi_no_mirai\\narrative_architecture.json",
+  "narrative_architecture_sha256": "6d520aef8fa2b0e08af409db9f271e7c7939ec0479c6f5a41937a4fba6ee9c42",
+  "desktop_capture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\nagi_no_mirai\\desktop_1440.png",
+  "desktop_capture_sha256": "7bac3def152c5d614ae21e5dfb5cfa44bbb219b99947817cd1ecad1d50a04460",
+  "mobile_capture_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\human_review\\nagi_no_mirai\\mobile_390.png",
+  "mobile_capture_sha256": "b25514dad22cd11ee7d41ce3aef8ed9959b17faa276e3d050350a2e77894ee19",
+  "browser": {
+    "playwright": "1.63.0",
+    "chromium": "153.0.8010.12"
+  },
+  "timestamp": "2026-09-17T01:43:35.884586+00:00",
+  "source_round": "round1h"
+}

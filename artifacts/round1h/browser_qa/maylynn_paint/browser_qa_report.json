@@ -1,5 +1,5 @@
 {
-  "source": "http://127.0.0.1:57820/artifacts/round1f/maylynn_paint/index.html",
+  "source": "http://127.0.0.1:50175/artifacts/round1h/maylynn_paint/index.html",
   "status": "PASS",
   "results": [
     {
@@ -135,5 +135,9 @@
     "horizontal_overflow_px": 0.0,
     "line_issues": [],
     "screenshot": ""
-  }
+  },
+  "loaded_url": "http://127.0.0.1:50175/artifacts/round1h/maylynn_paint/index.html",
+  "source_html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\maylynn_paint\\index.html",
+  "source_html_sha256": "88f7d365521d136800f581cac085653b331c8d9df26a93d690889f2f291b02c9",
+  "git_commit_sha": "565d2dbdab662f886fd4f8c77983a535ccbbaa9b"
 }

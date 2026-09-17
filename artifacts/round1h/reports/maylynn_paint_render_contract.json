@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "expected_section_naming": [
+    "家の輪郭を見つめる",
+    "素材に触れて考える",
+    "手仕事の順番を見る",
+    "仕上がりを思い描く",
+    "状態から相談する"
+  ],
+  "rendered_headings": [
+    "外壁塗装",
+    "手仕事の順番を見る",
+    "素材に触れて考える",
+    "仕上がりを思い描く",
+    "状態から相談する"
+  ],
+  "expected_rendered_headings": [
+    "素材に触れて考える",
+    "手仕事の順番を見る",
+    "仕上がりを思い描く",
+    "状態から相談する"
+  ],
+  "expected_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "流れを見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#contact",
+      "visible_label": "できることを見る"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "相談を始める"
+    }
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "流れを見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#contact",
+      "visible_label": "できることを見る"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "相談を始める"
+    }
+  ],
+  "source_html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\maylynn_paint\\index.html"
+}

@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "expected_section_naming": [
+    "空間に入る",
+    "静けさを感じる",
+    "触れられる時間",
+    "過ごし方を選ぶ",
+    "その時間を予約する"
+  ],
+  "rendered_headings": [
+    "ヘッドスパ",
+    "静けさを感じる",
+    "過ごし方を選ぶ",
+    "触れられる時間",
+    "その時間を予約する"
+  ],
+  "expected_rendered_headings": [
+    "静けさを感じる",
+    "触れられる時間",
+    "過ごし方を選ぶ",
+    "その時間を予約する"
+  ],
+  "expected_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "流れを見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#contact",
+      "visible_label": "できることを見る"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "相談を始める"
+    }
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "流れを見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#contact",
+      "visible_label": "できることを見る"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "相談を始める"
+    }
+  ],
+  "source_html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\nagi_no_mirai\\index.html"
+}

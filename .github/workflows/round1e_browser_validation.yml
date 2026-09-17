@@ -1,4 +1,4 @@
-name: Round 1H-B Browser Validation
+name: Round 1H-C Browser Validation
 
 on:
   workflow_dispatch:
@@ -9,6 +9,7 @@ on:
       - 'src/lp_engine/browser_qa.py'
       - 'src/lp_engine/production_generation.py'
       - 'src/lp_engine/creative_genome.py'
+      - 'src/lp_engine/narrative_architecture.py'
       - 'src/lp_engine/structural_similarity.py'
       - 'scripts/run_round1f_validation.py'
       - 'scripts/run_round1e_c2_validation.py'
@@ -16,7 +17,7 @@ on:
       - 'tests/test_round1e_c2_harness.py'
       - 'tests/test_creative_genome.py'
       - 'tests/test_production_generation.py'
-      - 'artifacts/round1e_b/**'
+      - 'artifacts/round1f/**'
       - 'assets/photography/**'
 
 jobs:
@@ -36,7 +37,7 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Photography preflight
         run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
-      - name: Round 1H-B Engine regeneration, smoke and 27 viewport QA
+      - name: Round 1H-C Engine regeneration, smoke, integrity and 27 viewport QA
         continue-on-error: true
         env:
           ROUND_LABEL: round1h
@@ -50,7 +51,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: round1h-human-review-${{ github.sha }}
+          name: round1h-c-human-review-${{ github.sha }}
           path: |
             artifacts/round1h/summary.json
             artifacts/round1h/reports/

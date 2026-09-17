@@ -1,5 +1,5 @@
 {
-  "source": "http://127.0.0.1:57820/artifacts/round1f/watashi_no_daidokoro/index.html",
+  "source": "http://127.0.0.1:50175/artifacts/round1h/watashi_no_daidokoro/index.html",
   "status": "PASS",
   "results": [
     {
@@ -135,5 +135,9 @@
     "horizontal_overflow_px": 0.0,
     "line_issues": [],
     "screenshot": ""
-  }
+  },
+  "loaded_url": "http://127.0.0.1:50175/artifacts/round1h/watashi_no_daidokoro/index.html",
+  "source_html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\watashi_no_daidokoro\\index.html",
+  "source_html_sha256": "eae9a926935f3bd575316a3d94214e0718231a37df5f98418e88a7216e194c71",
+  "git_commit_sha": "565d2dbdab662f886fd4f8c77983a535ccbbaa9b"
 }

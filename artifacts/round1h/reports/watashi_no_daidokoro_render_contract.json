@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "expected_section_naming": [
+    "食材に出会う",
+    "手を動かしてみる",
+    "料理ができていく",
+    "食卓を囲む",
+    "参加を考える"
+  ],
+  "rendered_headings": [
+    "料理教室",
+    "食卓を囲む",
+    "料理ができていく",
+    "手を動かしてみる",
+    "参加を考える"
+  ],
+  "expected_rendered_headings": [
+    "手を動かしてみる",
+    "料理ができていく",
+    "食卓を囲む",
+    "参加を考える"
+  ],
+  "expected_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "流れを見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#contact",
+      "visible_label": "できることを見る"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "相談を始める"
+    }
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "流れを見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#contact",
+      "visible_label": "できることを見る"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "相談を始める"
+    }
+  ],
+  "source_html_path": "C:\\Users\\disce\\OneDrive\\Documents\\GitHub\\lp-creative-director-engine\\artifacts\\round1h\\watashi_no_daidokoro\\index.html"
+}
