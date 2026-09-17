@@ -13,6 +13,9 @@ on:
       - 'scripts/run_round1f_validation.py'
       - 'scripts/run_round1e_c2_validation.py'
       - 'scripts/preflight_photography_assets.py'
+      - 'tests/test_round1e_c2_harness.py'
+      - 'tests/test_creative_genome.py'
+      - 'tests/test_production_generation.py'
       - 'artifacts/round1e_b/**'
       - 'assets/photography/**'
 
