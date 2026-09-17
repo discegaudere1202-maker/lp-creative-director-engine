@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "broken_japanese": 0,
+  "double_punctuation": 0,
+  "companies": [
+    "maylynn_paint",
+    "nagi_no_mirai",
+    "watashi_no_daidokoro"
+  ]
+}

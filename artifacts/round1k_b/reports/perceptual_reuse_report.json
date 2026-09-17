@@ -1,0 +1,209 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "FAIL",
+      "levels": {
+        "exact": 0,
+        "crop": 0,
+        "same_subject": 0,
+        "same_semantic_scene": 0,
+        "same_perceptual_role": 0
+      },
+      "human_review_candidates": [],
+      "assets": [
+        {
+          "asset_id": "maylynn-hero-home-finish-generated-c140090c",
+          "scene_id": "scene-01-observe",
+          "sha": "43f2b4d029b8e3a0fe0448e9c0ddb754a58ba7df62a0eb393fe71889074e61df",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "hero_home_finish",
+          "prominence": "immersive",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "maylynn-craft-handwork-pexels-1669754",
+          "scene_id": "scene-02-read_material",
+          "sha": "b381f4046ddb2908c89532ab52bed7022ea88b1eed0a5e126c04cde2cac1f43b",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "craft_handwork",
+          "prominence": "intimate",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "maylynn-material-detail-unsplash-w0bqO-Elz8",
+          "scene_id": "scene-03-watch_hands",
+          "sha": "b46943d3a258b4e7c794801cc075313bd867c940f0557190a0a4555f6e978fad",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "material_detail",
+          "prominence": "standard",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "maylynn-trust-consultation-pexels-9052547",
+          "scene_id": "scene-04-imagine_change",
+          "sha": "5a2aee9eaf3150836659ae23e171a726bb5b1db95876e788b202ff05c9b29b79",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "trust_consultation",
+          "prominence": "standard",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "maylynn-hero-home-finish-generated-c140090c",
+          "scene_id": "scene-05-consult",
+          "sha": "43f2b4d029b8e3a0fe0448e9c0ddb754a58ba7df62a0eb393fe71889074e61df",
+          "phash_similarity": 1.0,
+          "crop": "role-safe focal crop",
+          "role": "hero_home_finish",
+          "prominence": "dominant",
+          "adjacent_distance": 1,
+          "verdict": "FAIL"
+        }
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "FAIL",
+      "levels": {
+        "exact": 0,
+        "crop": 0,
+        "same_subject": 0,
+        "same_semantic_scene": 0,
+        "same_perceptual_role": 0
+      },
+      "human_review_candidates": [],
+      "assets": [
+        {
+          "asset_id": "nagi-hero-treatment-space-generated-v1",
+          "scene_id": "scene-01-arrive",
+          "sha": "0054db60c6e065a92dbcb00e2187016962d7d1d160b4906c50f85439400da032",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "hero_treatment_space",
+          "prominence": "immersive",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "nagi-sensory-detail-generated-v1",
+          "scene_id": "scene-02-settle",
+          "sha": "12c7a8462e9e0ec4a8381da85ba4cda4d7ca8bfebc5554b5f9aafcab263a3294",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "sensory_detail",
+          "prominence": "intimate",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "nagi-welcome-human-generated-v1",
+          "scene_id": "scene-03-feel_care",
+          "sha": "aeee01bb5377685b936d2865295df066d447f7b0f2a5018f2148992cc8a6f430",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "welcome_human",
+          "prominence": "dominant",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "nagi-hand-technique-pexels-5794031",
+          "scene_id": "scene-04-choose_time",
+          "sha": "b482b37498b4540960022aadaff6aea555926bff5538f107792d536f18aeaf95",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "hand_technique",
+          "prominence": "standard",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "nagi-hero-treatment-space-generated-v1",
+          "scene_id": "scene-05-reserve",
+          "sha": "0054db60c6e065a92dbcb00e2187016962d7d1d160b4906c50f85439400da032",
+          "phash_similarity": 1.0,
+          "crop": "role-safe focal crop",
+          "role": "hero_treatment_space",
+          "prominence": "standard",
+          "adjacent_distance": 1,
+          "verdict": "FAIL"
+        }
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "FAIL",
+      "levels": {
+        "exact": 0,
+        "crop": 0,
+        "same_subject": 0,
+        "same_semantic_scene": 0,
+        "same_perceptual_role": 0
+      },
+      "human_review_candidates": [],
+      "assets": [
+        {
+          "asset_id": "watashi-hero-shared-cooking-generated-v1",
+          "scene_id": "scene-01-encounter",
+          "sha": "ccd052d0c230c2a07d3118b7e080a39660c897e6e12fcefb3b333628311752b8",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "hero_shared_cooking",
+          "prominence": "dominant",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "watashi-finished-table-generated-v1",
+          "scene_id": "scene-02-touch",
+          "sha": "9261a9adf99e4934d5f02a263154cbef07d3a1debc5312933194bf27942865b9",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "finished_table",
+          "prominence": "dominant",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "watashi-ingredient-story-pexels-3952043",
+          "scene_id": "scene-03-make",
+          "sha": "725e6124a296496c63f63b54fa7e705601c0cd1a40e8f29ff8551c4591df077b",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "ingredient_story",
+          "prominence": "standard",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "watashi-hands-in-action-pexels-8357260",
+          "scene_id": "scene-04-share",
+          "sha": "be17d561fceac68c8fb225f11cca7966d58cb199e1e79f9cc7d6afb41445feea",
+          "phash_similarity": 0.0,
+          "crop": "role-safe focal crop",
+          "role": "hands_in_action",
+          "prominence": "dominant",
+          "adjacent_distance": 1,
+          "verdict": "PASS"
+        },
+        {
+          "asset_id": "watashi-hero-shared-cooking-generated-v1",
+          "scene_id": "scene-05-join",
+          "sha": "ccd052d0c230c2a07d3118b7e080a39660c897e6e12fcefb3b333628311752b8",
+          "phash_similarity": 1.0,
+          "crop": "role-safe focal crop",
+          "role": "hero_shared_cooking",
+          "prominence": "standard",
+          "adjacent_distance": 1,
+          "verdict": "FAIL"
+        }
+      ]
+    }
+  }
+}

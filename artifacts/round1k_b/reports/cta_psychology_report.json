@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "stages": [
+        "discovery",
+        "reassurance",
+        "action"
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "action_destination_verified": "PASS"
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "stages": [
+        "discovery",
+        "reassurance",
+        "action"
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "action_destination_verified": "PASS"
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "stages": [
+        "discovery",
+        "reassurance",
+        "action"
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "action_destination_verified": "PASS"
+    }
+  }
+}

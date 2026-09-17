@@ -1,0 +1,270 @@
+{
+  "status": "PASS",
+  "stale_capture_count": 0,
+  "records": [
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "scene": "scene-01-observe",
+      "peak": "peak-01-scene-01-observe",
+      "viewport": 1440,
+      "source_html_sha": "73bde58751b4f0ef85b7b207fb9fc61466a86392e77ec8e0b57538f40113b246",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "fe0efedb483f6f3f396f090f3ae7a08a37ec98d055f16569ea1f5e4a5abdadd7",
+      "created_at": "2026-09-17T07:37:05.239410+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "scene": "scene-01-observe",
+      "peak": "peak-01-scene-01-observe",
+      "viewport": 390,
+      "source_html_sha": "73bde58751b4f0ef85b7b207fb9fc61466a86392e77ec8e0b57538f40113b246",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "b8bc148ca8732595edf79356f6a2619e8fb93b1df335c60ca72d8e9e31fb9bab",
+      "created_at": "2026-09-17T07:37:05.243634+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "scene": "scene-03-watch_hands",
+      "peak": "peak-02-scene-03-watch_hands",
+      "viewport": 1440,
+      "source_html_sha": "73bde58751b4f0ef85b7b207fb9fc61466a86392e77ec8e0b57538f40113b246",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "fe0efedb483f6f3f396f090f3ae7a08a37ec98d055f16569ea1f5e4a5abdadd7",
+      "created_at": "2026-09-17T07:37:05.261896+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "scene": "scene-03-watch_hands",
+      "peak": "peak-02-scene-03-watch_hands",
+      "viewport": 390,
+      "source_html_sha": "73bde58751b4f0ef85b7b207fb9fc61466a86392e77ec8e0b57538f40113b246",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "b8bc148ca8732595edf79356f6a2619e8fb93b1df335c60ca72d8e9e31fb9bab",
+      "created_at": "2026-09-17T07:37:05.267922+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "scene": "scene-05-consult",
+      "peak": "peak-03-scene-05-consult",
+      "viewport": 1440,
+      "source_html_sha": "73bde58751b4f0ef85b7b207fb9fc61466a86392e77ec8e0b57538f40113b246",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "fe0efedb483f6f3f396f090f3ae7a08a37ec98d055f16569ea1f5e4a5abdadd7",
+      "created_at": "2026-09-17T07:37:05.285706+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "scene": "scene-05-consult",
+      "peak": "peak-03-scene-05-consult",
+      "viewport": 390,
+      "source_html_sha": "73bde58751b4f0ef85b7b207fb9fc61466a86392e77ec8e0b57538f40113b246",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "b8bc148ca8732595edf79356f6a2619e8fb93b1df335c60ca72d8e9e31fb9bab",
+      "created_at": "2026-09-17T07:37:05.291593+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "canonical_full",
+      "scene": null,
+      "peak": null,
+      "viewport": 1440,
+      "source_html_sha": "73bde58751b4f0ef85b7b207fb9fc61466a86392e77ec8e0b57538f40113b246",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "fe0efedb483f6f3f396f090f3ae7a08a37ec98d055f16569ea1f5e4a5abdadd7",
+      "created_at": "2026-09-17T07:37:05.311349+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "canonical_full",
+      "scene": null,
+      "peak": null,
+      "viewport": 390,
+      "source_html_sha": "73bde58751b4f0ef85b7b207fb9fc61466a86392e77ec8e0b57538f40113b246",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "b8bc148ca8732595edf79356f6a2619e8fb93b1df335c60ca72d8e9e31fb9bab",
+      "created_at": "2026-09-17T07:37:05.317195+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "scene": "scene-01-arrive",
+      "peak": "peak-01-scene-01-arrive",
+      "viewport": 1440,
+      "source_html_sha": "e6d4e07921ecde37743ee712f49c1587e98561d0c1e9fcbdedbce9bf5a62fbc3",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "047e07cfc1c6df3a00e9d18b5cf3e9679da9e858ae499c9672e00d1aab881208",
+      "created_at": "2026-09-17T07:37:05.338188+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "scene": "scene-01-arrive",
+      "peak": "peak-01-scene-01-arrive",
+      "viewport": 390,
+      "source_html_sha": "e6d4e07921ecde37743ee712f49c1587e98561d0c1e9fcbdedbce9bf5a62fbc3",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "b2c216a251e08684eacc3e580bebb7ae4d7fdafecad2f0606dbaa9729187ae0f",
+      "created_at": "2026-09-17T07:37:05.343989+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "scene": "scene-03-feel_care",
+      "peak": "peak-02-scene-03-feel_care",
+      "viewport": 1440,
+      "source_html_sha": "e6d4e07921ecde37743ee712f49c1587e98561d0c1e9fcbdedbce9bf5a62fbc3",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "047e07cfc1c6df3a00e9d18b5cf3e9679da9e858ae499c9672e00d1aab881208",
+      "created_at": "2026-09-17T07:37:05.360896+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "scene": "scene-03-feel_care",
+      "peak": "peak-02-scene-03-feel_care",
+      "viewport": 390,
+      "source_html_sha": "e6d4e07921ecde37743ee712f49c1587e98561d0c1e9fcbdedbce9bf5a62fbc3",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "b2c216a251e08684eacc3e580bebb7ae4d7fdafecad2f0606dbaa9729187ae0f",
+      "created_at": "2026-09-17T07:37:05.366128+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "scene": "scene-05-reserve",
+      "peak": "peak-03-scene-05-reserve",
+      "viewport": 1440,
+      "source_html_sha": "e6d4e07921ecde37743ee712f49c1587e98561d0c1e9fcbdedbce9bf5a62fbc3",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "047e07cfc1c6df3a00e9d18b5cf3e9679da9e858ae499c9672e00d1aab881208",
+      "created_at": "2026-09-17T07:37:05.385682+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "scene": "scene-05-reserve",
+      "peak": "peak-03-scene-05-reserve",
+      "viewport": 390,
+      "source_html_sha": "e6d4e07921ecde37743ee712f49c1587e98561d0c1e9fcbdedbce9bf5a62fbc3",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "b2c216a251e08684eacc3e580bebb7ae4d7fdafecad2f0606dbaa9729187ae0f",
+      "created_at": "2026-09-17T07:37:05.390632+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "canonical_full",
+      "scene": null,
+      "peak": null,
+      "viewport": 1440,
+      "source_html_sha": "e6d4e07921ecde37743ee712f49c1587e98561d0c1e9fcbdedbce9bf5a62fbc3",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "047e07cfc1c6df3a00e9d18b5cf3e9679da9e858ae499c9672e00d1aab881208",
+      "created_at": "2026-09-17T07:37:05.407721+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "canonical_full",
+      "scene": null,
+      "peak": null,
+      "viewport": 390,
+      "source_html_sha": "e6d4e07921ecde37743ee712f49c1587e98561d0c1e9fcbdedbce9bf5a62fbc3",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "b2c216a251e08684eacc3e580bebb7ae4d7fdafecad2f0606dbaa9729187ae0f",
+      "created_at": "2026-09-17T07:37:05.411769+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "scene": "scene-01-encounter",
+      "peak": "peak-01-scene-01-encounter",
+      "viewport": 1440,
+      "source_html_sha": "c526ac60af48e7e2a4a252fc61365c90f6050bfb9dd67d0be6bb93a7a2ff3c00",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "163a58f95ca729a7079c25cf6e78f561f9255ff0bb1700eeb4b844830ca5e70b",
+      "created_at": "2026-09-17T07:37:05.435253+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "scene": "scene-01-encounter",
+      "peak": "peak-01-scene-01-encounter",
+      "viewport": 390,
+      "source_html_sha": "c526ac60af48e7e2a4a252fc61365c90f6050bfb9dd67d0be6bb93a7a2ff3c00",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "f7ff23cd37c7fc00003e87cec3c65b29b2afabad57f29a7e837c0de50af5f687",
+      "created_at": "2026-09-17T07:37:05.439180+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "scene": "scene-03-make",
+      "peak": "peak-02-scene-03-make",
+      "viewport": 1440,
+      "source_html_sha": "c526ac60af48e7e2a4a252fc61365c90f6050bfb9dd67d0be6bb93a7a2ff3c00",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "163a58f95ca729a7079c25cf6e78f561f9255ff0bb1700eeb4b844830ca5e70b",
+      "created_at": "2026-09-17T07:37:05.464432+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "scene": "scene-03-make",
+      "peak": "peak-02-scene-03-make",
+      "viewport": 390,
+      "source_html_sha": "c526ac60af48e7e2a4a252fc61365c90f6050bfb9dd67d0be6bb93a7a2ff3c00",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "f7ff23cd37c7fc00003e87cec3c65b29b2afabad57f29a7e837c0de50af5f687",
+      "created_at": "2026-09-17T07:37:05.472216+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "scene": "scene-05-join",
+      "peak": "peak-03-scene-05-join",
+      "viewport": 1440,
+      "source_html_sha": "c526ac60af48e7e2a4a252fc61365c90f6050bfb9dd67d0be6bb93a7a2ff3c00",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "163a58f95ca729a7079c25cf6e78f561f9255ff0bb1700eeb4b844830ca5e70b",
+      "created_at": "2026-09-17T07:37:05.506765+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "scene": "scene-05-join",
+      "peak": "peak-03-scene-05-join",
+      "viewport": 390,
+      "source_html_sha": "c526ac60af48e7e2a4a252fc61365c90f6050bfb9dd67d0be6bb93a7a2ff3c00",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "f7ff23cd37c7fc00003e87cec3c65b29b2afabad57f29a7e837c0de50af5f687",
+      "created_at": "2026-09-17T07:37:05.513040+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "canonical_full",
+      "scene": null,
+      "peak": null,
+      "viewport": 1440,
+      "source_html_sha": "c526ac60af48e7e2a4a252fc61365c90f6050bfb9dd67d0be6bb93a7a2ff3c00",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "163a58f95ca729a7079c25cf6e78f561f9255ff0bb1700eeb4b844830ca5e70b",
+      "created_at": "2026-09-17T07:37:05.535698+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "canonical_full",
+      "scene": null,
+      "peak": null,
+      "viewport": 390,
+      "source_html_sha": "c526ac60af48e7e2a4a252fc61365c90f6050bfb9dd67d0be6bb93a7a2ff3c00",
+      "source_head": "WORKFLOW_SHA",
+      "capture_sha": "f7ff23cd37c7fc00003e87cec3c65b29b2afabad57f29a7e837c0de50af5f687",
+      "created_at": "2026-09-17T07:37:05.540932+00:00"
+    }
+  ]
+}

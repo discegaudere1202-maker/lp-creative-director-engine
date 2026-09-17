@@ -1,0 +1,10 @@
+{
+  "35177879340": "EXPECTED_CONTRACT_MIGRATION",
+  "reason": "previous workflow validated old fixed-section assumptions against the new Premium Scene DOM; current K-A2 validator is semantic and source-locked",
+  "other_failures": {
+    "Phase 3": "LEGACY_WORKFLOW_DRIFT",
+    "Phase 4": "LEGACY_WORKFLOW_DRIFT",
+    "Production Generation QA": "EXPECTED_CONTRACT_MIGRATION",
+    "Production QA Loop": "LEGACY_WORKFLOW_DRIFT"
+  }
+}
