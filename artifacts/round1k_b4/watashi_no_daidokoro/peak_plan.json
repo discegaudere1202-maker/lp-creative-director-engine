@@ -1,0 +1,88 @@
+{
+  "peaks": [
+    {
+      "peak_id": "peak-01-scene-01-encounter",
+      "scene_id": "scene-01-encounter",
+      "peak_role": "hero",
+      "peak_priority": "primary",
+      "peak_reason": "encounterの視線を一つに束ねる",
+      "focal_authority": "WORLD",
+      "visual_delta_from_previous": [],
+      "visual_delta_to_next": [
+        "topology",
+        "type_scale",
+        "authority"
+      ],
+      "desktop_peak_treatment": {
+        "topology": "full_bleed",
+        "media_scale": "dominant",
+        "viewport_share": "0.55-0.80"
+      },
+      "mobile_peak_treatment": {
+        "variant": "temporal_recomposition",
+        "crop": "preserve_focal_entity",
+        "scale": "peak_specific",
+        "cta_timing": "after_idea"
+      }
+    },
+    {
+      "peak_id": "peak-02-scene-03-make",
+      "scene_id": "scene-03-make",
+      "peak_role": "mid",
+      "peak_priority": "secondary",
+      "peak_reason": "makeの視線を一つに束ねる",
+      "focal_authority": "DATA",
+      "visual_delta_from_previous": [
+        "topology",
+        "media_scale",
+        "negative_space"
+      ],
+      "visual_delta_to_next": [
+        "topology",
+        "type_scale",
+        "authority"
+      ],
+      "desktop_peak_treatment": {
+        "topology": "sequence",
+        "media_scale": "standard",
+        "viewport_share": "0.55-0.80"
+      },
+      "mobile_peak_treatment": {
+        "variant": "temporal_recomposition",
+        "crop": "preserve_focal_entity",
+        "scale": "peak_specific",
+        "cta_timing": "after_idea"
+      }
+    },
+    {
+      "peak_id": "peak-03-scene-05-join",
+      "scene_id": "scene-05-join",
+      "peak_role": "late",
+      "peak_priority": "primary",
+      "peak_reason": "joinの視線を一つに束ねる",
+      "focal_authority": "TYPOGRAPHY",
+      "visual_delta_from_previous": [
+        "topology",
+        "media_scale",
+        "negative_space"
+      ],
+      "visual_delta_to_next": [
+        "type_scale",
+        "asymmetry",
+        "sequencing"
+      ],
+      "desktop_peak_treatment": {
+        "topology": "layered",
+        "media_scale": "none",
+        "viewport_share": "0.55-0.80"
+      },
+      "mobile_peak_treatment": {
+        "variant": "temporal_recomposition",
+        "crop": "preserve_focal_entity",
+        "scale": "peak_specific",
+        "cta_timing": "after_idea"
+      }
+    }
+  ],
+  "status": "PASS"
+}

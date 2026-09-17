@@ -1,0 +1,332 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "scenes": [
+        {
+          "scene_id": "scene-01-observe",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 130,
+            "y": 214.140625,
+            "width": 1180,
+            "height": 770.046875
+          },
+          "expected_authority": "IMAGE",
+          "rendered_authority": "IMAGE",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 130,
+            "y": 1490.78125,
+            "width": 566,
+            "height": 409.328125
+          },
+          "expected_authority": "MATERIAL",
+          "rendered_authority": "MATERIAL",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 168,
+            "y": 2221.109375,
+            "width": 1110,
+            "height": 864.5
+          },
+          "expected_authority": "DATA",
+          "rendered_authority": "DATA",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 130,
+            "y": 3608.203125,
+            "width": 1180,
+            "height": 818.65625
+          },
+          "expected_authority": "TYPE",
+          "rendered_authority": "TYPE",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "expected_media": false,
+          "rendered_media": false,
+          "image_count": 0,
+          "visible_media_count": 0,
+          "media_area": null,
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        }
+      ],
+      "internal_identifier_count": 0,
+      "placeholder_count": 0,
+      "broken_media": 0,
+      "empty_media": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "scenes": [
+        {
+          "scene_id": "scene-01-arrive",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 130,
+            "y": 214.140625,
+            "width": 1180,
+            "height": 770.046875
+          },
+          "expected_authority": "IMAGE",
+          "rendered_authority": "IMAGE",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 130,
+            "y": 1490.78125,
+            "width": 566,
+            "height": 409.328125
+          },
+          "expected_authority": "SENSORY",
+          "rendered_authority": "SENSORY",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 744,
+            "y": 2189.109375,
+            "width": 566,
+            "height": 480
+          },
+          "expected_authority": "PERSON",
+          "rendered_authority": "PERSON",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 130,
+            "y": 3042.109375,
+            "width": 1180,
+            "height": 818.75
+          },
+          "expected_authority": "TYPE",
+          "rendered_authority": "TYPE",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "expected_media": false,
+          "rendered_media": false,
+          "image_count": 0,
+          "visible_media_count": 0,
+          "media_area": null,
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        }
+      ],
+      "internal_identifier_count": 0,
+      "placeholder_count": 0,
+      "broken_media": 0,
+      "empty_media": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "scenes": [
+        {
+          "scene_id": "scene-01-encounter",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 130,
+            "y": 214.140625,
+            "width": 1180,
+            "height": 770.046875
+          },
+          "expected_authority": "WORLD",
+          "rendered_authority": "WORLD",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 744,
+            "y": 1490.78125,
+            "width": 566,
+            "height": 480
+          },
+          "expected_authority": "PERSON",
+          "rendered_authority": "PERSON",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 168,
+            "y": 2291.78125,
+            "width": 1110,
+            "height": 773.0625
+          },
+          "expected_authority": "DATA",
+          "rendered_authority": "DATA",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "expected_media": true,
+          "rendered_media": true,
+          "image_count": 1,
+          "visible_media_count": 1,
+          "media_area": {
+            "x": 130,
+            "y": 3587.4375,
+            "width": 1180,
+            "height": 1801.859375
+          },
+          "expected_authority": "WORLD",
+          "rendered_authority": "WORLD",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-join",
+          "expected_media": false,
+          "rendered_media": false,
+          "image_count": 0,
+          "visible_media_count": 0,
+          "media_area": null,
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "mismatch": 0,
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "broken": false,
+          "empty": false,
+          "verdict": "PASS"
+        }
+      ],
+      "internal_identifier_count": 0,
+      "placeholder_count": 0,
+      "broken_media": 0,
+      "empty_media": 0
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "status": "PASS",
+  "commit_sha": "ae24448133e270eb9f70a866863b2f2ddb8c2856",
+  "qa_viewport_total": 27,
+  "qa_pass_count": 27,
+  "qa_fail_count": 0,
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    }
+  ],
+  "render_contracts": [
+    {
+      "company": "maylynn_paint",
+      "scene_count": 5,
+      "contract": {
+        "status": "PASS",
+        "scene_count": {
+          "expected": 5,
+          "rendered": 5
+        },
+        "expected_headings": [
+          "家の輪郭を見つめる",
+          "素材に触れて考える",
+          "手仕事の順番を見る",
+          "仕上がりを思い描く",
+          "状態から相談する"
+        ],
+        "rendered_headings": [
+          "家の輪郭を見つめる",
+          "素材に触れて考える",
+          "手仕事の順番を見る",
+          "仕上がりを思い描く",
+          "状態から相談する"
+        ],
+        "rendered_ctas": [
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "素材の状態を見る"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#reassurance",
+            "visible_label": "対応範囲を確かめる"
+          },
+          {
+            "stage": "action",
+            "destination": "#contact",
+            "visible_label": "見積を相談する"
+          }
+        ],
+        "internal_metadata_visible": false,
+        "internal_leakage": [],
+        "editorial_violations": []
+      }
+    },
+    {
+      "company": "nagi_no_mirai",
+      "scene_count": 5,
+      "contract": {
+        "status": "PASS",
+        "scene_count": {
+          "expected": 5,
+          "rendered": 5
+        },
+        "expected_headings": [
+          "空間に入る",
+          "静けさを感じる",
+          "触れられる時間",
+          "過ごし方を選ぶ",
+          "その時間を予約する"
+        ],
+        "rendered_headings": [
+          "空間に入る",
+          "静けさを感じる",
+          "触れられる時間",
+          "過ごし方を選ぶ",
+          "その時間を予約する"
+        ],
+        "rendered_ctas": [
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "過ごし方を感じる"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#reassurance",
+            "visible_label": "時間の選び方を見る"
+          },
+          {
+            "stage": "action",
+            "destination": "#contact",
+            "visible_label": "予約を相談する"
+          }
+        ],
+        "internal_metadata_visible": false,
+        "internal_leakage": [],
+        "editorial_violations": []
+      }
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "scene_count": 5,
+      "contract": {
+        "status": "PASS",
+        "scene_count": {
+          "expected": 5,
+          "rendered": 5
+        },
+        "expected_headings": [
+          "食材に出会う",
+          "手を動かしてみる",
+          "料理ができていく",
+          "食卓を囲む",
+          "参加を考える"
+        ],
+        "rendered_headings": [
+          "食材に出会う",
+          "手を動かしてみる",
+          "料理ができていく",
+          "食卓を囲む",
+          "参加を考える"
+        ],
+        "rendered_ctas": [
+          {
+            "stage": "discovery",
+            "destination": "#way-in",
+            "visible_label": "料理の流れを見る"
+          },
+          {
+            "stage": "reassurance",
+            "destination": "#reassurance",
+            "visible_label": "場と内容を確かめる"
+          },
+          {
+            "stage": "action",
+            "destination": "#contact",
+            "visible_label": "参加を相談する"
+          }
+        ],
+        "internal_metadata_visible": false,
+        "internal_leakage": [],
+        "editorial_violations": []
+      }
+    }
+  ],
+  "technical_captures_total": 6,
+  "manual_lp_edit": 0,
+  "human_review_capture": true,
+  "human_review_ready": true,
+  "round1k_a2_ready": true,
+  "round1k_a3_ready": true,
+  "round1k_a4_ready": false,
+  "a4_public_copy": {
+    "safety_violations": 0,
+    "verification_leakage": 0,
+    "name_swappable_major_sentence": 0,
+    "signature_companies": 3,
+    "manual_lp_edit": 0
+  },
+  "round1k_a7_ready": true,
+  "rendered_copy_a7": {
+    "trace_coverage": 100,
+    "known_defects": 0,
+    "blocker": 0,
+    "major": 0,
+    "manual_lp_edit": 0
+  },
+  "synthetic_generalization": {
+    "status": "PASS",
+    "cases": [
+      "entity/activity mismatch",
+      "generic abstraction"
+    ]
+  },
+  "round1k_b_machine_ready": true,
+  "peak_captures_total": 18,
+  "capture_provenance": "PASS",
+  "stale_capture_count": 0,
+  "human_review_questions": [
+    "First impression",
+    "Company specificity",
+    "Emotional movement",
+    "Screenshot Peaks",
+    "Desktop / Mobile quality",
+    "100万円価値"
+  ],
+  "round1k_b2_machine_ready": true,
+  "round1k_b4_machine_ready": true
+}

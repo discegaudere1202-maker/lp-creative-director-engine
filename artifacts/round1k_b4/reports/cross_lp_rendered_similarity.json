@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "pairs": [
+    {
+      "left": "maylynn_paint",
+      "right": "nagi_no_mirai",
+      "density_sequence_similarity": 1.0,
+      "media_sequence_similarity": 0.8,
+      "topology_similarity": 0.6,
+      "authority_similarity": 0.6,
+      "peak_timing_similarity": 1.0,
+      "CTA_timing_similarity": 1.0,
+      "hard_same_sequence": 0,
+      "verdict": "PASS"
+    },
+    {
+      "left": "maylynn_paint",
+      "right": "watashi_no_daidokoro",
+      "density_sequence_similarity": 1.0,
+      "media_sequence_similarity": 1.0,
+      "topology_similarity": 0.4,
+      "authority_similarity": 0.4,
+      "peak_timing_similarity": 1.0,
+      "CTA_timing_similarity": 1.0,
+      "hard_same_sequence": 0,
+      "verdict": "PASS"
+    },
+    {
+      "left": "nagi_no_mirai",
+      "right": "watashi_no_daidokoro",
+      "density_sequence_similarity": 1.0,
+      "media_sequence_similarity": 0.8,
+      "topology_similarity": 0.4,
+      "authority_similarity": 0.2,
+      "peak_timing_similarity": 1.0,
+      "CTA_timing_similarity": 1.0,
+      "hard_same_sequence": 0,
+      "verdict": "PASS"
+    }
+  ],
+  "cross_lp_same_rhythm_hard_violation": 0
+}

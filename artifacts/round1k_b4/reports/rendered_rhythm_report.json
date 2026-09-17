@@ -1,0 +1,311 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "rendered_sequence": [
+        {
+          "density_band": "balanced",
+          "media_band": "2",
+          "topology": "full_bleed",
+          "authority": "IMAGE",
+          "peak": true,
+          "cta": true,
+          "height": 1276.640625,
+          "media_ratio": 0.603,
+          "text_ratio": 0.045,
+          "whitespace_ratio": 0.352,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "balanced",
+          "media_band": "1",
+          "topology": "inset",
+          "authority": "MATERIAL",
+          "peak": false,
+          "cta": true,
+          "height": 698.328125,
+          "media_ratio": 0.281,
+          "text_ratio": 0.04,
+          "whitespace_ratio": 0.679,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "balanced",
+          "media_band": "2",
+          "topology": "sequence",
+          "authority": "DATA",
+          "peak": true,
+          "cta": true,
+          "height": 1419.09375,
+          "media_ratio": 0.573,
+          "text_ratio": 0.038,
+          "whitespace_ratio": 0.389,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "image_dominant",
+          "media_band": "3",
+          "topology": "layered",
+          "authority": "TYPE",
+          "peak": false,
+          "cta": true,
+          "height": 1107.65625,
+          "media_ratio": 0.739,
+          "text_ratio": 0.018,
+          "whitespace_ratio": 0.243,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "pause",
+          "media_band": "0",
+          "topology": "split",
+          "authority": "TYPOGRAPHY",
+          "peak": true,
+          "cta": true,
+          "height": 458.59375,
+          "media_ratio": 0,
+          "text_ratio": 0.06,
+          "whitespace_ratio": 0.94,
+          "background_mode": "rendered_css_surface"
+        }
+      ],
+      "density_sequence": [
+        "balanced",
+        "balanced",
+        "balanced",
+        "image_dominant",
+        "pause"
+      ],
+      "media_sequence": [
+        "2",
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "topology_sequence": [
+        "full_bleed",
+        "inset",
+        "sequence",
+        "layered",
+        "split"
+      ],
+      "authority_sequence": [
+        "IMAGE",
+        "MATERIAL",
+        "DATA",
+        "TYPE",
+        "TYPOGRAPHY"
+      ],
+      "plan_render_mismatch": 0,
+      "same_density_3_plus": 0,
+      "same_topology_3_plus": 0,
+      "same_media_scale_3_plus": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "rendered_sequence": [
+        {
+          "density_band": "balanced",
+          "media_band": "2",
+          "topology": "full_bleed",
+          "authority": "IMAGE",
+          "peak": true,
+          "cta": true,
+          "height": 1276.640625,
+          "media_ratio": 0.603,
+          "text_ratio": 0.045,
+          "whitespace_ratio": 0.352,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "balanced",
+          "media_band": "1",
+          "topology": "inset",
+          "authority": "SENSORY",
+          "peak": false,
+          "cta": true,
+          "height": 698.328125,
+          "media_ratio": 0.281,
+          "text_ratio": 0.04,
+          "whitespace_ratio": 0.679,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "balanced",
+          "media_band": "1",
+          "topology": "split",
+          "authority": "PERSON",
+          "peak": true,
+          "cta": true,
+          "height": 853,
+          "media_ratio": 0.27,
+          "text_ratio": 0.032,
+          "whitespace_ratio": 0.698,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "image_dominant",
+          "media_band": "3",
+          "topology": "layered",
+          "authority": "TYPE",
+          "peak": false,
+          "cta": true,
+          "height": 1107.75,
+          "media_ratio": 0.739,
+          "text_ratio": 0.014,
+          "whitespace_ratio": 0.247,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "pause",
+          "media_band": "0",
+          "topology": "layered",
+          "authority": "TYPOGRAPHY",
+          "peak": true,
+          "cta": true,
+          "height": 793,
+          "media_ratio": 0,
+          "text_ratio": 0.026,
+          "whitespace_ratio": 0.974,
+          "background_mode": "rendered_css_surface"
+        }
+      ],
+      "density_sequence": [
+        "balanced",
+        "balanced",
+        "balanced",
+        "image_dominant",
+        "pause"
+      ],
+      "media_sequence": [
+        "2",
+        "1",
+        "1",
+        "3",
+        "0"
+      ],
+      "topology_sequence": [
+        "full_bleed",
+        "inset",
+        "split",
+        "layered",
+        "layered"
+      ],
+      "authority_sequence": [
+        "IMAGE",
+        "SENSORY",
+        "PERSON",
+        "TYPE",
+        "TYPOGRAPHY"
+      ],
+      "plan_render_mismatch": 0,
+      "same_density_3_plus": 0,
+      "same_topology_3_plus": 0,
+      "same_media_scale_3_plus": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "rendered_sequence": [
+        {
+          "density_band": "balanced",
+          "media_band": "2",
+          "topology": "full_bleed",
+          "authority": "WORLD",
+          "peak": true,
+          "cta": true,
+          "height": 1276.640625,
+          "media_ratio": 0.603,
+          "text_ratio": 0.045,
+          "whitespace_ratio": 0.352,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "balanced",
+          "media_band": "1",
+          "topology": "split",
+          "authority": "PERSON",
+          "peak": false,
+          "cta": true,
+          "height": 769,
+          "media_ratio": 0.299,
+          "text_ratio": 0.036,
+          "whitespace_ratio": 0.665,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "balanced",
+          "media_band": "2",
+          "topology": "sequence",
+          "authority": "DATA",
+          "peak": true,
+          "cta": true,
+          "height": 1327.65625,
+          "media_ratio": 0.548,
+          "text_ratio": 0.041,
+          "whitespace_ratio": 0.411,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "image_dominant",
+          "media_band": "3",
+          "topology": "full_bleed",
+          "authority": "WORLD",
+          "peak": false,
+          "cta": true,
+          "height": 2224.453125,
+          "media_ratio": 0.81,
+          "text_ratio": 0.026,
+          "whitespace_ratio": 0.164,
+          "background_mode": "rendered_css_surface"
+        },
+        {
+          "density_band": "pause",
+          "media_band": "0",
+          "topology": "layered",
+          "authority": "TYPOGRAPHY",
+          "peak": true,
+          "cta": true,
+          "height": 793,
+          "media_ratio": 0,
+          "text_ratio": 0.023,
+          "whitespace_ratio": 0.977,
+          "background_mode": "rendered_css_surface"
+        }
+      ],
+      "density_sequence": [
+        "balanced",
+        "balanced",
+        "balanced",
+        "image_dominant",
+        "pause"
+      ],
+      "media_sequence": [
+        "2",
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "topology_sequence": [
+        "full_bleed",
+        "split",
+        "sequence",
+        "full_bleed",
+        "layered"
+      ],
+      "authority_sequence": [
+        "WORLD",
+        "PERSON",
+        "DATA",
+        "WORLD",
+        "TYPOGRAPHY"
+      ],
+      "plan_render_mismatch": 0,
+      "same_density_3_plus": 0,
+      "same_topology_3_plus": 0,
+      "same_media_scale_3_plus": 0
+    }
+  }
+}

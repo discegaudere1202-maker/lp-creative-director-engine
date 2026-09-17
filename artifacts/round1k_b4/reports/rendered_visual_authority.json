@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "plan_render_mismatch": 0,
+      "scenes": [
+        {
+          "scene_id": "scene-01-observe",
+          "expected_authority": "IMAGE",
+          "rendered_authority": "IMAGE",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "expected_authority": "MATERIAL",
+          "rendered_authority": "MATERIAL",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "expected_authority": "DATA",
+          "rendered_authority": "DATA",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "expected_authority": "TYPE",
+          "rendered_authority": "TYPE",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "plan_render_mismatch": 0,
+      "scenes": [
+        {
+          "scene_id": "scene-01-arrive",
+          "expected_authority": "IMAGE",
+          "rendered_authority": "IMAGE",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "expected_authority": "SENSORY",
+          "rendered_authority": "SENSORY",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "expected_authority": "PERSON",
+          "rendered_authority": "PERSON",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "expected_authority": "TYPE",
+          "rendered_authority": "TYPE",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "plan_render_mismatch": 0,
+      "scenes": [
+        {
+          "scene_id": "scene-01-encounter",
+          "expected_authority": "WORLD",
+          "rendered_authority": "WORLD",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "expected_authority": "PERSON",
+          "rendered_authority": "PERSON",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "expected_authority": "DATA",
+          "rendered_authority": "DATA",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "expected_authority": "WORLD",
+          "rendered_authority": "WORLD",
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-join",
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "verdict": "PASS"
+        }
+      ]
+    }
+  }
+}

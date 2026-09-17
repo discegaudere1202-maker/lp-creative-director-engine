@@ -59,7 +59,7 @@ def derive_creative_genome(
     }.get(profile, ("入口を見る", "内容を確かめる", "相談を始める"))
     cta_progression = [
         {"stage": "discovery", "section_role": "hero_orientation", "user_hesitation": "自分に関係する入口か分からない", "evidence_already_seen": [], "required_evidence": [], "action_reason": "まず状況を見渡す", "action_type": "anchor", "label_strategy": "understand_before_contact", "visible_label": cta_labels[0], "destination": "#way-in"},
-        {"stage": "reassurance", "section_role": "company_truth", "user_hesitation": "この会社へ相談してよいか迷う", "evidence_already_seen": [item.get("evidence_id") for item in evidence[:2]], "required_evidence": [item.get("evidence_id") for item in evidence[:2]], "action_reason": "会社固有の範囲を確かめる", "action_type": "anchor", "label_strategy": "verify_scope", "visible_label": cta_labels[1], "destination": "#contact"},
+        {"stage": "reassurance", "section_role": "company_truth", "user_hesitation": "この会社へ相談してよいか迷う", "evidence_already_seen": [item.get("evidence_id") for item in evidence[:2]], "required_evidence": [item.get("evidence_id") for item in evidence[:2]], "action_reason": "会社固有の範囲を確かめる", "action_type": "anchor", "label_strategy": "verify_scope", "visible_label": cta_labels[1], "destination": "#reassurance"},
         {"stage": "action", "section_role": "cta_zone", "user_hesitation": "何を伝えればよいか分からない", "evidence_already_seen": [item.get("evidence_id") for item in evidence], "required_evidence": [item.get("evidence_id") for item in evidence], "action_reason": f"{goal}の確認へ進む", "action_type": "conversion", "label_strategy": "act_on_seen_evidence", "visible_label": cta_labels[2], "destination": "#contact"},
     ]
     return {

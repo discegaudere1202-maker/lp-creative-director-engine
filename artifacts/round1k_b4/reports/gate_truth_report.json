@@ -1,0 +1,1176 @@
+{
+  "status": "PASS",
+  "gates": {
+    "media": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {
+        "maylynn_paint": {
+          "status": "PASS",
+          "scenes": [
+            {
+              "scene_id": "scene-01-observe",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 130,
+                "y": 214.140625,
+                "width": 1180,
+                "height": 770.046875
+              },
+              "expected_authority": "IMAGE",
+              "rendered_authority": "IMAGE",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-02-read_material",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 130,
+                "y": 1490.78125,
+                "width": 566,
+                "height": 409.328125
+              },
+              "expected_authority": "MATERIAL",
+              "rendered_authority": "MATERIAL",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-03-watch_hands",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 168,
+                "y": 2221.109375,
+                "width": 1110,
+                "height": 864.5
+              },
+              "expected_authority": "DATA",
+              "rendered_authority": "DATA",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-04-imagine_change",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 130,
+                "y": 3608.203125,
+                "width": 1180,
+                "height": 818.65625
+              },
+              "expected_authority": "TYPE",
+              "rendered_authority": "TYPE",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-05-consult",
+              "expected_media": false,
+              "rendered_media": false,
+              "image_count": 0,
+              "visible_media_count": 0,
+              "media_area": null,
+              "expected_authority": "TYPOGRAPHY",
+              "rendered_authority": "TYPOGRAPHY",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            }
+          ],
+          "internal_identifier_count": 0,
+          "placeholder_count": 0,
+          "broken_media": 0,
+          "empty_media": 0
+        },
+        "nagi_no_mirai": {
+          "status": "PASS",
+          "scenes": [
+            {
+              "scene_id": "scene-01-arrive",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 130,
+                "y": 214.140625,
+                "width": 1180,
+                "height": 770.046875
+              },
+              "expected_authority": "IMAGE",
+              "rendered_authority": "IMAGE",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-02-settle",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 130,
+                "y": 1490.78125,
+                "width": 566,
+                "height": 409.328125
+              },
+              "expected_authority": "SENSORY",
+              "rendered_authority": "SENSORY",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-03-feel_care",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 744,
+                "y": 2189.109375,
+                "width": 566,
+                "height": 480
+              },
+              "expected_authority": "PERSON",
+              "rendered_authority": "PERSON",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-04-choose_time",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 130,
+                "y": 3042.109375,
+                "width": 1180,
+                "height": 818.75
+              },
+              "expected_authority": "TYPE",
+              "rendered_authority": "TYPE",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-05-reserve",
+              "expected_media": false,
+              "rendered_media": false,
+              "image_count": 0,
+              "visible_media_count": 0,
+              "media_area": null,
+              "expected_authority": "TYPOGRAPHY",
+              "rendered_authority": "TYPOGRAPHY",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            }
+          ],
+          "internal_identifier_count": 0,
+          "placeholder_count": 0,
+          "broken_media": 0,
+          "empty_media": 0
+        },
+        "watashi_no_daidokoro": {
+          "status": "PASS",
+          "scenes": [
+            {
+              "scene_id": "scene-01-encounter",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 130,
+                "y": 214.140625,
+                "width": 1180,
+                "height": 770.046875
+              },
+              "expected_authority": "WORLD",
+              "rendered_authority": "WORLD",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-02-touch",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 744,
+                "y": 1490.78125,
+                "width": 566,
+                "height": 480
+              },
+              "expected_authority": "PERSON",
+              "rendered_authority": "PERSON",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-03-make",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 168,
+                "y": 2291.78125,
+                "width": 1110,
+                "height": 773.0625
+              },
+              "expected_authority": "DATA",
+              "rendered_authority": "DATA",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-04-share",
+              "expected_media": true,
+              "rendered_media": true,
+              "image_count": 1,
+              "visible_media_count": 1,
+              "media_area": {
+                "x": 130,
+                "y": 3587.4375,
+                "width": 1180,
+                "height": 1801.859375
+              },
+              "expected_authority": "WORLD",
+              "rendered_authority": "WORLD",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-05-join",
+              "expected_media": false,
+              "rendered_media": false,
+              "image_count": 0,
+              "visible_media_count": 0,
+              "media_area": null,
+              "expected_authority": "TYPOGRAPHY",
+              "rendered_authority": "TYPOGRAPHY",
+              "mismatch": 0,
+              "internal_identifier_leakage": [],
+              "placeholder": false,
+              "broken": false,
+              "empty": false,
+              "verdict": "PASS"
+            }
+          ],
+          "internal_identifier_count": 0,
+          "placeholder_count": 0,
+          "broken_media": 0,
+          "empty_media": 0
+        }
+      },
+      "final_status": "PASS",
+      "override_reason": "none"
+    },
+    "authority": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {
+        "maylynn_paint": {
+          "status": "PASS",
+          "plan_render_mismatch": 0,
+          "scenes": [
+            {
+              "scene_id": "scene-01-observe",
+              "expected_authority": "IMAGE",
+              "rendered_authority": "IMAGE",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-02-read_material",
+              "expected_authority": "MATERIAL",
+              "rendered_authority": "MATERIAL",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-03-watch_hands",
+              "expected_authority": "DATA",
+              "rendered_authority": "DATA",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-04-imagine_change",
+              "expected_authority": "TYPE",
+              "rendered_authority": "TYPE",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-05-consult",
+              "expected_authority": "TYPOGRAPHY",
+              "rendered_authority": "TYPOGRAPHY",
+              "verdict": "PASS"
+            }
+          ]
+        },
+        "nagi_no_mirai": {
+          "status": "PASS",
+          "plan_render_mismatch": 0,
+          "scenes": [
+            {
+              "scene_id": "scene-01-arrive",
+              "expected_authority": "IMAGE",
+              "rendered_authority": "IMAGE",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-02-settle",
+              "expected_authority": "SENSORY",
+              "rendered_authority": "SENSORY",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-03-feel_care",
+              "expected_authority": "PERSON",
+              "rendered_authority": "PERSON",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-04-choose_time",
+              "expected_authority": "TYPE",
+              "rendered_authority": "TYPE",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-05-reserve",
+              "expected_authority": "TYPOGRAPHY",
+              "rendered_authority": "TYPOGRAPHY",
+              "verdict": "PASS"
+            }
+          ]
+        },
+        "watashi_no_daidokoro": {
+          "status": "PASS",
+          "plan_render_mismatch": 0,
+          "scenes": [
+            {
+              "scene_id": "scene-01-encounter",
+              "expected_authority": "WORLD",
+              "rendered_authority": "WORLD",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-02-touch",
+              "expected_authority": "PERSON",
+              "rendered_authority": "PERSON",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-03-make",
+              "expected_authority": "DATA",
+              "rendered_authority": "DATA",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-04-share",
+              "expected_authority": "WORLD",
+              "rendered_authority": "WORLD",
+              "verdict": "PASS"
+            },
+            {
+              "scene_id": "scene-05-join",
+              "expected_authority": "TYPOGRAPHY",
+              "rendered_authority": "TYPOGRAPHY",
+              "verdict": "PASS"
+            }
+          ]
+        }
+      },
+      "final_status": "PASS",
+      "override_reason": "none"
+    },
+    "rhythm": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {
+        "maylynn_paint": {
+          "status": "PASS",
+          "rendered_sequence": [
+            {
+              "density_band": "balanced",
+              "media_band": "2",
+              "topology": "full_bleed",
+              "authority": "IMAGE",
+              "peak": true,
+              "cta": true,
+              "height": 1276.640625,
+              "media_ratio": 0.603,
+              "text_ratio": 0.045,
+              "whitespace_ratio": 0.352,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "balanced",
+              "media_band": "1",
+              "topology": "inset",
+              "authority": "MATERIAL",
+              "peak": false,
+              "cta": true,
+              "height": 698.328125,
+              "media_ratio": 0.281,
+              "text_ratio": 0.04,
+              "whitespace_ratio": 0.679,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "balanced",
+              "media_band": "2",
+              "topology": "sequence",
+              "authority": "DATA",
+              "peak": true,
+              "cta": true,
+              "height": 1419.09375,
+              "media_ratio": 0.573,
+              "text_ratio": 0.038,
+              "whitespace_ratio": 0.389,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "image_dominant",
+              "media_band": "3",
+              "topology": "layered",
+              "authority": "TYPE",
+              "peak": false,
+              "cta": true,
+              "height": 1107.65625,
+              "media_ratio": 0.739,
+              "text_ratio": 0.018,
+              "whitespace_ratio": 0.243,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "pause",
+              "media_band": "0",
+              "topology": "split",
+              "authority": "TYPOGRAPHY",
+              "peak": true,
+              "cta": true,
+              "height": 458.59375,
+              "media_ratio": 0,
+              "text_ratio": 0.06,
+              "whitespace_ratio": 0.94,
+              "background_mode": "rendered_css_surface"
+            }
+          ],
+          "density_sequence": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "image_dominant",
+            "pause"
+          ],
+          "media_sequence": [
+            "2",
+            "1",
+            "2",
+            "3",
+            "0"
+          ],
+          "topology_sequence": [
+            "full_bleed",
+            "inset",
+            "sequence",
+            "layered",
+            "split"
+          ],
+          "authority_sequence": [
+            "IMAGE",
+            "MATERIAL",
+            "DATA",
+            "TYPE",
+            "TYPOGRAPHY"
+          ],
+          "plan_render_mismatch": 0,
+          "same_density_3_plus": 0,
+          "same_topology_3_plus": 0,
+          "same_media_scale_3_plus": 0
+        },
+        "nagi_no_mirai": {
+          "status": "PASS",
+          "rendered_sequence": [
+            {
+              "density_band": "balanced",
+              "media_band": "2",
+              "topology": "full_bleed",
+              "authority": "IMAGE",
+              "peak": true,
+              "cta": true,
+              "height": 1276.640625,
+              "media_ratio": 0.603,
+              "text_ratio": 0.045,
+              "whitespace_ratio": 0.352,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "balanced",
+              "media_band": "1",
+              "topology": "inset",
+              "authority": "SENSORY",
+              "peak": false,
+              "cta": true,
+              "height": 698.328125,
+              "media_ratio": 0.281,
+              "text_ratio": 0.04,
+              "whitespace_ratio": 0.679,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "balanced",
+              "media_band": "1",
+              "topology": "split",
+              "authority": "PERSON",
+              "peak": true,
+              "cta": true,
+              "height": 853,
+              "media_ratio": 0.27,
+              "text_ratio": 0.032,
+              "whitespace_ratio": 0.698,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "image_dominant",
+              "media_band": "3",
+              "topology": "layered",
+              "authority": "TYPE",
+              "peak": false,
+              "cta": true,
+              "height": 1107.75,
+              "media_ratio": 0.739,
+              "text_ratio": 0.014,
+              "whitespace_ratio": 0.247,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "pause",
+              "media_band": "0",
+              "topology": "layered",
+              "authority": "TYPOGRAPHY",
+              "peak": true,
+              "cta": true,
+              "height": 793,
+              "media_ratio": 0,
+              "text_ratio": 0.026,
+              "whitespace_ratio": 0.974,
+              "background_mode": "rendered_css_surface"
+            }
+          ],
+          "density_sequence": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "image_dominant",
+            "pause"
+          ],
+          "media_sequence": [
+            "2",
+            "1",
+            "1",
+            "3",
+            "0"
+          ],
+          "topology_sequence": [
+            "full_bleed",
+            "inset",
+            "split",
+            "layered",
+            "layered"
+          ],
+          "authority_sequence": [
+            "IMAGE",
+            "SENSORY",
+            "PERSON",
+            "TYPE",
+            "TYPOGRAPHY"
+          ],
+          "plan_render_mismatch": 0,
+          "same_density_3_plus": 0,
+          "same_topology_3_plus": 0,
+          "same_media_scale_3_plus": 0
+        },
+        "watashi_no_daidokoro": {
+          "status": "PASS",
+          "rendered_sequence": [
+            {
+              "density_band": "balanced",
+              "media_band": "2",
+              "topology": "full_bleed",
+              "authority": "WORLD",
+              "peak": true,
+              "cta": true,
+              "height": 1276.640625,
+              "media_ratio": 0.603,
+              "text_ratio": 0.045,
+              "whitespace_ratio": 0.352,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "balanced",
+              "media_band": "1",
+              "topology": "split",
+              "authority": "PERSON",
+              "peak": false,
+              "cta": true,
+              "height": 769,
+              "media_ratio": 0.299,
+              "text_ratio": 0.036,
+              "whitespace_ratio": 0.665,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "balanced",
+              "media_band": "2",
+              "topology": "sequence",
+              "authority": "DATA",
+              "peak": true,
+              "cta": true,
+              "height": 1327.65625,
+              "media_ratio": 0.548,
+              "text_ratio": 0.041,
+              "whitespace_ratio": 0.411,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "image_dominant",
+              "media_band": "3",
+              "topology": "full_bleed",
+              "authority": "WORLD",
+              "peak": false,
+              "cta": true,
+              "height": 2224.453125,
+              "media_ratio": 0.81,
+              "text_ratio": 0.026,
+              "whitespace_ratio": 0.164,
+              "background_mode": "rendered_css_surface"
+            },
+            {
+              "density_band": "pause",
+              "media_band": "0",
+              "topology": "layered",
+              "authority": "TYPOGRAPHY",
+              "peak": true,
+              "cta": true,
+              "height": 793,
+              "media_ratio": 0,
+              "text_ratio": 0.023,
+              "whitespace_ratio": 0.977,
+              "background_mode": "rendered_css_surface"
+            }
+          ],
+          "density_sequence": [
+            "balanced",
+            "balanced",
+            "balanced",
+            "image_dominant",
+            "pause"
+          ],
+          "media_sequence": [
+            "2",
+            "1",
+            "2",
+            "3",
+            "0"
+          ],
+          "topology_sequence": [
+            "full_bleed",
+            "split",
+            "sequence",
+            "full_bleed",
+            "layered"
+          ],
+          "authority_sequence": [
+            "WORLD",
+            "PERSON",
+            "DATA",
+            "WORLD",
+            "TYPOGRAPHY"
+          ],
+          "plan_render_mismatch": 0,
+          "same_density_3_plus": 0,
+          "same_topology_3_plus": 0,
+          "same_media_scale_3_plus": 0
+        }
+      },
+      "final_status": "PASS",
+      "override_reason": "none"
+    },
+    "cross_lp": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {},
+      "final_status": "PASS",
+      "override_reason": "none"
+    },
+    "cta": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {
+        "maylynn_paint": {
+          "status": "PASS",
+          "ctas": [
+            {
+              "stage": "discovery",
+              "label": "素材の状態を見る",
+              "href": "#way-in",
+              "scene_id": "scene-01-observe",
+              "preceding_scene": "scene-01-observe",
+              "psychological_state_before": "uncertain",
+              "psychological_state_after": "oriented",
+              "resolved_target": "scene-02-read_material",
+              "target_content": "素材に触れて考える\n\n外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+              "target_content_hash": "c146f0707d3cfce13fae1c649464436a715a7f295cbc637c9da6bd972bfbf0e4",
+              "information_gain": "orient_to_process",
+              "next_action": "scroll_and_compare",
+              "psychological_purpose": "orient_to_process",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            },
+            {
+              "stage": "reassurance",
+              "label": "対応範囲を確かめる",
+              "href": "#reassurance",
+              "scene_id": "scene-03-watch_hands",
+              "preceding_scene": "scene-03-watch_hands",
+              "psychological_state_before": "informed",
+              "psychological_state_after": "reassured",
+              "resolved_target": "scene-03-watch_hands",
+              "target_content": "手仕事の順番を見る\n外壁塗装を提供する事業者\n対応範囲を確かめる",
+              "target_content_hash": "4a1b23c97db87438c7c98a9f1faa7fc43cf89d3036fb7b4a9be26ba5939dd5af",
+              "information_gain": "verify_scope",
+              "next_action": "review_scope",
+              "psychological_purpose": "verify_scope",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            },
+            {
+              "stage": "action",
+              "label": "見積を相談する",
+              "href": "#contact",
+              "scene_id": "scene-05-consult",
+              "preceding_scene": "scene-05-consult",
+              "psychological_state_before": "ready",
+              "psychological_state_after": "contact_started",
+              "resolved_target": "scene-05-consult",
+              "target_content": "状態から相談する\n\n外壁塗装の状態を見ながら、相談の準備を整えます。\n\n見積を相談する",
+              "target_content_hash": "cb09b47bdbf6ca0ee7d5cf0af1380f9d250db856d91bc1909fa4daf7f6a214a8",
+              "information_gain": "start_verified_contact",
+              "next_action": "use_verified_channel",
+              "psychological_purpose": "start_verified_contact",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            }
+          ],
+          "psychological_delta": "PASS",
+          "evidence_delta": "PASS",
+          "destination_logic": "PASS",
+          "same_target_content_violations": 0,
+          "generic_cross_lp": 0
+        },
+        "nagi_no_mirai": {
+          "status": "PASS",
+          "ctas": [
+            {
+              "stage": "discovery",
+              "label": "過ごし方を感じる",
+              "href": "#way-in",
+              "scene_id": "scene-01-arrive",
+              "preceding_scene": "scene-01-arrive",
+              "psychological_state_before": "uncertain",
+              "psychological_state_after": "oriented",
+              "resolved_target": "scene-02-settle",
+              "target_content": "静けさを感じる\n\nヘッドスパを提供する事業者",
+              "target_content_hash": "086cd4a1d2cfd3c2448ba9cd1a914bc10bdf186ddc1271215a2ae93750e3dbb3",
+              "information_gain": "orient_to_process",
+              "next_action": "scroll_and_compare",
+              "psychological_purpose": "orient_to_process",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            },
+            {
+              "stage": "reassurance",
+              "label": "時間の選び方を見る",
+              "href": "#reassurance",
+              "scene_id": "scene-03-feel_care",
+              "preceding_scene": "scene-03-feel_care",
+              "psychological_state_before": "informed",
+              "psychological_state_after": "reassured",
+              "resolved_target": "scene-03-feel_care",
+              "target_content": "触れられる時間\n\n静かな空間で過ごすひとときを、ヘッドスパに合わせて選びます。\n\n時間の選び方を見る",
+              "target_content_hash": "a477fe60c654d977b23e025eb77035f58bc261d4ca6e9d2b612ff6ef9a491636",
+              "information_gain": "verify_scope",
+              "next_action": "review_scope",
+              "psychological_purpose": "verify_scope",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            },
+            {
+              "stage": "action",
+              "label": "予約を相談する",
+              "href": "#contact",
+              "scene_id": "scene-05-reserve",
+              "preceding_scene": "scene-05-reserve",
+              "psychological_state_before": "ready",
+              "psychological_state_after": "contact_started",
+              "resolved_target": "scene-05-reserve",
+              "target_content": "その時間を予約する\n\nヘッドスパで、自分のための時間を予約します。\n\n予約を相談する",
+              "target_content_hash": "f3378b7e1eef43c0e1c340741c74542ae5229a61c455f1058248e5f1a7e9aaf1",
+              "information_gain": "start_verified_contact",
+              "next_action": "use_verified_channel",
+              "psychological_purpose": "start_verified_contact",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            }
+          ],
+          "psychological_delta": "PASS",
+          "evidence_delta": "PASS",
+          "destination_logic": "PASS",
+          "same_target_content_violations": 0,
+          "generic_cross_lp": 0
+        },
+        "watashi_no_daidokoro": {
+          "status": "PASS",
+          "ctas": [
+            {
+              "stage": "discovery",
+              "label": "料理の流れを見る",
+              "href": "#way-in",
+              "scene_id": "scene-01-encounter",
+              "preceding_scene": "scene-01-encounter",
+              "psychological_state_before": "uncertain",
+              "psychological_state_after": "oriented",
+              "resolved_target": "scene-02-touch",
+              "target_content": "手を動かしてみる\n\n火を入れ、手を動かし、料理を食卓へ運ぶ流れを楽しみます。",
+              "target_content_hash": "566aaf9087de033a7556743e181de939aa0285ba671bf85cc418cb302dd506e7",
+              "information_gain": "orient_to_process",
+              "next_action": "scroll_and_compare",
+              "psychological_purpose": "orient_to_process",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            },
+            {
+              "stage": "reassurance",
+              "label": "場と内容を確かめる",
+              "href": "#reassurance",
+              "scene_id": "scene-03-make",
+              "preceding_scene": "scene-03-make",
+              "psychological_state_before": "informed",
+              "psychological_state_after": "reassured",
+              "resolved_target": "scene-03-make",
+              "target_content": "料理ができていく\n食材と手を動かす時間を選び、料理の流れを一緒に学びます。\n場と内容を確かめる",
+              "target_content_hash": "2b7fbbd2215b76692ec3ac4acbbe492ed958c10149f32de573c1c4f99982da05",
+              "information_gain": "verify_scope",
+              "next_action": "review_scope",
+              "psychological_purpose": "verify_scope",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            },
+            {
+              "stage": "action",
+              "label": "参加を相談する",
+              "href": "#contact",
+              "scene_id": "scene-05-join",
+              "preceding_scene": "scene-05-join",
+              "psychological_state_before": "ready",
+              "psychological_state_after": "contact_started",
+              "resolved_target": "scene-05-join",
+              "target_content": "参加を考える\n\nできあがる一皿を囲む時間へ、参加の一歩を踏み出します。\n\n参加を相談する",
+              "target_content_hash": "519ccb728ce7495fe3fb53dd9efdd4732579b99668661ecd3a6c2f39054be492",
+              "information_gain": "start_verified_contact",
+              "next_action": "use_verified_channel",
+              "psychological_purpose": "start_verified_contact",
+              "target_exists": true,
+              "preceding_evidence": "rendered_scene_trace",
+              "verdict": "PASS"
+            }
+          ],
+          "psychological_delta": "PASS",
+          "evidence_delta": "PASS",
+          "destination_logic": "PASS",
+          "same_target_content_violations": 0,
+          "generic_cross_lp": 0
+        }
+      },
+      "final_status": "PASS",
+      "override_reason": "none"
+    },
+    "peak": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {
+        "maylynn_paint": {
+          "status": "PASS",
+          "count": 3,
+          "rendered_authority": "PASS",
+          "neighbor_delta": "PASS",
+          "placeholder": 0,
+          "capture": "PASS"
+        },
+        "nagi_no_mirai": {
+          "status": "PASS",
+          "count": 3,
+          "rendered_authority": "PASS",
+          "neighbor_delta": "PASS",
+          "placeholder": 0,
+          "capture": "PASS"
+        },
+        "watashi_no_daidokoro": {
+          "status": "PASS",
+          "count": 3,
+          "rendered_authority": "PASS",
+          "neighbor_delta": "PASS",
+          "placeholder": 0,
+          "capture": "PASS"
+        }
+      },
+      "final_status": "PASS",
+      "override_reason": "none"
+    },
+    "mobile": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {
+        "maylynn_paint": {
+          "status": "PASS",
+          "simple_stack": 0,
+          "actual_re_art_direction": "PASS",
+          "focal_preservation": "PASS",
+          "peak_variant": "PASS"
+        },
+        "nagi_no_mirai": {
+          "status": "PASS",
+          "simple_stack": 0,
+          "actual_re_art_direction": "PASS",
+          "focal_preservation": "PASS",
+          "peak_variant": "PASS"
+        },
+        "watashi_no_daidokoro": {
+          "status": "PASS",
+          "simple_stack": 0,
+          "actual_re_art_direction": "PASS",
+          "focal_preservation": "PASS",
+          "peak_variant": "PASS"
+        }
+      },
+      "final_status": "PASS",
+      "override_reason": "none"
+    },
+    "reuse": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {
+        "maylynn_paint": {
+          "status": "PASS",
+          "prominent_exact_reuse": 0,
+          "hero_final_exact_reuse": 0,
+          "same_asset_different_evidence_role": 0,
+          "adjacent_near_duplicate": 0,
+          "assets": [
+            {
+              "asset_id": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "scene_id": "scene-01-observe",
+              "sha": "f35d468562c4c1133882f48e654be7f5ec8bb39a689b1dba36b05602051c61c8",
+              "phash_similarity": 0.0,
+              "prominence": "prominent",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+              "scene_id": "scene-02-read_material",
+              "sha": "4c847cd75c5925eb59da6d1b04708e42ec3153c58264c9e646b678adb993abb0",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/stock/maylynn_paint/material_detail.jpg",
+              "scene_id": "scene-03-watch_hands",
+              "sha": "f5f34b3927146c8aa52143c71787f76f43325c86b5c0ae30ac5750c2e4346bef",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+              "scene_id": "scene-04-imagine_change",
+              "sha": "18e89b9bed9f3a8ac58df75da02101c13875518009bc3c71a0bbdd85350a55d2",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            }
+          ]
+        },
+        "nagi_no_mirai": {
+          "status": "PASS",
+          "prominent_exact_reuse": 0,
+          "hero_final_exact_reuse": 0,
+          "same_asset_different_evidence_role": 0,
+          "adjacent_near_duplicate": 0,
+          "assets": [
+            {
+              "asset_id": "/assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+              "scene_id": "scene-01-arrive",
+              "sha": "7a263f6ff010a6f59e3eef4dbc0329b35955247985d63e0f9d0d4b6466b6668b",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/generated/nagi_no_mirai/sensory_detail.png",
+              "scene_id": "scene-02-settle",
+              "sha": "3b61b2c34045a4de9a5e770721a39030692c9930bcda59d481bca2b61b54026e",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/generated/nagi_no_mirai/welcome_human.png",
+              "scene_id": "scene-03-feel_care",
+              "sha": "6a58c86480f58871ae60defcf6987c314a81978279dbdc06099ca12006e6ecb4",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/stock/nagi_no_mirai/hand_technique.jpg",
+              "scene_id": "scene-04-choose_time",
+              "sha": "912e7687314d7cadedc9dfd97df9030dc8e2bcf62c1893b529d6534b4de936d4",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            }
+          ]
+        },
+        "watashi_no_daidokoro": {
+          "status": "PASS",
+          "prominent_exact_reuse": 0,
+          "hero_final_exact_reuse": 0,
+          "same_asset_different_evidence_role": 0,
+          "adjacent_near_duplicate": 0,
+          "assets": [
+            {
+              "asset_id": "/assets/photography/generated/watashi_no_daidokoro/hero_shared_cooking.png",
+              "scene_id": "scene-01-encounter",
+              "sha": "2b6688de6b0c7dfc31f25a648b1bd026c9496fe6ef59597b2780b7970a31813e",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/generated/watashi_no_daidokoro/finished_table.png",
+              "scene_id": "scene-02-touch",
+              "sha": "b88037d0af86e494eda56968f71f39b2e20e80a8e28e3cd4ef1271b4e84fc7e0",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/stock/watashi_no_daidokoro/ingredient_story.jpg",
+              "scene_id": "scene-03-make",
+              "sha": "1b0b646b96fb454d9288705d2ba5d024c8b41534869c21aa6eb11816f9d2facf",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            },
+            {
+              "asset_id": "/assets/photography/stock/watashi_no_daidokoro/hands_in_action.jpg",
+              "scene_id": "scene-04-share",
+              "sha": "afbcd46287e4b600f9a80eb918776919cdc37feb11f49be49f866fd74c87ea6b",
+              "phash_similarity": 0.0,
+              "prominence": "supporting",
+              "verdict": "PASS"
+            }
+          ]
+        }
+      },
+      "final_status": "PASS",
+      "override_reason": "none"
+    },
+    "capture": {
+      "planned_status": "PASS",
+      "rendered_status": "PASS",
+      "child_statuses": {},
+      "final_status": "PASS",
+      "override_reason": "none"
+    }
+  }
+}

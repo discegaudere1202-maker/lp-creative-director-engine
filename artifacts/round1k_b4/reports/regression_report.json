@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "peak": "PASS",
+  "mobile": "PASS",
+  "perceptual_reuse": "PASS",
+  "a7_copy": "PASS",
+  "public_heading": "15/15",
+  "scene": "5/5 each",
+  "photography": "4/4 each",
+  "safety": "PASS",
+  "claim_trace": "PASS",
+  "browser_qa": "27/27 PASS",
+  "manual_lp_edit": 0
+}

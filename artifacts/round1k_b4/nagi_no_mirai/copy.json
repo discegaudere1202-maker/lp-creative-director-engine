@@ -1,0 +1,89 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "なぎのみらい",
+    "headline": "ヘッドスパ",
+    "headline_lines": [
+      "ヘッドスパ"
+    ],
+    "supporting": "福岡市でヘッドスパを探している方へ。ヘッドスパを提供する事業者。触れられる時間と空間を手がかりに、次の一歩を考えます。",
+    "cta": "予約する",
+    "microcopy": "福岡市｜触れられる時間と空間から次の案内へ。"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "空間に入る",
+      "headline_lines": [
+        "空間に入る"
+      ],
+      "body": "福岡市のヘッドスパ。ヘッドスパを提供する事業者",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "静けさを感じる",
+      "headline_lines": [
+        "静けさを感じる"
+      ],
+      "body": "ヘッドスパを提供する事業者",
+      "evidence_claims": [
+        "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "福岡市で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "触れられる時間",
+      "headline_lines": [
+        "触れられる時間"
+      ],
+      "body": "静かな空間で過ごすひとときを、ヘッドスパに合わせて選びます。",
+      "evidence_claims": [
+        "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "福岡市で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "過ごし方を選ぶ",
+      "headline_lines": [
+        "過ごし方を選ぶ"
+      ],
+      "body": "静かな空間で、ヘッドスパのひとときを味わいます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "その時間を予約する",
+      "headline_lines": [
+        "その時間を予約する"
+      ],
+      "body": "ヘッドスパで、自分のための時間を予約します。",
+      "evidence_claims": [],
+      "cta": "予約する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "meaning_units_not_character_count"
+  },
+  "process_steps": [
+    "気になることを話す",
+    "過ごし方を選ぶ",
+    "予約を相談する"
+  ],
+  "section_naming_gate": {
+    "status": "PASS",
+    "violations": []
+  }
+}

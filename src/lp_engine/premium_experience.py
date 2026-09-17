@@ -85,9 +85,55 @@ def perceptual_reuse_report(asset_manifest: Mapping[str, Any], scene_plan: Mappi
 
 
 def aggregate_gate(children: Mapping[str, Mapping[str, Any]]) -> dict[str, Any]:
-    """Fail closed: a parent cannot pass when any child gate fails."""
-    failures = [name for name, report in children.items() if report.get("status") != "PASS"]
-    return {"status": "PASS" if not failures else "FAIL", "child_failures": failures, "integrity": "PASS" if not failures else "FAIL"}
+    """Fail closed across arbitrary nested mappings and sequences."""
+    failures: list[str] = []
+
+    def walk(value: Any, path: str) -> None:
+        if isinstance(value, Mapping):
+            if value.get("status") == "FAIL" or value.get("verdict") == "FAIL" or value.get("pass") is False:
+                failures.append(path)
+            hard = value.get("hard_violation")
+            if isinstance(hard, (int, float)) and hard > 0:
+                failures.append(path)
+            for key, child in value.items():
+                walk(child, f"{path}.{key}")
+        elif isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
+            for index, child in enumerate(value):
+                walk(child, f"{path}[{index}]")
+
+    walk(children, "root")
+    unique = list(dict.fromkeys(failures))
+    return {"status": "PASS" if not unique else "FAIL", "child_failures": unique, "integrity": "PASS" if not unique else "FAIL"}
+
+
+def aggregate_gate_status(report: Mapping[str, Any]) -> dict[str, Any]:
+    """Shared gate SSOT used by B4 reports and final aggregation."""
+    return aggregate_gate(report)
+
+
+def rendered_media_contract(expected_media: bool, rendered_media: bool, visible_media_count: int, nonzero_area: bool = True) -> dict[str, Any]:
+    """Validate the media intent that was actually rendered."""
+    valid = rendered_media == expected_media and (not expected_media or (visible_media_count > 0 and nonzero_area))
+    return {"expected_media": expected_media, "rendered_media": rendered_media, "visible_media_count": visible_media_count, "verdict": "PASS" if valid else "FAIL"}
+
+
+def authority_contract(expected_authority: str, rendered_authority: str) -> dict[str, Any]:
+    valid = bool(expected_authority) and expected_authority == rendered_authority
+    return {"expected_authority": expected_authority, "rendered_authority": rendered_authority, "mismatch": int(not valid), "verdict": "PASS" if valid else "FAIL"}
+
+
+def rhythm_contract(left: Sequence[Mapping[str, Any]], right: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    """Compare rendered signatures, ignoring labels and company names."""
+    keys = ("density_band", "media_band", "topology")
+    same = len(left) == len(right) and all(all(a.get(key) == b.get(key) for key in keys) for a, b in zip(left, right))
+    return {"hard_violation": int(same), "verdict": "FAIL" if same else "PASS"}
+
+
+def cta_destination_contract(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    by_stage = {row.get("stage"): row for row in rows}
+    same_content = len(by_stage) == 3 and by_stage.get("reassurance", {}).get("target_content_hash") == by_stage.get("action", {}).get("target_content_hash")
+    valid = set(by_stage) == {"discovery", "reassurance", "action"} and len(rows) == 3 and all(row.get("target_exists") for row in rows) and not same_content
+    return {"same_target_content_violations": int(same_content), "verdict": "PASS" if valid else "FAIL"}
 
 
 def extract_rendered_ctas(html: str) -> list[dict[str, Any]]:

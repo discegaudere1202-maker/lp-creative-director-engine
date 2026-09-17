@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "copy_intents": [
+        "ORIENT",
+        "GUIDE",
+        "CONVERT"
+      ],
+      "source_allowlist": [
+        "VERIFIED_SCOPE",
+        "Company Truth",
+        "Company Signature Anchor",
+        "Copy Intent"
+      ]
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "copy_intents": [
+        "ORIENT",
+        "GUIDE",
+        "CONVERT"
+      ],
+      "source_allowlist": [
+        "VERIFIED_SCOPE",
+        "Company Truth",
+        "Company Signature Anchor",
+        "Copy Intent"
+      ]
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "copy_intents": [
+        "ORIENT",
+        "GUIDE",
+        "CONVERT"
+      ],
+      "source_allowlist": [
+        "VERIFIED_SCOPE",
+        "Company Truth",
+        "Company Signature Anchor",
+        "Copy Intent"
+      ]
+    }
+  ]
+}

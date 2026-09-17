@@ -1,0 +1,196 @@
+{
+  "schema_version": "narrative_architecture_v1",
+  "narrative_family": "participation",
+  "narrative_arc": [
+    {
+      "narrative_state": "encounter",
+      "user_question": "何から始めると楽しそうか",
+      "user_emotion": "curious",
+      "section_purpose": "CREATE_DESIRE",
+      "evidence_required": [],
+      "preferred_visual_authority": "PERSON",
+      "preferred_composition_grammar": "table_scene",
+      "copy_density": "medium",
+      "cta_eligibility": "none"
+    },
+    {
+      "narrative_state": "touch",
+      "user_question": "自分の手で試せるか",
+      "user_emotion": "engaged",
+      "section_purpose": "SHOW_PARTICIPATION",
+      "evidence_required": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002"
+      ],
+      "preferred_visual_authority": "WORLD",
+      "preferred_composition_grammar": "human_dialogue",
+      "copy_density": "medium",
+      "cta_eligibility": "secondary"
+    },
+    {
+      "narrative_state": "make",
+      "user_question": "できていく過程を想像できるか",
+      "user_emotion": "energized",
+      "section_purpose": "SHOW_PROCESS",
+      "evidence_required": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002"
+      ],
+      "preferred_visual_authority": "PLACE",
+      "preferred_composition_grammar": "process_sequence",
+      "copy_density": "medium",
+      "cta_eligibility": "secondary"
+    },
+    {
+      "narrative_state": "share",
+      "user_question": "できたものを誰と囲むか",
+      "user_emotion": "warm",
+      "section_purpose": "SHOW_TRANSFORMATION",
+      "evidence_required": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002"
+      ],
+      "preferred_visual_authority": "MATERIAL",
+      "preferred_composition_grammar": "table_scene",
+      "copy_density": "medium",
+      "cta_eligibility": "secondary"
+    },
+    {
+      "narrative_state": "join",
+      "user_question": "次の回にどう参加するか",
+      "user_emotion": "ready",
+      "section_purpose": "ENABLE_ACTION",
+      "evidence_required": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002"
+      ],
+      "preferred_visual_authority": "TYPOGRAPHY",
+      "preferred_composition_grammar": "asymmetric_editorial",
+      "copy_density": "medium",
+      "cta_eligibility": "primary"
+    }
+  ],
+  "narrative_states": [
+    "encounter",
+    "touch",
+    "make",
+    "share",
+    "join"
+  ],
+  "section_purposes": [
+    "CREATE_DESIRE",
+    "SHOW_PARTICIPATION",
+    "SHOW_PROCESS",
+    "SHOW_TRANSFORMATION",
+    "ENABLE_ACTION"
+  ],
+  "transition_logic": [
+    "encounter→touch",
+    "touch→make",
+    "make→share",
+    "share→join"
+  ],
+  "emotional_progression": [
+    "curious",
+    "engaged",
+    "energized",
+    "warm",
+    "ready"
+  ],
+  "visual_progression": [
+    "table_scene",
+    "human_dialogue",
+    "process_sequence",
+    "table_scene",
+    "asymmetric_editorial"
+  ],
+  "evidence_progression": [
+    [],
+    [
+      "watashi_no_daidokoro-e-001",
+      "watashi_no_daidokoro-e-002"
+    ],
+    [
+      "watashi_no_daidokoro-e-001",
+      "watashi_no_daidokoro-e-002"
+    ],
+    [
+      "watashi_no_daidokoro-e-001",
+      "watashi_no_daidokoro-e-002"
+    ],
+    [
+      "watashi_no_daidokoro-e-001",
+      "watashi_no_daidokoro-e-002"
+    ]
+  ],
+  "cta_progression_mapping": [
+    {
+      "stage": "discovery",
+      "section_role": "hero_orientation",
+      "user_hesitation": "自分に関係する入口か分からない",
+      "evidence_already_seen": [],
+      "required_evidence": [],
+      "action_reason": "まず状況を見渡す",
+      "action_type": "anchor",
+      "label_strategy": "understand_before_contact",
+      "visible_label": "料理の流れを見る",
+      "destination": "#way-in"
+    },
+    {
+      "stage": "reassurance",
+      "section_role": "company_truth",
+      "user_hesitation": "この会社へ相談してよいか迷う",
+      "evidence_already_seen": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002"
+      ],
+      "required_evidence": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002"
+      ],
+      "action_reason": "会社固有の範囲を確かめる",
+      "action_type": "anchor",
+      "label_strategy": "verify_scope",
+      "visible_label": "場と内容を確かめる",
+      "destination": "#reassurance"
+    },
+    {
+      "stage": "action",
+      "section_role": "cta_zone",
+      "user_hesitation": "何を伝えればよいか分からない",
+      "evidence_already_seen": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002",
+        "watashi_no_daidokoro-e-003",
+        "watashi_no_daidokoro-e-004"
+      ],
+      "required_evidence": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002",
+        "watashi_no_daidokoro-e-003",
+        "watashi_no_daidokoro-e-004"
+      ],
+      "action_reason": "applicationの確認へ進む",
+      "action_type": "conversion",
+      "label_strategy": "act_on_seen_evidence",
+      "visible_label": "参加を相談する",
+      "destination": "#contact"
+    }
+  ],
+  "section_naming": [
+    "食材に出会う",
+    "手を動かしてみる",
+    "料理ができていく",
+    "食卓を囲む",
+    "参加を考える"
+  ],
+  "mobile_redirection": {
+    "hero_crop": "focus_primary_authority",
+    "visual_text_order": "authority_before_explanation",
+    "whitespace": "preserve_tempo_pause",
+    "section_density": "reduce_supporting_density",
+    "image_prominence": "promote_signature_moment",
+    "cta_timing": "after_reassurance"
+  },
+  "derived_from": "Creative Genome + Company Truth + approved Evidence"
+}
