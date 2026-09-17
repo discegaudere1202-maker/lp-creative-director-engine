@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "rendered_sequence": [
+        "pause",
+        "balanced",
+        "pause",
+        "image_dominant",
+        "pause"
+      ],
+      "density_sequence": [
+        "pause",
+        "balanced",
+        "sparse",
+        "image_dominant",
+        "sparse"
+      ],
+      "media_ratio_sequence": [
+        0.603,
+        0.281,
+        0,
+        0.739,
+        0
+      ],
+      "same_density_3_plus": 0,
+      "same_topology_3_plus": 0,
+      "same_media_ratio_3_plus": 0,
+      "plan_render_mismatch": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "rendered_sequence": [
+        "pause",
+        "balanced",
+        "pause",
+        "image_dominant",
+        "pause"
+      ],
+      "density_sequence": [
+        "pause",
+        "balanced",
+        "pause",
+        "image_dominant",
+        "sparse"
+      ],
+      "media_ratio_sequence": [
+        0.603,
+        0.281,
+        0.27,
+        0.739,
+        0
+      ],
+      "same_density_3_plus": 0,
+      "same_topology_3_plus": 0,
+      "same_media_ratio_3_plus": 0,
+      "plan_render_mismatch": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "rendered_sequence": [
+        "pause",
+        "balanced",
+        "pause",
+        "image_dominant",
+        "pause"
+      ],
+      "density_sequence": [
+        "pause",
+        "balanced",
+        "sparse",
+        "image_dominant",
+        "sparse"
+      ],
+      "media_ratio_sequence": [
+        0.603,
+        0.299,
+        0,
+        0.81,
+        0
+      ],
+      "same_density_3_plus": 0,
+      "same_topology_3_plus": 0,
+      "same_media_ratio_3_plus": 0,
+      "plan_render_mismatch": 0
+    }
+  },
+  "cross_lp_same_rhythm_hard": 0
+}

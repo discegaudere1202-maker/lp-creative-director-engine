@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "trace_coverage": 100,
+      "untraced": 0,
+      "blocker": 0,
+      "major": 0,
+      "violations": []
+    },
+    {
+      "company": "nagi_no_mirai",
+      "trace_coverage": 100,
+      "untraced": 0,
+      "blocker": 0,
+      "major": 0,
+      "violations": []
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "trace_coverage": 100,
+      "untraced": 0,
+      "blocker": 0,
+      "major": 0,
+      "violations": []
+    }
+  ]
+}

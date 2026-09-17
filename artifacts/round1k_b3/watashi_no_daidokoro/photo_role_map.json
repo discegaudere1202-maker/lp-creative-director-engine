@@ -1,0 +1,58 @@
+{
+  "schema_version": "photo_role_map_v1",
+  "selection_mode": "role_driven_not_fixed_count",
+  "roles": [
+    {
+      "photo_role": "hero_shared_cooking",
+      "visual_subject": "手を動かしながら学ぶ共有時間",
+      "business_purpose": "完成品だけでなく教室体験を伝える",
+      "replacement_target": "実教室・レッスン風景",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "mid",
+      "proof_intent": "experience_context_only",
+      "placement": "hero_dominant_image"
+    },
+    {
+      "photo_role": "ingredient_story",
+      "visual_subject": "食材・道具・下準備の手触り",
+      "business_purpose": "素材への関心と暮らしの温度を伝える",
+      "replacement_target": "実食材・実テーブル",
+      "preferred_orientation": "square",
+      "crop_tolerance": "tight",
+      "people_distance": "none",
+      "proof_intent": "material_context_only",
+      "placement": "mid_frame_proof_experience"
+    },
+    {
+      "photo_role": "hands_in_action",
+      "visual_subject": "包丁・混ぜる・盛り付け等の手元",
+      "business_purpose": "学びの具体性を見せる",
+      "replacement_target": "実レッスン中の手元",
+      "preferred_orientation": "portrait",
+      "crop_tolerance": "tight",
+      "people_distance": "close",
+      "proof_intent": "craft_context_only",
+      "placement": "craft_detail_image",
+      "secondary_placement": "quiet_chapter_image"
+    },
+    {
+      "photo_role": "finished_table",
+      "visual_subject": "完成物と共有する場",
+      "business_purpose": "体験後の達成感を想起させる",
+      "replacement_target": "実教室の完成物・食卓",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "far",
+      "proof_intent": "outcome_context_only",
+      "placement": "quiet_chapter_image"
+    }
+  ],
+  "section_role_map": {
+    "hero_orientation": "hero_shared_cooking",
+    "company_truth": "ingredient_story",
+    "service_process": "hands_in_action",
+    "next_step": "finished_table",
+    "cta_zone": "finished_table"
+  }
+}

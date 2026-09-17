@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "precedence": [
+    "rendered_fail",
+    "capture_fail",
+    "dom_fail",
+    "plan_pass"
+  ],
+  "overridden_plan_passes": 0
+}

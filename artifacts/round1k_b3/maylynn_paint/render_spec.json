@@ -1,0 +1,1650 @@
+{
+  "schema_version": "production_generation_v1",
+  "company": {
+    "schema_version": "production_generation_v1",
+    "company_id": "maylynn_paint",
+    "company_name": "Maylynn Paint",
+    "industry": "外壁塗装",
+    "service_category": "外壁塗装",
+    "location": "福岡市",
+    "business_model": "local_service",
+    "company_truth": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+    "differentiators": [
+      "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。"
+    ],
+    "customer_state": {
+      "before": "相談前に何を確認すればよいか分からない",
+      "after": "まず状況を伝えてみようと思える",
+      "barrier": "自分に合う入口か分からない"
+    },
+    "conversion_goal": "quote_request",
+    "generation_iteration": 5,
+    "primary_objections": [
+      "O3_PROCESS",
+      "O4_NEXT"
+    ],
+    "available_evidence": [
+      "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+      "福岡市で活動する事業者。",
+      "対応できる内容を確認してから次の案内へ進む。",
+      "公式SNSから相談・予約の入口を確認する。"
+    ],
+    "unavailable_evidence": [
+      "実店舗・実施工・実スタッフ・実顧客・実教室の写真"
+    ],
+    "hearing_required": [],
+    "visual_authority": [
+      "MATERIAL",
+      "PLACE",
+      "PERSON",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "evidence_density": "MEDIUM",
+    "industry_visual_family": "material_field",
+    "visual_scene": "material_field",
+    "layout_profile": "field_ledger",
+    "field_validation_context": true,
+    "verified_strengths": [
+      "E2_SPECIFIC",
+      "E3_OPERATIONAL",
+      "E5_DECISION_ENABLING"
+    ],
+    "evidence_utility": {
+      "TRUST": 1,
+      "CONVERSION": 2,
+      "VISUAL": 1,
+      "PROCESS": 2,
+      "IDENTITY": 1
+    },
+    "evidence_strategy": "proof_process_action_balance",
+    "source_references": [
+      "approved-selection-manifest",
+      "phase6-sales-master-snapshot"
+    ],
+    "contact_channels": {
+      "href": "#contact",
+      "primary": "公式SNS"
+    },
+    "photo_replacement_readiness": {
+      "status": "READY_WITH_PROXY",
+      "proxy_role": "role_selected_photography_asset",
+      "replacement_targets": [
+        "実店舗・実現場・実商品・実人物写真"
+      ],
+      "layout_constraints": [
+        "同一役割の実写真を同じ比率へ差し替え可能",
+        "文字重なりなし",
+        "中央焦点を保持"
+      ],
+      "proof_role": "visual_context_only; not evidence of a real result or location",
+      "source_priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only"
+    }
+  },
+  "strategy": {
+    "schema_version": "production_generation_v1",
+    "creative_problem": "相談前に何を確認すればよいか分からないを、見積の入口をつくるへ変える。",
+    "target_customer_state": {
+      "before": "相談前に何を確認すればよいか分からない",
+      "after": "まず状況を伝えてみようと思える",
+      "barrier": "自分に合う入口か分からない"
+    },
+    "desired_customer_transition": "まず状況を伝えてみようと思える",
+    "core_message": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+    "big_idea": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。を、見積の入口をつくるの入口として見せる。",
+    "emotional_barrier": "自分に合う入口か分からない",
+    "trust_strategy": {
+      "approved_proof": [
+        "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+        "福岡市で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。"
+      ],
+      "sequence": [
+        "Company Truth",
+        "Operational clarity",
+        "Action"
+      ],
+      "unsupported_claim_policy": "Use only Safety-approved evidence; do not generate reassurance from missing facts."
+    },
+    "conversion_strategy": {
+      "goal": "quote_request",
+      "cta_role": "permission_to_start",
+      "before_cta": "対象となる状況と確認できる入口を短く明示する",
+      "customer_hesitation": "自分に合う入口か分からない",
+      "resolved_by_lp": "会社固有の入口・Process・連絡手段を一続きにする",
+      "why_act_now": "見積の入口をつくるを確認できる入口がここにある",
+      "after_click": "確認済みの連絡手段へ進み、未確認の対応約束は置かない",
+      "after_cta": "確認できる連絡手段だけを表示し、未確認の対応約束を置かない"
+    },
+    "form_causality": [
+      {
+        "company_truth": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+        "form_decision": "field_ledgerの主構造を選び、情報の入口を一つの視線移動にまとめる。",
+        "customer_effect": "最初に何を理解すればよいか迷いにくい。"
+      },
+      {
+        "company_truth": "相談前に何を確認すればよいか分からない",
+        "form_decision": "Before Stateを最初の見出しとCTA前の説明へ再登場させる。",
+        "customer_effect": "自分の現在地から行動へ移れる。"
+      },
+      {
+        "company_truth": "自分に合う入口か分からない",
+        "form_decision": "障壁に対応するEvidenceを、説明・Process・CTAの順で近接配置する。",
+        "customer_effect": "行動前の不確実さが具体的な確認事項へ変わる。"
+      },
+      {
+        "company_truth": "quote_request",
+        "form_decision": "Conversion Goalに合わせてCTAのタイミングと余白を決める。",
+        "customer_effect": "押す理由と次の動作が画面上でつながる。"
+      },
+      {
+        "company_truth": "MEDIUM",
+        "form_decision": "LOW Evidenceでは主張を増やさず、余白・Type・Material abstractionでPeakをつくる。",
+        "customer_effect": "情報不足を誤認させず、見せ場の密度だけを高める。"
+      }
+    ],
+    "big_idea_gate": {
+      "company_specific": true,
+      "customer_relevant": true,
+      "visualizable": true,
+      "extendable": true,
+      "memorable": true
+    },
+    "visual_authority_priority": [
+      "MATERIAL",
+      "PLACE",
+      "PERSON",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "layout_profile": "field_ledger",
+    "evidence_density_signal": "MEDIUM",
+    "quality_calibration": "premium_causality_and_conversion",
+    "sparse_strategy": "not_required",
+    "premium_quality_strategy": {
+      "enabled": true,
+      "focus": [
+        "form_causality",
+        "conversion_confidence",
+        "quiet_chapters",
+        "mobile_peak"
+      ],
+      "not_a_template": true
+    },
+    "anti_template_notes": [
+      "No generic three-card grid as the primary composition.",
+      "No unsupported reassurance or invented metrics.",
+      "Peak screens are limited; quiet chapters carry orientation."
+    ],
+    "creative_genome": {
+      "schema_version": "creative_genome_v1",
+      "dominant_narrative": "craft",
+      "emotional_tempo": "grounded",
+      "visual_authority_priority": [
+        "MATERIAL",
+        "PLACE",
+        "PERSON",
+        "TYPOGRAPHY",
+        "DOCUMENT"
+      ],
+      "composition_logic": [
+        "editorial_split",
+        "material_detail",
+        "process_sequence",
+        "progressive_story"
+      ],
+      "signature_moment": {
+        "section_role": "company_truth",
+        "reason": "Company Truthと主役のVisual Authorityが同じ画面で結び付く瞬間"
+      },
+      "screenshot_peak_plan": [
+        {
+          "section_role": "hero_orientation",
+          "visual_authority": "MATERIAL",
+          "composition": "editorial_split",
+          "reason": "最初の認識を決める"
+        },
+        {
+          "section_role": "company_truth",
+          "visual_authority": "PLACE",
+          "composition": "material_detail",
+          "reason": "固有のTruthを記憶に残す"
+        },
+        {
+          "section_role": "service_process",
+          "visual_authority": "MATERIAL",
+          "composition": "process_sequence",
+          "reason": "行動の順番を見せる"
+        }
+      ],
+      "cta_progression": [
+        {
+          "stage": "discovery",
+          "section_role": "hero_orientation",
+          "user_hesitation": "自分に関係する入口か分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "まず状況を見渡す",
+          "action_type": "anchor",
+          "label_strategy": "understand_before_contact",
+          "visible_label": "素材の状態を見る",
+          "destination": "#way-in"
+        },
+        {
+          "stage": "reassurance",
+          "section_role": "company_truth",
+          "user_hesitation": "この会社へ相談してよいか迷う",
+          "evidence_already_seen": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "required_evidence": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "action_reason": "会社固有の範囲を確かめる",
+          "action_type": "anchor",
+          "label_strategy": "verify_scope",
+          "visible_label": "対応範囲を確かめる",
+          "destination": "#contact"
+        },
+        {
+          "stage": "action",
+          "section_role": "cta_zone",
+          "user_hesitation": "何を伝えればよいか分からない",
+          "evidence_already_seen": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002",
+            "maylynn_paint-e-003",
+            "maylynn_paint-e-004"
+          ],
+          "required_evidence": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002",
+            "maylynn_paint-e-003",
+            "maylynn_paint-e-004"
+          ],
+          "action_reason": "quote_requestの確認へ進む",
+          "action_type": "conversion",
+          "label_strategy": "act_on_seen_evidence",
+          "visible_label": "見積を相談する",
+          "destination": "#contact"
+        }
+      ],
+      "mobile_redirection": {
+        "hero_crop": "focus_primary_authority",
+        "visual_text_order": "authority_before_explanation",
+        "whitespace": "preserve_tempo_pause",
+        "section_density": "reduce_supporting_density",
+        "image_prominence": "promote_signature_moment",
+        "cta_timing": "after_reassurance"
+      },
+      "derivation": {
+        "source": "Company Truth + evidence types + conversion goal + visual authority",
+        "profile": "field_ledger",
+        "evidence_types": [
+          "CTA_CHANNEL",
+          "PLACE_WIDE",
+          "SERVICE_PROCESS",
+          "SERVICE_SCOPE"
+        ],
+        "deterministic": true
+      }
+    },
+    "narrative_architecture": {
+      "schema_version": "narrative_architecture_v1",
+      "narrative_family": "craft",
+      "narrative_arc": [
+        {
+          "narrative_state": "observe",
+          "user_question": "この場所や状態をどう見つめればよいか",
+          "user_emotion": "curious",
+          "section_purpose": "ESTABLISH_CONTEXT",
+          "evidence_required": [
+            "maylynn_paint-e-001"
+          ],
+          "preferred_visual_authority": "MATERIAL",
+          "preferred_composition_grammar": "immersive_image",
+          "copy_density": "medium",
+          "cta_eligibility": "none"
+        },
+        {
+          "narrative_state": "read_material",
+          "user_question": "素材の違いはどこに表れるか",
+          "user_emotion": "attentive",
+          "section_purpose": "SHOW_DETAIL",
+          "evidence_required": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "preferred_visual_authority": "PLACE",
+          "preferred_composition_grammar": "material_detail",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "watch_hands",
+          "user_question": "どんな手順で整えていくか",
+          "user_emotion": "assured",
+          "section_purpose": "SHOW_CRAFT",
+          "evidence_required": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "preferred_visual_authority": "PERSON",
+          "preferred_composition_grammar": "process_sequence",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "imagine_change",
+          "user_question": "整ったあとの景色を想像できるか",
+          "user_emotion": "hopeful",
+          "section_purpose": "SHOW_TRANSFORMATION",
+          "evidence_required": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "preferred_visual_authority": "TYPOGRAPHY",
+          "preferred_composition_grammar": "asymmetric_editorial",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "consult",
+          "user_question": "自分の状態をどう伝えるか",
+          "user_emotion": "ready",
+          "section_purpose": "ENABLE_ACTION",
+          "evidence_required": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "preferred_visual_authority": "DOCUMENT",
+          "preferred_composition_grammar": "human_dialogue",
+          "copy_density": "medium",
+          "cta_eligibility": "primary"
+        }
+      ],
+      "narrative_states": [
+        "observe",
+        "read_material",
+        "watch_hands",
+        "imagine_change",
+        "consult"
+      ],
+      "section_purposes": [
+        "ESTABLISH_CONTEXT",
+        "SHOW_DETAIL",
+        "SHOW_CRAFT",
+        "SHOW_TRANSFORMATION",
+        "ENABLE_ACTION"
+      ],
+      "transition_logic": [
+        "observe→read_material",
+        "read_material→watch_hands",
+        "watch_hands→imagine_change",
+        "imagine_change→consult"
+      ],
+      "emotional_progression": [
+        "curious",
+        "attentive",
+        "assured",
+        "hopeful",
+        "ready"
+      ],
+      "visual_progression": [
+        "immersive_image",
+        "material_detail",
+        "process_sequence",
+        "asymmetric_editorial",
+        "human_dialogue"
+      ],
+      "evidence_progression": [
+        [
+          "maylynn_paint-e-001"
+        ],
+        [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ]
+      ],
+      "cta_progression_mapping": [
+        {
+          "stage": "discovery",
+          "section_role": "hero_orientation",
+          "user_hesitation": "自分に関係する入口か分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "まず状況を見渡す",
+          "action_type": "anchor",
+          "label_strategy": "understand_before_contact",
+          "visible_label": "素材の状態を見る",
+          "destination": "#way-in"
+        },
+        {
+          "stage": "reassurance",
+          "section_role": "company_truth",
+          "user_hesitation": "この会社へ相談してよいか迷う",
+          "evidence_already_seen": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "required_evidence": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002"
+          ],
+          "action_reason": "会社固有の範囲を確かめる",
+          "action_type": "anchor",
+          "label_strategy": "verify_scope",
+          "visible_label": "対応範囲を確かめる",
+          "destination": "#contact"
+        },
+        {
+          "stage": "action",
+          "section_role": "cta_zone",
+          "user_hesitation": "何を伝えればよいか分からない",
+          "evidence_already_seen": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002",
+            "maylynn_paint-e-003",
+            "maylynn_paint-e-004"
+          ],
+          "required_evidence": [
+            "maylynn_paint-e-001",
+            "maylynn_paint-e-002",
+            "maylynn_paint-e-003",
+            "maylynn_paint-e-004"
+          ],
+          "action_reason": "quote_requestの確認へ進む",
+          "action_type": "conversion",
+          "label_strategy": "act_on_seen_evidence",
+          "visible_label": "見積を相談する",
+          "destination": "#contact"
+        }
+      ],
+      "section_naming": [
+        "家の輪郭を見つめる",
+        "素材に触れて考える",
+        "手仕事の順番を見る",
+        "仕上がりを思い描く",
+        "状態から相談する"
+      ],
+      "mobile_redirection": {
+        "hero_crop": "focus_primary_authority",
+        "visual_text_order": "authority_before_explanation",
+        "whitespace": "preserve_tempo_pause",
+        "section_density": "reduce_supporting_density",
+        "image_prominence": "promote_signature_moment",
+        "cta_timing": "after_reassurance"
+      },
+      "derived_from": "Creative Genome + Company Truth + approved Evidence"
+    }
+  },
+  "ia": [
+    {
+      "section_id": "opening",
+      "section_role": "hero_orientation",
+      "customer_question": "ここは自分の状況を相談できる場所か？",
+      "key_message": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。を、見積の入口をつくるの入口として見せる。",
+      "layout_hint": "field_ledger",
+      "evidence_used": [],
+      "visual_authority": "MATERIAL",
+      "emotional_intensity": 5,
+      "cta_role": "orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "headline_first_then_single_action",
+      "composition_grammar": "editorial_split",
+      "genome_tempo": "grounded",
+      "cta_stage": "discovery",
+      "order": 0
+    },
+    {
+      "section_id": "way_in",
+      "section_role": "service_process",
+      "customer_question": "相談したら、何を伝えればよいか？",
+      "key_message": "対応範囲をほどく。",
+      "layout_hint": "対応範囲をほどく",
+      "evidence_used": [
+        "maylynn_paint-e-001",
+        "maylynn_paint-e-003"
+      ],
+      "visual_authority": "DOCUMENT",
+      "emotional_intensity": 3,
+      "cta_role": "clarity",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "vertical_steps_with_breathing_room",
+      "composition_grammar": "process_sequence",
+      "genome_tempo": "grounded",
+      "cta_stage": "",
+      "order": 1
+    },
+    {
+      "section_id": "truth",
+      "section_role": "company_truth",
+      "customer_question": "なぜこの会社に相談するのか？",
+      "key_message": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+      "layout_hint": "現状を図面にする",
+      "evidence_used": [
+        "maylynn_paint-e-001",
+        "maylynn_paint-e-002"
+      ],
+      "visual_authority": "MATERIAL",
+      "emotional_intensity": 4,
+      "cta_role": "proof_orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "stacked_proof_with_short_lines",
+      "composition_grammar": "material_detail",
+      "genome_tempo": "grounded",
+      "cta_stage": "reassurance",
+      "order": 2
+    },
+    {
+      "section_id": "contact",
+      "section_role": "next_step",
+      "customer_question": "問い合わせた後、まず何ができるか？",
+      "key_message": "見積の入口。",
+      "layout_hint": "見積の入口",
+      "evidence_used": [
+        "maylynn_paint-e-004"
+      ],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 4,
+      "cta_role": "action",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "contact_details_before_button",
+      "composition_grammar": "progressive_story",
+      "genome_tempo": "grounded",
+      "cta_stage": "",
+      "order": 3
+    },
+    {
+      "section_id": "close",
+      "section_role": "cta_zone",
+      "customer_question": "ここから何をすればよいか？",
+      "key_message": "見積の入口をつくる",
+      "layout_hint": "field_ledger",
+      "evidence_used": [
+        "maylynn_paint-e-001",
+        "maylynn_paint-e-002",
+        "maylynn_paint-e-003",
+        "maylynn_paint-e-004"
+      ],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 5,
+      "cta_role": "primary_conversion",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target",
+      "composition_grammar": "editorial_split",
+      "genome_tempo": "grounded",
+      "cta_stage": "action",
+      "order": 4
+    }
+  ],
+  "copy": {
+    "schema_version": "production_generation_v1",
+    "hero": {
+      "eyebrow": "Maylynn Paint",
+      "headline": "外壁塗装",
+      "headline_lines": [
+        "外壁塗装"
+      ],
+      "supporting": "福岡市で外壁塗装を探している方へ。外壁塗装を提供する事業者。素材の状態と仕上がりを手がかりに、次の一歩を考えます。",
+      "cta": "見積を相談する",
+      "microcopy": "福岡市｜素材の状態と仕上がりから次の案内へ。"
+    },
+    "sections": [
+      {
+        "section_id": "opening",
+        "headline": "家の輪郭を見つめる",
+        "headline_lines": [
+          "家の輪郭を見つめる"
+        ],
+        "body": "福岡市の外壁塗装。外壁塗装を提供する事業者",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "way_in",
+        "headline": "素材に触れて考える",
+        "headline_lines": [
+          "素材に触れて考える"
+        ],
+        "body": "外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "truth",
+        "headline": "手仕事の順番を見る",
+        "headline_lines": [
+          "手仕事の順番を見る"
+        ],
+        "body": "外壁塗装を提供する事業者",
+        "evidence_claims": [
+          "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+          "福岡市で活動する事業者。",
+          "対応できる内容を確認してから次の案内へ進む。",
+          "公式SNSから相談・予約の入口を確認する。"
+        ],
+        "cta": ""
+      },
+      {
+        "section_id": "contact",
+        "headline": "仕上がりを思い描く",
+        "headline_lines": [
+          "仕上がりを思い描く"
+        ],
+        "body": "表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+        "evidence_claims": [
+          "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+          "福岡市で活動する事業者。",
+          "対応できる内容を確認してから次の案内へ進む。",
+          "公式SNSから相談・予約の入口を確認する。"
+        ],
+        "cta": ""
+      },
+      {
+        "section_id": "close",
+        "headline": "状態から相談する",
+        "headline_lines": [
+          "状態から相談する"
+        ],
+        "body": "外壁塗装の状態を見ながら、相談の準備を整えます。",
+        "evidence_claims": [],
+        "cta": "見積を相談する"
+      }
+    ],
+    "global_constraints": {
+      "all_customer_facing_claims_require_evidence_id": true,
+      "unsupported_reassurance": "blocked",
+      "line_shape": "meaning_units_not_character_count"
+    },
+    "process_steps": [
+      "状態を伝える",
+      "対応範囲を確認する",
+      "見積を相談する"
+    ],
+    "section_naming_gate": {
+      "status": "PASS",
+      "violations": []
+    }
+  },
+  "art_direction": {
+    "schema_version": "production_generation_v1",
+    "art_direction_concept": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。を、見積の入口をつくるの入口として見せる。",
+    "visual_mood": "precise field intelligence with the warmth of a working craft",
+    "visual_authority_priority": [
+      "MATERIAL",
+      "PLACE",
+      "PERSON",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "color_logic": {
+      "ink": "#151613",
+      "accent": "#d7b27b",
+      "paper": "#f1eadc",
+      "reason": "MATERIAL is the first evidence-bearing authority."
+    },
+    "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+    "composition_logic": "A datum-led field opening, material inspection surface and measured quote route; evidence sits beside the decision it supports.",
+    "photography_logic": "Role-driven photography is the primary visual authority; vector scenes are support only.",
+    "visual_scene": "material_field",
+    "visual_source": "photography_pipeline",
+    "photo_replacement_readiness": {
+      "status": "READY_WITH_PROXY",
+      "proxy_role": "role_selected_photography_asset",
+      "replacement_targets": [
+        "実店舗・実現場・実商品・実人物写真"
+      ],
+      "layout_constraints": [
+        "同一役割の実写真を同じ比率へ差し替え可能",
+        "文字重なりなし",
+        "中央焦点を保持"
+      ],
+      "proof_role": "visual_context_only; not evidence of a real result or location",
+      "source_priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only"
+    },
+    "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+    "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+    "motion_logic": "trace_the_work; one restrained reveal per section; no infinite or blocking animation.",
+    "forbidden_patterns": [
+      "rounded card wall",
+      "generic three-column grid",
+      "unsupported trust badge",
+      "stock person",
+      "marquee",
+      "parallax"
+    ],
+    "craft_catch": "A datum line carries the customer from a visible condition to the information needed for a quote.",
+    "layout_profile": "field_ledger",
+    "art_direction_dimensions": {
+      "macro_composition": "field_ledger",
+      "visual_density": "measured_material",
+      "negative_space": "inspection_gaps",
+      "surface": "work_surface",
+      "section_transitions": "datum_lines",
+      "rhythm": "inspect_then_release",
+      "motion": "trace_the_work",
+      "evidence_density": "MEDIUM",
+      "visual_authority": "MATERIAL",
+      "crop_logic": "no client image dependency; abstract geometry carries the role"
+    },
+    "photo_role_map": {
+      "schema_version": "photo_role_map_v1",
+      "selection_mode": "role_driven_not_fixed_count",
+      "roles": [
+        {
+          "photo_role": "hero_home_finish",
+          "visual_subject": "住宅外観と仕上がりの素材感",
+          "business_purpose": "家を任せる仕事だと瞬時に伝える",
+          "replacement_target": "実施工後の住宅外観",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "none",
+          "proof_intent": "visual_context_only",
+          "placement": "hero_dominant_image"
+        },
+        {
+          "photo_role": "craft_handwork",
+          "visual_subject": "ローラー・刷毛・施工中の手元",
+          "business_purpose": "職人仕事と丁寧さを視覚化する",
+          "replacement_target": "実作業中の手元写真",
+          "preferred_orientation": "portrait",
+          "crop_tolerance": "tight",
+          "people_distance": "close",
+          "proof_intent": "craft_context_only",
+          "placement": "mid_frame_proof_experience"
+        },
+        {
+          "photo_role": "material_detail",
+          "visual_subject": "施工面・素材・仕上げの細部",
+          "business_purpose": "品質をディテールで理解させる",
+          "replacement_target": "実施工ディテール",
+          "preferred_orientation": "square",
+          "crop_tolerance": "tight",
+          "people_distance": "none",
+          "proof_intent": "material_context_only",
+          "placement": "craft_detail_image",
+          "secondary_placement": "quiet_chapter_image"
+        },
+        {
+          "photo_role": "trust_consultation",
+          "visual_subject": "住まいについて相談する人の距離感",
+          "business_purpose": "相談前の心理的ハードルを下げる",
+          "replacement_target": "実打ち合わせ・相談風景",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "mid",
+          "proof_intent": "human_context_only",
+          "placement": "quiet_chapter_image"
+        }
+      ],
+      "section_role_map": {
+        "hero_orientation": "hero_home_finish",
+        "company_truth": "craft_handwork",
+        "service_process": "material_detail",
+        "next_step": "trust_consultation",
+        "cta_zone": "trust_consultation"
+      }
+    },
+    "asset_selection_policy": {
+      "priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only_not_primary_photography"
+    },
+    "vector_role": "supporting_only"
+  },
+  "design_tokens": {
+    "schema_version": "production_generation_v1",
+    "colors": {
+      "ink": "#151613",
+      "accent": "#d7b27b",
+      "paper": "#f1eadc",
+      "muted": "#77736b",
+      "line": "rgba(21,21,21,.18)"
+    },
+    "typography": {
+      "display": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+      "body": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+      "display_weight": 800,
+      "body_weight": 450
+    },
+    "font_scale": {
+      "eyebrow": "0.72rem",
+      "body": "1rem",
+      "lead": "1.18rem",
+      "h2": "clamp(2rem, 5vw, 5rem)",
+      "hero": "clamp(3rem, 10vw, 9rem)"
+    },
+    "spacing": {
+      "unit": "8px",
+      "section": "clamp(5rem, 12vw, 12rem)",
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "radius": {
+      "surface": "2px",
+      "button": "999px"
+    },
+    "borders": {
+      "hairline": "1px solid var(--line)",
+      "strong": "1px solid var(--ink)"
+    },
+    "shadows": {
+      "surface": "10px 18px 0 rgba(21,21,21,.08)"
+    },
+    "container_widths": {
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "rhythm": {
+      "peak_to_quiet": "1.5",
+      "quiet_to_peak": "1.15"
+    },
+    "motion": {
+      "duration_ms": 520,
+      "easing": "cubic-bezier(.2,.7,.2,1)"
+    }
+  },
+  "compositions": [
+    {
+      "section_id": "opening",
+      "layout_type": "field_cover",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_material_field_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "headline",
+      "mobile_transformation": "headline_first_then_single_action",
+      "screenshot_peak": true,
+      "order": 0,
+      "layout_profile": "field_ledger",
+      "section_role": "hero_orientation",
+      "photo_role": "hero_home_finish",
+      "photo_placement": "hero_dominant_image",
+      "photo_asset_id": "maylynn-hero-home-finish-generated-c140090c",
+      "photo_source_type": "generated",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "way_in",
+      "layout_type": "work_sequence",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_material_field_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "rhythm",
+      "mobile_transformation": "vertical_steps_with_breathing_room",
+      "screenshot_peak": false,
+      "order": 1,
+      "layout_profile": "field_ledger",
+      "section_role": "service_process",
+      "photo_role": "material_detail",
+      "photo_placement": "craft_detail_image",
+      "photo_asset_id": "maylynn-material-detail-unsplash-w0bqO-Elz8",
+      "photo_source_type": "free_stock",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "truth",
+      "layout_type": "material_inspection",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_material_field_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "evidence",
+      "mobile_transformation": "stacked_proof_with_short_lines",
+      "screenshot_peak": true,
+      "order": 2,
+      "layout_profile": "field_ledger",
+      "section_role": "company_truth",
+      "photo_role": "craft_handwork",
+      "photo_placement": "mid_frame_proof_experience",
+      "photo_asset_id": "maylynn-craft-handwork-pexels-1669754",
+      "photo_source_type": "free_stock",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "contact",
+      "layout_type": "quote_route",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_material_field_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "channel",
+      "mobile_transformation": "contact_details_before_button",
+      "screenshot_peak": false,
+      "order": 3,
+      "layout_profile": "field_ledger",
+      "section_role": "next_step",
+      "photo_role": "trust_consultation",
+      "photo_placement": "quiet_chapter_image",
+      "photo_asset_id": "maylynn-trust-consultation-pexels-9052547",
+      "photo_source_type": "free_stock",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "close",
+      "layout_type": "closing_field",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_material_field_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "action",
+      "mobile_transformation": "sticky_safe_spacing_and_full_width_touch_target",
+      "screenshot_peak": true,
+      "order": 4,
+      "layout_profile": "field_ledger",
+      "section_role": "cta_zone",
+      "photo_role": "trust_consultation",
+      "photo_placement": "pre_cta_trust_image",
+      "photo_asset_id": "maylynn-trust-consultation-pexels-9052547",
+      "photo_source_type": "free_stock",
+      "vector_role": "supporting_only"
+    }
+  ],
+  "motion_spec": {
+    "kind": "section_reveal",
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)",
+    "reduced_motion": "no_transform"
+  },
+  "approved_evidence_ids": [
+    "maylynn_paint-e-001",
+    "maylynn_paint-e-002",
+    "maylynn_paint-e-003",
+    "maylynn_paint-e-004"
+  ],
+  "production_output_status": "PRODUCTION_APPROVED",
+  "approved_evidence": [
+    {
+      "evidence_id": "maylynn_paint-e-001",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "SERVICE_SCOPE",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+      "source": "approved-selection-manifest",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "HERO",
+        "MIDDLE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "maylynn_paint-e-002",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "PLACE_WIDE",
+      "evidence_strength": "E2_SPECIFIC",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "福岡市で活動する事業者。",
+      "source": "phase6-sales-master-snapshot",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "HERO",
+        "EARLY_PROOF"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "maylynn_paint-e-003",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "SERVICE_PROCESS",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "対応できる内容を確認してから次の案内へ進む。",
+      "source": "approved-selection-manifest",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "MIDDLE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "maylynn_paint-e-004",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "CTA_CHANNEL",
+      "evidence_strength": "E5_DECISION_ENABLING",
+      "target_objections": [
+        "O4_NEXT"
+      ],
+      "claim": "公式SNSから相談・予約の入口を確認する。",
+      "source": "phase6-sales-master-snapshot",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    }
+  ],
+  "photo_role_map": {
+    "schema_version": "photo_role_map_v1",
+    "selection_mode": "role_driven_not_fixed_count",
+    "roles": [
+      {
+        "photo_role": "hero_home_finish",
+        "visual_subject": "住宅外観と仕上がりの素材感",
+        "business_purpose": "家を任せる仕事だと瞬時に伝える",
+        "replacement_target": "実施工後の住宅外観",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "none",
+        "proof_intent": "visual_context_only",
+        "placement": "hero_dominant_image"
+      },
+      {
+        "photo_role": "craft_handwork",
+        "visual_subject": "ローラー・刷毛・施工中の手元",
+        "business_purpose": "職人仕事と丁寧さを視覚化する",
+        "replacement_target": "実作業中の手元写真",
+        "preferred_orientation": "portrait",
+        "crop_tolerance": "tight",
+        "people_distance": "close",
+        "proof_intent": "craft_context_only",
+        "placement": "mid_frame_proof_experience"
+      },
+      {
+        "photo_role": "material_detail",
+        "visual_subject": "施工面・素材・仕上げの細部",
+        "business_purpose": "品質をディテールで理解させる",
+        "replacement_target": "実施工ディテール",
+        "preferred_orientation": "square",
+        "crop_tolerance": "tight",
+        "people_distance": "none",
+        "proof_intent": "material_context_only",
+        "placement": "craft_detail_image",
+        "secondary_placement": "quiet_chapter_image"
+      },
+      {
+        "photo_role": "trust_consultation",
+        "visual_subject": "住まいについて相談する人の距離感",
+        "business_purpose": "相談前の心理的ハードルを下げる",
+        "replacement_target": "実打ち合わせ・相談風景",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "human_context_only",
+        "placement": "quiet_chapter_image"
+      }
+    ],
+    "section_role_map": {
+      "hero_orientation": "hero_home_finish",
+      "company_truth": "craft_handwork",
+      "service_process": "material_detail",
+      "next_step": "trust_consultation",
+      "cta_zone": "trust_consultation"
+    }
+  },
+  "asset_manifest": {
+    "schema_version": "photography_asset_manifest_v1",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_policy": "supporting_only_not_primary_photography",
+    "assets": [
+      {
+        "asset_id": "maylynn-craft-handwork-pexels-1669754",
+        "photo_role": "craft_handwork",
+        "source_type": "free_stock",
+        "provider": "Pexels",
+        "source": "https://www.pexels.com/photo/person-holding-paint-roller-on-wall-1669754/",
+        "asset_url": "/assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+        "creator": "Malte Luk",
+        "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+        "license_terms_url": "https://www.pexels.com/license/",
+        "checked_at": "2026-09-16",
+        "visual_subject": "Selection Manifest PRIMARY",
+        "placement": "",
+        "replacement_target": "",
+        "crop": "50% 50%",
+        "alt": "craft_handwork stock context image",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "maylynn-material-detail-unsplash-w0bqO-Elz8",
+        "photo_role": "material_detail",
+        "source_type": "free_stock",
+        "provider": "Unsplash",
+        "source": "https://unsplash.com/photos/a-close-up-of-a-white-stucco-wall--w0bqO-Elz8",
+        "asset_url": "/assets/photography/stock/maylynn_paint/material_detail.jpg",
+        "creator": "Denis Agati",
+        "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+        "license_terms_url": "https://unsplash.com/license",
+        "checked_at": "2026-09-16",
+        "visual_subject": "Selection Manifest PRIMARY",
+        "placement": "",
+        "replacement_target": "",
+        "crop": "50% 50%",
+        "alt": "material_detail stock context image",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "maylynn-trust-consultation-pexels-9052547",
+        "photo_role": "trust_consultation",
+        "source_type": "free_stock",
+        "provider": "Pexels",
+        "source": "https://www.pexels.com/photo/people-discussing-the-floor-plan-9052547/",
+        "asset_url": "/assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+        "creator": "SHVETS production",
+        "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+        "license_terms_url": "https://www.pexels.com/license/",
+        "checked_at": "2026-09-16",
+        "visual_subject": "Selection Manifest PRIMARY",
+        "placement": "",
+        "replacement_target": "",
+        "crop": "50% 50%",
+        "alt": "trust_consultation stock context image",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "maylynn-hero-home-finish-generated-c140090c",
+        "photo_role": "hero_home_finish",
+        "source_type": "generated",
+        "provider": "OpenAI image generation",
+        "source": "conversation-approved-generated-asset",
+        "asset_url": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+        "creator": "OpenAI",
+        "rights_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "license_terms_url": "",
+        "checked_at": "2026-09-16",
+        "visual_subject": "一般的な日本の2階建て戸建住宅を3/4外観で捉え、明るい外壁面と濃色アクセント面の仕上がりが読み取れる住宅外観イメージ",
+        "placement": "hero_dominant_image",
+        "replacement_target": "Maylynn Paintの実施工後住宅写真",
+        "crop": "{\"desktop\": \"landscape; house on right; copy-safe sky/streetscape on left\", \"mobile\": \"4:3 crop-safe around the main house mass and entrance; avoid cropping to only facade detail\", \"recommended_object_position\": \"58% 50%\"}",
+        "alt": "外壁塗装後の住まいを想起させる日本の戸建住宅外観イメージ",
+        "vector_role": "photography_candidate"
+      }
+    ],
+    "pending_roles": []
+  },
+  "premium_scene_plan": {
+    "schema_version": "premium_scene_plan_v1",
+    "company": {
+      "company_id": "maylynn_paint",
+      "company_name": "Maylynn Paint"
+    },
+    "derivation_trace": {
+      "inputs": [
+        "Creative Genome",
+        "Narrative Architecture",
+        "Company Truth",
+        "Evidence",
+        "Photography Roles"
+      ],
+      "deterministic": true
+    },
+    "company_signature": [
+      {
+        "anchor": "Place",
+        "value": "福岡市",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Process",
+        "value": "外壁塗装",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Philosophy",
+        "value": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Audience tension",
+        "value": "自分に合う入口か分からない",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      }
+    ],
+    "scene_plan": [
+      {
+        "scene_id": "scene-01-observe",
+        "narrative_index": 0,
+        "narrative_state": "observe",
+        "entry_emotion": "curious",
+        "exit_emotion": "attentive",
+        "user_question": "この場所や状態をどう見つめればよいか",
+        "narrative_function": "ESTABLISH_CONTEXT",
+        "state_delta": {
+          "before": "この場所や状態をどう見つめればよいか",
+          "after": "attentiveへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "maylynn_paint-e-001"
+        ],
+        "visual_authority": "IMAGE",
+        "focal_entity": "hero_home_finish",
+        "dominance_level": "immersive",
+        "copy_intent": "ORIENT",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "immersive_image",
+          "topology": "full_bleed",
+          "dominant_authority": "IMAGE",
+          "focal_count": 1,
+          "media_scale": "immersive",
+          "type_scale": "display",
+          "spatial_relation": "edge_bleed",
+          "asymmetry": "medium",
+          "negative_space": "perimeter",
+          "sequencing": "simultaneous",
+          "contrast_mode": "scale",
+          "transition": "reveal"
+        },
+        "transition_in": "reveal",
+        "transition_out": "reveal",
+        "peak_role": "candidate",
+        "peak_candidate_reason": "narrative state transition",
+        "cta_stage": "discovery",
+        "desktop_art_direction": {
+          "topology": "full_bleed",
+          "focal_point": "center",
+          "media_scale": "immersive"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "perimeter",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "observeをESTABLISH_CONTEXTへ翻訳"
+      },
+      {
+        "scene_id": "scene-02-read_material",
+        "narrative_index": 1,
+        "narrative_state": "read_material",
+        "entry_emotion": "attentive",
+        "exit_emotion": "assured",
+        "user_question": "素材の違いはどこに表れるか",
+        "narrative_function": "SHOW_DETAIL",
+        "state_delta": {
+          "before": "素材の違いはどこに表れるか",
+          "after": "assuredへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        "visual_authority": "MATERIAL",
+        "focal_entity": "craft_handwork",
+        "dominance_level": "intimate",
+        "copy_intent": "PROVE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "material_detail",
+          "topology": "inset",
+          "dominant_authority": "MATERIAL",
+          "focal_count": 2,
+          "media_scale": "intimate",
+          "type_scale": "editorial",
+          "spatial_relation": "offset",
+          "asymmetry": "high",
+          "negative_space": "directional",
+          "sequencing": "progressive",
+          "contrast_mode": "tonal",
+          "transition": "continuation"
+        },
+        "transition_in": "continuation",
+        "transition_out": "continuation",
+        "peak_role": "support",
+        "peak_candidate_reason": "supporting evidence",
+        "cta_stage": "discovery",
+        "desktop_art_direction": {
+          "topology": "inset",
+          "focal_point": "center",
+          "media_scale": "intimate"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "directional",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "read_materialをSHOW_DETAILへ翻訳"
+      },
+      {
+        "scene_id": "scene-03-watch_hands",
+        "narrative_index": 2,
+        "narrative_state": "watch_hands",
+        "entry_emotion": "assured",
+        "exit_emotion": "hopeful",
+        "user_question": "どんな手順で整えていくか",
+        "narrative_function": "SHOW_CRAFT",
+        "state_delta": {
+          "before": "どんな手順で整えていくか",
+          "after": "hopefulへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        "visual_authority": "DATA",
+        "focal_entity": "material_detail",
+        "dominance_level": "standard",
+        "copy_intent": "PROVE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "process_sequence",
+          "topology": "sequence",
+          "dominant_authority": "DATA",
+          "focal_count": "multi",
+          "media_scale": "standard",
+          "type_scale": "quiet",
+          "spatial_relation": "contained",
+          "asymmetry": "low",
+          "negative_space": "perimeter",
+          "sequencing": "stepwise",
+          "contrast_mode": "density",
+          "transition": "cut"
+        },
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "peak_role": "support",
+        "peak_candidate_reason": "supporting evidence",
+        "cta_stage": "reassurance",
+        "desktop_art_direction": {
+          "topology": "sequence",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "perimeter",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "watch_handsをSHOW_CRAFTへ翻訳"
+      },
+      {
+        "scene_id": "scene-04-imagine_change",
+        "narrative_index": 3,
+        "narrative_state": "imagine_change",
+        "entry_emotion": "hopeful",
+        "exit_emotion": "ready",
+        "user_question": "整ったあとの景色を想像できるか",
+        "narrative_function": "SHOW_TRANSFORMATION",
+        "state_delta": {
+          "before": "整ったあとの景色を想像できるか",
+          "after": "readyへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        "visual_authority": "TYPE",
+        "focal_entity": "trust_consultation",
+        "dominance_level": "standard",
+        "copy_intent": "GUIDE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "asymmetric_editorial",
+          "topology": "layered",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "standard",
+          "type_scale": "editorial",
+          "spatial_relation": "overlap",
+          "asymmetry": "high",
+          "negative_space": "central",
+          "sequencing": "progressive",
+          "contrast_mode": "scale",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "support",
+        "peak_candidate_reason": "supporting evidence",
+        "cta_stage": "reassurance",
+        "desktop_art_direction": {
+          "topology": "layered",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "imagine_changeをSHOW_TRANSFORMATIONへ翻訳"
+      },
+      {
+        "scene_id": "scene-05-consult",
+        "narrative_index": 4,
+        "narrative_state": "consult",
+        "entry_emotion": "ready",
+        "exit_emotion": "ready",
+        "user_question": "自分の状態をどう伝えるか",
+        "narrative_function": "ENABLE_ACTION",
+        "state_delta": {
+          "before": "自分の状態をどう伝えるか",
+          "after": "readyへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        "visual_authority": "TYPOGRAPHY",
+        "focal_entity": "typography",
+        "dominance_level": "display",
+        "copy_intent": "CONVERT",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "human_dialogue",
+          "topology": "split",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "none",
+          "type_scale": "display",
+          "spatial_relation": "floating",
+          "asymmetry": "medium",
+          "negative_space": "directional",
+          "sequencing": "simultaneous",
+          "contrast_mode": "chromatic",
+          "transition": "reveal"
+        },
+        "transition_in": "reveal",
+        "transition_out": "reveal",
+        "peak_role": "candidate",
+        "peak_candidate_reason": "narrative state transition",
+        "cta_stage": "action",
+        "desktop_art_direction": {
+          "topology": "split",
+          "focal_point": "center",
+          "media_scale": "dominant"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "directional",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "after_scene",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "consultをENABLE_ACTIONへ翻訳"
+      }
+    ],
+    "copy_plan": {
+      "claim_eligibility": [
+        {
+          "claim_trace_id": "maylynn_paint-e-001",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "maylynn_paint-e-001"
+        },
+        {
+          "claim_trace_id": "maylynn_paint-e-002",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "maylynn_paint-e-002"
+        },
+        {
+          "claim_trace_id": "maylynn_paint-e-003",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "maylynn_paint-e-003"
+        },
+        {
+          "claim_trace_id": "maylynn_paint-e-004",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "maylynn_paint-e-004"
+        }
+      ],
+      "omit_unverified": true
+    },
+    "device_plan": {
+      "desktop": "scene-specific foundation",
+      "mobile": "scene-specific foundation"
+    },
+    "reuse_plan": {
+      "policy": "same_role_only"
+    },
+    "qa_expectations": {
+      "gates": [
+        "narrative_order",
+        "state_delta",
+        "grammar_delta",
+        "authority_realization",
+        "claim_trace",
+        "cta_contract"
+      ]
+    },
+    "qa_gates": {
+      "narrative_scene_order_gate": "PASS",
+      "scene_state_delta_gate": "PASS",
+      "rendered_grammar_delta_gate": "PASS",
+      "consecutive_topology_repetition_gate": "PASS",
+      "visual_authority_realization_gate": "PASS",
+      "claim_traceability_gate": "PASS"
+    }
+  }
+}

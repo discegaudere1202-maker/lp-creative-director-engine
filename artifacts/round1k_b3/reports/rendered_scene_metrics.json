@@ -1,0 +1,421 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": [
+      {
+        "scene_id": "scene-01-observe",
+        "width": 1180,
+        "height": 1276.640625,
+        "viewport_duration": 1.28,
+        "media_area": {
+          "x": 130,
+          "y": 214.140625,
+          "width": 1180,
+          "height": 770.046875
+        },
+        "text_area": {
+          "x": 130,
+          "y": 1008.1875,
+          "width": 1180,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.352,
+        "media_ratio": 0.603,
+        "text_ratio": 0.045,
+        "CTA_count": 1,
+        "rendered_authority": "IMAGE",
+        "expected_authority": "IMAGE",
+        "topology": "full_bleed",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "pause",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-02-read_material",
+        "width": 1180,
+        "height": 698.328125,
+        "viewport_duration": 0.7,
+        "media_area": {
+          "x": 130,
+          "y": 1490.78125,
+          "width": 566,
+          "height": 409.328125
+        },
+        "text_area": {
+          "x": 744,
+          "y": 1652.640625,
+          "width": 566,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.679,
+        "media_ratio": 0.281,
+        "text_ratio": 0.04,
+        "CTA_count": 0,
+        "rendered_authority": "MATERIAL",
+        "expected_authority": "MATERIAL",
+        "topology": "inset",
+        "background_mode": "rendered_css_surface",
+        "peak": false,
+        "density_signature": "balanced",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-03-watch_hands",
+        "width": 1180,
+        "height": 554.59375,
+        "viewport_duration": 0.55,
+        "media_area": null,
+        "text_area": {
+          "x": 168,
+          "y": 2221.109375,
+          "width": 1110,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.902,
+        "media_ratio": 0,
+        "text_ratio": 0.098,
+        "CTA_count": 1,
+        "rendered_authority": "TYPOGRAPHY",
+        "expected_authority": "DATA",
+        "topology": "sequence",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "sparse",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-04-imagine_change",
+        "width": 1180,
+        "height": 1107.65625,
+        "viewport_duration": 1.11,
+        "media_area": {
+          "x": 130,
+          "y": 2743.703125,
+          "width": 1180,
+          "height": 818.65625
+        },
+        "text_area": {
+          "x": 303.59375,
+          "y": 3379.28125,
+          "width": 417.21875,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.243,
+        "media_ratio": 0.739,
+        "text_ratio": 0.018,
+        "CTA_count": 0,
+        "rendered_authority": "TYPE",
+        "expected_authority": "TYPE",
+        "topology": "layered",
+        "background_mode": "rendered_css_surface",
+        "peak": false,
+        "density_signature": "image_dominant",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-05-consult",
+        "width": 1180,
+        "height": 458.59375,
+        "viewport_duration": 0.46,
+        "media_area": null,
+        "text_area": {
+          "x": 130,
+          "y": 3851.359375,
+          "width": 566,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.94,
+        "media_ratio": 0,
+        "text_ratio": 0.06,
+        "CTA_count": 1,
+        "rendered_authority": "TYPOGRAPHY",
+        "expected_authority": "TYPOGRAPHY",
+        "topology": "split",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "sparse",
+        "media_integrity": "PASS"
+      }
+    ],
+    "nagi_no_mirai": [
+      {
+        "scene_id": "scene-01-arrive",
+        "width": 1180,
+        "height": 1276.640625,
+        "viewport_duration": 1.28,
+        "media_area": {
+          "x": 130,
+          "y": 214.140625,
+          "width": 1180,
+          "height": 770.046875
+        },
+        "text_area": {
+          "x": 130,
+          "y": 1008.1875,
+          "width": 1180,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.352,
+        "media_ratio": 0.603,
+        "text_ratio": 0.045,
+        "CTA_count": 1,
+        "rendered_authority": "IMAGE",
+        "expected_authority": "IMAGE",
+        "topology": "full_bleed",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "pause",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-02-settle",
+        "width": 1180,
+        "height": 698.328125,
+        "viewport_duration": 0.7,
+        "media_area": {
+          "x": 130,
+          "y": 1490.78125,
+          "width": 566,
+          "height": 409.328125
+        },
+        "text_area": {
+          "x": 744,
+          "y": 1652.640625,
+          "width": 566,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.679,
+        "media_ratio": 0.281,
+        "text_ratio": 0.04,
+        "CTA_count": 0,
+        "rendered_authority": "SENSORY",
+        "expected_authority": "SENSORY",
+        "topology": "inset",
+        "background_mode": "rendered_css_surface",
+        "peak": false,
+        "density_signature": "balanced",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-03-feel_care",
+        "width": 1180,
+        "height": 853,
+        "viewport_duration": 0.85,
+        "media_area": {
+          "x": 744,
+          "y": 2189.109375,
+          "width": 566,
+          "height": 480
+        },
+        "text_area": {
+          "x": 130,
+          "y": 2386.3125,
+          "width": 566,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.698,
+        "media_ratio": 0.27,
+        "text_ratio": 0.032,
+        "CTA_count": 1,
+        "rendered_authority": "PERSON",
+        "expected_authority": "PERSON",
+        "topology": "split",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "pause",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-04-choose_time",
+        "width": 1180,
+        "height": 1107.75,
+        "viewport_duration": 1.11,
+        "media_area": {
+          "x": 130,
+          "y": 3042.109375,
+          "width": 1180,
+          "height": 818.75
+        },
+        "text_area": {
+          "x": 303.59375,
+          "y": 3677.765625,
+          "width": 323.109375,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.247,
+        "media_ratio": 0.739,
+        "text_ratio": 0.014,
+        "CTA_count": 0,
+        "rendered_authority": "TYPE",
+        "expected_authority": "TYPE",
+        "topology": "layered",
+        "background_mode": "rendered_css_surface",
+        "peak": false,
+        "density_signature": "image_dominant",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-05-reserve",
+        "width": 1180,
+        "height": 793,
+        "viewport_duration": 0.79,
+        "media_area": null,
+        "text_area": {
+          "x": 303.59375,
+          "y": 4418.671875,
+          "width": 429.0625,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.974,
+        "media_ratio": 0,
+        "text_ratio": 0.026,
+        "CTA_count": 1,
+        "rendered_authority": "TYPOGRAPHY",
+        "expected_authority": "TYPOGRAPHY",
+        "topology": "layered",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "sparse",
+        "media_integrity": "PASS"
+      }
+    ],
+    "watashi_no_daidokoro": [
+      {
+        "scene_id": "scene-01-encounter",
+        "width": 1180,
+        "height": 1276.640625,
+        "viewport_duration": 1.28,
+        "media_area": {
+          "x": 130,
+          "y": 214.140625,
+          "width": 1180,
+          "height": 770.046875
+        },
+        "text_area": {
+          "x": 130,
+          "y": 1008.1875,
+          "width": 1180,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.352,
+        "media_ratio": 0.603,
+        "text_ratio": 0.045,
+        "CTA_count": 1,
+        "rendered_authority": "WORLD",
+        "expected_authority": "WORLD",
+        "topology": "full_bleed",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "pause",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-02-touch",
+        "width": 1180,
+        "height": 769,
+        "viewport_duration": 0.77,
+        "media_area": {
+          "x": 744,
+          "y": 1490.78125,
+          "width": 566,
+          "height": 480
+        },
+        "text_area": {
+          "x": 130,
+          "y": 1687.984375,
+          "width": 566,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.665,
+        "media_ratio": 0.299,
+        "text_ratio": 0.036,
+        "CTA_count": 0,
+        "rendered_authority": "PERSON",
+        "expected_authority": "PERSON",
+        "topology": "split",
+        "background_mode": "rendered_css_surface",
+        "peak": false,
+        "density_signature": "balanced",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-03-make",
+        "width": 1180,
+        "height": 554.59375,
+        "viewport_duration": 0.55,
+        "media_area": null,
+        "text_area": {
+          "x": 168,
+          "y": 2291.78125,
+          "width": 1110,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.902,
+        "media_ratio": 0,
+        "text_ratio": 0.098,
+        "CTA_count": 1,
+        "rendered_authority": "TYPOGRAPHY",
+        "expected_authority": "DATA",
+        "topology": "sequence",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "sparse",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-04-share",
+        "width": 1180,
+        "height": 2224.453125,
+        "viewport_duration": 2.22,
+        "media_area": {
+          "x": 130,
+          "y": 2814.375,
+          "width": 1180,
+          "height": 1801.859375
+        },
+        "text_area": {
+          "x": 130,
+          "y": 4640.234375,
+          "width": 1180,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.164,
+        "media_ratio": 0.81,
+        "text_ratio": 0.026,
+        "CTA_count": 0,
+        "rendered_authority": "WORLD",
+        "expected_authority": "WORLD",
+        "topology": "full_bleed",
+        "background_mode": "rendered_css_surface",
+        "peak": false,
+        "density_signature": "image_dominant",
+        "media_integrity": "PASS"
+      },
+      {
+        "scene_id": "scene-05-join",
+        "width": 1180,
+        "height": 793,
+        "viewport_duration": 0.79,
+        "media_area": null,
+        "text_area": {
+          "x": 303.59375,
+          "y": 5307.640625,
+          "width": 374.515625,
+          "height": 57.59375
+        },
+        "whitespace_ratio": 0.977,
+        "media_ratio": 0,
+        "text_ratio": 0.023,
+        "CTA_count": 1,
+        "rendered_authority": "TYPOGRAPHY",
+        "expected_authority": "TYPOGRAPHY",
+        "topology": "layered",
+        "background_mode": "rendered_css_surface",
+        "peak": true,
+        "density_signature": "sparse",
+        "media_integrity": "PASS"
+      }
+    ]
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "status": "PASS",
+  "visible_internal_identifier_count": 0,
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "scenes": [
+        {
+          "scene_id": "scene-01-observe",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "box": {
+                "x": 130,
+                "y": 230.140625,
+                "width": 1180,
+                "height": 738.046875
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+              "naturalWidth": 5184,
+              "naturalHeight": 3456,
+              "box": {
+                "x": 130,
+                "y": 1506.78125,
+                "width": 566,
+                "height": 377.328125
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "expected_media": true,
+          "image_count": 0,
+          "images": [],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+              "naturalWidth": 5754,
+              "naturalHeight": 3836,
+              "box": {
+                "x": 130,
+                "y": 2759.703125,
+                "width": 1180,
+                "height": 786.65625
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "expected_media": false,
+          "image_count": 0,
+          "images": [],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        }
+      ],
+      "internal_identifier_count": 0,
+      "placeholder_count": 0,
+      "broken_media": 0,
+      "empty_media": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "scenes": [
+        {
+          "scene_id": "scene-01-arrive",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "box": {
+                "x": 130,
+                "y": 230.140625,
+                "width": 1180,
+                "height": 738.046875
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/generated/nagi_no_mirai/sensory_detail.png",
+              "naturalWidth": 1536,
+              "naturalHeight": 1024,
+              "box": {
+                "x": 130,
+                "y": 1506.78125,
+                "width": 566,
+                "height": 377.328125
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/generated/nagi_no_mirai/welcome_human.png",
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "box": {
+                "x": 744,
+                "y": 2216.859375,
+                "width": 566,
+                "height": 424.5
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/stock/nagi_no_mirai/hand_technique.jpg",
+              "naturalWidth": 4702,
+              "naturalHeight": 3135,
+              "box": {
+                "x": 130,
+                "y": 3058.109375,
+                "width": 1180,
+                "height": 786.75
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "expected_media": false,
+          "image_count": 0,
+          "images": [],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        }
+      ],
+      "internal_identifier_count": 0,
+      "placeholder_count": 0,
+      "broken_media": 0,
+      "empty_media": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "scenes": [
+        {
+          "scene_id": "scene-01-encounter",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/generated/watashi_no_daidokoro/hero_shared_cooking.png",
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "box": {
+                "x": 130,
+                "y": 230.140625,
+                "width": 1180,
+                "height": 738.046875
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/generated/watashi_no_daidokoro/finished_table.png",
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "box": {
+                "x": 744,
+                "y": 1553.765625,
+                "width": 566,
+                "height": 354.015625
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "expected_media": true,
+          "image_count": 0,
+          "images": [],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "expected_media": true,
+          "image_count": 1,
+          "images": [
+            {
+              "src": "http://127.0.0.1:53168/assets/photography/stock/watashi_no_daidokoro/hands_in_action.jpg",
+              "naturalWidth": 4383,
+              "naturalHeight": 6574,
+              "box": {
+                "x": 130,
+                "y": 2830.375,
+                "width": 1180,
+                "height": 1769.859375
+              },
+              "visible": true
+            }
+          ],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        },
+        {
+          "scene_id": "scene-05-join",
+          "expected_media": false,
+          "image_count": 0,
+          "images": [],
+          "internal_identifier_leakage": [],
+          "placeholder": false,
+          "verdict": "PASS"
+        }
+      ],
+      "internal_identifier_count": 0,
+      "placeholder_count": 0,
+      "broken_media": 0,
+      "empty_media": 0
+    }
+  }
+}

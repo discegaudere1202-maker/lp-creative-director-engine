@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "FAIL",
+      "plan_render_mismatch": 1,
+      "scenes": [
+        {
+          "expected_authority": "IMAGE",
+          "rendered_authority": "IMAGE",
+          "media_ratio": 0.603,
+          "text_ratio": 0.045,
+          "whitespace_ratio": 0.352,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "MATERIAL",
+          "rendered_authority": "MATERIAL",
+          "media_ratio": 0.281,
+          "text_ratio": 0.04,
+          "whitespace_ratio": 0.679,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "DATA",
+          "rendered_authority": "TYPOGRAPHY",
+          "media_ratio": 0,
+          "text_ratio": 0.098,
+          "whitespace_ratio": 0.902,
+          "viewport_intersection": 1,
+          "verdict": "FAIL"
+        },
+        {
+          "expected_authority": "TYPE",
+          "rendered_authority": "TYPE",
+          "media_ratio": 0.739,
+          "text_ratio": 0.018,
+          "whitespace_ratio": 0.243,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "media_ratio": 0,
+          "text_ratio": 0.06,
+          "whitespace_ratio": 0.94,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "plan_render_mismatch": 0,
+      "scenes": [
+        {
+          "expected_authority": "IMAGE",
+          "rendered_authority": "IMAGE",
+          "media_ratio": 0.603,
+          "text_ratio": 0.045,
+          "whitespace_ratio": 0.352,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "SENSORY",
+          "rendered_authority": "SENSORY",
+          "media_ratio": 0.281,
+          "text_ratio": 0.04,
+          "whitespace_ratio": 0.679,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "PERSON",
+          "rendered_authority": "PERSON",
+          "media_ratio": 0.27,
+          "text_ratio": 0.032,
+          "whitespace_ratio": 0.698,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "TYPE",
+          "rendered_authority": "TYPE",
+          "media_ratio": 0.739,
+          "text_ratio": 0.014,
+          "whitespace_ratio": 0.247,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "media_ratio": 0,
+          "text_ratio": 0.026,
+          "whitespace_ratio": 0.974,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "FAIL",
+      "plan_render_mismatch": 1,
+      "scenes": [
+        {
+          "expected_authority": "WORLD",
+          "rendered_authority": "WORLD",
+          "media_ratio": 0.603,
+          "text_ratio": 0.045,
+          "whitespace_ratio": 0.352,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "PERSON",
+          "rendered_authority": "PERSON",
+          "media_ratio": 0.299,
+          "text_ratio": 0.036,
+          "whitespace_ratio": 0.665,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "DATA",
+          "rendered_authority": "TYPOGRAPHY",
+          "media_ratio": 0,
+          "text_ratio": 0.098,
+          "whitespace_ratio": 0.902,
+          "viewport_intersection": 1,
+          "verdict": "FAIL"
+        },
+        {
+          "expected_authority": "WORLD",
+          "rendered_authority": "WORLD",
+          "media_ratio": 0.81,
+          "text_ratio": 0.026,
+          "whitespace_ratio": 0.164,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        },
+        {
+          "expected_authority": "TYPOGRAPHY",
+          "rendered_authority": "TYPOGRAPHY",
+          "media_ratio": 0,
+          "text_ratio": 0.023,
+          "whitespace_ratio": 0.977,
+          "viewport_intersection": 1,
+          "verdict": "PASS"
+        }
+      ]
+    }
+  }
+}

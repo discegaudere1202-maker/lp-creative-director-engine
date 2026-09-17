@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "count": 3,
+      "rendered_authority": "PASS",
+      "neighbor_delta": "PASS",
+      "placeholder": 0,
+      "capture": "PASS"
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "count": 3,
+      "rendered_authority": "PASS",
+      "neighbor_delta": "PASS",
+      "placeholder": 0,
+      "capture": "PASS"
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "count": 3,
+      "rendered_authority": "PASS",
+      "neighbor_delta": "PASS",
+      "placeholder": 0,
+      "capture": "PASS"
+    }
+  }
+}

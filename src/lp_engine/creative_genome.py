@@ -52,10 +52,15 @@ def derive_creative_genome(
     }
     composition = forms.get(profile, ["editorial_split", "progressive_story", "human_dialogue", "asymmetric_editorial"])
     goal = _text(understanding.get("conversion_goal")) or "inquiry"
+    cta_labels = {
+        "field_ledger": ("素材の状態を見る", "対応範囲を確かめる", "見積を相談する"),
+        "care_rhythm": ("過ごし方を感じる", "時間の選び方を見る", "予約を相談する"),
+        "studio_invitation": ("料理の流れを見る", "場と内容を確かめる", "参加を相談する"),
+    }.get(profile, ("入口を見る", "内容を確かめる", "相談を始める"))
     cta_progression = [
-        {"stage": "discovery", "section_role": "hero_orientation", "user_hesitation": "自分に関係する入口か分からない", "evidence_already_seen": [], "required_evidence": [], "action_reason": "まず状況を見渡す", "action_type": "anchor", "label_strategy": "understand_before_contact", "visible_label": "流れを見る", "destination": "#way-in"},
-        {"stage": "reassurance", "section_role": "company_truth", "user_hesitation": "この会社へ相談してよいか迷う", "evidence_already_seen": [item.get("evidence_id") for item in evidence[:2]], "required_evidence": [item.get("evidence_id") for item in evidence[:2]], "action_reason": "会社固有の範囲を確かめる", "action_type": "anchor", "label_strategy": "verify_scope", "visible_label": "できることを見る", "destination": "#contact"},
-        {"stage": "action", "section_role": "cta_zone", "user_hesitation": "何を伝えればよいか分からない", "evidence_already_seen": [item.get("evidence_id") for item in evidence], "required_evidence": [item.get("evidence_id") for item in evidence], "action_reason": f"{goal}の確認へ進む", "action_type": "conversion", "label_strategy": "act_on_seen_evidence", "visible_label": "相談を始める", "destination": "#contact"},
+        {"stage": "discovery", "section_role": "hero_orientation", "user_hesitation": "自分に関係する入口か分からない", "evidence_already_seen": [], "required_evidence": [], "action_reason": "まず状況を見渡す", "action_type": "anchor", "label_strategy": "understand_before_contact", "visible_label": cta_labels[0], "destination": "#way-in"},
+        {"stage": "reassurance", "section_role": "company_truth", "user_hesitation": "この会社へ相談してよいか迷う", "evidence_already_seen": [item.get("evidence_id") for item in evidence[:2]], "required_evidence": [item.get("evidence_id") for item in evidence[:2]], "action_reason": "会社固有の範囲を確かめる", "action_type": "anchor", "label_strategy": "verify_scope", "visible_label": cta_labels[1], "destination": "#contact"},
+        {"stage": "action", "section_role": "cta_zone", "user_hesitation": "何を伝えればよいか分からない", "evidence_already_seen": [item.get("evidence_id") for item in evidence], "required_evidence": [item.get("evidence_id") for item in evidence], "action_reason": f"{goal}の確認へ進む", "action_type": "conversion", "label_strategy": "act_on_seen_evidence", "visible_label": cta_labels[2], "destination": "#contact"},
     ]
     return {
         "schema_version": "creative_genome_v1",

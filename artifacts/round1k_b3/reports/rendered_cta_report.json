@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "ctas": [
+        {
+          "stage": "discovery",
+          "label": "素材の状態を見る",
+          "href": "#way-in",
+          "scene_id": "scene-01-observe",
+          "preceding_scene": "scene-01-observe",
+          "psychological_state_before": "uncertain",
+          "psychological_state_after": "oriented",
+          "resolved_target": "#way-in",
+          "target_visible_text": "素材に触れて考える\n\n外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "reassurance",
+          "label": "対応範囲を確かめる",
+          "href": "#contact",
+          "scene_id": "scene-03-watch_hands",
+          "preceding_scene": "scene-03-watch_hands",
+          "psychological_state_before": "informed",
+          "psychological_state_after": "reassured",
+          "resolved_target": "#contact",
+          "target_visible_text": "状態から相談する\n\n外壁塗装の状態を見ながら、相談の準備を整えます。\n\n見積を相談する",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "action",
+          "label": "見積を相談する",
+          "href": "#contact",
+          "scene_id": "scene-05-consult",
+          "preceding_scene": "scene-05-consult",
+          "psychological_state_before": "ready",
+          "psychological_state_after": "contact_started",
+          "resolved_target": "#contact",
+          "target_visible_text": "状態から相談する\n\n外壁塗装の状態を見ながら、相談の準備を整えます。\n\n見積を相談する",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        }
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "generic_cross_lp": "0"
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "ctas": [
+        {
+          "stage": "discovery",
+          "label": "過ごし方を感じる",
+          "href": "#way-in",
+          "scene_id": "scene-01-arrive",
+          "preceding_scene": "scene-01-arrive",
+          "psychological_state_before": "uncertain",
+          "psychological_state_after": "oriented",
+          "resolved_target": "#way-in",
+          "target_visible_text": "静けさを感じる\n\nヘッドスパを提供する事業者",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "reassurance",
+          "label": "時間の選び方を見る",
+          "href": "#contact",
+          "scene_id": "scene-03-feel_care",
+          "preceding_scene": "scene-03-feel_care",
+          "psychological_state_before": "informed",
+          "psychological_state_after": "reassured",
+          "resolved_target": "#contact",
+          "target_visible_text": "その時間を予約する\n\nヘッドスパで、自分のための時間を予約します。\n\n予約を相談する",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "action",
+          "label": "予約を相談する",
+          "href": "#contact",
+          "scene_id": "scene-05-reserve",
+          "preceding_scene": "scene-05-reserve",
+          "psychological_state_before": "ready",
+          "psychological_state_after": "contact_started",
+          "resolved_target": "#contact",
+          "target_visible_text": "その時間を予約する\n\nヘッドスパで、自分のための時間を予約します。\n\n予約を相談する",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        }
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "generic_cross_lp": "0"
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "ctas": [
+        {
+          "stage": "discovery",
+          "label": "料理の流れを見る",
+          "href": "#way-in",
+          "scene_id": "scene-01-encounter",
+          "preceding_scene": "scene-01-encounter",
+          "psychological_state_before": "uncertain",
+          "psychological_state_after": "oriented",
+          "resolved_target": "#way-in",
+          "target_visible_text": "手を動かしてみる\n\n火を入れ、手を動かし、料理を食卓へ運ぶ流れを楽しみます。",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "reassurance",
+          "label": "場と内容を確かめる",
+          "href": "#contact",
+          "scene_id": "scene-03-make",
+          "preceding_scene": "scene-03-make",
+          "psychological_state_before": "informed",
+          "psychological_state_after": "reassured",
+          "resolved_target": "#contact",
+          "target_visible_text": "参加を考える\n\nできあがる一皿を囲む時間へ、参加の一歩を踏み出します。\n\n参加を相談する",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        },
+        {
+          "stage": "action",
+          "label": "参加を相談する",
+          "href": "#contact",
+          "scene_id": "scene-05-join",
+          "preceding_scene": "scene-05-join",
+          "psychological_state_before": "ready",
+          "psychological_state_after": "contact_started",
+          "resolved_target": "#contact",
+          "target_visible_text": "参加を考える\n\nできあがる一皿を囲む時間へ、参加の一歩を踏み出します。\n\n参加を相談する",
+          "preceding_evidence": "rendered_scene_trace",
+          "company_signature_link": "scene-specific",
+          "verdict": "PASS"
+        }
+      ],
+      "psychological_delta": "PASS",
+      "evidence_delta": "PASS",
+      "destination_logic": "PASS",
+      "generic_cross_lp": "0"
+    }
+  }
+}
