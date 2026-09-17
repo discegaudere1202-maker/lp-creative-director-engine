@@ -2,7 +2,7 @@
 from __future__ import annotations
 import json, os, re
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/"artifacts"/"round1k_a5"
+ROOT=Path(__file__).resolve().parents[1]; OUT=Path(os.environ.get("ROUND_OUTPUT_ROOT", str(ROOT/"artifacts"/"round1k_a5")))
 def write(p,v): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 def norm(s):
     s=re.sub(r"Maylynn Paint|なぎのみらい|わたしの台所|福岡市西区|福岡市|外壁塗装|ヘッドスパ|料理教室|少人数でストウブ無水料理", "ENTITY", s)

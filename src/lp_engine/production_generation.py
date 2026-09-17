@@ -566,9 +566,9 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                 "body": {
                     "opening": f"{location}の{category}。{truth}",
                     "truth": truth,
-                    "way_in": (f"{truth_fragment or scope or category}の現場を見渡し、{signature_phrase}へ目を向けます." if layout_profile == "field_ledger" else f"{signature_phrase}がほどける時間。{truth_fragment or scope or category}を味わいます." if layout_profile == "care_rhythm" else f"{signature_phrase}を選び、{truth_fragment or scope or category}を一緒につくります."),
-                    "contact": (f"表面の変化と手順を並べ、{truth_fragment or scope or category}の仕上がりを思い描きます." if layout_profile == "field_ledger" else f"静かな空間で過ごす時間を、{truth_fragment or scope or category}に合わせて選びます." if layout_profile == "care_rhythm" else f"火を入れ、手を動かし、{truth_fragment or scope or category}が食卓へ向かう流れを楽しみます."),
-                    "close": (f"{truth_fragment or scope or category}の状態を見ながら、次の相談へ進みます." if layout_profile == "field_ledger" else f"{truth_fragment or scope or category}で、自分のための時間を予約します." if layout_profile == "care_rhythm" else f"できあがる一皿を囲む時間へ、参加の一歩を踏み出します."),
+                    "way_in": (f"{compact_category}の現場を見渡し、{signature_phrase}へ目を向けます." if layout_profile == "field_ledger" else f"{signature_phrase}がほどける時間。{compact_category}で過ごすひとときを味わいます." if layout_profile == "care_rhythm" else f"{signature_phrase}を選び、{compact_category}を一緒に学びます."),
+                    "contact": (f"表面の変化と手順を並べ、{compact_category}の仕上がりを思い描きます." if layout_profile == "field_ledger" else f"静かな空間で過ごす時間を、{compact_category}のひとときとして選びます." if layout_profile == "care_rhythm" else f"火を入れ、手を動かし、{compact_category}の料理を食卓へ運ぶ流れを楽しみます."),
+                    "close": (f"{compact_category}の状態を見ながら、次の相談へ進みます." if layout_profile == "field_ledger" else f"{compact_category}で、自分のための時間を予約します." if layout_profile == "care_rhythm" else f"できあがる一皿を囲む時間へ、参加の一歩を踏み出します."),
                 }.get(item["section_id"], item["key_message"]),
                 "evidence_claims": claims if item["section_id"] in {"truth", "contact"} else [],
                 "cta": cta if item["section_id"] == "close" else "",
@@ -865,7 +865,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         scene_photo = render_photo_asset(scene_asset)
         media_content = scene_photo or "<span>" + esc(scene["focal_entity"]) + "</span>"
         media = f'<div class="scene-media scene-media--{esc(grammar["media_scale"])}" aria-hidden="true">{media_content}</div>'
-        if topology == "sequence": inner = f'<div class="scene-sequence"><h2>{esc(heading)}</h2><ol><li>{esc(body)}</li><li>{esc("次の確認へ進む")}</li></ol></div>'
+        if topology == "sequence": inner = f'<div class="scene-sequence"><h2>{esc(heading)}</h2><ol><li>{esc(body)}</li></ol></div>'
         elif topology == "inset": inner = f'<div class="scene-inset">{media}<div><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'
         elif topology == "split": inner = f'<div class="scene-split"><div><h2>{esc(heading)}</h2><p>{esc(body)}</p></div>{media}</div>'
         elif topology == "layered": inner = f'<div class="scene-layered">{media}<div class="scene-layered-copy"><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'
