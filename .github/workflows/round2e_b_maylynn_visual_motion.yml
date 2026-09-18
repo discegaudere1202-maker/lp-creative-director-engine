@@ -63,6 +63,27 @@ jobs:
           for name, value in summary.get("gate_checks", {}).items():
               if not value:
                   print(f"::error file=.github/workflows/round2e_b_maylynn_visual_motion.yml,line=1::Round 2E-B gate failed: {name}")
+          browser_report_path = Path("artifacts/round2e_b/browser_qa.json")
+          if browser_report_path.is_file():
+              browser_report = json.loads(browser_report_path.read_text(encoding="utf-8"))
+              for result in browser_report.get("results", []):
+                  if result.get("status") == "FAIL":
+                      details = {
+                          "width": result.get("width"),
+                          "overflow": result.get("horizontal_overflow_px"),
+                          "line_issues": result.get("line_issues", []),
+                          "console_errors": result.get("console_errors", []),
+                          "page_errors": result.get("page_errors", []),
+                          "request_failures": result.get("request_failures", []),
+                      }
+                      print(f"::error file=.github/workflows/round2e_b_maylynn_visual_motion.yml,line=1::Round 2E-B browser viewport failure: {json.dumps(details, ensure_ascii=True)}")
+              zoom = browser_report.get("zoom_200_proxy", {})
+              if zoom.get("status") == "FAIL":
+                  details = {
+                      "overflow": zoom.get("horizontal_overflow_px"),
+                      "line_issues": zoom.get("line_issues", []),
+                  }
+                  print(f"::error file=.github/workflows/round2e_b_maylynn_visual_motion.yml,line=1::Round 2E-B browser zoom proxy failure: {json.dumps(details, ensure_ascii=True)}")
           PY
           else
             echo "Round 2E-B summary.json was not produced." >> "$GITHUB_STEP_SUMMARY"
