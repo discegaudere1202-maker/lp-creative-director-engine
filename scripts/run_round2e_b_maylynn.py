@@ -163,7 +163,7 @@ STYLE = r'''
 # Semantic headline spans are protected as authored units.  The common
 # renderer still leaves body copy responsive; a too-wide protected unit is
 # surfaced as overflow and fails QA rather than being silently rewrapped.
-STYLE += '\n.semantic-protected-line{white-space:nowrap}@media(min-width:761px){.viewport h1{font-size:clamp(2.6rem,4vw,5rem)}.viewport h2{font-size:clamp(2rem,3.2vw,3.6rem)}}@media(max-width:760px){.hero-viewport h1{font-size:clamp(2rem,9vw,4rem)}}'
+STYLE += '\n.semantic-protected-line{white-space:nowrap}@media(min-width:761px){.viewport h1{font-size:clamp(2.5rem,3.5vw,4.4rem)}.viewport h2{font-size:clamp(1.8rem,3vw,3.2rem)}}@media(max-width:760px){.viewport h1{font-size:clamp(2rem,9vw,4rem)}.viewport h2{font-size:clamp(1.75rem,8vw,3.1rem)}}'
 
 
 SCRIPT = r'''<script>

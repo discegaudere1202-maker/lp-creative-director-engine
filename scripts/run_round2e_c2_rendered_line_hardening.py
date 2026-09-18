@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import asyncio
+from io import BytesIO
 import hashlib
 import json
 import os
@@ -90,14 +91,40 @@ async def _screenshot(target: Path, page, *, locator=None, full_page: bool = Fal
     for attempt in range(3):
         try:
             if locator is None:
-                await page.screenshot(path=str(target), full_page=full_page, animations="disabled", timeout=30000)
+                await page.screenshot(path=str(target), full_page=full_page, animations="disabled", scale="css", timeout=30000)
             else:
-                await locator.screenshot(path=str(target), animations="disabled", timeout=30000)
+                await locator.screenshot(path=str(target), animations="disabled", scale="css", timeout=30000)
             return
         except Exception:
             if attempt == 2:
+                if full_page and locator is None:
+                    await _stitched_full_page(target, page)
+                    return
                 raise
+            await page.reload(wait_until="networkidle")
+            await page.evaluate("async () => { if (document.fonts) await document.fonts.ready; }")
             await page.wait_for_timeout(250 * (attempt + 1))
+
+
+async def _stitched_full_page(target: Path, page) -> None:
+    """Fallback for Chromium surfaces that reject a single huge capture."""
+    from PIL import Image
+
+    dims = await page.evaluate("() => ({width: window.innerWidth, height: window.innerHeight, total: document.documentElement.scrollHeight})")
+    width = int(dims["width"])
+    viewport_height = int(dims["height"])
+    total = int(dims["total"])
+    canvas = Image.new("RGB", (width, total), "white")
+    for y in range(0, total, viewport_height):
+        await page.evaluate("(scrollY) => window.scrollTo(0, scrollY)", y)
+        await page.wait_for_timeout(60)
+        remaining = min(viewport_height, total - y)
+        raw = await page.screenshot(animations="disabled", scale="css", clip={"x": 0, "y": 0, "width": width, "height": remaining}, timeout=30000)
+        with Image.open(BytesIO(raw)) as part:
+            canvas.paste(part.convert("RGB"), (0, y))
+    await page.evaluate("() => window.scrollTo(0, 0)")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    canvas.save(target, format="PNG")
 
 
 async def capture_c2(url: str, output: Path, source_head: str) -> dict[str, Any]:
