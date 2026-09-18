@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+  "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
   "placeholder_source_head": 0,
   "stale_capture_count": 0,
   "canonical_count": 6,
@@ -11,7 +11,7 @@
       "capture_type": "canonical_full",
       "path": "human_review_captures\\maylynn_paint\\desktop_full_1440.png",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "c8addadc623c9e529c8447c53879446e2ddc99432fd5acca760d7808f2ac089a",
       "stale": false
@@ -23,7 +23,7 @@
       "peak_id": "peak-02-read_material",
       "scene_id": "scene-02-read_material",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "cdabfda4688ff21144042e1f021be17669666b61680029e933aa1899eec3e0f2",
       "bounding_box": {
@@ -41,7 +41,7 @@
       "peak_id": "peak-01-observe",
       "scene_id": "scene-01-observe",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "10f928cb5200eb818abf86b2beeebc13ce11a7e53eda637e57c314f2920d00ff",
       "bounding_box": {
@@ -59,7 +59,7 @@
       "peak_id": "peak-03-watch_hands",
       "scene_id": "scene-03-watch_hands",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "d6439c3bc5d81523cd54a2c556749afac7380b1fcaf870e53807ef0f28f981c5",
       "bounding_box": {
@@ -77,7 +77,7 @@
       "peak_id": "peak-04-imagine_change",
       "scene_id": "scene-04-imagine_change",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "32d381fb683f28580dec6a3bb1cd7b5dbc2474e1e46b4cf96e088ef288c53b91",
       "bounding_box": {
@@ -93,7 +93,7 @@
       "capture_type": "canonical_full",
       "path": "human_review_captures\\maylynn_paint\\mobile_full_390.png",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "9226628ee3ec31b1b3bec72f917ad4d81eb8f25dc368f4e6d7c6bd0dc34f069d",
       "stale": false
@@ -105,7 +105,7 @@
       "peak_id": "peak-02-read_material",
       "scene_id": "scene-02-read_material",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "27b7b0a1f3536b36b725f421ef72bab7a17e8d53c23ef19b270d1d7804044e35",
       "bounding_box": {
@@ -123,7 +123,7 @@
       "peak_id": "peak-01-observe",
       "scene_id": "scene-01-observe",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "37d58aa46483230a83b6e276242c5abec5b9c56512c2f360bc20e3da50221696",
       "bounding_box": {
@@ -141,7 +141,7 @@
       "peak_id": "peak-03-watch_hands",
       "scene_id": "scene-03-watch_hands",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "2e51af40c49f32678c6691d5205aad51ee22a11483f8fb97478ab086a4323c17",
       "bounding_box": {
@@ -159,7 +159,7 @@
       "peak_id": "peak-04-imagine_change",
       "scene_id": "scene-04-imagine_change",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "7de15462cdec33d68a5996e0676df8cb0fce488a1230c69b16b0dc34050942fc",
       "capture_sha": "99aa3e6b3bc37d2bfceb3e51d1e9c7bfee431a82cafc78de7d53ca5804754ff0",
       "bounding_box": {
@@ -175,7 +175,7 @@
       "capture_type": "canonical_full",
       "path": "human_review_captures\\nagi_no_mirai\\desktop_full_1440.png",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "0530424ca5d8c8a093ef8747874034054f4cfdb3a514381eb68b496d4046470a",
       "capture_sha": "f6255babab3ce4493dc3bd500863b597a6fdced6105558c8517493dfcbb6526a",
       "stale": false
@@ -187,7 +187,7 @@
       "peak_id": "peak-03-feel_care",
       "scene_id": "scene-03-feel_care",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "0530424ca5d8c8a093ef8747874034054f4cfdb3a514381eb68b496d4046470a",
       "capture_sha": "5a13260dbf0dbaefa54df06fb56246269dc225f29b623d009ba48cb720b3b75b",
       "bounding_box": {
@@ -205,7 +205,7 @@
       "peak_id": "peak-04-choose_time",
       "scene_id": "scene-04-choose_time",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "0530424ca5d8c8a093ef8747874034054f4cfdb3a514381eb68b496d4046470a",
       "capture_sha": "bc4be2d077b780c230741fe678248a2990dbce7cfe68bbfeda0c2cc3dfb0e12e",
       "bounding_box": {
@@ -223,7 +223,7 @@
       "peak_id": "peak-02-settle",
       "scene_id": "scene-02-settle",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "0530424ca5d8c8a093ef8747874034054f4cfdb3a514381eb68b496d4046470a",
       "capture_sha": "f2cbcecb27b2ac319f3e6a6884c7f5e7c6f0e2b0b1bce08dcba1ac34447901af",
       "bounding_box": {
@@ -239,7 +239,7 @@
       "capture_type": "canonical_full",
       "path": "human_review_captures\\nagi_no_mirai\\mobile_full_390.png",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "0530424ca5d8c8a093ef8747874034054f4cfdb3a514381eb68b496d4046470a",
       "capture_sha": "d5e1bbade669ef94edaf4f1216f049e8e5cdd6a26f90a1934edec3e0294b3a4c",
       "stale": false
@@ -251,7 +251,7 @@
       "peak_id": "peak-03-feel_care",
       "scene_id": "scene-03-feel_care",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "0530424ca5d8c8a093ef8747874034054f4cfdb3a514381eb68b496d4046470a",
       "capture_sha": "330e7d1c6609938be3390c6694ad67f78f83820355df439330d15eea66418b2f",
       "bounding_box": {
@@ -269,7 +269,7 @@
       "peak_id": "peak-04-choose_time",
       "scene_id": "scene-04-choose_time",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "0530424ca5d8c8a093ef8747874034054f4cfdb3a514381eb68b496d4046470a",
       "capture_sha": "7069142c9f5ec1f08142b224053230deaf5c68fddc2913ec4fa456a2f9fe7748",
       "bounding_box": {
@@ -287,7 +287,7 @@
       "peak_id": "peak-02-settle",
       "scene_id": "scene-02-settle",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "0530424ca5d8c8a093ef8747874034054f4cfdb3a514381eb68b496d4046470a",
       "capture_sha": "3bccdcf76c2bddd903e57068cd583b207dda42a2d6fb2e6170bd3a38ffafbbc2",
       "bounding_box": {
@@ -303,7 +303,7 @@
       "capture_type": "canonical_full",
       "path": "human_review_captures\\watashi_no_daidokoro\\desktop_full_1440.png",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "184df812d8411bc13772b0ef11ec1c1f7d88d3d2203cc37f9967dbbc5451c122",
       "stale": false
@@ -315,7 +315,7 @@
       "peak_id": "peak-03-make",
       "scene_id": "scene-03-make",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "1b0c70c23618468708fed45ddc2fe846b83ae63287dc380e987021fa78bc2d9c",
       "bounding_box": {
@@ -333,7 +333,7 @@
       "peak_id": "peak-02-touch",
       "scene_id": "scene-02-touch",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "6cf4be847f7e125d48e3edaec00d30f0330cab1f6f1e644ef4a5d8e7f27bd98d",
       "bounding_box": {
@@ -351,7 +351,7 @@
       "peak_id": "peak-04-share",
       "scene_id": "scene-04-share",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "fb8afa190f6dc5276fb31f3e97b18ce976c0404143bbffa31b2736030608ea47",
       "bounding_box": {
@@ -369,7 +369,7 @@
       "peak_id": "peak-01-encounter",
       "scene_id": "scene-01-encounter",
       "viewport": 1440,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "195144324a3dbf48c35faf4fa2694e5fd6e08f7a681d51c9803fa1ad2eea2d24",
       "bounding_box": {
@@ -385,7 +385,7 @@
       "capture_type": "canonical_full",
       "path": "human_review_captures\\watashi_no_daidokoro\\mobile_full_390.png",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "ec79a0d6c6a58de17e2d94286970f9fd7a70c7904cb9b2ce0e19d93a40f32ce1",
       "stale": false
@@ -397,7 +397,7 @@
       "peak_id": "peak-03-make",
       "scene_id": "scene-03-make",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "72724a657a4864d51dd1ec0a1767a979b13b3a56c79f9f938edb5df31d6bbc37",
       "bounding_box": {
@@ -415,7 +415,7 @@
       "peak_id": "peak-02-touch",
       "scene_id": "scene-02-touch",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "728ae7fca05d05cb0aa68a898b6daa0e58adde14b9b8b14cfa0e94be35bd5cc4",
       "bounding_box": {
@@ -433,7 +433,7 @@
       "peak_id": "peak-04-share",
       "scene_id": "scene-04-share",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "ceb12d9c7ca30ec9a0f85cb21a1bb6cbe443b340d49d932565c7cd3b13a69b81",
       "bounding_box": {
@@ -451,7 +451,7 @@
       "peak_id": "peak-01-encounter",
       "scene_id": "scene-01-encounter",
       "viewport": 390,
-      "source_head": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+      "source_head": "9841017fad7d5ac0ce435b88e3715b91e738e4fb",
       "source_html_sha": "26d4c2b8fcd63f53393333a1695f22c43bea9cf7e4fa6810173c0e9cc87494d2",
       "capture_sha": "ad0978f51ae33fd133e2332dc25b58a82e2cdd25ad5b5141723528bc3a817a0c",
       "bounding_box": {

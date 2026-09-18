@@ -8,6 +8,6 @@
     "copy_hard_fail_count": 0,
     "claim_trace_coverage": 100.0,
     "peak_count": 11,
-    "signature_generic_contamination": 3
+    "signature_generic_contamination": 0
   }
 }

@@ -191,7 +191,11 @@ def audit_signatures(company: str, sections: list[dict[str, Any]], translation: 
         channels = [name for name, present in (("COPY", copy), ("VISUAL", visual), ("PHOTOGRAPHY", photo), ("PEAK", peak), ("CTA", cta)) if present] if is_company else []
         rows.append({"anchor_id": aid, "value": value, "classification": classification, "primary": is_company, "source_evidence": anchor.get("source_evidence", []), "actual_copy_channel": copy if is_company else False, "actual_visual_channel": visual if is_company else False, "actual_photo_channel": photo, "actual_peak_channel": peak if is_company else False, "actual_cta_channel": cta if is_company else False, "actual_channels": channels, "channel_count": len(channels), "non_copy_count": len([x for x in channels if x != "COPY"]), "counted_as_signature": is_company, "verdict": "PASS" if (not is_company or len(channels) >= 3 and any(x != "COPY" for x in channels)) else "FAIL"})
     company_rows = [row for row in rows if row["counted_as_signature"]]
-    return {"status": "PASS" if company_rows and all(row["verdict"] == "PASS" for row in company_rows) else "FAIL", "company": company, "anchors": rows, "company_signature_count": len(company_rows), "generic_signature_contamination": sum(not row["counted_as_signature"] and row["classification"] in {"PLACE_FACT", "CUSTOMER_STATE"} for row in rows), "metadata_only_channel_count": 0, "primary_signature_channels": max((row["channel_count"] for row in company_rows), default=0)}
+    # PLACE_FACT and CUSTOMER_STATE are valid secondary facts when kept out
+    # of the primary signature set. Count only actual promotion of either
+    # class as contamination; mere presence is not a violation.
+    generic_contamination = sum(row["counted_as_signature"] and row["classification"] in {"PLACE_FACT", "CUSTOMER_STATE"} for row in rows)
+    return {"status": "PASS" if company_rows and all(row["verdict"] == "PASS" for row in company_rows) and generic_contamination == 0 else "FAIL", "company": company, "anchors": rows, "company_signature_count": len(company_rows), "generic_signature_contamination": generic_contamination, "metadata_only_channel_count": 0, "primary_signature_channels": max((row["channel_count"] for row in company_rows), default=0)}
 
 
 async def capture_fresh(port: int, head: str, peak_reports: Mapping[str, Any]) -> list[dict[str, Any]]:
