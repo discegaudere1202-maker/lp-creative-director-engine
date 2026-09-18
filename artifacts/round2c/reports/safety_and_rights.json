@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "claim_trace": "fact nodes to decisions to viewport copy",
+  "conflicted_address_excluded_from_primary": true,
+  "proxy_not_evidence": true,
+  "actual_evidence_slots": [
+    "E01_REAL_DRONE_INSPECTION",
+    "E02_REAL_WORKER_PORTRAIT",
+    "E03_REAL_BEFORE_AFTER",
+    "E04_REAL_PROJECT_SEQUENCE"
+  ],
+  "contact_actionability": {
+    "phone": "VERIFIED_PUBLIC",
+    "form": "VERIFIED_OFFICIAL"
+  },
+  "invented_price": 0,
+  "invented_project": 0,
+  "invented_credential": 0
+}

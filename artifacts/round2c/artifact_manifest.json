@@ -1,0 +1,20 @@
+{
+  "name": "round2c-maylynn-premium-prototype-d6b90c1c11a124472be44ae7f244612482cfba77",
+  "source_head": "d6b90c1c11a124472be44ae7f244612482cfba77",
+  "root": "artifacts/round2c",
+  "includes": [
+    "maylynn_premium_prototype/index.html",
+    "company_research_v2.json",
+    "evidence_graph_v2.json",
+    "customer_decision_model_v1.json",
+    "experience_architecture_v2.json",
+    "creative_composition_v2.json",
+    "quality_review_contract_v2.json",
+    "asset_manifest.json",
+    "source_manifest.json",
+    "captures/",
+    "browser_qa.json",
+    "reports/"
+  ],
+  "github_artifact": "NOT_UPLOADED"
+}

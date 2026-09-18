@@ -1,0 +1,23 @@
+{
+  "schema_version": "quality_review_contract_v2",
+  "review_stage": "MACHINE_TECHNICAL_VERIFICATION_BEFORE_SHUN",
+  "status": "PASS",
+  "checks": {
+    "research_schema": true,
+    "conflicts_preserved": true,
+    "no_conflicted_hero_proof": true,
+    "decision_first": true,
+    "one_viewport_one_complete_idea": true,
+    "copy_roles_composed": true,
+    "shot_contracts_complete": true,
+    "motion_intent_bounded": true,
+    "microcraft_minimum": true,
+    "mobile_recomposition": true,
+    "real_contact_only": true,
+    "no_invented_price": true,
+    "actual_evidence_pending": true
+  },
+  "constitution": "PROVISIONAL_NOT_FINAL",
+  "human_final_judge": "Shun",
+  "one_million_yen_pass": "NOT_ASSESSED"
+}

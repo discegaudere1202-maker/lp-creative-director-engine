@@ -1,0 +1,139 @@
+{
+  "schema_version": "round2c_capture_manifest_v1",
+  "source_head": "d6b90c1c11a124472be44ae7f244612482cfba77",
+  "status": "PASS",
+  "records": [
+    {
+      "kind": "full_page",
+      "viewport": 1440,
+      "path": "captures\\desktop_1440_full.png",
+      "sha": "320f4ab4591a2d70da61dd7f7a9dbcde448ccdf1abd21c59c91312357b76af44"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 1440,
+      "viewport_id": "V01",
+      "path": "captures\\desktop_1440_V01.png",
+      "sha": "ed990745043c0401e9d704df50c81f6cb16af86ac6403f945887c67bff307c47"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 1440,
+      "viewport_id": "V04",
+      "path": "captures\\desktop_1440_V04.png",
+      "sha": "142cc456f99808838920c82c91ef2b993cef0904de63e1b578954d6b45d641bd"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 1440,
+      "viewport_id": "V05",
+      "path": "captures\\desktop_1440_V05.png",
+      "sha": "3125cc9cbe6ec2eabf818d8748b587306d776346aa0e33b4d2e4cc186324d2a4"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 1440,
+      "viewport_id": "V06",
+      "path": "captures\\desktop_1440_V06.png",
+      "sha": "47f9ba1b41f3e4b7ba4fc515d597385a1da45175363dee6153c70a0f8b34298e"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 1440,
+      "viewport_id": "V09",
+      "path": "captures\\desktop_1440_V09.png",
+      "sha": "127a9842401d9b0a835688f5e31d7237ba6e22fba2f8e62fe56d84d8c0f3929b"
+    },
+    {
+      "kind": "full_page",
+      "viewport": 390,
+      "path": "captures\\mobile_390_full.png",
+      "sha": "f941a644c87812a435b8a15cc082956504060ee83905b23c1a89d56b809a6866"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 390,
+      "viewport_id": "V01",
+      "path": "captures\\mobile_390_V01.png",
+      "sha": "2f49198606334029dbaacee99867746fb70a43d9c2a5a7fee5f5a057f70079e9"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 390,
+      "viewport_id": "V04",
+      "path": "captures\\mobile_390_V04.png",
+      "sha": "d95958238c64278527a4a5245bc67804132addd59718aa9181cfc0c9ab8445cf"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 390,
+      "viewport_id": "V05",
+      "path": "captures\\mobile_390_V05.png",
+      "sha": "024fc528f68fa0f1ef14460a6ce3c3a002b4a59cf77367ee4dd6a8aa615c20ef"
+    },
+    {
+      "kind": "viewport",
+      "viewport": 390,
+      "viewport_id": "V09",
+      "path": "captures\\mobile_390_V09.png",
+      "sha": "ff34b1b079420949965f0fc2f1e8102f9ee60350649ff04fbaa8e42712f8499a"
+    },
+    {
+      "kind": "full_page",
+      "viewport": 430,
+      "path": "captures\\additional_430_full.png",
+      "sha": "4565074eda9767a31b3a9f728a40aefbd7550d186d44a07cb1b50bea5a0eb536"
+    },
+    {
+      "kind": "motion_state",
+      "motion_id": "M01",
+      "viewport_id": "V01",
+      "path": "captures\\motion_states\\M01_V01.png",
+      "sha": "c7509cc237137d98a1c5cba05d287c82006042bef4cc1c42249e1299014a1300"
+    },
+    {
+      "kind": "motion_state",
+      "motion_id": "M02",
+      "viewport_id": "V02",
+      "path": "captures\\motion_states\\M02_V02.png",
+      "sha": "b6ad751eb4b32c7b44954ba774a9d8529873b6ee823fdb42fdeb933f38aab4a8"
+    },
+    {
+      "kind": "motion_state",
+      "motion_id": "M03",
+      "viewport_id": "V03",
+      "path": "captures\\motion_states\\M03_V03.png",
+      "sha": "427d09a78e841b9a91b0135f26173c48d822bf71568e642fae9eaf049954eb28"
+    },
+    {
+      "kind": "motion_state",
+      "motion_id": "M04",
+      "viewport_id": "V04",
+      "path": "captures\\motion_states\\M04_V04.png",
+      "sha": "ff2176ca67a1b7629f5c205c86287d734bda467254f736b2dd5b1d9ce72eece0"
+    },
+    {
+      "kind": "motion_state",
+      "motion_id": "M05",
+      "viewport_id": "V05",
+      "path": "captures\\motion_states\\M05_V05.png",
+      "sha": "3125cc9cbe6ec2eabf818d8748b587306d776346aa0e33b4d2e4cc186324d2a4"
+    },
+    {
+      "kind": "motion_state",
+      "motion_id": "M06",
+      "viewport_id": "V09",
+      "path": "captures\\motion_states\\M06_V09.png",
+      "sha": "127a9842401d9b0a835688f5e31d7237ba6e22fba2f8e62fe56d84d8c0f3929b"
+    }
+  ],
+  "counts": {
+    "desktop_full": 1,
+    "mobile_full": 1,
+    "additional_430_full": 1,
+    "desktop_viewports": 5,
+    "mobile_viewports": 4,
+    "motion_states": 6,
+    "total": 18
+  }
+}

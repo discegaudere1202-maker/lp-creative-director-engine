@@ -1,0 +1,137 @@
+{
+  "schema_version": "round2c_asset_manifest_v1",
+  "policy": "generated_or_free_stock_only; actual_evidence_requires_rights_clearance",
+  "bindings": [
+    {
+      "viewport_id": "V01",
+      "role": "hero_authority",
+      "asset_role": "hero_home_finish",
+      "status": "PROXY_NOT_EVIDENCE"
+    },
+    {
+      "viewport_id": "V02",
+      "role": "defect_detail",
+      "asset_role": "material_detail",
+      "status": "PROXY_NOT_EVIDENCE"
+    },
+    {
+      "viewport_id": "V05",
+      "role": "craft_process",
+      "asset_role": "craft_handwork",
+      "status": "FREE_STOCK_CONTEXT"
+    },
+    {
+      "viewport_id": "V06",
+      "role": "evidence_surface",
+      "asset_role": "data_led_no_photo",
+      "status": "RIGHTS_SAFE"
+    },
+    {
+      "viewport_id": "V07",
+      "role": "material_choice",
+      "asset_role": "css_material_strip",
+      "status": "ABSTRACT_NOT_REAL_COLOR"
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "maylynn-hero-home-finish-generated-c140090c",
+      "photo_role": "hero_home_finish",
+      "source_type": "generated",
+      "provider": "OpenAI image generation",
+      "source": "conversation-approved-generated-asset",
+      "asset_url": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+      "creator": "OpenAI",
+      "rights_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+      "license_terms_url": "",
+      "checked_at": "2026-09-16",
+      "visual_subject": "一般的な日本の2階建て戸建住宅を3/4外観で捉え、明るい外壁面と濃色アクセント面の仕上がりが読み取れる住宅外観イメージ",
+      "placement": "hero_dominant_image",
+      "replacement_target": "Maylynn Paintの実施工後住宅写真",
+      "crop": "{\"desktop\": \"landscape; house on right; copy-safe sky/streetscape on left\", \"mobile\": \"4:3 crop-safe around the main house mass and entrance; avoid cropping to only facade detail\", \"recommended_object_position\": \"58% 50%\"}",
+      "alt": "外壁塗装後の住まいを想起させる日本の戸建住宅外観イメージ",
+      "gen_id": "c140090c-9549-4fba-8074-c60b0abd32e8",
+      "local_asset_path": "assets/photography/generated/maylynn_paint/hero_home_finish.png",
+      "binary_available": true,
+      "file_hash": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+      "width": 1586,
+      "height": 992,
+      "file_type": "PNG"
+    },
+    {
+      "asset_id": "maylynn-craft-handwork-pexels-1669754",
+      "photo_role": "craft_handwork",
+      "source_type": "free_stock",
+      "provider": "Pexels",
+      "source": "https://www.pexels.com/photo/person-holding-paint-roller-on-wall-1669754/",
+      "asset_url": "/assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+      "creator": "Malte Luk",
+      "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+      "license_terms_url": "https://www.pexels.com/license/",
+      "checked_at": "2026-09-16",
+      "visual_subject": "Selection Manifest PRIMARY",
+      "placement": "",
+      "replacement_target": "",
+      "crop": "50% 50%",
+      "alt": "craft_handwork stock context image",
+      "local_asset_path": "assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+      "binary_available": true,
+      "file_hash": "61a30f5c7041064f517a141ff628b25d93e96a3a20b9fbf3b4017c77190873e2",
+      "width": 5184,
+      "height": 3456,
+      "file_type": "JPEG"
+    },
+    {
+      "asset_id": "maylynn-material-detail-unsplash-w0bqO-Elz8",
+      "photo_role": "material_detail",
+      "source_type": "free_stock",
+      "provider": "Unsplash",
+      "source": "https://unsplash.com/photos/a-close-up-of-a-white-stucco-wall--w0bqO-Elz8",
+      "asset_url": "/assets/photography/stock/maylynn_paint/material_detail.jpg",
+      "creator": "Denis Agati",
+      "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+      "license_terms_url": "https://unsplash.com/license",
+      "checked_at": "2026-09-16",
+      "visual_subject": "Selection Manifest PRIMARY",
+      "placement": "",
+      "replacement_target": "",
+      "crop": "50% 50%",
+      "alt": "material_detail stock context image",
+      "local_asset_path": "assets/photography/stock/maylynn_paint/material_detail.jpg",
+      "binary_available": true,
+      "file_hash": "047a38aa585e51a48fba5c0c7c5322620990aa44b7cac644ba940e4ffd755779",
+      "width": 4608,
+      "height": 3456,
+      "file_type": "JPEG"
+    },
+    {
+      "asset_id": "maylynn-trust-consultation-pexels-9052547",
+      "photo_role": "trust_consultation",
+      "source_type": "free_stock",
+      "provider": "Pexels",
+      "source": "https://www.pexels.com/photo/people-discussing-the-floor-plan-9052547/",
+      "asset_url": "/assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+      "creator": "SHVETS production",
+      "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+      "license_terms_url": "https://www.pexels.com/license/",
+      "checked_at": "2026-09-16",
+      "visual_subject": "Selection Manifest PRIMARY",
+      "placement": "",
+      "replacement_target": "",
+      "crop": "50% 50%",
+      "alt": "trust_consultation stock context image",
+      "local_asset_path": "assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+      "binary_available": true,
+      "file_hash": "4a8697c19e23d9053d8ddbe6eeecaf2191e4ab04f0f726a69c2849e5c05b4c41",
+      "width": 5754,
+      "height": 3836,
+      "file_type": "JPEG"
+    }
+  ],
+  "actual_evidence_slots": [
+    "E01_REAL_DRONE_INSPECTION",
+    "E02_REAL_WORKER_PORTRAIT",
+    "E03_REAL_BEFORE_AFTER",
+    "E04_REAL_PROJECT_SEQUENCE"
+  ]
+}

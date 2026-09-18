@@ -1,0 +1,58 @@
+{
+  "schema_version": "round2c_maylynn_premium_prototype_v1",
+  "status": "PASS",
+  "round": "2C",
+  "source_head": "d6b90c1c11a124472be44ae7f244612482cfba77",
+  "company": "maylynn_paint",
+  "quality_architecture_ready": true,
+  "maylynn_implementation_ready": true,
+  "machine_technical_verification": "PASS",
+  "shun_quality_review": "NOT_STARTED",
+  "one_million_yen_pass": "NOT_ASSESSED",
+  "nagi_no_mirai": "NOT_STARTED",
+  "watashi_no_daidokoro": "NOT_STARTED",
+  "browser_qa": {
+    "status": "PASS",
+    "total": 9,
+    "pass": 9,
+    "fail": 0,
+    "overflow_max": 0.0,
+    "console_errors": 0,
+    "page_errors": 0,
+    "request_failures": 0
+  },
+  "captures": {
+    "desktop_full": 1,
+    "mobile_full": 1,
+    "additional_430_full": 1,
+    "desktop_viewports": 5,
+    "mobile_viewports": 4,
+    "motion_states": 6,
+    "total": 18
+  },
+  "artifact": {
+    "name": "round2c-maylynn-premium-prototype-d6b90c1c11a124472be44ae7f244612482cfba77",
+    "source_head": "d6b90c1c11a124472be44ae7f244612482cfba77",
+    "root": "artifacts/round2c",
+    "includes": [
+      "maylynn_premium_prototype/index.html",
+      "company_research_v2.json",
+      "evidence_graph_v2.json",
+      "customer_decision_model_v1.json",
+      "experience_architecture_v2.json",
+      "creative_composition_v2.json",
+      "quality_review_contract_v2.json",
+      "asset_manifest.json",
+      "source_manifest.json",
+      "captures/",
+      "browser_qa.json",
+      "reports/"
+    ],
+    "github_artifact": "NOT_UPLOADED"
+  },
+  "manual_lp_edit": 0,
+  "creative_production_status": "PROTOTYPE_NOT_FINAL",
+  "remaining": [
+    "Shun must review the actual HTML/screenshots/motion before any final quality decision."
+  ]
+}

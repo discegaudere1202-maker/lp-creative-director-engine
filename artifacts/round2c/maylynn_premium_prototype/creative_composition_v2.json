@@ -1,0 +1,871 @@
+{
+  "schema_version": "creative_composition_v2",
+  "company_id": "maylynn_paint",
+  "copy": {
+    "V01": {
+      "kicker": "OYAMA / EXTERIOR & ROOF",
+      "headline": [
+        "塗る前に、",
+        "まず状態を見る。"
+      ],
+      "lead": "外壁のひび割れ、剥がれ、屋根の傷み。\nメイリン塗装工務店は、小山市を中心に、外壁・屋根の修繕と塗装を行っています。\n屋根や高所は、ドローンを使った現地調査にも対応しています。",
+      "facts": [
+        "小山市中心",
+        "DRONE SURVEY",
+        "最長15年保証"
+      ]
+    },
+    "V02": {
+      "kicker": "01 / SIGNS",
+      "headline": [
+        "住まいは、",
+        "先にサインを出す。"
+      ],
+      "lead": "色あせ、ひび割れ、剥がれ、コケやカビ。\n屋根の破損は、雨漏りにつながることもあります。",
+      "labels": [
+        "ひび割れ",
+        "剥がれ",
+        "色あせ",
+        "コケ・カビ",
+        "屋根の傷み"
+      ]
+    },
+    "V03": {
+      "kicker": "02 / SCOPE",
+      "headline": [
+        "外壁だけで、",
+        "終わらない。"
+      ],
+      "lead": "外壁や屋根の塗り替え・修繕から、外装まわりの改装まで。\n住まいの状態と希望を聞きながら、工事内容を考えていきます。",
+      "scope": [
+        "外壁",
+        "屋根",
+        "高所調査",
+        "修繕・改装"
+      ]
+    },
+    "V04": {
+      "kicker": "03 / INSPECTION",
+      "headline": [
+        "見えない屋根は、",
+        "ドローンで見る。"
+      ],
+      "lead": "高所の状態と施工面積を確認してから、必要な仕事を考える。",
+      "metrics": [
+        {
+          "label": "DRONE",
+          "value": "高所現地調査"
+        },
+        {
+          "label": "MAX",
+          "value": "15年",
+          "note": "保証"
+        },
+        {
+          "label": "DAYS",
+          "value": "7–9",
+          "note": "一軒家の目安"
+        },
+        {
+          "label": "COLORS",
+          "value": "654",
+          "note": "選べる色数"
+        }
+      ]
+    },
+    "V05": {
+      "kicker": "04 / PROCESS",
+      "headline": [
+        "見て、決めて、塗る。"
+      ],
+      "lead": "現地の状態と希望を確かめ、必要な仕事を順番に整理します。",
+      "steps": [
+        "まず相談する",
+        "現地の状態を見る",
+        "内容と見積を確認する",
+        "段取りをして施工する",
+        "仕上がりを確認し、保証へ"
+      ],
+      "proof": "20年以上の経験を持つ職人"
+    },
+    "V06": {
+      "kicker": "05 / PUBLIC EVIDENCE",
+      "headline": [
+        "公開されている仕事で、",
+        "確かめる。"
+      ],
+      "lead": "実際の案件や第三者レビューを、分かる範囲で確認できます。工事範囲や条件を広げて解釈しません。",
+      "cards": [
+        {
+          "label": "OFFICIAL PROJECT",
+          "title": "築40年住宅の塗装工事",
+          "body": "料金5万円〜程度 / 工期1〜2日程度",
+          "source": "公式施工実績"
+        },
+        {
+          "label": "PUBLIC REVIEW · 1",
+          "title": "築45年戸建 / 外壁塗装",
+          "body": "2025年施工完了 / 68万円 / 15日",
+          "source": "リショップナビ公開レビュー"
+        }
+      ]
+    },
+    "V07": {
+      "kicker": "06 / MATERIAL",
+      "headline": [
+        "色は654通り。",
+        "塗料は、住まいに合わせて。"
+      ],
+      "lead": "公式FAQでは、日塗工色見本帳654色から選択可能。防水性・防汚性など、異なる性能を持つ塗料も案内しています。",
+      "footnote": "画面上の色は実色再現ではありません。"
+    },
+    "V08": {
+      "kicker": "07 / FAQ",
+      "headline": [
+        "相談する前に、",
+        "ここまで分かる。"
+      ],
+      "items": [
+        [
+          "保証は？",
+          "最長15年。"
+        ],
+        [
+          "工期目安は？",
+          "一軒家7〜9日。"
+        ],
+        [
+          "色は？",
+          "654色。"
+        ],
+        [
+          "どの地域？",
+          "小山市を中心に周辺エリア。"
+        ],
+        [
+          "連絡可能時間？",
+          "公式掲載10:00〜19:00。"
+        ]
+      ]
+    },
+    "V09": {
+      "kicker": "08 / ACTION",
+      "headline": [
+        "気になるところを、",
+        "まず見せてください。"
+      ],
+      "lead": "外壁のひび、屋根の色あせ、剥がれ。\n相談内容を工事名に整理する前に、今見えている状態を伝えるところから。",
+      "primary_action": "電話で相談する",
+      "secondary_action": "フォームで問い合わせる",
+      "phone": "0800-8080-886",
+      "support": [
+        "受付 10:00〜19:00",
+        "栃木県小山市を中心に周辺エリア"
+      ]
+    }
+  },
+  "typography": {
+    "display": "Zen Kaku Gothic New",
+    "body": "Noto Sans JP",
+    "data": "IBM Plex Mono",
+    "display_weight": 600,
+    "hero_desktop": "clamp(4.5rem, 7vw, 7rem)",
+    "hero_mobile": "clamp(2.5rem, 11vw, 3.15rem)",
+    "section_heading": "clamp(2.5rem, 4.4vw, 4.6rem)",
+    "body_size": "1rem",
+    "lead_size": "clamp(1.1rem, 1.7vw, 1.35rem)",
+    "line_break_policy": "meaning_chunk_only"
+  },
+  "shots": [
+    {
+      "shot_id": "S01",
+      "viewport_id": "V01",
+      "shot_type": "EXPLANATION / CONTEXT",
+      "asset_role": "hero_home_finish",
+      "subject": "日本の戸建外観と状態を確認する入口",
+      "moment": "inspection前の観察",
+      "distance": "medium-wide",
+      "camera_angle": "eye-level",
+      "crop": "desktop split / mobile 4:3",
+      "information_purpose": "condition_first_entry",
+      "emotion": "quiet confidence",
+      "evidence_status": "PROXY_NOT_EVIDENCE",
+      "replacement_target": "actual inspection photo",
+      "motion_relation": "inspection reveal"
+    },
+    {
+      "shot_id": "S02",
+      "viewport_id": "V02",
+      "shot_type": "DETAIL",
+      "asset_role": "material_detail",
+      "subject": "外壁の質感を読むための近接面",
+      "moment": "劣化サインを観察",
+      "distance": "macro",
+      "camera_angle": "neutral",
+      "crop": "detail card",
+      "information_purpose": "self diagnosis",
+      "emotion": "attention",
+      "evidence_status": "PROXY_NOT_EVIDENCE",
+      "replacement_target": "actual crack / peeling photos",
+      "motion_relation": "annotation reveal"
+    },
+    {
+      "shot_id": "S03",
+      "viewport_id": "V05",
+      "shot_type": "PROCESS / DETAIL",
+      "asset_role": "craft_handwork",
+      "subject": "ローラーと手元",
+      "moment": "準備と施工",
+      "distance": "close",
+      "camera_angle": "eye-level",
+      "crop": "sticky process visual",
+      "information_purpose": "process clarity",
+      "emotion": "assurance",
+      "evidence_status": "FREE_STOCK_CONTEXT",
+      "replacement_target": "actual worker process photo",
+      "motion_relation": "process progress"
+    },
+    {
+      "shot_id": "S04",
+      "viewport_id": "V04",
+      "shot_type": "EXPLANATION",
+      "asset_role": "vector_scope_drone",
+      "subject": "屋根とドローン調査の関係図",
+      "moment": "inspection",
+      "distance": "diagram",
+      "camera_angle": "orthographic",
+      "crop": "full panel",
+      "information_purpose": "quantified inspection proof",
+      "emotion": "clarity",
+      "evidence_status": "EXPLANATORY_PROXY",
+      "replacement_target": "real drone inspection image",
+      "motion_relation": "proof surface reveal"
+    },
+    {
+      "shot_id": "S05",
+      "viewport_id": "V07",
+      "shot_type": "MATERIAL / DETAIL",
+      "asset_role": "css_material_strip",
+      "subject": "色見本と塗料性能の選択面",
+      "moment": "choice",
+      "distance": "macro",
+      "camera_angle": "flat-lay",
+      "crop": "horizontal strip",
+      "information_purpose": "choice support",
+      "emotion": "agency",
+      "evidence_status": "ABSTRACT_NOT_REAL_COLOR",
+      "replacement_target": "approved color material photography",
+      "motion_relation": "material light pass"
+    }
+  ],
+  "motion": [
+    {
+      "motion_id": "M01",
+      "trigger": "page_load",
+      "intent": "ATTENTION + REVEAL",
+      "from": "visual clipped to 18%",
+      "to": "full inspection context",
+      "duration": "1000ms",
+      "easing": "cubic-bezier(.22,.61,.36,1)",
+      "scroll_relation": "none",
+      "desktop": "clip-path reveal",
+      "mobile": "650–850ms",
+      "reduced_motion": "final state immediately"
+    },
+    {
+      "motion_id": "M02",
+      "trigger": "viewport_entry",
+      "intent": "EXPLANATION",
+      "from": "leader line 0%",
+      "to": "defect label connected",
+      "duration": "420ms",
+      "easing": "ease-out",
+      "scroll_relation": "entry",
+      "desktop": "staggered labels",
+      "mobile": "tap/snap reveal",
+      "reduced_motion": "visible"
+    },
+    {
+      "motion_id": "M03",
+      "trigger": "hover/focus/tap",
+      "intent": "REVEAL",
+      "from": "neutral scope map",
+      "to": "wall/roof highlight",
+      "duration": "260ms",
+      "easing": "ease-out",
+      "scroll_relation": "interaction",
+      "desktop": "hover/focus",
+      "mobile": "tap",
+      "reduced_motion": "state change without transition"
+    },
+    {
+      "motion_id": "M04",
+      "trigger": "viewport_entry",
+      "intent": "PROOF",
+      "from": "masked metrics",
+      "to": "aligned grid",
+      "duration": "600ms",
+      "easing": "ease-out",
+      "scroll_relation": "entry",
+      "desktop": "surface reveal",
+      "mobile": "surface reveal",
+      "reduced_motion": "visible"
+    },
+    {
+      "motion_id": "M05",
+      "trigger": "scroll",
+      "intent": "PROCESS",
+      "from": "step inactive",
+      "to": "active image/step",
+      "duration": "480ms",
+      "easing": "ease-in-out",
+      "scroll_relation": "sticky desktop / sequential mobile",
+      "desktop": "sticky visual + progress",
+      "mobile": "non-sticky sequence",
+      "reduced_motion": "no auto movement"
+    },
+    {
+      "motion_id": "M06",
+      "trigger": "hover/focus",
+      "intent": "ACTION",
+      "from": "quiet link",
+      "to": "small arrow/underline travel",
+      "duration": "150ms",
+      "easing": "ease-out",
+      "scroll_relation": "none",
+      "desktop": "underline",
+      "mobile": "pressed state",
+      "reduced_motion": "color only"
+    }
+  ],
+  "microcraft": {
+    "minimum_decisions": 20,
+    "decisions": [
+      "hero location kicker",
+      "01/09 index",
+      "inspection rule",
+      "asymmetric crop",
+      "fact rail baseline",
+      "DRONE SURVEY mono label",
+      "detail leader line",
+      "annotation dots",
+      "image index",
+      "scope legend",
+      "metric source chip",
+      "MAX superscript",
+      "metric footnote",
+      "process progress line",
+      "active-step marker",
+      "craft caption",
+      "public-source link",
+      "evidence source date",
+      "color index",
+      "screen-color disclaimer",
+      "FAQ plus/minus",
+      "phone availability",
+      "CTA arrow 12–16px",
+      "hover underline",
+      "mobile sticky separator"
+    ]
+  },
+  "mobile": {
+    "primary_width": 390,
+    "technical_widths": [
+      320,
+      360,
+      375,
+      430
+    ],
+    "global": "recomposed_not_desktop_stack",
+    "V01": "brand/location → headline → image → lead → fact chips; 4:3 crop",
+    "V02": "horizontal snap detail cards with 15% next-card edge",
+    "V03": "full-width scope graphic then tap regions",
+    "V04": "image first, 2×2 metrics",
+    "V05": "sticky removed, image above active step",
+    "V06": "single-column evidence cards with source labels",
+    "V07": "horizontal material strip, no scroll hijack",
+    "V08": "accordion, first item open",
+    "V09": "full-width phone/form buttons plus sticky contact after hero; hidden at final",
+    "spacing": {
+      "hero_bottom": "56–72px",
+      "major_section": "64–88px",
+      "proof_separator": "40–56px"
+    }
+  },
+  "asset_policy": {
+    "new_assets": [
+      "generated",
+      "free_stock"
+    ],
+    "actual_evidence_images": "HEARING_REQUIRED_BEFORE_USE",
+    "proxy_never_evidence": true
+  },
+  "viewport_bindings": [
+    {
+      "viewport_id": "V01",
+      "section_id": "hero",
+      "label": "Hero / proposition",
+      "user_questions": [
+        "D01",
+        "D02"
+      ],
+      "information_gain": [
+        "外壁・屋根の塗装、修繕、改装を小山市中心に相談できる。",
+        "外壁・屋根を状態と希望に合わせて調査・修繕・塗装する。"
+      ],
+      "emotional_role": "condition_first_entry",
+      "proof_role": "context_or_explanation",
+      "density": "LOW",
+      "viewport_count": 1,
+      "cta_relation": "supporting_information",
+      "complete_idea": "condition_first_entry",
+      "primary_focal": "WORLD + CONTEXT",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "状態を見る会社として入る。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "lead",
+        "fact",
+        "navigation cue"
+      ],
+      "visual_roles": [
+        "EXPLANATION / CONTEXT"
+      ],
+      "proof_roles": [
+        "CONTEXT"
+      ],
+      "micro_craft": [
+        "hero location kicker",
+        "01/09 index",
+        "inspection rule"
+      ],
+      "motion_intent": "ATTENTION/REVEAL",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "condition_first_entry"
+      },
+      "mobile_composition": {
+        "mode": "brand/location → headline → image → lead → fact chips; 4:3 crop",
+        "complete_idea": "condition_first_entry"
+      },
+      "benchmark_reason": "状態を見る会社として入る。"
+    },
+    {
+      "viewport_id": "V02",
+      "section_id": "signs",
+      "label": "Exterior warning signs",
+      "user_questions": [
+        "D03"
+      ],
+      "information_gain": [
+        "ひび割れ、剥がれ、汚れ、色あせ、屋根の破損など。"
+      ],
+      "emotional_role": "self_diagnosis",
+      "proof_role": "verified_public_facts",
+      "density": "MEDIUM",
+      "viewport_count": 1,
+      "cta_relation": "supporting_information",
+      "complete_idea": "self_diagnosis",
+      "primary_focal": "DETAIL",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "これ相談していい、を自己判定する。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "annotation",
+        "body"
+      ],
+      "visual_roles": [
+        "DETAIL"
+      ],
+      "proof_roles": [
+        "CONTEXT"
+      ],
+      "micro_craft": [
+        "01/09 index",
+        "inspection rule",
+        "asymmetric crop"
+      ],
+      "motion_intent": "EXPLANATION",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "self_diagnosis"
+      },
+      "mobile_composition": {
+        "mode": "horizontal snap detail cards with 15% next-card edge",
+        "complete_idea": "self_diagnosis"
+      },
+      "benchmark_reason": "これ相談していい、を自己判定する。"
+    },
+    {
+      "viewport_id": "V03",
+      "section_id": "scope",
+      "label": "Service scope",
+      "user_questions": [
+        "D02",
+        "D03"
+      ],
+      "information_gain": [
+        "外壁・屋根を状態と希望に合わせて調査・修繕・塗装する。",
+        "ひび割れ、剥がれ、汚れ、色あせ、屋根の破損など。"
+      ],
+      "emotional_role": "scope_clarity",
+      "proof_role": "context_or_explanation",
+      "density": "MEDIUM",
+      "viewport_count": 1,
+      "cta_relation": "supporting_information",
+      "complete_idea": "scope_clarity",
+      "primary_focal": "EXPLANATION",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "外壁だけに閉じない相談範囲を理解する。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "scope label",
+        "legend"
+      ],
+      "visual_roles": [
+        "TYPOGRAPHY"
+      ],
+      "proof_roles": [
+        "CONTEXT"
+      ],
+      "micro_craft": [
+        "inspection rule",
+        "asymmetric crop",
+        "fact rail baseline"
+      ],
+      "motion_intent": "REVEAL",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "scope_clarity"
+      },
+      "mobile_composition": {
+        "mode": "full-width scope graphic then tap regions",
+        "complete_idea": "scope_clarity"
+      },
+      "benchmark_reason": "外壁だけに閉じない相談範囲を理解する。"
+    },
+    {
+      "viewport_id": "V04",
+      "section_id": "proof",
+      "label": "Inspection & quantified public proof",
+      "user_questions": [
+        "D04",
+        "D06",
+        "D07"
+      ],
+      "information_gain": [
+        "屋根・高所はドローンを用いた現地調査に対応する。",
+        "20年以上の経験、公開されている施工・レビュー・調査情報を確認できる。",
+        "一軒家は7〜9日が目安、保証は最長15年。"
+      ],
+      "emotional_role": "inspection_authority",
+      "proof_role": "verified_public_facts",
+      "density": "HIGH",
+      "viewport_count": 1,
+      "cta_relation": "supporting_information",
+      "complete_idea": "inspection_authority",
+      "primary_focal": "EXPLANATION + DATA",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "ドローンと公開情報で信頼の理由を掴む。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "lead",
+        "metric",
+        "caption",
+        "footnote"
+      ],
+      "visual_roles": [
+        "EXPLANATION"
+      ],
+      "proof_roles": [
+        "PUBLIC_FACT"
+      ],
+      "micro_craft": [
+        "asymmetric crop",
+        "fact rail baseline",
+        "DRONE SURVEY mono label"
+      ],
+      "motion_intent": "PROOF",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "inspection_authority"
+      },
+      "mobile_composition": {
+        "mode": "image first, 2×2 metrics",
+        "complete_idea": "inspection_authority"
+      },
+      "benchmark_reason": "ドローンと公開情報で信頼の理由を掴む。"
+    },
+    {
+      "viewport_id": "V05",
+      "section_id": "process",
+      "label": "Work process / craft",
+      "user_questions": [
+        "D05",
+        "D06"
+      ],
+      "information_gain": [
+        "現地調査、診断・見積、施工、品質チェックの順で進む。",
+        "20年以上の経験、公開されている施工・レビュー・調査情報を確認できる。"
+      ],
+      "emotional_role": "process_transparency",
+      "proof_role": "verified_public_facts",
+      "density": "HIGH",
+      "viewport_count": 1,
+      "cta_relation": "supporting_information",
+      "complete_idea": "process_transparency",
+      "primary_focal": "PROCESS",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "相談後に起きることを想像できる。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "lead",
+        "step",
+        "proof"
+      ],
+      "visual_roles": [
+        "PROCESS / DETAIL"
+      ],
+      "proof_roles": [
+        "CONTEXT"
+      ],
+      "micro_craft": [
+        "fact rail baseline",
+        "DRONE SURVEY mono label",
+        "detail leader line"
+      ],
+      "motion_intent": "PROCESS",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "process_transparency"
+      },
+      "mobile_composition": {
+        "mode": "sticky removed, image above active step",
+        "complete_idea": "process_transparency"
+      },
+      "benchmark_reason": "相談後に起きることを想像できる。"
+    },
+    {
+      "viewport_id": "V06",
+      "section_id": "evidence",
+      "label": "Public project & review evidence",
+      "user_questions": [
+        "D06",
+        "D09"
+      ],
+      "information_gain": [
+        "20年以上の経験、公開されている施工・レビュー・調査情報を確認できる。",
+        "案件ごとに異なる。公開ケースとレビューは参考情報として提示し、標準料金は断定しない。"
+      ],
+      "emotional_role": "public_verification",
+      "proof_role": "verified_public_facts",
+      "density": "HIGH",
+      "viewport_count": 1,
+      "cta_relation": "supporting_information",
+      "complete_idea": "public_verification",
+      "primary_focal": "DATA + DOCUMENT",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "公開された仕事とレビューで確かめる。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "lead",
+        "proof card",
+        "source"
+      ],
+      "visual_roles": [
+        "TYPOGRAPHY"
+      ],
+      "proof_roles": [
+        "PUBLIC_FACT"
+      ],
+      "micro_craft": [
+        "DRONE SURVEY mono label",
+        "detail leader line",
+        "annotation dots"
+      ],
+      "motion_intent": "PROOF",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "public_verification"
+      },
+      "mobile_composition": {
+        "mode": "single-column evidence cards with source labels",
+        "complete_idea": "public_verification"
+      },
+      "benchmark_reason": "公開された仕事とレビューで確かめる。"
+    },
+    {
+      "viewport_id": "V07",
+      "section_id": "material",
+      "label": "Paint / color decision support",
+      "user_questions": [
+        "D02",
+        "D07"
+      ],
+      "information_gain": [
+        "外壁・屋根を状態と希望に合わせて調査・修繕・塗装する。",
+        "一軒家は7〜9日が目安、保証は最長15年。"
+      ],
+      "emotional_role": "choice_support",
+      "proof_role": "context_or_explanation",
+      "density": "MEDIUM",
+      "viewport_count": 1,
+      "cta_relation": "supporting_information",
+      "complete_idea": "choice_support",
+      "primary_focal": "MATERIAL",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "色と塗料の選択情報を持ち帰る。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "lead",
+        "material",
+        "footnote"
+      ],
+      "visual_roles": [
+        "MATERIAL / DETAIL"
+      ],
+      "proof_roles": [
+        "CONTEXT"
+      ],
+      "micro_craft": [
+        "detail leader line",
+        "annotation dots",
+        "image index"
+      ],
+      "motion_intent": "MATERIAL",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "choice_support"
+      },
+      "mobile_composition": {
+        "mode": "horizontal material strip, no scroll hijack",
+        "complete_idea": "choice_support"
+      },
+      "benchmark_reason": "色と塗料の選択情報を持ち帰る。"
+    },
+    {
+      "viewport_id": "V08",
+      "section_id": "faq",
+      "label": "FAQ / reassurance",
+      "user_questions": [
+        "D07",
+        "D08",
+        "D09"
+      ],
+      "information_gain": [
+        "一軒家は7〜9日が目安、保証は最長15年。",
+        "小山市を中心に周辺エリア。正確な住所は公開情報に競合があるため要確認。",
+        "案件ごとに異なる。公開ケースとレビューは参考情報として提示し、標準料金は断定しない。"
+      ],
+      "emotional_role": "last_uncertainty",
+      "proof_role": "verified_public_facts",
+      "density": "MEDIUM",
+      "viewport_count": 1,
+      "cta_relation": "supporting_information",
+      "complete_idea": "last_uncertainty",
+      "primary_focal": "DOCUMENT",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "問い合わせ直前の不安を残さない。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "question",
+        "answer"
+      ],
+      "visual_roles": [
+        "TYPOGRAPHY"
+      ],
+      "proof_roles": [
+        "PUBLIC_FACT"
+      ],
+      "micro_craft": [
+        "annotation dots",
+        "image index",
+        "scope legend"
+      ],
+      "motion_intent": "TRANSITION",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "last_uncertainty"
+      },
+      "mobile_composition": {
+        "mode": "accordion, first item open",
+        "complete_idea": "last_uncertainty"
+      },
+      "benchmark_reason": "問い合わせ直前の不安を残さない。"
+    },
+    {
+      "viewport_id": "V09",
+      "section_id": "action",
+      "label": "Verified contact / close",
+      "user_questions": [
+        "D10"
+      ],
+      "information_gain": [
+        "電話または公式問い合わせフォームで、見えている状態を伝える。"
+      ],
+      "emotional_role": "real_action",
+      "proof_role": "verified_public_facts",
+      "density": "LOW",
+      "viewport_count": 1,
+      "cta_relation": "real_action",
+      "complete_idea": "real_action",
+      "primary_focal": "TYPOGRAPHY + ACTION",
+      "secondary_focal": "editorial copy + source label",
+      "main_message": "状態を見せるという実Actionへ進む。",
+      "copy_roles": [
+        "kicker",
+        "headline",
+        "lead",
+        "CTA",
+        "support"
+      ],
+      "visual_roles": [
+        "TYPOGRAPHY"
+      ],
+      "proof_roles": [
+        "PUBLIC_FACT"
+      ],
+      "micro_craft": [
+        "image index",
+        "scope legend",
+        "metric source chip"
+      ],
+      "motion_intent": "ACTION",
+      "entry_state": "resting_surface",
+      "exit_state": "decision_clear",
+      "desktop_composition": {
+        "grid": "12-column",
+        "complete_idea": "real_action"
+      },
+      "mobile_composition": {
+        "mode": "full-width phone/form buttons plus sticky contact after hero; hidden at final",
+        "complete_idea": "real_action"
+      },
+      "benchmark_reason": "状態を見せるという実Actionへ進む。"
+    }
+  ]
+}

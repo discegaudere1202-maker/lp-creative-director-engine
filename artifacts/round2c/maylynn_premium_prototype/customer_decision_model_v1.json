@@ -1,0 +1,161 @@
+{
+  "schema_version": "customer_decision_model_v1",
+  "company_id": "maylynn_paint",
+  "decision_count": 10,
+  "decisions": [
+    {
+      "decision_id": "D01",
+      "question": "これは自分が相談してよい内容か。",
+      "importance": "HIGH",
+      "answer": "外壁・屋根の塗装、修繕、改装を小山市中心に相談できる。",
+      "evidence_ids": [
+        "identity.brand",
+        "place.primary_area",
+        "offer.exterior_roof"
+      ],
+      "confidence": "HIGH",
+      "required_before_action": true,
+      "unknown": false,
+      "hearing_needed": false,
+      "hero_eligible": true
+    },
+    {
+      "decision_id": "D02",
+      "question": "何をしてくれるか。",
+      "importance": "MEDIUM",
+      "answer": "外壁・屋根を状態と希望に合わせて調査・修繕・塗装する。",
+      "evidence_ids": [
+        "offer.exterior_roof",
+        "process.drone"
+      ],
+      "confidence": "HIGH",
+      "required_before_action": true,
+      "unknown": false,
+      "hearing_needed": false,
+      "hero_eligible": true
+    },
+    {
+      "decision_id": "D03",
+      "question": "どんな状態が相談対象か。",
+      "importance": "HIGH",
+      "answer": "ひび割れ、剥がれ、汚れ、色あせ、屋根の破損など。",
+      "evidence_ids": [
+        "problem.signs"
+      ],
+      "confidence": "HIGH",
+      "required_before_action": true,
+      "unknown": false,
+      "hearing_needed": false,
+      "hero_eligible": true
+    },
+    {
+      "decision_id": "D04",
+      "question": "どう調べるか。",
+      "importance": "MEDIUM",
+      "answer": "屋根・高所はドローンを用いた現地調査に対応する。",
+      "evidence_ids": [
+        "process.drone",
+        "process.flow"
+      ],
+      "confidence": "HIGH",
+      "required_before_action": true,
+      "unknown": false,
+      "hearing_needed": false,
+      "hero_eligible": false
+    },
+    {
+      "decision_id": "D05",
+      "question": "どう進むか。",
+      "importance": "MEDIUM",
+      "answer": "現地調査、診断・見積、施工、品質チェックの順で進む。",
+      "evidence_ids": [
+        "process.flow"
+      ],
+      "confidence": "HIGH",
+      "required_before_action": true,
+      "unknown": false,
+      "hearing_needed": false,
+      "hero_eligible": false
+    },
+    {
+      "decision_id": "D06",
+      "question": "なぜ信じられるか。",
+      "importance": "HIGH",
+      "answer": "20年以上の経験、公開されている施工・レビュー・調査情報を確認できる。",
+      "evidence_ids": [
+        "people.experience",
+        "proof.case",
+        "proof.review",
+        "process.drone"
+      ],
+      "confidence": "MEDIUM",
+      "required_before_action": true,
+      "unknown": false,
+      "hearing_needed": false,
+      "hero_eligible": false
+    },
+    {
+      "decision_id": "D07",
+      "question": "期間や保証は。",
+      "importance": "MEDIUM",
+      "answer": "一軒家は7〜9日が目安、保証は最長15年。",
+      "evidence_ids": [
+        "trust.duration",
+        "trust.warranty"
+      ],
+      "confidence": "HIGH",
+      "required_before_action": true,
+      "unknown": false,
+      "hearing_needed": false,
+      "hero_eligible": false
+    },
+    {
+      "decision_id": "D08",
+      "question": "どの地域か。",
+      "importance": "MEDIUM",
+      "answer": "小山市を中心に周辺エリア。正確な住所は公開情報に競合があるため要確認。",
+      "evidence_ids": [
+        "place.primary_area",
+        "address.official_old",
+        "address.official_new"
+      ],
+      "confidence": "CONFLICTED",
+      "required_before_action": true,
+      "unknown": true,
+      "hearing_needed": true,
+      "hero_eligible": false
+    },
+    {
+      "decision_id": "D09",
+      "question": "費用は。",
+      "importance": "MEDIUM",
+      "answer": "案件ごとに異なる。公開ケースとレビューは参考情報として提示し、標準料金は断定しない。",
+      "evidence_ids": [
+        "proof.case",
+        "proof.review"
+      ],
+      "confidence": "MEDIUM",
+      "required_before_action": false,
+      "unknown": true,
+      "hearing_needed": true,
+      "hero_eligible": false
+    },
+    {
+      "decision_id": "D10",
+      "question": "次に何をするか。",
+      "importance": "HIGH",
+      "answer": "電話または公式問い合わせフォームで、見えている状態を伝える。",
+      "evidence_ids": [
+        "action.phone",
+        "action.hours",
+        "action.form"
+      ],
+      "confidence": "HIGH",
+      "required_before_action": true,
+      "unknown": false,
+      "hearing_needed": false,
+      "hero_eligible": false
+    }
+  ],
+  "action_rule": "Only verified phone and official form create native actions; unknown price/address stays informational or hearing-needed."
+}

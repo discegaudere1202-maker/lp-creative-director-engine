@@ -1,0 +1,477 @@
+{
+  "schema_version": "evidence_graph_v2",
+  "company_id": "maylynn_paint",
+  "nodes": [
+    {
+      "node_id": "identity.brand",
+      "node_type": "FACT",
+      "value": "メイリン塗装工務店",
+      "category": "Identity",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_hands_home",
+      "allowed_usage": [
+        "HERO",
+        "FOOTER",
+        "IDENTITY"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "identity.company",
+      "node_type": "FACT",
+      "value": "メイリンハンズ株式会社",
+      "category": "Identity",
+      "confidence": "B",
+      "status": "ACTIVE",
+      "source": "rehome_review",
+      "allowed_usage": [
+        "ABOUT",
+        "PROOF_CARD"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "identity.representative",
+      "node_type": "FACT",
+      "value": "廣瀬 佑輔",
+      "category": "People",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_hands_about",
+      "allowed_usage": [
+        "ABOUT",
+        "PROOF_CARD"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "place.primary_area",
+      "node_type": "FACT",
+      "value": "栃木県小山市を中心に周辺エリア",
+      "category": "Place",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_hands_home",
+      "allowed_usage": [
+        "HERO",
+        "ACTION",
+        "FACT_RAIL"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "offer.exterior_roof",
+      "node_type": "FACT",
+      "value": "外壁・屋根の塗装、修繕、改装",
+      "category": "Offer",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_paint_home",
+      "allowed_usage": [
+        "HERO",
+        "SCOPE",
+        "ACTION"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "problem.signs",
+      "node_type": "FACT",
+      "value": "外壁のひび割れ・剥がれ・汚れ・色あせ、屋根の破損・経年劣化",
+      "category": "Problem",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_paint_home",
+      "allowed_usage": [
+        "SIGNS",
+        "HERO_LEAD"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "process.drone",
+      "node_type": "FACT",
+      "value": "屋根・高所はドローンを用いた現地調査に対応",
+      "category": "Process",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_paint_home",
+      "allowed_usage": [
+        "PROOF",
+        "PROCESS"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "process.flow",
+      "node_type": "FACT",
+      "value": "現地調査・診断・見積・施工・品質チェックを自社社員で行う",
+      "category": "Process",
+      "confidence": "B",
+      "status": "ACTIVE",
+      "source": "zehitomo_profile",
+      "allowed_usage": [
+        "PROCESS",
+        "PROOF_CARD"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "trust.warranty",
+      "node_type": "FACT",
+      "value": "最長15年の保証",
+      "category": "Proof",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_paint_home",
+      "allowed_usage": [
+        "PROOF",
+        "FAQ",
+        "ACTION_SUPPORT"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "trust.duration",
+      "node_type": "FACT",
+      "value": "一軒家は7〜9日が目安",
+      "category": "Time",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_paint_home",
+      "allowed_usage": [
+        "PROOF",
+        "FAQ"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "trust.colors",
+      "node_type": "FACT",
+      "value": "日塗工色見本帳654色から選択可能",
+      "category": "Offer",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_paint_home",
+      "allowed_usage": [
+        "MATERIAL",
+        "FAQ"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "people.experience",
+      "node_type": "FACT",
+      "value": "20年以上の経験を持つ職人",
+      "category": "People",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_hands_about",
+      "allowed_usage": [
+        "PROCESS",
+        "PROOF_CARD"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "action.phone",
+      "node_type": "FACT",
+      "value": "0800-8080-886",
+      "category": "Action",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_hands_home",
+      "allowed_usage": [
+        "ACTION"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "action.hours",
+      "node_type": "FACT",
+      "value": "受付10:00〜19:00",
+      "category": "Availability",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_hands_home",
+      "allowed_usage": [
+        "FAQ",
+        "ACTION"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "action.form",
+      "node_type": "FACT",
+      "value": "公式問い合わせフォーム",
+      "category": "Action",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_hands_home",
+      "allowed_usage": [
+        "ACTION"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "proof.case",
+      "node_type": "FACT",
+      "value": "築40年住宅の塗装工事／料金5万円〜程度／工期1〜2日程度",
+      "category": "Proof",
+      "confidence": "A",
+      "status": "ACTIVE",
+      "source": "official_hands_home",
+      "allowed_usage": [
+        "EVIDENCE_CARD"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "proof.review",
+      "node_type": "FACT",
+      "value": "公開レビュー1件：2025年施工完了、築45年戸建、外壁塗装、68万円、15日",
+      "category": "Proof",
+      "confidence": "C",
+      "status": "ACTIVE",
+      "source": "rehome_review",
+      "allowed_usage": [
+        "EVIDENCE_CARD"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "address.official_old",
+      "node_type": "FACT",
+      "value": "栃木県小山市ひととのや1871-358",
+      "category": "Place",
+      "confidence": "A",
+      "status": "CONFLICTED",
+      "source": "official_paint_home",
+      "allowed_usage": [
+        "INTERNAL_CONFLICT_ONLY"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    },
+    {
+      "node_id": "address.official_new",
+      "node_type": "FACT",
+      "value": "栃木県小山市駅南町2-8-6",
+      "category": "Place",
+      "confidence": "A",
+      "status": "CONFLICTED",
+      "source": "official_hands_home",
+      "allowed_usage": [
+        "INTERNAL_CONFLICT_ONLY"
+      ],
+      "claim_safety": "VERIFIED_PUBLIC"
+    }
+  ],
+  "edges": [
+    {
+      "from": "identity.brand",
+      "to": "D01",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "identity.brand",
+      "to": "D02",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "identity.company",
+      "to": "D06",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "identity.representative",
+      "to": "D06",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "place.primary_area",
+      "to": "D01",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "place.primary_area",
+      "to": "D08",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "offer.exterior_roof",
+      "to": "D01",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "offer.exterior_roof",
+      "to": "D02",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "offer.exterior_roof",
+      "to": "D03",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "problem.signs",
+      "to": "D01",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "problem.signs",
+      "to": "D03",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "process.drone",
+      "to": "D04",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "process.drone",
+      "to": "D06",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "process.flow",
+      "to": "D04",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "process.flow",
+      "to": "D05",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "process.flow",
+      "to": "D06",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "trust.warranty",
+      "to": "D06",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "trust.warranty",
+      "to": "D07",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "trust.duration",
+      "to": "D05",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "trust.duration",
+      "to": "D07",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "trust.colors",
+      "to": "D02",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "trust.colors",
+      "to": "D07",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "people.experience",
+      "to": "D06",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "action.phone",
+      "to": "D10",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "action.hours",
+      "to": "D07",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "action.hours",
+      "to": "D10",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "action.form",
+      "to": "D10",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "proof.case",
+      "to": "D06",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "proof.case",
+      "to": "D07",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "proof.review",
+      "to": "D06",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "proof.review",
+      "to": "D07",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": true
+    },
+    {
+      "from": "address.official_old",
+      "to": "D08",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": false
+    },
+    {
+      "from": "address.official_new",
+      "to": "D08",
+      "relation": "SUPPORTS_DECISION",
+      "eligible": false
+    }
+  ],
+  "conflict_policy": "CONFLICTED facts never enter Hero or Main proof; resolve only through Hearing.",
+  "proxy_evidence_policy": "Generated/free imagery may explain context but never asserts a real result, person, place, or case.",
+  "counts": {
+    "fact_nodes": 19,
+    "decision_edges": 33,
+    "conflicted_nodes": 2
+  }
+}
