@@ -56,6 +56,14 @@ jobs:
         run: |
           if [ -f artifacts/round2e_b/summary.json ]; then
             cat artifacts/round2e_b/summary.json >> "$GITHUB_STEP_SUMMARY"
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path("artifacts/round2e_b/summary.json").read_text(encoding="utf-8"))
+          for name, value in summary.get("gate_checks", {}).items():
+              if not value:
+                  print(f"::error file=.github/workflows/round2e_b_maylynn_visual_motion.yml,line=1::Round 2E-B gate failed: {name}")
+          PY
           else
             echo "Round 2E-B summary.json was not produced." >> "$GITHUB_STEP_SUMMARY"
             find artifacts/round2e_b -maxdepth 2 -type f -print 2>/dev/null || true
