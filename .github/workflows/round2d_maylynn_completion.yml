@@ -1,0 +1,96 @@
+name: Round 2D Maylynn Creative Completion
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round2d_maylynn.py"
+      - "scripts/run_round2c_maylynn.py"
+      - "src/lp_engine/**"
+      - "tests/test_round2d_completion.py"
+      - ".github/workflows/round2d_maylynn_completion.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  round2d-completion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout final pushed HEAD
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          python -m playwright install --with-deps chromium
+
+      - name: Verify Round 2D direct contracts
+        run: >-
+          python -m unittest
+          tests.test_round2d_completion
+          tests.test_round2c_architecture
+          tests.test_browser_qa_static
+          tests.test_browser_smoke
+          tests.test_photography_asset_preflight
+
+      - name: Verify repository diff contract
+        run: git diff --check
+
+      - name: Generate Maylynn creative completion artifact
+        run: python scripts/run_round2d_maylynn.py
+
+      - name: Assert final-form HTML readiness and provenance
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          root = Path("artifacts/round2d")
+          summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
+          manifest = json.loads((root / "completion_manifest.json").read_text(encoding="utf-8"))
+          head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          assert summary["status"] == "PASS"
+          assert summary["source_head"] == head
+          assert summary["machine_technical_ready"] == "PASS"
+          assert summary["creative_implementation_complete"] == "YES"
+          assert summary["shun_final_form_html_review_ready"] == "YES"
+          assert manifest["source_head"] == head
+          assert manifest["completion_status"] == "ALL_FINAL"
+          assert len(manifest["viewports"]) == 9
+          assert all(item["state"] == "FINAL" for item in manifest["viewports"])
+          assert manifest["visual_moments"]["count"] >= 6
+          assert manifest["motion"]["count"] >= 4
+          assert manifest["motion"]["reduced_motion_required"] is True
+          assert summary["browser_qa"]["total"] == 9
+          assert summary["browser_qa"]["pass"] == 9
+          assert summary["browser_qa"]["fail"] == 0
+          assert summary["browser_qa"]["overflow_max"] == 0
+          assert summary["browser_qa"]["console_errors"] == 0
+          assert summary["browser_qa"]["page_errors"] == 0
+          assert summary["browser_qa"]["request_failures"] == 0
+          assert summary["html_review"]["browser_qa"]["pass"] == 2
+          assert summary["html_review"]["browser_qa"]["fail"] == 0
+          assert summary["interaction_qa"]["status"] == "PASS"
+          assert summary["captures"]["total"] >= 20
+          assert summary["image_provenance"]["status"] == "PASS"
+          assert summary["safety"]["status"] == "PASS"
+          assert summary["manual_lp_edit"] == 0
+          assert summary["artifact"]["name"] == f"round2d-maylynn-creative-completion-{head}"
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload Round 2D creative completion artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2d-maylynn-creative-completion-${{ github.sha }}
+          path: artifacts/round2d
+          if-no-files-found: error
