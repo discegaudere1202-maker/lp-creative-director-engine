@@ -220,6 +220,77 @@ LINEBOX_JS = r"""
 """
 
 
+RENDERED_LINE_JS = r"""
+() => {
+  const compact = (value) => String(value || '').replace(/\s+/g, '');
+  function inspect(root) {
+    const chars = [];
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!node.nodeValue || !parent) return NodeFilter.FILTER_REJECT;
+        const style = getComputedStyle(parent);
+        if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    let node;
+    let index = 0;
+    while ((node = walker.nextNode())) {
+      for (let offset = 0; offset < node.nodeValue.length; offset += 1) {
+        const ch = node.nodeValue[offset];
+        if (/\s/.test(ch)) continue;
+        const range = document.createRange();
+        try { range.setStart(node, offset); range.setEnd(node, offset + 1); } catch (_) { continue; }
+        const rect = range.getBoundingClientRect();
+        if (!rect.width && !rect.height) { index += 1; continue; }
+        chars.push({ch, index, top: rect.top, left: rect.left});
+        index += 1;
+      }
+    }
+    const lines = [];
+    for (const item of chars) {
+      let line = lines.find(candidate => Math.abs(candidate.top - item.top) <= 2);
+      if (!line) { line = {top: item.top, chars: []}; lines.push(line); }
+      line.chars.push(item);
+    }
+    lines.sort((a, b) => a.top - b.top);
+    return lines.map(line => {
+      line.chars.sort((a, b) => a.left - b.left);
+      return {text: line.chars.map(item => item.ch).join(''), indices: line.chars.map(item => item.index)};
+    });
+  }
+  const elements = [...document.querySelectorAll('h1[data-editorial-role],h2[data-editorial-role],h3[data-editorial-role]')];
+  return {
+    font_status: document.fonts ? document.fonts.status : 'unavailable',
+    elements: elements.map((root) => {
+      const lines = inspect(root);
+      const rect = root.getBoundingClientRect();
+      const style = getComputedStyle(root);
+      const renderedLines = lines.map(line => line.text);
+      const breakIndices = lines.slice(0, -1).map(line => Math.max(...line.indices) + 1);
+      const viewport = root.closest('[data-viewport-id]');
+      return {
+        element: viewport ? viewport.dataset.viewportId : root.id || root.tagName.toLowerCase(),
+        role: root.dataset.editorialRole || '',
+        source: compact(root.textContent),
+        rendered_lines: renderedLines,
+        break_indices: breakIndices,
+        font: {
+          font_family: style.fontFamily,
+          font_size: style.fontSize,
+          letter_spacing: style.letterSpacing,
+          element_width: rect.width,
+          font_status: document.fonts ? document.fonts.status : 'unavailable',
+          font_check: document.fonts ? document.fonts.check(`${style.fontSize} ${style.fontFamily}`) : false,
+        }
+      };
+    })
+  };
+}
+"""
+
+
 def _jpeg_size(data: bytes) -> tuple[int, int] | None:
     if not data.startswith(b'\xff\xd8'):
         return None
@@ -453,6 +524,59 @@ async def run_browser_qa(
         encoding="utf-8",
     )
     return report
+
+
+async def run_rendered_line_qa(
+    source: str,
+    semantic_irs: dict[str, dict[str, Any]],
+    widths: list[int] | None = None,
+    height: int = DEFAULT_HEIGHT,
+    executable_path: str | None = None,
+) -> dict[str, Any]:
+    """Reconstruct rendered Japanese lines with Chromium Range geometry."""
+    from .editorial_quality import validate_rendered_breaks
+
+    widths = widths or DEFAULT_WIDTHS
+    prepared = _prepare_source(source)
+    results: list[dict[str, Any]] = []
+    async with async_playwright() as playwright:
+        browser = await playwright.chromium.launch(
+            headless=True,
+            executable_path=executable_path if executable_path and Path(executable_path).exists() else None,
+            args=["--no-sandbox", "--disable-dev-shm-usage"],
+        )
+        for width in widths:
+            page = await browser.new_page(viewport={"width": width, "height": height})
+            await page.route(FAVICON_ROUTE_GLOB, _fulfill_favicon)
+            await _load_source(page, prepared, lightweight=True)
+            await page.evaluate("async () => { if (document.fonts) await document.fonts.ready; }")
+            await page.wait_for_timeout(50)
+            payload = await page.evaluate(RENDERED_LINE_JS)
+            seen: set[str] = set()
+            for item in payload.get("elements", []):
+                viewport_id = str(item.get("element") or "")
+                ir = semantic_irs.get(viewport_id)
+                if not ir:
+                    results.append({"viewport_width": width, "element": viewport_id, "status": "FAIL", "error": "missing_semantic_ir", **item})
+                    continue
+                seen.add(viewport_id)
+                check = validate_rendered_breaks(ir, item.get("rendered_lines", []), font=item.get("font"))
+                check.update({"viewport_width": width, "element": viewport_id, "role": item.get("role"), "browser_break_indices": item.get("break_indices", [])})
+                results.append(check)
+            for viewport_id, ir in semantic_irs.items():
+                if viewport_id not in seen:
+                    results.append({"viewport_width": width, "element": viewport_id, "status": "FAIL", "error": "headline_element_not_found", "source": ir.get("text", "")})
+            await page.close()
+        await browser.close()
+    font_families = {str(item.get("font", {}).get("font_family", "")) for item in results if item.get("font")}
+    font_status = "PASS" if all(item.get("font_status") == "PASS" for item in results) and len(font_families) <= 1 else "FAIL"
+    return {
+        "schema_version": "rendered_japanese_line_report_v1",
+        "status": "PASS" if results and all(item.get("status") == "PASS" for item in results) and font_status == "PASS" else "FAIL",
+        "viewport_widths": widths,
+        "font_determinism": {"status": font_status, "font_families": sorted(font_families)},
+        "results": results,
+    }
 
 
 def run_browser_qa_sync(*args, **kwargs) -> BrowserQAReport:

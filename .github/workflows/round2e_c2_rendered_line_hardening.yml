@@ -1,0 +1,136 @@
+name: Round 2E-C2 Rendered Japanese Line Hardening
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "src/lp_engine/**"
+      - "src/lp_engine/creative_composition.py"
+      - "scripts/run_round2e_b_maylynn.py"
+      - "scripts/run_round2e_c_editorial_hardening.py"
+      - "scripts/run_round2e_c2_rendered_line_hardening.py"
+      - "tests/test_round2e_c2_rendered_line_hardening.py"
+      - "tests/test_round2e_c_editorial_engine.py"
+      - ".github/workflows/round2e_c2_rendered_line_hardening.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  rendered-line-hardening:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout pushed HEAD
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest
+          python -m playwright install --with-deps chromium
+
+      - name: Run rendered-line, editorial, and shared regressions
+        run: |
+          python -m pytest -q tests/test_round2e_c2_rendered_line_hardening.py tests/test_round2e_c_editorial_engine.py tests/test_round2e_b_visual_motion.py
+          python -m unittest \
+            tests.test_browser_qa_static \
+            tests.test_browser_smoke \
+            tests.test_photography_asset_preflight \
+            tests.test_batch \
+            tests.test_production_generation \
+            tests.test_round2c_architecture \
+            tests.test_round2d_completion
+
+      - name: Verify repository diff contract
+        run: git diff --check
+
+      - name: Generate Round 2E-C2 artifact
+        id: generate
+        continue-on-error: true
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+        run: python scripts/run_round2e_c2_rendered_line_hardening.py
+
+      - name: Surface rendered-line diagnostics
+        if: always()
+        run: |
+          if [ -f artifacts/round2e_c2/summary.json ]; then
+            cat artifacts/round2e_c2/summary.json >> "$GITHUB_STEP_SUMMARY"
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path("artifacts/round2e_c2/summary.json").read_text(encoding="utf-8"))
+          for name, value in summary.get("gate_checks", {}).items():
+              if not value:
+                  print(f"::error file=scripts/run_round2e_c2_rendered_line_hardening.py,line=1::Round 2E-C2 gate failed: {name}")
+          report = Path("artifacts/round2e_c2/rendered_line_report.json")
+          if report.is_file():
+              data = json.loads(report.read_text(encoding="utf-8"))
+              for item in data.get("results", []):
+                  if item.get("status") != "PASS":
+                      print(f"::error file=artifacts/round2e_c2/rendered_line_report.json,line=1::Rendered line failure width={item.get('viewport_width')} element={item.get('element')}: {json.dumps(item, ensure_ascii=True)[:1800]}")
+          PY
+          else
+            echo "Round 2E-C2 summary.json was not produced." >> "$GITHUB_STEP_SUMMARY"
+            find artifacts/round2e_c2 -maxdepth 3 -type f -print 2>/dev/null || true
+          fi
+
+      - name: Upload failure diagnostics
+        if: steps.generate.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2e-c2-failure-diagnostics-${{ github.sha }}
+          path: artifacts/round2e_c2
+          if-no-files-found: warn
+
+      - name: Stop on generation failure
+        if: steps.generate.outcome == 'failure'
+        run: exit 1
+
+      - name: Assert Machine Technical Ready and Shun Re-review Ready
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+          root = Path("artifacts/round2e_c2")
+          summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
+          head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          assert summary["status"] == "PASS"
+          assert summary["source_head"] == head
+          assert summary["machine_technical_ready"] == "YES"
+          assert summary["shun_rereview_ready"] == "YES"
+          assert summary["previous_round2e_c_machine_pass"] == "REVOKED_FALSE_PASS"
+          assert summary["human_visual_review"] == "DEFERRED_TO_SHUN"
+          assert summary["one_million_yen_gate"] == "NOT_ASSESSED"
+          assert summary["browser_qa"]["total"] == 9 and summary["browser_qa"]["pass"] == 9 and summary["browser_qa"]["fail"] == 0
+          assert summary["browser_qa"]["overflow_max"] == 0
+          assert summary["browser_qa"]["console_errors"] == 0 and summary["browser_qa"]["page_errors"] == 0 and summary["browser_qa"]["request_failures"] == 0
+          assert summary["rendered_line_qa"] == {"status": "PASS", "total": 81, "pass": 81, "fail": 0}
+          assert summary["font_determinism"]["status"] == "PASS"
+          assert summary["html_review"]["browser_qa"]["pass"] == 2
+          assert summary["html_review"]["browser_qa"]["fail"] == 0
+          assert summary["fixtures"]["status"] == "PASS"
+          assert summary["editorial_contract"]["status"] == "PASS"
+          assert all(summary["editorial_contract"]["gates"].values())
+          assert summary["batch_1000"]["status"] == "PASS"
+          assert summary["interaction_qa"]["status"] == "PASS"
+          assert summary["captures"]["total"] == 14
+          assert summary["nagi_watashi_regression"]["creative_redesign"] == "NOT_STARTED"
+          assert summary["manual_lp_edit"] == 0
+          assert summary["artifact"]["name"] == f"round2e-c2-rendered-line-hardening-{head}"
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload Round 2E-C2 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2e-c2-rendered-line-hardening-${{ github.sha }}
+          path: artifacts/round2e_c2
+          if-no-files-found: error

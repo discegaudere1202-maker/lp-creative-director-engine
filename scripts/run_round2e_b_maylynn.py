@@ -160,6 +160,11 @@ STYLE = r'''
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.hero-primary,.hero-inset,.inspection-line,.inspection-target,.roof-stage,.closing-media{transform:none!important}.atlas-frame,.craft-frame{transition:none}.roof-path path{animation:none;stroke-dashoffset:0}.roof-marker{animation:none;opacity:1;transform:none}.closing-divider{transform:scaleX(1)}}
 '''
 
+# Semantic headline spans are protected as authored units.  The common
+# renderer still leaves body copy responsive; a too-wide protected unit is
+# surfaced as overflow and fails QA rather than being silently rewrapped.
+STYLE += '\n.semantic-protected-line{white-space:nowrap}@media(min-width:761px){.viewport h1{font-size:clamp(2.6rem,4vw,5rem)}.viewport h2{font-size:clamp(2rem,3.2vw,3.6rem)}}@media(max-width:760px){.hero-viewport h1{font-size:clamp(2rem,9vw,4rem)}}'
+
 
 SCRIPT = r'''<script>
 (() => {

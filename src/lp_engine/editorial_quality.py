@@ -16,6 +16,10 @@ SCHEMA_VERSION = "editorial_text_ir_v1"
 EDITORIAL_GATES = (
     "japanese_editorial_structure",
     "rendered_line_shape",
+    "rendered_break_boundary",
+    "protected_phrase_integrity",
+    "lexical_split_integrity",
+    "font_determinism",
     "internal_label_leakage",
     "interaction_reality",
     "copy_naturalness",
@@ -41,6 +45,18 @@ INTERNAL_LABEL_DENYLIST = (
 PARTICLES = {"を", "に", "へ", "が", "は", "と", "で", "や", "の", "も", "ば", "て", "から", "まで", "より"}
 OPENING_PUNCTUATION = set("、。！？!?：:）」』】〕〉》〉〉\"'")
 PUNCTUATION_ONLY = set("、。！？!?：:・,./／—ー…()（）[]【】「」『』")
+
+DEFAULT_LEXICAL_UNITS = (
+    "住まい",
+    "ところ",
+    "初めて",
+    "気になる",
+    "状態を見る",
+    "相談する",
+    "相談できます",
+    "安心して",
+    "合わせて",
+)
 
 
 def _text(value: Any) -> str:
@@ -181,8 +197,107 @@ def render_text_ir(ir: Mapping[str, Any], *, tag: str = "p", escape: Callable[[A
     esc = escape or (lambda value: html.escape(str(value or ""), quote=True))
     lines = list(ir.get("preferred_lines_desktop") or ir.get("semantic_chunks") or [ir.get("text", "")])
     role = html.escape(str(ir.get("role", "body")), quote=True)
-    spans = "".join(f'<span class="semantic-line headline-line" data-semantic-role="{role}">{esc(line)}</span>' for line in lines)
+    protected_class = " semantic-protected-line" if str(ir.get("role", "")).endswith("headline") or str(ir.get("role", "")) == "headline" else ""
+    spans = "".join(
+        f'<span class="semantic-line headline-line{protected_class}" data-semantic-role="{role}" '
+        f'data-semantic-index="{index}" data-semantic-source="{esc(line)}">{esc(line)}</span>'
+        for index, line in enumerate(lines)
+    )
     return f"<{tag} data-editorial-role=\"{role}\">{spans}</{tag}>"
+
+
+def _compact_text(value: Any) -> str:
+    return re.sub(r"\s+", "", str(value or ""))
+
+
+def _boundary_indices(source: str, lines: Sequence[str]) -> list[int]:
+    compact_source = _compact_text(source)
+    compact_lines = [_compact_text(line) for line in lines if _compact_text(line)]
+    if not compact_lines:
+        return []
+    cursor = 0
+    indices: list[int] = []
+    for line in compact_lines[:-1]:
+        cursor += len(line)
+        indices.append(cursor)
+    return indices if "".join(compact_lines) == compact_source else [-1]
+
+
+def allowed_break_indices(ir: Mapping[str, Any]) -> list[int]:
+    """Return the union of semantic chunk and preferred-line boundaries."""
+    source = _compact_text(ir.get("text", ""))
+    boundaries: set[int] = set()
+    for key in ("semantic_chunks", "preferred_lines_desktop"):
+        values = [_compact_text(item) for item in (ir.get(key) or []) if _compact_text(item)]
+        cursor = 0
+        for value in values[:-1]:
+            cursor += len(value)
+            boundaries.add(cursor)
+        if values and "".join(values) != source:
+            return []
+    return sorted(boundaries)
+
+
+def _phrase_ranges(source: str, phrases: Sequence[str]) -> list[tuple[str, int, int]]:
+    compact_source = _compact_text(source)
+    ranges: list[tuple[str, int, int]] = []
+    for phrase in phrases:
+        compact_phrase = _compact_text(phrase)
+        if not compact_phrase:
+            continue
+        start = compact_source.find(compact_phrase)
+        while start >= 0:
+            ranges.append((compact_phrase, start, start + len(compact_phrase)))
+            start = compact_source.find(compact_phrase, start + 1)
+    return ranges
+
+
+def validate_rendered_breaks(
+    ir: Mapping[str, Any],
+    rendered_lines: Sequence[str],
+    *,
+    lexical_units: Sequence[str] | None = None,
+    font: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Validate actual Chromium line boundaries against the semantic IR."""
+    source = _compact_text(ir.get("text", ""))
+    lines = [_compact_text(line) for line in rendered_lines if _compact_text(line)]
+    breaks = _boundary_indices(source, lines)
+    allowed = allowed_break_indices(ir)
+    boundary_violations = (
+        [{"type": "rendered_text_mismatch", "source": source, "rendered_lines": lines}]
+        if breaks == [-1]
+        else [{"break_index": index, "allowed_break_indices": allowed} for index in breaks if index not in allowed]
+    )
+    protected_violations = [
+        {"phrase": phrase, "break_index": index, "range": [start, end]}
+        for index in breaks
+        for phrase, start, end in _phrase_ranges(source, ir.get("protected_phrases") or [])
+        if start < index < end
+    ]
+    lexical_violations = [
+        {"unit": phrase, "break_index": index, "range": [start, end]}
+        for index in breaks
+        for phrase, start, end in _phrase_ranges(source, lexical_units or DEFAULT_LEXICAL_UNITS)
+        if start < index < end
+    ]
+    font_payload = dict(font or {})
+    font_ok = font is None or all(font_payload.get(key) not in (None, "") for key in ("font_family", "font_size", "letter_spacing", "element_width"))
+    issues = boundary_violations + protected_violations + lexical_violations
+    return {
+        "status": "PASS" if not issues and font_ok else "FAIL",
+        "source": source,
+        "semantic_chunks": list(ir.get("semantic_chunks") or []),
+        "preferred_lines": list(ir.get("preferred_lines_desktop") or []),
+        "rendered_lines": lines,
+        "break_indices": breaks,
+        "allowed_break_indices": allowed,
+        "boundary_violations": boundary_violations,
+        "protected_phrase_violations": protected_violations,
+        "lexical_split_violations": lexical_violations,
+        "font": font_payload,
+        "font_status": "PASS" if font_ok else "FAIL",
+    }
 
 
 def scan_internal_labels(text: str) -> list[str]:
@@ -220,6 +335,10 @@ def build_editorial_contract(blocks: Sequence[Mapping[str, Any]], *, rendered: M
     gates = {
         "japanese_editorial_structure": all(row["status"] == "PASS" for row in source_reports),
         "rendered_line_shape": rendered.get("line_status", "PASS") == "PASS",
+        "rendered_break_boundary": rendered.get("rendered_break_boundary_status", "PASS") == "PASS",
+        "protected_phrase_integrity": rendered.get("protected_phrase_status", "PASS") == "PASS",
+        "lexical_split_integrity": rendered.get("lexical_split_status", "PASS") == "PASS",
+        "font_determinism": rendered.get("font_determinism_status", "PASS") == "PASS",
         "internal_label_leakage": rendered.get("internal_label_status", "PASS") == "PASS",
         "interaction_reality": interactions.get("status", "PASS") == "PASS",
         "copy_naturalness": all(row["status"] == "PASS" for row in natural_reports),
