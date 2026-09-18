@@ -212,7 +212,7 @@ def main() -> int:
         captures = asyncio.run(capture_artifact(url, OUT / "captures"))
     finally:
         server.shutdown()
-    human_review_browser = asyncio.run(run_browser_qa(human_review_path.as_uri(), OUT / "human_review_browser_qa", [390, 1440], 1000, screenshot_widths=[]))
+    human_review_browser = asyncio.run(run_browser_qa(str(human_review_path), OUT / "human_review_browser_qa", [390, 1440], 1000, screenshot_widths=[]))
     human_review_browser_payload = human_review_browser.to_dict()
     write(OUT / "reports" / "html_review_browser_qa.json", human_review_browser_payload)
     write(OUT / "browser_qa.json", browser_report)
