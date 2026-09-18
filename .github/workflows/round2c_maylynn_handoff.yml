@@ -1,0 +1,82 @@
+name: Round 2C Maylynn Premium Handoff
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round2c_maylynn.py"
+      - "src/lp_engine/company_research_v2.py"
+      - "src/lp_engine/evidence_graph_v2.py"
+      - "src/lp_engine/customer_decision.py"
+      - "src/lp_engine/experience_architecture.py"
+      - "src/lp_engine/creative_composition.py"
+      - "src/lp_engine/quality_review_contract_v2.py"
+      - "tests/test_round2c_architecture.py"
+      - ".github/workflows/round2c_maylynn_handoff.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  round2c-handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout final pushed HEAD
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          python -m playwright install --with-deps chromium
+
+      - name: Verify Round 2C direct contracts
+        run: >-
+          python -m unittest
+          tests.test_round2c_architecture
+          tests.test_browser_qa_static
+          tests.test_browser_smoke
+          tests.test_photography_asset_preflight
+
+      - name: Verify repository diff contract
+        run: git diff --check
+
+      - name: Generate Maylynn prototype and machine handoff artifact
+        run: python scripts/run_round2c_maylynn.py
+
+      - name: Assert final provenance and readiness
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          root = Path("artifacts/round2c")
+          summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
+          head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          assert summary["status"] == "PASS"
+          assert summary["source_head"] == head
+          assert summary["artifact"]["source_head"] == head
+          assert summary["artifact"]["name"] == f"round2c-maylynn-premium-prototype-{head}"
+          assert summary["browser_qa"]["pass"] == 9
+          assert summary["browser_qa"]["fail"] == 0
+          assert summary["captures"]["total"] == 18
+          assert summary["html_review"]["self_contained"] is True
+          assert summary["html_review"]["browser_qa"]["status"] == "PASS"
+          assert summary["full_test_attribution"]["round2c_regression_count"] == 0
+          assert summary["manual_lp_edit"] == 0
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload Round 2C handoff artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2c-maylynn-premium-prototype-${{ github.sha }}
+          path: artifacts/round2c
+          if-no-files-found: error
