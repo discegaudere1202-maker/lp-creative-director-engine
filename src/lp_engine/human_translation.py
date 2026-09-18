@@ -22,10 +22,37 @@ CTA_DESTINATION_TYPES = (
 TEMPORAL_STAGES = ("arrival", "orientation", "understanding", "practice", "reassurance", "action", "afterglow")
 _GENERIC = ("事業者", "サービスを提供", "幅広く対応", "高品質", "地域の窓口", "お任せください")
 _CONCRETE = ("外壁", "屋根", "雨漏り", "塗装", "ヘッド", "タオル", "ベッド", "手", "食材", "料理", "食卓", "素材", "場所", "工程", "予約", "相談", "参加", "一皿", "状態", "見積")
+_CONTACT_VALUE_KEYS = ("href", "url", "phone", "tel", "email", "line", "instagram", "booking_url", "contact_form_url", "contact_value")
+_CONTACT_VALUE_PATTERN = re.compile(r"(?:https?://|mailto:|tel:|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|0\d{1,4}[-ー－ ]\d{1,4}[-ー－ ]\d{3,4})", re.I)
 
 
 def _text(value: Any) -> str:
     return str(value or "").strip()
+
+
+def actual_contact_data(understanding: Mapping[str, Any], approved_evidence: Sequence[Mapping[str, Any]] = ()) -> list[str]:
+    """Return only public contact values that can create real information gain.
+
+    Channel labels and in-page anchors are intentionally excluded.  A value is
+    useful here only when it is a URL, mail address, telephone number, or an
+    equivalent explicit contact datum carried by approved CTA evidence.
+    """
+    channels = understanding.get("contact_channels") or {}
+    candidates: list[str] = []
+    for key in _CONTACT_VALUE_KEYS:
+        value = _text(channels.get(key))
+        if value and _CONTACT_VALUE_PATTERN.search(value):
+            candidates.append(value)
+    for item in approved_evidence:
+        if _text(item.get("evidence_type")) != "CTA_CHANNEL" or _text(item.get("verification_status")).upper() != "VERIFIED":
+            continue
+        for key in _CONTACT_VALUE_KEYS:
+            value = _text(item.get(key))
+            if value and _CONTACT_VALUE_PATTERN.search(value):
+                candidates.append(value)
+        claim = _text(item.get("claim"))
+        candidates.extend(_CONTACT_VALUE_PATTERN.findall(claim))
+    return list(dict.fromkeys(candidates))
 
 
 def _anchor_match(value: str, text: str) -> bool:
@@ -170,8 +197,9 @@ def build_cta_closure(understanding: Mapping[str, Any], strategy: Mapping[str, A
     href = _text(channels.get("href"))
     def is_external(value: str) -> bool:
         return bool(re.match(r"^(?:https?://|mailto:|tel:)", value, re.I))
-    verified = is_external(href)
-    informational_evidence = any(_text(item.get("evidence_type")) == "CTA_CHANNEL" and _text(item.get("verification_status")) == "VERIFIED" for item in approved_evidence)
+    contact_data = actual_contact_data(understanding, approved_evidence)
+    verified = is_external(href) and bool(contact_data)
+    declared_channel = bool(_text(channels.get("href")) or _text(channels.get("primary")) or contact_data)
     genome = {x.get("stage"): x for x in strategy.get("creative_genome", {}).get("cta_progression", [])}
     destinations = {"discovery": ("PAGE_SECTION", "#way-in"), "reassurance": ("PROCESS_GUIDE", "#reassurance"), "action": ("VERIFIED_NATIVE" if verified else "INFORMATIONAL_ONLY", href if verified else "#contact")}
     rows = []
@@ -179,16 +207,16 @@ def build_cta_closure(understanding: Mapping[str, Any], strategy: Mapping[str, A
         dtype, destination = destinations[stage]
         item = genome.get(stage, {})
         action_stage = stage == "action"
-        has_safe_information = verified or informational_evidence
-        actionability = "ACTION" if action_stage and verified else "QUIET_CONVERSION_END" if action_stage and has_safe_information else "ORIENTATION"
-        hard_violation = bool(action_stage and not verified and not has_safe_information)
+        has_safe_information = bool(contact_data)
+        actionability = "ACTION" if action_stage and verified else "QUIET_CONVERSION_END" if action_stage else "ORIENTATION"
+        # A declared channel with no verified datum is a deliberate quiet end,
+        # not a promise.  A completely missing channel remains invalid for the
+        # legacy fail-closed contract.
+        hard_violation = bool(action_stage and not verified and not declared_channel)
         semantic_payload = _text(item.get("visible_label")) or stage
         if action_stage and not verified:
-            # An informational destination cannot carry an action promise.
-            # Keep the quiet end useful while making the rendered label match
-            # the actual destination semantics.
-            semantic_payload = "連絡先を確認する" if informational_evidence else ""
-        rows.append({"cta_id": f"cta-{stage}", "stage": stage, "user_state_before": _text((understanding.get("customer_state") or {}).get("before")), "promise": _text(item.get("action_reason")) or stage, "destination_type": dtype, "destination_id": destination, "href": destination, "semantic_payload": semantic_payload, "verified_action": {"verified": verified if action_stage else True, "channel": _text(channels.get("primary")), "href": href, "verified_external_href": href if verified else ""}, "actionability": actionability, "fake_action": bool(action_stage and not verified and not has_safe_information), "completion_state": _text((understanding.get("customer_state") or {}).get("after")), "hard_violation": hard_violation, "fallback_reason": "verified action channel unavailable; informational destination only" if action_stage and not verified else ""})
+            semantic_payload = ""
+        rows.append({"cta_id": f"cta-{stage}", "stage": stage, "user_state_before": _text((understanding.get("customer_state") or {}).get("before")), "promise": _text(item.get("action_reason")) or stage, "destination_type": dtype, "destination_id": destination, "href": destination, "semantic_payload": semantic_payload, "actual_contact_datum_count": len(contact_data) if action_stage else 0, "actual_contact_data": contact_data if action_stage else [], "verified_action": {"verified": verified if action_stage else True, "channel": _text(channels.get("primary")), "href": href, "verified_external_href": href if verified else ""}, "actionability": actionability, "fake_action": bool(action_stage and not verified and not has_safe_information and not declared_channel), "completion_state": _text((understanding.get("customer_state") or {}).get("after")), "hard_violation": hard_violation, "fallback_reason": "verified contact datum unavailable; quiet conversion end" if action_stage and not verified else ""})
     violations = [row for row in rows if row["hard_violation"]]
     return {"schema_version": "cta_action_closure_ir_v1", "status": "PASS" if not violations else "FAIL", "closures": rows, "hard_violations": violations}
 
@@ -214,9 +242,10 @@ def build_photo_binding(scene_plan: Mapping[str, Any], asset_manifest: Mapping[s
         grammar = _text((scene.get("visual_grammar") or {}).get("name"))
         company = _text((understanding or {}).get("company_id"))
         state = _text(scene.get("narrative_state")).lower()
-        # A MAKE/PROGRESS scene must show ongoing preparation.  The
-        # ingredient still-life role is valid context, never the active
-        # cooking proof for this state.
+        # Touch is the first-contact/preparation state; Make is active cooking
+        # progress.  Keep the approved roles distinct when both exist.
+        if company == "watashi_no_daidokoro" and state == "touch":
+            role = "ingredient_story" if "ingredient_story" in roles else role
         if company == "watashi_no_daidokoro" and state == "make":
             role = "hands_in_action" if "hands_in_action" in roles else role
         if role not in roles:
@@ -228,6 +257,11 @@ def build_photo_binding(scene_plan: Mapping[str, Any], asset_manifest: Mapping[s
             score, reason = (min(0.72, compatible[0][1]), "no exact approved role; fallback requires review") if compatible else (0.0, "no approved role")
         else:
             score, reason = _role_compatibility(grammar, role)
+        if company == "watashi_no_daidokoro" and state == "touch":
+            if role == "ingredient_story":
+                score, reason = 1.0, "preparation_first_contact_required"
+            elif role == "hands_in_action":
+                score, reason = 0.55, "active_cooking_asset_not_preparation_specific"
         if company == "watashi_no_daidokoro" and state == "make":
             if role == "hands_in_action":
                 score, reason = 1.0, "active_cooking_action_required"

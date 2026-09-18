@@ -1,0 +1,467 @@
+{
+  "status": "PASS",
+  "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+  "placeholder_source_head": 0,
+  "stale_capture_count": 0,
+  "canonical_count": 6,
+  "peak_count": 22,
+  "total": 28,
+  "records": [
+    {
+      "company": "maylynn_paint",
+      "capture_type": "canonical_full",
+      "path": "human_review_captures\\maylynn_paint\\desktop_full_1440.png",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "17b970840c00b7537d38aa89f244d26c706b0e9abe6538b8443de35228481dfc",
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "path": "human_review_captures\\maylynn_paint\\peak-02-read_material_desktop.png",
+      "peak_id": "peak-02-read_material",
+      "scene_id": "scene-02-read_material",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "cdabfda4688ff21144042e1f021be17669666b61680029e933aa1899eec3e0f2",
+      "bounding_box": {
+        "x": 130,
+        "y": 126.78125,
+        "width": 1180,
+        "height": 746.5
+      },
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "path": "human_review_captures\\maylynn_paint\\peak-01-observe_desktop.png",
+      "peak_id": "peak-01-observe",
+      "scene_id": "scene-01-observe",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "10f928cb5200eb818abf86b2beeebc13ce11a7e53eda637e57c314f2920d00ff",
+      "bounding_box": {
+        "x": 130,
+        "y": -277.859375,
+        "width": 1180,
+        "height": 1277.640625
+      },
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "path": "human_review_captures\\maylynn_paint\\peak-03-watch_hands_desktop.png",
+      "peak_id": "peak-03-watch_hands",
+      "scene_id": "scene-03-watch_hands",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "bb2845a4b4f68e5fe21e952d7bdfd07b531e8018e78902f74ba0dd4842a44a18",
+      "bounding_box": {
+        "x": 130,
+        "y": -165.71875,
+        "width": 1180,
+        "height": 1330.921875
+      },
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "path": "human_review_captures\\maylynn_paint\\peak-04-imagine_change_desktop.png",
+      "peak_id": "peak-04-imagine_change",
+      "scene_id": "scene-04-imagine_change",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "32d381fb683f28580dec6a3bb1cd7b5dbc2474e1e46b4cf96e088ef288c53b91",
+      "bounding_box": {
+        "x": 130,
+        "y": -54.796875,
+        "width": 1180,
+        "height": 1108.65625
+      },
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "canonical_full",
+      "path": "human_review_captures\\maylynn_paint\\mobile_full_390.png",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "aa2b761210812c08bd49a84cc15416fc4c82b652311ab206365c8fc42ffe2b55",
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "path": "human_review_captures\\maylynn_paint\\peak-02-read_material_mobile.png",
+      "peak_id": "peak-02-read_material",
+      "scene_id": "scene-02-read_material",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "27b7b0a1f3536b36b725f421ef72bab7a17e8d53c23ef19b270d1d7804044e35",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 287.4375,
+        "width": 351,
+        "height": 556.546875
+      },
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "path": "human_review_captures\\maylynn_paint\\peak-01-observe_mobile.png",
+      "peak_id": "peak-01-observe",
+      "scene_id": "scene-01-observe",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "37d58aa46483230a83b6e276242c5abec5b9c56512c2f360bc20e3da50221696",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 0.140625,
+        "width": 351,
+        "height": 597.296875
+      },
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "path": "human_review_captures\\maylynn_paint\\peak-03-watch_hands_mobile.png",
+      "peak_id": "peak-03-watch_hands",
+      "scene_id": "scene-03-watch_hands",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "a8e8e811b9baa111ec6fb4a7a482970bd00ba41e986601d1747b6d784a91bb59",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 113.984375,
+        "width": 351,
+        "height": 615.953125
+      },
+      "stale": false
+    },
+    {
+      "company": "maylynn_paint",
+      "capture_type": "peak",
+      "path": "human_review_captures\\maylynn_paint\\peak-04-imagine_change_mobile.png",
+      "peak_id": "peak-04-imagine_change",
+      "scene_id": "scene-04-imagine_change",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "capture_sha": "c9d4d5657123598414df731013d736a3ee48f2b989562d236e2559bf02367983",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 293.9375,
+        "width": 351,
+        "height": 550
+      },
+      "stale": false
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "canonical_full",
+      "path": "human_review_captures\\nagi_no_mirai\\desktop_full_1440.png",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "capture_sha": "653e29444086484889c1cde9bf8d3df07755cba84eca8e39489909c14b328de7",
+      "stale": false
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "path": "human_review_captures\\nagi_no_mirai\\peak-03-feel_care_desktop.png",
+      "peak_id": "peak-03-feel_care",
+      "scene_id": "scene-03-feel_care",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "capture_sha": "5a13260dbf0dbaefa54df06fb56246269dc225f29b623d009ba48cb720b3b75b",
+      "bounding_box": {
+        "x": 130,
+        "y": 73.109375,
+        "width": 1180,
+        "height": 853
+      },
+      "stale": false
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "path": "human_review_captures\\nagi_no_mirai\\peak-04-choose_time_desktop.png",
+      "peak_id": "peak-04-choose_time",
+      "scene_id": "scene-04-choose_time",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "capture_sha": "bc4be2d077b780c230741fe678248a2990dbce7cfe68bbfeda0c2cc3dfb0e12e",
+      "bounding_box": {
+        "x": 130,
+        "y": 0.109375,
+        "width": 1180,
+        "height": 1107.75
+      },
+      "stale": false
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "path": "human_review_captures\\nagi_no_mirai\\peak-02-settle_desktop.png",
+      "peak_id": "peak-02-settle",
+      "scene_id": "scene-02-settle",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "capture_sha": "f2cbcecb27b2ac319f3e6a6884c7f5e7c6f0e2b0b1bce08dcba1ac34447901af",
+      "bounding_box": {
+        "x": 130,
+        "y": 150.78125,
+        "width": 1180,
+        "height": 698.328125
+      },
+      "stale": false
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "canonical_full",
+      "path": "human_review_captures\\nagi_no_mirai\\mobile_full_390.png",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "capture_sha": "4ab8cbaabcaf4e37009920d797a684f03ce3c04d65988179654e2f1824445359",
+      "stale": false
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "path": "human_review_captures\\nagi_no_mirai\\peak-03-feel_care_mobile.png",
+      "peak_id": "peak-03-feel_care",
+      "scene_id": "scene-03-feel_care",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "capture_sha": "330e7d1c6609938be3390c6694ad67f78f83820355df439330d15eea66418b2f",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 101.734375,
+        "width": 351,
+        "height": 639.546875
+      },
+      "stale": false
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "path": "human_review_captures\\nagi_no_mirai\\peak-04-choose_time_mobile.png",
+      "peak_id": "peak-04-choose_time",
+      "scene_id": "scene-04-choose_time",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "capture_sha": "7069142c9f5ec1f08142b224053230deaf5c68fddc2913ec4fa456a2f9fe7748",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 295.28125,
+        "width": 351,
+        "height": 549
+      },
+      "stale": false
+    },
+    {
+      "company": "nagi_no_mirai",
+      "capture_type": "peak",
+      "path": "human_review_captures\\nagi_no_mirai\\peak-02-settle_mobile.png",
+      "peak_id": "peak-02-settle",
+      "scene_id": "scene-02-settle",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "capture_sha": "3bccdcf76c2bddd903e57068cd583b207dda42a2d6fb2e6170bd3a38ffafbbc2",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 158.4375,
+        "width": 351,
+        "height": 526.296875
+      },
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "canonical_full",
+      "path": "human_review_captures\\watashi_no_daidokoro\\desktop_full_1440.png",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "91e2761fefcb9bef5c04a114334811eee48109b52b2bd731fa991e4c4bcea687",
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "path": "human_review_captures\\watashi_no_daidokoro\\peak-03-make_desktop.png",
+      "peak_id": "peak-03-make",
+      "scene_id": "scene-03-make",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "bbe080c62c4b9b51ff3174dcab60f2027e2cac0100beb0deec1e89276a5f3bdf",
+      "bounding_box": {
+        "x": 130,
+        "y": -630.21875,
+        "width": 1180,
+        "height": 2259.453125
+      },
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "path": "human_review_captures\\watashi_no_daidokoro\\peak-02-touch_desktop.png",
+      "peak_id": "peak-02-touch",
+      "scene_id": "scene-02-touch",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "05c84e6c9345dff88c4dc837c4bf85fff11ceab853b5b782b433a7d80402bd48",
+      "bounding_box": {
+        "x": 130,
+        "y": 114.78125,
+        "width": 1180,
+        "height": 771
+      },
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "path": "human_review_captures\\watashi_no_daidokoro\\peak-04-share_desktop.png",
+      "peak_id": "peak-04-share",
+      "scene_id": "scene-04-share",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "b898f9eac45eea599e12c759c2e520b5655bfc5e55ccee2a8fe291649c927db8",
+      "bounding_box": {
+        "x": 130,
+        "y": -97.765625,
+        "width": 1180,
+        "height": 1194.640625
+      },
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "path": "human_review_captures\\watashi_no_daidokoro\\peak-01-encounter_desktop.png",
+      "peak_id": "peak-01-encounter",
+      "scene_id": "scene-01-encounter",
+      "viewport": 1440,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "195144324a3dbf48c35faf4fa2694e5fd6e08f7a681d51c9803fa1ad2eea2d24",
+      "bounding_box": {
+        "x": 130,
+        "y": -138.859375,
+        "width": 1180,
+        "height": 1278.640625
+      },
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "canonical_full",
+      "path": "human_review_captures\\watashi_no_daidokoro\\mobile_full_390.png",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "5f8c77c6adb52415ed1993147a77282a0a1e88e671336aea9cc262c4c8939fed",
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "path": "human_review_captures\\watashi_no_daidokoro\\peak-03-make_mobile.png",
+      "peak_id": "peak-03-make",
+      "scene_id": "scene-03-make",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "dbef409b3fc6977aade164a028ca6ae82ab8a15b7fafbe024385158f043b6650",
+      "bounding_box": {
+        "x": 19.5,
+        "y": -5.265625,
+        "width": 351,
+        "height": 853.75
+      },
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "path": "human_review_captures\\watashi_no_daidokoro\\peak-02-touch_mobile.png",
+      "peak_id": "peak-02-touch",
+      "scene_id": "scene-02-touch",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "404cd0e0b2ab3565d5a6e38932dc38fc51d3818eb48da3100b58b6bf4d1086ce",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 164.4375,
+        "width": 351,
+        "height": 514.296875
+      },
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "path": "human_review_captures\\watashi_no_daidokoro\\peak-04-share_mobile.png",
+      "peak_id": "peak-04-share",
+      "scene_id": "scene-04-share",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "47e48cbceadd531bb54792236106f4dfbec6efe17536c604149d86091d2c7827",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 150.484375,
+        "width": 351,
+        "height": 542.296875
+      },
+      "stale": false
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "capture_type": "peak",
+      "path": "human_review_captures\\watashi_no_daidokoro\\peak-01-encounter_mobile.png",
+      "peak_id": "peak-01-encounter",
+      "scene_id": "scene-01-encounter",
+      "viewport": 390,
+      "source_head": "847ca1a5c514ad89903c61e635401593229380e0",
+      "source_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "capture_sha": "ad0978f51ae33fd133e2332dc25b58a82e2cdd25ad5b5141723528bc3a817a0c",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 57.140625,
+        "width": 351,
+        "height": 626.296875
+      },
+      "stale": false
+    }
+  ]
+}

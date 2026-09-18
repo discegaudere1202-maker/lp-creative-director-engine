@@ -111,6 +111,26 @@ def _unique(values: Sequence[str]) -> list[str]:
     return list(dict.fromkeys(_text(item) for item in values if _text(item)))
 
 
+def normalize_japanese_particles(value: str) -> str:
+    """Collapse malformed repeated postpositions at the render boundary."""
+    text = _text(value)
+    patterns = (
+        (r"(?:について)+", "について"),
+        (r"(?:に関して)+", "に関して"),
+        (r"(?:として)+", "として"),
+        (r"にはに", "には"),
+        (r"についてに", "について"),
+        (r"をについて", "について"),
+        (r"にを", "を"),
+        (r"がを", "が"),
+        (r"をを", "を"),
+        (r"へへ", "へ"),
+    )
+    for pattern, replacement in patterns:
+        text = re.sub(pattern, replacement, text)
+    return text
+
+
 def _company(raw: Mapping[str, Any]) -> Mapping[str, Any]:
     company = raw.get("company")
     if not isinstance(company, Mapping):
@@ -550,7 +570,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     # Preserve the verified truth fragment.  A generic category sentence is
     # not an acceptable primary definition: the Round 1M translation layer
     # will omit an unsupported fragment instead of inventing a substitute.
-    public_truth = truth_fragment or ""
+    public_truth = normalize_japanese_particles(truth_fragment or "")
     activity_head = compact_category.replace("教室", "").replace("スクール", "").strip() or compact_category
     profile = _text(strategy.get("layout_profile")) or "editorial_rail"
     authorities = list(strategy.get("visual_authority_priority") or [])
@@ -902,8 +922,8 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         topology = grammar["topology"]
         section_id = ia[i].get("section_id") if i < len(ia) else ""
         translated = translation_by_id.get(scene.get("scene_id"), {})
-        body = _text((translated.get("outputs") or {}).get("body")) or copy_by_id.get(section_id, {}).get("body", scene["creative_reason"])
-        heading = _text((translated.get("outputs") or {}).get("headline")) or (names[i] if i < len(names) else scene["narrative_state"])
+        body = normalize_japanese_particles(_text((translated.get("outputs") or {}).get("body")) or copy_by_id.get(section_id, {}).get("body", scene["creative_reason"]))
+        heading = normalize_japanese_particles(_text((translated.get("outputs") or {}).get("headline")) or (names[i] if i < len(names) else scene["narrative_state"]))
         trace = esc(json.dumps({"scene_id":scene["scene_id"],"narrative_index":i,"grammar":grammar,"copy_intent":scene["copy_intent"]}, ensure_ascii=False))
         # The final CTA-led scene is a typography/place moment. Never cycle
         # back to the hero asset when the approved pool is smaller than the
@@ -927,11 +947,16 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
             cta_href = closure.get("href") or genome.get("destination") or "#contact"
             cta_label = genome.get("visible_label") or closure.get("semantic_payload") or "次へ進む"
             if closure.get("actionability") == "QUIET_CONVERSION_END":
-                cta_label = closure.get("semantic_payload") or "公式窓口の案内を確認する"
+                cta_label = closure.get("semantic_payload") or ""
+            # A quiet end with no actual contact datum is intentionally a
+            # buttonless close.  Labels such as 公式SNS never create gain.
+            if closure.get("actionability") == "QUIET_CONVERSION_END" and not closure.get("actual_contact_datum_count"):
+                cta_label = ""
             verified_href = closure.get("verified_action", {}).get("verified_external_href") or ""
             verified_attr = f' data-verified-external-href="{esc(verified_href)}"' if verified_href else ""
-            cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" data-actionability="{esc(closure.get("actionability") or "ORIENTATION")}" data-destination-type="{esc(closure.get("destination_type") or "INFORMATIONAL_ONLY")}" data-state-before="{esc(closure.get("user_state_before"))}" data-state-after="{esc(closure.get("completion_state"))}"{verified_attr} href="{esc(cta_href)}">{esc(cta_label)}</a>'
-            rendered_cta_stages.add(scene.get("cta_stage"))
+            if cta_label:
+                cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" data-actionability="{esc(closure.get("actionability") or "ORIENTATION")}" data-destination-type="{esc(closure.get("destination_type") or "INFORMATIONAL_ONLY")}" data-state-before="{esc(closure.get("user_state_before"))}" data-state-after="{esc(closure.get("completion_state"))}" data-contact-datum-count="{esc(closure.get("actual_contact_datum_count", 0))}"{verified_attr} href="{esc(cta_href)}">{esc(cta_label)}</a>'
+                rendered_cta_stages.add(scene.get("cta_stage"))
         rendered_text = f"{heading}{body}"
         trace_ids = list(scene.get("evidence_ids") or [])
         for evidence in spec.get("approved_evidence") or []:
@@ -955,17 +980,24 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
                 anchor_ids.append(anchor.get("anchor_id"))
         anchor_attr_data = esc(",".join(x for x in anchor_ids if x))
         chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
-    channel = (spec.get("company") or {}).get("contact_channel") or (spec.get("understanding") or {}).get("contact_channels", {}).get("primary") or "公式窓口"
+    channel_data = spec.get("understanding", {}).get("contact_channels", {})
+    contact_values = []
+    for key in ("href", "url", "phone", "tel", "email", "line", "instagram", "booking_url", "contact_form_url", "contact_value"):
+        value = _text(channel_data.get(key))
+        if re.search(r"(?:https?://|mailto:|tel:|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|0\d{1,4}[-ー－ ]\d{1,4}[-ー－ ]\d{3,4})", value, re.I):
+            contact_values.append(value)
+    channel = (spec.get("company") or {}).get("contact_channel") or (channel_data.get("primary") if contact_values else "")
     contact_context = "｜".join(str(value) for value in ((spec.get("company") or {}).get("location"), (spec.get("company") or {}).get("service_category")) if value)
-    contact_claim = next((x.get("semantic_payload") for x in cta_closures.values() if x.get("stage") == "action" and x.get("semantic_payload")), "連絡先を確認する")
+    contact_claim = next((x.get("semantic_payload") for x in cta_closures.values() if x.get("stage") == "action" and x.get("semantic_payload")), "")
     contact_trace_ids = []
-    contact_text = f"{contact_context}{contact_claim}{channel}"
+    contact_text = f"{contact_context}{contact_claim}{channel}{''.join(contact_values)}"
     for evidence in spec.get("approved_evidence") or []:
         evidence_id = _text(evidence.get("evidence_id"))
         if evidence_id and _claim_matches(_text(evidence.get("claim")), contact_text):
             contact_trace_ids.append(hashlib.sha256(evidence_id.encode()).hexdigest()[:10])
     contact_trace = ",".join(contact_trace_ids)
-    contact_details = f'<section id="contact" class="premium-contact-details" data-destination-type="INFORMATIONAL_ONLY" data-evidence-trace="{esc(contact_trace)}"><h2>公式窓口の案内</h2><p>{esc(contact_context)}</p><p>{esc(contact_claim)}</p><p>{esc(channel)}</p></section>'
+    contact_datum_markup = "".join(f"<p data-contact-datum=\"verified\">{esc(value)}</p>" for value in contact_values)
+    contact_details = f'<section id="contact" class="premium-contact-details" data-destination-type="INFORMATIONAL_ONLY" data-contact-datum-count="{len(contact_values)}" data-evidence-trace="{esc(contact_trace)}"><h2>次の案内</h2><p>{esc(contact_context)}</p>{f"<p>{esc(contact_claim)}</p>" if contact_claim else ""}{f"<p>{esc(channel)}</p>" if channel else ""}{contact_datum_markup}</section>'
     return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:var(--human-border-width) solid var(--line);border-radius:var(--human-scene-radius)}} .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em;border-radius:var(--human-scene-radius)}} .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0}} .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}} .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%}} .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%;min-width:0;border-radius:var(--human-scene-radius)}} .scene-full{{min-width:0;display:grid;gap:1.5rem}} .scene-sequence{{min-width:0;border-left:var(--human-edge-width) solid var(--accent);padding:2rem;overflow-wrap:anywhere}} .premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:var(--human-cta-radius);text-decoration:none;max-width:100%}} .premium-contact-details{{width:var(--rail);margin:0 auto;padding:4rem 0;border-top:var(--human-border-width) solid var(--line)}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr)}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
 
 def render_html(spec: Mapping[str, Any]) -> str:

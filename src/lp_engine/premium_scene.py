@@ -65,10 +65,11 @@ def build_premium_scene_plan(understanding: Mapping[str, Any], architecture: Map
         purpose = _text(arc.get("section_purpose"))
         stage = "action" if purpose == "ENABLE_ACTION" else "reassurance" if i >= 2 else "discovery"
         focal_entity = _role_for_scene(grammar_name, photo_roles, _text(arc.get("narrative_state")), used_roles)
-        # Watashi's MAKE scene is a progress proof, not a still-life chapter.
-        # Reuse the approved active-hands asset with a scene-specific crop
-        # when no second action asset exists; the binding gate will reject an
-        # ingredient-only role for this narrative state.
+        # Watashi's TOUCH scene is preparation/first contact and MAKE is active
+        # cooking progress.  Prefer the two approved roles separately so the
+        # adjacent narrative states do not collapse into one photograph.
+        if _text(understanding.get("company_id")) == "watashi_no_daidokoro" and _text(arc.get("narrative_state")).lower() == "touch" and "ingredient_story" in photo_roles:
+            focal_entity = "ingredient_story"
         if _text(understanding.get("company_id")) == "watashi_no_daidokoro" and _text(arc.get("narrative_state")).lower() == "make" and "hands_in_action" in photo_roles:
             focal_entity = "hands_in_action"
         if focal_entity != "typography":

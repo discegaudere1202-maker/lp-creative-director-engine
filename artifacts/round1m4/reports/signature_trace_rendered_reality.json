@@ -1,0 +1,221 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "company": "maylynn_paint",
+      "anchors": [
+        {
+          "anchor_id": "anchor-01-place",
+          "value": "福岡市",
+          "classification": "PLACE_FACT",
+          "primary": false,
+          "source_evidence": [
+            "maylynn_paint-e-002"
+          ],
+          "actual_copy_channel": false,
+          "actual_visual_channel": false,
+          "actual_photo_channel": false,
+          "actual_peak_channel": false,
+          "actual_cta_channel": false,
+          "actual_channels": [],
+          "channel_count": 0,
+          "non_copy_count": 0,
+          "counted_as_signature": false,
+          "verdict": "PASS"
+        },
+        {
+          "anchor_id": "anchor-02-service",
+          "value": "外壁塗装",
+          "classification": "SERVICE_FACT",
+          "primary": false,
+          "source_evidence": [
+            "maylynn_paint-e-001"
+          ],
+          "actual_copy_channel": false,
+          "actual_visual_channel": false,
+          "actual_photo_channel": false,
+          "actual_peak_channel": false,
+          "actual_cta_channel": false,
+          "actual_channels": [],
+          "channel_count": 0,
+          "non_copy_count": 0,
+          "counted_as_signature": false,
+          "verdict": "PASS"
+        },
+        {
+          "anchor_id": "anchor-03-truth",
+          "value": "外壁塗装・屋根・雨漏り・リフォームについて相談できる地域の窓口",
+          "classification": "COMPANY_SIGNATURE",
+          "primary": true,
+          "source_evidence": [
+            "maylynn_paint-e-001"
+          ],
+          "actual_copy_channel": true,
+          "actual_visual_channel": true,
+          "actual_photo_channel": true,
+          "actual_peak_channel": true,
+          "actual_cta_channel": false,
+          "actual_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK"
+          ],
+          "channel_count": 4,
+          "non_copy_count": 3,
+          "counted_as_signature": true,
+          "verdict": "PASS"
+        }
+      ],
+      "company_signature_count": 1,
+      "generic_signature_contamination": 0,
+      "metadata_only_channel_count": 0,
+      "primary_signature_channels": 4
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "company": "nagi_no_mirai",
+      "anchors": [
+        {
+          "anchor_id": "anchor-01-place",
+          "value": "福岡市",
+          "classification": "PLACE_FACT",
+          "primary": false,
+          "source_evidence": [
+            "nagi_no_mirai-e-002"
+          ],
+          "actual_copy_channel": false,
+          "actual_visual_channel": false,
+          "actual_photo_channel": false,
+          "actual_peak_channel": false,
+          "actual_cta_channel": false,
+          "actual_channels": [],
+          "channel_count": 0,
+          "non_copy_count": 0,
+          "counted_as_signature": false,
+          "verdict": "PASS"
+        },
+        {
+          "anchor_id": "anchor-02-service",
+          "value": "ヘッドスパ",
+          "classification": "SERVICE_FACT",
+          "primary": false,
+          "source_evidence": [
+            "nagi_no_mirai-e-001"
+          ],
+          "actual_copy_channel": false,
+          "actual_visual_channel": false,
+          "actual_photo_channel": false,
+          "actual_peak_channel": false,
+          "actual_cta_channel": false,
+          "actual_channels": [],
+          "channel_count": 0,
+          "non_copy_count": 0,
+          "counted_as_signature": false,
+          "verdict": "PASS"
+        },
+        {
+          "anchor_id": "anchor-03-truth",
+          "value": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口",
+          "classification": "COMPANY_SIGNATURE",
+          "primary": true,
+          "source_evidence": [
+            "nagi_no_mirai-e-001"
+          ],
+          "actual_copy_channel": true,
+          "actual_visual_channel": true,
+          "actual_photo_channel": true,
+          "actual_peak_channel": true,
+          "actual_cta_channel": false,
+          "actual_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK"
+          ],
+          "channel_count": 4,
+          "non_copy_count": 3,
+          "counted_as_signature": true,
+          "verdict": "PASS"
+        }
+      ],
+      "company_signature_count": 1,
+      "generic_signature_contamination": 0,
+      "metadata_only_channel_count": 0,
+      "primary_signature_channels": 4
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "company": "watashi_no_daidokoro",
+      "anchors": [
+        {
+          "anchor_id": "anchor-01-place",
+          "value": "福岡市西区",
+          "classification": "PLACE_FACT",
+          "primary": false,
+          "source_evidence": [
+            "watashi_no_daidokoro-e-002"
+          ],
+          "actual_copy_channel": false,
+          "actual_visual_channel": false,
+          "actual_photo_channel": false,
+          "actual_peak_channel": false,
+          "actual_cta_channel": false,
+          "actual_channels": [],
+          "channel_count": 0,
+          "non_copy_count": 0,
+          "counted_as_signature": false,
+          "verdict": "PASS"
+        },
+        {
+          "anchor_id": "anchor-02-service",
+          "value": "料理教室",
+          "classification": "SERVICE_FACT",
+          "primary": false,
+          "source_evidence": [
+            "watashi_no_daidokoro-e-001"
+          ],
+          "actual_copy_channel": false,
+          "actual_visual_channel": false,
+          "actual_photo_channel": false,
+          "actual_peak_channel": false,
+          "actual_cta_channel": false,
+          "actual_channels": [],
+          "channel_count": 0,
+          "non_copy_count": 0,
+          "counted_as_signature": false,
+          "verdict": "PASS"
+        },
+        {
+          "anchor_id": "anchor-03-truth",
+          "value": "少人数でストウブ無水料理を学ぶ料理教室",
+          "classification": "COMPANY_SIGNATURE",
+          "primary": true,
+          "source_evidence": [
+            "watashi_no_daidokoro-e-001"
+          ],
+          "actual_copy_channel": true,
+          "actual_visual_channel": true,
+          "actual_photo_channel": true,
+          "actual_peak_channel": true,
+          "actual_cta_channel": false,
+          "actual_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK"
+          ],
+          "channel_count": 4,
+          "non_copy_count": 3,
+          "counted_as_signature": true,
+          "verdict": "PASS"
+        }
+      ],
+      "company_signature_count": 1,
+      "generic_signature_contamination": 0,
+      "metadata_only_channel_count": 0,
+      "primary_signature_channels": 4
+    }
+  }
+}

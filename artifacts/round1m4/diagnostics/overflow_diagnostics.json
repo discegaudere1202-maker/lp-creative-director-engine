@@ -1,0 +1,82 @@
+{
+  "root_cause": "Premium scene photo-frame was an unconstrained grid item; intrinsic image min-content width expanded scene rail. Shared CSS fix applies min-width:0, minmax(0,1fr), width/max-width 100%.",
+  "representative_viewports": [
+    390,
+    768,
+    1440
+  ],
+  "records": [
+    {
+      "company": "maylynn_paint",
+      "viewport": 390.0,
+      "document_scroll_width": 390.0,
+      "body_scroll_width": 390.0,
+      "window_inner_width": 390.0,
+      "suspected_root_cause": "none"
+    },
+    {
+      "company": "maylynn_paint",
+      "viewport": 768.0,
+      "document_scroll_width": 768.0,
+      "body_scroll_width": 768.0,
+      "window_inner_width": 768.0,
+      "suspected_root_cause": "none"
+    },
+    {
+      "company": "maylynn_paint",
+      "viewport": 1440.0,
+      "document_scroll_width": 1440.0,
+      "body_scroll_width": 1440.0,
+      "window_inner_width": 1440.0,
+      "suspected_root_cause": "none"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "viewport": 390.0,
+      "document_scroll_width": 390.0,
+      "body_scroll_width": 390.0,
+      "window_inner_width": 390.0,
+      "suspected_root_cause": "none"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "viewport": 768.0,
+      "document_scroll_width": 768.0,
+      "body_scroll_width": 768.0,
+      "window_inner_width": 768.0,
+      "suspected_root_cause": "none"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "viewport": 1440.0,
+      "document_scroll_width": 1440.0,
+      "body_scroll_width": 1440.0,
+      "window_inner_width": 1440.0,
+      "suspected_root_cause": "none"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "viewport": 390.0,
+      "document_scroll_width": 390.0,
+      "body_scroll_width": 390.0,
+      "window_inner_width": 390.0,
+      "suspected_root_cause": "none"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "viewport": 768.0,
+      "document_scroll_width": 768.0,
+      "body_scroll_width": 768.0,
+      "window_inner_width": 768.0,
+      "suspected_root_cause": "none"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "viewport": 1440.0,
+      "document_scroll_width": 1440.0,
+      "body_scroll_width": 1440.0,
+      "window_inner_width": 1440.0,
+      "suspected_root_cause": "none"
+    }
+  ]
+}

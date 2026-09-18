@@ -1,0 +1,881 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "company": "maylynn_paint",
+      "items": [
+        {
+          "text": "家の輪郭を見つめる",
+          "role": "h2",
+          "scene_id": "scene-01-observe",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "福岡市で、住まいの状態を相談できます。",
+          "role": "p",
+          "scene_id": "scene-01-observe",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "FACTUAL_CLAIM",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [
+            "maylynn_paint-e-002"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "素材の状態を見る",
+          "role": "a",
+          "scene_id": "scene-01-observe",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "CTA_UI_LABEL",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "素材に触れて考える",
+          "role": "h2",
+          "scene_id": "scene-02-read_material",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+          "role": "p",
+          "scene_id": "scene-02-read_material",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "DERIVED_MEANING",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "手仕事の順番を見る",
+          "role": "h2",
+          "scene_id": "scene-03-watch_hands",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "外壁塗装・屋根・雨漏り・リフォームについて相談できます",
+          "role": "li",
+          "scene_id": "scene-03-watch_hands",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "FACTUAL_CLAIM",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [
+            "maylynn_paint-e-001"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "対応範囲を確かめる",
+          "role": "a",
+          "scene_id": "scene-03-watch_hands",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "CTA_UI_LABEL",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [
+            "maylynn_paint-e-003"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "仕上がりを思い描く",
+          "role": "h2",
+          "scene_id": "scene-04-imagine_change",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+          "role": "p",
+          "scene_id": "scene-04-imagine_change",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "DERIVED_MEANING",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "状態から相談する",
+          "role": "h2",
+          "scene_id": "scene-05-consult",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "外壁塗装の状態を見ながら、相談の準備を整えます。",
+          "role": "p",
+          "scene_id": "scene-05-consult",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "DERIVED_MEANING",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "322a500465",
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "次の案内",
+          "role": "h2",
+          "scene_id": "",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "8ab974c366"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "福岡市｜外壁塗装",
+          "role": "p",
+          "scene_id": "",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "FACTUAL_CLAIM",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "8ab974c366"
+          ],
+          "source_truth": [
+            "maylynn_paint-e-002"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        }
+      ],
+      "grammar_hard_fail": 0,
+      "procedural_phrase_violations": 0,
+      "definition_major_fail": 0,
+      "claim_trace_missing": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "company": "nagi_no_mirai",
+      "items": [
+        {
+          "text": "空間に入る",
+          "role": "h2",
+          "scene_id": "scene-01-arrive",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "福岡市で、自分に合う過ごし方を考える時間をつくります。",
+          "role": "p",
+          "scene_id": "scene-01-arrive",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "FACTUAL_CLAIM",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "d94ba09045"
+          ],
+          "source_truth": [
+            "nagi_no_mirai-e-002"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "過ごし方を感じる",
+          "role": "a",
+          "scene_id": "scene-01-arrive",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "CTA_UI_LABEL",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "静けさを感じる",
+          "role": "h2",
+          "scene_id": "scene-02-settle",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+          "role": "p",
+          "scene_id": "scene-02-settle",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "FACTUAL_CLAIM",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649"
+          ],
+          "source_truth": [
+            "nagi_no_mirai-e-001"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "触れられる時間",
+          "role": "h2",
+          "scene_id": "scene-03-feel_care",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649",
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "触れられる時間を選び、自分に合う過ごし方を考えます。",
+          "role": "p",
+          "scene_id": "scene-03-feel_care",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649",
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "時間の選び方を見る",
+          "role": "a",
+          "scene_id": "scene-03-feel_care",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "CTA_UI_LABEL",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649",
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "過ごし方を選ぶ",
+          "role": "h2",
+          "scene_id": "scene-04-choose_time",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649",
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "頭をゆるめる時間の流れを、静かな空間で確かめます。",
+          "role": "p",
+          "scene_id": "scene-04-choose_time",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649",
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "その時間を予約する",
+          "role": "h2",
+          "scene_id": "scene-05-reserve",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649",
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "ヘッドスパで、自分のための時間を予約します。",
+          "role": "p",
+          "scene_id": "scene-05-reserve",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "DERIVED_MEANING",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "5925611649",
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "次の案内",
+          "role": "h2",
+          "scene_id": "",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "d94ba09045"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "福岡市｜ヘッドスパ",
+          "role": "p",
+          "scene_id": "",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "FACTUAL_CLAIM",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "d94ba09045"
+          ],
+          "source_truth": [
+            "nagi_no_mirai-e-002"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        }
+      ],
+      "grammar_hard_fail": 0,
+      "procedural_phrase_violations": 0,
+      "definition_major_fail": 0,
+      "claim_trace_missing": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "company": "watashi_no_daidokoro",
+      "items": [
+        {
+          "text": "食材に出会う",
+          "role": "h2",
+          "scene_id": "scene-01-encounter",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "福岡市西区の料理教室で、食材と手を動かす時間に出会います。",
+          "role": "p",
+          "scene_id": "scene-01-encounter",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "FACTUAL_CLAIM",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "e98a978ae6"
+          ],
+          "source_truth": [
+            "watashi_no_daidokoro-e-002"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "料理の流れを見る",
+          "role": "a",
+          "scene_id": "scene-01-encounter",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "CTA_UI_LABEL",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "手を動かしてみる",
+          "role": "h2",
+          "scene_id": "scene-02-touch",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "手を動かし、火を入れる順序を確かめます。",
+          "role": "p",
+          "scene_id": "scene-02-touch",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "料理ができていく",
+          "role": "h2",
+          "scene_id": "scene-03-make",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "料理教室で食材を選び、料理の流れを一緒に学びます。",
+          "role": "li",
+          "scene_id": "scene-03-make",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "DERIVED_MEANING",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "場と内容を確かめる",
+          "role": "a",
+          "scene_id": "scene-03-make",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "CTA_UI_LABEL",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "食卓を囲む",
+          "role": "h2",
+          "scene_id": "scene-04-share",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+          "role": "p",
+          "scene_id": "scene-04-share",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "DERIVED_MEANING",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "参加を考える",
+          "role": "h2",
+          "scene_id": "scene-05-join",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+          "role": "p",
+          "scene_id": "scene-05-join",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "f0a47e5f99",
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "次の案内",
+          "role": "h2",
+          "scene_id": "",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "NON_CLAIM_EXPRESSION",
+          "claim_trace_required": false,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "e98a978ae6"
+          ],
+          "source_truth": [],
+          "violations": [],
+          "verdict": "PASS"
+        },
+        {
+          "text": "福岡市西区｜料理教室",
+          "role": "p",
+          "scene_id": "",
+          "grammar_status": "PASS",
+          "particle_status": "PASS",
+          "modifier_status": "PASS",
+          "procedural_phrase": false,
+          "repetition": "PASS",
+          "claim_type": "FACTUAL_CLAIM",
+          "claim_trace_required": true,
+          "claim_trace_present": true,
+          "trace_ids": [
+            "e98a978ae6"
+          ],
+          "source_truth": [
+            "watashi_no_daidokoro-e-002"
+          ],
+          "violations": [],
+          "verdict": "PASS"
+        }
+      ],
+      "grammar_hard_fail": 0,
+      "procedural_phrase_violations": 0,
+      "definition_major_fail": 0,
+      "claim_trace_missing": 0
+    }
+  },
+  "duplicate_particle_count": 0,
+  "old_maylynn_line_count": 0
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "scene_count": {
+    "expected": 5,
+    "rendered": 5
+  },
+  "expected_headings": [
+    "空間に入る",
+    "静けさを感じる",
+    "触れられる時間",
+    "過ごし方を選ぶ",
+    "その時間を予約する"
+  ],
+  "rendered_headings": [
+    "空間に入る",
+    "静けさを感じる",
+    "触れられる時間",
+    "過ごし方を選ぶ",
+    "その時間を予約する",
+    "次の案内"
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "過ごし方を感じる"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#reassurance",
+      "visible_label": "時間の選び方を見る"
+    }
+  ],
+  "quiet_end_without_contact": true,
+  "internal_metadata_visible": false,
+  "internal_leakage": [],
+  "editorial_violations": []
+}

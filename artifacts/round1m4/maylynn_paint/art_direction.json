@@ -1,0 +1,134 @@
+{
+  "schema_version": "production_generation_v1",
+  "art_direction_concept": "外壁塗装・屋根・雨漏り・リフォームについて相談できる地域の窓口。を、見積の入口をつくるの入口として見せる。",
+  "visual_mood": "precise field intelligence with the warmth of a working craft",
+  "visual_authority_priority": [
+    "MATERIAL",
+    "PLACE",
+    "PERSON",
+    "TYPOGRAPHY",
+    "DOCUMENT"
+  ],
+  "color_logic": {
+    "ink": "#151613",
+    "accent": "#d7b27b",
+    "paper": "#f1eadc",
+    "reason": "MATERIAL is the first evidence-bearing authority."
+  },
+  "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+  "composition_logic": "A datum-led field opening, material inspection surface and measured quote route; evidence sits beside the decision it supports.",
+  "photography_logic": "Role-driven photography is the primary visual authority; vector scenes are support only.",
+  "visual_scene": "material_field",
+  "visual_source": "photography_pipeline",
+  "photo_replacement_readiness": {
+    "status": "READY_WITH_PROXY",
+    "proxy_role": "role_selected_photography_asset",
+    "replacement_targets": [
+      "実店舗・実現場・実商品・実人物写真"
+    ],
+    "layout_constraints": [
+      "同一役割の実写真を同じ比率へ差し替え可能",
+      "文字重なりなし",
+      "中央焦点を保持"
+    ],
+    "proof_role": "visual_context_only; not evidence of a real result or location",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only"
+  },
+  "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+  "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+  "motion_logic": "trace_the_work; one restrained reveal per section; no infinite or blocking animation.",
+  "forbidden_patterns": [
+    "rounded card wall",
+    "generic three-column grid",
+    "unsupported trust badge",
+    "stock person",
+    "marquee",
+    "parallax"
+  ],
+  "craft_catch": "A datum line carries the customer from a visible condition to the information needed for a quote.",
+  "layout_profile": "field_ledger",
+  "art_direction_dimensions": {
+    "macro_composition": "field_ledger",
+    "visual_density": "measured_material",
+    "negative_space": "inspection_gaps",
+    "surface": "work_surface",
+    "section_transitions": "datum_lines",
+    "rhythm": "inspect_then_release",
+    "motion": "trace_the_work",
+    "evidence_density": "MEDIUM",
+    "visual_authority": "MATERIAL",
+    "crop_logic": "no client image dependency; abstract geometry carries the role"
+  },
+  "photo_role_map": {
+    "schema_version": "photo_role_map_v1",
+    "selection_mode": "role_driven_not_fixed_count",
+    "roles": [
+      {
+        "photo_role": "hero_home_finish",
+        "visual_subject": "住宅外観と仕上がりの素材感",
+        "business_purpose": "家を任せる仕事だと瞬時に伝える",
+        "replacement_target": "実施工後の住宅外観",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "none",
+        "proof_intent": "visual_context_only",
+        "placement": "hero_dominant_image"
+      },
+      {
+        "photo_role": "craft_handwork",
+        "visual_subject": "ローラー・刷毛・施工中の手元",
+        "business_purpose": "職人仕事と丁寧さを視覚化する",
+        "replacement_target": "実作業中の手元写真",
+        "preferred_orientation": "portrait",
+        "crop_tolerance": "tight",
+        "people_distance": "close",
+        "proof_intent": "craft_context_only",
+        "placement": "mid_frame_proof_experience"
+      },
+      {
+        "photo_role": "material_detail",
+        "visual_subject": "施工面・素材・仕上げの細部",
+        "business_purpose": "品質をディテールで理解させる",
+        "replacement_target": "実施工ディテール",
+        "preferred_orientation": "square",
+        "crop_tolerance": "tight",
+        "people_distance": "none",
+        "proof_intent": "material_context_only",
+        "placement": "craft_detail_image",
+        "secondary_placement": "quiet_chapter_image"
+      },
+      {
+        "photo_role": "trust_consultation",
+        "visual_subject": "住まいについて相談する人の距離感",
+        "business_purpose": "相談前の心理的ハードルを下げる",
+        "replacement_target": "実打ち合わせ・相談風景",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "human_context_only",
+        "placement": "quiet_chapter_image"
+      }
+    ],
+    "section_role_map": {
+      "hero_orientation": "hero_home_finish",
+      "company_truth": "craft_handwork",
+      "service_process": "material_detail",
+      "next_step": "trust_consultation",
+      "cta_zone": "trust_consultation"
+    }
+  },
+  "asset_selection_policy": {
+    "priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only_not_primary_photography"
+  },
+  "vector_role": "supporting_only"
+}

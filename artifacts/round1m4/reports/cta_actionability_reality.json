@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "company": "maylynn_paint",
+      "actual_contact_datum_count": 0,
+      "action_ctas": [],
+      "fake_information_gain_count": 0,
+      "fake_action_count": 0,
+      "contact_label_without_datum_count": 0,
+      "no_verified_contact_final_button_count": 1
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "company": "nagi_no_mirai",
+      "actual_contact_datum_count": 0,
+      "action_ctas": [],
+      "fake_information_gain_count": 0,
+      "fake_action_count": 0,
+      "contact_label_without_datum_count": 0,
+      "no_verified_contact_final_button_count": 1
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "company": "watashi_no_daidokoro",
+      "actual_contact_datum_count": 0,
+      "action_ctas": [],
+      "fake_information_gain_count": 0,
+      "fake_action_count": 0,
+      "contact_label_without_datum_count": 0,
+      "no_verified_contact_final_button_count": 1
+    }
+  },
+  "fake_action_count": 0,
+  "fake_information_gain_count": 0,
+  "contact_label_without_datum_count": 0,
+  "no_verified_contact_final_button_count": 3
+}

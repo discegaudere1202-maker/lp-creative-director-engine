@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "mismatches": [],
+  "metrics": {
+    "duplicate_particle_count": 0,
+    "old_maylynn_line_count": 0,
+    "fake_information_gain_count": 0,
+    "adjacent_asset_reuse_count": 0,
+    "claim_trace_coverage": 100.0,
+    "peak_count": 11
+  }
+}

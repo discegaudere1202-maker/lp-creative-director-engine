@@ -30,7 +30,7 @@ B4_ARTIFACT_ID = "10488734493"
 M2_ARTIFACT_ID = "10535375741"
 ACTION_WORDS = ("相談する", "予約する", "参加する", "問い合わせる", "依頼する", "申し込む")
 EDITORIAL_PATTERNS = {
-    "duplicate_particle": re.compile(r"(?:をについて|をを|がを|にを)"),
+    "duplicate_particle": re.compile(r"(?:についてについて|に関してに関して|についてに|にを|をについて|がを|をを|にはに|へへ|としてとして)"),
     "procedural_phrase": re.compile(r"(?:相談内容|対応内容|内容)を確認してから(?:案内|次の案内)へ進む|確認してから案内へ進む"),
     "duplicate_definition": re.compile(r"(料理教室|相談窓口|無水料理).{0,8}\1"),
     "dangling_phrase": re.compile(r"(?:へ進む|に合わせて選びます)(?:。|$)"),

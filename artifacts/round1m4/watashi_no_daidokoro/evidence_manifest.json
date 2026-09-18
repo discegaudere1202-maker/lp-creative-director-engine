@@ -1,0 +1,48 @@
+{
+  "generation_id": "round1k-a2-watashi_no_daidokoro",
+  "items": [
+    {
+      "claim": "少人数でストウブ無水料理を学ぶ料理教室。",
+      "evidence_id": "watashi_no_daidokoro-e-001",
+      "source": "approved-selection-manifest",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "MIDDLE"
+      ]
+    },
+    {
+      "claim": "福岡市西区で活動する事業者。",
+      "evidence_id": "watashi_no_daidokoro-e-002",
+      "source": "phase6-sales-master-snapshot",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "HERO",
+        "EARLY_PROOF"
+      ]
+    },
+    {
+      "claim": "対応範囲を案内する。",
+      "evidence_id": "watashi_no_daidokoro-e-003",
+      "source": "approved-selection-manifest",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "MIDDLE"
+      ]
+    },
+    {
+      "claim": "公式SNSから相談・予約の入口を確認する。",
+      "evidence_id": "watashi_no_daidokoro-e-004",
+      "source": "phase6-sales-master-snapshot",
+      "verification_status": "VERIFIED",
+      "rights_status": "NOT_APPLICABLE",
+      "placement": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ]
+    }
+  ]
+}
