@@ -231,14 +231,17 @@ def main() -> int:
     threading.Thread(target=server.serve_forever, daemon=True).start()
     try:
         url = f"http://127.0.0.1:{server.server_port}/{canonical_path.relative_to(ROOT).as_posix()}"
-        browser_payload = asyncio.run(run_browser_qa(url, OUT / "browser_qa", DEFAULT_WIDTHS, 1000, screenshot_widths=[390, 1440])).to_dict()
+        # Use the Playwright-managed browser installed by the workflow so
+        # rendered line QA is not affected by a runner's unrelated system
+        # Chromium/font package.
+        browser_payload = asyncio.run(run_browser_qa(url, OUT / "browser_qa", DEFAULT_WIDTHS, 1000, screenshot_widths=[390, 1440], executable_path=None)).to_dict()
         interactions = asyncio.run(round2e.interaction_qa(url))
         internal = asyncio.run(internal_label_qa(url))
         captures = asyncio.run(capture_editorial_artifact(url, OUT / "captures", source_head))
         motion_recording = asyncio.run(round2e.record_motion(url, OUT))
     finally:
         server.shutdown()
-    html_review = asyncio.run(run_browser_qa(str(human_path), OUT / "human_review_browser_qa", [390, 1440], 1000, screenshot_widths=[])).to_dict()
+    html_review = asyncio.run(run_browser_qa(str(human_path), OUT / "human_review_browser_qa", [390, 1440], 1000, screenshot_widths=[], executable_path=None)).to_dict()
     browser = browser_summary(browser_payload)
     html_browser = browser_summary(html_review)
     write(OUT / "browser_qa.json", browser_payload)
