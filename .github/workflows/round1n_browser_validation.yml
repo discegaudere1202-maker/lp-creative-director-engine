@@ -1,0 +1,55 @@
+name: Round 1N-B Final Premium Creative Correction
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/round1n_browser_validation.yml'
+      - 'src/lp_engine/production_generation.py'
+      - 'src/lp_engine/human_translation.py'
+      - 'scripts/run_round1n_validation.py'
+      - 'tests/test_round1n_creative_correction.py'
+      - 'assets/photography/**'
+
+jobs:
+  round1n-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install project
+        run: python -m pip install -e .
+
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Photography preflight
+        run: python scripts/preflight_photography_assets.py --output data/photography/photography_asset_preflight_v1.json
+
+      - name: Round 1N-B Engine regeneration, rendered copy correction and captures
+        env:
+          ROUND_OUTPUT_ROOT: artifacts/round1n
+          SOURCE_HEAD: ${{ github.sha }}
+        run: python scripts/run_round1n_validation.py
+
+      - name: Upload Round 1N-B Final Premium Creative artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round1n-final-premium-creative-${{ github.sha }}
+          path: |
+            artifacts/round1n/**
+            data/photography/photography_asset_preflight_v1.json
+          if-no-files-found: error
+
+      - name: Final Round 1N-B gate
+        if: always()
+        run: python -c "import json,sys; p=json.load(open('artifacts/round1n/final_gate_summary.json',encoding='utf-8')); print(p); sys.exit(0 if p.get('status') == 'PASS' and p.get('implementation_ready') and p.get('human_re_review_ready') and p.get('commit_sha') == '${{ github.sha }}' and p.get('qa_pass_count') == 27 and p.get('qa_fail_count') == 0 and p.get('canonical_captures') == 6 and p.get('human_peak_captures') == 14 and p.get('total_captures') == 20 and p.get('capture_provenance') == 'PASS' and p.get('manual_lp_edit') == 0 else 1)"
