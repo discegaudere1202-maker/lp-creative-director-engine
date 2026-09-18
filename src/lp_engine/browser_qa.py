@@ -14,7 +14,10 @@ from playwright.async_api import async_playwright
 
 DEFAULT_WIDTHS = [320, 360, 375, 390, 430, 768, 1024, 1280, 1440]
 DEFAULT_HEIGHT = 1000
-TEXT_SELECTOR = "h1,h2,h3,.btn,.navcta,.nav-call,.contact-cta,.sticky,button"
+# Rendered editorial QA must inspect body copy as well as headings and CTAs.
+# These class names are shared engine roles; company renderers may add their
+# own role selectors without changing the gate semantics.
+TEXT_SELECTOR = "h1,h2,h3,.btn,.navcta,.nav-call,.contact-cta,.sticky,button,.lead,.body-note,.caption,.source-note,.scope-note,.proof-line,.material-footnote,.action-route,.atlas-stop p,.craft-step p,.evidence-card p,.faq-list summary,.faq-list details p,.hero-scope"
 FAVICON_ROUTE_GLOB = "**/favicon.ico"
 
 
@@ -92,6 +95,7 @@ LINEBOX_JS = r"""
         if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
         const p = node.parentElement;
         if (!p) return NodeFilter.FILTER_REJECT;
+        if (p.closest('[data-lineqa-ignore]')) return NodeFilter.FILTER_REJECT;
         const style = getComputedStyle(p);
         if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;

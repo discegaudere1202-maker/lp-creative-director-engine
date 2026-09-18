@@ -31,6 +31,7 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from lp_engine.browser_qa import DEFAULT_WIDTHS, run_browser_qa
+from lp_engine.editorial_quality import internal_label_gate, make_text_ir, naturalness_gate, render_text_ir, repair_text_ir, scan_internal_labels
 from lp_engine.company_research_v2 import build_maylynn_research_snapshot, validate_research_snapshot
 from lp_engine.customer_decision import build_customer_decision_model
 from lp_engine.evidence_graph_v2 import build_evidence_graph
@@ -41,9 +42,10 @@ from run_round2c_maylynn import esc
 
 
 def headline(lines: list[str], tag: str = "h2") -> str:
-    """Keep the source copy intact while allowing the browser to balance it."""
-    joined = " ".join(str(line).strip() for line in lines)
-    return f'<{tag}><span class="headline-line">{esc(joined)}</span></{tag}>'
+    """Render Copy IR semantic chunks; the renderer never re-splits copy."""
+    chunks = [str(line).strip() for line in lines if str(line).strip()]
+    ir = repair_text_ir(make_text_ir("".join(chunks), role="headline", semantic_chunks=chunks, preferred_lines=chunks, protected_phrases=chunks))
+    return render_text_ir(ir, tag=tag, escape=esc)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -121,7 +123,7 @@ def load_media() -> dict[str, dict[str, Any]]:
 def image(media: dict[str, dict[str, Any]], asset_id: str, alt: str, *, class_name: str = "", loading: str = "lazy") -> str:
     item = media[asset_id]
     source = "/" + item["local_asset_path"]
-    caption = "GENERATED CONTEXT · NOT EVIDENCE" if item["source_type"] == "generated" else "FREE STOCK CONTEXT · NOT EVIDENCE"
+    caption = "住まいの状態を見るための参考イメージ" if item["source_type"] == "generated" else "素材の質感を伝える参考イメージ"
     return f'<figure class="media-frame {esc(class_name)}" data-asset-id="{asset_id}" data-evidence-status="{esc(item["evidence_status"])}"><img src="{esc(source)}" alt="{esc(alt)}" loading="{loading}"><figcaption>{caption}</figcaption></figure>'
 
 
@@ -147,13 +149,14 @@ STYLE = r'''
 .material-layout{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,7vw,7rem);align-items:center}.paint-fan{height:560px;box-shadow:14px 14px 0 rgba(27,29,27,.08)}.paint-fan img{object-position:center}.material-preview{position:relative;height:300px;overflow:hidden;background:#d7d8d1;box-shadow:12px 12px 0 rgba(27,29,27,.08)}.material-preview img{filter:saturate(.7);transition:filter 400ms ease,transform 900ms var(--ease)}.material-preview.is-live img{transform:scale(1.035)}.material-preview-tint{position:absolute;inset:0;background:var(--tone,#bda78e);mix-blend-mode:color;opacity:.45;transition:background 420ms ease}.material-preview-label{position:absolute;z-index:2;left:16px;bottom:16px;padding:8px 10px;background:rgba(239,237,231,.9);font:10px var(--mono)}.swatch-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.swatch-button{width:50px;height:82px;border:1px solid var(--ink);background:var(--swatch);transition:transform 220ms var(--ease),box-shadow 220ms ease;outline-offset:4px}.swatch-button:hover,.swatch-button:focus-visible,.swatch-button.is-selected{transform:translateY(-9px);box-shadow:0 9px 0 rgba(27,29,27,.14);outline:1px solid var(--ink)}.material-footnote{margin-top:22px;font:11px/1.6 var(--mono);color:var(--moss)}
 .faq-layout{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,4fr) minmax(0,4fr);gap:clamp(2rem,6vw,6rem);align-items:start}.faq-media{height:480px}.faq-list{border-top:1px solid var(--ink)}details{border-bottom:1px solid var(--line);padding:18px 0}summary{list-style:none;display:flex;justify-content:space-between;gap:16px;cursor:pointer;font-size:1.05rem}summary::-webkit-details-marker{display:none}summary span{font:20px var(--mono);color:var(--oxide);transition:transform 180ms ease}details[open] summary span{transform:rotate(45deg)}details p{margin:14px 0 0;color:var(--moss);font-size:.92rem}.faq-side-note{font:11px/1.7 var(--mono);color:var(--moss);border-top:1px solid var(--ink);padding-top:18px}
 .material-layout>div{min-width:0;width:100%}.swatch-row{min-width:0;max-width:100%}
-.viewport h1,.viewport h2,.viewport h3,.lead,.body-note,.evidence-card p,.roof-fact strong,.atlas-stop p{ text-wrap:balance }
+.viewport h1,.viewport h2,.viewport h3,.lead,.body-note,.evidence-card p,.roof-fact strong,.atlas-stop p{ text-wrap:balance }.lead,.source-note,.craft-step p{ text-wrap:pretty;letter-spacing:-.018em }.source-note{font-size:10px}.proof-line span{white-space:nowrap}
 .scope-index button{display:block}.scope-index button span{font:1.05rem/1.3 var(--serif);color:inherit}
-@media (min-width:761px) and (max-width:900px){.atlas-layout{gap:3rem}.atlas-stop p{font-size:.82rem}.faq-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:3rem}.faq-media{grid-column:1/-1;height:320px}}
+@media (min-width:761px) and (max-width:900px){.atlas-layout{gap:3rem}.atlas-stop p{font-size:.82rem}.faq-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:3rem}.faq-media{grid-column:1/-1;height:320px}.material-layout,.hero-composition,.craft-layout{grid-template-columns:1fr;gap:3rem}.hero-media-stack{min-height:560px}.craft-stage{position:relative;top:auto;height:500px}.paint-fan{height:420px}}
 .closing-layout{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,7vw,7rem);align-items:center;min-height:72vh}.closing-media{height:620px;transform:scale(1.045);transition:transform 1000ms var(--ease);box-shadow:18px 18px 0 rgba(27,29,27,.1)}.closing-media.is-live{transform:scale(1)}.closing-media img{object-position:66% center}.closing-copy{border-top:1px solid var(--ink);padding-top:24px}.action-panel{margin-top:40px;background:var(--dark);color:var(--paper);padding:28px;display:grid;gap:18px;box-shadow:12px 12px 0 rgba(27,29,27,.12)}.action-link{display:grid;gap:7px;color:var(--paper);text-decoration:none;border-bottom:1px solid rgba(239,237,231,.35);padding:13px 0;transition:color 160ms ease,border-color 160ms ease}.action-link:hover,.action-link:focus-visible{color:#e0a58f;border-color:#e0a58f}.action-link span{font-size:1.05rem}.action-link strong{font:clamp(1.4rem,2.7vw,2.4rem) var(--mono);font-weight:400;letter-spacing:-.06em}.action-link small{font:11px var(--mono);color:#b7c0b5}.action-route{font:10px/1.6 var(--mono);color:#b7c0b5;border-top:1px solid rgba(239,237,231,.3);padding-top:15px}.action-route strong{color:#e0a58f;font-weight:400}.closing-divider{height:1px;margin-top:22px;background:linear-gradient(to right,var(--ember),transparent);transform:scaleX(0);transform-origin:left;transition:transform 900ms var(--ease) 350ms}.closing-copy.is-live .closing-divider{transform:scaleX(1)}
 .footer{width:var(--rail);margin:auto;padding:26px 0 60px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font:11px var(--mono);color:var(--moss)}.sticky-contact{position:fixed;left:50%;bottom:18px;transform:translate(-50%,130%);z-index:20;display:flex;background:var(--dark);color:var(--paper);border:1px solid var(--paper);transition:transform 240ms ease}.sticky-contact.is-visible{transform:translate(-50%,0)}.sticky-contact a{padding:10px 18px;color:var(--paper);text-decoration:none;font:11px var(--mono)}.sticky-contact a+a{border-left:1px solid rgba(239,237,231,.35)}
 @keyframes drawPath{to{stroke-dashoffset:0}}@keyframes markerIn{to{opacity:1;transform:scale(1)}}@keyframes scopeIn{from{opacity:.4}to{opacity:1}}@keyframes fanOpen{from{transform:translateY(16px) rotate(-2deg);opacity:.65}to{transform:translateY(0) rotate(0);opacity:1}}
-@media(max-width:760px){html{scroll-behavior:auto}.topbar{padding:18px 0;gap:12px}.topbar span{font-size:9px}.viewport{width:min(100% - 32px,620px);padding:64px 0}.viewport:first-of-type{padding-top:34px}.viewport-meta{margin-bottom:22px}.viewport h1{font-size:clamp(2.6rem,11vw,4rem)}.viewport h2{font-size:clamp(2rem,9vw,3.1rem)}.lead{font-size:1rem}.fact-rail{margin-top:28px}.hero-composition{display:flex;flex-direction:column;gap:28px;min-height:0;align-items:stretch}.hero-media-stack{min-height:430px;order:2}.hero-primary{inset:0 0 6% 0;height:94%;clip-path:inset(0 7% 0 0)}.hero-inset{width:43%;height:31%;border-width:6px}.inspection-target{width:64px;height:64px;right:19%}.inspection-target:before{height:94px;top:-15px}.inspection-target:after{width:94px;left:-15px}.atlas-layout,.scope-layout,.roof-layout,.craft-layout,.evidence-layout,.material-layout,.closing-layout{display:flex;flex-direction:column;gap:30px;min-height:0}.atlas-stage{display:none}.atlas-stops{width:100%}.atlas-stop{display:block;padding:0 0 38px;margin-bottom:28px}.atlas-stop.is-active{padding-left:0}.atlas-stop-number{display:block;margin-bottom:10px}.atlas-stop-media{display:block;height:260px;margin:0 0 16px;overflow:hidden}.atlas-stop-media img{width:100%;height:100%;object-fit:cover}.scope-visual{padding:10px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.scope-index button{padding:16px 0}.roof-viewport,.craft-viewport{min-height:0}.roof-stage,.craft-stage{position:relative;top:auto;width:100%;height:360px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.roof-stage img{object-position:center}.roof-facts{width:100%}.roof-fact{min-height:124px;padding:14px}.roof-fact strong{font-size:1.1rem}.craft-stage{display:none}.craft-mobile-media{display:block;height:245px;margin:16px 0 14px;overflow:hidden}.craft-step{display:block;padding:0 0 35px;margin-bottom:30px}.craft-step.is-active{padding-left:0}.craft-step span,.craft-step strong{display:block}.craft-step strong{margin-top:8px}.craft-step p{margin:10px 0 0}.evidence-layout{align-items:stretch}.evidence-map-frame{padding:10px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.evidence-card{display:block;padding:20px 0}.evidence-card h3{margin:8px 0}.evidence-card footer{margin-top:10px}.paint-fan{height:320px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.material-preview{height:250px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.swatch-row{flex-wrap:nowrap;overflow-x:auto;padding:8px 3px 16px}.swatch-button{min-width:46px;height:70px}.faq-layout{display:flex;flex-direction:column;gap:30px}.faq-media{height:270px;order:2}.faq-list{order:1;width:100%}.faq-side-note{order:3}.closing-layout{align-items:stretch}.closing-media{height:350px;order:1;box-shadow:8px 8px 0 rgba(27,29,27,.1)}.closing-copy{order:2}.action-panel{padding:22px;box-shadow:8px 8px 0 rgba(27,29,27,.12)}.sticky-contact a{padding:10px 14px}.footer{width:min(100% - 32px,620px);padding-bottom:90px;gap:12px}.footer span:last-child{text-align:right}}
+.viewport h1,.viewport h2,.viewport h3,.lead,.body-note,.evidence-card p,.roof-fact strong,.atlas-stop p{ text-wrap:balance }.lead,.source-note,.craft-step p{ text-wrap:pretty;letter-spacing:-.018em }.source-note{font-size:10px}.proof-line span{white-space:nowrap}
+@media(max-width:760px){html{scroll-behavior:auto}.topbar{padding:18px 0;gap:12px}.topbar span{font-size:9px}.viewport{width:min(100% - 32px,620px);padding:64px 0}.viewport:first-of-type{padding-top:34px}.viewport-meta{margin-bottom:22px}.viewport h1{font-size:clamp(2.6rem,11vw,4rem)}.viewport h2{font-size:clamp(2rem,9vw,3.1rem)}.lead{font-size:.9rem}.fact-rail{margin-top:28px}.hero-composition{display:flex;flex-direction:column;gap:28px;min-height:0;align-items:stretch}.hero-media-stack{min-height:430px;order:2}.hero-primary{inset:0 0 6% 0;height:94%;clip-path:inset(0 7% 0 0)}.hero-inset{width:43%;height:31%;border-width:6px}.inspection-target{width:64px;height:64px;right:19%}.inspection-target:before{height:94px;top:-15px}.inspection-target:after{width:94px;left:-15px}.atlas-layout,.scope-layout,.roof-layout,.craft-layout,.evidence-layout,.material-layout,.closing-layout{display:flex;flex-direction:column;gap:30px;min-height:0}.atlas-stage{display:none}.atlas-stops{width:100%}.atlas-stop{display:block;padding:0 0 38px;margin-bottom:28px}.atlas-stop.is-active{padding-left:0}.atlas-stop-number{display:block;margin-bottom:10px}.atlas-stop-media{display:block;height:260px;margin:0 0 16px;overflow:hidden}.atlas-stop-media img{width:100%;height:100%;object-fit:cover}.scope-visual{padding:10px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.scope-index button{padding:16px 0}.roof-viewport,.craft-viewport{min-height:0}.roof-stage,.craft-stage{position:relative;top:auto;width:100%;height:360px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.roof-stage img{object-position:center}.roof-facts{width:100%}.roof-fact{min-height:124px;padding:14px}.roof-fact strong{font-size:1.1rem}.craft-stage{display:none}.craft-mobile-media{display:block;height:245px;margin:16px 0 14px;overflow:hidden}.craft-step{display:block;padding:0 0 35px;margin-bottom:30px}.craft-step.is-active{padding-left:0}.craft-step span,.craft-step strong{display:block}.craft-step strong{margin-top:8px}.craft-step p{margin:10px 0 0}.evidence-layout{align-items:stretch}.evidence-map-frame{padding:10px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.evidence-card{display:block;padding:20px 0}.evidence-card h3{margin:8px 0}.evidence-card footer{margin-top:10px}.paint-fan{height:320px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.material-preview{height:250px;box-shadow:8px 8px 0 rgba(27,29,27,.08)}.swatch-row{flex-wrap:nowrap;overflow-x:auto;padding:8px 3px 16px}.swatch-button{min-width:46px;height:70px}.faq-layout{display:flex;flex-direction:column;gap:30px}.faq-media{height:270px;order:2}.faq-list{order:1;width:100%}.faq-side-note{order:3}.closing-layout{align-items:stretch}.closing-media{height:350px;order:1;box-shadow:8px 8px 0 rgba(27,29,27,.1)}.closing-copy{order:2}.action-panel{padding:22px;box-shadow:8px 8px 0 rgba(27,29,27,.12)}.sticky-contact a{padding:10px 14px}.footer{width:min(100% - 32px,620px);padding-bottom:90px;gap:12px}.footer span:last-child{text-align:right}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.hero-primary,.hero-inset,.inspection-line,.inspection-target,.roof-stage,.closing-media{transform:none!important}.atlas-frame,.craft-frame{transition:none}.roof-path path{animation:none;stroke-dashoffset:0}.roof-marker{animation:none;opacity:1;transform:none}.closing-divider{transform:scaleX(1)}}
 '''
 
@@ -177,21 +180,38 @@ SCRIPT = r'''<script>
     document.querySelectorAll('[data-atlas-frame]').forEach((frame) => frame.classList.toggle('is-active', frame.dataset.atlasFrame === id));
     if (atlasStage) atlasStage.dataset.active = id;
   };
-  const atlasObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) activateAtlas(entry.target); }), {rootMargin:'-38% 0px -48% 0px', threshold:0});
-  atlasStops.forEach((stop) => { atlasObserver.observe(stop); stop.addEventListener('click', () => activateAtlas(stop)); });
+  const desktopHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+  atlasStops.forEach((stop) => {
+    stop.addEventListener('click', () => activateAtlas(stop));
+    stop.addEventListener('focusin', () => activateAtlas(stop));
+    stop.addEventListener('pointerenter', () => { if (desktopHover.matches) activateAtlas(stop); });
+  });
   if (atlasStops[0]) activateAtlas(atlasStops[0]);
 
   const scopeNodes = [...document.querySelectorAll('[data-scope-node]')];
   const scopeParts = [...document.querySelectorAll('.scope-illustration [data-scope]')];
+  let scopeUserInteracted = false;
   const activateScope = (id) => { scopeNodes.forEach((node) => node.classList.toggle('is-active', node.dataset.scopeNode === id)); scopeParts.forEach((part) => part.classList.toggle('is-highlight', part.dataset.scope === id)); };
-  if (!reduced) ['wall','roof','high'].forEach((id, index) => window.setTimeout(() => activateScope(id), 420 + index * 260)); else activateScope('wall');
-  scopeNodes.forEach((node) => { node.addEventListener('click', () => activateScope(node.dataset.scopeNode)); node.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activateScope(node.dataset.scopeNode); } }); });
+  if (!reduced) ['wall','roof','high'].forEach((id, index) => window.setTimeout(() => { if (!scopeUserInteracted) activateScope(id); }, 420 + index * 260)); else activateScope('wall');
+  scopeNodes.forEach((node) => { node.addEventListener('click', () => { scopeUserInteracted = true; activateScope(node.dataset.scopeNode); }); node.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); scopeUserInteracted = true; activateScope(node.dataset.scopeNode); } }); });
 
   const craftStage = document.querySelector('[data-process-stage]');
   const craftSteps = [...document.querySelectorAll('[data-process-step]')];
-  const processObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (!entry.isIntersecting) return; const id = entry.target.dataset.processStep; craftSteps.forEach((step) => step.classList.toggle('is-active', step.dataset.processStep === id)); if (craftStage) craftStage.dataset.process = id; }), {rootMargin:'-32% 0px -50% 0px', threshold:0});
-  craftSteps.forEach((step) => processObserver.observe(step));
-  if (craftSteps[0]) { craftSteps[0].classList.add('is-active'); if (craftStage) craftStage.dataset.process = craftSteps[0].dataset.processStep; }
+  const craftFrames = [...document.querySelectorAll('[data-process-media]')];
+  const setProcess = (step) => {
+    const id = step.dataset.processStep;
+    craftSteps.forEach((item) => item.classList.toggle('is-active', item === step));
+    craftFrames.forEach((frame) => frame.classList.toggle('is-active', frame.dataset.processMedia === id));
+    if (craftStage) { craftStage.dataset.process = id; craftStage.dataset.processImage = id; }
+  };
+  const processObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) setProcess(entry.target); }), {rootMargin:'-32% 0px -50% 0px', threshold:0});
+  craftSteps.forEach((step) => {
+    processObserver.observe(step);
+    step.addEventListener('click', () => setProcess(step));
+    step.addEventListener('focusin', () => setProcess(step));
+    step.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setProcess(step); } });
+  });
+  if (craftSteps[0]) setProcess(craftSteps[0]);
 
   const palette = document.querySelector('.swatch-row');
   const preview = document.querySelector('.material-preview');
@@ -210,37 +230,37 @@ def render_html(snapshot: dict[str, Any], experience: dict[str, Any], creative: 
     copy = creative["copy"]
     views = {item["viewport_id"]: item for item in experience["sections"]}
     v01, v02, v03, v04, v05, v06, v07, v08, v09 = (copy[key] for key in ("V01", "V02", "V03", "V04", "V05", "V06", "V07", "V08", "V09"))
-    hero_body = f'''<div class="hero-composition" data-human-media="A01,A02"><div class="hero-copy"><p class="kicker">{esc(v01["kicker"])}</p>{headline(v01["headline"], "h1")}<p class="lead">{esc(v01["lead"])}</p><div class="fact-rail">{"".join(f"<span>{esc(fact)}</span>" for fact in v01["facts"])}</div><p class="caption">HOME → SIGN / まず住まいの全体を見てから、細部へ。</p></div><div class="hero-media-stack" data-human-media="A01,A02"><div class="hero-primary">{image(media, "A01", "日本の戸建て外壁を点検する人と住まいの文脈画像", loading="eager")}</div><div class="hero-inset">{image(media, "A02", "日本の住宅外壁の表面ディテールを近くで見る文脈画像")}</div><span class="inspection-line" aria-hidden="true"></span><span class="inspection-target" aria-hidden="true"></span><span class="hero-callout">FIELD OBSERVATION / NOT EVIDENCE</span><span class="hero-caption">A01 + A02 / HOME → DETAIL</span></div></div>'''
+    hero_body = f'''<div class="hero-composition" data-human-media="A01,A02"><div class="hero-copy"><p class="kicker">{esc(v01["kicker"])}</p>{headline(v01["headline"], "h1")}<p class="lead">{esc(v01["lead"])}</p><div class="fact-rail">{"".join(f"<span>{esc(fact)}</span>" for fact in v01["facts"])}</div><p class="caption">住まいの全体を見てから、細部へ。</p></div><div class="hero-media-stack" data-human-media="A01,A02"><div class="hero-primary">{image(media, "A01", "日本の戸建て外壁を点検する人と住まいの文脈画像", loading="eager")}</div><div class="hero-inset">{image(media, "A02", "日本の住宅外壁の表面ディテールを近くで見る文脈画像")}</div><span class="inspection-line" aria-hidden="true"></span><span class="inspection-target" aria-hidden="true"></span><span class="hero-callout">状態を見る / 住まいの輪郭</span><span class="hero-caption">全体 → 細部</span></div></div>'''
 
     atlas_labels = [("A03", "ひび割れ", "細い変化を、近くで読む。", "crack"), ("A04", "剥がれ", "浮き上がった表面を見逃さない。", "peeling"), ("A05", "色あせ・チョーキング", "光の当たり方でわかる変化。", "fading"), ("A06", "コケ・風雨", "水が集まりやすい場所を確認する。", "moss")]
     atlas_frames = "".join(f'<div class="atlas-frame {"is-active" if index == 0 else ""}" data-atlas-frame="{kind}">{image(media, asset_id, label + "の外壁状態を示す文脈画像", class_name="atlas-frame-image")}</div>' for index, (asset_id, label, _, kind) in enumerate(atlas_labels))
     atlas_stops = "".join(f'<button type="button" class="atlas-stop {"is-active" if index == 0 else ""}" data-atlas-stop="{kind}"><span class="atlas-stop-number">0{index+1}</span><div class="atlas-stop-media">{image(media, asset_id, label + "の外壁状態を示す文脈画像")}</div><div><h3>{esc(label)}</h3><p>{esc(description)}</p></div></button>' for index, (asset_id, label, description, kind) in enumerate(atlas_labels))
-    atlas_body = f'''<div class="intro-row"><div><p class="kicker">{esc(v02["kicker"])}</p>{headline(v02["headline"])}</div><p class="lead">{esc(v02["lead"])}</p></div><div class="atlas-layout" data-human-media="A03,A04,A05,A06"><div class="atlas-stage" data-atlas-stage><span class="atlas-stage-label">MATERIAL ATLAS / SURFACE DISCOVERY</span>{atlas_frames}<span class="atlas-stage-index">SCROLL TO TRACE / 04</span></div><div class="atlas-stops">{atlas_stops}</div></div>'''
+    atlas_body = f'''<div class="intro-row"><div><p class="kicker">{esc(v02["kicker"])}</p>{headline(v02["headline"])}</div><p class="lead">{esc(v02["lead"])}</p></div><div class="atlas-layout" data-human-media="A03,A04,A05,A06"><div class="atlas-stage" data-atlas-stage><span class="atlas-stage-label">表面のサインを読む</span>{atlas_frames}<span class="atlas-stage-index">4つの見え方</span></div><div class="atlas-stops">{atlas_stops}</div></div>'''
 
     scope_nodes = "".join(f'<button type="button" data-scope-node="{key}"><span>0{index+1} / {esc(label)}</span></button>' for index, (key, label) in enumerate((("wall", v03["scope"][0]), ("roof", v03["scope"][1]), ("high", v03["scope"][2]), ("repair", v03["scope"][3]))))
-    scope_body = f'''<div class="intro-row"><div><p class="kicker">{esc(v03["kicker"])}</p>{headline(v03["headline"])}</div><p class="lead">{esc(v03["lead"])}</p></div><div class="scope-layout" data-human-media="A07"><div class="scope-visual">{SCOPE_SVG}</div><div><div class="scope-index">{scope_nodes}</div><p class="scope-note">A07 / EXPLANATORY DIAGRAM · 相談範囲を、外壁・屋根・高所・修繕へ分けて見る。</p></div></div>'''
+    scope_body = f'''<div class="intro-row"><div><p class="kicker">{esc(v03["kicker"])}</p>{headline(v03["headline"])}</div><p class="lead">{esc(v03["lead"])}</p></div><div class="scope-layout" data-human-media="A07"><div class="scope-visual">{SCOPE_SVG}</div><div><div class="scope-index">{scope_nodes}</div><p class="scope-note">相談範囲を、外壁・屋根・高所・修繕へ分けて見る説明図。</p></div></div>'''
 
     metrics = "".join(f'<div class="roof-fact"><span>{esc(item["label"])}</span><strong>{esc(item["value"])}</strong><small>{esc(item.get("note", ""))}</small></div>' for item in v04["metrics"])
-    roof_body = f'''<div class="proof-header"><p class="kicker">{esc(v04["kicker"])}</p>{headline(v04["headline"])}<p class="lead">{esc(v04["lead"])}</p></div><div class="roof-layout" data-human-media="A08"><div class="roof-stage" data-roof-stage>{image(media, "A08", "日本の住宅屋根を高所から見る生成コンテキスト画像", class_name="roof-image", loading="eager")}<svg class="roof-path" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M12 76 C28 62 35 46 48 57 S71 39 90 25"/></svg><span class="roof-marker roof-marker--1"></span><span class="roof-marker roof-marker--2"></span><span class="roof-marker roof-marker--3"></span><span class="roof-label">A08 / HIGH PLACE · INSPECTION PATH</span></div><div class="roof-facts">{metrics}</div></div><p class="source-note">Source: official public pages · the roof image is a visual proxy, not a project record or diagnostic measurement.</p>'''
+    roof_body = f'''<div class="proof-header"><p class="kicker">{esc(v04["kicker"])}</p>{headline(v04["headline"])}<p class="lead">{esc(v04["lead"])}</p></div><div class="roof-layout" data-human-media="A08"><div class="roof-stage" data-roof-stage>{image(media, "A08", "日本の住宅屋根を高所から見る生成コンテキスト画像", class_name="roof-image", loading="eager")}<svg class="roof-path" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M12 76 C28 62 35 46 48 57 S71 39 90 25"/></svg><span class="roof-marker roof-marker--1"></span><span class="roof-marker roof-marker--2"></span><span class="roof-marker roof-marker--3"></span><span class="roof-label">屋根・高所の確認</span></div><div class="roof-facts">{metrics}</div></div><p class="source-note">公式掲載情報をもとに、確認できる範囲を示します。画像は参考用で、案件記録や診断値ではありません。</p>'''
 
-    process_data = [("A09", "準備する", "窓まわりを守り、塗る前の状態を整える。", "PREPARATION"), ("A10", "塗る", "外壁の面に合わせて、施工を進める。", "APPLICATION"), ("A11", "仕上げる", "端部と細部を見て、仕上がりを確認する。", "FINISHING")]
+    process_data = [("A09", "見て", "窓まわりを確認する。", "CHECK"), ("A10", "決めて", "状態を確かめ、内容を整理する。", "PLAN"), ("A11", "塗る", "内容を決めて施工する。", "PAINT")]
     craft_frames = "".join(f'<div class="craft-frame {"is-active" if index == 0 else ""} craft-frame--{asset_id}" data-process-media="{asset_id}">{image(media, asset_id, label + "の施工工程を示す文脈画像", class_name="craft-image")}</div>' for index, (asset_id, label, _, _) in enumerate(process_data))
-    craft_steps = "".join(f'<article class="craft-step {"is-active" if index == 0 else ""}" data-process-step="{asset_id}"><span>0{index+1}</span><strong>{esc(label)} / {esc(kicker)}</strong><div class="craft-mobile-media">{image(media, asset_id, label + "の施工工程を示す文脈画像")}</div><p>{esc(description)}</p></article>' for index, (asset_id, label, description, kicker) in enumerate(process_data))
-    craft_body = f'''<div class="process-intro"><p class="kicker">{esc(v05["kicker"])}</p>{headline(v05["headline"])}<p class="lead">{esc(v05["lead"])}</p></div><div class="craft-layout" data-human-media="A09,A10,A11"><div class="craft-stage" data-process-stage>{craft_frames}<span class="craft-stage-label">CRAFT PROGRESSION / 03 MEDIA</span><span class="craft-progress"></span></div><div class="craft-steps">{craft_steps}<p class="proof-line">{esc(v05["proof"])} <span>／ 公式掲載情報</span></p></div></div>'''
+    craft_steps = "".join(f'<article class="craft-step {"is-active" if index == 0 else ""}" data-process-step="{asset_id}" tabindex="0" role="button" aria-label="{esc(label)}の工程を表示"><span>0{index+1}</span><strong>{esc(label)} / {esc(kicker)}</strong><div class="craft-mobile-media">{image(media, asset_id, label + "の施工工程を示す文脈画像")}</div><p>{esc(description)}</p></article>' for index, (asset_id, label, description, kicker) in enumerate(process_data))
+    craft_body = f'''<div class="process-intro"><p class="kicker">{esc(v05["kicker"])}</p>{headline(v05["headline"])}<p class="lead">{esc(v05["lead"])}</p></div><div class="craft-layout" data-human-media="A09,A10,A11"><div class="craft-stage" data-process-stage>{craft_frames}<span class="craft-stage-label">工程を追う</span><span class="craft-progress"></span></div><div class="craft-steps">{craft_steps}<p class="proof-line">{esc(v05["proof"])} <span>／ 公式掲載情報</span></p></div></div>'''
 
     evidence_cards = "".join(f'<article class="evidence-card"><div class="card-label">{esc(card["label"])}</div><div><h3>{esc(card["title"])}</h3><p>{esc(card["body"])}</p><footer>{esc(card["source"])}</footer></div></article>' for card in v06["cards"])
-    evidence_body = f'''<div class="evidence-layout" data-human-media="A12"><div class="evidence-map-frame">{MAP_SVG}</div><div class="evidence-copy"><p class="kicker">{esc(v06["kicker"])}</p>{headline(v06["headline"])}<p class="lead">{esc(v06["lead"])}</p>{evidence_cards}<p class="evidence-note">A12 / SERVICE-AREA CONTEXT MAP · 公開情報を、条件と範囲を分けて確認する。</p></div></div>'''
+    evidence_body = f'''<div class="evidence-layout" data-human-media="A12"><div class="evidence-map-frame">{MAP_SVG}</div><div class="evidence-copy"><p class="kicker">{esc(v06["kicker"])}</p>{headline(v06["headline"])}<p class="lead">{esc(v06["lead"])}</p>{evidence_cards}<p class="evidence-note">公開情報を、条件と範囲に分けて確認する。</p></div></div>'''
 
     swatches = "".join(f'<button type="button" class="swatch-button" style="--swatch:{tone}" data-swatch="{index+1:02d}" aria-label="representative color {index+1:02d}"></button>' for index, tone in enumerate(("#e5ded1", "#cbb9a1", "#aa8d71", "#847a6e", "#677166", "#5b6663", "#6c4d43", "#3f4542")))
     material_body = f'''<div class="material-layout" data-human-media="A13,A14"><div><p class="kicker">{esc(v07["kicker"])}</p>{headline(v07["headline"])}<p class="lead">{esc(v07["lead"])}</p><div class="swatch-row" data-material-palette>{swatches}</div><p class="material-footnote">{esc(v07["footnote"])}</p></div><div><div class="paint-fan">{image(media, "A13", "住まいの外壁色を選ぶ物理色見本帳の文脈画像", class_name="paint-fan-image")}</div><div class="material-preview" data-material-preview>{image(media, "A14", "中立的な外壁素材の質感を示す文脈画像", class_name="material-preview-image")}<span class="material-preview-tint"></span><span class="material-preview-label" data-material-label>01 / warm mineral</span></div></div></div>'''
 
-    faq = "".join(f'<details {"open" if index == 0 else ""}><summary>{esc(question)}<span>＋</span></summary><p>{esc(answer)}</p></details>' for index, (question, answer) in enumerate(v08["items"]))
-    faq_body = f'''<div class="faq-layout" data-human-media="A15"><div><p class="kicker">{esc(v08["kicker"])}</p>{headline(v08["headline"])}<p class="faq-side-note">FAQ / INFORMATION PAUSE<br>動きを止めて、相談前に確認できることを残します。</p></div><div class="faq-list">{faq}</div><div class="faq-media">{image(media, "A15", "外壁塗装で使うローラーや刷毛、トレイの道具文脈画像")}</div></div>'''
+    faq = "".join(f'<details {"open" if index == 0 else ""}><summary>{esc(question)}<span data-lineqa-ignore="true">＋</span></summary><p>{esc(answer)}</p></details>' for index, (question, answer) in enumerate(v08["items"]))
+    faq_body = f'''<div class="faq-layout" data-human-media="A15"><div><p class="kicker">{esc(v08["kicker"])}</p>{headline(v08["headline"])}<p class="faq-side-note">よくある確認事項<br>相談前に確認できることを残します。</p></div><div class="faq-list">{faq}</div><div class="faq-media">{image(media, "A15", "外壁塗装で使うローラーや刷毛、トレイの道具文脈画像")}</div></div>'''
 
-    action_body = f'''<div class="closing-layout" data-human-media="A16"><div class="closing-media">{image(media, "A16", "住まいの外壁を見ながら相談する施主と点検者の生成コンテキスト画像", loading="eager")}</div><div class="closing-copy"><p class="kicker">{esc(v09["kicker"])}</p>{headline(v09["headline"])}<p class="lead">{esc(v09["lead"])}</p><div class="action-panel"><a class="action-link" href="tel:+818008080886" data-contact-action="phone"><span>{esc(v09["primary_action"])}</span><strong>{esc(v09["phone"])}</strong><small>{esc(v09["support"][0])}</small></a><a class="action-link" href="https://maylynnhands.com/contact/" data-contact-action="form"><span>{esc(v09["secondary_action"])}</span><small>公式問い合わせフォーム</small></a><p class="action-route"><strong>CONSULT</strong> 見えている状態 → 相談内容 → 現地確認</p></div><div class="closing-divider"></div></div></div>'''
+    action_body = f'''<div class="closing-layout" data-human-media="A16"><div class="closing-media">{image(media, "A16", "住まいの外壁を見ながら相談する施主と点検者の生成コンテキスト画像", loading="eager")}</div><div class="closing-copy"><p class="kicker">{esc(v09["kicker"])}</p>{headline(v09["headline"])}<p class="lead">{esc(v09["lead"])}</p><div class="action-panel"><a class="action-link" href="tel:+818008080886" data-contact-action="phone"><span>{esc(v09["primary_action"])}</span><strong>{esc(v09["phone"])}</strong><small>{esc(v09["support"][0])}</small></a><a class="action-link" href="https://maylynnhands.com/contact/" data-contact-action="form"><span>{esc(v09["secondary_action"])}</span><small>公式問い合わせフォーム</small></a><p class="action-route"><strong>相談の流れ</strong> 見えている状態 → 相談内容 → 現地確認</p></div><div class="closing-divider"></div></div></div>'''
 
     preload = "/" + media["A01"]["local_asset_path"]
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><meta name="description" content="塗る前に、まず状態を見る。小山市を中心としたメイリン塗装工務店のVisual & Motion Implementation。"><link rel="preload" as="image" href="{preload}"><title>メイリン塗装工務店｜FIELD OBSERVATION</title><style>{STYLE}</style></head><body data-round="2E-B" data-company="maylynn_paint"><header class="topbar"><strong>メイリン塗装工務店</strong><span>FIELD OBSERVATION CINEMATIC / MAYLYNN</span></header><main>{viewport(views["V01"], hero_body, class_name="hero-viewport", composition="asymmetric cinematic split")}{viewport(views["V02"], atlas_body, class_name="atlas-viewport", composition="sticky material atlas")}{viewport(views["V03"], scope_body, class_name="scope-viewport", composition="diagram + index")}{viewport(views["V04"], roof_body, class_name="roof-viewport", composition="dominant cinematic inspection")}{viewport(views["V05"], craft_body, class_name="craft-viewport", composition="sticky documentary process")}{viewport(views["V06"], evidence_body, class_name="evidence-viewport", composition="map + editorial proof")}{viewport(views["V07"], material_body, class_name="material-viewport", composition="interactive material split")}{viewport(views["V08"], faq_body, class_name="faq-viewport", composition="narrow photo + FAQ")}{viewport(views["V09"], action_body, class_name="action-viewport", composition="cinematic contact split")}</main><nav id="sticky-contact" class="sticky-contact" aria-label="contact"><a href="tel:+818008080886">電話</a><a href="https://maylynnhands.com/contact/">フォーム</a></nav><footer class="footer"><span>メイリン塗装工務店</span><span>公開情報 / Visual & Motion Implementation</span></footer>{SCRIPT}</body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><meta name="description" content="塗る前に、まず状態を見る。小山市を中心としたメイリン塗装工務店の外装相談。"><link rel="preload" as="image" href="{preload}"><title>メイリン塗装工務店｜塗る前に、まず状態を見る。</title><style>{STYLE}</style></head><body data-round="2E-C" data-company="maylynn_paint"><header class="topbar"><strong>メイリン塗装工務店</strong><span>住まいの状態から考える、外装相談</span></header><main>{viewport(views["V01"], hero_body, class_name="hero-viewport", composition="asymmetric cinematic split")}{viewport(views["V02"], atlas_body, class_name="atlas-viewport", composition="sticky material atlas")}{viewport(views["V03"], scope_body, class_name="scope-viewport", composition="diagram + index")}{viewport(views["V04"], roof_body, class_name="roof-viewport", composition="dominant cinematic inspection")}{viewport(views["V05"], craft_body, class_name="craft-viewport", composition="sticky documentary process")}{viewport(views["V06"], evidence_body, class_name="evidence-viewport", composition="map + editorial proof")}{viewport(views["V07"], material_body, class_name="material-viewport", composition="interactive material split")}{viewport(views["V08"], faq_body, class_name="faq-viewport", composition="narrow photo + FAQ")}{viewport(views["V09"], action_body, class_name="action-viewport", composition="cinematic contact split")}</main><nav id="sticky-contact" class="sticky-contact" aria-label="contact"><a href="tel:+818008080886">電話</a><a href="https://maylynnhands.com/contact/">フォーム</a></nav><footer class="footer"><span>メイリン塗装工務店</span><span>公開情報 / 外装相談</span></footer>{SCRIPT}</body></html>'''
 
 
 def self_contained_html(html_text: str, media: dict[str, dict[str, Any]]) -> str:
@@ -290,26 +310,62 @@ async def interaction_qa(url: str) -> dict[str, Any]:
 
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch()
+        desktop = await browser.new_page(viewport={"width": 1440, "height": 900})
+        await desktop.goto(url, wait_until="networkidle")
+        atlas = desktop.locator('[data-atlas-stage]')
+        await atlas.scroll_into_view_if_needed()
+        first_stop = desktop.locator('[data-atlas-stop="crack"]')
+        second_stop = desktop.locator('[data-atlas-stop="peeling"]')
+        await first_stop.hover()
+        await desktop.wait_for_timeout(150)
+        atlas_first = await atlas.get_attribute("data-active")
+        first_frame = await desktop.locator('[data-atlas-frame="crack"].is-active').count()
+        await second_stop.hover()
+        await desktop.wait_for_timeout(150)
+        atlas_second = await atlas.get_attribute("data-active")
+        second_frame = await desktop.locator('[data-atlas-frame="peeling"].is-active').count()
+        process_step = desktop.locator('[data-process-step="A10"]')
+        await process_step.click(force=True)
+        await desktop.wait_for_timeout(150)
+        process_mid = await desktop.locator('[data-process-stage]').get_attribute("data-process")
+        process_mid_src = await desktop.locator('[data-process-media="A10"].is-active img').get_attribute("src")
+        await desktop.locator('[data-process-step="A11"]').click(force=True)
+        await desktop.wait_for_timeout(150)
+        process_end = await desktop.locator('[data-process-stage]').get_attribute("data-process")
+        process_end_src = await desktop.locator('[data-process-media="A11"].is-active img').get_attribute("src")
+        desktop_interaction = {
+            "v02_hover": {"status": "PASS" if atlas_first == "crack" and atlas_second == "peeling" and first_frame == 1 and second_frame == 1 and atlas_first != atlas_second else "FAIL", "initial": atlas_first, "hover_state": atlas_second, "image_states": [first_frame, second_frame]},
+            "v05_process": {"status": "PASS" if process_mid == "A10" and process_end == "A11" and process_mid_src and process_end_src and process_mid_src != process_end_src else "FAIL", "states": [process_mid, process_end], "image_changed": bool(process_mid_src and process_end_src and process_mid_src != process_end_src)},
+        }
+        await desktop.close()
+
         page = await browser.new_page(viewport={"width": 390, "height": 844})
         await page.goto(url, wait_until="networkidle")
         scope_button = page.locator('[data-scope-node="roof"]')
         await scope_button.scroll_into_view_if_needed()
         await scope_button.click(force=True)
-        await page.wait_for_timeout(100)
+        await scope_button.dispatch_event("click")
+        await scope_button.focus()
+        await scope_button.press("Enter")
+        await page.wait_for_timeout(180)
         scope_active = await page.locator('[data-scope-node="roof"]').evaluate("node => node.classList.contains('is-active')")
         await page.locator('.swatch-button[data-swatch="05"]').click()
         selected_color = await page.locator('[data-material-palette]').get_attribute("data-selected-color")
-        await page.locator('[data-process-step="A10"]').scroll_into_view_if_needed()
+        await page.locator('[data-atlas-stop="moss"]').click(force=True)
+        mobile_atlas = await page.locator('[data-atlas-stage]').get_attribute("data-active")
+        await page.locator('[data-process-step="A10"]').click(force=True)
         await page.wait_for_timeout(100)
-        process_active = await page.locator('[data-process-step="A10"].is-active').count()
+        mobile_process = await page.locator('[data-process-step="A10"].is-active').count()
         await page.locator('.faq-list details').nth(1).locator('summary').click()
         faq_open = await page.locator('.faq-list details').nth(1).get_attribute('open')
         await page.emulate_media(reduced_motion="reduce")
         await page.reload(wait_until="networkidle")
         reduced_mode = await page.locator('html').get_attribute('data-motion')
-        result = {"status": "PASS" if scope_active and selected_color == "05" and process_active >= 1 and faq_open == "" and reduced_mode == "reduced" else "FAIL", "scope_selection": scope_active, "selected_color": selected_color, "process_active_count": process_active, "faq_second_open": faq_open == "", "reduced_motion_mode": reduced_mode}
+        mobile_interaction = {"status": "PASS" if scope_active and selected_color == "05" and mobile_atlas == "moss" and mobile_process == 1 and faq_open == "" and reduced_mode == "reduced" else "FAIL", "scope_selection": scope_active, "selected_color": selected_color, "atlas_tap_state": mobile_atlas, "process_active_count": mobile_process, "faq_second_open": faq_open == "", "reduced_motion_mode": reduced_mode}
+        await page.close()
+        all_pass = all(item["status"] == "PASS" for item in [desktop_interaction["v02_hover"], desktop_interaction["v05_process"], mobile_interaction])
         await browser.close()
-        return result
+        return {"status": "PASS" if all_pass else "FAIL", "desktop": desktop_interaction, "mobile": mobile_interaction, "contract": "hover/focus desktop; tap/click mobile; DOM state and image source must change"}
 
 
 async def record_motion(url: str, output: Path) -> dict[str, Any]:
@@ -334,11 +390,14 @@ async def record_motion(url: str, output: Path) -> dict[str, Any]:
             await page.wait_for_timeout(4200)
             if viewport_id == "V02":
                 for stop in ("crack", "peeling", "fading", "moss"):
-                    await page.locator(f'[data-atlas-stop="{stop}"]').scroll_into_view_if_needed()
+                    target = page.locator(f'[data-atlas-stop="{stop}"]')
+                    await target.scroll_into_view_if_needed()
+                    await target.hover()
                     await page.wait_for_timeout(650)
             if viewport_id == "V05":
                 for step in ("A09", "A10", "A11"):
                     await page.locator(f'[data-process-step="{step}"]').scroll_into_view_if_needed()
+                    await page.locator(f'[data-process-step="{step}"]').click(force=True)
                     await page.wait_for_timeout(650)
             if viewport_id == "V07":
                 await page.locator('.swatch-button[data-swatch="05"]').click()

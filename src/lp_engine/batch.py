@@ -17,10 +17,22 @@ import threading
 from typing import Any, Callable, Mapping
 from uuid import uuid4
 
+from .editorial_quality import EDITORIAL_GATES
+
 BATCH_STATES = ("QUEUED", "RUNNING", "COMPLETED", "HOLD", "BLOCKED", "FAILED", "RETRY_PENDING", "CANCELLED")
 FAILURE_TYPES = ("INPUT_ERROR", "RESEARCH_ERROR", "SAFETY_BLOCK", "RIGHTS_BLOCK", "GENERATION_ERROR", "RENDER_ERROR", "QA_ERROR", "BROWSER_ERROR", "REGISTRY_ERROR", "UNKNOWN")
 RETRYABLE = {"GENERATION_ERROR", "RENDER_ERROR", "BROWSER_ERROR", "REGISTRY_ERROR"}
 QUALITY_AXES = ("Immediate Read", "Distinctness", "Owner Specificity", "Visual Hierarchy", "Craft Detail", "Emotional Pull", "Trust", "Share Impulse", "Mobile Quality", "Conversion Intent")
+
+
+def validate_publish_ready(quality_contract: Mapping[str, Any] | None) -> dict[str, Any]:
+    """Fail closed for batch output when the editorial contract is present."""
+    contract = dict(quality_contract or {})
+    gates = dict(contract.get("gates") or {})
+    missing = [name for name in EDITORIAL_GATES if name not in gates]
+    failed = [name for name in EDITORIAL_GATES if gates.get(name) is not True]
+    status = "PASS" if not missing and not failed and contract.get("status") == "PASS" else "FAIL"
+    return {"status": status, "missing_gates": missing, "failed_gates": failed, "publish_ready": status == "PASS"}
 
 def _now() -> str:
     return datetime.now(UTC).isoformat()
@@ -169,6 +181,11 @@ def run_batch(*, batch_id: str, inputs: list[BatchInput], registry: BatchRegistr
                 item.generation_id = str(result.get("generation_id", _id("generation"))); item.artifact_id = str(result.get("artifact_id", _id("artifact")))
                 item.safety = dict(result.get("safety", {"status": "PASS"})); item.qa = dict(result.get("qa", {"status": "PASS"})); item.quality = dict(result.get("quality", {}))
                 item.state = str(result.get("state", "COMPLETED")); item.failure_type = None; item.error = None
+                if result.get("quality_contract") is not None or item.qa.get("editorial_contract") is not None:
+                    contract_check = validate_publish_ready(result.get("quality_contract") or item.qa.get("editorial_contract"))
+                    item.qa["editorial_contract"] = contract_check
+                    if contract_check["status"] != "PASS":
+                        item.state = "HOLD"; item.failure_type = "QA_ERROR"; item.error = "editorial quality contract failed"
                 if browser_qa:
                     item.qa["browser"] = dict(browser_qa(inp, Path(item.output_dir)))
                     item.qa["browser"]["status"] = item.qa["browser"].get("status", "PASS")

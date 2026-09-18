@@ -20,6 +20,7 @@ from typing import Any, Mapping, Sequence
 
 from .evidence_safety import evaluate_evidence_selection
 from .creative_genome import derive_creative_genome, public_copy_gate
+from .editorial_quality import make_text_ir, repair_text_ir, render_text_ir
 from .narrative_architecture import derive_narrative_architecture, narrative_gates
 from .premium_scene import build_premium_scene_plan, scene_plan_gates
 from .human_translation import build_human_translation
@@ -189,6 +190,12 @@ def _line_shape(text: str, *, max_chars: int = 12) -> list[str]:
     cut = max(4, min(len(value) - 3, max_chars))
     head, tail = value[:cut], value[cut:]
     return [head] + _line_shape(tail, max_chars=max_chars)
+
+
+def _semantic_text(text: str, role: str, preferred_lines: Sequence[str] | None = None, *, paragraphs: Sequence[str] | None = None, context: Mapping[str, Any] | None = None) -> dict[str, Any]:
+    """Build the renderer-facing IR; no renderer owns editorial line breaks."""
+    lines = list(preferred_lines or _line_shape(text, max_chars=12))
+    return repair_text_ir(make_text_ir(text, role=role, semantic_chunks=lines, preferred_lines=lines, paragraphs=paragraphs, context=context))
 
 
 def _authority_order(raw: Mapping[str, Any], evidence: Sequence[Mapping[str, Any]]) -> list[str]:
@@ -701,14 +708,18 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     hero_headline = _text(hero_override.get("headline")) or headline
     hero_supporting = _text(hero_override.get("supporting")) or f"{location}で{category}を探している方へ。{public_truth}。{signature_phrase}を手がかりに、次の一歩を考えます。"
     hero_microcopy = _text(hero_override.get("microcopy")) or f"{location}｜{signature_phrase}。"
+    hero_semantic_text = _semantic_text(hero_headline, "hero_headline", _line_shape(hero_headline, max_chars=9 if field_validation else 7), context={"subject": category, "preferred_line_policy": "meaning_unit"})
     return {
         "schema_version": SCHEMA_VERSION,
         "hero": {
             "eyebrow": company_name,
             "headline": hero_headline,
             "headline_lines": _line_shape(hero_headline, max_chars=9 if field_validation else 7),
+            "semantic_text": hero_semantic_text,
             "supporting": hero_supporting,
+            "supporting_semantic_text": _semantic_text(hero_supporting, "lead", paragraphs=[part for part in hero_supporting.splitlines() if part.strip()], context={"subject": category}),
             "cta": cta,
+            "cta_semantic_text": _semantic_text(cta, "cta", [cta]),
             "microcopy": hero_microcopy,
         },
         "sections": [
@@ -716,6 +727,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                 "section_id": item["section_id"],
                 "headline": section_headlines.get(item["section_id"], item["key_message"]),
                 "headline_lines": _line_shape(section_headlines.get(item["section_id"], item["key_message"]), max_chars=11),
+                "semantic_text": _semantic_text(section_headlines.get(item["section_id"], item["key_message"]), "section_headline", _line_shape(section_headlines.get(item["section_id"], item["key_message"]), max_chars=11), context={"section_id": item["section_id"]}),
                 "body": {
                     "opening": (f"{location}で、住まいの状態を相談できます。" if layout_profile == "field_ledger" else f"{location}で、自分に合う過ごし方を考える時間をつくります。" if layout_profile == "care_rhythm" else f"{location}の料理教室で、食材と手を動かす時間に出会います。"),
                     "truth": (public_truth if layout_profile != "studio_invitation" else "ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。"),
@@ -731,7 +743,9 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
         "global_constraints": {
             "all_customer_facing_claims_require_evidence_id": True,
             "unsupported_reassurance": "blocked",
-            "line_shape": "meaning_units_not_character_count",
+            "line_shape": "rendered_browser_line_shape_with_semantic_ir",
+            "paragraph_architecture": "role_and_sentence_units_not_character_count",
+            "copy_naturalness_gate": "subject_object_context_naturalness_commercial_usefulness",
         },
         "process_steps": process_steps,
         "premium_scene_copy": premium_surface,
@@ -993,7 +1007,7 @@ def _render_styles(tokens: Mapping[str, Any]) -> str:
     * {{ box-sizing:border-box; }} html {{ scroll-behavior:smooth; }} body {{ margin:0; background:var(--paper); color:var(--ink); font-family:{typo['body']}; font-weight:var(--body-weight); line-height:var(--body-leading); }}
     a {{ color:inherit; }} .site-shell {{ overflow:hidden; }} .topline {{ width:var(--rail); margin:auto; padding:24px 0; display:flex; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }}
     .section {{ width:var(--rail); margin:auto; padding:var(--section, {spacing['section']}) 0; position:relative; }} .section--quiet {{ padding-top:clamp(4rem,8vw,8rem); padding-bottom:clamp(4rem,8vw,8rem); }} .section--peak {{ min-height:min(92vh, 860px); display:grid; align-content:center; }}
-    .hero-grid {{ display:grid; grid-template-columns:minmax(0, 1.4fr) minmax(160px, .6fr); gap:clamp(1.5rem, 5vw, 6rem); align-items:end; }} .eyebrow {{ color:var(--accent); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }} h1,h2,p {{ margin:0; }} h1 {{ max-width:none; font-family:var(--display); font-weight:var(--display-weight); font-size:var(--hero-size); line-height:1.06; letter-spacing:-.045em; }} h1 .headline-line,h2 .headline-line {{ display:block; white-space:nowrap; }} h2 {{ max-width:none; font-family:var(--display); font-weight:var(--display-weight); font-size:var(--h2-size); line-height:1.12; letter-spacing:-.035em; }} .lead {{ max-width:34rem; font-size:{scale['lead']}; }} .small {{ color:var(--muted); font-size:.82rem; }} .section-header {{ display:flex; justify-content:space-between; gap:2rem; align-items:flex-end; border-top:1px solid var(--line); padding-top:18px; margin-bottom:clamp(2rem,5vw,5rem); }}
+    .hero-grid {{ display:grid; grid-template-columns:minmax(0, 1.4fr) minmax(160px, .6fr); gap:clamp(1.5rem, 5vw, 6rem); align-items:end; }} .eyebrow {{ color:var(--accent); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }} h1,h2,p {{ margin:0; }} h1 {{ max-width:none; font-family:var(--display); font-weight:var(--display-weight); font-size:var(--hero-size); line-height:1.06; letter-spacing:-.045em; }} h1 .headline-line,h2 .headline-line,.semantic-line {{ display:block; white-space:normal; text-wrap:balance; }} h2 {{ max-width:none; font-family:var(--display); font-weight:var(--display-weight); font-size:var(--h2-size); line-height:1.12; letter-spacing:-.035em; }} .lead {{ max-width:34rem; font-size:{scale['lead']}; }} .small {{ color:var(--muted); font-size:.82rem; }} .section-header {{ display:flex; justify-content:space-between; gap:2rem; align-items:flex-end; border-top:1px solid var(--line); padding-top:18px; margin-bottom:clamp(2rem,5vw,5rem); }}
     .hero-mark {{ aspect-ratio:1; border:1px solid var(--ink); position:relative; background:linear-gradient(135deg, transparent 48%, var(--accent) 49%, var(--accent) 51%, transparent 52%), repeating-linear-gradient(0deg, transparent 0 19px, var(--line) 20px); }} .hero-mark::before,.hero-mark::after {{ content:""; position:absolute; border:1px solid var(--ink); border-radius:50%; width:28%; aspect-ratio:1; left:14%; top:18%; }} .hero-mark::after {{ left:auto; top:auto; right:14%; bottom:18%; }}
     .visual-scene {{ position:relative; min-height:clamp(240px,34vw,480px); overflow:hidden; border:var(--human-border-width) solid var(--ink); border-radius:var(--surface-radius); background:var(--paper); isolation:isolate; }} .visual-scene::after {{ content:""; position:absolute; inset:10%; border:1px solid color-mix(in srgb, var(--ink) 34%, transparent); pointer-events:none; }} .scene-caption {{ position:absolute; left:18px; bottom:16px; z-index:3; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }}
     .scene-material_field {{ background:linear-gradient(135deg,var(--paper) 0 48%,var(--accent) 48% 50%,var(--ink) 50% 52%,var(--paper) 52%); }} .scene-material_field .scene-plane {{ position:absolute; width:65%; height:46%; right:10%; top:18%; background:var(--ink); transform:skewY(-12deg); box-shadow:18px 18px 0 var(--accent); }} .scene-material_field .scene-line {{ position:absolute; left:12%; right:12%; bottom:28%; border-top:1px solid var(--ink); }}
@@ -1056,27 +1070,9 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     ctas = {x.get("stage"): x for x in plan.get("scene_plan", [])}
     signature_anchors = list(translation.get("signature_anchors") or [])
     def esc(v): return html.escape(str(v or ""), quote=True)
-    heading_breaks = {
-        "住まいの「気になる」から、話せる。": ("住まいの「気", "になる」から、", "話せる。"),
-        "まず、気になる場所を見る。": ("まず、気になる", "場所を見る。"),
-        "住まいに、手を入れる。": ("住まいに、手を", "入れる。"),
-        "気になることを、ひとつずつ。": ("気になることを、", "ひとつずつ。"),
-        "住まいのことは、気になるところから。": ("住まいのことは、気", "になるところから。"),
-        "静けさに、頭を預ける。": ("静けさに、頭を", "預ける。"),
-        "まずは、頭を預ける。": ("まずは、頭を", "預ける。"),
-        "自分の時間を、話して選ぶ。": ("自分の時間を、", "話して選ぶ。"),
-        "その静けさを、自分の時間として。": ("その静けさを、", "自分の時間として。"),
-        "ストウブを囲んで、手を動かす。": ("ストウブを", "囲んで、手を", "動かす。"),
-        "食材に触れる。": ("食材に触れる。",),
-        "手を動かすと、一皿が進む。": ("手を動かすと、", "一皿が進む。"),
-        "できた一皿を、食卓へ。": ("できた一皿を、", "食卓へ。"),
-        "その食卓に、自分も加わる。": ("その食卓に、", "自分も加わる。"),
-    }
     def heading_markup(value: str, tag: str) -> str:
-        lines = heading_breaks.get(value)
-        if not lines or "".join(lines) != value:
-            return f"<{tag}>{esc(value)}</{tag}>"
-        return f"<{tag}>" + "".join(f'<span class="headline-line">{esc(line)}</span>' for line in lines) + f"</{tag}>"
+        ir = repair_text_ir(make_text_ir(value, role="section_headline", context={"renderer": "premium"}))
+        return render_text_ir(ir, tag=tag, escape=esc)
     chunks = []
     rendered_cta_stages = set()
     for i, scene in enumerate(plan.get("scene_plan", [])):
@@ -1227,7 +1223,10 @@ def render_html(spec: Mapping[str, Any]) -> str:
     contact_markup = "".join(f'<div>{_esc(item.get("claim"))}</div>' for item in contact_claims)
     steps = list(copy.get("process_steps") or ["状況を伝える", "対応できることを確認する", "次の案内を考える"])
     steps_markup = "".join(f'<div class="step"><div class="step-number">0{idx}</div><p>{_esc(label)}</p></div>' for idx, label in enumerate(steps, 1))
-    lines_markup = "".join(f'<span class="headline-line">{_esc(line)}</span>' for line in hero["headline_lines"])
+    def semantic_markup(record: Mapping[str, Any], tag: str = "h2") -> str:
+        ir = record.get("semantic_text") or _semantic_text(_text(record.get("headline")), "section_headline", record.get("headline_lines"))
+        return render_text_ir(ir, tag=tag, escape=_esc)
+    lines_markup = semantic_markup(hero, "h1")
     location = _esc(company.get("location"))
     category = _esc(company.get("service_category"))
     name = _esc(company.get("company_name"))
@@ -1259,11 +1258,11 @@ def render_html(spec: Mapping[str, Any]) -> str:
 <body class="page-{_esc(profile)}"><div class="site-shell">
 <header class="topline"><span>{name}</span><span>{location}</span></header>
 <main>
-<section class="section section--peak" data-reveal data-role="hero_orientation" data-layout="{_esc(composition_by_section.get("opening", {}).get("layout_type", "split_rail"))}"><div class="calibration"></div><div class="hero-grid"><div><div class="eyebrow">{_esc(hero["eyebrow"])}</div><h1>{lines_markup}</h1><p class="lead" style="margin-top:28px">{_esc(hero["supporting"])}</p>{cta_markup("discovery", hero["cta"], "#way-in", "→")}<p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div>{scene_markup}</div></section>
-<section class="section section--peak" data-reveal data-role="company_truth" data-layout="{_esc(composition_by_section.get("truth", {}).get("layout_type", "offset_evidence_surface"))}"><div class="section-header"><span class="eyebrow">01 / 会社の輪郭</span><span class="small">{location}</span></div><div class="proof-surface"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["truth"]["headline_lines"])}</h2>{truth_photo}</div><div><p class="lead">{_esc(copy_sections["truth"]["body"])}</p><div class="claim-list" style="margin-top:34px">{claims_markup}</div></div></div></section>
-<section class="section section--quiet" id="way-in" data-reveal data-role="service_process" data-layout="{_esc(composition_by_section.get("way_in", {}).get("layout_type", "sequence_rail"))}"><div class="section-header"><span class="eyebrow">02 / 入口のリズム</span><span class="small">{_esc(ia_label := _text(sections["way_in"].get("layout_hint")) or "次を考える")}</span></div><div class="hero-grid"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["way_in"]["headline_lines"])}</h2>{process_photo}</div><div><p class="lead">{_esc(copy_sections["way_in"]["body"])}</p></div></div><div class="sequence" style="margin-top:64px">{steps_markup}</div></section>
-<section class="section section--quiet" id="contact" data-reveal data-role="next_step" data-layout="{_esc(composition_by_section.get("contact", {}).get("layout_type", "contact_strip"))}"><div class="section-header"><span class="eyebrow">03 / 次の案内</span><span class="small">{location}</span></div><div class="contact-strip"><div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["contact"]["headline_lines"])}</h2><p class="lead" style="margin-top:24px">{_esc(copy_sections["contact"]["body"])}</p>{next_photo}<div class="contact-lines" style="margin-top:28px">{contact_markup}</div></div><div>{cta_markup("reassurance", hero["cta"], "#contact", "↗")}</div></div></section>
-<section class="section section--peak" data-reveal data-role="cta_zone" data-layout="{_esc(composition_by_section.get("close", {}).get("layout_type", "closing_field"))}"><div class="hero-grid"><div><div class="eyebrow">04 / {category}</div><h2>{"".join(f'<span class="headline-line">{_esc(line)}</span>' for line in copy_sections["close"]["headline_lines"])}</h2><p class="lead" style="margin-top:28px">{_esc(copy_sections["close"]["body"])}</p>{cta_photo}</div><div>{cta_markup("action", hero["cta"], contact_href, "↗")}<p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div></div></section>
+<section class="section section--peak" data-reveal data-role="hero_orientation" data-layout="{_esc(composition_by_section.get("opening", {}).get("layout_type", "split_rail"))}"><div class="calibration"></div><div class="hero-grid"><div><div class="eyebrow">{_esc(hero["eyebrow"])}</div>{lines_markup}<p class="lead" style="margin-top:28px">{_esc(hero["supporting"])}</p>{cta_markup("discovery", hero["cta"], "#way-in", "→")}<p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div>{scene_markup}</div></section>
+<section class="section section--peak" data-reveal data-role="company_truth" data-layout="{_esc(composition_by_section.get("truth", {}).get("layout_type", "offset_evidence_surface"))}"><div class="section-header"><span class="eyebrow">01 / 会社の輪郭</span><span class="small">{location}</span></div><div class="proof-surface"><div>{semantic_markup(copy_sections["truth"])}{truth_photo}</div><div><p class="lead">{_esc(copy_sections["truth"]["body"])}</p><div class="claim-list" style="margin-top:34px">{claims_markup}</div></div></div></section>
+<section class="section section--quiet" id="way-in" data-reveal data-role="service_process" data-layout="{_esc(composition_by_section.get("way_in", {}).get("layout_type", "sequence_rail"))}"><div class="section-header"><span class="eyebrow">02 / 入口のリズム</span><span class="small">{_esc(ia_label := _text(sections["way_in"].get("layout_hint")) or "次を考える")}</span></div><div class="hero-grid"><div>{semantic_markup(copy_sections["way_in"])}{process_photo}</div><div><p class="lead">{_esc(copy_sections["way_in"]["body"])}</p></div></div><div class="sequence" style="margin-top:64px">{steps_markup}</div></section>
+<section class="section section--quiet" id="contact" data-reveal data-role="next_step" data-layout="{_esc(composition_by_section.get("contact", {}).get("layout_type", "contact_strip"))}"><div class="section-header"><span class="eyebrow">03 / 次の案内</span><span class="small">{location}</span></div><div class="contact-strip"><div>{semantic_markup(copy_sections["contact"])}<p class="lead" style="margin-top:24px">{_esc(copy_sections["contact"]["body"])}</p>{next_photo}<div class="contact-lines" style="margin-top:28px">{contact_markup}</div></div><div>{cta_markup("reassurance", hero["cta"], "#contact", "↗")}</div></div></section>
+<section class="section section--peak" data-reveal data-role="cta_zone" data-layout="{_esc(composition_by_section.get("close", {}).get("layout_type", "closing_field"))}"><div class="hero-grid"><div><div class="eyebrow">04 / {category}</div>{semantic_markup(copy_sections["close"])}<p class="lead" style="margin-top:28px">{_esc(copy_sections["close"]["body"])}</p>{cta_photo}</div><div>{cta_markup("action", hero["cta"], contact_href, "↗")}<p class="small" style="margin-top:16px">{_esc(hero["microcopy"])}</p></div></div></section>
 </main><footer class="topline footer-note"><span>{name}</span><span>この先の相談へ</span></footer>
 </div><script>for (const node of document.querySelectorAll('[data-reveal]')) {{ const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {{ if (entry.isIntersecting) {{ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }} }}), {{ threshold: 0.12 }}); observer.observe(node); }}</script></body></html>'''
 

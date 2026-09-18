@@ -1,0 +1,140 @@
+name: Round 2E-C Editorial Engine Hardening
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "src/lp_engine/**"
+      - "scripts/run_round2e_b_maylynn.py"
+      - "scripts/run_round2e_c_editorial_hardening.py"
+      - "assets/photography/generated/maylynn_paint/round2e/**"
+      - "assets/photography/stock/maylynn_paint/craft_handwork.jpg"
+      - "assets/photography/stock/maylynn_paint/material_detail.jpg"
+      - "tests/test_round2e_b_visual_motion.py"
+      - "tests/test_round2e_c_editorial_engine.py"
+      - ".github/workflows/round2e_c_editorial_engine_hardening.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  round2e-c-editorial-engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout pushed HEAD
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package, test runner, and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest
+          python -m playwright install --with-deps chromium
+
+      - name: Run editorial, synthetic, and related engine contracts
+        run: |
+          python -m pytest -q tests/test_round2e_c_editorial_engine.py tests/test_round2e_b_visual_motion.py
+          python -m unittest \
+            tests.test_browser_qa_static \
+            tests.test_browser_smoke \
+            tests.test_photography_asset_preflight \
+            tests.test_batch \
+            tests.test_production_generation \
+            tests.test_round2c_architecture \
+            tests.test_round2d_completion
+
+      - name: Verify repository diff contract
+        run: git diff --check
+
+      - name: Generate Round 2E-C artifact
+        id: generate
+        continue-on-error: true
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+        run: python scripts/run_round2e_c_editorial_hardening.py
+
+      - name: Surface generated diagnostics
+        if: always()
+        run: |
+          if [ -f artifacts/round2e_c/summary.json ]; then
+            cat artifacts/round2e_c/summary.json >> "$GITHUB_STEP_SUMMARY"
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path("artifacts/round2e_c/summary.json").read_text(encoding="utf-8"))
+          for name, value in summary.get("gate_checks", {}).items():
+              if not value:
+                  print(f"::error file=.github/workflows/round2e_c_editorial_engine_hardening.yml,line=1::Round 2E-C gate failed: {name}")
+          for name, value in summary.get("editorial_contract", {}).get("gates", {}).items():
+              if not value:
+                  print(f"::error file=.github/workflows/round2e_c_editorial_engine_hardening.yml,line=1::Editorial gate failed: {name}")
+          PY
+          else
+            echo "Round 2E-C summary.json was not produced." >> "$GITHUB_STEP_SUMMARY"
+            find artifacts/round2e_c -maxdepth 3 -type f -print 2>/dev/null || true
+          fi
+
+      - name: Upload failure diagnostics
+        if: steps.generate.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2e-c-failure-diagnostics-${{ github.sha }}
+          path: artifacts/round2e_c
+          if-no-files-found: warn
+
+      - name: Stop on generation failure
+        if: steps.generate.outcome == 'failure'
+        run: exit 1
+
+      - name: Assert machine technical and Shun re-review readiness
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          root = Path("artifacts/round2e_c")
+          summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
+          manifest = json.loads((root / "completion_manifest.json").read_text(encoding="utf-8"))
+          head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          assert summary["status"] == "PASS"
+          assert summary["source_head"] == head
+          assert summary["machine_technical_ready"] == "YES"
+          assert summary["shun_rereview_ready"] == "YES"
+          assert summary["human_visual_review"] == "DEFERRED_TO_SHUN"
+          assert summary["one_million_yen_gate"] == "NOT_ASSESSED"
+          assert manifest["source_head"] == head
+          assert len(manifest["viewports"]) == 9
+          assert all(item["status"] == "FINAL" for item in manifest["viewports"])
+          assert summary["browser_qa"] == {
+              "status": "PASS", "total": 9, "pass": 9, "fail": 0,
+              "overflow_max": 0.0, "console_errors": 0,
+              "page_errors": 0, "request_failures": 0, "line_issue_count": 0,
+          }
+          assert summary["html_review"]["browser_qa"]["pass"] == 2
+          assert summary["html_review"]["browser_qa"]["fail"] == 0
+          assert summary["editorial_contract"]["status"] == "PASS"
+          assert all(summary["editorial_contract"]["gates"].values())
+          assert summary["interaction_qa"]["status"] == "PASS"
+          assert summary["captures"]["total"] == 12
+          assert summary["motion_recording"]["status"] == "PASS"
+          assert summary["motion_recording"]["bytes"] > 0
+          assert summary["motion_recording"]["coverage"] == ["V01", "V02", "V04", "V05", "V07", "V09"]
+          assert summary["maylynn_corrections"]["internal_label_leakage"] == 0
+          assert summary["nagi_watashi_regression"]["creative_redesign"] == "NOT_STARTED"
+          assert summary["manual_lp_edit"] == 0
+          assert summary["artifact"]["name"] == f"round2e-c-editorial-engine-hardening-{head}"
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload Round 2E-C editorial engine artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2e-c-editorial-engine-hardening-${{ github.sha }}
+          path: artifacts/round2e_c
+          if-no-files-found: error

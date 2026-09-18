@@ -56,8 +56,10 @@ class Round2EBVisualMotionTests(unittest.TestCase):
             self.assertIn(f'data-asset-id="{asset_id}"', rendered)
         for viewport_id in [f"V0{i}" for i in range(1, 10)]:
             self.assertIn(f'data-viewport-id="{viewport_id}"', rendered)
-        for marker in ("scope-illustration", "evidence-map", "roof-path", "craft-stage", "material-preview", "prefers-reduced-motion", "NOT EVIDENCE"):
+        for marker in ("scope-illustration", "evidence-map", "roof-path", "craft-stage", "material-preview", "prefers-reduced-motion", "参考イメージ", "表面のサインを読む", "工程を追う"):
             self.assertIn(marker, rendered)
+        self.assertNotIn("NOT EVIDENCE", rendered)
+        self.assertNotIn("FIELD OBSERVATION", rendered)
         self.assertNotIn("nagi_no_mirai", rendered)
         self.assertNotIn("watashi_no_daidokoro", rendered)
         self.assertNotIn("TODO", rendered)
