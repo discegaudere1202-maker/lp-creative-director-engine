@@ -29,6 +29,21 @@ def _role_for_scene(grammar: str, roles: Sequence[str], narrative_state: str = "
         "table_scene": ("table_", "finished_", "hero_shared"),
     }
     used = used or set()
+    state = _text(narrative_state).lower()
+    demand_groups = (
+        (("encounter", "arrive", "observe", "opening", "context"), ("hero_", "context", "place_")),
+        (("touch", "hands", "watch", "technique", "practice"), ("hands_", "hand_", "craft_", "technique")),
+        (("make", "process", "cook", "change", "work"), ("craft_", "hand_", "ingredient_", "material_")),
+        (("share", "finish", "table", "result", "imagine"), ("finished_", "table_", "result", "hero_shared")),
+        (("feel", "care", "welcome", "trust", "human"), ("welcome_", "trust_", "human")),
+        (("settle", "sensory", "detail", "pause"), ("sensory_", "detail", "material_")),
+        (("choose", "time", "consult", "join", "contact"), ("hand_", "technique", "welcome_", "trust_")),
+    )
+    for tokens, preferred in demand_groups:
+        if any(token in state for token in tokens):
+            for role in roles:
+                if role not in used and any(token in _text(role) for token in preferred):
+                    return _text(role)
     for role in roles:
         if role not in used and any(token in _text(role) for token in groups.get(grammar, ())):
             return _text(role)

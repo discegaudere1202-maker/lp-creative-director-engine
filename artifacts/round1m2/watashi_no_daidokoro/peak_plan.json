@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "selection": "rendered_candidate_ranking",
+  "peaks": [
+    {
+      "peak_id": "peak-03-make",
+      "scene_id": "scene-03-make",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 2,
+        "narrative_significance": 2,
+        "screenshot_independence": 2,
+        "visual_concentration": 1
+      },
+      "total": 13,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "料理ができていく 料理教室で食材を選び、料理の流れを一緒に学びます。 場と内容を確かめる",
+      "rendered_authority": "DATA",
+      "signature_anchor_ids": [
+        "anchor-02-service"
+      ],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-02-touch",
+      "scene_id": "scene-02-touch",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 2,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 2
+      },
+      "total": 13,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "手を動かしてみる 手を動かし、火を入れる順序を確かめます。",
+      "rendered_authority": "PERSON",
+      "signature_anchor_ids": [],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-04-share",
+      "scene_id": "scene-04-share",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 2,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 2
+      },
+      "total": 13,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "食卓を囲む ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+      "rendered_authority": "WORLD",
+      "signature_anchor_ids": [],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-01-encounter",
+      "scene_id": "scene-01-encounter",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 1,
+        "perceptual_delta": 1,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 2
+      },
+      "total": 11,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "食材に出会う 福岡市西区の料理教室で、食材と手を動かす時間に出会います。 料理の流れを見る",
+      "rendered_authority": "WORLD",
+      "signature_anchor_ids": [
+        "anchor-01-place",
+        "anchor-02-service"
+      ],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    }
+  ],
+  "candidate_count": 5,
+  "fixed_position_selection": false
+}

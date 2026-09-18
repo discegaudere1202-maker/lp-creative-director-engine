@@ -1,0 +1,239 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "bindings": [
+        {
+          "scene_id": "scene-01-observe",
+          "narrative_state": "observe",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+          "photo_role": "hero_home_finish",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "narrative_state": "read_material",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/stock/maylynn_paint/material_detail.jpg",
+          "photo_role": "material_detail",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "narrative_state": "watch_hands",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+          "photo_role": "craft_handwork",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "narrative_state": "imagine_change",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+          "photo_role": "trust_consultation",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "expected_media": false,
+          "rendered_media": false,
+          "photo_role": "typography",
+          "status": "PASS"
+        }
+      ],
+      "semantic_score_threshold": 0.65,
+      "temporal_inversion_count": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "bindings": [
+        {
+          "scene_id": "scene-01-arrive",
+          "narrative_state": "arrive",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+          "photo_role": "hero_treatment_space",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "narrative_state": "settle",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/generated/nagi_no_mirai/sensory_detail.png",
+          "photo_role": "sensory_detail",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "narrative_state": "feel_care",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/generated/nagi_no_mirai/welcome_human.png",
+          "photo_role": "welcome_human",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "narrative_state": "choose_time",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/stock/nagi_no_mirai/hand_technique.jpg",
+          "photo_role": "hand_technique",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "expected_media": false,
+          "rendered_media": false,
+          "photo_role": "typography",
+          "status": "PASS"
+        }
+      ],
+      "semantic_score_threshold": 0.65,
+      "temporal_inversion_count": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "bindings": [
+        {
+          "scene_id": "scene-01-encounter",
+          "narrative_state": "encounter",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/generated/watashi_no_daidokoro/hero_shared_cooking.png",
+          "photo_role": "hero_shared_cooking",
+          "timeline_reset_reason": "hero_preview_then_process_start",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "narrative_state": "touch",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/stock/watashi_no_daidokoro/hands_in_action.jpg",
+          "photo_role": "hands_in_action",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "narrative_state": "make",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/stock/watashi_no_daidokoro/ingredient_story.jpg",
+          "photo_role": "ingredient_story",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "narrative_state": "share",
+          "expected_media": true,
+          "rendered_media": true,
+          "rendered_asset_id": "/assets/photography/generated/watashi_no_daidokoro/finished_table.png",
+          "photo_role": "finished_table",
+          "timeline_reset_reason": "",
+          "temporal": 1.0,
+          "subject": 1.0,
+          "action": 1.0,
+          "evidence": 1.0,
+          "score": 1.0,
+          "prohibited": 0,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-05-join",
+          "expected_media": false,
+          "rendered_media": false,
+          "photo_role": "typography",
+          "status": "PASS"
+        }
+      ],
+      "semantic_score_threshold": 0.65,
+      "temporal_inversion_count": 0
+    }
+  }
+}

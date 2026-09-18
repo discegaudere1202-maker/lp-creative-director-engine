@@ -14,23 +14,44 @@ def plan_peaks(scene_plan: Mapping[str, Any]) -> dict[str, Any]:
     scenes = list(scene_plan.get("scene_plan") or [])
     if not scenes:
         return {"peaks": [], "status": "FAIL"}
-    indices = sorted({0, max(1, len(scenes) // 2), len(scenes) - 1})[:4]
-    peaks = []
-    for rank, index in enumerate(indices, 1):
+    ranked = []
+    for index, scene in enumerate(scenes):
         scene = scenes[index]
         grammar = scene.get("visual_grammar", {})
-        peaks.append({
-            "peak_id": f"peak-{rank:02d}-{scene.get('scene_id', index)}",
+        media = bool(scene.get("expected_media")) and scene.get("focal_entity") != "typography"
+        quiet_end = index == len(scenes) - 1 and not media and str(scene.get("visual_authority", "")).upper() in {"TYPE", "TYPOGRAPHY"}
+        score = {
+            "idea_clarity": 2 if scene.get("copy_intent") or scene.get("narrative_state") else 1,
+            "rendered_payload": 2 if media or scene.get("evidence_ids") else 1,
+            "authority": 2 if scene.get("visual_authority") or grammar.get("dominant_authority") else 1,
+            "delta": 2 if index and grammar.get("topology") != scenes[index - 1].get("visual_grammar", {}).get("topology") else 1,
+            "independence": 2 if media else 1,
+        }
+        total = sum(score.values())
+        if quiet_end:
+            total = 0
+        ranked.append({
+            "_index": index,
             "scene_id": scene.get("scene_id"),
-            "peak_role": "hero" if index == 0 else "mid" if index < len(scenes) - 1 else "late",
-            "peak_priority": "primary" if index in {0, len(scenes) - 1} else "secondary",
-            "peak_reason": f"{scene.get('narrative_state')}の視線を一つに束ねる",
+            "score": score,
+            "total": total,
+            "eligible": total >= 6 and not quiet_end,
+            "archetype": "media-led" if media else "evidence-led",
+            "peak_reason": f"{scene.get('narrative_state')}の実レンダリング内容を一つに束ねる",
             "focal_authority": scene.get("visual_authority") or grammar.get("dominant_authority"),
+            "screenshot_independence": bool(media or scene.get("evidence_ids")),
+            "human_review_reason": "media or evidence payload is independently legible",
             "visual_delta_from_previous": ["topology", "media_scale", "negative_space"] if index else [],
-            "visual_delta_to_next": ["type_scale", "asymmetry", "sequencing"] if index == len(scenes) - 1 else ["topology", "type_scale", "authority"],
             "desktop_peak_treatment": {"topology": grammar.get("topology"), "media_scale": grammar.get("media_scale"), "viewport_share": "0.55-0.80"},
             "mobile_peak_treatment": {"variant": "temporal_recomposition", "crop": "preserve_focal_entity", "scale": "peak_specific", "cta_timing": "after_idea"},
         })
+    ranked = [x for x in ranked if x["eligible"]]
+    ranked.sort(key=lambda x: (-x["total"], x["scene_id"] or ""))
+    peaks = []
+    for rank, row in enumerate(ranked[:4], 1):
+        row = dict(row); row.pop("_index", None)
+        row.update({"peak_id": f"peak-{rank:02d}-{row.get('scene_id')}", "peak_role": "primary" if rank == 1 else "secondary", "peak_priority": "primary" if rank == 1 else "secondary"})
+        peaks.append(row)
     return {"peaks": peaks, "status": "PASS" if 2 <= len(peaks) <= 4 and any(x["peak_role"] != "hero" for x in peaks) else "FAIL"}
 
 
@@ -140,10 +161,13 @@ def extract_rendered_ctas(html: str) -> list[dict[str, Any]]:
     """Extract CTA truth from final DOM, independent of genome metadata."""
     scene = ""
     result = []
-    for block in re.finditer(r'<section[^>]*data-scene-id="([^"]+)"[^>]*>(.*?)</section>', html, re.S):
-        scene, body = block.groups()
+    for block in re.finditer(r'<section([^>]*)data-scene-id="([^"]+)"([^>]*)>(.*?)</section>', html, re.S):
+        before, scene, after, body = block.groups()
+        attrs = before + after
+        source_id = re.search(r'\bid="([^"]+)"', attrs)
+        source_id = source_id.group(1) if source_id else scene
         for match in re.finditer(r'<a[^>]*data-cta-stage="([^"]+)"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', body, re.S):
             stage, href, label = match.groups()
             label = re.sub(r"<[^>]+>", "", label).strip()
-            result.append({"stage": stage, "label": label, "href": href, "scene_id": scene, "preceding_scene": scene, "psychological_state_before": "uncertain" if stage == "discovery" else "informed" if stage == "reassurance" else "ready", "psychological_state_after": "oriented" if stage == "discovery" else "reassured" if stage == "reassurance" else "contact_started"})
+            result.append({"stage": stage, "label": label, "href": href, "scene_id": scene, "source_section_id": source_id, "preceding_scene": scene, "psychological_state_before": "uncertain" if stage == "discovery" else "informed" if stage == "reassurance" else "ready", "psychological_state_after": "oriented" if stage == "discovery" else "reassured" if stage == "reassurance" else "contact_started"})
     return result

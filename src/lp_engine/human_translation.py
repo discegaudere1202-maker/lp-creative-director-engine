@@ -46,12 +46,13 @@ def derive_signature_anchors(
 ) -> list[dict[str, Any]]:
     """Derive only traceable anchors, each with at least three channels."""
     values = _values(understanding)
+    # Customer barrier/transition describe a user state, not a company
+    # signature.  Keep them in copy/CTA IR but do not promote them to
+    # reusable company anchors.
     candidates = [
         ("PLACE", values["location"], "location", "the customer needs a reachable context"),
         ("SERVICE", values["service_category"], "service_category", "the customer needs to recognize the activity"),
         ("TRUTH", values["company_truth"].rstrip("。"), "company_truth", "company truth must remain the source of meaning"),
-        ("BARRIER", values["barrier"], "customer_barrier", "the page should answer the actual hesitation"),
-        ("TRANSITION", values["after"], "customer_transition", "the action must change the customer state"),
     ]
     evidence_by_id = {_text(item.get("evidence_id")): item for item in evidence if _text(item.get("evidence_id"))}
     result: list[dict[str, Any]] = []
@@ -67,6 +68,7 @@ def derive_signature_anchors(
             "evidence_ids": evidence_ids,
             "strength": 2 if evidence_ids or source in {"location", "service_category", "company_truth"} else 1,
             "expression_channels": ["COPY", "VISUAL", "PHOTOGRAPHY", "PEAK", "CTA"],
+            "generic_customer_state": False,
             "creative_reason": reason,
         })
     return result
@@ -141,14 +143,21 @@ def build_premium_copy_translation(
 def build_cta_closure(understanding: Mapping[str, Any], strategy: Mapping[str, Any], scene_plan: Mapping[str, Any], approved_evidence: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     channels = understanding.get("contact_channels") or {}
     href = _text(channels.get("href"))
-    verified = bool(href and href != "#contact") or any(_text(item.get("evidence_type")) == "CTA_CHANNEL" and _text(item.get("verification_status")) == "VERIFIED" for item in approved_evidence)
+    def is_external(value: str) -> bool:
+        return bool(re.match(r"^(?:https?://|mailto:|tel:)", value, re.I))
+    verified = is_external(href)
+    informational_evidence = any(_text(item.get("evidence_type")) == "CTA_CHANNEL" and _text(item.get("verification_status")) == "VERIFIED" for item in approved_evidence)
     genome = {x.get("stage"): x for x in strategy.get("creative_genome", {}).get("cta_progression", [])}
     destinations = {"discovery": ("PAGE_SECTION", "#way-in"), "reassurance": ("PROCESS_GUIDE", "#reassurance"), "action": ("VERIFIED_NATIVE" if verified else "INFORMATIONAL_ONLY", href if verified else "#contact")}
     rows = []
     for stage in ("discovery", "reassurance", "action"):
         dtype, destination = destinations[stage]
         item = genome.get(stage, {})
-        rows.append({"cta_id": f"cta-{stage}", "stage": stage, "user_state_before": _text((understanding.get("customer_state") or {}).get("before")), "promise": _text(item.get("action_reason")) or stage, "destination_type": dtype, "destination_id": destination, "href": destination, "semantic_payload": _text(item.get("visible_label")), "verified_action": {"verified": verified if stage == "action" else True, "channel": _text(channels.get("primary")), "href": href}, "actionability": "ACTION" if stage == "action" and verified else "ORIENTATION", "completion_state": _text((understanding.get("customer_state") or {}).get("after")), "hard_violation": stage == "action" and not verified, "fallback_reason": "verified action channel unavailable" if stage == "action" and not verified else ""})
+        action_stage = stage == "action"
+        has_safe_information = verified or informational_evidence
+        actionability = "ACTION" if action_stage and verified else "QUIET_CONVERSION_END" if action_stage and has_safe_information else "ORIENTATION"
+        hard_violation = bool(action_stage and not verified and not has_safe_information)
+        rows.append({"cta_id": f"cta-{stage}", "stage": stage, "user_state_before": _text((understanding.get("customer_state") or {}).get("before")), "promise": _text(item.get("action_reason")) or stage, "destination_type": dtype, "destination_id": destination, "href": destination, "semantic_payload": _text(item.get("visible_label")) or ("公式窓口の案内を確認する" if action_stage else stage), "verified_action": {"verified": verified if action_stage else True, "channel": _text(channels.get("primary")), "href": href, "verified_external_href": href if verified else ""}, "actionability": actionability, "fake_action": bool(action_stage and not verified and not has_safe_information), "completion_state": _text((understanding.get("customer_state") or {}).get("after")), "hard_violation": hard_violation, "fallback_reason": "verified action channel unavailable; informational destination only" if action_stage and not verified else ""})
     violations = [row for row in rows if row["hard_violation"]]
     return {"schema_version": "cta_action_closure_ir_v1", "status": "PASS" if not violations else "FAIL", "closures": rows, "hard_violations": violations}
 
@@ -204,10 +213,13 @@ def build_peak_candidates(scene_plan: Mapping[str, Any], translation: Mapping[st
         translation_row = next((x for x in (translation or {}).get("scenes", []) if x.get("scene_id") == scene.get("scene_id")), {})
         media = bool(scene.get("expected_media")) and _text(scene.get("focal_entity")) != "typography"
         score = {"idea_clarity": 2 if scene.get("copy_intent") else 1, "company_specificity": 2 if translation_row.get("specificity") else 1, "content_payload": 2 if scene.get("evidence_ids") else 1, "perceptual_delta": 2 if index and scene.get("visual_grammar", {}).get("topology") != (scene_plan.get("scene_plan") or [])[index-1].get("visual_grammar", {}).get("topology") else 1, "narrative_significance": 2 if scene.get("narrative_function") in {"SHOW_DETAIL", "SHOW_PROCESS", "ENABLE_ACTION"} else 1, "screenshot_independence": 2 if media else 1, "visual_concentration": 2 if scene.get("dominance_level") in {"immersive", "dominant", "display"} else 1}
-        total = sum(score.values()); eligible = total >= 9 and score["company_specificity"] >= 1 and score["content_payload"] >= 1 and score["narrative_significance"] >= 1 and (media or bool(scene.get("evidence_ids")))
-        rows.append({"peak_id": f"peak-{len(rows)+1:02d}-{_text(scene.get('narrative_state'))}", "scene_id": scene.get("scene_id"), "score": score, "total": total, "eligible": eligible, "reason": "multi-axis candidate ranking"})
+        forced_quiet_end = index == len(scene_plan.get("scene_plan") or []) - 1 and not media and _text(scene.get("visual_authority")).upper() in {"TYPE", "TYPOGRAPHY"}
+        total = sum(score.values()); eligible = (not forced_quiet_end) and total >= 9 and score["company_specificity"] >= 1 and score["content_payload"] >= 1 and score["narrative_significance"] >= 1 and (media or bool(scene.get("evidence_ids")))
+        rows.append({"peak_id": f"peak-{len(rows)+1:02d}-{_text(scene.get('narrative_state'))}", "scene_id": scene.get("scene_id"), "score": score, "total": total, "eligible": eligible, "forced_quiet_end": forced_quiet_end, "archetype": "media-led" if media else "evidence-led", "reason": "rendered content candidate ranking"})
     eligible = [x for x in rows if x["eligible"] and not (not x["score"]["content_payload"] and x["score"]["visual_concentration"] <= 1)]
-    return {"schema_version": "human_peak_candidates_v1", "selection": "ranked_candidates_not_fixed_position", "status": "PASS" if len(eligible) >= 2 else "FAIL", "candidates": rows, "selected": eligible[:4], "minimum": 2, "maximum": 4}
+    eligible.sort(key=lambda x: (-x["total"], -x["score"]["narrative_significance"], x["scene_id"] or ""))
+    selected = eligible[:4]
+    return {"schema_version": "human_peak_candidates_v1", "selection": "rendered_candidate_ranking", "status": "PASS" if 2 <= len(selected) <= 4 else "FAIL", "candidates": rows, "selected": selected, "minimum": 2, "maximum": 4}
 
 
 def build_human_translation(understanding: Mapping[str, Any], strategy: Mapping[str, Any], scene_plan: Mapping[str, Any], approved_evidence: Sequence[Mapping[str, Any]], asset_manifest: Mapping[str, Any], copy: Mapping[str, Any]) -> dict[str, Any]:

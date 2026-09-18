@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "selection": "rendered_candidate_ranking",
+  "peaks": [
+    {
+      "peak_id": "peak-02-read_material",
+      "scene_id": "scene-02-read_material",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 2,
+        "narrative_significance": 2,
+        "screenshot_independence": 2,
+        "visual_concentration": 1
+      },
+      "total": 13,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "素材に触れて考える 外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+      "rendered_authority": "MATERIAL",
+      "signature_anchor_ids": [
+        "anchor-02-service"
+      ],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-01-observe",
+      "scene_id": "scene-01-observe",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 1,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 2
+      },
+      "total": 12,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "家の輪郭を見つめる 福岡市で、住まいの状態を相談できます。 素材の状態を見る",
+      "rendered_authority": "IMAGE",
+      "signature_anchor_ids": [
+        "anchor-01-place"
+      ],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-03-watch_hands",
+      "scene_id": "scene-03-watch_hands",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 2,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 1
+      },
+      "total": 12,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "手仕事の順番を見る 外壁塗装・屋根・雨漏り・リフォームをについて相談できます 対応範囲を確かめる",
+      "rendered_authority": "DATA",
+      "signature_anchor_ids": [
+        "anchor-02-service",
+        "anchor-03-truth"
+      ],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-04-imagine_change",
+      "scene_id": "scene-04-imagine_change",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 2,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 1
+      },
+      "total": 12,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "仕上がりを思い描く 表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+      "rendered_authority": "TYPE",
+      "signature_anchor_ids": [
+        "anchor-02-service"
+      ],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    }
+  ],
+  "candidate_count": 5,
+  "fixed_position_selection": false
+}

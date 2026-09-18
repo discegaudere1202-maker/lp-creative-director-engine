@@ -1,0 +1,584 @@
+{
+  "status": "FAIL",
+  "canonical_duplicate_peak": 0,
+  "peak_count": 24,
+  "wrong_peak_scene": 0,
+  "records": [
+    {
+      "company": "maylynn_paint",
+      "peak_id": "peak-01-scene-02-read_material",
+      "scene_id": "scene-02-read_material",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "capture_sha": "cdabfda4688ff21144042e1f021be17669666b61680029e933aa1899eec3e0f2",
+      "bounding_box": {
+        "x": 130,
+        "y": 126.78125,
+        "width": 1180,
+        "height": 746.5
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 6.78125,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "素材に触れて考える\n\n外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+      "created_at": "2026-09-18T06:13:32.969707+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "peak_id": "peak-02-scene-03-watch_hands",
+      "scene_id": "scene-03-watch_hands",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "capture_sha": "5496cd29d413ecf663c1f79f3ac4b45ac459ac83f2c73e0a219f42ea3023fab0",
+      "bounding_box": {
+        "x": 130,
+        "y": 0.28125,
+        "width": 1180,
+        "height": 1330.921875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "手仕事の順番を見る\n外壁塗装・屋根・雨漏り・リフォームをについて相談できます\n対応範囲を確かめる",
+      "created_at": "2026-09-18T06:13:33.395964+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "peak_id": "peak-03-scene-04-imagine_change",
+      "scene_id": "scene-04-imagine_change",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "capture_sha": "32d381fb683f28580dec6a3bb1cd7b5dbc2474e1e46b4cf96e088ef288c53b91",
+      "bounding_box": {
+        "x": 130,
+        "y": -54.796875,
+        "width": 1180,
+        "height": 1108.65625
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "仕上がりを思い描く\n\n表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+      "created_at": "2026-09-18T06:13:33.824272+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "peak_id": "peak-04-scene-01-observe",
+      "scene_id": "scene-01-observe",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "capture_sha": "1db93bd0ab976cebc8c2932a5fcc8f472a14a34238fe541694f68814dd7933b3",
+      "bounding_box": {
+        "x": 130,
+        "y": -138.859375,
+        "width": 1180,
+        "height": 1277.640625
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "家の輪郭を見つめる\n\n福岡市で、住まいの状態を相談できます。\n\n素材の状態を見る",
+      "created_at": "2026-09-18T06:13:34.260631+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "peak_id": "peak-01-scene-02-read_material",
+      "scene_id": "scene-02-read_material",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "capture_sha": "27b7b0a1f3536b36b725f421ef72bab7a17e8d53c23ef19b270d1d7804044e35",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 287.4375,
+        "width": 351,
+        "height": 556.546875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 167.4375,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "素材に触れて考える\n\n外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+      "created_at": "2026-09-18T06:13:35.218915+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "peak_id": "peak-02-scene-03-watch_hands",
+      "scene_id": "scene-03-watch_hands",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "capture_sha": "e850a481d8fe006c8749f0f65de5ad7629d5d3e31e6c64f02c7b2fd18035dc74",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 227.984375,
+        "width": 351,
+        "height": 615.953125
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 107.984375,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "手仕事の順番を見る\n外壁塗装・屋根・雨漏り・リフォームをについて相談できます\n対応範囲を確かめる",
+      "created_at": "2026-09-18T06:13:35.500137+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "peak_id": "peak-03-scene-04-imagine_change",
+      "scene_id": "scene-04-imagine_change",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "capture_sha": "21e0291a5664d069222ee7988301d03c9ba84f069850905cf2272d650168ff83",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 293.9375,
+        "width": 351,
+        "height": 550
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 173.9375,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "仕上がりを思い描く\n\n表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+      "created_at": "2026-09-18T06:13:35.614606+00:00"
+    },
+    {
+      "company": "maylynn_paint",
+      "peak_id": "peak-04-scene-01-observe",
+      "scene_id": "scene-01-observe",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "capture_sha": "b264d33299a99ec906f4d255e65f0cb312e57d664ec908f3108b0398847742d8",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 57.140625,
+        "width": 351,
+        "height": 597.296875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "家の輪郭を見つめる\n\n福岡市で、住まいの状態を相談できます。\n\n素材の状態を見る",
+      "created_at": "2026-09-18T06:13:35.743141+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "peak_id": "peak-01-scene-02-settle",
+      "scene_id": "scene-02-settle",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "capture_sha": "f2cbcecb27b2ac319f3e6a6884c7f5e7c6f0e2b0b1bce08dcba1ac34447901af",
+      "bounding_box": {
+        "x": 130,
+        "y": 150.78125,
+        "width": 1180,
+        "height": 698.328125
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 30.78125,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "静けさを感じる\n\nドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+      "created_at": "2026-09-18T06:13:36.855292+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "peak_id": "peak-02-scene-03-feel_care",
+      "scene_id": "scene-03-feel_care",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "capture_sha": "b0ecc141b80069d4c51000e6ce8654222e1ef720f0f8e415ba1625f1f92a217e",
+      "bounding_box": {
+        "x": 130,
+        "y": 147.109375,
+        "width": 1180,
+        "height": 853
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 27.109375,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "触れられる時間\n\n触れられる時間を選び、自分に合う過ごし方を考えます。\n\n時間の選び方を見る",
+      "created_at": "2026-09-18T06:13:37.087467+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "peak_id": "peak-03-scene-04-choose_time",
+      "scene_id": "scene-04-choose_time",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "capture_sha": "9071d9bc1d646eb44a95b36e5dd2b8d798861a26e95e6515e9ed46a5d2b55184",
+      "bounding_box": {
+        "x": 130,
+        "y": -53.890625,
+        "width": 1180,
+        "height": 1107.75
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "過ごし方を選ぶ\n\n頭をゆるめる時間の流れを、静かな空間で確かめます。",
+      "created_at": "2026-09-18T06:13:37.525022+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "peak_id": "peak-04-scene-01-arrive",
+      "scene_id": "scene-01-arrive",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "capture_sha": "78915f834e2cfeb3011cefac986335ffb864f5d7ba222816703e83e57d5a02ac",
+      "bounding_box": {
+        "x": 130,
+        "y": -137.859375,
+        "width": 1180,
+        "height": 1276.640625
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "空間に入る\n\n福岡市で、自分に合う過ごし方を考える時間をつくります。\n\n過ごし方を感じる",
+      "created_at": "2026-09-18T06:13:37.965517+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "peak_id": "peak-01-scene-02-settle",
+      "scene_id": "scene-02-settle",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "capture_sha": "54b3653fd8809f5eeaf86d1b7ee59aafaef4504917b497f8aab056c114b7511f",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 317.4375,
+        "width": 351,
+        "height": 526.296875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 197.4375,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "静けさを感じる\n\nドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+      "created_at": "2026-09-18T06:13:38.945535+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "peak_id": "peak-02-scene-03-feel_care",
+      "scene_id": "scene-03-feel_care",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "capture_sha": "d0ae70f45d41ff873769ad3a21b3a6764304d2b28a550f69503544532b2ba2e9",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 204.734375,
+        "width": 351,
+        "height": 639.546875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 84.734375,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "触れられる時間\n\n触れられる時間を選び、自分に合う過ごし方を考えます。\n\n時間の選び方を見る",
+      "created_at": "2026-09-18T06:13:39.112246+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "peak_id": "peak-03-scene-04-choose_time",
+      "scene_id": "scene-04-choose_time",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "capture_sha": "15e8f5d6ec73f3f11b896e87e26fb5e96c09674c3203b91c60f6197430103899",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 147.28125,
+        "width": 351,
+        "height": 549
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 27.28125,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "過ごし方を選ぶ\n\n頭をゆるめる時間の流れを、静かな空間で確かめます。",
+      "created_at": "2026-09-18T06:13:39.218678+00:00"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "peak_id": "peak-04-scene-01-arrive",
+      "scene_id": "scene-01-arrive",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "capture_sha": "a47357d0706f32f29c09dd263f779829e7efe0cd81c8588ba5d025d3cf42289e",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 57.140625,
+        "width": 351,
+        "height": 624.296875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "空間に入る\n\n福岡市で、自分に合う過ごし方を考える時間をつくります。\n\n過ごし方を感じる",
+      "created_at": "2026-09-18T06:13:39.341846+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "peak_id": "peak-01-scene-02-touch",
+      "scene_id": "scene-02-touch",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "capture_sha": "6cf4be847f7e125d48e3edaec00d30f0330cab1f6f1e644ef4a5d8e7f27bd98d",
+      "bounding_box": {
+        "x": 130,
+        "y": -86.21875,
+        "width": 1180,
+        "height": 1171.921875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "手を動かしてみる\n\n手を動かし、火を入れる順序を確かめます。",
+      "created_at": "2026-09-18T06:13:40.913312+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "peak_id": "peak-02-scene-03-make",
+      "scene_id": "scene-03-make",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "capture_sha": "e22871282c01ad437a09a5c3e3b6993cbe13317c2499d2826b14c856a4c78107",
+      "bounding_box": {
+        "x": 130,
+        "y": -166.296875,
+        "width": 1180,
+        "height": 1332.328125
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "料理ができていく\n料理教室で食材を選び、料理の流れを一緒に学びます。\n場と内容を確かめる",
+      "created_at": "2026-09-18T06:13:41.367249+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "peak_id": "peak-03-scene-04-share",
+      "scene_id": "scene-04-share",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "capture_sha": "fb8afa190f6dc5276fb31f3e97b18ce976c0404143bbffa31b2736030608ea47",
+      "bounding_box": {
+        "x": 130,
+        "y": -96.96875,
+        "width": 1180,
+        "height": 1194.640625
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "食卓を囲む\n\nストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+      "created_at": "2026-09-18T06:13:41.879322+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "peak_id": "peak-04-scene-01-encounter",
+      "scene_id": "scene-01-encounter",
+      "viewport": 1440,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "capture_sha": "195144324a3dbf48c35faf4fa2694e5fd6e08f7a681d51c9803fa1ad2eea2d24",
+      "bounding_box": {
+        "x": 130,
+        "y": -138.859375,
+        "width": 1180,
+        "height": 1278.640625
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000
+      },
+      "target_scene_text": "食材に出会う\n\n福岡市西区の料理教室で、食材と手を動かす時間に出会います。\n\n料理の流れを見る",
+      "created_at": "2026-09-18T06:13:42.414304+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "peak_id": "peak-01-scene-02-touch",
+      "scene_id": "scene-02-touch",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "capture_sha": "f9bff3c4e58d18e053e51e2ecf999f24b498fb76d3f13443628538c82644b958",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 51.4375,
+        "width": 351,
+        "height": 792.75
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "手を動かしてみる\n\n手を動かし、火を入れる順序を確かめます。",
+      "created_at": "2026-09-18T06:13:43.522470+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "peak_id": "peak-02-scene-03-make",
+      "scene_id": "scene-03-make",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "capture_sha": "8163dc32c7f3d56bc7814719945b03ecf34b0eb9e296f71d774de407d9be6e7d",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 114.1875,
+        "width": 351,
+        "height": 616.5625
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "料理ができていく\n料理教室で食材を選び、料理の流れを一緒に学びます。\n場と内容を確かめる",
+      "created_at": "2026-09-18T06:13:43.647581+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "peak_id": "peak-03-scene-04-share",
+      "scene_id": "scene-04-share",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "capture_sha": "0aac0350cd9394a07fcdde0bf0ba0369ad88d9f477c1008eff116098bd648901",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 301.75,
+        "width": 351,
+        "height": 542.296875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 181.75,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "食卓を囲む\n\nストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+      "created_at": "2026-09-18T06:13:43.797858+00:00"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "peak_id": "peak-04-scene-01-encounter",
+      "scene_id": "scene-01-encounter",
+      "viewport": 390,
+      "capture_type": "peak",
+      "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "source_html_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "capture_sha": "ad0978f51ae33fd133e2332dc25b58a82e2cdd25ad5b5141723528bc3a817a0c",
+      "bounding_box": {
+        "x": 19.5,
+        "y": 57.140625,
+        "width": 351,
+        "height": 626.296875
+      },
+      "crop_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "target_scene_text": "食材に出会う\n\n福岡市西区の料理教室で、食材と手を動かす時間に出会います。\n\n料理の流れを見る",
+      "created_at": "2026-09-18T06:13:43.946589+00:00"
+    }
+  ]
+}

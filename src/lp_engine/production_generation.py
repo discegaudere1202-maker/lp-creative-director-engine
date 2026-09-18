@@ -522,7 +522,16 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     _, goal_phrase = GOAL_LABELS.get(goal, ("次の一歩をつくる", "相談する"))
     goal_noun = GOAL_NOUNS.get(goal, "相談")
     channel = _text((understanding.get("contact_channels") or {}).get("label")) or ""
-    truth_fragment = truth.rstrip("。.!！？!? ").replace("相談できる地域の窓口", "相談内容を確認してから案内へ進む").replace("の相談窓口", "の内容を確認してから案内へ進む")
+    truth_fragment = truth.rstrip("。.!！？!? ")
+    # Keep verified scope, but turn catalogue-like truth into a sentence that
+    # can be read aloud.  Never manufacture a process or a destination from
+    # the truth field.
+    if "相談できる地域の窓口" in truth_fragment:
+        truth_fragment = truth_fragment.replace("相談できる地域の窓口", "について相談できます")
+    elif truth_fragment.endswith("の相談窓口"):
+        truth_fragment = truth_fragment[:-len("の相談窓口")] + "について相談できます"
+    elif truth_fragment.endswith("料理教室"):
+        truth_fragment = truth_fragment[:-len("料理教室")].rstrip() + "料理を学びます"
     # Preserve the verified truth fragment.  A generic category sentence is
     # not an acceptable primary definition: the Round 1M translation layer
     # will omit an unsupported fragment instead of inventing a substitute.
@@ -570,10 +579,10 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
                 "headline": section_headlines.get(item["section_id"], item["key_message"]),
                 "headline_lines": _line_shape(section_headlines.get(item["section_id"], item["key_message"]), max_chars=11),
                 "body": {
-                    "opening": f"{location}の{category}。{public_truth}",
-                    "truth": public_truth,
-                    "way_in": (f"{compact_category}の現場を見渡し、{signature_phrase}へ目を向けます。" if layout_profile == "field_ledger" else f"静かな空間で、{compact_category}のひとときを味わいます。" if layout_profile == "care_rhythm" else f"{signature_phrase}を選び、{activity_head}の流れを一緒に学びます。"),
-                    "contact": (f"表面の変化と手順を並べ、{compact_category}の仕上がりを思い描きます。" if layout_profile == "field_ledger" else f"静かな空間で過ごすひとときを、{compact_category}に合わせて選びます。" if layout_profile == "care_rhythm" else f"火を入れ、手を動かし、{activity_head}を食卓へ運ぶ流れを楽しみます。"),
+                    "opening": (f"{location}で、住まいの状態を相談できます。" if layout_profile == "field_ledger" else f"{location}で、自分に合う過ごし方を考える時間をつくります。" if layout_profile == "care_rhythm" else f"{location}の料理教室で、食材と手を動かす時間に出会います。"),
+                    "truth": (public_truth if layout_profile != "studio_invitation" else "ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。"),
+                    "way_in": (f"{compact_category}の現場を見渡し、{signature_phrase}へ目を向けます。" if layout_profile == "field_ledger" else f"頭をゆるめる時間の流れを、静かな空間で確かめます。" if layout_profile == "care_rhythm" else "料理教室で食材を選び、料理の流れを一緒に学びます。"),
+                    "contact": (f"表面の変化と手順を並べ、{compact_category}の仕上がりを思い描きます。" if layout_profile == "field_ledger" else "触れられる時間を選び、自分に合う過ごし方を考えます。" if layout_profile == "care_rhythm" else "手を動かし、火を入れる順序を確かめます。"),
                     "close": (f"{compact_category}の状態を見ながら、相談の準備を整えます。" if layout_profile == "field_ledger" else f"{compact_category}で、自分のための時間を予約します。" if layout_profile == "care_rhythm" else f"できあがる一皿を囲む時間へ、参加の一歩を踏み出します。"),
                 }.get(item["section_id"], item["key_message"]),
                 "evidence_claims": claims if item["section_id"] in {"truth", "contact"} else [],
@@ -869,6 +878,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     copy_by_id = {x.get("section_id"): x for x in copy.get("sections", [])}
     names = list(spec.get("strategy", {}).get("narrative_architecture", {}).get("section_naming") or [])
     ctas = {x.get("stage"): x for x in plan.get("scene_plan", [])}
+    signature_anchors = list(translation.get("signature_anchors") or [])
     def esc(v): return html.escape(str(v or ""), quote=True)
     chunks = []
     rendered_cta_stages = set()
@@ -897,15 +907,35 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
             item = next((x for x in plan.get("scene_plan", []) if x.get("cta_stage") == scene["cta_stage"]), {})
             genome = next((x for x in spec["strategy"]["creative_genome"].get("cta_progression", []) if x.get("stage") == scene["cta_stage"]), {})
             closure = cta_closures.get(scene["cta_stage"], {})
-            cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" href="{esc(closure.get("href") or genome.get("destination") or "#contact")}">{esc(genome.get("visible_label") or "次へ進む")}</a>'
+            cta_href = closure.get("href") or genome.get("destination") or "#contact"
+            cta_label = genome.get("visible_label") or closure.get("semantic_payload") or "次へ進む"
+            if closure.get("actionability") == "QUIET_CONVERSION_END":
+                cta_label = closure.get("semantic_payload") or "公式窓口の案内を確認する"
+            verified_href = closure.get("verified_action", {}).get("verified_external_href") or ""
+            verified_attr = f' data-verified-external-href="{esc(verified_href)}"' if verified_href else ""
+            cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" data-actionability="{esc(closure.get("actionability") or "ORIENTATION")}" data-destination-type="{esc(closure.get("destination_type") or "INFORMATIONAL_ONLY")}" data-state-before="{esc(closure.get("user_state_before"))}" data-state-after="{esc(closure.get("completion_state"))}"{verified_attr} href="{esc(cta_href)}">{esc(cta_label)}</a>'
             rendered_cta_stages.add(scene.get("cta_stage"))
         evidence_trace = ",".join(hashlib.sha256(str(x).encode()).hexdigest()[:10] for x in scene["evidence_ids"])
-        # Premium pages use the same public anchors as the canonical CTA
-        # contract so every rendered destination resolves in the DOM.
-        anchor = "way-in" if i == 1 else "reassurance" if i == 2 else "contact" if i == len(plan.get("scene_plan", [])) - 1 else scene.get("scene_id", "")
+        # CTA destinations resolve to a different, content-bearing section;
+        # the CTA source itself never doubles as its target.
+        anchor = "way-in" if i == 1 else "reassurance" if i == 3 else "final-quiet-end" if i == len(plan.get("scene_plan", [])) - 1 else scene.get("scene_id", "")
         anchor_attr = f' id="{anchor}"' if anchor else ""
-        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}">{inner}{cta}</section>')
-    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:var(--human-border-width) solid var(--line);border-radius:var(--human-scene-radius)}} .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em;border-radius:var(--human-scene-radius)}} .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0}} .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}} .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%}} .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%;min-width:0;border-radius:var(--human-scene-radius)}} .scene-full{{min-width:0;display:grid;gap:1.5rem}} .scene-sequence{{min-width:0;border-left:var(--human-edge-width) solid var(--accent);padding:2rem;overflow-wrap:anywhere}} .premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:var(--human-cta-radius);text-decoration:none;max-width:100%}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr)}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
+        rendered_text = f"{heading}{body}"
+        anchor_ids = []
+        for anchor in signature_anchors:
+            value = str(anchor.get("value") or "")
+            fragments = [part for part in re.split(r"[・、。/／\s]+", value) if len(part) >= 2]
+            fragment_hits = sum(part in rendered_text for part in fragments)
+            threshold = 1 if len(fragments) <= 2 else 2
+            if value and (value in rendered_text or fragment_hits >= threshold):
+                anchor_ids.append(anchor.get("anchor_id"))
+        anchor_attr_data = esc(",".join(x for x in anchor_ids if x))
+        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
+    channel = (spec.get("company") or {}).get("contact_channel") or (spec.get("understanding") or {}).get("contact_channels", {}).get("primary") or "公式窓口"
+    contact_context = "｜".join(str(value) for value in ((spec.get("company") or {}).get("location"), (spec.get("company") or {}).get("service_category")) if value)
+    contact_claim = next((x.get("promise") for x in cta_closures.values() if x.get("stage") == "action" and x.get("promise")), "次の案内を確認できます")
+    contact_details = f'<section id="contact" class="premium-contact-details" data-destination-type="INFORMATIONAL_ONLY"><h2>公式窓口の案内</h2><p>{esc(contact_context)}</p><p>{esc(contact_claim)}</p><p>{esc(channel)}</p></section>'
+    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:var(--human-border-width) solid var(--line);border-radius:var(--human-scene-radius)}} .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em;border-radius:var(--human-scene-radius)}} .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0}} .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}} .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%}} .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%;min-width:0;border-radius:var(--human-scene-radius)}} .scene-full{{min-width:0;display:grid;gap:1.5rem}} .scene-sequence{{min-width:0;border-left:var(--human-edge-width) solid var(--accent);padding:2rem;overflow-wrap:anywhere}} .premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:var(--human-cta-radius);text-decoration:none;max-width:100%}} .premium-contact-details{{width:var(--rail);margin:0 auto;padding:4rem 0;border-top:var(--human-border-width) solid var(--line)}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr)}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
 
 def render_html(spec: Mapping[str, Any]) -> str:
     if spec.get("premium_scene_plan"):

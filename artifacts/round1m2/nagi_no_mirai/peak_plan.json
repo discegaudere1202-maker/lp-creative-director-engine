@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "selection": "rendered_candidate_ranking",
+  "peaks": [
+    {
+      "peak_id": "peak-03-feel_care",
+      "scene_id": "scene-03-feel_care",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 2,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 2
+      },
+      "total": 13,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "触れられる時間 触れられる時間を選び、自分に合う過ごし方を考えます。 時間の選び方を見る",
+      "rendered_authority": "PERSON",
+      "signature_anchor_ids": [],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-04-choose_time",
+      "scene_id": "scene-04-choose_time",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 2,
+        "perceptual_delta": 2,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 1
+      },
+      "total": 12,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "過ごし方を選ぶ 頭をゆるめる時間の流れを、静かな空間で確かめます。",
+      "rendered_authority": "TYPE",
+      "signature_anchor_ids": [],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-01-arrive",
+      "scene_id": "scene-01-arrive",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 1,
+        "perceptual_delta": 1,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 2
+      },
+      "total": 11,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "空間に入る 福岡市で、自分に合う過ごし方を考える時間をつくります。 過ごし方を感じる",
+      "rendered_authority": "IMAGE",
+      "signature_anchor_ids": [
+        "anchor-01-place"
+      ],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    },
+    {
+      "peak_id": "peak-02-settle",
+      "scene_id": "scene-02-settle",
+      "score": {
+        "idea_clarity": 2,
+        "company_specificity": 2,
+        "content_payload": 1,
+        "perceptual_delta": 2,
+        "narrative_significance": 1,
+        "screenshot_independence": 2,
+        "visual_concentration": 1
+      },
+      "total": 11,
+      "eligible": true,
+      "forced_quiet_end": false,
+      "archetype": "media-led",
+      "reason": "rendered content candidate ranking",
+      "rendered_payload": "静けさを感じる ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+      "rendered_authority": "SENSORY",
+      "signature_anchor_ids": [
+        "anchor-02-service",
+        "anchor-03-truth"
+      ],
+      "narrative_reason": "rendered content candidate ranking",
+      "screenshot_independence": true,
+      "human_review_reason": "actual rendered media or evidence payload is legible"
+    }
+  ],
+  "candidate_count": 5,
+  "fixed_position_selection": false
+}

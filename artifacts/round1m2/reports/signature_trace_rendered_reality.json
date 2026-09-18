@@ -1,0 +1,253 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "anchors": [
+        {
+          "anchor_id": "anchor-01-place",
+          "anchor_type": "PLACE",
+          "value": "福岡市",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "channel_count": 5,
+          "non_copy_channels": [
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": true,
+          "photo": true,
+          "peak": true,
+          "cta": true,
+          "status": "PASS"
+        },
+        {
+          "anchor_id": "anchor-02-service",
+          "anchor_type": "SERVICE",
+          "value": "外壁塗装",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "channel_count": 5,
+          "non_copy_channels": [
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": true,
+          "photo": true,
+          "peak": true,
+          "cta": true,
+          "status": "PASS"
+        },
+        {
+          "anchor_id": "anchor-03-truth",
+          "anchor_type": "TRUTH",
+          "value": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "channel_count": 5,
+          "non_copy_channels": [
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": true,
+          "photo": true,
+          "peak": true,
+          "cta": true,
+          "status": "PASS"
+        }
+      ],
+      "generic_customer_state_anchors": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "anchors": [
+        {
+          "anchor_id": "anchor-01-place",
+          "anchor_type": "PLACE",
+          "value": "福岡市",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "channel_count": 5,
+          "non_copy_channels": [
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": true,
+          "photo": true,
+          "peak": true,
+          "cta": true,
+          "status": "PASS"
+        },
+        {
+          "anchor_id": "anchor-02-service",
+          "anchor_type": "SERVICE",
+          "value": "ヘッドスパ",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "channel_count": 5,
+          "non_copy_channels": [
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": true,
+          "photo": true,
+          "peak": true,
+          "cta": true,
+          "status": "PASS"
+        },
+        {
+          "anchor_id": "anchor-03-truth",
+          "anchor_type": "TRUTH",
+          "value": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "channel_count": 5,
+          "non_copy_channels": [
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": true,
+          "photo": true,
+          "peak": true,
+          "cta": true,
+          "status": "PASS"
+        }
+      ],
+      "generic_customer_state_anchors": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "anchors": [
+        {
+          "anchor_id": "anchor-01-place",
+          "anchor_type": "PLACE",
+          "value": "福岡市西区",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "channel_count": 5,
+          "non_copy_channels": [
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": true,
+          "photo": true,
+          "peak": true,
+          "cta": true,
+          "status": "PASS"
+        },
+        {
+          "anchor_id": "anchor-02-service",
+          "anchor_type": "SERVICE",
+          "value": "料理教室",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "channel_count": 5,
+          "non_copy_channels": [
+            "VISUAL",
+            "PHOTOGRAPHY",
+            "PEAK",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": true,
+          "photo": true,
+          "peak": true,
+          "cta": true,
+          "status": "PASS"
+        },
+        {
+          "anchor_id": "anchor-03-truth",
+          "anchor_type": "TRUTH",
+          "value": "少人数でストウブ無水料理を学ぶ料理教室",
+          "generic_customer_state": false,
+          "rendered_channels": [
+            "COPY",
+            "PHOTOGRAPHY",
+            "CTA"
+          ],
+          "channel_count": 3,
+          "non_copy_channels": [
+            "PHOTOGRAPHY",
+            "CTA"
+          ],
+          "copy": true,
+          "visual": false,
+          "photo": true,
+          "peak": false,
+          "cta": true,
+          "status": "PASS"
+        }
+      ],
+      "generic_customer_state_anchors": 0
+    }
+  }
+}

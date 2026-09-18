@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "count": 4,
+      "non_hero": 4,
+      "neighbor_delta": "PASS",
+      "authority": "PASS"
+    },
+    "nagi_no_mirai": {
+      "count": 4,
+      "non_hero": 4,
+      "neighbor_delta": "PASS",
+      "authority": "PASS"
+    },
+    "watashi_no_daidokoro": {
+      "count": 4,
+      "non_hero": 4,
+      "neighbor_delta": "PASS",
+      "authority": "PASS"
+    }
+  }
+}

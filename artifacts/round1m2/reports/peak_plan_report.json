@@ -1,0 +1,440 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "peaks": [
+        {
+          "scene_id": "scene-02-read_material",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "read_materialの実レンダリング内容を一つに束ねる",
+          "focal_authority": "MATERIAL",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "inset",
+            "media_scale": "intimate",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-01-scene-02-read_material",
+          "peak_role": "primary",
+          "peak_priority": "primary"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "watch_handsの実レンダリング内容を一つに束ねる",
+          "focal_authority": "DATA",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "sequence",
+            "media_scale": "standard",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-02-scene-03-watch_hands",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "imagine_changeの実レンダリング内容を一つに束ねる",
+          "focal_authority": "TYPE",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "layered",
+            "media_scale": "standard",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-03-scene-04-imagine_change",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        },
+        {
+          "scene_id": "scene-01-observe",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 1,
+            "independence": 2
+          },
+          "total": 9,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "observeの実レンダリング内容を一つに束ねる",
+          "focal_authority": "IMAGE",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [],
+          "desktop_peak_treatment": {
+            "topology": "full_bleed",
+            "media_scale": "immersive",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-04-scene-01-observe",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        }
+      ],
+      "status": "PASS"
+    },
+    "nagi_no_mirai": {
+      "peaks": [
+        {
+          "scene_id": "scene-02-settle",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "settleの実レンダリング内容を一つに束ねる",
+          "focal_authority": "SENSORY",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "inset",
+            "media_scale": "intimate",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-01-scene-02-settle",
+          "peak_role": "primary",
+          "peak_priority": "primary"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "feel_careの実レンダリング内容を一つに束ねる",
+          "focal_authority": "PERSON",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "split",
+            "media_scale": "dominant",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-02-scene-03-feel_care",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "choose_timeの実レンダリング内容を一つに束ねる",
+          "focal_authority": "TYPE",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "layered",
+            "media_scale": "standard",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-03-scene-04-choose_time",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        },
+        {
+          "scene_id": "scene-01-arrive",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 1,
+            "independence": 2
+          },
+          "total": 9,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "arriveの実レンダリング内容を一つに束ねる",
+          "focal_authority": "IMAGE",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [],
+          "desktop_peak_treatment": {
+            "topology": "full_bleed",
+            "media_scale": "immersive",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-04-scene-01-arrive",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        }
+      ],
+      "status": "PASS"
+    },
+    "watashi_no_daidokoro": {
+      "peaks": [
+        {
+          "scene_id": "scene-02-touch",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "touchの実レンダリング内容を一つに束ねる",
+          "focal_authority": "PERSON",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "split",
+            "media_scale": "dominant",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-01-scene-02-touch",
+          "peak_role": "primary",
+          "peak_priority": "primary"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "makeの実レンダリング内容を一つに束ねる",
+          "focal_authority": "DATA",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "sequence",
+            "media_scale": "standard",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-02-scene-03-make",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 2,
+            "independence": 2
+          },
+          "total": 10,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "shareの実レンダリング内容を一つに束ねる",
+          "focal_authority": "WORLD",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [
+            "topology",
+            "media_scale",
+            "negative_space"
+          ],
+          "desktop_peak_treatment": {
+            "topology": "full_bleed",
+            "media_scale": "dominant",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-03-scene-04-share",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        },
+        {
+          "scene_id": "scene-01-encounter",
+          "score": {
+            "idea_clarity": 2,
+            "rendered_payload": 2,
+            "authority": 2,
+            "delta": 1,
+            "independence": 2
+          },
+          "total": 9,
+          "eligible": true,
+          "archetype": "media-led",
+          "peak_reason": "encounterの実レンダリング内容を一つに束ねる",
+          "focal_authority": "WORLD",
+          "screenshot_independence": true,
+          "human_review_reason": "media or evidence payload is independently legible",
+          "visual_delta_from_previous": [],
+          "desktop_peak_treatment": {
+            "topology": "full_bleed",
+            "media_scale": "dominant",
+            "viewport_share": "0.55-0.80"
+          },
+          "mobile_peak_treatment": {
+            "variant": "temporal_recomposition",
+            "crop": "preserve_focal_entity",
+            "scale": "peak_specific",
+            "cta_timing": "after_idea"
+          },
+          "peak_id": "peak-04-scene-01-encounter",
+          "peak_role": "secondary",
+          "peak_priority": "secondary"
+        }
+      ],
+      "status": "PASS"
+    }
+  }
+}

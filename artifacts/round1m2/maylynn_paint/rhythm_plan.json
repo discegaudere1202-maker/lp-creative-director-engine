@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "sequence": [
+    {
+      "scene_id": "scene-01-observe",
+      "rhythm_state": "PAUSE",
+      "density": "medium",
+      "whitespace_role": "intentional_pause",
+      "density_reason": "one viewport one idea",
+      "is_peak": true,
+      "mobile_duration": "short"
+    },
+    {
+      "scene_id": "scene-02-read_material",
+      "rhythm_state": "LOW",
+      "density": "medium",
+      "whitespace_role": "guided_transition",
+      "density_reason": "one viewport one idea",
+      "is_peak": true,
+      "mobile_duration": "medium"
+    },
+    {
+      "scene_id": "scene-03-watch_hands",
+      "rhythm_state": "MEDIUM",
+      "density": "medium",
+      "whitespace_role": "guided_transition",
+      "density_reason": "one viewport one idea",
+      "is_peak": true,
+      "mobile_duration": "medium"
+    },
+    {
+      "scene_id": "scene-04-imagine_change",
+      "rhythm_state": "HIGH",
+      "density": "medium",
+      "whitespace_role": "guided_transition",
+      "density_reason": "one viewport one idea",
+      "is_peak": true,
+      "mobile_duration": "medium"
+    },
+    {
+      "scene_id": "scene-05-consult",
+      "rhythm_state": "CLIMAX",
+      "density": "medium",
+      "whitespace_role": "guided_transition",
+      "density_reason": "one viewport one idea",
+      "is_peak": false,
+      "mobile_duration": "short"
+    }
+  ],
+  "same_density_3_plus": 0,
+  "same_topology_3_plus": 0,
+  "same_authority_3_plus": 0,
+  "mid_late_peak": 0
+}

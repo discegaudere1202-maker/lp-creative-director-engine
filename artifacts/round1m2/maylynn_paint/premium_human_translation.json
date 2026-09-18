@@ -1,0 +1,656 @@
+{
+  "schema_version": "premium_human_translation_v1",
+  "signature_anchors": [
+    {
+      "anchor_id": "anchor-01-place",
+      "anchor_type": "PLACE",
+      "value": "福岡市",
+      "source": "location",
+      "evidence_ids": [
+        "maylynn_paint-e-002"
+      ],
+      "strength": 2,
+      "expression_channels": [
+        "COPY",
+        "VISUAL",
+        "PHOTOGRAPHY",
+        "PEAK",
+        "CTA"
+      ],
+      "generic_customer_state": false,
+      "creative_reason": "the customer needs a reachable context"
+    },
+    {
+      "anchor_id": "anchor-02-service",
+      "anchor_type": "SERVICE",
+      "value": "外壁塗装",
+      "source": "service_category",
+      "evidence_ids": [
+        "maylynn_paint-e-001"
+      ],
+      "strength": 2,
+      "expression_channels": [
+        "COPY",
+        "VISUAL",
+        "PHOTOGRAPHY",
+        "PEAK",
+        "CTA"
+      ],
+      "generic_customer_state": false,
+      "creative_reason": "the customer needs to recognize the activity"
+    },
+    {
+      "anchor_id": "anchor-03-truth",
+      "anchor_type": "TRUTH",
+      "value": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口",
+      "source": "company_truth",
+      "evidence_ids": [
+        "maylynn_paint-e-001"
+      ],
+      "strength": 2,
+      "expression_channels": [
+        "COPY",
+        "VISUAL",
+        "PHOTOGRAPHY",
+        "PEAK",
+        "CTA"
+      ],
+      "generic_customer_state": false,
+      "creative_reason": "company truth must remain the source of meaning"
+    }
+  ],
+  "copy_translation": {
+    "schema_version": "premium_copy_translation_ir_v1",
+    "expression_modes": [
+      "DIRECT_VALUE",
+      "CONCRETE_SCENE",
+      "PROCESS_MEANING",
+      "REASSURANCE",
+      "INVITATION",
+      "FACT_STRIP",
+      "OMISSION"
+    ],
+    "signature_anchor_ids": [
+      "anchor-01-place",
+      "anchor-02-service",
+      "anchor-03-truth"
+    ],
+    "scenes": [
+      {
+        "scene_id": "scene-01-observe",
+        "narrative_index": 0,
+        "truth_atoms": [
+          {
+            "claim_trace_id": "maylynn_paint-e-001",
+            "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+            "evidence_type": "SERVICE_SCOPE"
+          }
+        ],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "外壁塗装",
+          "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口",
+          "福岡市"
+        ],
+        "implication_type": "ORIENT",
+        "expression_mode": "DIRECT_VALUE",
+        "visual_dependency": "IMAGE",
+        "claim_trace_ids": [
+          "maylynn_paint-e-001"
+        ],
+        "outputs": {
+          "headline": "家の輪郭を見つめる",
+          "body": "福岡市で、住まいの状態を相談できます。",
+          "microcopy": "福岡市｜素材の状態と仕上がりから次の案内へ。"
+        },
+        "definition": {
+          "text": "家の輪郭を見つめる福岡市で、住まいの状態を相談できます。",
+          "score": 2,
+          "generic_predicate": false,
+          "anchor_present": true,
+          "concrete_noun": true,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "ORIENT"
+      },
+      {
+        "scene_id": "scene-02-read_material",
+        "narrative_index": 1,
+        "truth_atoms": [
+          {
+            "claim_trace_id": "maylynn_paint-e-001",
+            "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+            "evidence_type": "SERVICE_SCOPE"
+          },
+          {
+            "claim_trace_id": "maylynn_paint-e-002",
+            "fact": "福岡市で活動する事業者。",
+            "evidence_type": "PLACE_WIDE"
+          }
+        ],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "外壁塗装"
+        ],
+        "implication_type": "PROVE",
+        "expression_mode": "CONCRETE_SCENE",
+        "visual_dependency": "MATERIAL",
+        "claim_trace_ids": [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        "outputs": {
+          "headline": "素材に触れて考える",
+          "body": "外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+          "microcopy": ""
+        },
+        "definition": {
+          "text": "素材に触れて考える外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+          "score": 2,
+          "generic_predicate": false,
+          "anchor_present": true,
+          "concrete_noun": true,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "PROVE"
+      },
+      {
+        "scene_id": "scene-03-watch_hands",
+        "narrative_index": 2,
+        "truth_atoms": [
+          {
+            "claim_trace_id": "maylynn_paint-e-001",
+            "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+            "evidence_type": "SERVICE_SCOPE"
+          },
+          {
+            "claim_trace_id": "maylynn_paint-e-002",
+            "fact": "福岡市で活動する事業者。",
+            "evidence_type": "PLACE_WIDE"
+          }
+        ],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "外壁塗装"
+        ],
+        "implication_type": "PROVE",
+        "expression_mode": "PROCESS_MEANING",
+        "visual_dependency": "DATA",
+        "claim_trace_ids": [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        "outputs": {
+          "headline": "手仕事の順番を見る",
+          "body": "外壁塗装・屋根・雨漏り・リフォームをについて相談できます",
+          "microcopy": ""
+        },
+        "definition": {
+          "text": "手仕事の順番を見る外壁塗装・屋根・雨漏り・リフォームをについて相談できます",
+          "score": 2,
+          "generic_predicate": false,
+          "anchor_present": true,
+          "concrete_noun": true,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "PROVE"
+      },
+      {
+        "scene_id": "scene-04-imagine_change",
+        "narrative_index": 3,
+        "truth_atoms": [
+          {
+            "claim_trace_id": "maylynn_paint-e-001",
+            "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+            "evidence_type": "SERVICE_SCOPE"
+          },
+          {
+            "claim_trace_id": "maylynn_paint-e-002",
+            "fact": "福岡市で活動する事業者。",
+            "evidence_type": "PLACE_WIDE"
+          }
+        ],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "外壁塗装"
+        ],
+        "implication_type": "GUIDE",
+        "expression_mode": "REASSURANCE",
+        "visual_dependency": "TYPE",
+        "claim_trace_ids": [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        "outputs": {
+          "headline": "仕上がりを思い描く",
+          "body": "表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+          "microcopy": ""
+        },
+        "definition": {
+          "text": "仕上がりを思い描く表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+          "score": 2,
+          "generic_predicate": false,
+          "anchor_present": true,
+          "concrete_noun": true,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "GUIDE"
+      },
+      {
+        "scene_id": "scene-05-consult",
+        "narrative_index": 4,
+        "truth_atoms": [
+          {
+            "claim_trace_id": "maylynn_paint-e-001",
+            "fact": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口。",
+            "evidence_type": "SERVICE_SCOPE"
+          },
+          {
+            "claim_trace_id": "maylynn_paint-e-002",
+            "fact": "福岡市で活動する事業者。",
+            "evidence_type": "PLACE_WIDE"
+          }
+        ],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "外壁塗装"
+        ],
+        "implication_type": "CONVERT",
+        "expression_mode": "INVITATION",
+        "visual_dependency": "TYPOGRAPHY",
+        "claim_trace_ids": [
+          "maylynn_paint-e-001",
+          "maylynn_paint-e-002"
+        ],
+        "outputs": {
+          "headline": "状態から相談する",
+          "body": "外壁塗装の状態を見ながら、相談の準備を整えます。",
+          "microcopy": ""
+        },
+        "definition": {
+          "text": "状態から相談する外壁塗装の状態を見ながら、相談の準備を整えます。",
+          "score": 2,
+          "generic_predicate": false,
+          "anchor_present": true,
+          "concrete_noun": true,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "CONVERT"
+      }
+    ]
+  },
+  "cta_closure": {
+    "schema_version": "cta_action_closure_ir_v1",
+    "status": "PASS",
+    "closures": [
+      {
+        "cta_id": "cta-discovery",
+        "stage": "discovery",
+        "user_state_before": "相談前に何を確認すればよいか分からない",
+        "promise": "まず状況を見渡す",
+        "destination_type": "PAGE_SECTION",
+        "destination_id": "#way-in",
+        "href": "#way-in",
+        "semantic_payload": "素材の状態を見る",
+        "verified_action": {
+          "verified": true,
+          "channel": "公式SNS",
+          "href": "#contact",
+          "verified_external_href": ""
+        },
+        "actionability": "ORIENTATION",
+        "fake_action": false,
+        "completion_state": "まず状況を伝えてみようと思える",
+        "hard_violation": false,
+        "fallback_reason": ""
+      },
+      {
+        "cta_id": "cta-reassurance",
+        "stage": "reassurance",
+        "user_state_before": "相談前に何を確認すればよいか分からない",
+        "promise": "会社固有の範囲を確かめる",
+        "destination_type": "PROCESS_GUIDE",
+        "destination_id": "#reassurance",
+        "href": "#reassurance",
+        "semantic_payload": "対応範囲を確かめる",
+        "verified_action": {
+          "verified": true,
+          "channel": "公式SNS",
+          "href": "#contact",
+          "verified_external_href": ""
+        },
+        "actionability": "ORIENTATION",
+        "fake_action": false,
+        "completion_state": "まず状況を伝えてみようと思える",
+        "hard_violation": false,
+        "fallback_reason": ""
+      },
+      {
+        "cta_id": "cta-action",
+        "stage": "action",
+        "user_state_before": "相談前に何を確認すればよいか分からない",
+        "promise": "quote_requestの確認へ進む",
+        "destination_type": "INFORMATIONAL_ONLY",
+        "destination_id": "#contact",
+        "href": "#contact",
+        "semantic_payload": "見積を相談する",
+        "verified_action": {
+          "verified": false,
+          "channel": "公式SNS",
+          "href": "#contact",
+          "verified_external_href": ""
+        },
+        "actionability": "QUIET_CONVERSION_END",
+        "fake_action": false,
+        "completion_state": "まず状況を伝えてみようと思える",
+        "hard_violation": false,
+        "fallback_reason": "verified action channel unavailable; informational destination only"
+      }
+    ],
+    "hard_violations": []
+  },
+  "photo_binding": {
+    "schema_version": "photography_causal_binding_v1",
+    "selection": "scene_demand_x_asset_profile",
+    "bindings": [
+      {
+        "scene_id": "scene-01-observe",
+        "photo_role": "hero_home_finish",
+        "temporal_stage": "arrival",
+        "compatibility_score": 0.95,
+        "status": "PASS",
+        "reason": "grammar_role_match",
+        "causal_inputs": [
+          "immersive_image",
+          "ESTABLISH_CONTEXT",
+          "ORIENT"
+        ]
+      },
+      {
+        "scene_id": "scene-02-read_material",
+        "photo_role": "material_detail",
+        "temporal_stage": "orientation",
+        "compatibility_score": 0.95,
+        "status": "PASS",
+        "reason": "grammar_role_match",
+        "causal_inputs": [
+          "material_detail",
+          "SHOW_DETAIL",
+          "PROVE"
+        ]
+      },
+      {
+        "scene_id": "scene-03-watch_hands",
+        "photo_role": "craft_handwork",
+        "temporal_stage": "understanding",
+        "compatibility_score": 0.95,
+        "status": "PASS",
+        "reason": "grammar_role_match",
+        "causal_inputs": [
+          "process_sequence",
+          "SHOW_CRAFT",
+          "PROVE"
+        ]
+      },
+      {
+        "scene_id": "scene-04-imagine_change",
+        "photo_role": "trust_consultation",
+        "temporal_stage": "practice",
+        "compatibility_score": 0.9,
+        "status": "PASS",
+        "reason": "known_role_compatible",
+        "causal_inputs": [
+          "asymmetric_editorial",
+          "SHOW_TRANSFORMATION",
+          "GUIDE"
+        ]
+      },
+      {
+        "scene_id": "scene-05-consult",
+        "photo_role": "typography",
+        "temporal_stage": "reassurance",
+        "compatibility_score": 1.0,
+        "status": "PASS",
+        "reason": "typography-led closure"
+      }
+    ],
+    "temporal_inversion_count": 0,
+    "semantic_mismatch_count": 0
+  },
+  "art_direction_token_profile": {
+    "type_voice": "measured",
+    "surface_language": "working_surface",
+    "edge_language": "datum",
+    "image_behavior": "inspect",
+    "spatial_language": "rail_then_offset",
+    "cta_language": "measured_invitation",
+    "decorative_grammar": "registration",
+    "rhythm_character": "inspect_then_release",
+    "motion_character": "trace_the_work",
+    "schema_version": "art_direction_token_profile_v2",
+    "profile_id": "field_ledger",
+    "signature_anchors": [
+      "anchor-01-place",
+      "anchor-02-service",
+      "anchor-03-truth"
+    ],
+    "creative_reason": "bounded tokens derived from narrative profile and signature anchors",
+    "derivation": {
+      "layout_profile": "field_ledger",
+      "anchor_types": [
+        "PLACE",
+        "SERVICE",
+        "TRUTH"
+      ],
+      "slug_dependency": false
+    }
+  },
+  "peak_candidates": {
+    "schema_version": "human_peak_candidates_v1",
+    "selection": "rendered_candidate_ranking",
+    "status": "PASS",
+    "candidates": [
+      {
+        "peak_id": "peak-01-observe",
+        "scene_id": "scene-01-observe",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 1,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 2
+        },
+        "total": 12,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-02-read_material",
+        "scene_id": "scene-02-read_material",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 2,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 13,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-03-watch_hands",
+        "scene_id": "scene-03-watch_hands",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 12,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-04-imagine_change",
+        "scene_id": "scene-04-imagine_change",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 12,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-05-consult",
+        "scene_id": "scene-05-consult",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 2,
+          "screenshot_independence": 1,
+          "visual_concentration": 2
+        },
+        "total": 13,
+        "eligible": false,
+        "forced_quiet_end": true,
+        "archetype": "evidence-led",
+        "reason": "rendered content candidate ranking"
+      }
+    ],
+    "selected": [
+      {
+        "peak_id": "peak-02-read_material",
+        "scene_id": "scene-02-read_material",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 2,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 13,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-01-observe",
+        "scene_id": "scene-01-observe",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 1,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 2
+        },
+        "total": 12,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-03-watch_hands",
+        "scene_id": "scene-03-watch_hands",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 12,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-04-imagine_change",
+        "scene_id": "scene-04-imagine_change",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 12,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "reason": "rendered content candidate ranking"
+      }
+    ],
+    "minimum": 2,
+    "maximum": 4
+  },
+  "cross_modal_consistency": {
+    "status": "PASS",
+    "anchor_channel_count": {
+      "anchor-01-place": 5,
+      "anchor-02-service": 5,
+      "anchor-03-truth": 5
+    },
+    "channels": [
+      "COPY",
+      "CTA",
+      "PEAK",
+      "PHOTOGRAPHY",
+      "VISUAL"
+    ]
+  }
+}

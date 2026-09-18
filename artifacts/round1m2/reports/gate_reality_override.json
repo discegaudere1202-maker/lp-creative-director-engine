@@ -1,0 +1,1182 @@
+{
+  "status": "PASS",
+  "override_policy": "rendered FAIL overrides metadata PASS",
+  "children": {
+    "cta": {
+      "maylynn_paint": {
+        "status": "PASS",
+        "ctas": [
+          {
+            "stage": "discovery",
+            "label": "素材の状態を見る",
+            "href": "#way-in",
+            "source_section": "scene-01-observe",
+            "source_section_id": "scene-01-observe",
+            "target_section": "scene-02-read_material",
+            "target_section_id": "way-in",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "素材に触れて考える 外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+            "target_content_hash": "c146f0707d3cfce13fae1c649464436a715a7f295cbc637c9da6bd972bfbf0e4",
+            "source_content_hash": "b3b25347cc927fe7588dff5091b1bb300fb5a7ed5dc79b9dc683edf5f496a205",
+            "verified_external_href": "",
+            "destination_type": "PAGE_SECTION",
+            "actionability": "ORIENTATION",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          },
+          {
+            "stage": "reassurance",
+            "label": "対応範囲を確かめる",
+            "href": "#reassurance",
+            "source_section": "scene-03-watch_hands",
+            "source_section_id": "scene-03-watch_hands",
+            "target_section": "scene-04-imagine_change",
+            "target_section_id": "reassurance",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "仕上がりを思い描く 表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+            "target_content_hash": "f86594c928db75b5107fe7d4e114bc86e3a453a40e35aeeee8c3c0010e7bd573",
+            "source_content_hash": "3d7d27f3671f575969a33c74131cd1c167321511346de8afdf4f35a18cc61cfb",
+            "verified_external_href": "",
+            "destination_type": "PROCESS_GUIDE",
+            "actionability": "ORIENTATION",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          },
+          {
+            "stage": "action",
+            "label": "見積を相談する",
+            "href": "#contact",
+            "source_section": "scene-05-consult",
+            "source_section_id": "final-quiet-end",
+            "target_section": "",
+            "target_section_id": "contact",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "公式窓口の案内 福岡市｜外壁塗装 quote_requestの確認へ進む 公式窓口",
+            "target_content_hash": "f1f0aa2ddf98923a7d698c9a8df51aa919ba1d25acfbc8c7cc4e72fab4faff82",
+            "source_content_hash": "d0d17fd79a718d7b3bd42d462ae9e4eeda4ae4408e323aed8fc935b48ef2c9ba",
+            "verified_external_href": "",
+            "destination_type": "INFORMATIONAL_ONLY",
+            "actionability": "QUIET_CONVERSION_END",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          }
+        ],
+        "self_anchor_violations": 0,
+        "fake_action": 0,
+        "same_section": 0
+      },
+      "nagi_no_mirai": {
+        "status": "PASS",
+        "ctas": [
+          {
+            "stage": "discovery",
+            "label": "過ごし方を感じる",
+            "href": "#way-in",
+            "source_section": "scene-01-arrive",
+            "source_section_id": "scene-01-arrive",
+            "target_section": "scene-02-settle",
+            "target_section_id": "way-in",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "静けさを感じる ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+            "target_content_hash": "afe482259cdbbbf2bc989d78099d5e4023ee1c1f9492f1c78e900bad3843e0f4",
+            "source_content_hash": "93ecb9304b25940bda484166a635de4d7d8120222bab71aa15fa523625c85ef5",
+            "verified_external_href": "",
+            "destination_type": "PAGE_SECTION",
+            "actionability": "ORIENTATION",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          },
+          {
+            "stage": "reassurance",
+            "label": "時間の選び方を見る",
+            "href": "#reassurance",
+            "source_section": "scene-03-feel_care",
+            "source_section_id": "scene-03-feel_care",
+            "target_section": "scene-04-choose_time",
+            "target_section_id": "reassurance",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "過ごし方を選ぶ 頭をゆるめる時間の流れを、静かな空間で確かめます。",
+            "target_content_hash": "2f8e27c6a0ad349d9e9d3b0bd9dcd3e2d9d75ac0beb89b12e930992a3469a09e",
+            "source_content_hash": "cf958686820ae59d56b02a0260f8b3545da5111b23e561353ca1cf4f24cd831c",
+            "verified_external_href": "",
+            "destination_type": "PROCESS_GUIDE",
+            "actionability": "ORIENTATION",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          },
+          {
+            "stage": "action",
+            "label": "予約を相談する",
+            "href": "#contact",
+            "source_section": "scene-05-reserve",
+            "source_section_id": "final-quiet-end",
+            "target_section": "",
+            "target_section_id": "contact",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "公式窓口の案内 福岡市｜ヘッドスパ reservationの確認へ進む 公式窓口",
+            "target_content_hash": "7ec0389d733e8b8444254eb2c588e3c0aca29f6d36f0d3e4cb5dcb7a94533abd",
+            "source_content_hash": "f7769a2e3d439b007afea20568355ca4d2ad1d33e443ce4d95feda3d2d783db5",
+            "verified_external_href": "",
+            "destination_type": "INFORMATIONAL_ONLY",
+            "actionability": "QUIET_CONVERSION_END",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          }
+        ],
+        "self_anchor_violations": 0,
+        "fake_action": 0,
+        "same_section": 0
+      },
+      "watashi_no_daidokoro": {
+        "status": "PASS",
+        "ctas": [
+          {
+            "stage": "discovery",
+            "label": "料理の流れを見る",
+            "href": "#way-in",
+            "source_section": "scene-01-encounter",
+            "source_section_id": "scene-01-encounter",
+            "target_section": "scene-02-touch",
+            "target_section_id": "way-in",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "手を動かしてみる 手を動かし、火を入れる順序を確かめます。",
+            "target_content_hash": "7bc67782a25c5ae532fd55a384c3ac8085a4a8db9536647b711ac44a08d1a5ee",
+            "source_content_hash": "783e1d51278517918466a153a53d606db397204645e9275f40ba81d0f8151cd3",
+            "verified_external_href": "",
+            "destination_type": "PAGE_SECTION",
+            "actionability": "ORIENTATION",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          },
+          {
+            "stage": "reassurance",
+            "label": "場と内容を確かめる",
+            "href": "#reassurance",
+            "source_section": "scene-03-make",
+            "source_section_id": "scene-03-make",
+            "target_section": "scene-04-share",
+            "target_section_id": "reassurance",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "食卓を囲む ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+            "target_content_hash": "5b1044167c44ddbb9b0e6cd45887b5882e98c0116fe76ab0f209a83f0d5ea6af",
+            "source_content_hash": "19cc6762b24dfa24f6682f16c18e0e911a9a17798ad4afe64583e3ccf8478a44",
+            "verified_external_href": "",
+            "destination_type": "PROCESS_GUIDE",
+            "actionability": "ORIENTATION",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          },
+          {
+            "stage": "action",
+            "label": "参加を相談する",
+            "href": "#contact",
+            "source_section": "scene-05-join",
+            "source_section_id": "final-quiet-end",
+            "target_section": "",
+            "target_section_id": "contact",
+            "target_exists": true,
+            "same_section": false,
+            "target_text": "公式窓口の案内 福岡市西区｜料理教室 applicationの確認へ進む 公式窓口",
+            "target_content_hash": "5cd58b6e88d0896b510f28673aca037c21e5a58cce642601244f34088699b5ed",
+            "source_content_hash": "35bc968fce826f4b8f252488c9f96b5f486eb4a68e7a90157619f2f99ebf1a53",
+            "verified_external_href": "",
+            "destination_type": "INFORMATIONAL_ONLY",
+            "actionability": "QUIET_CONVERSION_END",
+            "user_state_before": "相談前に何を確認すればよいか分からない",
+            "user_state_after": "まず状況を伝えてみようと思える",
+            "information_gain": 1,
+            "fake_action": false,
+            "hard_reasons": [],
+            "verdict": "PASS"
+          }
+        ],
+        "self_anchor_violations": 0,
+        "fake_action": 0,
+        "same_section": 0
+      }
+    },
+    "photo": {
+      "maylynn_paint": {
+        "status": "PASS",
+        "bindings": [
+          {
+            "scene_id": "scene-01-observe",
+            "narrative_state": "observe",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+            "photo_role": "hero_home_finish",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-02-read_material",
+            "narrative_state": "read_material",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/stock/maylynn_paint/material_detail.jpg",
+            "photo_role": "material_detail",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-03-watch_hands",
+            "narrative_state": "watch_hands",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+            "photo_role": "craft_handwork",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-04-imagine_change",
+            "narrative_state": "imagine_change",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+            "photo_role": "trust_consultation",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-05-consult",
+            "expected_media": false,
+            "rendered_media": false,
+            "photo_role": "typography",
+            "status": "PASS"
+          }
+        ],
+        "semantic_score_threshold": 0.65,
+        "temporal_inversion_count": 0
+      },
+      "nagi_no_mirai": {
+        "status": "PASS",
+        "bindings": [
+          {
+            "scene_id": "scene-01-arrive",
+            "narrative_state": "arrive",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+            "photo_role": "hero_treatment_space",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-02-settle",
+            "narrative_state": "settle",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/generated/nagi_no_mirai/sensory_detail.png",
+            "photo_role": "sensory_detail",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-03-feel_care",
+            "narrative_state": "feel_care",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/generated/nagi_no_mirai/welcome_human.png",
+            "photo_role": "welcome_human",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-04-choose_time",
+            "narrative_state": "choose_time",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/stock/nagi_no_mirai/hand_technique.jpg",
+            "photo_role": "hand_technique",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-05-reserve",
+            "expected_media": false,
+            "rendered_media": false,
+            "photo_role": "typography",
+            "status": "PASS"
+          }
+        ],
+        "semantic_score_threshold": 0.65,
+        "temporal_inversion_count": 0
+      },
+      "watashi_no_daidokoro": {
+        "status": "PASS",
+        "bindings": [
+          {
+            "scene_id": "scene-01-encounter",
+            "narrative_state": "encounter",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/generated/watashi_no_daidokoro/hero_shared_cooking.png",
+            "photo_role": "hero_shared_cooking",
+            "timeline_reset_reason": "hero_preview_then_process_start",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-02-touch",
+            "narrative_state": "touch",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/stock/watashi_no_daidokoro/hands_in_action.jpg",
+            "photo_role": "hands_in_action",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-03-make",
+            "narrative_state": "make",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/stock/watashi_no_daidokoro/ingredient_story.jpg",
+            "photo_role": "ingredient_story",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-04-share",
+            "narrative_state": "share",
+            "expected_media": true,
+            "rendered_media": true,
+            "rendered_asset_id": "/assets/photography/generated/watashi_no_daidokoro/finished_table.png",
+            "photo_role": "finished_table",
+            "timeline_reset_reason": "",
+            "temporal": 1.0,
+            "subject": 1.0,
+            "action": 1.0,
+            "evidence": 1.0,
+            "score": 1.0,
+            "prohibited": 0,
+            "status": "PASS"
+          },
+          {
+            "scene_id": "scene-05-join",
+            "expected_media": false,
+            "rendered_media": false,
+            "photo_role": "typography",
+            "status": "PASS"
+          }
+        ],
+        "semantic_score_threshold": 0.65,
+        "temporal_inversion_count": 0
+      }
+    },
+    "copy": {
+      "maylynn_paint": {
+        "status": "PASS",
+        "blocker": 0,
+        "major": 0,
+        "violations": [],
+        "trace_coverage": 100,
+        "untraced_visible_copy": 0,
+        "scenes": [
+          {
+            "scene_id": "scene-01-observe",
+            "text": "家の輪郭を見つめる 福岡市で、住まいの状態を相談できます。 素材の状態を見る",
+            "evidence_trace": "322a500465",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-02-read_material",
+            "text": "素材に触れて考える 外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+            "evidence_trace": "322a500465,8ab974c366",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-03-watch_hands",
+            "text": "手仕事の順番を見る 外壁塗装・屋根・雨漏り・リフォームをについて相談できます 対応範囲を確かめる",
+            "evidence_trace": "322a500465,8ab974c366",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-04-imagine_change",
+            "text": "仕上がりを思い描く 表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+            "evidence_trace": "322a500465,8ab974c366",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-05-consult",
+            "text": "状態から相談する 外壁塗装の状態を見ながら、相談の準備を整えます。 見積を相談する",
+            "evidence_trace": "322a500465,8ab974c366",
+            "claim_trace_present": true
+          }
+        ]
+      },
+      "nagi_no_mirai": {
+        "status": "PASS",
+        "blocker": 0,
+        "major": 0,
+        "violations": [],
+        "trace_coverage": 100,
+        "untraced_visible_copy": 0,
+        "scenes": [
+          {
+            "scene_id": "scene-01-arrive",
+            "text": "空間に入る 福岡市で、自分に合う過ごし方を考える時間をつくります。 過ごし方を感じる",
+            "evidence_trace": "",
+            "claim_trace_present": false
+          },
+          {
+            "scene_id": "scene-02-settle",
+            "text": "静けさを感じる ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+            "evidence_trace": "",
+            "claim_trace_present": false
+          },
+          {
+            "scene_id": "scene-03-feel_care",
+            "text": "触れられる時間 触れられる時間を選び、自分に合う過ごし方を考えます。 時間の選び方を見る",
+            "evidence_trace": "5925611649,d94ba09045",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-04-choose_time",
+            "text": "過ごし方を選ぶ 頭をゆるめる時間の流れを、静かな空間で確かめます。",
+            "evidence_trace": "5925611649,d94ba09045",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-05-reserve",
+            "text": "その時間を予約する ヘッドスパで、自分のための時間を予約します。 予約を相談する",
+            "evidence_trace": "5925611649,d94ba09045",
+            "claim_trace_present": true
+          }
+        ]
+      },
+      "watashi_no_daidokoro": {
+        "status": "PASS",
+        "blocker": 0,
+        "major": 0,
+        "violations": [],
+        "trace_coverage": 100,
+        "untraced_visible_copy": 0,
+        "scenes": [
+          {
+            "scene_id": "scene-01-encounter",
+            "text": "食材に出会う 福岡市西区の料理教室で、食材と手を動かす時間に出会います。 料理の流れを見る",
+            "evidence_trace": "",
+            "claim_trace_present": false
+          },
+          {
+            "scene_id": "scene-02-touch",
+            "text": "手を動かしてみる 手を動かし、火を入れる順序を確かめます。",
+            "evidence_trace": "f0a47e5f99,e98a978ae6",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-03-make",
+            "text": "料理ができていく 料理教室で食材を選び、料理の流れを一緒に学びます。 場と内容を確かめる",
+            "evidence_trace": "f0a47e5f99,e98a978ae6",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-04-share",
+            "text": "食卓を囲む ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+            "evidence_trace": "f0a47e5f99,e98a978ae6",
+            "claim_trace_present": true
+          },
+          {
+            "scene_id": "scene-05-join",
+            "text": "参加を考える できあがる一皿を囲む時間へ、参加の一歩を踏み出します。 参加を相談する",
+            "evidence_trace": "f0a47e5f99,e98a978ae6",
+            "claim_trace_present": true
+          }
+        ]
+      }
+    },
+    "peak": {
+      "maylynn_paint": {
+        "status": "PASS",
+        "selection": "rendered_candidate_ranking",
+        "peaks": [
+          {
+            "peak_id": "peak-02-read_material",
+            "scene_id": "scene-02-read_material",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 2,
+              "narrative_significance": 2,
+              "screenshot_independence": 2,
+              "visual_concentration": 1
+            },
+            "total": 13,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "素材に触れて考える 外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+            "rendered_authority": "MATERIAL",
+            "signature_anchor_ids": [
+              "anchor-02-service"
+            ],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-01-observe",
+            "scene_id": "scene-01-observe",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 1,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 2
+            },
+            "total": 12,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "家の輪郭を見つめる 福岡市で、住まいの状態を相談できます。 素材の状態を見る",
+            "rendered_authority": "IMAGE",
+            "signature_anchor_ids": [
+              "anchor-01-place"
+            ],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-03-watch_hands",
+            "scene_id": "scene-03-watch_hands",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 2,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 1
+            },
+            "total": 12,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "手仕事の順番を見る 外壁塗装・屋根・雨漏り・リフォームをについて相談できます 対応範囲を確かめる",
+            "rendered_authority": "DATA",
+            "signature_anchor_ids": [
+              "anchor-02-service",
+              "anchor-03-truth"
+            ],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-04-imagine_change",
+            "scene_id": "scene-04-imagine_change",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 2,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 1
+            },
+            "total": 12,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "仕上がりを思い描く 表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+            "rendered_authority": "TYPE",
+            "signature_anchor_ids": [
+              "anchor-02-service"
+            ],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          }
+        ],
+        "candidate_count": 5,
+        "fixed_position_selection": false
+      },
+      "nagi_no_mirai": {
+        "status": "PASS",
+        "selection": "rendered_candidate_ranking",
+        "peaks": [
+          {
+            "peak_id": "peak-03-feel_care",
+            "scene_id": "scene-03-feel_care",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 2,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 2
+            },
+            "total": 13,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "触れられる時間 触れられる時間を選び、自分に合う過ごし方を考えます。 時間の選び方を見る",
+            "rendered_authority": "PERSON",
+            "signature_anchor_ids": [],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-04-choose_time",
+            "scene_id": "scene-04-choose_time",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 2,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 1
+            },
+            "total": 12,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "過ごし方を選ぶ 頭をゆるめる時間の流れを、静かな空間で確かめます。",
+            "rendered_authority": "TYPE",
+            "signature_anchor_ids": [],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-01-arrive",
+            "scene_id": "scene-01-arrive",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 1,
+              "perceptual_delta": 1,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 2
+            },
+            "total": 11,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "空間に入る 福岡市で、自分に合う過ごし方を考える時間をつくります。 過ごし方を感じる",
+            "rendered_authority": "IMAGE",
+            "signature_anchor_ids": [
+              "anchor-01-place"
+            ],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-02-settle",
+            "scene_id": "scene-02-settle",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 1,
+              "perceptual_delta": 2,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 1
+            },
+            "total": 11,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "静けさを感じる ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+            "rendered_authority": "SENSORY",
+            "signature_anchor_ids": [
+              "anchor-02-service",
+              "anchor-03-truth"
+            ],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          }
+        ],
+        "candidate_count": 5,
+        "fixed_position_selection": false
+      },
+      "watashi_no_daidokoro": {
+        "status": "PASS",
+        "selection": "rendered_candidate_ranking",
+        "peaks": [
+          {
+            "peak_id": "peak-03-make",
+            "scene_id": "scene-03-make",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 2,
+              "narrative_significance": 2,
+              "screenshot_independence": 2,
+              "visual_concentration": 1
+            },
+            "total": 13,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "料理ができていく 料理教室で食材を選び、料理の流れを一緒に学びます。 場と内容を確かめる",
+            "rendered_authority": "DATA",
+            "signature_anchor_ids": [
+              "anchor-02-service"
+            ],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-02-touch",
+            "scene_id": "scene-02-touch",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 2,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 2
+            },
+            "total": 13,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "手を動かしてみる 手を動かし、火を入れる順序を確かめます。",
+            "rendered_authority": "PERSON",
+            "signature_anchor_ids": [],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-04-share",
+            "scene_id": "scene-04-share",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 2,
+              "perceptual_delta": 2,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 2
+            },
+            "total": 13,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "食卓を囲む ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+            "rendered_authority": "WORLD",
+            "signature_anchor_ids": [],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          },
+          {
+            "peak_id": "peak-01-encounter",
+            "scene_id": "scene-01-encounter",
+            "score": {
+              "idea_clarity": 2,
+              "company_specificity": 2,
+              "content_payload": 1,
+              "perceptual_delta": 1,
+              "narrative_significance": 1,
+              "screenshot_independence": 2,
+              "visual_concentration": 2
+            },
+            "total": 11,
+            "eligible": true,
+            "forced_quiet_end": false,
+            "archetype": "media-led",
+            "reason": "rendered content candidate ranking",
+            "rendered_payload": "食材に出会う 福岡市西区の料理教室で、食材と手を動かす時間に出会います。 料理の流れを見る",
+            "rendered_authority": "WORLD",
+            "signature_anchor_ids": [
+              "anchor-01-place",
+              "anchor-02-service"
+            ],
+            "narrative_reason": "rendered content candidate ranking",
+            "screenshot_independence": true,
+            "human_review_reason": "actual rendered media or evidence payload is legible"
+          }
+        ],
+        "candidate_count": 5,
+        "fixed_position_selection": false
+      }
+    },
+    "signature": {
+      "maylynn_paint": {
+        "status": "PASS",
+        "anchors": [
+          {
+            "anchor_id": "anchor-01-place",
+            "anchor_type": "PLACE",
+            "value": "福岡市",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "channel_count": 5,
+            "non_copy_channels": [
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": true,
+            "photo": true,
+            "peak": true,
+            "cta": true,
+            "status": "PASS"
+          },
+          {
+            "anchor_id": "anchor-02-service",
+            "anchor_type": "SERVICE",
+            "value": "外壁塗装",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "channel_count": 5,
+            "non_copy_channels": [
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": true,
+            "photo": true,
+            "peak": true,
+            "cta": true,
+            "status": "PASS"
+          },
+          {
+            "anchor_id": "anchor-03-truth",
+            "anchor_type": "TRUTH",
+            "value": "外壁塗装・屋根・雨漏り・リフォームを相談できる地域の窓口",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "channel_count": 5,
+            "non_copy_channels": [
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": true,
+            "photo": true,
+            "peak": true,
+            "cta": true,
+            "status": "PASS"
+          }
+        ],
+        "generic_customer_state_anchors": 0
+      },
+      "nagi_no_mirai": {
+        "status": "PASS",
+        "anchors": [
+          {
+            "anchor_id": "anchor-01-place",
+            "anchor_type": "PLACE",
+            "value": "福岡市",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "channel_count": 5,
+            "non_copy_channels": [
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": true,
+            "photo": true,
+            "peak": true,
+            "cta": true,
+            "status": "PASS"
+          },
+          {
+            "anchor_id": "anchor-02-service",
+            "anchor_type": "SERVICE",
+            "value": "ヘッドスパ",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "channel_count": 5,
+            "non_copy_channels": [
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": true,
+            "photo": true,
+            "peak": true,
+            "cta": true,
+            "status": "PASS"
+          },
+          {
+            "anchor_id": "anchor-03-truth",
+            "anchor_type": "TRUTH",
+            "value": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "channel_count": 5,
+            "non_copy_channels": [
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": true,
+            "photo": true,
+            "peak": true,
+            "cta": true,
+            "status": "PASS"
+          }
+        ],
+        "generic_customer_state_anchors": 0
+      },
+      "watashi_no_daidokoro": {
+        "status": "PASS",
+        "anchors": [
+          {
+            "anchor_id": "anchor-01-place",
+            "anchor_type": "PLACE",
+            "value": "福岡市西区",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "channel_count": 5,
+            "non_copy_channels": [
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": true,
+            "photo": true,
+            "peak": true,
+            "cta": true,
+            "status": "PASS"
+          },
+          {
+            "anchor_id": "anchor-02-service",
+            "anchor_type": "SERVICE",
+            "value": "料理教室",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "channel_count": 5,
+            "non_copy_channels": [
+              "VISUAL",
+              "PHOTOGRAPHY",
+              "PEAK",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": true,
+            "photo": true,
+            "peak": true,
+            "cta": true,
+            "status": "PASS"
+          },
+          {
+            "anchor_id": "anchor-03-truth",
+            "anchor_type": "TRUTH",
+            "value": "少人数でストウブ無水料理を学ぶ料理教室",
+            "generic_customer_state": false,
+            "rendered_channels": [
+              "COPY",
+              "PHOTOGRAPHY",
+              "CTA"
+            ],
+            "channel_count": 3,
+            "non_copy_channels": [
+              "PHOTOGRAPHY",
+              "CTA"
+            ],
+            "copy": true,
+            "visual": false,
+            "photo": true,
+            "peak": false,
+            "cta": true,
+            "status": "PASS"
+          }
+        ],
+        "generic_customer_state_anchors": 0
+      }
+    },
+    "capture": "PASS",
+    "browser": "PASS"
+  }
+}

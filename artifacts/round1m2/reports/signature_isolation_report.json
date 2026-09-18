@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "major_copy_units": 5,
+      "cross_family_contamination": [],
+      "signature_centrality": "PRIMARY"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "major_copy_units": 6,
+      "cross_family_contamination": [],
+      "signature_centrality": "PRIMARY"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "major_copy_units": 5,
+      "cross_family_contamination": [],
+      "signature_centrality": "PRIMARY"
+    }
+  ]
+}

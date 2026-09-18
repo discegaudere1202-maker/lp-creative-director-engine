@@ -1,0 +1,2279 @@
+{
+  "schema_version": "production_generation_v1",
+  "company": {
+    "schema_version": "production_generation_v1",
+    "company_id": "nagi_no_mirai",
+    "company_name": "なぎのみらい",
+    "industry": "ヘッドスパ",
+    "service_category": "ヘッドスパ",
+    "location": "福岡市",
+    "business_model": "local_service",
+    "company_truth": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+    "differentiators": [
+      "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。"
+    ],
+    "customer_state": {
+      "before": "相談前に何を確認すればよいか分からない",
+      "after": "まず状況を伝えてみようと思える",
+      "barrier": "自分に合う入口か分からない"
+    },
+    "conversion_goal": "reservation",
+    "generation_iteration": 5,
+    "primary_objections": [
+      "O3_PROCESS",
+      "O4_NEXT"
+    ],
+    "available_evidence": [
+      "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "福岡市で活動する事業者。",
+      "対応できる内容を確認してから次の案内へ進む。",
+      "公式SNSから相談・予約の入口を確認する。"
+    ],
+    "unavailable_evidence": [
+      "実店舗・実施工・実スタッフ・実顧客・実教室の写真"
+    ],
+    "hearing_required": [],
+    "visual_authority": [
+      "PERSON",
+      "SENSORY",
+      "PLACE",
+      "MATERIAL",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "evidence_density": "MEDIUM",
+    "industry_visual_family": "care_experience",
+    "visual_scene": "care_experience",
+    "layout_profile": "care_rhythm",
+    "field_validation_context": true,
+    "verified_strengths": [
+      "E2_SPECIFIC",
+      "E3_OPERATIONAL",
+      "E5_DECISION_ENABLING"
+    ],
+    "evidence_utility": {
+      "TRUST": 1,
+      "CONVERSION": 2,
+      "VISUAL": 1,
+      "PROCESS": 2,
+      "IDENTITY": 1
+    },
+    "evidence_strategy": "proof_process_action_balance",
+    "source_references": [
+      "approved-selection-manifest",
+      "phase6-sales-master-snapshot"
+    ],
+    "contact_channels": {
+      "href": "#contact",
+      "primary": "公式SNS"
+    },
+    "photo_replacement_readiness": {
+      "status": "READY_WITH_PROXY",
+      "proxy_role": "role_selected_photography_asset",
+      "replacement_targets": [
+        "実店舗・実現場・実商品・実人物写真"
+      ],
+      "layout_constraints": [
+        "同一役割の実写真を同じ比率へ差し替え可能",
+        "文字重なりなし",
+        "中央焦点を保持"
+      ],
+      "proof_role": "visual_context_only; not evidence of a real result or location",
+      "source_priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only"
+    }
+  },
+  "strategy": {
+    "schema_version": "production_generation_v1",
+    "creative_problem": "相談前に何を確認すればよいか分からないを、予約前の不安をほどくへ変える。",
+    "target_customer_state": {
+      "before": "相談前に何を確認すればよいか分からない",
+      "after": "まず状況を伝えてみようと思える",
+      "barrier": "自分に合う入口か分からない"
+    },
+    "desired_customer_transition": "まず状況を伝えてみようと思える",
+    "core_message": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+    "big_idea": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。を、予約前の不安をほどくの入口として見せる。",
+    "emotional_barrier": "自分に合う入口か分からない",
+    "trust_strategy": {
+      "approved_proof": [
+        "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "福岡市で活動する事業者。",
+        "対応できる内容を確認してから次の案内へ進む。"
+      ],
+      "sequence": [
+        "Company Truth",
+        "Operational clarity",
+        "Action"
+      ],
+      "unsupported_claim_policy": "Use only Safety-approved evidence; do not generate reassurance from missing facts."
+    },
+    "conversion_strategy": {
+      "goal": "reservation",
+      "cta_role": "permission_to_start",
+      "before_cta": "対象となる状況と確認できる入口を短く明示する",
+      "customer_hesitation": "自分に合う入口か分からない",
+      "resolved_by_lp": "会社固有の入口・Process・連絡手段を一続きにする",
+      "why_act_now": "予約前の不安をほどくを確認できる入口がここにある",
+      "after_click": "確認済みの連絡手段へ進み、未確認の対応約束は置かない",
+      "after_cta": "確認できる連絡手段だけを表示し、未確認の対応約束を置かない"
+    },
+    "form_causality": [
+      {
+        "company_truth": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "form_decision": "care_rhythmの主構造を選び、情報の入口を一つの視線移動にまとめる。",
+        "customer_effect": "最初に何を理解すればよいか迷いにくい。"
+      },
+      {
+        "company_truth": "相談前に何を確認すればよいか分からない",
+        "form_decision": "Before Stateを最初の見出しとCTA前の説明へ再登場させる。",
+        "customer_effect": "自分の現在地から行動へ移れる。"
+      },
+      {
+        "company_truth": "自分に合う入口か分からない",
+        "form_decision": "障壁に対応するEvidenceを、説明・Process・CTAの順で近接配置する。",
+        "customer_effect": "行動前の不確実さが具体的な確認事項へ変わる。"
+      },
+      {
+        "company_truth": "reservation",
+        "form_decision": "Conversion Goalに合わせてCTAのタイミングと余白を決める。",
+        "customer_effect": "押す理由と次の動作が画面上でつながる。"
+      },
+      {
+        "company_truth": "MEDIUM",
+        "form_decision": "LOW Evidenceでは主張を増やさず、余白・Type・Material abstractionでPeakをつくる。",
+        "customer_effect": "情報不足を誤認させず、見せ場の密度だけを高める。"
+      }
+    ],
+    "big_idea_gate": {
+      "company_specific": true,
+      "customer_relevant": true,
+      "visualizable": true,
+      "extendable": true,
+      "memorable": true
+    },
+    "visual_authority_priority": [
+      "PERSON",
+      "SENSORY",
+      "PLACE",
+      "MATERIAL",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "layout_profile": "care_rhythm",
+    "evidence_density_signal": "MEDIUM",
+    "quality_calibration": "premium_causality_and_conversion",
+    "sparse_strategy": "not_required",
+    "premium_quality_strategy": {
+      "enabled": true,
+      "focus": [
+        "form_causality",
+        "conversion_confidence",
+        "quiet_chapters",
+        "mobile_peak"
+      ],
+      "not_a_template": true
+    },
+    "anti_template_notes": [
+      "No generic three-card grid as the primary composition.",
+      "No unsupported reassurance or invented metrics.",
+      "Peak screens are limited; quiet chapters carry orientation."
+    ],
+    "creative_genome": {
+      "schema_version": "creative_genome_v1",
+      "dominant_narrative": "sensory_experience",
+      "emotional_tempo": "gentle",
+      "visual_authority_priority": [
+        "PERSON",
+        "SENSORY",
+        "PLACE",
+        "MATERIAL",
+        "TYPOGRAPHY",
+        "DOCUMENT"
+      ],
+      "composition_logic": [
+        "sensory_pause",
+        "immersive_image",
+        "human_dialogue",
+        "progressive_story"
+      ],
+      "signature_moment": {
+        "section_role": "company_truth",
+        "reason": "Company Truthと主役のVisual Authorityが同じ画面で結び付く瞬間"
+      },
+      "screenshot_peak_plan": [
+        {
+          "section_role": "hero_orientation",
+          "visual_authority": "PERSON",
+          "composition": "sensory_pause",
+          "reason": "最初の認識を決める"
+        },
+        {
+          "section_role": "company_truth",
+          "visual_authority": "SENSORY",
+          "composition": "immersive_image",
+          "reason": "固有のTruthを記憶に残す"
+        },
+        {
+          "section_role": "service_process",
+          "visual_authority": "PERSON",
+          "composition": "human_dialogue",
+          "reason": "行動の順番を見せる"
+        }
+      ],
+      "cta_progression": [
+        {
+          "stage": "discovery",
+          "section_role": "hero_orientation",
+          "user_hesitation": "自分に関係する入口か分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "まず状況を見渡す",
+          "action_type": "anchor",
+          "label_strategy": "understand_before_contact",
+          "visible_label": "過ごし方を感じる",
+          "destination": "#way-in"
+        },
+        {
+          "stage": "reassurance",
+          "section_role": "company_truth",
+          "user_hesitation": "この会社へ相談してよいか迷う",
+          "evidence_already_seen": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "required_evidence": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "action_reason": "会社固有の範囲を確かめる",
+          "action_type": "anchor",
+          "label_strategy": "verify_scope",
+          "visible_label": "時間の選び方を見る",
+          "destination": "#reassurance"
+        },
+        {
+          "stage": "action",
+          "section_role": "cta_zone",
+          "user_hesitation": "何を伝えればよいか分からない",
+          "evidence_already_seen": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002",
+            "nagi_no_mirai-e-003",
+            "nagi_no_mirai-e-004"
+          ],
+          "required_evidence": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002",
+            "nagi_no_mirai-e-003",
+            "nagi_no_mirai-e-004"
+          ],
+          "action_reason": "reservationの確認へ進む",
+          "action_type": "conversion",
+          "label_strategy": "act_on_seen_evidence",
+          "visible_label": "予約を相談する",
+          "destination": "#contact"
+        }
+      ],
+      "mobile_redirection": {
+        "hero_crop": "focus_primary_authority",
+        "visual_text_order": "authority_before_explanation",
+        "whitespace": "preserve_tempo_pause",
+        "section_density": "reduce_supporting_density",
+        "image_prominence": "promote_signature_moment",
+        "cta_timing": "after_reassurance"
+      },
+      "derivation": {
+        "source": "Company Truth + evidence types + conversion goal + visual authority",
+        "profile": "care_rhythm",
+        "evidence_types": [
+          "CTA_CHANNEL",
+          "PLACE_WIDE",
+          "SERVICE_PROCESS",
+          "SERVICE_SCOPE"
+        ],
+        "deterministic": true
+      }
+    },
+    "narrative_architecture": {
+      "schema_version": "narrative_architecture_v1",
+      "narrative_family": "sensory_experience",
+      "narrative_arc": [
+        {
+          "narrative_state": "arrive",
+          "user_question": "どんな空気の中で過ごすのか",
+          "user_emotion": "open",
+          "section_purpose": "CREATE_DESIRE",
+          "evidence_required": [],
+          "preferred_visual_authority": "PERSON",
+          "preferred_composition_grammar": "immersive_image",
+          "copy_density": "low",
+          "cta_eligibility": "none"
+        },
+        {
+          "narrative_state": "settle",
+          "user_question": "静けさはどう深まるか",
+          "user_emotion": "calm",
+          "section_purpose": "CREATE_PAUSE",
+          "evidence_required": [],
+          "preferred_visual_authority": "SENSORY",
+          "preferred_composition_grammar": "sensory_pause",
+          "copy_density": "low",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "feel_care",
+          "user_question": "どんな時間を受け取るのか",
+          "user_emotion": "trusting",
+          "section_purpose": "SHOW_EXPERIENCE",
+          "evidence_required": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "preferred_visual_authority": "PLACE",
+          "preferred_composition_grammar": "human_dialogue",
+          "copy_density": "low",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "choose_time",
+          "user_question": "自分の過ごし方を選べるか",
+          "user_emotion": "certain",
+          "section_purpose": "REDUCE_UNCERTAINTY",
+          "evidence_required": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "preferred_visual_authority": "MATERIAL",
+          "preferred_composition_grammar": "progressive_story",
+          "copy_density": "low",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "reserve",
+          "user_question": "いつ、その時間をつくるか",
+          "user_emotion": "ready",
+          "section_purpose": "ENABLE_ACTION",
+          "evidence_required": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "preferred_visual_authority": "TYPOGRAPHY",
+          "preferred_composition_grammar": "asymmetric_editorial",
+          "copy_density": "low",
+          "cta_eligibility": "primary"
+        }
+      ],
+      "narrative_states": [
+        "arrive",
+        "settle",
+        "feel_care",
+        "choose_time",
+        "reserve"
+      ],
+      "section_purposes": [
+        "CREATE_DESIRE",
+        "CREATE_PAUSE",
+        "SHOW_EXPERIENCE",
+        "REDUCE_UNCERTAINTY",
+        "ENABLE_ACTION"
+      ],
+      "transition_logic": [
+        "arrive→settle",
+        "settle→feel_care",
+        "feel_care→choose_time",
+        "choose_time→reserve"
+      ],
+      "emotional_progression": [
+        "open",
+        "calm",
+        "trusting",
+        "certain",
+        "ready"
+      ],
+      "visual_progression": [
+        "immersive_image",
+        "sensory_pause",
+        "human_dialogue",
+        "progressive_story",
+        "asymmetric_editorial"
+      ],
+      "evidence_progression": [
+        [],
+        [],
+        [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ],
+        [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ],
+        [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ]
+      ],
+      "cta_progression_mapping": [
+        {
+          "stage": "discovery",
+          "section_role": "hero_orientation",
+          "user_hesitation": "自分に関係する入口か分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "まず状況を見渡す",
+          "action_type": "anchor",
+          "label_strategy": "understand_before_contact",
+          "visible_label": "過ごし方を感じる",
+          "destination": "#way-in"
+        },
+        {
+          "stage": "reassurance",
+          "section_role": "company_truth",
+          "user_hesitation": "この会社へ相談してよいか迷う",
+          "evidence_already_seen": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "required_evidence": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "action_reason": "会社固有の範囲を確かめる",
+          "action_type": "anchor",
+          "label_strategy": "verify_scope",
+          "visible_label": "時間の選び方を見る",
+          "destination": "#reassurance"
+        },
+        {
+          "stage": "action",
+          "section_role": "cta_zone",
+          "user_hesitation": "何を伝えればよいか分からない",
+          "evidence_already_seen": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002",
+            "nagi_no_mirai-e-003",
+            "nagi_no_mirai-e-004"
+          ],
+          "required_evidence": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002",
+            "nagi_no_mirai-e-003",
+            "nagi_no_mirai-e-004"
+          ],
+          "action_reason": "reservationの確認へ進む",
+          "action_type": "conversion",
+          "label_strategy": "act_on_seen_evidence",
+          "visible_label": "予約を相談する",
+          "destination": "#contact"
+        }
+      ],
+      "section_naming": [
+        "空間に入る",
+        "静けさを感じる",
+        "触れられる時間",
+        "過ごし方を選ぶ",
+        "その時間を予約する"
+      ],
+      "mobile_redirection": {
+        "hero_crop": "focus_primary_authority",
+        "visual_text_order": "authority_before_explanation",
+        "whitespace": "preserve_tempo_pause",
+        "section_density": "reduce_supporting_density",
+        "image_prominence": "promote_signature_moment",
+        "cta_timing": "after_reassurance"
+      },
+      "derived_from": "Creative Genome + Company Truth + approved Evidence"
+    }
+  },
+  "ia": [
+    {
+      "section_id": "opening",
+      "section_role": "hero_orientation",
+      "customer_question": "ここは自分の状況を相談できる場所か？",
+      "key_message": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。を、予約前の不安をほどくの入口として見せる。",
+      "layout_hint": "care_rhythm",
+      "evidence_used": [],
+      "visual_authority": "PERSON",
+      "emotional_intensity": 5,
+      "cta_role": "orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "headline_first_then_single_action",
+      "composition_grammar": "sensory_pause",
+      "genome_tempo": "gentle",
+      "cta_stage": "discovery",
+      "order": 0
+    },
+    {
+      "section_id": "truth",
+      "section_role": "company_truth",
+      "customer_question": "なぜこの会社に相談するのか？",
+      "key_message": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "layout_hint": "気になることから",
+      "evidence_used": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002"
+      ],
+      "visual_authority": "PERSON",
+      "emotional_intensity": 4,
+      "cta_role": "proof_orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "stacked_proof_with_short_lines",
+      "composition_grammar": "immersive_image",
+      "genome_tempo": "gentle",
+      "cta_stage": "reassurance",
+      "order": 1
+    },
+    {
+      "section_id": "contact",
+      "section_role": "next_step",
+      "customer_question": "問い合わせた後、まず何ができるか？",
+      "key_message": "予約の入口。",
+      "layout_hint": "予約の入口",
+      "evidence_used": [
+        "nagi_no_mirai-e-004"
+      ],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 4,
+      "cta_role": "action",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "contact_details_before_button",
+      "composition_grammar": "progressive_story",
+      "genome_tempo": "gentle",
+      "cta_stage": "",
+      "order": 2
+    },
+    {
+      "section_id": "way_in",
+      "section_role": "service_process",
+      "customer_question": "相談したら、何を伝えればよいか？",
+      "key_message": "過ごし方を選ぶ。",
+      "layout_hint": "過ごし方を選ぶ",
+      "evidence_used": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-003"
+      ],
+      "visual_authority": "DOCUMENT",
+      "emotional_intensity": 3,
+      "cta_role": "clarity",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "vertical_steps_with_breathing_room",
+      "composition_grammar": "human_dialogue",
+      "genome_tempo": "gentle",
+      "cta_stage": "",
+      "order": 3
+    },
+    {
+      "section_id": "close",
+      "section_role": "cta_zone",
+      "customer_question": "ここから何をすればよいか？",
+      "key_message": "予約前の不安をほどく",
+      "layout_hint": "care_rhythm",
+      "evidence_used": [
+        "nagi_no_mirai-e-001",
+        "nagi_no_mirai-e-002",
+        "nagi_no_mirai-e-003",
+        "nagi_no_mirai-e-004"
+      ],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 5,
+      "cta_role": "primary_conversion",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target",
+      "composition_grammar": "sensory_pause",
+      "genome_tempo": "gentle",
+      "cta_stage": "action",
+      "order": 4
+    }
+  ],
+  "copy": {
+    "schema_version": "production_generation_v1",
+    "hero": {
+      "eyebrow": "なぎのみらい",
+      "headline": "ヘッドスパ",
+      "headline_lines": [
+        "ヘッドスパ"
+      ],
+      "supporting": "福岡市でヘッドスパを探している方へ。ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます。触れられる時間と空間を手がかりに、次の一歩を考えます。",
+      "cta": "予約する",
+      "microcopy": "福岡市｜触れられる時間と空間から次の案内へ。"
+    },
+    "sections": [
+      {
+        "section_id": "opening",
+        "headline": "空間に入る",
+        "headline_lines": [
+          "空間に入る"
+        ],
+        "body": "福岡市で、自分に合う過ごし方を考える時間をつくります。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "truth",
+        "headline": "静けさを感じる",
+        "headline_lines": [
+          "静けさを感じる"
+        ],
+        "body": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+        "evidence_claims": [
+          "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+          "福岡市で活動する事業者。",
+          "対応できる内容を確認してから次の案内へ進む。",
+          "公式SNSから相談・予約の入口を確認する。"
+        ],
+        "cta": ""
+      },
+      {
+        "section_id": "contact",
+        "headline": "触れられる時間",
+        "headline_lines": [
+          "触れられる時間"
+        ],
+        "body": "触れられる時間を選び、自分に合う過ごし方を考えます。",
+        "evidence_claims": [
+          "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+          "福岡市で活動する事業者。",
+          "対応できる内容を確認してから次の案内へ進む。",
+          "公式SNSから相談・予約の入口を確認する。"
+        ],
+        "cta": ""
+      },
+      {
+        "section_id": "way_in",
+        "headline": "過ごし方を選ぶ",
+        "headline_lines": [
+          "過ごし方を選ぶ"
+        ],
+        "body": "頭をゆるめる時間の流れを、静かな空間で確かめます。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "close",
+        "headline": "その時間を予約する",
+        "headline_lines": [
+          "その時間を予約する"
+        ],
+        "body": "ヘッドスパで、自分のための時間を予約します。",
+        "evidence_claims": [],
+        "cta": "予約する"
+      }
+    ],
+    "global_constraints": {
+      "all_customer_facing_claims_require_evidence_id": true,
+      "unsupported_reassurance": "blocked",
+      "line_shape": "meaning_units_not_character_count"
+    },
+    "process_steps": [
+      "気になることを話す",
+      "過ごし方を選ぶ",
+      "予約を相談する"
+    ],
+    "section_naming_gate": {
+      "status": "PASS",
+      "violations": []
+    }
+  },
+  "art_direction": {
+    "schema_version": "production_generation_v1",
+    "art_direction_concept": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。を、予約前の不安をほどくの入口として見せる。",
+    "visual_mood": "soft, tactile care with room to breathe before choosing",
+    "visual_authority_priority": [
+      "PERSON",
+      "SENSORY",
+      "PLACE",
+      "MATERIAL",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "color_logic": {
+      "ink": "#1c1917",
+      "accent": "#d8a58c",
+      "paper": "#f6eee7",
+      "reason": "PERSON is the first evidence-bearing authority."
+    },
+    "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+    "composition_logic": "A soft arrival opening, tactile care surface and generous booking pause; the page slows before asking for action.",
+    "photography_logic": "Role-driven photography is the primary visual authority; vector scenes are support only.",
+    "visual_scene": "care_experience",
+    "visual_source": "photography_pipeline",
+    "photo_replacement_readiness": {
+      "status": "READY_WITH_PROXY",
+      "proxy_role": "role_selected_photography_asset",
+      "replacement_targets": [
+        "実店舗・実現場・実商品・実人物写真"
+      ],
+      "layout_constraints": [
+        "同一役割の実写真を同じ比率へ差し替え可能",
+        "文字重なりなし",
+        "中央焦点を保持"
+      ],
+      "proof_role": "visual_context_only; not evidence of a real result or location",
+      "source_priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only"
+    },
+    "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+    "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+    "motion_logic": "settle_into_care; one restrained reveal per section; no infinite or blocking animation.",
+    "forbidden_patterns": [
+      "rounded card wall",
+      "generic three-column grid",
+      "unsupported trust badge",
+      "stock person",
+      "marquee",
+      "parallax"
+    ],
+    "craft_catch": "A breath mark carries the customer from a vague need for care to a chosen kind of time.",
+    "layout_profile": "care_rhythm",
+    "art_direction_dimensions": {
+      "macro_composition": "care_rhythm",
+      "visual_density": "soft_focus",
+      "negative_space": "breathing_intervals",
+      "surface": "warm_matte",
+      "section_transitions": "breath_marks",
+      "rhythm": "arrive_then_settle",
+      "motion": "settle_into_care",
+      "evidence_density": "MEDIUM",
+      "visual_authority": "PERSON",
+      "crop_logic": "no client image dependency; abstract geometry carries the role"
+    },
+    "photo_role_map": {
+      "schema_version": "photo_role_map_v1",
+      "selection_mode": "role_driven_not_fixed_count",
+      "roles": [
+        {
+          "photo_role": "hero_treatment_space",
+          "visual_subject": "静かな施術空間と施術の気配",
+          "business_purpose": "安心感と体験の温度を最初に伝える",
+          "replacement_target": "実店舗と実施術シーン",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "mid",
+          "proof_intent": "experience_context_only",
+          "placement": "hero_dominant_image"
+        },
+        {
+          "photo_role": "hand_technique",
+          "visual_subject": "頭部への手技と施術者の手元",
+          "business_purpose": "技術感と身体感覚を伝える",
+          "replacement_target": "実施術中の手元",
+          "preferred_orientation": "portrait",
+          "crop_tolerance": "tight",
+          "people_distance": "close",
+          "proof_intent": "craft_context_only",
+          "placement": "mid_frame_proof_experience"
+        },
+        {
+          "photo_role": "sensory_detail",
+          "visual_subject": "タオル・照明・ベッド周りの静かなディテール",
+          "business_purpose": "リラックスの感覚を補強する",
+          "replacement_target": "実店舗ディテール",
+          "preferred_orientation": "square",
+          "crop_tolerance": "tight",
+          "people_distance": "none",
+          "proof_intent": "sensory_context_only",
+          "placement": "craft_detail_image",
+          "secondary_placement": "quiet_chapter_image"
+        },
+        {
+          "photo_role": "welcome_human",
+          "visual_subject": "相談・迎え入れの人間的な距離感",
+          "business_purpose": "初回来店の不安を下げる",
+          "replacement_target": "実接客・相談風景",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "mid",
+          "proof_intent": "human_context_only",
+          "placement": "quiet_chapter_image"
+        }
+      ],
+      "section_role_map": {
+        "hero_orientation": "hero_treatment_space",
+        "company_truth": "hand_technique",
+        "service_process": "sensory_detail",
+        "next_step": "welcome_human",
+        "cta_zone": "welcome_human"
+      }
+    },
+    "asset_selection_policy": {
+      "priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only_not_primary_photography"
+    },
+    "vector_role": "supporting_only"
+  },
+  "design_tokens": {
+    "schema_version": "production_generation_v1",
+    "colors": {
+      "ink": "#1c1917",
+      "accent": "#d8a58c",
+      "paper": "#f6eee7",
+      "muted": "#77736b",
+      "line": "rgba(21,21,21,.18)"
+    },
+    "typography": {
+      "display": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+      "body": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+      "display_weight": 800,
+      "body_weight": 450
+    },
+    "font_scale": {
+      "eyebrow": "0.72rem",
+      "body": "1rem",
+      "lead": "1.18rem",
+      "h2": "clamp(2rem, 5vw, 5rem)",
+      "hero": "clamp(3rem, 10vw, 9rem)"
+    },
+    "spacing": {
+      "unit": "8px",
+      "section": "clamp(5rem, 12vw, 12rem)",
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "radius": {
+      "surface": "2px",
+      "button": "999px"
+    },
+    "borders": {
+      "hairline": "1px solid var(--line)",
+      "strong": "1px solid var(--ink)"
+    },
+    "shadows": {
+      "surface": "10px 18px 0 rgba(21,21,21,.08)"
+    },
+    "container_widths": {
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "rhythm": {
+      "peak_to_quiet": "1.5",
+      "quiet_to_peak": "1.15"
+    },
+    "motion": {
+      "duration_ms": 520,
+      "easing": "cubic-bezier(.2,.7,.2,1)"
+    }
+  },
+  "compositions": [
+    {
+      "section_id": "opening",
+      "layout_type": "care_invitation",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_care_experience_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "headline",
+      "mobile_transformation": "headline_first_then_single_action",
+      "screenshot_peak": true,
+      "order": 0,
+      "layout_profile": "care_rhythm",
+      "section_role": "hero_orientation",
+      "photo_role": "hero_treatment_space",
+      "photo_placement": "hero_dominant_image",
+      "photo_asset_id": "nagi-hero-treatment-space-generated-v1",
+      "photo_source_type": "generated",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "truth",
+      "layout_type": "care_surface",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "right",
+      "image_role": "generated_care_experience_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "evidence",
+      "mobile_transformation": "stacked_proof_with_short_lines",
+      "screenshot_peak": true,
+      "order": 1,
+      "layout_profile": "care_rhythm",
+      "section_role": "company_truth",
+      "photo_role": "hand_technique",
+      "photo_placement": "mid_frame_proof_experience",
+      "photo_asset_id": "nagi-hand-technique-pexels-5794031",
+      "photo_source_type": "free_stock",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "contact",
+      "layout_type": "care_contact",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_care_experience_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "channel",
+      "mobile_transformation": "contact_details_before_button",
+      "screenshot_peak": false,
+      "order": 2,
+      "layout_profile": "care_rhythm",
+      "section_role": "next_step",
+      "photo_role": "welcome_human",
+      "photo_placement": "quiet_chapter_image",
+      "photo_asset_id": "nagi-welcome-human-generated-v1",
+      "photo_source_type": "generated",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "way_in",
+      "layout_type": "arrival_sequence",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_care_experience_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "rhythm",
+      "mobile_transformation": "vertical_steps_with_breathing_room",
+      "screenshot_peak": false,
+      "order": 3,
+      "layout_profile": "care_rhythm",
+      "section_role": "service_process",
+      "photo_role": "sensory_detail",
+      "photo_placement": "craft_detail_image",
+      "photo_asset_id": "nagi-sensory-detail-generated-v1",
+      "photo_source_type": "generated",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "close",
+      "layout_type": "closing_field",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_care_experience_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "action",
+      "mobile_transformation": "sticky_safe_spacing_and_full_width_touch_target",
+      "screenshot_peak": true,
+      "order": 4,
+      "layout_profile": "care_rhythm",
+      "section_role": "cta_zone",
+      "photo_role": "welcome_human",
+      "photo_placement": "pre_cta_trust_image",
+      "photo_asset_id": "nagi-welcome-human-generated-v1",
+      "photo_source_type": "generated",
+      "vector_role": "supporting_only"
+    }
+  ],
+  "motion_spec": {
+    "kind": "section_reveal",
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)",
+    "reduced_motion": "no_transform"
+  },
+  "approved_evidence_ids": [
+    "nagi_no_mirai-e-001",
+    "nagi_no_mirai-e-002",
+    "nagi_no_mirai-e-003",
+    "nagi_no_mirai-e-004"
+  ],
+  "production_output_status": "PRODUCTION_APPROVED",
+  "approved_evidence": [
+    {
+      "evidence_id": "nagi_no_mirai-e-001",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "SERVICE_SCOPE",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+      "source": "approved-selection-manifest",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "HERO",
+        "MIDDLE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "nagi_no_mirai-e-002",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "PLACE_WIDE",
+      "evidence_strength": "E2_SPECIFIC",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "福岡市で活動する事業者。",
+      "source": "phase6-sales-master-snapshot",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "HERO",
+        "EARLY_PROOF"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "nagi_no_mirai-e-003",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "SERVICE_PROCESS",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "対応できる内容を確認してから次の案内へ進む。",
+      "source": "approved-selection-manifest",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "MIDDLE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "nagi_no_mirai-e-004",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "CTA_CHANNEL",
+      "evidence_strength": "E5_DECISION_ENABLING",
+      "target_objections": [
+        "O4_NEXT"
+      ],
+      "claim": "公式SNSから相談・予約の入口を確認する。",
+      "source": "phase6-sales-master-snapshot",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    }
+  ],
+  "photo_role_map": {
+    "schema_version": "photo_role_map_v1",
+    "selection_mode": "role_driven_not_fixed_count",
+    "roles": [
+      {
+        "photo_role": "hero_treatment_space",
+        "visual_subject": "静かな施術空間と施術の気配",
+        "business_purpose": "安心感と体験の温度を最初に伝える",
+        "replacement_target": "実店舗と実施術シーン",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "experience_context_only",
+        "placement": "hero_dominant_image"
+      },
+      {
+        "photo_role": "hand_technique",
+        "visual_subject": "頭部への手技と施術者の手元",
+        "business_purpose": "技術感と身体感覚を伝える",
+        "replacement_target": "実施術中の手元",
+        "preferred_orientation": "portrait",
+        "crop_tolerance": "tight",
+        "people_distance": "close",
+        "proof_intent": "craft_context_only",
+        "placement": "mid_frame_proof_experience"
+      },
+      {
+        "photo_role": "sensory_detail",
+        "visual_subject": "タオル・照明・ベッド周りの静かなディテール",
+        "business_purpose": "リラックスの感覚を補強する",
+        "replacement_target": "実店舗ディテール",
+        "preferred_orientation": "square",
+        "crop_tolerance": "tight",
+        "people_distance": "none",
+        "proof_intent": "sensory_context_only",
+        "placement": "craft_detail_image",
+        "secondary_placement": "quiet_chapter_image"
+      },
+      {
+        "photo_role": "welcome_human",
+        "visual_subject": "相談・迎え入れの人間的な距離感",
+        "business_purpose": "初回来店の不安を下げる",
+        "replacement_target": "実接客・相談風景",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "human_context_only",
+        "placement": "quiet_chapter_image"
+      }
+    ],
+    "section_role_map": {
+      "hero_orientation": "hero_treatment_space",
+      "company_truth": "hand_technique",
+      "service_process": "sensory_detail",
+      "next_step": "welcome_human",
+      "cta_zone": "welcome_human"
+    }
+  },
+  "asset_manifest": {
+    "schema_version": "photography_asset_manifest_v1",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_policy": "supporting_only_not_primary_photography",
+    "assets": [
+      {
+        "asset_id": "nagi-hand-technique-pexels-5794031",
+        "photo_role": "hand_technique",
+        "source_type": "free_stock",
+        "provider": "Pexels",
+        "source": "https://www.pexels.com/photo/close-up-view-of-massaging-head-5794031/",
+        "asset_url": "/assets/photography/stock/nagi_no_mirai/hand_technique.jpg",
+        "creator": "Yan Krukau",
+        "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+        "license_terms_url": "https://www.pexels.com/license/",
+        "checked_at": "2026-09-16",
+        "visual_subject": "Selection Manifest PRIMARY",
+        "placement": "",
+        "replacement_target": "",
+        "crop": "50% 50%",
+        "alt": "hand_technique stock context image",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "nagi-hero-treatment-space-generated-v1",
+        "photo_role": "hero_treatment_space",
+        "source_type": "generated",
+        "provider": "OpenAI image generation",
+        "source": "conversation-approved-generated-asset",
+        "asset_url": "/assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+        "creator": "OpenAI",
+        "rights_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "license_terms_url": "",
+        "checked_at": "2026-09-16",
+        "visual_subject": "服を着た成人客が仰向けで休み、施術者の両手が頭部へ静かに触れる、日本の小規模ドライヘッドスパを想起させる生成ビジュアル。",
+        "placement": "hero_dominant_image",
+        "replacement_target": "なぎのみらいの実店舗・実際の施術シーン",
+        "crop": "{\"desktop\": \"16:10 crop; preserve client head and both practitioner hands on right, retain approximately 35-45% quiet copy area on left\", \"mobile\": \"4:3 crop-safe; retain head, both hands and enough surrounding room context; do not crop to face-only\"}",
+        "alt": "静かな小規模サロンで頭部への施術を受けながら休む時間を想起させるイメージ",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "nagi-sensory-detail-generated-v1",
+        "photo_role": "sensory_detail",
+        "source_type": "generated",
+        "provider": "OpenAI image generation",
+        "source": "conversation-approved-generated-asset",
+        "asset_url": "/assets/photography/generated/nagi_no_mirai/sensory_detail.png",
+        "creator": "OpenAI",
+        "rights_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "license_terms_url": "",
+        "checked_at": "2026-09-16",
+        "visual_subject": "頭部と首周りを柔らかく支えるヘッドレスト、清潔なタオルと布、自然光、小さな木製サイド家具をClose〜Medium Detailで捉えた、頭を預けて静かに休む時間を想起させるイメージ",
+        "placement": "quiet_chapter_image",
+        "replacement_target": "なぎのみらいの実店舗にある頭部周りの施術環境・実ディテール",
+        "crop": "\"square; 50% 50%\"",
+        "alt": "頭と首を支える柔らかなヘッドレストとタオル、自然光の静かな休息イメージ",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "nagi-welcome-human-generated-v1",
+        "photo_role": "welcome_human",
+        "source_type": "generated",
+        "provider": "OpenAI image generation",
+        "source": "conversation-approved-generated-asset",
+        "asset_url": "/assets/photography/generated/nagi_no_mirai/welcome_human.png",
+        "creator": "OpenAI",
+        "rights_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "license_terms_url": "",
+        "checked_at": "2026-09-16",
+        "visual_subject": "日本の小規模なドライヘッドスパを想起させる昼間の室内で、成人女性2名が同じ高さで穏やかに向き合い、何も記録せず自然に話を聞く人間的な距離感と初回来店時の安心を伝えるイメージ",
+        "placement": "pre_cta_trust_image",
+        "replacement_target": "なぎのみらいの実スタッフ・実相談風景",
+        "crop": "\"landscape 4:3; preserve both women on the left-to-center and approximately 25-35% quiet wall area on the right for CTA-adjacent layout\"",
+        "alt": "小規模なヘッドスパを想起させる室内で、二人の女性が穏やかに向き合い自然に話す安心感のイメージ",
+        "vector_role": "photography_candidate"
+      }
+    ],
+    "pending_roles": []
+  },
+  "premium_scene_plan": {
+    "schema_version": "premium_scene_plan_v1",
+    "company": {
+      "company_id": "nagi_no_mirai",
+      "company_name": "なぎのみらい"
+    },
+    "derivation_trace": {
+      "inputs": [
+        "Creative Genome",
+        "Narrative Architecture",
+        "Company Truth",
+        "Evidence",
+        "Photography Roles"
+      ],
+      "deterministic": true
+    },
+    "company_signature": [
+      {
+        "anchor": "Place",
+        "value": "福岡市",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Process",
+        "value": "ヘッドスパ",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Philosophy",
+        "value": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Audience tension",
+        "value": "自分に合う入口か分からない",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      }
+    ],
+    "scene_plan": [
+      {
+        "scene_id": "scene-01-arrive",
+        "narrative_index": 0,
+        "narrative_state": "arrive",
+        "entry_emotion": "open",
+        "exit_emotion": "calm",
+        "user_question": "どんな空気の中で過ごすのか",
+        "narrative_function": "CREATE_DESIRE",
+        "state_delta": {
+          "before": "どんな空気の中で過ごすのか",
+          "after": "calmへ進める"
+        },
+        "evidence_mode": "non_claim_expression",
+        "evidence_ids": [],
+        "visual_authority": "IMAGE",
+        "focal_entity": "hero_treatment_space",
+        "expected_media": true,
+        "dominance_level": "immersive",
+        "copy_intent": "ORIENT",
+        "copy_density": "low",
+        "visual_grammar": {
+          "name": "immersive_image",
+          "topology": "full_bleed",
+          "dominant_authority": "IMAGE",
+          "focal_count": 1,
+          "media_scale": "immersive",
+          "type_scale": "display",
+          "spatial_relation": "edge_bleed",
+          "asymmetry": "medium",
+          "negative_space": "perimeter",
+          "sequencing": "simultaneous",
+          "contrast_mode": "scale",
+          "transition": "reveal"
+        },
+        "transition_in": "reveal",
+        "transition_out": "reveal",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "discovery",
+        "desktop_art_direction": {
+          "topology": "full_bleed",
+          "focal_point": "center",
+          "media_scale": "immersive"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "perimeter",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "arriveをCREATE_DESIREへ翻訳"
+      },
+      {
+        "scene_id": "scene-02-settle",
+        "narrative_index": 1,
+        "narrative_state": "settle",
+        "entry_emotion": "calm",
+        "exit_emotion": "trusting",
+        "user_question": "静けさはどう深まるか",
+        "narrative_function": "CREATE_PAUSE",
+        "state_delta": {
+          "before": "静けさはどう深まるか",
+          "after": "trustingへ進める"
+        },
+        "evidence_mode": "non_claim_expression",
+        "evidence_ids": [],
+        "visual_authority": "SENSORY",
+        "focal_entity": "sensory_detail",
+        "expected_media": true,
+        "dominance_level": "intimate",
+        "copy_intent": "GUIDE",
+        "copy_density": "low",
+        "visual_grammar": {
+          "name": "sensory_pause",
+          "topology": "inset",
+          "dominant_authority": "SENSORY",
+          "focal_count": 1,
+          "media_scale": "intimate",
+          "type_scale": "quiet",
+          "spatial_relation": "contained",
+          "asymmetry": "low",
+          "negative_space": "central",
+          "sequencing": "pinned",
+          "contrast_mode": "tonal",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "discovery",
+        "desktop_art_direction": {
+          "topology": "inset",
+          "focal_point": "center",
+          "media_scale": "intimate"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "settleをCREATE_PAUSEへ翻訳"
+      },
+      {
+        "scene_id": "scene-03-feel_care",
+        "narrative_index": 2,
+        "narrative_state": "feel_care",
+        "entry_emotion": "trusting",
+        "exit_emotion": "certain",
+        "user_question": "どんな時間を受け取るのか",
+        "narrative_function": "SHOW_EXPERIENCE",
+        "state_delta": {
+          "before": "どんな時間を受け取るのか",
+          "after": "certainへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ],
+        "visual_authority": "PERSON",
+        "focal_entity": "welcome_human",
+        "expected_media": true,
+        "dominance_level": "dominant",
+        "copy_intent": "PROVE",
+        "copy_density": "low",
+        "visual_grammar": {
+          "name": "human_dialogue",
+          "topology": "split",
+          "dominant_authority": "PERSON",
+          "focal_count": 2,
+          "media_scale": "dominant",
+          "type_scale": "editorial",
+          "spatial_relation": "floating",
+          "asymmetry": "medium",
+          "negative_space": "directional",
+          "sequencing": "simultaneous",
+          "contrast_mode": "chromatic",
+          "transition": "reveal"
+        },
+        "transition_in": "reveal",
+        "transition_out": "reveal",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "reassurance",
+        "desktop_art_direction": {
+          "topology": "split",
+          "focal_point": "center",
+          "media_scale": "dominant"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "directional",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "feel_careをSHOW_EXPERIENCEへ翻訳"
+      },
+      {
+        "scene_id": "scene-04-choose_time",
+        "narrative_index": 3,
+        "narrative_state": "choose_time",
+        "entry_emotion": "certain",
+        "exit_emotion": "ready",
+        "user_question": "自分の過ごし方を選べるか",
+        "narrative_function": "REDUCE_UNCERTAINTY",
+        "state_delta": {
+          "before": "自分の過ごし方を選べるか",
+          "after": "readyへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ],
+        "visual_authority": "TYPE",
+        "focal_entity": "hand_technique",
+        "expected_media": true,
+        "dominance_level": "standard",
+        "copy_intent": "GUIDE",
+        "copy_density": "low",
+        "visual_grammar": {
+          "name": "progressive_story",
+          "topology": "layered",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "standard",
+          "type_scale": "editorial",
+          "spatial_relation": "overlap",
+          "asymmetry": "high",
+          "negative_space": "central",
+          "sequencing": "progressive",
+          "contrast_mode": "scale",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "reassurance",
+        "desktop_art_direction": {
+          "topology": "layered",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "choose_timeをREDUCE_UNCERTAINTYへ翻訳"
+      },
+      {
+        "scene_id": "scene-05-reserve",
+        "narrative_index": 4,
+        "narrative_state": "reserve",
+        "entry_emotion": "ready",
+        "exit_emotion": "ready",
+        "user_question": "いつ、その時間をつくるか",
+        "narrative_function": "ENABLE_ACTION",
+        "state_delta": {
+          "before": "いつ、その時間をつくるか",
+          "after": "readyへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ],
+        "visual_authority": "TYPOGRAPHY",
+        "focal_entity": "typography",
+        "expected_media": false,
+        "dominance_level": "display",
+        "copy_intent": "CONVERT",
+        "copy_density": "low",
+        "visual_grammar": {
+          "name": "asymmetric_editorial",
+          "topology": "layered",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "none",
+          "type_scale": "display",
+          "spatial_relation": "overlap",
+          "asymmetry": "high",
+          "negative_space": "central",
+          "sequencing": "progressive",
+          "contrast_mode": "scale",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "action",
+        "desktop_art_direction": {
+          "topology": "layered",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "after_scene",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "reserveをENABLE_ACTIONへ翻訳"
+      }
+    ],
+    "copy_plan": {
+      "claim_eligibility": [
+        {
+          "claim_trace_id": "nagi_no_mirai-e-001",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "nagi_no_mirai-e-001"
+        },
+        {
+          "claim_trace_id": "nagi_no_mirai-e-002",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "nagi_no_mirai-e-002"
+        },
+        {
+          "claim_trace_id": "nagi_no_mirai-e-003",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "nagi_no_mirai-e-003"
+        },
+        {
+          "claim_trace_id": "nagi_no_mirai-e-004",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "nagi_no_mirai-e-004"
+        }
+      ],
+      "omit_unverified": true
+    },
+    "device_plan": {
+      "desktop": "scene-specific foundation",
+      "mobile": "scene-specific foundation"
+    },
+    "reuse_plan": {
+      "policy": "same_role_only"
+    },
+    "qa_expectations": {
+      "gates": [
+        "narrative_order",
+        "state_delta",
+        "grammar_delta",
+        "authority_realization",
+        "claim_trace",
+        "cta_contract"
+      ]
+    },
+    "qa_gates": {
+      "narrative_scene_order_gate": "PASS",
+      "scene_state_delta_gate": "PASS",
+      "rendered_grammar_delta_gate": "PASS",
+      "consecutive_topology_repetition_gate": "PASS",
+      "visual_authority_realization_gate": "PASS",
+      "claim_traceability_gate": "PASS"
+    },
+    "human_translation_ref": "premium_human_translation_v1"
+  },
+  "premium_human_translation": {
+    "schema_version": "premium_human_translation_v1",
+    "signature_anchors": [
+      {
+        "anchor_id": "anchor-01-place",
+        "anchor_type": "PLACE",
+        "value": "福岡市",
+        "source": "location",
+        "evidence_ids": [
+          "nagi_no_mirai-e-002"
+        ],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "the customer needs a reachable context"
+      },
+      {
+        "anchor_id": "anchor-02-service",
+        "anchor_type": "SERVICE",
+        "value": "ヘッドスパ",
+        "source": "service_category",
+        "evidence_ids": [
+          "nagi_no_mirai-e-001"
+        ],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "the customer needs to recognize the activity"
+      },
+      {
+        "anchor_id": "anchor-03-truth",
+        "anchor_type": "TRUTH",
+        "value": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口",
+        "source": "company_truth",
+        "evidence_ids": [
+          "nagi_no_mirai-e-001"
+        ],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "company truth must remain the source of meaning"
+      }
+    ],
+    "copy_translation": {
+      "schema_version": "premium_copy_translation_ir_v1",
+      "expression_modes": [
+        "DIRECT_VALUE",
+        "CONCRETE_SCENE",
+        "PROCESS_MEANING",
+        "REASSURANCE",
+        "INVITATION",
+        "FACT_STRIP",
+        "OMISSION"
+      ],
+      "signature_anchor_ids": [
+        "anchor-01-place",
+        "anchor-02-service",
+        "anchor-03-truth"
+      ],
+      "scenes": [
+        {
+          "scene_id": "scene-01-arrive",
+          "narrative_index": 0,
+          "truth_atoms": [],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口",
+            "ヘッドスパ",
+            "福岡市"
+          ],
+          "implication_type": "ORIENT",
+          "expression_mode": "DIRECT_VALUE",
+          "visual_dependency": "IMAGE",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "空間に入る",
+            "body": "福岡市で、自分に合う過ごし方を考える時間をつくります。",
+            "microcopy": "福岡市｜触れられる時間と空間から次の案内へ。"
+          },
+          "definition": {
+            "text": "空間に入る福岡市で、自分に合う過ごし方を考える時間をつくります。",
+            "score": 3,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": false,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "ORIENT"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "narrative_index": 1,
+          "truth_atoms": [],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ヘッドスパ"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "CONCRETE_SCENE",
+          "visual_dependency": "SENSORY",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "静けさを感じる",
+            "body": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "静けさを感じるドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "narrative_index": 2,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "nagi_no_mirai-e-001",
+              "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "nagi_no_mirai-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口"
+          ],
+          "implication_type": "PROVE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "PERSON",
+          "claim_trace_ids": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "outputs": {
+            "headline": "触れられる時間",
+            "body": "触れられる時間を選び、自分に合う過ごし方を考えます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "触れられる時間触れられる時間を選び、自分に合う過ごし方を考えます。",
+            "score": 3,
+            "generic_predicate": false,
+            "anchor_present": false,
+            "concrete_noun": false,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "PROVE"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "narrative_index": 3,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "nagi_no_mirai-e-001",
+              "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "nagi_no_mirai-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "TYPE",
+          "claim_trace_ids": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "outputs": {
+            "headline": "過ごし方を選ぶ",
+            "body": "頭をゆるめる時間の流れを、静かな空間で確かめます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "過ごし方を選ぶ頭をゆるめる時間の流れを、静かな空間で確かめます。",
+            "score": 3,
+            "generic_predicate": false,
+            "anchor_present": false,
+            "concrete_noun": false,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "narrative_index": 4,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "nagi_no_mirai-e-001",
+              "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "nagi_no_mirai-e-002",
+              "fact": "福岡市で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "ヘッドスパ"
+          ],
+          "implication_type": "CONVERT",
+          "expression_mode": "INVITATION",
+          "visual_dependency": "TYPOGRAPHY",
+          "claim_trace_ids": [
+            "nagi_no_mirai-e-001",
+            "nagi_no_mirai-e-002"
+          ],
+          "outputs": {
+            "headline": "その時間を予約する",
+            "body": "ヘッドスパで、自分のための時間を予約します。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "その時間を予約するヘッドスパで、自分のための時間を予約します。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "CONVERT"
+        }
+      ]
+    },
+    "cta_closure": {
+      "schema_version": "cta_action_closure_ir_v1",
+      "status": "PASS",
+      "closures": [
+        {
+          "cta_id": "cta-discovery",
+          "stage": "discovery",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "まず状況を見渡す",
+          "destination_type": "PAGE_SECTION",
+          "destination_id": "#way-in",
+          "href": "#way-in",
+          "semantic_payload": "過ごし方を感じる",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact",
+            "verified_external_href": ""
+          },
+          "actionability": "ORIENTATION",
+          "fake_action": false,
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-reassurance",
+          "stage": "reassurance",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "会社固有の範囲を確かめる",
+          "destination_type": "PROCESS_GUIDE",
+          "destination_id": "#reassurance",
+          "href": "#reassurance",
+          "semantic_payload": "時間の選び方を見る",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact",
+            "verified_external_href": ""
+          },
+          "actionability": "ORIENTATION",
+          "fake_action": false,
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-action",
+          "stage": "action",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "reservationの確認へ進む",
+          "destination_type": "INFORMATIONAL_ONLY",
+          "destination_id": "#contact",
+          "href": "#contact",
+          "semantic_payload": "予約を相談する",
+          "verified_action": {
+            "verified": false,
+            "channel": "公式SNS",
+            "href": "#contact",
+            "verified_external_href": ""
+          },
+          "actionability": "QUIET_CONVERSION_END",
+          "fake_action": false,
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": "verified action channel unavailable; informational destination only"
+        }
+      ],
+      "hard_violations": []
+    },
+    "photo_binding": {
+      "schema_version": "photography_causal_binding_v1",
+      "selection": "scene_demand_x_asset_profile",
+      "bindings": [
+        {
+          "scene_id": "scene-01-arrive",
+          "photo_role": "hero_treatment_space",
+          "temporal_stage": "arrival",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "immersive_image",
+            "CREATE_DESIRE",
+            "ORIENT"
+          ]
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "photo_role": "sensory_detail",
+          "temporal_stage": "orientation",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "sensory_pause",
+            "CREATE_PAUSE",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "photo_role": "welcome_human",
+          "temporal_stage": "understanding",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "human_dialogue",
+            "SHOW_EXPERIENCE",
+            "PROVE"
+          ]
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "photo_role": "hand_technique",
+          "temporal_stage": "practice",
+          "compatibility_score": 0.9,
+          "status": "PASS",
+          "reason": "known_role_compatible",
+          "causal_inputs": [
+            "progressive_story",
+            "REDUCE_UNCERTAINTY",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "photo_role": "typography",
+          "temporal_stage": "reassurance",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        }
+      ],
+      "temporal_inversion_count": 0,
+      "semantic_mismatch_count": 0
+    },
+    "art_direction_token_profile": {
+      "type_voice": "quiet",
+      "surface_language": "warm_matte",
+      "edge_language": "soft_boundary",
+      "image_behavior": "breathe",
+      "spatial_language": "arrival_then_pause",
+      "cta_language": "gentle_booking",
+      "decorative_grammar": "breath_marks",
+      "rhythm_character": "arrive_then_settle",
+      "motion_character": "settle_into_care",
+      "schema_version": "art_direction_token_profile_v2",
+      "profile_id": "care_rhythm",
+      "signature_anchors": [
+        "anchor-01-place",
+        "anchor-02-service",
+        "anchor-03-truth"
+      ],
+      "creative_reason": "bounded tokens derived from narrative profile and signature anchors",
+      "derivation": {
+        "layout_profile": "care_rhythm",
+        "anchor_types": [
+          "PLACE",
+          "SERVICE",
+          "TRUTH"
+        ],
+        "slug_dependency": false
+      }
+    },
+    "peak_candidates": {
+      "schema_version": "human_peak_candidates_v1",
+      "selection": "rendered_candidate_ranking",
+      "status": "PASS",
+      "candidates": [
+        {
+          "peak_id": "peak-01-arrive",
+          "scene_id": "scene-01-arrive",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 11,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-02-settle",
+          "scene_id": "scene-02-settle",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 11,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-03-feel_care",
+          "scene_id": "scene-03-feel_care",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-04-choose_time",
+          "scene_id": "scene-04-choose_time",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 12,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-05-reserve",
+          "scene_id": "scene-05-reserve",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 1,
+            "narrative_significance": 2,
+            "screenshot_independence": 1,
+            "visual_concentration": 2
+          },
+          "total": 12,
+          "eligible": false,
+          "forced_quiet_end": true,
+          "archetype": "evidence-led",
+          "reason": "rendered content candidate ranking"
+        }
+      ],
+      "selected": [
+        {
+          "peak_id": "peak-03-feel_care",
+          "scene_id": "scene-03-feel_care",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-04-choose_time",
+          "scene_id": "scene-04-choose_time",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 12,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-01-arrive",
+          "scene_id": "scene-01-arrive",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 11,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-02-settle",
+          "scene_id": "scene-02-settle",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 11,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "reason": "rendered content candidate ranking"
+        }
+      ],
+      "minimum": 2,
+      "maximum": 4
+    },
+    "cross_modal_consistency": {
+      "status": "PASS",
+      "anchor_channel_count": {
+        "anchor-01-place": 5,
+        "anchor-02-service": 5,
+        "anchor-03-truth": 5
+      },
+      "channels": [
+        "COPY",
+        "CTA",
+        "PEAK",
+        "PHOTOGRAPHY",
+        "VISUAL"
+      ]
+    }
+  }
+}

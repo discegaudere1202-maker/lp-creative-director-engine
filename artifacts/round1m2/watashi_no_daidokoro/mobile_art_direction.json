@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "simple_stack_violations": 0,
+  "scenes": [
+    {
+      "mode": "temporal_sequence",
+      "mobile_crop": "preserve_focal_entity",
+      "mobile_focal_point": "scene-specific",
+      "mobile_order": "copy-media-cta",
+      "mobile_type_ratio": "0.82",
+      "mobile_whitespace": "expanded",
+      "mobile_duration": "short",
+      "mobile_motion": "reveal-on-entry",
+      "mobile_compression": "peak-aware",
+      "mobile_cta_timing": "after-idea",
+      "mobile_peak_variant": "dedicated",
+      "reason": "mobile reads as a deliberate temporal sequence"
+    },
+    {
+      "mode": "temporal_sequence",
+      "mobile_crop": "preserve_focal_entity",
+      "mobile_focal_point": "scene-specific",
+      "mobile_order": "copy-media-cta",
+      "mobile_type_ratio": "0.82",
+      "mobile_whitespace": "expanded",
+      "mobile_duration": "short",
+      "mobile_motion": "reveal-on-entry",
+      "mobile_compression": "peak-aware",
+      "mobile_cta_timing": "after-idea",
+      "mobile_peak_variant": "dedicated",
+      "reason": "mobile reads as a deliberate temporal sequence"
+    },
+    {
+      "mode": "temporal_sequence",
+      "mobile_crop": "preserve_focal_entity",
+      "mobile_focal_point": "scene-specific",
+      "mobile_order": "copy-media-cta",
+      "mobile_type_ratio": "0.82",
+      "mobile_whitespace": "expanded",
+      "mobile_duration": "short",
+      "mobile_motion": "reveal-on-entry",
+      "mobile_compression": "peak-aware",
+      "mobile_cta_timing": "after-idea",
+      "mobile_peak_variant": "dedicated",
+      "reason": "mobile reads as a deliberate temporal sequence"
+    },
+    {
+      "mode": "temporal_sequence",
+      "mobile_crop": "preserve_focal_entity",
+      "mobile_focal_point": "scene-specific",
+      "mobile_order": "copy-media-cta",
+      "mobile_type_ratio": "0.82",
+      "mobile_whitespace": "expanded",
+      "mobile_duration": "short",
+      "mobile_motion": "reveal-on-entry",
+      "mobile_compression": "peak-aware",
+      "mobile_cta_timing": "after-idea",
+      "mobile_peak_variant": "dedicated",
+      "reason": "mobile reads as a deliberate temporal sequence"
+    },
+    {
+      "mode": "temporal_sequence",
+      "mobile_crop": "preserve_focal_entity",
+      "mobile_focal_point": "scene-specific",
+      "mobile_order": "media-copy",
+      "mobile_type_ratio": "0.72",
+      "mobile_whitespace": "central",
+      "mobile_duration": "medium",
+      "mobile_motion": "reveal-on-entry",
+      "mobile_compression": "peak-aware",
+      "mobile_cta_timing": "deferred",
+      "mobile_peak_variant": "none",
+      "reason": "mobile reads as a deliberate temporal sequence"
+    }
+  ]
+}

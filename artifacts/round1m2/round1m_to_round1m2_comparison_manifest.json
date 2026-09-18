@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "from": {
+    "round": "Round 1K-B4",
+    "artifact_id": "10488734493"
+  },
+  "baseline": {
+    "round": "Round 1M",
+    "artifact_id": "10493375373"
+  },
+  "to": {
+    "round": "Round 1M2",
+    "source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d"
+  },
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "copy_sha": "3689735de1525c0145f2eaa2109ff98d37e4787237fad12a7dafff443cce62a2",
+      "cta_report_sha": "273dcda195361dcf540809284879973fd6e8966f733d2943094cec91809ff16d",
+      "photo_order": [
+        "hero_home_finish",
+        "material_detail",
+        "craft_handwork",
+        "trust_consultation",
+        "typography"
+      ],
+      "peak_ids": [
+        "peak-02-read_material",
+        "peak-01-observe",
+        "peak-03-watch_hands",
+        "peak-04-imagine_change"
+      ],
+      "art_direction_profile": "field_ledger",
+      "capture_source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "b4_artifact_id": "10488734493",
+      "round1m_artifact_id": "10493375373"
+    },
+    {
+      "company": "nagi_no_mirai",
+      "copy_sha": "7d6e203086337062bf234679f6cbf79a710c78fcc6b07dda5647d05dc49a337b",
+      "cta_report_sha": "d82d05a58bdad9d900547767f4c04f63cba2bbed9277b5cd75aa656eb7156f40",
+      "photo_order": [
+        "hero_treatment_space",
+        "sensory_detail",
+        "welcome_human",
+        "hand_technique",
+        "typography"
+      ],
+      "peak_ids": [
+        "peak-03-feel_care",
+        "peak-04-choose_time",
+        "peak-01-arrive",
+        "peak-02-settle"
+      ],
+      "art_direction_profile": "care_rhythm",
+      "capture_source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "b4_artifact_id": "10488734493",
+      "round1m_artifact_id": "10493375373"
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "copy_sha": "136a35d155284d25f00599cfa35c2ad27ed688fa29e71e36643514ae2934bba4",
+      "cta_report_sha": "4aed430e340848507ec642e39087cdffa519b2ec4c7d8c3ad5ef17ea5cf90b4c",
+      "photo_order": [
+        "hero_shared_cooking",
+        "hands_in_action",
+        "ingredient_story",
+        "finished_table",
+        "typography"
+      ],
+      "peak_ids": [
+        "peak-03-make",
+        "peak-02-touch",
+        "peak-04-share",
+        "peak-01-encounter"
+      ],
+      "art_direction_profile": "studio_invitation",
+      "capture_source_head": "7b6e557f9bc99494e7cfea72f07ad370003ce53d",
+      "b4_artifact_id": "10488734493",
+      "round1m_artifact_id": "10493375373"
+    }
+  ]
+}

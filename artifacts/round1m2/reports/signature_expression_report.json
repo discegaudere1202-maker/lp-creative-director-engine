@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "anchor": {
+        "anchor": "Place",
+        "value": "福岡市",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      "channels": [
+        "Copy",
+        "Photography role",
+        "Composition",
+        "Rhythm"
+      ],
+      "non_copy_channels": 3,
+      "trace": [
+        {
+          "scene_id": "scene-01-observe",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        }
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "anchor": {
+        "anchor": "Place",
+        "value": "福岡市",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      "channels": [
+        "Copy",
+        "Photography role",
+        "Composition",
+        "Rhythm"
+      ],
+      "non_copy_channels": 3,
+      "trace": [
+        {
+          "scene_id": "scene-01-arrive",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        }
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "anchor": {
+        "anchor": "Place",
+        "value": "福岡市西区",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      "channels": [
+        "Copy",
+        "Photography role",
+        "Composition",
+        "Rhythm"
+      ],
+      "non_copy_channels": 3,
+      "trace": [
+        {
+          "scene_id": "scene-01-encounter",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "expression_channels": [
+            "Composition",
+            "Photography role",
+            "Rhythm"
+          ],
+          "rendered_result": "scene-specific form"
+        }
+      ]
+    }
+  }
+}

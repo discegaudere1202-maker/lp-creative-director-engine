@@ -1,0 +1,125 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "blocker": 0,
+      "major": 0,
+      "violations": [],
+      "trace_coverage": 100,
+      "untraced_visible_copy": 0,
+      "scenes": [
+        {
+          "scene_id": "scene-01-observe",
+          "text": "家の輪郭を見つめる 福岡市で、住まいの状態を相談できます。 素材の状態を見る",
+          "evidence_trace": "322a500465",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "text": "素材に触れて考える 外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+          "evidence_trace": "322a500465,8ab974c366",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "text": "手仕事の順番を見る 外壁塗装・屋根・雨漏り・リフォームをについて相談できます 対応範囲を確かめる",
+          "evidence_trace": "322a500465,8ab974c366",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "text": "仕上がりを思い描く 表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+          "evidence_trace": "322a500465,8ab974c366",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "text": "状態から相談する 外壁塗装の状態を見ながら、相談の準備を整えます。 見積を相談する",
+          "evidence_trace": "322a500465,8ab974c366",
+          "claim_trace_present": true
+        }
+      ]
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "blocker": 0,
+      "major": 0,
+      "violations": [],
+      "trace_coverage": 100,
+      "untraced_visible_copy": 0,
+      "scenes": [
+        {
+          "scene_id": "scene-01-arrive",
+          "text": "空間に入る 福岡市で、自分に合う過ごし方を考える時間をつくります。 過ごし方を感じる",
+          "evidence_trace": "",
+          "claim_trace_present": false
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "text": "静けさを感じる ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+          "evidence_trace": "",
+          "claim_trace_present": false
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "text": "触れられる時間 触れられる時間を選び、自分に合う過ごし方を考えます。 時間の選び方を見る",
+          "evidence_trace": "5925611649,d94ba09045",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "text": "過ごし方を選ぶ 頭をゆるめる時間の流れを、静かな空間で確かめます。",
+          "evidence_trace": "5925611649,d94ba09045",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "text": "その時間を予約する ヘッドスパで、自分のための時間を予約します。 予約を相談する",
+          "evidence_trace": "5925611649,d94ba09045",
+          "claim_trace_present": true
+        }
+      ]
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "blocker": 0,
+      "major": 0,
+      "violations": [],
+      "trace_coverage": 100,
+      "untraced_visible_copy": 0,
+      "scenes": [
+        {
+          "scene_id": "scene-01-encounter",
+          "text": "食材に出会う 福岡市西区の料理教室で、食材と手を動かす時間に出会います。 料理の流れを見る",
+          "evidence_trace": "",
+          "claim_trace_present": false
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "text": "手を動かしてみる 手を動かし、火を入れる順序を確かめます。",
+          "evidence_trace": "f0a47e5f99,e98a978ae6",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-03-make",
+          "text": "料理ができていく 料理教室で食材を選び、料理の流れを一緒に学びます。 場と内容を確かめる",
+          "evidence_trace": "f0a47e5f99,e98a978ae6",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-04-share",
+          "text": "食卓を囲む ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+          "evidence_trace": "f0a47e5f99,e98a978ae6",
+          "claim_trace_present": true
+        },
+        {
+          "scene_id": "scene-05-join",
+          "text": "参加を考える できあがる一皿を囲む時間へ、参加の一歩を踏み出します。 参加を相談する",
+          "evidence_trace": "f0a47e5f99,e98a978ae6",
+          "claim_trace_present": true
+        }
+      ]
+    }
+  }
+}
