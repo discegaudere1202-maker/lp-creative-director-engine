@@ -1,0 +1,99 @@
+name: Round 2E-B Maylynn Visual and Motion
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round2e_b_maylynn.py"
+      - "scripts/run_round2c_maylynn.py"
+      - "src/lp_engine/**"
+      - "assets/photography/generated/maylynn_paint/round2e/**"
+      - "assets/photography/stock/maylynn_paint/craft_handwork.jpg"
+      - "assets/photography/stock/maylynn_paint/material_detail.jpg"
+      - "tests/test_round2e_b_visual_motion.py"
+      - ".github/workflows/round2e_b_maylynn_visual_motion.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  round2e-b-visual-motion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout pushed HEAD
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package, test runner, and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest
+          python -m playwright install --with-deps chromium
+
+      - name: Run Round 2E-B dedicated and related contracts
+        run: |
+          python -m pytest -q tests/test_round2e_b_visual_motion.py
+          python -m unittest \
+            tests.test_browser_qa_static \
+            tests.test_browser_smoke \
+            tests.test_photography_asset_preflight
+
+      - name: Verify repository diff contract
+        run: git diff --check
+
+      - name: Generate Maylynn Visual and Motion artifact
+        run: python scripts/run_round2e_b_maylynn.py
+
+      - name: Assert machine readiness and provenance
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          root = Path("artifacts/round2e_b")
+          summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
+          manifest = json.loads((root / "completion_manifest.json").read_text(encoding="utf-8"))
+          head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          assert summary["status"] == "PASS"
+          assert summary["source_head"] == head
+          assert summary["machine_technical_ready"] == "YES"
+          assert summary["creative_implementation_complete"] == "YES"
+          assert summary["shun_final_form_html_review_ready"] == "YES"
+          assert manifest["source_head"] == head
+          assert all(item["status"] == "FINAL" for item in manifest["viewports"])
+          assert len(manifest["viewports"]) == 9
+          assert manifest["physical_media_assets"] == 14
+          assert manifest["human_visual_moments"] == 9
+          assert manifest["motion"]["autonomous_count"] >= 4
+          assert summary["browser_qa"] == {
+              "status": "PASS", "total": 9, "pass": 9, "fail": 0,
+              "overflow_max": 0.0, "console_errors": 0,
+              "page_errors": 0, "request_failures": 0,
+          }
+          assert summary["html_review"]["browser_qa"]["pass"] == 2
+          assert summary["html_review"]["browser_qa"]["fail"] == 0
+          assert summary["interaction_qa"]["status"] == "PASS"
+          assert summary["captures"]["total"] == 12
+          assert summary["motion_recording"]["status"] == "PASS"
+          assert summary["motion_recording"]["bytes"] > 0
+          assert summary["motion_recording"]["duration_seconds"] > 0
+          assert summary["motion_recording"]["coverage"] == ["V01", "V02", "V04", "V05", "V07", "V09"]
+          assert summary["asset_provenance"]["status"] == "PASS"
+          assert summary["evidence_safety"]["status"] == "PASS"
+          assert summary["manual_lp_edit"] == 0
+          assert summary["artifact"]["name"] == f"round2e-b-maylynn-visual-motion-{head}"
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload Round 2E-B artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2e-b-maylynn-visual-motion-${{ github.sha }}
+          path: artifacts/round2e_b
+          if-no-files-found: error
