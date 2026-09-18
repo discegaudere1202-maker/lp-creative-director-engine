@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "total": 27,
+  "pass": 27,
+  "fail": 0,
+  "overflow": 0,
+  "console_errors": 0,
+  "page_errors": 0,
+  "request_failures": 0,
+  "source": "existing Round 1K-A2 browser contract"
+}

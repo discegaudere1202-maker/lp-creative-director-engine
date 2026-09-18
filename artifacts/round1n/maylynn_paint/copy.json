@@ -1,0 +1,137 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "Maylynn Paint",
+    "headline": "住まいの「気になる」から、話せる。",
+    "headline_lines": [
+      "住まいの",
+      "「気になる」から、",
+      "話せる。"
+    ],
+    "supporting": "外壁塗装、屋根、雨漏り、リフォーム。\n福岡市で、住まいの気になることを相談できるMaylynn Paint。",
+    "cta": "見積を相談する",
+    "microcopy": "外壁塗装 / 屋根 / 雨漏り / リフォーム"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "住まいの「気になる」から、話せる。",
+      "headline_lines": [
+        "住まいの",
+        "「気になる」から、",
+        "話せる。"
+      ],
+      "body": "福岡市で、住まいの状態を相談できます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "まず、気になる場所を見る。",
+      "headline_lines": [
+        "まず、気になる場所を",
+        "見る。"
+      ],
+      "body": "外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "住まいに、手を入れる。",
+      "headline_lines": [
+        "住まいに、手を入れる。"
+      ],
+      "body": "外壁塗装・屋根・雨漏り・リフォームについて相談できます",
+      "evidence_claims": [
+        "外壁塗装・屋根・雨漏り・リフォームについて相談できる地域の窓口。",
+        "福岡市で活動する事業者。",
+        "対応範囲を案内する。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "気になることを、ひとつずつ。",
+      "headline_lines": [
+        "気になることを、",
+        "ひとつずつ。"
+      ],
+      "body": "表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+      "evidence_claims": [
+        "外壁塗装・屋根・雨漏り・リフォームについて相談できる地域の窓口。",
+        "福岡市で活動する事業者。",
+        "対応範囲を案内する。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "住まいのことは、気になるところから。",
+      "headline_lines": [
+        "住まいのことは、",
+        "気になるところから。"
+      ],
+      "body": "外壁塗装の状態を見ながら、相談の準備を整えます。",
+      "evidence_claims": [],
+      "cta": "見積を相談する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "meaning_units_not_character_count"
+  },
+  "process_steps": [
+    "状態を伝える",
+    "対応範囲を確認する",
+    "見積を相談する"
+  ],
+  "premium_scene_copy": {
+    "hero": {
+      "headline": "住まいの「気になる」から、話せる。",
+      "supporting": "外壁塗装、屋根、雨漏り、リフォーム。\n福岡市で、住まいの気になることを相談できるMaylynn Paint。",
+      "microcopy": "外壁塗装 / 屋根 / 雨漏り / リフォーム"
+    },
+    "scenes": {
+      "observe": {
+        "headline": "住まいの「気になる」から、話せる。",
+        "body": "外壁塗装、屋根、雨漏り、リフォーム。\n福岡市で、住まいの気になることを相談できるMaylynn Paint。"
+      },
+      "read_material": {
+        "headline": "まず、気になる場所を見る。",
+        "body": "外壁の表面も、屋根も。\n住まいの変化に気づいたところが、相談の入口になる。"
+      },
+      "watch_hands": {
+        "headline": "住まいに、手を入れる。",
+        "body": "外壁塗装をはじめ、屋根・雨漏り・リフォームまで。\n気になる場所から、相談できる範囲がある。"
+      },
+      "imagine_change": {
+        "headline": "気になることを、ひとつずつ。",
+        "body": "外壁か、屋根か、雨漏りか。\n住まいの状態を見ながら、相談したいことを整理する。"
+      },
+      "consult": {
+        "headline": "住まいのことは、気になるところから。",
+        "body": "福岡市で、外壁塗装・屋根・雨漏り・リフォームを相談できるMaylynn Paint。"
+      }
+    },
+    "hero_meta": {
+      "kind": "scope_rail",
+      "items": [
+        "外壁塗装",
+        "屋根",
+        "雨漏り",
+        "リフォーム"
+      ]
+    },
+    "ending_variant": "grounded_field_closure",
+    "pattern": "multi_scope_consultation",
+    "profile_id": "field_ledger"
+  },
+  "section_naming_gate": {
+    "status": "PASS",
+    "violations": []
+  }
+}

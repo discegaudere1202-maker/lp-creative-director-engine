@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scene_count": {
+    "expected": 5,
+    "rendered": 5
+  },
+  "expected_headings": [
+    "静けさに、頭を預ける。",
+    "まずは、頭を預ける。",
+    "自分の時間を、話して選ぶ。",
+    "過ごし方を選ぶ。",
+    "その静けさを、自分の時間として。"
+  ],
+  "rendered_headings": [
+    "静けさに、頭を預ける。",
+    "まずは、頭を預ける。",
+    "自分の時間を、話して選ぶ。",
+    "過ごし方を選ぶ。",
+    "その静けさを、自分の時間として。"
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "過ごし方を感じる"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#reassurance",
+      "visible_label": "時間の選び方を見る"
+    }
+  ],
+  "quiet_end_without_contact": true,
+  "internal_metadata_visible": false,
+  "internal_leakage": [],
+  "editorial_violations": []
+}

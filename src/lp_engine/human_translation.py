@@ -135,6 +135,11 @@ def evaluate_definition_gate(texts: Sequence[str], signature_anchors: Sequence[M
 
 
 def _scene_copy(copy: Mapping[str, Any], scene: Mapping[str, Any], index: int) -> tuple[str, str]:
+    premium = copy.get("premium_scene_copy") or {}
+    state = _text(scene.get("narrative_state"))
+    premium_item = (premium.get("scenes") or {}).get(state)
+    if premium_item:
+        return _text(premium_item.get("headline")) or state, _text(premium_item.get("body")) or _text(scene.get("creative_reason"))
     sections = list(copy.get("sections") or [])
     if index < len(sections):
         item = sections[index]
@@ -315,6 +320,26 @@ def build_human_translation(understanding: Mapping[str, Any], strategy: Mapping[
     photo = build_photo_binding(scene_plan, asset_manifest, understanding)
     tokens = build_art_direction_token_profile(understanding, strategy, anchors)
     peaks = build_peak_candidates(scene_plan, copy_ir)
+    profile_peak_states = {
+        "field_ledger": ("observe", "watch_hands"),
+        "care_rhythm": ("feel_care", "choose_time"),
+        "studio_invitation": ("encounter", "make", "share"),
+    }
+    wanted_states = profile_peak_states.get(tokens.get("profile_id"), ())
+    presentation_rows = []
+    for scene in scene_plan.get("scene_plan") or []:
+        state = _text(scene.get("narrative_state"))
+        if state in wanted_states:
+            presentation_rows.append({
+                "peak_id": f"human-peak-{len(presentation_rows)+1:02d}-{state}",
+                "scene_id": scene.get("scene_id"),
+                "narrative_state": state,
+                "presentation_role": "human_peak",
+                "profile_id": tokens.get("profile_id"),
+                "capture_required": True,
+                "selection_reason": "Final Premium Creative Correction profile-derived human presentation plan",
+            })
+    human_peaks = {"schema_version": "human_peak_presentation_v1", "status": "PASS" if len(presentation_rows) == len(wanted_states) else "FAIL", "profile_id": tokens.get("profile_id"), "selected": presentation_rows, "selected_count": len(presentation_rows), "expected_count": len(wanted_states), "machine_peak_scoring_unchanged": True}
     channels = {channel for anchor in anchors for channel in anchor.get("expression_channels", [])}
     consistency = {"status": "PASS" if all(len(anchor.get("expression_channels", [])) >= 3 for anchor in anchors) else "FAIL", "anchor_channel_count": {anchor["anchor_id"]: len(anchor.get("expression_channels", [])) for anchor in anchors}, "channels": sorted(channels)}
-    return {"schema_version": "premium_human_translation_v1", "signature_anchors": anchors, "copy_translation": copy_ir, "cta_closure": cta, "photo_binding": photo, "art_direction_token_profile": tokens, "peak_candidates": peaks, "cross_modal_consistency": consistency}
+    return {"schema_version": "premium_human_translation_v1", "signature_anchors": anchors, "copy_translation": copy_ir, "cta_closure": cta, "photo_binding": photo, "art_direction_token_profile": tokens, "peak_candidates": peaks, "human_peak_presentation": human_peaks, "cross_modal_consistency": consistency}

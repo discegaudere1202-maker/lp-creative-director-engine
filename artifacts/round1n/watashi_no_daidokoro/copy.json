@@ -1,0 +1,133 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "わたしの台所",
+    "headline": "ストウブを囲んで、手を動かす。",
+    "headline_lines": [
+      "ストウブを囲んで、",
+      "手を動かす。"
+    ],
+    "supporting": "少人数で、無水料理が一皿になっていく時間。\n福岡市西区の「わたしの台所」。",
+    "cta": "申込みを相談する",
+    "microcopy": "少人数 / ストウブ / 無水料理"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "ストウブを囲んで、手を動かす。",
+      "headline_lines": [
+        "ストウブを囲んで、手を",
+        "動かす。"
+      ],
+      "body": "福岡市西区の料理教室で、食材と手を動かす時間に出会います。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "食材に触れる。",
+      "headline_lines": [
+        "食材に触れる。"
+      ],
+      "body": "手を動かし、火を入れる順序を確かめます。",
+      "evidence_claims": [
+        "少人数でストウブ無水料理を学ぶ料理教室。",
+        "福岡市西区で活動する事業者。",
+        "対応範囲を案内する。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "手を動かすと、一皿が進む。",
+      "headline_lines": [
+        "手を動かすと、",
+        "一皿が進む。"
+      ],
+      "body": "料理教室で食材を選び、料理の流れを一緒に学びます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "できた一皿を、食卓へ。",
+      "headline_lines": [
+        "できた一皿を、食卓へ。"
+      ],
+      "body": "ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+      "evidence_claims": [
+        "少人数でストウブ無水料理を学ぶ料理教室。",
+        "福岡市西区で活動する事業者。",
+        "対応範囲を案内する。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "その食卓に、自分も加わる。",
+      "headline_lines": [
+        "その食卓に、",
+        "自分も加わる。"
+      ],
+      "body": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+      "evidence_claims": [],
+      "cta": "申込みを相談する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "meaning_units_not_character_count"
+  },
+  "process_steps": [
+    "やってみたいことを選ぶ",
+    "内容と場所を確認する",
+    "参加を相談する"
+  ],
+  "premium_scene_copy": {
+    "hero": {
+      "headline": "ストウブを囲んで、手を動かす。",
+      "supporting": "少人数で、無水料理が一皿になっていく時間。\n福岡市西区の「わたしの台所」。",
+      "microcopy": "少人数 / ストウブ / 無水料理"
+    },
+    "scenes": {
+      "encounter": {
+        "headline": "ストウブを囲んで、手を動かす。",
+        "body": "少人数で、無水料理が一皿になっていく時間。\n福岡市西区の「わたしの台所」。"
+      },
+      "touch": {
+        "headline": "食材に触れる。",
+        "body": "野菜と道具を前に、\n料理が始まるところへ近づく。"
+      },
+      "make": {
+        "headline": "手を動かすと、一皿が進む。",
+        "body": "切る。火を入れる。\nストウブの無水料理を、手を動かしながら学ぶ。"
+      },
+      "share": {
+        "headline": "できた一皿を、食卓へ。",
+        "body": "つくる時間の先に、\nできあがった料理と、囲む食卓がある。"
+      },
+      "join": {
+        "headline": "その食卓に、自分も加わる。",
+        "body": "少人数で手を動かし、\nストウブの無水料理をつくる「わたしの台所」。"
+      }
+    },
+    "hero_meta": {
+      "kind": "fact_tabs",
+      "items": [
+        "少人数",
+        "ストウブ",
+        "無水料理"
+      ]
+    },
+    "ending_variant": "communal_table_closure",
+    "pattern": "hands_on_named_method",
+    "profile_id": "studio_invitation"
+  },
+  "section_naming_gate": {
+    "status": "PASS",
+    "violations": []
+  }
+}

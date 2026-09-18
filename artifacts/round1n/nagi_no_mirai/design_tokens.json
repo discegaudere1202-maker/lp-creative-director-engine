@@ -1,0 +1,82 @@
+{
+  "schema_version": "production_generation_v1",
+  "profile_id": "care_rhythm",
+  "colors": {
+    "ink": "#39332F",
+    "accent": "#B7A39B",
+    "paper": "#F7F3EE",
+    "muted": "#81756F",
+    "line": "rgba(57,51,47,.14)"
+  },
+  "typography": {
+    "display": "\"Hiragino Mincho ProN\", \"Yu Mincho\", YuMincho, serif",
+    "body": "ui-sans-serif, system-ui, -apple-system, \"Hiragino Sans\", sans-serif",
+    "display_weight": 450,
+    "body_weight": 420
+  },
+  "font_scale": {
+    "eyebrow": "0.72rem",
+    "body": "1rem",
+    "lead": "1.18rem",
+    "h2": "clamp(2.1rem, 3.6vw, 3.2rem)",
+    "hero": "clamp(3.25rem, 5.6vw, 4.5rem)",
+    "body_leading": "1.95"
+  },
+  "spacing": {
+    "unit": "8px",
+    "section": "clamp(7.5rem, 15vw, 10.5rem)",
+    "rail": "min(92vw, 1180px)",
+    "text": "min(90vw, 780px)",
+    "ending": "clamp(8rem, 16vw, 10.5rem)",
+    "mobile_section": "clamp(5.5rem, 24vw, 7.5rem)",
+    "mobile_padding": "clamp(5.5rem, 24vw, 7.5rem)"
+  },
+  "radius": {
+    "surface": "32px",
+    "button": "32px",
+    "media": "32px"
+  },
+  "borders": {
+    "hairline": "0px solid var(--line)",
+    "strong": "0px solid var(--ink)",
+    "width": "0px",
+    "edge_width": "0px"
+  },
+  "shadows": {
+    "surface": "none"
+  },
+  "container_widths": {
+    "rail": "min(90vw, 1180px)",
+    "text": "min(90vw, 720px)"
+  },
+  "rhythm": {
+    "peak_to_quiet": "1.5",
+    "quiet_to_peak": "1.15",
+    "section_gap": "clamp(7.5rem, 15vw, 10.5rem)",
+    "cadence": "long breathing intervals"
+  },
+  "grid": "loose editorial 44/56",
+  "image_framing": {
+    "radius": "32px",
+    "fit": "cover",
+    "profile_behavior": "loose editorial 44/56",
+    "scene_columns": "minmax(0,.44fr) minmax(0,.56fr)",
+    "copy_surface": "transparent"
+  },
+  "ending": {
+    "variant": "quiet_afterglow_closure",
+    "padding": "clamp(8rem, 16vw, 10.5rem)",
+    "border_width": "0px"
+  },
+  "mobile": {
+    "hero": "clamp(2.1rem, 10vw, 2.65rem)",
+    "h2": "clamp(1.75rem, 7.6vw, 2.2rem)",
+    "section_gap": "clamp(5.5rem, 24vw, 7.5rem)",
+    "padding": "clamp(5.5rem, 24vw, 7.5rem)",
+    "identity": "long breathing intervals"
+  },
+  "motion": {
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)"
+  }
+}

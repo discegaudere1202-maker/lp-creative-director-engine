@@ -1,0 +1,58 @@
+{
+  "schema_version": "photo_role_map_v1",
+  "selection_mode": "role_driven_not_fixed_count",
+  "roles": [
+    {
+      "photo_role": "hero_treatment_space",
+      "visual_subject": "静かな施術空間と施術の気配",
+      "business_purpose": "安心感と体験の温度を最初に伝える",
+      "replacement_target": "実店舗と実施術シーン",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "mid",
+      "proof_intent": "experience_context_only",
+      "placement": "hero_dominant_image"
+    },
+    {
+      "photo_role": "hand_technique",
+      "visual_subject": "頭部への手技と施術者の手元",
+      "business_purpose": "技術感と身体感覚を伝える",
+      "replacement_target": "実施術中の手元",
+      "preferred_orientation": "portrait",
+      "crop_tolerance": "tight",
+      "people_distance": "close",
+      "proof_intent": "craft_context_only",
+      "placement": "mid_frame_proof_experience"
+    },
+    {
+      "photo_role": "sensory_detail",
+      "visual_subject": "タオル・照明・ベッド周りの静かなディテール",
+      "business_purpose": "リラックスの感覚を補強する",
+      "replacement_target": "実店舗ディテール",
+      "preferred_orientation": "square",
+      "crop_tolerance": "tight",
+      "people_distance": "none",
+      "proof_intent": "sensory_context_only",
+      "placement": "craft_detail_image",
+      "secondary_placement": "quiet_chapter_image"
+    },
+    {
+      "photo_role": "welcome_human",
+      "visual_subject": "相談・迎え入れの人間的な距離感",
+      "business_purpose": "初回来店の不安を下げる",
+      "replacement_target": "実接客・相談風景",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "mid",
+      "proof_intent": "human_context_only",
+      "placement": "quiet_chapter_image"
+    }
+  ],
+  "section_role_map": {
+    "hero_orientation": "hero_treatment_space",
+    "company_truth": "hand_technique",
+    "service_process": "sensory_detail",
+    "next_step": "welcome_human",
+    "cta_zone": "welcome_human"
+  }
+}

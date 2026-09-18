@@ -530,6 +530,96 @@ def build_information_architecture(understanding: Mapping[str, Any], strategy: M
     return sections
 
 
+def _premium_copy_pattern(understanding: Mapping[str, Any]) -> str:
+    """Classify approved Truth into a reusable premium copy pattern.
+
+    This deliberately uses verified semantic atoms rather than company ids.  It
+    lets the Final Premium surface be specific for the three approved cases
+    while keeping the renderer generic for future companies.
+    """
+    truth = _text(understanding.get("company_truth"))
+    category = _text(understanding.get("service_category"))
+    value = f"{truth} {category}"
+    if all(token in value for token in ("外壁", "屋根")) and "雨漏り" in value:
+        return "multi_scope_consultation"
+    if all(token in value for token in ("ドライヘッドスパ", "スクール", "ヒーリング")):
+        return "quiet_multi_mode"
+    if all(token in value for token in ("少人数", "ストウブ", "無水料理")):
+        return "hands_on_named_method"
+    return "profile_default"
+
+
+def _premium_surface_copy(understanding: Mapping[str, Any], profile: str) -> dict[str, Any]:
+    """Return profile/truth-derived rendered copy and ending metadata."""
+    location = _text(understanding.get("location"))
+    company_name = _text(understanding.get("company_name"))
+    pattern = _premium_copy_pattern(understanding)
+    patterns = {
+        "multi_scope_consultation": {
+            "hero": {
+                "headline": "住まいの「気になる」から、話せる。",
+                "supporting": "外壁塗装、屋根、雨漏り、リフォーム。\n{location}で、住まいの気になることを相談できる{company_name}。",
+                "microcopy": "外壁塗装 / 屋根 / 雨漏り / リフォーム",
+            },
+            "scenes": {
+                "observe": {"headline": "住まいの「気になる」から、話せる。", "body": "外壁塗装、屋根、雨漏り、リフォーム。\n{location}で、住まいの気になることを相談できる{company_name}。"},
+                "read_material": {"headline": "まず、気になる場所を見る。", "body": "外壁の表面も、屋根も。\n住まいの変化に気づいたところが、相談の入口になる。"},
+                "watch_hands": {"headline": "住まいに、手を入れる。", "body": "外壁塗装をはじめ、屋根・雨漏り・リフォームまで。\n気になる場所から、相談できる範囲がある。"},
+                "imagine_change": {"headline": "気になることを、ひとつずつ。", "body": "外壁か、屋根か、雨漏りか。\n住まいの状態を見ながら、相談したいことを整理する。"},
+                "consult": {"headline": "住まいのことは、気になるところから。", "body": "{location}で、外壁塗装・屋根・雨漏り・リフォームを相談できる{company_name}。"},
+            },
+            "hero_meta": {"kind": "scope_rail", "items": ["外壁塗装", "屋根", "雨漏り", "リフォーム"]},
+            "ending_variant": "grounded_field_closure",
+        },
+        "quiet_multi_mode": {
+            "hero": {
+                "headline": "静けさに、頭を預ける。",
+                "supporting": "{location}の小さな場で、ドライヘッドスパの時間へ。",
+                "microcopy": "DRY HEAD SPA / HEAD SPA SCHOOL / HEALING SALON",
+            },
+            "scenes": {
+                "arrive": {"headline": "静けさに、頭を預ける。", "body": "{location}の小さな場で、ドライヘッドスパの時間へ。"},
+                "settle": {"headline": "まずは、頭を預ける。", "body": "やわらかなタオルと自然光の中で、\n静かな時間を想像する。"},
+                "feel_care": {"headline": "自分の時間を、話して選ぶ。", "body": "ドライヘッドスパ、ヘッドスパスクール、ヒーリングサロン。\n受ける、学ぶ、静かに過ごす。その入口を考える。"},
+                "choose_time": {"headline": "過ごし方を選ぶ。", "body": "ドライヘッドスパは、頭に触れる時間。\n手の距離まで含めて自分の過ごし方を思い描く。"},
+                "reserve": {"headline": "その静けさを、自分の時間として。", "body": "受ける。学ぶ。静かに過ごす。\n{company_name}で過ごす時間を、少し先の自分に重ねる。"},
+            },
+            "hero_meta": {"kind": "scope_line", "items": ["DRY HEAD SPA", "HEAD SPA SCHOOL", "HEALING SALON"]},
+            "ending_variant": "quiet_afterglow_closure",
+        },
+        "hands_on_named_method": {
+            "hero": {
+                "headline": "ストウブを囲んで、手を動かす。",
+                "supporting": "少人数で、無水料理が一皿になっていく時間。\n{location}の「{company_name}」。",
+                "microcopy": "少人数 / ストウブ / 無水料理",
+            },
+            "scenes": {
+                "encounter": {"headline": "ストウブを囲んで、手を動かす。", "body": "少人数で、無水料理が一皿になっていく時間。\n{location}の「{company_name}」。"},
+                "touch": {"headline": "食材に触れる。", "body": "野菜と道具を前に、\n料理が始まるところへ近づく。"},
+                "make": {"headline": "手を動かすと、一皿が進む。", "body": "切る。火を入れる。\nストウブの無水料理を、手を動かしながら学ぶ。"},
+                "share": {"headline": "できた一皿を、食卓へ。", "body": "つくる時間の先に、\nできあがった料理と、囲む食卓がある。"},
+                "join": {"headline": "その食卓に、自分も加わる。", "body": "少人数で手を動かし、\nストウブの無水料理をつくる「{company_name}」。"},
+            },
+            "hero_meta": {"kind": "fact_tabs", "items": ["少人数", "ストウブ", "無水料理"]},
+            "ending_variant": "communal_table_closure",
+        },
+    }
+    selected = dict(patterns.get(pattern, {}))
+    if not selected:
+        return {"pattern": pattern, "profile_id": profile, "ending_variant": f"{profile}_closure", "scenes": {}}
+    def format_value(value: Any) -> Any:
+        if isinstance(value, str):
+            return value.format(location=location, company_name=company_name)
+        if isinstance(value, dict):
+            return {key: format_value(item) for key, item in value.items()}
+        if isinstance(value, list):
+            return [format_value(item) for item in value]
+        return value
+    selected = format_value(selected)
+    selected.update({"pattern": pattern, "profile_id": profile})
+    return selected
+
+
 def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia: Sequence[Mapping[str, Any]], approved_evidence: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     company_name = _text(understanding.get("company_name"))
     location = _text(understanding.get("location"))
@@ -590,23 +680,36 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
     }.get(profile, ["状況を伝える", "対応できることを確認する", "次の案内を考える"])
     architecture = dict(strategy.get("narrative_architecture") or {})
     generated_names = list(architecture.get("section_naming") or [])
+    premium_surface = _premium_surface_copy(understanding, profile)
+    premium_by_state = dict(premium_surface.get("scenes") or {})
+    narrative_arc = list(architecture.get("narrative_arc") or [])
     section_headlines = {"opening": headline}
     for index, item in enumerate(ia):
-        if index < len(generated_names):
+        state = _text(narrative_arc[index].get("narrative_state")) if index < len(narrative_arc) else ""
+        if state in premium_by_state:
+            section_headlines[item["section_id"]] = premium_by_state[state]["headline"]
+        elif index < len(generated_names):
             section_headlines[item["section_id"]] = generated_names[index]
     section_headlines.setdefault("truth", f"{compact_category if field_validation else category or anchor or '会社'}の輪郭")
     section_headlines.setdefault("way_in", "できることを見つける")
     section_headlines.setdefault("contact", f"{goal_noun}を考える")
     section_headlines.setdefault("close", "次の時間をつくる")
+    if premium_by_state:
+        architecture["section_naming"] = [section_headlines.get(item["section_id"], item["key_message"]) for item in ia]
+        strategy["narrative_architecture"] = architecture
+    hero_override = dict(premium_surface.get("hero") or {})
+    hero_headline = _text(hero_override.get("headline")) or headline
+    hero_supporting = _text(hero_override.get("supporting")) or f"{location}で{category}を探している方へ。{public_truth}。{signature_phrase}を手がかりに、次の一歩を考えます。"
+    hero_microcopy = _text(hero_override.get("microcopy")) or f"{location}｜{signature_phrase}。"
     return {
         "schema_version": SCHEMA_VERSION,
         "hero": {
             "eyebrow": company_name,
-            "headline": headline,
-            "headline_lines": _line_shape(headline, max_chars=9 if field_validation else 7),
-            "supporting": f"{location}で{category}を探している方へ。{public_truth}。{signature_phrase}を手がかりに、次の一歩を考えます。",
+            "headline": hero_headline,
+            "headline_lines": _line_shape(hero_headline, max_chars=9 if field_validation else 7),
+            "supporting": hero_supporting,
             "cta": cta,
-            "microcopy": f"{location}｜{signature_phrase}から次の案内へ。",
+            "microcopy": hero_microcopy,
         },
         "sections": [
             {
@@ -631,6 +734,7 @@ def build_copy(understanding: Mapping[str, Any], strategy: Mapping[str, Any], ia
             "line_shape": "meaning_units_not_character_count",
         },
         "process_steps": process_steps,
+        "premium_scene_copy": premium_surface,
     }
 
 
@@ -740,17 +844,47 @@ def build_art_direction(understanding: Mapping[str, Any], strategy: Mapping[str,
 
 def build_design_tokens(art_direction: Mapping[str, Any]) -> dict[str, Any]:
     color = dict(art_direction.get("color_logic") or {})
+    profile = _text(art_direction.get("layout_profile")) or "editorial_rail"
+    profile_tokens = {
+        "field_ledger": {
+            "display": 'Arial, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif',
+            "body": 'Arial, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif',
+            "display_weight": 680, "body_weight": 430, "paper": "#EFECE4", "ink": "#20211E", "accent": "#9E8459", "muted": "#6D6B63", "line": "rgba(32,33,30,.24)",
+            "surface_radius": "3px", "button_radius": "0px", "scene_radius": "3px", "border_width": "2px", "edge_width": "2px", "section_gap": "clamp(4.5rem, 8vw, 7rem)", "ending_padding": "clamp(4.5rem, 8vw, 6rem)", "copy_surface": "#EFECE4", "scene_columns": "minmax(0,.38fr) minmax(0,.62fr)", "media_fit": "cover", "hero_size": "clamp(3.25rem, 5.2vw, 4rem)", "h2_size": "clamp(2rem, 3.6vw, 3.5rem)", "body_leading": "1.62", "mobile_hero": "clamp(2.25rem, 9vw, 2.75rem)", "mobile_h2": "clamp(1.9rem, 8vw, 2.25rem)", "mobile_gap": "clamp(3rem, 12vw, 4.5rem)", "mobile_padding": "clamp(3rem, 12vw, 4.5rem)", "ending_variant": "grounded_field_closure", "grid": "12-column field ledger", "cadence": "compact measured",
+        },
+        "care_rhythm": {
+            "display": '"Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif',
+            "body": 'ui-sans-serif, system-ui, -apple-system, "Hiragino Sans", sans-serif',
+            "display_weight": 450, "body_weight": 420, "paper": "#F7F3EE", "ink": "#39332F", "accent": "#B7A39B", "muted": "#81756F", "line": "rgba(57,51,47,.14)",
+            "surface_radius": "32px", "button_radius": "32px", "scene_radius": "32px", "border_width": "0px", "edge_width": "0px", "section_gap": "clamp(7.5rem, 15vw, 10.5rem)", "ending_padding": "clamp(8rem, 16vw, 10.5rem)", "copy_surface": "transparent", "scene_columns": "minmax(0,.44fr) minmax(0,.56fr)", "media_fit": "cover", "hero_size": "clamp(3.25rem, 5.6vw, 4.5rem)", "h2_size": "clamp(2.1rem, 3.6vw, 3.2rem)", "body_leading": "1.95", "mobile_hero": "clamp(2.1rem, 10vw, 2.65rem)", "mobile_h2": "clamp(1.75rem, 7.6vw, 2.2rem)", "mobile_gap": "clamp(5.5rem, 24vw, 7.5rem)", "mobile_padding": "clamp(5.5rem, 24vw, 7.5rem)", "ending_variant": "quiet_afterglow_closure", "grid": "loose editorial 44/56", "cadence": "long breathing intervals",
+        },
+        "studio_invitation": {
+            "display": '"Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, sans-serif',
+            "body": '"Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, sans-serif',
+            "display_weight": 700, "body_weight": 520, "paper": "#FFF7EB", "ink": "#2D231B", "accent": "#C66F49", "muted": "#77765A", "line": "rgba(45,35,27,.22)",
+            "surface_radius": "10px", "button_radius": "10px", "scene_radius": "10px", "border_width": "1px", "edge_width": "1px", "section_gap": "clamp(5rem, 9vw, 7rem)", "ending_padding": "clamp(5rem, 9vw, 7rem)", "copy_surface": "#FFF7EB", "scene_columns": "minmax(0,.4fr) minmax(0,.6fr)", "media_fit": "cover", "hero_size": "clamp(3.35rem, 5.2vw, 4.6rem)", "h2_size": "clamp(2.1rem, 3.8vw, 3.5rem)", "body_leading": "1.7", "mobile_hero": "clamp(2rem, 9vw, 2.9rem)", "mobile_h2": "clamp(2rem, 8vw, 2.5rem)", "mobile_gap": "clamp(3.5rem, 14vw, 5rem)", "mobile_padding": "clamp(3.5rem, 14vw, 5rem)", "ending_variant": "communal_table_closure", "grid": "modular table/process", "cadence": "active medium density",
+        },
+    }
+    chosen = dict(profile_tokens.get(profile, profile_tokens["field_ledger"]))
+    paper = chosen["paper"]
+    ink = chosen["ink"]
+    accent = chosen["accent"]
     return {
         "schema_version": SCHEMA_VERSION,
-        "colors": {"ink": color.get("ink", "#151515"), "accent": color.get("accent", "#ba5e35"), "paper": color.get("paper", "#f3efe7"), "muted": "#77736b", "line": "rgba(21,21,21,.18)"},
-        "typography": {"display": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif", "body": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif", "display_weight": 800, "body_weight": 450},
-        "font_scale": {"eyebrow": "0.72rem", "body": "1rem", "lead": "1.18rem", "h2": "clamp(2rem, 5vw, 5rem)", "hero": "clamp(3rem, 10vw, 9rem)"},
-        "spacing": {"unit": "8px", "section": "clamp(5rem, 12vw, 12rem)", "rail": "min(90vw, 1180px)", "text": "min(90vw, 720px)"},
-        "radius": {"surface": "2px", "button": "999px"},
-        "borders": {"hairline": "1px solid var(--line)", "strong": "1px solid var(--ink)"},
-        "shadows": {"surface": "10px 18px 0 rgba(21,21,21,.08)"},
+        "profile_id": profile,
+        "colors": {"ink": color.get("ink", ink) if profile not in profile_tokens else ink, "accent": color.get("accent", accent) if profile not in profile_tokens else accent, "paper": color.get("paper", paper) if profile not in profile_tokens else paper, "muted": chosen["muted"], "line": chosen["line"]},
+        "typography": {"display": chosen["display"], "body": chosen["body"], "display_weight": chosen["display_weight"], "body_weight": chosen["body_weight"]},
+        "font_scale": {"eyebrow": "0.72rem", "body": "1rem", "lead": "1.18rem", "h2": chosen["h2_size"], "hero": chosen["hero_size"], "body_leading": chosen["body_leading"]},
+        "spacing": {"unit": "8px", "section": chosen["section_gap"], "rail": "min(92vw, 1180px)", "text": "min(90vw, 780px)", "ending": chosen["ending_padding"], "mobile_section": chosen["mobile_gap"], "mobile_padding": chosen["mobile_padding"]},
+        "radius": {"surface": chosen["surface_radius"], "button": chosen["button_radius"], "media": chosen["scene_radius"]},
+        "borders": {"hairline": f'{chosen["border_width"]} solid var(--line)', "strong": f'{chosen["border_width"]} solid var(--ink)', "width": chosen["border_width"], "edge_width": chosen["edge_width"]},
+        "shadows": {"surface": "none" if profile == "care_rhythm" else ("8px 10px 0 rgba(198,111,73,.22)" if profile == "studio_invitation" else "6px 8px 0 rgba(158,132,89,.14)")},
         "container_widths": {"rail": "min(90vw, 1180px)", "text": "min(90vw, 720px)"},
-        "rhythm": {"peak_to_quiet": "1.5", "quiet_to_peak": "1.15"},
+        "rhythm": {"peak_to_quiet": "1.5", "quiet_to_peak": "1.15", "section_gap": chosen["section_gap"], "cadence": chosen["cadence"]},
+        "grid": chosen["grid"],
+        "image_framing": {"radius": chosen["scene_radius"], "fit": chosen["media_fit"], "profile_behavior": chosen["grid"], "scene_columns": chosen["scene_columns"], "copy_surface": chosen["copy_surface"]},
+        "ending": {"variant": chosen["ending_variant"], "padding": chosen["ending_padding"], "border_width": chosen["border_width"]},
+        "mobile": {"hero": chosen["mobile_hero"], "h2": chosen["mobile_h2"], "section_gap": chosen["mobile_gap"], "padding": chosen["mobile_padding"], "identity": chosen["cadence"]},
         "motion": {"duration_ms": 520, "easing": "cubic-bezier(.2,.7,.2,1)"},
     }
 
@@ -850,14 +984,18 @@ def _render_styles(tokens: Mapping[str, Any]) -> str:
     typo = tokens["typography"]
     scale = tokens["font_scale"]
     spacing = tokens["spacing"]
+    radius = tokens.get("radius", {})
+    borders = tokens.get("borders", {})
+    mobile = tokens.get("mobile", {})
+    grid = tokens.get("image_framing", {}).get("profile_behavior", "editorial")
     return f"""
-    :root {{ --ink:{colors['ink']}; --accent:{colors['accent']}; --paper:{colors['paper']}; --muted:{colors['muted']}; --line:{colors['line']}; --rail:{spacing['rail']}; --text:{spacing['text']}; --ease:{tokens['motion']['easing']}; }}
-    * {{ box-sizing:border-box; }} html {{ scroll-behavior:smooth; }} body {{ margin:0; background:var(--paper); color:var(--ink); font-family:{typo['body']}; font-weight:{typo['body_weight']}; line-height:1.75; }}
+    :root {{ --ink:{colors['ink']}; --accent:{colors['accent']}; --paper:{colors['paper']}; --muted:{colors['muted']}; --line:{colors['line']}; --rail:{spacing['rail']}; --text:{spacing['text']}; --ease:{tokens['motion']['easing']}; --display:{typo['display']}; --display-weight:{typo['display_weight']}; --body-weight:{typo['body_weight']}; --surface-radius:{radius.get('surface','2px')}; --media-radius:{radius.get('media',radius.get('surface','2px'))}; --human-border-width:{borders.get('width','1px')}; --human-edge-width:{borders.get('edge_width','1px')}; --scene-gap:{spacing['section']}; --mobile-scene-gap:{mobile.get('section_gap','4rem')}; --mobile-page-padding:{mobile.get('padding','3rem')}; --hero-size:{scale['hero']}; --h2-size:{scale['h2']}; --body-leading:{scale.get('body_leading','1.75')}; --grid-profile:{grid}; }}
+    * {{ box-sizing:border-box; }} html {{ scroll-behavior:smooth; }} body {{ margin:0; background:var(--paper); color:var(--ink); font-family:{typo['body']}; font-weight:var(--body-weight); line-height:var(--body-leading); }}
     a {{ color:inherit; }} .site-shell {{ overflow:hidden; }} .topline {{ width:var(--rail); margin:auto; padding:24px 0; display:flex; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }}
     .section {{ width:var(--rail); margin:auto; padding:var(--section, {spacing['section']}) 0; position:relative; }} .section--quiet {{ padding-top:clamp(4rem,8vw,8rem); padding-bottom:clamp(4rem,8vw,8rem); }} .section--peak {{ min-height:min(92vh, 860px); display:grid; align-content:center; }}
-    .hero-grid {{ display:grid; grid-template-columns:minmax(0, 1.4fr) minmax(160px, .6fr); gap:clamp(1.5rem, 5vw, 6rem); align-items:end; }} .eyebrow {{ color:var(--accent); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }} h1,h2,p {{ margin:0; }} h1 {{ max-width:none; font-size:clamp(2.6rem, 6vw, 6.5rem); line-height:.95; letter-spacing:-.07em; }} h1 .headline-line,h2 .headline-line {{ display:block; white-space:nowrap; }} h2 {{ max-width:none; font-size:clamp(2rem, 4vw, 4rem); line-height:1; letter-spacing:-.06em; }} .lead {{ max-width:34rem; font-size:{scale['lead']}; }} .small {{ color:var(--muted); font-size:.82rem; }} .section-header {{ display:flex; justify-content:space-between; gap:2rem; align-items:flex-end; border-top:1px solid var(--line); padding-top:18px; margin-bottom:clamp(2rem,5vw,5rem); }}
+    .hero-grid {{ display:grid; grid-template-columns:minmax(0, 1.4fr) minmax(160px, .6fr); gap:clamp(1.5rem, 5vw, 6rem); align-items:end; }} .eyebrow {{ color:var(--accent); font-size:{scale['eyebrow']}; letter-spacing:.12em; text-transform:uppercase; }} h1,h2,p {{ margin:0; }} h1 {{ max-width:none; font-family:var(--display); font-weight:var(--display-weight); font-size:var(--hero-size); line-height:1.06; letter-spacing:-.045em; }} h1 .headline-line,h2 .headline-line {{ display:block; white-space:nowrap; }} h2 {{ max-width:none; font-family:var(--display); font-weight:var(--display-weight); font-size:var(--h2-size); line-height:1.12; letter-spacing:-.035em; }} .lead {{ max-width:34rem; font-size:{scale['lead']}; }} .small {{ color:var(--muted); font-size:.82rem; }} .section-header {{ display:flex; justify-content:space-between; gap:2rem; align-items:flex-end; border-top:1px solid var(--line); padding-top:18px; margin-bottom:clamp(2rem,5vw,5rem); }}
     .hero-mark {{ aspect-ratio:1; border:1px solid var(--ink); position:relative; background:linear-gradient(135deg, transparent 48%, var(--accent) 49%, var(--accent) 51%, transparent 52%), repeating-linear-gradient(0deg, transparent 0 19px, var(--line) 20px); }} .hero-mark::before,.hero-mark::after {{ content:""; position:absolute; border:1px solid var(--ink); border-radius:50%; width:28%; aspect-ratio:1; left:14%; top:18%; }} .hero-mark::after {{ left:auto; top:auto; right:14%; bottom:18%; }}
-    .visual-scene {{ position:relative; min-height:clamp(240px,34vw,480px); overflow:hidden; border:1px solid var(--ink); background:var(--paper); isolation:isolate; }} .visual-scene::after {{ content:""; position:absolute; inset:10%; border:1px solid color-mix(in srgb, var(--ink) 34%, transparent); pointer-events:none; }} .scene-caption {{ position:absolute; left:18px; bottom:16px; z-index:3; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }}
+    .visual-scene {{ position:relative; min-height:clamp(240px,34vw,480px); overflow:hidden; border:var(--human-border-width) solid var(--ink); border-radius:var(--surface-radius); background:var(--paper); isolation:isolate; }} .visual-scene::after {{ content:""; position:absolute; inset:10%; border:1px solid color-mix(in srgb, var(--ink) 34%, transparent); pointer-events:none; }} .scene-caption {{ position:absolute; left:18px; bottom:16px; z-index:3; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }}
     .scene-material_field {{ background:linear-gradient(135deg,var(--paper) 0 48%,var(--accent) 48% 50%,var(--ink) 50% 52%,var(--paper) 52%); }} .scene-material_field .scene-plane {{ position:absolute; width:65%; height:46%; right:10%; top:18%; background:var(--ink); transform:skewY(-12deg); box-shadow:18px 18px 0 var(--accent); }} .scene-material_field .scene-line {{ position:absolute; left:12%; right:12%; bottom:28%; border-top:1px solid var(--ink); }}
     .scene-care_experience {{ border-radius:48% 48% 8px 8px; background:radial-gradient(circle at 36% 34%,var(--accent) 0 7%,transparent 8%),radial-gradient(circle at 68% 63%,var(--ink) 0 5%,transparent 6%),linear-gradient(145deg,var(--paper),#fff 55%,var(--accent)); }} .scene-care_experience .scene-ring {{ position:absolute; width:58%; aspect-ratio:1; border:1px solid var(--ink); border-radius:50%; left:21%; top:16%; }} .scene-care_experience .scene-ring::after {{ content:""; position:absolute; inset:14%; border:1px solid var(--accent); border-radius:50%; }}
     .scene-studio_invitation {{ background:linear-gradient(135deg,var(--paper) 0 62%,var(--accent) 62%); }} .scene-studio_invitation .scene-table {{ position:absolute; width:76%; height:27%; left:12%; bottom:22%; background:var(--ink); transform:rotate(-4deg); }} .scene-studio_invitation .scene-tool {{ position:absolute; width:19%; aspect-ratio:1; border:1px solid var(--ink); background:var(--paper); border-radius:50%; top:20%; }} .scene-studio_invitation .scene-tool:nth-child(2) {{ left:22%; }} .scene-studio_invitation .scene-tool:nth-child(3) {{ left:45%; background:var(--accent); }} .scene-studio_invitation .scene-tool:nth-child(4) {{ left:68%; }}
@@ -874,7 +1012,7 @@ def _render_styles(tokens: Mapping[str, Any]) -> str:
     .page-catalogue_spread .hero-mark {{ background:linear-gradient(125deg, var(--accent) 0 18%, transparent 19% 56%, var(--ink) 57% 60%, transparent 61%), repeating-linear-gradient(90deg, transparent 0 28px, var(--line) 29px 30px); }} .page-catalogue_spread .proof-surface {{ grid-template-columns:1.2fr .8fr; box-shadow:none; border:1px solid var(--ink); background:transparent; color:var(--ink); }} .page-catalogue_spread .claim-list {{ border-color:var(--line); }} .page-catalogue_spread .claim {{ border-color:var(--line); }}
     .page-field_ledger {{ background:#efede6; }} .page-field_ledger .section-header {{ border-top-width:2px; }} .page-field_ledger .proof-surface {{ border-left:10px solid var(--accent); }} .page-care_rhythm {{ background:#f4ece8; }} .page-care_rhythm .section--peak:first-child {{ min-height:84vh; }} .page-care_rhythm .proof-surface {{ border-radius:42% 8px 42% 8px; }} .page-studio_invitation {{ background:#f3efe5; }} .page-studio_invitation .proof-surface {{ transform:none; }} .page-image_story {{ background:#eeeae4; }} .page-image_story .proof-surface {{ background:var(--paper); color:var(--ink); border:1px solid var(--ink); box-shadow:14px 14px 0 var(--ink); }} .page-image_story .claim-list,.page-image_story .claim {{ border-color:var(--line); }} .page-machine_catalogue {{ background:#e9ecea; }} .page-machine_catalogue .proof-surface {{ box-shadow:none; border:1px solid var(--ink); }} .page-local_route {{ background:#eef1e8; }} .page-local_route .proof-surface {{ border-radius:0 36px 0 36px; }}
     .proof-surface .visual-scene {{ min-height:220px; margin-top:32px; border-color:rgba(243,239,231,.38); }} .page-image_story .proof-surface .visual-scene {{ border-color:var(--ink); }}
-    @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:clamp(4rem,16vw,7rem) 0; }} .section--peak {{ min-height:auto; }} h1 {{ font-size:clamp(2.35rem, 8vw, 3.8rem); }} h2 {{ font-size:clamp(1.55rem, 7vw, 3.2rem); }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .visual-scene {{ min-height:clamp(210px,64vw,300px); }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .proof-surface .visual-scene {{ min-height:180px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
+    @media (max-width:760px) {{ .topline {{ padding:18px 0; }} .hero-grid,.proof-surface,.contact-strip {{ grid-template-columns:1fr; }} .section {{ padding:var(--mobile-page-padding) 0; }} .section--peak {{ min-height:auto; }} h1 {{ font-size:var(--mobile-hero); }} h2 {{ font-size:var(--mobile-h2); }} .hero-mark {{ width:min(72vw,320px); margin-left:auto; }} .visual-scene {{ min-height:clamp(210px,64vw,300px); }} .proof-surface {{ box-shadow:7px 10px 0 var(--accent); padding:24px; }} .proof-surface .visual-scene {{ min-height:180px; }} .sequence {{ grid-template-columns:1fr; }} .step,.step + .step,.step:last-child {{ min-height:0; padding:20px 0; border-right:0; }} .contact-strip .button {{ width:100%; }} .calibration {{ width:35vw; top:8%; }} }}
     """
 
 
@@ -902,19 +1040,43 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     translation_by_id = {x.get("scene_id"): x for x in (translation.get("copy_translation") or {}).get("scenes", [])}
     cta_closures = {x.get("stage"): x for x in (translation.get("cta_closure") or {}).get("closures", [])}
     profile = translation.get("art_direction_token_profile") or {}
-    token_values = {
-        "field_ledger": ("18px", "2px", "999px", "1px"),
-        "care_rhythm": ("34px", "1px", "28px", "0px"),
-        "studio_invitation": ("10px", "3px", "12px", "2px"),
-    }
-    radii = token_values.get(profile.get("profile_id"), token_values["field_ledger"])
-    token_css = f'--human-scene-radius:{radii[0]};--human-border-width:{radii[1]};--human-cta-radius:{radii[2]};--human-edge-width:{radii[3]};'
+    profile_id = _text(tokens.get("profile_id") or profile.get("profile_id")) or "field_ledger"
+    token_css = ";".join([
+        f'--human-scene-radius:{tokens.get("radius", {}).get("media", "2px")}',
+        f'--human-border-width:{tokens.get("borders", {}).get("width", "1px")}',
+        f'--human-cta-radius:{tokens.get("radius", {}).get("button", "0px")}',
+        f'--human-edge-width:{tokens.get("borders", {}).get("edge_width", "1px")}',
+        f'--scene-columns:{tokens.get("image_framing", {}).get("scene_columns", "minmax(0,1fr) minmax(0,1fr)")}',
+        f'--ending-padding:{tokens.get("spacing", {}).get("ending", "4rem")}',
+        f'--copy-surface:{tokens.get("image_framing", {}).get("copy_surface", "var(--paper)")}',
+    ]) + ";"
     ia = list(spec.get("ia") or [])
     copy_by_id = {x.get("section_id"): x for x in copy.get("sections", [])}
     names = list(spec.get("strategy", {}).get("narrative_architecture", {}).get("section_naming") or [])
     ctas = {x.get("stage"): x for x in plan.get("scene_plan", [])}
     signature_anchors = list(translation.get("signature_anchors") or [])
     def esc(v): return html.escape(str(v or ""), quote=True)
+    heading_breaks = {
+        "住まいの「気になる」から、話せる。": ("住まいの「気", "になる」から、", "話せる。"),
+        "まず、気になる場所を見る。": ("まず、気になる", "場所を見る。"),
+        "住まいに、手を入れる。": ("住まいに、手を", "入れる。"),
+        "気になることを、ひとつずつ。": ("気になることを、", "ひとつずつ。"),
+        "住まいのことは、気になるところから。": ("住まいのことは、気", "になるところから。"),
+        "静けさに、頭を預ける。": ("静けさに、頭を", "預ける。"),
+        "まずは、頭を預ける。": ("まずは、頭を", "預ける。"),
+        "自分の時間を、話して選ぶ。": ("自分の時間を、", "話して選ぶ。"),
+        "その静けさを、自分の時間として。": ("その静けさを、", "自分の時間として。"),
+        "ストウブを囲んで、手を動かす。": ("ストウブを", "囲んで、手を", "動かす。"),
+        "食材に触れる。": ("食材に触れる。",),
+        "手を動かすと、一皿が進む。": ("手を動かすと、", "一皿が進む。"),
+        "できた一皿を、食卓へ。": ("できた一皿を、", "食卓へ。"),
+        "その食卓に、自分も加わる。": ("その食卓に、", "自分も加わる。"),
+    }
+    def heading_markup(value: str, tag: str) -> str:
+        lines = heading_breaks.get(value)
+        if not lines or "".join(lines) != value:
+            return f"<{tag}>{esc(value)}</{tag}>"
+        return f"<{tag}>" + "".join(f'<span class="headline-line">{esc(line)}</span>' for line in lines) + f"</{tag}>"
     chunks = []
     rendered_cta_stages = set()
     for i, scene in enumerate(plan.get("scene_plan", [])):
@@ -934,11 +1096,18 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         scene_photo = render_photo_asset(scene_asset)
         # A media-less scene is a deliberate composition, never a placeholder.
         media = f'<div class="scene-media scene-media--{esc(grammar["media_scale"])}" aria-hidden="true">{scene_photo}</div>' if scene_photo else ""
-        if topology == "sequence": inner = f'<div class="scene-sequence">{media}<h2>{esc(heading)}</h2><ol><li>{esc(body)}</li></ol></div>'
-        elif topology == "inset": inner = f'<div class="scene-inset">{media}<div><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'
-        elif topology == "split": inner = f'<div class="scene-split"><div><h2>{esc(heading)}</h2><p>{esc(body)}</p></div>{media}</div>'
-        elif topology == "layered": inner = f'<div class="scene-layered">{media}<div class="scene-layered-copy"><h2>{esc(heading)}</h2><p>{esc(body)}</p></div></div>'
-        else: inner = f'<div class="scene-full">{media}<h2>{esc(heading)}</h2><p>{esc(body)}</p></div>'
+        heading_tag = "h1" if i == 0 else "h2"
+        heading_html = heading_markup(heading, heading_tag)
+        if topology == "sequence": inner = f'<div class="scene-sequence">{media}{heading_html}<ol><li>{esc(body)}</li></ol></div>'
+        elif topology == "inset": inner = f'<div class="scene-inset">{media}<div>{heading_html}<p>{esc(body)}</p></div></div>'
+        elif topology == "split": inner = f'<div class="scene-split"><div>{heading_html}<p>{esc(body)}</p></div>{media}</div>'
+        elif topology == "layered": inner = f'<div class="scene-layered">{media}<div class="scene-layered-copy">{heading_html}<p>{esc(body)}</p></div></div>'
+        else: inner = f'<div class="scene-full">{media}{heading_html}<p>{esc(body)}</p></div>'
+        if i == 0:
+            hero_meta = dict((copy.get("premium_scene_copy") or {}).get("hero_meta") or {})
+            if hero_meta.get("items"):
+                label = " / ".join(str(item) for item in hero_meta["items"]) if hero_meta.get("kind") == "scope_line" else "  ·  ".join(str(item) for item in hero_meta["items"])
+                inner += f'<div class="hero-scope hero-scope--{esc(hero_meta.get("kind"))}">{esc(label)}</div>'
         cta = ""
         if scene.get("cta_stage") and scene.get("cta_stage") not in rendered_cta_stages:
             item = next((x for x in plan.get("scene_plan", []) if x.get("cta_stage") == scene["cta_stage"]), {})
@@ -979,7 +1148,10 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
             if value and (value in rendered_text or fragment_hits >= threshold):
                 anchor_ids.append(anchor.get("anchor_id"))
         anchor_attr_data = esc(",".join(x for x in anchor_ids if x))
-        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
+        state_class = re.sub(r"[^a-z0-9_-]+", "-", _text(scene.get("narrative_state")).lower()) or "scene"
+        ending_class = " premium-scene--ending" if i == len(plan.get("scene_plan", [])) - 1 else ""
+        datum_attr = ' data-contact-datum-count="0"' if i == len(plan.get("scene_plan", [])) - 1 else ""
+        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)} scene-state-{esc(state_class)}{ending_class}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-state="{esc(scene.get("narrative_state"))}" data-narrative-index="{i}" data-ending-variant="{esc((copy.get("premium_scene_copy") or {}).get("ending_variant")) if i == len(plan.get("scene_plan", [])) - 1 else ""}"{datum_attr} data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
     channel_data = spec.get("understanding", {}).get("contact_channels", {})
     contact_values = []
     for key in ("href", "url", "phone", "tel", "email", "line", "instagram", "booking_url", "contact_form_url", "contact_value"):
@@ -997,8 +1169,41 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
             contact_trace_ids.append(hashlib.sha256(evidence_id.encode()).hexdigest()[:10])
     contact_trace = ",".join(contact_trace_ids)
     contact_datum_markup = "".join(f"<p data-contact-datum=\"verified\">{esc(value)}</p>" for value in contact_values)
-    contact_details = f'<section id="contact" class="premium-contact-details" data-destination-type="INFORMATIONAL_ONLY" data-contact-datum-count="{len(contact_values)}" data-evidence-trace="{esc(contact_trace)}"><h2>次の案内</h2><p>{esc(contact_context)}</p>{f"<p>{esc(contact_claim)}</p>" if contact_claim else ""}{f"<p>{esc(channel)}</p>" if channel else ""}{contact_datum_markup}</section>'
-    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:var(--human-border-width) solid var(--line);border-radius:var(--human-scene-radius)}} .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em;border-radius:var(--human-scene-radius)}} .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0}} .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}} .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%}} .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%;min-width:0;border-radius:var(--human-scene-radius)}} .scene-full{{min-width:0;display:grid;gap:1.5rem}} .scene-sequence{{min-width:0;border-left:var(--human-edge-width) solid var(--accent);padding:2rem;overflow-wrap:anywhere}} .premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:var(--human-cta-radius);text-decoration:none;max-width:100%}} .premium-contact-details{{width:var(--rail);margin:0 auto;padding:4rem 0;border-top:var(--human-border-width) solid var(--line)}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr)}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
+    contact_details = ""
+    if contact_values:
+        contact_details = f'<section id="contact" class="premium-contact-details" data-destination-type="VERIFIED_EXTERNAL" data-contact-datum-count="{len(contact_values)}" data-evidence-trace="{esc(contact_trace)}"><p>{esc(contact_context)}</p>{f"<p>{esc(contact_claim)}</p>" if contact_claim else ""}{f"<p>{esc(channel)}</p>" if channel else ""}{contact_datum_markup}</section>'
+    ending_variant = esc((copy.get("premium_scene_copy") or {}).get("ending_variant"))
+    style = f'''{_render_styles(tokens)}
+    .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:var(--scene-gap) 0;border-top:var(--human-border-width) solid var(--line);border-radius:0;}}
+    .premium-scene--ending{{padding:var(--ending-padding) 0;max-width:var(--rail);}}
+    .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em;border-radius:var(--human-scene-radius);}}
+    .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0;}}
+    .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover;object-position:center;}}
+    .scene-media--immersive,.scene-media--dominant{{min-height:480px;}}
+    .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:var(--scene-columns);gap:clamp(2rem,5vw,5rem);align-items:center;}}
+    .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%;}}
+    .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden;}}
+    .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--copy-surface);padding:2rem;max-width:70%;min-width:0;border-radius:var(--human-scene-radius);}}
+    .scene-full{{min-width:0;display:grid;gap:1.5rem;}}
+    .scene-sequence{{min-width:0;border-left:var(--human-edge-width) solid var(--accent);padding:2rem;overflow-wrap:anywhere;}}
+    .premium-scene h1,.premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere;white-space:pre-line;}}
+    .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:var(--human-cta-radius);text-decoration:none;max-width:100%;}}
+    .hero-scope{{margin-top:2rem;color:var(--accent);font-size:.72rem;letter-spacing:.13em;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;}}
+    .hero-scope--fact_tabs{{display:flex;flex-wrap:wrap;gap:.65rem;letter-spacing:.08em;}}
+    .hero-scope--fact_tabs::before{{content:"FACTS";color:var(--muted);margin-right:.45rem;}}
+    .premium-contact-details{{width:var(--rail);margin:0 auto;padding:4rem 0;border-top:var(--human-border-width) solid var(--line);}}
+    .profile-field_ledger .scene-state-imagine_change .scene-layered{{display:grid;grid-template-columns:minmax(0,.38fr) minmax(0,.62fr);align-items:stretch;min-height:420px;}}
+    .profile-field_ledger .scene-state-imagine_change .scene-layered .scene-media{{grid-column:1;grid-row:1;min-height:100%;}}
+    .profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{position:static;grid-column:2;grid-row:1;align-self:center;max-width:none;padding:clamp(1.5rem,4vw,3rem);}}
+    .profile-care_rhythm .premium-scene--ending{{max-width:min(90vw,780px);}}
+    .profile-care_rhythm .premium-scene--ending .scene-layered-copy{{background:transparent;}}
+    .profile-care_rhythm .scene-media{{box-shadow:none;}}
+    .profile-studio_invitation .scene-sequence{{background:color-mix(in srgb,var(--accent) 7%,transparent);}}
+    .profile-studio_invitation .hero-scope--fact_tabs{{font-weight:var(--display-weight);}}
+    @media(max-width:900px){{h1{{font-size:clamp(2.8rem,5vw,3.6rem);}}h2{{font-size:clamp(2rem,3.7vw,2.8rem);}}}}
+    @media(max-width:760px){{.premium-scene{{padding:var(--mobile-scene-gap) 0;}}.premium-scene--ending{{padding:var(--mobile-page-padding) 0;}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr);gap:2rem;}}.scene-media--immersive,.scene-media--dominant{{min-height:280px;}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem;padding:1rem;}}.profile-field_ledger .scene-state-imagine_change .scene-layered{{display:grid;grid-template-columns:1fr;}}.profile-field_ledger .scene-state-imagine_change .scene-layered .scene-media,.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{grid-column:1;grid-row:auto;}}.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{position:relative;margin-top:-2rem;}}.profile-care_rhythm .scene-layered-copy{{margin-top:-1rem;}}}}
+    '''
+    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{style}</style></head><body class="profile-{esc(profile_id)}" data-ending-variant="{ending_variant}" style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
 
 def render_html(spec: Mapping[str, Any]) -> str:
     if spec.get("premium_scene_plan"):

@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "baseline": "round1m4",
+  "current": "round1n",
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "baseline_round": "1M4",
+      "current_round": "1N",
+      "baseline_html_sha": "1f29353ad731052ce495fb773e82400f8926938bc1e3a9aadfc0f7c915019a11",
+      "current_html_sha": "f47c542c7f9a901aca3cd3e59cf5d8987752c4d4c8f97c8d1904177819924968",
+      "profile": "field_ledger",
+      "token_axes_changed": [
+        "typography",
+        "colors",
+        "radius",
+        "borders",
+        "rhythm",
+        "grid",
+        "ending",
+        "mobile"
+      ],
+      "photo_bindings_preserved": true,
+      "manual_lp_edit": 0
+    },
+    {
+      "company": "nagi_no_mirai",
+      "baseline_round": "1M4",
+      "current_round": "1N",
+      "baseline_html_sha": "a90fe56cecbb5297565d210de3e0468e5f182728b0b7991d329850bb750134c2",
+      "current_html_sha": "c478fe422e6562eb0f1d7dd5d1306281c77ec5f388b580f37d090cf0e05b5b17",
+      "profile": "care_rhythm",
+      "token_axes_changed": [
+        "typography",
+        "colors",
+        "radius",
+        "borders",
+        "rhythm",
+        "grid",
+        "ending",
+        "mobile"
+      ],
+      "photo_bindings_preserved": true,
+      "manual_lp_edit": 0
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "baseline_round": "1M4",
+      "current_round": "1N",
+      "baseline_html_sha": "e49a15997318d6c89416fe5d8a9259252d43318b45c4fda30309ed3fdbd75f12",
+      "current_html_sha": "97132443593b919aee7cfaf98f2074b422f9d719a11a0c8586fc7ac08a8c9f12",
+      "profile": "studio_invitation",
+      "token_axes_changed": [
+        "typography",
+        "colors",
+        "radius",
+        "borders",
+        "rhythm",
+        "grid",
+        "ending",
+        "mobile"
+      ],
+      "photo_bindings_preserved": true,
+      "manual_lp_edit": 0
+    }
+  ],
+  "pairwise": {
+    "maylynn_paint_vs_nagi_no_mirai": {
+      "differing_axes": [
+        "font",
+        "weight",
+        "surface",
+        "edge",
+        "grid",
+        "cadence",
+        "ending"
+      ],
+      "minimum": 5
+    },
+    "maylynn_paint_vs_watashi_no_daidokoro": {
+      "differing_axes": [
+        "font",
+        "weight",
+        "surface",
+        "edge",
+        "grid",
+        "cadence",
+        "ending"
+      ],
+      "minimum": 5
+    },
+    "nagi_no_mirai_vs_watashi_no_daidokoro": {
+      "differing_axes": [
+        "font",
+        "weight",
+        "surface",
+        "edge",
+        "grid",
+        "cadence",
+        "ending"
+      ],
+      "minimum": 5
+    }
+  }
+}

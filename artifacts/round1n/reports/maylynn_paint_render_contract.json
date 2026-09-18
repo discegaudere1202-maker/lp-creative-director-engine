@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scene_count": {
+    "expected": 5,
+    "rendered": 5
+  },
+  "expected_headings": [
+    "住まいの「気になる」から、話せる。",
+    "まず、気になる場所を見る。",
+    "住まいに、手を入れる。",
+    "気になることを、ひとつずつ。",
+    "住まいのことは、気になるところから。"
+  ],
+  "rendered_headings": [
+    "住まいの「気になる」から、話せる。",
+    "まず、気になる場所を見る。",
+    "住まいに、手を入れる。",
+    "気になることを、ひとつずつ。",
+    "住まいのことは、気になるところから。"
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "素材の状態を見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#reassurance",
+      "visible_label": "対応範囲を確かめる"
+    }
+  ],
+  "quiet_end_without_contact": true,
+  "internal_metadata_visible": false,
+  "internal_leakage": [],
+  "editorial_violations": []
+}

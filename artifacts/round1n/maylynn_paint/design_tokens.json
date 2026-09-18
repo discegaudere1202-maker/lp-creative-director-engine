@@ -1,0 +1,82 @@
+{
+  "schema_version": "production_generation_v1",
+  "profile_id": "field_ledger",
+  "colors": {
+    "ink": "#20211E",
+    "accent": "#9E8459",
+    "paper": "#EFECE4",
+    "muted": "#6D6B63",
+    "line": "rgba(32,33,30,.24)"
+  },
+  "typography": {
+    "display": "Arial, \"Helvetica Neue\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", sans-serif",
+    "body": "Arial, \"Helvetica Neue\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", sans-serif",
+    "display_weight": 680,
+    "body_weight": 430
+  },
+  "font_scale": {
+    "eyebrow": "0.72rem",
+    "body": "1rem",
+    "lead": "1.18rem",
+    "h2": "clamp(2rem, 3.6vw, 3.5rem)",
+    "hero": "clamp(3.25rem, 5.2vw, 4rem)",
+    "body_leading": "1.62"
+  },
+  "spacing": {
+    "unit": "8px",
+    "section": "clamp(4.5rem, 8vw, 7rem)",
+    "rail": "min(92vw, 1180px)",
+    "text": "min(90vw, 780px)",
+    "ending": "clamp(4.5rem, 8vw, 6rem)",
+    "mobile_section": "clamp(3rem, 12vw, 4.5rem)",
+    "mobile_padding": "clamp(3rem, 12vw, 4.5rem)"
+  },
+  "radius": {
+    "surface": "3px",
+    "button": "0px",
+    "media": "3px"
+  },
+  "borders": {
+    "hairline": "2px solid var(--line)",
+    "strong": "2px solid var(--ink)",
+    "width": "2px",
+    "edge_width": "2px"
+  },
+  "shadows": {
+    "surface": "6px 8px 0 rgba(158,132,89,.14)"
+  },
+  "container_widths": {
+    "rail": "min(90vw, 1180px)",
+    "text": "min(90vw, 720px)"
+  },
+  "rhythm": {
+    "peak_to_quiet": "1.5",
+    "quiet_to_peak": "1.15",
+    "section_gap": "clamp(4.5rem, 8vw, 7rem)",
+    "cadence": "compact measured"
+  },
+  "grid": "12-column field ledger",
+  "image_framing": {
+    "radius": "3px",
+    "fit": "cover",
+    "profile_behavior": "12-column field ledger",
+    "scene_columns": "minmax(0,.38fr) minmax(0,.62fr)",
+    "copy_surface": "#EFECE4"
+  },
+  "ending": {
+    "variant": "grounded_field_closure",
+    "padding": "clamp(4.5rem, 8vw, 6rem)",
+    "border_width": "2px"
+  },
+  "mobile": {
+    "hero": "clamp(2.25rem, 9vw, 2.75rem)",
+    "h2": "clamp(1.9rem, 8vw, 2.25rem)",
+    "section_gap": "clamp(3rem, 12vw, 4.5rem)",
+    "padding": "clamp(3rem, 12vw, 4.5rem)",
+    "identity": "compact measured"
+  },
+  "motion": {
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)"
+  }
+}

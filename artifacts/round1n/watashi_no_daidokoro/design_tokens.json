@@ -1,0 +1,82 @@
+{
+  "schema_version": "production_generation_v1",
+  "profile_id": "studio_invitation",
+  "colors": {
+    "ink": "#2D231B",
+    "accent": "#C66F49",
+    "paper": "#FFF7EB",
+    "muted": "#77765A",
+    "line": "rgba(45,35,27,.22)"
+  },
+  "typography": {
+    "display": "\"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, system-ui, sans-serif",
+    "body": "\"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, system-ui, sans-serif",
+    "display_weight": 700,
+    "body_weight": 520
+  },
+  "font_scale": {
+    "eyebrow": "0.72rem",
+    "body": "1rem",
+    "lead": "1.18rem",
+    "h2": "clamp(2.1rem, 3.8vw, 3.5rem)",
+    "hero": "clamp(3.35rem, 5.2vw, 4.6rem)",
+    "body_leading": "1.7"
+  },
+  "spacing": {
+    "unit": "8px",
+    "section": "clamp(5rem, 9vw, 7rem)",
+    "rail": "min(92vw, 1180px)",
+    "text": "min(90vw, 780px)",
+    "ending": "clamp(5rem, 9vw, 7rem)",
+    "mobile_section": "clamp(3.5rem, 14vw, 5rem)",
+    "mobile_padding": "clamp(3.5rem, 14vw, 5rem)"
+  },
+  "radius": {
+    "surface": "10px",
+    "button": "10px",
+    "media": "10px"
+  },
+  "borders": {
+    "hairline": "1px solid var(--line)",
+    "strong": "1px solid var(--ink)",
+    "width": "1px",
+    "edge_width": "1px"
+  },
+  "shadows": {
+    "surface": "8px 10px 0 rgba(198,111,73,.22)"
+  },
+  "container_widths": {
+    "rail": "min(90vw, 1180px)",
+    "text": "min(90vw, 720px)"
+  },
+  "rhythm": {
+    "peak_to_quiet": "1.5",
+    "quiet_to_peak": "1.15",
+    "section_gap": "clamp(5rem, 9vw, 7rem)",
+    "cadence": "active medium density"
+  },
+  "grid": "modular table/process",
+  "image_framing": {
+    "radius": "10px",
+    "fit": "cover",
+    "profile_behavior": "modular table/process",
+    "scene_columns": "minmax(0,.4fr) minmax(0,.6fr)",
+    "copy_surface": "#FFF7EB"
+  },
+  "ending": {
+    "variant": "communal_table_closure",
+    "padding": "clamp(5rem, 9vw, 7rem)",
+    "border_width": "1px"
+  },
+  "mobile": {
+    "hero": "clamp(2rem, 9vw, 2.9rem)",
+    "h2": "clamp(2rem, 8vw, 2.5rem)",
+    "section_gap": "clamp(3.5rem, 14vw, 5rem)",
+    "padding": "clamp(3.5rem, 14vw, 5rem)",
+    "identity": "active medium density"
+  },
+  "motion": {
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)"
+  }
+}

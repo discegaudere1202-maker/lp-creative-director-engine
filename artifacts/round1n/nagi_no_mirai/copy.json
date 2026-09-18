@@ -1,0 +1,132 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "なぎのみらい",
+    "headline": "静けさに、頭を預ける。",
+    "headline_lines": [
+      "静けさに、頭を",
+      "預ける。"
+    ],
+    "supporting": "福岡市の小さな場で、ドライヘッドスパの時間へ。",
+    "cta": "予約する",
+    "microcopy": "DRY HEAD SPA / HEAD SPA SCHOOL / HEALING SALON"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "静けさに、頭を預ける。",
+      "headline_lines": [
+        "静けさに、頭を預ける。"
+      ],
+      "body": "福岡市で、自分に合う過ごし方を考える時間をつくります。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "まずは、頭を預ける。",
+      "headline_lines": [
+        "まずは、頭を預ける。"
+      ],
+      "body": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+      "evidence_claims": [
+        "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "福岡市で活動する事業者。",
+        "対応範囲を案内する。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "自分の時間を、話して選ぶ。",
+      "headline_lines": [
+        "自分の時間を、",
+        "話して選ぶ。"
+      ],
+      "body": "触れられる時間を選び、自分に合う過ごし方を考えます。",
+      "evidence_claims": [
+        "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+        "福岡市で活動する事業者。",
+        "対応範囲を案内する。",
+        "公式SNSから相談・予約の入口を確認する。"
+      ],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "過ごし方を選ぶ。",
+      "headline_lines": [
+        "過ごし方を選ぶ。"
+      ],
+      "body": "頭をゆるめる時間の流れを、静かな空間で確かめます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "その静けさを、自分の時間として。",
+      "headline_lines": [
+        "その静けさを、自分の",
+        "時間として。"
+      ],
+      "body": "ヘッドスパで、自分のための時間を予約します。",
+      "evidence_claims": [],
+      "cta": "予約する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "meaning_units_not_character_count"
+  },
+  "process_steps": [
+    "気になることを話す",
+    "過ごし方を選ぶ",
+    "予約を相談する"
+  ],
+  "premium_scene_copy": {
+    "hero": {
+      "headline": "静けさに、頭を預ける。",
+      "supporting": "福岡市の小さな場で、ドライヘッドスパの時間へ。",
+      "microcopy": "DRY HEAD SPA / HEAD SPA SCHOOL / HEALING SALON"
+    },
+    "scenes": {
+      "arrive": {
+        "headline": "静けさに、頭を預ける。",
+        "body": "福岡市の小さな場で、ドライヘッドスパの時間へ。"
+      },
+      "settle": {
+        "headline": "まずは、頭を預ける。",
+        "body": "やわらかなタオルと自然光の中で、\n静かな時間を想像する。"
+      },
+      "feel_care": {
+        "headline": "自分の時間を、話して選ぶ。",
+        "body": "ドライヘッドスパ、ヘッドスパスクール、ヒーリングサロン。\n受ける、学ぶ、静かに過ごす。その入口を考える。"
+      },
+      "choose_time": {
+        "headline": "過ごし方を選ぶ。",
+        "body": "ドライヘッドスパは、頭に触れる時間。\n手の距離まで含めて自分の過ごし方を思い描く。"
+      },
+      "reserve": {
+        "headline": "その静けさを、自分の時間として。",
+        "body": "受ける。学ぶ。静かに過ごす。\nなぎのみらいで過ごす時間を、少し先の自分に重ねる。"
+      }
+    },
+    "hero_meta": {
+      "kind": "scope_line",
+      "items": [
+        "DRY HEAD SPA",
+        "HEAD SPA SCHOOL",
+        "HEALING SALON"
+      ]
+    },
+    "ending_variant": "quiet_afterglow_closure",
+    "pattern": "quiet_multi_mode",
+    "profile_id": "care_rhythm"
+  },
+  "section_naming_gate": {
+    "status": "PASS",
+    "violations": []
+  }
+}

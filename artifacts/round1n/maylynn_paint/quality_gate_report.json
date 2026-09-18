@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "safety": "PASS",
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "scene_gates": {
+    "narrative_scene_order_gate": "PASS",
+    "scene_state_delta_gate": "PASS",
+    "rendered_grammar_delta_gate": "PASS",
+    "consecutive_topology_repetition_gate": "PASS",
+    "visual_authority_realization_gate": "PASS",
+    "claim_traceability_gate": "PASS"
+  },
+  "render_contract": {
+    "status": "PASS",
+    "scene_count": {
+      "expected": 5,
+      "rendered": 5
+    },
+    "expected_headings": [
+      "住まいの「気になる」から、話せる。",
+      "まず、気になる場所を見る。",
+      "住まいに、手を入れる。",
+      "気になることを、ひとつずつ。",
+      "住まいのことは、気になるところから。"
+    ],
+    "rendered_headings": [
+      "住まいの「気になる」から、話せる。",
+      "まず、気になる場所を見る。",
+      "住まいに、手を入れる。",
+      "気になることを、ひとつずつ。",
+      "住まいのことは、気になるところから。"
+    ],
+    "rendered_ctas": [
+      {
+        "stage": "discovery",
+        "destination": "#way-in",
+        "visible_label": "素材の状態を見る"
+      },
+      {
+        "stage": "reassurance",
+        "destination": "#reassurance",
+        "visible_label": "対応範囲を確かめる"
+      }
+    ],
+    "quiet_end_without_contact": true,
+    "internal_metadata_visible": false,
+    "internal_leakage": [],
+    "editorial_violations": []
+  },
+  "photography_role_coverage": {
+    "expected": 4,
+    "actual": 4
+  }
+}

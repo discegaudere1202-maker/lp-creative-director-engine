@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "safety": "PASS",
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "scene_gates": {
+    "narrative_scene_order_gate": "PASS",
+    "scene_state_delta_gate": "PASS",
+    "rendered_grammar_delta_gate": "PASS",
+    "consecutive_topology_repetition_gate": "PASS",
+    "visual_authority_realization_gate": "PASS",
+    "claim_traceability_gate": "PASS"
+  },
+  "render_contract": {
+    "status": "PASS",
+    "scene_count": {
+      "expected": 5,
+      "rendered": 5
+    },
+    "expected_headings": [
+      "ストウブを囲んで、手を動かす。",
+      "食材に触れる。",
+      "手を動かすと、一皿が進む。",
+      "できた一皿を、食卓へ。",
+      "その食卓に、自分も加わる。"
+    ],
+    "rendered_headings": [
+      "ストウブを囲んで、手を動かす。",
+      "食材に触れる。",
+      "手を動かすと、一皿が進む。",
+      "できた一皿を、食卓へ。",
+      "その食卓に、自分も加わる。"
+    ],
+    "rendered_ctas": [
+      {
+        "stage": "discovery",
+        "destination": "#way-in",
+        "visible_label": "料理の流れを見る"
+      },
+      {
+        "stage": "reassurance",
+        "destination": "#reassurance",
+        "visible_label": "場と内容を確かめる"
+      }
+    ],
+    "quiet_end_without_contact": true,
+    "internal_metadata_visible": false,
+    "internal_leakage": [],
+    "editorial_violations": []
+  },
+  "photography_role_coverage": {
+    "expected": 4,
+    "actual": 4
+  }
+}

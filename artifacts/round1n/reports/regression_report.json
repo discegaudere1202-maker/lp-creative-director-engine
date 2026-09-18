@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "existing_suite": "M4 regression lock",
+  "new_profile_render_wiring_tests": "included",
+  "test_count": 166,
+  "browser_qa": {
+    "status": "PASS",
+    "total": 27,
+    "pass": 27,
+    "fail": 0,
+    "overflow": 0,
+    "console_errors": 0,
+    "page_errors": 0,
+    "request_failures": 0,
+    "source": "existing Round 1K-A2 browser contract"
+  },
+  "manual_lp_edit": 0
+}

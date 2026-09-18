@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "schema_version": "human_peak_presentation_v1",
+      "status": "PASS",
+      "profile_id": "field_ledger",
+      "selected": [
+        {
+          "peak_id": "human-peak-01-observe",
+          "scene_id": "scene-01-observe",
+          "narrative_state": "observe",
+          "presentation_role": "human_peak",
+          "profile_id": "field_ledger",
+          "capture_required": true,
+          "selection_reason": "Final Premium Creative Correction profile-derived human presentation plan"
+        },
+        {
+          "peak_id": "human-peak-02-watch_hands",
+          "scene_id": "scene-03-watch_hands",
+          "narrative_state": "watch_hands",
+          "presentation_role": "human_peak",
+          "profile_id": "field_ledger",
+          "capture_required": true,
+          "selection_reason": "Final Premium Creative Correction profile-derived human presentation plan"
+        }
+      ],
+      "selected_count": 2,
+      "expected_count": 2,
+      "machine_peak_scoring_unchanged": true
+    },
+    "nagi_no_mirai": {
+      "schema_version": "human_peak_presentation_v1",
+      "status": "PASS",
+      "profile_id": "care_rhythm",
+      "selected": [
+        {
+          "peak_id": "human-peak-01-feel_care",
+          "scene_id": "scene-03-feel_care",
+          "narrative_state": "feel_care",
+          "presentation_role": "human_peak",
+          "profile_id": "care_rhythm",
+          "capture_required": true,
+          "selection_reason": "Final Premium Creative Correction profile-derived human presentation plan"
+        },
+        {
+          "peak_id": "human-peak-02-choose_time",
+          "scene_id": "scene-04-choose_time",
+          "narrative_state": "choose_time",
+          "presentation_role": "human_peak",
+          "profile_id": "care_rhythm",
+          "capture_required": true,
+          "selection_reason": "Final Premium Creative Correction profile-derived human presentation plan"
+        }
+      ],
+      "selected_count": 2,
+      "expected_count": 2,
+      "machine_peak_scoring_unchanged": true
+    },
+    "watashi_no_daidokoro": {
+      "schema_version": "human_peak_presentation_v1",
+      "status": "PASS",
+      "profile_id": "studio_invitation",
+      "selected": [
+        {
+          "peak_id": "human-peak-01-encounter",
+          "scene_id": "scene-01-encounter",
+          "narrative_state": "encounter",
+          "presentation_role": "human_peak",
+          "profile_id": "studio_invitation",
+          "capture_required": true,
+          "selection_reason": "Final Premium Creative Correction profile-derived human presentation plan"
+        },
+        {
+          "peak_id": "human-peak-02-make",
+          "scene_id": "scene-03-make",
+          "narrative_state": "make",
+          "presentation_role": "human_peak",
+          "profile_id": "studio_invitation",
+          "capture_required": true,
+          "selection_reason": "Final Premium Creative Correction profile-derived human presentation plan"
+        },
+        {
+          "peak_id": "human-peak-03-share",
+          "scene_id": "scene-04-share",
+          "narrative_state": "share",
+          "presentation_role": "human_peak",
+          "profile_id": "studio_invitation",
+          "capture_required": true,
+          "selection_reason": "Final Premium Creative Correction profile-derived human presentation plan"
+        }
+      ],
+      "selected_count": 3,
+      "expected_count": 3,
+      "machine_peak_scoring_unchanged": true
+    }
+  },
+  "machine_peak_scoring_unchanged": true,
+  "total_selected": 7
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "round1n_implementation_summary_v1",
+  "status": "PASS",
+  "starting_head": "8393782d8c45cfb771228354b9e97ce5f64d1830",
+  "commit_sha": "8393782d8c45cfb771228354b9e97ce5f64d1830",
+  "qa_viewport_total": 27,
+  "qa_pass_count": 27,
+  "qa_fail_count": 0,
+  "canonical_captures": 6,
+  "human_peak_captures": 14,
+  "total_captures": 20,
+  "capture_provenance": "PASS",
+  "tests": {
+    "status": "PASS",
+    "modules": [
+      "tests.test_round1n_creative_correction",
+      "tests.test_round1m4_truth_closure",
+      "tests.test_round1m3_truth_closure",
+      "tests.test_round1m2_reality",
+      "tests.test_human_translation",
+      "tests.test_premium_scene",
+      "tests.test_premium_experience",
+      "tests.test_rendered_reality",
+      "tests.test_round1k_b4",
+      "tests.test_creative_genome",
+      "tests.test_photography_asset_preflight",
+      "tests.test_photography_pipeline",
+      "tests.test_production_generation",
+      "tests.test_pipeline_evidence_safety",
+      "tests.test_evidence_safety",
+      "tests.test_evidence_safety_adversarial"
+    ],
+    "returncode": 0,
+    "test_count": 166,
+    "stdout_tail": "",
+    "stderr_tail": "......................................................................................................................................................................\n----------------------------------------------------------------------\nRan 166 tests in 2.233s\n\nOK\n"
+  },
+  "manual_lp_edit": 0,
+  "photography_changed": 0,
+  "fake_cta": 0,
+  "generic_next_ui": 0,
+  "implementation_ready": true,
+  "human_re_review_ready": true,
+  "push_required": true,
+  "github_actions": "NOT_RUN_PUSH_APPROVAL_REQUIRED",
+  "artifact": {
+    "name": "round1n-final-premium-creative-8393782d8c45cfb771228354b9e97ce5f64d1830",
+    "round": "1N-B",
+    "source_head": "8393782d8c45cfb771228354b9e97ce5f64d1830",
+    "files": [
+      "index.html (3)",
+      "rendered_visible_copy/ (3)",
+      "design_tokens.json (3)",
+      "premium_human_translation.json (3)",
+      "human_review_captures/ (20)",
+      "reports/",
+      "summary.json"
+    ],
+    "github_artifact": "NOT_UPLOADED_PUSH_APPROVAL_REQUIRED"
+  }
+}
