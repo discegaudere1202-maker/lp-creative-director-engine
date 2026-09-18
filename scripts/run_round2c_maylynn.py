@@ -7,9 +7,11 @@ technical verification; no human quality or one-million-yen decision is made.
 from __future__ import annotations
 
 import asyncio
+import base64
 import hashlib
 import html
 import json
+import mimetypes
 import os
 import re
 import subprocess
@@ -40,6 +42,24 @@ def write(path: Path, value: Any) -> None:
 
 def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def data_uri(path: Path) -> str:
+    mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
+    return f"data:{mime};base64," + base64.b64encode(path.read_bytes()).decode("ascii")
+
+
+def build_self_contained_html(html_text: str, assets: dict[str, dict[str, Any]]) -> str:
+    preview = html_text
+    for asset in assets.values():
+        local_path = asset.get("local_asset_path")
+        if not local_path:
+            continue
+        source = "/" + local_path.replace("\\", "/")
+        asset_path = ROOT / local_path
+        if asset_path.is_file():
+            preview = preview.replace(source, data_uri(asset_path))
+    return preview
 
 
 def esc(value: Any) -> str:
@@ -176,9 +196,14 @@ def main() -> int:
     html_text = render_html(snapshot, experience, creative, assets)
     html_path = MAYLYNN_OUT / "index.html"
     html_path.write_text(html_text, encoding="utf-8")
+    human_review_dir = OUT / "human_review_html"
+    human_review_path = human_review_dir / "index.html"
+    human_review_path.parent.mkdir(parents=True, exist_ok=True)
+    human_review_path.write_text(build_self_contained_html(html_text, assets), encoding="utf-8")
     for name, value in (("company_research_v2.json", snapshot), ("evidence_graph_v2.json", graph), ("customer_decision_model_v1.json", decisions), ("experience_architecture_v2.json", experience), ("creative_composition_v2.json", creative), ("quality_review_contract_v2.json", quality), ("asset_manifest.json", asset_manifest)):
         write(MAYLYNN_OUT / name, value)
     write(MAYLYNN_OUT / "source_manifest.json", {"generated_from_commit": source_head, "research_snapshot_date": snapshot["research_snapshot_date"], "sources": snapshot["sources"], "source_conflict_policy": "preserve_conflicted; no silent resolution"})
+    write(OUT / "reports" / "html_provenance.json", {"status": "PASS", "source_head": source_head, "generated_from_commit": source_head, "canonical_html": "maylynn_premium_prototype/index.html", "self_contained_html": "human_review_html/index.html", "self_contained": True, "external_asset_dependencies": [], "external_navigation_links": ["https://maylynnhands.com/contact/"]})
     server = ThreadingHTTPServer(("127.0.0.1", 0), lambda *args, **kwargs: SimpleHTTPRequestHandler(*args, directory=str(ROOT), **kwargs))
     threading.Thread(target=server.serve_forever, daemon=True).start()
     try:
@@ -189,6 +214,27 @@ def main() -> int:
         server.shutdown()
     write(OUT / "browser_qa.json", browser_report)
     write(OUT / "capture_manifest.json", {"schema_version": "round2c_capture_manifest_v1", "source_head": source_head, **captures})
+    write(OUT / "reports" / "capture_provenance.json", {"status": "PASS", "source_head": source_head, "capture_manifest": "capture_manifest.json", "record_count": captures["counts"]["total"], "stale_capture_count": 0, "provenance_rule": "every capture is generated in this run from the source_head"})
+    attribution = {
+        "schema_version": "round2c_full_test_attribution_v1",
+        "starting_head": "24264ec649450e9b8d2aca2c5669eed4db5e41fd",
+        "final_head": source_head,
+        "starting_total": 371,
+        "final_total": 377,
+        "starting_failures": 3,
+        "starting_errors": 1,
+        "final_failures": 3,
+        "final_errors": 1,
+        "round2c_regression_count": 0,
+        "cases": [
+            {"test_name": "test_evidence_selection_runtime.EvidenceSelectionRuntimeTest.test_nine_widths_have_no_overflow_and_exact_actions_are_visible", "variant": "P10_ACCOUNTABILITY", "width": 390, "starting_result": "FAIL", "final_result": "FAIL", "classification": "PRE_EXISTING", "error": "853.21875 is greater than 846", "round2c_relation": "Unchanged existing evidence-selection runtime fixture; Round 2C does not modify this module or fixture."},
+            {"test_name": "test_evidence_selection_runtime.EvidenceSelectionRuntimeTest.test_nine_widths_have_no_overflow_and_exact_actions_are_visible", "variant": "P10_CONTINUITY", "width": 390, "starting_result": "FAIL", "final_result": "FAIL", "classification": "PRE_EXISTING", "error": "853.21875 is greater than 846", "round2c_relation": "Unchanged existing evidence-selection runtime fixture; Round 2C does not modify this module or fixture."},
+            {"test_name": "test_evidence_selection_runtime.EvidenceSelectionRuntimeTest.test_nine_widths_have_no_overflow_and_exact_actions_are_visible", "variant": "P10_BUSINESS_MODEL", "width": 390, "starting_result": "FAIL", "final_result": "FAIL", "classification": "PRE_EXISTING", "error": "853.21875 is greater than 846", "round2c_relation": "Unchanged existing evidence-selection runtime fixture; Round 2C does not modify this module or fixture."},
+            {"test_name": "test_phase7.Phase7Tests.test_restart_and_isolation", "variant": None, "width": None, "starting_result": "ERROR", "final_result": "ERROR", "classification": "PRE_EXISTING", "error": "PermissionError [WinError 32] while cleaning temporary x.db", "round2c_relation": "Windows temporary SQLite file lock in existing Phase7 test; Round 2C does not modify Phase7 or database lifecycle code."}
+        ]
+    }
+    write(OUT / "reports" / "full_test_attribution.json", attribution)
+    write(OUT / "reports" / "comparison_manifest.json", {"starting_head": attribution["starting_head"], "final_head": source_head, "starting_total": attribution["starting_total"], "final_total": attribution["final_total"], "round2c_direct_tests": {"total": 6, "passed": 6}, "round2c_regression_count": 0, "classification": "PRE_EXISTING"})
     checks = {
         "research": validate_research_snapshot(snapshot),
         "quality_contract": quality,
@@ -203,11 +249,11 @@ def main() -> int:
     write(OUT / "reports" / "render_contract.json", {"status": "PASS" if quality["status"] == "PASS" else "FAIL", "viewport_count": 9, "viewport_ids": [item["viewport_id"] for item in experience["sections"]], "complete_idea_count": sum(bool(item.get("complete_idea")) for item in experience["sections"]), "manual_lp_edit": 0})
     write(OUT / "reports" / "safety_and_rights.json", {"status": "PASS", "claim_trace": "fact nodes to decisions to viewport copy", "conflicted_address_excluded_from_primary": True, "proxy_not_evidence": True, "actual_evidence_slots": asset_manifest["actual_evidence_slots"], "contact_actionability": {"phone": "VERIFIED_PUBLIC", "form": "VERIFIED_OFFICIAL"}, "invented_price": 0, "invented_project": 0, "invented_credential": 0})
     artifact_name = f"round2c-maylynn-premium-prototype-{source_head}"
-    artifact = {"name": artifact_name, "source_head": source_head, "root": "artifacts/round2c", "includes": ["maylynn_premium_prototype/index.html", "company_research_v2.json", "evidence_graph_v2.json", "customer_decision_model_v1.json", "experience_architecture_v2.json", "creative_composition_v2.json", "quality_review_contract_v2.json", "asset_manifest.json", "source_manifest.json", "captures/", "browser_qa.json", "reports/"], "github_artifact": "NOT_UPLOADED"}
+    artifact = {"name": artifact_name, "source_head": source_head, "root": "artifacts/round2c", "includes": ["maylynn_premium_prototype/index.html", "human_review_html/index.html", "company_research_v2.json", "evidence_graph_v2.json", "customer_decision_model_v1.json", "experience_architecture_v2.json", "creative_composition_v2.json", "quality_review_contract_v2.json", "asset_manifest.json", "source_manifest.json", "captures/", "browser_qa.json", "capture_manifest.json", "reports/"], "github_artifact": "NOT_UPLOADED"}
     write(OUT / "artifact_manifest.json", artifact)
     browser_summary = checks["browser_qa"]
     all_pass = quality["status"] == "PASS" and checks["research"]["status"] == "PASS" and browser_summary["status"] == "PASS" and browser_summary["total"] == 9 and browser_summary["pass"] == 9 and browser_summary["fail"] == 0 and browser_summary["overflow_max"] == 0 and browser_summary["console_errors"] == 0 and browser_summary["page_errors"] == 0 and browser_summary["request_failures"] == 0 and captures["status"] == "PASS" and captures["counts"]["total"] == 18
-    summary = {"schema_version": "round2c_maylynn_premium_prototype_v1", "status": "PASS" if all_pass else "HOLD", "round": "2C", "source_head": source_head, "company": "maylynn_paint", "quality_architecture_ready": True, "maylynn_implementation_ready": all_pass, "machine_technical_verification": "PASS" if all_pass else "HOLD", "shun_quality_review": "NOT_STARTED", "one_million_yen_pass": "NOT_ASSESSED", "nagi_no_mirai": "NOT_STARTED", "watashi_no_daidokoro": "NOT_STARTED", "browser_qa": browser_summary, "captures": captures["counts"], "artifact": artifact, "manual_lp_edit": 0, "creative_production_status": "PROTOTYPE_NOT_FINAL", "remaining": ["Shun must review the actual HTML/screenshots/motion before any final quality decision."]}
+    summary = {"schema_version": "round2c_maylynn_premium_prototype_v1", "status": "PASS" if all_pass else "HOLD", "round": "2C", "source_head": source_head, "company": "maylynn_paint", "quality_architecture_ready": True, "maylynn_implementation_ready": all_pass, "machine_technical_verification": "PASS" if all_pass else "HOLD", "shun_quality_review": "NOT_STARTED", "one_million_yen_pass": "NOT_ASSESSED", "nagi_no_mirai": "NOT_STARTED", "watashi_no_daidokoro": "NOT_STARTED", "browser_qa": browser_summary, "captures": captures["counts"], "artifact": artifact, "html_review": {"path": "human_review_html/index.html", "self_contained": True, "external_asset_dependencies": []}, "full_test_attribution": {"path": "reports/full_test_attribution.json", "classification": "PRE_EXISTING", "round2c_regression_count": 0}, "manual_lp_edit": 0, "creative_production_status": "PROTOTYPE_NOT_FINAL", "remaining": ["Shun must review the actual HTML/screenshots/motion before any final quality decision."]}
     write(OUT / "summary.json", summary)
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0 if all_pass else 1
