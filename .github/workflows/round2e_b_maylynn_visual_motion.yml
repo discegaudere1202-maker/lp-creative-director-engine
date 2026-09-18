@@ -47,7 +47,31 @@ jobs:
         run: git diff --check
 
       - name: Generate Maylynn Visual and Motion artifact
+        id: generate
+        continue-on-error: true
         run: python scripts/run_round2e_b_maylynn.py
+
+      - name: Surface generated diagnostics
+        if: always()
+        run: |
+          if [ -f artifacts/round2e_b/summary.json ]; then
+            cat artifacts/round2e_b/summary.json >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Round 2E-B summary.json was not produced." >> "$GITHUB_STEP_SUMMARY"
+            find artifacts/round2e_b -maxdepth 2 -type f -print 2>/dev/null || true
+          fi
+
+      - name: Upload failure diagnostics
+        if: steps.generate.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2e-b-failure-diagnostics-${{ github.sha }}
+          path: artifacts/round2e_b
+          if-no-files-found: warn
+
+      - name: Stop on generation failure
+        if: steps.generate.outcome == 'failure'
+        run: exit 1
 
       - name: Assert machine readiness and provenance
         run: |

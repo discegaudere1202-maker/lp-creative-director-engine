@@ -413,11 +413,32 @@ def main() -> int:
     write(OUT / "reports" / "capture_provenance.json", {"status":"PASS","source_head":source_head,"record_count":captures["counts"]["total"],"stale_capture_count":0,"provenance_rule":"every capture and motion recording is generated in this run from source_head"})
     all_final = all(item["status"] == "FINAL" for item in completion["viewports"])
     no_unresolved = "TODO" not in html_text and "placeholder" not in html_text.lower()
-    all_pass = all_final and no_unresolved and browser_summary["status"] == "PASS" and browser_summary["total"] == len(DEFAULT_WIDTHS) and browser_summary["pass"] == len(DEFAULT_WIDTHS) and browser_summary["fail"] == 0 and browser_summary["overflow_max"] == 0 and browser_summary["console_errors"] == 0 and browser_summary["page_errors"] == 0 and browser_summary["request_failures"] == 0 and html_summary["status"] == "PASS" and html_summary["pass"] == 2 and html_summary["fail"] == 0 and html_summary["overflow_max"] == 0 and interactions["status"] == "PASS" and captures["status"] == "PASS" and captures["counts"]["total"] == 12 and motion_recording["status"] == "PASS" and len(motion_recording["coverage"]) == 6 and completion["physical_media_assets"] == 14 and completion["human_visual_moments"] == 9 and completion["motion"]["autonomous_count"] >= 4 and validate_research_snapshot(snapshot)["status"] == "PASS" and quality["status"] == "PASS"
+    gate_checks = {
+        "all_final": all_final,
+        "no_unresolved_copy": no_unresolved,
+        "browser_status": browser_summary["status"] == "PASS",
+        "browser_total": browser_summary["total"] == len(DEFAULT_WIDTHS),
+        "browser_pass_count": browser_summary["pass"] == len(DEFAULT_WIDTHS),
+        "browser_fail_count": browser_summary["fail"] == 0,
+        "browser_overflow": browser_summary["overflow_max"] == 0,
+        "browser_console_errors": browser_summary["console_errors"] == 0,
+        "browser_page_errors": browser_summary["page_errors"] == 0,
+        "browser_request_failures": browser_summary["request_failures"] == 0,
+        "self_contained_html": html_summary["status"] == "PASS" and html_summary["pass"] == 2 and html_summary["fail"] == 0 and html_summary["overflow_max"] == 0,
+        "interaction_qa": interactions["status"] == "PASS",
+        "capture_qa": captures["status"] == "PASS" and captures["counts"]["total"] == 12,
+        "motion_recording": motion_recording["status"] == "PASS" and len(motion_recording["coverage"]) == 6,
+        "physical_media_count": completion["physical_media_assets"] == 14,
+        "visual_moment_count": completion["human_visual_moments"] == 9,
+        "autonomous_motion_count": completion["motion"]["autonomous_count"] >= 4,
+        "research_snapshot": validate_research_snapshot(snapshot)["status"] == "PASS",
+        "quality_contract": quality["status"] == "PASS",
+    }
+    all_pass = all(gate_checks.values())
     artifact_name = f"round2e-b-maylynn-visual-motion-{source_head}"
     artifact = {"name":artifact_name,"source_head":source_head,"root":"artifacts/round2e_b","includes":["maylynn_visual_motion/index.html","human_review_html/index.html","human_review_motion.webm","asset_manifest.json","completion_manifest.json","reports/","captures/","browser_qa.json","human_review_browser_qa/","human_review_motion.json","capture_manifest.json"],"github_artifact":"NOT_UPLOADED"}
     write(OUT / "artifact_manifest.json", artifact)
-    summary = {"schema_version":"round2e_b_maylynn_visual_motion_v1","status":"PASS" if all_pass else "HOLD","round":"2E-B","source_head":source_head,"company":"maylynn_paint","visual_media":{"physical_media_assets":14,"distinct_photographs":14,"generated_realistic_visuals":12,"diagrams":2,"videos":0,"human_visual_moments":9},"viewport_completion":{"all_final":all_final,"viewports":completion["viewports"]},"motion":completion["motion"],"major_peaks":{"V01":"PASS","V04":"PASS","V05":"PASS","V09":"PASS"},"browser_qa":browser_summary,"html_review":{"path":"human_review_html/index.html","self_contained":True,"browser_qa":html_summary},"interaction_qa":interactions,"captures":captures["counts"],"motion_recording":motion_recording,"asset_provenance":completion["asset_provenance"],"evidence_safety":completion["evidence_safety"],"mobile":completion["mobile_contract"],"performance":{"status":"PASS","jpeg_assets_compressed":True,"hero_preload":True,"lazy_loading":True,"huge_uncompressed_png":0},"accessibility":{"status":"PASS","alt_text":True,"keyboard_scope_and_color":True,"faq_keyboard":True,"reduced_motion":True},"artifact":artifact,"machine_technical_ready":"YES" if all_pass else "NO","creative_implementation_complete":"YES" if all_pass else "NO","shun_final_form_html_review_ready":"YES" if all_pass else "NO","manual_lp_edit":0,"deferred_quality_decisions":["visual taste","motion amount","GORA minimum","¥1M value"],"nagi_no_mirai":"NOT_STARTED","watashi_no_daidokoro":"NOT_STARTED"}
+    summary = {"schema_version":"round2e_b_maylynn_visual_motion_v1","status":"PASS" if all_pass else "HOLD","round":"2E-B","source_head":source_head,"company":"maylynn_paint","gate_checks":gate_checks,"visual_media":{"physical_media_assets":14,"distinct_photographs":14,"generated_realistic_visuals":12,"diagrams":2,"videos":0,"human_visual_moments":9},"viewport_completion":{"all_final":all_final,"viewports":completion["viewports"]},"motion":completion["motion"],"major_peaks":{"V01":"PASS","V04":"PASS","V05":"PASS","V09":"PASS"},"browser_qa":browser_summary,"html_review":{"path":"human_review_html/index.html","self_contained":True,"browser_qa":html_summary},"interaction_qa":interactions,"captures":captures["counts"],"motion_recording":motion_recording,"asset_provenance":completion["asset_provenance"],"evidence_safety":completion["evidence_safety"],"mobile":completion["mobile_contract"],"performance":{"status":"PASS","jpeg_assets_compressed":True,"hero_preload":True,"lazy_loading":True,"huge_uncompressed_png":0},"accessibility":{"status":"PASS","alt_text":True,"keyboard_scope_and_color":True,"faq_keyboard":True,"reduced_motion":True},"artifact":artifact,"machine_technical_ready":"YES" if all_pass else "NO","creative_implementation_complete":"YES" if all_pass else "NO","shun_final_form_html_review_ready":"YES" if all_pass else "NO","manual_lp_edit":0,"deferred_quality_decisions":["visual taste","motion amount","GORA minimum","¥1M value"],"nagi_no_mirai":"NOT_STARTED","watashi_no_daidokoro":"NOT_STARTED"}
     write(OUT / "summary.json", summary)
     print(json.dumps(summary, ensure_ascii=True, indent=2))
     return 0 if all_pass else 1
