@@ -71,6 +71,17 @@ jobs:
           assert summary["html_review"]["browser_qa"]["status"] == "PASS"
           assert summary["full_test_attribution"]["round2c_regression_count"] == 0
           assert summary["manual_lp_edit"] == 0
+          capture_provenance = json.loads((root / "reports/capture_provenance.json").read_text(encoding="utf-8"))
+          html_provenance = json.loads((root / "reports/html_provenance.json").read_text(encoding="utf-8"))
+          comparison = json.loads((root / "reports/comparison_manifest.json").read_text(encoding="utf-8"))
+          assert capture_provenance["status"] == "PASS"
+          assert capture_provenance["source_head"] == head
+          assert capture_provenance["stale_capture_count"] == 0
+          assert html_provenance["status"] == "PASS"
+          assert html_provenance["source_head"] == head
+          assert html_provenance["generated_from_commit"] == head
+          assert comparison["final_head"] == head
+          assert comparison["round2c_regression_count"] == 0
           print(json.dumps(summary, ensure_ascii=False, indent=2))
           PY
 
