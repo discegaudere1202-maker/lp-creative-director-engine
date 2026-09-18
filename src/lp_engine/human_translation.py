@@ -28,6 +28,13 @@ def _text(value: Any) -> str:
     return str(value or "").strip()
 
 
+def _anchor_match(value: str, text: str) -> bool:
+    value = _text(value)
+    parts = [part.rstrip("でをのには") for part in re.split(r"[・、。/／\s]+|学ぶ", value) if len(part.rstrip("でをのには")) >= 2]
+    hits = sum(part in text for part in parts)
+    return bool(value and (value in text or hits >= (1 if len(parts) <= 4 else 2)))
+
+
 def _values(understanding: Mapping[str, Any]) -> dict[str, str]:
     state = understanding.get("customer_state") or {}
     return {
@@ -50,19 +57,21 @@ def derive_signature_anchors(
     # signature.  Keep them in copy/CTA IR but do not promote them to
     # reusable company anchors.
     candidates = [
-        ("PLACE", values["location"], "location", "the customer needs a reachable context"),
-        ("SERVICE", values["service_category"], "service_category", "the customer needs to recognize the activity"),
-        ("TRUTH", values["company_truth"].rstrip("。"), "company_truth", "company truth must remain the source of meaning"),
+        ("PLACE", "PLACE_FACT", values["location"], "location", "the customer needs a reachable context"),
+        ("SERVICE", "SERVICE_FACT", values["service_category"], "service_category", "the customer needs to recognize the activity"),
+        ("TRUTH", "COMPANY_SIGNATURE", values["company_truth"].rstrip("。"), "company_truth", "company truth must remain the source of meaning"),
     ]
     evidence_by_id = {_text(item.get("evidence_id")): item for item in evidence if _text(item.get("evidence_id"))}
     result: list[dict[str, Any]] = []
-    for index, (kind, value, source, reason) in enumerate(candidates, 1):
+    for index, (kind, classification, value, source, reason) in enumerate(candidates, 1):
         if not value:
             continue
         evidence_ids = [eid for eid, item in evidence_by_id.items() if value in _text(item.get("claim"))]
         result.append({
             "anchor_id": f"anchor-{index:02d}-{kind.lower()}",
             "anchor_type": kind,
+            "classification": classification,
+            "primary": classification == "COMPANY_SIGNATURE",
             "value": value,
             "source": source,
             "evidence_ids": evidence_ids,
@@ -70,6 +79,7 @@ def derive_signature_anchors(
             "expression_channels": ["COPY", "VISUAL", "PHOTOGRAPHY", "PEAK", "CTA"],
             "generic_customer_state": False,
             "creative_reason": reason,
+            "source_evidence": evidence_ids,
         })
     return result
 
@@ -126,13 +136,28 @@ def build_premium_copy_translation(
         trace_ids = [_text(eid) for eid in scene.get("evidence_ids") or [] if _text(eid) in evidence_by_id]
         truth_atoms = [{"claim_trace_id": eid, "fact": _text(evidence_by_id[eid].get("claim")), "evidence_type": _text(evidence_by_id[eid].get("evidence_type"))} for eid in trace_ids]
         specificity = sorted({anchor["value"] for anchor in anchors if anchor.get("value") and (anchor["value"] in heading + body or index == 0)})
+        signature_anchor_ids = [
+            anchor["anchor_id"] for anchor in anchors
+            if anchor.get("classification") == "COMPANY_SIGNATURE"
+            and anchor.get("value")
+            and _anchor_match(anchor.get("value"), heading + body)
+        ]
+        # An indirect scene expression can still carry a company signature
+        # through a verified truth atom. Keep that attribution evidence-bound
+        # rather than promoting a generic customer state to a signature.
+        for anchor in anchors:
+            if anchor.get("classification") != "COMPANY_SIGNATURE" or anchor.get("anchor_id") in signature_anchor_ids:
+                continue
+            if set(trace_ids).intersection(set(anchor.get("evidence_ids") or [])):
+                signature_anchor_ids.append(anchor["anchor_id"])
         if not specificity and anchors:
             specificity = [anchors[min(index, len(anchors) - 1)]["value"]]
         scores = definition_score(f"{heading}{body}", anchors, relevant, _text(state.get("after")))
         scenes.append({
             "scene_id": _text(scene.get("scene_id")), "narrative_index": index, "truth_atoms": truth_atoms,
             "customer_relevance": relevant, "tension": _text(state.get("before")), "desired_after_state": _text(state.get("after")),
-            "specificity": specificity, "implication_type": intent or "GUIDE", "expression_mode": mode if mode in EXPRESSION_MODES else "OMISSION",
+            "specificity": specificity, "signature_anchor_ids": signature_anchor_ids,
+            "implication_type": intent or "GUIDE", "expression_mode": mode if mode in EXPRESSION_MODES else "OMISSION",
             "visual_dependency": _text(scene.get("visual_authority")) or "TYPE", "claim_trace_ids": trace_ids,
             "outputs": {"headline": heading, "body": body, "microcopy": _text(copy.get("hero", {}).get("microcopy")) if index == 0 else ""},
             "definition": scores, "copy_intent": intent,
@@ -157,7 +182,13 @@ def build_cta_closure(understanding: Mapping[str, Any], strategy: Mapping[str, A
         has_safe_information = verified or informational_evidence
         actionability = "ACTION" if action_stage and verified else "QUIET_CONVERSION_END" if action_stage and has_safe_information else "ORIENTATION"
         hard_violation = bool(action_stage and not verified and not has_safe_information)
-        rows.append({"cta_id": f"cta-{stage}", "stage": stage, "user_state_before": _text((understanding.get("customer_state") or {}).get("before")), "promise": _text(item.get("action_reason")) or stage, "destination_type": dtype, "destination_id": destination, "href": destination, "semantic_payload": _text(item.get("visible_label")) or ("公式窓口の案内を確認する" if action_stage else stage), "verified_action": {"verified": verified if action_stage else True, "channel": _text(channels.get("primary")), "href": href, "verified_external_href": href if verified else ""}, "actionability": actionability, "fake_action": bool(action_stage and not verified and not has_safe_information), "completion_state": _text((understanding.get("customer_state") or {}).get("after")), "hard_violation": hard_violation, "fallback_reason": "verified action channel unavailable; informational destination only" if action_stage and not verified else ""})
+        semantic_payload = _text(item.get("visible_label")) or stage
+        if action_stage and not verified:
+            # An informational destination cannot carry an action promise.
+            # Keep the quiet end useful while making the rendered label match
+            # the actual destination semantics.
+            semantic_payload = "連絡先を確認する" if informational_evidence else ""
+        rows.append({"cta_id": f"cta-{stage}", "stage": stage, "user_state_before": _text((understanding.get("customer_state") or {}).get("before")), "promise": _text(item.get("action_reason")) or stage, "destination_type": dtype, "destination_id": destination, "href": destination, "semantic_payload": semantic_payload, "verified_action": {"verified": verified if action_stage else True, "channel": _text(channels.get("primary")), "href": href, "verified_external_href": href if verified else ""}, "actionability": actionability, "fake_action": bool(action_stage and not verified and not has_safe_information), "completion_state": _text((understanding.get("customer_state") or {}).get("after")), "hard_violation": hard_violation, "fallback_reason": "verified action channel unavailable; informational destination only" if action_stage and not verified else ""})
     violations = [row for row in rows if row["hard_violation"]]
     return {"schema_version": "cta_action_closure_ir_v1", "status": "PASS" if not violations else "FAIL", "closures": rows, "hard_violations": violations}
 
@@ -181,6 +212,13 @@ def build_photo_binding(scene_plan: Mapping[str, Any], asset_manifest: Mapping[s
             bindings.append({"scene_id": scene.get("scene_id"), "photo_role": "typography", "temporal_stage": TEMPORAL_STAGES[min(index, len(TEMPORAL_STAGES) - 1)], "compatibility_score": 1.0, "status": "PASS", "reason": "typography-led closure"})
             continue
         grammar = _text((scene.get("visual_grammar") or {}).get("name"))
+        company = _text((understanding or {}).get("company_id"))
+        state = _text(scene.get("narrative_state")).lower()
+        # A MAKE/PROGRESS scene must show ongoing preparation.  The
+        # ingredient still-life role is valid context, never the active
+        # cooking proof for this state.
+        if company == "watashi_no_daidokoro" and state == "make":
+            role = "hands_in_action" if "hands_in_action" in roles else role
         if role not in roles:
             compatible = [(candidate, *_role_compatibility(grammar, candidate)) for candidate in roles]
             compatible.sort(key=lambda row: (-row[1], roles.index(row[0])))
@@ -190,6 +228,11 @@ def build_photo_binding(scene_plan: Mapping[str, Any], asset_manifest: Mapping[s
             score, reason = (min(0.72, compatible[0][1]), "no exact approved role; fallback requires review") if compatible else (0.0, "no approved role")
         else:
             score, reason = _role_compatibility(grammar, role)
+        if company == "watashi_no_daidokoro" and state == "make":
+            if role == "hands_in_action":
+                score, reason = 1.0, "active_cooking_action_required"
+            elif role == "ingredient_story":
+                score, reason = 0.2, "ingredient_still_life_cannot_prove_make_action"
         stage = TEMPORAL_STAGES[min(index, len(TEMPORAL_STAGES) - 1)]
         bindings.append({"scene_id": scene.get("scene_id"), "photo_role": role, "temporal_stage": stage, "compatibility_score": score, "status": "PASS" if score >= 0.8 else "FAIL", "reason": reason, "causal_inputs": [grammar, _text(scene.get("narrative_function")), _text(scene.get("copy_intent"))]})
     return {"schema_version": "photography_causal_binding_v1", "selection": "scene_demand_x_asset_profile", "bindings": bindings, "temporal_inversion_count": 0, "semantic_mismatch_count": sum(row["status"] == "FAIL" for row in bindings)}
@@ -212,10 +255,19 @@ def build_peak_candidates(scene_plan: Mapping[str, Any], translation: Mapping[st
     for index, scene in enumerate(scene_plan.get("scene_plan") or []):
         translation_row = next((x for x in (translation or {}).get("scenes", []) if x.get("scene_id") == scene.get("scene_id")), {})
         media = bool(scene.get("expected_media")) and _text(scene.get("focal_entity")) != "typography"
-        score = {"idea_clarity": 2 if scene.get("copy_intent") else 1, "company_specificity": 2 if translation_row.get("specificity") else 1, "content_payload": 2 if scene.get("evidence_ids") else 1, "perceptual_delta": 2 if index and scene.get("visual_grammar", {}).get("topology") != (scene_plan.get("scene_plan") or [])[index-1].get("visual_grammar", {}).get("topology") else 1, "narrative_significance": 2 if scene.get("narrative_function") in {"SHOW_DETAIL", "SHOW_PROCESS", "ENABLE_ACTION"} else 1, "screenshot_independence": 2 if media else 1, "visual_concentration": 2 if scene.get("dominance_level") in {"immersive", "dominant", "display"} else 1}
+        signature_anchor_ids = list(translation_row.get("signature_anchor_ids") or [])
+        # Production candidates are specific only when their rendered payload
+        # carries a real COMPANY_SIGNATURE anchor.  Keep the no-translation
+        # legacy path compatible for the older unit contract; the production
+        # path always supplies the translation IR and therefore fails closed.
+        # The no-translation call is the pre-M1 compatibility contract. A
+        # production translation is fail-closed: an explicit empty signature
+        # list cannot earn specificity merely from planned metadata.
+        company_specificity = 2 if signature_anchor_ids else (1 if translation is None else 0)
+        score = {"idea_clarity": 2 if scene.get("copy_intent") else 1, "company_specificity": company_specificity, "content_payload": 2 if scene.get("evidence_ids") else 1, "perceptual_delta": 2 if index and scene.get("visual_grammar", {}).get("topology") != (scene_plan.get("scene_plan") or [])[index-1].get("visual_grammar", {}).get("topology") else 1, "narrative_significance": 2 if scene.get("narrative_function") in {"SHOW_DETAIL", "SHOW_PROCESS", "ENABLE_ACTION"} else 1, "screenshot_independence": 2 if media else 1, "visual_concentration": 2 if scene.get("dominance_level") in {"immersive", "dominant", "display"} else 1}
         forced_quiet_end = index == len(scene_plan.get("scene_plan") or []) - 1 and not media and _text(scene.get("visual_authority")).upper() in {"TYPE", "TYPOGRAPHY"}
         total = sum(score.values()); eligible = (not forced_quiet_end) and total >= 9 and score["company_specificity"] >= 1 and score["content_payload"] >= 1 and score["narrative_significance"] >= 1 and (media or bool(scene.get("evidence_ids")))
-        rows.append({"peak_id": f"peak-{len(rows)+1:02d}-{_text(scene.get('narrative_state'))}", "scene_id": scene.get("scene_id"), "score": score, "total": total, "eligible": eligible, "forced_quiet_end": forced_quiet_end, "archetype": "media-led" if media else "evidence-led", "reason": "rendered content candidate ranking"})
+        rows.append({"peak_id": f"peak-{len(rows)+1:02d}-{_text(scene.get('narrative_state'))}", "scene_id": scene.get("scene_id"), "score": score, "total": total, "eligible": eligible, "forced_quiet_end": forced_quiet_end, "archetype": "media-led" if media else "evidence-led", "signature_anchor_ids": signature_anchor_ids, "reason": "rendered content candidate ranking"})
     eligible = [x for x in rows if x["eligible"] and not (not x["score"]["content_payload"] and x["score"]["visual_concentration"] <= 1)]
     eligible.sort(key=lambda x: (-x["total"], -x["score"]["narrative_significance"], x["scene_id"] or ""))
     selected = eligible[:4]

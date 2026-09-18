@@ -1,0 +1,666 @@
+{
+  "schema_version": "premium_human_translation_v1",
+  "signature_anchors": [
+    {
+      "anchor_id": "anchor-01-place",
+      "anchor_type": "PLACE",
+      "classification": "PLACE_FACT",
+      "primary": false,
+      "value": "福岡市",
+      "source": "location",
+      "evidence_ids": [
+        "nagi_no_mirai-e-002"
+      ],
+      "strength": 2,
+      "expression_channels": [
+        "COPY",
+        "VISUAL",
+        "PHOTOGRAPHY",
+        "PEAK",
+        "CTA"
+      ],
+      "generic_customer_state": false,
+      "creative_reason": "the customer needs a reachable context",
+      "source_evidence": [
+        "nagi_no_mirai-e-002"
+      ]
+    },
+    {
+      "anchor_id": "anchor-02-service",
+      "anchor_type": "SERVICE",
+      "classification": "SERVICE_FACT",
+      "primary": false,
+      "value": "ヘッドスパ",
+      "source": "service_category",
+      "evidence_ids": [
+        "nagi_no_mirai-e-001"
+      ],
+      "strength": 2,
+      "expression_channels": [
+        "COPY",
+        "VISUAL",
+        "PHOTOGRAPHY",
+        "PEAK",
+        "CTA"
+      ],
+      "generic_customer_state": false,
+      "creative_reason": "the customer needs to recognize the activity",
+      "source_evidence": [
+        "nagi_no_mirai-e-001"
+      ]
+    },
+    {
+      "anchor_id": "anchor-03-truth",
+      "anchor_type": "TRUTH",
+      "classification": "COMPANY_SIGNATURE",
+      "primary": true,
+      "value": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口",
+      "source": "company_truth",
+      "evidence_ids": [
+        "nagi_no_mirai-e-001"
+      ],
+      "strength": 2,
+      "expression_channels": [
+        "COPY",
+        "VISUAL",
+        "PHOTOGRAPHY",
+        "PEAK",
+        "CTA"
+      ],
+      "generic_customer_state": false,
+      "creative_reason": "company truth must remain the source of meaning",
+      "source_evidence": [
+        "nagi_no_mirai-e-001"
+      ]
+    }
+  ],
+  "copy_translation": {
+    "schema_version": "premium_copy_translation_ir_v1",
+    "expression_modes": [
+      "DIRECT_VALUE",
+      "CONCRETE_SCENE",
+      "PROCESS_MEANING",
+      "REASSURANCE",
+      "INVITATION",
+      "FACT_STRIP",
+      "OMISSION"
+    ],
+    "signature_anchor_ids": [
+      "anchor-01-place",
+      "anchor-02-service",
+      "anchor-03-truth"
+    ],
+    "scenes": [
+      {
+        "scene_id": "scene-01-arrive",
+        "narrative_index": 0,
+        "truth_atoms": [],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口",
+          "ヘッドスパ",
+          "福岡市"
+        ],
+        "signature_anchor_ids": [],
+        "implication_type": "ORIENT",
+        "expression_mode": "DIRECT_VALUE",
+        "visual_dependency": "IMAGE",
+        "claim_trace_ids": [],
+        "outputs": {
+          "headline": "空間に入る",
+          "body": "福岡市で、自分に合う過ごし方を考える時間をつくります。",
+          "microcopy": "福岡市｜触れられる時間と空間から次の案内へ。"
+        },
+        "definition": {
+          "text": "空間に入る福岡市で、自分に合う過ごし方を考える時間をつくります。",
+          "score": 3,
+          "generic_predicate": false,
+          "anchor_present": true,
+          "concrete_noun": false,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "ORIENT"
+      },
+      {
+        "scene_id": "scene-02-settle",
+        "narrative_index": 1,
+        "truth_atoms": [],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "ヘッドスパ"
+        ],
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "implication_type": "GUIDE",
+        "expression_mode": "CONCRETE_SCENE",
+        "visual_dependency": "SENSORY",
+        "claim_trace_ids": [],
+        "outputs": {
+          "headline": "静けさを感じる",
+          "body": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+          "microcopy": ""
+        },
+        "definition": {
+          "text": "静けさを感じるドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+          "score": 2,
+          "generic_predicate": false,
+          "anchor_present": true,
+          "concrete_noun": true,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "GUIDE"
+      },
+      {
+        "scene_id": "scene-03-feel_care",
+        "narrative_index": 2,
+        "truth_atoms": [
+          {
+            "claim_trace_id": "nagi_no_mirai-e-001",
+            "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+            "evidence_type": "SERVICE_SCOPE"
+          },
+          {
+            "claim_trace_id": "nagi_no_mirai-e-002",
+            "fact": "福岡市で活動する事業者。",
+            "evidence_type": "PLACE_WIDE"
+          }
+        ],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口"
+        ],
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "implication_type": "PROVE",
+        "expression_mode": "REASSURANCE",
+        "visual_dependency": "PERSON",
+        "claim_trace_ids": [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ],
+        "outputs": {
+          "headline": "触れられる時間",
+          "body": "触れられる時間を選び、自分に合う過ごし方を考えます。",
+          "microcopy": ""
+        },
+        "definition": {
+          "text": "触れられる時間触れられる時間を選び、自分に合う過ごし方を考えます。",
+          "score": 3,
+          "generic_predicate": false,
+          "anchor_present": false,
+          "concrete_noun": false,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "PROVE"
+      },
+      {
+        "scene_id": "scene-04-choose_time",
+        "narrative_index": 3,
+        "truth_atoms": [
+          {
+            "claim_trace_id": "nagi_no_mirai-e-001",
+            "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+            "evidence_type": "SERVICE_SCOPE"
+          },
+          {
+            "claim_trace_id": "nagi_no_mirai-e-002",
+            "fact": "福岡市で活動する事業者。",
+            "evidence_type": "PLACE_WIDE"
+          }
+        ],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口"
+        ],
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "implication_type": "GUIDE",
+        "expression_mode": "REASSURANCE",
+        "visual_dependency": "TYPE",
+        "claim_trace_ids": [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ],
+        "outputs": {
+          "headline": "過ごし方を選ぶ",
+          "body": "頭をゆるめる時間の流れを、静かな空間で確かめます。",
+          "microcopy": ""
+        },
+        "definition": {
+          "text": "過ごし方を選ぶ頭をゆるめる時間の流れを、静かな空間で確かめます。",
+          "score": 3,
+          "generic_predicate": false,
+          "anchor_present": false,
+          "concrete_noun": false,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "GUIDE"
+      },
+      {
+        "scene_id": "scene-05-reserve",
+        "narrative_index": 4,
+        "truth_atoms": [
+          {
+            "claim_trace_id": "nagi_no_mirai-e-001",
+            "fact": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。",
+            "evidence_type": "SERVICE_SCOPE"
+          },
+          {
+            "claim_trace_id": "nagi_no_mirai-e-002",
+            "fact": "福岡市で活動する事業者。",
+            "evidence_type": "PLACE_WIDE"
+          }
+        ],
+        "customer_relevance": "自分に合う入口か分からない",
+        "tension": "相談前に何を確認すればよいか分からない",
+        "desired_after_state": "まず状況を伝えてみようと思える",
+        "specificity": [
+          "ヘッドスパ"
+        ],
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "implication_type": "CONVERT",
+        "expression_mode": "INVITATION",
+        "visual_dependency": "TYPOGRAPHY",
+        "claim_trace_ids": [
+          "nagi_no_mirai-e-001",
+          "nagi_no_mirai-e-002"
+        ],
+        "outputs": {
+          "headline": "その時間を予約する",
+          "body": "ヘッドスパで、自分のための時間を予約します。",
+          "microcopy": ""
+        },
+        "definition": {
+          "text": "その時間を予約するヘッドスパで、自分のための時間を予約します。",
+          "score": 2,
+          "generic_predicate": false,
+          "anchor_present": true,
+          "concrete_noun": true,
+          "customer_relevance": false,
+          "state_action": false,
+          "status": "PASS"
+        },
+        "copy_intent": "CONVERT"
+      }
+    ]
+  },
+  "cta_closure": {
+    "schema_version": "cta_action_closure_ir_v1",
+    "status": "PASS",
+    "closures": [
+      {
+        "cta_id": "cta-discovery",
+        "stage": "discovery",
+        "user_state_before": "相談前に何を確認すればよいか分からない",
+        "promise": "まず状況を見渡す",
+        "destination_type": "PAGE_SECTION",
+        "destination_id": "#way-in",
+        "href": "#way-in",
+        "semantic_payload": "過ごし方を感じる",
+        "verified_action": {
+          "verified": true,
+          "channel": "公式SNS",
+          "href": "#contact",
+          "verified_external_href": ""
+        },
+        "actionability": "ORIENTATION",
+        "fake_action": false,
+        "completion_state": "まず状況を伝えてみようと思える",
+        "hard_violation": false,
+        "fallback_reason": ""
+      },
+      {
+        "cta_id": "cta-reassurance",
+        "stage": "reassurance",
+        "user_state_before": "相談前に何を確認すればよいか分からない",
+        "promise": "会社固有の範囲を確かめる",
+        "destination_type": "PROCESS_GUIDE",
+        "destination_id": "#reassurance",
+        "href": "#reassurance",
+        "semantic_payload": "時間の選び方を見る",
+        "verified_action": {
+          "verified": true,
+          "channel": "公式SNS",
+          "href": "#contact",
+          "verified_external_href": ""
+        },
+        "actionability": "ORIENTATION",
+        "fake_action": false,
+        "completion_state": "まず状況を伝えてみようと思える",
+        "hard_violation": false,
+        "fallback_reason": ""
+      },
+      {
+        "cta_id": "cta-action",
+        "stage": "action",
+        "user_state_before": "相談前に何を確認すればよいか分からない",
+        "promise": "reservationの確認へ進む",
+        "destination_type": "INFORMATIONAL_ONLY",
+        "destination_id": "#contact",
+        "href": "#contact",
+        "semantic_payload": "連絡先を確認する",
+        "verified_action": {
+          "verified": false,
+          "channel": "公式SNS",
+          "href": "#contact",
+          "verified_external_href": ""
+        },
+        "actionability": "QUIET_CONVERSION_END",
+        "fake_action": false,
+        "completion_state": "まず状況を伝えてみようと思える",
+        "hard_violation": false,
+        "fallback_reason": "verified action channel unavailable; informational destination only"
+      }
+    ],
+    "hard_violations": []
+  },
+  "photo_binding": {
+    "schema_version": "photography_causal_binding_v1",
+    "selection": "scene_demand_x_asset_profile",
+    "bindings": [
+      {
+        "scene_id": "scene-01-arrive",
+        "photo_role": "hero_treatment_space",
+        "temporal_stage": "arrival",
+        "compatibility_score": 0.95,
+        "status": "PASS",
+        "reason": "grammar_role_match",
+        "causal_inputs": [
+          "immersive_image",
+          "CREATE_DESIRE",
+          "ORIENT"
+        ]
+      },
+      {
+        "scene_id": "scene-02-settle",
+        "photo_role": "sensory_detail",
+        "temporal_stage": "orientation",
+        "compatibility_score": 0.95,
+        "status": "PASS",
+        "reason": "grammar_role_match",
+        "causal_inputs": [
+          "sensory_pause",
+          "CREATE_PAUSE",
+          "GUIDE"
+        ]
+      },
+      {
+        "scene_id": "scene-03-feel_care",
+        "photo_role": "welcome_human",
+        "temporal_stage": "understanding",
+        "compatibility_score": 0.95,
+        "status": "PASS",
+        "reason": "grammar_role_match",
+        "causal_inputs": [
+          "human_dialogue",
+          "SHOW_EXPERIENCE",
+          "PROVE"
+        ]
+      },
+      {
+        "scene_id": "scene-04-choose_time",
+        "photo_role": "hand_technique",
+        "temporal_stage": "practice",
+        "compatibility_score": 0.9,
+        "status": "PASS",
+        "reason": "known_role_compatible",
+        "causal_inputs": [
+          "progressive_story",
+          "REDUCE_UNCERTAINTY",
+          "GUIDE"
+        ]
+      },
+      {
+        "scene_id": "scene-05-reserve",
+        "photo_role": "typography",
+        "temporal_stage": "reassurance",
+        "compatibility_score": 1.0,
+        "status": "PASS",
+        "reason": "typography-led closure"
+      }
+    ],
+    "temporal_inversion_count": 0,
+    "semantic_mismatch_count": 0
+  },
+  "art_direction_token_profile": {
+    "type_voice": "quiet",
+    "surface_language": "warm_matte",
+    "edge_language": "soft_boundary",
+    "image_behavior": "breathe",
+    "spatial_language": "arrival_then_pause",
+    "cta_language": "gentle_booking",
+    "decorative_grammar": "breath_marks",
+    "rhythm_character": "arrive_then_settle",
+    "motion_character": "settle_into_care",
+    "schema_version": "art_direction_token_profile_v2",
+    "profile_id": "care_rhythm",
+    "signature_anchors": [
+      "anchor-01-place",
+      "anchor-02-service",
+      "anchor-03-truth"
+    ],
+    "creative_reason": "bounded tokens derived from narrative profile and signature anchors",
+    "derivation": {
+      "layout_profile": "care_rhythm",
+      "anchor_types": [
+        "PLACE",
+        "SERVICE",
+        "TRUTH"
+      ],
+      "slug_dependency": false
+    }
+  },
+  "peak_candidates": {
+    "schema_version": "human_peak_candidates_v1",
+    "selection": "rendered_candidate_ranking",
+    "status": "PASS",
+    "candidates": [
+      {
+        "peak_id": "peak-01-arrive",
+        "scene_id": "scene-01-arrive",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 0,
+          "content_payload": 1,
+          "perceptual_delta": 1,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 2
+        },
+        "total": 9,
+        "eligible": false,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "signature_anchor_ids": [],
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-02-settle",
+        "scene_id": "scene-02-settle",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 1,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 11,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-03-feel_care",
+        "scene_id": "scene-03-feel_care",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 2
+        },
+        "total": 13,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-04-choose_time",
+        "scene_id": "scene-04-choose_time",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 12,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-05-reserve",
+        "scene_id": "scene-05-reserve",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 1,
+          "narrative_significance": 2,
+          "screenshot_independence": 1,
+          "visual_concentration": 2
+        },
+        "total": 12,
+        "eligible": false,
+        "forced_quiet_end": true,
+        "archetype": "evidence-led",
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "reason": "rendered content candidate ranking"
+      }
+    ],
+    "selected": [
+      {
+        "peak_id": "peak-03-feel_care",
+        "scene_id": "scene-03-feel_care",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 2
+        },
+        "total": 13,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-04-choose_time",
+        "scene_id": "scene-04-choose_time",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 2,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 12,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "reason": "rendered content candidate ranking"
+      },
+      {
+        "peak_id": "peak-02-settle",
+        "scene_id": "scene-02-settle",
+        "score": {
+          "idea_clarity": 2,
+          "company_specificity": 2,
+          "content_payload": 1,
+          "perceptual_delta": 2,
+          "narrative_significance": 1,
+          "screenshot_independence": 2,
+          "visual_concentration": 1
+        },
+        "total": 11,
+        "eligible": true,
+        "forced_quiet_end": false,
+        "archetype": "media-led",
+        "signature_anchor_ids": [
+          "anchor-03-truth"
+        ],
+        "reason": "rendered content candidate ranking"
+      }
+    ],
+    "minimum": 2,
+    "maximum": 4
+  },
+  "cross_modal_consistency": {
+    "status": "PASS",
+    "anchor_channel_count": {
+      "anchor-01-place": 5,
+      "anchor-02-service": 5,
+      "anchor-03-truth": 5
+    },
+    "channels": [
+      "COPY",
+      "CTA",
+      "PEAK",
+      "PHOTOGRAPHY",
+      "VISUAL"
+    ]
+  }
+}

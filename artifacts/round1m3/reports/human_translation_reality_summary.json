@@ -1,0 +1,85 @@
+{
+  "schema_version": "round1m3_summary_v1",
+  "status": "PASS",
+  "commit_sha": "2bc072ae8a740737d161bc639c1bfc47bc65c1b3",
+  "qa_viewport_total": 27,
+  "qa_pass_count": 27,
+  "qa_fail_count": 0,
+  "companies": [
+    {
+      "company": "maylynn_paint",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "company": "nagi_no_mirai",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "company": "watashi_no_daidokoro",
+      "status": "PASS",
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    }
+  ],
+  "round1m2_baseline_artifact_id": "10535375741",
+  "round1k_b4_baseline_artifact_id": "10488734493",
+  "final_gate_ssot": "final_gate_summary.json",
+  "human_review_capture": true,
+  "human_review_ready": true,
+  "round1m3_machine_ready": true,
+  "capture_provenance": "PASS",
+  "canonical_captures_total": 6,
+  "peak_captures_total": 22,
+  "human_review_captures_total": 28,
+  "manual_lp_edit": 0,
+  "stale_capture_count": 0,
+  "artifact_contradictions": 0,
+  "claim_trace_required_count": 14,
+  "claim_trace_traced_count": 14,
+  "claim_trace_coverage": 100.0,
+  "tests": {
+    "status": "PASS",
+    "modules": [
+      "tests.test_round1m3_truth_closure",
+      "tests.test_human_translation",
+      "tests.test_premium_scene",
+      "tests.test_premium_experience",
+      "tests.test_rendered_reality",
+      "tests.test_round1k_b4",
+      "tests.test_creative_genome",
+      "tests.test_photography_asset_preflight",
+      "tests.test_photography_pipeline",
+      "tests.test_production_generation",
+      "tests.test_pipeline_evidence_safety",
+      "tests.test_evidence_safety",
+      "tests.test_evidence_safety_adversarial"
+    ],
+    "returncode": 0,
+    "stdout_tail": "",
+    "stderr_tail": ".....................................................................................................................\n----------------------------------------------------------------------\nRan 117 tests in 1.200s\n\nOK\n"
+  },
+  "gate_statuses": {
+    "japanese_editorial": "PASS",
+    "cta_actionability": "PASS",
+    "photo_binding": "PASS",
+    "peak_reality": "PASS",
+    "signature_trace": "PASS",
+    "claim_trace": "PASS",
+    "capture_provenance": "PASS",
+    "browser_qa": "PASS",
+    "tests": "PASS",
+    "safety": "PASS",
+    "rights": "PASS",
+    "synthetic": "PASS",
+    "mutation": "PASS",
+    "regression": "PASS",
+    "artifact_consistency": "PASS"
+  }
+}

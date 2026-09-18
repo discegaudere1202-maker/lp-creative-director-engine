@@ -1,0 +1,2364 @@
+{
+  "schema_version": "production_generation_v1",
+  "company": {
+    "schema_version": "production_generation_v1",
+    "company_id": "watashi_no_daidokoro",
+    "company_name": "わたしの台所",
+    "industry": "料理教室",
+    "service_category": "料理教室",
+    "location": "福岡市西区",
+    "business_model": "local_service",
+    "company_truth": "少人数でストウブ無水料理を学ぶ料理教室。",
+    "differentiators": [
+      "少人数でストウブ無水料理を学ぶ料理教室。"
+    ],
+    "customer_state": {
+      "before": "相談前に何を確認すればよいか分からない",
+      "after": "まず状況を伝えてみようと思える",
+      "barrier": "自分に合う入口か分からない"
+    },
+    "conversion_goal": "application",
+    "generation_iteration": 5,
+    "primary_objections": [
+      "O3_PROCESS",
+      "O4_NEXT"
+    ],
+    "available_evidence": [
+      "少人数でストウブ無水料理を学ぶ料理教室。",
+      "福岡市西区で活動する事業者。",
+      "対応範囲を案内する。",
+      "公式SNSから相談・予約の入口を確認する。"
+    ],
+    "unavailable_evidence": [
+      "実店舗・実施工・実スタッフ・実顧客・実教室の写真"
+    ],
+    "hearing_required": [],
+    "visual_authority": [
+      "PERSON",
+      "WORLD",
+      "PLACE",
+      "MATERIAL",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "evidence_density": "MEDIUM",
+    "industry_visual_family": "learning_studio",
+    "visual_scene": "studio_invitation",
+    "layout_profile": "studio_invitation",
+    "field_validation_context": true,
+    "verified_strengths": [
+      "E2_SPECIFIC",
+      "E3_OPERATIONAL",
+      "E5_DECISION_ENABLING"
+    ],
+    "evidence_utility": {
+      "TRUST": 1,
+      "CONVERSION": 2,
+      "VISUAL": 1,
+      "PROCESS": 2,
+      "IDENTITY": 1
+    },
+    "evidence_strategy": "proof_process_action_balance",
+    "source_references": [
+      "approved-selection-manifest",
+      "phase6-sales-master-snapshot"
+    ],
+    "contact_channels": {
+      "href": "#contact",
+      "primary": "公式SNS"
+    },
+    "photo_replacement_readiness": {
+      "status": "READY_WITH_PROXY",
+      "proxy_role": "role_selected_photography_asset",
+      "replacement_targets": [
+        "実店舗・実現場・実商品・実人物写真"
+      ],
+      "layout_constraints": [
+        "同一役割の実写真を同じ比率へ差し替え可能",
+        "文字重なりなし",
+        "中央焦点を保持"
+      ],
+      "proof_role": "visual_context_only; not evidence of a real result or location",
+      "source_priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only"
+    }
+  },
+  "strategy": {
+    "schema_version": "production_generation_v1",
+    "creative_problem": "相談前に何を確認すればよいか分からないを、申込み前の疑問をほどくへ変える。",
+    "target_customer_state": {
+      "before": "相談前に何を確認すればよいか分からない",
+      "after": "まず状況を伝えてみようと思える",
+      "barrier": "自分に合う入口か分からない"
+    },
+    "desired_customer_transition": "まず状況を伝えてみようと思える",
+    "core_message": "少人数でストウブ無水料理を学ぶ料理教室。",
+    "big_idea": "少人数でストウブ無水料理を学ぶ料理教室。を、申込み前の疑問をほどくの入口として見せる。",
+    "emotional_barrier": "自分に合う入口か分からない",
+    "trust_strategy": {
+      "approved_proof": [
+        "少人数でストウブ無水料理を学ぶ料理教室。",
+        "福岡市西区で活動する事業者。",
+        "対応範囲を案内する。"
+      ],
+      "sequence": [
+        "Company Truth",
+        "Operational clarity",
+        "Action"
+      ],
+      "unsupported_claim_policy": "Use only Safety-approved evidence; do not generate reassurance from missing facts."
+    },
+    "conversion_strategy": {
+      "goal": "application",
+      "cta_role": "permission_to_start",
+      "before_cta": "対象となる状況と確認できる入口を短く明示する",
+      "customer_hesitation": "自分に合う入口か分からない",
+      "resolved_by_lp": "会社固有の入口・Process・連絡手段を一続きにする",
+      "why_act_now": "申込み前の疑問をほどくを確認できる入口がここにある",
+      "after_click": "確認済みの連絡手段へ進み、未確認の対応約束は置かない",
+      "after_cta": "確認できる連絡手段だけを表示し、未確認の対応約束を置かない"
+    },
+    "form_causality": [
+      {
+        "company_truth": "少人数でストウブ無水料理を学ぶ料理教室。",
+        "form_decision": "studio_invitationの主構造を選び、情報の入口を一つの視線移動にまとめる。",
+        "customer_effect": "最初に何を理解すればよいか迷いにくい。"
+      },
+      {
+        "company_truth": "相談前に何を確認すればよいか分からない",
+        "form_decision": "Before Stateを最初の見出しとCTA前の説明へ再登場させる。",
+        "customer_effect": "自分の現在地から行動へ移れる。"
+      },
+      {
+        "company_truth": "自分に合う入口か分からない",
+        "form_decision": "障壁に対応するEvidenceを、説明・Process・CTAの順で近接配置する。",
+        "customer_effect": "行動前の不確実さが具体的な確認事項へ変わる。"
+      },
+      {
+        "company_truth": "application",
+        "form_decision": "Conversion Goalに合わせてCTAのタイミングと余白を決める。",
+        "customer_effect": "押す理由と次の動作が画面上でつながる。"
+      },
+      {
+        "company_truth": "MEDIUM",
+        "form_decision": "LOW Evidenceでは主張を増やさず、余白・Type・Material abstractionでPeakをつくる。",
+        "customer_effect": "情報不足を誤認させず、見せ場の密度だけを高める。"
+      }
+    ],
+    "big_idea_gate": {
+      "company_specific": true,
+      "customer_relevant": true,
+      "visualizable": true,
+      "extendable": true,
+      "memorable": true
+    },
+    "visual_authority_priority": [
+      "PERSON",
+      "WORLD",
+      "PLACE",
+      "MATERIAL",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "layout_profile": "studio_invitation",
+    "evidence_density_signal": "MEDIUM",
+    "quality_calibration": "premium_causality_and_conversion",
+    "sparse_strategy": "not_required",
+    "premium_quality_strategy": {
+      "enabled": true,
+      "focus": [
+        "form_causality",
+        "conversion_confidence",
+        "quiet_chapters",
+        "mobile_peak"
+      ],
+      "not_a_template": true
+    },
+    "anti_template_notes": [
+      "No generic three-card grid as the primary composition.",
+      "No unsupported reassurance or invented metrics.",
+      "Peak screens are limited; quiet chapters carry orientation."
+    ],
+    "creative_genome": {
+      "schema_version": "creative_genome_v1",
+      "dominant_narrative": "participation",
+      "emotional_tempo": "warm",
+      "visual_authority_priority": [
+        "PERSON",
+        "WORLD",
+        "PLACE",
+        "MATERIAL",
+        "TYPOGRAPHY",
+        "DOCUMENT"
+      ],
+      "composition_logic": [
+        "table_scene",
+        "human_dialogue",
+        "process_sequence",
+        "progressive_story"
+      ],
+      "signature_moment": {
+        "section_role": "company_truth",
+        "reason": "Company Truthと主役のVisual Authorityが同じ画面で結び付く瞬間"
+      },
+      "screenshot_peak_plan": [
+        {
+          "section_role": "hero_orientation",
+          "visual_authority": "PERSON",
+          "composition": "table_scene",
+          "reason": "最初の認識を決める"
+        },
+        {
+          "section_role": "company_truth",
+          "visual_authority": "WORLD",
+          "composition": "human_dialogue",
+          "reason": "固有のTruthを記憶に残す"
+        },
+        {
+          "section_role": "service_process",
+          "visual_authority": "PERSON",
+          "composition": "process_sequence",
+          "reason": "行動の順番を見せる"
+        }
+      ],
+      "cta_progression": [
+        {
+          "stage": "discovery",
+          "section_role": "hero_orientation",
+          "user_hesitation": "自分に関係する入口か分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "まず状況を見渡す",
+          "action_type": "anchor",
+          "label_strategy": "understand_before_contact",
+          "visible_label": "料理の流れを見る",
+          "destination": "#way-in"
+        },
+        {
+          "stage": "reassurance",
+          "section_role": "company_truth",
+          "user_hesitation": "この会社へ相談してよいか迷う",
+          "evidence_already_seen": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "required_evidence": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "action_reason": "会社固有の範囲を確かめる",
+          "action_type": "anchor",
+          "label_strategy": "verify_scope",
+          "visible_label": "場と内容を確かめる",
+          "destination": "#reassurance"
+        },
+        {
+          "stage": "action",
+          "section_role": "cta_zone",
+          "user_hesitation": "何を伝えればよいか分からない",
+          "evidence_already_seen": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002",
+            "watashi_no_daidokoro-e-003",
+            "watashi_no_daidokoro-e-004"
+          ],
+          "required_evidence": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002",
+            "watashi_no_daidokoro-e-003",
+            "watashi_no_daidokoro-e-004"
+          ],
+          "action_reason": "applicationの確認へ進む",
+          "action_type": "conversion",
+          "label_strategy": "act_on_seen_evidence",
+          "visible_label": "参加を相談する",
+          "destination": "#contact"
+        }
+      ],
+      "mobile_redirection": {
+        "hero_crop": "focus_primary_authority",
+        "visual_text_order": "authority_before_explanation",
+        "whitespace": "preserve_tempo_pause",
+        "section_density": "reduce_supporting_density",
+        "image_prominence": "promote_signature_moment",
+        "cta_timing": "after_reassurance"
+      },
+      "derivation": {
+        "source": "Company Truth + evidence types + conversion goal + visual authority",
+        "profile": "studio_invitation",
+        "evidence_types": [
+          "CTA_CHANNEL",
+          "PLACE_WIDE",
+          "SERVICE_PROCESS",
+          "SERVICE_SCOPE"
+        ],
+        "deterministic": true
+      }
+    },
+    "narrative_architecture": {
+      "schema_version": "narrative_architecture_v1",
+      "narrative_family": "participation",
+      "narrative_arc": [
+        {
+          "narrative_state": "encounter",
+          "user_question": "何から始めると楽しそうか",
+          "user_emotion": "curious",
+          "section_purpose": "CREATE_DESIRE",
+          "evidence_required": [],
+          "preferred_visual_authority": "PERSON",
+          "preferred_composition_grammar": "table_scene",
+          "copy_density": "medium",
+          "cta_eligibility": "none"
+        },
+        {
+          "narrative_state": "touch",
+          "user_question": "自分の手で試せるか",
+          "user_emotion": "engaged",
+          "section_purpose": "SHOW_PARTICIPATION",
+          "evidence_required": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "preferred_visual_authority": "WORLD",
+          "preferred_composition_grammar": "human_dialogue",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "make",
+          "user_question": "できていく過程を想像できるか",
+          "user_emotion": "energized",
+          "section_purpose": "SHOW_PROCESS",
+          "evidence_required": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "preferred_visual_authority": "PLACE",
+          "preferred_composition_grammar": "process_sequence",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "share",
+          "user_question": "できたものを誰と囲むか",
+          "user_emotion": "warm",
+          "section_purpose": "SHOW_TRANSFORMATION",
+          "evidence_required": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "preferred_visual_authority": "MATERIAL",
+          "preferred_composition_grammar": "table_scene",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "join",
+          "user_question": "次の回にどう参加するか",
+          "user_emotion": "ready",
+          "section_purpose": "ENABLE_ACTION",
+          "evidence_required": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "preferred_visual_authority": "TYPOGRAPHY",
+          "preferred_composition_grammar": "asymmetric_editorial",
+          "copy_density": "medium",
+          "cta_eligibility": "primary"
+        }
+      ],
+      "narrative_states": [
+        "encounter",
+        "touch",
+        "make",
+        "share",
+        "join"
+      ],
+      "section_purposes": [
+        "CREATE_DESIRE",
+        "SHOW_PARTICIPATION",
+        "SHOW_PROCESS",
+        "SHOW_TRANSFORMATION",
+        "ENABLE_ACTION"
+      ],
+      "transition_logic": [
+        "encounter→touch",
+        "touch→make",
+        "make→share",
+        "share→join"
+      ],
+      "emotional_progression": [
+        "curious",
+        "engaged",
+        "energized",
+        "warm",
+        "ready"
+      ],
+      "visual_progression": [
+        "table_scene",
+        "human_dialogue",
+        "process_sequence",
+        "table_scene",
+        "asymmetric_editorial"
+      ],
+      "evidence_progression": [
+        [],
+        [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ]
+      ],
+      "cta_progression_mapping": [
+        {
+          "stage": "discovery",
+          "section_role": "hero_orientation",
+          "user_hesitation": "自分に関係する入口か分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "まず状況を見渡す",
+          "action_type": "anchor",
+          "label_strategy": "understand_before_contact",
+          "visible_label": "料理の流れを見る",
+          "destination": "#way-in"
+        },
+        {
+          "stage": "reassurance",
+          "section_role": "company_truth",
+          "user_hesitation": "この会社へ相談してよいか迷う",
+          "evidence_already_seen": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "required_evidence": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "action_reason": "会社固有の範囲を確かめる",
+          "action_type": "anchor",
+          "label_strategy": "verify_scope",
+          "visible_label": "場と内容を確かめる",
+          "destination": "#reassurance"
+        },
+        {
+          "stage": "action",
+          "section_role": "cta_zone",
+          "user_hesitation": "何を伝えればよいか分からない",
+          "evidence_already_seen": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002",
+            "watashi_no_daidokoro-e-003",
+            "watashi_no_daidokoro-e-004"
+          ],
+          "required_evidence": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002",
+            "watashi_no_daidokoro-e-003",
+            "watashi_no_daidokoro-e-004"
+          ],
+          "action_reason": "applicationの確認へ進む",
+          "action_type": "conversion",
+          "label_strategy": "act_on_seen_evidence",
+          "visible_label": "参加を相談する",
+          "destination": "#contact"
+        }
+      ],
+      "section_naming": [
+        "食材に出会う",
+        "手を動かしてみる",
+        "料理ができていく",
+        "食卓を囲む",
+        "参加を考える"
+      ],
+      "mobile_redirection": {
+        "hero_crop": "focus_primary_authority",
+        "visual_text_order": "authority_before_explanation",
+        "whitespace": "preserve_tempo_pause",
+        "section_density": "reduce_supporting_density",
+        "image_prominence": "promote_signature_moment",
+        "cta_timing": "after_reassurance"
+      },
+      "derived_from": "Creative Genome + Company Truth + approved Evidence"
+    }
+  },
+  "ia": [
+    {
+      "section_id": "opening",
+      "section_role": "hero_orientation",
+      "customer_question": "ここは自分の状況を相談できる場所か？",
+      "key_message": "少人数でストウブ無水料理を学ぶ料理教室。を、申込み前の疑問をほどくの入口として見せる。",
+      "layout_hint": "studio_invitation",
+      "evidence_used": [],
+      "visual_authority": "PERSON",
+      "emotional_intensity": 5,
+      "cta_role": "orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "headline_first_then_single_action",
+      "composition_grammar": "table_scene",
+      "genome_tempo": "warm",
+      "cta_stage": "discovery",
+      "order": 0
+    },
+    {
+      "section_id": "contact",
+      "section_role": "next_step",
+      "customer_question": "問い合わせた後、まず何ができるか？",
+      "key_message": "参加の入口。",
+      "layout_hint": "参加の入口",
+      "evidence_used": [
+        "watashi_no_daidokoro-e-004"
+      ],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 4,
+      "cta_role": "action",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "contact_details_before_button",
+      "composition_grammar": "progressive_story",
+      "genome_tempo": "warm",
+      "cta_stage": "",
+      "order": 1
+    },
+    {
+      "section_id": "way_in",
+      "section_role": "service_process",
+      "customer_question": "相談したら、何を伝えればよいか？",
+      "key_message": "場と内容を知る。",
+      "layout_hint": "場と内容を知る",
+      "evidence_used": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-003"
+      ],
+      "visual_authority": "DOCUMENT",
+      "emotional_intensity": 3,
+      "cta_role": "clarity",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "vertical_steps_with_breathing_room",
+      "composition_grammar": "process_sequence",
+      "genome_tempo": "warm",
+      "cta_stage": "",
+      "order": 2
+    },
+    {
+      "section_id": "truth",
+      "section_role": "company_truth",
+      "customer_question": "なぜこの会社に相談するのか？",
+      "key_message": "少人数でストウブ無水料理を学ぶ料理教室。",
+      "layout_hint": "やってみたいから",
+      "evidence_used": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002"
+      ],
+      "visual_authority": "PERSON",
+      "emotional_intensity": 4,
+      "cta_role": "proof_orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "stacked_proof_with_short_lines",
+      "composition_grammar": "human_dialogue",
+      "genome_tempo": "warm",
+      "cta_stage": "reassurance",
+      "order": 3
+    },
+    {
+      "section_id": "close",
+      "section_role": "cta_zone",
+      "customer_question": "ここから何をすればよいか？",
+      "key_message": "申込み前の疑問をほどく",
+      "layout_hint": "studio_invitation",
+      "evidence_used": [
+        "watashi_no_daidokoro-e-001",
+        "watashi_no_daidokoro-e-002",
+        "watashi_no_daidokoro-e-003",
+        "watashi_no_daidokoro-e-004"
+      ],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 5,
+      "cta_role": "primary_conversion",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target",
+      "composition_grammar": "table_scene",
+      "genome_tempo": "warm",
+      "cta_stage": "action",
+      "order": 4
+    }
+  ],
+  "copy": {
+    "schema_version": "production_generation_v1",
+    "hero": {
+      "eyebrow": "わたしの台所",
+      "headline": "料理教室",
+      "headline_lines": [
+        "料理教室"
+      ],
+      "supporting": "福岡市西区で料理教室を探している方へ。少人数でストウブ無水料理を学ぶ料理を学びます。食材と手を動かす時間を手がかりに、次の一歩を考えます。",
+      "cta": "申込みを相談する",
+      "microcopy": "福岡市西区｜食材と手を動かす時間から次の案内へ。"
+    },
+    "sections": [
+      {
+        "section_id": "opening",
+        "headline": "食材に出会う",
+        "headline_lines": [
+          "食材に出会う"
+        ],
+        "body": "福岡市西区の料理教室で、食材と手を動かす時間に出会います。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "contact",
+        "headline": "手を動かしてみる",
+        "headline_lines": [
+          "手を動かしてみる"
+        ],
+        "body": "手を動かし、火を入れる順序を確かめます。",
+        "evidence_claims": [
+          "少人数でストウブ無水料理を学ぶ料理教室。",
+          "福岡市西区で活動する事業者。",
+          "対応範囲を案内する。",
+          "公式SNSから相談・予約の入口を確認する。"
+        ],
+        "cta": ""
+      },
+      {
+        "section_id": "way_in",
+        "headline": "料理ができていく",
+        "headline_lines": [
+          "料理ができていく"
+        ],
+        "body": "料理教室で食材を選び、料理の流れを一緒に学びます。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "truth",
+        "headline": "食卓を囲む",
+        "headline_lines": [
+          "食卓を囲む"
+        ],
+        "body": "ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+        "evidence_claims": [
+          "少人数でストウブ無水料理を学ぶ料理教室。",
+          "福岡市西区で活動する事業者。",
+          "対応範囲を案内する。",
+          "公式SNSから相談・予約の入口を確認する。"
+        ],
+        "cta": ""
+      },
+      {
+        "section_id": "close",
+        "headline": "参加を考える",
+        "headline_lines": [
+          "参加を考える"
+        ],
+        "body": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+        "evidence_claims": [],
+        "cta": "申込みを相談する"
+      }
+    ],
+    "global_constraints": {
+      "all_customer_facing_claims_require_evidence_id": true,
+      "unsupported_reassurance": "blocked",
+      "line_shape": "meaning_units_not_character_count"
+    },
+    "process_steps": [
+      "やってみたいことを選ぶ",
+      "内容と場所を確認する",
+      "参加を相談する"
+    ],
+    "section_naming_gate": {
+      "status": "PASS",
+      "violations": []
+    }
+  },
+  "art_direction": {
+    "schema_version": "production_generation_v1",
+    "art_direction_concept": "少人数でストウブ無水料理を学ぶ料理教室。を、申込み前の疑問をほどくの入口として見せる。",
+    "visual_mood": "open studio energy with tools, hands and an invitation to try",
+    "visual_authority_priority": [
+      "PERSON",
+      "WORLD",
+      "PLACE",
+      "MATERIAL",
+      "TYPOGRAPHY",
+      "DOCUMENT"
+    ],
+    "color_logic": {
+      "ink": "#1c1917",
+      "accent": "#d8a58c",
+      "paper": "#f6eee7",
+      "reason": "PERSON is the first evidence-bearing authority."
+    },
+    "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+    "composition_logic": "A studio-table opening, shared-tool evidence surface and session path; the page invites a first try rather than listing a menu.",
+    "photography_logic": "Role-driven photography is the primary visual authority; vector scenes are support only.",
+    "visual_scene": "studio_invitation",
+    "visual_source": "photography_pipeline",
+    "photo_replacement_readiness": {
+      "status": "READY_WITH_PROXY",
+      "proxy_role": "role_selected_photography_asset",
+      "replacement_targets": [
+        "実店舗・実現場・実商品・実人物写真"
+      ],
+      "layout_constraints": [
+        "同一役割の実写真を同じ比率へ差し替え可能",
+        "文字重なりなし",
+        "中央焦点を保持"
+      ],
+      "proof_role": "visual_context_only; not evidence of a real result or location",
+      "source_priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only"
+    },
+    "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+    "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+    "motion_logic": "open_the_session; one restrained reveal per section; no infinite or blocking animation.",
+    "forbidden_patterns": [
+      "rounded card wall",
+      "generic three-column grid",
+      "unsupported trust badge",
+      "stock person",
+      "marquee",
+      "parallax"
+    ],
+    "craft_catch": "A session mark carries the customer from curiosity to a first activity they can name.",
+    "layout_profile": "studio_invitation",
+    "art_direction_dimensions": {
+      "macro_composition": "studio_invitation",
+      "visual_density": "playful_index",
+      "negative_space": "lesson_pauses",
+      "surface": "studio_table",
+      "section_transitions": "session_marks",
+      "rhythm": "notice_then_try",
+      "motion": "open_the_session",
+      "evidence_density": "MEDIUM",
+      "visual_authority": "PERSON",
+      "crop_logic": "no client image dependency; abstract geometry carries the role"
+    },
+    "photo_role_map": {
+      "schema_version": "photo_role_map_v1",
+      "selection_mode": "role_driven_not_fixed_count",
+      "roles": [
+        {
+          "photo_role": "hero_shared_cooking",
+          "visual_subject": "手を動かしながら学ぶ共有時間",
+          "business_purpose": "完成品だけでなく教室体験を伝える",
+          "replacement_target": "実教室・レッスン風景",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "mid",
+          "proof_intent": "experience_context_only",
+          "placement": "hero_dominant_image"
+        },
+        {
+          "photo_role": "ingredient_story",
+          "visual_subject": "食材・道具・下準備の手触り",
+          "business_purpose": "素材への関心と暮らしの温度を伝える",
+          "replacement_target": "実食材・実テーブル",
+          "preferred_orientation": "square",
+          "crop_tolerance": "tight",
+          "people_distance": "none",
+          "proof_intent": "material_context_only",
+          "placement": "mid_frame_proof_experience"
+        },
+        {
+          "photo_role": "hands_in_action",
+          "visual_subject": "包丁・混ぜる・盛り付け等の手元",
+          "business_purpose": "学びの具体性を見せる",
+          "replacement_target": "実レッスン中の手元",
+          "preferred_orientation": "portrait",
+          "crop_tolerance": "tight",
+          "people_distance": "close",
+          "proof_intent": "craft_context_only",
+          "placement": "craft_detail_image",
+          "secondary_placement": "quiet_chapter_image"
+        },
+        {
+          "photo_role": "finished_table",
+          "visual_subject": "完成物と共有する場",
+          "business_purpose": "体験後の達成感を想起させる",
+          "replacement_target": "実教室の完成物・食卓",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "far",
+          "proof_intent": "outcome_context_only",
+          "placement": "quiet_chapter_image"
+        }
+      ],
+      "section_role_map": {
+        "hero_orientation": "hero_shared_cooking",
+        "company_truth": "ingredient_story",
+        "service_process": "hands_in_action",
+        "next_step": "finished_table",
+        "cta_zone": "finished_table"
+      }
+    },
+    "asset_selection_policy": {
+      "priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only_not_primary_photography"
+    },
+    "vector_role": "supporting_only"
+  },
+  "design_tokens": {
+    "schema_version": "production_generation_v1",
+    "colors": {
+      "ink": "#1c1917",
+      "accent": "#d8a58c",
+      "paper": "#f6eee7",
+      "muted": "#77736b",
+      "line": "rgba(21,21,21,.18)"
+    },
+    "typography": {
+      "display": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+      "body": "ui-sans-serif, system-ui, -apple-system, 'Hiragino Sans', sans-serif",
+      "display_weight": 800,
+      "body_weight": 450
+    },
+    "font_scale": {
+      "eyebrow": "0.72rem",
+      "body": "1rem",
+      "lead": "1.18rem",
+      "h2": "clamp(2rem, 5vw, 5rem)",
+      "hero": "clamp(3rem, 10vw, 9rem)"
+    },
+    "spacing": {
+      "unit": "8px",
+      "section": "clamp(5rem, 12vw, 12rem)",
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "radius": {
+      "surface": "2px",
+      "button": "999px"
+    },
+    "borders": {
+      "hairline": "1px solid var(--line)",
+      "strong": "1px solid var(--ink)"
+    },
+    "shadows": {
+      "surface": "10px 18px 0 rgba(21,21,21,.08)"
+    },
+    "container_widths": {
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "rhythm": {
+      "peak_to_quiet": "1.5",
+      "quiet_to_peak": "1.15"
+    },
+    "motion": {
+      "duration_ms": 520,
+      "easing": "cubic-bezier(.2,.7,.2,1)"
+    }
+  },
+  "compositions": [
+    {
+      "section_id": "opening",
+      "layout_type": "studio_cover",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_studio_invitation_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "headline",
+      "mobile_transformation": "headline_first_then_single_action",
+      "screenshot_peak": true,
+      "order": 0,
+      "layout_profile": "studio_invitation",
+      "section_role": "hero_orientation",
+      "photo_role": "hero_shared_cooking",
+      "photo_placement": "hero_dominant_image",
+      "photo_asset_id": "watashi-hero-shared-cooking-generated-v1",
+      "photo_source_type": "generated",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "contact",
+      "layout_type": "lesson_contact",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_studio_invitation_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "channel",
+      "mobile_transformation": "contact_details_before_button",
+      "screenshot_peak": false,
+      "order": 1,
+      "layout_profile": "studio_invitation",
+      "section_role": "next_step",
+      "photo_role": "finished_table",
+      "photo_placement": "quiet_chapter_image",
+      "photo_asset_id": "watashi-finished-table-generated-v1",
+      "photo_source_type": "generated",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "way_in",
+      "layout_type": "session_sequence",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_studio_invitation_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "rhythm",
+      "mobile_transformation": "vertical_steps_with_breathing_room",
+      "screenshot_peak": false,
+      "order": 2,
+      "layout_profile": "studio_invitation",
+      "section_role": "service_process",
+      "photo_role": "hands_in_action",
+      "photo_placement": "craft_detail_image",
+      "photo_asset_id": "watashi-hands-in-action-pexels-8357260",
+      "photo_source_type": "free_stock",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "truth",
+      "layout_type": "table_spread",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_studio_invitation_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "evidence",
+      "mobile_transformation": "stacked_proof_with_short_lines",
+      "screenshot_peak": true,
+      "order": 3,
+      "layout_profile": "studio_invitation",
+      "section_role": "company_truth",
+      "photo_role": "ingredient_story",
+      "photo_placement": "mid_frame_proof_experience",
+      "photo_asset_id": "watashi-ingredient-story-pexels-3952043",
+      "photo_source_type": "free_stock",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "close",
+      "layout_type": "closing_field",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_studio_invitation_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "action",
+      "mobile_transformation": "sticky_safe_spacing_and_full_width_touch_target",
+      "screenshot_peak": true,
+      "order": 4,
+      "layout_profile": "studio_invitation",
+      "section_role": "cta_zone",
+      "photo_role": "finished_table",
+      "photo_placement": "pre_cta_trust_image",
+      "photo_asset_id": "watashi-finished-table-generated-v1",
+      "photo_source_type": "generated",
+      "vector_role": "supporting_only"
+    }
+  ],
+  "motion_spec": {
+    "kind": "section_reveal",
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)",
+    "reduced_motion": "no_transform"
+  },
+  "approved_evidence_ids": [
+    "watashi_no_daidokoro-e-001",
+    "watashi_no_daidokoro-e-002",
+    "watashi_no_daidokoro-e-003",
+    "watashi_no_daidokoro-e-004"
+  ],
+  "production_output_status": "PRODUCTION_APPROVED",
+  "approved_evidence": [
+    {
+      "evidence_id": "watashi_no_daidokoro-e-001",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "SERVICE_SCOPE",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "少人数でストウブ無水料理を学ぶ料理教室。",
+      "source": "approved-selection-manifest",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "HERO",
+        "MIDDLE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "watashi_no_daidokoro-e-002",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "PLACE_WIDE",
+      "evidence_strength": "E2_SPECIFIC",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "福岡市西区で活動する事業者。",
+      "source": "phase6-sales-master-snapshot",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "HERO",
+        "EARLY_PROOF"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "watashi_no_daidokoro-e-003",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "SERVICE_PROCESS",
+      "evidence_strength": "E3_OPERATIONAL",
+      "target_objections": [
+        "O3_PROCESS"
+      ],
+      "claim": "対応範囲を案内する。",
+      "source": "approved-selection-manifest",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "MIDDLE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    },
+    {
+      "evidence_id": "watashi_no_daidokoro-e-004",
+      "company_id": "",
+      "case_id": "",
+      "evidence_type": "CTA_CHANNEL",
+      "evidence_strength": "E5_DECISION_ENABLING",
+      "target_objections": [
+        "O4_NEXT"
+      ],
+      "claim": "公式SNSから相談・予約の入口を確認する。",
+      "source": "phase6-sales-master-snapshot",
+      "source_type": "research_ledger",
+      "verification_status": "VERIFIED",
+      "verification_date": "2026-09-16",
+      "usage_status": "PRODUCTION_ELIGIBLE",
+      "placement_candidates": [
+        "BEFORE_CTA",
+        "CTA_ZONE"
+      ],
+      "rights_status": "NOT_APPLICABLE",
+      "hearing_required": false,
+      "blocking_status": "NON_BLOCKING",
+      "notes": ""
+    }
+  ],
+  "photo_role_map": {
+    "schema_version": "photo_role_map_v1",
+    "selection_mode": "role_driven_not_fixed_count",
+    "roles": [
+      {
+        "photo_role": "hero_shared_cooking",
+        "visual_subject": "手を動かしながら学ぶ共有時間",
+        "business_purpose": "完成品だけでなく教室体験を伝える",
+        "replacement_target": "実教室・レッスン風景",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "experience_context_only",
+        "placement": "hero_dominant_image"
+      },
+      {
+        "photo_role": "ingredient_story",
+        "visual_subject": "食材・道具・下準備の手触り",
+        "business_purpose": "素材への関心と暮らしの温度を伝える",
+        "replacement_target": "実食材・実テーブル",
+        "preferred_orientation": "square",
+        "crop_tolerance": "tight",
+        "people_distance": "none",
+        "proof_intent": "material_context_only",
+        "placement": "mid_frame_proof_experience"
+      },
+      {
+        "photo_role": "hands_in_action",
+        "visual_subject": "包丁・混ぜる・盛り付け等の手元",
+        "business_purpose": "学びの具体性を見せる",
+        "replacement_target": "実レッスン中の手元",
+        "preferred_orientation": "portrait",
+        "crop_tolerance": "tight",
+        "people_distance": "close",
+        "proof_intent": "craft_context_only",
+        "placement": "craft_detail_image",
+        "secondary_placement": "quiet_chapter_image"
+      },
+      {
+        "photo_role": "finished_table",
+        "visual_subject": "完成物と共有する場",
+        "business_purpose": "体験後の達成感を想起させる",
+        "replacement_target": "実教室の完成物・食卓",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "far",
+        "proof_intent": "outcome_context_only",
+        "placement": "quiet_chapter_image"
+      }
+    ],
+    "section_role_map": {
+      "hero_orientation": "hero_shared_cooking",
+      "company_truth": "ingredient_story",
+      "service_process": "hands_in_action",
+      "next_step": "finished_table",
+      "cta_zone": "finished_table"
+    }
+  },
+  "asset_manifest": {
+    "schema_version": "photography_asset_manifest_v1",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_policy": "supporting_only_not_primary_photography",
+    "assets": [
+      {
+        "asset_id": "watashi-hands-in-action-pexels-8357260",
+        "photo_role": "hands_in_action",
+        "source_type": "free_stock",
+        "provider": "Pexels",
+        "source": "https://www.pexels.com/photo/close-up-shot-of-sliced-garlic-on-knife-8357260/",
+        "asset_url": "/assets/photography/stock/watashi_no_daidokoro/hands_in_action.jpg",
+        "creator": "Ron Lach",
+        "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+        "license_terms_url": "https://www.pexels.com/license/",
+        "checked_at": "2026-09-16",
+        "visual_subject": "Selection Manifest PRIMARY",
+        "placement": "",
+        "replacement_target": "",
+        "crop": "50% 50%",
+        "alt": "hands_in_action stock context image",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "watashi-ingredient-story-pexels-3952043",
+        "photo_role": "ingredient_story",
+        "source_type": "free_stock",
+        "provider": "Pexels",
+        "source": "https://www.pexels.com/photo/wooden-kitchen-utensils-and-vegetables-3952043/",
+        "asset_url": "/assets/photography/stock/watashi_no_daidokoro/ingredient_story.jpg",
+        "creator": "Ksenia Chernaya",
+        "rights_status": "RESEARCH_APPROVED_FREE_STOCK",
+        "license_terms_url": "https://www.pexels.com/license/",
+        "checked_at": "2026-09-16",
+        "visual_subject": "Selection Manifest PRIMARY",
+        "placement": "",
+        "replacement_target": "",
+        "crop": "50% 50%",
+        "alt": "ingredient_story stock context image",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "watashi-finished-table-generated-v1",
+        "photo_role": "finished_table",
+        "source_type": "generated",
+        "provider": "OpenAI image generation",
+        "source": "conversation-approved-generated-asset",
+        "asset_url": "/assets/photography/generated/watashi_no_daidokoro/finished_table.png",
+        "creator": "OpenAI",
+        "rights_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "license_terms_url": "",
+        "checked_at": "2026-09-16",
+        "visual_subject": "少人数料理教室の終了後を想起させる、野菜中心の家庭料理とブランド非特定の鋳物鍋が並び、これから食卓を囲む直前の自然な時間を感じる日本の食卓",
+        "placement": "mid_frame_proof_experience",
+        "replacement_target": "わたしの台所の実教室で作った料理・実食卓",
+        "crop": "\"50% 50%\"",
+        "alt": "料理教室で作り終えた後の時間を想起させる家庭料理と食卓のイメージ",
+        "vector_role": "photography_candidate"
+      },
+      {
+        "asset_id": "watashi-hero-shared-cooking-generated-v1",
+        "photo_role": "hero_shared_cooking",
+        "source_type": "generated",
+        "provider": "OpenAI image generation",
+        "source": "conversation-approved-generated-asset",
+        "asset_url": "/assets/photography/generated/watashi_no_daidokoro/hero_shared_cooking.png",
+        "creator": "OpenAI",
+        "rights_status": "RESEARCH_APPROVED_GENERATED_VISUAL",
+        "license_terms_url": "",
+        "checked_at": "2026-09-16",
+        "visual_subject": "日本の小規模な家庭料理教室を想起させる、成人女性3人が野菜・包丁・鋳物鍋を囲み、教わりながら共同調理しているイメージ",
+        "placement": "hero_dominant_image",
+        "replacement_target": "わたしの台所の実教室風景・実講師・実参加者写真",
+        "crop": "\"desktop 16:10; mobile 4:3; subject focus 66% 50% with left copy-safe area\"",
+        "alt": "少人数で野菜を切り鍋を囲みながら一緒に料理する時間を想起させるイメージ",
+        "vector_role": "photography_candidate"
+      }
+    ],
+    "pending_roles": []
+  },
+  "premium_scene_plan": {
+    "schema_version": "premium_scene_plan_v1",
+    "company": {
+      "company_id": "watashi_no_daidokoro",
+      "company_name": "わたしの台所"
+    },
+    "derivation_trace": {
+      "inputs": [
+        "Creative Genome",
+        "Narrative Architecture",
+        "Company Truth",
+        "Evidence",
+        "Photography Roles"
+      ],
+      "deterministic": true
+    },
+    "company_signature": [
+      {
+        "anchor": "Place",
+        "value": "福岡市西区",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Process",
+        "value": "料理教室",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Philosophy",
+        "value": "少人数でストウブ無水料理を学ぶ料理教室。",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Audience tension",
+        "value": "自分に合う入口か分からない",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      }
+    ],
+    "scene_plan": [
+      {
+        "scene_id": "scene-01-encounter",
+        "narrative_index": 0,
+        "narrative_state": "encounter",
+        "entry_emotion": "curious",
+        "exit_emotion": "engaged",
+        "user_question": "何から始めると楽しそうか",
+        "narrative_function": "CREATE_DESIRE",
+        "state_delta": {
+          "before": "何から始めると楽しそうか",
+          "after": "engagedへ進める"
+        },
+        "evidence_mode": "non_claim_expression",
+        "evidence_ids": [],
+        "visual_authority": "WORLD",
+        "focal_entity": "hero_shared_cooking",
+        "expected_media": true,
+        "dominance_level": "dominant",
+        "copy_intent": "ORIENT",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "table_scene",
+          "topology": "full_bleed",
+          "dominant_authority": "WORLD",
+          "focal_count": "multi",
+          "media_scale": "dominant",
+          "type_scale": "display",
+          "spatial_relation": "edge_bleed",
+          "asymmetry": "medium",
+          "negative_space": "perimeter",
+          "sequencing": "simultaneous",
+          "contrast_mode": "chromatic",
+          "transition": "continuation"
+        },
+        "transition_in": "continuation",
+        "transition_out": "continuation",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "discovery",
+        "photo_crop": "",
+        "desktop_art_direction": {
+          "topology": "full_bleed",
+          "focal_point": "center",
+          "media_scale": "dominant"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "perimeter",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "encounterをCREATE_DESIREへ翻訳"
+      },
+      {
+        "scene_id": "scene-02-touch",
+        "narrative_index": 1,
+        "narrative_state": "touch",
+        "entry_emotion": "engaged",
+        "exit_emotion": "energized",
+        "user_question": "自分の手で試せるか",
+        "narrative_function": "SHOW_PARTICIPATION",
+        "state_delta": {
+          "before": "自分の手で試せるか",
+          "after": "energizedへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        "visual_authority": "PERSON",
+        "focal_entity": "hands_in_action",
+        "expected_media": true,
+        "dominance_level": "dominant",
+        "copy_intent": "GUIDE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "human_dialogue",
+          "topology": "split",
+          "dominant_authority": "PERSON",
+          "focal_count": 2,
+          "media_scale": "dominant",
+          "type_scale": "editorial",
+          "spatial_relation": "floating",
+          "asymmetry": "medium",
+          "negative_space": "directional",
+          "sequencing": "simultaneous",
+          "contrast_mode": "chromatic",
+          "transition": "reveal"
+        },
+        "transition_in": "reveal",
+        "transition_out": "reveal",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "discovery",
+        "photo_crop": "34% 50%",
+        "desktop_art_direction": {
+          "topology": "split",
+          "focal_point": "center",
+          "media_scale": "dominant"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "directional",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "touchをSHOW_PARTICIPATIONへ翻訳"
+      },
+      {
+        "scene_id": "scene-03-make",
+        "narrative_index": 2,
+        "narrative_state": "make",
+        "entry_emotion": "energized",
+        "exit_emotion": "warm",
+        "user_question": "できていく過程を想像できるか",
+        "narrative_function": "SHOW_PROCESS",
+        "state_delta": {
+          "before": "できていく過程を想像できるか",
+          "after": "warmへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        "visual_authority": "DATA",
+        "focal_entity": "hands_in_action",
+        "expected_media": true,
+        "dominance_level": "standard",
+        "copy_intent": "PROVE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "process_sequence",
+          "topology": "sequence",
+          "dominant_authority": "DATA",
+          "focal_count": "multi",
+          "media_scale": "standard",
+          "type_scale": "quiet",
+          "spatial_relation": "contained",
+          "asymmetry": "low",
+          "negative_space": "perimeter",
+          "sequencing": "stepwise",
+          "contrast_mode": "density",
+          "transition": "cut"
+        },
+        "transition_in": "cut",
+        "transition_out": "cut",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "reassurance",
+        "photo_crop": "68% 50%",
+        "desktop_art_direction": {
+          "topology": "sequence",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "perimeter",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "makeをSHOW_PROCESSへ翻訳"
+      },
+      {
+        "scene_id": "scene-04-share",
+        "narrative_index": 3,
+        "narrative_state": "share",
+        "entry_emotion": "warm",
+        "exit_emotion": "ready",
+        "user_question": "できたものを誰と囲むか",
+        "narrative_function": "SHOW_TRANSFORMATION",
+        "state_delta": {
+          "before": "できたものを誰と囲むか",
+          "after": "readyへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        "visual_authority": "WORLD",
+        "focal_entity": "finished_table",
+        "expected_media": true,
+        "dominance_level": "dominant",
+        "copy_intent": "GUIDE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "table_scene",
+          "topology": "full_bleed",
+          "dominant_authority": "WORLD",
+          "focal_count": "multi",
+          "media_scale": "dominant",
+          "type_scale": "display",
+          "spatial_relation": "edge_bleed",
+          "asymmetry": "medium",
+          "negative_space": "perimeter",
+          "sequencing": "simultaneous",
+          "contrast_mode": "chromatic",
+          "transition": "continuation"
+        },
+        "transition_in": "continuation",
+        "transition_out": "continuation",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "reassurance",
+        "photo_crop": "",
+        "desktop_art_direction": {
+          "topology": "full_bleed",
+          "focal_point": "center",
+          "media_scale": "dominant"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "perimeter",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "shareをSHOW_TRANSFORMATIONへ翻訳"
+      },
+      {
+        "scene_id": "scene-05-join",
+        "narrative_index": 4,
+        "narrative_state": "join",
+        "entry_emotion": "ready",
+        "exit_emotion": "ready",
+        "user_question": "次の回にどう参加するか",
+        "narrative_function": "ENABLE_ACTION",
+        "state_delta": {
+          "before": "次の回にどう参加するか",
+          "after": "readyへ進める"
+        },
+        "evidence_mode": "approved_evidence",
+        "evidence_ids": [
+          "watashi_no_daidokoro-e-001",
+          "watashi_no_daidokoro-e-002"
+        ],
+        "visual_authority": "TYPOGRAPHY",
+        "focal_entity": "typography",
+        "expected_media": false,
+        "dominance_level": "display",
+        "copy_intent": "CONVERT",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "asymmetric_editorial",
+          "topology": "layered",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "none",
+          "type_scale": "display",
+          "spatial_relation": "overlap",
+          "asymmetry": "high",
+          "negative_space": "central",
+          "sequencing": "progressive",
+          "contrast_mode": "scale",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "action",
+        "photo_crop": "",
+        "desktop_art_direction": {
+          "topology": "layered",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "after_scene",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "joinをENABLE_ACTIONへ翻訳"
+      }
+    ],
+    "copy_plan": {
+      "claim_eligibility": [
+        {
+          "claim_trace_id": "watashi_no_daidokoro-e-001",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "watashi_no_daidokoro-e-001"
+        },
+        {
+          "claim_trace_id": "watashi_no_daidokoro-e-002",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "watashi_no_daidokoro-e-002"
+        },
+        {
+          "claim_trace_id": "watashi_no_daidokoro-e-003",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "watashi_no_daidokoro-e-003"
+        },
+        {
+          "claim_trace_id": "watashi_no_daidokoro-e-004",
+          "category": "VERIFIED_FACT",
+          "evidence_id": "watashi_no_daidokoro-e-004"
+        }
+      ],
+      "omit_unverified": true
+    },
+    "device_plan": {
+      "desktop": "scene-specific foundation",
+      "mobile": "scene-specific foundation"
+    },
+    "reuse_plan": {
+      "policy": "same_role_only"
+    },
+    "qa_expectations": {
+      "gates": [
+        "narrative_order",
+        "state_delta",
+        "grammar_delta",
+        "authority_realization",
+        "claim_trace",
+        "cta_contract"
+      ]
+    },
+    "qa_gates": {
+      "narrative_scene_order_gate": "PASS",
+      "scene_state_delta_gate": "PASS",
+      "rendered_grammar_delta_gate": "PASS",
+      "consecutive_topology_repetition_gate": "PASS",
+      "visual_authority_realization_gate": "PASS",
+      "claim_traceability_gate": "PASS"
+    },
+    "human_translation_ref": "premium_human_translation_v1"
+  },
+  "premium_human_translation": {
+    "schema_version": "premium_human_translation_v1",
+    "signature_anchors": [
+      {
+        "anchor_id": "anchor-01-place",
+        "anchor_type": "PLACE",
+        "classification": "PLACE_FACT",
+        "primary": false,
+        "value": "福岡市西区",
+        "source": "location",
+        "evidence_ids": [
+          "watashi_no_daidokoro-e-002"
+        ],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "the customer needs a reachable context",
+        "source_evidence": [
+          "watashi_no_daidokoro-e-002"
+        ]
+      },
+      {
+        "anchor_id": "anchor-02-service",
+        "anchor_type": "SERVICE",
+        "classification": "SERVICE_FACT",
+        "primary": false,
+        "value": "料理教室",
+        "source": "service_category",
+        "evidence_ids": [
+          "watashi_no_daidokoro-e-001"
+        ],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "the customer needs to recognize the activity",
+        "source_evidence": [
+          "watashi_no_daidokoro-e-001"
+        ]
+      },
+      {
+        "anchor_id": "anchor-03-truth",
+        "anchor_type": "TRUTH",
+        "classification": "COMPANY_SIGNATURE",
+        "primary": true,
+        "value": "少人数でストウブ無水料理を学ぶ料理教室",
+        "source": "company_truth",
+        "evidence_ids": [
+          "watashi_no_daidokoro-e-001"
+        ],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "company truth must remain the source of meaning",
+        "source_evidence": [
+          "watashi_no_daidokoro-e-001"
+        ]
+      }
+    ],
+    "copy_translation": {
+      "schema_version": "premium_copy_translation_ir_v1",
+      "expression_modes": [
+        "DIRECT_VALUE",
+        "CONCRETE_SCENE",
+        "PROCESS_MEANING",
+        "REASSURANCE",
+        "INVITATION",
+        "FACT_STRIP",
+        "OMISSION"
+      ],
+      "signature_anchor_ids": [
+        "anchor-01-place",
+        "anchor-02-service",
+        "anchor-03-truth"
+      ],
+      "scenes": [
+        {
+          "scene_id": "scene-01-encounter",
+          "narrative_index": 0,
+          "truth_atoms": [],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "少人数でストウブ無水料理を学ぶ料理教室",
+            "料理教室",
+            "福岡市西区"
+          ],
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "implication_type": "ORIENT",
+          "expression_mode": "DIRECT_VALUE",
+          "visual_dependency": "WORLD",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "食材に出会う",
+            "body": "福岡市西区の料理教室で、食材と手を動かす時間に出会います。",
+            "microcopy": "福岡市西区｜食材と手を動かす時間から次の案内へ。"
+          },
+          "definition": {
+            "text": "食材に出会う福岡市西区の料理教室で、食材と手を動かす時間に出会います。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "ORIENT"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "narrative_index": 1,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-001",
+              "fact": "少人数でストウブ無水料理を学ぶ料理教室。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-002",
+              "fact": "福岡市西区で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "料理教室"
+          ],
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "PERSON",
+          "claim_trace_ids": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "outputs": {
+            "headline": "手を動かしてみる",
+            "body": "手を動かし、火を入れる順序を確かめます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "手を動かしてみる手を動かし、火を入れる順序を確かめます。",
+            "score": 3,
+            "generic_predicate": false,
+            "anchor_present": false,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "narrative_index": 2,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-001",
+              "fact": "少人数でストウブ無水料理を学ぶ料理教室。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-002",
+              "fact": "福岡市西区で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "料理教室"
+          ],
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "implication_type": "PROVE",
+          "expression_mode": "PROCESS_MEANING",
+          "visual_dependency": "DATA",
+          "claim_trace_ids": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "outputs": {
+            "headline": "料理ができていく",
+            "body": "料理教室で食材を選び、料理の流れを一緒に学びます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "料理ができていく料理教室で食材を選び、料理の流れを一緒に学びます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "PROVE"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "narrative_index": 3,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-001",
+              "fact": "少人数でストウブ無水料理を学ぶ料理教室。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-002",
+              "fact": "福岡市西区で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "少人数でストウブ無水料理を学ぶ料理教室"
+          ],
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "WORLD",
+          "claim_trace_ids": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "outputs": {
+            "headline": "食卓を囲む",
+            "body": "ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "食卓を囲むストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-05-join",
+          "narrative_index": 4,
+          "truth_atoms": [
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-001",
+              "fact": "少人数でストウブ無水料理を学ぶ料理教室。",
+              "evidence_type": "SERVICE_SCOPE"
+            },
+            {
+              "claim_trace_id": "watashi_no_daidokoro-e-002",
+              "fact": "福岡市西区で活動する事業者。",
+              "evidence_type": "PLACE_WIDE"
+            }
+          ],
+          "customer_relevance": "自分に合う入口か分からない",
+          "tension": "相談前に何を確認すればよいか分からない",
+          "desired_after_state": "まず状況を伝えてみようと思える",
+          "specificity": [
+            "少人数でストウブ無水料理を学ぶ料理教室"
+          ],
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "implication_type": "CONVERT",
+          "expression_mode": "INVITATION",
+          "visual_dependency": "TYPOGRAPHY",
+          "claim_trace_ids": [
+            "watashi_no_daidokoro-e-001",
+            "watashi_no_daidokoro-e-002"
+          ],
+          "outputs": {
+            "headline": "参加を考える",
+            "body": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "参加を考えるできあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+            "score": 3,
+            "generic_predicate": false,
+            "anchor_present": false,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "CONVERT"
+        }
+      ]
+    },
+    "cta_closure": {
+      "schema_version": "cta_action_closure_ir_v1",
+      "status": "PASS",
+      "closures": [
+        {
+          "cta_id": "cta-discovery",
+          "stage": "discovery",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "まず状況を見渡す",
+          "destination_type": "PAGE_SECTION",
+          "destination_id": "#way-in",
+          "href": "#way-in",
+          "semantic_payload": "料理の流れを見る",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact",
+            "verified_external_href": ""
+          },
+          "actionability": "ORIENTATION",
+          "fake_action": false,
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-reassurance",
+          "stage": "reassurance",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "会社固有の範囲を確かめる",
+          "destination_type": "PROCESS_GUIDE",
+          "destination_id": "#reassurance",
+          "href": "#reassurance",
+          "semantic_payload": "場と内容を確かめる",
+          "verified_action": {
+            "verified": true,
+            "channel": "公式SNS",
+            "href": "#contact",
+            "verified_external_href": ""
+          },
+          "actionability": "ORIENTATION",
+          "fake_action": false,
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-action",
+          "stage": "action",
+          "user_state_before": "相談前に何を確認すればよいか分からない",
+          "promise": "applicationの確認へ進む",
+          "destination_type": "INFORMATIONAL_ONLY",
+          "destination_id": "#contact",
+          "href": "#contact",
+          "semantic_payload": "連絡先を確認する",
+          "verified_action": {
+            "verified": false,
+            "channel": "公式SNS",
+            "href": "#contact",
+            "verified_external_href": ""
+          },
+          "actionability": "QUIET_CONVERSION_END",
+          "fake_action": false,
+          "completion_state": "まず状況を伝えてみようと思える",
+          "hard_violation": false,
+          "fallback_reason": "verified action channel unavailable; informational destination only"
+        }
+      ],
+      "hard_violations": []
+    },
+    "photo_binding": {
+      "schema_version": "photography_causal_binding_v1",
+      "selection": "scene_demand_x_asset_profile",
+      "bindings": [
+        {
+          "scene_id": "scene-01-encounter",
+          "photo_role": "hero_shared_cooking",
+          "temporal_stage": "arrival",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "table_scene",
+            "CREATE_DESIRE",
+            "ORIENT"
+          ]
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "photo_role": "hands_in_action",
+          "temporal_stage": "orientation",
+          "compatibility_score": 0.9,
+          "status": "PASS",
+          "reason": "known_role_compatible",
+          "causal_inputs": [
+            "human_dialogue",
+            "SHOW_PARTICIPATION",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-03-make",
+          "photo_role": "hands_in_action",
+          "temporal_stage": "understanding",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "active_cooking_action_required",
+          "causal_inputs": [
+            "process_sequence",
+            "SHOW_PROCESS",
+            "PROVE"
+          ]
+        },
+        {
+          "scene_id": "scene-04-share",
+          "photo_role": "finished_table",
+          "temporal_stage": "practice",
+          "compatibility_score": 0.95,
+          "status": "PASS",
+          "reason": "grammar_role_match",
+          "causal_inputs": [
+            "table_scene",
+            "SHOW_TRANSFORMATION",
+            "GUIDE"
+          ]
+        },
+        {
+          "scene_id": "scene-05-join",
+          "photo_role": "typography",
+          "temporal_stage": "reassurance",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        }
+      ],
+      "temporal_inversion_count": 0,
+      "semantic_mismatch_count": 0
+    },
+    "art_direction_token_profile": {
+      "type_voice": "open",
+      "surface_language": "studio_table",
+      "edge_language": "session_mark",
+      "image_behavior": "shared_focus",
+      "spatial_language": "table_then_path",
+      "cta_language": "try_then_join",
+      "decorative_grammar": "tool_marks",
+      "rhythm_character": "notice_then_try",
+      "motion_character": "open_the_session",
+      "schema_version": "art_direction_token_profile_v2",
+      "profile_id": "studio_invitation",
+      "signature_anchors": [
+        "anchor-01-place",
+        "anchor-02-service",
+        "anchor-03-truth"
+      ],
+      "creative_reason": "bounded tokens derived from narrative profile and signature anchors",
+      "derivation": {
+        "layout_profile": "studio_invitation",
+        "anchor_types": [
+          "PLACE",
+          "SERVICE",
+          "TRUTH"
+        ],
+        "slug_dependency": false
+      }
+    },
+    "peak_candidates": {
+      "schema_version": "human_peak_candidates_v1",
+      "selection": "rendered_candidate_ranking",
+      "status": "PASS",
+      "candidates": [
+        {
+          "peak_id": "peak-01-encounter",
+          "scene_id": "scene-01-encounter",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 11,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-02-touch",
+          "scene_id": "scene-02-touch",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-03-make",
+          "scene_id": "scene-03-make",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 2,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-04-share",
+          "scene_id": "scene-04-share",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-05-join",
+          "scene_id": "scene-05-join",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 2,
+            "screenshot_independence": 1,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": false,
+          "forced_quiet_end": true,
+          "archetype": "evidence-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        }
+      ],
+      "selected": [
+        {
+          "peak_id": "peak-03-make",
+          "scene_id": "scene-03-make",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 2,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-02-touch",
+          "scene_id": "scene-02-touch",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-04-share",
+          "scene_id": "scene-04-share",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-01-encounter",
+          "scene_id": "scene-01-encounter",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 11,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        }
+      ],
+      "minimum": 2,
+      "maximum": 4
+    },
+    "cross_modal_consistency": {
+      "status": "PASS",
+      "anchor_channel_count": {
+        "anchor-01-place": 5,
+        "anchor-02-service": 5,
+        "anchor-03-truth": 5
+      },
+      "channels": [
+        "COPY",
+        "CTA",
+        "PEAK",
+        "PHOTOGRAPHY",
+        "VISUAL"
+      ]
+    }
+  }
+}

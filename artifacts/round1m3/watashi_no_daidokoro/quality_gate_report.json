@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "safety": "PASS",
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "scene_gates": {
+    "narrative_scene_order_gate": "PASS",
+    "scene_state_delta_gate": "PASS",
+    "rendered_grammar_delta_gate": "PASS",
+    "consecutive_topology_repetition_gate": "PASS",
+    "visual_authority_realization_gate": "PASS",
+    "claim_traceability_gate": "PASS"
+  },
+  "render_contract": {
+    "status": "PASS",
+    "scene_count": {
+      "expected": 5,
+      "rendered": 5
+    },
+    "expected_headings": [
+      "食材に出会う",
+      "手を動かしてみる",
+      "料理ができていく",
+      "食卓を囲む",
+      "参加を考える"
+    ],
+    "rendered_headings": [
+      "食材に出会う",
+      "手を動かしてみる",
+      "料理ができていく",
+      "食卓を囲む",
+      "参加を考える",
+      "公式窓口の案内"
+    ],
+    "rendered_ctas": [
+      {
+        "stage": "discovery",
+        "destination": "#way-in",
+        "visible_label": "料理の流れを見る"
+      },
+      {
+        "stage": "reassurance",
+        "destination": "#reassurance",
+        "visible_label": "場と内容を確かめる"
+      },
+      {
+        "stage": "action",
+        "destination": "#contact",
+        "visible_label": "連絡先を確認する"
+      }
+    ],
+    "internal_metadata_visible": false,
+    "internal_leakage": [],
+    "editorial_violations": []
+  },
+  "photography_role_coverage": {
+    "expected": 4,
+    "actual": 4
+  }
+}

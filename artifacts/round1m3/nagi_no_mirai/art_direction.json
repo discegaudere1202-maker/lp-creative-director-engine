@@ -1,0 +1,135 @@
+{
+  "schema_version": "production_generation_v1",
+  "art_direction_concept": "ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンの相談窓口。を、予約前の不安をほどくの入口として見せる。",
+  "visual_mood": "soft, tactile care with room to breathe before choosing",
+  "visual_authority_priority": [
+    "PERSON",
+    "SENSORY",
+    "PLACE",
+    "MATERIAL",
+    "TYPOGRAPHY",
+    "DOCUMENT"
+  ],
+  "color_logic": {
+    "ink": "#1c1917",
+    "accent": "#d8a58c",
+    "paper": "#f6eee7",
+    "reason": "PERSON is the first evidence-bearing authority."
+  },
+  "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+  "composition_logic": "A soft arrival opening, tactile care surface and generous booking pause; the page slows before asking for action.",
+  "photography_logic": "Role-driven photography is the primary visual authority; vector scenes are support only.",
+  "visual_scene": "care_experience",
+  "visual_source": "photography_pipeline",
+  "photo_replacement_readiness": {
+    "status": "READY_WITH_PROXY",
+    "proxy_role": "role_selected_photography_asset",
+    "replacement_targets": [
+      "実店舗・実現場・実商品・実人物写真"
+    ],
+    "layout_constraints": [
+      "同一役割の実写真を同じ比率へ差し替え可能",
+      "文字重なりなし",
+      "中央焦点を保持"
+    ],
+    "proof_role": "visual_context_only; not evidence of a real result or location",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only"
+  },
+  "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+  "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+  "motion_logic": "settle_into_care; one restrained reveal per section; no infinite or blocking animation.",
+  "forbidden_patterns": [
+    "rounded card wall",
+    "generic three-column grid",
+    "unsupported trust badge",
+    "stock person",
+    "marquee",
+    "parallax"
+  ],
+  "craft_catch": "A breath mark carries the customer from a vague need for care to a chosen kind of time.",
+  "layout_profile": "care_rhythm",
+  "art_direction_dimensions": {
+    "macro_composition": "care_rhythm",
+    "visual_density": "soft_focus",
+    "negative_space": "breathing_intervals",
+    "surface": "warm_matte",
+    "section_transitions": "breath_marks",
+    "rhythm": "arrive_then_settle",
+    "motion": "settle_into_care",
+    "evidence_density": "MEDIUM",
+    "visual_authority": "PERSON",
+    "crop_logic": "no client image dependency; abstract geometry carries the role"
+  },
+  "photo_role_map": {
+    "schema_version": "photo_role_map_v1",
+    "selection_mode": "role_driven_not_fixed_count",
+    "roles": [
+      {
+        "photo_role": "hero_treatment_space",
+        "visual_subject": "静かな施術空間と施術の気配",
+        "business_purpose": "安心感と体験の温度を最初に伝える",
+        "replacement_target": "実店舗と実施術シーン",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "experience_context_only",
+        "placement": "hero_dominant_image"
+      },
+      {
+        "photo_role": "hand_technique",
+        "visual_subject": "頭部への手技と施術者の手元",
+        "business_purpose": "技術感と身体感覚を伝える",
+        "replacement_target": "実施術中の手元",
+        "preferred_orientation": "portrait",
+        "crop_tolerance": "tight",
+        "people_distance": "close",
+        "proof_intent": "craft_context_only",
+        "placement": "mid_frame_proof_experience"
+      },
+      {
+        "photo_role": "sensory_detail",
+        "visual_subject": "タオル・照明・ベッド周りの静かなディテール",
+        "business_purpose": "リラックスの感覚を補強する",
+        "replacement_target": "実店舗ディテール",
+        "preferred_orientation": "square",
+        "crop_tolerance": "tight",
+        "people_distance": "none",
+        "proof_intent": "sensory_context_only",
+        "placement": "craft_detail_image",
+        "secondary_placement": "quiet_chapter_image"
+      },
+      {
+        "photo_role": "welcome_human",
+        "visual_subject": "相談・迎え入れの人間的な距離感",
+        "business_purpose": "初回来店の不安を下げる",
+        "replacement_target": "実接客・相談風景",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "human_context_only",
+        "placement": "quiet_chapter_image"
+      }
+    ],
+    "section_role_map": {
+      "hero_orientation": "hero_treatment_space",
+      "company_truth": "hand_technique",
+      "service_process": "sensory_detail",
+      "next_step": "welcome_human",
+      "cta_zone": "welcome_human"
+    }
+  },
+  "asset_selection_policy": {
+    "priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only_not_primary_photography"
+  },
+  "vector_role": "supporting_only"
+}

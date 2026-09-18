@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scene_count": {
+    "expected": 5,
+    "rendered": 5
+  },
+  "expected_headings": [
+    "家の輪郭を見つめる",
+    "素材に触れて考える",
+    "手仕事の順番を見る",
+    "仕上がりを思い描く",
+    "状態から相談する"
+  ],
+  "rendered_headings": [
+    "家の輪郭を見つめる",
+    "素材に触れて考える",
+    "手仕事の順番を見る",
+    "仕上がりを思い描く",
+    "状態から相談する",
+    "公式窓口の案内"
+  ],
+  "rendered_ctas": [
+    {
+      "stage": "discovery",
+      "destination": "#way-in",
+      "visible_label": "素材の状態を見る"
+    },
+    {
+      "stage": "reassurance",
+      "destination": "#reassurance",
+      "visible_label": "対応範囲を確かめる"
+    },
+    {
+      "stage": "action",
+      "destination": "#contact",
+      "visible_label": "連絡先を確認する"
+    }
+  ],
+  "internal_metadata_visible": false,
+  "internal_leakage": [],
+  "editorial_violations": []
+}

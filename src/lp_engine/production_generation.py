@@ -83,6 +83,21 @@ def _text(value: Any) -> str:
     return str(value or "").strip()
 
 
+def _claim_fragments(value: str) -> list[str]:
+    parts = re.split(r"[・、。/／\s]+|(?<=で)|(?<=を)|(?<=の)|(?<=に)|(?<=は)|学ぶ", _text(value))
+    return [part.rstrip("でをのには") for part in parts if len(part.rstrip("でをのには")) >= 2]
+
+
+def _claim_matches(claim: str, visible_text: str) -> bool:
+    claim = _text(claim)
+    visible_text = _text(visible_text)
+    fragments = _claim_fragments(claim)
+    if not claim or not visible_text or not fragments:
+        return False
+    hits = sum(fragment in visible_text for fragment in fragments)
+    return claim in visible_text or hits >= (1 if len(fragments) <= 2 else 2)
+
+
 def _slug(value: str) -> str:
     value = re.sub(r"[^a-zA-Z0-9_-]+", "-", value.strip().lower()).strip("-")
     return value or "production-case"
@@ -894,6 +909,8 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         # back to the hero asset when the approved pool is smaller than the
         # five-scene narrative.
         scene_asset = None if i == len(plan.get("scene_plan", [])) - 1 else select_asset_for_role(spec.get("asset_manifest", {}), scene.get("focal_entity"))
+        if scene_asset and scene.get("photo_crop"):
+            scene_asset = {**scene_asset, "crop": scene.get("photo_crop")}
         scene_photo = render_photo_asset(scene_asset)
         # A media-less scene is a deliberate composition, never a placeholder.
         media = f'<div class="scene-media scene-media--{esc(grammar["media_scale"])}" aria-hidden="true">{scene_photo}</div>' if scene_photo else ""
@@ -915,26 +932,40 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
             verified_attr = f' data-verified-external-href="{esc(verified_href)}"' if verified_href else ""
             cta = f'<a class="button" data-cta-stage="{esc(scene["cta_stage"])}" data-actionability="{esc(closure.get("actionability") or "ORIENTATION")}" data-destination-type="{esc(closure.get("destination_type") or "INFORMATIONAL_ONLY")}" data-state-before="{esc(closure.get("user_state_before"))}" data-state-after="{esc(closure.get("completion_state"))}"{verified_attr} href="{esc(cta_href)}">{esc(cta_label)}</a>'
             rendered_cta_stages.add(scene.get("cta_stage"))
-        evidence_trace = ",".join(hashlib.sha256(str(x).encode()).hexdigest()[:10] for x in scene["evidence_ids"])
+        rendered_text = f"{heading}{body}"
+        trace_ids = list(scene.get("evidence_ids") or [])
+        for evidence in spec.get("approved_evidence") or []:
+            evidence_id = _text(evidence.get("evidence_id"))
+            if evidence_id and _claim_matches(_text(evidence.get("claim")), rendered_text) and evidence_id not in trace_ids:
+                trace_ids.append(evidence_id)
+        evidence_trace = ",".join(hashlib.sha256(str(x).encode()).hexdigest()[:10] for x in trace_ids)
         # CTA destinations resolve to a different, content-bearing section;
         # the CTA source itself never doubles as its target.
         anchor = "way-in" if i == 1 else "reassurance" if i == 3 else "final-quiet-end" if i == len(plan.get("scene_plan", [])) - 1 else scene.get("scene_id", "")
         anchor_attr = f' id="{anchor}"' if anchor else ""
-        rendered_text = f"{heading}{body}"
-        anchor_ids = []
+        anchor_ids = list(translated.get("signature_anchor_ids") or [])
         for anchor in signature_anchors:
+            if anchor.get("classification") != "COMPANY_SIGNATURE":
+                continue
             value = str(anchor.get("value") or "")
             fragments = [part for part in re.split(r"[・、。/／\s]+", value) if len(part) >= 2]
             fragment_hits = sum(part in rendered_text for part in fragments)
-            threshold = 1 if len(fragments) <= 2 else 2
+            threshold = 1 if len(fragments) <= 4 else 2
             if value and (value in rendered_text or fragment_hits >= threshold):
                 anchor_ids.append(anchor.get("anchor_id"))
         anchor_attr_data = esc(",".join(x for x in anchor_ids if x))
         chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-index="{i}" data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
     channel = (spec.get("company") or {}).get("contact_channel") or (spec.get("understanding") or {}).get("contact_channels", {}).get("primary") or "公式窓口"
     contact_context = "｜".join(str(value) for value in ((spec.get("company") or {}).get("location"), (spec.get("company") or {}).get("service_category")) if value)
-    contact_claim = next((x.get("promise") for x in cta_closures.values() if x.get("stage") == "action" and x.get("promise")), "次の案内を確認できます")
-    contact_details = f'<section id="contact" class="premium-contact-details" data-destination-type="INFORMATIONAL_ONLY"><h2>公式窓口の案内</h2><p>{esc(contact_context)}</p><p>{esc(contact_claim)}</p><p>{esc(channel)}</p></section>'
+    contact_claim = next((x.get("semantic_payload") for x in cta_closures.values() if x.get("stage") == "action" and x.get("semantic_payload")), "連絡先を確認する")
+    contact_trace_ids = []
+    contact_text = f"{contact_context}{contact_claim}{channel}"
+    for evidence in spec.get("approved_evidence") or []:
+        evidence_id = _text(evidence.get("evidence_id"))
+        if evidence_id and _claim_matches(_text(evidence.get("claim")), contact_text):
+            contact_trace_ids.append(hashlib.sha256(evidence_id.encode()).hexdigest()[:10])
+    contact_trace = ",".join(contact_trace_ids)
+    contact_details = f'<section id="contact" class="premium-contact-details" data-destination-type="INFORMATIONAL_ONLY" data-evidence-trace="{esc(contact_trace)}"><h2>公式窓口の案内</h2><p>{esc(contact_context)}</p><p>{esc(contact_claim)}</p><p>{esc(channel)}</p></section>'
     return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{_render_styles(tokens)} .premium-scene{{width:var(--rail);min-width:0;margin:auto;padding:clamp(4rem,10vw,9rem) 0;border-top:var(--human-border-width) solid var(--line);border-radius:var(--human-scene-radius)}} .scene-media{{min-width:0;max-width:100%;overflow:hidden;background:var(--ink);color:var(--paper);min-height:220px;display:grid;place-items:center;letter-spacing:.12em;border-radius:var(--human-scene-radius)}} .scene-media .photo-frame{{width:100%;max-width:100%;min-width:0}} .scene-media .photo-frame img{{display:block;width:100%;max-width:100%;height:auto;min-width:0;object-fit:cover}} .scene-media--immersive,.scene-media--dominant{{min-height:480px}} .scene-inset,.scene-split{{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}} .scene-inset>*,.scene-split>*{{min-width:0;max-width:100%}} .scene-layered{{position:relative;min-width:0;min-height:420px;overflow:hidden}} .scene-layered-copy{{position:absolute;left:12%;bottom:8%;background:var(--paper);padding:2rem;max-width:70%;min-width:0;border-radius:var(--human-scene-radius)}} .scene-full{{min-width:0;display:grid;gap:1.5rem}} .scene-sequence{{min-width:0;border-left:var(--human-edge-width) solid var(--accent);padding:2rem;overflow-wrap:anywhere}} .premium-scene h2,.premium-scene p{{min-width:0;overflow-wrap:anywhere}} .premium-scene .button{{display:inline-flex;margin-top:2rem;padding:12px 26px;background:var(--accent);color:var(--paper);border-radius:var(--human-cta-radius);text-decoration:none;max-width:100%}} .premium-contact-details{{width:var(--rail);margin:0 auto;padding:4rem 0;border-top:var(--human-border-width) solid var(--line)}} @media(max-width:760px){{.premium-scene{{padding:4rem 0}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr)}}.scene-media--immersive,.scene-media--dominant{{min-height:280px}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem}}}}</style></head><body style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
 
 def render_html(spec: Mapping[str, Any]) -> str:

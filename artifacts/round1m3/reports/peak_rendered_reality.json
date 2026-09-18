@@ -1,0 +1,395 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "company": "maylynn_paint",
+      "peaks": [
+        {
+          "peak_id": "peak-02-read_material",
+          "scene_id": "scene-02-read_material",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 2,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth",
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "素材に触れて考える 外壁塗装の現場を見渡し、素材の状態と仕上がりへ目を向けます。",
+          "rendered_authority": "MATERIAL",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth",
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        },
+        {
+          "peak_id": "peak-01-observe",
+          "scene_id": "scene-01-observe",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 12,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "家の輪郭を見つめる 福岡市で、住まいの状態を相談できます。 素材の状態を見る",
+          "rendered_authority": "IMAGE",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        },
+        {
+          "peak_id": "peak-03-watch_hands",
+          "scene_id": "scene-03-watch_hands",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 12,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth",
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "手仕事の順番を見る 外壁塗装・屋根・雨漏り・リフォームについてについて相談できます 対応範囲を確かめる",
+          "rendered_authority": "DATA",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth",
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        },
+        {
+          "peak_id": "peak-04-imagine_change",
+          "scene_id": "scene-04-imagine_change",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 12,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth",
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "仕上がりを思い描く 表面の変化と手順を並べ、外壁塗装の仕上がりを思い描きます。",
+          "rendered_authority": "TYPE",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth",
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        }
+      ],
+      "selected_count": 4,
+      "forced_final_peak_count": 0,
+      "specificity_without_signature": 0,
+      "empty_signature_selected": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "company": "nagi_no_mirai",
+      "peaks": [
+        {
+          "peak_id": "peak-03-feel_care",
+          "scene_id": "scene-03-feel_care",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "触れられる時間 触れられる時間を選び、自分に合う過ごし方を考えます。 時間の選び方を見る",
+          "rendered_authority": "PERSON",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        },
+        {
+          "peak_id": "peak-04-choose_time",
+          "scene_id": "scene-04-choose_time",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 12,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "過ごし方を選ぶ 頭をゆるめる時間の流れを、静かな空間で確かめます。",
+          "rendered_authority": "TYPE",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        },
+        {
+          "peak_id": "peak-02-settle",
+          "scene_id": "scene-02-settle",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 11,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth",
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "静けさを感じる ドライヘッドスパ・ヘッドスパスクール・ヒーリングサロンについて相談できます",
+          "rendered_authority": "SENSORY",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth",
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        }
+      ],
+      "selected_count": 3,
+      "forced_final_peak_count": 0,
+      "specificity_without_signature": 0,
+      "empty_signature_selected": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "company": "watashi_no_daidokoro",
+      "peaks": [
+        {
+          "peak_id": "peak-03-make",
+          "scene_id": "scene-03-make",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 2,
+            "screenshot_independence": 2,
+            "visual_concentration": 1
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "料理ができていく 料理教室で食材を選び、料理の流れを一緒に学びます。 場と内容を確かめる",
+          "rendered_authority": "DATA",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        },
+        {
+          "peak_id": "peak-02-touch",
+          "scene_id": "scene-02-touch",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "手を動かしてみる 手を動かし、火を入れる順序を確かめます。",
+          "rendered_authority": "PERSON",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        },
+        {
+          "peak_id": "peak-04-share",
+          "scene_id": "scene-04-share",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 2,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 13,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "食卓を囲む ストウブ無水料理を学び、食材から一皿ができていく流れを確かめます。",
+          "rendered_authority": "WORLD",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        },
+        {
+          "peak_id": "peak-01-encounter",
+          "scene_id": "scene-01-encounter",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 2,
+            "visual_concentration": 2
+          },
+          "total": 11,
+          "eligible": true,
+          "forced_quiet_end": false,
+          "archetype": "media-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking",
+          "rendered_payload": "食材に出会う 福岡市西区の料理教室で、食材と手を動かす時間に出会います。 料理の流れを見る",
+          "rendered_authority": "WORLD",
+          "narrative_reason": "rendered content candidate ranking",
+          "screenshot_independence": true,
+          "human_review_reason": "actual rendered media or evidence payload is legible",
+          "actual_signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "company_specificity": 2,
+          "rendered_media": true,
+          "verdict": "PASS"
+        }
+      ],
+      "selected_count": 4,
+      "forced_final_peak_count": 0,
+      "specificity_without_signature": 0,
+      "empty_signature_selected": 0
+    }
+  }
+}

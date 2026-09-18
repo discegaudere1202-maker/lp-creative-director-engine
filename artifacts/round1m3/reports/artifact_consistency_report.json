@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "contradictions": [],
+  "scanned_metrics": [
+    "status",
+    "verdict",
+    "ready",
+    "pass",
+    "provenance"
+  ],
+  "root_status": "PASS",
+  "root_machine_ready": true,
+  "root_human_review_ready": true,
+  "capture_provenance": "PASS",
+  "child_gate_statuses": {
+    "japanese_editorial": "PASS",
+    "cta_actionability": "PASS",
+    "photo_binding": "PASS",
+    "peak_reality": "PASS",
+    "signature_trace": "PASS",
+    "claim_trace": "PASS",
+    "capture_provenance": "PASS",
+    "browser_qa": "PASS",
+    "tests": "PASS",
+    "safety": "PASS",
+    "rights": "PASS",
+    "synthetic": "PASS",
+    "mutation": "PASS",
+    "regression": "PASS",
+    "cross_report": "PASS"
+  }
+}

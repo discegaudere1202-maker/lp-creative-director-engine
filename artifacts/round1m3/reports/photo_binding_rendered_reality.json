@@ -1,0 +1,227 @@
+{
+  "status": "PASS",
+  "companies": {
+    "maylynn_paint": {
+      "status": "PASS",
+      "company": "maylynn_paint",
+      "bindings": [
+        {
+          "scene_id": "scene-01-observe",
+          "narrative_function": "ESTABLISH_CONTEXT",
+          "expected_temporal_stage": "observe",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+          "rendered_role": "hero_home_finish",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-02-read_material",
+          "narrative_function": "SHOW_DETAIL",
+          "expected_temporal_stage": "read_material",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/stock/maylynn_paint/material_detail.jpg",
+          "rendered_role": "material_detail",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-03-watch_hands",
+          "narrative_function": "SHOW_CRAFT",
+          "expected_temporal_stage": "watch_hands",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/stock/maylynn_paint/craft_handwork.jpg",
+          "rendered_role": "craft_handwork",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-04-imagine_change",
+          "narrative_function": "SHOW_TRANSFORMATION",
+          "expected_temporal_stage": "imagine_change",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/stock/maylynn_paint/trust_consultation.jpg",
+          "rendered_role": "trust_consultation",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-05-consult",
+          "narrative_function": "ENABLE_ACTION",
+          "expected_temporal_stage": "consult",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "",
+          "rendered_role": "typography",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        }
+      ],
+      "temporal_inversion_count": 0,
+      "semantic_mismatch_count": 0,
+      "hard_prerequisite_failures": 0
+    },
+    "nagi_no_mirai": {
+      "status": "PASS",
+      "company": "nagi_no_mirai",
+      "bindings": [
+        {
+          "scene_id": "scene-01-arrive",
+          "narrative_function": "CREATE_DESIRE",
+          "expected_temporal_stage": "arrive",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+          "rendered_role": "hero_treatment_space",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-02-settle",
+          "narrative_function": "CREATE_PAUSE",
+          "expected_temporal_stage": "settle",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/generated/nagi_no_mirai/sensory_detail.png",
+          "rendered_role": "sensory_detail",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-03-feel_care",
+          "narrative_function": "SHOW_EXPERIENCE",
+          "expected_temporal_stage": "feel_care",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/generated/nagi_no_mirai/welcome_human.png",
+          "rendered_role": "welcome_human",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-04-choose_time",
+          "narrative_function": "REDUCE_UNCERTAINTY",
+          "expected_temporal_stage": "choose_time",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/stock/nagi_no_mirai/hand_technique.jpg",
+          "rendered_role": "hand_technique",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-05-reserve",
+          "narrative_function": "ENABLE_ACTION",
+          "expected_temporal_stage": "reserve",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "",
+          "rendered_role": "typography",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        }
+      ],
+      "temporal_inversion_count": 0,
+      "semantic_mismatch_count": 0,
+      "hard_prerequisite_failures": 0
+    },
+    "watashi_no_daidokoro": {
+      "status": "PASS",
+      "company": "watashi_no_daidokoro",
+      "bindings": [
+        {
+          "scene_id": "scene-01-encounter",
+          "narrative_function": "CREATE_DESIRE",
+          "expected_temporal_stage": "encounter",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/generated/watashi_no_daidokoro/hero_shared_cooking.png",
+          "rendered_role": "hero_shared_cooking",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-02-touch",
+          "narrative_function": "SHOW_PARTICIPATION",
+          "expected_temporal_stage": "touch",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/stock/watashi_no_daidokoro/hands_in_action.jpg",
+          "rendered_role": "hands_in_action",
+          "actual_action_state": "active_hand_preparation",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-03-make",
+          "narrative_function": "SHOW_PROCESS",
+          "expected_temporal_stage": "make",
+          "expected_action": "ongoing_cooking",
+          "rendered_asset": "/assets/photography/stock/watashi_no_daidokoro/hands_in_action.jpg",
+          "rendered_role": "hands_in_action",
+          "actual_action_state": "active_hand_preparation",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-04-share",
+          "narrative_function": "SHOW_TRANSFORMATION",
+          "expected_temporal_stage": "share",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "/assets/photography/generated/watashi_no_daidokoro/finished_table.png",
+          "rendered_role": "finished_table",
+          "actual_action_state": "shared_result",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        },
+        {
+          "scene_id": "scene-05-join",
+          "narrative_function": "ENABLE_ACTION",
+          "expected_temporal_stage": "join",
+          "expected_action": "scene-specific evidence",
+          "rendered_asset": "",
+          "rendered_role": "typography",
+          "actual_action_state": "context",
+          "semantic_compatibility": true,
+          "temporal_compatibility": true,
+          "hard_prerequisite": true,
+          "status": "PASS"
+        }
+      ],
+      "temporal_inversion_count": 0,
+      "semantic_mismatch_count": 0,
+      "hard_prerequisite_failures": 0
+    }
+  }
+}

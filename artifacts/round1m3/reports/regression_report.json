@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "existing_tests": "97 PASS",
+  "new_truth_closure_tests": "PASS",
+  "synthetic": "PASS",
+  "mutation": "PASS",
+  "browser_qa": "27/27 PASS",
+  "manual_lp_edit": 0
+}
