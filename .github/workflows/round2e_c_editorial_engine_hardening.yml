@@ -73,6 +73,19 @@ jobs:
           for name, value in summary.get("editorial_contract", {}).get("gates", {}).items():
               if not value:
                   print(f"::error file=.github/workflows/round2e_c_editorial_engine_hardening.yml,line=1::Editorial gate failed: {name}")
+          browser_report = Path("artifacts/round2e_c/browser_qa.json")
+          if browser_report.is_file():
+              report = json.loads(browser_report.read_text(encoding="utf-8"))
+              for result in report.get("results", []):
+                  issues = result.get("line_issues", [])
+                  if issues:
+                      compact = json.dumps([{ "selector": x.get("selector"), "text": x.get("text"), "lines": x.get("lines"), "issue": x.get("issue") } for x in issues], ensure_ascii=True)
+                      print(f"::error file=.github/workflows/round2e_c_editorial_engine_hardening.yml,line=1::Browser line QA width={result.get('width')}: {compact[:1800]}")
+                  if result.get("horizontal_overflow_px", 0) > 1 or result.get("console_errors") or result.get("page_errors") or result.get("request_failures"):
+                      print(f"::error file=.github/workflows/round2e_c_editorial_engine_hardening.yml,line=1::Browser technical QA width={result.get('width')}: overflow={result.get('horizontal_overflow_px')}, console={result.get('console_errors')}, page={result.get('page_errors')}, request={result.get('request_failures')}")
+              zoom = report.get("zoom_200_proxy", {})
+              if zoom.get("line_issues") or zoom.get("status") == "FAIL":
+                  print(f"::error file=.github/workflows/round2e_c_editorial_engine_hardening.yml,line=1::Browser zoom QA: {json.dumps(zoom, ensure_ascii=True)[:1800]}")
           PY
           else
             echo "Round 2E-C summary.json was not produced." >> "$GITHUB_STEP_SUMMARY"
