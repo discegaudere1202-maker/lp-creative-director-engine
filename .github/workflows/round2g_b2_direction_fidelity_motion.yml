@@ -1,0 +1,85 @@
+name: Round 2G-B2 Direction Fidelity and Motion Reality
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round2g_b2_direction_fidelity_motion.py"
+      - "src/lp_engine/round2g_fidelity_gates.py"
+      - "tests/test_round2g_b2_fidelity_gates.py"
+      - "assets/photography/generated/maylynn_paint/round2g/**"
+      - ".github/workflows/round2g_b2_direction_fidelity_motion.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  maylynn-direction-fidelity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest playwright
+          playwright install --with-deps chromium
+      - name: Diff check
+        run: git diff --check
+      - name: Round 2G-B2 contract tests
+        run: pytest -q tests/test_round2g_b2_fidelity_gates.py tests/test_round2g_b_field_documentary.py tests/test_browser_qa_static.py tests/test_browser_smoke.py
+      - name: Generate Maylynn B2 output and measured QA package
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+          ROUND2G_B2_OUTPUT_ROOT: artifacts/round2g_b2
+        run: python scripts/run_round2g_b2_direction_fidelity_motion.py
+      - name: Assert Round 2G-B2 gates
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          root = Path('artifacts/round2g_b2')
+          summary = json.loads((root / 'summary.json').read_text(encoding='utf-8'))
+          assert summary['status'] == 'PASS', summary
+          assert summary['source_head'] == os.environ['EXPECTED_HEAD']
+          assert summary['machine_technical_ready'] == 'YES'
+          assert summary['creative_spec_fidelity'] == 'PASS'
+          assert summary['motion_reality'] == 'PASS'
+          assert summary['perceptual_delta_machine_evidence'] == 'PASS'
+          assert summary['shun_final_form_review_ready'] == 'YES'
+          assert summary['human_visual_review'] == 'REQUIRED'
+          assert summary['manual_lp_edit'] == 0
+          assert summary['nagi_no_mirai'] == 'NOT_STARTED'
+          assert summary['watashi_no_daidokoro'] == 'NOT_STARTED'
+          assert summary['one_million_yen_gate'] == 'NOT_ASSESSED'
+          browser = summary['qa']['browser']
+          assert browser['total'] == 9 and browser['pass'] == 9 and browser['fail'] == 0
+          assert browser['overflow_max'] == 0 and browser['console_errors'] == 0
+          assert browser['page_errors'] == 0 and browser['request_failures'] == 0
+          assert summary['qa']['fidelity']['status'] == 'PASS'
+          assert summary['qa']['public_labels']['leak_count'] == 0
+          assert summary['creative_delta']['pass_count'] >= 6
+          assert summary['captures']['total'] == 16
+          assert summary['motion']['status'] == 'PASS'
+          assert summary['motion']['ground_to_drone']['sample_count'] >= 10
+          assert summary['motion']['ground_to_drone']['intermediate_samples'] >= 2
+          for mode in ('desktop', 'mobile'):
+              assert 30 <= summary['motion'][mode]['duration_seconds'] <= 60
+          assert (root / 'motion_frames/ground_to_drone_contact_sheet.png').is_file()
+          assert (root / 'motion_frames/craft_contact_sheet.png').is_file()
+          assert (root / 'human_review_html/index.html').is_file()
+          print('Round 2G-B2 gates PASS')
+          PY
+      - name: Upload Round 2G-B2 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2g-b2-direction-fidelity-motion-${{ github.sha }}
+          path: artifacts/round2g_b2
+          if-no-files-found: error
+          retention-days: 14
