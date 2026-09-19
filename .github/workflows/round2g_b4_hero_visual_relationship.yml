@@ -1,0 +1,81 @@
+name: Round 2G-B4 Hero Visual Relationship Correction
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round2g_b2_direction_fidelity_motion.py"
+      - "scripts/run_round2g_b4_hero_visual_relationship.py"
+      - "src/lp_engine/visual_relationship.py"
+      - "tests/test_visual_relationship.py"
+      - ".github/workflows/round2g_b4_hero_visual_relationship.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  maylynn-hero-relationship:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project, browser and recording tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest playwright
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          playwright install --with-deps chromium
+      - name: Diff check
+        run: git diff --check
+      - name: Relationship and Round 2G regression tests
+        run: pytest -q tests/test_visual_relationship.py tests/test_round2g_b3_finish_gates.py tests/test_round2g_b2_fidelity_gates.py tests/test_round2g_b_field_documentary.py tests/test_browser_qa_static.py tests/test_browser_smoke.py
+      - name: Generate Round 2G-B4 package
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+          ROUND2G_B2_OUTPUT_ROOT: artifacts/round2g_b4
+        run: python scripts/run_round2g_b4_hero_visual_relationship.py
+      - name: Assert Round 2G-B4 gates
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          root = Path('artifacts/round2g_b4')
+          summary = json.loads((root / 'summary.json').read_text(encoding='utf-8'))
+          assert summary['status'] == 'PASS', summary
+          assert summary['starting_head'] == '2dabc7f840d09992d3f775b5a85c84de75c8fd5f'
+          assert summary['source_head'] == os.environ['EXPECTED_HEAD']
+          assert summary['final_maylynn_relation'] == 'SECONDARY_CONTEXT'
+          assert summary['visual_relationship_contract']['status'] == 'PASS'
+          assert summary['visual_relationship_contract']['contract']['semantic_relation'] == 'WHOLE_HOUSE_OBSERVATION → SURFACE_CONDITION'
+          assert summary['qa']['browser']['total'] == 9 and summary['qa']['browser']['pass'] == 9
+          assert summary['qa']['browser']['overflow_max'] == 0
+          assert summary['qa']['browser']['console_errors'] == 0
+          assert summary['qa']['browser']['page_errors'] == 0
+          assert summary['qa']['browser']['request_failures'] == 0
+          assert summary['captures']['total'] == 16
+          assert summary['machine_technical_ready'] == 'YES'
+          assert summary['manual_lp_edit'] == 0
+          assert summary['nagi_no_mirai'] == 'NOT_STARTED'
+          assert summary['watashi_no_daidokoro'] == 'NOT_STARTED'
+          assert summary['one_million_yen_gate'] == 'NOT_ASSESSED'
+          html = (root / 'maylynn_field_documentary/index.html').read_text(encoding='utf-8')
+          assert '<div class="hero-detail">' not in html
+          assert 'hero-secondary-context' in html
+          for path in ('hero_review/before_hero.png', 'hero_review/after_hero_1440.png', 'hero_review/after_hero_390.png', 'hero_review/visual_relationship_manifest.json', 'reports/visual_relationship_qa.json', 'reports/round2g_b4_regression.json', 'human_review_html/index.html'):
+              assert (root / path).is_file(), path
+          print('Round 2G-B4 gates PASS')
+          PY
+      - name: Upload Round 2G-B4 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2g-b4-hero-visual-relationship-${{ github.sha }}
+          path: artifacts/round2g_b4
+          if-no-files-found: error
+          retention-days: 14

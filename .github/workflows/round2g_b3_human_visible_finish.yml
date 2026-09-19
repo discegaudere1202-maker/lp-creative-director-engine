@@ -2,12 +2,6 @@ name: Round 2G-B3 Human-visible Finish Correction
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "scripts/run_round2g_b2_direction_fidelity_motion.py"
-      - "src/lp_engine/round2g_fidelity_gates.py"
-      - "tests/test_round2g_b3_finish_gates.py"
-      - ".github/workflows/round2g_b3_human_visible_finish.yml"
 
 permissions:
   contents: read
