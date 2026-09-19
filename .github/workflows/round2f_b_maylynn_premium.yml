@@ -1,0 +1,146 @@
+name: Round 2F-B Maylynn Premium Quality Uplift
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round2f_b_maylynn.py"
+      - "scripts/run_round2e_b_maylynn.py"
+      - "scripts/run_round2e_c2_rendered_line_hardening.py"
+      - "src/lp_engine/**"
+      - "assets/photography/generated/maylynn_paint/round2e/**"
+      - "assets/photography/generated/maylynn_paint/round2f/**"
+      - "assets/fonts/round2f/**"
+      - "tests/test_round2f_b_maylynn_premium.py"
+      - "tests/test_round2e_b_visual_motion.py"
+      - "tests/test_round2e_c_editorial_engine.py"
+      - "tests/test_round2e_c2_rendered_line_hardening.py"
+      - ".github/workflows/round2f_b_maylynn_premium.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  round2f-b-maylynn-premium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout pushed HEAD
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package, tests, and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest
+          python -m playwright install --with-deps chromium
+
+      - name: Run Round 2F-B and Round 2E-C2 regression tests
+        run: |
+          python -m pytest -q \
+            tests/test_round2f_b_maylynn_premium.py \
+            tests/test_round2e_b_visual_motion.py \
+            tests/test_round2e_c_editorial_engine.py \
+            tests/test_round2e_c2_rendered_line_hardening.py
+          python -m unittest \
+            tests.test_browser_qa_static \
+            tests.test_browser_smoke \
+            tests.test_photography_asset_preflight \
+            tests.test_batch \
+            tests.test_round2c_architecture \
+            tests.test_round2d_completion
+
+      - name: Verify repository diff contract
+        run: git diff --check
+
+      - name: Generate Maylynn Premium Quality Uplift artifact
+        id: generate
+        continue-on-error: true
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+        run: python scripts/run_round2f_b_maylynn.py
+
+      - name: Surface generated diagnostics
+        if: always()
+        run: |
+          if [ -f artifacts/round2f_b/summary.json ]; then
+            cat artifacts/round2f_b/summary.json >> "$GITHUB_STEP_SUMMARY"
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path("artifacts/round2f_b/summary.json").read_text(encoding="utf-8"))
+          for name, value in summary.get("qa", {}).get("gate_checks", {}).items():
+              if not value:
+                  print(f"::error file=scripts/run_round2f_b_maylynn.py,line=1::Round 2F-B gate failed: {name}")
+          PY
+          else
+            echo "Round 2F-B summary.json was not produced." >> "$GITHUB_STEP_SUMMARY"
+            find artifacts/round2f_b -maxdepth 3 -type f -print 2>/dev/null || true
+          fi
+
+      - name: Upload failure diagnostics
+        if: steps.generate.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2f-b-failure-diagnostics-${{ github.sha }}
+          path: artifacts/round2f_b
+          if-no-files-found: warn
+
+      - name: Stop on generation failure
+        if: steps.generate.outcome == 'failure'
+        run: exit 1
+
+      - name: Assert machine readiness, provenance, and review package
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          root = Path("artifacts/round2f_b")
+          summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
+          head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          assert summary["status"] == "PASS"
+          assert summary["source_head"] == head
+          assert summary["machine_technical_ready"] == "YES"
+          assert summary["creative_implementation_complete"] == "YES"
+          assert summary["shun_final_form_review_ready"] == "YES"
+          assert summary["manual_lp_edit"] == 0
+          assert summary["human_visual_review"] == "DEFERRED_TO_SHUN"
+          assert summary["one_million_yen_gate"] == "NOT_ASSESSED"
+          assert summary["nagi_no_mirai"] == "NOT_STARTED"
+          assert summary["watashi_no_daidokoro"] == "NOT_STARTED"
+          browser = summary["qa"]["browser"]
+          assert browser["status"] == "PASS"
+          assert browser["total"] == 9 and browser["pass"] == 9 and browser["fail"] == 0
+          assert browser["overflow_max"] == 0 and browser["console_errors"] == 0
+          assert browser["page_errors"] == 0 and browser["request_failures"] == 0
+          assert summary["qa"]["human_review_html"]["pass"] == 2
+          assert summary["qa"]["human_review_html"]["fail"] == 0
+          assert summary["qa"]["font"]["canonical"]["fallback"] == 0
+          assert summary["qa"]["font"]["self_contained"]["fallback"] == 0
+          assert summary["captures"] == {"full_pages": 2, "desktop_viewports": 9, "mobile_viewports": 5, "peaks": 3, "total": 19}
+          assert summary["motion_recording"]["status"] == "PASS"
+          assert summary["motion_recording"]["desktop"]["bytes"] > 0
+          assert summary["motion_recording"]["mobile"]["bytes"] > 0
+          capture_manifest = json.loads((root / "capture_manifest.json").read_text(encoding="utf-8"))
+          assert capture_manifest["status"] == "PASS"
+          assert len(capture_manifest["records"]) == 19
+          for record in capture_manifest["records"]:
+              assert (root / record["path"]).is_file(), record["path"]
+          assert (root / "motion/desktop_motion_review.webm").is_file()
+          assert (root / "motion/mobile_motion_review.webm").is_file()
+          assert summary["artifact"]["name"] == f"round2f-b-maylynn-premium-uplift-{head}"
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload Round 2F-B Maylynn artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2f-b-maylynn-premium-uplift-${{ github.sha }}
+          path: artifacts/round2f_b
+          if-no-files-found: error
