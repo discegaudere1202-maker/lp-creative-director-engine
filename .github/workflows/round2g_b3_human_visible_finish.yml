@@ -68,7 +68,7 @@ jobs:
           assert summary['human_visual_review'] == 'REQUIRED'
           assert summary['manual_lp_edit'] == 0
           assert summary['nagi_no_mirai'] == 'NOT_STARTED'
-          assert summary['watashi_no_mirai'] == 'NOT_STARTED'
+          assert summary['watashi_no_daidokoro'] == 'NOT_STARTED'
           assert summary['one_million_yen_gate'] == 'NOT_ASSESSED'
           for mode in ('desktop', 'mobile'):
               assert 45 <= summary['motion'][mode]['duration_seconds'] <= 60

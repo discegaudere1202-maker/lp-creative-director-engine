@@ -301,12 +301,15 @@ def extract_recording_contact_sheet(video: Path, timecode: dict[str, Any], outpu
     ffmpeg = _shutil.which("ffmpeg")
     if not ffmpeg or not video.is_file():
         return {"status":"FAIL","source":"final_recording","reason":"ffmpeg_or_recording_unavailable","frames":[],"first_final_similarity":None}
+    output.mkdir(parents=True, exist_ok=True)
     start = max(0.0, float(timecode["start_timestamp"]) - .25)
     duration = 1.8 if kind == "ground_to_drone" else 2.4
     frame_count = 16
-    frame_dir = output.parent / f"{kind}_recording_frames"; frame_dir.mkdir(parents=True, exist_ok=True)
+    frame_dir = output / f"{kind}_recording_frames"; frame_dir.mkdir(parents=True, exist_ok=True)
     for old in frame_dir.glob("*.png"): old.unlink()
-    command = [ffmpeg, "-hide_banner", "-loglevel", "error", "-y", "-ss", str(start), "-i", str(video), "-vf", f"fps={frame_count / duration:.4f}", "-frames:v", str(frame_count), str(frame_dir / "frame_%02d.png")]
+    # Seek after opening the Chromium WebM. This is slower than input seeking,
+    # but avoids codec/container-specific keyframe misses on GitHub runners.
+    command = [ffmpeg, "-hide_banner", "-loglevel", "error", "-y", "-i", str(video), "-ss", str(start), "-t", str(duration), "-vf", f"fps={frame_count / duration:.4f}", "-frames:v", str(frame_count), str(frame_dir / "frame_%02d.png")]
     result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
     frames = sorted(frame_dir.glob("frame_*.png"))
     if result.returncode or len(frames) < 12:
@@ -317,7 +320,7 @@ def extract_recording_contact_sheet(video: Path, timecode: dict[str, Any], outpu
     for frame in frames[1:-1]:
         image = Image.open(frame).convert("RGB").resize((240,160)); d_first = sum(ImageStat.Stat(ImageChops.difference(first,image)).mean) / 3 / 255; d_last = sum(ImageStat.Stat(ImageChops.difference(last,image)).mean) / 3 / 255; middle_similarity.append(round(max(0, 1 - min(d_first, d_last)), 4))
     timestamps = [round(start + index * duration / max(len(frames) - 1, 1), 3) for index in range(len(frames))]
-    sheet = output.parent / f"{kind}_recording_contact_sheet.png"; compose_timestamp_sheet(frames, timestamps, sheet)
+    sheet = output / f"{kind}_recording_contact_sheet.png"; compose_timestamp_sheet(frames, timestamps, sheet)
     evidence = recording_evidence_gate(similarity, len(frames), middle_similarity)
     return {**evidence,"source":"final_recording","video":str(video.relative_to(OUT)).replace("\\","/"),"frames":[str(item.relative_to(OUT)).replace("\\","/") for item in frames],"timestamps":timestamps,"contact_sheet":str(sheet.relative_to(OUT)).replace("\\","/")}
 
