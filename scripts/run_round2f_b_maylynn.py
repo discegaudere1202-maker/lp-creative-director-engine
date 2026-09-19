@@ -338,6 +338,29 @@ def self_contained_html(html_text: str, media: dict[str, dict[str, Any]]) -> str
     return pattern.sub(lambda match: replacements[match.group(0)], html_text)
 
 
+def write_self_contained_html(destination: Path, html_text: str, media: dict[str, dict[str, Any]]) -> None:
+    """Write the review HTML without retaining all embedded media in memory."""
+    replacements: dict[str, Path] = {}
+    for item in media.values():
+        local = item.get("local_asset_path")
+        if local:
+            path = ROOT / local
+            if path.is_file():
+                replacements["/" + local] = path
+    for filename, _weight in FONT_FILES.values():
+        path = FONT_ROOT / filename
+        if path.is_file():
+            replacements["/assets/fonts/round2f/" + filename] = path
+    pattern = re.compile("|".join(re.escape(value) for value in sorted(replacements, key=len, reverse=True)))
+    cursor = 0
+    with destination.open("w", encoding="utf-8") as output:
+        for match in pattern.finditer(html_text):
+            output.write(html_text[cursor:match.start()])
+            output.write(data_uri(replacements[match.group(0)]))
+            cursor = match.end()
+        output.write(html_text[cursor:])
+
+
 async def font_qa(url: str) -> dict[str, Any]:
     from playwright.async_api import async_playwright
 
@@ -640,7 +663,7 @@ def main() -> int:
     human = OUT / "human_review_html" / "index.html"
     canonical.write_text(html_text, encoding="utf-8")
     human.parent.mkdir(parents=True, exist_ok=True)
-    human.write_text(self_contained_html(html_text, media), encoding="utf-8")
+    write_self_contained_html(human, html_text, media)
     write(OUT / "asset_manifest.json", {"schema_version": "round2f_b_asset_manifest_v1", "company": "maylynn_paint", "assets": list(media.values())})
     write(OUT / "completion_manifest.json", completion)
     write(MAYLYNN_OUT / "asset_manifest.json", {"schema_version": "round2f_b_asset_manifest_v1", "company": "maylynn_paint", "assets": list(media.values())})
@@ -738,7 +761,8 @@ def main() -> int:
         artifact_includes.extend(["creative_direction_contract.json", "required_forbidden_manifest.json", "fidelity_report.json", "negative_fidelity_fixtures.json", "motion_review_manifest.json"])
     artifact = {"name": artifact_name, "source_head": source_head, "root": artifact_root, "includes": artifact_includes, "github_artifact": "UPLOADED_BY_WORKFLOW"}
     write(OUT / "artifact_manifest.json", artifact)
-    summary = {"schema_version": "round2f_b2_creative_fidelity_v1" if IS_B2 else "round2f_b_maylynn_premium_uplift_v1", "status": "PASS" if all_pass else "HOLD", "round": "2F-B2" if IS_B2 else "2F-B", "starting_head": "8147d3149efb929fbbda1bd766dd90d96edfbfd0" if IS_B2 else "573ab0ddb7f68b201e0e16b73ca43386b4e583c5", "source_head": source_head, "company": "maylynn_paint", "top_5": {"hero": "EDITORIAL OBSERVATION ASYMMETRIC", "prototype_language": "REMOVED_FROM_PUBLIC_UI", "peaks": ["V01", "V04", "V05"], "typography": "ACTUAL_BUNDLED_FONTS", "photography_motion": "SERIES_AND_SHARED_VELOCITY"}, "asset_changes": {"A07": "REDESIGNED", "A10": "REPLACED", "A12": "REDESIGNED", "A14": "REPLACED", "A01_A02_A03_A04_A05_A06_A08_A09_A11_A13_A15_A16": "KEEP_OR_RECROP_RECOLOR"}, "typography": {"actual_fonts": True, "fallback": 0 if gate_checks["font_determinism"] else 1, "manifest": "typography_manifest.json"}, "photography_series": photo_grade, "motion_system": motion, "screenshot_peaks": {"candidates": ["V01", "V04", "V05"], "machine_candidate_status": "PASS"}, "desktop": {"composition": "independent editorial composition", "full_capture": "captures/desktop_1440_full.png"}, "mobile": {"composition": "independent 390px composition", "full_capture": "captures/mobile_390_full.png"}, "general_engine_rules": {"no_visible_internal_architecture": True, "actual_font_asset_loading": True, "screenshot_peak_candidates": 3, "photography_page_consistency": True, "motion_shared_velocity": True, "proof_art_direction": True, "closing_narrative_closure": True, "mobile_independent_composition": True}, "round2e_c2_regression": {"rendered_line_qa": rendered_summary, "negative_fixtures": fixtures["status"], "browser_widths": DEFAULT_WIDTHS, "interaction": interactions["status"], "stale_capture": 0, "evidence_safety": completion["evidence_safety"]["status"]}, "qa": {"browser": browser, "human_review_html": html_browser, "font": {"canonical": fonts, "self_contained": html_fonts}, "internal_labels": internal, "editorial_contract": editorial_contract, "batch_1000": batch_1000, "creative_direction_fidelity": runtime_fidelity if IS_B2 else None, "gate_checks": gate_checks}, "captures": captures["counts"], "motion_recording": motion, "artifact": artifact, "machine_technical_ready": "YES" if all_pass else "NO", "creative_direction_fidelity": "PASS" if IS_B2 and runtime_fidelity["status"] == "PASS" and static_fidelity["status"] == "PASS" else ("NOT_APPLICABLE" if not IS_B2 else "FAIL"), "creative_implementation_complete": "YES" if all_pass else "NO", "shun_final_form_review_ready": "YES" if all_pass else "NO", "manual_lp_edit": 0, "human_visual_review": "DEFERRED_TO_SHUN", "one_million_yen_gate": "NOT_ASSESSED", "nagi_no_mirai": "NOT_STARTED", "watashi_no_daidokoro": "NOT_STARTED"}
+    fidelity_status = "PASS" if IS_B2 and runtime_fidelity["status"] == "PASS" and static_fidelity["status"] == "PASS" else ("NOT_APPLICABLE" if not IS_B2 else "FAIL")
+    summary = {"schema_version": "round2f_b2_creative_fidelity_v1" if IS_B2 else "round2f_b_maylynn_premium_uplift_v1", "status": "PASS" if all_pass else "HOLD", "round": "2F-B2" if IS_B2 else "2F-B", "starting_head": "8147d3149efb929fbbda1bd766dd90d96edfbfd0" if IS_B2 else "573ab0ddb7f68b201e0e16b73ca43386b4e583c5", "source_head": source_head, "company": "maylynn_paint", "top_5": {"hero": "EDITORIAL OBSERVATION ASYMMETRIC", "prototype_language": "REMOVED_FROM_PUBLIC_UI", "peaks": ["V01", "V04", "V05"], "typography": "ACTUAL_BUNDLED_FONTS", "photography_motion": "SERIES_AND_SHARED_VELOCITY"}, "asset_changes": {"A07": "REDESIGNED", "A10": "REPLACED", "A12": "REDESIGNED", "A14": "REPLACED", "A01_A02_A03_A04_A05_A06_A08_A09_A11_A13_A15_A16": "KEEP_OR_RECROP_RECOLOR"}, "typography": {"actual_fonts": True, "fallback": 0 if gate_checks["font_determinism"] else 1, "manifest": "typography_manifest.json"}, "photography_series": photo_grade, "motion_system": motion, "screenshot_peaks": {"candidates": ["V01", "V04", "V05"], "machine_candidate_status": "PASS"}, "desktop": {"composition": "independent editorial composition", "full_capture": "captures/desktop_1440_full.png"}, "mobile": {"composition": "independent 390px composition", "full_capture": "captures/mobile_390_full.png"}, "general_engine_rules": {"no_visible_internal_architecture": True, "actual_font_asset_loading": True, "screenshot_peak_candidates": 3, "photography_page_consistency": True, "motion_shared_velocity": True, "proof_art_direction": True, "closing_narrative_closure": True, "mobile_independent_composition": True}, "round2e_c2_regression": {"rendered_line_qa": rendered_summary, "negative_fixtures": fixtures["status"], "browser_widths": DEFAULT_WIDTHS, "interaction": interactions["status"], "stale_capture": 0, "evidence_safety": completion["evidence_safety"]["status"]}, "qa": {"browser": browser, "human_review_html": html_browser, "font": {"canonical": fonts, "self_contained": html_fonts}, "internal_labels": internal, "editorial_contract": editorial_contract, "batch_1000": batch_1000, "creative_direction_fidelity": runtime_fidelity if IS_B2 else None, "gate_checks": gate_checks}, "captures": captures["counts"], "motion_recording": motion, "artifact": artifact, "machine_technical_ready": "YES" if all_pass else "NO", "creative_direction_fidelity": {"status": fidelity_status, "report": "fidelity_report.json"} if IS_B2 else fidelity_status, "creative_implementation_complete": "YES" if all_pass else "NO", "shun_final_form_review_ready": "YES" if all_pass else "NO", "manual_lp_edit": 0, "human_visual_review": "DEFERRED_TO_SHUN", "one_million_yen_gate": "NOT_ASSESSED", "nagi_no_mirai": "NOT_STARTED", "watashi_no_daidokoro": "NOT_STARTED"}
     write(OUT / "summary.json", summary)
     print(json.dumps(summary, ensure_ascii=True, indent=2))
     return 0 if all_pass else 1
