@@ -48,6 +48,7 @@ jobs:
           root = Path('artifacts/round2g_b3')
           summary = json.loads((root / 'summary.json').read_text(encoding='utf-8'))
           assert summary['status'] == 'PASS', summary
+          assert summary['starting_head'] == '7dafbd6718eebe935d02c84ad845e8b625c9dda5'
           assert summary['source_head'] == os.environ['EXPECTED_HEAD']
           assert summary['v03_duplicate_copy']['desktop_mobile_duplicate_count'] == 0
           assert summary['qa']['text_collision']['duplicate_count'] == 0

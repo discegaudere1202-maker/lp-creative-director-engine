@@ -29,7 +29,7 @@ import run_round2e_c2_rendered_line_hardening as c2
 from lp_engine.browser_qa import DEFAULT_WIDTHS, run_browser_qa, run_rendered_line_qa
 from lp_engine.round2g_fidelity_gates import duplicate_text_gate, header_contrast_gate, motion_reality_gate, public_label_gate, recording_evidence_gate, screenshot_delta_gate, spec_actual_gate
 
-STARTING_HEAD = "952f63f9ace53192d187c778a80f55b0469ece9c"
+STARTING_HEAD = "7dafbd6718eebe935d02c84ad845e8b625c9dda5"
 OUT = Path(os.environ.get("ROUND2G_B2_OUTPUT_ROOT", str(ROOT / "artifacts" / "round2g_b2")))
 if not OUT.is_absolute():
     OUT = ROOT / OUT
