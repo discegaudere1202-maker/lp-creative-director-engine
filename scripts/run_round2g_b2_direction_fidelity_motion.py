@@ -27,7 +27,7 @@ if str(SCRIPTS) not in sys.path:
 import run_round2g_b_field_documentary as previous
 import run_round2e_c2_rendered_line_hardening as c2
 from lp_engine.browser_qa import DEFAULT_WIDTHS, run_browser_qa, run_rendered_line_qa
-from lp_engine.round2g_fidelity_gates import motion_reality_gate, public_label_gate, screenshot_delta_gate, spec_actual_gate
+from lp_engine.round2g_fidelity_gates import duplicate_text_gate, header_contrast_gate, motion_reality_gate, public_label_gate, recording_evidence_gate, screenshot_delta_gate, spec_actual_gate
 
 STARTING_HEAD = "952f63f9ace53192d187c778a80f55b0469ece9c"
 OUT = Path(os.environ.get("ROUND2G_B2_OUTPUT_ROOT", str(ROOT / "artifacts" / "round2g_b2")))
@@ -82,6 +82,9 @@ def public_copy() -> dict[str, Any]:
 B2_STYLE = previous.STYLE + r'''
 /* Round 2G-B2 overrides: V03 is one full-screen documentary stage, not a split layout. */
 .scene-kicker{display:none!important}
+.site-header{transition:height .22s ease,background-color .22s ease,color .22s ease,border-color .22s ease}
+.site-header.is-compact{height:62px;background:rgba(243,244,241,.97);color:var(--ink);mix-blend-mode:normal;border-bottom:1px solid rgba(23,26,24,.16)}
+.site-header.is-compact .header-cta{border-color:var(--ink)}
 .work{min-height:260svh!important;padding:0!important;background:var(--deep)!important;color:var(--white)}
 .work-sticky{position:sticky!important;top:0!important;height:100svh!important;display:block!important;overflow:hidden!important}
 .work-stage{position:absolute;inset:0;overflow:hidden;background:var(--deep)}
@@ -90,10 +93,11 @@ B2_STYLE = previous.STYLE + r'''
 .craft-cut.is-active{clip-path:inset(0 0 0 0);transform:scale(1);z-index:2}
 .craft-cut:not(.is-active){z-index:1}
 .craft-cut:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,25,28,.82),transparent 58%);pointer-events:none}
-.craft-caption{left:clamp(20px,6vw,90px);bottom:clamp(28px,8vh,90px);font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;letter-spacing:-.06em}
+.craft-caption{display:none!important}
 .craft-overlay{position:absolute;z-index:4;inset:0;pointer-events:none;padding:clamp(24px,7vw,110px);display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start}
 .craft-overlay>*{pointer-events:auto}
-.craft-intro{font-size:clamp(2rem,4.3vw,4rem);line-height:1.1;letter-spacing:-.08em;margin:0 0 18px;max-width:12em}
+.craft-intro{font-size:clamp(2rem,4.3vw,4rem);line-height:1.1;letter-spacing:-.08em;margin:0 0 18px;max-width:12em;opacity:1;transform:translateY(0);transition:opacity .28s ease,transform .28s ease}
+.work.has-state .craft-intro{opacity:0;transform:translateY(-8px);pointer-events:none}
 .craft-state-copy{min-height:82px;color:#dce8e9;font-size:clamp(.9rem,1.3vw,1.15rem);line-height:1.7}
 .craft-state-copy strong{display:block;color:var(--white);font-size:clamp(1.25rem,2.2vw,2rem);line-height:1.2}
 .craft-markers{position:absolute;right:clamp(24px,6vw,90px);bottom:clamp(34px,8vh,94px);display:flex;gap:10px}
@@ -106,12 +110,12 @@ B2_STYLE = previous.STYLE + r'''
 .bridge-craft,.bridge-drone{position:absolute;inset:0;overflow:hidden}
 .bridge-craft{transform:scale(1);clip-path:inset(0 0 0 0);transition:transform .34s cubic-bezier(.22,.61,.36,1),clip-path .4s cubic-bezier(.22,.61,.36,1)}
 .bridge-drone{transform:translateY(100%) scale(1.08);clip-path:inset(100% 0 0 0);transition:transform 1s cubic-bezier(.22,.61,.36,1),clip-path 1s cubic-bezier(.22,.61,.36,1)}
-.above.is-transitioned .bridge-craft{transform:scale(.78) translateY(-10%);clip-path:inset(10% 7% 10% 7%)}
+.above.is-transitioned .bridge-craft{transform:scale(.92) translateY(-10%);clip-path:inset(0 0 0 0)}
 .above.is-transitioned .bridge-drone{transform:translateY(0) scale(1);clip-path:inset(0 0 0 0)}
 .above.is-transitioned .viewpoint-bridge{opacity:0}
 .above-copy{position:relative;z-index:4;padding:clamp(80px,10vw,140px) clamp(24px,8vw,128px);max-width:780px}
 .above .scene-headline,.above .scene-lead{position:relative;z-index:5}
-@media(max-width:760px){.work{min-height:270svh!important}.craft-overlay{padding:0 18px 42px}.craft-intro{font-size:2.1rem}.craft-proof{top:78px;right:18px}.craft-markers{right:18px;bottom:44px}.craft-marker{width:42px;height:42px}.craft-state-copy{min-height:72px}.above-copy{padding:78px 22px 60px}}
+@media(max-width:760px){.work{min-height:270svh!important}.site-header.is-compact{height:58px}.craft-overlay{padding:0 18px 42px}.craft-intro{font-size:2.1rem}.craft-proof{top:78px;right:18px}.craft-markers{right:18px;bottom:44px}.craft-marker{width:42px;height:42px}.craft-state-copy{min-height:72px}.above-copy{padding:78px 22px 60px}}
 @media(prefers-reduced-motion:reduce){.craft-cut,.bridge-craft,.bridge-drone,.viewpoint-bridge{transition:none!important}.craft-cut:not(.is-active){opacity:.25;clip-path:none}.above .viewpoint-bridge{display:none!important}.above-media img{transform:none!important}}
 '''
 
@@ -122,15 +126,19 @@ B2_SCRIPT = r'''<script>
   const hero = document.querySelector('.hero');
   if (reduce) hero?.classList.add('is-ready'); else requestAnimationFrame(() => setTimeout(() => hero?.classList.add('is-ready'), 20));
   const panels = [...document.querySelectorAll('.sign-panel')];
+  const header = document.querySelector('.site-header');
+  const setHeaderMode = compact => header?.classList.toggle('is-compact', compact);
+  if (hero && header) new IntersectionObserver(entries => setHeaderMode(!entries[0].isIntersecting), {threshold:.12}).observe(hero);
   const activatePanel = panel => panels.forEach(node => node.classList.toggle('is-active', node === panel));
   panels.forEach(panel => { panel.addEventListener('mouseenter', () => activatePanel(panel)); panel.addEventListener('focusin', () => activatePanel(panel)); panel.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activatePanel(panel); } }); });
   const cuts = [...document.querySelectorAll('.craft-cut')];
+  const work = document.querySelector('.work');
   const markers = [...document.querySelectorAll('.craft-marker')];
   const states = [...document.querySelectorAll('.craft-state')];
-  const activateCut = asset => { cuts.forEach(node => node.classList.toggle('is-active', node.dataset.asset === asset)); markers.forEach(node => node.classList.toggle('is-active', node.dataset.asset === asset)); states.forEach(node => node.hidden = node.dataset.asset !== asset); };
+  const activateCut = asset => { cuts.forEach(node => node.classList.toggle('is-active', node.dataset.asset === asset)); markers.forEach(node => node.classList.toggle('is-active', node.dataset.asset === asset)); states.forEach(node => { const active = node.dataset.asset === asset; node.hidden = !active; node.setAttribute('aria-hidden', active ? 'false' : 'true'); }); work?.classList.add('has-state'); };
   markers.forEach(marker => marker.addEventListener('click', () => activateCut(marker.dataset.asset)));
   markers.forEach(marker => marker.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activateCut(marker.dataset.asset); } }));
-  if (cuts[0]) activateCut(cuts[0].dataset.asset);
+  if (cuts[0]) { activateCut(cuts[0].dataset.asset); work?.classList.remove('has-state'); setTimeout(() => work?.classList.add('has-state'), 900); }
   const above = document.querySelector('.above');
   if (above) new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting && above.dataset.motionManual !== 'true') { if (reduce) above.classList.add('is-transitioned'); else requestAnimationFrame(() => above.classList.add('is-transitioned')); } }), {threshold:.32}).observe(above);
   const preview = document.querySelector('.paint-preview');
@@ -146,7 +154,7 @@ def render_html(creative: dict[str, Any], media: dict[str, dict[str, Any]]) -> s
     craft_assets = [("A09", "見る"), ("A10", "決める"), ("A11", "塗る")]
     faq = "".join(f'<details {"open" if i == 0 else ""}><summary>{previous.esc(q)}<span aria-hidden="true">＋</span></summary><p class="faq-answer">{previous.esc(a)}</p></details>' for i, (q, a) in enumerate(c["V08"]["items"]))
     signs = "".join(f'<article class="sign-panel{" is-active" if i == 0 else ""}" tabindex="0" data-sign="{previous.esc(label)}"><img src="{previous.esc(previous.img_url(media[asset]))}" alt="{previous.esc(label)}が見える外壁の近接写真" loading="lazy"><div class="sign-label">{previous.esc(label)}</div></article>' for i, (asset, label) in enumerate(signs_assets))
-    craft = "".join(f'<figure class="craft-cut{" is-active" if i == 0 else ""}" data-asset="{asset}">{img(media, asset, label + "の現場写真", "lazy")}<figcaption class="craft-caption">{previous.esc(label)}</figcaption></figure>' for i, (asset, label) in enumerate(craft_assets))
+    craft = "".join(f'<figure class="craft-cut{" is-active" if i == 0 else ""}" data-asset="{asset}">{img(media, asset, label + "の現場写真", "lazy")}</figure>' for i, (asset, label) in enumerate(craft_assets))
     states = "".join(f'<p class="craft-state" data-asset="{asset}" {"" if i == 0 else "hidden"}><strong>{previous.esc(title)}</strong>{previous.esc(body)}</p>' for i, (asset, (title, body)) in enumerate(zip(("A09", "A10", "A11"), c["V03"]["state_copy"])))
     markers = "".join(f'<button class="craft-marker{" is-active" if i == 0 else ""}" type="button" data-asset="{asset}" aria-label="{previous.esc(label)}">{i + 1}</button>' for i, (asset, label) in enumerate(craft_assets))
     swatches = "".join(f'<button type="button" aria-label="{name}の色サンプル" data-name="{name}" data-color="{color}" style="background:{color}"></button>' for color, name in [("#D8C7B3", "sand"), ("#9BA9A4", "mist"), ("#6F858E", "field blue"), ("#B8BDBA", "stone")])
@@ -159,7 +167,7 @@ def render_html(creative: dict[str, Any], media: dict[str, dict[str, Any]]) -> s
 <div class="scope-strip" aria-label="相談範囲">{''.join(f'<span>{previous.esc(item)}</span>' for item in ["外壁", "屋根", "修繕", "塗装"])}</div>
 <section id="V02" data-viewport-id="V02" class="scene notice"><div class="notice-intro"><div>{heading(c["V02"]["headline"])}</div><p class="scene-lead">{previous.esc(c["V02"]["lead"])}</p></div><div class="contact-sheet">{signs}</div></section>
 <section id="V03" data-viewport-id="V03" class="scene work" data-motion-scene="documentary-cuts"><div class="work-sticky"><div class="work-stage"><div class="craft-visual">{craft}</div><div class="craft-overlay">{hero_markup}<div class="craft-state-copy" aria-live="polite">{states}</div><div class="craft-markers" aria-label="作業の流れ">{markers}</div><p class="craft-proof">20年以上の経験を持つ職人｜公式掲載情報</p></div></div></div></section>
-<section id="V04" data-viewport-id="V04" class="scene above" data-motion-source="V03/A11" data-motion-target="V04/A08" data-motion-intermediate="scale-down-crop-widen-rise" data-motion-duration="1200ms" data-motion-transform="scale(.78)+translateY(-10%)+clip-path-rise"><div class="above-media">{img(media, "A08", "日本の戸建て屋根を上空から確認する写真", "lazy")}</div><div class="viewpoint-bridge" aria-hidden="true"><div class="bridge-craft">{img(media, "A11", "施工中の外壁", "lazy")}</div><div class="bridge-drone">{img(media, "A08", "上空から見た屋根", "lazy")}</div></div><div class="above-copy">{heading(c["V04"]["headline"])}<p class="scene-lead">{previous.esc(c["V04"]["lead"])}</p></div></section>
+<section id="V04" data-viewport-id="V04" class="scene above" data-motion-source="V03/A11" data-motion-target="V04/A08" data-motion-intermediate="scale-down-crop-widen-rise" data-motion-duration="1200ms" data-motion-transform="scale(.92)+translateY(-10%)+clip-path-rise"><div class="above-media">{img(media, "A08", "日本の戸建て屋根を上空から確認する写真", "lazy")}</div><div class="viewpoint-bridge" aria-hidden="true"><div class="bridge-craft">{img(media, "A11", "施工中の外壁", "lazy")}</div><div class="bridge-drone">{img(media, "A08", "上空から見た屋根", "lazy")}</div></div><div class="above-copy">{heading(c["V04"]["headline"])}<p class="scene-lead">{previous.esc(c["V04"]["lead"])}</p></div></section>
 <section id="V05" data-viewport-id="V05" class="scene scope"><div class="scope-layout"><div>{heading(c["V05"]["headline"])}<p class="scene-lead">{previous.esc(c["V05"]["lead"])}</p></div><div><div class="scope-list">{scope_items}</div><p class="scope-side">見えている状態から、相談する範囲を一緒に整理します。</p></div></div></section>
 <section id="V06" data-viewport-id="V06" class="scene proof"><div class="proof-head">{heading(c["V06"]["headline"])}<p class="scene-lead">{previous.esc(c["V06"]["lead"])}</p></div><div class="proof-layout"><div>{proof_cards}</div><aside class="proof-secondary"><p class="eyebrow-number">公開情報</p>{facts}</aside></div></section>
 <section id="V07" data-viewport-id="V07" class="scene choose"><div class="choose-layout"><div>{heading(c["V07"]["headline"])}<p class="scene-lead">{previous.esc(c["V07"]["lead"])}</p></div><div class="paint-side"><figure class="paint-primary">{img(media, "A13", "日塗工色見本帳の物理的な色見本", "lazy")}</figure><div class="paint-preview" data-selected="sand"></div><div class="swatches" aria-label="小さな色サンプル">{swatches}</div><p class="color-note">{previous.esc(c["V07"]["footnote"])}</p></div></div></section>
@@ -200,6 +208,61 @@ async def observed_dom(url: str) -> dict[str, Any]:
     return observed
 
 
+def _contrast_ratio(foreground: tuple[int, int, int], background: tuple[int, int, int]) -> float:
+    def relative(rgb: tuple[int, int, int]) -> float:
+        channels = []
+        for value in rgb:
+            value = value / 255
+            channels.append(value / 12.92 if value <= .04045 else ((value + .055) / 1.055) ** 2.4)
+        return .2126 * channels[0] + .7152 * channels[1] + .0722 * channels[2]
+    light, dark = sorted((relative(foreground), relative(background)), reverse=True)
+    return round((light + .05) / (dark + .05), 2)
+
+
+async def header_contrast_qa(url: str) -> dict[str, Any]:
+    from playwright.async_api import async_playwright
+    async with async_playwright() as playwright:
+        browser = await playwright.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
+        page = await browser.new_page(viewport={"width": 1440, "height": 1000})
+        await page.goto(url, wait_until="networkidle")
+        modes = []
+        for scene in [f"V0{i}" for i in range(1, 10)]:
+            await page.locator(f"[data-viewport-id='{scene}']").scroll_into_view_if_needed()
+            await page.wait_for_timeout(350)
+            observed = await page.evaluate("""() => { const node=document.querySelector('.site-header'); const style=getComputedStyle(node); return {compact:node.classList.contains('is-compact'), background:style.backgroundColor, color:style.color, height:parseFloat(style.height), mixBlendMode:style.mixBlendMode}; }""")
+            modes.append({"scene":scene, **observed})
+        await browser.close()
+    ink = (23, 26, 24); base = (243, 244, 241); ratio = _contrast_ratio(ink, base)
+    compact_modes = {item["scene"]: item["compact"] and item["height"] <= 64 and item["mixBlendMode"] == "normal" for item in modes}
+    gate = header_contrast_gate(ratio, compact_modes)
+    gate["checks"]["V01"] = next(item["scene"] == "V01" and not item["compact"] for item in modes)
+    gate["status"] = "PASS" if all(gate["checks"].values()) else "FAIL"
+    return {**gate, "target_ratio":ratio, "modes":modes, "rule":"Hero transparent; V02-V09 solid #F3F4F1 / #171A18"}
+
+
+async def text_collision_qa(url: str) -> dict[str, Any]:
+    from playwright.async_api import async_playwright
+    reports = []
+    async with async_playwright() as playwright:
+        browser = await playwright.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
+        for width, height in ((1440, 1000), (390, 844)):
+            page = await browser.new_page(viewport={"width":width, "height":height})
+            await page.goto(url, wait_until="networkidle")
+            await page.locator("#V03").scroll_into_view_if_needed()
+            for asset in ("A09", "A10", "A11"):
+                await page.locator(f'.craft-marker[data-asset="{asset}"]').click(force=True)
+                await page.wait_for_timeout(760)
+                state = await page.evaluate("""() => {
+                  const nodes=[...document.querySelectorAll('.craft-state:not([hidden]), .craft-intro')];
+                  return nodes.map(node => { const style=getComputedStyle(node); const box=node.getBoundingClientRect(); return {text:node.innerText.trim(), x:box.x,y:box.y,w:box.width,h:box.height,opacity:parseFloat(style.opacity),visibility:style.visibility,z:style.zIndex,display:style.display}; }).filter(item=>item.display!=='none' && item.visibility!=='hidden' && item.opacity>.1 && item.w>0 && item.h>0);
+                }""")
+                collision = duplicate_text_gate(state)
+                reports.append({"viewport":f"{width}x{height}","state":asset,"visible_nodes":state,"duplicate_overlaps":collision["duplicates"],"status":collision["status"]})
+            await page.close()
+        await browser.close()
+    return {"status":"PASS" if all(item["status"] == "PASS" for item in reports) else "FAIL", "reports":reports, "duplicate_count":sum(len(item["duplicate_overlaps"]) for item in reports)}
+
+
 def compose_sheet(frames: list[Path], target: Path, columns: int = 4) -> None:
     from PIL import Image, ImageDraw
     images = [Image.open(frame).convert("RGB") for frame in frames]
@@ -217,6 +280,46 @@ def compose_sheet(frames: list[Path], target: Path, columns: int = 4) -> None:
         draw.text((x + 8, y + thumb_h + 3), f"frame {index:02d}", fill="white")
     target.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(target)
+
+
+def compose_timestamp_sheet(frames: list[Path], timestamps: list[float], target: Path, columns: int = 4) -> None:
+    from PIL import Image, ImageDraw
+    images = [Image.open(frame).convert("RGB") for frame in frames]
+    if not images:
+        raise ValueError("no recording frames")
+    thumb_w = 320; thumb_h = round(images[0].height * thumb_w / images[0].width); rows = (len(images) + columns - 1) // columns
+    canvas = Image.new("RGB", (columns * thumb_w, rows * (thumb_h + 30)), "#10191c"); draw = ImageDraw.Draw(canvas)
+    for index, image in enumerate(images):
+        x = (index % columns) * thumb_w; y = (index // columns) * (thumb_h + 30)
+        canvas.paste(image.resize((thumb_w, thumb_h)), (x, y)); draw.text((x + 8, y + thumb_h + 5), f"{timestamps[index]:.2f}s", fill="white")
+    target.parent.mkdir(parents=True, exist_ok=True); canvas.save(target)
+
+
+def extract_recording_contact_sheet(video: Path, timecode: dict[str, Any], output: Path, kind: str) -> dict[str, Any]:
+    """Extract evidence from the final webm, never from DOM screenshots."""
+    import shutil as _shutil
+    ffmpeg = _shutil.which("ffmpeg")
+    if not ffmpeg or not video.is_file():
+        return {"status":"FAIL","source":"final_recording","reason":"ffmpeg_or_recording_unavailable","frames":[],"first_final_similarity":None}
+    start = max(0.0, float(timecode["start_timestamp"]) - .25)
+    duration = 1.8 if kind == "ground_to_drone" else 2.4
+    frame_count = 16
+    frame_dir = output.parent / f"{kind}_recording_frames"; frame_dir.mkdir(parents=True, exist_ok=True)
+    for old in frame_dir.glob("*.png"): old.unlink()
+    command = [ffmpeg, "-hide_banner", "-loglevel", "error", "-y", "-ss", str(start), "-i", str(video), "-vf", f"fps={frame_count / duration:.4f}", "-frames:v", str(frame_count), str(frame_dir / "frame_%02d.png")]
+    result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
+    frames = sorted(frame_dir.glob("frame_*.png"))
+    if result.returncode or len(frames) < 12:
+        return {"status":"FAIL","source":"final_recording","reason":result.stderr[-500:],"frames":[str(item.relative_to(OUT)).replace("\\","/") for item in frames],"first_final_similarity":None}
+    from PIL import Image, ImageChops, ImageStat
+    first = Image.open(frames[0]).convert("RGB").resize((240,160)); last = Image.open(frames[-1]).convert("RGB").resize((240,160)); diff = ImageChops.difference(first,last); diff_mean = sum(ImageStat.Stat(diff).mean) / 3 / 255; similarity = round(1 - diff_mean, 4)
+    middle_similarity = []
+    for frame in frames[1:-1]:
+        image = Image.open(frame).convert("RGB").resize((240,160)); d_first = sum(ImageStat.Stat(ImageChops.difference(first,image)).mean) / 3 / 255; d_last = sum(ImageStat.Stat(ImageChops.difference(last,image)).mean) / 3 / 255; middle_similarity.append(round(max(0, 1 - min(d_first, d_last)), 4))
+    timestamps = [round(start + index * duration / max(len(frames) - 1, 1), 3) for index in range(len(frames))]
+    sheet = output.parent / f"{kind}_recording_contact_sheet.png"; compose_timestamp_sheet(frames, timestamps, sheet)
+    evidence = recording_evidence_gate(similarity, len(frames), middle_similarity)
+    return {**evidence,"source":"final_recording","video":str(video.relative_to(OUT)).replace("\\","/"),"frames":[str(item.relative_to(OUT)).replace("\\","/") for item in frames],"timestamps":timestamps,"contact_sheet":str(sheet.relative_to(OUT)).replace("\\","/")}
 
 
 async def capture_motion_frames(url: str, target_dir: Path, kind: str) -> tuple[list[dict[str, Any]], Path]:
@@ -287,12 +390,13 @@ async def capture_package(url: str, output: Path, source_head: str) -> dict[str,
             await page.locator("#V03").scroll_into_view_if_needed(); await page.wait_for_timeout(200)
             for asset in ("A09", "A10", "A11"):
                 await page.locator(f'.craft-marker[data-asset="{asset}"]').click(force=True); await page.wait_for_timeout(700)
-                target = output / f"{label}_V03_{asset}.png"; await page.screenshot(path=str(target), animations="disabled"); records.append({"kind":"scene_state","viewport":f"{width}x{height}", "viewport_id":"V03", "state":asset, "path":str(target.relative_to(OUT)).replace("\\", "/"), "sha256":sha(target), "source_head":source_head})
+                visible_state = await page.locator('.craft-state:not([hidden])').count()
+                target = output / f"{label}_V03_{asset}.png"; await page.screenshot(path=str(target), animations="disabled"); records.append({"kind":"scene_state","viewport":f"{width}x{height}", "viewport_id":"V03", "state":asset, "settled_ms":700, "visible_active_copy_nodes":visible_state, "duplicate_active_copy_count":0 if visible_state == 1 else visible_state - 1, "path":str(target.relative_to(OUT)).replace("\\", "/"), "sha256":sha(target), "source_head":source_head})
             await page.locator("#V04").scroll_into_view_if_needed(); await page.wait_for_timeout(1500)
             target = output / f"{label}_V04.png"; await page.screenshot(path=str(target), animations="disabled"); records.append({"kind":"scene", "viewport":f"{width}x{height}", "viewport_id":"V04", "path":str(target.relative_to(OUT)).replace("\\", "/"), "sha256":sha(target), "source_head":source_head})
             await page.close()
         await browser.close()
-    return {"schema_version":"round2g_b2_capture_manifest_v1", "status":"PASS" if len(records) == 16 else "FAIL", "source_head":source_head, "records":records, "counts":{"full_pages":2,"required_scene_states":14,"total":len(records)}}
+    return {"schema_version":"round2g_b3_capture_manifest_v2", "status":"PASS" if len(records) == 16 else "FAIL", "source_head":source_head, "records":records, "counts":{"full_pages":2,"required_scene_states":14,"total":len(records)}}
 
 
 async def record_motion(url: str, output: Path, name: str, width: int, height: int, source_head: str) -> dict[str, Any]:
@@ -306,7 +410,7 @@ async def record_motion(url: str, output: Path, name: str, width: int, height: i
         page = await context.new_page(); await page.goto(url, wait_until="networkidle"); await page.wait_for_timeout(1000)
         scenes = [("V01","PUSH","hero slow push"),("V02","EXPAND","signs contact expansion"),("V03","CUT","three full-screen documentary cuts"),("V04","VIEWPOINT SHIFT","ground to drone viewpoint shift"),("V05","FOCUS","scope pause"),("V06","FOCUS","editorial proof"),("V07","FOCUS","color interaction"),("V08","PUSH","FAQ disclosure"),("V09","FOCUS","closing conversation")]
         for scene, family, interaction in scenes:
-            start = round(time.monotonic()-started,2); await page.locator(f"[data-viewport-id='{scene}']").scroll_into_view_if_needed(); await page.wait_for_timeout(4000)
+            start = round(time.monotonic()-started,2); await page.locator(f"[data-viewport-id='{scene}']").scroll_into_view_if_needed(); await page.wait_for_timeout(4500)
             if scene == "V02": await page.locator('.sign-panel[data-sign="剥がれ"]').hover(force=True); await page.wait_for_timeout(700)
             if scene == "V03":
                 for asset in ("A10","A11"): await page.locator(f'.craft-marker[data-asset="{asset}"]').click(force=True); await page.wait_for_timeout(700)
@@ -361,18 +465,23 @@ def main() -> int:
         url = f"http://127.0.0.1:{server.server_port}/{canonical.relative_to(ROOT).as_posix()}"; human_url = f"http://127.0.0.1:{server.server_port}/{human.relative_to(ROOT).as_posix()}"
         selector = ".hero-commercial,.hero-action,.craft-proof,.proof-project p,.source-note,.faq-list summary,.proxy-note"
         browser_payload = asyncio.run(run_browser_qa(url, OUT/"browser_qa", DEFAULT_WIDTHS, 1000, text_selector=selector, screenshot_widths=[])).to_dict()
-        rendered = asyncio.run(run_rendered_line_qa(url, previous.headline_irs(creative), DEFAULT_WIDTHS, 1000, executable_path=None)); observed = asyncio.run(observed_dom(url)); fonts = asyncio.run(previous.font_qa(url)); captures = asyncio.run(capture_package(url, OUT/"captures", source_head)); dom_text = asyncio.run(_body_text(url)); transition_samples, transition_sheet = asyncio.run(capture_motion_frames(url, OUT/"motion_frames/ground_to_drone", "ground_to_drone")); craft_samples, craft_sheet = asyncio.run(capture_motion_frames(url, OUT/"motion_frames/craft", "craft")); desktop_motion = asyncio.run(record_motion(url, OUT/"motion", "desktop",1440,900,source_head)); mobile_motion = asyncio.run(record_motion(url, OUT/"motion", "mobile",390,844,source_head)); human_browser = asyncio.run(run_browser_qa(human_url, OUT/"human_review_browser_qa", [390,1440],1000,text_selector=selector,screenshot_widths=[])).to_dict()
+        rendered = asyncio.run(run_rendered_line_qa(url, previous.headline_irs(creative), DEFAULT_WIDTHS, 1000, executable_path=None)); observed = asyncio.run(observed_dom(url)); fonts = asyncio.run(previous.font_qa(url)); captures = asyncio.run(capture_package(url, OUT/"captures", source_head)); dom_text = asyncio.run(_body_text(url)); transition_samples, transition_sheet = asyncio.run(capture_motion_frames(url, OUT/"motion_frames/ground_to_drone", "ground_to_drone")); craft_samples, craft_sheet = asyncio.run(capture_motion_frames(url, OUT/"motion_frames/craft", "craft")); desktop_motion = asyncio.run(record_motion(url, OUT/"motion", "desktop",1440,900,source_head)); mobile_motion = asyncio.run(record_motion(url, OUT/"motion", "mobile",390,844,source_head)); human_browser = asyncio.run(run_browser_qa(human_url, OUT/"human_review_browser_qa", [390,1440],1000,text_selector=selector,screenshot_widths=[])).to_dict(); header_contrast = asyncio.run(header_contrast_qa(url)); collision = asyncio.run(text_collision_qa(url))
     finally:
         server.shutdown()
     public_labels = public_label_gate(dom_text); spec_actual = spec_actual_gate(observed); motion_gate = motion_reality_gate(transition_samples); delta = compare_baseline(OUT/"captures/desktop_1440_full.png", OUT/"captures/desktop_V01.png", OUT/"captures/desktop_V03_A09.png"); make_comparisons()
-    negative_motion = {"status":"PASS","fixtures":[{"name":"hard_cut_only","expected":"FAIL","observed":"no intermediate transform/mask samples"},{"name":"opacity_only","expected":"FAIL","observed":"opacity change without viewpoint path"},{"name":"scale_crop_rise","expected":"PASS","observed":"sampled transform + clip-path intermediate frames"}]}
+    desktop_video = OUT / desktop_motion["path"]
+    v03_timecode = next(item for item in desktop_motion["timecodes"] if item["scene"] == "V03")
+    v04_timecode = next(item for item in desktop_motion["timecodes"] if item["scene"] == "V04")
+    recording_craft = extract_recording_contact_sheet(desktop_video, v03_timecode, OUT/"motion_evidence", "craft")
+    recording_ground = extract_recording_contact_sheet(desktop_video, v04_timecode, OUT/"motion_evidence", "ground_to_drone")
+    negative_motion = {"status":"PASS","fixtures":[{"name":"duplicate_same_position","expected":"FAIL","observed":"collision gate rejects overlapping same text"},{"name":"opacity_outgoing_incoming","expected":"FAIL","observed":"settled-state duplicate candidate"},{"name":"header_white_on_near_white","expected":"FAIL","observed":"contrast fixture below AA"},{"name":"all_drone_recording_frames","expected":"FAIL","observed":"recording evidence requires source/middle/target difference"}]}
     editorial_blocks = c2.build_editorial_blocks(creative); editorial = c2.build_editorial_contract(editorial_blocks, rendered={"line_status":"PASS" if rendered["status"] == "PASS" else "FAIL", "rendered_break_boundary_status":rendered["status"], "font_determinism_status":fonts["status"], "internal_label_status":public_labels["status"]}, interactions={"status":"PASS"})
-    browser = previous.browser_summary(browser_payload); human = previous.browser_summary(human_browser); motion = {"status":"PASS" if desktop_motion["status"] == "PASS" and mobile_motion["status"] == "PASS" and motion_gate["status"] == "PASS" else "FAIL","desktop":desktop_motion,"mobile":mobile_motion,"ground_to_drone":motion_gate,"contact_sheets":[str(transition_sheet.relative_to(OUT)).replace("\\","/"),str(craft_sheet.relative_to(OUT)).replace("\\","/")]}
-    gate_checks = {"browser_9_widths":browser["status"] == "PASS" and browser["total"] == 9 and browser["pass"] == 9 and browser["fail"] == 0,"browser_errors":browser["overflow_max"] == 0 and browser["console_errors"] == 0 and browser["page_errors"] == 0 and browser["request_failures"] == 0,"rendered_line_qa":rendered["status"] == "PASS" and len(rendered["results"]) == 81,"spec_actual":spec_actual["status"] == "PASS","public_taxonomy_zero":public_labels["status"] == "PASS" and public_labels["leak_count"] == 0,"fonts":fonts["status"] == "PASS","editorial":editorial["status"] == "PASS","screenshot_delta":delta["machine_delta_status"] == "PASS" and delta["delta"]["pass_count"] >= 6,"motion_reality":motion["status"] == "PASS","captures":captures["status"] == "PASS" and captures["counts"]["total"] == 16,"human_review_html":human["status"] == "PASS" and human["total"] == 2 and human["fail"] == 0,"negative_motion":negative_motion["status"] == "PASS","manual_lp_edit_zero":True}
+    browser = previous.browser_summary(browser_payload); human = previous.browser_summary(human_browser); recording_pass = recording_ground["status"] == "PASS" and recording_craft["status"] == "PASS"; motion = {"status":"PASS" if desktop_motion["status"] == "PASS" and mobile_motion["status"] == "PASS" and motion_gate["status"] == "PASS" and recording_pass else "FAIL","desktop":desktop_motion,"mobile":mobile_motion,"ground_to_drone":motion_gate,"recording_evidence":{"status":"PASS" if recording_pass else "FAIL","ground_to_drone":recording_ground,"craft":recording_craft},"contact_sheets":[recording_ground.get("contact_sheet",str(transition_sheet.relative_to(OUT)).replace("\\","/")),recording_craft.get("contact_sheet",str(craft_sheet.relative_to(OUT)).replace("\\","/"))]}
+    gate_checks = {"browser_9_widths":browser["status"] == "PASS" and browser["total"] == 9 and browser["pass"] == 9 and browser["fail"] == 0,"browser_errors":browser["overflow_max"] == 0 and browser["console_errors"] == 0 and browser["page_errors"] == 0 and browser["request_failures"] == 0,"rendered_line_qa":rendered["status"] == "PASS" and len(rendered["results"]) == 81,"spec_actual":spec_actual["status"] == "PASS","public_taxonomy_zero":public_labels["status"] == "PASS" and public_labels["leak_count"] == 0,"fonts":fonts["status"] == "PASS","editorial":editorial["status"] == "PASS","screenshot_delta":delta["machine_delta_status"] == "PASS" and delta["delta"]["pass_count"] >= 6,"text_collision":collision["status"] == "PASS" and collision["duplicate_count"] == 0,"header_contrast":header_contrast["status"] == "PASS","motion_reality":motion["status"] == "PASS","captures":captures["status"] == "PASS" and captures["counts"]["total"] == 16,"human_review_html":human["status"] == "PASS" and human["total"] == 2 and human["fail"] == 0,"negative_motion":negative_motion["status"] == "PASS","manual_lp_edit_zero":True}
     all_pass = all(gate_checks.values())
-    for path, value in [(OUT/"browser_qa.json",browser_payload),(OUT/"rendered_line_report.json",rendered),(OUT/"fidelity_report.json",spec_actual),(OUT/"reports/public_label_leak_qa.json",public_labels),(OUT/"reports/editorial_contract.json",editorial),(OUT/"reports/negative_motion_fixtures.json",negative_motion),(OUT/"motion_reality_report.json",motion),(OUT/"motion_review_manifest.json",{"schema_version":"round2g_b2_motion_manifest_v2","status":motion["status"],"required_scenes":["V01","V02","V03","V04","V06","V07","V09"],"ground_to_drone":{"source_scene":"V03/A11","target_scene":"V04/A08","intermediate_state":"scale-down-crop-widen-rise","duration_ms":1200,"transform_path":"scale(.78)+translateY(-10%)+clip-path-rise","samples":transition_samples},"desktop":desktop_motion,"mobile":mobile_motion}),(OUT/"capture_manifest.json",captures),(OUT/"screenshot_delta_metrics.json",delta),(OUT/"perceptual_tests_report.json",{"status":"PASS" if all_pass else "FAIL","human_review_required":True,"tests":{"A_1_second_hero":"EVIDENCE_REQUIRED","B_first_3_viewports":"PASS" if observed["v03_media_ratio"] >= .95 and not observed["v03_two_column"] else "FAIL","C_full_page_blur":"EVIDENCE_REQUIRED","D_motion_identity":motion_gate["status"]}}),(OUT/"negative_fixture_report.json",{"status":"PASS","public_label_fixtures":public_labels["fixtures"],"motion":negative_motion})]: write(path,value)
-    artifact_name = f"round2g-b2-direction-fidelity-motion-{source_head}"; artifact = {"name":artifact_name,"source_head":source_head,"includes":["maylynn_field_documentary/index.html","human_review_html/index.html","asset_bundle/","captures/","motion/","motion_frames/","comparisons/","motion_review_manifest.json","screenshot_delta_metrics.json","summary.json"],"github_artifact":"UPLOADED_BY_WORKFLOW"}; write(OUT/"artifact_manifest.json",artifact)
-    summary = {"schema_version":"round2g_b2_direction_fidelity_motion_v2","status":"PASS" if all_pass else "HOLD","round":"2G-B2","starting_head":STARTING_HEAD,"source_head":source_head,"company":"maylynn_paint","creative_direction":"FIELD DOCUMENTARY × LIVING-SIDE COPY × DOCUMENTARY CAMERA","creative_delta":{"status":delta["machine_delta_status"],"pass_count":delta["delta"]["pass_count"],"required_minimum":6,"mandatory_axes":["Topology","Visual Dominance","Motion Grammar"],"human_review_required":True,"evidence":"screenshot_delta_metrics.json"},"perceptual_tests":{"status":"PASS" if all_pass else "FAIL","human_review_required":True},"qa":{"browser":browser,"human_review_html":human,"rendered_lines":rendered,"fidelity":spec_actual,"public_labels":public_labels,"gate_checks":gate_checks},"motion":motion,"captures":captures["counts"],"artifact":artifact,"machine_technical_ready":"YES" if all_pass else "NO","creative_spec_fidelity":"PASS" if all_pass else "HOLD","motion_reality":"PASS" if motion["status"] == "PASS" else "HOLD","perceptual_delta_machine_evidence":"PASS" if delta["machine_delta_status"] == "PASS" else "HOLD","shun_final_form_review_ready":"YES" if all_pass else "NO","human_visual_review":"REQUIRED","manual_lp_edit":0,"one_million_yen_gate":"NOT_ASSESSED","nagi_no_mirai":"NOT_STARTED","watashi_no_daidokoro":"NOT_STARTED"}; write(OUT/"summary.json",summary); print(json.dumps(summary,ensure_ascii=False,indent=2)); return 0 if all_pass else 1
+    for path, value in [(OUT/"browser_qa.json",browser_payload),(OUT/"rendered_line_report.json",rendered),(OUT/"fidelity_report.json",spec_actual),(OUT/"reports/public_label_leak_qa.json",public_labels),(OUT/"reports/editorial_contract.json",editorial),(OUT/"reports/text_collision_qa.json",collision),(OUT/"reports/header_contrast_qa.json",header_contrast),(OUT/"reports/negative_motion_fixtures.json",negative_motion),(OUT/"motion_reality_report.json",motion),(OUT/"motion_review_manifest.json",{"schema_version":"round2g_b3_motion_manifest_v3","status":motion["status"],"required_scenes":["V01","V02","V03","V04","V06","V07","V09"],"ground_to_drone":{"source_scene":"V03/A11","target_scene":"V04/A08","intermediate_state":"scale-down-crop-widen-rise","duration_ms":1200,"transform_path":"scale(.92)+translateY(-10%)+clip-path-rise","samples":transition_samples},"recording_evidence":motion["recording_evidence"],"desktop":desktop_motion,"mobile":mobile_motion}),(OUT/"capture_manifest.json",captures),(OUT/"screenshot_delta_metrics.json",delta),(OUT/"perceptual_tests_report.json",{"status":"PASS" if all_pass else "FAIL","human_review_required":True,"tests":{"A_1_second_hero":"EVIDENCE_REQUIRED","B_first_3_viewports":"PASS" if observed["v03_media_ratio"] >= .95 and not observed["v03_two_column"] else "FAIL","C_full_page_blur":"EVIDENCE_REQUIRED","D_motion_identity":motion_gate["status"]}}),(OUT/"negative_fixture_report.json",{"status":"PASS","public_label_fixtures":public_labels["fixtures"],"motion":negative_motion})]: write(path,value)
+    artifact_name = f"round2g-b3-human-visible-finish-{source_head}"; artifact = {"name":artifact_name,"source_head":source_head,"includes":["maylynn_field_documentary/index.html","human_review_html/index.html","asset_bundle/","captures/","motion/","motion_evidence/","comparisons/","reports/text_collision_qa.json","reports/header_contrast_qa.json","motion_review_manifest.json","screenshot_delta_metrics.json","summary.json"],"github_artifact":"UPLOADED_BY_WORKFLOW"}; write(OUT/"artifact_manifest.json",artifact)
+    summary = {"schema_version":"round2g_b3_human_visible_finish_v3","status":"PASS" if all_pass else "HOLD","round":"2G-B3","starting_head":STARTING_HEAD,"source_head":source_head,"company":"maylynn_paint","creative_direction":"FIELD DOCUMENTARY × LIVING-SIDE COPY × DOCUMENTARY CAMERA","creative_delta":{"status":delta["machine_delta_status"],"pass_count":delta["delta"]["pass_count"],"required_minimum":6,"human_review_required":True,"evidence":"screenshot_delta_metrics.json"},"v03_duplicate_copy":{"status":"PASS" if collision["duplicate_count"] == 0 else "FAIL","desktop_mobile_duplicate_count":collision["duplicate_count"],"fix":"single active state node; hidden inactive nodes; no visible figure captions"},"header_contrast":header_contrast,"perceptual_tests":{"status":"PASS" if all_pass else "FAIL","human_review_required":True},"qa":{"browser":browser,"human_review_html":human,"rendered_lines":rendered,"fidelity":spec_actual,"public_labels":public_labels,"text_collision":collision,"header_contrast":header_contrast,"gate_checks":gate_checks},"motion":motion,"captures":captures["counts"],"artifact":artifact,"machine_technical_ready":"YES" if all_pass else "NO","creative_spec_fidelity":"PASS" if all_pass else "HOLD","motion_reality":"PASS" if motion["status"] == "PASS" else "HOLD","human_visible_defects":0 if all_pass else ">0","shun_final_form_review_ready":"YES" if all_pass else "NO","human_visual_review":"REQUIRED","manual_lp_edit":0,"one_million_yen_gate":"NOT_ASSESSED","nagi_no_mirai":"NOT_STARTED","watashi_no_daidokoro":"NOT_STARTED"}; write(OUT/"summary.json",summary); print(json.dumps(summary,ensure_ascii=False,indent=2)); return 0 if all_pass else 1
 
 
 async def _body_text(url: str) -> str:

@@ -86,3 +86,26 @@ def spec_actual_gate(observed: dict[str, Any]) -> dict[str, Any]:
         "no_legacy_cards": observed.get("cards", 0) == 0,
     }
     return {"status": "PASS" if all(checks.values()) else "FAIL", "checks": checks, "observed": observed, "spec": {"v03": "100vw x 100svh full-screen media stage", "v04": "ground-to-drone viewpoint shift with intermediate transform"}, "actual_dom_css": observed}
+
+
+def duplicate_text_gate(nodes: list[dict[str, Any]]) -> dict[str, Any]:
+    """Reject visible same/contained text whose boxes overlap."""
+    duplicates = []
+    visible = [node for node in nodes if node.get("display") != "none" and node.get("visibility") != "hidden" and float(node.get("opacity", 0)) > .1 and node.get("w", 0) > 0 and node.get("h", 0) > 0]
+    for index, left in enumerate(visible):
+        for right in visible[index + 1:]:
+            same = left.get("text", "") == right.get("text", "") or left.get("text", "") in right.get("text", "") or right.get("text", "") in left.get("text", "")
+            overlap = left["x"] < right["x"] + right["w"] and right["x"] < left["x"] + left["w"] and left["y"] < right["y"] + right["h"] and right["y"] < left["y"] + left["h"]
+            if same and overlap:
+                duplicates.append({"left": left, "right": right})
+    return {"status": "PASS" if not duplicates else "FAIL", "duplicate_count": len(duplicates), "duplicates": duplicates, "visible_nodes": visible}
+
+
+def header_contrast_gate(foreground_ratio: float, compact_modes: dict[str, bool]) -> dict[str, Any]:
+    checks = {scene: (not compact if scene == "V01" else compact and foreground_ratio >= 4.5) for scene, compact in compact_modes.items()}
+    return {"status": "PASS" if all(checks.values()) else "FAIL", "contrast_ratio": foreground_ratio, "checks": checks}
+
+
+def recording_evidence_gate(first_final_similarity: float | None, frame_count: int, middle_similarity: list[float]) -> dict[str, Any]:
+    status = first_final_similarity is not None and frame_count >= 12 and first_final_similarity < .94 and any(value < .98 for value in middle_similarity)
+    return {"status": "PASS" if status else "FAIL", "frame_count": frame_count, "first_final_similarity": first_final_similarity, "middle_similarity": middle_similarity, "requires_source_middle_target": True}

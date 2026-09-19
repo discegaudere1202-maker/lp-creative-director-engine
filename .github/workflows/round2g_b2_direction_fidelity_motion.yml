@@ -2,17 +2,6 @@ name: Round 2G-B2 Direction Fidelity and Motion Reality
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "scripts/run_round2g_b2_direction_fidelity_motion.py"
-      - "src/lp_engine/round2g_fidelity_gates.py"
-      - "tests/test_round2g_b2_fidelity_gates.py"
-      - "artifacts/round2f_b2/captures/desktop_1440_full.png"
-      - "artifacts/round2f_b2/captures/desktop_V01.png"
-      - "artifacts/round2f_b2/captures/desktop_V03.png"
-      - "artifacts/round2f_b2/captures/desktop_V05_A09.png"
-      - "assets/photography/generated/maylynn_paint/round2g/**"
-      - ".github/workflows/round2g_b2_direction_fidelity_motion.yml"
 
 permissions:
   contents: read
