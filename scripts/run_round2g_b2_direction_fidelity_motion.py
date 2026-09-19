@@ -302,7 +302,8 @@ def extract_recording_contact_sheet(video: Path, timecode: dict[str, Any], outpu
     if not ffmpeg or not video.is_file():
         return {"status":"FAIL","source":"final_recording","reason":"ffmpeg_or_recording_unavailable","frames":[],"first_final_similarity":None}
     output.mkdir(parents=True, exist_ok=True)
-    start = max(0.0, float(timecode["start_timestamp"]) - .25)
+    evidence_timestamp = timecode.get("evidence_start_timestamp", timecode["start_timestamp"])
+    start = max(0.0, float(evidence_timestamp) - .25)
     duration = 1.8 if kind == "ground_to_drone" else 2.4
     frame_count = 16
     frame_dir = output / f"{kind}_recording_frames"; frame_dir.mkdir(parents=True, exist_ok=True)
@@ -414,11 +415,15 @@ async def record_motion(url: str, output: Path, name: str, width: int, height: i
         scenes = [("V01","PUSH","hero slow push"),("V02","EXPAND","signs contact expansion"),("V03","CUT","three full-screen documentary cuts"),("V04","VIEWPOINT SHIFT","ground to drone viewpoint shift"),("V05","FOCUS","scope pause"),("V06","FOCUS","editorial proof"),("V07","FOCUS","color interaction"),("V08","PUSH","FAQ disclosure"),("V09","FOCUS","closing conversation")]
         for scene, family, interaction in scenes:
             start = round(time.monotonic()-started,2); await page.locator(f"[data-viewport-id='{scene}']").scroll_into_view_if_needed(); await page.wait_for_timeout(4500)
+            evidence_start = round(time.monotonic()-started,2) if scene == "V03" else None
             if scene == "V02": await page.locator('.sign-panel[data-sign="剥がれ"]').hover(force=True); await page.wait_for_timeout(700)
             if scene == "V03":
                 for asset in ("A10","A11"): await page.locator(f'.craft-marker[data-asset="{asset}"]').click(force=True); await page.wait_for_timeout(700)
             if scene == "V07": await page.locator('.swatches button[data-name="field blue"]').click(force=True); await page.wait_for_timeout(500)
-            end = round(time.monotonic()-started,2); timecodes.append({"scene":scene,"start_timestamp":start,"end_timestamp":end,"motion_family":family,"interaction":interaction,"expected_visible_change":"documentary camera or state change"})
+            end = round(time.monotonic()-started,2); record = {"scene":scene,"start_timestamp":start,"end_timestamp":end,"motion_family":family,"interaction":interaction,"expected_visible_change":"documentary camera or state change"}
+            if evidence_start is not None:
+                record["evidence_start_timestamp"] = evidence_start
+            timecodes.append(record)
         await context.close(); source = await page.video.path() if page.video else None; await browser.close()
     destination = output / f"{name}_motion_review.webm"
     if not source or not Path(source).is_file(): raise FileNotFoundError(name)
