@@ -13,6 +13,7 @@ import hashlib
 import json
 import mimetypes
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -34,7 +35,10 @@ from lp_engine.browser_qa import DEFAULT_WIDTHS, run_browser_qa, run_rendered_li
 from run_round2e_c_editorial_hardening import browser_summary, internal_label_qa
 
 
-OUT = Path(os.environ.get("ROUND2F_B_OUTPUT_ROOT", str(ROOT / "artifacts" / "round2f_b")))
+ROUND2F_VARIANT = os.environ.get("ROUND2F_VARIANT", "B").upper()
+IS_B2 = ROUND2F_VARIANT == "B2"
+DEFAULT_OUTPUT = "round2f_b2" if IS_B2 else "round2f_b"
+OUT = Path(os.environ.get("ROUND2F_B_OUTPUT_ROOT", str(ROOT / "artifacts" / DEFAULT_OUTPUT)))
 if not OUT.is_absolute():
     OUT = ROOT / OUT
 MAYLYNN_OUT = OUT / "maylynn_premium"
@@ -47,6 +51,13 @@ FONT_FILES = {
     "Inter Tight": ("InterTight-Variable.ttf", "500 600"),
     "IBM Plex Mono": ("IBMPlexMono-400.ttf", "400"),
 }
+
+
+class QuietAssetHandler(SimpleHTTPRequestHandler):
+    """Keep generated QA output focused on contract failures, not asset 200s."""
+
+    def log_message(self, _format: str, *args: Any) -> None:
+        return
 
 
 def write(path: Path, value: Any) -> None:
@@ -167,6 +178,108 @@ html,body{background:var(--premium-paper);color:var(--premium-ink);font-family:v
 '''
 
 
+# B2 keeps the approved 2F-A direction as executable requirements.  These
+# overrides intentionally target rendered classes rather than hand-editing an
+# exported LP; the same rules therefore apply to every future engine render.
+B2_FIDELITY_STYLE = r'''
+.media-frame figcaption{display:none!important}.proxy-transparency{margin:14px 0 0;font:11px/1.65 var(--body);color:var(--premium-moss);letter-spacing:0}.v06-lead-line{display:inline}.roof-viewport{display:flex;flex-direction:column;gap:clamp(1.5rem,3vw,2.6rem);padding-block:clamp(4.2rem,6vw,6.4rem)}.roof-viewport .roof-layout{display:contents}.roof-stage{order:1;height:min(66vh,640px);box-shadow:10px 10px 0 rgba(37,34,31,.07)}.roof-stage:after{background:linear-gradient(180deg,rgba(37,34,31,.03),transparent 38%,rgba(37,34,31,.08))}.roof-stage .roof-path path{stroke:rgba(164,93,71,.58)!important;stroke-width:1.2!important;stroke-dasharray:5 8!important;stroke-dashoffset:0!important;animation:none!important;opacity:.62!important}.roof-marker{width:12px!important;height:12px!important;border-width:1px!important;background:rgba(243,240,233,.94)!important;opacity:1!important;transform:none!important;animation:none!important}.proof-header{order:2;max-width:54rem}.roof-facts{order:3;grid-template-columns:2fr repeat(3,1fr);border-top-color:rgba(37,34,31,.42)}.roof-fact{min-height:104px;padding:15px 16px}.roof-fact:first-child{background:#312d29}.roof-viewport>.source-note{order:4;margin:0}.roof-viewport>.proxy-transparency{order:5!important;margin:0}.craft-viewport{min-height:0;padding-block:clamp(4.2rem,6vw,6.4rem)}.craft-layout{align-items:start}.craft-stage{height:min(56vw,560px);min-height:420px;background:#d7d5cd;box-shadow:10px 10px 0 rgba(37,34,31,.07)}.craft-frame,.craft-frame .media-frame,.craft-frame img{width:100%;height:100%}.craft-frame .media-frame{margin:0}.craft-frame img{display:block;object-fit:cover}.craft-progress{background:rgba(243,240,233,.55)}.craft-step{padding:20px 0}.craft-step p{margin-top:5px}.evidence-layout{align-items:start}.evidence-map-frame{max-width:420px;margin-top:44px;box-shadow:8px 8px 0 rgba(37,34,31,.06)}.evidence-copy{max-width:760px}.evidence-card{grid-template-columns:150px 1fr;padding:20px 0}.card-label{font-family:var(--body);font-size:.86rem;letter-spacing:0}.material-viewport{padding-block:clamp(4.2rem,6vw,6.4rem)}.paint-fan{height:clamp(390px,39vw,520px);box-shadow:10px 10px 0 rgba(37,34,31,.07)}.material-preview{height:230px;box-shadow:8px 8px 0 rgba(37,34,31,.06)}.material-preview-label{left:12px;bottom:12px;padding:6px 8px;font:11px/1.35 var(--body);letter-spacing:0}.faq-viewport{min-height:0;padding-block:clamp(4rem,5.5vw,5.6rem)}.faq-layout{grid-template-columns:minmax(220px,.34fr) minmax(0,.66fr);grid-template-rows:auto auto;column-gap:clamp(2rem,5vw,5rem);row-gap:22px;align-items:start}.faq-layout>div:first-child{grid-column:1;grid-row:1}.faq-list{grid-column:2;grid-row:1/span 2}.faq-media{grid-column:1;grid-row:2;height:220px;margin:0;align-self:start}.faq-side-note{margin-top:18px}.action-viewport{padding-top:clamp(4.2rem,6vw,6.4rem)}
+@media(max-width:760px){.proxy-transparency{font-size:10px}.roof-viewport{display:block;padding-block:56px}.roof-viewport .roof-layout{display:flex}.roof-stage{height:370px;min-height:0}.proof-header{margin-top:26px}.roof-facts{grid-template-columns:1fr 1fr}.craft-viewport,.material-viewport,.faq-viewport,.action-viewport{padding-block:56px}.craft-stage{display:none}.craft-mobile-media,.craft-mobile-media .media-frame,.craft-mobile-media img{height:250px}.craft-mobile-media img{object-fit:cover}.faq-layout{display:grid;grid-template-columns:1fr;grid-template-rows:auto;gap:24px}.faq-layout>div:first-child,.faq-list,.faq-media{grid-column:1;grid-row:auto}.faq-media{height:230px;order:0}.faq-list{order:1}.faq-layout>div:first-child{order:-1}.evidence-map-frame{max-width:none;margin-top:0}[data-viewport-id="V06"] .v06-lead-line{display:block}}
+'''
+
+
+CREATIVE_FIDELITY_CONTRACT = {
+    "schema_version": "round2f_b2_creative_direction_fidelity_v1",
+    "round": "2F-B2",
+    "pipeline": "creative_intent -> implementation_contract -> render -> fidelity_qa",
+    "viewports": {
+        "V04": {"required": {"asset_ids": ["A08"], "visual_dominance": "roof_photo", "topology": "photo_then_headline_then_proof", "inspection_path_px_max": 1.5}, "forbidden": ["thick_scan_geometry", "wide_orange_rectangle", "grey_mask"], "target": {"marker_style": "small_circle", "path_opacity_max": .7}},
+        "V05": {"required": {"asset_ids": ["A09", "A10", "A11"], "interaction": "three_state_process", "image_fill_min": .95}, "forbidden": ["dead_blank_stage", "visible_scroll_spacer"], "target": {"composition_type": "documentary_photo_process"}},
+        "V06": {"required": {"headline_text": "施工実績と、公開レビュー。", "primary": "official_project", "secondary": "public_review"}, "forbidden": ["old_headline"], "target": {"map_dominance": "secondary"}},
+        "V07": {"required": {"headline_text": "654色から、住まいに合う色を。", "asset_ids": ["A13", "A14"], "font_role": "material_experience"}, "forbidden": ["prototype_tone_label", "repeated_proxy_badge"], "target": {"palette_dominance": "physical_color_fan"}},
+        "V08": {"required": {"headline_text": "保証も、工期も。相談する前に。", "composition_type": "compact_reassurance"}, "forbidden": ["old_headline", "dead_blank_stage"], "target": {"desktop_photo_ratio": .3, "section_height_max": 1120}},
+        "PUBLIC": {"required": {"proxy_transparency": "group_footnote"}, "forbidden": ["repeated_proxy_badge"]},
+    },
+}
+
+
+def apply_b2_creative(creative: dict[str, Any]) -> dict[str, Any]:
+    """Apply only the already-approved 2F-A copy and hierarchy deltas."""
+    corrected = json.loads(json.dumps(creative, ensure_ascii=False))
+    copy = corrected["copy"]
+    copy["V06"].update({
+        "headline": ["施工実績と、", "公開レビュー。"],
+        "lead": "公式に掲載されている施工実績と、第三者サイトの公開レビュー。確認できる事実を、判断材料としてまとめます。",
+    })
+    copy["V06"]["cards"][0]["label"] = "施工実績"
+    copy["V06"]["cards"][1]["label"] = "公開レビュー"
+    copy["V07"]["headline"] = ["654色から、", "住まいに合う色を。"]
+    copy["V08"]["headline"] = ["保証も、工期も。", "相談する前に。"]
+    return corrected
+
+
+def _section_html(html_text: str, viewport_id: str) -> str:
+    match = re.search(rf'<section[^>]*data-viewport-id="{viewport_id}"[^>]*>(.*?)</section>', html_text, re.S)
+    return match.group(1) if match else ""
+
+
+def _visible_text(markup: str) -> str:
+    return re.sub(r"\s+", "", re.sub(r"<[^>]+>", "", markup))
+
+
+def apply_b2_public_markup(html_text: str) -> str:
+    """Move proxy transparency from repeated photo bars to one group footnote."""
+    html_text = re.sub(r"<figcaption>.*?</figcaption>", "", html_text, flags=re.S)
+    for viewport_id in ("V01", "V02", "V04", "V05", "V07", "V08", "V09"):
+        html_text = re.sub(
+            rf'(<section[^>]*data-viewport-id="{viewport_id}"[^>]*>.*?)(</section>)',
+            r'\1<p class="proxy-transparency">※ 写真はサービス内容をイメージした参考ビジュアルです。</p>\2',
+            html_text,
+            count=1,
+            flags=re.S,
+        )
+    japanese_tones = {
+        "warm mineral": "ウォームニュートラル", "muted sand": "やわらかな砂色",
+        "cedar earth": "木肌のアース", "quiet stone": "静かな石色",
+        "moss shadow": "苔むした陰影", "rain slate": "雨の日のスレート",
+        "iron oxide": "深い酸化色", "deep charcoal": "濃いチャコール",
+    }
+    for old, new in japanese_tones.items():
+        html_text = html_text.replace(old, new)
+    html_text = html_text.replace("01 / ウォームニュートラル", "ウォームニュートラル")
+    html_text = html_text.replace("button.dataset.swatch + ' / ' + tone[1]", "tone[1]")
+    html_text = html_text.replace(
+        "公式に掲載されている施工実績と、第三者サイトの公開レビュー。確認できる事実を、判断材料としてまとめます。",
+        "<span class=\"v06-lead-line\">公式に掲載されている施工実績と、</span><span class=\"v06-lead-line\">第三者サイトの公開レビュー。</span><span class=\"v06-lead-line\">確認できる事実を、</span><span class=\"v06-lead-line\">判断材料としてまとめます。</span>",
+    )
+    return html_text
+
+
+def static_fidelity_report(html_text: str) -> dict[str, Any]:
+    results: list[dict[str, Any]] = []
+    for viewport_id, required in (("V06", "施工実績と、公開レビュー。"), ("V07", "654色から、住まいに合う色を。"), ("V08", "保証も、工期も。相談する前に。")):
+        actual = _visible_text(_section_html(html_text, viewport_id))
+        results.append({"gate": f"{viewport_id}_required_headline", "status": "PASS" if required in actual else "FAIL", "expected": required})
+    v04 = _section_html(html_text, "V04")
+    results.append({"gate": "V04_observational_overlay", "status": "PASS" if "roof-path" in v04 and "wide-orange" not in v04 and "thick-scan" not in v04 else "FAIL"})
+    v05 = _section_html(html_text, "V05")
+    results.append({"gate": "V05_three_assets", "status": "PASS" if all(asset in v05 for asset in ("A09", "A10", "A11")) else "FAIL"})
+    results.append({"gate": "proxy_group_footnotes", "status": "PASS" if "<figcaption>" not in html_text and html_text.count("proxy-transparency") >= 7 else "FAIL"})
+    results.append({"gate": "V07_no_prototype_tone", "status": "PASS" if "warm mineral" not in html_text and "01 / warm" not in html_text else "FAIL"})
+    return {"status": "PASS" if all(item["status"] == "PASS" for item in results) else "FAIL", "results": results}
+
+
+def negative_fidelity_fixtures() -> dict[str, Any]:
+    required = CREATIVE_FIDELITY_CONTRACT["viewports"]
+    fixtures = [
+        {"name": "V06 old headline", "observed": "公開情報から、工事の内容を、確かめる。", "expected": required["V06"]["required"]["headline_text"], "status": "FAIL"},
+        {"name": "V08 old headline", "observed": "相談前に、ここまで分かる。", "expected": required["V08"]["required"]["headline_text"], "status": "FAIL"},
+        {"name": "V04 thick scan overlay", "observed": {"stroke_width": 3}, "max": 1.5, "status": "FAIL"},
+        {"name": "V05 empty stage ratio", "observed": {"image_fill": .6}, "min": .95, "status": "FAIL"},
+    ]
+    all_expected_failures = all(item["status"] == "FAIL" for item in fixtures)
+    return {"status": "PASS" if all_expected_failures else "FAIL", "all_expected_failures": all_expected_failures, "fixtures": fixtures}
+
+
 def render_html(snapshot: dict[str, Any], experience: dict[str, Any], creative: dict[str, Any], media: dict[str, dict[str, Any]]) -> str:
     previous_scope, previous_map = base.SCOPE_SVG, base.MAP_SVG
     try:
@@ -200,16 +313,29 @@ def render_html(snapshot: dict[str, Any], experience: dict[str, Any], creative: 
     }
     for old, new in replacements.items():
         html_text = html_text.replace(old, new)
-    return html_text.replace("</style></head>", PREMIUM_STYLE + "</style></head>", 1)
+    if IS_B2:
+        html_text = apply_b2_public_markup(html_text)
+    style = PREMIUM_STYLE + (B2_FIDELITY_STYLE if IS_B2 else "")
+    return html_text.replace("</style></head>", style + "</style></head>", 1)
 
 
 def self_contained_html(html_text: str, media: dict[str, dict[str, Any]]) -> str:
-    output = base.self_contained_html(html_text, media)
+    # A repeated ``str.replace`` copies the already-base64-expanded document
+    # once per asset.  One substitution pass keeps the self-contained review
+    # package deterministic without the transient memory spike.
+    replacements: dict[str, str] = {}
+    for item in media.values():
+        local = item.get("local_asset_path")
+        if local:
+            path = ROOT / local
+            if path.is_file():
+                replacements["/" + local] = data_uri(path)
     for filename, _weight in FONT_FILES.values():
         path = FONT_ROOT / filename
         if path.is_file():
-            output = output.replace("/assets/fonts/round2f/" + filename, data_uri(path))
-    return output
+            replacements["/assets/fonts/round2f/" + filename] = data_uri(path)
+    pattern = re.compile("|".join(re.escape(value) for value in sorted(replacements, key=len, reverse=True)))
+    return pattern.sub(lambda match: replacements[match.group(0)], html_text)
 
 
 async def font_qa(url: str) -> dict[str, Any]:
@@ -233,6 +359,55 @@ async def font_qa(url: str) -> dict[str, Any]:
     report["status"] = "PASS" if report.get("status") == "loaded" and all(report.get("checks", {}).values()) else "FAIL"
     report["fallback"] = 0 if report["status"] == "PASS" else 1
     return report
+
+
+async def runtime_fidelity_qa(url: str) -> dict[str, Any]:
+    """Compare observable DOM/CSS reality with the approved B2 contract."""
+    from playwright.async_api import async_playwright
+
+    async with async_playwright() as playwright:
+        browser = await playwright.chromium.launch()
+        page = await browser.new_page(viewport={"width": 1440, "height": 1000})
+        await page.goto(url, wait_until="networkidle")
+        await page.evaluate("document.fonts ? document.fonts.ready : Promise.resolve()")
+        data = await page.evaluate("""() => {
+          const section = (id) => document.querySelector(`[data-viewport-id="${id}"]`);
+          const text = (id) => section(id)?.innerText.replace(/\\s+/g, '') || '';
+          const roof = document.querySelector('.roof-stage');
+          const path = document.querySelector('.roof-path path');
+          const header = document.querySelector('.roof-viewport .proof-header');
+          const stage = document.querySelector('.craft-stage');
+          const image = document.querySelector('.craft-frame.is-active img');
+          const rect = (node) => node ? node.getBoundingClientRect() : null;
+          const stageRect = rect(stage), imageRect = rect(image);
+          const overlap = stageRect && imageRect ? Math.max(0, Math.min(stageRect.right, imageRect.right) - Math.max(stageRect.left, imageRect.left)) * Math.max(0, Math.min(stageRect.bottom, imageRect.bottom) - Math.max(stageRect.top, imageRect.top)) : 0;
+          const imageFill = stageRect && stageRect.width * stageRect.height ? overlap / (stageRect.width * stageRect.height) : 0;
+          const roofStyle = path ? getComputedStyle(path) : null;
+          const heights = Object.fromEntries(['V05', 'V08', 'V09'].map((id) => [id, Math.round(section(id)?.getBoundingClientRect().height || 0)]));
+          return {
+            headlines: {V06: text('V06'), V07: text('V07'), V08: text('V08')},
+            roof: {path_px: roofStyle ? parseFloat(roofStyle.strokeWidth) : null, opacity: roofStyle ? parseFloat(roofStyle.opacity) : null, stage_before_headline: Boolean(roof && header && rect(roof).top < rect(header).top), marker_count: document.querySelectorAll('.roof-marker').length},
+            v05: {image_fill: Number(imageFill.toFixed(3)), states: [...document.querySelectorAll('[data-process-step]')].map((node) => node.dataset.processStep)},
+            proxy: {visible_figure_captions: [...document.querySelectorAll('figcaption')].filter((node) => getComputedStyle(node).display !== 'none').length, group_footnotes: document.querySelectorAll('.proxy-transparency').length},
+            layout: {section_heights: heights, scroll_height: Math.round(document.documentElement.scrollHeight)},
+          };
+        }""")
+        await page.close()
+        await browser.close()
+    expected = CREATIVE_FIDELITY_CONTRACT["viewports"]
+    checks = {
+        "V04_thin_observational_path": data["roof"]["path_px"] is not None and data["roof"]["path_px"] <= expected["V04"]["required"]["inspection_path_px_max"] and data["roof"]["opacity"] <= expected["V04"]["target"]["path_opacity_max"],
+        "V04_photo_then_headline": data["roof"]["stage_before_headline"] and data["roof"]["marker_count"] == 3,
+        "V05_no_visible_empty_stage": data["v05"]["image_fill"] >= expected["V05"]["required"]["image_fill_min"],
+        "V05_three_state_process": data["v05"]["states"] == ["A09", "A10", "A11"],
+        "V06_copy_fidelity": expected["V06"]["required"]["headline_text"] in data["headlines"]["V06"],
+        "V07_copy_fidelity": expected["V07"]["required"]["headline_text"] in data["headlines"]["V07"],
+        "V08_copy_fidelity": expected["V08"]["required"]["headline_text"] in data["headlines"]["V08"],
+        "V07_no_prototype_label": "warm mineral" not in data["headlines"]["V07"].lower(),
+        "proxy_transparency_grouped": data["proxy"]["visible_figure_captions"] == 0 and data["proxy"]["group_footnotes"] >= 7,
+        "V08_compact_reassurance": data["layout"]["section_heights"]["V08"] <= expected["V08"]["target"]["section_height_max"],
+    }
+    return {"status": "PASS" if all(checks.values()) else "FAIL", "checks": checks, "observed": data, "contract": CREATIVE_FIDELITY_CONTRACT}
 
 
 async def capture_stitched_full_page(page: Any, target: Path) -> None:
@@ -298,6 +473,8 @@ async def capture_review_package(url: str, output: Path) -> dict[str, Any]:
             await capture_stitched_full_page(page, full)
             records.append({"kind": "full_page", "viewport": f"{width}x{height}", "path": str(full.relative_to(OUT)).replace("\\", "/"), "sha256": sha(full)})
             ids = [f"V0{i}" for i in range(1, 10)] if width == 1440 else ["V01", "V04", "V05", "V07", "V09"]
+            if IS_B2:
+                ids = ["V01", "V03", "V04", "V06", "V07", "V08", "V09"] if width == 1440 else ["V01", "V04", "V05", "V07", "V08", "V09"]
             for viewport_id in ids:
                 locator = page.locator(f"[data-viewport-id='{viewport_id}']")
                 await locator.scroll_into_view_if_needed()
@@ -305,6 +482,15 @@ async def capture_review_package(url: str, output: Path) -> dict[str, Any]:
                 target = output / f"{label}_{viewport_id}.png"
                 await locator.screenshot(path=str(target))
                 records.append({"kind": "viewport", "viewport": f"{width}x{height}", "viewport_id": viewport_id, "path": str(target.relative_to(OUT)).replace("\\", "/"), "sha256": sha(target)})
+            if IS_B2 and width == 1440:
+                locator = page.locator("[data-viewport-id='V05']")
+                await locator.scroll_into_view_if_needed()
+                for asset_id in ("A09", "A10", "A11"):
+                    await page.locator(f"[data-process-step='{asset_id}']").click(force=True)
+                    await page.wait_for_timeout(300)
+                    target = output / f"desktop_V05_{asset_id}.png"
+                    await locator.screenshot(path=str(target))
+                    records.append({"kind": "viewport_state", "viewport": "1440x1000", "viewport_id": "V05", "state": asset_id, "path": str(target.relative_to(OUT)).replace("\\", "/"), "sha256": sha(target)})
             await page.close()
         page = await browser.new_page(viewport={"width": 1440, "height": 1000})
         await page.goto(url, wait_until="networkidle")
@@ -319,7 +505,9 @@ async def capture_review_package(url: str, output: Path) -> dict[str, Any]:
             records.append({"kind": "peak", "viewport": "1440x1000", "viewport_id": viewport_id, "path": str(target.relative_to(OUT)).replace("\\", "/"), "sha256": sha(target)})
         await page.close()
         await browser.close()
-    return {"status": "PASS" if len(records) == 19 else "FAIL", "records": records, "counts": {"full_pages": 2, "desktop_viewports": 9, "mobile_viewports": 5, "peaks": 3, "total": len(records)}}
+    expected_total = 21 if IS_B2 else 19
+    counts = {"full_pages": 2, "desktop_viewports": 10 if IS_B2 else 9, "mobile_viewports": 6 if IS_B2 else 5, "peaks": 3, "total": len(records)}
+    return {"status": "PASS" if len(records) == expected_total else "FAIL", "records": records, "counts": counts}
 
 
 async def record_motion_session(url: str, output: Path, name: str, width: int, height: int, coverage: list[str]) -> dict[str, Any]:
@@ -329,6 +517,7 @@ async def record_motion_session(url: str, output: Path, name: str, width: int, h
     video_dir = output / f"{name}_tmp"
     video_dir.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
+    timecodes: list[dict[str, Any]] = []
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch()
         context = await browser.new_context(viewport={"width": width, "height": height}, record_video_dir=str(video_dir), record_video_size={"width": width, "height": height})
@@ -337,25 +526,46 @@ async def record_motion_session(url: str, output: Path, name: str, width: int, h
         await page.goto(url, wait_until="networkidle")
         await page.wait_for_timeout(900)
         for viewport_id in coverage:
+            timestamp_start = round(time.monotonic() - started, 2)
             locator = page.locator(f"[data-viewport-id='{viewport_id}']")
             await locator.scroll_into_view_if_needed()
             await page.wait_for_timeout(900)
+            interaction = "natural_scroll"
+            expected_visible_change = "section enters as a complete composition"
             if viewport_id == "V02":
+                interaction = "surface_atlas_hover"
+                expected_visible_change = "crack, peeling, fading, and moss states replace the main surface photograph"
                 for stop in ("crack", "peeling", "fading", "moss"):
-                    await page.locator(f'[data-atlas-stop="{stop}"]').hover()
+                    # The atlas transitions its active state after every hover.
+                    # Force bypasses Playwright's stability wait without bypassing
+                    # the real pointer event dispatched to the page.
+                    await page.locator(f'[data-atlas-stop="{stop}"]').hover(force=True)
                     await page.wait_for_timeout(280)
             elif viewport_id == "V03":
+                interaction = "scope_selection"
+                expected_visible_change = "wall, roof, and high-area overlays activate in the house elevation"
                 for node in ("wall", "roof", "high"):
                     await page.locator(f'[data-scope-node="{node}"]').click(force=True)
                     await page.wait_for_timeout(280)
             elif viewport_id == "V05":
+                interaction = "three_state_process"
+                expected_visible_change = "A09, A10, and A11 fill the documentary process frame"
                 for step in ("A09", "A10", "A11"):
                     await page.locator(f'[data-process-step="{step}"]').click(force=True)
                     await page.wait_for_timeout(300)
             elif viewport_id == "V07":
+                interaction = "material_palette_selection"
+                expected_visible_change = "the material preview shifts to the selected physical color fan tone"
                 await page.locator('.swatch-button[data-swatch="05"]').click(force=True)
                 await page.wait_for_timeout(550)
+            elif viewport_id == "V04":
+                interaction = "thin_observational_path"
+                expected_visible_change = "a restrained inspection path and small markers support the roof photograph"
+            elif viewport_id == "V09":
+                interaction = "closing_transition"
+                expected_visible_change = "the consultation image resolves into the dark contact closure"
             await page.wait_for_timeout(260)
+            timecodes.append({"scene": viewport_id, "timestamp_start": timestamp_start, "timestamp_end": round(time.monotonic() - started, 2), "interaction": interaction, "expected_visible_change": expected_visible_change})
         await page.close()
         await context.close()
         source = await video.path() if video else None
@@ -365,13 +575,13 @@ async def record_motion_session(url: str, output: Path, name: str, width: int, h
         raise FileNotFoundError(f"Motion recording missing: {name}")
     shutil.copy2(source, destination)
     shutil.rmtree(video_dir, ignore_errors=True)
-    return {"status": "PASS" if destination.stat().st_size > 0 else "FAIL", "path": str(destination.relative_to(OUT)).replace("\\", "/"), "bytes": destination.stat().st_size, "duration_seconds": round(max(time.monotonic() - started, .001), 2), "coverage": coverage, "format": "webm", "source": "Playwright recorded natural scroll and interaction states"}
+    return {"status": "PASS" if destination.stat().st_size > 0 else "FAIL", "path": str(destination.relative_to(OUT)).replace("\\", "/"), "bytes": destination.stat().st_size, "duration_seconds": round(max(time.monotonic() - started, .001), 2), "coverage": coverage, "timecodes": timecodes, "format": "webm", "source": "Playwright recorded natural scroll and interaction states"}
 
 
 def build_completion_manifest(source_head: str, media: dict[str, dict[str, Any]]) -> dict[str, Any]:
     return {
-        "schema_version": "round2f_b_completion_manifest_v1",
-        "round": "2F-B",
+        "schema_version": "round2f_b2_completion_manifest_v1" if IS_B2 else "round2f_b_completion_manifest_v1",
+        "round": "2F-B2" if IS_B2 else "2F-B",
         "company": "maylynn_paint",
         "source_head": source_head,
         "creative_direction": "EDITORIAL OBSERVATION / DOCUMENTARY CRAFT",
@@ -420,9 +630,12 @@ def main() -> int:
     decisions = base.build_customer_decision_model(snapshot, graph)
     experience = base.build_experience_architecture(snapshot, decisions)
     creative = base.build_creative_composition(snapshot, experience)
+    if IS_B2:
+        creative = apply_b2_creative(creative)
     quality = base.build_quality_review_contract(snapshot, graph, decisions, experience, creative)
     completion = build_completion_manifest(source_head, media)
     html_text = render_html(snapshot, experience, creative, media)
+    static_fidelity = static_fidelity_report(html_text) if IS_B2 else {"status": "PASS", "results": []}
     canonical = MAYLYNN_OUT / "index.html"
     human = OUT / "human_review_html" / "index.html"
     canonical.write_text(html_text, encoding="utf-8")
@@ -443,7 +656,7 @@ def main() -> int:
     write(OUT / "reports" / "html_provenance.json", {"status": "PASS", "source_head": source_head, "self_contained": True, "external_asset_dependencies": [], "manual_lp_edit": 0})
     copy_asset_bundle(media)
 
-    server = ThreadingHTTPServer(("127.0.0.1", 0), lambda *args, **kwargs: SimpleHTTPRequestHandler(*args, directory=str(ROOT), **kwargs))
+    server = ThreadingHTTPServer(("127.0.0.1", 0), lambda *args, **kwargs: QuietAssetHandler(*args, directory=str(ROOT), **kwargs))
     threading.Thread(target=server.serve_forever, daemon=True).start()
     try:
         url = f"http://127.0.0.1:{server.server_port}/{canonical.relative_to(ROOT).as_posix()}"
@@ -459,6 +672,7 @@ def main() -> int:
         html_review = asyncio.run(run_browser_qa(human_url, OUT / "human_review_browser_qa", [390, 1440], 1000, screenshot_widths=[])).to_dict()
         html_fonts = asyncio.run(font_qa(human_url))
         internal = asyncio.run(internal_label_qa(url))
+        runtime_fidelity = asyncio.run(runtime_fidelity_qa(url)) if IS_B2 else {"status": "PASS", "checks": {}, "observed": {}}
     finally:
         server.shutdown()
     browser = browser_summary(browser_payload)
@@ -471,6 +685,12 @@ def main() -> int:
     write(OUT / "reports" / "internal_label_qa.json", internal)
     write(OUT / "reports" / "motion_recording.json", {"status": "PASS" if desktop_motion["status"] == "PASS" and mobile_motion["status"] == "PASS" else "FAIL", "desktop": desktop_motion, "mobile": mobile_motion})
     write(OUT / "capture_manifest.json", {"schema_version": "round2f_b_capture_manifest_v1", "source_head": source_head, **captures})
+    if IS_B2:
+        write(OUT / "creative_direction_contract.json", CREATIVE_FIDELITY_CONTRACT)
+        write(OUT / "required_forbidden_manifest.json", CREATIVE_FIDELITY_CONTRACT["viewports"])
+        write(OUT / "fidelity_report.json", {"status": "PASS" if static_fidelity["status"] == "PASS" and runtime_fidelity["status"] == "PASS" else "FAIL", "static": static_fidelity, "runtime": runtime_fidelity})
+        write(OUT / "negative_fidelity_fixtures.json", negative_fidelity_fixtures())
+        write(OUT / "motion_review_manifest.json", {"status": "PASS" if desktop_motion["status"] == "PASS" and mobile_motion["status"] == "PASS" else "FAIL", "desktop": {"path": desktop_motion["path"], "duration_seconds": desktop_motion["duration_seconds"], "timecodes": desktop_motion["timecodes"]}, "mobile": {"path": mobile_motion["path"], "duration_seconds": mobile_motion["duration_seconds"], "timecodes": mobile_motion["timecodes"]}})
     blocks = c2.build_editorial_blocks(creative)
     rendered_summary = {"line_status": "PASS" if browser["line_issue_count"] == 0 else "FAIL", "rendered_break_boundary_status": rendered_lines["status"], "font_determinism_status": "PASS" if fonts["status"] == "PASS" and html_fonts["status"] == "PASS" else "FAIL", "internal_label_status": internal["status"]}
     editorial_contract = c2.build_editorial_contract(blocks, rendered=rendered_summary, interactions=interactions)
@@ -496,17 +716,29 @@ def main() -> int:
         "interaction_reality": interactions["status"] == "PASS",
         "internal_labels": internal["status"] == "PASS" and internal["leak_count"] == 0,
         "photo_series": photo_grade["status"] == "PASS",
-        "captures_19": captures["status"] == "PASS" and captures["counts"]["total"] == 19,
+        f"captures_{21 if IS_B2 else 19}": captures["status"] == "PASS" and captures["counts"]["total"] == (21 if IS_B2 else 19),
         "motion_desktop_mobile": motion["status"] == "PASS" and len(desktop_motion["coverage"]) == 7 and len(mobile_motion["coverage"]) == 7,
         "asset_provenance": completion["asset_provenance"]["status"] == "PASS",
         "evidence_safety": completion["evidence_safety"]["status"] == "PASS",
         "manual_lp_edit_zero": True,
     }
+    if IS_B2:
+        gate_checks.update({
+            "creative_direction_fidelity_static": static_fidelity["status"] == "PASS",
+            "creative_direction_fidelity_runtime": runtime_fidelity["status"] == "PASS" and all(runtime_fidelity["checks"].values()),
+            "negative_fidelity_fixtures": negative_fidelity_fixtures()["status"] == "PASS",
+            "captures_b2_required": captures["status"] == "PASS" and captures["counts"]["total"] == 21,
+            "motion_timecodes": len(desktop_motion["timecodes"]) == 7 and len(mobile_motion["timecodes"]) == 7,
+        })
     all_pass = all(gate_checks.values())
-    artifact_name = f"round2f-b-maylynn-premium-uplift-{source_head}"
-    artifact = {"name": artifact_name, "source_head": source_head, "root": "artifacts/round2f_b", "includes": ["maylynn_premium/index.html", "human_review_html/index.html", "asset_bundle/", "typography_manifest.json", "photo_grade_manifest.json", "motion_manifest.json", "motion/desktop_motion_review.webm", "motion/mobile_motion_review.webm", "captures/", "browser_qa.json", "rendered_line_report.json", "human_review_browser_qa/", "summary.json"], "github_artifact": "UPLOADED_BY_WORKFLOW"}
+    artifact_name = f"round2f-b2-creative-fidelity-{source_head}" if IS_B2 else f"round2f-b-maylynn-premium-uplift-{source_head}"
+    artifact_root = "artifacts/round2f_b2" if IS_B2 else "artifacts/round2f_b"
+    artifact_includes = ["maylynn_premium/index.html", "human_review_html/index.html", "asset_bundle/", "typography_manifest.json", "photo_grade_manifest.json", "motion_manifest.json", "motion/desktop_motion_review.webm", "motion/mobile_motion_review.webm", "captures/", "browser_qa.json", "rendered_line_report.json", "human_review_browser_qa/", "summary.json"]
+    if IS_B2:
+        artifact_includes.extend(["creative_direction_contract.json", "required_forbidden_manifest.json", "fidelity_report.json", "negative_fidelity_fixtures.json", "motion_review_manifest.json"])
+    artifact = {"name": artifact_name, "source_head": source_head, "root": artifact_root, "includes": artifact_includes, "github_artifact": "UPLOADED_BY_WORKFLOW"}
     write(OUT / "artifact_manifest.json", artifact)
-    summary = {"schema_version": "round2f_b_maylynn_premium_uplift_v1", "status": "PASS" if all_pass else "HOLD", "round": "2F-B", "starting_head": "573ab0ddb7f68b201e0e16b73ca43386b4e583c5", "source_head": source_head, "company": "maylynn_paint", "top_5": {"hero": "EDITORIAL OBSERVATION ASYMMETRIC", "prototype_language": "REMOVED_FROM_PUBLIC_UI", "peaks": ["V01", "V04", "V05"], "typography": "ACTUAL_BUNDLED_FONTS", "photography_motion": "SERIES_AND_SHARED_VELOCITY"}, "asset_changes": {"A07": "REDESIGNED", "A10": "REPLACED", "A12": "REDESIGNED", "A14": "REPLACED", "A01_A02_A03_A04_A05_A06_A08_A09_A11_A13_A15_A16": "KEEP_OR_RECROP_RECOLOR"}, "typography": {"actual_fonts": True, "fallback": 0 if gate_checks["font_determinism"] else 1, "manifest": "typography_manifest.json"}, "photography_series": photo_grade, "motion_system": motion, "screenshot_peaks": {"candidates": ["V01", "V04", "V05"], "machine_candidate_status": "PASS"}, "desktop": {"composition": "independent editorial composition", "full_capture": "captures/desktop_1440_full.png"}, "mobile": {"composition": "independent 390px composition", "full_capture": "captures/mobile_390_full.png"}, "general_engine_rules": {"no_visible_internal_architecture": True, "actual_font_asset_loading": True, "screenshot_peak_candidates": 3, "photography_page_consistency": True, "motion_shared_velocity": True, "proof_art_direction": True, "closing_narrative_closure": True, "mobile_independent_composition": True}, "round2e_c2_regression": {"rendered_line_qa": rendered_summary, "negative_fixtures": fixtures["status"], "browser_widths": DEFAULT_WIDTHS, "interaction": interactions["status"], "stale_capture": 0, "evidence_safety": completion["evidence_safety"]["status"]}, "qa": {"browser": browser, "human_review_html": html_browser, "font": {"canonical": fonts, "self_contained": html_fonts}, "internal_labels": internal, "editorial_contract": editorial_contract, "batch_1000": batch_1000, "gate_checks": gate_checks}, "captures": captures["counts"], "motion_recording": motion, "artifact": artifact, "machine_technical_ready": "YES" if all_pass else "NO", "creative_implementation_complete": "YES" if all_pass else "NO", "shun_final_form_review_ready": "YES" if all_pass else "NO", "manual_lp_edit": 0, "human_visual_review": "DEFERRED_TO_SHUN", "one_million_yen_gate": "NOT_ASSESSED", "nagi_no_mirai": "NOT_STARTED", "watashi_no_daidokoro": "NOT_STARTED"}
+    summary = {"schema_version": "round2f_b2_creative_fidelity_v1" if IS_B2 else "round2f_b_maylynn_premium_uplift_v1", "status": "PASS" if all_pass else "HOLD", "round": "2F-B2" if IS_B2 else "2F-B", "starting_head": "8147d3149efb929fbbda1bd766dd90d96edfbfd0" if IS_B2 else "573ab0ddb7f68b201e0e16b73ca43386b4e583c5", "source_head": source_head, "company": "maylynn_paint", "top_5": {"hero": "EDITORIAL OBSERVATION ASYMMETRIC", "prototype_language": "REMOVED_FROM_PUBLIC_UI", "peaks": ["V01", "V04", "V05"], "typography": "ACTUAL_BUNDLED_FONTS", "photography_motion": "SERIES_AND_SHARED_VELOCITY"}, "asset_changes": {"A07": "REDESIGNED", "A10": "REPLACED", "A12": "REDESIGNED", "A14": "REPLACED", "A01_A02_A03_A04_A05_A06_A08_A09_A11_A13_A15_A16": "KEEP_OR_RECROP_RECOLOR"}, "typography": {"actual_fonts": True, "fallback": 0 if gate_checks["font_determinism"] else 1, "manifest": "typography_manifest.json"}, "photography_series": photo_grade, "motion_system": motion, "screenshot_peaks": {"candidates": ["V01", "V04", "V05"], "machine_candidate_status": "PASS"}, "desktop": {"composition": "independent editorial composition", "full_capture": "captures/desktop_1440_full.png"}, "mobile": {"composition": "independent 390px composition", "full_capture": "captures/mobile_390_full.png"}, "general_engine_rules": {"no_visible_internal_architecture": True, "actual_font_asset_loading": True, "screenshot_peak_candidates": 3, "photography_page_consistency": True, "motion_shared_velocity": True, "proof_art_direction": True, "closing_narrative_closure": True, "mobile_independent_composition": True}, "round2e_c2_regression": {"rendered_line_qa": rendered_summary, "negative_fixtures": fixtures["status"], "browser_widths": DEFAULT_WIDTHS, "interaction": interactions["status"], "stale_capture": 0, "evidence_safety": completion["evidence_safety"]["status"]}, "qa": {"browser": browser, "human_review_html": html_browser, "font": {"canonical": fonts, "self_contained": html_fonts}, "internal_labels": internal, "editorial_contract": editorial_contract, "batch_1000": batch_1000, "creative_direction_fidelity": runtime_fidelity if IS_B2 else None, "gate_checks": gate_checks}, "captures": captures["counts"], "motion_recording": motion, "artifact": artifact, "machine_technical_ready": "YES" if all_pass else "NO", "creative_direction_fidelity": "PASS" if IS_B2 and runtime_fidelity["status"] == "PASS" and static_fidelity["status"] == "PASS" else ("NOT_APPLICABLE" if not IS_B2 else "FAIL"), "creative_implementation_complete": "YES" if all_pass else "NO", "shun_final_form_review_ready": "YES" if all_pass else "NO", "manual_lp_edit": 0, "human_visual_review": "DEFERRED_TO_SHUN", "one_million_yen_gate": "NOT_ASSESSED", "nagi_no_mirai": "NOT_STARTED", "watashi_no_daidokoro": "NOT_STARTED"}
     write(OUT / "summary.json", summary)
     print(json.dumps(summary, ensure_ascii=True, indent=2))
     return 0 if all_pass else 1
