@@ -1,0 +1,61 @@
+name: Round 2Q Nagi First Creative Growth
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_round2q_nagi_growth.py"
+      - "scripts/run_round2q_contract_tests.py"
+      - "tests/test_round2q_growth.py"
+      - "src/lp_engine/**"
+      - ".github/workflows/round2q_nagi_growth.yml"
+  workflow_dispatch:
+
+jobs:
+  creative-growth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package and browser
+        run: |
+          python -m pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Diff check
+        run: git diff --check
+      - name: Round 2Q contracts
+        run: |
+          python scripts/run_round2q_contract_tests.py
+          python -m unittest discover -s tests -p 'test_round2q_growth.py'
+          python scripts/run_round2j_contract_tests.py
+          python -m unittest discover -s tests -p 'test_round2j_ceiling_director.py'
+      - name: Round 2Q generation and QA
+        run: python scripts/run_round2q_nagi_growth.py
+      - name: Assert Human Review readiness
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s = json.loads(Path('artifacts/round2q/summary.json').read_text(encoding='utf-8'))
+          assert s['status'] == 'PASS'
+          assert s['human_review_ready'] == 'YES'
+          assert s['floor_status'] == 'PASS'
+          assert s['ceiling_status'] == 'READY_FOR_HUMAN_REVIEW'
+          assert s['browser_qa']['total'] == 9 and s['browser_qa']['pass'] == 9 and s['browser_qa']['fail'] == 0
+          assert s['browser_qa']['overflow_max'] == 0
+          assert s['browser_qa']['console_errors'] == 0 and s['browser_qa']['page_errors'] == 0 and s['browser_qa']['request_failures'] == 0
+          assert s['checks']['motion'] == 'PASS'
+          assert s['traffic_truth'] == 'UNKNOWN'
+          assert s['verified_contact'] == 'Instagram @happyfuture_02'
+          assert s['one_million_yen_gate'] == 'NOT_ASSESSED'
+          assert s['pattern_02_registration'] == 'NOT_REGISTERED'
+          PY
+      - name: Upload Round 2Q artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2q-nagi-first-creative-growth
+          path: artifacts/round2q
+          if-no-files-found: error
