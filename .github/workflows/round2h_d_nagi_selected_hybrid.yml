@@ -1,0 +1,59 @@
+name: Round 2H-D Nagi Selected Hybrid Implementation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round2h_d_nagi.py"
+      - "tests/test_round2h_d_nagi.py"
+      - ".github/workflows/round2h_d_nagi_selected_hybrid.yml"
+      - "assets/photography/generated/nagi_no_mirai/**"
+      - "assets/photography/stock/nagi_no_mirai/**"
+      - "assets/fonts/round2f/**"
+permissions:
+  contents: read
+jobs:
+  nagi-selected-hybrid:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest playwright pillow
+          playwright install --with-deps chromium
+      - name: Diff check
+        run: git diff --check
+      - name: Regression tests
+        run: pytest -q tests/test_round2h_d_nagi.py tests/test_browser_qa_static.py tests/test_browser_smoke.py
+      - name: Generate package
+        env:
+          ROUND2H_D_OUTPUT_ROOT: artifacts/round2h_d
+        run: python scripts/run_round2h_d_nagi.py
+      - name: Assert gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('artifacts/round2h_d/summary.json').read_text(encoding='utf-8'))
+          assert s['status']=='PASS',s
+          assert s['qa']['browser']['total']==9 and s['qa']['browser']['pass']==9 and s['qa']['browser']['fail']==0
+          assert s['qa']['browser']['overflow_max']==0
+          assert s['qa']['browser']['console_errors']==0 and s['qa']['browser']['page_errors']==0 and s['qa']['browser']['request_failures']==0
+          assert s['qa']['rendered_lines']['status']=='PASS'
+          assert s['qa']['safety']['status']=='PASS'
+          assert s['manual_lp_edit']==0 and s['human_review_ready']=='YES'
+          assert s['one_million_yen_gate']=='NOT_ASSESSED' and s['pattern_02_registration']=='NOT_REGISTERED'
+          print('Round 2H-D gates PASS')
+          PY
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2h-d-nagi-selected-hybrid
+          path: artifacts/round2h_d
+          if-no-files-found: error
+          retention-days: 14
