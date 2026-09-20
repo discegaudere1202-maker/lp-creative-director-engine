@@ -1,0 +1,44 @@
+name: Round 2S-B Motion Lab Review Package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/package_round2s_b_review.py"
+      - ".github/workflows/round2s_b_review_package.yml"
+      - "scripts/run_round2s_b_nagi_motion_lab.py"
+  workflow_dispatch:
+
+jobs:
+  review-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package and browser
+        run: |
+          python -m pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Package and validate self-contained HTML
+        run: python scripts/package_round2s_b_review.py
+      - name: Assert review package
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s = json.loads(Path('artifacts/round2s_b_review/self_contained_validation.json').read_text(encoding='utf-8'))
+          assert s['status'] == 'PASS'
+          assert s['motion_integrity'] == 'PASS'
+          assert s['single_file'] is True
+          assert s['external_asset_references'] is False
+          assert s['validation']['reduced_motion'] == 'PASS'
+          PY
+      - name: Upload self-contained review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2s-b-nagi-motion-lab-review
+          path: artifacts/round2s_b_review
+          if-no-files-found: error
