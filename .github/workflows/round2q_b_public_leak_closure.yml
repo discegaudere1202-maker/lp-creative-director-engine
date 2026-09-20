@@ -1,0 +1,59 @@
+name: Round 2Q-B Public Leak Closure
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_round2q_b_public_leak_closure.py"
+      - "scripts/run_round2q_b_contract_tests.py"
+      - "tests/test_round2q_b_public_leak.py"
+      - ".github/workflows/round2q_b_public_leak_closure.yml"
+  workflow_dispatch:
+
+jobs:
+  public-leak-closure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package and browser
+        run: |
+          python -m pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Diff check
+        run: git diff --check
+      - name: Round 2Q-B contract and regression tests
+        run: |
+          python scripts/run_round2q_b_contract_tests.py
+          python -m unittest discover -s tests -p 'test_round2q_b_public_leak.py'
+          python scripts/run_round2q_contract_tests.py
+          python -m unittest discover -s tests -p 'test_round2q_growth.py'
+      - name: Generate and validate blocker closure
+        run: python scripts/run_round2q_b_public_leak_closure.py
+      - name: Assert blocker closed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s = json.loads(Path('artifacts/round2q_b/summary.json').read_text(encoding='utf-8'))
+          assert s['status'] == 'PASS'
+          assert s['public_leak']['status'] == 'PASS'
+          assert s['public_leak']['token_count'] == 0
+          assert s['desktop_regression'] == 'PASS'
+          assert s['mobile_regression'] == 'PASS'
+          assert s['browser_qa']['total'] == 9 and s['browser_qa']['pass'] == 9 and s['browser_qa']['fail'] == 0
+          assert s['browser_qa']['overflow_max'] == 0
+          assert s['runtime']['status'] == 'PASS'
+          assert s['human_review_ready'] == 'YES'
+          assert s['one_million_yen_gate'] == 'NOT_ASSESSED'
+          assert s['pattern_02_registration'] == 'NOT_REGISTERED'
+          PY
+      - name: Upload Round 2Q-B artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2q-b-nagi-public-leak-closure
+          path: artifacts/round2q_b
+          if-no-files-found: error
