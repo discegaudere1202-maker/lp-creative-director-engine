@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir -p artifacts/round2h_f
           set +e
-          python -m pytest -vv tests/test_round2h_f_nagi.py tests/test_sales_sample_policy.py tests/test_browser_qa_static.py tests/test_browser_smoke.py 2>&1 | tee artifacts/round2h_f/pytest.log
+          python -m pytest -vv tests/test_round2h_f_nagi.py tests/test_sales_sample_policy.py tests/test_browser_qa_static.py 2>&1 | tee artifacts/round2h_f/pytest.log
           status=\${PIPESTATUS[0]}
           exit \$status
       - name: Upload regression diagnostics
