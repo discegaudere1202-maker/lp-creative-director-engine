@@ -38,9 +38,13 @@ jobs:
           mkdir -p artifacts/round2h_f
           set +e
           status=0
-          for test_file in tests/test_round2h_f_nagi.py tests/test_sales_sample_policy.py tests/test_browser_qa_static.py; do
+          for test_file in scripts/run_round2h_f_contract_tests.py tests/test_browser_qa_static.py; do
             echo "===== \$test_file =====" >> artifacts/round2h_f/pytest.log
-            python -m pytest -vv "\$test_file" >> artifacts/round2h_f/pytest.log 2>&1
+            if [[ "\$test_file" == scripts/* ]]; then
+              python "\$test_file" >> artifacts/round2h_f/pytest.log 2>&1
+            else
+              python -m unittest discover -s tests -p "\$(basename "\$test_file")" >> artifacts/round2h_f/pytest.log 2>&1
+            fi
             test_status=\$?
             echo "exit_code=\$test_status" >> artifacts/round2h_f/pytest.log
             if [ "\$test_status" -ne 0 ]; then status=\$test_status; fi
