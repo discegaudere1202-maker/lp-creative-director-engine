@@ -1,0 +1,71 @@
+name: Round 2H-F Nagi Human Review Correction
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round2h_f_nagi.py"
+      - "src/lp_engine/sales_sample_policy.py"
+      - "tests/test_round2h_f_nagi.py"
+      - "tests/test_sales_sample_policy.py"
+      - ".github/workflows/round2h_f_nagi_human_review_correction.yml"
+      - "assets/photography/generated/nagi_no_mirai/**"
+      - "assets/photography/stock/nagi_no_mirai/**"
+      - "assets/fonts/round2f/**"
+
+permissions:
+  contents: read
+
+jobs:
+  human-review-correction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest playwright pillow
+          playwright install --with-deps chromium
+      - name: Diff check
+        run: git diff --check
+      - name: Regression tests
+        run: pytest -q tests/test_round2h_f_nagi.py tests/test_sales_sample_policy.py tests/test_browser_qa_static.py tests/test_browser_smoke.py
+      - name: Generate correction package
+        env:
+          SOURCE_HEAD: \${{ github.sha }}
+        run: python scripts/run_round2h_f_nagi.py
+      - name: Assert machine gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s = json.loads(Path("artifacts/round2h_f/summary.json").read_text(encoding="utf-8"))
+          assert s["status"] == "PASS", s
+          assert s["browser_qa"]["total"] == 9
+          assert s["browser_qa"]["pass"] == 9
+          assert s["browser_qa"]["fail"] == 0
+          assert s["browser_qa"]["overflow_max"] <= 1
+          assert s["browser_qa"]["console_errors"] == 0
+          assert s["browser_qa"]["page_errors"] == 0
+          assert s["browser_qa"]["request_failures"] == 0
+          assert s["rendered_line_qa"]["status"] == "PASS"
+          assert s["mobile_composite_qa"]["status"] == "PASS"
+          assert s["motion"]["status"] == "PASS"
+          assert s["sales_sample_fact_policy"]["status"] == "PASS"
+          assert s["human_review_ready"] == "YES"
+          assert s["manual_lp_edit"] == 0
+          assert s["one_million_yen_gate"] == "NOT_ASSESSED"
+          print("Round 2H-F machine gates PASS")
+          PY
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2h-f-nagi-human-review-correction
+          path: artifacts/round2h_f
+          if-no-files-found: error
+          retention-days: 14
