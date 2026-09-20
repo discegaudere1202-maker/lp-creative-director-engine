@@ -37,8 +37,19 @@ jobs:
         run: |
           mkdir -p artifacts/round2h_f
           set +e
-          python -m pytest -vv tests/test_round2h_f_nagi.py tests/test_sales_sample_policy.py tests/test_browser_qa_static.py 2>&1 | tee artifacts/round2h_f/pytest.log
-          status=\${PIPESTATUS[0]}
+          status=0
+          for test_file in tests/test_round2h_f_nagi.py tests/test_sales_sample_policy.py tests/test_browser_qa_static.py; do
+            echo "===== \$test_file =====" >> artifacts/round2h_f/pytest.log
+            python -m pytest -vv "\$test_file" >> artifacts/round2h_f/pytest.log 2>&1
+            test_status=\$?
+            echo "exit_code=\$test_status" >> artifacts/round2h_f/pytest.log
+            if [ "\$test_status" -ne 0 ]; then status=\$test_status; fi
+          done
+          if [ "\$status" -ne 0 ]; then
+            tail -n 40 artifacts/round2h_f/pytest.log | while IFS= read -r line; do
+              echo "::error title=Round 2H-F pytest::\$line"
+            done
+          fi
           exit \$status
       - name: Upload regression diagnostics
         if: failure()
