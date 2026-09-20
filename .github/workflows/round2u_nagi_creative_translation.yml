@@ -37,7 +37,7 @@ jobs:
           summary = json.loads((root / 'summary.json').read_text(encoding='utf-8'))
           browser = summary['browser_qa']
           self_contained = json.loads((root / 'reports' / 'self_contained.json').read_text(encoding='utf-8'))
-          pack = summary['evidence']
+          pack = json.loads((root / 'human_review_pack' / 'evidence_manifest.json').read_text(encoding='utf-8'))
           assert summary['status'] == 'PASS'
           assert summary['scene_count'] == 12
           assert summary['human_review_ready'] == 'YES'
