@@ -34,7 +34,20 @@ jobs:
       - name: Diff check
         run: git diff --check
       - name: Regression tests
-        run: pytest -q tests/test_round2h_f_nagi.py tests/test_sales_sample_policy.py tests/test_browser_qa_static.py tests/test_browser_smoke.py
+        run: |
+          mkdir -p artifacts/round2h_f
+          set +e
+          python -m pytest -vv tests/test_round2h_f_nagi.py tests/test_sales_sample_policy.py tests/test_browser_qa_static.py tests/test_browser_smoke.py 2>&1 | tee artifacts/round2h_f/pytest.log
+          status=\${PIPESTATUS[0]}
+          exit \$status
+      - name: Upload regression diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2h-f-regression-diagnostics
+          path: artifacts/round2h_f/pytest.log
+          if-no-files-found: warn
+          retention-days: 7
       - name: Generate correction package
         env:
           SOURCE_HEAD: \${{ github.sha }}
