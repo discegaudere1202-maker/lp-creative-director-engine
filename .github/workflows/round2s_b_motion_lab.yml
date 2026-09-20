@@ -1,0 +1,53 @@
+name: Round 2S-B Nagi Motion Craft Lab
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_round2s_b_nagi_motion_lab.py"
+      - "scripts/run_round2s_b_contract_tests.py"
+      - ".github/workflows/round2s_b_motion_lab.yml"
+  workflow_dispatch:
+
+jobs:
+  motion-lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package and browser
+        run: |
+          python -m pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Diff and contract checks
+        run: |
+          git diff --check
+          python scripts/run_round2s_b_contract_tests.py
+      - name: Generate Motion Lab and Evidence Pack
+        run: python scripts/run_round2s_b_nagi_motion_lab.py
+      - name: Assert standalone lab result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path('artifacts/round2s_b/summary.json').read_text(encoding='utf-8'))
+          assert summary['status'] == 'PASS'
+          assert summary['experiments'] == 6
+          assert summary['hero_variants'] == 3
+          assert summary['selector_variants'] == 2
+          assert summary['three_to_one_variants'] == 4
+          assert summary['qa']['status'] == 'PASS'
+          assert summary['evidence']['screenshots'] >= 60
+          assert summary['evidence']['recordings'] >= 18
+          assert summary['production_integration'] == 'NOT_INTEGRATED'
+          assert summary['human_review_ready'] == 'YES'
+          PY
+      - name: Upload Motion Lab artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2s-b-nagi-motion-craft-lab
+          path: artifacts/round2s_b
+          if-no-files-found: error
