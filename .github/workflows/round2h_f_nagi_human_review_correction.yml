@@ -39,22 +39,22 @@ jobs:
           set +e
           status=0
           for test_file in scripts/run_round2h_f_contract_tests.py tests/test_browser_qa_static.py; do
-            echo "===== \$test_file =====" >> artifacts/round2h_f/pytest.log
-            if [[ "\$test_file" == scripts/* ]]; then
-              python "\$test_file" >> artifacts/round2h_f/pytest.log 2>&1
+            echo "===== $test_file =====" >> artifacts/round2h_f/pytest.log
+            if [[ "$test_file" == scripts/* ]]; then
+              python "$test_file" >> artifacts/round2h_f/pytest.log 2>&1
             else
-              python -m unittest discover -s tests -p "\$(basename "\$test_file")" >> artifacts/round2h_f/pytest.log 2>&1
+              python -m unittest discover -s tests -p "$(basename "$test_file")" >> artifacts/round2h_f/pytest.log 2>&1
             fi
-            test_status=\$?
-            echo "exit_code=\$test_status" >> artifacts/round2h_f/pytest.log
-            if [ "\$test_status" -ne 0 ]; then status=\$test_status; fi
+            test_status=$?
+            echo "exit_code=$test_status" >> artifacts/round2h_f/pytest.log
+            if [ "$test_status" -ne 0 ]; then status=$test_status; fi
           done
-          if [ "\$status" -ne 0 ]; then
+          if [ "$status" -ne 0 ]; then
             tail -n 40 artifacts/round2h_f/pytest.log | while IFS= read -r line; do
-              echo "::error title=Round 2H-F pytest::\$line"
+              echo "::error title=Round 2H-F pytest::$line"
             done
           fi
-          exit \$status
+          exit $status
       - name: Upload regression diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
@@ -64,8 +64,6 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
       - name: Generate correction package
-        env:
-          SOURCE_HEAD: \${{ github.sha }}
         run: python scripts/run_round2h_f_nagi.py
       - name: Assert machine gates
         run: |
