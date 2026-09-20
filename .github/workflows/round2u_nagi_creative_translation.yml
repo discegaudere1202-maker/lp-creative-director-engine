@@ -1,0 +1,66 @@
+name: Round 2U Nagi Creative Translation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_round2u_nagi_creative_translation.py"
+      - "scripts/run_round2u_contract_tests.py"
+      - ".github/workflows/round2u_nagi_creative_translation.yml"
+  workflow_dispatch:
+
+jobs:
+  creative-translation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package and browser
+        run: |
+          python -m pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Diff and contract checks
+        run: |
+          git diff --check
+          python scripts/run_round2u_contract_tests.py
+      - name: Generate Round 2U prototype and evidence
+        run: python scripts/run_round2u_nagi_creative_translation.py
+      - name: Assert Round 2U machine result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('artifacts/round2u')
+          summary = json.loads((root / 'summary.json').read_text(encoding='utf-8'))
+          browser = summary['browser_qa']
+          self_contained = json.loads((root / 'reports' / 'self_contained.json').read_text(encoding='utf-8'))
+          pack = summary['evidence']
+          assert summary['status'] == 'PASS'
+          assert summary['scene_count'] == 12
+          assert summary['human_review_ready'] == 'YES'
+          assert summary['production_integration'] == 'NOT_INTEGRATED'
+          assert summary['one_million_yen_gate'] == 'NOT_ASSESSED'
+          assert browser['status'] == 'PASS'
+          assert len(browser['rows']) == 9
+          assert browser['public_internal_leak'] == []
+          assert browser['ui_instruction_leak'] == []
+          assert browser['trust_fabrication_hits'] == []
+          assert pack['screenshot_count'] == 18
+          assert pack['recording_count'] == 2
+          assert self_contained['single_file'] is True
+          assert self_contained['external_asset_references'] is False
+          assert (root / 'Nagi_Round2U_Creative_Translation_Integration_SelfContained.html').exists()
+          assert (root / 'human_review_pack' / 'recordings' / 'desktop_full_page_scroll.webm').exists()
+          assert (root / 'human_review_pack' / 'recordings' / 'mobile_full_page_scroll.webm').exists()
+          PY
+      - name: Set artifact name
+        run: echo "ROUND2U_ARTIFACT=round2u-nagi-creative-translation-integration-${GITHUB_SHA:0:12}" >> "$GITHUB_ENV"
+      - name: Upload Round 2U review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ROUND2U_ARTIFACT }}
+          path: artifacts/round2u
+          if-no-files-found: error
