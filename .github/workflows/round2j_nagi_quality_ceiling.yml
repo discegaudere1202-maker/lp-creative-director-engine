@@ -1,0 +1,68 @@
+name: Round 2J Nagi Quality Ceiling
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_round2j_nagi_quality_ceiling.py"
+      - "scripts/run_round2j_contract_tests.py"
+      - "src/lp_engine/ceiling_director.py"
+      - "src/lp_engine/sales_sample_policy.py"
+      - "tests/test_round2j_ceiling_director.py"
+      - "assets/photography/generated/nagi_no_mirai/**"
+      - ".github/workflows/round2j_nagi_quality_ceiling.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality-ceiling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Diff check
+        run: git diff --check
+      - name: Contract and regression tests
+        run: |
+          python scripts/run_round2j_contract_tests.py
+          python -m unittest discover -s tests -p "test_round2j_ceiling_director.py"
+          python scripts/run_round2h_h_contract_tests.py
+      - name: Generate Quality Ceiling artifact
+        run: python scripts/run_round2j_nagi_quality_ceiling.py
+      - name: Assert Floor and Ceiling evidence gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("artifacts/round2j")
+          summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
+          peaks = json.loads((root / "reports/memorability_report.json").read_text(encoding="utf-8"))
+          authority = json.loads((root / "reports/photography_authority_report.json").read_text(encoding="utf-8"))
+          assert summary["status"] == "PASS", summary
+          assert summary["human_review_ready"] == "YES", summary
+          assert summary["floor_status"] == "PASS", summary
+          assert summary["ceiling_status"] == "READY_FOR_HUMAN_REVIEW", summary
+          assert len(summary["screenshot_peaks"]["peaks"]) >= 4, summary
+          assert peaks["status"] == "READY_FOR_HUMAN_REVIEW", peaks
+          assert authority["status"] == "PASS", authority
+          assert summary["one_million_yen_gate"] == "NOT_ASSESSED", summary
+          assert summary["pattern_02_registration"] == "NOT_REGISTERED", summary
+          print("Round 2J Floor/Ceiling evidence gates: PASS")
+          PY
+      - name: Upload Round 2J artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round2j-nagi-quality-ceiling
+          path: artifacts/round2j
+          if-no-files-found: error
+          retention-days: 14
