@@ -1,0 +1,65 @@
+name: Round 2U-B Nagi Shun Review Blocker Closure
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_round2u_b_nagi_shun_review_blocker_closure.py"
+      - "scripts/run_round2u_b_contract_tests.py"
+      - ".github/workflows/round2u_b_nagi_shun_review_blocker_closure.yml"
+  workflow_dispatch:
+
+jobs:
+  blocker-closure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package and browser
+        run: |
+          python -m pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Diff and contract checks
+        run: |
+          git diff --check
+          python scripts/run_round2u_b_contract_tests.py
+      - name: Generate blocker closure evidence
+        run: python scripts/run_round2u_b_nagi_shun_review_blocker_closure.py
+      - name: Assert blocker closure
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('artifacts/round2u_b')
+          summary = json.loads((root / 'summary.json').read_text(encoding='utf-8'))
+          qa = json.loads((root / 'reports' / 'japanese_line_qa.json').read_text(encoding='utf-8'))
+          public = json.loads((root / 'reports' / 'public_wording_audit.json').read_text(encoding='utf-8'))
+          motion = json.loads((root / 'reports' / 'motion_regression.json').read_text(encoding='utf-8'))
+          self_contained = json.loads((root / 'reports' / 'self_contained.json').read_text(encoding='utf-8'))
+          pack = json.loads((root / 'human_review_pack' / 'evidence_manifest.json').read_text(encoding='utf-8'))
+          assert summary['status'] == 'PASS'
+          assert summary['shun_review_ready'] == 'YES'
+          assert qa['status'] == 'PASS'
+          assert len(qa['rows']) == 9
+          assert all(not row['line_issues'] for row in qa['rows'])
+          assert qa['public_production_wording_hits'] == []
+          assert qa['trust_fabrication_hits'] == []
+          assert public['status'] == 'PASS'
+          assert motion['status'] == 'PASS'
+          assert self_contained['single_file'] is True
+          assert self_contained['external_asset_references'] is False
+          assert pack['screenshot_count'] >= 13
+          assert pack['recording_count'] == 2
+          assert (root / 'Nagi_Round2U-B_Shuns_Review_Blocker_Closure_SelfContained.html').exists()
+          PY
+      - name: Set artifact name
+        run: echo "ROUND2UB_ARTIFACT=round2u-b-nagi-shun-review-blocker-closure-${GITHUB_SHA:0:12}" >> "$GITHUB_ENV"
+      - name: Upload blocker closure artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ROUND2UB_ARTIFACT }}
+          path: artifacts/round2u_b
+          if-no-files-found: error
