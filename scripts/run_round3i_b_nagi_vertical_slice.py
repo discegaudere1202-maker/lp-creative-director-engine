@@ -7,6 +7,7 @@ inspect the rendered result.
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import shutil
 import subprocess
@@ -126,7 +127,10 @@ def main() -> int:
     if json.loads((PHASE_A/"01_truth_set.json").read_text(encoding="utf-8"))["payload"]["truth_hash"] != FROZEN_HASH: raise SystemExit("frozen truth hash mismatch")
     # Preserve existing user artifacts under OneDrive; this renderer only overwrites
     # its own deterministic files and can safely reuse an existing asset directory.
-    site=OUT/"site";site.mkdir(parents=True, exist_ok=True); shutil.copytree(ROOT/"artifacts"/"round2u_b"/"site"/"assets",site/"assets",dirs_exist_ok=True)
+    site=OUT/"site";site.mkdir(parents=True, exist_ok=True)
+    fonts=site/"assets"/"fonts";fonts.mkdir(parents=True,exist_ok=True)
+    for source,name in (("NotoSansJP-Variable.ttf","NotoSansJP-Variable.ttf"),("InterTight-Variable.ttf","InterTight-Variable.ttf")):
+      shutil.copy2(ROOT/"assets"/"fonts"/"round2f"/source,fonts/name)
     (site/"index.html").write_text(HTML.replace("%%CSS%%",CSS).replace("%%IG%%",INSTAGRAM),encoding="utf-8")
     artifacts()
     with serve(site) as url: qa=asyncio.run(render(url))
@@ -147,6 +151,11 @@ def main() -> int:
     (OUT/"phase_b_summary.md").write_text("# Round 3I-B\n\n## Selected Creative Hypothesis\nCHOICE_FIRST。低Evidence条件で、3つの実在サービスを選ぶ判断を最初の画面から主役にした。\n\n## What changed visually\n写真主導・反復サービス紹介から、三つの入口、選択、既知情報、相談経路、余韻という異なるSceneへ変更。\n\n## Remaining concerns\n人物・価格・時間・一次EvidenceはFreeze外のため、最終Sales Sampleでは追加検証が必要。Formal Aoiは未実施。\n",encoding="utf-8")
     tests=subprocess.run([sys.executable,"-m","pytest","-q","-p","no:cacheprovider","--basetemp",str(ROOT/".round3ib-pytest-temp"),"tests/test_round3i_b_vertical_slice.py","tests/test_round3i_a_decision_foundation.py","tests/test_round3d_regression_immunity.py"],cwd=ROOT,capture_output=True,text=True,encoding="utf-8")
     write_json(OUT/"test_results.json",{"status":"PASS" if tests.returncode==0 else "FAIL","stdout":tests.stdout,"stderr":tests.stderr})
+    entries=[]
+    for path in sorted(OUT.rglob("*")):
+      if path.is_file() and path.name!="artifact_manifest.json":
+        data=path.read_bytes();entries.append({"path":path.relative_to(OUT).as_posix(),"size_bytes":len(data),"sha256":hashlib.sha256(data).hexdigest()})
+    write_json(OUT/"artifact_manifest.json",{"schema_version":"round3i_b_artifact_manifest_v1","source_head":subprocess.run(["git","rev-parse","HEAD"],cwd=ROOT,capture_output=True,text=True,check=True).stdout.strip(),"frozen_truth_hash":FROZEN_HASH,"file_count":len(entries)+1,"files":entries})
     return 0 if qa['status']=="PASS" and tests.returncode==0 else 1
 
 if __name__=="__main__": raise SystemExit(main())
