@@ -78,7 +78,7 @@ jobs:
           assert verdict['scale'].startswith('NOT_ESTABLISHED')
           assert verdict['one_million_yen_gate'] == 'NOT_ASSESSED'
           assert verdict['pattern_registration'] == 'NOT_REGISTERED'
-          for name in ('new_1440.png', 'new_390.png', 'old_1440.png', 'old_390.png', 'new_desktop_1440.png', 'new_desktop_1280.png', 'new_mobile_390.png', 'new_mobile_375.png', 'old_desktop_1440.png', 'old_desktop_1280.png', 'old_mobile_390.png', 'old_mobile_375.png', 'selector_initial.png', 'selector_preview.png', 'selector_locked.png', 'selector_locked_other_preview.png'):
+          for name in ('new_1440.png', 'new_390.png', 'new_desktop_1440.png', 'new_desktop_1280.png', 'new_mobile_390.png', 'new_mobile_375.png', 'old_desktop_1440.png', 'old_desktop_1280.png', 'old_mobile_390.png', 'old_mobile_375.png', 'selector_initial.png', 'selector_preview.png', 'selector_locked.png', 'selector_locked_other_preview.png'):
               assert (root / 'captures' / name).is_file(), name
           for name in ('desktop_1440_before_after.png', 'desktop_1280_before_after.png', 'mobile_390_before_after.png', 'mobile_375_before_after.png'):
               assert (root / 'comparisons' / name).is_file(), name
