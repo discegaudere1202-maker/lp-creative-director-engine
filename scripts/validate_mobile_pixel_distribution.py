@@ -136,11 +136,17 @@ def validate() -> dict:
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     files = []
     for path in sorted(EVIDENCE.rglob("*")):
-        if path.is_file() and path.name != "distribution_artifact_manifest.json":
+        if path.is_file() and path.name not in {"distribution_artifact_manifest.json", "distribution_report.json"}:
             files.append({"path": path.relative_to(EVIDENCE).as_posix(), "bytes": path.stat().st_size, "sha256": sha256(path)})
-    dist_manifest = {"schema_version": "mobile_pixel_distribution_files_v1", "file_count": len(files), "total_bytes": sum(item["bytes"] for item in files), "files": files}
+    dist_manifest = {
+        "schema_version": "mobile_pixel_distribution_files_v1",
+        "file_count": len(files),
+        "total_bytes": sum(item["bytes"] for item in files),
+        "excluded_from_file_hashes": ["distribution_report.json", "distribution_artifact_manifest.json"],
+        "files": files,
+    }
     (EVIDENCE / "distribution_artifact_manifest.json").write_text(json.dumps(dist_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    report["artifact_file_count"] = len(files) + 1
+    report["artifact_file_count"] = len(files) + 2
     report["artifact_total_bytes"] = dist_manifest["total_bytes"]
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return report
