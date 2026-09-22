@@ -1,5 +1,10 @@
 name: Round 3B Nagi Adaptive Authored Resolution
 
+# This workflow is intentionally both manually dispatchable and narrowly
+# push-triggered, so the review package can be reproduced without creating an
+# artifact for unrelated commits.
+run-name: Round 3B Nagi review package · ${{ github.ref_name }} · ${{ github.sha }}
+
 on:
   push:
     branches: [main]
@@ -11,6 +16,9 @@ on:
       - "scripts/run_round2u_nagi_creative_translation.py"
       - "scripts/run_round2u_b_nagi_shun_review_blocker_closure.py"
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   round3b-nagi:
