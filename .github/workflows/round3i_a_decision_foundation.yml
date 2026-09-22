@@ -1,0 +1,42 @@
+name: Round 3I-A Nagi Decision Foundation
+run-name: Round 3I-A · ${{ github.ref_name }} · ${{ github.sha }}
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "fixtures/nagi/**"
+      - "registries/design_intelligence/**"
+      - "src/lp_engine/nagi_decision_foundation.py"
+      - "scripts/run_round3i_a_decision_foundation.py"
+      - "tests/test_round3i_a_decision_foundation.py"
+      - ".github/workflows/round3i_a_decision_foundation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  decision-foundation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package
+        run: python -m pip install -e . pytest
+      - name: Phase A contract tests
+        run: |
+          mkdir -p artifacts/round3i_a
+          python -m pytest -q -p no:cacheprovider --junitxml=artifacts/round3i_a/test_report.xml tests/test_round3i_a_decision_foundation.py tests/test_round3d_regression_immunity.py
+      - name: Build deterministic Nagi decision trace
+        run: python -X utf8 scripts/run_round3i_a_decision_foundation.py
+      - name: Upload Phase A package
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3i-a-nagi-decision-foundation-${{ github.sha }}
+          path: artifacts/round3i_a/
+          if-no-files-found: error
+          retention-days: 30

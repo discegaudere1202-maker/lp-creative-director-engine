@@ -1,0 +1,22 @@
+{
+  "schema_version": "nagi_frozen_unknowns_v1",
+  "truth_boundary_version": "AAR-IPCF-3HF-v1.0",
+  "frozen_unknowns": [
+    "founder / staff profile",
+    "qualification",
+    "experience history",
+    "proprietary method",
+    "exact prices",
+    "durations",
+    "unverified detailed address",
+    "premises imagery",
+    "staff imagery",
+    "unverified reviews",
+    "detailed curriculum",
+    "healing efficacy",
+    "founder philosophy",
+    "brand story",
+    "unsupported business history"
+  ],
+  "unknown_policy": "UNKNOWN remains UNKNOWN; no public or external research is used to fill these fields in Phase A."
+}

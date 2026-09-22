@@ -1,0 +1,11 @@
+{
+  "schema_version": "nagi_frozen_evidence_refs_v1",
+  "truth_boundary_version": "AAR-IPCF-3HF-v1.0",
+  "evidence": [
+    {"evidence_id": "nagi-truth-name", "field": "entity", "ontology": "FACT", "value_ref": "frozen_truth.json#/entity"},
+    {"evidence_id": "nagi-truth-location", "field": "location", "ontology": "FACT", "value_ref": "frozen_truth.json#/location"},
+    {"evidence_id": "nagi-truth-services", "field": "services", "ontology": "FACT", "value_ref": "frozen_truth.json#/services"},
+    {"evidence_id": "nagi-truth-contact", "field": "public_contact", "ontology": "FACT", "value_ref": "frozen_truth.json#/public_contact"},
+    {"evidence_id": "nagi-unknowns", "field": "frozen_unknowns", "ontology": "FACT", "value_ref": "frozen_unknowns.json#/frozen_unknowns", "note": "Known boundary that the listed business details are not verified."}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "nagi_frozen_truth_v1",
+  "truth_boundary_version": "AAR-IPCF-3HF-v1.0",
+  "entity": "なぎのみらい",
+  "location": "福岡市",
+  "services": [
+    {"service_id": "dry_head_spa", "name": "Dry Head Spa", "safe_framing": "受ける"},
+    {"service_id": "head_spa_school", "name": "Head Spa School", "safe_framing": "学ぶ"},
+    {"service_id": "healing_salon", "name": "Healing Salon", "safe_framing": "ヒーリングを知る"}
+  ],
+  "public_contact": {
+    "channel": "official SNS",
+    "handle": "@happyfuture_02",
+    "reservation_route_status": "VERIFIED"
+  }
+}

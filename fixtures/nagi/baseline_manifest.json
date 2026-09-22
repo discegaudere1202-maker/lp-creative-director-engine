@@ -1,0 +1,11 @@
+{
+  "baseline_type": "ROUND_2U_B_CLEAN",
+  "baseline_head": "a4873e9421f5ddce3d84d84fbf27f40b54a84223",
+  "truth_boundary_version": "AAR-IPCF-3HF-v1.0",
+  "reason_selected": "Formal calibration baseline fixed by the Round 3I-A implementation brief; clean baseline is retained for comparison.",
+  "excluded_candidate": {
+    "candidate": "ROUND_3B",
+    "promoted": false,
+    "reason": "Pairwise Aoi improvement did not meet Shun's Human-visible Premium Quality Gate; do not promote as comparison baseline."
+  }
+}
