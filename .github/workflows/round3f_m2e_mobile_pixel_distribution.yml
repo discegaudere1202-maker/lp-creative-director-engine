@@ -1,0 +1,45 @@
+name: Round 3F-M2E Mobile Pixel Evidence Distribution
+
+run-name: Round 3F-M2E evidence · ${{ github.ref_name }} · ${{ github.sha }}
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_mobile_pixel_evidence.py"
+      - "scripts/validate_mobile_pixel_distribution.py"
+      - ".github/workflows/round3f_m2e_mobile_pixel_distribution.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: round3f-m2e-mobile-pixel-evidence-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  capture-and-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install capture dependencies
+        run: |
+          python -m pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Re-capture public benchmark evidence
+        run: python -X utf8 scripts/run_mobile_pixel_evidence.py
+      - name: Validate evidence and write distribution metadata
+        run: python -X utf8 scripts/validate_mobile_pixel_distribution.py
+      - name: Upload browser evidence for Kanade
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3fm2e-mobile-pixel-evidence-${{ github.run_id }}
+          path: artifacts/mobile_pixel_evidence_round3fm2e/
+          if-no-files-found: error
+          compression-level: 1
+          retention-days: 30
