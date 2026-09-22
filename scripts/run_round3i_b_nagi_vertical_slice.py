@@ -149,13 +149,16 @@ def main() -> int:
     ]
     write_json(OUT/"19_phase_b_qa.json",{"status":qa['status'],"frozen_truth_hash":FROZEN_HASH,"browser":qa,"source_correction":"PASS","round3d_regression":"PASS","learning_visible_translation":learning,"no_fabrication":True,"no_public_internal_terms":all(not r['internal'] for r in qa['rows'])})
     (OUT/"phase_b_summary.md").write_text("# Round 3I-B\n\n## Selected Creative Hypothesis\nCHOICE_FIRST。低Evidence条件で、3つの実在サービスを選ぶ判断を最初の画面から主役にした。\n\n## What changed visually\n写真主導・反復サービス紹介から、三つの入口、選択、既知情報、相談経路、余韻という異なるSceneへ変更。\n\n## Remaining concerns\n人物・価格・時間・一次EvidenceはFreeze外のため、最終Sales Sampleでは追加検証が必要。Formal Aoiは未実施。\n",encoding="utf-8")
+    def write_manifest() -> None:
+      entries=[]
+      for path in sorted(OUT.rglob("*")):
+        if path.is_file() and path.name!="artifact_manifest.json":
+          data=path.read_bytes();entries.append({"path":path.relative_to(OUT).as_posix(),"size_bytes":len(data),"sha256":hashlib.sha256(data).hexdigest()})
+      write_json(OUT/"artifact_manifest.json",{"schema_version":"round3i_b_artifact_manifest_v1","source_head":subprocess.run(["git","rev-parse","HEAD"],cwd=ROOT,capture_output=True,text=True,check=True).stdout.strip(),"frozen_truth_hash":FROZEN_HASH,"file_count":len(entries)+1,"files":entries})
+    write_manifest()
     tests=subprocess.run([sys.executable,"-m","pytest","-q","-p","no:cacheprovider","--basetemp",str(ROOT/".round3ib-pytest-temp"),"tests/test_round3i_b_vertical_slice.py","tests/test_round3i_a_decision_foundation.py","tests/test_round3d_regression_immunity.py"],cwd=ROOT,capture_output=True,text=True,encoding="utf-8")
     write_json(OUT/"test_results.json",{"status":"PASS" if tests.returncode==0 else "FAIL","stdout":tests.stdout,"stderr":tests.stderr})
-    entries=[]
-    for path in sorted(OUT.rglob("*")):
-      if path.is_file() and path.name!="artifact_manifest.json":
-        data=path.read_bytes();entries.append({"path":path.relative_to(OUT).as_posix(),"size_bytes":len(data),"sha256":hashlib.sha256(data).hexdigest()})
-    write_json(OUT/"artifact_manifest.json",{"schema_version":"round3i_b_artifact_manifest_v1","source_head":subprocess.run(["git","rev-parse","HEAD"],cwd=ROOT,capture_output=True,text=True,check=True).stdout.strip(),"frozen_truth_hash":FROZEN_HASH,"file_count":len(entries)+1,"files":entries})
+    write_manifest()
     return 0 if qa['status']=="PASS" and tests.returncode==0 else 1
 
 if __name__=="__main__": raise SystemExit(main())
