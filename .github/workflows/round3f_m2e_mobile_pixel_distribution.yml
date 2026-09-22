@@ -9,6 +9,7 @@ on:
     paths:
       - "scripts/run_mobile_pixel_evidence.py"
       - "scripts/validate_mobile_pixel_distribution.py"
+      - "scripts/research/mobile_pixel_evidence/**"
       - ".github/workflows/round3f_m2e_mobile_pixel_distribution.yml"
 
 permissions:
