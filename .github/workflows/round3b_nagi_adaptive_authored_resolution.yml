@@ -1,0 +1,89 @@
+name: Round 3B Nagi Adaptive Authored Resolution
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/lp_engine/adaptive_authored_resolution.py"
+      - "tests/test_round3b_adaptive_authored_resolution.py"
+      - "scripts/run_round3b_nagi_vertical_slice.py"
+      - ".github/workflows/round3b_nagi_adaptive_authored_resolution.yml"
+      - "scripts/run_round2u_nagi_creative_translation.py"
+      - "scripts/run_round2u_b_nagi_shun_review_blocker_closure.py"
+  workflow_dispatch:
+
+jobs:
+  round3b-nagi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package and browser
+        run: |
+          python -m pip install -e . pytest
+          python -m playwright install --with-deps chromium
+      - name: Diff whitespace check
+        run: git diff --check
+      - name: Rebuild frozen Round 2U-B comparison baseline
+        run: |
+          python scripts/run_round2u_nagi_creative_translation.py
+          python scripts/run_round2u_b_nagi_shun_review_blocker_closure.py
+      - name: Generate Round 3B Nagi vertical slice
+        run: python -X utf8 scripts/run_round3b_nagi_vertical_slice.py
+      - name: Assert Round 3B gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('artifacts/round3b_nagi')
+          summary = json.loads((root / 'summary.json').read_text(encoding='utf-8'))
+          tests = json.loads((root / 'reports' / 'automated_test_results.json').read_text(encoding='utf-8'))
+          trace = json.loads((root / 'reports' / 'decision_trace.json').read_text(encoding='utf-8'))
+          qa = json.loads((root / 'reports' / 'browser_qa.json').read_text(encoding='utf-8'))
+          preflight = json.loads((root / 'reports' / 'render_preflight.json').read_text(encoding='utf-8'))
+          verdict = json.loads((root / 'reports' / 'implementation_verdict.json').read_text(encoding='utf-8'))
+          aoi_prep = json.loads((root / 'reports' / 'aoi_review_preparation.json').read_text(encoding='utf-8'))
+          known = json.loads((root / 'reports' / 'known_repository_failures.json').read_text(encoding='utf-8'))
+          assert summary['status'] == 'PASS'
+          assert summary['automated_tests']['status'] == tests['status'] == 'PASS'
+          assert len(tests['results']) == 2 and all(item['exit_code'] == 0 for item in tests['results'])
+          assert summary['scope']['phase_iii_plus'] == 'NOT_STARTED'
+          assert summary['browser_qa']['pass'] == summary['browser_qa']['total'] == 9
+          assert qa['mobile_interaction']['hover_preview']
+          assert qa['mobile_interaction']['click_lock']
+          assert qa['mobile_interaction']['lock_survives_other_preview']
+          assert qa['reduced_motion'] is True
+          assert preflight['status'] == 'PASS'
+          assert summary['aoi_review']['human_approval'] is False
+          assert aoi_prep['formal_visual_review_status'] == 'PENDING_AOI_HUMAN_REVIEW'
+          assert aoi_prep['proxy_is_formal_review'] is False
+          assert known['rerun_in_round3b_workflow'] is False
+          assert summary['aoi_review']['one_million_yen_gate'] == 'NOT_ASSESSED'
+          assert summary['sales_release']['status'] == 'ELIGIBLE_FOR_SALES_PRODUCTION'
+          assert summary['manual_lp_edit'] == 0
+          assert summary['next'] == 'Shun Decision Gate'
+          assert verdict['quality_effect'].startswith('PENDING_SHUN_PAIRWISE_REVIEW')
+          assert verdict['causality'].startswith('NOT_ESTABLISHED')
+          assert verdict['scale'].startswith('NOT_ESTABLISHED')
+          assert verdict['one_million_yen_gate'] == 'NOT_ASSESSED'
+          assert verdict['pattern_registration'] == 'NOT_REGISTERED'
+          for name in ('new_1440.png', 'new_390.png', 'old_1440.png', 'old_390.png', 'new_desktop_1440.png', 'new_desktop_1280.png', 'new_mobile_390.png', 'new_mobile_375.png', 'old_desktop_1440.png', 'old_desktop_1280.png', 'old_mobile_390.png', 'old_mobile_375.png', 'selector_initial.png', 'selector_preview.png', 'selector_locked.png', 'selector_locked_other_preview.png'):
+              assert (root / 'captures' / name).is_file(), name
+          for name in ('desktop_1440_before_after.png', 'desktop_1280_before_after.png', 'mobile_390_before_after.png', 'mobile_375_before_after.png'):
+              assert (root / 'comparisons' / name).is_file(), name
+          for name in ('selector_preview_lock_sequence.webm', 'mobile_selector_selection.webm'):
+              assert (root / 'motion_captures' / name).is_file(), name
+          for name in ('revision_result.json', 'preserved_artifacts.json', 'aoi_review_preparation.json', 'known_repository_failures.json'):
+              assert (root / 'reports' / name).is_file(), name
+          assert trace['events'], 'decision trace must not be empty'
+          PY
+      - name: Upload Round 3B decision package
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3b-nagi-adaptive-slice-${{ github.sha }}
+          path: artifacts/round3b_nagi
+          if-no-files-found: error
+          compression-level: 6
