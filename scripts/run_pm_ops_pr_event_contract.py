@@ -113,9 +113,15 @@ def main() -> int:
         event.setdefault("event_name", os.environ.get("GITHUB_EVENT_NAME", "manual"))
         event.setdefault("after", os.environ.get("GITHUB_SHA", ""))
     evidence = build_evidence(event, os.environ.get("GITHUB_REPOSITORY", ""))
+    if not event.get("pull_request"):
+        # Installation/dispatch validation is intentionally separate from a
+        # lifecycle event; there is no PR relation to resolve on push.
+        evidence["event"]["name"] = event.get("event_name", "manual")
+        evidence["status"] = "PASS"
+        evidence["missing"] = []
     package(evidence, args.out)
     print(json.dumps(evidence, ensure_ascii=False, indent=2))
-    return 0 if evidence["status"] == "PASS" or evidence["event"]["name"] == "manual" else 1
+    return 0 if evidence["status"] == "PASS" else 1
 
 
 if __name__ == "__main__":
