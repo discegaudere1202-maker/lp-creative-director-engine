@@ -1,0 +1,32 @@
+name: Round 3I-BR-K Visual Keyframes
+
+on:
+  push:
+    paths:
+      - "scripts/run_round3i_br_k_visual_keyframes.py"
+      - "tests/test_round3i_br_k_keyframes.py"
+      - ".github/workflows/round3i_br_k_visual_keyframes.yml"
+      - "assets/fonts/round2f/**"
+  workflow_dispatch:
+
+jobs:
+  visual-keyframes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install renderer
+        run: |
+          pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Generate three visual keyframes
+        run: python -X utf8 scripts/run_round3i_br_k_visual_keyframes.py
+      - name: Run keyframe contract tests
+        run: python -m pytest -q -p no:cacheprovider tests/test_round3i_br_k_keyframes.py
+      - name: Upload keyframe package
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3i-br-k-nagi-visual-keyframes-${{ github.sha }}
+          path: artifacts/round3i_br_k/
