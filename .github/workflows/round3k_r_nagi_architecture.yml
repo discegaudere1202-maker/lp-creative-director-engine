@@ -1,0 +1,24 @@
+name: Round 3K-R Nagi Persuasion Architecture Pixel Fidelity
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/run_round3k_r_nagi_architecture.py'
+      - 'tests/test_round3k_r_nagi_architecture.py'
+      - '.github/workflows/round3k_r_nagi_architecture.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install playwright pytest
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/run_round3k_r_nagi_architecture.py
+      - run: pytest -q tests/test_round3k_r_nagi_architecture.py
+      - run: git diff --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: round3k-r-nagi-architecture-review
+          path: artifacts/round3k_r_nagi_architecture
