@@ -90,9 +90,16 @@ async def make_comparison() -> None:
 
 async def main_async() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
-    result = await r2.main_async()
-    qa = json.loads((OUT / "browser_qa.json").read_text(encoding="utf-8"))
-    print("ROUND3N_BROWSER_QA_RESULT=" + json.dumps({"status": qa["status"], "rows": [{"width": row["width"], "pass": row["pass"], "line_qa": row["line_qa"], "overflow": row["overflow"], "legacy": row["legacy"], "images": row["images"], "frames": row["frames"], "disclosures": row["disclosures"], "rolePass": row["rolePass"]} for row in qa["rows"]]}, ensure_ascii=False))
+    print("ROUND3N_START_BROWSER_QA", flush=True)
+    try:
+        result = await r2.main_async()
+    except BaseException as exc:
+        print("ROUND3N_BROWSER_QA_EXCEPTION=" + repr(exc), flush=True)
+        raise
+    qa_path = OUT / "browser_qa.json"
+    print("ROUND3N_BROWSER_QA_FILE=" + str(qa_path.exists()), flush=True)
+    qa = json.loads(qa_path.read_text(encoding="utf-8"))
+    print("ROUND3N_BROWSER_QA_RESULT=" + json.dumps({"result": result, "status": qa["status"], "rows": [{"width": row["width"], "pass": row["pass"], "line_qa": row["line_qa"], "overflow": row["overflow"], "legacy": row["legacy"], "images": row["images"], "frames": row["frames"], "disclosures": row["disclosures"], "rolePass": row["rolePass"]} for row in qa["rows"]]}, ensure_ascii=False), flush=True)
     visual_continuity_ledger()
     await make_comparison()
     write_json(OUT / "final_qa.json", {"status": "HOLD — SARAH HUMAN VISUAL REVIEW PENDING", "copy_persuasion_safety": "PRESERVED_FROM_ROUND_3K_R2", "visual_continuity": "MACHINE_PASS_HUMAN_PENDING", "shun_decision": "NOT_REQUIRED_YET"})
