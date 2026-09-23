@@ -20,6 +20,7 @@ jobs:
       - name: Install renderer
         run: |
           pip install -e .
+          pip install pytest
           python -m playwright install --with-deps chromium
       - name: Generate three visual keyframes
         run: python -X utf8 scripts/run_round3i_br_k_visual_keyframes.py
