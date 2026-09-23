@@ -68,8 +68,10 @@ jobs:
             const pr = context.payload.pull_request;
             const runs = await github.rest.actions.listWorkflowRunsForRepo({owner: context.repo.owner, repo: context.repo.repo, head_sha: pr.head.sha, per_page: 50});
             const files = await github.rest.pulls.listFiles({owner: context.repo.owner, repo: context.repo.repo, pull_number: pr.number, per_page: 100});
-            const runLines = runs.data.workflow_runs.map(r => '- ' + r.id + ': ' + r.name + ' / ' + r.status + ' / ' + (r.conclusion || 'pending')).join('\n') || '- none yet';
-            const fileLines = files.data.files.map(f => '- ' + f.filename + ' (' + f.status + ')').join('\n') || '- none';
+            const workflowRuns = Array.isArray(runs.data?.workflow_runs) ? runs.data.workflow_runs : [];
+            const changedFiles = Array.isArray(files.data) ? files.data : (Array.isArray(files.data?.files) ? files.data.files : []);
+            const runLines = workflowRuns.map(r => '- ' + r.id + ': ' + r.name + ' / ' + r.status + ' / ' + (r.conclusion || 'pending')).join('\n') || '- none yet';
+            const fileLines = changedFiles.map(f => '- ' + f.filename + ' (' + f.status + ')').join('\n') || '- none';
             const comment = [
               '## Sarah PM Realtime Catch-up Signal', '',
               'Event: pull_request.' + context.payload.action,
