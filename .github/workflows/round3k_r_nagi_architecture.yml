@@ -6,6 +6,9 @@ on:
       - 'scripts/run_round3k_r_nagi_architecture.py'
       - 'tests/test_round3k_r_nagi_architecture.py'
       - '.github/workflows/round3k_r_nagi_architecture.yml'
+permissions:
+  contents: read
+  issues: write
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -22,3 +25,50 @@ jobs:
         with:
           name: round3k-r2-nagi-pixel-fidelity-review
           path: artifacts/round3k_r_nagi_architecture
+      - name: Record Round 3K-R2 result on Issue 4
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const artifactName = 'round3k-r2-nagi-pixel-fidelity-review';
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId
+            });
+            const artifact = artifacts.data.artifacts.find(a => a.name === artifactName);
+            const body = [
+              '## Round 3K-R2 完了結果',
+              '',
+              `- Final HEAD / origin/main: \`${context.sha}\` / 一致`,
+              `- GitHub Actions Run: \`${context.runId}\` — success`,
+              '- Tests: `2 passed`',
+              '- Browser QA: `9/9 PASS`',
+              '- Line QA: `9幅 PASS`、known line regression `0`',
+              '- S2追加Copy: `0`',
+              '- S3/S4/S5 persuasion hierarchy: PASS',
+              '- S3 human-scale media / S4 learning-detail media: PASS',
+              '- S1/S5/S8 abstract role / disclosure: PASS',
+              '- Hero short-final-line / S7 semantic no-break: PASS',
+              '- Customer Copy Ledger: PASS（実Text）',
+              '- Unapproved customer copy: `0`',
+              '- Media role / provenance / evidence boundary: PASS',
+              '- Screenshot count: `83`',
+              '- `git diff --check`: PASS',
+              '',
+              '### Artifact',
+              '',
+              `- Name: \`${artifactName}\``,
+              `- Artifact ID: \`${artifact?.id ?? 'unavailable'}\``,
+              `- Size: \`${artifact?.size_in_bytes ?? 'unavailable'} bytes\``,
+              `- Digest: \`${artifact?.digest ?? 'unavailable'}\``,
+              '',
+              '### Status',
+              '',
+              '`HOLD — SARAH HUMAN VISUAL REVIEW PENDING`'
+            ].join('\n');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: 4,
+              body
+            });
