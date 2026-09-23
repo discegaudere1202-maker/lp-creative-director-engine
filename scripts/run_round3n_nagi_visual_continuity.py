@@ -40,6 +40,12 @@ body{background:var(--field);color:var(--ink)}
 .ending{min-height:102svh;background:linear-gradient(135deg,#e5eee7,#f4f3eb)}.ending:before{right:4%;top:11%;width:48%;height:80%;border:0;background:linear-gradient(125deg,#ffffff00,#d9e4dcaa);transform:rotate(7deg)}.ending:after{left:34%;bottom:26%;width:62%;height:1px;background:var(--signal);transform:rotate(-13deg)}.ending .media{right:-7%;bottom:-4%;width:64%;height:88%;opacity:.65;mix-blend-mode:multiply;transform:rotate(-4deg)}.ending .copy{position:relative;z-index:3;max-width:650px;padding-top:2vh}
 .disclosure{position:relative;z-index:5;background:#f8fbf5e8}
 @media(max-width:760px){.scene{min-height:0;padding:106px 22px 82px}.scene:before{inset:8% -14% auto auto;width:74%;height:34%;transform:rotate(-6deg);opacity:.4}.hero{min-height:820px}.hero:before{right:-23%;top:29%;width:118%;height:42%;transform:rotate(-5deg)}.hero .media{right:-22%;top:35%;width:118%;height:44%;clip-path:polygon(4% 0,100% 7%,94% 100%,0 91%);opacity:.55}.hero-copy{padding-top:3vh}.hero-copy h1{font-size:clamp(31px,9vw,44px);max-width:92%}.route-line{bottom:8%;left:22px;right:22px}.state{min-height:780px}.state-grid{margin-top:26px}.state-card,.state-card:nth-child(2),.state-card:nth-child(3){min-height:205px;transform:none;background:transparent;padding:28px 0}.receive{min-height:960px}.receive:before{left:-20%;top:20%;width:90%;height:36%;transform:rotate(8deg)}.receive .copy{max-width:100%;padding-top:0}.receive .media{right:-12%;top:auto;bottom:5%;width:113%;height:48%;clip-path:polygon(4% 0,100% 6%,95% 100%,0 93%);box-shadow:-18px 18px 0 #b9cec366}.receive h2,.learn h2,.healing h2{font-size:clamp(27px,8vw,38px)}.learn{min-height:930px}.learn .media{left:-13%;top:auto;bottom:4%;width:112%;height:47%;clip-path:polygon(0 8%,94% 0,100% 91%,7% 100%);box-shadow:18px 18px 0 #d6c6a855}.learn .copy{max-width:100%;margin-left:0;padding-top:0}.healing{min-height:850px}.healing:before{right:-18%;width:116%;height:54%;top:auto;bottom:0}.healing .media{right:-16%;bottom:-4%;width:130%;height:60%;opacity:.52}.healing .copy{max-width:100%;padding-top:0}.trust{min-height:800px}.trust-grid{display:block}.facts{padding:0 12px}.action{min-height:870px}.action:before{left:-9%;top:13%;width:110%;height:48%}.action:after{right:2%;bottom:11%;width:34%;height:28%}.message-draft{box-shadow:14px 14px 0 #e7efe7}.action .aside{position:relative;right:auto;top:auto;margin-top:45px}.ending{min-height:900px}.ending:before{right:-20%;top:35%;width:125%;height:54%;transform:rotate(8deg)}.ending .media{right:-22%;bottom:-2%;width:130%;height:56%;transform:rotate(-5deg);opacity:.55}.ending .copy{padding-top:0}.ending .disclosure{right:10%;bottom:8%}}
+/* final optical guard: preserve copy while keeping the longest authored chunks inside their heading boxes */
+.hero-copy h1{font-size:clamp(42px,5.1vw,72px)}
+.receive h2{font-size:clamp(30px,3.2vw,48px)}
+.learn h2{font-size:clamp(27px,2.7vw,42px)}
+.receive .copy,.learn .copy{max-width:58%}
+@media(max-width:760px){.scene.hero .hero-copy h1{font-size:24px!important}.receive .copy,.learn .copy{max-width:100%}}
 </style>
 """
 
@@ -113,6 +119,15 @@ def main() -> int:
     write_json(OUT / "comparison" / "f3_reference_status.json", {"status": "PASS" if f3_result == 0 else "REFERENCE_GENERATION_FAILED", "source": "Round 3I-BR-F3"})
     r2.OUT = OUT
     r2.HTML = r2.HTML.replace("</head>", VISUAL_CSS + "</head>")
+    # Round 3K-R2 carries an old patch that nested <style> tags. Collapse the
+    # head stylesheet into one valid block so the Round 3N visual layer is
+    # actually rendered without changing any copy or scene markup.
+    first_style = r2.HTML.find("<style>")
+    last_style = r2.HTML.rfind("</style>")
+    if first_style >= 0 and last_style > first_style:
+        style_body = r2.HTML[first_style + len("<style>"):last_style]
+        style_body = style_body.replace("<style>", "").replace("</style>", "")
+        r2.HTML = r2.HTML[:first_style] + "<style>" + style_body + "</style>" + r2.HTML[last_style + len("</style>"):]
     return asyncio.run(main_async())
 
 
