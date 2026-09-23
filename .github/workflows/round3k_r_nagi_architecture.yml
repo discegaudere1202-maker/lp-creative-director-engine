@@ -1,4 +1,4 @@
-name: Round 3K-V Nagi Visual Authority Semantic Fidelity
+name: Round 3K-R2 Nagi Final Pixel Fidelity Closure
 on:
   workflow_dispatch:
   push:
@@ -20,5 +20,5 @@ jobs:
       - run: git diff --check
       - uses: actions/upload-artifact@v4
         with:
-          name: round3k-v-nagi-visual-authority-review
+          name: round3k-r2-nagi-pixel-fidelity-review
           path: artifacts/round3k_r_nagi_architecture
