@@ -91,6 +91,7 @@ async def make_comparison() -> None:
 async def main_async() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     result = await r2.main_async()
+    print("ROUND3N_BROWSER_QA_RESULT=" + json.dumps(result, ensure_ascii=False))
     visual_continuity_ledger()
     await make_comparison()
     write_json(OUT / "final_qa.json", {"status": "HOLD — SARAH HUMAN VISUAL REVIEW PENDING", "copy_persuasion_safety": "PRESERVED_FROM_ROUND_3K_R2", "visual_continuity": "MACHINE_PASS_HUMAN_PENDING", "shun_decision": "NOT_REQUIRED_YET"})
