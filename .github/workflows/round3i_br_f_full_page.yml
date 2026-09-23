@@ -1,0 +1,30 @@
+name: Round 3I-BR-F Nagi Full-page Visual Translation
+on:
+  push:
+    paths:
+      - "scripts/run_round3i_br_f_full_page.py"
+      - "tests/test_round3i_br_f_full_page.py"
+      - ".github/workflows/round3i_br_f_full_page.yml"
+      - "assets/fonts/round2f/**"
+  workflow_dispatch:
+jobs:
+  full-page-visual-translation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install renderer
+        run: |
+          pip install -e .
+          pip install pytest
+          python -m playwright install --with-deps chromium
+      - name: Generate full-page translation
+        run: python -X utf8 scripts/run_round3i_br_f_full_page.py
+      - name: Run full-page contract tests
+        run: python -m pytest -q -p no:cacheprovider tests/test_round3i_br_f_full_page.py
+      - name: Upload full-page package
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3i-br-f-nagi-full-page-${{ github.sha }}
+          path: artifacts/round3i_br_f/
