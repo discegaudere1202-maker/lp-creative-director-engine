@@ -57,9 +57,9 @@ def build_evidence(event: dict[str, Any], repository: str = "") -> dict[str, Any
         # A push/workflow_dispatch run validates the installed contract itself;
         # it is not a fabricated PR lifecycle signal.
         missing = []
-    if not number:
+    if not manual_event and not number:
         missing.append("pull_request.number")
-    if not sha:
+    if not manual_event and not sha:
         missing.append("pull_request.head.sha")
     if action == "ready_for_review" and pr.get("draft") is True:
         missing.append("ready_for_review requires draft=false")

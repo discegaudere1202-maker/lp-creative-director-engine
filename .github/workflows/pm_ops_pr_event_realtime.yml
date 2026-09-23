@@ -29,7 +29,7 @@ jobs:
       - name: Validate PM-OPS event contract
         run: python scripts/run_pm_ops_pr_event_contract.py
       - name: Run PM-OPS regression tests
-        run: pytest -q tests/test_pm_ops_pr_event_contract.py
+        run: python -m pip install pytest && pytest -q tests/test_pm_ops_pr_event_contract.py
       - name: Check patch whitespace
         run: git diff --check
       - name: Upload event evidence
@@ -37,29 +37,25 @@ jobs:
         with:
           name: pm-ops-pr-event-realtime-contract
           path: artifacts/pm_ops_pr_event_realtime
-
-      - name: Record GitHub-side implementation result on Issue #5
+      - name: Record implementation result on Issue 5
         if: github.event_name == 'push'
         uses: actions/github-script@v7
         with:
           script: |
-            const body = `## PM-OPS-1 GitHub-side implementation result
-
-            Status: **HOLD — SARAH PM REVIEW PENDING**
-
-            The PR event workflow and machine-readable linkage contract are now present on \\`${context.sha}\`.
-
-            - Primary trigger: \\`pull_request.ready_for_review\\`
-            - Secondary triggers: \\`synchronize\\`, \\`converted_to_draft\\`, \\`closed\\`
-            - Fallback: existing hourly condition watch
-            - Workflow: \\`.github/workflows/pm_ops_pr_event_realtime.yml\\`
-            - Contract: \\`scripts/run_pm_ops_pr_event_contract.py\\`
-            - Tests: \\`tests/test_pm_ops_pr_event_contract.py\\`
-            - Sarah prompt: \\`docs/PM_OPS_SARAH_WORK_PROMPT.md\\`
-
-            The deterministic E2E lifecycle test covers Ready for Review, commit update, and close. A live ChatGPT Work delivery remains pending the user's one-time GitHub connector/automation approval; no permission or merge action was automated.`;
+            const body = [
+              '## PM-OPS-1 GitHub-side implementation result', '',
+              'Status: HOLD — SARAH PM REVIEW PENDING', '',
+              'Realtime PR event workflow and linkage contract are present on commit ' + context.sha + '.', '',
+              '- Primary trigger: pull_request.ready_for_review',
+              '- Secondary triggers: synchronize, converted_to_draft, closed',
+              '- Fallback: existing hourly condition watch',
+              '- Workflow: .github/workflows/pm_ops_pr_event_realtime.yml',
+              '- Contract: scripts/run_pm_ops_pr_event_contract.py',
+              '- Tests: tests/test_pm_ops_pr_event_contract.py',
+              '- Sarah prompt: docs/PM_OPS_SARAH_WORK_PROMPT.md', '',
+              'Deterministic E2E covers Ready for Review, commit update, and close. Live ChatGPT Work delivery remains pending the user one-time GitHub connector/automation approval; no permission or merge action was automated.'
+            ].join('\n');
             await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: 5, body});
-
       - name: Record PR lifecycle signal on linked Task Issue
         if: github.event_name == 'pull_request' && (github.event.action == 'ready_for_review' || github.event.action == 'synchronize' || github.event.action == 'closed' || github.event.action == 'converted_to_draft')
         uses: actions/github-script@v7
@@ -67,25 +63,21 @@ jobs:
           script: |
             const body = context.payload.pull_request.body || '';
             const match = body.match(/task_issue:\s*(\d+)/i);
-            if (!match) core.setFailed('pm-ops metadata has no task_issue');
+            if (!match) { core.setFailed('pm-ops metadata has no task_issue'); return; }
             const issue = Number(match[1]);
             const pr = context.payload.pull_request;
             const runs = await github.rest.actions.listWorkflowRunsForRepo({owner: context.repo.owner, repo: context.repo.repo, head_sha: pr.head.sha, per_page: 50});
             const files = await github.rest.pulls.listFiles({owner: context.repo.owner, repo: context.repo.repo, pull_number: pr.number, per_page: 100});
-            const runLines = runs.data.workflow_runs.map(r => `- ${r.id}: ${r.name} / ${r.status} / ${r.conclusion || 'pending'}`).join('\n') || '- none yet';
-            const fileLines = files.data.files.map(f => `- ${f.filename} (${f.status})`).join('\n') || '- none';
-            const comment = `## Sarah PM Realtime Catch-up Signal
-
-            Event: \\`pull_request.${context.payload.action}\\`
-            PR: #${pr.number} — ${pr.title}
-            Final HEAD: \\`${pr.head.sha}\\`
-            Review state: ${pr.draft ? 'draft' : pr.merged ? 'merged' : pr.state}
-
-            ### Changed files
-            ${fileLines}
-
-            ### Matching Actions runs
-            ${runLines}
-
-            Sarah next step: inspect the PR, linked Task Issue, matching runs/artifacts, and human evidence. Keep \\`HOLD — SARAH PM REVIEW PENDING\\`; this workflow does not merge or declare visual quality.`;
+            const runLines = runs.data.workflow_runs.map(r => '- ' + r.id + ': ' + r.name + ' / ' + r.status + ' / ' + (r.conclusion || 'pending')).join('\n') || '- none yet';
+            const fileLines = files.data.files.map(f => '- ' + f.filename + ' (' + f.status + ')').join('\n') || '- none';
+            const comment = [
+              '## Sarah PM Realtime Catch-up Signal', '',
+              'Event: pull_request.' + context.payload.action,
+              'PR: #' + pr.number + ' — ' + pr.title,
+              'Final HEAD: ' + pr.head.sha,
+              'Review state: ' + (pr.draft ? 'draft' : pr.merged ? 'merged' : pr.state), '',
+              '### Changed files', fileLines, '',
+              '### Matching Actions runs', runLines, '',
+              'Sarah next step: inspect the PR, linked Task Issue, matching runs/artifacts, and human evidence. Keep HOLD — SARAH PM REVIEW PENDING; this workflow does not merge or declare visual quality.'
+            ].join('\n');
             await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: issue, body: comment});
