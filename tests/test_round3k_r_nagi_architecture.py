@@ -8,4 +8,4 @@ def test_independent_scene_and_copy_contract():
     html=(OUT/'reproduction/index.html').read_text(encoding='utf-8'); assert '今したいことから' not in html and '選んだサービス' not in html and '内容から読む' not in html
 def test_media_boundary_and_hold():
     media=json.loads((OUT/'media_role_manifest.json').read_text(encoding='utf-8')); boundary=json.loads((OUT/'evidence_boundary.json').read_text(encoding='utf-8')); final=json.loads((OUT/'final_qa.json').read_text(encoding='utf-8'))
-    assert media['human_perception_qa']=='PASS' and media['material_media_scenes']==['S1','S3','S4','S5','S8'] and boundary['status']=='PASS' and final['status'].startswith('HOLD')
+    assert media['human_perception_qa']=='PASS' and {x['scene'] for x in media['assets']}=={'S1','S3','S4','S5','S8'} and boundary['status']=='PASS' and final['status'].startswith('HOLD')

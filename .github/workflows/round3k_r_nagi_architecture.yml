@@ -1,4 +1,4 @@
-name: Round 3K-R Nagi Persuasion Architecture Pixel Fidelity
+name: Round 3K-V Nagi Visual Authority Semantic Fidelity
 on:
   workflow_dispatch:
   push:
@@ -20,5 +20,5 @@ jobs:
       - run: git diff --check
       - uses: actions/upload-artifact@v4
         with:
-          name: round3k-r-nagi-architecture-review
+          name: round3k-v-nagi-visual-authority-review
           path: artifacts/round3k_r_nagi_architecture
