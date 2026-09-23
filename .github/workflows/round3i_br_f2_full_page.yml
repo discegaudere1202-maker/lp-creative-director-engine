@@ -1,0 +1,25 @@
+name: Round 3I-BR-F2 Full-page Final Correction
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/run_round3i_br_f2_full_page.py'
+      - 'tests/test_round3i_br_f2_full_page.py'
+      - '.github/workflows/round3i_br_f2_full_page.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install playwright pytest
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/run_round3i_br_f2_full_page.py
+      - run: pytest -q tests/test_round3i_br_f2_full_page.py
+      - run: git diff --check
+      - name: Package review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3i-br-f2-nagi-full-page-review
+          path: artifacts/round3i_br_f2
