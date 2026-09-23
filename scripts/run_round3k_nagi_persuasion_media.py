@@ -62,6 +62,8 @@ async def main_async():
     with f3.serve(site) as url:qa=await f3.render(url)
     line=json.loads((OUT/"line_composition_qa.json").read_text(encoding='utf-8'))
     line["coverage"]="all_major_customer_facing_headings"; line["status"]="PASS" if line["orphan_line_count"]==0 and all(c["rects"]==1 for row in line["widths"] for h in row["headings"] for c in h["chunks"]) else "FAIL"
+    for width_row in line["widths"]:
+        width_row["status"]="PASS" if all(c["rects"]==1 for h in width_row["headings"] for c in h["chunks"]) and not width_row.get("issues") else "FAIL"
     write_json(OUT/"line_composition_qa.json",line)
     for row in qa["rows"]:
         row["internal"]=0
