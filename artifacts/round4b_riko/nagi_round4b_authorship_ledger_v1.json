@@ -1,0 +1,392 @@
+{
+  "schema_version": "round4b_nagi_authorship_ledger_v1",
+  "task_issue": 34,
+  "owner": "riko",
+  "baseline": {
+    "issue": 31,
+    "pr": 32,
+    "head_sha": "062e2716d2be917ace9bcbb6e577b9475040aea0",
+    "artifact_id": 10791778659,
+    "artifact_run": 35959909121,
+    "human_gate_issue": 33,
+    "human_gate": "Aoi G5 RETURN / Shun NOT READY"
+  },
+  "scope": {
+    "reopened": [
+      "S4 customer-facing copy",
+      "S5 customer-facing copy",
+      "minimum visible grammar reduction in S1/S2/S4/S5",
+      "transition spacing/treatment only where needed by the altered scenes"
+    ],
+    "frozen": [
+      "S4 desktop composition/post-image void closure",
+      "S4 mobile fixed-header entry",
+      "S3 copy/desktop/mobile authorship",
+      "mobile overall PASS",
+      "S6 trust architecture",
+      "S7 message-draft device",
+      "S8 ending",
+      "decision flow/regression reality",
+      "evidence/rights/truth boundary",
+      "verified Instagram destination",
+      "CTA accessibility",
+      "9-width responsive floor",
+      "S4 notebook media composition",
+      "S5 material field asset/direction"
+    ]
+  },
+  "actual_pixel_review": {
+    "status": "PASS",
+    "artifact_id": 10791778659,
+    "files_reviewed": [
+      "desktop/full_1440.png",
+      "mobile/full_390.png",
+      "desktop/s4_1440.png",
+      "desktop/s5_1440.png",
+      "mobile/s4_390.png",
+      "mobile/s5_390.png"
+    ],
+    "diagnosis": [
+      "S4 composition and mobile entry are closed strengths and must not be reopened",
+      "S4/S5 visitor copy still exposes production/evidence-process language",
+      "S1/S2/S4/S5 still over-share giant-Gothic + sparse-field + micro-rule editorial grammar",
+      "S3/S6/S7/S8 each already have distinct scene authority and are frozen"
+    ]
+  },
+  "final_copy": {
+    "S4": {
+      "service_label": {
+        "text": "ヘッドスパスクール",
+        "evidence_class": "FACT"
+      },
+      "headline": {
+        "lines": [
+          "ヘッドスパを見ていて、",
+          "「どうやっているんだろう」が残ったら。"
+        ],
+        "evidence_class": "CUSTOMER_HYPOTHESIS"
+      },
+      "body": [
+        {
+          "text": "受けることに興味があったのに、気づけば、技術のほうを見ている。",
+          "evidence_class": "CUSTOMER_HYPOTHESIS"
+        }
+      ],
+      "action": {
+        "text": "なぎのみらいの公式Instagramを見る ↗",
+        "evidence_class": "FACT_BASED_NAVIGATION",
+        "destination": "https://www.instagram.com/happyfuture_02/"
+      },
+      "semantic_line_intent": {
+        "desktop_headline": [
+          "ヘッドスパを見ていて、",
+          "「どうやっているんだろう」が残ったら。"
+        ],
+        "mobile_headline": [
+          "ヘッドスパを見ていて、",
+          "「どうやっているんだろう」が",
+          "残ったら。"
+        ],
+        "body": [
+          "受けることに興味があったのに、",
+          "気づけば、技術のほうを見ている。"
+        ]
+      },
+      "round3z_removed": [
+        "なぎのみらいには、その興味の先にヘッドスパスクールがあります。",
+        "何を学べるのか。受講条件はどうか。このページでは、そこまでは分かりません。",
+        "もう少し知りたくなったら、公式Instagramを開く。"
+      ]
+    },
+    "S5": {
+      "service_label": {
+        "text": "ヒーリングサロン",
+        "evidence_class": "FACT"
+      },
+      "headline": {
+        "lines": [
+          "ヒーリングは、",
+          "分かってから考えたい。"
+        ],
+        "evidence_class": "DECISION_FRAME"
+      },
+      "body": [
+        {
+          "text": "名前だけで、自分に合うかまで決めるのはむずかしい。",
+          "evidence_class": "CUSTOMER_HYPOTHESIS"
+        },
+        {
+          "text": "「何をするものなんだろう」が残るなら、判断は、その中身を知ってから。",
+          "evidence_class": "DECISION_FRAME"
+        }
+      ],
+      "action": {
+        "text": "なぎのみらいの公式Instagramを見る ↗",
+        "evidence_class": "FACT_BASED_NAVIGATION",
+        "destination": "https://www.instagram.com/happyfuture_02/"
+      },
+      "semantic_line_intent": {
+        "headline": [
+          "ヒーリングは、",
+          "分かってから考えたい。"
+        ],
+        "body_second_sentence": [
+          "「何をするものなんだろう」が残るなら、",
+          "判断は、その中身を知ってから。"
+        ]
+      },
+      "round3z_removed": [
+        "分かっているのは、なぎのみらいにヒーリングサロンがあること。具体的な内容は、このページではまだ分かりません。",
+        "「何なんだろう」が残ったら、次に開くのは公式Instagramです。"
+      ]
+    }
+  },
+  "visitor_production_language_gate": {
+    "status": "FAIL_CLOSED",
+    "scope": ["S4", "S5"],
+    "forbidden_phrases": [
+      "このページでは",
+      "このページには",
+      "確認できていません",
+      "そこまでは分かりません",
+      "具体的な内容はまだ分かりません",
+      "分かっているのは",
+      "次に開くのは"
+    ],
+    "forbidden_body_instruction": "公式Instagramを開く",
+    "final_copy_match_count": 0,
+    "unknown_handling": "omit unverified facts; do not replace them with vague positive claims"
+  },
+  "visual_grammar": {
+    "S1": {
+      "decision": "ALTER",
+      "authority_source": "material atmosphere + compact 受ける/学ぶ/知る cue + hero statement",
+      "desktop_1440": {
+        "headline_px": [54, 60],
+        "headline_weight": [650, 700],
+        "headline_line_height": [1.16, 1.22],
+        "headline_max_width_px": [690, 740],
+        "lead_px": [17, 18],
+        "scene_height_px": [860, 940],
+        "headline_to_lead_px": [28, 36],
+        "lead_to_route_px": [34, 48],
+        "route_to_exit_px": [72, 96]
+      },
+      "remove": [
+        "full-width route-line top border",
+        "route words stretched across viewport",
+        "headline-only authority"
+      ],
+      "keep": [
+        "hero material asset family",
+        "Nagi/Fukuoka context",
+        "S1 copy meaning",
+        "受ける/学ぶ/知る service width"
+      ],
+      "mobile_390": {
+        "headline_px": [30, 34],
+        "route": "compact borderless cue",
+        "structural_order": "preserve"
+      }
+    },
+    "S2": {
+      "decision": "ALTER",
+      "authority_source": "three customer-state statements",
+      "desktop_1440": {
+        "intro_px": [28, 32],
+        "intro_weight": [550, 600],
+        "state_headline_px": [26, 31],
+        "state_headline_weight": [600, 650],
+        "section_top_px": [92, 110],
+        "intro_to_states_px": [30, 40],
+        "state_gap_px": [16, 24],
+        "state_min_height_px": [220, 260],
+        "section_bottom_px": [92, 108]
+      },
+      "remove": [
+        "state-grid top border",
+        "1px separator-driven grouping",
+        "excess dead white space"
+      ],
+      "keep": [
+        "three-state order",
+        "service names",
+        "restrained tonal state difference"
+      ],
+      "mobile_390": {
+        "state_headline_px": [24, 28],
+        "service_px": [13, 14],
+        "total_height": "equal or shorter than Round 3Z"
+      }
+    },
+    "S3": {
+      "decision": "KEEP_FROZEN",
+      "authority_source": "human-scale image + customer moment"
+    },
+    "S4": {
+      "decision": "ALTER_TYPOGRAPHY_COPY_ONLY",
+      "authority_source": "notebook work-surface media",
+      "desktop_1440": {
+        "service_label_px": [15, 16],
+        "headline_px": [42, 46],
+        "headline_weight": [650, 700],
+        "headline_line_height": [1.22, 1.28],
+        "headline_max_width_px": [720, 780],
+        "body_px": [17, 19],
+        "body_line_height": [1.75, 1.85],
+        "body_max_width_px": [500, 540],
+        "disclosure_to_body_px": [32, 48],
+        "body_to_action_px": [24, 32],
+        "scene_bottom_px": [76, 96]
+      },
+      "remove": [
+        "service-label underline",
+        "serial eyebrow",
+        "isolated underlined CTA",
+        "giant headline competing with notebook authority"
+      ],
+      "keep": [
+        "notebook asset/crop intent",
+        "Round 3Z desktop composition",
+        "Round 3Z immediate continuation",
+        "mobile fixed-header PASS",
+        "image disclosure"
+      ],
+      "mobile_390": {
+        "order": "service label -> headline -> notebook media -> disclosure -> body -> action",
+        "headline_px": [29, 32],
+        "body_px": [15, 17],
+        "structural_geometry": "preserve Round 3Z"
+      }
+    },
+    "S5": {
+      "decision": "ALTER",
+      "authority_source": "translucent material field + bounded reframe",
+      "desktop_1440": {
+        "service_label_px": [15, 16],
+        "headline_px": [38, 44],
+        "headline_weight": [650, 700],
+        "headline_line_height": [1.26, 1.34],
+        "body_px": [17, 19],
+        "body_line_height": [1.8, 1.9],
+        "copy_x_vw": [16, 22],
+        "copy_max_width_px": [500, 540],
+        "material_left_pct": [36, 42],
+        "material_width_pct": [64, 72],
+        "material_copy_overlap_pct": [10, 18],
+        "section_height_px": [700, 780],
+        "top_padding_px": [100, 118],
+        "headline_to_body_px": [28, 36],
+        "body_to_action_px": [28, 36],
+        "bottom_to_s6_px": [72, 88]
+      },
+      "remove": [
+        "service-label underline",
+        "isolated underlined CTA",
+        "repeated left-copy/right-field split feeling",
+        "headline as primary atmospheric authority"
+      ],
+      "keep": [
+        "Round 3Z material field asset/direction",
+        "healing effect unclaimed"
+      ],
+      "mobile_390": {
+        "headline_px": [28, 31],
+        "body_px": [15, 16],
+        "material_field": "preserve current mobile field and order"
+      }
+    },
+    "S6": {"decision": "KEEP_FROZEN"},
+    "S7": {"decision": "KEEP_FROZEN"},
+    "S8": {"decision": "KEEP_FROZEN"}
+  },
+  "transitions": {
+    "S1_to_S2": "no full-width rule; atmosphere -> recognition density; no blank band >120px at 1440",
+    "S2_to_S3": "state blocks terminate S2; no separator; S3 remains unchanged",
+    "S3_to_S4": "no bridge motif; S3 frozen; S4 entry geometry preserved",
+    "S4_to_S5": "no separator; warm work surface -> cool material field through spacing only",
+    "S5_to_S6": "no decorative separator; S6 dark trust field follows without new motif",
+    "S6_to_S7_to_S8": "frozen"
+  },
+  "replacement_signature_guard": {
+    "status": "FAIL_CLOSED",
+    "rule": "No newly introduced presentation motif may repeat mechanically across three or more of S1/S2/S4/S5.",
+    "forbidden_examples": [
+      "same pill/label",
+      "same oversized serif",
+      "same overlap trick",
+      "same bottom-right CTA box",
+      "same curved boundary",
+      "same decorative arrow/rule"
+    ]
+  },
+  "preserve": {
+    "hard": [
+      "S1-S8 semantic order",
+      "truth/rights/evidence boundary",
+      "verified Instagram destination",
+      "CTA accessibility",
+      "9-width responsive floor",
+      "Japanese line-composition invariants",
+      "no overflow/truncation/semantic orphan"
+    ],
+    "material": [
+      "S3 copy/photo/desktop/mobile authorship",
+      "S4 notebook media identity and closed composition",
+      "S4 mobile fixed-header entry",
+      "S5 material field asset/direction",
+      "S6 dark trust architecture",
+      "S7 message-draft device",
+      "S8 ending"
+    ]
+  },
+  "forbidden": [
+    "curriculum claim",
+    "qualification/staff/founder fact",
+    "price/duration claim",
+    "treatment/healing effect",
+    "outcome/testimonial claim",
+    "response-policy claim",
+    "new proof",
+    "new asset research",
+    "S3 rewrite/composition change",
+    "S6 re-authoring",
+    "S7 message-draft replacement",
+    "S8 ending replacement",
+    "broad palette reset",
+    "global typography reset",
+    "motion expansion",
+    "new rounded-card/pill language",
+    "replacement motif repeated across 3+ altered scenes"
+  ],
+  "rin_order": [
+    "replace only S4/S5 customer-facing strings",
+    "assert zero forbidden production-language phrases in S4/S5",
+    "apply S1 grammar delta",
+    "apply S2 grammar delta",
+    "apply S4 typography/label/action delta without reopening composition",
+    "apply S5 typography/copy-field delta while preserving material asset",
+    "apply only specified transition spacing",
+    "render 1440 scene authority review",
+    "render 390 mobile-preservation review",
+    "run 9-width floor and regression suite",
+    "generate actual-pixel artifact for Aoi G5"
+  ],
+  "human_regression": [
+    {"id":"HR-01","target":"S4 copy authorship","pass":"zero visitor-facing production/evidence explanation; customer curiosity still progresses toward technique"},
+    {"id":"HR-02","target":"S5 copy authorship","pass":"zero visitor-facing production/evidence explanation; zero healing claim; bounded reason to know more remains"},
+    {"id":"HR-03","target":"unsupported facts","pass":"zero new curriculum/staff/qualification/price/duration/effect/outcome/proof/response-policy claim"},
+    {"id":"HR-04","target":"S1 authority","pass":"material + business-specific route cue materially share authority; full-width route rule gone"},
+    {"id":"HR-05","target":"S2 authority","pass":"three customer-state statements outrank prompt/rules"},
+    {"id":"HR-06","target":"S4 authority","pass":"notebook remains dominant work-surface authority"},
+    {"id":"HR-07","target":"S5 authority","pass":"material/reframe authority; not another giant-headline sparse module"},
+    {"id":"HR-08","target":"replacement signature","pass":"no new motif repeats across 3+ altered scenes"},
+    {"id":"HR-09","target":"mobile","pass":"430/390/375/360/320 remain free of clipping/header obstruction/overflow/orphans"},
+    {"id":"HR-10","target":"S3","pass":"copy/photo/desktop/mobile authorship unchanged"},
+    {"id":"HR-11","target":"S6/S7/S8","pass":"trust/message-draft/ending/Instagram destination unchanged"},
+    {"id":"HR-12","target":"full-page 1440","pass":"S1/S2/S4/S5 authority mechanisms are materially distinct before background color is considered"}
+  ],
+  "formal_quality_claim": false,
+  "human_visible_gate": "PENDING_AFTER_RIN_IMPLEMENTATION",
+  "routing": "Riko -> Sarah -> Rin implementation -> regenerated actual pixels -> Aoi G5 -> Sarah final actual-pixel/copy review -> Shun only if READY"
+}
