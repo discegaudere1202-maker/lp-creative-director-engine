@@ -22,7 +22,7 @@ CONTAINMENT_CSS = r'''<style>
 #s2 .state-grid,#s2 .state-card{min-width:0;max-width:100%}
 #s2 .state-card h3{min-width:0;overflow-wrap:anywhere;word-break:break-all}
 #s2 .state-card h3 .line-chunk,#s4 h2 .line-chunk,#s7 h2 .line-chunk{word-break:break-all}
-.learn .tail{margin-top:390px}
+.learn .tail{margin-top:389px}
 @media(max-width:760px){.learn .tail{margin-top:24px}}
 </style>'''
 
