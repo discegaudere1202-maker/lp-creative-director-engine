@@ -1,0 +1,65 @@
+name: Round 3Q Nagi QA Baseline Repair and Rebuild
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_round3q_nagi_rebuild.py"
+      - "tests/test_round3q_nagi_rebuild.py"
+      - ".github/workflows/round3q_nagi_rebuild.yml"
+      - "docs/ROUND3P_**"
+      - "docs/research/COPY_QUALITY_RUBRIC_VNEXT_FINAL.md"
+      - "docs/research/NAGI_CURRENT_STATE_DIAGNOSIS_3P_FINAL.md"
+      - "artifacts/round3p_riko/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest playwright pillow
+          playwright install --with-deps chromium
+      - name: Phase A compile and baseline tests
+        run: |
+          python -m py_compile scripts/run_round2h_d_nagi.py
+          pytest -q tests/test_round2h_d_nagi.py tests/test_browser_qa_static.py tests/test_browser_smoke.py
+      - name: Diff check
+        run: git diff --check
+      - name: Generate Round 3Q package
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+        run: python scripts/run_round3q_nagi_rebuild.py
+      - name: Round 3Q contract tests
+        run: pytest -q tests/test_round3q_nagi_rebuild.py
+      - name: Assert fail-closed gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('artifacts/round3q_nagi_rebuild')
+          s=json.loads((root/'summary.json').read_text(encoding='utf-8'))
+          q=json.loads((root/'browser_qa.json').read_text(encoding='utf-8'))
+          assert s['gates']['G0']=='PASS' and s['gates']['G4']=='PASS'
+          assert s['gates']['G5']=='HUMAN_REVIEW_PENDING' and s['gates']['G6']=='NOT_STARTED'
+          assert q['status']=='PASS' and q['total']==9 and q['pass']==9 and q['fail']==0
+          assert s['regression_count']==0 and s['incidental_change_count']==0
+          assert s['human_review_ready']=='YES' and s['formal_human_quality_pass'] is False
+          print('Round 3Q technical and regression gates PASS; human gate remains pending')
+          PY
+      - name: Upload Round 3Q artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3q-nagi-design-copy-regression-safe-${{ github.sha }}
+          path: artifacts/round3q_nagi_rebuild
+          if-no-files-found: error
+          retention-days: 14
