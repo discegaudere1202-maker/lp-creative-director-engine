@@ -1,0 +1,23 @@
+{
+  "schema_version": "issue44_compatibility_prohibited_hypotheses_v1",
+  "compatible_hypotheses": [
+    {"when":"high sensory experience weight + low immediate information burden","prefer":"BW-F01 with atmosphere/recognition composition","why":"environment can carry desire before proof"},
+    {"when":"high trust requirement + complex conditions","prefer":"BW-F02/BW-F06 with distributed proof and quiet boundary modules","why":"customer needs inspectability rather than atmosphere alone"},
+    {"when":"multiple services + choice anxiety","prefer":"BW-F05 with intent-routed service and contextual CTA","why":"decision architecture is the differentiator"},
+    {"when":"owner/staff importance is strategically high","prefer":"BW-F04/BW-F07 human relationship grammar","why":"human identity materially affects choice; feasibility determines realization, not family fit"},
+    {"when":"unfamiliar category + low readiness","prefer":"BW-F08 plus permission/education sequence","why":"understanding must precede commitment"}
+  ],
+  "prohibited_combinations": [
+    {"combination":"Clinical Calm + decorative luxury media dominating condition/proof scenes","reason":"steals authority from evidence and can create false reassurance"},
+    {"combination":"Sensory Sanctuary + generic spa stock used as company reality","reason":"stock-image costume / authenticity risk"},
+    {"combination":"Guided Choice + repeated equal-card grid as the whole page","reason":"turns decision logic into obvious template signature"},
+    {"combination":"Human Craft/Local Human + unverifiable staff/premises/process claims","reason":"creative fit cannot authorize fabricated evidence"},
+    {"combination":"Editorial High-Consideration + Hero luxury followed by generic late-page FAQ/CTA","reason":"premium thesis collapses after Hero"},
+    {"combination":"Proof-Led Process + feature inventory without customer task/risk framing","reason":"evidence volume is not persuasive causality"}
+  ],
+  "hard_separation": {
+    "creative_fit": "determines what art direction is appropriate",
+    "production_feasibility": "determines how selected direction can be realized safely with available assets/evidence",
+    "rule": "Production feasibility may cause adaptation/fallback inside the chosen creative logic; it must not silently select an inferior family."
+  }
+}
