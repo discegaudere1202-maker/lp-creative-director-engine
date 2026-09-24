@@ -1,0 +1,66 @@
+name: Round 3T Nagi Narrow Authored Correction
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/run_round3t_nagi_authored_correction.py"
+      - "tests/test_round3t_nagi_authored_correction.py"
+      - "scripts/run_round2h_d_nagi.py"
+      - ".github/workflows/qa.yml"
+      - ".github/workflows/round3t_nagi_authored_correction.yml"
+      - "docs/ROUND3S_**"
+      - "artifacts/round3s_riko/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project, test and browser dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest playwright pillow
+          playwright install --with-deps chromium
+      - name: Phase A baseline repair
+        run: |
+          python -m py_compile scripts/run_round2h_d_nagi.py
+          pytest -q -p no:cacheprovider tests/test_round2h_d_nagi.py tests/test_browser_qa_static.py tests/test_browser_smoke.py
+      - name: Full generic LP Engine QA
+        run: python -m unittest discover -s tests -v
+      - name: Diff check
+        run: git diff --check
+      - name: Generate Round 3T package
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+        run: python scripts/run_round3t_nagi_authored_correction.py
+      - name: Round 3T contract tests
+        run: pytest -q -p no:cacheprovider tests/test_round3t_nagi_authored_correction.py
+      - name: Assert Round 3T gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('artifacts/round3t_nagi_authored_correction')
+          s=json.loads((root/'summary.json').read_text(encoding='utf-8'))
+          q=json.loads((root/'browser_qa.json').read_text(encoding='utf-8'))
+          assert q['status']=='PASS' and q['total']==9 and q['pass']==9 and q['fail']==0
+          assert s['status']=='HOLD — SARAH HUMAN VISUAL REVIEW PENDING'
+          assert s['formal_human_quality_pass'] is False
+          assert s['round3t']['g5']=='HUMAN_REVIEW_PENDING'
+          print('Round 3T G0-G4 technical gates PASS; G5 remains human review pending')
+          PY
+      - name: Upload Round 3T artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3t-nagi-authored-correction-${{ github.sha }}
+          path: artifacts/round3t_nagi_authored_correction
+          if-no-files-found: error
+          retention-days: 14
