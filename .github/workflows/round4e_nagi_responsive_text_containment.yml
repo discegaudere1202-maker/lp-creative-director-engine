@@ -1,0 +1,38 @@
+name: Round 4E Nagi Responsive Text Containment
+
+on:
+  pull_request:
+    paths:
+      - "scripts/run_round4e_nagi_responsive_text_containment.py"
+      - "scripts/run_round4c_nagi_final_copy_visual_grammar.py"
+      - "tests/test_round4e_nagi_responsive_text_containment.py"
+      - "scripts/run_round3z_nagi_s4_s5_grammar.py"
+      - ".github/workflows/round4e_nagi_responsive_text_containment.yml"
+  workflow_dispatch:
+
+jobs:
+  round4e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -e . pytest playwright pillow
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Generate Round 4E artifact
+        run: python scripts/run_round4e_nagi_responsive_text_containment.py
+      - name: Run Round 4E tests
+        run: python -m pytest -q -p no:cacheprovider tests/test_round4e_nagi_responsive_text_containment.py
+      - name: Diff check
+        run: git diff --check
+      - name: Assert technical gates
+        run: >-
+          python -c "import json; q=json.load(open('artifacts/round4e_nagi_responsive_text_containment/browser_qa.json')); d=json.load(open('artifacts/round4e_nagi_responsive_text_containment/text_containment_diagnostics.json')); assert q['status']=='PASS' and q['pass']==9 and d['status']=='PASS'"
+      - name: Upload Round 4E artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round4e-nagi-responsive-text-containment-${{ github.sha }}
+          path: artifacts/round4e_nagi_responsive_text_containment
