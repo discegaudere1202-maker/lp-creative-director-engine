@@ -1,0 +1,68 @@
+{
+  "schema_version": "issue44_research_saturation_report_v1",
+  "research_mode": "PERSIST_COMPLETED_WORK_NO_RESEARCH_RERUN",
+  "recovered_counts": {
+    "discovery": 150,
+    "strong_shortlist": 45,
+    "deep_annotation": 40,
+    "elite_candidate": 15,
+    "deep_original_or_official_verified": 40
+  },
+  "discovery_source_distribution": {
+    "LP advance / recruiting": 39,
+    "LP advance / real-estate": 26,
+    "SANKOU!": 22,
+    "LP advance / original LP search": 15,
+    "LP advance / video-category": 11,
+    "LP advance / new arrivals": 7,
+    "SANKOU! food category": 4,
+    "LP advance / education": 4,
+    "LP advance / insurance": 4,
+    "LP advance / app": 3,
+    "LP advance / B2B": 3,
+    "SANKOU! medical category": 2,
+    "SANKOU! cleanliness category": 2,
+    "LP advance / housing": 2,
+    "LP advance / local service": 2,
+    "LP advance / IT category": 1,
+    "LP advance / local manufacturing": 1,
+    "LP advance / EC": 1,
+    "LP advance / food": 1
+  },
+  "saturated_or_pause_regions": [
+    "photography-led lifestyle Hero",
+    "generic premium housing mood",
+    "basic app feature lists",
+    "trust-through-testimonials",
+    "high-ticket consultation/diagnosis commitment ladder",
+    "distributed basic trust structure"
+  ],
+  "continuing_blind_spots": [
+    "broader original-LP verification across discovery",
+    "education outside career-change schools",
+    "local medical/professional services",
+    "calculators/selectors/comparisons",
+    "pricing architecture",
+    "late-page patterns in small B2B/SME"
+  ],
+  "mobile_motion_supporting_slice": {
+    "pixel_verified": 11,
+    "viewports": [390, 375, 320],
+    "mobile_authored": 5,
+    "mobile_adapted": 2,
+    "responsive_only": 1,
+    "mobile_regression": 3,
+    "motion_meaningful": 2,
+    "motion_decorative": 3,
+    "motion_mixed": 3,
+    "motion_insufficient": 3
+  },
+  "saturation_judgment": "MECHANISM-LEVEL PARTIAL SATURATION / NOT A CLAIM OF FULL 300-500 DISCOVERY TARGET",
+  "why": "Repeated decision mechanisms had begun to stabilize in several regions, but recovered evidence does not justify claiming the Issue43 300–500 discovery / 60–80 deep target was completed.",
+  "confidence_limits": [
+    "The structured 150-record registry is concentrated in SANKOU! and LP advance/original-page routes; per-sample rows from every source in the six-source quality map were not retained in the recovered session.",
+    "Dedicated same-template-looking labeled pair rows were not recovered; Template Resemblance numeric threshold remains uncalibrated.",
+    "Beauty/Wellness family taxonomy is a proposal derived from same-industry plus adjacent service evidence and requires multi-company validation.",
+    "Motion evidence is materially thinner than static composition evidence."
+  ]
+}
