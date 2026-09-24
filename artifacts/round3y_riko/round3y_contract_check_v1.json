@@ -1,0 +1,83 @@
+{
+  "schema_version": "round3y_contract_check_v1",
+  "task_issue": 29,
+  "owner": "riko",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "C01",
+      "name": "scope_lock",
+      "status": "PASS",
+      "evidence": "Only S4/S5 copy, S4 composition/mobile contract, and targeted grammar de-systemization in S1/S2/S4/S5/S7/S8 are reopened. No production code is changed."
+    },
+    {
+      "id": "C02",
+      "name": "s4_copy_exact",
+      "status": "PASS",
+      "evidence": "Final exact S4 Japanese, semantic line intent, customer before/after, evidence boundary and Round 3W comparison are specified."
+    },
+    {
+      "id": "C03",
+      "name": "s5_copy_exact",
+      "status": "PASS",
+      "evidence": "Final exact S5 Japanese retains service existence and unknown boundaries without generic permission or invented facts."
+    },
+    {
+      "id": "C04",
+      "name": "s4_desktop_authorship",
+      "status": "PASS",
+      "evidence": "1440 geometry and 1280/1024/768 degradation convert S4 to question -> work surface -> immediate continuation and forbid balanced/mirrored split fallback."
+    },
+    {
+      "id": "C05",
+      "name": "s4_void_closed",
+      "status": "PASS",
+      "evidence": "Continuation distance is bounded; body must start near media/disclosure and unresolved beige void is fail-closed."
+    },
+    {
+      "id": "C06",
+      "name": "mobile_static_geometry",
+      "status": "PASS",
+      "evidence": "430/390/375/360/320 headline, crop, aspect, disclosure, body grouping and scene-exit rules are specified."
+    },
+    {
+      "id": "C07",
+      "name": "mobile_capture_reality",
+      "status": "PASS",
+      "evidence": "Capture/scroll protocol is separated from CSS geometry; visible clipping overrides numeric PASS."
+    },
+    {
+      "id": "C08",
+      "name": "grammar_de_systemization",
+      "status": "PASS",
+      "evidence": "Scene-by-scene KEEP/ALTER matrix directly addresses serial eyebrows, giant Gothic repetition, thin rules, sparse fields and isolated underline/link treatment."
+    },
+    {
+      "id": "C09",
+      "name": "replacement_signature_guard",
+      "status": "PASS",
+      "evidence": "A new repeated motif across three or more altered scenes is explicitly fail-closed."
+    },
+    {
+      "id": "C10",
+      "name": "preserve_contract",
+      "status": "PASS",
+      "evidence": "S3, S6, S7 message-draft, S8 ending, evidence safety, Instagram, accessibility, responsive floor and non-collision gains are preserved."
+    },
+    {
+      "id": "C11",
+      "name": "issue28_regression_mapping",
+      "status": "PASS",
+      "evidence": "Ten human-regression checks map to S4 void, mobile obstruction, S4/S5 explanatory copy, engine grammar, preserved-scene regression and safety/accessibility."
+    },
+    {
+      "id": "C12",
+      "name": "actual_pixel_review",
+      "status": "PASS",
+      "evidence": "Round 3W artifact 10790710792 was directly inspected: desktop/full 1440, S4 1440, mobile S4 390/430 and S3 390 reference."
+    }
+  ],
+  "human_visible_gate": "PENDING_AFTER_RIN_IMPLEMENTATION",
+  "formal_quality_claim": false,
+  "routing": "Riko -> Sarah -> Rin -> regenerated artifact -> Aoi G5 -> Sarah actual-pixel/copy review -> Shun only if READY"
+}

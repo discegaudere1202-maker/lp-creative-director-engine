@@ -1,0 +1,193 @@
+{
+  "schema_version": "round3y_nagi_authorship_ledger_v1",
+  "task_issue": 29,
+  "owner": "riko",
+  "baseline": {
+    "head_sha": "e03a669d6a8ee7c696840666d357372a2304c9ec",
+    "pr_number": 27,
+    "artifact_id": 10790710792,
+    "human_gate_issue": 28
+  },
+  "scope": {
+    "reopened": [
+      "S4 authored desktop/mobile composition",
+      "S4 customer-facing copy",
+      "S5 customer-facing copy",
+      "minimum full-page grammar de-systemization in S1/S2/S4/S5/S7/S8"
+    ],
+    "frozen": [
+      "S3 copy/editorial finish",
+      "S3 desktop authorship",
+      "S3 mobile authorship",
+      "S6 trust architecture",
+      "S7 message-draft device",
+      "S8 ending function",
+      "S1-S8 semantic order",
+      "evidence/rights/truth boundary",
+      "verified Instagram destination",
+      "CTA accessibility",
+      "9-width responsive floor"
+    ]
+  },
+  "final_copy": {
+    "S4": {
+      "service_label": "ヘッドスパスクール",
+      "headline": [
+        "ヘッドスパを見ていて、",
+        "「どうやっているんだろう」が残ったら。"
+      ],
+      "body": [
+        "ヘッドスパを見ているうちに、やり方のほうまで知りたくなることがあります。",
+        "なぎのみらいには、その興味の先にヘッドスパスクールがあります。",
+        "何を学べるのか。受講条件はどうか。このページでは、そこまでは分かりません。",
+        "もう少し知りたくなったら、公式Instagramを開く。"
+      ],
+      "evidence_classes": ["CUSTOMER_HYPOTHESIS", "FACT", "UNKNOWN_BOUNDARY", "BOUNDED_ACTION"]
+    },
+    "S5": {
+      "service_label": "ヒーリングサロン",
+      "headline": [
+        "ヒーリングは、",
+        "分かってから考えたい。"
+      ],
+      "body": [
+        "名前だけでは、何をするものなのか、自分に関係があるのかまでは見えてきません。",
+        "分かっているのは、なぎのみらいにヒーリングサロンがあること。具体的な内容は、このページではまだ分かりません。",
+        "「何なんだろう」が残ったら、次に開くのは公式Instagramです。"
+      ],
+      "evidence_classes": ["CUSTOMER_HYPOTHESIS", "FACT_AND_UNKNOWN_BOUNDARY", "BOUNDED_ACTION"]
+    }
+  },
+  "s4_composition": {
+    "thesis": "question -> work surface -> immediate continuation",
+    "desktop": {
+      "1440": {
+        "section_height_px": [980, 1040],
+        "top_padding_px": [150, 170],
+        "headline_x_px": [104, 132],
+        "headline_width_px": [760, 860],
+        "headline_size_px": [48, 54],
+        "media_x_px": [170, 210],
+        "media_y_px": [360, 390],
+        "media_width_px": [1020, 1080],
+        "media_height_px": [360, 400],
+        "continuation_gap_px": [38, 56],
+        "body_width_px": [500, 560],
+        "body_x_px": [690, 760]
+      },
+      "1280": {
+        "section_height_px": [940, 1010],
+        "headline_x_px": [72, 88],
+        "headline_width_px": [700, 760],
+        "headline_size_px": [46, 50],
+        "media_x_px": [90, 110],
+        "media_width_px": [1040, 1080],
+        "media_height_px": [350, 380],
+        "body_x_px": [620, 680],
+        "body_width_px": [470, 520],
+        "max_continuation_gap_px": 64
+      },
+      "1024": {
+        "section_height_px": [900, 980],
+        "headline_x_px": [56, 64],
+        "headline_width_px": [680, 760],
+        "headline_size_px": [40, 44],
+        "media_side_inset_px": 56,
+        "media_height_px": [320, 350],
+        "body_width_px": [480, 540],
+        "max_continuation_gap_px": 52
+      },
+      "768": {
+        "headline_x_px": [40, 48],
+        "headline_size_px": [36, 40],
+        "media_x_px": 40,
+        "media_max_width_px": 688,
+        "media_aspect_ratio_target": 1.8,
+        "body_x_px": [250, 280],
+        "body_width_px": [430, 500],
+        "continuation_gap_px": [32, 44]
+      }
+    },
+    "mobile": {
+      "entry_clearance_rule": "label_top and first headline glyph must be >= nav_bottom + 20px after final scene-entry scroll",
+      "430_390": {
+        "headline_size_px": [30, 33],
+        "headline_line_height": [1.32, 1.40],
+        "media_top_gap_px": [24, 30],
+        "media_aspect_ratio": [1.45, 1.55],
+        "body_gap_after_disclosure_px": [22, 28],
+        "scene_exit_px": [68, 84]
+      },
+      "375_360": {
+        "headline_size_px": [28, 31],
+        "body_size_px": [16, 17],
+        "media_min_aspect_ratio": 1.35
+      },
+      "320": {
+        "headline_size_px": [26, 28],
+        "media_aspect_ratio": [1.25, 1.35],
+        "quoted_phrase_semantic_unit": true
+      },
+      "capture_protocol": [
+        "measure rendered sticky header bottom",
+        "scroll to S4 and apply intentional offset",
+        "wait two animation frames",
+        "capture viewport entry state",
+        "record nav_bottom, label_top, headline_top, clearance_px",
+        "fail if screenshot visibly clips opening copy even when metric passes"
+      ]
+    }
+  },
+  "grammar_matrix": {
+    "S1": {"decision": "ALTER_MINIMAL", "remove": ["serial/editorial meta feel", "decorative thin rule"], "keep": ["business/location context", "hero atmosphere"]},
+    "S2": {"decision": "ALTER", "remove": ["02 meta label", "decorative rule repetition", "excess dead space"], "keep": ["recognition density", "service/customer-state grouping"]},
+    "S3": {"decision": "KEEP_FROZEN"},
+    "S4": {"decision": "ALTER_STRONG", "remove": ["tiny serial opening", "service underline/rule", "large unresolved beige void", "isolated underline CTA"], "add": ["readable service label", "work-surface authority", "immediate body continuation"]},
+    "S5": {"decision": "ALTER", "remove": ["03 serial dominance", "decorative rule", "isolated underline CTA"], "keep": ["abstract openness", "headline direction"]},
+    "S6": {"decision": "KEEP_FROZEN"},
+    "S7": {"decision": "ALTER_MINIMAL", "remove": ["07 serial/meta if present", "decorative rule"], "keep": ["message-draft device", "example-message logic", "Instagram action"]},
+    "S8": {"decision": "ALTER_MINIMAL", "remove": ["serial/meta if present", "duplicate underline treatment"], "keep": ["ending function", "open resolution", "Instagram destination"]}
+  },
+  "replacement_signature_rule": {
+    "status": "FAIL_CLOSED",
+    "rule": "No newly introduced decorative/presentation motif may mechanically repeat across three or more of S1/S2/S4/S5/S7/S8.",
+    "forbidden_examples": ["same pill label", "same rounded card", "same oversized serif", "same bottom-right CTA box", "same overlap trick"]
+  },
+  "preserve": {
+    "hard": [
+      "evidence/rights/truth boundary",
+      "verified @happyfuture_02 destination",
+      "CTA accessibility",
+      "9-width responsive floor",
+      "no overflow/truncation/semantic orphan",
+      "S1-S8 order"
+    ],
+    "material": [
+      "S3 copy/editorial finish",
+      "S3 desktop/mobile authorship",
+      "S6 dark trust break",
+      "S7 message-draft device",
+      "S8 ending function",
+      "representative media disclosure",
+      "S3/S4 non-collision gain"
+    ]
+  },
+  "forbidden": [
+    "new curriculum claim",
+    "qualification claim",
+    "staff fact",
+    "price/duration claim",
+    "treatment or healing effect claim",
+    "outcome claim",
+    "review claim",
+    "response-policy claim",
+    "S3 rewrite",
+    "S6 re-authoring",
+    "S7 message-draft removal",
+    "S8 generic CTA-panel replacement",
+    "broad palette or typography reset",
+    "new asset research",
+    "motion expansion"
+  ],
+  "routing": "Riko -> Sarah -> Rin implementation -> regenerated artifact -> Aoi G5 -> Sarah actual-pixel/copy review -> Shun only if READY"
+}

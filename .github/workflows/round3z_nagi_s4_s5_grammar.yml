@@ -1,0 +1,44 @@
+name: Round 3Z Nagi S4 S5 Grammar
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/run_round3z_nagi_s4_s5_grammar.py'
+      - 'tests/test_round3z_nagi_s4_s5_grammar.py'
+      - 'scripts/run_round3w_nagi_final_authorship.py'
+      - 'scripts/run_round3q_nagi_rebuild.py'
+      - 'docs/ROUND3Y_RIKO_NAGI_S4_S5_FULL_PAGE_GRAMMAR_FINAL_AUTHORSHIP_v1.md'
+      - 'artifacts/round3y_riko/**'
+      - '.github/workflows/round3z_nagi_s4_s5_grammar.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install dependencies
+        run: pip install -e . pytest playwright pillow
+      - name: Install browser
+        run: playwright install --with-deps chromium
+      - name: Generate Round 3W baseline captures
+        run: python scripts/run_round3w_nagi_final_authorship.py
+      - name: Generate Round 3Z artifact
+        run: python -m py_compile scripts/run_round3z_nagi_s4_s5_grammar.py && python scripts/run_round3z_nagi_s4_s5_grammar.py
+      - name: Round 3Z tests
+        run: pytest -q tests/test_round3z_nagi_s4_s5_grammar.py
+      - name: Generic diff check
+        run: git diff --check
+      - name: Gate assertion
+        run: python -c "import json; p='artifacts/round3z_nagi_s4_s5_grammar'; q=json.load(open(p+'/browser_qa.json')); g=json.load(open(p+'/fixed_header_measurements.json')); assert q['status']=='PASS' and q['total']==9 and q['pass']==9 and g['status']=='PASS'"
+      - name: Upload Round 3Z artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3z-nagi-s4-s5-grammar-${{ github.sha }}
+          path: artifacts/round3z_nagi_s4_s5_grammar
+          if-no-files-found: error
