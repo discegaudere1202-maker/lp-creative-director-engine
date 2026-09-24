@@ -1,0 +1,44 @@
+name: Round 3W Nagi Final Narrow Authorship
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/run_round3w_nagi_final_authorship.py'
+      - 'tests/test_round3w_nagi_final_authorship.py'
+      - 'scripts/run_round3q_nagi_rebuild.py'
+      - 'docs/ROUND3V_RIKO_NAGI_FINAL_NARROW_AUTHORSHIP_CORRECTION_v1.md'
+      - 'artifacts/round3v_riko/**'
+      - '.github/workflows/round3w_nagi_final_authorship.yml'
+      - 'assets/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install dependencies
+        run: pip install -e . pytest playwright pillow
+      - name: Install browser
+        run: playwright install --with-deps chromium
+      - name: Generate preserved Round 3T baseline captures
+        run: python scripts/run_round3t_nagi_authored_correction.py
+      - name: Compile and dedicated contract
+        run: python -m py_compile scripts/run_round3w_nagi_final_authorship.py scripts/run_round3q_nagi_rebuild.py && python scripts/run_round3w_nagi_final_authorship.py
+      - name: Round 3W tests
+        run: pytest -q tests/test_round3w_nagi_final_authorship.py
+      - name: Diff check
+        run: git diff --check
+      - name: Gate assertion
+        run: python -c "import json; p='artifacts/round3w_nagi_final_authorship'; q=json.load(open(p+'/browser_qa.json')); g=json.load(open(p+'/fixed_header_geometry.json')); assert q['status']=='PASS' and q['total']==9 and q['pass']==9 and g['status']=='PASS'"
+      - name: Package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round3w-nagi-final-authorship-${{ github.sha }}
+          path: artifacts/round3w_nagi_final_authorship
+          if-no-files-found: error
