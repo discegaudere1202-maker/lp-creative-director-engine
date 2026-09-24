@@ -1,0 +1,8 @@
+{
+  "schema_version": "creative_fit_profile_v1",
+  "status": "CONTRACT",
+  "description": "Creative decision dimensions only; asset and evidence availability are excluded.",
+  "dimensions": ["premium_authority_need", "warmth", "naturalness", "clinical_expertise", "craftsmanship", "modernity", "softness", "calmness", "boldness", "intimacy", "local_relationship_weight", "desired_state_change_intensity", "trust_requirement", "decision_commitment_pressure", "owner_personality_importance", "visual_storytelling_need", "information_density_need", "emotional_purchase_weight", "category_education_need", "choice_guidance_need", "process_inspectability_need", "sensory_experience_weight", "human_relationship_weight"],
+  "taxonomy_reference": "data/production_architecture/family_taxonomy_candidates_v1.json",
+  "boundary": "production_feasibility_must_not_be_used_to_select_or_silently_change_family"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "template_resemblance_contract_v0",
+  "status": "CANDIDATE_NO_NUMERIC_THRESHOLD",
+  "human_review_required": true,
+  "calibration_status": "CANDIDATE_NO_NUMERIC_THRESHOLD",
+  "dimensions": ["hero_silhouette", "section_topology", "module_sequence", "dominant_grid", "typography_hierarchy", "color_topology", "media_framing", "rhythm", "material_grammar", "cta_choreography", "motion_pattern", "screenshot_gestalt"],
+  "hard_fail_candidates": ["color/logo/photo swap impression", "same dominant Hero/service/CTA composition", "same late-page rhythm and ending", "same media mask/crop/type hierarchy", "repeated human reviewers label same-template derivation"],
+  "not_uniqueness": ["raw color difference", "photo replacement", "copy replacement", "token swaps alone"],
+  "labeled_pair_basis": {"same_family_acceptably_distinct": ["BM-004/BM-033", "BM-042/BM-102", "BM-031/BM-108"], "clearly_different_family": ["BM-006/BM-002", "BM-003/BM-005"], "same_template_looking_pairs": "NOT_RECOVERED_AS_SAVED_PAIR_ROWS"}
+}

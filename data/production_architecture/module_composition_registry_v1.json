@@ -1,0 +1,21 @@
+{
+  "schema_version": "module_composition_pattern_registry_v1",
+  "status": "RESEARCH_GRAMMAR_NOT_COMPONENT_LIBRARY",
+  "patterns": [
+    {"pattern_id":"M-HERO-01","name":"Recognition-led Hero","compatible_families":["BW-F01","BW-F07","BW-F08"],"incompatible_conditions":["conditions must dominate immediately"],"media_requirements":"context only; no proof implication","mobile_principle":"preserve recognition before ornament"},
+    {"pattern_id":"M-HERO-02","name":"Evidence-first Hero","compatible_families":["BW-F02","BW-F06"],"incompatible_conditions":["desire must be established first"],"media_requirements":"verified or clearly bounded evidence","mobile_principle":"keep evidence legible"},
+    {"pattern_id":"M-HERO-03","name":"Guided-choice Hero","compatible_families":["BW-F05","BW-F08"],"incompatible_conditions":["single clear offer"],"media_requirements":"choice context, not equal cards","mobile_principle":"one readable route at a time"},
+    {"pattern_id":"M-TRUST-01","name":"Quiet Boundary Ledger","compatible_families":["BW-F02","BW-F05"],"incompatible_conditions":["no known/unknown boundary"],"media_requirements":"source or unknown labels","mobile_principle":"retain boundary next to claim"},
+    {"pattern_id":"M-TRUST-02","name":"Distributed Proof Thread","compatible_families":["BW-F02","BW-F03","BW-F06"],"incompatible_conditions":["proof unavailable"],"media_requirements":"distributed source-backed proof","mobile_principle":"avoid proof wall"},
+    {"pattern_id":"M-PROBLEM-01","name":"Scene-based Tension Naming","compatible_families":["BW-F01","BW-F02","BW-F08"],"incompatible_conditions":["generic emotional copy"],"media_requirements":"scene context","mobile_principle":"short scene before explanation"},
+    {"pattern_id":"M-STORY-01","name":"Causal Business Story","compatible_families":["BW-F03","BW-F04","BW-F06"],"incompatible_conditions":["causal chain not evidenced"],"media_requirements":"process/provenance evidence","mobile_principle":"one causal step per view"},
+    {"pattern_id":"M-SERVICE-01","name":"Intent-routed Service Field","compatible_families":["BW-F05","BW-F08"],"incompatible_conditions":["routing adds artificial choice"],"media_requirements":"service distinctions","mobile_principle":"intent-first vertical route"},
+    {"pattern_id":"M-PROCESS-01","name":"Process-as-Proof Sequence","compatible_families":["BW-F02","BW-F06"],"incompatible_conditions":["invented process"],"media_requirements":"verified process","mobile_principle":"steps remain readable"},
+    {"pattern_id":"M-HUMAN-01","name":"Relationship Evidence Scene","compatible_families":["BW-F04","BW-F07"],"incompatible_conditions":["human evidence absent"],"media_requirements":"consented/verified human context","mobile_principle":"context before intimacy"},
+    {"pattern_id":"M-GALLERY-01","name":"Atmosphere as Decision Scene","compatible_families":["BW-F01","BW-F03","BW-F04"],"incompatible_conditions":["atmosphere masks limitations"],"media_requirements":"material atmosphere with role","mobile_principle":"retain decision context"},
+    {"pattern_id":"M-OFFER-01","name":"Commitment Ladder","compatible_families":["BW-F02","BW-F03","BW-F05"],"incompatible_conditions":["unverified offer terms"],"media_requirements":"known commitment steps","mobile_principle":"one next commitment"},
+    {"pattern_id":"M-CTA-01","name":"State-specific Next Event","compatible_families":["BW-F01","BW-F02","BW-F03","BW-F04","BW-F05","BW-F06","BW-F07","BW-F08"],"incompatible_conditions":["universal sticky CTA as only route"],"media_requirements":"CTA destination known","mobile_principle":"state-specific action"},
+    {"pattern_id":"M-END-01","name":"Utility Closure","compatible_families":["BW-F02","BW-F05","BW-F06"],"incompatible_conditions":["utility hides unresolved risk"],"media_requirements":"contact/process facts","mobile_principle":"clear final action"},
+    {"pattern_id":"M-END-02","name":"Emotional Resolution","compatible_families":["BW-F01","BW-F03","BW-F07"],"incompatible_conditions":["emotional promise unsupported"],"media_requirements":"bounded emotional context","mobile_principle":"resolve without overclaim"}
+  ]
+}

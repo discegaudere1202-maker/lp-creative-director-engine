@@ -1,0 +1,46 @@
+name: Issue 47 Production Architecture Contract
+
+on:
+  pull_request:
+    paths:
+      - "src/lp_engine/production_architecture.py"
+      - "data/production_architecture/**"
+      - "tests/test_production_architecture_contract.py"
+      - "scripts/run_issue47_production_architecture.py"
+      - ".github/workflows/issue47_production_architecture_contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  architecture-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine
+        run: python -m pip install -e . pytest
+      - name: Diff whitespace check
+        run: git diff --check
+      - name: Dedicated Issue 47 tests
+        run: python -m pytest -q -p no:cacheprovider --junitxml=/tmp/issue47-junit.xml tests/test_production_architecture_contract.py
+      - name: Generic engine regression tests
+        run: python -m pytest -q -p no:cacheprovider tests/test_browser_qa_static.py tests/test_round3d_regression_immunity.py
+      - name: Build architecture artifact
+        run: python -X utf8 scripts/run_issue47_production_architecture.py
+      - name: Add test report to artifact
+        run: cp /tmp/issue47-junit.xml artifacts/issue47_production_architecture/issue47-junit.xml
+      - name: Verify artifact manifest
+        run: |
+          test -f artifacts/issue47_production_architecture/architecture_validation.json
+          test "$(python -c 'import json; print(json.load(open("artifacts/issue47_production_architecture/architecture_validation.json"))["status"])')" = PASS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue47-production-architecture-${{ github.sha }}
+          path: artifacts/issue47_production_architecture/
+          if-no-files-found: error
+          retention-days: 30
