@@ -1,0 +1,41 @@
+{
+  "schema_version": "issue44_creative_profile_recommendation_v1",
+  "hard_rule": "Creative Fit contains only dimensions that can change appropriate art direction or conversion presentation. Asset/evidence availability belongs exclusively to Production Feasibility.",
+  "recommendations": [
+    {"dimension":"premium","decision":"ALTER","to":"premium_authority_need","reason":"Price/consideration positioning affects restraint, proof pacing and authority, but premium as a style adjective invites luxury-template shortcuts."},
+    {"dimension":"warmth","decision":"KEEP","reason":"Changes human distance, photography, type softness and trust tone."},
+    {"dimension":"naturalness","decision":"KEEP","reason":"Changes material/color/media language when grounded in service/customer context."},
+    {"dimension":"clinical_expertise","decision":"KEEP","reason":"Changes evidence density, precision, boundary communication and composition authority."},
+    {"dimension":"craftsmanship","decision":"KEEP","reason":"Changes process/detail/provenance emphasis."},
+    {"dimension":"modernity","decision":"KEEP","reason":"Changes interaction, type, spacing and graphic system when customer expectation supports it."},
+    {"dimension":"softness","decision":"KEEP","reason":"Changes edge, contrast, density and emotional distance."},
+    {"dimension":"calmness","decision":"KEEP","reason":"Changes rhythm/visual noise; evidence shows calm can protect trust reading."},
+    {"dimension":"boldness","decision":"KEEP","reason":"Changes dominance and tension; must not become giant-type default."},
+    {"dimension":"intimacy","decision":"KEEP","reason":"Changes human scale, copy distance and media crop."},
+    {"dimension":"locality","decision":"ALTER","to":"local_relationship_weight","reason":"Geography alone is not art direction; relevance comes from local relationship/context importance."},
+    {"dimension":"transformation_intensity","decision":"ALTER","to":"desired_state_change_intensity","reason":"Avoids outcome-claim bias and frames how dramatic the customer decision/story should feel."},
+    {"dimension":"trust_requirement","decision":"KEEP","reason":"Strongly changes proof placement, background quietness and conversion sequence."},
+    {"dimension":"booking_urgency","decision":"ALTER","to":"decision_commitment_pressure","reason":"Not all conversions are bookings; evidence favors bounded next actions rather than universal urgency."},
+    {"dimension":"owner_personality_importance","decision":"KEEP","reason":"Can materially change whether human identity is a primary art-direction authority."},
+    {"dimension":"visual_storytelling_need","decision":"KEEP","reason":"Changes media sequence/background/choreography."},
+    {"dimension":"information_density_need","decision":"KEEP","reason":"Changes typography, spacing, comparison and mobile re-art-direction."},
+    {"dimension":"emotional_purchase_weight","decision":"KEEP","reason":"Changes desire vs evidence authority balance."},
+    {"dimension":"category_education_need","decision":"ADD","reason":"Unfamiliar categories require explanatory/permission-led art direction before conversion."},
+    {"dimension":"choice_guidance_need","decision":"ADD","reason":"Multiple offers or uncertain fit justify guided-choice composition and comparison logic."},
+    {"dimension":"process_inspectability_need","decision":"ADD","reason":"When method/process is decisive, proof/process must become visual authority."},
+    {"dimension":"sensory_experience_weight","decision":"ADD","reason":"Determines how much atmosphere/material/media should carry customer imagination."},
+    {"dimension":"human_relationship_weight","decision":"ADD","reason":"Separates businesses where owner/staff relationship should materially shape the page."}
+  ],
+  "explicitly_excluded_from_creative_fit": [
+    "photo asset quantity",
+    "evidence quantity available",
+    "scraping difficulty",
+    "source coverage",
+    "rights clarity",
+    "staff photo availability",
+    "facility photo availability",
+    "pricing completeness",
+    "social proof availability"
+  ],
+  "production_feasibility_note": "Excluded dimensions remain important for safe realization/adaptation only after Creative Fit is determined. Production Feasibility must not silently choose a different Creative Family."
+}
