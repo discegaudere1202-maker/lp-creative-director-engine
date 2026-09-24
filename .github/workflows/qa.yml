@@ -20,7 +20,7 @@ jobs:
       - name: Install engine
         run: |
           python -m pip install --upgrade pip
-          pip install -e .
+          pip install -e . pytest pillow
           python -m playwright install --with-deps chromium
       - name: Unit and browser smoke tests
         run: python -m unittest discover -s tests -v

@@ -1,0 +1,77 @@
+{
+  "schema_version": "round3v_contract_check_v1",
+  "task_issue": 24,
+  "owner": "riko",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "C01",
+      "name": "scope_lock",
+      "status": "PASS",
+      "evidence": "Only S1/S2/S3/S4/S5/S7 copy and S3/S4 authored composition/mobile contracts are changed; no production code or new architecture is authored."
+    },
+    {
+      "id": "C02",
+      "name": "exact_copy_complete",
+      "status": "PASS",
+      "evidence": "Final exact customer-facing copy and semantic heading chunks are specified for S1/S2/S3/S4/S5/S7."
+    },
+    {
+      "id": "C03",
+      "name": "round3t_before_after_complete",
+      "status": "PASS",
+      "evidence": "Each changed copy scene explicitly identifies the Round 3T weakness and the customer-decision reason for the new line."
+    },
+    {
+      "id": "C04",
+      "name": "evidence_boundary",
+      "status": "PASS",
+      "evidence": "No price, duration, qualification, curriculum, outcome, treatment effect, Healing effect, review, staff or response-policy claim was introduced."
+    },
+    {
+      "id": "C05",
+      "name": "s3_desktop_authored",
+      "status": "PASS",
+      "evidence": "1440 geometry, crop/focal target, type hierarchy, non-collision rule and 1280/1024/768 degradation are defined; S3 is not a balanced split."
+    },
+    {
+      "id": "C06",
+      "name": "s4_desktop_authored",
+      "status": "PASS",
+      "evidence": "1440 geometry, wide work-surface crop, body continuation and 1280/1024/768 degradation are defined; S4 is not a mirrored split."
+    },
+    {
+      "id": "C07",
+      "name": "mobile_re_art_direction",
+      "status": "PASS",
+      "evidence": "390 S3 and S4 have different orders, scale/crop/bleed/inset/disclosure/whitespace contracts with 430/375/360/320 degradation."
+    },
+    {
+      "id": "C08",
+      "name": "fixed_header_reality",
+      "status": "PASS",
+      "evidence": "A measurable nav-versus-eyebrow bounding-box acceptance condition is specified for 390 and all smaller mobile widths."
+    },
+    {
+      "id": "C09",
+      "name": "preserve_contract_complete",
+      "status": "PASS",
+      "evidence": "S6 dark break, S7 message-draft device, S8 ending, verified Instagram, representative-media disclosure, accessibility and responsive floor are explicitly preserved."
+    },
+    {
+      "id": "C10",
+      "name": "human_regression_traps_encoded",
+      "status": "PASS",
+      "evidence": "All seven mandatory Issue #24 traps are encoded fail-closed, plus non-collision, semantic-line and engine-signature checks."
+    },
+    {
+      "id": "C11",
+      "name": "artifact_pixel_review",
+      "status": "PASS",
+      "evidence": "Artifact 10788443033 desktop S1/S2/S3/S4/S5/S7, mobile S3/S4, full pages and source S3/S4 media were directly inspected before authoring geometry."
+    }
+  ],
+  "human_visible_gate": "PENDING_AFTER_RIN_IMPLEMENTATION",
+  "formal_quality_claim": false,
+  "routing": "Riko -> Sarah -> Rin -> artifact regeneration -> Aoi G5 -> Sarah actual-pixel/copy review -> Shun only if READY"
+}

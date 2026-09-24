@@ -1,0 +1,97 @@
+{
+  "schema_version": "round4b_contract_check_v1",
+  "task_issue": 34,
+  "owner": "riko",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "C01",
+      "name": "scope_lock",
+      "status": "PASS",
+      "evidence": "Only S4/S5 customer-facing copy, S1/S2/S4/S5 visible grammar, and strictly necessary transition treatment are reopened. No production code is changed."
+    },
+    {
+      "id": "C02",
+      "name": "actual_pixel_review",
+      "status": "PASS",
+      "evidence": "Round 3Z artifact 10791778659 was directly inspected at desktop full 1440, mobile full 390, S4 1440/390 and S5 1440/390 before authoring the contract."
+    },
+    {
+      "id": "C03",
+      "name": "s4_exact_copy",
+      "status": "PASS",
+      "evidence": "Final exact S4 label/headline/body/action, semantic line intent, evidence class and Round 3Z comparison are specified."
+    },
+    {
+      "id": "C04",
+      "name": "s5_exact_copy",
+      "status": "PASS",
+      "evidence": "Final exact S5 label/headline/body/action, semantic line intent, evidence class and Round 3Z comparison are specified."
+    },
+    {
+      "id": "C05",
+      "name": "visitor_production_language_zero",
+      "status": "PASS",
+      "evidence": "Final S4/S5 copy contains zero matches for: このページでは / このページには / 確認できていません / そこまでは分かりません / 具体的な内容はまだ分かりません / 分かっているのは / 次に開くのは / 公式Instagramを開く."
+    },
+    {
+      "id": "C06",
+      "name": "evidence_safety",
+      "status": "PASS",
+      "evidence": "No curriculum, qualification, staff, founder, price, duration, treatment/healing effect, outcome, testimonial, proof or response-policy claim is introduced. Unknown facts are omitted."
+    },
+    {
+      "id": "C07",
+      "name": "s1_authority_delta",
+      "status": "PASS",
+      "evidence": "S1 implementation-ready authority source, type-scale reduction, borderless compact route cue, density targets, mobile preservation and frozen elements are specified."
+    },
+    {
+      "id": "C08",
+      "name": "s2_authority_delta",
+      "status": "PASS",
+      "evidence": "S2 moves authority to three customer-state statements with explicit type hierarchy, density, separator removal and mobile constraints."
+    },
+    {
+      "id": "C09",
+      "name": "s4_closed_strength_preservation",
+      "status": "PASS",
+      "evidence": "Round 3Z notebook composition, immediate continuation and fixed-header mobile entry remain frozen; only copy/type/label/action treatment is altered."
+    },
+    {
+      "id": "C10",
+      "name": "s5_material_authority",
+      "status": "PASS",
+      "evidence": "The current S5 material asset/direction is preserved while copy/material relationship, headline authority and density are specified to avoid another headline-plus-field module."
+    },
+    {
+      "id": "C11",
+      "name": "transition_contract",
+      "status": "PASS",
+      "evidence": "S1→S2, S2→S3, S3→S4, S4→S5 and S5→S6 transition behavior is explicit; S6→S7→S8 is frozen."
+    },
+    {
+      "id": "C12",
+      "name": "replacement_signature_guard",
+      "status": "PASS",
+      "evidence": "Any newly introduced motif mechanically repeated across three or more of S1/S2/S4/S5 is fail-closed."
+    },
+    {
+      "id": "C13",
+      "name": "frozen_scene_regression_contract",
+      "status": "PASS",
+      "evidence": "S3, S6, S7, S8, decision flow, evidence/rights/truth boundary, Instagram destination, CTA accessibility and 9-width floor are explicitly preserved."
+    },
+    {
+      "id": "C14",
+      "name": "issue33_human_regression_mapping",
+      "status": "PASS",
+      "evidence": "Twelve human-regression checks map directly to Issue #33 remaining copy/engine-grammar blockers and closed strengths."
+    }
+  ],
+  "pass_count": 14,
+  "fail_count": 0,
+  "human_visible_gate": "PENDING_AFTER_RIN_IMPLEMENTATION",
+  "formal_quality_claim": false,
+  "routing": "Riko -> Sarah -> Rin -> regenerated actual pixels -> Aoi G5 -> Sarah final actual-pixel/copy review -> Shun only if READY"
+}
