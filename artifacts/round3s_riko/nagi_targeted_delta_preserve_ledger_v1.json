@@ -1,0 +1,342 @@
+{
+  "schema_version": "round3s_riko_targeted_delta_preserve_v1",
+  "task_issue": 19,
+  "owner": "riko",
+  "case_id": "nagi-no-mirai",
+  "status": "READY_FOR_SARAH_REVIEW_RIKO_SCOPE",
+  "baseline": {
+    "round": "3Q",
+    "pr_number": 17,
+    "head_sha": "f307ba2bfa92c1e9c187b7bf16423c4f63ee7870",
+    "artifact_id": 10769904633,
+    "human_return_issue": 18,
+    "human_gate": "RETURN"
+  },
+  "targeted_blockers": [
+    {
+      "blocker_id": "A18-B1",
+      "severity": "HIGH",
+      "scope": ["S3", "S4", "desktop"],
+      "problem": "Representative media collides with headline/body fields and reads as accidental overlap.",
+      "resolution_contract": "Non-overlapping authored media/copy zones with breakpoint-specific optical safety gaps, crop and tilt bounds."
+    },
+    {
+      "blocker_id": "A18-B2",
+      "severity": "HIGH",
+      "scope": ["S1", "S2", "S4", "S5", "S7", "copy"],
+      "problem": "Safe explanatory copy remains generalized and AI/instructional in tone.",
+      "resolution_contract": "Exact customer-facing copy is fixed in the Round 3S spec and must preserve evidence/UNKNOWN boundaries."
+    },
+    {
+      "blocker_id": "A18-B3",
+      "severity": "MEDIUM_HIGH",
+      "scope": ["S3", "S4", "mobile"],
+      "problem": "390px behaves like a compressed desktop stack rather than independent mobile art direction.",
+      "resolution_contract": "S3 and S4 receive different mobile reading sequences, media positions and responsive degradation rules."
+    }
+  ],
+  "preserve_ledger": [
+    {
+      "id": "R3S-P-HARD-001",
+      "classification": "PRESERVE",
+      "level": "HARD",
+      "scope": "case-wide",
+      "layer": "EVIDENCE_SAFETY",
+      "description": "Do not fabricate staff, customers, premises, treatment effects, school outcomes, prices, durations, qualifications, reviews, curriculum, healing effects or detailed location.",
+      "acceptance": "semantic evidence diff shows zero unsupported factual promotion"
+    },
+    {
+      "id": "R3S-P-HARD-002",
+      "classification": "PRESERVE",
+      "level": "HARD",
+      "scope": "conversion",
+      "layer": "VERIFIED_CONTACT",
+      "description": "Official Instagram @happyfuture_02 remains the only verified public external conversion route used by this task.",
+      "acceptance": "all external CTA targets resolve to the verified official Instagram route"
+    },
+    {
+      "id": "R3S-P-HARD-003",
+      "classification": "PRESERVE",
+      "level": "HARD",
+      "scope": "all widths",
+      "layer": "RESPONSIVE_FLOOR",
+      "description": "No overflow, truncation, hidden CTA, broken focus behavior, or Japanese semantic-fragment regression at 320/360/375/390/430/768/1024/1280/1440.",
+      "acceptance": "nine-width browser QA plus semantic line review"
+    },
+    {
+      "id": "R3S-P-MAT-001",
+      "classification": "PRESERVE",
+      "level": "MATERIAL",
+      "scope": "S1-S8",
+      "layer": "PERSUASION_ARCHITECTURE",
+      "description": "S1-S8 semantic intent/order remains intact; this task changes authored expression, not the approved persuasion architecture.",
+      "acceptance": "scene job mapping unchanged"
+    },
+    {
+      "id": "R3S-P-MAT-002",
+      "classification": "PRESERVE",
+      "level": "MATERIAL",
+      "scope": "S2",
+      "layer": "SPACING_DENSITY",
+      "description": "Round 3Q S2 spacing/density improvement is retained while copy may change.",
+      "acceptance": "S2 does not return to dense baseline component packing"
+    },
+    {
+      "id": "R3S-P-MAT-003",
+      "classification": "PRESERVE",
+      "level": "MATERIAL",
+      "scope": "S6",
+      "layer": "TRUST_AUTHORITY",
+      "description": "S6 dark trust anchor remains a clear material authority/rhythm shift.",
+      "acceptance": "screen-first comparison confirms S6 is not weakened"
+    },
+    {
+      "id": "R3S-P-MAT-004",
+      "classification": "PRESERVE",
+      "level": "MATERIAL",
+      "scope": ["S3", "S4"],
+      "layer": "REPRESENTATIVE_MEDIA",
+      "description": "Representative media remains integrated, disclosed and non-evidentiary; it may not become fake Nagi proof or a generic detached card.",
+      "acceptance": "media-role review and disclosure check"
+    },
+    {
+      "id": "R3S-P-MAT-005",
+      "classification": "PRESERVE",
+      "level": "MATERIAL",
+      "scope": "S7-S8",
+      "layer": "LATE_PAGE",
+      "description": "Late page remains decision-led and conversion-relevant rather than reverting to generic information storage plus CTA box.",
+      "acceptance": "human review confirms continued customer-state movement"
+    },
+    {
+      "id": "R3S-P-MAT-006",
+      "classification": "PRESERVE",
+      "level": "MATERIAL",
+      "scope": "mobile",
+      "layer": "MOBILE_AUTHORSHIP",
+      "description": "Same thesis / different composition remains the governing mobile principle.",
+      "acceptance": "390px is reviewed as authored mobile composition, not desktop stack"
+    },
+    {
+      "id": "R3S-P-HARD-004",
+      "classification": "PRESERVE",
+      "level": "HARD",
+      "scope": "cta",
+      "layer": "ACCESSIBILITY",
+      "description": "CTA remains readable, keyboard/focus accessible and usable with minimum effective mobile tap target.",
+      "acceptance": "browser/accessibility floor passes"
+    }
+  ],
+  "intentional_change_ledger": [
+    {
+      "id": "R3S-D-001",
+      "classification": "INTENTIONAL_CHANGE",
+      "scope": "S1 copy",
+      "reason": "Remove interchangeable hero generality and establish the real receive/learn/know triad as the first customer decision.",
+      "allowed_change": "headline/body/semantic breaks only",
+      "forbidden_side_effects": ["invented benefit", "new service", "contact change", "scene reorder"]
+    },
+    {
+      "id": "R3S-D-002",
+      "classification": "INTENTIONAL_CHANGE",
+      "scope": "S2 copy micro-composition",
+      "reason": "Turn category/state map into active self-identification while retaining improved spacing/density.",
+      "allowed_change": "headlines/card copy/microcopy and minor fit adjustments",
+      "forbidden_side_effects": ["card-density regression", "new claim", "new service taxonomy"]
+    },
+    {
+      "id": "R3S-D-003",
+      "classification": "INTENTIONAL_CHANGE",
+      "scope": "S3 desktop composition",
+      "reason": "Remove media/text collision while retaining experiential representative-media authority.",
+      "allowed_change": "safe zone, media position, width, crop, tilt, shadow, copy split presentation",
+      "forbidden_side_effects": ["detached stock-card look", "fake evidence implication", "S3 semantic job change"]
+    },
+    {
+      "id": "R3S-D-004",
+      "classification": "INTENTIONAL_CHANGE",
+      "scope": "S4 desktop composition and copy",
+      "reason": "Resolve collision and give learning curiosity a persuasive next question without pretending curriculum details are known.",
+      "allowed_change": "copy safe zone, media geometry, exact Round 3S copy, UNKNOWN presentation",
+      "forbidden_side_effects": ["curriculum fabrication", "outcome claim", "text-over-photo collision"]
+    },
+    {
+      "id": "R3S-D-005",
+      "classification": "INTENTIONAL_CHANGE",
+      "scope": "S5 copy",
+      "reason": "Make category uncertainty customer-facing and persuasive while preserving the unknown boundary.",
+      "allowed_change": "exact Round 3S copy",
+      "forbidden_side_effects": ["healing effect claim", "method claim", "suitability promise"]
+    },
+    {
+      "id": "R3S-D-006",
+      "classification": "INTENTIONAL_CHANGE",
+      "scope": "S7 copy",
+      "reason": "Remove AI/tutorial language and reduce contact friction through customer-facing action preparation.",
+      "allowed_change": "headline/body/example framing/closing persuasion/verified CTA",
+      "forbidden_side_effects": ["response promise", "reservation guarantee", "new contact channel"]
+    },
+    {
+      "id": "R3S-D-007",
+      "classification": "INTENTIONAL_CHANGE",
+      "scope": "S3 mobile",
+      "reason": "Re-author mobile as opening sentence -> media -> remaining body rather than desktop stack.",
+      "allowed_change": "content ordering, media bleed/crop, spacing, breakpoint geometry",
+      "forbidden_side_effects": ["overlap", "overflow", "lost disclosure", "semantic copy change"]
+    },
+    {
+      "id": "R3S-D-008",
+      "classification": "INTENTIONAL_CHANGE",
+      "scope": "S4 mobile",
+      "reason": "Re-author mobile as headline -> media -> persuasion -> UNKNOWN line to preserve learning-detail authority.",
+      "allowed_change": "content ordering, asymmetric crop, spacing, breakpoint geometry",
+      "forbidden_side_effects": ["overlap", "overflow", "blind center crop", "hidden UNKNOWN"]
+    }
+  ],
+  "forbidden_change_ledger": [
+    {
+      "id": "R3S-F-001",
+      "classification": "FORBIDDEN_CHANGE",
+      "scope": "S6",
+      "description": "No creative restyle of S6 unless required to repair a demonstrable regression introduced by Round 3S implementation."
+    },
+    {
+      "id": "R3S-F-002",
+      "classification": "FORBIDDEN_CHANGE",
+      "scope": "architecture",
+      "description": "No S1-S8 reorder, broad redesign, new creative direction or new service architecture."
+    },
+    {
+      "id": "R3S-F-003",
+      "classification": "FORBIDDEN_CHANGE",
+      "scope": "business truth",
+      "description": "No new Nagi-specific claims, proof, staff identity, prices, durations, qualifications, methods, effects or reviews."
+    },
+    {
+      "id": "R3S-F-004",
+      "classification": "FORBIDDEN_CHANGE",
+      "scope": "unrelated system",
+      "description": "No unrelated motion, navigation, footer or global component redesign as part of this targeted correction."
+    }
+  ],
+  "desktop_geometry": {
+    "S3": {
+      "1440": {
+        "copy_safe_zone": {"left_min_px": 96, "right_max_px": 650, "top_min_px": 150, "top_max_px": 190, "headline_max_width_px": 520, "body_max_width_px": 500},
+        "media_zone": {"left_min_px": 735, "right_bleed_max_px": 24, "top_min_px": 120, "top_max_px": 150, "width_min_px": 620, "width_max_px": 690},
+        "min_optical_gap_px": 64,
+        "tilt_deg": {"min": -2.5, "max": -1.5}
+      },
+      "1280": {"min_optical_gap_px": 56, "media_width_max_px": 560, "tilt_abs_max_deg": 2.0},
+      "1024": {"min_optical_gap_px": 40, "tilt_abs_max_deg": 1.25},
+      "768": {"min_optical_gap_px": 32, "overlap_allowed": false, "preferred_sequence": ["opening_copy", "media", "remaining_copy"]}
+    },
+    "S4": {
+      "1440": {
+        "media_zone": {"left_bleed_max_px": 24, "right_max_px": 645, "top_min_px": 135, "top_max_px": 165, "width_min_px": 610, "width_max_px": 670},
+        "copy_safe_zone": {"left_min_px": 735, "right_max_px": 1340, "top_min_px": 155, "top_max_px": 190, "headline_max_width_px": 540, "body_max_width_px": 540},
+        "min_optical_gap_px": 64,
+        "tilt_deg": {"min": 1.0, "max": 2.0}
+      },
+      "1280": {"min_optical_gap_px": 56, "media_width_max_px": 550, "tilt_abs_max_deg": 2.0},
+      "1024": {"min_optical_gap_px": 40, "tilt_abs_max_deg": 1.25},
+      "768": {"min_optical_gap_px": 32, "overlap_allowed": false, "preferred_sequence": ["opening_copy", "media", "remaining_copy"]}
+    }
+  },
+  "mobile_authorship": {
+    "390": {
+      "S3": {
+        "order": ["eyebrow", "headline", "opening_sentence", "representative_media", "remaining_body"],
+        "overlap_allowed": false,
+        "tilt_deg": 0,
+        "horizontal_padding_px": 22,
+        "media_bleed_each_side_max_px": 22,
+        "media_aspect_range": [1.22, 1.333],
+        "media_top_gap_px": [26, 32],
+        "media_bottom_gap_px": [28, 34]
+      },
+      "S4": {
+        "order": ["eyebrow", "headline", "representative_media", "persuasion_body", "unknown_next_question"],
+        "overlap_allowed": false,
+        "tilt_deg": 0,
+        "horizontal_padding_px": 22,
+        "left_bleed_max_px": 22,
+        "media_width_percent_of_content": [105, 112],
+        "media_top_gap_px": [28, 34],
+        "media_bottom_gap_px": [28, 36]
+      }
+    },
+    "degradation": {
+      "430": "same authored sequence as 390; no decorative expansion",
+      "375": "reduce media bleed before type hierarchy; preserve semantic lines",
+      "360": "reduce media bleed before type hierarchy; preserve semantic lines",
+      "320": "remove bleed if needed; media width 100%; no tilt; side padding >=18px; h2 target >=28px",
+      "768": "bridge composition; no overlap; opening copy -> media -> remaining copy allowed"
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC-01",
+      "name": "S3_S4_1440_collision_hard_check",
+      "required": true,
+      "pass_when": ["copy/media bounding boxes do not intersect", "optical gap >=64px", "no high-contrast media behind copy", "disclosure does not collide", "media remains integrated"]
+    },
+    {
+      "id": "AC-02",
+      "name": "desktop_degradation",
+      "required": true,
+      "viewports": [1280, 1024, 768],
+      "pass_when": ["no overlap", "hierarchy preserved", "no emergency tiny type", "meaningful crop preserved", "no overflow"]
+    },
+    {
+      "id": "AC-03",
+      "name": "copy_exactness_and_customer_facing_language",
+      "required": true,
+      "pass_when": ["approved Round 3S copy rendered", "no instructional internal language", "no unsupported claim"]
+    },
+    {
+      "id": "AC-04",
+      "name": "customer_state_movement",
+      "required": true,
+      "pass_when": ["S1 triad understood", "S2 self-identification", "S4 learning next question", "S5 category uncertainty reduced", "S7 contact friction reduced"]
+    },
+    {
+      "id": "AC-05",
+      "name": "mobile_authorship_390",
+      "required": true,
+      "pass_when": ["S3 and S4 are not identical stacks", "specified orders are rendered", "no overlap", "deliberate crop", "authored spacing"]
+    },
+    {
+      "id": "AC-06",
+      "name": "small_width_degradation",
+      "required": true,
+      "viewports": [320, 360, 375, 430],
+      "pass_when": ["no overflow", "no truncation", "no semantic orphan", "usable CTA/content flow"]
+    },
+    {
+      "id": "AC-07",
+      "name": "preserve_S6",
+      "required": true,
+      "pass_when": ["S6 remains a clear trust/information authority break"]
+    },
+    {
+      "id": "AC-08",
+      "name": "evidence_media_safety",
+      "required": true,
+      "pass_when": ["representative media remains disclosed", "no fake Nagi proof", "UNKNOWN facts remain unknown"]
+    },
+    {
+      "id": "AC-09",
+      "name": "verified_contact",
+      "required": true,
+      "pass_when": ["external conversion target is verified official Instagram only"]
+    },
+    {
+      "id": "AC-10",
+      "name": "human_visible_gate",
+      "required": true,
+      "pass_when": ["Aoi G5 re-check is run on actual pixels/copy after Rin implementation", "Sarah final screen/copy review follows"]
+    }
+  ],
+  "next_routing": ["sarah_review", "rin_narrow_implementation", "same_artifact_regeneration", "aoi_g5_recheck", "sarah_final_screen_copy_review", "shun_final_only_after_pass"]
+}
