@@ -1,0 +1,240 @@
+{
+  "schema_version": "round3v_nagi_authorship_ledger_v1",
+  "task_issue": 24,
+  "owner": "riko",
+  "case_id": "nagi-no-mirai",
+  "status": "READY_FOR_SARAH_REVIEW_RIKO_CONTRACT_SCOPE",
+  "baseline": {
+    "issue": 21,
+    "pr": 22,
+    "head_sha": "1f0bed6f90212a35cec7e1ea560dd071612a4a0d",
+    "artifact_id": 10788443033,
+    "artifact_digest": "sha256:5c7b679607e24ffd034e3a04700d0bd4bb575f395f0515ce9547bc8672290eeb",
+    "human_return_issue": 23,
+    "human_gate": "RETURN"
+  },
+  "scope_lock": {
+    "new_research": false,
+    "new_architecture": false,
+    "service_taxonomy_change": false,
+    "production_code_change": false,
+    "allowed_copy_scenes": ["S1", "S2", "S3", "S4", "S5", "S7"],
+    "allowed_visual_scenes": ["S3", "S4"]
+  },
+  "final_copy": {
+    "S1": {
+      "headline_chunks": [
+        "「休みたい」から始まって、",
+        "やり方まで知りたくなることもある。"
+      ],
+      "mobile_headline_chunks": [
+        "「休みたい」から始まって、",
+        "やり方まで",
+        "知りたくなることもある。"
+      ],
+      "lead": [
+        "ドライヘッドスパを受ける。",
+        "ヘッドスパの技術を学ぶ。",
+        "ヒーリングは、内容を知ってから考える。",
+        "福岡市のなぎのみらいには、その3つがあります。"
+      ],
+      "evidence_class": ["CUSTOMER_HYPOTHESIS", "FACT", "CUSTOMER_SIDE_DECISION_FRAME"],
+      "business_policy_claim": false
+    },
+    "S2": {
+      "eyebrow": "02 / いま近い気持ち",
+      "intro": [
+        "いま欲しいのは、休む時間か。",
+        "技術を知ることか。",
+        "ヒーリングの中身か。"
+      ],
+      "cards": [
+        {"label": "受ける", "primary": "今日は、何もしない時間がほしい。", "service": "ドライヘッドスパ"},
+        {"label": "学ぶ", "primary": "受けるうちに、やり方まで気になってきた。", "service": "ヘッドスパスクール"},
+        {"label": "知る", "primary": "ヒーリングは、名前だけでは判断できない。", "service": "ヒーリングサロン"}
+      ],
+      "closing_line": null,
+      "evidence_class": ["CUSTOMER_HYPOTHESIS", "FACT"],
+      "business_policy_claim": false
+    },
+    "S3": {
+      "headline_chunks": [
+        "一日が終わっても、",
+        "頭の中だけ",
+        "切り替わらない日がある。"
+      ],
+      "body": [
+        "もう何かを足すより、何もしない時間を取りたくなる。",
+        "ドライヘッドスパを探したくなるのは、そんなときかもしれません。"
+      ],
+      "forbidden_body_prefix": "一日が終わっても、頭の中だけ切り替わらない日がある。",
+      "evidence_class": ["CUSTOMER_HYPOTHESIS", "FACT_SERVICE_NAME"],
+      "effect_claim": false
+    },
+    "S4": {
+      "headline_chunks": [
+        "ヘッドスパを見ていて、",
+        "「どうやっているんだろう」が残ったら。"
+      ],
+      "mobile_headline_chunks": [
+        "ヘッドスパを見ていて、",
+        "「どうやっているんだろう」が",
+        "残ったら。"
+      ],
+      "body": [
+        "技術そのものを知りたくなったら、なぎのみらいにはヘッドスパスクールがあります。",
+        "カリキュラムや受講条件は、このページでは確認できていません。",
+        "そこまで知りたいなら、公式Instagramを開く。"
+      ],
+      "evidence_class": ["CUSTOMER_HYPOTHESIS", "FACT", "EVIDENCE_BOUNDARY", "INVITATION"],
+      "business_policy_claim": false
+    },
+    "S5": {
+      "headline_chunks": [
+        "ヒーリングは、",
+        "分かってから考えたい。"
+      ],
+      "body": [
+        "名前だけでは、何をするのかも、自分に関係があるのかも判断しにくい。",
+        "なぎのみらいには、ヒーリングサロンがあります。",
+        "具体的な内容は、このページでは確認できていません。",
+        "そのまま選ぶより、公式Instagramを見てから考える。"
+      ],
+      "evidence_class": ["CUSTOMER_HYPOTHESIS", "FACT", "EVIDENCE_BOUNDARY", "INVITATION"],
+      "healing_effect_claim": false,
+      "business_policy_claim": false
+    },
+    "S7": {
+      "eyebrow": "07 / 公式Instagram",
+      "headline_chunks": [
+        "何て送ろう、と迷ったら。",
+        "聞きたいことを、一文だけ。"
+      ],
+      "body": "言葉に迷うときの参考に、たとえば。",
+      "examples": [
+        "「ドライヘッドスパについて聞きたいです」",
+        "「スクールについて知りたいです」",
+        "「ヒーリングについて、内容を確認したいです」"
+      ],
+      "message_footer": "こんな一文から。",
+      "aside": null,
+      "cta": "公式Instagramを開く ↗",
+      "evidence_class": ["CUSTOMER_SIDE_EXAMPLE", "VERIFIED_DESTINATION", "INVITATION"],
+      "response_promise": false
+    }
+  },
+  "visual_contract": {
+    "S3": {
+      "thesis": "text resolves first, visual center lowers, image becomes scene exit",
+      "desktop_1440": {
+        "scene_min_height_px": [1060, 1120],
+        "headline": {"x_px": 100, "y_start_px": [214, 238], "max_width_px": 720, "font_px": [56, 62]},
+        "body": {"x_px": 100, "max_width_px": 520, "gap_after_headline_px": [32, 40]},
+        "media": {"x_percent": [44, 46], "right_inset_max_px": 72, "y_start_px": [560, 600], "width_percent": [50, 51], "height_px": [410, 450], "object_position": "52% 66%", "rotation_deg": 0, "clip_path": false},
+        "required_gap_px": 64
+      },
+      "desktop_degradation": {
+        "1280": {"headline_max_width_px": 680, "media_x_percent": 42, "media_width_percent": 53, "required_gap_px": 56},
+        "1024": {"headline_max_width_px": 620, "body_max_width_px": 500, "media_width_percent": [68, 72], "required_vertical_gap_px": 40},
+        "768": {"order": ["meta", "service", "headline", "body", "media", "disclosure", "exit"], "media_width_percent": [76, 84], "media_aspect_ratio": [1.7, 1.777], "required_vertical_gap_px": 36}
+      },
+      "mobile_390": {
+        "order": ["meta", "service", "headline", "body", "full_bleed_media", "disclosure", "exit"],
+        "top_padding_px_min": 156,
+        "text_inset_px": 22,
+        "headline_px": [32, 35],
+        "media_width": "100vw",
+        "media_aspect_ratio": [1.55, 1.65],
+        "object_position": "52% 66%",
+        "text_after_media": false
+      }
+    },
+    "S4": {
+      "thesis": "question, central work surface, evidence boundary and next action",
+      "desktop_1440": {
+        "scene_min_height_px": [1180, 1260],
+        "headline": {"x_px": 100, "y_start_px": [208, 232], "max_width_px": 900, "font_px": [48, 54]},
+        "media": {"x_percent": [12, 13], "y_start_px": [392, 420], "width_percent": [74, 76], "height_px": [490, 520], "object_position": "52% 43%", "rotation_deg": 0, "clip_path": false},
+        "body": {"x_percent": [52, 55], "max_width_px": 500, "top_after_media_px": [34, 42]}
+      },
+      "desktop_degradation": {
+        "1280": {"headline_max_width_px": 820, "media_x_percent": 8, "media_width_percent": 84, "body_x_percent": 50},
+        "1024": {"headline_max_width_px": 760, "media_x_percent": 5.5, "media_width_percent": 89, "body_max_width_px": 540, "media_body_gap_px_min": 36},
+        "768": {"order": ["meta", "service", "headline", "media", "disclosure", "body"], "media_width_percent": 100, "body_max_width_px": 560}
+      },
+      "mobile_390": {
+        "order": ["meta", "service", "inset_media", "disclosure", "solid_headline_field", "body", "exit"],
+        "top_padding_px_min": 156,
+        "text_inset_px": 22,
+        "media_width_px": [342, 348],
+        "media_aspect_ratio": "4:5",
+        "object_position": "50% 42%",
+        "headline_overlap_px": [32, 38],
+        "headline_px": [29, 32],
+        "text_on_photo": false
+      }
+    },
+    "mobile_degradation": {
+      "430": {"S3_headline_px_max": 36, "S4_media_width_px": [366, 374], "S4_overlap_px": 36},
+      "375": {"S3_headline_px": [31, 33], "S4_media_width_px": [330, 336], "S4_overlap_px": [30, 34]},
+      "360": {"S3_headline_px": [30, 32], "S4_media_width_px": [318, 326], "S4_overlap_px": [28, 32]},
+      "320": {"S3_headline_px": [27, 29], "S4_media_width_px": [286, 294], "S4_overlap_px": [22, 26], "S4_headline_px": [26, 28]}
+    },
+    "fixed_header_contract": {
+      "mobile_nav_height_px": 60,
+      "scroll_margin_top_px_min": 60,
+      "mobile_scene_top_padding_px_min": 156,
+      "acceptance_390": "eyebrow.top >= nav.bottom + 20",
+      "acceptance_other_mobile": "eyebrow.top >= nav.bottom + 16"
+    }
+  },
+  "preserve": [
+    {"id": "R3V-P-HARD-001", "level": "HARD", "scope": "case-wide", "description": "Evidence, truth and rights boundary remains unchanged."},
+    {"id": "R3V-P-HARD-002", "level": "HARD", "scope": "conversion", "description": "Verified Instagram route @happyfuture_02 remains the only external destination used in this task."},
+    {"id": "R3V-P-HARD-003", "level": "HARD", "scope": "responsive", "description": "Nine-width no-overflow, no-truncation and no-semantic-orphan floor remains active."},
+    {"id": "R3V-P-MAT-001", "level": "MATERIAL", "scope": "S1-S8", "description": "Scene order and semantic persuasion architecture remain unchanged."},
+    {"id": "R3V-P-MAT-002", "level": "MATERIAL", "scope": "S2", "description": "Round 3T spacing/density gain remains except micro-height changes caused by exact new copy."},
+    {"id": "R3V-P-MAT-003", "level": "MATERIAL", "scope": "S6", "description": "Dark trust / information authority break remains untouched."},
+    {"id": "R3V-P-MAT-004", "level": "MATERIAL", "scope": "S7", "description": "Message-draft visual device remains intact while customer copy changes."},
+    {"id": "R3V-P-MAT-005", "level": "MATERIAL", "scope": "S8", "description": "Ending remains untouched."},
+    {"id": "R3V-P-MAT-006", "level": "MATERIAL", "scope": "S3-S4", "description": "Current non-collision gain must not regress."}
+  ],
+  "intentional_change": [
+    "S1 exact copy",
+    "S2 exact copy",
+    "S3 exact copy and desktop/mobile composition",
+    "S4 exact copy and desktop/mobile composition",
+    "S5 exact copy",
+    "S7 exact copy while preserving message-draft device"
+  ],
+  "forbidden_change": [
+    "new research",
+    "new persuasion architecture",
+    "service taxonomy change",
+    "new assets",
+    "unverified business policy",
+    "treatment or healing effects",
+    "school outcomes or curriculum claims",
+    "S6 restyle",
+    "S8 restyle",
+    "S7 message-draft removal",
+    "mirrored S3/S4 alternating split",
+    "same mobile headline-image-body stack for S3 and S4",
+    "repeated giant Gothic",
+    "automatic diagonal planes",
+    "thin-rule ornament",
+    "generic editorial card shells"
+  ],
+  "acceptance": [
+    {"id": "AC-01", "trap": "headline repeated as first body sentence", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-02", "trap": "customer-visible UX/page-navigation explanation", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-03", "trap": "S3/S4 mirrored alternating split templates", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-04", "trap": "mobile scene label hidden under fixed header", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-05", "trap": "S3/S4 both become headline-image-body mobile stacks", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-06", "trap": "safe generic copy replaces customer-moment specificity", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-07", "trap": "S6/S7/S8 safety/accessibility/preserve regression", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-08", "trap": "text directly overlays representative photography", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-09", "trap": "semantic line / overflow / truncation regression", "status_required": "FAIL_CLOSED"},
+    {"id": "AC-10", "trap": "new repeated engine-signature motif introduced across S3/S4", "status_required": "FAIL_CLOSED"}
+  ]
+}
