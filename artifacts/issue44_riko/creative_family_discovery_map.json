@@ -1,0 +1,88 @@
+{
+  "schema_version": "issue44_creative_family_discovery_map_v1",
+  "status": "PROPOSAL_FROM_COMPLETED_EVIDENCE_NOT_PRODUCTION_LOCK",
+  "derivation_rule": "A family must describe a repeated customer/authority/art-direction logic, not a color label or a single admired page.",
+  "families": [
+    {
+      "family_id": "BW-F01",
+      "name": "Sensory Sanctuary / Atmospheric Rest",
+      "visual_thesis": "Environment and material atmosphere carry desire before information becomes dominant.",
+      "customer_conditions": ["experience-led service", "emotional purchase weight high", "sensory imagination materially affects choice"],
+      "art_direction_mechanisms": ["large environmental media", "material/tactile fields", "slow density rhythm", "quiet type authority", "background-to-foreground handoff"],
+      "evidence_refs": ["BM-002", "BM-112", "BM-099", "BM-039"],
+      "boundary": "Not equivalent to beige/green/natural styling. Requires a real sensory decision job.",
+      "overlap": ["BW-F03", "BW-F04"]
+    },
+    {
+      "family_id": "BW-F02",
+      "name": "Clinical Calm / Structured Reassurance",
+      "visual_thesis": "Calm surfaces protect comprehension while evidence, boundaries and process carry trust.",
+      "customer_conditions": ["trust-sensitive purchase", "fear of wrong choice", "expertise/conditions matter"],
+      "art_direction_mechanisms": ["quiet evidence fields", "controlled hierarchy", "reduced decorative competition", "process/boundary emphasis", "precise late-page trust"],
+      "evidence_refs": ["BM-009", "BM-010", "BM-109", "BM-042"],
+      "boundary": "Calmness without evidence or next action is insufficient.",
+      "overlap": ["BW-F05", "BW-F06"]
+    },
+    {
+      "family_id": "BW-F03",
+      "name": "Editorial High-Consideration / Aspirational Authority",
+      "visual_thesis": "Aspirational visual authority is sustained into proof, performance and commitment decisions rather than abandoned after Hero.",
+      "customer_conditions": ["high consideration", "premium positioning", "desire and rational reassurance both material"],
+      "art_direction_mechanisms": ["editorial scale shifts", "large authored media", "controlled whitespace", "late-page proof translation", "high-contrast authority handoff"],
+      "evidence_refs": ["BM-004", "BM-033", "BM-104", "BM-105"],
+      "boundary": "Large typography or luxury photography alone does not define the family.",
+      "overlap": ["BW-F01", "BW-F06"]
+    },
+    {
+      "family_id": "BW-F04",
+      "name": "Human Craft / Provenance-Led Intimacy",
+      "visual_thesis": "Human-scale making, material detail and provenance create authority without corporate distance.",
+      "customer_conditions": ["craft/process matters", "local/personal character affects purchase", "customer wants to know how/where/who"],
+      "art_direction_mechanisms": ["detail photography", "process sequencing", "human-scale crops", "material evidence", "local specificity"],
+      "evidence_refs": ["BM-039", "BM-108", "BM-103"],
+      "boundary": "Do not romanticize locality or craft without actual process evidence.",
+      "overlap": ["BW-F01", "BW-F07"]
+    },
+    {
+      "family_id": "BW-F05",
+      "name": "Guided Choice / Diagnostic Clarity",
+      "visual_thesis": "The page earns trust by reducing a complex or ambiguous choice into a legible sequence of smaller decisions.",
+      "customer_conditions": ["multiple services/plans", "choice anxiety", "category ambiguity", "comparison support is valuable"],
+      "art_direction_mechanisms": ["routing/selector authority", "comparison states", "progressive disclosure", "contextual CTA", "decision-specific scene differentiation"],
+      "evidence_refs": ["BM-006", "BM-062", "BM-110", "BM-102"],
+      "boundary": "Not a card-grid family. The family is the decision logic and authored choice sequence.",
+      "overlap": ["BW-F02", "BW-F08"]
+    },
+    {
+      "family_id": "BW-F06",
+      "name": "Proof-Led Process Authority",
+      "visual_thesis": "Process, mechanism and operational evidence become the visual and persuasive center.",
+      "customer_conditions": ["outcomes depend on method/process", "risk or expertise is material", "B2B/technical logic can transfer to wellness proof"],
+      "art_direction_mechanisms": ["process diagrams", "before/after workflow", "proof-density peaks", "evidence-first scenes", "late-page risk closure"],
+      "evidence_refs": ["BM-003", "BM-031", "BM-034", "BM-106"],
+      "boundary": "Feature inventory without task framing is not this family.",
+      "overlap": ["BW-F02", "BW-F03"]
+    },
+    {
+      "family_id": "BW-F07",
+      "name": "Local Human / Community Warmth",
+      "visual_thesis": "Specific local relationships and real human context reduce distance without generic friendliness claims.",
+      "customer_conditions": ["local service", "relationship matters", "visit/contact trust is material"],
+      "art_direction_mechanisms": ["place/human photography when verified", "nearby-context specificity", "visit-before-commitment", "warm but evidence-protecting rhythm"],
+      "evidence_refs": ["BM-032", "BM-037", "BM-038", "BM-114"],
+      "boundary": "Locality must be concrete; generic '地域密着' mood is insufficient.",
+      "overlap": ["BW-F04", "BW-F05"]
+    },
+    {
+      "family_id": "BW-F08",
+      "name": "Category Education / Open Discovery",
+      "visual_thesis": "When the category itself is unfamiliar, the page prioritizes understanding and self-placement before conversion.",
+      "customer_conditions": ["new/ambiguous category", "customer cannot yet judge fit", "education precedes desire"],
+      "art_direction_mechanisms": ["concept-to-concrete sequence", "self-identification", "guided examples", "low-commitment next event", "openness rather than proof overload"],
+      "evidence_refs": ["BM-011", "BM-041", "BM-043", "BM-001"],
+      "boundary": "Abstract brand language must be followed by concrete process/use/outcome evidence.",
+      "overlap": ["BW-F05", "BW-F01"]
+    }
+  ],
+  "beauty_wellness_note": "These are evidence-derived art-direction families proposed for Beauty/Wellness adaptation using same-industry and adjacent high-quality service evidence. They are not eight fixed templates and are not production-eligible until multi-company validation."
+}
