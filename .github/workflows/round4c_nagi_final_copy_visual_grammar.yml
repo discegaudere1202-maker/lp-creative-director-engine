@@ -1,0 +1,41 @@
+name: Round 4C Nagi Final Copy Visual Grammar
+
+on:
+  pull_request:
+    paths:
+      - "scripts/run_round4c_nagi_final_copy_visual_grammar.py"
+      - "tests/test_round4c_nagi_final_copy_visual_grammar.py"
+      - "scripts/run_round3z_nagi_s4_s5_grammar.py"
+      - "scripts/run_round3w_nagi_final_authorship.py"
+      - "scripts/run_round3q_nagi_rebuild.py"
+      - "docs/ROUND4B_RIKO_NAGI_COPY_AUTHORSHIP_FINAL_VISUAL_GRAMMAR_REDUCTION_v1.md"
+      - "artifacts/round4b_riko/**"
+      - ".github/workflows/round4c_nagi_final_copy_visual_grammar.yml"
+  workflow_dispatch:
+
+jobs:
+  round4c:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -e . pytest playwright pillow
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Generate Round 4C artifact
+        run: python scripts/run_round4c_nagi_final_copy_visual_grammar.py
+      - name: Run Round 4C tests
+        run: python -m pytest -q -p no:cacheprovider tests/test_round4c_nagi_final_copy_visual_grammar.py
+      - name: Diff check
+        run: git diff --check
+      - name: Assert technical gates
+        run: >-
+          python -c "import json; q=json.load(open('artifacts/round4c_nagi_final_copy_visual_grammar/browser_qa.json')); f=json.load(open('artifacts/round4c_nagi_final_copy_visual_grammar/fixed_header_measurements.json')); assert q['status']=='PASS' and q['pass']==9 and f['status']=='PASS'"
+      - name: Upload Round 4C artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: round4c-nagi-final-copy-visual-grammar-${{ github.sha }}
+          path: artifacts/round4c_nagi_final_copy_visual_grammar
