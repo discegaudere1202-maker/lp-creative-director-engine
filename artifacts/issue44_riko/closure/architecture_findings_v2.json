@@ -1,0 +1,55 @@
+{
+  "schema_version":"issue44_architecture_findings_v2",
+  "status":"RESEARCH_CLOSURE_READY_PROPOSAL_NOT_PRODUCTION_LOCK",
+  "preservation_rule":"v1 findings remain valid unless explicitly changed below. This file is a versioned evidence-closure delta, not a rewrite for novelty.",
+  "family_validation":{
+    "new_family_required":false,
+    "judgment":"The eight v1 families remain sufficient at mechanism level after the 150-row Beauty/Wellness-heavy continuation. New evidence mostly strengthened boundaries and secondary-family combinations rather than creating a ninth family.",
+    "families":[
+      {"id":"BW-F01","name":"Sensory Sanctuary / Atmospheric Rest","new_evidence_refs":["BM-191","BM-247","BM-284","BM-190"],"confidence_change":"UP","boundary_refinement":"Atmosphere qualifies only when sensory/ritual expectation changes the decision; generic beige/natural styling does not."},
+      {"id":"BW-F02","name":"Clinical Calm / Structured Reassurance","new_evidence_refs":["BM-185","BM-188","BM-265","BM-285"],"confidence_change":"UP","boundary_refinement":"Clinical authority can be warm or colorful; the defining mechanism is precise evidence/boundary/process without anxiety-amplifying clutter."},
+      {"id":"BW-F03","name":"Editorial High-Consideration / Aspirational Authority","new_evidence_refs":["BM-184","BM-203","BM-233","BM-238","BM-277"],"confidence_change":"UP","boundary_refinement":"Editorial scale must persist into a credible proof/commitment handoff; photography alone is insufficient."},
+      {"id":"BW-F04","name":"Human Craft / Provenance-Led Intimacy","new_evidence_refs":["BM-189","BM-191","BM-240","BM-244","BM-284"],"confidence_change":"UP","boundary_refinement":"Provenance may be temporal, material, editorial or human; it must be specific and inspectable rather than nostalgic styling."},
+      {"id":"BW-F05","name":"Guided Choice / Diagnostic Clarity","new_evidence_refs":["BM-188","BM-202","BM-281"],"confidence_change":"UP","boundary_refinement":"The decision sequence/selector is the family mechanism, not a card grid or quiz visual."},
+      {"id":"BW-F06","name":"Proof-Led Process Authority","new_evidence_refs":["BM-185","BM-202","BM-203","BM-265"],"confidence_change":"UP","boundary_refinement":"Proof should be causal and local to the decision; detached claim walls are not equivalent."},
+      {"id":"BW-F07","name":"Local Human / Community Warmth","new_evidence_refs":["BM-233","BM-236","BM-238","BM-240","BM-244","BM-247","BM-277"],"confidence_change":"UP_STRONGLY","boundary_refinement":"Real place, people, access and visit feasibility are structural trust inputs; generic friendliness/locality claims are not."},
+      {"id":"BW-F08","name":"Category Education / Open Discovery","new_evidence_refs":["BM-190"],"confidence_change":"SUPPORTED_BUT_LESS_DENSE_THAN_F01_F07","boundary_refinement":"Education must precede conversion only when the user lacks a usable category model; otherwise it becomes unnecessary exposition."}
+    ],
+    "family_selection_rule":"Select dominant family + optional secondary influence from customer state, authority, information density, trust logic, composition and commitment. Never select family from photo/evidence quantity or collection difficulty."
+  },
+  "beauty_wellness_taxonomy_validation":{
+    "status":"VALIDATED_AS_RESEARCH_TAXONOMY_NOT_PRODUCTION_LOCK",
+    "reason":"Same-industry density is materially stronger across salons, esthetic/treatment, clinic, wellness/body-care, beauty education/support and product contexts. Multi-company Production validation is still required before a selector contract becomes hard-coded.",
+    "prohibited_shortcut":"Do not translate each family into one fixed layout/template."
+  },
+  "module_composition_registry_delta":{
+    "new_html_components":0,
+    "judgment":"Continuation evidence refined existing persuasion/composition grammar rather than justifying a generic component explosion.",
+    "refinements":[
+      {"observed_mechanism":"Diagnostic Recommender Loop","maps_to":["Guided-choice Hero","State-specific Next Event"],"evidence_refs":["BM-188","BM-202","BM-281"]},
+      {"observed_mechanism":"Safety Boundary Thread","maps_to":["Quiet Boundary Ledger","Distributed Proof Thread"],"evidence_refs":["BM-185","BM-203","BM-265"]},
+      {"observed_mechanism":"Heritage Chronology","maps_to":["Causal Business Story","Emotional Resolution"],"evidence_refs":["BM-189"]},
+      {"observed_mechanism":"Visit Feasibility Proof","maps_to":["Relationship Evidence Scene","State-specific Next Event","Utility Closure"],"evidence_refs":["BM-236","BM-247"]},
+      {"observed_mechanism":"Ritual-to-Mechanism Handoff","maps_to":["Atmosphere as Decision Scene","Process-as-Proof Sequence"],"evidence_refs":["BM-191","BM-284"]},
+      {"observed_mechanism":"Editorial Ecosystem Routing","maps_to":["Intent-routed Service Field","Relationship Evidence Scene"],"evidence_refs":["BM-240","BM-277"]},
+      {"observed_mechanism":"Quantified Device Proof Stack","maps_to":["Distributed Proof Thread","Process-as-Proof Sequence","Commitment Ladder"],"evidence_refs":["BM-203"]}
+    ]
+  },
+  "compatibility_delta":[
+    {"combination":"Clinical Calm + Guided Choice","status":"COMPATIBLE","condition":"trust-sensitive ambiguous choice; selector/recommendation must be supported by actual evidence"},
+    {"combination":"Sensory Sanctuary + Clinical Calm","status":"CONDITIONAL","condition":"use a deliberate atmosphere→evidence handoff; do not inject dense proof into the sensory opening"},
+    {"combination":"Local Human + Editorial Authority","status":"COMPATIBLE","condition":"real people/place/service context must exist; stock-like editorialization is prohibited"},
+    {"combination":"Proof-Led Process + Sensory Sanctuary","status":"CONDITIONAL","condition":"appropriate for devices/wellness where experience matters, but proof must arrive before high commitment"},
+    {"combination":"Guided Choice + fixed generic card matrix","status":"PROHIBITED_AS_FAMILY_IMPLEMENTATION_SHORTCUT","condition":"cards may appear, but repeated card geometry cannot substitute for authored decision states"},
+    {"combination":"Asset scarcity → lower-fit family","status":"PROHIBITED","condition":"Creative Fit precedes Production Feasibility; adapt realization after family choice"}
+  ],
+  "creative_profile_validation":{
+    "result":"NO_DIMENSION_REVERSAL_FROM_V1_AFTER_CONTINUATION",
+    "keep":["warmth","naturalness","clinical_expertise","craftsmanship","modernity","softness","calmness","boldness","intimacy","trust_requirement","owner_personality_importance","visual_storytelling_need","information_density_need","emotional_purchase_weight"],
+    "alter":{"premium":"premium_authority_need","locality":"local_relationship_weight","transformation_intensity":"desired_state_change_intensity","booking_urgency":"decision_commitment_pressure"},
+    "add":["category_education_need","choice_guidance_need","process_inspectability_need","sensory_experience_weight","human_relationship_weight"],
+    "remove_from_creative_fit":["photo_asset_quantity","evidence_quantity","scraping_difficulty","source_coverage","rights_clarity","staff_photo_availability","facility_photo_availability","pricing_completeness","social_proof_availability"],
+    "validation_reason":"The new same-industry corpus repeatedly changes art direction based on customer decision/trust/authority state, while asset availability changes how the selected direction can be safely realized, not which direction fits."
+  },
+  "implementation_boundary":"No selector, renderer, HTML/CSS component, numeric resemblance gate, Nagi rebuild or Production engine change is authorized by this research artifact."
+}
