@@ -81,6 +81,10 @@ def main() -> int:
     c.CSS=c.CSS.replace("</style>",CONTAINMENT_CSS.replace("<style>","").replace("</style>","")+"</style>")
     c.qa=qa
     result=c.main()
+    if result != 0:
+        qa_path=OUT / "browser_qa.json"
+        if qa_path.exists():
+            print(qa_path.read_text(encoding="utf-8"), flush=True)
     # The inherited builder creates the complete Round 4C evidence; add the Round 4E-specific proof.
     for old,new in (("round3z_vs_round4c_1440.html","round3z_vs_round4e_1440.html"),("round3z_vs_round4c_390.html","round3z_vs_round4e_390.html")):
         p=OUT/"comparison"/old
