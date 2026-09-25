@@ -1,0 +1,25 @@
+{
+  "schema_version": "template_resemblance_contract_v0",
+  "status": "CANDIDATE_NO_NUMERIC_THRESHOLD",
+  "human_review_required": true,
+  "calibration_status": "CANDIDATE_NO_NUMERIC_THRESHOLD",
+  "dimensions": ["hero_silhouette", "section_topology", "module_sequence", "dominant_grid", "typography_hierarchy", "color_topology", "media_framing", "rhythm", "material_grammar", "cta_choreography", "motion_pattern", "screenshot_gestalt"],
+  "hard_fail_candidates": ["color/logo/photo swap impression", "same dominant Hero/service/CTA composition", "same late-page rhythm and ending", "same media mask/crop/type hierarchy", "repeated human reviewers label same-template derivation"],
+  "not_uniqueness": ["raw color difference", "photo replacement", "copy replacement", "token swaps alone"],
+  "labeled_pair_basis": {
+    "source_artifact": "artifacts/issue44_riko/closure/template_resemblance_labeled_pairs_v1.json",
+    "source_sha256": "9f44854145e0938f5eead380eacb61306ddb3b36bccdf3f38c4910ad7e5e6330",
+    "pair_count": 24,
+    "class_counts": {
+      "obvious_same_template_skin_swap": 8,
+      "same_creative_family_acceptably_distinct": 8,
+      "clearly_different_family_or_decision_grammar": 8
+    },
+    "classes": [
+      "obvious_same_template_skin_swap",
+      "same_creative_family_acceptably_distinct",
+      "clearly_different_family_or_decision_grammar"
+    ],
+    "same_template_looking_pairs": "obvious_same_template_skin_swap"
+  }
+}

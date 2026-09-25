@@ -1,0 +1,18 @@
+{
+  "schema_version": "issue44_beauty_wellness_family_taxonomy_proposal_v1",
+  "status": "PROPOSAL_NOT_PRODUCTION_LOCK",
+  "selection_principle": "Select by Creative Fit/customer decision logic. Apply Production Feasibility only after fit is determined.",
+  "families": [
+    {"id":"BW-F01","name":"Sensory Sanctuary / Atmospheric Rest","creative_fit_signals":["sensory experience weight high","emotional purchase weight high","experience imagination drives desire"],"avoid_when":["evidence/conditions must dominate immediately","atmosphere would hide material limitations"]},
+    {"id":"BW-F02","name":"Clinical Calm / Structured Reassurance","creative_fit_signals":["trust requirement high","wrong-choice anxiety","conditions/process matter"],"avoid_when":["page requires strong expressive aspiration before comprehension"]},
+    {"id":"BW-F03","name":"Editorial High-Consideration / Aspirational Authority","creative_fit_signals":["premium authority need high","high consideration","desire and rational proof both material"],"avoid_when":["premium signal would rely only on giant type/luxury imagery"]},
+    {"id":"BW-F04","name":"Human Craft / Provenance-Led Intimacy","creative_fit_signals":["craftsmanship high","human relationship weight high","process/provenance affects choice"],"avoid_when":["human/process claims cannot be evidenced"]},
+    {"id":"BW-F05","name":"Guided Choice / Diagnostic Clarity","creative_fit_signals":["choice guidance need high","multiple services/plans","self-fit ambiguity"],"avoid_when":["only one clear offer exists","routing adds artificial choice"]},
+    {"id":"BW-F06","name":"Proof-Led Process Authority","creative_fit_signals":["process inspectability high","expertise/risk high","method is decisive"],"avoid_when":["proof is too weak and would require invented process"]},
+    {"id":"BW-F07","name":"Local Human / Community Warmth","creative_fit_signals":["local relationship weight high","human trust is central","visit/contact context matters"],"avoid_when":["locality is only a geographic fact and not a decision factor"]},
+    {"id":"BW-F08","name":"Category Education / Open Discovery","creative_fit_signals":["category education need high","customer cannot yet judge fit","low readiness"],"avoid_when":["category already understood and explanation would slow conversion"]}
+  ],
+  "not_templates": true,
+  "overlap_rule": "A company may fit multiple families. Dominant family and secondary influence may coexist; do not force one-hot classification.",
+  "validation_requirement": "Multi-company validation is required before any family becomes a production-selectable contract."
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "family_module_selection_contract_v1",
+  "status": "CONTRACT",
+  "selection_order": ["company_truth", "customer_decision_state", "creative_fit", "dominant_family", "optional_secondary_influence", "module_compatibility", "production_feasibility_adaptation"],
+  "family_change_allowed_after_feasibility": false,
+  "module_registry": "data/production_architecture/module_composition_registry_v1.json",
+  "hard_boundaries": ["no_fixed_layout_per_family", "no_equal_card_default_for_guided_choice", "no_unverifiable_human_proof", "module_is_grammar_not_component_inventory"]
+}

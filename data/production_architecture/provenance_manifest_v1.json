@@ -1,0 +1,8 @@
+{
+  "schema_version": "production_architecture_provenance_v1",
+  "research_issue": 44,
+  "research_head": "135e15276da07279731d48ff2b1306fae2411db4",
+  "source_artifacts": ["artifacts/issue44_riko/beauty_wellness_family_taxonomy_proposal.json", "artifacts/issue44_riko/module_composition_pattern_registry.json", "artifacts/issue44_riko/compatibility_prohibited_hypotheses.json", "artifacts/issue44_riko/creative_profile_recommendation.json", "artifacts/issue44_riko/template_resemblance_model_v0.json", "artifacts/issue44_riko/closure/template_resemblance_labeled_pairs_v1.json", "artifacts/issue44_riko/closure/architecture_findings_v2.json", "artifacts/issue44_riko/closure/research_saturation_closure_report.json"],
+  "contract_versions": {"creative_fit_profile_v1":"v1", "production_feasibility_profile_v1":"v1", "family_module_selection_contract_v1":"v1", "template_resemblance_contract_v0":"v0"},
+  "deterministic_rule": "Every production architecture result records this manifest and the selected contract versions."
+}

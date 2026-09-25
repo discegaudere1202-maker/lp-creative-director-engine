@@ -1,0 +1,83 @@
+{
+  "schema_version": "issue44_curation_source_quality_matrix_v1",
+  "task_issue": 44,
+  "owner": "riko",
+  "research_mode": "PERSIST_COMPLETED_WORK_NO_RESEARCH_RERUN",
+  "sources": [
+    {
+      "source_name": "LP Archive",
+      "canonical_url": "https://rdlp.jp/lp-archive/",
+      "source_type": "Japanese LP-specific high-volume archive",
+      "approx_corpus_breadth": "45,000+ (completed-research checkpoint)",
+      "filters_taxonomy": ["industry/category", "color", "taste/style", "image/visual characteristics"],
+      "strengths": ["very large LP-specific breadth", "same-category comparison", "useful for repeated composition detection"],
+      "biases": ["archive breadth exceeds uniformly deep annotation capacity", "visual quality varies"],
+      "research_use": "discovery / prevalence checks / anti-template comparison",
+      "persistence_note": "source identity and breadth came from the completed Issue44 research summary; no new browsing was performed in this persistence pass"
+    },
+    {
+      "source_name": "Web Design Clip [L]",
+      "canonical_url": "https://lp.webdesignclip.com/",
+      "source_type": "Japanese LP-specific design gallery",
+      "approx_corpus_breadth": "3,271 (completed-research checkpoint)",
+      "filters_taxonomy": ["industry/category", "color", "design element"],
+      "strengths": ["LP-specific framing", "filterable visual comparison", "good for hero/module grammar"],
+      "biases": ["curation taste", "gallery representation can over-emphasize first-view quality"],
+      "research_use": "creative-family cross-check / hero-module discovery",
+      "persistence_note": "no new browsing in writeback pass"
+    },
+    {
+      "source_name": "ランディングページ（LP）集めました。",
+      "canonical_url": "https://lp-web.com/",
+      "source_type": "Japanese long-running LP archive",
+      "approx_corpus_breadth": "3,000+ (completed-research checkpoint)",
+      "filters_taxonomy": ["category", "color"],
+      "strengths": ["longitudinal Japanese LP coverage", "commercial LP breadth"],
+      "biases": ["older conventions coexist with current work", "filter granularity lower than some newer databases"],
+      "research_use": "historical/prevalence cross-check / repeated-commercial-grammar detection",
+      "persistence_note": "no new browsing in writeback pass"
+    },
+    {
+      "source_name": "SANKOU!",
+      "canonical_url": "https://sankoudesign.com/",
+      "source_type": "Japanese high-design web gallery",
+      "approx_corpus_breadth": "4,027 (completed-research checkpoint)",
+      "filters_taxonomy": ["site type", "industry", "style", "design characteristics"],
+      "strengths": ["strong Japanese art-direction examples", "useful adjacent-category inspiration", "broad design-language coverage"],
+      "biases": ["not LP-only", "curation favors visually distinctive work"],
+      "research_use": "art-direction family discovery / authored mechanism discovery",
+      "persistence_note": "existing Round3F registry contains SANKOU!-origin discovery records; original pages were used for analysis where possible"
+    },
+    {
+      "source_name": "MUUUUU.ORG",
+      "canonical_url": "https://muuuuu.org/",
+      "source_type": "Japanese high-quality web design gallery",
+      "approx_corpus_breadth": "6,219 (completed-research checkpoint)",
+      "filters_taxonomy": ["industry", "color", "site type", "design taste", "interaction"],
+      "strengths": ["premium visual systems", "interaction and long-page rhythm", "adjacent-category breadth"],
+      "biases": ["not LP-only", "brand-rich examples can overstate asset availability"],
+      "research_use": "composition / rhythm / motion-adjacent art-direction cross-check",
+      "persistence_note": "source-map evidence preserved; exact per-sample MUUUUU rows were not present in the recovered Round3F registry, so no false sample count is claimed"
+    },
+    {
+      "source_name": "Lapa Ninja",
+      "canonical_url": "https://www.lapa.ninja/",
+      "source_type": "International landing-page gallery",
+      "approx_corpus_breadth": "7,400+ (completed-research checkpoint)",
+      "filters_taxonomy": ["category", "page type", "full-page examples"],
+      "strengths": ["international variation", "anti-local-maxima reference", "full-page composition diversity"],
+      "biases": ["different language/cultural conversion norms", "cannot be copied directly into Japanese service LPs"],
+      "research_use": "variation / anti-template / international counterexample corpus",
+      "persistence_note": "supplementary only; Japanese sources remain core"
+    }
+  ],
+  "hard_exclusions": [
+    "small SEO listicles as primary evidence",
+    "article commentary when actual page/screen can be inspected",
+    "single-gallery taxonomy treated as ground truth"
+  ],
+  "traceability_limit": {
+    "status": "RECOVERED_WITH_LIMIT",
+    "note": "The completed session's source-quality map is recoverable, but the persisted Round3F 150-record registry itself is concentrated in SANKOU! and LP advance/original-page routes. This package does not fabricate per-source sampling counts for galleries not represented in that registry."
+  }
+}

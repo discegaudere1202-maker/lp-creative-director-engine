@@ -1,0 +1,40 @@
+{
+  "schema_version": "issue44_template_resemblance_model_v0",
+  "status": "CANDIDATE_MODEL_REQUIRES_FUTURE_PAIR_CALIBRATION_BEFORE_HARD_NUMERIC_THRESHOLD",
+  "principle": "Color, photo, logo, or copy swaps alone never count as meaningful uniqueness.",
+  "dimensions": [
+    {"id":"TR-HERO","name":"hero silhouette/composition","human_review_priority":"HIGH"},
+    {"id":"TR-TOPO","name":"section topology/order","human_review_priority":"MEDIUM"},
+    {"id":"TR-MODSEQ","name":"repeated module sequence","human_review_priority":"HIGH"},
+    {"id":"TR-GRID","name":"dominant alignment/grid behavior","human_review_priority":"HIGH"},
+    {"id":"TR-TYPE","name":"typography hierarchy","human_review_priority":"HIGH"},
+    {"id":"TR-COLOR","name":"color topology","human_review_priority":"LOW_ALONE"},
+    {"id":"TR-MEDIA","name":"media framing/crop/mask pattern","human_review_priority":"HIGH"},
+    {"id":"TR-RHYTHM","name":"whitespace/density rhythm","human_review_priority":"HIGH"},
+    {"id":"TR-MATERIAL","name":"decorative/material grammar","human_review_priority":"HIGH"},
+    {"id":"TR-CTA","name":"CTA choreography","human_review_priority":"MEDIUM_HIGH"},
+    {"id":"TR-MOTION","name":"motion pattern where observed","human_review_priority":"MEDIUM"},
+    {"id":"TR-SCREEN","name":"screenshot-level gestalt similarity","human_review_priority":"HIGHEST"}
+  ],
+  "hard_fail_candidates": [
+    "obvious color/logo/photo swap impression",
+    "same dominant Hero + service + CTA composition across unrelated businesses",
+    "same late-page rhythm and ending despite different decision problems",
+    "same media mask/crop/typography hierarchy producing screenshot-level derivation feel",
+    "multimodal human-perception reviewer repeatedly labels outputs as same-template derivations"
+  ],
+  "not_uniqueness": ["raw color difference", "photo replacement", "copy replacement"],
+  "labeled_pair_basis": {
+    "same_family_acceptably_distinct": [
+      {"a":"BM-004 The Residence Designs","b":"BM-033 ジョイフルホーム","reason":"both high-consideration housing, but authority/proof/lifestyle grammar differs materially"},
+      {"a":"BM-042 TORAIZ","b":"BM-102 STUDIO上野 by LIG","reason":"education/high-commitment contexts with different support/choice/composition logic"},
+      {"a":"BM-031 東海環境","b":"BM-108 ユニット株式会社","reason":"local B2B authority expressed through different process/category mechanisms"}
+    ],
+    "clearly_different_family": [
+      {"a":"BM-006 FANCL SKIN PATCH","b":"BM-002 SANU 2nd Home","reason":"guided diagnostic/choice vs atmospheric lifestyle immersion"},
+      {"a":"BM-003 Chromateach","b":"BM-005 Human Rights Now","reason":"technical process authority vs human/cause agency"}
+    ],
+    "same_template_looking_pairs": "NOT_RECOVERED_AS_SAVED_PAIR_ROWS",
+    "calibration_limit": "The completed-session persistence did not retain a dedicated same-template labeled pair file. Do not invent numeric thresholds. Future calibration must add actual generated-output and benchmark pair judgments before this becomes a hard numeric gate."
+  }
+}

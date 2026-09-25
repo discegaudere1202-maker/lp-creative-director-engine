@@ -1,0 +1,7 @@
+{
+  "schema_version": "production_feasibility_profile_v1",
+  "status": "CONTRACT",
+  "dimensions": ["photo_asset_quantity", "evidence_quantity_available", "scraping_difficulty", "source_coverage", "rights_clarity", "staff_photo_availability", "facility_photo_availability", "pricing_completeness", "social_proof_availability"],
+  "adaptation_policy": {"may_change_family": false, "stage": "post_selection_adaptation", "note": "Scarcity adapts realization inside the selected creative logic."},
+  "boundary": "never_embedded_in_creative_fit"
+}
