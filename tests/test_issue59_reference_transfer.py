@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
+
+import pytest
 
 from lp_engine.controlled_transfer import _feasibility, load_reference_contracts, reference_input, run_reference_company
 from lp_engine.production_architecture import infer_and_select_family
@@ -25,3 +28,28 @@ def test_issue59_feasibility_counterfactual_cannot_change_family(tmp_path):
         assert trace["no_company_lookup"] is True
         assert trace["no_family_fixed_layout"] is True
         assert json.loads((tmp_path / contract["company_id"] / "site" / "render_spec.json").read_text(encoding="utf-8"))["controlled_architecture"]["family_frozen_before_feasibility"] is True
+
+
+@pytest.mark.parametrize("width", [768, 1024, 1280, 1440])
+def test_regina_choose_time_media_and_copy_never_overlap(tmp_path, width):
+    """The Regina desktop choice scene must be geometry-safe at all desktop widths."""
+    contract = next(item for item in load_reference_contracts() if item["company_id"] == "regina-clinic")
+    result = run_reference_company(contract, tmp_path / contract["company_id"])
+    html_path = Path(result["site"]) / "index.html"
+
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        page = browser.new_page(viewport={"width": width, "height": 900})
+        page.goto(html_path.as_uri(), wait_until="load")
+        geometry = page.locator(".scene-state-choose_time").evaluate(
+            """node => {
+                const media = node.querySelector('.scene-media').getBoundingClientRect();
+                const copy = node.querySelector('.scene-layered-copy').getBoundingClientRect();
+                return {media: {left: media.left, right: media.right, top: media.top, bottom: media.bottom}, copy: {left: copy.left, right: copy.right, top: copy.top, bottom: copy.bottom}};
+            }"""
+        )
+        browser.close()
+
+    assert geometry["copy"]["left"] >= geometry["media"]["right"] - 1, geometry

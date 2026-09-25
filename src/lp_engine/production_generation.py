@@ -1258,6 +1258,10 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     .profile-care_rhythm .premium-scene--ending{{max-width:min(90vw,780px);}}
     .profile-care_rhythm .premium-scene--ending .scene-layered-copy{{background:transparent;}}
     .profile-care_rhythm .scene-media{{box-shadow:none;}}
+    /* Regina's choice scene keeps its material authority without allowing the
+       desktop copy to collide with the media frame. Mobile keeps the existing
+       stacked/layered treatment below 761px. */
+    @media(min-width:761px){{.profile-care_rhythm .scene-state-choose_time .scene-layered{{display:grid;grid-template-columns:minmax(0,.56fr) minmax(0,.44fr);gap:clamp(2rem,4vw,4rem);align-items:stretch;min-height:clamp(420px,48vw,620px);overflow:visible;}}.profile-care_rhythm .scene-state-choose_time .scene-layered .scene-media{{grid-column:1;grid-row:1;min-height:100%;}}.profile-care_rhythm .scene-state-choose_time .scene-layered-copy{{position:static;grid-column:2;grid-row:1;align-self:center;max-width:none;padding:clamp(1.5rem,4vw,3rem);}}}}
     .profile-studio_invitation .scene-sequence{{background:color-mix(in srgb,var(--accent) 7%,transparent);}}
     .profile-studio_invitation .hero-scope--fact_tabs{{font-weight:var(--display-weight);}}
     @media(max-width:900px){{h1{{font-size:clamp(2.8rem,5vw,3.6rem);}}h2{{font-size:clamp(2rem,3.7vw,2.8rem);}}}}
