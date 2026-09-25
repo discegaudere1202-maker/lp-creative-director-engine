@@ -1,0 +1,57 @@
+{
+  "schema_version": "issue66_closure_report_v1",
+  "issue": 66,
+  "status": "RIKO_RESEARCH_SPEC_COMPLETE_PENDING_PR_QA_SARAH_AUDIT",
+  "purpose":"Design Phase C Production expansion for the next clearly distinct Beauty/Wellness Creative Families using accepted benchmark and Phase B transfer evidence.",
+  "selected_families":["BW-F05","BW-F07","BW-F01","BW-F03"],
+  "deferred_family":"BW-F06",
+  "taxonomy_change":"NONE",
+  "ninth_family_required":false,
+  "reference_company_count":8,
+  "reference_company_pairs":{
+    "BW-F05":["POLA APEX","FANCL"],
+    "BW-F07":["Lino Hair","Barbaro"],
+    "BW-F01":["THREE","BAUM"],
+    "BW-F03":["kakimoto arms","pilates K"]
+  },
+  "staged_rollout_order":["BW-F05","BW-F07","BW-F01","BW-F03"],
+  "why_not_f06_this_phase":"F06 remains valid and unvalidated as a dominant Production Family, but its mechanism/collision logic was already exercised as secondary context in both Regina F02 and uka F04. The four selected families add more net-new dominant decision/composition coverage in the limited 3–4 Family Phase C scope.",
+  "phase_b_constraints_promoted_to_phase_c_locks":[
+    "different Family metadata is insufficient if public scene semantics remain visually template-identical",
+    "Hero + at least one core mid-scene + trust/decision scene + closing/CTA must be authored from company truth and decision job",
+    "do not reuse a generic five-scene progression across materially different Families",
+    "320px is an authored optical Japanese line state; isolated particles, isolated noun fragments and one-character CTA/headline orphans are blocking",
+    "responsive media framing needs human-visible review at intermediate widths even when browser/overflow QA is green"
+  ],
+  "phase_c_evidence_requirement":{
+    "new_reference_outputs":8,
+    "widths_per_reference":9,
+    "minimum_new_fullpage_screenshots":72,
+    "accepted_baselines":["Nagi/BW-F08","Regina/BW-F02","uka/BW-F04"],
+    "human_review_required":true,
+    "numeric_template_resemblance_threshold":false
+  },
+  "architecture_boundaries":[
+    "Creative Fit and Production Feasibility remain hard-separated",
+    "Family freezes before feasibility adaptation",
+    "no Family-to-fixed-layout or Family-to-fixed-Hero mapping",
+    "no company/case lookup masquerading as inference",
+    "module patterns are persuasion/composition grammar, not component templates",
+    "asset convenience cannot choose Family",
+    "unresolved genuine co-dominance must surface HUMAN_REVIEW_REQUIRED"
+  ],
+  "registry_boundaries":[
+    "BW-F03 has no dedicated accepted Hero pattern; this increases authored/human-review requirements and does not authorize a fixed new F03 Hero template",
+    "shared M-HERO-01 compatibility across F01/F07/F08 must not produce shared first-view silhouette",
+    "F05 Guided-choice grammar is decision routing, not equal-card UI"
+  ],
+  "known_uncertainties":[
+    "Phase C still will not constitute universal proof across all eight Families until dominant F06 is productionized",
+    "official-site media visibility does not establish reuse rights",
+    "volatile company facts must be re-verified at implementation time",
+    "F03 authored first-view quality cannot be closed by research or CI alone",
+    "human-visible non-template authorship must be judged on actual screenshots, not metadata or architecture traces"
+  ],
+  "recommended_next_task":"[Rin] Phase C Waves 1–4｜BW-F05/F07/F01/F03 Controlled Production Expansion × 8-Reference Cross-Family Non-Template QA",
+  "scope_boundary":"No Production implementation/code changes are authorized by Issue #66 itself; Sarah research/architecture audit precedes Rin implementation."
+}
