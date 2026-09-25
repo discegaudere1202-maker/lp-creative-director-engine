@@ -187,6 +187,23 @@ def main() -> int:
                 page.set_viewport_size({"width": width, "height": 900})
                 page.goto(html_path.as_uri(), wait_until="load")
                 overflow = page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth")
+                optical = None
+                if case_id == "pilates-trust-same-family" and width == 320:
+                    optical = page.evaluate("""
+                        () => {
+                            const chunks = [...document.querySelectorAll(".hero h1 .headline-chunk")];
+                            return {
+                                chunks: chunks.map((node) => ({
+                                    text: node.textContent,
+                                    line_count: node.getClientRects().length,
+                                    width: node.getBoundingClientRect().width,
+                                })),
+                                forced_break: getComputedStyle(document.querySelector(".headline-break-320")).display !== "none",
+                            };
+                        }
+                    """)
+                    if not optical["forced_break"] or any(len(item["text"].strip()) <= 1 for item in optical["chunks"]):
+                        raise AssertionError("pilates 320px headline optical guard failed")
                 shot = output / "screenshots" / case_id
                 shot.mkdir(parents=True, exist_ok=True)
                 shot_path = shot / f"{width}.png"
@@ -195,6 +212,7 @@ def main() -> int:
                     "width": width,
                     "path": str(shot_path.relative_to(output)),
                     "overflow": bool(overflow),
+                    **({"optical_320": optical} if optical is not None else {}),
                 })
             page.close()
         browser.close()
@@ -217,6 +235,7 @@ def main() -> int:
         "fit_freezes_before_feasibility": True,
         "human_visible_template_resemblance": "PENDING_AOI_NOT_SELF_DECLARED",
         "screenshot_count": sum(len(item["screenshots"]) for item in render_cases.values()),
+        "pilates_320_optical_line_guard": True,
         "all_screenshots_overflow_free": all(
             not shot["overflow"]
             for item in render_cases.values()
