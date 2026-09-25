@@ -7,7 +7,50 @@ from lp_engine.authored_composition_runtime import (
     consume_composition_plan,
     migration_guard,
 )
-from tests.test_authored_composition_contract import fixture
+
+
+def fixture():
+    truth = lambda value: {"value": value, "confidence": "verified", "sources": ["fixture"]}
+    return {
+        "company_truth": {
+            "category": truth("hair_salon"),
+            "name": truth("Example"),
+            "offers": [{"id": "receive", "job": "receive"}, {"id": "learn", "job": "learn"}],
+            "contact": truth({"channel": "form"}),
+            "unknowns": [],
+        },
+        "customer_decision_state": {
+            "primary_job": "choose",
+            "tensions": ["choice"],
+            "questions": ["price"],
+            "risk_sensitivity": "medium",
+            "decision_stage": "consider",
+        },
+        "creative_family": {
+            "family_id": "family-alpha",
+            "version": "1",
+            "rationale": ["choice clarity"],
+            "frozen": True,
+        },
+        "evidence": {
+            "facts": [{
+                "id": "process",
+                "claim": "verified process",
+                "scope": "process",
+                "sources": ["official"],
+                "confidence": "verified",
+                "usable_for_persuasion": True,
+            }],
+            "proof_gaps": [],
+            "contradictions": [],
+        },
+        "media_roles": [{
+            "role_id": "process-1",
+            "role": "process",
+            "required_content_class": "human_detail",
+            "rights": "licensed",
+        }],
+    }
 
 
 class AuthoredCompositionRuntimeTest(unittest.TestCase):
