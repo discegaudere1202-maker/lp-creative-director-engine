@@ -179,7 +179,7 @@ def apply_f01_composition(html_path: str | Path, company_id: str) -> dict[str, s
         return {"company_id": company_id, "status": "not_required"}
     path = Path(html_path)
     html = path.read_text(encoding="utf-8")
-    marker = "data-issue77-f01"
+    marker = '<body data-issue77-f01="'
     if marker in html:
         return {"company_id": company_id, "status": "already_applied"}
     css = F01_COMPOSITION_CSS[company_id]
