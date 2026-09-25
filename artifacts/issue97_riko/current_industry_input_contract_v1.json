@@ -1,0 +1,67 @@
+{
+  "schema_version": "current_industry_production_input_contract_v1",
+  "scope": ["beauty_cosmetics", "hair_salon_barber", "pilates_fitness"],
+  "required": {
+    "company_truth": {
+      "business_category": {"confidence": "verified", "routing_use": "asset_pool_scope_only"},
+      "company_name": {"confidence": "verified", "routing_use": "none"},
+      "offers": {"minimum": 1, "each_requires": ["offer_id", "customer_job", "source_refs"]},
+      "action_state": {"one_of": ["verified_cta_destination", "NO_VERIFIED_ACTION"]}
+    },
+    "customer_decision_state": {
+      "primary_job": ["choose", "understand", "trust", "compare", "prepare", "act"],
+      "decision_stage": ["discover", "consider", "validate", "ready"],
+      "risk_sensitivity": ["low", "medium", "high"],
+      "requires_any": ["questions", "tensions"]
+    },
+    "creative_family": {
+      "requires": ["family_id", "version", "rationale", "frozen"],
+      "frozen_must_equal": true
+    },
+    "evidence": {
+      "requires": ["facts", "proof_gaps", "contradictions"],
+      "persuasion_fact_rule": "visible factual persuasion requires verified confidence and eligible source refs"
+    },
+    "media_roles": {
+      "requires_per_role": ["role_id", "role", "required_content_class", "rights_status", "evidence_boundary"]
+    }
+  },
+  "optional_company_truth": [
+    "location", "price", "duration", "hours", "philosophy", "qualifications", "reviews",
+    "process", "person_identity", "product_details", "trial_conditions", "facilities", "outcomes"
+  ],
+  "derivation_rules": [
+    "derive decision state from verified offer shape, observed conversion route, evidence-supported objections, and explicit research/hearing facts",
+    "industry/category label alone cannot select decision job",
+    "company identity cannot select topology",
+    "missing optional facts stay unknown",
+    "contradictory facts cannot collapse into positive claims",
+    "if plausible primary decision jobs imply materially different topology, HUMAN_REVIEW_REQUIRED"
+  ],
+  "identity_fields": {
+    "allowed_for_output_or_audit": ["company_name", "business_category", "reference_id", "fixture_id"],
+    "forbidden_for_topology_routing": ["company_name", "company_id", "slug", "reference_id", "fixture_id", "business_category"]
+  },
+  "insufficiency_gates": [
+    {
+      "state": "INPUT_TRUTH_INSUFFICIENT",
+      "when": "minimum company truth or action state is missing",
+      "output_allowed": false
+    },
+    {
+      "state": "DECISION_STATE_AMBIGUOUS",
+      "when": "primary decision job cannot be resolved without materially different architecture",
+      "output_allowed": false
+    },
+    {
+      "state": "INPUT_CONTRADICTION_BLOCKED",
+      "when": "offer, price, qualification, result proof, or contact contradiction affects visible persuasion/action",
+      "output_allowed": false
+    }
+  ],
+  "fit_feasibility_lock": {
+    "fit_inputs": ["customer_decision_state", "offer_jobs", "evidence_shape", "family_principles"],
+    "feasibility_inputs_after_freeze": ["available_media", "rights", "renderer_capabilities", "viewport_constraints"],
+    "feasibility_may_change_family": false
+  }
+}
