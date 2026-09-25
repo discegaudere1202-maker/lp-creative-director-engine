@@ -968,6 +968,32 @@ def build_compositions(ia: Sequence[Mapping[str, Any]], art_direction: Mapping[s
     return compositions
 
 
+def apply_controlled_architecture(
+    compositions: Sequence[Mapping[str, Any]],
+    architecture: Mapping[str, Any] | None,
+) -> list[dict[str, Any]]:
+    """Materialize a frozen architecture decision into composition planning."""
+    if not architecture:
+        return [dict(item) for item in compositions]
+    grammar = architecture.get("module_grammar") or {}
+    patterns = list(grammar.get("selected_patterns") or [])
+    if not patterns:
+        raise ValueError("controlled architecture requires selected module grammar")
+    role_pattern = {"hero_orientation": "hero", "company_truth": "trust", "service_process": "service", "next_step": "cta", "cta_zone": "end"}
+    enriched: list[dict[str, Any]] = []
+    for index, item in enumerate(compositions):
+        row = dict(item)
+        wanted = role_pattern.get(str(row.get("section_role") or ""))
+        chosen = next((pattern for pattern in patterns if wanted and wanted in str(pattern.get("pattern_id", "")).lower()), patterns[index % len(patterns)])
+        pattern_id = str(chosen.get("pattern_id") or "")
+        row["architecture_pattern_id"] = pattern_id
+        row["architecture_grammar"] = str(chosen.get("name") or pattern_id)
+        row["architecture_mobile_principle"] = chosen.get("mobile_principle")
+        row["architecture_selection_basis"] = "frozen family + customer decision state + compatible grammar"
+        row["layout_type"] = f"architecture-{pattern_id.lower()}"
+        enriched.append(row)
+    return enriched
+
 def build_render_spec(
     understanding: Mapping[str, Any],
     strategy: Mapping[str, Any],
@@ -1046,6 +1072,44 @@ def _visual_scene_markup(scene: str) -> str:
     # must never leak into a customer-facing sales sample.
     return f'<div class="visual-scene scene-{scene}" data-visual-source="engine_generated_vector_scene" data-photo-replacement="same-role-approved-real-image" aria-hidden="true">{bodies[scene]}</div>'
 
+
+def apply_controlled_architecture_to_scene_plan(
+    scene_plan: Mapping[str, Any],
+    architecture: Mapping[str, Any] | None,
+) -> dict[str, Any]:
+    """Make the selected compatible grammar drive the premium renderer."""
+    if not architecture:
+        return dict(scene_plan)
+    grammar = architecture.get("module_grammar") or {}
+    patterns = list(grammar.get("selected_patterns") or [])
+    if not patterns:
+        raise ValueError("controlled architecture requires selected module grammar")
+    role_prefixes = ("M-HERO-", "M-TRUST-", "M-PROBLEM-", "M-SERVICE-", "M-CTA-", "M-END-")
+    selected = {str(item.get("pattern_id")): item for item in patterns}
+    ordered = [selected[key] for key in selected if str(key).startswith(role_prefixes)]
+    if not ordered:
+        ordered = patterns
+    topology_by_pattern = {
+        "M-HERO-01": "full", "M-HERO-03": "split", "M-TRUST-01": "layered",
+        "M-TRUST-02": "inset", "M-PROBLEM-01": "sequence", "M-SERVICE-01": "split",
+        "M-CTA-01": "inset", "M-END-01": "sequence", "M-END-02": "full",
+    }
+    result = {key: value for key, value in scene_plan.items() if key != "scene_plan"}
+    result["scene_plan"] = []
+    for index, scene in enumerate(scene_plan.get("scene_plan", [])):
+        row = dict(scene)
+        pattern = ordered[index % len(ordered)]
+        pattern_id = str(pattern.get("pattern_id") or "")
+        visual_grammar = dict(row.get("visual_grammar") or {})
+        visual_grammar["topology"] = topology_by_pattern.get(pattern_id, visual_grammar.get("topology", "full"))
+        visual_grammar["architecture_pattern_id"] = pattern_id
+        visual_grammar["architecture_grammar"] = pattern.get("name") or pattern_id
+        visual_grammar["architecture_mobile_principle"] = pattern.get("mobile_principle")
+        row["visual_grammar"] = visual_grammar
+        row["architecture_pattern_id"] = pattern_id
+        result["scene_plan"].append(row)
+    result["controlled_architecture"] = dict(architecture)
+    return result
 
 def _render_premium_html(spec: Mapping[str, Any]) -> str:
     company, copy, tokens = spec["company"], spec["copy"], spec["design_tokens"]
@@ -1197,6 +1261,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     .profile-studio_invitation .scene-sequence{{background:color-mix(in srgb,var(--accent) 7%,transparent);}}
     .profile-studio_invitation .hero-scope--fact_tabs{{font-weight:var(--display-weight);}}
     @media(max-width:900px){{h1{{font-size:clamp(2.8rem,5vw,3.6rem);}}h2{{font-size:clamp(2rem,3.7vw,2.8rem);}}}}
+    @media(min-width:761px) and (max-width:1100px){{.scene-state-feel_care .scene-media--dominant{{min-height:0;aspect-ratio:3 / 2;}}.scene-state-feel_care .scene-media--dominant .photo-frame{{height:100%;}}.scene-state-feel_care .scene-media--dominant .photo-frame img{{height:100%;object-fit:cover;}}}}
     @media(max-width:760px){{.premium-scene{{padding:var(--mobile-scene-gap) 0;}}.premium-scene--ending{{padding:var(--mobile-page-padding) 0;}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr);gap:2rem;}}.scene-media--immersive,.scene-media--dominant{{min-height:280px;}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem;padding:1rem;}}.profile-field_ledger .scene-state-imagine_change .scene-layered{{display:grid;grid-template-columns:1fr;}}.profile-field_ledger .scene-state-imagine_change .scene-layered .scene-media,.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{grid-column:1;grid-row:auto;}}.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{position:relative;margin-top:-2rem;}}.profile-care_rhythm .scene-layered-copy{{margin-top:-1rem;}}}}
     '''
     return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{style}</style></head><body class="profile-{esc(profile_id)}" data-ending-variant="{ending_variant}" style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
@@ -1276,7 +1341,7 @@ def _input_digest(raw: Mapping[str, Any]) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
-def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation_id: str | None = None, mode: str = "production", iteration: int | None = None) -> GenerationResult:
+def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation_id: str | None = None, mode: str = "production", iteration: int | None = None, architecture: Mapping[str, Any] | None = None) -> GenerationResult:
     """Run all structured stages and render only Safety-approved evidence.
 
     Production is fail-closed.  Research/test output is explicitly marked
@@ -1319,6 +1384,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     photo_role_map = build_photo_role_map(understanding, strategy, ia)
     asset_manifest = build_asset_manifest(raw.get("photo_assets") or [], photo_role_map)
     premium_scene_plan = build_premium_scene_plan(understanding, strategy["narrative_architecture"], strategy["creative_genome"], approved, [item.get("photo_role", "") for item in raw.get("photo_assets") or []])
+    premium_scene_plan = apply_controlled_architecture_to_scene_plan(premium_scene_plan, architecture)
     premium_scene_plan["qa_gates"] = scene_plan_gates(premium_scene_plan)
     human_translation = build_human_translation(understanding, strategy, premium_scene_plan, approved, asset_manifest, copy)
     premium_scene_plan["human_translation_ref"] = "premium_human_translation_v1"
@@ -1345,7 +1411,10 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         for item in base_compositions
     ]
     compositions = connect_photo_roles_to_compositions(compositions_with_roles, photo_role_map, asset_manifest)
+    compositions = apply_controlled_architecture(compositions, architecture)
     render_spec = build_render_spec(understanding, strategy, ia, copy, art, tokens, compositions, safety)
+    if architecture:
+        render_spec["controlled_architecture"] = dict(architecture)
     render_spec["approved_evidence"] = approved
     render_spec["photo_role_map"] = photo_role_map
     render_spec["asset_manifest"] = asset_manifest
