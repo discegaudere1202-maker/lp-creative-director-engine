@@ -87,7 +87,7 @@ footer {{ padding: 48px clamp(20px, 5vw, 72px); border-top: 1px solid #b9c5be; }
   .hero, .hero[data-topology="guided_choice"], .hero[data-topology="relationship_media"] {{ min-height: 76svh; grid-template-columns: 1fr; gap: 28px; padding: 64px 0; }}
   .hero[data-topology="text_led_field"] {{ min-height: 60svh; }}
   .plan-field {{ min-height: 220px; }}
-  @media (max-width: 340px) {{ .headline-break-320 {{ display: block; }} }}}
+  @media (max-width: 340px) {{ .headline-break-320 {{ display: block; }} }}
   .scene {{ min-height: 52svh; grid-template-columns: 42px 1fr; gap: 14px; }}
   .scene p {{ grid-column: 2; }}
 }}
