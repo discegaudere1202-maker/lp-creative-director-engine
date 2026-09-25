@@ -1122,6 +1122,7 @@ def apply_public_scene_semantics(scene_plan: Mapping[str, Any], architecture: Ma
     result["scene_plan"] = []
     for index, (scene, semantic) in enumerate(zip(scenes, semantics)):
         row = dict(scene)
+        row["legacy_narrative_state"] = row.get("narrative_state")
         row["scene_id"] = f"scene-{index + 1:02d}-{semantic['state']}"
         row["narrative_state"] = semantic["state"]
         row["narrative_function"] = semantic["role"]
@@ -1237,9 +1238,11 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
                 anchor_ids.append(anchor.get("anchor_id"))
         anchor_attr_data = esc(",".join(x for x in anchor_ids if x))
         state_class = re.sub(r"[^a-z0-9_-]+", "-", _text(scene.get("narrative_state")).lower()) or "scene"
+        legacy_state_class = re.sub(r"[^a-z0-9_-]+", "-", _text(scene.get("legacy_narrative_state")).lower())
+        compatibility_class = f" scene-state-{legacy_state_class}" if legacy_state_class and legacy_state_class != state_class else ""
         ending_class = " premium-scene--ending" if i == len(plan.get("scene_plan", [])) - 1 else ""
         datum_attr = ' data-contact-datum-count="0"' if i == len(plan.get("scene_plan", [])) - 1 else ""
-        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)} scene-state-{esc(state_class)}{ending_class}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-state="{esc(scene.get("narrative_state"))}" data-narrative-index="{i}" data-ending-variant="{esc((copy.get("premium_scene_copy") or {}).get("ending_variant")) if i == len(plan.get("scene_plan", [])) - 1 else ""}"{datum_attr} data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
+        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)} scene-state-{esc(state_class)}{compatibility_class}{ending_class}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-state="{esc(scene.get("narrative_state"))}" data-narrative-index="{i}" data-ending-variant="{esc((copy.get("premium_scene_copy") or {}).get("ending_variant")) if i == len(plan.get("scene_plan", [])) - 1 else ""}"{datum_attr} data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
     channel_data = spec.get("understanding", {}).get("contact_channels", {})
     contact_values = []
     for key in ("href", "url", "phone", "tel", "email", "line", "instagram", "booking_url", "contact_form_url", "contact_value"):
