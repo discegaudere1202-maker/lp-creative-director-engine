@@ -100,7 +100,7 @@ body[data-issue74-profile="ritual-material-proof"] main > .premium-scene:nth-chi
 body[data-issue74-profile="ritual-material-proof"] main > .premium-scene:nth-child(2) .scene-inset{grid-template-columns:1fr;max-width:56rem}
 body[data-issue74-profile="ritual-material-proof"] main > .premium-scene:nth-child(2) .scene-media{width:82%;min-height:300px}
 body[data-issue74-profile="ritual-material-proof"] main > .premium-scene:nth-child(3) .scene-layered{min-height:360px}
-body[data-issue74-profile="ritual-material-proof"] main > .premium-scene:nth-child(4){max-width:52rem;margin-left:12%;border-top:0;border-bottom:1px solid var(--line)}
+body[data-issue74-profile="ritual-material-proof"] main > .premium-scene:nth-child(4){width:calc(100% - 12%);max-width:52rem;box-sizing:border-box;margin-left:12%;border-top:0;border-bottom:1px solid var(--line)}\nbody[data-issue74-profile="ritual-material-proof"] main > .premium-scene .scene-full,body[data-issue74-profile="ritual-material-proof"] main > .premium-scene .scene-split,body[data-issue74-profile="ritual-material-proof"] main > .premium-scene .scene-inset,body[data-issue74-profile="ritual-material-proof"] main > .premium-scene .scene-layered{min-width:0;max-width:100%;box-sizing:border-box}
 """,
 "environment-lifestyle-fit": """
 body[data-issue74-profile="environment-lifestyle-fit"] main > .premium-scene:nth-child(1) .scene-full{display:grid;grid-template-columns:1fr;gap:1rem}
