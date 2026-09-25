@@ -123,7 +123,7 @@ def validate_selection_contract(selection: dict[str, Any]) -> None:
 
 
 def validate_resemblance_contract(contract: dict[str, Any]) -> None:
-    _require(contract, ("schema_version", "dimensions", "hard_fail_candidates", "human_review_required", "calibration_status"), "resemblance")
+    _require(contract, ("schema_version", "dimensions", "hard_fail_candidates", "human_review_required", "calibration_status", "labeled_pair_basis"), "resemblance")
     if contract["schema_version"] != RESEMBLANCE_SCHEMA:
         raise ValueError("resemblance schema mismatch")
     if set(contract["dimensions"]) != set(RESEMBLANCE_DIMENSIONS):
@@ -134,6 +134,16 @@ def validate_resemblance_contract(contract: dict[str, Any]) -> None:
         raise ValueError("numeric resemblance threshold is not calibrated")
     if not contract["hard_fail_candidates"]:
         raise ValueError("resemblance hard-fail candidates are required")
+    basis = contract["labeled_pair_basis"]
+    _require(basis, ("source_artifact", "source_sha256", "pair_count", "class_counts", "classes", "same_template_looking_pairs"), "resemblance labeled-pair basis")
+    if basis["source_artifact"] != "artifacts/issue44_riko/closure/template_resemblance_labeled_pairs_v1.json":
+        raise ValueError("resemblance labeled-pair source must be the accepted Issue #44 closure artifact")
+    if basis["pair_count"] != 24 or sum(basis["class_counts"].values()) != basis["pair_count"]:
+        raise ValueError("resemblance labeled-pair basis must contain all 24 pairs")
+    if set(basis["class_counts"]) != set(basis["classes"]):
+        raise ValueError("resemblance labeled-pair classes are incomplete")
+    if basis["same_template_looking_pairs"] != "obvious_same_template_skin_swap":
+        raise ValueError("same-template calibration class must be explicit")
 
 
 def evaluate_resemblance(*, observed: dict[str, Any], token_only_change: bool, human_review: str = "PENDING") -> dict[str, Any]:

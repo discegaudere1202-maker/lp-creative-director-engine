@@ -64,6 +64,11 @@ def test_module_registry_is_grammar_and_has_compatibility():
 def test_resemblance_rejects_token_swaps_and_preserves_human_review():
     contract = load_json(ARCH / "template_resemblance_contract_v0.json")
     validate_resemblance_contract(contract)
+    basis = contract["labeled_pair_basis"]
+    assert basis["source_artifact"] == "artifacts/issue44_riko/closure/template_resemblance_labeled_pairs_v1.json"
+    assert basis["pair_count"] == 24
+    assert sum(basis["class_counts"].values()) == 24
+    assert basis["same_template_looking_pairs"] == "obvious_same_template_skin_swap"
     observed = {name: "same" for name in RESEMBLANCE_DIMENSIONS}
     assert evaluate_resemblance(observed=observed, token_only_change=True)["status"] == "FAIL"
     assert evaluate_resemblance(observed=observed, token_only_change=False)["status"] == "HUMAN_REVIEW_REQUIRED"
