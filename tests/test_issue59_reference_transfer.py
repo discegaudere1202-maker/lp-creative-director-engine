@@ -86,7 +86,7 @@ def test_uka_320_optical_line_composition_keeps_hero_unit_and_cta_intact(tmp_pat
         )
         browser.close()
 
-    assert evidence["profile"] == "human_craft_provenance"
+    assert evidence["profile"] == "craft"
     assert "サロンを選ぶ。" in evidence["heroText"]
     assert any("サロンを選ぶ。" in line for line in evidence["heroLines"]), evidence
     assert not any(line in {"サロン", "を", "る", "。"} for line in evidence["heroLines"])
