@@ -142,7 +142,7 @@ def public_topology_signature(contract: Mapping[str, Any]) -> dict[str, Any]:
         "core_decision_mode": author["core_decision_mode"],
         "closing_mode": author["closing_mode"],
         "progression": author["progression"],
-        "scene_states": [row["state"] for row in contract["public_scene_semantics"]],
+        "scene_states": [row["state"] for row in (contract.get("public_scene_semantics") or contract["architecture"]["public_scene_semantics"])],
     }
 
 def run_corrected_reference(contract: Mapping[str, Any], output_dir: str | Path) -> dict[str, Any]:
