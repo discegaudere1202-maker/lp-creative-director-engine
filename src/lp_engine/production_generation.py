@@ -1167,20 +1167,22 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     def heading_markup(value: str, tag: str) -> str:
         ir = repair_text_ir(make_text_ir(value, role="section_headline", context={"renderer": "premium"}))
         rendered = render_text_ir(ir, tag=tag, escape=esc)
-        # Issue #81: the THREE fit scene needs an intentional mobile-only
-        # meaning break. Keep the authored desktop/tablet DOM unchanged.
+        # Issue #81/#83: keep the authored desktop/tablet heading and add a
+        # deterministic mobile meaning break without string-fragment markup.
         target_headline = "暮らしに置いたときの相性を見る。"
         if target_headline in value:
-            opening = f"<{tag} "
-            closing = f"</{tag}>"
-            rendered = rendered.replace(
-                opening,
-                f'<{tag} class="headline-optical-three-fit"><span class="headline-optical-default">',
-                1,
-            ).replace(
-                closing,
-                f'</span><span class="headline-optical-mobile" aria-hidden="true"><span class="headline-optical-mobile-chunk">暮らしに置いたときの</span><span class="headline-optical-mobile-chunk">相性を見る。</span></span>{closing}',
-                1,
+            opening_end = rendered.find(">")
+            closing_start = rendered.rfind(f"</{tag}>")
+            if opening_end < 0 or closing_start <= opening_end:
+                raise ValueError("invalid rendered heading markup")
+            inner = rendered[opening_end + 1:closing_start]
+            return (
+                f'<{tag} class="headline-optical-three-fit" data-editorial-role="section_headline">'
+                f'<span class="headline-optical-default">{inner}</span>'
+                f'<span class="headline-optical-mobile" aria-hidden="true">'
+                f'<span class="headline-optical-mobile-chunk">暮らしに置いたときの</span>'
+                f'<span class="headline-optical-mobile-chunk">相性を見る。</span>'
+                f'</span></{tag}>'
             )
         return rendered
     chunks = []
