@@ -1,0 +1,41 @@
+name: Issue 91 Shadow Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+    paths:
+      - 'src/lp_engine/authored_composition_contract.py'
+      - 'src/lp_engine/authored_composition_runtime.py'
+      - 'scripts/run_issue91_shadow_validation.py'
+      - 'tests/test_authored_composition_contract.py'
+      - 'tests/test_authored_composition_runtime.py'
+      - 'tests/test_issue91_shadow_validation.py'
+      - '.github/workflows/issue91-shadow-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shadow-validation:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install engine
+        run: pip install -e .
+      - name: Run Issue 91 validation matrix
+        run: python scripts/run_issue91_shadow_validation.py --out artifacts/issue91_shadow_validation
+      - name: Run contract tests
+        run: |
+          python -m unittest tests/test_authored_composition_contract.py
+          python -m unittest tests/test_authored_composition_runtime.py
+          python -m unittest tests/test_issue91_shadow_validation.py
+      - name: Upload validation evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue91-shadow-validation
+          path: artifacts/issue91_shadow_validation
