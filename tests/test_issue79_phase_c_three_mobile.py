@@ -7,7 +7,7 @@ def test_issue79_three_mobile_rule_is_scoped_and_readable():
     assert "@media (max-width:767px)" in css
     assert "word-break:keep-all" in css
     assert "overflow-wrap:normal" in css
-    assert "nth-child(3)" in css
+    assert ".scene-layered-copy" in css
 
 def test_issue79_mobile_injection_is_idempotent():
     with TemporaryDirectory() as tmp:
