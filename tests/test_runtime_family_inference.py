@@ -53,7 +53,7 @@ def test_issue49_16_cases_infer_two_per_family_without_case_lookup():
             customer_decision_state=company["customer_decision_state"],
             creative_fit=_fit(expected),
         )
-        assert result["dominant_family"] == expected["dominant"]
+        assert result["dominant_family"] == expected["dominant"], f"case={expected['case_id']} result={result}"
         assert result["feasibility_ignored_at_selection"] is True
         assert "layout_id" not in result
         assert set(result["fit_dimensions_used"]) == set(FIT_DIMENSIONS)
