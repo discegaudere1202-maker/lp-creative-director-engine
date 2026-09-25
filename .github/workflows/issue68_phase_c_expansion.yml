@@ -21,6 +21,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install -e .
+      - run: python -m pip install pytest
       - run: python -m pip install playwright
       - run: playwright install --with-deps chromium
       - run: git diff --check
