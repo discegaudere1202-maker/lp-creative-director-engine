@@ -158,8 +158,9 @@ def _neutral_fit():
     ],
 )
 def test_each_collision_pair_resolves_both_directions(
-    _rule_id, left_family, left_signal, right_family, right_signal
+    rule_id, left_family, left_signal, right_family, right_signal
 ):
+    assert rule_id.startswith("C")
     for expected_family, signal in ((left_family, left_signal), (right_family, right_signal)):
         result = infer_creative_family(
             company_truth={"verified": True, "facts": ["synthetic service"]},
