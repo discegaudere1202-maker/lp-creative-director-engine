@@ -28,5 +28,6 @@ def test_issue74_html_injection_is_render_level_and_idempotent():
         second = apply_visual_composition(path, "diagnostic-route")
         assert first["status"] == "applied"
         assert second["status"] == "already_applied"
-        assert rendered.count("<style data-issue74-profile=") == 1\n        assert rendered.count("<body data-issue74-profile=") == 1
+        assert rendered.count("<style data-issue74-profile=") == 1
+        assert rendered.count("<body data-issue74-profile=") == 1
         assert "split-diagnostic" not in rendered
