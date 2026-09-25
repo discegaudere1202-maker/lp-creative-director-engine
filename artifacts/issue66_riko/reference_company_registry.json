@@ -1,0 +1,45 @@
+{
+  "schema_version": "issue66_reference_company_registry_v1",
+  "issue": 66,
+  "status": "EIGHT_REFERENCE_COMPANIES_SELECTED",
+  "selection_rule": "Use companies already validated in Issue #49 because they provide first-party provenance and decision-state coverage. Selection is for Creative Fit validation coverage, not asset convenience.",
+  "family_count": 4,
+  "company_count": 8,
+  "families": [
+    {
+      "family_id": "BW-F05",
+      "references": [
+        {"case_id":"V49-09","company":"POLA APEX","official_url":"https://www.pola.co.jp/brand/apex/about/index.html","decision_state":"category accepted; customer cannot self-select without diagnosis","coverage_role":"deep diagnostic/personalized formulation route"},
+        {"case_id":"V49-10","company":"FANCL","official_url":"https://www.fancl.co.jp/shop/service/index.html","decision_state":"low-friction answer to appropriate current-skin care","coverage_role":"lighter counseling/measurement/self-serve route"}
+      ]
+    },
+    {
+      "family_id": "BW-F07",
+      "references": [
+        {"case_id":"V49-13","company":"Lino Hair","official_url":"https://lino.kyoto.jp/concept/","decision_state":"trusted long-term local relationship matters beyond one haircut","coverage_role":"multi-generational local-life relationship"},
+        {"case_id":"V49-14","company":"Barbaro","official_url":"https://barbaro1994.com/","decision_state":"familiarity, continuity and community presence lead","coverage_role":"long-tenure face-visible neighborhood continuity"}
+      ]
+    },
+    {
+      "family_id": "BW-F01",
+      "references": [
+        {"case_id":"V49-01","company":"THREE","official_url":"https://www.threecosmetics.com/brand/holistic-care-concept","decision_state":"worldview/ritual matters as much as functional efficacy","coverage_role":"multi-sense holistic ritual with science support"},
+        {"case_id":"V49-02","company":"BAUM","official_url":"https://www.baumjapan.com/baum/about/brand-story.html","decision_state":"calming sensory identity and lifestyle fit lead","coverage_role":"tree/material/environment narrative with sustainability support"}
+      ]
+    },
+    {
+      "family_id": "BW-F03",
+      "references": [
+        {"case_id":"V49-05","company":"kakimoto arms","official_url":"https://kakimoto-arms.com/","decision_state":"high-consideration aspirational choice needs authorship and specialist proof","coverage_role":"specialist portfolio/editorial craft"},
+        {"case_id":"V49-06","company":"pilates K","official_url":"https://pilates-k.jp/aboutus","decision_state":"desired self-image leads and program proof enables commitment","coverage_role":"transformation identity/program/studio-energy authority"}
+      ]
+    }
+  ],
+  "within_family_non_template_rule": "Each pair must demonstrate the same decision family with materially different hero silhouette, section topology, media role, rhythm and CTA choreography. The second company is not a skin-swap verification sample.",
+  "truth_policy": [
+    "First-party official URL is provenance, not permission to reuse media.",
+    "Prices, menus, store availability, campaign claims and reservation details must be re-verified at implementation time.",
+    "Do not infer current Production Feasibility from the presence or absence of assets on these pages.",
+    "Do not fabricate real staff/customer/person evidence."
+  ]
+}

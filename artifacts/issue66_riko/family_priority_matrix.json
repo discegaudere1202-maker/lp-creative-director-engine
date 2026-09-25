@@ -1,0 +1,92 @@
+{
+  "schema_version": "issue66_family_priority_matrix_v1",
+  "issue": 66,
+  "status": "SELECTED_FOR_PHASE_C_RESEARCH_SPEC",
+  "selection_boundary": "Rank uncovered Creative Fit regions by architecture-learning value and decision-state coverage. Do not use asset quantity, rights convenience, evidence collection difficulty, or current Production Feasibility to choose a Family.",
+  "already_production_validated_dominant_families": ["BW-F02", "BW-F04", "BW-F08"],
+  "phase_b_reference_truth": {
+    "BW-F02": "Regina controlled Production / clinical reassurance",
+    "BW-F04": "uka controlled Production / human craft-provenance",
+    "BW-F08": "Nagi controlled Production / category education-open discovery",
+    "human_visible_status": "accepted upstream, including final narrow optical correction for uka"
+  },
+  "ranking_dimensions": [
+    "net_new_customer_decision_state_coverage",
+    "dominant_family_not_yet_production_validated",
+    "collision_learning_against_proven_family",
+    "benchmark_family_confidence",
+    "new_composition_grammar_space",
+    "cross_family_template_resemblance_learning_value"
+  ],
+  "candidates": [
+    {
+      "family_id": "BW-F05",
+      "name": "Guided Choice / Diagnostic Clarity",
+      "phase_c_decision": "SELECT",
+      "priority": "P1",
+      "evidence_strength": "UP",
+      "decision_state_gain": "HIGH",
+      "collision_learning": "VERY_HIGH",
+      "rationale": "Adds category-accepted-but-cannot-self-select logic. It directly tests the accepted F05 vs F08 discriminator against Nagi and F05 vs F02 adjacency against Regina. The family mechanism is decision routing, not cards.",
+      "benchmark_refs": ["BM-188", "BM-202", "BM-281"],
+      "validated_company_refs": ["V49-09", "V49-10"],
+      "primary_collision_refs": ["BW-F08", "BW-F02"]
+    },
+    {
+      "family_id": "BW-F07",
+      "name": "Local Human / Community Warmth",
+      "phase_c_decision": "SELECT",
+      "priority": "P2",
+      "evidence_strength": "UP_STRONGLY",
+      "decision_state_gain": "HIGH",
+      "collision_learning": "HIGH",
+      "rationale": "Adds locality/community/continuity as a decision-relevant trust mechanism. It directly tests the accepted F04 vs F07 boundary against uka: human warmth alone cannot promote F07; locality must materially change choice.",
+      "benchmark_refs": ["BM-233", "BM-236", "BM-238", "BM-240", "BM-244", "BM-247", "BM-277"],
+      "validated_company_refs": ["V49-13", "V49-14"],
+      "primary_collision_refs": ["BW-F04", "BW-F05"]
+    },
+    {
+      "family_id": "BW-F01",
+      "name": "Sensory Sanctuary / Atmospheric Rest",
+      "phase_c_decision": "SELECT",
+      "priority": "P3",
+      "evidence_strength": "UP",
+      "decision_state_gain": "HIGH",
+      "collision_learning": "HIGH",
+      "rationale": "Adds desire-through-sensory-imagination rather than education, craft provenance, or reassurance. It tests F01 vs F04 and protects shared Recognition-led/Atmosphere grammar from becoming a visual template.",
+      "benchmark_refs": ["BM-191", "BM-247", "BM-284", "BM-190"],
+      "validated_company_refs": ["V49-01", "V49-02"],
+      "primary_collision_refs": ["BW-F04", "BW-F03"]
+    },
+    {
+      "family_id": "BW-F03",
+      "name": "Editorial High-Consideration / Aspirational Authority",
+      "phase_c_decision": "SELECT",
+      "priority": "P4",
+      "evidence_strength": "UP",
+      "decision_state_gain": "HIGH",
+      "collision_learning": "HIGH",
+      "rationale": "Adds premium/aspirational authority that must survive into proof and commitment. It tests F03 vs F04 and F03 vs F01 while forcing editorial authorship beyond token-level luxury styling.",
+      "benchmark_refs": ["BM-184", "BM-203", "BM-233", "BM-238", "BM-277"],
+      "validated_company_refs": ["V49-05", "V49-06"],
+      "primary_collision_refs": ["BW-F04", "BW-F01", "BW-F06"]
+    },
+    {
+      "family_id": "BW-F06",
+      "name": "Proof-Led Process Authority",
+      "phase_c_decision": "DEFER_NEXT_WAVE_NOT_REJECTED",
+      "priority": "NEXT",
+      "evidence_strength": "UP",
+      "decision_state_gain": "MEDIUM_HIGH",
+      "collision_learning": "HIGH_BUT_PARTIALLY_EXERCISED",
+      "rationale": "Dominant F06 remains unvalidated and must be productionized later. It is deferred only because Phase B already exercised F06 as secondary/collision context in both Regina (F02→F06) and uka (F04→F06), so the marginal new architecture coverage is lower than the four selected families in this phase.",
+      "benchmark_refs": ["BM-185", "BM-202", "BM-203", "BM-265"],
+      "validated_company_refs": ["V49-11", "V49-12"],
+      "primary_collision_refs": ["BW-F02", "BW-F08", "BW-F03"]
+    }
+  ],
+  "selected_families": ["BW-F05", "BW-F07", "BW-F01", "BW-F03"],
+  "deferred_family": "BW-F06",
+  "taxonomy_change": "NONE",
+  "ninth_family_required": false
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "issue66_family_expansion_contract_v1",
+  "issue": 66,
+  "family_id": "BW-F07",
+  "family_name": "Local Human / Community Warmth",
+  "status": "RIN_READY_AFTER_SARAH_AUDIT",
+  "customer_decision_state": "The customer can understand the service, but ongoing nearby relationship, familiarity, continuity or concrete community presence materially changes whom they choose.",
+  "first_persuasive_job": "Turn verified place/people/continuity into decision-relevant trust without collapsing into generic friendliness or locality claims.",
+  "dominant_fit_drivers": ["local_relationship_weight", "human_relationship_weight", "intimacy", "warmth"],
+  "fit_boundary": "Creative Fit decides BW-F07 only when locality/continuity affects the buying decision. Asset quantity or the availability of real-person photography cannot promote or demote the Family.",
+  "reference_companies": [
+    {
+      "case_id": "V49-13",
+      "company": "Lino Hair",
+      "official_url": "https://lino.kyoto.jp/concept/",
+      "expected_dominant": "BW-F07",
+      "secondary": ["BW-F04"],
+      "decision_state": "Customer is choosing a trusted long-term local relationship, not only a one-off haircut.",
+      "within_family_distinctiveness": "Multi-generational local-life participation and long-horizon relationship can carry the narrative."
+    },
+    {
+      "case_id": "V49-14",
+      "company": "Barbaro",
+      "official_url": "https://barbaro1994.com/",
+      "expected_dominant": "BW-F07",
+      "secondary": ["BW-F04"],
+      "decision_state": "Customer values familiarity, continuity and visible neighborhood presence before creative prestige.",
+      "within_family_distinctiveness": "Long tenure, face-visible neighborhood continuity and community activity differ materially from Lino's generational-life framing."
+    }
+  ],
+  "compatible_module_grammar": [
+    {"pattern_id": "M-HERO-01", "role": "recognition-led opening grounded in actual local/human context"},
+    {"pattern_id": "M-HUMAN-01", "role": "relationship evidence scene; context before intimacy"},
+    {"pattern_id": "M-CTA-01", "role": "state-specific visit/contact/booking next event"},
+    {"pattern_id": "M-END-02", "role": "bounded emotional resolution around continuity/belonging"}
+  ],
+  "conditional_support_grammar": [
+    {"pattern_id": "M-END-01", "condition": "may support visit/access utility only as secondary closure; do not let utility replace the local relationship thesis"}
+  ],
+  "prohibited_or_misfit_grammar": [
+    "generic 地域密着 copy or warm stock-photo mood without concrete locality evidence",
+    "F04 craft/provenance narrative when locality is incidental to the choice",
+    "corporate testimonial wall as a substitute for place/relationship evidence",
+    "generic editorial lifestyle treatment that erases actual neighborhood specificity",
+    "map/access facts used as the sole proof of Local Human"
+  ],
+  "art_direction_contract": {
+    "hero": "Make a concrete place, person, continuity cue or local-life context legible in the first view; warmth alone is not enough.",
+    "media": "Prefer verified place/human/visit context with proper rights. If those assets are not safely usable, preserve the Family through truthful local evidence and safe realization rather than switching Family.",
+    "typography": "Human and approachable but evidence-led; avoid generic handwritten/local-craft styling unless brand truth supports it.",
+    "density": "Low-to-medium rhythm around people/place, with practical visit facts near the point of commitment rather than as a disconnected footer dump.",
+    "cta": "Use visit/contact/booking wording that reduces distance and preserves the local relationship premise.",
+    "responsive": "Keep local cue and next action visually adjacent on mobile. At 320–430px, prevent face/place evidence from separating from the claim it supports and apply the accepted optical Japanese line-break gate."
+  },
+  "collision_rules": [
+    {
+      "against": "BW-F04",
+      "discriminator": "F07 only when locality/community/ongoing nearby relationship changes choice; F04 when human technique/provenance matters but locality is incidental.",
+      "human_review_trigger": "locality appears in copy but its decision relevance is not evidenced"
+    },
+    {
+      "against": "BW-F05",
+      "discriminator": "F07 when relationship/place is the gating trust job; F05 when customer primarily needs service/option routing.",
+      "human_review_trigger": "a local multi-service business has equally strong relationship and option-selection barriers"
+    }
+  ],
+  "anti_template_requirements": [
+    "Lino and Barbaro must differ in hero evidence, narrative topology and closing logic according to their distinct form of local trust.",
+    "Compared with uka F04, F07 output must make place/continuity decision-relevant rather than simply reusing human-technique scenes.",
+    "Shared Recognition-led Hero compatibility with F01/F08 must not create a common first-view silhouette across those Families.",
+    "Color/photo/logo/copy substitution alone is a template-swap failure."
+  ],
+  "production_feasibility_separate_profile": {
+    "required": true,
+    "may_change_family": false,
+    "allowed_effect": "After Family freeze, may choose safe local-context media, verified text evidence, access utility or generated non-person visuals without inventing people/history/community claims."
+  },
+  "phase_c_validation": {
+    "required_reference_count": 2,
+    "all_required_widths": [320,360,375,390,430,768,1024,1280,1440],
+    "within_family_pair_test": true,
+    "cross_family_comparison_targets": ["uka/BW-F04", "Nagi/BW-F08"],
+    "human_visible_required": true
+  }
+}

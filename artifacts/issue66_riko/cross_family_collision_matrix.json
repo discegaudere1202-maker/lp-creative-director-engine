@@ -1,0 +1,25 @@
+{
+  "schema_version": "issue66_cross_family_collision_matrix_v1",
+  "issue": 66,
+  "status": "PHASE_C_COLLISION_CONTRACT",
+  "principle": "Resolve by verified customer decision job, not visual adjectives, industry labels, asset convenience, or company identity.",
+  "rows": [
+    {"pair":["BW-F05","BW-F08"],"discriminator":"BW-F05 when the category is already accepted and option/service self-selection is the blocker; BW-F08 when category understanding/self-placement must happen before option choice.","human_review_trigger":"verified truth cannot establish category readiness or both jobs are genuinely co-dominant","phase_c_reference":"APEX/FANCL vs Nagi"},
+    {"pair":["BW-F05","BW-F02"],"discriminator":"BW-F05 when routing to the right option is first; BW-F02 when suitability, safety, risk or wrong-choice reassurance must be resolved first.","human_review_trigger":"diagnostic routing and safety reassurance are inseparable before any useful next event","phase_c_reference":"APEX/FANCL vs Regina"},
+    {"pair":["BW-F07","BW-F04"],"discriminator":"BW-F07 only when ongoing local/community relationship materially changes choice; BW-F04 when human technique, maker/provenance or craft is the trust mechanism and locality is incidental.","human_review_trigger":"locality exists in brand language but decision relevance is not evidenced","phase_c_reference":"Lino/Barbaro vs uka"},
+    {"pair":["BW-F07","BW-F05"],"discriminator":"BW-F07 when relationship/place is the gating trust job; BW-F05 when service or option routing is the gating decision job.","human_review_trigger":"a local multi-service business has co-dominant relationship and routing barriers","phase_c_reference":"Lino/Barbaro vs APEX/FANCL"},
+    {"pair":["BW-F01","BW-F04"],"discriminator":"BW-F01 when imagined sensory experience, ritual or atmosphere itself creates desire; BW-F04 when human/material provenance or technique is indispensable to trust/meaning.","human_review_trigger":"sensory experience and provenance are equally central and cannot be subordinated","phase_c_reference":"THREE/BAUM vs uka"},
+    {"pair":["BW-F01","BW-F03"],"discriminator":"BW-F01 when sensory state/lifestyle fit leads; BW-F03 when aspirational status, desired self-image or specialist authority leads into proof and commitment.","human_review_trigger":"sensory worldview and premium authority are genuinely co-dominant","phase_c_reference":"THREE/BAUM vs kakimoto/pilates K"},
+    {"pair":["BW-F01","BW-F08"],"discriminator":"BW-F01 when the customer understands the category and desire depends on sensory imagination; BW-F08 when category comprehension/self-placement precedes desire or commitment.","human_review_trigger":"category readiness is uncertain and the same calm/recognition visual grammar could hide the distinction","phase_c_reference":"THREE/BAUM vs Nagi"},
+    {"pair":["BW-F03","BW-F04"],"discriminator":"BW-F03 when aspirational/editorial authority is the first persuasive job; BW-F04 when maker, practitioner, technique or provenance authority must lead.","human_review_trigger":"specialist prestige and practitioner/maker provenance are inseparable in the verified decision state","phase_c_reference":"kakimoto/pilates K vs uka"},
+    {"pair":["BW-F03","BW-F06"],"discriminator":"BW-F03 when authority/desire leads and mechanism proof supports commitment; BW-F06 when method/process credibility is the gating question from the outset.","human_review_trigger":"specialist authority and mechanism efficacy are co-equal before persuasive progress","phase_c_reference":"kakimoto/pilates K vs deferred F06 wave"},
+    {"pair":["BW-F03","BW-F01"],"discriminator":"Use the same F01/F03 rule symmetrically; luxury styling, large type, natural palette or image mood never resolve the collision.","human_review_trigger":"decision-state evidence remains insufficient after verified truth review","phase_c_reference":"cross-selected pair"}
+  ],
+  "hard_failure_conditions": [
+    "family selected from company/case lookup",
+    "family selected from industry name alone",
+    "family changed because assets/rights/evidence are difficult",
+    "unresolved genuine co-dominance silently forced to a winner",
+    "visual similarity is used as evidence that two companies share a Family"
+  ]
+}

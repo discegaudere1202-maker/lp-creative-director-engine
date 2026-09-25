@@ -1,0 +1,89 @@
+{
+  "schema_version": "issue66_family_expansion_contract_v1",
+  "issue": 66,
+  "family_id": "BW-F01",
+  "family_name": "Sensory Sanctuary / Atmospheric Rest",
+  "status": "RIN_READY_AFTER_SARAH_AUDIT",
+  "customer_decision_state": "The customer broadly understands the category, but imagined sensory experience, ritual, atmosphere or lifestyle fit materially determines desire and choice.",
+  "first_persuasive_job": "Make the desired sensory/experiential state imaginable before dense explanation, then hand off to bounded evidence before meaningful commitment.",
+  "dominant_fit_drivers": ["sensory_experience_weight", "emotional_purchase_weight", "visual_storytelling_need", "naturalness", "calmness"],
+  "fit_boundary": "BW-F01 is selected because sensory expectation changes the decision, not because the brand uses beige, green, natural textures or calm photography. Production Feasibility cannot select the Family.",
+  "reference_companies": [
+    {
+      "case_id": "V49-01",
+      "company": "THREE",
+      "official_url": "https://www.threecosmetics.com/brand/holistic-care-concept",
+      "expected_dominant": "BW-F01",
+      "secondary": ["BW-F04"],
+      "acceptable_alternatives": ["BW-F04", "BW-F03"],
+      "decision_state": "Customer broadly understands cosmetics but chooses a worldview/ritual as much as functional efficacy.",
+      "within_family_distinctiveness": "Can braid ritual/product/multi-sense narrative with scientific support; proof handoff is later and more product-contextual."
+    },
+    {
+      "case_id": "V49-02",
+      "company": "BAUM",
+      "official_url": "https://www.baumjapan.com/baum/about/brand-story.html",
+      "expected_dominant": "BW-F01",
+      "secondary": ["BW-F03"],
+      "acceptable_alternatives": ["BW-F03"],
+      "decision_state": "Customer seeks a calming sensory identity and lifestyle fit, not diagnosis-led choice.",
+      "within_family_distinctiveness": "A slower tree/material/environment narrative with sustainability support should differ structurally from THREE."
+    }
+  ],
+  "compatible_module_grammar": [
+    {"pattern_id": "M-HERO-01", "role": "recognition/desire-led first view without premature proof wall"},
+    {"pattern_id": "M-PROBLEM-01", "role": "scene-based tension naming grounded in a real use moment"},
+    {"pattern_id": "M-GALLERY-01", "role": "atmosphere as a decision scene, not decoration"},
+    {"pattern_id": "M-CTA-01", "role": "state-specific next event after enough desire/trust"},
+    {"pattern_id": "M-END-02", "role": "bounded emotional resolution"}
+  ],
+  "conditional_support_grammar": [
+    {"pattern_id": "M-PROCESS-01", "condition": "only as a secondary proof handoff when mechanism/process actually matters and is evidenced; never let it convert the opening into F06"}
+  ],
+  "prohibited_or_misfit_grammar": [
+    "generic beige/green/natural styling presented as evidence of F01",
+    "dense clinical/evidence-first hero unless the actual first job has shifted to F02/F06",
+    "F04 provenance/maker story dominating when human/material origin is actually the gating trust mechanism",
+    "abstract wellness copy with no concrete ritual/use/context handoff",
+    "decorative gallery sequence with no decision role"
+  ],
+  "art_direction_contract": {
+    "hero": "Create an authored sensory first view through environment, material, ritual or state change; do not reuse Nagi's category-education/routing silhouette merely because both can be calm.",
+    "media": "Large environmental/material/ritual media may carry meaning. Crops must preserve tactile or situational cues; stock-like mood imagery without a decision role is insufficient.",
+    "typography": "Quiet display authority, generous leading and deliberate scale are allowed, but typography must support the sensory thesis rather than imitate a luxury/wellness template.",
+    "density": "Low density early with purposeful breathing room; evidence density should rise at the exact point a customer needs confidence before commitment.",
+    "cta": "Use a bounded next event appropriate to the reference company—experience, explore, trial, store/service detail—rather than an always-on hard conversion.",
+    "responsive": "Preserve visual breathing room and sensory crop logic on 320–430px; do not collapse authored atmosphere into a generic text-image stack. Apply optical line-break checks at every required width."
+  },
+  "collision_rules": [
+    {
+      "against": "BW-F04",
+      "discriminator": "F01 when imagined experience/atmosphere itself carries desire; F04 when maker, human technique, provenance or how-it-is-made evidence is indispensable to trust and meaning.",
+      "human_review_trigger": "sensory experience and provenance are equally central and neither can be subordinated"
+    },
+    {
+      "against": "BW-F03",
+      "discriminator": "F01 when sensory state/lifestyle fit leads; F03 when aspirational/premium authority and authored status lead into rational commitment.",
+      "human_review_trigger": "premium authority and sensory worldview are inseparable in the verified decision state"
+    }
+  ],
+  "anti_template_requirements": [
+    "THREE and BAUM must differ in hero framing, narrative pacing, proof handoff and ending despite sharing sensory logic.",
+    "Compared with Nagi F08, F01 must not use category education or three-route service topology as its center of gravity.",
+    "Compared with uka F04, atmosphere must not merely wrap a craft/provenance sequence; sensory desire itself must carry the first persuasive job.",
+    "Shared M-HERO-01 compatibility with F07/F08 is not permission for a shared hero layout.",
+    "Color/photo/logo/copy substitution alone is a template-swap failure."
+  ],
+  "production_feasibility_separate_profile": {
+    "required": true,
+    "may_change_family": false,
+    "allowed_effect": "After Family freeze, may choose safe generated/stock/material/environment media and adjust gallery realization without inventing sensory claims or switching Family because ideal assets are unavailable."
+  },
+  "phase_c_validation": {
+    "required_reference_count": 2,
+    "all_required_widths": [320,360,375,390,430,768,1024,1280,1440],
+    "within_family_pair_test": true,
+    "cross_family_comparison_targets": ["uka/BW-F04", "Nagi/BW-F08", "BW-F03 selected references"],
+    "human_visible_required": true
+  }
+}

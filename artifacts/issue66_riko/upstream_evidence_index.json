@@ -1,0 +1,26 @@
+{
+  "schema_version": "issue66_upstream_evidence_index_v1",
+  "issue": 66,
+  "status": "TRACEABLE_TO_ACCEPTED_SSOT",
+  "sources": [
+    {"path":"artifacts/issue44_riko/creative_family_discovery_map.json","use":"accepted benchmark-derived Family definitions and boundaries"},
+    {"path":"artifacts/issue44_riko/closure/deep_annotation_041_050.json","use":"deep evidence for BM-184/185/188/190/191/202/203/233/236 including F03/F05/F01/F06/F07 mechanisms"},
+    {"path":"artifacts/issue44_riko/closure/deep_annotation_051_060.json","use":"deep evidence for BM-238/240/244/247/265/277/281/284/285 including F07/F03/F05/F01 and F06 adjacency"},
+    {"path":"data/production_architecture/module_composition_registry_v1.json","use":"accepted module/composition grammar compatibility"},
+    {"path":"artifacts/issue49_riko/creative_fit_expected_labels.json","use":"two validated dominant-company cases for every BW-F01..BW-F08 and Fit/Feasibility separation"},
+    {"issue":57,"use":"Regina + uka research contracts and transfer design"},
+    {"issue":59,"use":"controlled Regina/uka Production transfer implementation/evidence"},
+    {"issue":61,"use":"human-visible template-transfer RETURN showing metadata differences were insufficient"},
+    {"issue":62,"use":"corrected public-semantics review; architecture-transfer blocker materially resolved, 320px optical defect isolated"},
+    {"issue":63,"use":"final HUMAN_VISIBLE_PASS after 320px optical line correction"},
+    {"merged_pr":60,"main_sha":"4fb77f0aa22fd747e3771fcd585e6c47e9f5912c","use":"accepted Phase B Production baseline"}
+  ],
+  "selection_evidence": {
+    "BW-F05":["V49-09","V49-10","BM-188","BM-202","BM-281"],
+    "BW-F07":["V49-13","V49-14","BM-233","BM-236","BM-238","BM-247"],
+    "BW-F01":["V49-01","V49-02","BM-191","BM-284","BM-190"],
+    "BW-F03":["V49-05","V49-06","BM-184","BM-203","BM-277"],
+    "BW-F06_deferred":["V49-11","V49-12","BM-185","BM-203","BM-265","Regina-secondary","uka-secondary"]
+  },
+  "evidence_policy":"These refs justify research/specification choices. They do not grant media reuse rights or replace implementation-date verification of volatile facts."
+}

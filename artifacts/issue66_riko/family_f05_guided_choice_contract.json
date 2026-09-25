@@ -1,0 +1,85 @@
+{
+  "schema_version": "issue66_family_expansion_contract_v1",
+  "issue": 66,
+  "family_id": "BW-F05",
+  "family_name": "Guided Choice / Diagnostic Clarity",
+  "status": "RIN_READY_AFTER_SARAH_AUDIT",
+  "customer_decision_state": "The customer already accepts the category but cannot confidently self-select among services, formulations, routes or care options.",
+  "first_persuasive_job": "Reduce option ambiguity by making the path to the right fit legible, bounded and explainable.",
+  "dominant_fit_drivers": ["choice_guidance_need", "information_density_need", "trust_requirement"],
+  "fit_boundary": "Creative Fit decides BW-F05 before Production Feasibility. Asset quantity, rights clarity, pricing completeness and social-proof availability cannot switch the Family.",
+  "reference_companies": [
+    {
+      "case_id": "V49-09",
+      "company": "POLA APEX",
+      "official_url": "https://www.pola.co.jp/brand/apex/about/index.html",
+      "expected_dominant": "BW-F05",
+      "secondary": ["BW-F02"],
+      "decision_state": "Customer knows skincare but cannot self-select the right care without analysis.",
+      "within_family_distinctiveness": "Analysis-to-personalized-formulation routing; diagnosis and explanation can carry the journey."
+    },
+    {
+      "case_id": "V49-10",
+      "company": "FANCL",
+      "official_url": "https://www.fancl.co.jp/shop/service/index.html",
+      "expected_dominant": "BW-F05",
+      "secondary": ["BW-F02"],
+      "acceptable_alternative": ["BW-F08"],
+      "decision_state": "Customer wants a low-friction answer to what current skin care is appropriate.",
+      "within_family_distinctiveness": "Lighter counseling/measurement/self-serve route; must not clone APEX's deeper diagnostic topology."
+    }
+  ],
+  "compatible_module_grammar": [
+    {"pattern_id": "M-HERO-03", "role": "guided choice entry; one legible decision at a time"},
+    {"pattern_id": "M-TRUST-01", "role": "state known/unknown or recommendation boundary next to claim"},
+    {"pattern_id": "M-SERVICE-01", "role": "intent-routed service field; not equal generic cards"},
+    {"pattern_id": "M-OFFER-01", "role": "commitment ladder only when terms are verified"},
+    {"pattern_id": "M-CTA-01", "role": "state-specific next event such as analysis/counseling"},
+    {"pattern_id": "M-END-01", "role": "clear utility closure after routing"}
+  ],
+  "prohibited_or_misfit_grammar": [
+    "fixed equal-card matrix as the family implementation",
+    "BW-F08-style category education when the category is already accepted",
+    "atmosphere-first opening that delays the actual option ambiguity",
+    "single universal sticky CTA that ignores decision state",
+    "recommendation claims without source-bounded diagnostic basis"
+  ],
+  "art_direction_contract": {
+    "hero": "Expose the unresolved choice or diagnostic entry immediately; show a route, not a product-card wall.",
+    "media": "Use measurement, consultation, service-context or diagnostic-state media only when provenance/rights are safe; media must clarify the choice rather than decorate it.",
+    "typography": "Prioritize labels, state changes and route hierarchy; ornamental display typography is secondary to decision clarity.",
+    "density": "Progressive disclosure: concise choice framing early, denser evidence only at the branch where it matters.",
+    "cta": "Move from low-friction self-placement/analysis toward a concrete next event; CTA wording must reflect current decision state.",
+    "responsive": "On 320–430px, expose one readable route at a time; do not compress multiple routes into horizontal micro-cards. Preserve recommendation boundary adjacent to the relevant choice."
+  },
+  "collision_rules": [
+    {
+      "against": "BW-F08",
+      "discriminator": "F05 when category acceptance exists and option selection is the blocker; F08 when understanding the category/self-placement precedes option choice.",
+      "human_review_trigger": "category acceptance cannot be established from verified company/customer truth"
+    },
+    {
+      "against": "BW-F02",
+      "discriminator": "F05 when route selection is the first job; F02 when safety/suitability/wrong-choice reassurance is the first job.",
+      "human_review_trigger": "diagnostic routing and safety reassurance are co-equal before any useful next event"
+    }
+  ],
+  "anti_template_requirements": [
+    "APEX and FANCL must not share the same hero silhouette, route count, module sequence and CTA choreography merely because both are F05.",
+    "A service/diagnostic path must be authored from actual option structure; generic 3-card geometry is not evidence of Guided Choice.",
+    "Compared with Nagi F08, the page must move quickly from accepted category to selection logic rather than replay category education.",
+    "Color/photo/logo/copy substitution alone is a template-swap failure."
+  ],
+  "production_feasibility_separate_profile": {
+    "required": true,
+    "may_change_family": false,
+    "allowed_effect": "After Family freeze, may alter media realization, proof placement, or unavailable module variants while preserving the decision-routing logic."
+  },
+  "phase_c_validation": {
+    "required_reference_count": 2,
+    "all_required_widths": [320,360,375,390,430,768,1024,1280,1440],
+    "within_family_pair_test": true,
+    "cross_family_comparison_targets": ["Nagi/BW-F08", "Regina/BW-F02"],
+    "human_visible_required": true
+  }
+}
