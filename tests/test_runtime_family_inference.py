@@ -11,6 +11,7 @@ from lp_engine.production_architecture import (
     FEASIBILITY_DIMENSIONS,
     FIT_DIMENSIONS,
     FAMILY_IDS,
+    infer_and_select_family,
     infer_creative_family,
     select_family,
 )
@@ -86,6 +87,10 @@ def test_inference_hard_fails_on_feasibility_leakage_and_unverified_truth():
     with pytest.raises(ValueError, match="verified"):
         infer_creative_family(company_truth={"verified": False}, customer_decision_state="choose", creative_fit=_fit(expected))
 
+    leaked_truth = {"verified": True, "facts": {"photo_asset_quantity": 0.9}}
+    with pytest.raises(ValueError, match="feasibility"):
+        infer_creative_family(company_truth=leaked_truth, customer_decision_state="choose", creative_fit=_fit(expected))
+
 
 def test_unresolved_co_dominance_is_human_review_not_a_forced_winner():
     expected, _company = next(_records())
@@ -110,3 +115,43 @@ def test_prohibited_families_remain_explicit_and_are_not_substituted():
     )
     assert result["prohibited_or_misfit"] == expected["prohibited"]
     assert result["dominant_family"] not in result["prohibited_or_misfit"]
+
+
+def test_collision_rules_are_executed_and_unresolved_pairs_stop_for_review():
+    expected, company = next(row for row in _records() if row[0]["case_id"] == "V49-03")
+    result = infer_creative_family(
+        company_truth={"verified": True, "facts": company["company_intelligence"]},
+        customer_decision_state=company["customer_decision_state"],
+        creative_fit=_fit(expected),
+    )
+    assert result["dominant_family"] == "BW-F02"
+    assert result["collision_rule"] == "C02_C06"
+
+    unresolved = infer_creative_family(
+        company_truth={"verified": True, "facts": ["safety and mechanism evidence are both central"]},
+        customer_decision_state="the customer needs safety reassurance and mechanism proof equally",
+        creative_fit=_fit(expected),
+    )
+    assert unresolved["dominant_family"] is None
+    assert unresolved["collision_rule"] == "C02_C06"
+    assert unresolved["human_review_required"] is True
+
+
+def test_inference_freezes_fit_before_feasibility_selection():
+    expected, company = next(_records())
+    feasibility = {
+        "schema_version": "production_feasibility_profile_v1",
+        "profile_id": "separate-feasibility",
+        "dimensions": {name: 0.9 for name in FEASIBILITY_DIMENSIONS},
+        "adaptation_policy": {"may_change_family": False},
+        "source_refs": ["test:separate-feasibility"],
+    }
+    output = infer_and_select_family(
+        company_truth={"verified": True, "facts": company["company_intelligence"]},
+        customer_decision_state=company["customer_decision_state"],
+        creative_fit=_fit(expected),
+        feasibility=feasibility,
+        candidates=[{"family_id": family} for family in FAMILY_IDS],
+    )
+    assert output["selection"]["dominant_family"] == expected["dominant"]
+    assert output["selection"]["family_change_allowed"] is False

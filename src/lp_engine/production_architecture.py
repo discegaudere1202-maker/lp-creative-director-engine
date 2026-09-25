@@ -57,23 +57,23 @@ _FAMILY_JOBS = {
     "BW-F07": ("make ongoing local/community/human relationship itself a reason to choose", {"local_relationship_weight", "human_relationship_weight", "intimacy", "warmth"}),
     "BW-F08": ("help a low-readiness customer understand the category and self-place before asking for commitment", {"category_education_need", "choice_guidance_need", "information_density_need"}),
 }
-_COLLISIONS = {
-    frozenset(("BW-F02", "BW-F06")): ("safety/suitability reassurance", "mechanism efficacy proof"),
-    frozenset(("BW-F05", "BW-F08")): ("category accepted + option ambiguity", "category/fit understanding"),
-    frozenset(("BW-F01", "BW-F04")): ("experience imagination", "provenance/human technique"),
-    frozenset(("BW-F03", "BW-F04")): ("aspirational authority", "maker/provenance authority"),
-    frozenset(("BW-F04", "BW-F07")): ("human craft without decision-relevant locality", "ongoing local relationship"),
-    frozenset(("BW-F06", "BW-F08")): ("method credibility", "category understanding"),
-}
+_COLLISION_RULES = (
+    {"id": "C02_C06", "pair": frozenset(("BW-F02", "BW-F06")), "left": ("safety", "suitable", "appropriate", "wrong choice", "risk", "counseling", "condition", "reassurance"), "right": ("mechanism", "measurable", "repeatable", "process", "causal", "evidence", "proof", "visible change"), "left_family": "BW-F02", "right_family": "BW-F06", "left_reason": "safety/suitability reassurance leads", "right_reason": "mechanism efficacy proof leads"},
+    {"id": "C05_C08", "pair": frozenset(("BW-F05", "BW-F08")), "left": ("cannot self-select", "self-select", "personalized", "personalised", "recommendation", "routing", "what care is appropriate", "right care"), "right": ("category itself", "category curious", "first-timer", "first timer", "beginner", "understandable", "low commitment", "low-commitment"), "left_family": "BW-F05", "right_family": "BW-F08", "left_reason": "category accepted with option ambiguity", "right_reason": "category/fit understanding precedes option choice"},
+    {"id": "C01_C04", "pair": frozenset(("BW-F01", "BW-F04")), "left": ("sensory", "sensory", "ritual", "fragrance", "forest", "scent", "atmosphere", "lifestyle fit", "experience"), "right": ("maker", "material", "provenance", "craft", "technique", "practitioner", "factory", "human maker", "expert hands-on", "method grew"), "left_family": "BW-F01", "right_family": "BW-F04", "left_reason": "experience imagination leads", "right_reason": "provenance/human technique is indispensable"},
+    {"id": "C03_C04", "pair": frozenset(("BW-F03", "BW-F04")), "left": ("high-class", "high class", "aspirational", "desired self-image", "premium authority", "specialist authority", "authorship"), "right": ("maker", "material", "provenance", "craft", "technique", "factory", "human maker"), "left_family": "BW-F03", "right_family": "BW-F04", "left_reason": "aspirational authority leads", "right_reason": "maker/provenance authority leads"},
+    {"id": "C04_C07", "pair": frozenset(("BW-F04", "BW-F07")), "left": ("maker", "material", "provenance", "craft", "technique", "practitioner", "method"), "right": ("local", "community", "nearby", "neighborhood", "neighbourhood", "generations", "familiarity", "continuity", "daily life"), "left_family": "BW-F04", "right_family": "BW-F07", "left_reason": "human craft without decision-relevant locality", "right_reason": "ongoing local relationship changes choice"},
+    {"id": "C06_C08", "pair": frozenset(("BW-F06", "BW-F08")), "left": ("mechanism", "measurable", "repeatable", "causal", "evidence", "proof", "research", "visible change"), "right": ("category itself", "category curious", "category education", "first-timer", "first timer", "beginner", "understandable", "low commitment", "low-commitment"), "left_family": "BW-F06", "right_family": "BW-F08", "left_reason": "method credibility is the gating question", "right_reason": "category understanding is the gating question"},
+)
 _TEXT_MARKERS = {
-    "BW-F01": ("sensory", "sensory", "ritual", "fragrance", "forest", "scent", "atmosphere", "experience imagination"),
-    "BW-F02": ("safety", "suitability", "wrong-choice", "wrong choice", "risk", "counseling", "clinical", "condition", "reassurance"),
-    "BW-F03": ("premium", "aspirational", "specialist authority", "high-class", "high class", "desired self-image", "authorship"),
-    "BW-F04": ("maker", "material", "provenance", "craft", "technique", "practitioner", "factory", "method grew", "human makers"),
-    "BW-F05": ("personalized", "personalised", "self-select", "self select", "cannot self-select", "right care", "what care is appropriate", "recommendation", "routing", "option", "measurement-to-advice"),
-    "BW-F06": ("mechanism", "measurable", "repeatable process", "method and evidence", "causally", "proof", "research", "visible change"),
-    "BW-F07": ("local", "community", "nearby", "neighborhood", "neighbourhood", "generations", "familiarity", "continuity"),
-    "BW-F08": ("first-timer", "first timer", "category itself", "understandable", "category education", "low-commitment", "low commitment", "beginner"),
+    "BW-F01": ("sensory", "ritual", "fragrance", "forest", "scent", "atmosphere", "lifestyle fit", "experience"),
+    "BW-F02": ("safety", "suitable", "appropriate", "wrong choice", "risk", "counseling", "condition", "reassurance"),
+    "BW-F03": ("high-class", "high class", "aspirational", "desired self-image", "premium authority", "specialist authority", "authorship"),
+    "BW-F04": ("maker", "material", "provenance", "craft", "technique", "practitioner", "factory", "human maker", "expert hands-on", "method grew"),
+    "BW-F05": ("cannot self-select", "self-select", "personalized", "personalised", "recommendation", "routing", "what care is appropriate", "right care"),
+    "BW-F06": ("mechanism", "measurable", "repeatable", "process", "causal", "evidence", "proof", "research", "visible change"),
+    "BW-F07": ("local", "community", "nearby", "neighborhood", "neighbourhood", "generations", "familiarity", "continuity", "daily life"),
+    "BW-F08": ("category itself", "category curious", "category education", "first-timer", "first timer", "beginner", "understandable", "low commitment", "low-commitment"),
 }
 
 
@@ -151,20 +151,28 @@ def select_family(*, fit: dict[str, Any], feasibility: dict[str, Any], candidate
 
 def _flatten_truth(company_truth: dict[str, Any], customer_decision_state: Any) -> str:
     values: list[str] = []
-    for value in company_truth.values():
-        if isinstance(value, (str, int, float)):
+
+    def visit(value: Any) -> None:
+        if isinstance(value, (str, int, float)) and not isinstance(value, bool):
             values.append(str(value))
+        elif isinstance(value, dict):
+            for child in value.values():
+                visit(child)
         elif isinstance(value, list):
-            values.extend(str(item) for item in value)
-    if isinstance(customer_decision_state, str):
-        values.append(customer_decision_state)
-    elif isinstance(customer_decision_state, dict):
-        for value in customer_decision_state.values():
-            if isinstance(value, (str, int, float)):
-                values.append(str(value))
-            elif isinstance(value, list):
-                values.extend(str(item) for item in value)
+            for child in value:
+                visit(child)
+
+    visit(company_truth)
+    visit(customer_decision_state)
     return " ".join(values).lower()
+
+
+def _contains_feasibility_key(value: Any) -> bool:
+    if isinstance(value, dict):
+        return bool(set(value).intersection(FEASIBILITY_INPUT_FIELDS)) or any(_contains_feasibility_key(child) for child in value.values())
+    if isinstance(value, list):
+        return any(_contains_feasibility_key(child) for child in value)
+    return False
 
 
 def _require_inference_inputs(company_truth: dict[str, Any], customer_decision_state: Any, creative_fit: dict[str, Any]) -> dict[str, float]:
@@ -172,6 +180,8 @@ def _require_inference_inputs(company_truth: dict[str, Any], customer_decision_s
         raise ValueError("company_truth must be verified before family inference")
     if not isinstance(customer_decision_state, (str, dict)) or not customer_decision_state:
         raise ValueError("customer_decision_state is required for family inference")
+    if _contains_feasibility_key(company_truth) or _contains_feasibility_key(customer_decision_state):
+        raise ValueError("production feasibility fields are forbidden at inference stage")
     if not isinstance(creative_fit, dict) or set(creative_fit) != {"schema_version", "profile_id", "dimensions", "source_refs"}:
         if isinstance(creative_fit, dict) and FEASIBILITY_INPUT_FIELDS.intersection(creative_fit):
             raise ValueError("production feasibility fields are forbidden at inference stage")
@@ -186,6 +196,20 @@ def _require_inference_inputs(company_truth: dict[str, Any], customer_decision_s
     return {name: _score(value, f"creative fit {name}") for name, value in dimensions.items()}
 
 
+def _resolve_collision(candidates: set[str], text: str) -> tuple[str | None, str | None, str | None]:
+    for rule in _COLLISION_RULES:
+        if not rule["pair"].issubset(candidates):
+            continue
+        left_hit = any(marker in text for marker in rule["left"])
+        right_hit = any(marker in text for marker in rule["right"])
+        if left_hit and not right_hit:
+            return rule["left_family"], rule["id"], rule["left_reason"]
+        if right_hit and not left_hit:
+            return rule["right_family"], rule["id"], rule["right_reason"]
+        return None, rule["id"], "collision remains co-dominant after explicit rule"
+    return None, None, None
+
+
 def infer_creative_family(*, company_truth: dict[str, Any], customer_decision_state: Any, creative_fit: dict[str, Any]) -> dict[str, Any]:
     """Infer a family from verified truth, customer decision job and ordinal fit signals.
 
@@ -193,52 +217,42 @@ def infer_creative_family(*, company_truth: dict[str, Any], customer_decision_st
     annotations are calibrated probabilities. It is a pre-validation stage; callers
     freeze the result before passing feasibility to ``select_family``.
     """
-    dimensions = _require_inference_inputs(company_truth, customer_decision_state, creative_fit)
-    text = _flatten_truth(company_truth, customer_decision_state)
-    customer_text = _flatten_truth({}, customer_decision_state)
-    marker_hits = {family: sum(text.count(marker) for marker in markers) for family, markers in _TEXT_MARKERS.items()}
-    decision_hits = {family: sum(customer_text.count(marker) for marker in markers) for family, markers in _TEXT_MARKERS.items()}
-    scores = {family: 0.0 for family in FAMILY_IDS}
-    for family, (_, used_dimensions) in _FAMILY_JOBS.items():
-        scores[family] = sum(dimensions[name] for name in used_dimensions) / len(used_dimensions)
+    _require_inference_inputs(company_truth, customer_decision_state, creative_fit)
+    decision_text = _flatten_truth({}, customer_decision_state)
+    truth_text = _flatten_truth(company_truth, {})
+    text = decision_text or truth_text
+    candidates = {family for family, markers in _TEXT_MARKERS.items() if any(marker in text for marker in markers)}
+    dominant, collision_rule, collision_reason = _resolve_collision(candidates, text)
+    if dominant is None and len(candidates) == 1:
+        dominant = next(iter(candidates))
+        collision_reason = "single explicit decision-job family"
+    if dominant is None:
+        return {
+            "dominant_family": None, "secondary_influences": sorted(candidates),
+            "acceptable_alternatives": sorted(candidates),
+            "prohibited_or_misfit": list(company_truth.get("prohibited_families", [])),
+            "ambiguity_state": "CO_DOMINANT_HUMAN_REVIEW", "human_review_required": True,
+            "customer_decision_job": "undetermined between competing decision jobs",
+            "fit_dimensions_used": list(FIT_DIMENSIONS), "feasibility_ignored_at_selection": True,
+            "reasoning": collision_reason or "No explicit decision-job signal resolved the family.",
+            "provenance_refs": list(creative_fit["source_refs"]),
+            "collision_rule": collision_rule,
+        }
 
-    # Decision-state language identifies the first persuasive job; fit dimensions
-    # only break ties and keep the selector general rather than case/company keyed.
-    explicit_priority = ["BW-F01", "BW-F02", "BW-F03", "BW-F04", "BW-F05", "BW-F06", "BW-F07", "BW-F08"]
-    marker_candidates = [family for family in explicit_priority if decision_hits[family] > 0]
-    if not marker_candidates:
-        marker_candidates = [family for family in explicit_priority if marker_hits[family] > 0]
-    if marker_candidates:
-        top = marker_candidates[0]
-        if top == "BW-F07" and dimensions["local_relationship_weight"] < 0.7:
-            marker_candidates = [family for family in marker_candidates if family != "BW-F07"]
-        if top == "BW-F08" and dimensions["category_education_need"] < 0.7:
-            marker_candidates = [family for family in marker_candidates if family != "BW-F08"]
-        if marker_candidates:
-            dominant = marker_candidates[0]
-        else:
-            dominant = max(scores, key=scores.get)
-    else:
-        ranked = sorted(scores.items(), key=lambda item: item[1], reverse=True)
-        if len(ranked) < 2 or ranked[0][1] - ranked[1][1] < 0.08:
-            return {
-                "dominant_family": None, "secondary_influences": [family for family, _ in ranked[:2]],
-                "acceptable_alternatives": [family for family, _ in ranked[:3]],
-                "prohibited_or_misfit": list(company_truth.get("prohibited_families", [])),
-                "ambiguity_state": "CO_DOMINANT_HUMAN_REVIEW", "human_review_required": True,
-                "customer_decision_job": "undetermined between competing decision jobs",
-                "fit_dimensions_used": list(FIT_DIMENSIONS), "feasibility_ignored_at_selection": True,
-                "reasoning": "No decision-state signal resolves the leading families; no winner was forced.",
-                "provenance_refs": list(creative_fit["source_refs"]),
-            }
-        dominant = ranked[0][0]
+    prohibited = list(company_truth.get("prohibited_families", []))
+    if dominant in prohibited:
+        return {
+            "dominant_family": None, "secondary_influences": sorted(candidates - {dominant}),
+            "acceptable_alternatives": sorted(candidates - {dominant}),
+            "prohibited_or_misfit": prohibited, "ambiguity_state": "PROHIBITED_DOMINANT_HUMAN_REVIEW",
+            "human_review_required": True, "customer_decision_job": _FAMILY_JOBS[dominant][0],
+            "fit_dimensions_used": list(FIT_DIMENSIONS), "feasibility_ignored_at_selection": True,
+            "reasoning": "The explicit decision-job family is prohibited; no silent substitution was made.",
+            "provenance_refs": list(creative_fit["source_refs"]), "collision_rule": collision_rule,
+        }
 
-    secondary = [family for family, _ in sorted(scores.items(), key=lambda item: item[1], reverse=True) if family != dominant and scores[family] >= scores[dominant] - 0.16][:2]
+    secondary = sorted(candidates - {dominant})
     acceptable = list(secondary)
-    for pair, _reasons in _COLLISIONS.items():
-        if dominant in pair:
-            acceptable.extend(sorted(pair - {dominant}))
-    acceptable = list(dict.fromkeys(acceptable))
     job = _FAMILY_JOBS[dominant][0]
     return {
         "dominant_family": dominant,
@@ -250,9 +264,34 @@ def infer_creative_family(*, company_truth: dict[str, Any], customer_decision_st
         "customer_decision_job": job,
         "fit_dimensions_used": list(FIT_DIMENSIONS),
         "feasibility_ignored_at_selection": True,
-        "reasoning": f"Decision-state markers and Creative Fit signals identify {dominant}; alternatives remain explicit and are not layout mappings.",
+        "reasoning": f"Explicit decision-job rule {collision_rule or 'single-family rule'} identifies {dominant}: {collision_reason or job}.",
         "provenance_refs": list(creative_fit["source_refs"]),
+        "collision_rule": collision_rule,
     }
+
+
+def infer_and_select_family(*, company_truth: dict[str, Any], customer_decision_state: Any, creative_fit: dict[str, Any], feasibility: dict[str, Any], candidates: list[dict[str, Any]]) -> dict[str, Any]:
+    """Run inference first, then pass a frozen Creative Fit to selection.
+
+    Feasibility is intentionally accepted only by the second stage. An unresolved
+    inference is returned for human review and never converted into a guessed family.
+    """
+    inference = infer_creative_family(
+        company_truth=company_truth,
+        customer_decision_state=customer_decision_state,
+        creative_fit=creative_fit,
+    )
+    if inference["human_review_required"]:
+        return {"inference": inference, "selection": None}
+    frozen_fit = {
+        "schema_version": CREATIVE_FIT_SCHEMA,
+        "profile_id": creative_fit["profile_id"],
+        "dimensions": dict(creative_fit["dimensions"]),
+        "dominant_family": inference["dominant_family"],
+        "secondary_families": list(inference["secondary_influences"]),
+        "source_refs": list(inference["provenance_refs"]),
+    }
+    return {"inference": inference, "selection": select_family(fit=frozen_fit, feasibility=feasibility, candidates=candidates)}
 
 
 def validate_selection_contract(selection: dict[str, Any]) -> None:
