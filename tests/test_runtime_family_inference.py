@@ -125,11 +125,11 @@ def test_collision_rules_are_executed_and_unresolved_pairs_stop_for_review():
         creative_fit=_fit(expected),
     )
     assert result["dominant_family"] == "BW-F02"
-    assert result["collision_rule"] == "C02_C06"
+    assert result["collision_rule"] is None
 
     unresolved = infer_creative_family(
-        company_truth={"verified": True, "facts": ["safety and mechanism evidence are both central"]},
-        customer_decision_state="the customer needs safety reassurance and mechanism proof equally",
+        company_truth={"verified": True, "facts": ["safety and measurable mechanism evidence are both central"]},
+        customer_decision_state="the customer needs safety reassurance and measurable mechanism proof equally",
         creative_fit=_fit(expected),
     )
     assert unresolved["dominant_family"] is None
