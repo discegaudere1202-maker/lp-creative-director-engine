@@ -70,7 +70,7 @@ _TEXT_MARKERS = {
     "BW-F02": ("safety", "suitability", "wrong-choice", "wrong choice", "risk", "counseling", "clinical", "condition", "reassurance"),
     "BW-F03": ("premium", "aspirational", "specialist authority", "high-class", "high class", "desired self-image", "authorship"),
     "BW-F04": ("maker", "material", "provenance", "craft", "technique", "practitioner", "factory", "method grew", "human makers"),
-    "BW-F05": ("personalized", "personalised", "self-select", "self select", "recommendation", "routing", "option", "measurement-to-advice", "cannot self-select"),
+    "BW-F05": ("personalized", "personalised", "self-select", "self select", "cannot self-select", "right care", "what care is appropriate", "recommendation", "routing", "option", "measurement-to-advice"),
     "BW-F06": ("mechanism", "measurable", "repeatable process", "method and evidence", "causally", "proof", "research", "visible change"),
     "BW-F07": ("local", "community", "nearby", "neighborhood", "neighbourhood", "generations", "familiarity", "continuity"),
     "BW-F08": ("first-timer", "first timer", "category itself", "understandable", "category education", "low-commitment", "low commitment", "beginner"),
