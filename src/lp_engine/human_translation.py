@@ -135,6 +135,9 @@ def evaluate_definition_gate(texts: Sequence[str], signature_anchors: Sequence[M
 
 
 def _scene_copy(copy: Mapping[str, Any], scene: Mapping[str, Any], index: int) -> tuple[str, str]:
+    public_copy = scene.get("public_copy") or {}
+    if public_copy.get("headline") or public_copy.get("body"):
+        return _text(public_copy.get("headline")) or _text(scene.get("narrative_state")), _text(public_copy.get("body")) or _text(scene.get("creative_reason"))
     premium = copy.get("premium_scene_copy") or {}
     state = _text(scene.get("narrative_state"))
     premium_item = (premium.get("scenes") or {}).get(state)

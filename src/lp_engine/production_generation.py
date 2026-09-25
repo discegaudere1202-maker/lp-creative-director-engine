@@ -1111,6 +1111,34 @@ def apply_controlled_architecture_to_scene_plan(
     result["controlled_architecture"] = dict(architecture)
     return result
 
+
+def apply_public_scene_semantics(scene_plan: Mapping[str, Any], architecture: Mapping[str, Any] | None) -> dict[str, Any]:
+    """Materialize family/decision-job semantics into the public scene plan."""
+    semantics = list((architecture or {}).get("public_scene_semantics") or [])
+    scenes = list(scene_plan.get("scene_plan") or [])
+    if not semantics or len(semantics) != len(scenes):
+        return dict(scene_plan)
+    result = {key: value for key, value in scene_plan.items() if key != "scene_plan"}
+    result["scene_plan"] = []
+    for index, (scene, semantic) in enumerate(zip(scenes, semantics)):
+        row = dict(scene)
+        row["scene_id"] = f"scene-{index + 1:02d}-{semantic['state']}"
+        row["narrative_state"] = semantic["state"]
+        row["narrative_function"] = semantic["role"]
+        row["copy_intent"] = semantic["copy_intent"]
+        row["visual_authority"] = semantic["visual_authority"]
+        row["focal_entity"] = semantic["media_role"]
+        row["expected_media"] = semantic["media_role"] != "typography"
+        row["public_copy"] = {"headline": semantic["headline"], "body": semantic["body"]}
+        row["public_cta_label"] = semantic.get("cta_label", "")
+        row["cta_stage"] = semantic.get("cta_stage", "")
+        row["semantic_role"] = semantic["role"]
+        row["semantic_derivation"] = "frozen family + customer decision job"
+        result["scene_plan"].append(row)
+    result["public_semantic_profile"] = (architecture or {}).get("public_semantic_profile")
+    result["public_semantic_derivation"] = (architecture or {}).get("public_semantic_derivation")
+    return result
+
 def _render_premium_html(spec: Mapping[str, Any]) -> str:
     company, copy, tokens = spec["company"], spec["copy"], spec["design_tokens"]
     plan = spec["premium_scene_plan"]
@@ -1174,7 +1202,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
             genome = next((x for x in spec["strategy"]["creative_genome"].get("cta_progression", []) if x.get("stage") == scene["cta_stage"]), {})
             closure = cta_closures.get(scene["cta_stage"], {})
             cta_href = closure.get("href") or genome.get("destination") or "#contact"
-            cta_label = genome.get("visible_label") or closure.get("semantic_payload") or "次へ進む"
+            cta_label = scene.get("public_cta_label") or genome.get("visible_label") or closure.get("semantic_payload") or "次へ進む"
             if closure.get("actionability") == "QUIET_CONVERSION_END":
                 cta_label = closure.get("semantic_payload") or ""
             # A quiet end with no actual contact datum is intentionally a
@@ -1389,6 +1417,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     asset_manifest = build_asset_manifest(raw.get("photo_assets") or [], photo_role_map)
     premium_scene_plan = build_premium_scene_plan(understanding, strategy["narrative_architecture"], strategy["creative_genome"], approved, [item.get("photo_role", "") for item in raw.get("photo_assets") or []])
     premium_scene_plan = apply_controlled_architecture_to_scene_plan(premium_scene_plan, architecture)
+    premium_scene_plan = apply_public_scene_semantics(premium_scene_plan, architecture)
     premium_scene_plan["qa_gates"] = scene_plan_gates(premium_scene_plan)
     human_translation = build_human_translation(understanding, strategy, premium_scene_plan, approved, asset_manifest, copy)
     premium_scene_plan["human_translation_ref"] = "premium_human_translation_v1"

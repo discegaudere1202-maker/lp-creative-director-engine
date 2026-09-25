@@ -30,6 +30,22 @@ def test_issue59_feasibility_counterfactual_cannot_change_family(tmp_path):
         assert json.loads((tmp_path / contract["company_id"] / "site" / "render_spec.json").read_text(encoding="utf-8"))["controlled_architecture"]["family_frozen_before_feasibility"] is True
 
 
+def test_issue59_family_driven_public_scene_semantics_diverge_without_company_lookup(tmp_path):
+    for contract in load_reference_contracts():
+        result = run_reference_company(contract, tmp_path / contract["company_id"])
+        trace = result["trace"]
+        assert trace["public_semantic_derivation"].startswith("frozen family + customer decision job")
+        assert trace["no_company_lookup"] is True
+        assert len(trace["architecture"]["public_scene_semantics"]) == 5
+    regina_spec = json.loads((tmp_path / "regina-clinic" / "site" / "render_spec.json").read_text(encoding="utf-8"))
+    uka_spec = json.loads((tmp_path / "uka" / "site" / "render_spec.json").read_text(encoding="utf-8"))
+    regina_states = [row["narrative_state"] for row in regina_spec["premium_scene_plan"]["scene_plan"]]
+    uka_states = [row["narrative_state"] for row in uka_spec["premium_scene_plan"]["scene_plan"]]
+    assert regina_states != uka_states
+    assert "安全性と適応" in (tmp_path / "regina-clinic" / "site" / "index.html").read_text(encoding="utf-8")
+    assert "手技の積み重ね" in (tmp_path / "uka" / "site" / "index.html").read_text(encoding="utf-8")
+
+
 @pytest.mark.parametrize("width", [768, 1024, 1280, 1440])
 def test_regina_choose_time_media_and_copy_never_overlap(tmp_path, width):
     """The Regina desktop choice scene must be geometry-safe at all desktop widths."""

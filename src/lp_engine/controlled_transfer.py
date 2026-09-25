@@ -70,7 +70,32 @@ def _architecture(contract: Mapping[str, Any], inference: Mapping[str, Any], fea
     if contract["expected_family"] == "BW-F04":
         grammar["hero_authoring"] = "F04 decision job authored from compatible story/human/atmosphere grammar; no F04-specific hero template"
     grammar["compatibility_rationale"] = contract["decision_job"]
-    return {"dominant_family": inference["dominant_family"], "secondary_families": inference["secondary_influences"], "customer_decision_state": contract["customer_state"], "module_grammar": grammar, "family_frozen_before_feasibility": True, "production_feasibility": feasibility, "source_contract": contract["reference_id"]}
+    public_profiles = {
+        "BW-F02": {
+            "profile": "clinical_reassurance",
+            "scene_semantics": [
+                {"state": "suitability", "role": "clinical_suitability", "headline": "安全性と適応を確認してから、選ぶ。", "body": "医療脱毛を検討するときは、肌の状態や希望を確認するところから始まります。", "copy_intent": "ORIENT", "visual_authority": "TYPE", "media_role": "hero_context", "cta_stage": "discovery"},
+                {"state": "consultation", "role": "consultation_process", "headline": "まず、相談で確認できること。", "body": "医師の確認、施術方法、費用とリスク。契約前に知りたいことを順に整理します。", "copy_intent": "PROVE", "visual_authority": "PERSON", "media_role": "consultation_context", "cta_stage": ""},
+                {"state": "risk_information", "role": "risk_boundary", "headline": "分からないことを、残したまま進まない。", "body": "適応や注意点を確認し、納得できる範囲で次の判断へ進めます。", "copy_intent": "REDUCE_RISK", "visual_authority": "DATA", "media_role": "process_detail", "cta_stage": "reassurance"},
+                {"state": "decision", "role": "medical_choice", "headline": "自分に合う方法を、説明を聞いて決める。", "body": "相談で確認した内容をもとに、施術の選択と残る不確実性を整理します。", "copy_intent": "COMPARE", "visual_authority": "MATERIAL", "media_role": "material_detail", "cta_stage": ""},
+                {"state": "counseling", "role": "consultation_cta", "headline": "無料カウンセリングから、相談できます。", "body": "気になることを持って、公式のカウンセリング案内へ進めます。", "copy_intent": "CONVERT", "visual_authority": "TYPE", "media_role": "typography", "cta_stage": "action"},
+            ],
+        },
+        "BW-F04": {
+            "profile": "human_craft_provenance",
+            "scene_semantics": [
+                {"state": "method", "role": "method_first", "headline": "手技の積み重ねから、サロンを選ぶ。", "body": "ukaのヘッドスパは、施術者の技術と方法を知るところから始まります。", "copy_intent": "ORIENT", "visual_authority": "PERSON", "media_role": "hero_context", "cta_stage": "discovery"},
+                {"state": "technique", "role": "hand_technique", "headline": "手の動きに、方法が現れる。", "body": "触れ方、力加減、相談から施術へつながる手技を、ひとつずつ見渡します。", "copy_intent": "SHOW_CRAFT", "visual_authority": "PERSON", "media_role": "hand_technique", "cta_stage": ""},
+                {"state": "provenance", "role": "accumulated_method", "headline": "積み重ねてきた方法を、確かめる。", "body": "人の手で続いてきた技術と、サロンで受ける時間の関係を整理します。", "copy_intent": "PROVE", "visual_authority": "DATA", "media_role": "process_detail", "cta_stage": "reassurance"},
+                {"state": "menu_direction", "role": "salon_choice", "headline": "自分の悩みに近いメニューを探す。", "body": "相談・観察・手技の流れを手がかりに、向かいたいサロンを考えます。", "copy_intent": "COMPARE", "visual_authority": "MATERIAL", "media_role": "material_detail", "cta_stage": ""},
+                {"state": "salon_booking", "role": "salon_cta", "headline": "メニューを見て、サロンを予約する。", "body": "知りたいことを確かめたら、公式のサロン案内へ進めます。", "copy_intent": "CONVERT", "visual_authority": "TYPE", "media_role": "typography", "cta_stage": "action"},
+            ],
+        },
+    }
+    semantic = public_profiles.get(inference["dominant_family"], {"profile": "decision_job", "scene_semantics": []})
+    for row in semantic["scene_semantics"]:
+        row["cta_label"] = contract["primary_cta"] if row["cta_stage"] == "action" else ""
+    return {"dominant_family": inference["dominant_family"], "secondary_families": inference["secondary_influences"], "customer_decision_state": contract["customer_state"], "module_grammar": grammar, "public_semantic_profile": semantic["profile"], "public_scene_semantics": semantic["scene_semantics"], "public_semantic_derivation": "frozen family + customer decision job + compatible grammar; no company lookup", "family_frozen_before_feasibility": True, "production_feasibility": feasibility, "source_contract": contract["reference_id"]}
 
 
 def run_reference_company(contract: Mapping[str, Any], output_dir: str | Path) -> dict[str, Any]:
@@ -89,7 +114,7 @@ def run_reference_company(contract: Mapping[str, Any], output_dir: str | Path) -
     generated = run_generation({**raw, "validation_context": "NO_WEB_FIELD_VALIDATION"}, site, generation_id=f"issue59-{contract['company_id']}", mode="production", architecture=architecture)
     constrained = _feasibility(contract, constrained=True)
     counter = infer_and_select_family(company_truth=truth, customer_decision_state=contract["customer_state"], creative_fit=fit, feasibility=constrained, candidates=[{"family_id": family} for family in FAMILY_IDS])
-    trace = {"schema_version": "issue59_transfer_architecture_trace_v1", "source_issue": 59, "source_contract": contract["reference_id"], "company": contract["company_name"], "expected_family": contract["expected_family"], "runtime_inference": result["inference"], "selection": result["selection"], "architecture": architecture, "production_feasibility": feasibility, "feasibility_counterfactual": {"profile_id": constrained["profile_id"], "dominant_family": counter["selection"]["dominant_family"], "family_unchanged": counter["selection"]["dominant_family"] == contract["expected_family"], "may_change_family": False}, "generation_id": generated.generation_id, "production_output_allowed": generated.production_output_allowed, "no_company_lookup": True, "no_family_fixed_layout": True, "status": "PASS"}
+    trace = {"schema_version": "issue59_transfer_architecture_trace_v1", "source_issue": 59, "source_contract": contract["reference_id"], "company": contract["company_name"], "expected_family": contract["expected_family"], "runtime_inference": result["inference"], "selection": result["selection"], "architecture": architecture, "public_semantic_profile": architecture.get("public_semantic_profile"), "public_semantic_derivation": architecture.get("public_semantic_derivation"), "production_feasibility": feasibility, "feasibility_counterfactual": {"profile_id": constrained["profile_id"], "dominant_family": counter["selection"]["dominant_family"], "family_unchanged": counter["selection"]["dominant_family"] == contract["expected_family"], "may_change_family": False}, "generation_id": generated.generation_id, "production_output_allowed": generated.production_output_allowed, "no_company_lookup": True, "no_family_fixed_layout": True, "status": "PASS"}
     out.mkdir(parents=True, exist_ok=True)
     (out / "architecture_trace.json").write_text(json.dumps(trace, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"status": "PASS", "trace": trace, "site": site}
