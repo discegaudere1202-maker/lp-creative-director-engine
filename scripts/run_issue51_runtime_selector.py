@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from lp_engine.production_architecture import FIT_DIMENSIONS, infer_creative_family
@@ -11,9 +12,14 @@ SOURCE = ROOT / "artifacts" / "issue49_riko"
 OUT = ROOT / "artifacts" / "issue51_runtime_selector"
 
 
+def load_issue49_json(path: Path):
+    raw = path.read_text(encoding="utf-8")
+    return json.loads(re.sub(r"(?<![0-9A-Za-z_])\.(\d+)", r"0.\1", raw))
+
+
 def main() -> int:
-    labels = json.loads((SOURCE / "creative_fit_expected_labels.json").read_text(encoding="utf-8"))["records"]
-    companies = json.loads((SOURCE / "validation_company_registry.json").read_text(encoding="utf-8"))["companies"]
+    labels = load_issue49_json(SOURCE / "creative_fit_expected_labels.json")["records"]
+    companies = load_issue49_json(SOURCE / "validation_company_registry.json")["companies"]
     by_id = {row["case_id"]: row for row in companies}
     results = []
     for expected in labels:

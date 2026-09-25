@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -18,9 +19,16 @@ ROOT = Path(__file__).resolve().parents[1]
 ISSUE49 = ROOT / "artifacts" / "issue49_riko"
 
 
+def _load_issue49_json(path: Path):
+    # The accepted Issue #49 ordinal fixture uses JSON-like shorthand such as .75.
+    # Keep the SSOT unchanged and normalize only at the test boundary.
+    raw = path.read_text(encoding="utf-8")
+    return json.loads(re.sub(r"(?<![0-9A-Za-z_])\.(\d+)", r"0.\1", raw))
+
+
 def _records():
-    labels = json.loads((ISSUE49 / "creative_fit_expected_labels.json").read_text(encoding="utf-8"))["records"]
-    companies = json.loads((ISSUE49 / "validation_company_registry.json").read_text(encoding="utf-8"))["companies"]
+    labels = _load_issue49_json(ISSUE49 / "creative_fit_expected_labels.json")["records"]
+    companies = _load_issue49_json(ISSUE49 / "validation_company_registry.json")["companies"]
     by_id = {row["case_id"]: row for row in companies}
     for row in labels:
         company = by_id[row["case_id"]]
