@@ -1,0 +1,62 @@
+{
+  "schema_version": "issue97_deprecation_deletion_targets_v1",
+  "principle": "delete or isolate only after CompositionPlan Production cutover and current-industry regression matrix pass; never restore legacy routing as silent fallback",
+  "targets": [
+    {
+      "symbol": "src/lp_engine/production_generation.py::_industry_visual_direction",
+      "current_problem": "category keywords can select visual family/profile/authority/scene",
+      "production_target": "remove from authored composition authority",
+      "interim": "compatibility/regression-only if still needed by accepted snapshots",
+      "delete_when": ["CompositionPlan is authoritative", "current-industry fixture matrix green", "no runtime import depends on category profile selection"]
+    },
+    {
+      "symbol": "src/lp_engine/production_generation.py::_layout_profile",
+      "current_problem": "goal/authority/category path chooses renderer/form profile outside CompositionPlan",
+      "production_target": "remove from final topology/profile selection",
+      "interim": "may translate a plan directive only if it cannot make a new creative decision",
+      "delete_when": ["renderer consumes explicit plan topology", "legacy profile assertions replaced by plan assertions"]
+    },
+    {
+      "symbol": "src/lp_engine/controlled_production.py::nagi_reference_input and Nagi-specific helpers",
+      "current_problem": "company-specific controlled adapter is inappropriate as a generic Production entrypoint",
+      "production_target": "regression fixture namespace only",
+      "interim": "retain immutable reference evidence",
+      "delete_when": ["only if equivalent regression fixture exists elsewhere and evidence references are preserved"]
+    },
+    {
+      "symbol": "src/lp_engine/controlled_production.py::_select_module_grammar",
+      "current_problem": "narrow controlled bridge predates generalized CompositionPlan",
+      "production_target": "CompositionPlan-compatible grammar selection in generic planner/runtime",
+      "interim": "regression-only",
+      "delete_when": ["generic grammar trace covers accepted controlled cases"]
+    },
+    {
+      "symbol": "src/lp_engine/authored_composition_runtime.py::consume_composition_plan shadow-only restriction",
+      "current_problem": "explicitly rejects non-shadow mode even after controlled validation PASS",
+      "production_target": "guarded Production consumption boundary",
+      "interim": "shadow remains available for comparison",
+      "delete_when": ["do not delete function; replace shadow-only restriction with explicit mode/gate contract"]
+    },
+    {
+      "symbol": "any company/reference/category/family-to-fixed-profile runtime map",
+      "current_problem": "template routing risk",
+      "production_target": "forbidden",
+      "interim": "test-only reference labels allowed",
+      "delete_when": ["immediately once discovered in Production composition path"]
+    }
+  ],
+  "static_guard_patterns": [
+    "company_id_or_slug_in_topology_branch",
+    "reference_or_fixture_id_in_topology_branch",
+    "business_category_to_final_profile_map",
+    "family_id_to_single_hero_or_layout",
+    "legacy_profile_fallback_on_plan_error"
+  ],
+  "behavioral_guards": [
+    "identity mutation invariance",
+    "decision-state mutation sensitivity",
+    "category mutation cannot change topology when authored semantic inputs are held constant",
+    "feasibility cannot mutate Family",
+    "plan failure cannot invoke legacy profile fallback"
+  ]
+}
