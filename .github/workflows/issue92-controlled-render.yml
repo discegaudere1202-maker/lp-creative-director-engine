@@ -1,0 +1,36 @@
+name: Issue 92 Controlled Render Evidence
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+    paths:
+      - 'src/lp_engine/authored_composition_contract.py'
+      - 'src/lp_engine/authored_composition_runtime.py'
+      - 'src/lp_engine/controlled_render.py'
+      - 'scripts/run_issue92_controlled_render.py'
+      - '.github/workflows/issue92-controlled-render.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  controlled-render:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install engine
+        run: pip install -e .
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Generate controlled HTML and browser evidence
+        run: python scripts/run_issue92_controlled_render.py --out artifacts/issue92_controlled_render
+      - name: Upload controlled render artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue92-controlled-render-browser-evidence
+          path: artifacts/issue92_controlled_render
