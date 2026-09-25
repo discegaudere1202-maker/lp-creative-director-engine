@@ -1,0 +1,24 @@
+{
+  "schema_version": "issue87_rule_primitive_registry_v1",
+  "status": "CONTRACT",
+  "rule": "Primitives transform a decision/evidence state into composition intent. They are not HTML components or Family templates.",
+  "primitives": [
+    {"id":"P-OPEN-DECISION","name":"Decision-first opening","preconditions":["first persuasive job known"],"mutations":["hero exposes the unresolved decision rather than generic brand mood"],"conflicts":["generic family hero shell"],"human_review":["hero silhouette authored"]},
+    {"id":"P-EVIDENCE-ADJ","name":"Evidence-boundary adjacency","preconditions":["claim/proof or known/unknown boundary exists"],"mutations":["place proof/boundary beside the decision it supports"],"conflicts":["detached proof wall"],"human_review":["trust logic visible"]},
+    {"id":"P-ROUTE-BEFORE-CARDS","name":"Route before card grid","preconditions":["choice guidance is decision-critical"],"mutations":["show one legible route/state before breadth"],"conflicts":["equal generic cards"],"human_review":["routing visibly understandable"]},
+    {"id":"P-ATMOSPHERE-ROLE","name":"Atmosphere with decision role","preconditions":["sensory experience materially affects choice"],"mutations":["media/crop/whitespace carry a concrete desired state"],"conflicts":["decorative mood gallery"],"human_review":["atmosphere is persuasive not ornamental"]},
+    {"id":"P-HUMAN-CONTEXT","name":"Context before intimacy","preconditions":["human/provenance trust matters"],"mutations":["establish who/how/where before emotional closeness"],"conflicts":["generic smiling-person proof"],"human_review":["human evidence remains truthful"]},
+    {"id":"P-AUTH-PROOF-COMMIT","name":"Authority to proof to commitment","preconditions":["aspirational/specialist authority leads"],"mutations":["stage authority, then proof, then rational next event"],"conflicts":["luxury hero followed by generic template sections"],"human_review":["authority survives into commitment"]},
+    {"id":"P-LOCAL-SPECIFICITY","name":"Local specificity before warmth","preconditions":["local relationship changes choice"],"mutations":["surface place/continuity evidence before generic warmth"],"conflicts":["地域密着 mood without proof"],"human_review":["locality is decision-relevant"]},
+    {"id":"P-PROCESS-PROOF","name":"Process as proof","preconditions":["mechanism/process credibility gates choice"],"mutations":["process becomes causal proof sequence"],"conflicts":["feature inventory"],"human_review":["process is verified"]},
+    {"id":"P-CTA-STATE","name":"State-specific CTA","preconditions":["conversion goal and customer state known"],"mutations":["CTA names the next useful event for current state"],"conflicts":["universal sticky CTA as only route"],"human_review":["CTA choreography matches journey"]},
+    {"id":"P-MOBILE-PRIORITY","name":"Responsive priority transform","preconditions":["desktop composition contains simultaneous routes/proof/media"],"mutations":["mobile reorders or isolates the highest-priority decision unit"],"conflicts":["desktop shrink/stack only"],"human_review":["390 and 768/1024 composition"]},
+    {"id":"P-JA-OPTICAL","name":"Japanese optical line composition","preconditions":["Japanese public heading/CTA"],"mutations":["preserve semantic chunks and avoid isolated particles/noun fragments/one-character tails"],"conflicts":["mechanical character-count wrapping"],"human_review":["320 mandatory", "360 spot-check"]}
+  ],
+  "selection_contract": {
+    "inputs": ["decision_signature", "dominant_family", "compatible_module_grammar", "evidence_bindings", "conversion_goal"],
+    "identity_key_selection_forbidden": true,
+    "every_applied_primitive_requires_audit_reason": true,
+    "conflicting_primitives_require_resolution_or_human_review": true
+  }
+}
