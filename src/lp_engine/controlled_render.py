@@ -20,6 +20,13 @@ def _esc(value: Any) -> str:
     return html.escape(str(value or ""), quote=True)
 
 
+def _headline_markup(primary_job: str) -> str:
+    """Keep narrow-mobile trust wording in semantic chunks, not character slices."""
+    if primary_job == "trust":
+        return '<span class="headline-chunk">trustのための</span><br class="headline-break-320"><span class="headline-chunk">入口</span>'
+    return _esc(f"{primary_job}のための入口")
+
+
 def render_controlled_html(raw: Mapping[str, Any]) -> tuple[str, dict[str, Any]]:
     plan = infer_authored_composition(raw)
     directives = consume_composition_plan(plan, mode="shadow")
@@ -61,6 +68,8 @@ main {{ padding: 0 clamp(20px, 5vw, 72px); }}
 .hero[data-topology="text_led_field"] {{ grid-template-columns: 1fr; max-width: 820px; }}
 .kicker {{ letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }}
 h1 {{ font-size: clamp(32px, 5vw, 72px); line-height: 1.1; margin: 18px 0; max-width: 14em; }}
+.headline-chunk {{ white-space: nowrap; }}
+.headline-break-320 {{ display: none; }}
 .lead {{ font-size: clamp(17px, 2vw, 23px); line-height: 1.7; max-width: 32em; }}
 .plan-field {{ min-height: 320px; border: 1px solid #8ca39a; padding: clamp(24px, 5vw, 64px); display: grid; align-content: end; background: linear-gradient(135deg, #dbe5e0, #ffffff); }}
 .plan-field strong {{ font-size: clamp(22px, 3vw, 40px); }}
@@ -78,6 +87,7 @@ footer {{ padding: 48px clamp(20px, 5vw, 72px); border-top: 1px solid #b9c5be; }
   .hero, .hero[data-topology="guided_choice"], .hero[data-topology="relationship_media"] {{ min-height: 76svh; grid-template-columns: 1fr; gap: 28px; padding: 64px 0; }}
   .hero[data-topology="text_led_field"] {{ min-height: 60svh; }}
   .plan-field {{ min-height: 220px; }}
+  @media (max-width: 340px) {{ .headline-break-320 {{ display: block; }} }}}
   .scene {{ min-height: 52svh; grid-template-columns: 42px 1fr; gap: 14px; }}
   .scene p {{ grid-column: 2; }}
 }}
@@ -89,7 +99,7 @@ footer {{ padding: 48px clamp(20px, 5vw, 72px); border-top: 1px solid #b9c5be; }
 <header><strong>{_esc(company["name"]["value"])}</strong><span>controlled render</span></header>
 <main>
 <section class="hero" data-topology="{_esc(topology["hero"])}" data-decision-job="{_esc(decision["primary_job"])}">
-<div><span class="kicker">authored composition</span><h1>{_esc(decision["primary_job"])}のための入口</h1>
+<div><span class="kicker">authored composition</span><h1 data-optical-headline="true">{_headline_markup(decision["primary_job"])}</h1>
 <p class="lead">Company TruthとDecision Stateから、固定テンプレートではなく検証可能なCompositionPlanを生成します。</p></div>
 <div class="plan-field"><span class="kicker">visual authority</span><strong>{_esc(directives["variation_vector"]["visual_authority"])}</strong><span>{_esc(topology["core_decision"])}</span></div>
 </section>
