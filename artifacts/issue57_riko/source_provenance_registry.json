@@ -1,0 +1,21 @@
+{
+  "schema_version": "issue57_source_provenance_registry_v1",
+  "retrieved_at": "2026-09-25",
+  "sources": [
+    {"company":"レジーナクリニック","url":"https://www.reginaclinic.jp/about/clinic/free-counseling/","first_party":true,"verified_facts":["approximately 90-minute required pre-contract counseling","mechanism/method/cost explanation","physician examination","plan-specific risk explanation","test irradiation route","no forced solicitation stated"]},
+    {"company":"レジーナクリニック","url":"https://www.reginaclinic.jp/","first_party":true,"verified_facts":["medical-hair-removal positioning","doctor support","current plan context"]},
+    {"company":"レジーナクリニック","url":"https://www.reginaclinic.jp/part/","first_party":true,"volatile":true,"verified_facts":["current plan/price structure"]},
+    {"company":"レジーナクリニック","url":"https://www.reginaclinic.jp/about/clinic/reservation/","first_party":true,"verified_facts":["web counseling reservation","change/cancellation route"]},
+    {"company":"レジーナクリニック","url":"https://www.reginaclinic.jp/faq/treatment/","first_party":true,"verified_facts":["treatment suitability can depend on medication/skin condition and physician judgment"]},
+    {"company":"uka","url":"https://uka.co.jp/our-philosophy/en-harmony-method/headspa/","first_party":true,"verified_facts":["Deep Care Method","consultation/observation/touch before treatment","method sequence","salon booking links"]},
+    {"company":"uka","url":"https://uka.co.jp/news/37180/","first_party":true,"verified_facts":["2026-05 head-spa renewal","method grew from refined shampoo technique","three menu directions"]},
+    {"company":"uka","url":"https://uka.co.jp/salons/","first_party":true,"verified_facts":["total beauty salon context","Headspa service category"]},
+    {"company":"uka","url":"https://uka.co.jp/salons/midtown/","first_party":true,"verified_facts":["online/phone reservation","store/access/operating context"]},
+    {"company":"uka","url":"https://uka.co.jp/ukakau/c0199652/","first_party":true,"volatile":true,"verified_facts":["current Total Care price","AI diagnosis/counseling and sequenced care process","eligible salons"]}
+  ],
+  "policy": {
+    "volatile_truth": "Prices, menus, stores, campaigns and operating details must be re-verified on implementation date.",
+    "rights": "Public visibility on an official site does not establish reuse rights for images or media.",
+    "selection": "Source richness/asset availability did not determine Creative Family or company selection."
+  }
+}

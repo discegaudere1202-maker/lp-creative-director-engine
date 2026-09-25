@@ -1,0 +1,169 @@
+{
+  "schema_version": "issue57_reference_company_validation_contract_v1",
+  "reference_id": "RC57-03",
+  "company": "uka",
+  "issue49_case_id": "V49-08",
+  "retrieved_at": "2026-09-25",
+  "role": "Reference Company #3",
+  "company_identity": {
+    "context": "total beauty salon / head spa / hands-on care method",
+    "official_domain": "uka.co.jp",
+    "first_party_sources": [
+      {"url":"https://uka.co.jp/our-philosophy/en-harmony-method/headspa/","role":"Deep Care Method, consultation/diagnosis, method sequence and booking routes"},
+      {"url":"https://uka.co.jp/news/37180/","role":"2026 head-spa renewal, origin of method and three current menu directions"},
+      {"url":"https://uka.co.jp/salons/","role":"salon/service context"},
+      {"url":"https://uka.co.jp/salons/midtown/","role":"salon access, online/phone reservation and facility truth"},
+      {"url":"https://uka.co.jp/ukakau/c0199652/","role":"current Total Care menu price, process and eligible stores"}
+    ]
+  },
+  "verified_company_truth": [
+    "uka describes its head spa as a method developed by refining salon shampoo/hand techniques over time.",
+    "The Deep Care Method connects muscle, blood-flow, scalp and hair as a care concept and starts with consultation/observation/touch before the treatment sequence.",
+    "Current official material presents multiple head-spa directions, including regenerative, total-care and dry-spa options, selected by concern/purpose.",
+    "The Total Care menu currently includes AI diagnosis/counseling followed by a sequenced hands-on care process and is listed for specific salons.",
+    "Official salon pages provide online/phone reservation routes and concrete store information.",
+    "Sensory relaxation is material, but the first-party story repeatedly makes technique, practitioner judgment and accumulated method part of the service value."
+  ],
+  "customer_decision_state": {
+    "before": "The customer understands head spa as a category but must decide whether uka's practitioner-led method and care philosophy are credible and relevant to their concern.",
+    "first_persuasive_job": "make human technique, accumulated method and practitioner judgment indispensable to trust before asking the customer to book",
+    "after": "The customer understands what the method is, how consultation relates to the sequence, which care direction may fit, and can choose a salon/menu booking route.",
+    "decision_job_signal": "human craft/provenance leads; process proof and sensory experience support"
+  },
+  "creative_fit": {
+    "schema_version": "creative_fit_profile_v1",
+    "score_semantics": "Issue #49 expert ordinal strength; not probability or learned runtime weight",
+    "dimensions": {
+      "premium_authority_need": 0.80,
+      "warmth": 0.75,
+      "naturalness": 0.85,
+      "clinical_expertise": 0.55,
+      "craftsmanship": 0.95,
+      "modernity": 0.75,
+      "softness": 0.85,
+      "calmness": 0.85,
+      "boldness": 0.35,
+      "intimacy": 0.85,
+      "local_relationship_weight": 0.35,
+      "desired_state_change_intensity": 0.75,
+      "trust_requirement": 0.80,
+      "decision_commitment_pressure": 0.55,
+      "owner_personality_importance": 0.65,
+      "visual_storytelling_need": 0.80,
+      "information_density_need": 0.75,
+      "emotional_purchase_weight": 0.85,
+      "category_education_need": 0.40,
+      "choice_guidance_need": 0.75,
+      "process_inspectability_need": 0.95,
+      "sensory_experience_weight": 0.90,
+      "human_relationship_weight": 0.90
+    },
+    "expected_dominant_family": "BW-F04",
+    "secondary_influence": ["BW-F06"],
+    "acceptable_alternatives": ["BW-F06", "BW-F01"],
+    "prohibited_or_misfit": ["BW-F07"],
+    "source_refs": ["artifacts/issue49_riko/creative_fit_expected_labels.json#V49-08", "artifacts/issue49_riko/validation_company_registry.json#V49-08"]
+  },
+  "family_inference_trace": {
+    "collision_surfaces": [
+      {"pair":["BW-F04","BW-F06"],"resolution":"Human technique/provenance is the meaning carrier; method/process proof supports it rather than becoming the sole efficacy story."},
+      {"pair":["BW-F01","BW-F04"],"resolution":"Sensory relaxation is strong, but atmosphere is not sufficient to explain why uka should be chosen; practitioner technique and accumulated method are indispensable."}
+    ],
+    "expected_ambiguity": "MODERATE",
+    "human_review_trigger": "If inference becomes process-only (F06) or atmosphere-only (F01), inspect whether human technique/provenance has been lost before rendering."
+  },
+  "production_feasibility": {
+    "schema_version": "production_feasibility_profile_v1",
+    "stage": "POST_FAMILY_FREEZE_ONLY",
+    "may_change_family": false,
+    "dimensions": {
+      "photo_asset_quantity": 0.85,
+      "evidence_quantity_available": 0.90,
+      "scraping_difficulty": 0.20,
+      "source_coverage": 0.95,
+      "rights_clarity": 0.20,
+      "staff_photo_availability": 0.45,
+      "facility_photo_availability": 0.80,
+      "pricing_completeness": 0.90,
+      "social_proof_availability": 0.20
+    },
+    "notes": [
+      "Official visual abundance is not permission to reuse copyrighted imagery and did not influence the Family decision.",
+      "If actual practitioner/facility media cannot be used, realization must adapt without switching away from BW-F04.",
+      "Current prices, menus, stores and campaign details must be re-verified at implementation time; temporary campaign content is not core Company Truth."
+    ]
+  },
+  "module_composition_hypotheses": {
+    "accepted_registry_only": true,
+    "dominant_family_compatible": ["M-STORY-01", "M-HUMAN-01", "M-GALLERY-01", "M-CTA-01"],
+    "secondary_family_candidates_requiring_compatibility_check": ["M-PROCESS-01", "M-TRUST-02"],
+    "required_emphasis": [
+      "Open with practitioner/method authorship rather than category education or a generic spa mood board.",
+      "Use causal business/method story to connect consultation, hands-on technique and the care philosophy.",
+      "Use human relationship evidence only when the human context is rights-safe and not fabricated.",
+      "Atmosphere may support the decision but must not replace method/provenance.",
+      "CTA must emerge from method/menu understanding into a concrete salon booking route."
+    ],
+    "registry_gap_note": "The accepted registry has no F04-specific HERO pattern. This is not evidence for a new Family or permission to invent a fixed hero template; Rin should author the opening from F04 decision logic and compatible story/human/atmosphere grammar, preserving human review.",
+    "not_a_fixed_order": true
+  },
+  "composition_difference_requirements": {
+    "vs_nagi": [
+      "Same head-spa-adjacent category must NOT inherit Nagi's BW-F08 recognition/category-education hero or three-service routing structure.",
+      "First view must signal authored technique/method trust, not 'what is head spa / which category do I choose'.",
+      "Replace Nagi's service-routing center of gravity with method provenance, human technique and sequenced care meaning.",
+      "Do not repeat Nagi's generic pale-wellness/editorial gestalt, rounded-photo rhythm and abstract calm copy as the universal visual grammar."
+    ],
+    "vs_company_02_regina": [
+      "uka should not lead with a clinical boundary ledger or institutional risk-density field.",
+      "Evidence should feel embodied in technique/process/provenance rather than medical eligibility and risk control.",
+      "Human/sensory media can carry meaning when provenance/rights are safe; Regina's media must stay subordinate to clinical boundaries.",
+      "uka CTA can move from method/menu fit into salon booking; Regina CTA moves from reassurance into free counseling."
+    ]
+  },
+  "media_roles_needed": [
+    "hands-on technique detail without implying a named real practitioner unless verified",
+    "consultation/scalp-check context showing the relationship between diagnosis and care",
+    "salon environment as authored atmosphere, not generic spa stock",
+    "product/material/tool detail that supports the method story",
+    "care-sequence visual or diagram where steps are first-party verified"
+  ],
+  "evidence_safety_constraints": [
+    "Do not fabricate staff identities, customer testimonials or actual-salon scenes.",
+    "Do not turn wellness wording into medical diagnosis, treatment or guaranteed outcome claims.",
+    "Do not present generated hands/people as documentary proof of uka's actual practitioners.",
+    "Use current menu names, prices, eligible stores and reservation routes only when re-verified for the implementation date.",
+    "If rights-safe human imagery is unavailable, preserve F04 through copy/composition/provenance logic rather than switching Family or faking human proof."
+  ],
+  "expected_cta_logic": {
+    "primary": "ヘッドスパの内容を理解して対象サロンで予約する",
+    "secondary": "メニュー・店舗・料金を確認する",
+    "choreography": "method/provenance → consultation/process meaning → menu direction → salon-specific booking"
+  },
+  "human_visible_risks": [
+    "A generic wellness editorial treatment could look nearly identical to Nagi despite a different Family.",
+    "Over-indexing on process diagrams could collapse F04 into BW-F06.",
+    "Over-indexing on scent/relaxation imagery could collapse F04 into BW-F01.",
+    "Rights-constrained media may tempt synthetic practitioner proof; this must be blocked.",
+    "Intermediate widths must preserve authored media crops; Issue #55 showed that technically green framing can still look mechanically adapted."
+  ],
+  "template_swap_failure_conditions": [
+    "Nagi's BW-F08 hero/module sequence is retained and only copy/media are swapped.",
+    "The same pale field + rounded photography + serif + beige-pill + large-whitespace grammar dominates without a company-specific method/provenance composition thesis.",
+    "Three equal service/menu cards become the primary structure even though human method trust is the first persuasive job.",
+    "Family metadata says BW-F04 but the screenshot gestalt reads like generic wellness or Nagi's open-discovery flow.",
+    "Production Feasibility or available image count changes the expected Family."
+  ],
+  "rin_validation_contract": {
+    "expected_family": "BW-F04",
+    "expected_secondary": ["BW-F06"],
+    "acceptable_alternatives": ["BW-F06", "BW-F01"],
+    "family_must_freeze_before_feasibility": true,
+    "must_not_emit_layout_id": true,
+    "minimum_required_grammar_evidence": ["M-STORY-01", "M-HUMAN-01", "M-CTA-01"],
+    "secondary_process_requirement": "If M-PROCESS-01 is used from BW-F06 secondary influence, record the explicit secondary-family compatibility rationale rather than silently treating it as F04 primary grammar.",
+    "counterfactual": "Run at least one rights-constrained/no-practitioner-photo feasibility profile and assert dominant Family remains BW-F04.",
+    "visual_evidence_widths": [320,360,375,390,430,768,1024,1280,1440],
+    "human_review_required": ["F04 vs F06 collision", "F04 vs F01 collision", "human-evidence authenticity", "template resemblance vs Nagi", "responsive media authorship"]
+  }
+}

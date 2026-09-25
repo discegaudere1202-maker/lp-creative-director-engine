@@ -1,0 +1,62 @@
+{
+  "schema_version": "issue57_cross_company_transfer_matrix_v1",
+  "issue": 57,
+  "status": "COMPLETE",
+  "references": [
+    {"id":"RC01","company":"なぎのみらい","family":"BW-F08","secondary":[],"decision_job":"category education/open discovery before service choice","cta":"Instagram consultation / choose service route","core_grammar":["M-HERO-01","M-PROBLEM-01","M-SERVICE-01","M-CTA-01"]},
+    {"id":"RC57-02","company":"レジーナクリニック","family":"BW-F02","secondary":["BW-F06"],"decision_job":"reduce safety/suitability/wrong-choice anxiety before commitment","cta":"book free counseling","core_grammar":["M-HERO-02","M-TRUST-01","M-PROCESS-01","M-CTA-01"]},
+    {"id":"RC57-03","company":"uka","family":"BW-F04","secondary":["BW-F06"],"decision_job":"trust human technique/provenance and accumulated method before booking","cta":"understand method/menu then book a salon","core_grammar":["M-STORY-01","M-HUMAN-01","M-CTA-01"]}
+  ],
+  "required_variation": {
+    "hero_silhouette": {
+      "RC01":"recognition/open-discovery first view",
+      "RC57-02":"evidence/reassurance first view with visible boundaries",
+      "RC57-03":"human-method authorship first view; no F04 fixed hero template",
+      "failure":"three pages retain the same hero geometry with only copy/media swaps"
+    },
+    "section_topology": {
+      "RC01":"problem recognition → intent/service routing → next event",
+      "RC57-02":"suitability/boundary → counseling/process → proof/plan context → counseling commitment",
+      "RC57-03":"method provenance → human technique/process meaning → menu direction → salon booking",
+      "failure":"identical scene order or same number/type of rounded cards drives all pages"
+    },
+    "trust_logic": {
+      "RC01":"clarity and approachable first step",
+      "RC57-02":"clinical boundaries, physician/counseling flow, risk/process transparency",
+      "RC57-03":"practitioner technique, accumulated method, provenance and embodied process",
+      "failure":"all pages use testimonials/atmosphere as generic trust substitute"
+    },
+    "media_role": {
+      "RC01":"sensory/human context supporting category recognition",
+      "RC57-02":"process/facility/clinical context subordinate to verified medical boundaries",
+      "RC57-03":"hands-on technique, consultation, material/salon atmosphere supporting provenance",
+      "failure":"same stock-photo framing/crop rhythm or generated people presented as documentary truth"
+    },
+    "density_rhythm": {
+      "RC01":"open and low-pressure with clear routing",
+      "RC57-02":"higher factual density but distributed and scannable",
+      "RC57-03":"editorial breathing room interrupted by method/process detail",
+      "failure":"same whitespace cadence and typography scale across all three"
+    },
+    "cta_choreography": {
+      "RC01":"choose a relevant service route then consult",
+      "RC57-02":"reassurance and process clarity before free-counseling CTA",
+      "RC57-03":"method/menu understanding before salon-specific booking",
+      "failure":"same universal sticky CTA is the only conversion logic"
+    }
+  },
+  "invariance_checks_required_for_next_rin_task": [
+    "Change only Production Feasibility for RC57-02; inferred Family must remain BW-F02.",
+    "Change only Production Feasibility for RC57-03; inferred Family must remain BW-F04.",
+    "Remove reusable practitioner/facility imagery while preserving truth; Family must not switch.",
+    "No Family may map to a fixed layout_id.",
+    "Nagi and uka must remain visibly distinct despite shared head-spa-adjacent context.",
+    "Cross-company resemblance review must use screenshot gestalt and structure, not color/photo differences alone."
+  ],
+  "human_visible_comparison_gate": {
+    "dimensions":["screenshot_gestalt","hero_silhouette","section_topology","module_sequence","dominant_grid","typography_hierarchy","media_framing","whitespace_density_rhythm","material_grammar","cta_choreography","responsive_authorship"],
+    "numeric_threshold": null,
+    "rule":"human review required; token/color/photo/logo/copy swaps alone cannot establish uniqueness"
+  },
+  "coverage_conclusion":"The three-reference set deliberately covers BW-F08, BW-F02 and BW-F04 with materially different decision jobs, including a same-adjacent-category Nagi↔uka control. This is sufficient for the next controlled transfer validation cycle; it does not prove universal Production lock across all eight Families."
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "issue57_contract_check_v1",
+  "status": "PASS",
+  "checks": [
+    {"id":"C01","requirement":"exactly two additional Reference Companies selected","result":"PASS","evidence":"RC57-02 Regina Clinic and RC57-03 uka"},
+    {"id":"C02","requirement":"selection optimizes transfer-validation coverage rather than asset convenience","result":"PASS","evidence":"selection rationale uses decision-state/Family/composition contrast; feasibility stored post-selection"},
+    {"id":"C03","requirement":"first-party source provenance present for both companies","result":"PASS","evidence":"source_provenance_registry.json + per-company source lists"},
+    {"id":"C04","requirement":"verified Company Truth summarized separately from Production Feasibility","result":"PASS"},
+    {"id":"C05","requirement":"accepted 23 Creative Fit dimensions represented","result":"PASS","evidence":"both contracts preserve Issue #49 expert ordinal profiles"},
+    {"id":"C06","requirement":"expected dominant/secondary/alternatives/misfits explicit","result":"PASS","evidence":"Regina F02/F06; uka F04/F06 with explicit alternatives/collisions"},
+    {"id":"C07","requirement":"family inference trace and ambiguity expectation specified","result":"PASS"},
+    {"id":"C08","requirement":"Production Feasibility cannot change expected Family","result":"PASS","evidence":"post-family-freeze profiles + Rin counterfactual requirements"},
+    {"id":"C09","requirement":"module/composition hypotheses use accepted registry rather than fixed layouts","result":"PASS","evidence":"module_composition_registry_v1 pattern IDs only; no layout_id"},
+    {"id":"C10","requirement":"cross-company composition differences explicit vs Nagi and between new companies","result":"PASS","evidence":"cross_company_transfer_matrix.json"},
+    {"id":"C11","requirement":"media roles and evidence/safety constraints explicit","result":"PASS"},
+    {"id":"C12","requirement":"CTA logic explicit for both companies","result":"PASS"},
+    {"id":"C13","requirement":"human-visible risks explicit","result":"PASS"},
+    {"id":"C14","requirement":"template-swap failure conditions explicit","result":"PASS"},
+    {"id":"C15","requirement":"Rin-facing implementation/validation contract is sufficient without Shun clarification","result":"PASS","evidence":"JSON + Markdown handoff with expected families, grammar, QA, evidence widths and safety boundaries"},
+    {"id":"C16","requirement":"preserve accepted eight-family taxonomy unless real gap appears","result":"PASS","evidence":"no taxonomy gap found; F04 hero absence recorded as registry coverage boundary only"},
+    {"id":"C17","requirement":"no numeric Template Resemblance threshold introduced","result":"PASS"},
+    {"id":"C18","requirement":"research task makes no Production code changes","result":"PASS","evidence":"Issue #57 branch artifacts/docs only"},
+    {"id":"C19","requirement":"closure report records uncertainty and recommended next Rin task","result":"PASS"},
+    {"id":"C20","requirement":"required deliverables are present","result":"PASS","evidence":"selection; company 02/03 contracts; matrix; Rin handoff md/json; closure md/json"}
+  ],
+  "result_summary": "20 / 20 PASS",
+  "ready_condition": "Own-scope research/specification PASS; PR-level generic QA and PM-OPS must also be green before Ready for Review.",
+  "routing": "Riko complete → Sarah audit → if PASS, Rin controlled Production transfer implementation. Do not merge from this task."
+}
