@@ -1,0 +1,96 @@
+{
+  "schema_version": "issue66_family_expansion_contract_v1",
+  "issue": 66,
+  "family_id": "BW-F03",
+  "family_name": "Editorial High-Consideration / Aspirational Authority",
+  "status": "RIN_READY_AFTER_SARAH_AUDIT",
+  "customer_decision_state": "The customer is high-consideration and aspirational: authored status, desired self-image or specialist authority creates desire, but rational proof must survive into commitment.",
+  "first_persuasive_job": "Establish credible aspirational authority, then translate that authority into proof, offer confidence and a state-appropriate commitment path.",
+  "dominant_fit_drivers": ["premium_authority_need", "visual_storytelling_need", "emotional_purchase_weight", "decision_commitment_pressure", "desired_state_change_intensity"],
+  "fit_boundary": "Premium visuals alone do not qualify. The Family is selected when aspirational/editorial authority is genuinely part of the decision and must persist into rational commitment. Feasibility never chooses the Family.",
+  "reference_companies": [
+    {
+      "case_id": "V49-05",
+      "company": "kakimoto arms",
+      "official_url": "https://kakimoto-arms.com/",
+      "expected_dominant": "BW-F03",
+      "secondary": ["BW-F04"],
+      "acceptable_alternatives": ["BW-F04"],
+      "decision_state": "Customer is high-consideration and aspirational, seeking both authorship and specialist proof.",
+      "within_family_distinctiveness": "Specialist portfolio/editorial craft and collaborative expertise can carry authority; proof should resolve into practitioner/specialist confidence."
+    },
+    {
+      "case_id": "V49-06",
+      "company": "pilates K",
+      "official_url": "https://pilates-k.jp/aboutus",
+      "expected_dominant": "BW-F03",
+      "secondary": ["BW-F01"],
+      "acceptable_alternatives": ["BW-F01"],
+      "decision_state": "Customer is motivated by desired self-image and needs enough program proof to commit.",
+      "within_family_distinctiveness": "Transformation imagery, contemporary studio energy and program states must differ materially from kakimoto's specialist/editorial portfolio logic."
+    }
+  ],
+  "compatible_module_grammar": [
+    {"pattern_id": "M-TRUST-02", "role": "distributed proof that sustains authority beyond the opening"},
+    {"pattern_id": "M-STORY-01", "role": "causal/authorship story only when verified"},
+    {"pattern_id": "M-GALLERY-01", "role": "authored media/atmosphere with a decision role"},
+    {"pattern_id": "M-OFFER-01", "role": "verified commitment ladder"},
+    {"pattern_id": "M-CTA-01", "role": "state-specific consultation/trial/booking action"},
+    {"pattern_id": "M-END-02", "role": "emotional resolution without unsupported status promise"}
+  ],
+  "registry_boundary": {
+    "dedicated_f03_hero_pattern_exists": false,
+    "required_behavior": "Do not create a fixed F03 hero template to fill this gap. Author the first view from verified aspirational authority + compatible gallery/story/proof grammar, then human-review screenshot gestalt and hero silhouette."
+  },
+  "prohibited_or_misfit_grammar": [
+    "luxury photography or huge type as the sole basis for F03",
+    "generic magazine/editorial shell reused across companies",
+    "F04 provenance/craft story dominating when maker/process is actually the gating trust mechanism",
+    "F01 atmosphere-led opening when sensory state rather than authority is the first job",
+    "proof wall that destroys the aspirational opening instead of staging a deliberate handoff"
+  ],
+  "art_direction_contract": {
+    "hero": "Create a company-specific authority silhouette from specialist authorship, transformation aspiration or brand worldview. No family-level fixed hero is allowed.",
+    "media": "Use portfolio, specialist, transformation, studio or authored brand-world media only with safe provenance. Media must establish authority or desired self-image, not simply look premium.",
+    "typography": "Editorial scale shifts, controlled asymmetry and high-contrast hierarchy are allowed when they express actual authority. Repeated generic luxury serif treatment across references is a template failure.",
+    "density": "Low-to-medium early density; proof and offer specificity increase as commitment approaches. Preserve a deliberate authority→proof→commitment handoff.",
+    "cta": "Consultation/trial/booking CTA should feel like the next rational step after authority/proof, not a disconnected sales button.",
+    "responsive": "Mobile must preserve authored hierarchy and authority rather than flattening into a generic stacked landing page. 320–430px optical Japanese line composition is a hard human-visible gate."
+  },
+  "collision_rules": [
+    {
+      "against": "BW-F04",
+      "discriminator": "F03 when premium/aspirational authority and authored visual status lead; F04 when authority must resolve first into human/material provenance and craft process.",
+      "human_review_trigger": "premium authority is inseparable from a founder/maker narrative"
+    },
+    {
+      "against": "BW-F01",
+      "discriminator": "F03 when aspirational status/desired self-image leads; F01 when sensory experience/lifestyle fit leads.",
+      "human_review_trigger": "sensory worldview and premium authority are co-equal in the verified decision state"
+    },
+    {
+      "against": "BW-F06",
+      "discriminator": "F03 when authority/desire leads and proof supports commitment; F06 when mechanism/process credibility is the gating question from the outset.",
+      "human_review_trigger": "specialist authority and mechanism efficacy must both be proven before any persuasive progress"
+    }
+  ],
+  "anti_template_requirements": [
+    "kakimoto arms and pilates K must not share hero silhouette, grid, proof sequence, image masks or CTA rhythm merely because both are F03.",
+    "Compared with uka F04, kakimoto may share human expertise but must lead with aspirational/specialist authority rather than provenance intimacy.",
+    "Compared with F01, pilates K can use emotional/transformation media but must preserve an authority/proof/commitment handoff rather than atmospheric rest grammar.",
+    "The absence of a dedicated F03 hero pattern increases human-review importance; it does not authorize a new fixed template.",
+    "Color/photo/logo/copy substitution alone is a template-swap failure."
+  ],
+  "production_feasibility_separate_profile": {
+    "required": true,
+    "may_change_family": false,
+    "allowed_effect": "After Family freeze, may safely alter media realization and proof placement according to rights/evidence availability while preserving the authority→proof→commitment logic."
+  },
+  "phase_c_validation": {
+    "required_reference_count": 2,
+    "all_required_widths": [320,360,375,390,430,768,1024,1280,1440],
+    "within_family_pair_test": true,
+    "cross_family_comparison_targets": ["uka/BW-F04", "BW-F01 selected references", "Regina/BW-F02"],
+    "human_visible_required": true
+  }
+}
