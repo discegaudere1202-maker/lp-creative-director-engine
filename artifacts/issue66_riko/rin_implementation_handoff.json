@@ -1,0 +1,80 @@
+{
+  "schema_version": "issue66_rin_implementation_handoff_v1",
+  "issue": 66,
+  "status": "READY_AFTER_SARAH_RESEARCH_AUDIT",
+  "owner_next": "rin",
+  "parent": 43,
+  "upstream_main_sha": "4fb77f0aa22fd747e3771fcd585e6c47e9f5912c",
+  "implementation_objective": "Expand accepted Production Architecture to BW-F05, BW-F07, BW-F01 and BW-F03 through generalizable family logic, two controlled references per Family, and cross-family human-visible evidence without fixed templates or company lookup.",
+  "binding_inputs": [
+    "artifacts/issue66_riko/family_priority_matrix.json",
+    "artifacts/issue66_riko/reference_company_registry.json",
+    "artifacts/issue66_riko/family_f05_guided_choice_contract.json",
+    "artifacts/issue66_riko/family_f07_local_human_contract.json",
+    "artifacts/issue66_riko/family_f01_sensory_contract.json",
+    "artifacts/issue66_riko/family_f03_aspirational_authority_contract.json",
+    "artifacts/issue66_riko/cross_family_collision_matrix.json",
+    "artifacts/issue66_riko/cross_family_screenshot_evidence_plan.json",
+    "artifacts/issue66_riko/staged_rollout_plan.json"
+  ],
+  "rollout_order": ["BW-F05","BW-F07","BW-F01","BW-F03"],
+  "reference_contracts": {
+    "BW-F05":["V49-09 POLA APEX","V49-10 FANCL"],
+    "BW-F07":["V49-13 Lino Hair","V49-14 Barbaro"],
+    "BW-F01":["V49-01 THREE","V49-02 BAUM"],
+    "BW-F03":["V49-05 kakimoto arms","V49-06 pilates K"]
+  },
+  "required_runtime_behavior": [
+    "infer Family from verified Company Truth + customer decision state + accepted Creative Fit dimensions",
+    "hard-fail feasibility leakage during inference",
+    "apply accepted and Issue66 collision rules; unresolved co-dominance returns HUMAN_REVIEW_REQUIRED",
+    "freeze dominant Family before Production Feasibility",
+    "select compatible composition grammar from the registry; never map Family to one layout",
+    "derive public scene semantics from frozen Family + decision job + company truth, not a shared generic five-scene sequence",
+    "record provenance/rationale for every secondary-family module used"
+  ],
+  "required_reference_execution": [
+    "two materially distinct outputs per Family",
+    "at least one lower-asset/rights-constrained feasibility counterfactual per reference with dominant Family invariant",
+    "nine full-page widths per reference: 320/360/375/390/430/768/1024/1280/1440",
+    "browser/overflow/line geometry checks",
+    "cross-family comparison package including accepted Nagi/Regina/uka references",
+    "deterministic proof architecture decisions affect rendered composition, not metadata only"
+  ],
+  "phase_b_failure_prevention_locks": [
+    "Do not reuse the same generic public five-scene progression across different decision jobs.",
+    "Hero, at least one core mid-scene, trust/decision scene and closing/CTA logic must be company/family authored.",
+    "320px Japanese headings/CTAs must reject isolated particles, isolated noun fragments and one-character final-line orphans.",
+    "Responsive media framing must be human-reviewed at 768/1024 in addition to automated overflow checks."
+  ],
+  "family_specific_minimums": {
+    "BW-F05":"M-HERO-03 + route/diagnostic grammar; no equal-card default; prove F05 vs F08/F02.",
+    "BW-F07":"place/relationship decision relevance visible; prove F07 vs F04; safe media fallback cannot switch Family.",
+    "BW-F01":"sensory thesis must carry desire; shared M-HERO-01 cannot create F07/F08 silhouette reuse; proof handoff remains bounded.",
+    "BW-F03":"no dedicated Hero pattern exists; author first view from authority decision job and compatible grammar; no generic luxury/editorial template."
+  },
+  "forbidden": [
+    "company name/case ID to Family lookup",
+    "Family to fixed layout or fixed Hero template",
+    "asset scarcity changing Family",
+    "using official-site visible media without rights basis",
+    "fabricating real staff/customer evidence",
+    "numeric Template Resemblance threshold",
+    "CI-only Human-visible PASS",
+    "weakening/skipping tests to obtain green QA"
+  ],
+  "qa_required": [
+    "dedicated Phase C family tests",
+    "Issue #51 selector regression",
+    "Issue #53 Nagi regression",
+    "Issue #59 Regina/uka transfer regression",
+    "generic LP Engine QA",
+    "all-width line/overflow/browser QA",
+    "PM-OPS Ready-for-Review",
+    "Aoi independent human-visible cross-family review after Sarah technical audit"
+  ],
+  "completion_report_fields": [
+    "Final HEAD","workflow runs","tests","family inference traces","feasibility counterfactuals","screenshot inventory","browser/line QA","cross-family comparison artifact ID/digest","changed-file inventory","known human-visible risks"
+  ],
+  "scope_boundary":"Issue #66 itself authorizes research/specification only. Implementation starts only after Sarah PASS/routing."
+}
