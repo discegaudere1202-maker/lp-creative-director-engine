@@ -1,0 +1,58 @@
+{
+  "schema_version": "issue66_staged_rollout_plan_v1",
+  "issue": 66,
+  "status": "PROPOSED_IMPLEMENTATION_ORDER",
+  "selection_basis": "Maximize architecture-learning value while preserving accepted Phase B behavior; do not rank by asset convenience.",
+  "waves": [
+    {
+      "wave": 1,
+      "family_id": "BW-F05",
+      "references": ["POLA APEX","FANCL"],
+      "why_first": "Highest collision-learning value because F05 is adjacent to both already-proven F08/Nagi and F02/Regina, while the accepted registry already contains explicit guided-choice Hero/service grammar.",
+      "implementation_focus": ["runtime inference F05 vs F08/F02","guided-choice composition without equal-card default","diagnostic/routing CTA choreography","within-family topology variation"],
+      "exit_gate": "Both references infer F05 from general logic; family remains frozen under feasibility counterfactuals; screenshots are distinct from each other, Nagi and Regina."
+    },
+    {
+      "wave": 2,
+      "family_id": "BW-F07",
+      "references": ["Lino Hair","Barbaro"],
+      "why_second": "Tests the accepted F04/F07 boundary against uka and expands Production into local/community relationship logic with low similarity to clinical/diagnostic families.",
+      "implementation_focus": ["locality decision relevance not generic warmth","place/human evidence adjacency","relationship-led hero and visit CTA","F07 vs F04 human-review boundary"],
+      "exit_gate": "Local relationship is visibly decision-relevant; outputs do not mimic uka craft/provenance or generic salon templates; safe fallback preserves F07 if human imagery is unavailable."
+    },
+    {
+      "wave": 3,
+      "family_id": "BW-F01",
+      "references": ["THREE","BAUM"],
+      "why_third": "Expands to sensory/atmosphere-led desire while explicitly testing shared M-HERO-01 compatibility against F07/F08 and the F01/F04 collision.",
+      "implementation_focus": ["sensory thesis before dense explanation","meaning-bearing atmosphere/media","F01 vs F04/F03 boundary","avoid beige-wellness visual shortcut"],
+      "exit_gate": "Sensory decision job is visible without relying on color palette; THREE and BAUM differ in pacing, hero and proof handoff; Nagi/F07 recognition hero silhouettes are not reused."
+    },
+    {
+      "wave": 4,
+      "family_id": "BW-F03",
+      "references": ["kakimoto arms","pilates K"],
+      "why_fourth": "High value but highest human-authorship risk: accepted registry has no dedicated F03 Hero pattern, so authority must be authored without creating a new fixed family template.",
+      "implementation_focus": ["authority-to-proof-to-commitment handoff","company-specific hero authorship","F03 vs F04/F01/F06 collision handling","mobile editorial hierarchy"],
+      "exit_gate": "Both references infer F03 while producing materially different authority silhouettes and proof rhythms; no generic luxury/editorial shell emerges."
+    }
+  ],
+  "deferred_next_wave": {
+    "family_id": "BW-F06",
+    "name": "Proof-Led Process Authority",
+    "reason": "Still requires dominant-F06 Production validation, but Phase B already exercised F06 as secondary/collision context for Regina and uka. Its incremental Phase C architecture coverage is lower than the four selected families.",
+    "must_not_be_interpreted_as": ["taxonomy rejection","low-value family","permission to weaken F06 collision logic"],
+    "recommended_followup": "Productionize F06 after Phase C four-family expansion or earlier only if Phase C reveals a mechanism-proof blocker that cannot be resolved through existing secondary logic."
+  },
+  "global_wave_gates": [
+    "preserve Nagi/Regina/uka accepted regression",
+    "no company/case lookup",
+    "no Family-to-fixed-layout mapping",
+    "Creative Fit and Production Feasibility hard-separated",
+    "all required widths captured",
+    "generic LP Engine QA green",
+    "family-specific QA green",
+    "PM-OPS green",
+    "human-visible review before declaring non-template success"
+  ]
+}
