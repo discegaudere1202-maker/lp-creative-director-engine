@@ -1,0 +1,42 @@
+{
+  "schema_version": "issue87_migration_map_v1",
+  "status": "IMPLEMENTATION_READY_SPEC",
+  "objective": "Replace identity/category/profile shortcuts with inference-driven authored CompositionPlan while preserving accepted reference behavior as regression evidence only.",
+  "observed_current_targets": [
+    {
+      "path": "src/lp_engine/controlled_production.py",
+      "target": "nagi_reference_input / run_controlled_nagi_production / _select_module_grammar",
+      "current_role": "narrow accepted reference adapter and compatible grammar selection",
+      "migration": "keep fixture/reference data in test/evidence scope; route production through generic AuthoringInput -> CompositionPlanner -> CompositionPlan without reference identity selection"
+    },
+    {
+      "path": "src/lp_engine/production_generation.py",
+      "target": "_industry_visual_direction",
+      "current_role": "service-category keyword -> visual family/profile/authority/scene shortcut for field validation",
+      "migration": "remove this shortcut from final composition/profile selection; category may remain factual context but must not directly choose CompositionPlan topology/profile"
+    },
+    {
+      "path": "src/lp_engine/production_generation.py",
+      "target": "_layout_profile",
+      "current_role": "goal/authority/category -> renderer layout profile",
+      "migration": "derive rendering form from CompositionPlan scene/topology/media/density/CTA intents; no Family/category/company -> fixed profile"
+    }
+  ],
+  "stages": [
+    {"stage":0,"name":"freeze_regressions","behavior":"Nagi/Regina/uka and accepted Phase C outputs remain immutable regression fixtures/evidence, never runtime routing keys."},
+    {"stage":1,"name":"shadow_plan","behavior":"Generate CompositionPlan beside legacy render path; compare decisions, public semantics and traces without changing production output."},
+    {"stage":2,"name":"reference_planner_validation","behavior":"Route accepted references through planner using truth/decision/Fit/grammar inputs with identity routing disabled; compare screenshots/traces against accepted intent."},
+    {"stage":3,"name":"generic_planner_primary","behavior":"CompositionPlan becomes the only production composition input; renderer consumes plan rather than category/company/reference profile maps."},
+    {"stage":4,"name":"delete_runtime_shortcuts","behavior":"Delete/deactivate identity/category-keyed composition routing and add static/behavioral tests forbidding reintroduction."},
+    {"stage":5,"name":"retain_test_fixtures_only","behavior":"Reference ids/slugs remain permitted only in tests, artifact paths and audit labels, never in planner selection logic."}
+  ],
+  "compatibility_rule": "Migration may preserve lower-level renderer implementations where useful, but their selection must be justified by CompositionPlan intent rather than identity/category/Family lookup.",
+  "rollback_rule": "If planner output cannot preserve an accepted decision/trust contract, stop and return to research/implementation review; do not silently call the legacy identity/category fallback.",
+  "completion_tests": [
+    "static search finds no runtime company/reference lookup selecting layout/profile",
+    "behavioral mutation of company_id/reference_id with identical semantic inputs does not change CompositionPlan",
+    "changing decision state with same company identity can change CompositionPlan",
+    "same Family + different decision/company truth can produce materially different plan semantics",
+    "Production Feasibility changes realization only after Family freeze"
+  ]
+}
