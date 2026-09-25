@@ -46,6 +46,54 @@ def test_issue59_family_driven_public_scene_semantics_diverge_without_company_lo
     assert "手技の積み重ね" in (tmp_path / "uka" / "site" / "index.html").read_text(encoding="utf-8")
 
 
+def test_uka_320_optical_line_composition_keeps_hero_unit_and_cta_intact(tmp_path):
+    """The narrow Sarah return is covered by rendered Chromium geometry, not metadata."""
+    contract = next(item for item in load_reference_contracts() if item["company_id"] == "uka")
+    result = run_reference_company(contract, tmp_path / contract["company_id"])
+    html_path = Path(result["site"]) / "index.html"
+
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        page = browser.new_page(viewport={"width": 320, "height": 800})
+        page.goto(html_path.as_uri(), wait_until="load")
+        evidence = page.evaluate(
+            """() => {
+                function lines(el) {
+                  const text = el.innerText.replace(/\\s+/g, '');
+                  const rows = [];
+                  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+                  let node;
+                  while (node = walker.nextNode()) {
+                    for (let i = 0; i < node.length; i++) {
+                      const ch = node.data[i];
+                      if (/\\s/.test(ch)) continue;
+                      const range = document.createRange();
+                      range.setStart(node, i); range.setEnd(node, i + 1);
+                      const rect = range.getBoundingClientRect();
+                      let row = rows.find(item => Math.abs(item.top - rect.top) <= 2);
+                      if (!row) { row = {top: rect.top, chars: []}; rows.push(row); }
+                      row.chars.push(ch);
+                    }
+                  }
+                  return rows.sort((a,b) => a.top - b.top).map(row => row.chars.join(''));
+                }
+                const hero = document.querySelector('h1');
+                const cta = [...document.querySelectorAll('a.button')].find(a => a.innerText.includes('メニューを見てサロンを予約する'));
+                return {heroText: hero?.innerText || '', heroLines: hero ? lines(hero) : [], ctaText: cta?.innerText || '', ctaLines: cta ? lines(cta) : [], profile: document.body.dataset.publicSemanticProfile};
+            }"""
+        )
+        browser.close()
+
+    assert evidence["profile"] == "human_craft_provenance"
+    assert "サロンを選ぶ。" in evidence["heroText"]
+    assert any("サロンを選ぶ。" in line for line in evidence["heroLines"]), evidence
+    assert not any(line in {"サロン", "を", "る", "。"} for line in evidence["heroLines"])
+    assert evidence["ctaText"] == "メニューを見てサロンを予約する"
+    assert not any(len(line) == 1 for line in evidence["ctaLines"])
+
+
 @pytest.mark.parametrize("width", [768, 1024, 1280, 1440])
 def test_regina_choose_time_media_and_copy_never_overlap(tmp_path, width):
     """The Regina desktop choice scene must be geometry-safe at all desktop widths."""
