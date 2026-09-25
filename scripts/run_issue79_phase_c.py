@@ -30,7 +30,7 @@ async def capture(site):
                 shot=OUT/"screenshots"/f"three_{width}.png"; await page.screenshot(path=str(shot),full_page=True)
                 optical=width>430 or metrics["copyWidth"]>=width*.7
                 ok=bool(response and response.ok and not errors and not failures and metrics["scrollWidth"]<=metrics["clientWidth"] and metrics["f01"]=="three" and optical)
-                rows.append({"company_id":"three","viewport":width,"status":"PASS" if ok else "FAIL","page_loaded":bool(response and response.ok),"console_errors":errors,"request_failures":failures,"overflow_px":max(0,metrics["scrollWidth"]-metrics["clientWidth"]),"copy_width":metrics["copyWidth"],"text_boxes":metrics["text"],"screenshot":shot.name})
+                rows.append({"company_id":"three","viewport":width,"status":"PASS" if ok else "FAIL","page_loaded":bool(response and response.ok),"console_errors":errors,"request_failures":failures,"overflow_px":max(0,metrics["scrollWidth"]-metrics["clientWidth"]),"copy_width":metrics["copyWidth"],"text_boxes":metrics["text"],"overflow_offenders":metrics["offenders"],"screenshot":shot.name})
                 await page.close()
             await browser.close()
     finally: server.shutdown()
