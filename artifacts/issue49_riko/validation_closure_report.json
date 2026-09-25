@@ -1,0 +1,27 @@
+{
+  "schema_version":"issue49_validation_closure_v1",
+  "status":"VALIDATION_CLOSED_FOR_PM_AUDIT",
+  "validation_counts":{"companies":16,"families":8,"dominant_cases_per_family":2,"creative_fit_dimensions_per_case":23,"feasibility_invariance_cases":16,"family_composition_pairs":8,"explicit_collision_pairs":6},
+  "source_coverage":{"first_party_official_pages":16,"coverage_note":"Each validation case records a first-party official URL and company/customer-decision facts. This is a qualitative multi-company validation set, not a statistically representative market sample."},
+  "taxonomy_verdict":"READY_WITH_EXPLICIT_AMBIGUITY_RULES",
+  "why_not_READY_FOR_RUNTIME_IMPLEMENTATION_without_qualifier":"The eight-family taxonomy covers all 16 cases without a ninth-family gap, but multiple legitimate family collisions require explicit decision-state boundary rules and a human-review fallback. Numeric weighting precision is not calibrated.",
+  "why_not_RESEARCH_REVISION_REQUIRED":"No case exposed a missing family; each ambiguity was explainable as a boundary/secondary-influence problem within the existing eight-family system.",
+  "saturation_statement":"The set was deliberately balanced at two materially different dominant cases per family. The second case in each family changed composition examples and sharpened boundaries but did not create a new family. Further validation should be regression expansion, not broad taxonomy discovery, unless a new sector exposes an unexplainable decision job.",
+  "key_findings":[
+    "Creative Fit and Production Feasibility remain separable in all 16 cases.",
+    "All 16 feasibility-only counterfactual perturbations preserve dominant family.",
+    "Every family supports materially different composition grammar across its two cases; family-to-layout mapping is invalid.",
+    "The strongest runtime need is collision handling, not additional families.",
+    "Current Issue #47 contract is structurally sound but is not yet a true inference selector because dominant_family is supplied before select_family validation.",
+    "Secondary influence is normal and should be first-class in runtime output.",
+    "No numeric family probability or Template Resemblance threshold is justified."
+  ],
+  "remaining_uncertainty":[
+    "The 0..1 Creative Fit annotations are expert ordinal judgments, not learned/calibrated weights.",
+    "Conversion lift from one valid family versus another acceptable alternative has not been experimentally measured.",
+    "Novel sectors outside Beauty/Wellness and directly adjacent contexts may expose new collisions or taxonomy gaps.",
+    "Some cases require human interpretation of customer readiness or whether locality/provenance is truly decision-relevant.",
+    "Selector implementation must be followed by automated multi-company regression and later Production outcome validation."
+  ],
+  "routing":"Riko Issue #49 complete -> Sarah research/contract audit -> if PASS, Rin implements runtime selector + automated multi-company regression. No Nagi rebuild in this task."
+}
