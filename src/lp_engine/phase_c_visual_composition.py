@@ -143,3 +143,47 @@ def apply_visual_composition(html_path: str | Path, profile: str) -> dict[str, s
     html = html.replace("<body ", f'<body data-issue74-profile="{escape(profile)}" ', 1)
     path.write_text(html, encoding="utf-8")
     return {"profile": profile, "status": "applied"}
+
+
+F01_COMPOSITION_CSS = {
+    "three": """
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(1) .scene-split{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,.28fr);align-items:stretch}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(1) .scene-media{grid-column:1;grid-row:1;min-height:clamp(440px,60vw,820px)}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(1) .scene-copy{grid-column:2;grid-row:1;align-self:end}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(2){padding-top:clamp(3rem,8vw,8rem)}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(2) .scene-inset{display:grid;grid-template-columns:minmax(0,.3fr) minmax(0,.7fr);gap:clamp(1rem,5vw,5rem);align-items:start}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(3) .scene-layered{display:grid;grid-template-columns:minmax(0,.68fr) minmax(0,.32fr);min-height:clamp(360px,44vw,620px)}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(3) .scene-layered-copy{position:static;grid-column:1;grid-row:1;align-self:center}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(3) .scene-media{grid-column:2;grid-row:1;min-height:100%}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(4){width:100%;max-width:none;margin:0;padding-top:clamp(4rem,10vw,10rem);border-top:0}
+body[data-issue77-f01="three"] main > .premium-scene:nth-child(4) .scene-full{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,.3fr);align-items:end;border-top:2px solid var(--ink);padding-top:2rem}
+body[data-issue77-f01="three"] main > .premium-scene .scene-full,body[data-issue77-f01="three"] main > .premium-scene .scene-split,body[data-issue77-f01="three"] main > .premium-scene .scene-inset,body[data-issue77-f01="three"] main > .premium-scene .scene-layered{min-width:0;max-width:100%;box-sizing:border-box}
+""",
+    "baum": """
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(1) .scene-full{display:block;position:relative;min-height:clamp(500px,62vw,860px)}
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(1) .scene-media{height:100%;min-height:500px;width:100%}
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(1) .scene-copy{position:absolute;left:8%;bottom:8%;max-width:28rem;padding:1.25rem;background:var(--copy-surface)}
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(2) .scene-split{display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,.35fr);align-items:start}
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(2) .scene-media{grid-column:1;min-height:clamp(300px,38vw,520px)}
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(3) .scene-inset{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,.58fr);gap:clamp(1rem,4vw,4rem);align-items:center}
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(3) .scene-media{min-height:clamp(320px,34vw,500px)}
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(4){max-width:48rem;margin-left:auto;padding-bottom:clamp(6rem,12vw,12rem);border-top:0}
+body[data-issue77-f01="baum"] main > .premium-scene:nth-child(4) .scene-full{display:block;border-left:10px solid var(--accent);padding-left:2rem}
+body[data-issue77-f01="baum"] main > .premium-scene .scene-full,body[data-issue77-f01="baum"] main > .premium-scene .scene-split,body[data-issue77-f01="baum"] main > .premium-scene .scene-inset,body[data-issue77-f01="baum"] main > .premium-scene .scene-layered{min-width:0;max-width:100%;box-sizing:border-box}
+""",
+}
+
+def apply_f01_composition(html_path: str | Path, company_id: str) -> dict[str, str]:
+    if company_id not in F01_COMPOSITION_CSS:
+        return {"company_id": company_id, "status": "not_required"}
+    path = Path(html_path)
+    html = path.read_text(encoding="utf-8")
+    marker = "data-issue77-f01"
+    if marker in html:
+        return {"company_id": company_id, "status": "already_applied"}
+    css = F01_COMPOSITION_CSS[company_id]
+    tag = f'<style data-issue77-f01="{escape(company_id)}">{css}</style>'
+    html = html.replace("</head>", f"{tag}</head>", 1)
+    html = html.replace("<body ", f'<body data-issue77-f01="{escape(company_id)}" ', 1)
+    path.write_text(html, encoding="utf-8")
+    return {"company_id": company_id, "status": "applied"}
