@@ -1,0 +1,49 @@
+{
+  "schema_version": "issue59_reference_company_contracts_v1",
+  "source_issue": 57,
+  "source_commit": "9faa6b657ff644b898c0d16b760a8f74a98781a5",
+  "companies": [
+    {
+      "reference_id": "RC57-02",
+      "company_name": "レジーナクリニック",
+      "company_id": "regina-clinic",
+      "industry": "医療脱毛・カウンセリング型クリニック",
+      "location": "全国の各院",
+      "expected_family": "BW-F02",
+      "secondary_families": ["BW-F06"],
+      "decision_job": "safety/suitability reassurance leads; mechanism/process proof supports",
+      "customer_state": {
+        "before": "医療脱毛を検討しているが、安全性・適応・費用・契約前の流れが分からず、間違った選択を避けたい",
+        "after": "何を確認され、何が説明され、どこに不確実性が残るかを理解して無料カウンセリングを選べる",
+        "signal": "safety suitability counseling reassurance"
+      },
+      "prohibited_families": ["BW-F01", "BW-F04"],
+      "compatible_patterns": ["M-HERO-02", "M-TRUST-01", "M-TRUST-02", "M-PROBLEM-01", "M-PROCESS-01", "M-OFFER-01", "M-CTA-01", "M-END-01"],
+      "primary_cta": "無料カウンセリングを予約する",
+      "source_refs": ["artifacts/issue57_riko/company_02_validation_contract.json", "artifacts/issue57_riko/source_provenance_registry.json"],
+      "volatile_fact_policy": "prices, menus, campaigns and clinic availability require implementation-date re-verification",
+      "visual_boundary": "generated visual is explanatory only; never actual physician, staff, patient, clinic or medical proof"
+    },
+    {
+      "reference_id": "RC57-03",
+      "company_name": "uka",
+      "company_id": "uka",
+      "industry": "トータルビューティー・ヘッドスパ",
+      "location": "uka salons",
+      "expected_family": "BW-F04",
+      "secondary_families": ["BW-F06"],
+      "decision_job": "human technique/provenance and accumulated method lead; process proof and sensory experience support",
+      "customer_state": {
+        "before": "ヘッドスパを検討しているが、ukaの施術者の技術・積み重ねた方法・自分の悩みとの関係が分からない",
+        "after": "相談・観察・手技・方法のつながりとメニューの方向を理解してサロン予約へ進める",
+        "signal": "practitioner technique provenance method"
+      },
+      "prohibited_families": ["BW-F07"],
+      "compatible_patterns": ["M-STORY-01", "M-HUMAN-01", "M-GALLERY-01", "M-PROCESS-01", "M-TRUST-02", "M-CTA-01"],
+      "primary_cta": "メニューを見てサロンを予約する",
+      "source_refs": ["artifacts/issue57_riko/company_03_validation_contract.json", "artifacts/issue57_riko/source_provenance_registry.json"],
+      "volatile_fact_policy": "prices, menus, stores and campaigns require implementation-date re-verification",
+      "visual_boundary": "generated visual is explanatory only; never actual practitioner, customer, salon or treatment proof"
+    }
+  ]
+}

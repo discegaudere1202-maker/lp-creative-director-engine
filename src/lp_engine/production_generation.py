@@ -1111,6 +1111,35 @@ def apply_controlled_architecture_to_scene_plan(
     result["controlled_architecture"] = dict(architecture)
     return result
 
+
+def apply_public_scene_semantics(scene_plan: Mapping[str, Any], architecture: Mapping[str, Any] | None) -> dict[str, Any]:
+    """Materialize family/decision-job semantics into the public scene plan."""
+    semantics = list((architecture or {}).get("public_scene_semantics") or [])
+    scenes = list(scene_plan.get("scene_plan") or [])
+    if not semantics or len(semantics) != len(scenes):
+        return dict(scene_plan)
+    result = {key: value for key, value in scene_plan.items() if key != "scene_plan"}
+    result["scene_plan"] = []
+    for index, (scene, semantic) in enumerate(zip(scenes, semantics)):
+        row = dict(scene)
+        row["legacy_narrative_state"] = row.get("narrative_state")
+        row["scene_id"] = f"scene-{index + 1:02d}-{semantic['state']}"
+        row["narrative_state"] = semantic["state"]
+        row["narrative_function"] = semantic["role"]
+        row["copy_intent"] = semantic["copy_intent"]
+        row["visual_authority"] = semantic["visual_authority"]
+        row["focal_entity"] = semantic["media_role"]
+        row["expected_media"] = semantic["media_role"] != "typography"
+        row["public_copy"] = {"headline": semantic["headline"], "body": semantic["body"]}
+        row["public_cta_label"] = semantic.get("cta_label", "")
+        row["cta_stage"] = semantic.get("cta_stage", "")
+        row["semantic_role"] = semantic["role"]
+        row["semantic_derivation"] = "frozen family + customer decision job"
+        result["scene_plan"].append(row)
+    result["public_semantic_profile"] = (architecture or {}).get("public_semantic_profile")
+    result["public_semantic_derivation"] = (architecture or {}).get("public_semantic_derivation")
+    return result
+
 def _render_premium_html(spec: Mapping[str, Any]) -> str:
     company, copy, tokens = spec["company"], spec["copy"], spec["design_tokens"]
     plan = spec["premium_scene_plan"]
@@ -1119,6 +1148,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     cta_closures = {x.get("stage"): x for x in (translation.get("cta_closure") or {}).get("closures", [])}
     profile = translation.get("art_direction_token_profile") or {}
     profile_id = _text(tokens.get("profile_id") or profile.get("profile_id")) or "field_ledger"
+    public_semantic_profile = _text(plan.get("public_semantic_profile"))
     token_css = ";".join([
         f'--human-scene-radius:{tokens.get("radius", {}).get("media", "2px")}',
         f'--human-border-width:{tokens.get("borders", {}).get("width", "1px")}',
@@ -1174,7 +1204,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
             genome = next((x for x in spec["strategy"]["creative_genome"].get("cta_progression", []) if x.get("stage") == scene["cta_stage"]), {})
             closure = cta_closures.get(scene["cta_stage"], {})
             cta_href = closure.get("href") or genome.get("destination") or "#contact"
-            cta_label = genome.get("visible_label") or closure.get("semantic_payload") or "次へ進む"
+            cta_label = scene.get("public_cta_label") or genome.get("visible_label") or closure.get("semantic_payload") or "次へ進む"
             if closure.get("actionability") == "QUIET_CONVERSION_END":
                 cta_label = closure.get("semantic_payload") or ""
             # A quiet end with no actual contact datum is intentionally a
@@ -1209,9 +1239,11 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
                 anchor_ids.append(anchor.get("anchor_id"))
         anchor_attr_data = esc(",".join(x for x in anchor_ids if x))
         state_class = re.sub(r"[^a-z0-9_-]+", "-", _text(scene.get("narrative_state")).lower()) or "scene"
+        legacy_state_class = re.sub(r"[^a-z0-9_-]+", "-", _text(scene.get("legacy_narrative_state")).lower())
+        compatibility_class = f" scene-state-{legacy_state_class}" if legacy_state_class and legacy_state_class != state_class else ""
         ending_class = " premium-scene--ending" if i == len(plan.get("scene_plan", [])) - 1 else ""
         datum_attr = ' data-contact-datum-count="0"' if i == len(plan.get("scene_plan", [])) - 1 else ""
-        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)} scene-state-{esc(state_class)}{ending_class}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-state="{esc(scene.get("narrative_state"))}" data-narrative-index="{i}" data-ending-variant="{esc((copy.get("premium_scene_copy") or {}).get("ending_variant")) if i == len(plan.get("scene_plan", [])) - 1 else ""}"{datum_attr} data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
+        chunks.append(f'<section{anchor_attr} class="premium-scene premium-scene--{esc(topology)} scene-state-{esc(state_class)}{compatibility_class}{ending_class}" data-scene-id="{esc(scene["scene_id"])}" data-narrative-state="{esc(scene.get("narrative_state"))}" data-narrative-index="{i}" data-ending-variant="{esc((copy.get("premium_scene_copy") or {}).get("ending_variant")) if i == len(plan.get("scene_plan", [])) - 1 else ""}"{datum_attr} data-grammar="{esc(json.dumps(grammar, ensure_ascii=False))}" data-copy-intent="{esc(scene["copy_intent"])}" data-evidence-trace="{evidence_trace}" data-translation-mode="{esc(translated.get("expression_mode"))}" data-signature-anchor-ids="{anchor_attr_data}">{inner}{cta}</section>')
     channel_data = spec.get("understanding", {}).get("contact_channels", {})
     contact_values = []
     for key in ("href", "url", "phone", "tel", "email", "line", "instagram", "booking_url", "contact_form_url", "contact_value"):
@@ -1258,13 +1290,21 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     .profile-care_rhythm .premium-scene--ending{{max-width:min(90vw,780px);}}
     .profile-care_rhythm .premium-scene--ending .scene-layered-copy{{background:transparent;}}
     .profile-care_rhythm .scene-media{{box-shadow:none;}}
+    /* Regina's choice scene keeps its material authority without allowing the
+       desktop copy to collide with the media frame. Mobile keeps the existing
+       stacked/layered treatment below 761px. */
+    @media(min-width:761px){{.profile-care_rhythm .scene-state-choose_time .scene-layered{{display:grid;grid-template-columns:minmax(0,.56fr) minmax(0,.44fr);gap:clamp(2rem,4vw,4rem);align-items:stretch;min-height:clamp(420px,48vw,620px);overflow:visible;}}.profile-care_rhythm .scene-state-choose_time .scene-layered .scene-media{{grid-column:1;grid-row:1;min-height:100%;}}.profile-care_rhythm .scene-state-choose_time .scene-layered-copy{{position:static;grid-column:2;grid-row:1;align-self:center;max-width:none;padding:clamp(1.5rem,4vw,3rem);}}}}
     .profile-studio_invitation .scene-sequence{{background:color-mix(in srgb,var(--accent) 7%,transparent);}}
     .profile-studio_invitation .hero-scope--fact_tabs{{font-weight:var(--display-weight);}}
     @media(max-width:900px){{h1{{font-size:clamp(2.8rem,5vw,3.6rem);}}h2{{font-size:clamp(2rem,3.7vw,2.8rem);}}}}
     @media(min-width:761px) and (max-width:1100px){{.scene-state-feel_care .scene-media--dominant{{min-height:0;aspect-ratio:3 / 2;}}.scene-state-feel_care .scene-media--dominant .photo-frame{{height:100%;}}.scene-state-feel_care .scene-media--dominant .photo-frame img{{height:100%;object-fit:cover;}}}}
     @media(max-width:760px){{.premium-scene{{padding:var(--mobile-scene-gap) 0;}}.premium-scene--ending{{padding:var(--mobile-page-padding) 0;}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr);gap:2rem;}}.scene-media--immersive,.scene-media--dominant{{min-height:280px;}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem;padding:1rem;}}.profile-field_ledger .scene-state-imagine_change .scene-layered{{display:grid;grid-template-columns:1fr;}}.profile-field_ledger .scene-state-imagine_change .scene-layered .scene-media,.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{grid-column:1;grid-row:auto;}}.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{position:relative;margin-top:-2rem;}}.profile-care_rhythm .scene-layered-copy{{margin-top:-1rem;}}}}
+    /* Narrow optical correction for the BW-F04 320px review finding only.
+       Keep the semantic phrase and CTA intact; do not alter >=360px output. */
+    @media(max-width:335px){{body[data-public-semantic-profile="craft"] .premium-scene:first-child h1{{font-size:2.1rem;line-height:1.28;}}body[data-public-semantic-profile="craft"] .premium-scene .button{{font-size:.82rem;letter-spacing:-.02em;padding-inline:14px;white-space:nowrap;}}}}
     '''
-    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{style}</style></head><body class="profile-{esc(profile_id)}" data-ending-variant="{ending_variant}" style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
+    public_semantic_profile = {"human_craft_provenance": "craft"}.get(public_semantic_profile, "")
+    return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{style}</style></head><body class="profile-{esc(profile_id)}" data-public-semantic-profile="{esc(public_semantic_profile)}" data-ending-variant="{ending_variant}" style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
 
 def render_html(spec: Mapping[str, Any]) -> str:
     if spec.get("premium_scene_plan"):
@@ -1385,6 +1425,7 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     asset_manifest = build_asset_manifest(raw.get("photo_assets") or [], photo_role_map)
     premium_scene_plan = build_premium_scene_plan(understanding, strategy["narrative_architecture"], strategy["creative_genome"], approved, [item.get("photo_role", "") for item in raw.get("photo_assets") or []])
     premium_scene_plan = apply_controlled_architecture_to_scene_plan(premium_scene_plan, architecture)
+    premium_scene_plan = apply_public_scene_semantics(premium_scene_plan, architecture)
     premium_scene_plan["qa_gates"] = scene_plan_gates(premium_scene_plan)
     human_translation = build_human_translation(understanding, strategy, premium_scene_plan, approved, asset_manifest, copy)
     premium_scene_plan["human_translation_ref"] = "premium_human_translation_v1"
@@ -1510,3 +1551,4 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
