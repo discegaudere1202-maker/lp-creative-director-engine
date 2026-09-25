@@ -1169,7 +1169,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         rendered = render_text_ir(ir, tag=tag, escape=esc)
         # Issue #81: the THREE fit scene needs an intentional mobile-only
         # meaning break. Keep the authored desktop/tablet DOM unchanged.
-        if value == "暮らしに置いたときの相性を見る。":
+        if "暮らしに置いたときの相性を見る" in value:
             opening = f"<{tag}>"
             closing = f"</{tag}>"
             rendered = rendered.replace(
