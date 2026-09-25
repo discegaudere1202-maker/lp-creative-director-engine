@@ -1,0 +1,169 @@
+{
+  "schema_version": "issue57_reference_company_validation_contract_v1",
+  "reference_id": "RC57-02",
+  "company": "レジーナクリニック",
+  "issue49_case_id": "V49-03",
+  "retrieved_at": "2026-09-25",
+  "role": "Reference Company #2",
+  "company_identity": {
+    "context": "medical hair removal / consultation-led clinical service",
+    "official_domain": "reginaclinic.jp",
+    "first_party_sources": [
+      {"url":"https://www.reginaclinic.jp/about/clinic/free-counseling/","role":"free counseling, risks, physician/staff flow, test irradiation, application"},
+      {"url":"https://www.reginaclinic.jp/","role":"medical-hair-removal positioning, doctor support, plan context"},
+      {"url":"https://www.reginaclinic.jp/part/","role":"current plan and price structure"},
+      {"url":"https://www.reginaclinic.jp/about/clinic/reservation/","role":"reservation/change/cancellation truth"},
+      {"url":"https://www.reginaclinic.jp/faq/treatment/","role":"treatment suitability and medical boundary examples"}
+    ]
+  },
+  "verified_company_truth": [
+    "A free counseling session is required before contract; the official page currently describes it as approximately 90 minutes.",
+    "Counseling explains the hair-removal mechanism, treatment method, costs, self-care/aftercare and customer concerns before commitment.",
+    "A physician checks skin/hair/body condition and determines whether treatment is appropriate; treatment can be refused or limited depending on condition, medication or other factors.",
+    "Counseling staff explain plan-specific risks, prices, follow-up and refund information; the official page states there is no forced solicitation.",
+    "A test irradiation route is available for customers who request it when booking counseling.",
+    "The current official site provides multiple plan structures and a Web route to book free counseling."
+  ],
+  "customer_decision_state": {
+    "before": "The customer understands medical hair removal as a category but has high anxiety about suitability, safety, risk, cost and what happens before treatment.",
+    "first_persuasive_job": "reduce wrong-choice and safety anxiety with bounded, inspectable reassurance before asking for commitment",
+    "after": "The customer understands what will be checked, what will be explained, where uncertainty remains, and can choose whether to book free counseling.",
+    "decision_job_signal": "safety/suitability reassurance leads; mechanism/process proof supports"
+  },
+  "creative_fit": {
+    "schema_version": "creative_fit_profile_v1",
+    "score_semantics": "Issue #49 expert ordinal strength; not probability or learned runtime weight",
+    "dimensions": {
+      "premium_authority_need": 0.55,
+      "warmth": 0.55,
+      "naturalness": 0.10,
+      "clinical_expertise": 0.95,
+      "craftsmanship": 0.20,
+      "modernity": 0.70,
+      "softness": 0.70,
+      "calmness": 0.90,
+      "boldness": 0.30,
+      "intimacy": 0.45,
+      "local_relationship_weight": 0.20,
+      "desired_state_change_intensity": 0.85,
+      "trust_requirement": 1.00,
+      "decision_commitment_pressure": 0.75,
+      "owner_personality_importance": 0.10,
+      "visual_storytelling_need": 0.45,
+      "information_density_need": 0.90,
+      "emotional_purchase_weight": 0.50,
+      "category_education_need": 0.55,
+      "choice_guidance_need": 0.70,
+      "process_inspectability_need": 0.90,
+      "sensory_experience_weight": 0.15,
+      "human_relationship_weight": 0.65
+    },
+    "expected_dominant_family": "BW-F02",
+    "secondary_influence": ["BW-F06"],
+    "acceptable_alternatives": ["BW-F06"],
+    "prohibited_or_misfit": ["BW-F01", "BW-F04"],
+    "source_refs": ["artifacts/issue49_riko/creative_fit_expected_labels.json#V49-03", "artifacts/issue49_riko/validation_company_registry.json#V49-03"]
+  },
+  "family_inference_trace": {
+    "collision_pair": ["BW-F02", "BW-F06"],
+    "dominance_rule": "When suitability/safety/wrong-choice anxiety is the gating question, BW-F02 leads. BW-F06 may support with mechanism/process proof but must not replace the reassurance job.",
+    "expected_ambiguity": "LOW_TO_MODERATE",
+    "human_review_trigger": "If generated truth reframes the page primarily around efficacy/mechanism and suppresses suitability/risk boundaries, review F02 vs F06 before rendering."
+  },
+  "production_feasibility": {
+    "schema_version": "production_feasibility_profile_v1",
+    "stage": "POST_FAMILY_FREEZE_ONLY",
+    "may_change_family": false,
+    "dimensions": {
+      "photo_asset_quantity": 0.80,
+      "evidence_quantity_available": 0.95,
+      "scraping_difficulty": 0.15,
+      "source_coverage": 0.95,
+      "rights_clarity": 0.20,
+      "staff_photo_availability": 0.60,
+      "facility_photo_availability": 0.75,
+      "pricing_completeness": 0.95,
+      "social_proof_availability": 0.25
+    },
+    "notes": [
+      "Official source richness does not contribute to Family selection.",
+      "Visible official-site imagery does not imply reusable production rights; rights must be verified or realization must adapt without changing BW-F02.",
+      "Current prices and operational details are volatile facts and must be re-verified at implementation time."
+    ]
+  },
+  "module_composition_hypotheses": {
+    "accepted_registry_only": true,
+    "dominant_family_compatible": [
+      "M-HERO-02",
+      "M-TRUST-01",
+      "M-TRUST-02",
+      "M-PROBLEM-01",
+      "M-PROCESS-01",
+      "M-OFFER-01",
+      "M-CTA-01",
+      "M-END-01"
+    ],
+    "required_emphasis": [
+      "Evidence/suitability signal must appear before aspirational or sensory persuasion.",
+      "Known/unknown and eligibility boundaries must stay adjacent to medical claims.",
+      "Counseling/physician/process truth should be distributed as reassurance rather than collapsed into a generic feature wall.",
+      "Commitment should ladder toward free counseling, not simulate a direct treatment purchase."
+    ],
+    "not_a_fixed_order": true
+  },
+  "composition_difference_requirements": {
+    "vs_nagi": [
+      "Do not use Nagi's category-recognition opening as the dominant first-view logic.",
+      "Do not reproduce Nagi's intent-routed three-service field or abstract quiet-wellness copy rhythm.",
+      "Increase factual density and boundary visibility; reduce atmosphere-first whitespace as the dominant persuasion mechanism.",
+      "CTA is 'book free counseling' after reassurance, not 'choose a service mode / consult by Instagram'."
+    ],
+    "vs_company_03_uka": [
+      "Regina must lead with clinical reassurance/boundaries; uka must lead with human technique/provenance.",
+      "Regina media cannot carry proof merely through mood; uka may use atmosphere only when it supports method/human authorship.",
+      "Regina composition should feel inspectable and bounded, not craft-editorial."
+    ]
+  },
+  "media_roles_needed": [
+    "consultation/physician context where rights and identity are safe",
+    "treatment-flow or counseling-process visualization",
+    "equipment or treatment-context media only when it does not imply unverified efficacy",
+    "clinic/facility context for orientation, not as a substitute for medical proof",
+    "clear factual typography/diagram roles for risks, steps and boundaries"
+  ],
+  "evidence_safety_constraints": [
+    "Do not invent efficacy, pain, duration, eligibility or medical-outcome claims.",
+    "Do not present generated people as actual physicians/staff/patients or as testimonial evidence.",
+    "Do not use before/after imagery as proof unless provenance, consent, rights and claim context are verified.",
+    "Keep free-counseling duration, plan prices, campaign terms and clinic availability date-stamped and re-verifiable.",
+    "Preserve contraindication/suitability uncertainty instead of converting it into reassuring certainty."
+  ],
+  "expected_cta_logic": {
+    "primary": "無料カウンセリングを予約する",
+    "secondary": "料金・施術の流れ・FAQを確認する",
+    "choreography": "reassurance/boundary → process clarity → plan context → state-specific counseling CTA"
+  },
+  "human_visible_risks": [
+    "A generic beauty-clinic gradient/card design could erase the medical reassurance logic.",
+    "Too much dense text can become an institutional FAQ wall rather than authored persuasion.",
+    "Clinical imagery can falsely imply proof or real staff identity if provenance is weak.",
+    "Responsive collapse must not detach risk/boundary copy from the claim it qualifies."
+  ],
+  "template_swap_failure_conditions": [
+    "Nagi hero/section order is retained and only colors/copy/images are swapped.",
+    "The page uses the same pale wellness/editorial gestalt, rounded-photo rhythm and abstract calm copy as Nagi despite the different trust job.",
+    "Evidence-first and boundary patterns are absent while generic service cards dominate.",
+    "Family metadata says BW-F02 but screenshot gestalt remains BW-F08-style open discovery.",
+    "Production Feasibility changes the expected Family."
+  ],
+  "rin_validation_contract": {
+    "expected_family": "BW-F02",
+    "expected_secondary": ["BW-F06"],
+    "family_must_freeze_before_feasibility": true,
+    "must_not_emit_layout_id": true,
+    "minimum_required_grammar_evidence": ["M-HERO-02", "M-TRUST-01", "M-PROCESS-01", "M-CTA-01"],
+    "counterfactual": "Run at least one lower-asset/rights-constrained feasibility profile and assert dominant Family remains BW-F02.",
+    "visual_evidence_widths": [320,360,375,390,430,768,1024,1280,1440],
+    "human_review_required": ["medical-claim framing", "template resemblance", "claim-boundary adjacency", "responsive density", "media provenance"]
+  }
+}
