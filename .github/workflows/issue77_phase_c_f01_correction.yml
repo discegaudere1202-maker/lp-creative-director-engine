@@ -1,0 +1,33 @@
+name: Issue 77 Phase C F01 Composition Correction
+on:
+  pull_request:
+    paths:
+      - src/lp_engine/phase_c_visual_composition.py
+      - scripts/run_issue77_phase_c.py
+      - tests/test_issue77_phase_c_f01.py
+      - .github/workflows/issue77_phase_c_f01_correction.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phase-c-f01:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e .
+      - run: python -m pip install pytest playwright
+      - run: playwright install --with-deps chromium
+      - run: git diff --check
+      - run: pytest -q tests/test_issue77_phase_c_f01.py tests/test_issue74_phase_c_visual_composition.py tests/test_issue71_phase_c_authorship.py tests/test_issue68_phase_c.py tests/test_issue53_controlled_production.py tests/test_issue59_reference_transfer.py
+      - run: python scripts/run_issue77_phase_c.py
+      - name: Validate F01 evidence and ZIP
+        run: python -c "import json,zipfile; from pathlib import Path; r=Path('artifacts/issue77_phase_c_f01'); s=json.loads((r/'summary.json').read_text()); print({'screenshots':s['screenshot_count'],'browser_pass':sum(x['status']=='PASS' for x in s['browser_qa']),'failed_rows':[x for x in s['browser_qa'] if x['status']!='PASS']}); assert s['status']=='PASS' and s['reference_count']==2 and s['screenshot_count']==18 and all(x['status']=='PASS' for x in s['browser_qa']); assert all(x['status']=='PRESERVED' for x in s['accepted_pair_regression']); assert zipfile.ZipFile(r/'issue77_phase_c_f01_evidence.zip').testzip() is None"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue77-phase-c-f01-${{ github.sha }}
+          path: artifacts/issue77_phase_c_f01
+          if-no-files-found: error
