@@ -28,18 +28,7 @@ async def capture(site):
                 response=await page.goto(f"http://127.0.0.1:{server.server_address[1]}/index.html",wait_until="networkidle")
                 metrics=await page.evaluate("""() => {const e=document.querySelector('main > .premium-scene.scene-state-fit .scene-inset>div,main > .premium-scene.scene-state-fit .scene-split>div,main > .premium-scene.scene-state-fit .scene-full'); const r=e?.getBoundingClientRect(); const t=[...document.querySelectorAll('main > .premium-scene.scene-state-fit h1,main > .premium-scene.scene-state-fit h2,main > .premium-scene.scene-state-fit p')].map(x=>({text:x.innerText,width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height})); return {scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth,f01:document.body.dataset.issue77F01,copyWidth:r?.width||0,text:t,offenders:[...document.querySelectorAll("*")].map(x=>({tag:x.tagName,cls:x.className?.toString?.()||"",right:x.getBoundingClientRect().right,width:x.getBoundingClientRect().width})).filter(x=>x.right>document.documentElement.clientWidth+1).sort((a,b)=>b.right-a.right).slice(0,8)}}""")
                 headline=await page.evaluate("""() => {const h=document.querySelector('main > .premium-scene.scene-state-fit .headline-optical-three-fit'); const chunks=[...document.querySelectorAll('main > .premium-scene.scene-state-fit .headline-optical-mobile-chunk')]; const vr=document.querySelector('main > .premium-scene.scene-state-fit')?.getBoundingClientRect(); const boxes=chunks.map(x=>({text:x.innerText,right:x.getBoundingClientRect().right,width:x.getBoundingClientRect().width})); return {chunks:boxes.map(x=>x.text),rightOk:boxes.length===2 && boxes.every(x=>x.right<=document.documentElement.clientWidth+1 && x.width>0),boxes:boxes,headingRight:h?.getBoundingClientRect().right||0,sceneRight:vr?.right||0}}""")
-                public_leaks=await page.evaluate("""() => {
-                    const text=document.body.innerText || "";
-                    return ["data-editorial-role=", "headline-optical-default", "<h1", "<h2"].filter(token => text.includes(token));
-                }"""); public_leaks=await page.evaluate("""() => {
-                    const text=document.body.innerText || "";
-                    return ["data-editorial-role=", "headline-optical-default", "<h1", "<h2"].filter(token => text.includes(token));
-                }""")
-
-public_leaks=await page.evaluate("""() => {
-                    const text=document.body.innerText || "";
-                    return ["data-editorial-role=", "headline-optical-default", "<h1", "<h2"].filter(token => text.includes(token));
-                }""")
+                public_leaks=await page.evaluate("""() => {const text=document.body.innerText || ""; return ["data-editorial-role=", "headline-optical-default", "<h1", "<h2"].filter(token => text.includes(token));}""")
                 shot=OUT/"screenshots"/f"three_{width}.png"; await page.screenshot(path=str(shot),full_page=True)
                 optical=width>430 or (metrics["copyWidth"]>=width*.7 and headline["rightOk"] and headline["chunks"]==["暮らしに置いたときの","相性を見る。"] and not public_leaks)
                 ok=bool(response and response.ok and not errors and not failures and metrics["scrollWidth"]<=metrics["clientWidth"] and metrics["f01"]=="three" and optical)
