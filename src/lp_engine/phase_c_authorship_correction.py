@@ -20,6 +20,14 @@ from .phase_c_expansion import (
 )
 from .production_architecture import FAMILY_IDS, infer_and_select_family
 from .production_generation import run_generation
+from .phase_c_visual_composition import apply_visual_composition
+
+RENDERER_PROFILE_BY_COMPANY = {
+    "pola-apex": "diagnostic-route", "fancl": "self-check-field",
+    "lino-hair": "relationship-continuity", "barbaro": "community-appointment",
+    "three": "ritual-material-proof", "baum": "environment-lifestyle-fit",
+    "kakimoto-arms": "authorship-portfolio-investment", "pilates-k": "program-fit-commitment",
+}
 
 PAIR_IDS = {
     "BW-F05": ("pola-apex", "fancl"),
@@ -120,6 +128,7 @@ def corrected_contract(contract: Mapping[str, Any]) -> dict[str, Any]:
     result = deepcopy(dict(contract))
     company_id = result["company_id"]
     result["public_authorship"] = deepcopy(AUTHORS[company_id])
+    result["public_authorship"]["renderer_profile"] = RENDERER_PROFILE_BY_COMPANY[company_id]
     result["public_scene_semantics"] = _correct_rows(company_id)
     result["authorship_derivation"] = {
         "source": "frozen company truth + customer decision job",
@@ -170,10 +179,11 @@ def run_corrected_reference(contract: Mapping[str, Any], output_dir: str | Path)
     generated = run_generation(
         {**raw, "validation_context": "NO_WEB_FIELD_VALIDATION"},
         site,
-        generation_id=f"issue71-{contract['company_id']}",
+        generation_id=f"issue74-{contract['company_id']}",
         mode="production",
         architecture=architecture,
     )
+    composition = apply_visual_composition(Path(generated.output_dir) / "index.html", contract["public_authorship"]["renderer_profile"])
     constrained = _feasibility(contract, constrained=True)
     counter = infer_and_select_family(
         company_truth=truth,
@@ -202,6 +212,7 @@ def run_corrected_reference(contract: Mapping[str, Any], output_dir: str | Path)
         "production_output_allowed": generated.production_output_allowed,
         "no_company_lookup": True,
         "no_family_fixed_layout": True,
+        "renderer_composition": composition,
         "status": "PASS",
     }
     out.mkdir(parents=True, exist_ok=True)
