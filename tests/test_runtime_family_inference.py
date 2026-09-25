@@ -70,9 +70,11 @@ def test_feasibility_is_post_selection_and_cannot_change_family():
     selected_fit = {**_fit(expected), "dominant_family": result["dominant_family"], "secondary_families": result["secondary_influences"]}
     base = {name: 0.1 for name in FEASIBILITY_DIMENSIONS}
     rich = {name: 0.9 for name in FEASIBILITY_DIMENSIONS}
+    base_profile = {"schema_version": "production_feasibility_profile_v1", "profile_id": "sparse", "dimensions": base, "adaptation_policy": {"may_change_family": False}, "source_refs": ["issue49:feasibility_invariance_checks"]}
+    rich_profile = {"schema_version": "production_feasibility_profile_v1", "profile_id": "rich", "dimensions": rich, "adaptation_policy": {"may_change_family": False}, "source_refs": ["issue49:feasibility_invariance_checks"]}
     candidates = [{"family_id": family} for family in FAMILY_IDS]
-    assert select_family(fit=selected_fit, feasibility={"schema_version": "production_feasibility_profile_v1", "profile_id": "sparse", "dimensions": base, "adaptation_policy": {"may_change_family": False}}, candidates=candidates)["dominant_family"] == result["dominant_family"]
-    assert select_family(fit=selected_fit, feasibility={"schema_version": "production_feasibility_profile_v1", "profile_id": "rich", "dimensions": rich, "adaptation_policy": {"may_change_family": False}}, candidates=candidates)["dominant_family"] == result["dominant_family"]
+    assert select_family(fit=selected_fit, feasibility=base_profile, candidates=candidates)["dominant_family"] == result["dominant_family"]
+    assert select_family(fit=selected_fit, feasibility=rich_profile, candidates=candidates)["dominant_family"] == result["dominant_family"]
 
 
 def test_inference_hard_fails_on_feasibility_leakage_and_unverified_truth():

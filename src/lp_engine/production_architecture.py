@@ -195,15 +195,19 @@ def infer_creative_family(*, company_truth: dict[str, Any], customer_decision_st
     """
     dimensions = _require_inference_inputs(company_truth, customer_decision_state, creative_fit)
     text = _flatten_truth(company_truth, customer_decision_state)
+    customer_text = _flatten_truth({}, customer_decision_state)
     marker_hits = {family: sum(text.count(marker) for marker in markers) for family, markers in _TEXT_MARKERS.items()}
+    decision_hits = {family: sum(customer_text.count(marker) for marker in markers) for family, markers in _TEXT_MARKERS.items()}
     scores = {family: 0.0 for family in FAMILY_IDS}
     for family, (_, used_dimensions) in _FAMILY_JOBS.items():
         scores[family] = sum(dimensions[name] for name in used_dimensions) / len(used_dimensions)
 
     # Decision-state language identifies the first persuasive job; fit dimensions
     # only break ties and keep the selector general rather than case/company keyed.
-    explicit_priority = ["BW-F07", "BW-F08", "BW-F05", "BW-F02", "BW-F06", "BW-F04", "BW-F03", "BW-F01"]
-    marker_candidates = [family for family in explicit_priority if marker_hits[family] > 0]
+    explicit_priority = ["BW-F01", "BW-F02", "BW-F03", "BW-F04", "BW-F05", "BW-F06", "BW-F07", "BW-F08"]
+    marker_candidates = [family for family in explicit_priority if decision_hits[family] > 0]
+    if not marker_candidates:
+        marker_candidates = [family for family in explicit_priority if marker_hits[family] > 0]
     if marker_candidates:
         top = marker_candidates[0]
         if top == "BW-F07" and dimensions["local_relationship_weight"] < 0.7:
