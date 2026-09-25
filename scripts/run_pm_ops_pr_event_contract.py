@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 import re
+import urllib.request
 from pathlib import Path
 from typing import Any
 
@@ -26,10 +27,9 @@ EVENT_SIGNALS = {
 
 def metadata_from_body(body: str | None) -> dict[str, str]:
     match = META_RE.search(body or "")
-    if not match:
-        return {}
+    source = match.group(1) if match else (body or "")
     result: dict[str, str] = {}
-    for line in match.group(1).splitlines():
+    for line in source.splitlines():
         field = FIELD_RE.match(line)
         if field:
             result[field.group(1)] = field.group(2).strip().strip('"\'')
@@ -40,15 +40,35 @@ def event_pr(event: dict[str, Any]) -> dict[str, Any]:
     return event.get("pull_request") or {}
 
 
+def live_pull_request_body(event: dict[str, Any], repository: str) -> str | None:
+    pr = event_pr(event)
+    number = pr.get("number")
+    token = os.environ.get("GITHUB_TOKEN")
+    if not number or not token or not repository:
+        return None
+    request = urllib.request.Request(
+        f"https://api.github.com/repos/{repository}/pulls/{number}",
+        headers={"Accept": "application/vnd.github+json", "Authorization": f"Bearer {token}", "X-GitHub-Api-Version": "2022-11-28"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=10) as response:
+            payload = json.load(response)
+    except Exception:
+        return None
+    return payload.get("body") if isinstance(payload, dict) else None
+
+
 def build_evidence(event: dict[str, Any], repository: str = "") -> dict[str, Any]:
     pr = event_pr(event)
     number = pr.get("number") or event.get("number")
     head = pr.get("head") or {}
     sha = head.get("sha") or event.get("after") or ""
     action = event.get("action", "manual")
+    repo = repository or event.get("repository", {}).get("full_name", "")
     body = pr.get("body") or ""
     metadata = metadata_from_body(body)
-    repo = repository or event.get("repository", {}).get("full_name", "")
+    if not metadata:
+        metadata = metadata_from_body(live_pull_request_body(event, repo) or "")
     api_root = f"https://api.github.com/repos/{repo}" if repo else "https://api.github.com/repos/<owner>/<repo>"
     valid_fields = ["task_issue", "task_key", "parent_issue", "owner", "review_owner", "review_state"]
     missing = [field for field in valid_fields if not metadata.get(field)]
