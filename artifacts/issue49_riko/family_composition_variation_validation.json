@@ -1,0 +1,17 @@
+{
+  "schema_version":"issue49_family_composition_variation_v1",
+  "status":"PASS",
+  "principle":"A Creative Family constrains decision logic and composition grammar; it does not prescribe one section topology or visual layout.",
+  "family_pairs":[
+    {"family":"BW-F01","cases":["V49-01","V49-02"],"shared_logic":"sensory imagination carries desire","material_difference":"THREE can braid ritual/product/multi-sense narratives with scientific support; BAUM can use a slower tree/material/environment narrative with sustainability proof. Hero, density and proof handoff need not match."},
+    {"family":"BW-F02","cases":["V49-03","V49-04"],"shared_logic":"structured reassurance reduces wrong-choice risk","material_difference":"Regina can foreground counseling/risk/price/flow boundaries; Takami can organize around condition diagnosis, treatment combinations and continuity. Same reassurance family, different information topology."},
+    {"family":"BW-F03","cases":["V49-05","V49-06"],"shared_logic":"aspirational authority must survive into rational commitment","material_difference":"kakimoto arms can build authority through specialist portfolio/editorial craft; pilates K can build it through transformation imagery, program states and contemporary studio energy. One fixed premium layout would be wrong."},
+    {"family":"BW-F04","cases":["V49-07","V49-08"],"shared_logic":"human/material provenance is central","material_difference":"SHIRO can sequence producer/material/factory provenance; uka can sequence consultation, hands-on technique and accumulated salon method. Product provenance and practitioner provenance require different scene grammar."},
+    {"family":"BW-F05","cases":["V49-09","V49-10"],"shared_logic":"reduce self-selection ambiguity","material_difference":"APEX can emphasize analysis-to-personalized formulation routing; FANCL can offer lighter measurement/counseling/AI routes. Guided Choice can be a diagnostic journey, not a repeated card grid."},
+    {"family":"BW-F06","cases":["V49-11","V49-12"],"shared_logic":"method/mechanism proof earns trust","material_difference":"BODY ARCHI can use measurement/device/before-after causal sequences; zen place can use research/explanation/practice evidence. Proof authority can be quantitative or explanatory without sharing a layout."},
+    {"family":"BW-F07","cases":["V49-13","V49-14"],"shared_logic":"ongoing local human relationship reduces distance","material_difference":"Lino can foreground multi-generational local-life participation; Barbaro can foreground long tenure, face-visible neighborhood continuity and community activity. Local proof must follow actual relationship form."},
+    {"family":"BW-F08","cases":["V49-15","V49-16"],"shared_logic":"understanding and self-placement precede commitment","material_difference":"Rintosull can teach machine Pilates mechanics and beginner class experience; LAVA can teach hot-yoga effects, trial flow and program breadth. Both educate, but the conceptual obstacle and next-event sequence differ."}
+  ],
+  "result_summary":"8 / 8 family pairs demonstrate materially different composition possibilities",
+  "prohibited_runtime_shortcut":"family_id -> fixed layout_id"
+}
