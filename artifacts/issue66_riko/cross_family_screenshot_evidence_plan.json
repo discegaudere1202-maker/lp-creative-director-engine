@@ -1,0 +1,67 @@
+{
+  "schema_version": "issue66_cross_family_screenshot_evidence_plan_v1",
+  "issue": 66,
+  "status": "RIN_READY_AFTER_SARAH_AUDIT",
+  "required_widths": [320,360,375,390,430,768,1024,1280,1440],
+  "new_family_count": 4,
+  "reference_company_count": 8,
+  "minimum_new_fullpage_screenshots": 72,
+  "comparison_baseline": ["Nagi/BW-F08","Regina/BW-F02","uka/BW-F04"],
+  "evidence_groups": [
+    {
+      "id":"E1_WITHIN_FAMILY_PAIR",
+      "purpose":"Prove same Family does not collapse into one layout/template.",
+      "required_comparisons":["APEX vs FANCL","Lino Hair vs Barbaro","THREE vs BAUM","kakimoto arms vs pilates K"],
+      "must_differ_materially":["hero silhouette","public scene topology","media role/framing","density/whitespace rhythm","trust/proof placement","CTA choreography"],
+      "failure":"same topology/scene progression with token, photo, logo or copy substitution"
+    },
+    {
+      "id":"E2_CROSS_FAMILY_NEAR_COLLISION",
+      "purpose":"Prove visually adjacent Families remain decision-logic distinct.",
+      "required_comparisons":["F05 references vs Nagi/F08","F05 references vs Regina/F02","F07 references vs uka/F04","F01 references vs uka/F04","F01 references vs F03 references","F03 references vs uka/F04"],
+      "must_show":"the first persuasive job is visible in composition before reviewers inspect metadata",
+      "failure":"reviewer must read architecture_trace metadata to understand why the pages belong to different Families"
+    },
+    {
+      "id":"E3_PHASE_B_REGRESSION_LOCK",
+      "purpose":"Preserve accepted Nagi/Regina/uka behavior while expanding Phase C.",
+      "required_reference_evidence":["accepted Nagi screenshots","accepted Regina screenshots","accepted uka screenshots"],
+      "must_not_regress":["company-specific public semantics","responsive framing","CTA operability","optical Japanese line quality","family freeze before feasibility"]
+    },
+    {
+      "id":"E4_PUBLIC_SEMANTICS_AUTHORSHIP_GATE",
+      "purpose":"Prevent recurrence of Issue #61 token/copy-swapped transfer failure.",
+      "required_company_specific_elements":["hero public semantics","at least one core mid-scene","trust/decision scene","closing/CTA logic"],
+      "hard_rule":"No two reference outputs may reuse the same generic public five-scene progression merely with renamed copy/media labels when their customer decision jobs differ.",
+      "failure":"different architecture metadata but visibly shared scene progression/CTA rhythm"
+    },
+    {
+      "id":"E5_RESPONSIVE_AUTHORSHIP_AND_LINE_GATE",
+      "purpose":"Carry Issue #62/#63 optical lessons into Phase C.",
+      "checks":["no horizontal overflow","no media-frame collision/letterboxing regression","meaning-unit headline wrapping","no isolated Japanese particle/conjunction/noun fragment","no one-character CTA orphan","mobile keeps decision-state evidence adjacent to claim/CTA"],
+      "special_focus_widths":[320,390,768,1024,1440],
+      "hard_rule":"320px is a required authored state, not a shrink-to-fit afterthought."
+    }
+  ],
+  "human_visible_dimensions": [
+    "screenshot_gestalt",
+    "hero_silhouette",
+    "section_topology_module_sequence",
+    "trust_logic",
+    "media_role_framing",
+    "density_whitespace_rhythm",
+    "typography_material_grammar",
+    "cta_choreography",
+    "responsive_authorship",
+    "japanese_line_composition",
+    "generic_scene_reuse",
+    "ai_generated_or_template_smell"
+  ],
+  "template_resemblance_rule": {
+    "numeric_threshold": false,
+    "token_color_photo_logo_copy_swaps_are_uniqueness": false,
+    "human_review_required": true,
+    "minimum_priority_dimensions":["hero_silhouette","section_topology_module_sequence","cta_choreography","screenshot_gestalt"]
+  },
+  "automation_boundary":"CI may verify geometry, provenance, Family/Feasibility invariance and deterministic architecture consumption. CI cannot self-declare Human-visible non-template PASS."
+}
