@@ -1,0 +1,53 @@
+name: Issue 53 Controlled Production Nagi Reference
+
+on:
+  pull_request:
+    paths:
+      - "src/lp_engine/controlled_production.py"
+      - "src/lp_engine/production_generation.py"
+      - "src/lp_engine/production_architecture.py"
+      - "tests/test_issue53_controlled_production.py"
+      - "scripts/run_issue53_controlled_nagi.py"
+      - "data/production_architecture/**"
+      - "artifacts/round2u_b/site/**"
+      - ".github/workflows/issue53_controlled_production_nagi.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  controlled-production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine and browser tooling
+        run: |
+          python -m pip install -e . pytest
+          python -m playwright install --with-deps chromium
+      - name: Diff whitespace check
+        run: git diff --check
+      - name: Issue 53 integration tests
+        run: python -m pytest -q -p no:cacheprovider tests/test_issue53_controlled_production.py tests/test_runtime_family_inference.py tests/test_production_architecture_contract.py
+      - name: Issue 51 and generic regression tests
+        run: python -m pytest -q -p no:cacheprovider tests/test_browser_qa_static.py tests/test_round3d_regression_immunity.py
+      - name: Generate controlled Nagi reference and 9-width evidence
+        run: python -X utf8 scripts/run_issue53_controlled_nagi.py
+      - name: Verify integration trace and screenshots
+        run: |
+          test "$(python -c 'import json; print(json.load(open("artifacts/issue53_controlled_nagi/summary.json"))["status"])')" = PASS
+          test "$(python -c 'import json; print(json.load(open("artifacts/issue53_controlled_nagi/browser_evidence.json"))["status"])')" = PASS
+          test "$(python -c 'import json; print(json.load(open("artifacts/issue53_controlled_nagi/browser_evidence.json"))["widths"])')" = "[320, 360, 375, 390, 430, 768, 1024, 1280, 1440]"
+          test "$(python -c 'import json; print(json.load(open("artifacts/issue53_controlled_nagi/line_qa.json"))["result"])')" = PASS
+          test -f artifacts/issue53_controlled_nagi/manifest.json
+          test -f artifacts/issue53_controlled_nagi/manifest.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue53-controlled-production-nagi-${{ github.sha }}
+          path: artifacts/issue53_controlled_nagi/
+          if-no-files-found: error
+          retention-days: 30
