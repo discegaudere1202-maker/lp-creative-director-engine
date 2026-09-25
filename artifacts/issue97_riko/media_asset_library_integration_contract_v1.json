@@ -1,0 +1,59 @@
+{
+  "schema_version": "issue97_media_asset_library_integration_v1",
+  "pipeline": [
+    "current_industry_scope",
+    "business_category_asset_pool",
+    "scene_intent",
+    "media_role",
+    "required_content_class",
+    "candidate_assets",
+    "rights_provenance_gate",
+    "post_family_freeze_feasibility_selection"
+  ],
+  "category_policy": {
+    "may": ["scope_candidate_asset_pool", "describe_verified_business_context"],
+    "must_not": ["select_creative_family", "select_topology", "select_renderer_profile", "select_scene_order"]
+  },
+  "required_asset_metadata": [
+    "asset_id",
+    "source_provider",
+    "creator_when_known",
+    "rights_status",
+    "license_evidence_or_terms_ref",
+    "checked_at",
+    "content_class",
+    "eligible_media_roles",
+    "evidence_boundary",
+    "replacement_target_when_temporary"
+  ],
+  "evidence_boundary_values": [
+    "ACTUAL_COMPANY_EVIDENCE",
+    "LICENSED_GENERIC_MATERIAL",
+    "GENERATED_EXPLANATION",
+    "AUTHORED_ATMOSPHERE",
+    "ARCHITECTURE_VALIDATION_ONLY"
+  ],
+  "hard_rules": [
+    "public or official-site visibility does not establish reuse rights",
+    "generated/licensed generic visuals cannot be presented as actual staff/customer/venue/result proof",
+    "asset absence may change realization only after Family freeze",
+    "asset selection must not change Creative Family",
+    "unknown rights blocks the asset for Production use"
+  ],
+  "controlled_render_media": {
+    "issue_92_media_role": "architecture regression evidence",
+    "eligible_for_later_sales_sample_by_default": false,
+    "reason": "architecture-validation media is distinct from real-image Sales Sample evidence"
+  },
+  "later_sales_sample_gate": {
+    "required": true,
+    "in_issue_97_scope": false,
+    "must_validate": ["real_image_rights", "company_specific_truth_perception", "human_visible_photo_fit", "sales_sample_quality"]
+  },
+  "failure_states": [
+    "MEDIA_RIGHTS_BLOCKED",
+    "MEDIA_ROLE_UNSATISFIED",
+    "EVIDENCE_BOUNDARY_MISMATCH",
+    "HUMAN_REVIEW_REQUIRED"
+  ]
+}
