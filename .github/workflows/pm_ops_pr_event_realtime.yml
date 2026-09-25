@@ -35,7 +35,7 @@ jobs:
             const eventPath = process.env.GITHUB_EVENT_PATH;
             const event = JSON.parse(fs.readFileSync(eventPath, 'utf8'));
             const pr = event.pull_request || {};
-            if (!pr.body && pr.number) {
+            if (pr.number) {
               const response = await github.rest.pulls.get({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
