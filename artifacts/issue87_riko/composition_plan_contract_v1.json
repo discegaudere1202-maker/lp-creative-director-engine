@@ -1,0 +1,82 @@
+{
+  "schema_version": "issue87_composition_plan_contract_v1",
+  "status": "CONTRACT",
+  "planner_order": [
+    "validate_authoring_input",
+    "resolve_or_stop_ambiguity",
+    "freeze_dominant_family",
+    "derive_decision_signature",
+    "retrieve_compatible_module_grammar",
+    "apply_rule_primitives",
+    "assemble_composition_plan",
+    "apply_post_freeze_feasibility_adaptation",
+    "derive_responsive_authored_transforms",
+    "render",
+    "automated_qa",
+    "human_visible_review"
+  ],
+  "required_output_fields": [
+    "dominant_family",
+    "secondary_influence",
+    "decision_signature",
+    "ambiguity_status",
+    "family_frozen",
+    "selected_grammar",
+    "hero_silhouette_intent",
+    "scenes",
+    "topology_rationale",
+    "cta_choreography",
+    "responsive_authorship",
+    "feasibility_adaptations",
+    "prohibited_fallbacks",
+    "audit_trace"
+  ],
+  "scene_contract": {
+    "required": [
+      "scene_role",
+      "public_heading_intent",
+      "persuasive_job",
+      "trust_role",
+      "evidence_bindings",
+      "media_role",
+      "media_framing_intent",
+      "density_role",
+      "cta_role",
+      "responsive_transform",
+      "authorship_rationale"
+    ],
+    "rule": "Scenes are authored from decision structure and truth, not copied from a Family/reference scene list."
+  },
+  "selected_grammar_contract": {
+    "each_pattern_requires_compatibility_reason": true,
+    "registry_is_grammar_not_component_inventory": true,
+    "same_family_may_select_different_compatible_patterns": true,
+    "pattern_sequence_is_not_fixed_by_family": true
+  },
+  "within_family_variation": {
+    "required": true,
+    "must_be_able_to_differ_on": [
+      "hero silhouette",
+      "scene topology",
+      "public heading progression",
+      "proof distribution",
+      "media role/framing",
+      "density rhythm",
+      "CTA choreography",
+      "responsive transformation"
+    ],
+    "insufficient_difference": ["color swap", "photo swap", "logo swap", "copy noun swap", "same scene sequence with relabeled headings"]
+  },
+  "responsive_authorship": {
+    "required_widths": [320,360,375,390,430,768,1024,1280,1440],
+    "mobile_is_not_stack_only": true,
+    "320_optical_japanese_gate": true,
+    "intermediate_media_framing_review": true
+  },
+  "fail_closed": {
+    "unresolved_ambiguity": "HUMAN_REVIEW_REQUIRED",
+    "unsupported_grammar": "HUMAN_REVIEW_REQUIRED",
+    "identity_keyed_fallback_needed": "STOP_NO_RENDER",
+    "decision_signature_missing": "STOP_NO_RENDER"
+  }
+}

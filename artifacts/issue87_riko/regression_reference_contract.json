@@ -1,0 +1,56 @@
+{
+  "schema_version": "issue87_regression_reference_contract_v1",
+  "status": "CONTRACT",
+  "principle": "Accepted references are regression evidence, never runtime routing keys.",
+  "accepted_reference_set": [
+    {"reference":"Nagi","dominant_family":"BW-F08","decision_job":"category education / open discovery","runtime_key_allowed":false},
+    {"reference":"Regina","dominant_family":"BW-F02","decision_job":"clinical reassurance / suitability / risk-informed choice","runtime_key_allowed":false},
+    {"reference":"uka","dominant_family":"BW-F04","decision_job":"human craft / technique / provenance","runtime_key_allowed":false}
+  ],
+  "phase_c_reference_requirement": "Preserve accepted Phase C outputs as additional regression fixtures when available; do not derive routing from their ids/slugs.",
+  "machine_qa": [
+    "schema validation for AuthoringInput and CompositionPlan",
+    "ambiguity fail-closed",
+    "unsupported Family/grammar fail-closed",
+    "static no company/case/reference lookup in runtime composition routing",
+    "behavioral identity-invariance test",
+    "no Family -> fixed layout/profile test",
+    "Production Feasibility invariance after Family freeze",
+    "same-Family different decision signatures produce semantically different plans",
+    "near-collision Family tests preserve explicit discriminator/reviewability",
+    "generation/render consumes CompositionPlan, not metadata-only",
+    "Nagi/Regina/uka regression",
+    "accepted Phase C regression",
+    "line/overflow/browser QA at 320/360/375/390/430/768/1024/1280/1440"
+  ],
+  "human_visible_gates": [
+    "screenshot gestalt/company-specific authorship",
+    "hero silhouette",
+    "public heading progression and section topology",
+    "visible trust/proof architecture",
+    "media role/framing",
+    "density/whitespace rhythm",
+    "typography/material grammar",
+    "CTA choreography",
+    "responsive authorship at mobile/intermediate/desktop",
+    "320px Japanese optical line composition",
+    "repeated generic scene grammar / AI-generated feel",
+    "same-Family pair is distinct beyond tokens/copy/media swaps",
+    "cross-Family near-collision pair visibly expresses different decision logic"
+  ],
+  "phase_b_failure_regression": {
+    "forbidden_public_sequence_reuse": "Do not reuse an identical generic public scene progression across materially different decision jobs.",
+    "origin": "Issue #61 Regina/uka human-visible RETURN",
+    "required_authored_difference": ["hero", "at least one core mid-scene", "trust/decision scene", "closing/CTA logic"]
+  },
+  "optical_regression": {
+    "origin": "Issue #62/#63 uka 320px RETURN then HUMAN_VISIBLE_PASS",
+    "blocking_examples": ["isolated noun fragment", "isolated Japanese particle", "one-character CTA/headline tail"],
+    "mandatory_width": 320
+  },
+  "template_resemblance_policy": {
+    "numeric_threshold": false,
+    "ci_only_pass_forbidden": true,
+    "human_review_required": true
+  }
+}

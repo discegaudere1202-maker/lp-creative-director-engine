@@ -1,0 +1,33 @@
+{
+  "schema_version":"issue87_rin_handoff_v1",
+  "status":"READY_AFTER_SARAH_AUDIT",
+  "implementation_goal":"Introduce a generic CompositionPlanner that consumes semantic architecture inputs and emits CompositionPlan; renderer must not select composition by company/reference/category/Family fixed profile.",
+  "new_interfaces":["AuthoringInput v1","CompositionPlan v1","RulePrimitiveRegistry v1"],
+  "recommended_modules":[
+    {"module":"composition_planner.py","responsibility":"validate input, resolve ambiguity, derive decision signature, select compatible grammar/primitives, emit auditable CompositionPlan"},
+    {"module":"composition_contracts.py","responsibility":"schema validation and fail-closed errors"}
+  ],
+  "migration_targets":[
+    "src/lp_engine/controlled_production.py reference adapter remains fixture/regression-only",
+    "src/lp_engine/production_generation.py::_industry_visual_direction must not choose final composition/profile by service keyword",
+    "src/lp_engine/production_generation.py::_layout_profile must be superseded for final composition choice by CompositionPlan intent"
+  ],
+  "required_tests":[
+    "identity mutation invariance",
+    "decision-state mutation sensitivity",
+    "same-Family two-company plan distinction",
+    "Family fixed-layout prohibition",
+    "category-key final-profile prohibition",
+    "ambiguity STOP_NO_RENDER",
+    "grammar incompatibility HUMAN_REVIEW_REQUIRED",
+    "feasibility cannot change Family",
+    "CompositionPlan consumed by generation/render",
+    "Nagi/Regina/uka regressions",
+    "Phase C accepted regressions",
+    "9-width browser/line/overflow QA",
+    "320px optical Japanese QA"
+  ],
+  "human_review_required_for":["template resemblance","company-specific authorship","hero silhouette","scene semantics/topology","trust/proof visibility","media framing","density rhythm","CTA choreography","responsive authorship"],
+  "forbidden":["company/case/reference lookup","Family->layout/profile map","category keyword->final renderer profile","silent generic fallback","CI-only creative PASS","asset scarcity changing Family"],
+  "rollout":["shadow plan","accepted-reference planner validation","generic planner primary","delete runtime shortcuts","retain references as test fixtures only"]
+}

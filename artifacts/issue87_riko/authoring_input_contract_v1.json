@@ -1,0 +1,67 @@
+{
+  "schema_version": "issue87_authoring_input_contract_v1",
+  "status": "CONTRACT",
+  "purpose": "Generic authored-composition input after Family inference and before rendering.",
+  "required": [
+    "company_truth",
+    "customer_decision_state",
+    "creative_fit",
+    "family_selection",
+    "module_grammar_candidates",
+    "evidence_bindings",
+    "conversion_goal",
+    "production_feasibility"
+  ],
+  "family_selection": {
+    "dominant_family_required": true,
+    "secondary_influence_optional": true,
+    "family_frozen_before_feasibility": true,
+    "ambiguity_status_required": true,
+    "allowed_ambiguity_status": ["RESOLVED", "HUMAN_REVIEW_REQUIRED"],
+    "unresolved_behavior": "STOP_NO_RENDER"
+  },
+  "company_truth_minimum": [
+    "verified facts relevant to service/value proposition",
+    "differentiators with provenance",
+    "offer/service structure when known",
+    "contact/conversion facts when known"
+  ],
+  "customer_decision_state_minimum": [
+    "intent",
+    "decision_job",
+    "first_persuasive_job_or_equivalent",
+    "known_barriers_or_objections"
+  ],
+  "evidence_binding_policy": {
+    "source_bounded": true,
+    "unknown_must_remain_unknown": true,
+    "media_visibility_is_not_reuse_rights": true,
+    "generated_people_must_not_impersonate_real_people": true
+  },
+  "production_feasibility_policy": {
+    "applies_after_family_freeze": true,
+    "may_change_family": false,
+    "may_change": ["safe media realization", "proof placement", "available grammar variants", "asset realization"],
+    "must_preserve": ["decision job", "dominant family", "persuasive topology intent", "trust logic", "CTA state"]
+  },
+  "forbidden_runtime_routing_inputs": [
+    "company_name",
+    "company_id",
+    "reference_case_id",
+    "fixture_id",
+    "accepted_reference_slug",
+    "industry_or_service_keyword_as_final_renderer_profile_key"
+  ],
+  "allowed_use_of_identity_fields": "Identity may appear in output copy/audit provenance, but must not select layout/profile/scene topology.",
+  "decision_signature": {
+    "derive_from": ["customer_decision_state", "first persuasive job", "verified company truth", "offer structure", "evidence utility", "conversion state"],
+    "must_not_include": ["company_id as routing discriminator", "reference id as routing discriminator"]
+  },
+  "fail_closed_conditions": [
+    "dominant family unresolved",
+    "family/grammar compatibility cannot be justified",
+    "required decision job missing",
+    "evidence-dependent claim has no valid binding",
+    "planner would require a prohibited identity-keyed fallback"
+  ]
+}
