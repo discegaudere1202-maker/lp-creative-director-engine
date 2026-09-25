@@ -44,7 +44,7 @@ def reference_input(contract: Mapping[str, Any]) -> dict[str, Any]:
 
 def _architecture(contract: Mapping[str, Any], inference: Mapping[str, Any], feasibility: Mapping[str, Any]) -> dict[str, Any]:
     family = inference["dominant_family"]
-    grammar = _select_module_grammar(family, contract["customer_state"])
+    grammar = _select_module_grammar(family, {"decision_job": contract["decision_job"], "customer_state": contract["customer_state"]})
     if family == "BW-F03":
         grammar["hero_authoring"] = "F03 decision-job-authored aspirational authority; no fixed F03 hero template"
     grammar["compatibility_rationale"] = contract["decision_job"]
