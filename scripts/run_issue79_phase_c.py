@@ -31,7 +31,7 @@ async def capture(site):
                 public_leaks=await page.evaluate("""() => {
                     const text=document.body.innerText || "";
                     return ["data-editorial-role=", "headline-optical-default", "<h1", "<h2"].filter(token => text.includes(token));
-                }""")                public_leaks=await page.evaluate("""() => {
+                }"""); public_leaks=await page.evaluate("""() => {
                     const text=document.body.innerText || "";
                     return ["data-editorial-role=", "headline-optical-default", "<h1", "<h2"].filter(token => text.includes(token));
                 }""")
