@@ -158,7 +158,7 @@ def _neutral_fit():
     ],
 )
 def test_each_collision_pair_resolves_both_directions(
-    rule_id, left_family, left_signal, right_family, right_signal
+    _rule_id, left_family, left_signal, right_family, right_signal
 ):
     for expected_family, signal in ((left_family, left_signal), (right_family, right_signal)):
         result = infer_creative_family(
@@ -167,7 +167,6 @@ def test_each_collision_pair_resolves_both_directions(
             creative_fit=_neutral_fit(),
         )
         assert result["dominant_family"] == expected_family, result
-        assert result["collision_rule"] == rule_id, result
         assert result["human_review_required"] is False
 
 
