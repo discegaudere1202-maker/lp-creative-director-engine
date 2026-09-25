@@ -137,6 +137,82 @@ def test_collision_rules_are_executed_and_unresolved_pairs_stop_for_review():
     assert unresolved["human_review_required"] is True
 
 
+def _neutral_fit():
+    return {
+        "schema_version": "creative_fit_profile_v1",
+        "profile_id": "synthetic-collision-matrix",
+        "dimensions": {name: 0.5 for name in FIT_DIMENSIONS},
+        "source_refs": ["test:collision-matrix"],
+    }
+
+
+@pytest.mark.parametrize(
+    "rule_id,left_family,left_signal,right_family,right_signal",
+    [
+        ("C02_C06", "BW-F02", "safety", "BW-F06", "measurable"),
+        ("C05_C08", "BW-F05", "self-select", "BW-F08", "first-timer"),
+        ("C01_C04", "BW-F01", "sensory", "BW-F04", "provenance"),
+        ("C03_C04", "BW-F03", "aspirational", "BW-F04", "maker"),
+        ("C04_C07", "BW-F04", "craft", "BW-F07", "community"),
+        ("C06_C08", "BW-F06", "measurable", "BW-F08", "category education"),
+    ],
+)
+def test_each_collision_pair_resolves_both_directions(
+    rule_id, left_family, left_signal, right_family, right_signal
+):
+    for expected_family, signal in ((left_family, left_signal), (right_family, right_signal)):
+        result = infer_creative_family(
+            company_truth={"verified": True, "facts": ["synthetic service"]},
+            customer_decision_state=f"the primary decision job is {signal}",
+            creative_fit=_neutral_fit(),
+        )
+        assert result["dominant_family"] == expected_family, result
+        assert result["collision_rule"] == rule_id, result
+        assert result["human_review_required"] is False
+
+
+@pytest.mark.parametrize(
+    "rule_id,left_signal,right_signal",
+    [
+        ("C02_C06", "safety", "measurable"),
+        ("C05_C08", "self-select", "first-timer"),
+        ("C01_C04", "sensory", "provenance"),
+        ("C03_C04", "aspirational", "maker"),
+        ("C04_C07", "craft", "community"),
+        ("C06_C08", "measurable", "category education"),
+    ],
+)
+def test_each_collision_pair_requires_human_review_when_both_sides_remain(
+    rule_id, left_signal, right_signal
+):
+    result = infer_creative_family(
+        company_truth={"verified": True, "facts": ["synthetic service"]},
+        customer_decision_state=f"{left_signal} and {right_signal} are equally important",
+        creative_fit=_neutral_fit(),
+    )
+    assert result["dominant_family"] is None
+    assert result["collision_rule"] == rule_id
+    assert result["ambiguity_state"] == "CO_DOMINANT_HUMAN_REVIEW"
+    assert result["human_review_required"] is True
+
+
+@pytest.mark.parametrize(
+    "decision_state",
+    [
+        {"summary": "route care", "photo_asset_quantity": 0.9},
+        {"signals": {"source_coverage": 0.5}},
+    ],
+)
+def test_customer_decision_state_cannot_leak_production_feasibility(decision_state):
+    expected, _company = next(_records())
+    with pytest.raises(ValueError, match="feasibility"):
+        infer_creative_family(
+            company_truth={"verified": True, "facts": ["synthetic service"]},
+            customer_decision_state=decision_state,
+            creative_fit=_fit(expected),
+        )
+
+
 def test_inference_freezes_fit_before_feasibility_selection():
     expected, company = next(_records())
     feasibility = {
