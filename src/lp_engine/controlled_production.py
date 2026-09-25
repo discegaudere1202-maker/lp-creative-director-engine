@@ -166,6 +166,7 @@ def run_controlled_nagi_production(output_dir: str | Path) -> dict[str, Any]:
     )
     trace = {
         "schema_version": "issue53_controlled_production_trace_v1",
+        "integration_contract_version": "issue53-controlled-production-v1",
         "source_issue": 53,
         "company": raw["company"]["company_name"],
         "company_truth": company_truth,

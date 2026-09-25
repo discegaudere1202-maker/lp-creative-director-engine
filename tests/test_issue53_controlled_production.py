@@ -9,6 +9,7 @@ def test_issue53_nagi_path_uses_runtime_inference_and_freezes_family(tmp_path):
     result = run_controlled_nagi_production(tmp_path / "nagi")
     assert result["status"] == "PASS"
     trace = result["trace"]
+    assert trace["integration_contract_version"] == "issue53-controlled-production-v1"
     assert trace["runtime_inference"]["dominant_family"] == "BW-F08"
     assert trace["selection"]["selection_basis"] == "creative_fit"
     assert trace["selection"]["family_change_allowed"] is False
