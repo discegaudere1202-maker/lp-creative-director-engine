@@ -1171,7 +1171,7 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
         # meaning break. Keep the authored desktop/tablet DOM unchanged.
         target_headline = "暮らしに置いたときの相性を見る。"
         if target_headline in value:
-            opening = f"<{tag}>"
+            opening = f"<{tag} "
             closing = f"</{tag}>"
             rendered = rendered.replace(
                 opening,
