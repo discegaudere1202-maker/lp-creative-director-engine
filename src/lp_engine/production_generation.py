@@ -1166,7 +1166,25 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     def esc(v): return html.escape(str(v or ""), quote=True)
     def heading_markup(value: str, tag: str) -> str:
         ir = repair_text_ir(make_text_ir(value, role="section_headline", context={"renderer": "premium"}))
-        return render_text_ir(ir, tag=tag, escape=esc)
+        rendered = render_text_ir(ir, tag=tag, escape=esc)
+        # Issue #81/#83: keep the authored desktop/tablet heading and add a
+        # deterministic mobile meaning break without string-fragment markup.
+        target_headline = "暮らしに置いたときの相性を見る。"
+        if target_headline in value:
+            opening_end = rendered.find(">")
+            closing_start = rendered.rfind(f"</{tag}>")
+            if opening_end < 0 or closing_start <= opening_end:
+                raise ValueError("invalid rendered heading markup")
+            inner = rendered[opening_end + 1:closing_start]
+            return (
+                f'<{tag} class="headline-optical-three-fit" data-editorial-role="section_headline">'
+                f'<span class="headline-optical-default">{inner}</span>'
+                f'<span class="headline-optical-mobile" aria-hidden="true">'
+                f'<span class="headline-optical-mobile-chunk">暮らしに置いたときの</span>'
+                f'<span class="headline-optical-mobile-chunk">相性を見る。</span>'
+                f'</span></{tag}>'
+            )
+        return rendered
     chunks = []
     rendered_cta_stages = set()
     for i, scene in enumerate(plan.get("scene_plan", [])):
@@ -1299,7 +1317,8 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     @media(max-width:900px){{h1{{font-size:clamp(2.8rem,5vw,3.6rem);}}h2{{font-size:clamp(2rem,3.7vw,2.8rem);}}}}
     @media(min-width:761px) and (max-width:1100px){{.scene-state-feel_care .scene-media--dominant{{min-height:0;aspect-ratio:3 / 2;}}.scene-state-feel_care .scene-media--dominant .photo-frame{{height:100%;}}.scene-state-feel_care .scene-media--dominant .photo-frame img{{height:100%;object-fit:cover;}}}}
     @media(max-width:760px){{.premium-scene{{padding:var(--mobile-scene-gap) 0;}}.premium-scene--ending{{padding:var(--mobile-page-padding) 0;}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr);gap:2rem;}}.scene-media--immersive,.scene-media--dominant{{min-height:280px;}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem;padding:1rem;}}.profile-field_ledger .scene-state-imagine_change .scene-layered{{display:grid;grid-template-columns:1fr;}}.profile-field_ledger .scene-state-imagine_change .scene-layered .scene-media,.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{grid-column:1;grid-row:auto;}}.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{position:relative;margin-top:-2rem;}}.profile-care_rhythm .scene-layered-copy{{margin-top:-1rem;}}}}
-    /* Narrow optical correction for the BW-F04 320px review finding only.
+         .headline-optical-mobile{{display:none;}}
+     @media(max-width:767px){{body[data-issue77-f01="three"] .premium-scene.scene-state-fit .headline-optical-three-fit .headline-optical-default,.premium-scene.scene-state-fit .headline-optical-three-fit .headline-optical-default{{display:none!important;}}body[data-issue77-f01="three"] .premium-scene.scene-state-fit .headline-optical-three-fit .headline-optical-mobile,.premium-scene.scene-state-fit .headline-optical-three-fit .headline-optical-mobile{{display:block!important;white-space:normal;font-size:clamp(1.7rem,7.5vw,2.4rem);line-height:1.2;}}body[data-issue77-f01="three"] .premium-scene.scene-state-fit .headline-optical-three-fit .headline-optical-mobile-chunk,.premium-scene.scene-state-fit .headline-optical-three-fit .headline-optical-mobile-chunk{{display:block;white-space:nowrap;}}}}/* Narrow optical correction for the BW-F04 320px review finding only.
        Keep the semantic phrase and CTA intact; do not alter >=360px output. */
     @media(max-width:335px){{body[data-public-semantic-profile="craft"] .premium-scene:first-child h1{{font-size:2.1rem;line-height:1.28;}}body[data-public-semantic-profile="craft"] .premium-scene .button{{font-size:.82rem;letter-spacing:-.02em;padding-inline:14px;white-space:nowrap;}}}}
     '''
