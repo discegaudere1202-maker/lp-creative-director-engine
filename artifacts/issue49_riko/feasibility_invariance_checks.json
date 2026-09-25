@@ -1,0 +1,30 @@
+{
+  "schema_version":"issue49_feasibility_invariance_v1",
+  "status":"PASS",
+  "principle":"Changing Production Feasibility alone must never change expected Creative Family.",
+  "counterfactual_profiles":{
+    "RICH_ASSET":{"photo_asset_quantity":.9,"evidence_quantity_available":.9,"scraping_difficulty":.1,"source_coverage":.9,"rights_clarity":.9,"staff_photo_availability":.9,"facility_photo_availability":.9,"pricing_completeness":.9,"social_proof_availability":.9},
+    "SPARSE_ASSET":{"photo_asset_quantity":.1,"evidence_quantity_available":.2,"scraping_difficulty":.9,"source_coverage":.2,"rights_clarity":.2,"staff_photo_availability":.1,"facility_photo_availability":.1,"pricing_completeness":.2,"social_proof_availability":.1}
+  },
+  "note":"These are controlled counterfactual perturbations, not claims about each company's real asset inventory.",
+  "checks":[
+    {"case_id":"V49-01","expected_family":"BW-F01","rich_asset_family":"BW-F01","sparse_asset_family":"BW-F01","result":"PASS"},
+    {"case_id":"V49-02","expected_family":"BW-F01","rich_asset_family":"BW-F01","sparse_asset_family":"BW-F01","result":"PASS"},
+    {"case_id":"V49-03","expected_family":"BW-F02","rich_asset_family":"BW-F02","sparse_asset_family":"BW-F02","result":"PASS"},
+    {"case_id":"V49-04","expected_family":"BW-F02","rich_asset_family":"BW-F02","sparse_asset_family":"BW-F02","result":"PASS"},
+    {"case_id":"V49-05","expected_family":"BW-F03","rich_asset_family":"BW-F03","sparse_asset_family":"BW-F03","result":"PASS"},
+    {"case_id":"V49-06","expected_family":"BW-F03","rich_asset_family":"BW-F03","sparse_asset_family":"BW-F03","result":"PASS"},
+    {"case_id":"V49-07","expected_family":"BW-F04","rich_asset_family":"BW-F04","sparse_asset_family":"BW-F04","result":"PASS"},
+    {"case_id":"V49-08","expected_family":"BW-F04","rich_asset_family":"BW-F04","sparse_asset_family":"BW-F04","result":"PASS"},
+    {"case_id":"V49-09","expected_family":"BW-F05","rich_asset_family":"BW-F05","sparse_asset_family":"BW-F05","result":"PASS"},
+    {"case_id":"V49-10","expected_family":"BW-F05","rich_asset_family":"BW-F05","sparse_asset_family":"BW-F05","result":"PASS"},
+    {"case_id":"V49-11","expected_family":"BW-F06","rich_asset_family":"BW-F06","sparse_asset_family":"BW-F06","result":"PASS"},
+    {"case_id":"V49-12","expected_family":"BW-F06","rich_asset_family":"BW-F06","sparse_asset_family":"BW-F06","result":"PASS"},
+    {"case_id":"V49-13","expected_family":"BW-F07","rich_asset_family":"BW-F07","sparse_asset_family":"BW-F07","result":"PASS"},
+    {"case_id":"V49-14","expected_family":"BW-F07","rich_asset_family":"BW-F07","sparse_asset_family":"BW-F07","result":"PASS"},
+    {"case_id":"V49-15","expected_family":"BW-F08","rich_asset_family":"BW-F08","sparse_asset_family":"BW-F08","result":"PASS"},
+    {"case_id":"V49-16","expected_family":"BW-F08","rich_asset_family":"BW-F08","sparse_asset_family":"BW-F08","result":"PASS"}
+  ],
+  "result_summary":"16 / 16 PASS",
+  "implementation_implication":"Feasibility can adapt media substitution, proof rendering, copy specificity and fallback realization only after Family selection; it cannot trigger a Family switch."
+}
