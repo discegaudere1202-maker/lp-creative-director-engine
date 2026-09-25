@@ -1,0 +1,567 @@
+{
+  "schema_version": "phase_c_reference_contract_v1",
+  "issue": 68,
+  "source_issue": 66,
+  "companies": [
+    {
+      "reference_id": "V68-01",
+      "company_id": "pola-apex",
+      "company_name": "POLA APEX",
+      "expected_family": "BW-F05",
+      "decision_job": "category accepted; cannot self-select without diagnosis",
+      "official_url": "https://www.pola.co.jp/brand/apex/about/index.html",
+      "color": "#76524c",
+      "industry": "beauty consultation",
+      "location": "official reference context",
+      "customer_state": "category accepted; cannot self-select without diagnosis",
+      "prohibited_families": [],
+      "source_refs": [
+        "issue66:V68-01",
+        "https://www.pola.co.jp/brand/apex/about/index.html"
+      ],
+      "public_scene_semantics": [
+        {
+          "state": "need",
+          "role": "guided_choice",
+          "headline": "選びたいけれど、違いがまだ分からない。",
+          "body": "目的に近い入口から、相談する内容を整理できます。",
+          "copy_intent": "ORIENT",
+          "visual_authority": "TYPE",
+          "media_role": "hero_context",
+          "cta_stage": "discovery"
+        },
+        {
+          "state": "diagnosis",
+          "role": "diagnostic_route",
+          "headline": "先に、今の状態を確かめる。",
+          "body": "選択肢を並べるのではなく、必要な確認から順に進みます。",
+          "copy_intent": "PROVE",
+          "visual_authority": "PROCESS",
+          "media_role": "process_detail",
+          "cta_stage": ""
+        },
+        {
+          "state": "fit",
+          "role": "fit_comparison",
+          "headline": "自分に近い方法を、比べて選ぶ。",
+          "body": "条件と違いを見ながら、合う方向を絞り込みます。",
+          "copy_intent": "COMPARE",
+          "visual_authority": "DATA",
+          "media_role": "material_detail",
+          "cta_stage": "reassurance"
+        },
+        {
+          "state": "route",
+          "role": "recommended_route",
+          "headline": "次に確認することが、見えてくる。",
+          "body": "迷いを残したままではなく、相談先までつなげます。",
+          "copy_intent": "REDUCE_RISK",
+          "visual_authority": "MATERIAL",
+          "media_role": "consultation_context",
+          "cta_stage": ""
+        },
+        {
+          "state": "choice",
+          "role": "guided_cta",
+          "headline": "気になる入口から、相談できます。",
+          "body": "分からない点を持って、公式案内へ進めます。",
+          "copy_intent": "CONVERT",
+          "visual_authority": "TYPE",
+          "media_role": "typography",
+          "cta_stage": "action"
+        }
+      ],
+      "coverage_role": "primary family decision route"
+    },
+    {
+      "reference_id": "V68-02",
+      "company_id": "fancl",
+      "company_name": "FANCL",
+      "expected_family": "BW-F05",
+      "decision_job": "category accepted; personalized recommendation routes current skin care",
+      "official_url": "https://www.fancl.co.jp/shop/service/index.html",
+      "color": "#2f6b63",
+      "industry": "beauty consultation",
+      "location": "official reference context",
+      "customer_state": "category accepted; personalized recommendation routes current skin care",
+      "prohibited_families": [],
+      "source_refs": [
+        "issue66:V68-02",
+        "https://www.fancl.co.jp/shop/service/index.html"
+      ],
+      "public_scene_semantics": [
+        {
+          "state": "need",
+          "role": "guided_choice",
+          "headline": "選びたいけれど／違いがまだ分からない。",
+          "body": "目的に近い入口から、相談する内容を整理できます。",
+          "copy_intent": "ORIENT",
+          "visual_authority": "TYPE",
+          "media_role": "hero_context",
+          "cta_stage": "discovery"
+        },
+        {
+          "state": "diagnosis",
+          "role": "diagnostic_route",
+          "headline": "先に／今の状態を確かめる。",
+          "body": "選択肢を並べるのではなく、必要な確認から順に進みます。",
+          "copy_intent": "PROVE",
+          "visual_authority": "PROCESS",
+          "media_role": "process_detail",
+          "cta_stage": ""
+        },
+        {
+          "state": "fit",
+          "role": "fit_comparison",
+          "headline": "自分に近い方法を／比べて選ぶ。",
+          "body": "条件と違いを見ながら、合う方向を絞り込みます。",
+          "copy_intent": "COMPARE",
+          "visual_authority": "DATA",
+          "media_role": "material_detail",
+          "cta_stage": "reassurance"
+        },
+        {
+          "state": "route",
+          "role": "recommended_route",
+          "headline": "次に確認することが／見えてくる。",
+          "body": "迷いを残したままではなく、相談先までつなげます。",
+          "copy_intent": "REDUCE_RISK",
+          "visual_authority": "MATERIAL",
+          "media_role": "consultation_context",
+          "cta_stage": ""
+        },
+        {
+          "state": "choice",
+          "role": "guided_cta",
+          "headline": "気になる入口から／相談できます。",
+          "body": "分からない点を持って、公式案内へ進めます。",
+          "copy_intent": "CONVERT",
+          "visual_authority": "TYPE",
+          "media_role": "typography",
+          "cta_stage": "action"
+        }
+      ],
+      "coverage_role": "within-family alternate decision route"
+    },
+    {
+      "reference_id": "V68-03",
+      "company_id": "lino-hair",
+      "company_name": "Lino Hair",
+      "expected_family": "BW-F07",
+      "decision_job": "local relationship and long-term familiarity change the choice",
+      "official_url": "https://lino.kyoto.jp/concept/",
+      "color": "#8b5b45",
+      "industry": "local hair service",
+      "location": "official reference context",
+      "customer_state": "local relationship and long-term familiarity change the choice",
+      "prohibited_families": [],
+      "source_refs": [
+        "issue66:V68-03",
+        "https://lino.kyoto.jp/concept/"
+      ],
+      "public_scene_semantics": [
+        {
+          "state": "place",
+          "role": "local_recognition",
+          "headline": "通う場所だから、近さだけで決めない。",
+          "body": "その地域で続いてきた関係が、選ぶ理由になります。",
+          "copy_intent": "ORIENT",
+          "visual_authority": "TYPE",
+          "media_role": "hero_context",
+          "cta_stage": "discovery"
+        },
+        {
+          "state": "people",
+          "role": "community_relation",
+          "headline": "顔が見える関係から、相談が始まる。",
+          "body": "暮らしの中で会い続ける人と場所を、具体的に想像できます。",
+          "copy_intent": "SHOW_TRUST",
+          "visual_authority": "PERSON",
+          "media_role": "human_context",
+          "cta_stage": ""
+        },
+        {
+          "state": "continuity",
+          "role": "ongoing_relationship",
+          "headline": "一度きりではなく、続けて通う。",
+          "body": "世代や生活の変化とともに、付き合い方を考えます。",
+          "copy_intent": "PROVE",
+          "visual_authority": "PROCESS",
+          "media_role": "process_detail",
+          "cta_stage": "reassurance"
+        },
+        {
+          "state": "nearby",
+          "role": "local_choice",
+          "headline": "自分の毎日に近い場所を選ぶ。",
+          "body": "営業時間・距離・相談のしやすさを確認できます。",
+          "copy_intent": "COMPARE",
+          "visual_authority": "DATA",
+          "media_role": "material_detail",
+          "cta_stage": ""
+        },
+        {
+          "state": "visit",
+          "role": "local_cta",
+          "headline": "近くの店へ、まず相談する。",
+          "body": "場所と案内を確かめて、次の一歩へ進めます。",
+          "copy_intent": "CONVERT",
+          "visual_authority": "TYPE",
+          "media_role": "typography",
+          "cta_stage": "action"
+        }
+      ],
+      "coverage_role": "primary family decision route"
+    },
+    {
+      "reference_id": "V68-04",
+      "company_id": "barbaro",
+      "company_name": "Barbaro",
+      "expected_family": "BW-F07",
+      "decision_job": "community continuity and familiar faces lead the choice",
+      "official_url": "https://barbaro1994.com/",
+      "color": "#3b5a72",
+      "industry": "local hair service",
+      "location": "official reference context",
+      "customer_state": "community continuity and familiar faces lead the choice",
+      "prohibited_families": [],
+      "source_refs": [
+        "issue66:V68-04",
+        "https://barbaro1994.com/"
+      ],
+      "public_scene_semantics": [
+        {
+          "state": "place",
+          "role": "local_recognition",
+          "headline": "通う場所だから／近さだけで決めない。",
+          "body": "その地域で続いてきた関係が、選ぶ理由になります。",
+          "copy_intent": "ORIENT",
+          "visual_authority": "TYPE",
+          "media_role": "hero_context",
+          "cta_stage": "discovery"
+        },
+        {
+          "state": "people",
+          "role": "community_relation",
+          "headline": "顔が見える関係から／相談が始まる。",
+          "body": "暮らしの中で会い続ける人と場所を、具体的に想像できます。",
+          "copy_intent": "SHOW_TRUST",
+          "visual_authority": "PERSON",
+          "media_role": "human_context",
+          "cta_stage": ""
+        },
+        {
+          "state": "continuity",
+          "role": "ongoing_relationship",
+          "headline": "一度きりではなく／続けて通う。",
+          "body": "世代や生活の変化とともに、付き合い方を考えます。",
+          "copy_intent": "PROVE",
+          "visual_authority": "PROCESS",
+          "media_role": "process_detail",
+          "cta_stage": "reassurance"
+        },
+        {
+          "state": "nearby",
+          "role": "local_choice",
+          "headline": "自分の毎日に近い場所を選ぶ。",
+          "body": "営業時間・距離・相談のしやすさを確認できます。",
+          "copy_intent": "COMPARE",
+          "visual_authority": "DATA",
+          "media_role": "material_detail",
+          "cta_stage": ""
+        },
+        {
+          "state": "visit",
+          "role": "local_cta",
+          "headline": "近くの店へ／まず相談する。",
+          "body": "場所と案内を確かめて、次の一歩へ進めます。",
+          "copy_intent": "CONVERT",
+          "visual_authority": "TYPE",
+          "media_role": "typography",
+          "cta_stage": "action"
+        }
+      ],
+      "coverage_role": "within-family alternate decision route"
+    },
+    {
+      "reference_id": "V68-05",
+      "company_id": "three",
+      "company_name": "THREE",
+      "expected_family": "BW-F01",
+      "decision_job": "sensory ritual and holistic worldview lead before efficacy proof",
+      "official_url": "https://www.threecosmetics.com/brand/holistic-care-concept",
+      "color": "#5a6f52",
+      "industry": "sensory beauty/lifestyle",
+      "location": "official reference context",
+      "customer_state": "sensory ritual and holistic worldview lead before efficacy proof",
+      "prohibited_families": [],
+      "source_refs": [
+        "issue66:V68-05",
+        "https://www.threecosmetics.com/brand/holistic-care-concept"
+      ],
+      "public_scene_semantics": [
+        {
+          "state": "ritual",
+          "role": "sensory_invitation",
+          "headline": "使う前に、感覚の居場所を想像する。",
+          "body": "香りや素材の印象から、自分に合う時間を思い描けます。",
+          "copy_intent": "ORIENT",
+          "visual_authority": "ATMOSPHERE",
+          "media_role": "hero_context",
+          "cta_stage": "discovery"
+        },
+        {
+          "state": "material",
+          "role": "sensory_detail",
+          "headline": "触れるものが、選ぶ理由になる。",
+          "body": "素材・香り・手ざわりを、機能だけでなく体験として見渡します。",
+          "copy_intent": "DESIRE",
+          "visual_authority": "MATERIAL",
+          "media_role": "material_detail",
+          "cta_stage": ""
+        },
+        {
+          "state": "fit",
+          "role": "lifestyle_fit",
+          "headline": "暮らしに置いたときの、相性を見る。",
+          "body": "世界観と使い方が、自分の生活に続くかを確かめます。",
+          "copy_intent": "COMPARE",
+          "visual_authority": "PERSON",
+          "media_role": "process_detail",
+          "cta_stage": "reassurance"
+        },
+        {
+          "state": "proof",
+          "role": "bounded_support",
+          "headline": "感覚を、確かめられる情報へ戻す。",
+          "body": "成分・方法・背景を、雰囲気だけに任せず整理します。",
+          "copy_intent": "PROVE",
+          "visual_authority": "DATA",
+          "media_role": "consultation_context",
+          "cta_stage": ""
+        },
+        {
+          "state": "start",
+          "role": "sensory_cta",
+          "headline": "自分に合う入口から、始める。",
+          "body": "気になる方法を選び、公式案内へ進めます。",
+          "copy_intent": "CONVERT",
+          "visual_authority": "TYPE",
+          "media_role": "typography",
+          "cta_stage": "action"
+        }
+      ],
+      "coverage_role": "primary family decision route"
+    },
+    {
+      "reference_id": "V68-06",
+      "company_id": "baum",
+      "company_name": "BAUM",
+      "expected_family": "BW-F01",
+      "decision_job": "calming sensory identity and lifestyle fit lead the choice",
+      "official_url": "https://www.baumjapan.com/baum/about/brand-story.html",
+      "color": "#796244",
+      "industry": "sensory beauty/lifestyle",
+      "location": "official reference context",
+      "customer_state": "calming sensory identity and lifestyle fit lead the choice",
+      "prohibited_families": [],
+      "source_refs": [
+        "issue66:V68-06",
+        "https://www.baumjapan.com/baum/about/brand-story.html"
+      ],
+      "public_scene_semantics": [
+        {
+          "state": "ritual",
+          "role": "sensory_invitation",
+          "headline": "使う前に／感覚の居場所を想像する。",
+          "body": "香りや素材の印象から、自分に合う時間を思い描けます。",
+          "copy_intent": "ORIENT",
+          "visual_authority": "ATMOSPHERE",
+          "media_role": "hero_context",
+          "cta_stage": "discovery"
+        },
+        {
+          "state": "material",
+          "role": "sensory_detail",
+          "headline": "触れるものが／選ぶ理由になる。",
+          "body": "素材・香り・手ざわりを、機能だけでなく体験として見渡します。",
+          "copy_intent": "DESIRE",
+          "visual_authority": "MATERIAL",
+          "media_role": "material_detail",
+          "cta_stage": ""
+        },
+        {
+          "state": "fit",
+          "role": "lifestyle_fit",
+          "headline": "暮らしに置いたときの／相性を見る。",
+          "body": "世界観と使い方が、自分の生活に続くかを確かめます。",
+          "copy_intent": "COMPARE",
+          "visual_authority": "PERSON",
+          "media_role": "process_detail",
+          "cta_stage": "reassurance"
+        },
+        {
+          "state": "proof",
+          "role": "bounded_support",
+          "headline": "感覚を／確かめられる情報へ戻す。",
+          "body": "成分・方法・背景を、雰囲気だけに任せず整理します。",
+          "copy_intent": "PROVE",
+          "visual_authority": "DATA",
+          "media_role": "consultation_context",
+          "cta_stage": ""
+        },
+        {
+          "state": "start",
+          "role": "sensory_cta",
+          "headline": "自分に合う入口から／始める。",
+          "body": "気になる方法を選び、公式案内へ進めます。",
+          "copy_intent": "CONVERT",
+          "visual_authority": "TYPE",
+          "media_role": "typography",
+          "cta_stage": "action"
+        }
+      ],
+      "coverage_role": "within-family alternate decision route"
+    },
+    {
+      "reference_id": "V68-07",
+      "company_id": "kakimoto-arms",
+      "company_name": "kakimoto arms",
+      "expected_family": "BW-F03",
+      "decision_job": "specialist authorship and aspirational high-consideration proof",
+      "official_url": "https://kakimoto-arms.com/",
+      "color": "#1d3850",
+      "industry": "specialist premium service",
+      "location": "official reference context",
+      "customer_state": "specialist authorship and aspirational high-consideration proof",
+      "prohibited_families": [],
+      "source_refs": [
+        "issue66:V68-07",
+        "https://kakimoto-arms.com/"
+      ],
+      "public_scene_semantics": [
+        {
+          "state": "authority",
+          "role": "aspirational_authority",
+          "headline": "なりたい姿から、選択を始める。",
+          "body": "専門性と完成像を見ながら、投資する価値を考えます。",
+          "copy_intent": "ORIENT",
+          "visual_authority": "TYPE",
+          "media_role": "hero_context",
+          "cta_stage": "discovery"
+        },
+        {
+          "state": "authorship",
+          "role": "specialist_authorship",
+          "headline": "仕上がりは、誰がどう作るかで変わる。",
+          "body": "専門家の視点と仕事の痕跡を、判断材料として見せます。",
+          "copy_intent": "SHOW_CRAFT",
+          "visual_authority": "PERSON",
+          "media_role": "human_context",
+          "cta_stage": ""
+        },
+        {
+          "state": "portfolio",
+          "role": "aspirational_proof",
+          "headline": "見える結果の、その先を読む。",
+          "body": "実績と方法を分けずに、なぜ選ばれるかを確認します。",
+          "copy_intent": "PROVE",
+          "visual_authority": "DATA",
+          "media_role": "process_detail",
+          "cta_stage": "reassurance"
+        },
+        {
+          "state": "investment",
+          "role": "high_consideration",
+          "headline": "時間と費用に、納得して進む。",
+          "body": "条件・過程・残る問いを整理して、比較できます。",
+          "copy_intent": "COMPARE",
+          "visual_authority": "MATERIAL",
+          "media_role": "material_detail",
+          "cta_stage": ""
+        },
+        {
+          "state": "commit",
+          "role": "authority_cta",
+          "headline": "相談して、次の完成像を決める。",
+          "body": "知りたいことを持って、公式案内へ進めます。",
+          "copy_intent": "CONVERT",
+          "visual_authority": "TYPE",
+          "media_role": "typography",
+          "cta_stage": "action"
+        }
+      ],
+      "coverage_role": "primary family decision route"
+    },
+    {
+      "reference_id": "V68-08",
+      "company_id": "pilates-k",
+      "company_name": "pilates K",
+      "expected_family": "BW-F03",
+      "decision_job": "desired self-image and program authority enable commitment",
+      "official_url": "https://pilates-k.jp/aboutus",
+      "color": "#8b5966",
+      "industry": "specialist premium service",
+      "location": "official reference context",
+      "customer_state": "desired self-image and program authority enable commitment",
+      "prohibited_families": [],
+      "source_refs": [
+        "issue66:V68-08",
+        "https://pilates-k.jp/aboutus"
+      ],
+      "public_scene_semantics": [
+        {
+          "state": "authority",
+          "role": "aspirational_authority",
+          "headline": "なりたい姿から／選択を始める。",
+          "body": "専門性と完成像を見ながら、投資する価値を考えます。",
+          "copy_intent": "ORIENT",
+          "visual_authority": "TYPE",
+          "media_role": "hero_context",
+          "cta_stage": "discovery"
+        },
+        {
+          "state": "authorship",
+          "role": "specialist_authorship",
+          "headline": "仕上がりは／誰がどう作るかで変わる。",
+          "body": "専門家の視点と仕事の痕跡を、判断材料として見せます。",
+          "copy_intent": "SHOW_CRAFT",
+          "visual_authority": "PERSON",
+          "media_role": "human_context",
+          "cta_stage": ""
+        },
+        {
+          "state": "portfolio",
+          "role": "aspirational_proof",
+          "headline": "見える結果の／その先を読む。",
+          "body": "実績と方法を分けずに、なぜ選ばれるかを確認します。",
+          "copy_intent": "PROVE",
+          "visual_authority": "DATA",
+          "media_role": "process_detail",
+          "cta_stage": "reassurance"
+        },
+        {
+          "state": "investment",
+          "role": "high_consideration",
+          "headline": "時間と費用に／納得して進む。",
+          "body": "条件・過程・残る問いを整理して、比較できます。",
+          "copy_intent": "COMPARE",
+          "visual_authority": "MATERIAL",
+          "media_role": "material_detail",
+          "cta_stage": ""
+        },
+        {
+          "state": "commit",
+          "role": "authority_cta",
+          "headline": "相談して／次の完成像を決める。",
+          "body": "知りたいことを持って、公式案内へ進めます。",
+          "copy_intent": "CONVERT",
+          "visual_authority": "TYPE",
+          "media_role": "typography",
+          "cta_stage": "action"
+        }
+      ],
+      "coverage_role": "within-family alternate decision route"
+    }
+  ]
+}
