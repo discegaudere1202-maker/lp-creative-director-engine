@@ -27,10 +27,9 @@ EVENT_SIGNALS = {
 
 def metadata_from_body(body: str | None) -> dict[str, str]:
     match = META_RE.search(body or "")
-    if not match:
-        return {}
+    source = match.group(1) if match else (body or "")
     result: dict[str, str] = {}
-    for line in match.group(1).splitlines():
+    for line in source.splitlines():
         field = FIELD_RE.match(line)
         if field:
             result[field.group(1)] = field.group(2).strip().strip('"\'')
