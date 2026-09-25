@@ -17,3 +17,12 @@ def test_issue79_mobile_injection_is_idempotent():
         assert apply_f01_composition(path,"three")["status"]=="already_applied"
         text=path.read_text(encoding="utf-8")
         assert text.count("<style data-issue77-f01=")==1
+def test_issue81_three_fit_uses_mobile_meaning_break_without_clipping():
+    from inspect import getsource
+    from lp_engine import production_generation
+
+    source = getsource(production_generation._render_premium_html)
+    assert "暮らしに置いたときの相性を見る。" in source
+    assert "headline-optical-three-fit" in source
+    assert "headline-optical-mobile" in source
+    assert "@media(max-width:767px)" in source
