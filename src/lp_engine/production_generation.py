@@ -1301,8 +1301,9 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     @media(max-width:760px){{.premium-scene{{padding:var(--mobile-scene-gap) 0;}}.premium-scene--ending{{padding:var(--mobile-page-padding) 0;}}.scene-inset,.scene-split{{grid-template-columns:minmax(0,1fr);gap:2rem;}}.scene-media--immersive,.scene-media--dominant{{min-height:280px;}}.scene-layered-copy{{position:relative;left:0;bottom:auto;max-width:100%;margin-top:-2rem;padding:1rem;}}.profile-field_ledger .scene-state-imagine_change .scene-layered{{display:grid;grid-template-columns:1fr;}}.profile-field_ledger .scene-state-imagine_change .scene-layered .scene-media,.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{grid-column:1;grid-row:auto;}}.profile-field_ledger .scene-state-imagine_change .scene-layered-copy{{position:relative;margin-top:-2rem;}}.profile-care_rhythm .scene-layered-copy{{margin-top:-1rem;}}}}
     /* Narrow optical correction for the BW-F04 320px review finding only.
        Keep the semantic phrase and CTA intact; do not alter >=360px output. */
-    @media(max-width:335px){{body[data-public-semantic-profile="human_craft_provenance"] .premium-scene:first-child h1{{font-size:2.1rem;line-height:1.28;}}body[data-public-semantic-profile="human_craft_provenance"] .premium-scene .button{{font-size:.82rem;letter-spacing:-.02em;padding-inline:14px;white-space:nowrap;}}}}
+    @media(max-width:335px){{body[data-public-semantic-profile="craft"] .premium-scene:first-child h1{{font-size:2.1rem;line-height:1.28;}}body[data-public-semantic-profile="craft"] .premium-scene .button{{font-size:.82rem;letter-spacing:-.02em;padding-inline:14px;white-space:nowrap;}}}}
     '''
+    public_semantic_profile = {"human_craft_provenance": "craft"}.get(public_semantic_profile, "")
     return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{style}</style></head><body class="profile-{esc(profile_id)}" data-public-semantic-profile="{esc(public_semantic_profile)}" data-ending-variant="{ending_variant}" style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
 
 def render_html(spec: Mapping[str, Any]) -> str:
@@ -1550,3 +1551,4 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
