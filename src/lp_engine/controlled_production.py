@@ -187,10 +187,11 @@ def run_controlled_nagi_production(output_dir: str | Path) -> dict[str, Any]:
 
     family = inference["selection"]["dominant_family"]
     grammar = _select_module_grammar(family, raw["customer_decision_state"])
+    architecture = {"dominant_family": family, "secondary_families": inference["inference"]["secondary_influences"], "customer_decision_state": raw["customer_decision_state"], "module_grammar": grammar}
     raw_for_generation = deepcopy(raw)
     raw_for_generation["validation_context"] = "NO_WEB_FIELD_VALIDATION"
     site = out / "site"
-    result = run_generation(raw_for_generation, site, generation_id="issue53-nagi-controlled-reference", mode="production")
+    result = run_generation(raw_for_generation, site, generation_id="issue53-nagi-controlled-reference", mode="production", architecture=architecture)
     # Preserve the pre-integration generator output as a local comparison
     # reference. The package labels it as evidence, never as a visual PASS.
     (out / "baseline").mkdir(parents=True, exist_ok=True)
@@ -203,8 +204,8 @@ def run_controlled_nagi_production(output_dir: str | Path) -> dict[str, Any]:
     html_path.write_text(html, encoding="utf-8")
     render_spec_path = site / "render_spec.json"
     render_spec = json.loads(render_spec_path.read_text(encoding="utf-8"))
-    render_spec["controlled_architecture"] = {"dominant_family": family, "secondary_families": inference["inference"]["secondary_influences"], "module_grammar": grammar}
+    render_spec["controlled_architecture"] = architecture
     render_spec_path.write_text(json.dumps(render_spec, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    trace.update({"status": "PASS", "module_grammar": grammar, "generation_id": result.generation_id, "production_output_allowed": result.production_output_allowed})
+    trace.update({"status": "PASS", "module_grammar": grammar, "architecture_decision": architecture, "generation_id": result.generation_id, "production_output_allowed": result.production_output_allowed})
     (out / "architecture_trace.json").write_text(json.dumps(trace, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"status": "PASS", "trace": trace, "result": result, "output_dir": str(out), "site": str(site)}
