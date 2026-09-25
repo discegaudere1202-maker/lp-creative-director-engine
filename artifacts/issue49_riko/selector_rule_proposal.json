@@ -1,0 +1,48 @@
+{
+  "schema_version":"issue49_selector_rule_proposal_v1",
+  "status":"IMPLEMENTATION_READY_HYPOTHESIS_WITH_AMBIGUITY_FALLBACK",
+  "taxonomy_verdict":"READY_WITH_EXPLICIT_AMBIGUITY_RULES",
+  "non_numeric_policy":"No calibrated family probability, score cutoff, or Template Resemblance threshold is authorized by this validation.",
+  "selection_pipeline":[
+    "load verified company_truth and customer_decision_state",
+    "load Creative Fit only; reject any Production Feasibility field",
+    "identify the first persuasive job that must be solved before CTA",
+    "generate plausible family candidates from decision-job signature + fit signals",
+    "apply explicit collision rules and prohibited/misfit rules",
+    "select one dominant family when one decision job clearly leads",
+    "attach optional secondary influence when a second logic materially shapes composition",
+    "if two families remain co-dominant after collision rules, return HUMAN_REVIEW_REQUIRED rather than force a winner",
+    "after family selection, pass Production Feasibility only to realization adaptation"
+  ],
+  "family_decision_rules":[
+    {"family":"BW-F01","primary_decision_job":"make the desired sensory/experiential state imaginable before dense explanation","confirming_dimensions":["sensory_experience_weight","emotional_purchase_weight","visual_storytelling_need"],"anti_rule":"naturalness or calm styling alone is insufficient"},
+    {"family":"BW-F02","primary_decision_job":"reduce wrong-choice/safety anxiety with boundaries, suitability and structured reassurance","confirming_dimensions":["clinical_expertise","trust_requirement","information_density_need","calmness"],"anti_rule":"high trust requirement alone does not distinguish F02 from F06"},
+    {"family":"BW-F03","primary_decision_job":"establish aspirational/premium authority while carrying rational support into commitment","confirming_dimensions":["premium_authority_need","visual_storytelling_need","emotional_purchase_weight","decision_commitment_pressure"],"anti_rule":"premium styling, large type or high price alone is insufficient"},
+    {"family":"BW-F04","primary_decision_job":"make maker, practitioner, material provenance or craft process indispensable to trust/meaning","confirming_dimensions":["craftsmanship","human_relationship_weight","process_inspectability_need","intimacy"],"anti_rule":"warm human imagery without provenance/craft relevance is insufficient"},
+    {"family":"BW-F05","primary_decision_job":"route a customer who already accepts the category through ambiguous services/options toward the right fit","confirming_dimensions":["choice_guidance_need","information_density_need","trust_requirement"],"anti_rule":"multiple cards/plans alone is insufficient; real self-selection ambiguity must exist"},
+    {"family":"BW-F06","primary_decision_job":"prove that a method/mechanism/process is credible and causally capable of producing the desired change","confirming_dimensions":["process_inspectability_need","desired_state_change_intensity","trust_requirement","clinical_expertise"],"anti_rule":"feature inventory without causal/risk framing is insufficient"},
+    {"family":"BW-F07","primary_decision_job":"make ongoing local/community/human relationship itself a reason to choose","confirming_dimensions":["local_relationship_weight","human_relationship_weight","intimacy","warmth"],"anti_rule":"address/geography or generic 地域密着 language alone is insufficient"},
+    {"family":"BW-F08","primary_decision_job":"help a low-readiness customer understand the category and self-place before asking for commitment","confirming_dimensions":["category_education_need","choice_guidance_need","information_density_need"],"anti_rule":"education content alone is insufficient if the customer already accepts the category and only needs option routing"}
+  ],
+  "collision_rules":[
+    {"pair":["BW-F02","BW-F06"],"resolve_by":"safety/suitability reassurance leads -> F02; mechanism efficacy proof leads -> F06"},
+    {"pair":["BW-F05","BW-F08"],"resolve_by":"category accepted + option ambiguity -> F05; category/fit understanding precedes option choice -> F08"},
+    {"pair":["BW-F01","BW-F04"],"resolve_by":"experience imagination leads -> F01; provenance/human technique is indispensable -> F04"},
+    {"pair":["BW-F03","BW-F04"],"resolve_by":"aspirational authority leads -> F03; maker/provenance authority leads -> F04"},
+    {"pair":["BW-F04","BW-F07"],"resolve_by":"human craft without decision-relevant locality -> F04; ongoing local relationship changes choice -> F07"},
+    {"pair":["BW-F06","BW-F08"],"resolve_by":"method credibility is gating question -> F06; category understanding is gating question -> F08"}
+  ],
+  "output_contract":{
+    "required_fields":["dominant_family","secondary_influences","acceptable_alternatives","prohibited_or_misfit","ambiguity_state","human_review_required","customer_decision_job","fit_dimensions_used","feasibility_ignored_at_selection","reasoning","provenance_refs"],
+    "ambiguity_states":["RESOLVED","EXPLICIT_ALTERNATIVE","CO_DOMINANT_HUMAN_REVIEW"],
+    "feasibility_ignored_at_selection":true
+  },
+  "human_review_triggers":[
+    "two families remain co-dominant after an explicit collision rule",
+    "customer category acceptance/readiness cannot be established",
+    "locality is present but its decision relevance is unclear",
+    "premium authority and provenance are inseparable and neither is subordinate",
+    "safety reassurance and mechanism proof are co-equal before CTA",
+    "case falls materially outside Beauty/Wellness and directly adjacent validation coverage"
+  ]
+}

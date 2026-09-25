@@ -1,0 +1,35 @@
+{
+  "schema_version":"issue49_rin_facing_selector_contract_v1",
+  "status":"READY_FOR_RIN_AFTER_SARAH_PASS",
+  "upstream_contract":"data/production_architecture/family_module_selection_contract_v1.json",
+  "validated_case_count":16,
+  "required_runtime_changes":[
+    "Add an inference stage before current select_family validation; current contract validates a supplied dominant_family but does not infer it from Creative Fit.",
+    "Inference input must contain company_truth, customer_decision_state and exactly the accepted Creative Fit dimensions; Production Feasibility fields must hard-fail if present at this stage.",
+    "Represent family matching as explicit decision-job rules and collision resolution, not as fixed-layout mapping and not as fabricated probabilistic precision.",
+    "Support one dominant family plus zero-or-more secondary influences and acceptable alternatives.",
+    "Return HUMAN_REVIEW_REQUIRED when explicit collision rules cannot resolve co-dominance.",
+    "Run Production Feasibility adaptation only after the selector result is frozen; adaptation may not change family.",
+    "Preserve provenance from company truth and fit annotations into selector output.",
+    "Do not introduce a numeric Template Resemblance threshold as part of selector work."
+  ],
+  "minimum_regression_fixture":{
+    "cases":"V49-01..V49-16",
+    "expected_dominant_distribution":{"BW-F01":2,"BW-F02":2,"BW-F03":2,"BW-F04":2,"BW-F05":2,"BW-F06":2,"BW-F07":2,"BW-F08":2},
+    "required_assertions":[
+      "all 16 dominant-family expectations represented",
+      "all feasibility counterfactuals preserve dominant family",
+      "prohibited/misfit families are never silently substituted",
+      "family output does not contain layout_id",
+      "co-dominant unresolved inputs trigger human review",
+      "selector provenance records fit dimensions and decision-state basis"
+    ]
+  },
+  "architecture_comparison":{
+    "issue47_strengths":["fit/feasibility schema separation","dominant plus secondary contract","post-selection feasibility adaptation","family is not template"],
+    "issue47_gap_exposed_by_issue49":"The current select_family path validates a dominant family already present in the Creative Fit profile. It does not autonomously infer the family from the 23 dimensions and customer decision state.",
+    "issue49_resolution":"Use selector_rule_proposal_v1 as the evidence-backed inference layer before the existing validation contract."
+  },
+  "must_remain_human_reviewed":["genuine co-dominance after collision rules","novel contexts outside validated coverage","ambiguous customer readiness","ambiguous locality relevance","premium-authority vs provenance cases where neither leads","clinical reassurance vs mechanism proof where neither leads"],
+  "forbidden":["asset-scarcity family switching","family-to-fixed-layout lookup","numeric weights presented as calibrated probabilities","silent forced winner under unresolved ambiguity","Nagi rebuild in Issue #49"]
+}
