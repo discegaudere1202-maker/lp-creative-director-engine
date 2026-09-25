@@ -1,0 +1,73 @@
+{
+  "schema_version": "issue57_rin_transfer_handoff_v1",
+  "issue": 57,
+  "status": "IMPLEMENTATION_READY_AFTER_SARAH_PASS",
+  "recommended_next_task_title": "[Rin] Reference Companies #2–#3 Controlled Production Transfer Validation × Cross-Company Non-Template QA",
+  "base_requirement": "Start from main after Issue #57 merge and preserve Issue #53 controlled Production architecture path.",
+  "implementation_scope": [
+    "Generalize the Issue #53 controlled reference runner so a versioned reference-company contract can drive Company Truth → decision state → runtime Family inference → Family freeze → feasibility → module grammar → generation.",
+    "Add RC57-02 Regina and RC57-03 uka as separate fixtures/contracts; do not hard-code company name/case ID to Family.",
+    "Run runtime inference and assert expected dominant Family/secondary behavior against the Issue #57 contracts.",
+    "Keep Production Feasibility post-selection and run at least one feasibility counterfactual per company.",
+    "Generate 9-width evidence per company: 320/360/375/390/430/768/1024/1280/1440.",
+    "Produce architecture traces, browser evidence, line QA and manifest/digests separately for each company.",
+    "Produce a cross-company comparison package for Nagi vs Regina vs uka, not just baseline-vs-candidate within one company."
+  ],
+  "reference_contracts": {
+    "RC57-02": {
+      "company":"レジーナクリニック",
+      "expected_family":"BW-F02",
+      "expected_secondary":["BW-F06"],
+      "minimum_grammar_evidence":["M-HERO-02","M-TRUST-01","M-PROCESS-01","M-CTA-01"],
+      "primary_cta":"free counseling reservation",
+      "hard_visual_difference":"must not reproduce Nagi recognition/service-routing topology"
+    },
+    "RC57-03": {
+      "company":"uka",
+      "expected_family":"BW-F04",
+      "expected_secondary":["BW-F06"],
+      "minimum_grammar_evidence":["M-STORY-01","M-HUMAN-01","M-CTA-01"],
+      "primary_cta":"salon booking after method/menu understanding",
+      "hard_visual_difference":"same head-spa-adjacent context must still diverge from Nagi's BW-F08 composition"
+    }
+  },
+  "selector_assertions": [
+    "Feasibility fields must hard-fail if supplied at inference stage.",
+    "RC57-02 expected dominant Family = BW-F02; F02/F06 collision reasoning must be recorded.",
+    "RC57-03 expected dominant Family = BW-F04; F04/F06 and F01/F04 ambiguity must remain reviewable rather than silently forced when evidence becomes co-dominant.",
+    "No layout_id or family-to-template lookup may be introduced.",
+    "Ordinal Fit values are validation annotations, not probabilities."
+  ],
+  "module_selection_rules": [
+    "Use data/production_architecture/module_composition_registry_v1.json only; do not invent fixed module packs as new taxonomy data in the transfer task.",
+    "Record dominant-family and optional-secondary compatibility rationale for every selected pattern.",
+    "For RC57-03, the registry has no F04-specific HERO pattern. Do not invent Family→hero-template mapping; author the first view from the F04 decision job and accepted compatible grammar, and expose this for human review.",
+    "Production Feasibility may alter media realization or omit an unsafe media-dependent pattern, but may not alter the frozen Family."
+  ],
+  "evidence_and_safety": [
+    "Re-verify volatile prices/menu/store/campaign facts on implementation date.",
+    "Do not reuse official imagery unless rights are established; official visibility is not reuse permission.",
+    "No generated person may be represented as actual Regina physician/staff/patient or actual uka practitioner/customer.",
+    "Medical claims for Regina must remain source-bounded; no efficacy/eligibility certainty beyond verified truth.",
+    "Wellness claims for uka must not be upgraded into medical diagnosis/treatment claims."
+  ],
+  "automated_qa_required": [
+    "dedicated transfer-integration tests",
+    "Issue #51 16-case selector regression",
+    "Issue #53 controlled-production regression",
+    "generic LP Engine QA",
+    "line/overflow QA at all 18 new screenshots",
+    "PM-OPS Ready-for-Review contract"
+  ],
+  "human_visible_qa_required": [
+    "independent review of all 9 widths for each company",
+    "cross-company screenshot gestalt comparison across Nagi/Regina/uka",
+    "hero silhouette and section topology divergence",
+    "media framing and responsive authorship",
+    "claim-boundary adjacency for Regina",
+    "human/provenance authenticity for uka",
+    "template-swap detection using structure and material grammar, not token differences"
+  ],
+  "ready_gate":"Technical QA + complete screenshot/evidence package are necessary for Ready; human-visible PASS remains a separate Sarah/Aoi gate before any broader Production lock.",
+  "forbidden":["Nagi redesign","family-to-fixed-layout mapping","asset-scarcity Family switching","numeric Template Resemblance threshold","case-ID lookup masquerading as inference","bypassing human review on genuine co-dominance"]
+}

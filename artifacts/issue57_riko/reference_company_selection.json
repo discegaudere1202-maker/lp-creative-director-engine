@@ -1,0 +1,79 @@
+{
+  "schema_version": "issue57_reference_company_selection_v1",
+  "issue": 57,
+  "status": "SELECTION_COMPLETE",
+  "retrieved_at": "2026-09-25",
+  "base_head": "9ecd35c697bb1b90072716e4a0cd1ff71dab7f5d",
+  "selection_boundary": "Selection is based on transfer-validation coverage and Creative Fit/customer decision state. Production Feasibility and asset convenience were not selection signals.",
+  "reference_company_01": {
+    "company": "なぎのみらい",
+    "source_issue": 53,
+    "dominant_family": "BW-F08",
+    "decision_job": "help a first-timer understand the category and compare three service modes before commitment",
+    "verified_test_ref": "tests/test_issue53_controlled_production.py",
+    "known_grammar": ["M-HERO-01", "M-PROBLEM-01", "M-SERVICE-01", "M-CTA-01"],
+    "human_visible_status": "HUMAN_VISIBLE_PASS after Issue #56 narrow framing closure"
+  },
+  "selected": [
+    {
+      "reference_id": "RC57-02",
+      "issue49_case_id": "V49-03",
+      "company": "レジーナクリニック",
+      "context": "medical hair removal / high-trust consultation-led service",
+      "expected_dominant_family": "BW-F02",
+      "secondary_influence": ["BW-F06"],
+      "acceptable_alternatives": ["BW-F06"],
+      "prohibited_or_misfit": ["BW-F01", "BW-F04"],
+      "selection_rationale": [
+        "Tests high wrong-choice/safety anxiety and medically bounded persuasion rather than Nagi-style category education.",
+        "Exercises the validated BW-F02 vs BW-F06 collision: suitability/safety reassurance must lead while mechanism/process proof stays secondary.",
+        "Requires evidence-first, boundary-aware composition and a consultation CTA, materially different from Nagi's recognition/routing grammar.",
+        "First-party truth is sufficient to construct a controlled evidence ledger, but source richness is recorded only as post-selection feasibility."
+      ],
+      "official_sources": [
+        "https://www.reginaclinic.jp/about/clinic/free-counseling/",
+        "https://www.reginaclinic.jp/",
+        "https://www.reginaclinic.jp/part/",
+        "https://www.reginaclinic.jp/about/clinic/reservation/",
+        "https://www.reginaclinic.jp/faq/treatment/"
+      ]
+    },
+    {
+      "reference_id": "RC57-03",
+      "issue49_case_id": "V49-08",
+      "company": "uka",
+      "context": "total beauty salon / head spa / hands-on care method",
+      "expected_dominant_family": "BW-F04",
+      "secondary_influence": ["BW-F06"],
+      "acceptable_alternatives": ["BW-F06", "BW-F01"],
+      "prohibited_or_misfit": ["BW-F07"],
+      "selection_rationale": [
+        "Creates the strongest same-adjacent-category negative control against Nagi: both include head-spa context, but uka's first persuasive job is trust in practitioner technique and accumulated method, not category education.",
+        "Exercises human craft/provenance authorship with method proof as secondary influence, forcing composition away from Nagi's service-routing grammar.",
+        "Tests whether the system can preserve company-specific authorship without a registered F04-specific hero template.",
+        "First-party method, salon and menu truth is rich enough for controlled validation; asset abundance/rights do not determine the Family."
+      ],
+      "official_sources": [
+        "https://uka.co.jp/our-philosophy/en-harmony-method/headspa/",
+        "https://uka.co.jp/news/37180/",
+        "https://uka.co.jp/salons/",
+        "https://uka.co.jp/salons/midtown/",
+        "https://uka.co.jp/ukakau/c0199652/"
+      ]
+    }
+  ],
+  "why_this_pair": {
+    "dominant_family_coverage_across_1_to_3": ["BW-F08", "BW-F02", "BW-F04"],
+    "decision_state_spread": ["category education / open discovery", "clinical reassurance / wrong-choice anxiety", "human craft / practitioner-method trust"],
+    "trust_logic_spread": ["understand then choose", "safety/suitability boundaries then consult", "human technique/provenance then book"],
+    "composition_spread": ["recognition + intent routing", "evidence + boundary + process", "causal story + human evidence + atmosphere"],
+    "special_value": "Nagi vs uka disproves service-category-to-Family coupling; Regina adds a materially different high-risk clinical trust logic."
+  },
+  "not_selected_for_this_round": [
+    {"company": "Rintosull", "reason": "BW-F08 is too close to Nagi's validated first-timer category-education job for the strongest Phase B transfer contrast."},
+    {"company": "LAVA", "reason": "BW-F08 is too close to Nagi for this two-company transfer round."},
+    {"company": "POLA APEX", "reason": "BW-F05 would add guided-choice evidence, but remains adjacent to Nagi's choice-routing surface; retained as a later regression candidate."},
+    {"company": "SHIRO", "reason": "Strong BW-F04 candidate, but uka provides a more discriminating test because it is close to Nagi in service category while requiring a different Family and composition logic."},
+    {"company": "kakimoto arms", "reason": "Strong BW-F03 candidate, retained for later premium-authority transfer validation after the higher-value same-category/different-family uka control."}
+  ]
+}
