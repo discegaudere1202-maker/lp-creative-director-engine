@@ -1,7 +1,7 @@
 {
-  "schema_version": "issue106_sarah_visual_risk_corrections_v1",
+  "schema_version": "issue106_sarah_visual_risk_corrections_v2",
   "audit_stage": "SARAH_TECHNICAL_EVIDENCE_AUDIT",
-  "reason": "Actual downloaded binaries exposed visible brand/signage that provider-level metadata did not reveal. Block those exact asset ids before ingestion and replace them with independently safer candidates.",
+  "reason": "Actual-binary audit blocks visible trademark/signage risks and adds materially different Pilates studio clusters so distinct hero binaries do not still read as one repeated photoshoot.",
   "blocked_asset_ids": [
     {
       "asset_id": "pexels-16378448",
@@ -44,6 +44,36 @@
       "visual_tone_tags": ["clean", "barber", "interior"],
       "material_quality_tags": ["barber_chair", "mirror", "shop_detail"],
       "prohibited_uses": ["actual target-company barber shop", "actual branch interior", "property endorsement"]
+    },
+    {
+      "asset_id": "pexels-11036673",
+      "source_id": "11036673",
+      "source_url": "https://www.pexels.com/photo/the-interior-of-a-pilates-studio-11036673/",
+      "binary_url": "https://images.pexels.com/photos/11036673/pexels-photo-11036673.jpeg?auto=compress&dpr=1&h=750&w=1260",
+      "creator": "Karl Solano",
+      "content_class": "studio_interior_generic",
+      "industry_tags": ["pilates_fitness"],
+      "business_category_tags": ["pilates_studio"],
+      "eligible_scene_intents": ["recognize"],
+      "eligible_media_roles": ["hero", "interior_environment"],
+      "visual_tone_tags": ["bright", "spacious", "studio"],
+      "material_quality_tags": ["reformer", "window", "wood"],
+      "prohibited_uses": ["actual target-company studio", "actual equipment claim", "health outcome"]
+    },
+    {
+      "asset_id": "pexels-18499504",
+      "source_id": "18499504",
+      "source_url": "https://www.pexels.com/photo/a-modern-fitness-studio-18499504/",
+      "binary_url": "https://images.pexels.com/photos/18499504/pexels-photo-18499504.jpeg?auto=compress&dpr=1&h=750&w=1260",
+      "creator": "Lê Đức",
+      "content_class": "studio_interior_generic",
+      "industry_tags": ["pilates_fitness"],
+      "business_category_tags": ["pilates_studio"],
+      "eligible_scene_intents": ["recognize"],
+      "eligible_media_roles": ["hero", "interior_environment"],
+      "visual_tone_tags": ["minimal", "warm", "studio"],
+      "material_quality_tags": ["wooden_reformer", "quiet_space"],
+      "prohibited_uses": ["actual target-company studio", "actual equipment claim", "health outcome"]
     }
   ]
 }
