@@ -1,0 +1,51 @@
+{
+  "schema_version": "issue114_stage_a_premium_audit_matrix_v1",
+  "baseline": {
+    "main_sha": "a02a39eb04c956cd2d62f15ee7811dcd685ff812",
+    "issue111_final_head": "09e34d61de1ebe449cd1cbd56ac1e5a2e35b3ef3",
+    "artifact_id": 10912860741,
+    "screenshots": "81/81",
+    "aoi": "HUMAN_VISIBLE_PASS",
+    "sarah": "PASS"
+  },
+  "classification_values": ["PASS", "GAP", "CLIENT-EVIDENCE-DEPENDENT"],
+  "cross_sample_forensics": {
+    "embedded_css_hash_identical_across_9": true,
+    "actionable_anchor_links_present": false,
+    "script_animation_transition_keyframe_present": false,
+    "repeated_public_intent_tokens": ["recognize", "choose", "trust", "prepare", "compare", "act"],
+    "repeated_public_copy": [
+      "CompositionPlanの意図から、確認すべき情報を順に案内します。",
+      "決めるための情報を整理します。"
+    ]
+  },
+  "dimension_audit": [
+    {"dimension":"hero_authority","classification":"GAP","reason":"Structure differs, but Hero copy exposes internal decision semantics instead of a company-specific public proposition."},
+    {"dimension":"full_page_composition_rhythm","classification":"GAP","reason":"Scene order differs, yet the visible rhythm remains dominated by repeated stacked editorial blocks and separators."},
+    {"dimension":"typography_hierarchy","classification":"GAP","reason":"Legible hierarchy, but all nine samples share one visible type/spacing expression and do not materially shift voice by Family/company truth."},
+    {"dimension":"image_crop_quality","classification":"PASS","reason":"No blocking crop/clipping defect was observed in the accepted Stage A evidence; this does not imply company-specific authenticity."},
+    {"dimension":"media_story_integration","classification":"GAP","reason":"Rights-safe assets satisfy roles but usually behave as placed illustration rather than authority/process/detail/proof narrative."},
+    {"dimension":"section_density","classification":"GAP","reason":"Readable but spatial cadence is too uniform to create authored tension, release and screenshot-worthy chapters."},
+    {"dimension":"proof_placement","classification":"GAP","reason":"Trust structures exist, but verified proof is not consistently staged at the exact objection/claim it resolves."},
+    {"dimension":"proof_depth","classification":"CLIENT-EVIDENCE-DEPENDENT","reason":"Actual staff, venue, result, testimonial, credential and offer proof cannot be fabricated by the engine."},
+    {"dimension":"cta_choreography","classification":"GAP","reason":"CompositionPlan closing modes exist but Stage A HTML contains no actionable anchor CTA surface."},
+    {"dimension":"motion_meaningfulness","classification":"GAP","reason":"All nine Stage A HTML outputs contain no script, animation, transition or keyframe behavior."},
+    {"dimension":"mobile_premium_feel","classification":"GAP","reason":"320px is technically clean, but mobile remains mostly a safe vertical collapse with the same generic/internal copy and chapter cadence."},
+    {"dimension":"sensory_detail_richness","classification":"GAP","reason":"Real images add texture, but authored micro-detail, captioning, annotation, layering and scene-specific treatment remain sparse."},
+    {"dimension":"sensory_company_specificity","classification":"CLIENT-EVIDENCE-DEPENDENT","reason":"Actual process/material/place/person detail requires verified client evidence."},
+    {"dimension":"template_smell_repetition","classification":"GAP","reason":"Identical visible CSS expression plus repeated labels/copy makes architecture diverge more than the screenshots feel different."}
+  ],
+  "sample_architecture_preserve": [
+    {"sample_id":"SK1","category":"skincare","family":"BW-F05","hero":"guided_choice","core":"comparison_rail","closing":"guided_action","scene_order":["recognize","choose","act"]},
+    {"sample_id":"SK2","category":"skincare","family":"BW-F02","hero":"relationship_media","core":"single_offer_sequence","closing":"reassurance_then_action","scene_order":["recognize","trust","act"]},
+    {"sample_id":"SK3","category":"skincare","family":"BW-F02","hero":"relationship_media","core":"single_offer_sequence","closing":"guided_action","scene_order":["recognize","trust","act"]},
+    {"sample_id":"HS1","category":"hair_salon","family":"BW-F04","hero":"relationship_media","core":"comparison_rail","closing":"guided_action","scene_order":["recognize","choose","trust","act"]},
+    {"sample_id":"HS2","category":"hair_salon","family":"BW-F02","hero":"relationship_media","core":"single_offer_sequence","closing":"reassurance_then_action","scene_order":["recognize","trust","act"]},
+    {"sample_id":"BR1","category":"barber","family":"BW-F07","hero":"relationship_media","core":"comparison_rail","closing":"guided_action","scene_order":["recognize","choose","trust","act"]},
+    {"sample_id":"BR2","category":"barber","family":"BW-F07","hero":"relationship_media","core":"single_offer_sequence","closing":"direct_action","scene_order":["recognize","act"]},
+    {"sample_id":"PI1","category":"pilates_fitness","family":"BW-F03","hero":"relationship_media","core":"single_offer_sequence","closing":"direct_action","scene_order":["recognize","act"]},
+    {"sample_id":"PI2","category":"pilates_fitness","family":"BW-F02","hero":"relationship_media","core":"single_offer_sequence","closing":"guided_action","scene_order":["recognize","prepare","trust","act"]}
+  ],
+  "conclusion": "PRESERVE_ARCHITECTURE_UPLIFT_PUBLIC_AUTHORSHIP_LAYER",
+  "not_claimed": ["actual_¥1M_quality", "final_sales_readiness", "new_industry_readiness"]
+}

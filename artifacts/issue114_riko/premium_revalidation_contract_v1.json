@@ -1,0 +1,48 @@
+{
+  "schema_version": "issue114_premium_revalidation_contract_v1",
+  "baseline_artifact_id": 10912860741,
+  "exact_samples": ["SK1","SK2","SK3","HS1","HS2","BR1","BR2","PI1","PI2"],
+  "exact_widths": [320,360,375,390,430,768,1024,1280,1440],
+  "required_screenshots": 81,
+  "required_artifacts": [
+    "81 full-page screenshots",
+    "per-sample CompositionPlan + Premium Uplift trace",
+    "public-copy provenance/evidence trace",
+    "asset selection + rights/provenance trace",
+    "CTA destination/action trace",
+    "motion intent manifest including reduced-motion behavior",
+    "responsive/mobile authorship trace",
+    "cross-sample template-resemblance contact sheets at 320,390,768,1440",
+    "before-after contact sheets against Issue #111 Artifact 10912860741",
+    "regression manifest proving Issue #111 safety/rights/reuse/semantic gates retained"
+  ],
+  "automated_gates": [
+    "all_81_renders_produced",
+    "no_internal_decision_job_token_exposed_as_public_heading_unless_genuine_customer_language",
+    "no_banned_generic_validation_copy_on_public_sales_surface",
+    "positive_cases_with_verified_CTA_destination_render_actionable_links",
+    "no_unsupported_factual_claims",
+    "rights_and_provenance_pass",
+    "Family_unchanged_by_asset_scarcity",
+    "same_Family_authored_divergence_preserved",
+    "cross_Family_near_collision_remains_reviewable",
+    "320px_semantic_line_gate",
+    "no_overflow_or_clipping_at_all_9_widths",
+    "motion_reduced_motion_fallback_if_motion_exists"
+  ],
+  "aoi_human_visible_review": [
+    "hero authority feels company-specific rather than validation UI",
+    "full-page silhouette and rhythm feel authored",
+    "typography hierarchy supports premium voice",
+    "image crops and media sequences serve story/proof",
+    "proof appears where doubts are resolved",
+    "CTA has visible persuasive choreography and a real next action",
+    "motion if present is meaningful and non-distracting",
+    "320-430 mobile feels recomposed rather than merely stacked",
+    "sensory/detail richness supports category and company truth",
+    "cross-sample template smell is materially reduced",
+    "generic stock is not perceived as actual company evidence"
+  ],
+  "result_values": ["HUMAN_VISIBLE_PASS","HUMAN_VISIBLE_RETURN"],
+  "pass_boundary": "PASS means Premium Uplift is visibly improved and Stage A regressions are preserved. It does not by itself establish final ¥1M value when required client evidence is missing."
+}
