@@ -1,0 +1,16 @@
+{
+  "issue": 111,
+  "baseline_main_sha": "116fb0d7e19e16cbcf97343d7f96566f07d044c6",
+  "scope": [
+    "skincare_cosmetics_product",
+    "hair_salon",
+    "barber",
+    "pilates_studio"
+  ],
+  "sample_count": 9,
+  "widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+  "expected_screenshot_count": 81,
+  "source_inventory_floor": 62,
+  "human_visible_status": "PENDING_AOI_NOT_SELF_DECLARED",
+  "real_image_sales_sample_readiness": "NOT_SELF_DECLARED"
+}
