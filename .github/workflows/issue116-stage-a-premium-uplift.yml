@@ -62,7 +62,7 @@ jobs:
           python scripts/run_issue116_premium_uplift.py \
             --baseline artifacts/issue111_baseline \
             --out artifacts/issue116_premium_uplift
-      - name: 320-430px semantic optical hard gate
+      - name: 9-width Hero semantic optical hard gate
         run: |
           python scripts/run_issue116_mobile_optical_gate.py \
             --premium-root artifacts/issue116_premium_uplift/premium \
