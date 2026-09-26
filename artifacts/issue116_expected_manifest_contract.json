@@ -1,0 +1,28 @@
+{
+  "schema_version": "issue116_expected_manifest_contract_v1",
+  "required_gates": [
+    "all_81_renders_produced",
+    "all_81_before_after_changed",
+    "no_internal_decision_job_token_exposed_as_public_heading",
+    "no_banned_generic_validation_copy_on_public_sales_surface",
+    "no_unsupported_factual_claims",
+    "positive_cases_with_verified_CTA_destination_render_actionable_links",
+    "rights_and_provenance_pass",
+    "Family_unchanged_by_asset_scarcity",
+    "same_Family_authored_divergence_preserved",
+    "cross_Family_near_collision_remains_reviewable",
+    "320px_semantic_line_gate",
+    "no_overflow_or_clipping_at_all_9_widths",
+    "motion_reduced_motion_fallback_if_motion_exists",
+    "premium_surface_present_all_widths",
+    "mobile_authorship_320_430_complete",
+    "PU1_PU8_coverage",
+    "Issue111_rights_reuse_semantic_regressions_preserved"
+  ],
+  "human_boundary": {
+    "HUMAN_VISIBLE_PASS": "NOT_SELF_DECLARED_PENDING_AOI",
+    "final_premium_quality": "NOT_SELF_DECLARED",
+    "million_yen_value": "NOT_SELF_DECLARED",
+    "broader_sales_launch_readiness": "NOT_SELF_DECLARED"
+  }
+}

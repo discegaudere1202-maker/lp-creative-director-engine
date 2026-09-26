@@ -1,7 +1,8 @@
 """Asset-bound wrapper around the authoritative current-industry Production renderer.
 
-This layer is deliberately post-CompositionPlan: it may realize frozen media
-placements, but it cannot mutate Family, topology, scene order, or decision logic.
+Issue #116 keeps this layer post-CompositionPlan, then applies the premium
+authorship system (PU1-PU8).  Media realization may not mutate Family,
+topology, scene order, decision logic, or evidence state.
 """
 from __future__ import annotations
 
@@ -11,18 +12,54 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from .authored_composition_contract import plan_digest
-from .production_cutover import render_authoritative_html, run_authoritative_generation
-from .visual_asset_library import asset_binding_css, render_asset_binding
+from .premium_authorship import build_premium_uplift, render_premium_asset_bound_html
+from .production_cutover import run_authoritative_generation
 
 
 class AssetBoundProductionError(RuntimeError):
     pass
 
 
-def _binding_markup(bindings: Mapping[str, Mapping[str, Any]] | None, key: str) -> str:
-    if not bindings or key not in bindings:
-        return ""
-    return render_asset_binding(bindings[key])
+# 320px requires headline meaning units to stay whole without clipping. These
+# are public-copy semantic refinements only; they do not touch CompositionPlan.
+_MOBILE_SAFE_HERO_UNITS = {
+    "choose": ["違いが見える", "選びやすく", "なる。"],
+    "understand": ["はじめる前に", "流れを", "わかりやすく"],
+    "trust": ["任せる前に", "安心できる", "理由を。"],
+    "compare": ["比べるほど", "自分の基準が", "見えてくる。"],
+    "prepare": ["迷いを減らし", "気持ちよく", "はじめる。"],
+    "act": ["考えすぎる", "その前に", "次の一歩を", "軽く。"],
+}
+
+
+def _apply_mobile_headline_guard(plan: Mapping[str, Any], premium: dict[str, Any]) -> dict[str, Any]:
+    """Refine public headline units so every atomic unit fits the 320px canvas."""
+    job = str(plan["input"]["customer_decision_state"]["primary_job"])
+    units = _MOBILE_SAFE_HERO_UNITS.get(job)
+    if not units:
+        raise AssetBoundProductionError("PREMIUM_HEADLINE_SEMANTIC_UNITS_MISSING")
+    public = premium["PU1_public_copy"]
+    public["hero_headline_units"] = list(units)
+    public["trace"]["mobile_semantic_unit_guard"] = {
+        "minimum_width": 320,
+        "decision_job": job,
+        "units": list(units),
+        "source": "public_copy_semantic_refinement_only",
+        "composition_plan_mutated": False,
+    }
+    premium["PU2_hero_authority"]["authority_statement"] = "".join(units)
+    return premium
+
+
+def _apply_headline_optical_css_guard(rendered: str) -> str:
+    """Keep semantic units atomic at every width without oversized desktop type."""
+    css = (
+        ".premium-headline-unit{white-space:nowrap}"
+        "@media(min-width:431px){.premium-hero h1{font-size:clamp(46px,5.4vw,80px)}}"
+    )
+    if "</style>" not in rendered:
+        raise AssetBoundProductionError("PREMIUM_STYLE_ANCHOR_MISSING")
+    return rendered.replace("</style>", css + "</style>", 1)
 
 
 def render_asset_bound_authoritative_html(
@@ -30,48 +67,26 @@ def render_asset_bound_authoritative_html(
     directives: Mapping[str, Any],
     asset_bindings: Mapping[str, Mapping[str, Any]],
 ) -> str:
-    """Inject approved AssetBinding markup without re-inferring authored structure."""
+    """Render approved media through the premium authored surface."""
     if plan.get("production_authority") != "composition_plan":
         raise AssetBoundProductionError("COMPOSITION_PLAN_NOT_AUTHORITATIVE")
     if plan.get("input", {}).get("creative_family", {}).get("frozen") is not True:
         raise AssetBoundProductionError("FAMILY_NOT_FROZEN")
     original_topology = deepcopy(plan.get("topology"))
     original_scenes = deepcopy(plan.get("scene_intents"))
-    rendered = render_authoritative_html(plan, directives)
+    original_family = plan.get("family_id")
 
-    hero = _binding_markup(asset_bindings, "hero")
-    if hero:
-        marker = '<div><small>core: '
-        idx = rendered.find(marker)
-        if idx < 0:
-            raise AssetBoundProductionError("HERO_BINDING_ANCHOR_MISSING")
-        insert_at = idx + len("<div>")
-        rendered = rendered[:insert_at] + f'<div class="asset-realization asset-realization--hero">{hero}</div>' + rendered[insert_at:]
+    premium = build_premium_uplift(plan, directives, asset_bindings)
+    premium = _apply_mobile_headline_guard(plan, premium)
+    rendered = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
+    rendered = _apply_headline_optical_css_guard(rendered)
 
-    for scene in directives.get("scene_intents", []):
-        scene_id = str(scene.get("id") or "")
-        markup = _binding_markup(asset_bindings, scene_id)
-        if not markup:
-            continue
-        closing = "</section>"
-        anchor = f'data-scene="{scene_id}"'
-        start = rendered.find(anchor)
-        if start < 0:
-            raise AssetBoundProductionError(f"SCENE_BINDING_ANCHOR_MISSING:{scene_id}")
-        end = rendered.find(closing, start)
-        if end < 0:
-            raise AssetBoundProductionError(f"SCENE_BINDING_CLOSE_MISSING:{scene_id}")
-        rendered = rendered[:end] + f'<div class="asset-realization asset-realization--scene">{markup}</div>' + rendered[end:]
-
-    css = (
-        asset_binding_css()
-        + ".asset-realization{min-width:0}.asset-realization--scene{grid-column:2}"
-        + "@media(max-width:480px){footer{flex-direction:column;gap:8px;align-items:flex-start}"
-        + "footer span{display:block;max-width:100%;overflow-wrap:anywhere}}"
-    )
-    rendered = rendered.replace("</style>", css + "</style>", 1)
-    if plan.get("topology") != original_topology or plan.get("scene_intents") != original_scenes:
-        raise AssetBoundProductionError("ASSET_LAYER_MUTATED_AUTHORSHIP")
+    if (
+        plan.get("family_id") != original_family
+        or plan.get("topology") != original_topology
+        or plan.get("scene_intents") != original_scenes
+    ):
+        raise AssetBoundProductionError("ASSET_OR_PREMIUM_LAYER_MUTATED_AUTHORSHIP")
     return rendered
 
 
@@ -81,13 +96,18 @@ def run_asset_bound_generation(
     *,
     asset_bindings: Mapping[str, Mapping[str, Any]],
 ) -> dict[str, Any]:
-    """Run authoritative generation, then bind only pre-selected visual assets."""
+    """Run authoritative generation, then bind media and PU1-PU8 after Family freeze."""
     result = run_authoritative_generation(raw, output_dir)
     plan = result["plan"]
     directives = result["directives"]
     output = Path(output_dir)
-    html = render_asset_bound_authoritative_html(plan, directives, asset_bindings)
+
+    premium = build_premium_uplift(plan, directives, asset_bindings)
+    premium = _apply_mobile_headline_guard(plan, premium)
+    html = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
+    html = _apply_headline_optical_css_guard(html)
     (output / "index.html").write_text(html, encoding="utf-8")
+
     manifest_path = output / "production_manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     manifest["visual_asset_library"] = {
@@ -109,9 +129,14 @@ def run_asset_bound_generation(
         },
         "architecture_mutation": False,
     }
+    manifest["premium_authorship"] = deepcopy(premium)
+    manifest["premium_authorship"]["production_authority"] = "composition_plan"
+    manifest["premium_authorship"]["architecture_mutation"] = False
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
     result["manifest"] = manifest
     result["asset_bindings"] = deepcopy(dict(asset_bindings))
+    result["premium_uplift"] = deepcopy(premium)
     return result
 
 
