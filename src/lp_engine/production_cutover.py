@@ -108,18 +108,18 @@ def render_authoritative_html(plan: Mapping[str, Any], directives: Mapping[str, 
 <title>CompositionPlan Production Evidence</title>
 <style>
 :root{{font-family:system-ui,sans-serif;color:#171a18;background:#f3f4f1}}
-*{{box-sizing:border-box}}body{{margin:0}}main{{max-width:1440px;margin:auto;padding:0 clamp(20px,6vw,96px)}}
+*{{box-sizing:border-box}}body{{margin:0}}main{{max-width:1440px;margin:auto;padding:0 clamp(20px,6vw,96px);min-width:0;overflow-x:clip}}
 header,footer{{padding:22px 0;border-bottom:1px solid #c9d2cc;display:flex;justify-content:space-between}}
 .hero{{min-height:72svh;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,8vw,120px);align-items:center}}
 .hero[data-topology="guided_choice"]{{grid-template-columns:.8fr 1.2fr}}
 .hero[data-topology="text_led_field"]{{grid-template-columns:1fr;max-width:840px}}
 .hero[data-topology="relationship_media"]{{background:#e1ebe6}}
-h1{{font-size:clamp(32px,6vw,78px);line-height:1.08}}.lead{{font-size:clamp(17px,2vw,24px);line-height:1.7}}
-.offers{{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;padding:0;list-style:none}}
-.offers li{{background:#fff;border:1px solid #aebdb3;min-height:120px;padding:20px;display:grid;align-content:space-between}}
+h1{{font-size:clamp(32px,6vw,78px);line-height:1.08;overflow-wrap:anywhere}}.lead{{font-size:clamp(17px,2vw,24px);line-height:1.7;overflow-wrap:anywhere}}
+.offers{{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;padding:0;list-style:none;min-width:0}}
+.offers li{{background:#fff;border:1px solid #aebdb3;min-height:120px;padding:20px;display:grid;align-content:space-between;min-width:0;overflow-wrap:anywhere}}
 .scene{{min-height:42svh;border-top:1px solid #bbc8c0;padding:clamp(44px,8vw,110px) 0;display:grid;grid-template-columns:64px 1fr;gap:20px}}
-.scene h2{{font-size:clamp(28px,5vw,62px);margin:0}}.scene p{{grid-column:2;line-height:1.8}}
-@media(max-width:767px){{.hero,.hero[data-topology="guided_choice"],.hero[data-topology="relationship_media"]{{grid-template-columns:1fr;min-height:70svh;padding:54px 0}}.hero[data-topology="text_led_field"]{{min-height:56svh}}.scene{{grid-template-columns:40px 1fr;min-height:48svh}}}}
+.scene h2{{font-size:clamp(28px,5vw,62px);margin:0;min-width:0;overflow-wrap:anywhere}}.scene p{{grid-column:2;line-height:1.8;min-width:0;overflow-wrap:anywhere}}
+@media(max-width:767px){{.hero,.hero[data-topology="guided_choice"],.hero[data-topology="relationship_media"]{{grid-template-columns:1fr;min-height:70svh;padding:54px 0}}.hero[data-topology="text_led_field"]{{min-height:56svh}}.offers{{grid-template-columns:1fr}}.scene{{grid-template-columns:40px 1fr;min-height:48svh}}}}
 </style></head><body data-production-authority="composition_plan" data-plan-digest="{_esc(plan_digest(plan))}">
 <main><header><strong>Current-industry Production</strong><span>authoritative plan render</span></header>
 <section class="hero" data-topology="{_esc(topology["hero"])}" data-decision-job="{_esc(decision["primary_job"])}">
