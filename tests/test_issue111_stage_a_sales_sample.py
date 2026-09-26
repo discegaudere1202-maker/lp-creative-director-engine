@@ -8,6 +8,8 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 import run_issue111_stage_a_sales_sample_qa as issue111
+from lp_engine.production_cutover import consume_current_industry_production, plan_current_industry_production
+from lp_engine.visual_asset_production import render_asset_bound_authoritative_html
 
 
 class Issue111StageASalesSampleTest(unittest.TestCase):
@@ -75,6 +77,16 @@ class Issue111StageASalesSampleTest(unittest.TestCase):
             family = row["fixture"]["creative_family"]["family_id"]
             families.setdefault(category, set()).add(family)
         self.assertTrue(all(len(values) == 1 for values in families.values()))
+
+    def test_asset_bound_footer_stacks_on_narrow_widths(self):
+        raw = issue111.sample_matrix()["SK1"]["fixture"]
+        for role in raw["media_roles"]:
+            role["rights"] = "licensed"
+        plan = plan_current_industry_production(raw)
+        directives = consume_current_industry_production(plan)
+        rendered = render_asset_bound_authoritative_html(plan, directives, {})
+        self.assertIn("@media(max-width:480px){footer{flex-direction:column", rendered)
+        self.assertIn("footer span{display:block;max-width:100%;overflow-wrap:anywhere}", rendered)
 
 
 if __name__ == "__main__":
