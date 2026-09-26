@@ -743,6 +743,7 @@ a{{color:inherit}}.premium-shell{{max-width:1440px;margin:auto;padding:0 clamp(2
 .scene-media .production-asset img,.premium-hero__media .production-asset img{{aspect-ratio:4/3}}.cta-row{{align-items:stretch}}.cta-primary,.cta-secondary{{width:100%;min-width:0}}
 .premium-closing{{margin:0 -20px;padding:72px 20px}}.premium-closing h2{{font-size:clamp(40px,13vw,54px)}}.premium-footer{{flex-direction:column;align-items:flex-start;padding:24px 0}}
 }}
+@media(max-width:480px){{footer{{flex-direction:column;gap:8px;align-items:flex-start}}footer span{{display:block;max-width:100%;overflow-wrap:anywhere}}}}
 @media(max-width:360px){{.hero-lead,.scene-copy{{max-width:29ch}}.premium-scene{{padding:56px 0}}}}
 @media(max-width:340px){{.premium-headline-unit{{display:block;white-space:nowrap}}}}
 @media(prefers-reduced-motion:reduce){{html{{scroll-behavior:auto}}*,*::before,*::after{{animation:none!important;transition:none!important;transform:none!important}}}}
