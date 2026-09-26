@@ -33,9 +33,12 @@ jobs:
       - name: Generate Stage A 62-asset inventory evidence
         run: python scripts/run_issue109_stage_a_inventory_completion.py --out artifacts/issue109_stage_a_inventory
       - name: Git whitespace check
+        if: always()
         run: git diff --check
       - name: Upload Issue 109 evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: issue109-stage-a-inventory-completion
           path: artifacts/issue109_stage_a_inventory/
+          if-no-files-found: warn
