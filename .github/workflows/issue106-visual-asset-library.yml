@@ -8,6 +8,7 @@ on:
       - "src/lp_engine/visual_asset_production.py"
       - "data/visual_asset_library/**"
       - "scripts/run_issue106_visual_asset_library.py"
+      - "scripts/run_issue106_visual_asset_library_final.py"
       - "tests/test_visual_asset_library.py"
       - ".github/workflows/issue106-visual-asset-library.yml"
       - "src/lp_engine/production_cutover.py"
@@ -30,8 +31,8 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Contract and regression tests
         run: python -m unittest tests/test_visual_asset_library.py tests/test_production_cutover.py
-      - name: Acquire real candidates and generate Production evidence
-        run: python scripts/run_issue106_visual_asset_library.py --out artifacts/issue106_visual_asset_library
+      - name: Acquire corrected real candidates and generate Production evidence
+        run: python scripts/run_issue106_visual_asset_library_final.py --out artifacts/issue106_visual_asset_library
       - name: Upload Issue 106 evidence
         uses: actions/upload-artifact@v4
         with:
