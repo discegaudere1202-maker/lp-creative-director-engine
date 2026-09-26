@@ -1,0 +1,30 @@
+{
+  "schema_version": "issue114_systemic_vs_client_evidence_boundary_v1",
+  "systemic_engineering_uplift": [
+    {"id":"U1","name":"public_copy_transformation","problem":"Internal decision-job tokens and generic validation copy leak into public UI.","engine_must":"Transform frozen scene intent + company truth + verified evidence into public proposition, section headline, support copy, proof copy and CTA microcopy; prohibit internal labels in rendered copy."},
+    {"id":"U2","name":"hero_authority_authorship","problem":"Hero varies structurally but does not consistently establish a company-specific premium reason-to-believe.","engine_must":"Compose Hero from Family + decision state + strongest verified authority + media roles without mapping Family to one Hero."},
+    {"id":"U3","name":"scene_dramaturgy_and_density","problem":"Page rhythm remains repeated stacked blocks with uniform spacing and hierarchy.","engine_must":"Author per-scene weight, density, width, media/text relationship, chapter transition, proof adjacency and mobile recomposition."},
+    {"id":"U4","name":"media_story_binding","problem":"Images are rights-safe but weakly participate in persuasion.","engine_must":"Bind each asset to authority/process/context/detail/outcome function, claim adjacency, crop intent, caption/provenance mode and sequence role."},
+    {"id":"U5","name":"proof_choreography","problem":"Trust/proof remains a generic block instead of decisive evidence staging.","engine_must":"Place verified proof at the objection or claim it resolves; never promote illustrative media to factual evidence."},
+    {"id":"U6","name":"cta_choreography","problem":"Stage A has no actionable CTA links and closing strategy is metadata-like.","engine_must":"Render verified-destination CTAs with pre-CTA reassurance, primary/secondary hierarchy and decision-stage-specific wording."},
+    {"id":"U7","name":"meaningful_motion","problem":"No meaningful motion exists.","engine_must":"Allow motion only when it clarifies hierarchy, sequence, comparison or feedback and always provide reduced-motion behavior."},
+    {"id":"U8","name":"family_company_visual_voice","problem":"All samples use the same visible CSS expression, increasing template smell.","engine_must":"Derive type relationship, measure, spacing cadence, rule treatment, image geometry and surface depth from Family + company truth + scene plan while retaining a shared engineering system."},
+    {"id":"U9","name":"mobile_premium_recomposition","problem":"Mobile is safe but mostly a vertical collapse.","engine_must":"Re-author media order, proof adjacency, text measure, CTA behavior and chapter pacing at 320-430 without changing the persuasive job."}
+  ],
+  "client_evidence_dependencies": [
+    {"id":"C1","evidence":"actual_staff_or_owner_identity","cannot_be_replaced_by":"generic stock presented as staff"},
+    {"id":"C2","evidence":"actual_store_studio_space","cannot_be_replaced_by":"generic interior presented as venue"},
+    {"id":"C3","evidence":"actual_results_before_after_or_portfolio","cannot_be_replaced_by":"generic outcome image presented as result"},
+    {"id":"C4","evidence":"verified_testimonials_reviews","cannot_be_replaced_by":"synthetic quotes"},
+    {"id":"C5","evidence":"credentials_qualifications_awards","cannot_be_replaced_by":"unverified badge/logo"},
+    {"id":"C6","evidence":"verified_price_offer_duration_conditions","cannot_be_replaced_by":"estimated or invented terms"},
+    {"id":"C7","evidence":"actual_process_equipment_material_detail","cannot_be_replaced_by":"illustrative asset as factual proof"},
+    {"id":"C8","evidence":"company_specific_brand_assets_and_voice","cannot_be_replaced_by":"invented brand history or claims"}
+  ],
+  "boundary_rules": [
+    "Systemic uplift must improve composition/copy/media choreography even when client evidence is sparse.",
+    "Missing client evidence must be surfaced transparently and must never trigger fabricated proof.",
+    "Client evidence availability must not switch Creative Family.",
+    "Generic stock may create atmosphere/context but remains illustrative unless provenance proves actual-company evidence."
+  ]
+}
