@@ -1,9 +1,14 @@
 {
-  "schema_version": "issue109_stage_a_candidate_corrections_v1",
-  "reason": "Exact acquisition preflight replacement for unavailable/invalid candidate binaries before human visual-risk audit.",
+  "schema_version": "issue109_stage_a_candidate_corrections_v2",
+  "reason": "Exact acquisition preflight replacements for unavailable/invalid candidate binaries before human visual-risk audit.",
   "blocked_asset_ids": [
     {
       "asset_id": "pexels-35844836",
+      "reason": "ACQUISITION_FAILED",
+      "finding": "Candidate binary did not survive exact acquisition workflow; excluded from Stage A count."
+    },
+    {
+      "asset_id": "pexels-18499505",
       "reason": "ACQUISITION_FAILED",
       "finding": "Candidate binary did not survive exact acquisition workflow; excluded from Stage A count."
     }
@@ -23,6 +28,23 @@
       "visual_tone_tags": ["classic", "interior", "professional"],
       "material_quality_tags": ["barber_chair", "mirror", "space"],
       "prohibited_uses": ["actual target-company barber shop", "actual practitioner/customer evidence", "brand endorsement"],
+      "source_page_review": "FREE_TO_USE_CONFIRMED_2026-09-26",
+      "binary_visual_review": "PENDING_EXACT_BINARY_ARTIFACT_REVIEW"
+    },
+    {
+      "asset_id": "pexels-25599827",
+      "source_id": "25599827",
+      "source_url": "https://www.pexels.com/photo/pilates-tower-in-a-white-room-25599827/",
+      "binary_url": "https://images.pexels.com/photos/25599827/pexels-photo-25599827.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "creator": "Ahmet Kurt",
+      "content_class": "studio_interior_generic",
+      "industry_tags": ["pilates_fitness"],
+      "business_category_tags": ["pilates_studio"],
+      "eligible_scene_intents": ["recognize", "choose", "understand", "trust", "compare", "act"],
+      "eligible_media_roles": ["hero", "interior_environment"],
+      "visual_tone_tags": ["bright", "clean", "studio"],
+      "material_quality_tags": ["pilates_tower", "wood", "space"],
+      "prohibited_uses": ["actual target-company studio", "actual equipment claim", "health outcome"],
       "source_page_review": "FREE_TO_USE_CONFIRMED_2026-09-26",
       "binary_visual_review": "PENDING_EXACT_BINARY_ARTIFACT_REVIEW"
     }
