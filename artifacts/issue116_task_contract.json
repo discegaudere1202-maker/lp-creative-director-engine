@@ -1,0 +1,20 @@
+{
+  "issue": 116,
+  "baseline_main_sha": "e43e9006c753829360f25a90d8cca4db9fdc48ab",
+  "parent_issue": 114,
+  "baseline_issue111_artifact_id": 10912860741,
+  "scope": [
+    "skincare_cosmetics_product",
+    "hair_salon",
+    "barber",
+    "pilates_studio"
+  ],
+  "samples": ["SK1", "SK2", "SK3", "HS1", "HS2", "BR1", "BR2", "PI1", "PI2"],
+  "widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+  "expected_screenshot_count": 81,
+  "premium_uplifts": ["PU1", "PU2", "PU3", "PU4", "PU5", "PU6", "PU7", "PU8"],
+  "composition_plan_authority": true,
+  "family_frozen_before_media": true,
+  "human_visible_status": "PENDING_AOI_NOT_SELF_DECLARED",
+  "million_yen_value": "NOT_SELF_DECLARED"
+}
