@@ -22,36 +22,36 @@ The checked-in Pexels Stage A seed is a candidate registry, not an approval whit
 
 The seed intentionally does not fabricate the Issue #104 minimum 129-asset inventory. Artifact output reports actual rights-pass coverage and explicit remaining gaps before Real-image Sales Sample QA may begin.
 
-## Final candidate correction
+## Sarah exact-binary visual-risk correction
 
-Initial evidence exposed one cosmetics candidate with visible product branding and one hair-salon candidate with signage / branding risk. They were removed from the Stage A seed before review handoff.
+Initial Rin evidence replaced two obvious candidates before handoff, but Sarah's technical/evidence audit of the **actual downloaded binaries** found two additional metadata mismatches that automated provider metadata did not reveal:
 
-Replacement assets were independently inspected before final evidence generation:
+- `pexels-16378448`: visible `SYAGI` / product-label text on the cosmetic binary;
+- `pexels-7518728`: visible `Levi's` signage inside the barbershop binary.
 
-- cosmetics: Pexels `15369086`, an unlabeled cosmetic container;
-- hair salon: Pexels `7750098`, a salon interior without visible target-company identity / store signage.
+Both exact asset IDs are now blocked before ingestion by:
 
-Both replacements were reacquired, hashed, re-run through the rights gate, rebound into Production, and regenerated across all 81 screenshots.
+`data/visual_asset_library/providers/pexels_stage_a_sarah_corrections_v1.json`
+
+They are replaced for final evidence by:
+
+- cosmetics: Pexels `11741343`, blank cosmetic bottle candidate;
+- barber: Pexels `19664872`, empty barbershop interior candidate.
+
+The final CI runner applies this correction contract before acquisition, then reacquires, hashes, runs asset-level rights gates, rebinds Production, and regenerates all 81 screenshots. The final Artifact must be visually inspected again before Aoi PASS.
 
 ## Evidence convention
 
 Exact final HEAD / workflow run / artifact identifiers are recorded in PR #107 and Issue #106 completion comments so recording them does not mutate the Task branch after the final QA run.
 
-Validated gates include:
+Validated machine gates include:
 
 - 81 / 81 screenshots;
 - CompositionPlan / Family / topology / scene order preserved;
 - selected rights gate / image load / overflow / 320px semantic regression / renderer trace-hash join pass.
 
-Actual Stage A inventory: `11 / 62`; remaining gap `51`.
-
-- skincare/cosmetics product: `3 / 10`, gap 7.
-- hair salon: `2 / 18`, gap 16.
-- barber: `3 / 18`, gap 15.
-- Pilates studio: `3 / 16`, gap 13.
-
-The inventory floor is not fabricated, so `real_image_sales_sample_qa_start_gate=false` remains explicit.
+The inventory floor must not be fabricated, so `real_image_sales_sample_qa_start_gate=false` remains explicit until the Issue #104 category minimums are actually satisfied.
 
 ## Human boundary
 
-Automated success proves runtime/rights/trace/browser integration only. It does not self-declare `HUMAN_VISIBLE_PASS`, final photo fit, Real-image Sales Sample readiness, or ¥1M quality. Aoi remains the independent human-visible reviewer of the actual selected-image screenshots.
+Automated success proves runtime/rights/trace/browser integration only. It does not self-declare `HUMAN_VISIBLE_PASS`, final photo fit, Real-image Sales Sample readiness, or ¥1M quality. Aoi remains the independent human-visible reviewer of the actual selected-image screenshots after Sarah accepts the final regenerated evidence.
