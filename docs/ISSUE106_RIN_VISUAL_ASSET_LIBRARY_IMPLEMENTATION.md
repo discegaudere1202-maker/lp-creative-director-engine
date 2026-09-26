@@ -35,13 +35,14 @@ Both replacements were reacquired, hashed, re-run through the rights gate, rebou
 
 ## Final evidence
 
-Final task HEAD: `0e0f1e931cfd8c32fe82a6bb7ef8177e6b857639`
+Final task HEAD: `68a3d080d6e157ad6ad0241ba99ba899d51f3e20`
 
-- Issue #106 workflow: `36227053226` — success.
-- LP Engine QA: `36227053301` — success.
-- PM-OPS-1 PR Event Realtime Contract: `36227053399` — success.
-- Artifact ID: `10901212710`.
-- Artifact digest: `sha256:c0d81921401db79822cc6d7249d85770c665f9d1d8f191368652ed95fa96ecb9`.
+- Issue #106 workflow: `36227297410` — success.
+- LP Engine QA: `36227297405` — success.
+- PM-OPS-1 PR Event Realtime Contract: `36227297392` — success.
+- Issue #99 Production Cutover workflow: `36227297390` — skipped by scope/path filter; no failure.
+- Artifact ID: `10900618716`.
+- Artifact digest: `sha256:9d91652fcb1d0b2c6c18352f6c617012825e27ccc56ef86e0b9f92bb7ec6ae21`.
 - Screenshots: `81 / 81`.
 - CompositionPlan / Family / topology / scene order preserved.
 - selected rights gate / image load / overflow / 320px semantic regression / renderer trace-hash join all pass.
