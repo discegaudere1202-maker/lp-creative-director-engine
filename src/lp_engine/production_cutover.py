@@ -20,6 +20,11 @@ from .authored_composition_runtime import MigrationGuardError, consume_compositi
 
 CURRENT_INDUSTRIES = {"beauty_cosmetics", "hair_salon_barber", "pilates_fitness"}
 WIDTHS = (320, 360, 375, 390, 430, 768, 1024, 1280, 1440)
+_SEMANTIC_BODY_BREAK_RE = re.compile(
+    r"について|によって|として|ための|から|まで|より|ので|のに|[、をにへでがはもと]"
+)
+_SEMANTIC_BODY_TARGET = 12
+_SEMANTIC_BODY_MIN = 4
 
 
 class ProductionCutoverError(RuntimeError):
@@ -91,18 +96,62 @@ def _esc(value: Any) -> str:
 
 
 def semantic_headline_units(primary_job: str) -> tuple[str, ...]:
-    """Return meaning-preserving headline units for narrow mobile rendering."""
+    """Return meaning-preserving headline units for the 320px optical gate."""
     if not primary_job:
         raise ProductionCutoverError("HEADLINE_TEXT_EMPTY")
     return (f"{primary_job}のための", "入口")
 
 
+def _semantic_sentence_segments(sentence: str) -> list[str]:
+    """Split only at Japanese grammatical/punctuation boundaries, never mid-word."""
+    segments: list[str] = []
+    start = 0
+    for match in _SEMANTIC_BODY_BREAK_RE.finditer(sentence):
+        end = match.end()
+        if end > start:
+            segments.append(sentence[start:end])
+            start = end
+    if start < len(sentence):
+        segments.append(sentence[start:])
+    return [segment for segment in segments if segment]
+
+
+def _merge_semantic_segments(segments: list[str]) -> list[str]:
+    """Merge short semantic segments so narrow lines do not end in grammatical crumbs."""
+    if not segments:
+        return []
+    merged: list[str] = []
+    current = ""
+    for segment in segments:
+        if not current:
+            current = segment
+            continue
+        if len(current) < _SEMANTIC_BODY_MIN or len(current) + len(segment) <= _SEMANTIC_BODY_TARGET:
+            current += segment
+        else:
+            merged.append(current)
+            current = segment
+    if current:
+        merged.append(current)
+    if len(merged) > 1 and len(merged[-1].rstrip("。！？、")) < _SEMANTIC_BODY_MIN:
+        merged[-2] += merged[-1]
+        merged.pop()
+    return merged
+
+
 def semantic_body_units(text: str) -> tuple[str, ...]:
-    """Keep complete Japanese sentence units together at narrow widths."""
-    units = tuple(part for part in re.findall(r"[^。！？]+[。！？]|[^。！？]+$", text) if part)
-    if not units or any(len(unit.strip()) < 3 for unit in units):
+    """Compose Japanese body copy from deterministic meaning-boundary units."""
+    sentences = tuple(part for part in re.findall(r"[^。！？]+[。！？]|[^。！？]+$", text) if part)
+    if not sentences:
+        raise ProductionCutoverError("BODY_TEXT_EMPTY")
+    units: list[str] = []
+    for sentence in sentences:
+        units.extend(_merge_semantic_segments(_semantic_sentence_segments(sentence)))
+    if not units or "".join(units) != text:
+        raise ProductionCutoverError("BODY_SEMANTIC_COMPOSITION_INVALID")
+    if any(len(unit.rstrip("。！？、").strip()) < _SEMANTIC_BODY_MIN for unit in units):
         raise ProductionCutoverError("BODY_SEMANTIC_UNIT_TOO_SHORT")
-    return units
+    return tuple(units)
 
 
 def _unit_markup(units: tuple[str, ...], class_name: str) -> str:
@@ -143,7 +192,8 @@ h1{{font-size:clamp(32px,6vw,78px);line-height:1.08;overflow-wrap:anywhere}}.lea
 .offers li{{background:#fff;border:1px solid #aebdb3;min-height:120px;padding:20px;display:grid;align-content:space-between;min-width:0;overflow-wrap:anywhere}}
 .scene{{min-height:42svh;border-top:1px solid #bbc8c0;padding:clamp(44px,8vw,110px) 0;display:grid;grid-template-columns:64px 1fr;gap:20px}}
 .scene h2{{font-size:clamp(28px,5vw,62px);margin:0;min-width:0;overflow-wrap:anywhere}}.scene p{{grid-column:2;line-height:1.8;min-width:0;overflow-wrap:anywhere}}
-@media(max-width:767px){{.hero,.hero[data-topology="guided_choice"],.hero[data-topology="relationship_media"]{{grid-template-columns:1fr;min-height:70svh;padding:54px 0}}.hero[data-topology="text_led_field"]{{min-height:56svh}}.offers{{grid-template-columns:1fr}}.semantic-headline-unit,.semantic-body-unit{{display:inline-block;white-space:nowrap}}.scene{{grid-template-columns:40px 1fr;min-height:48svh}}}}
+@media(max-width:767px){{.hero,.hero[data-topology="guided_choice"],.hero[data-topology="relationship_media"]{{grid-template-columns:1fr;min-height:70svh;padding:54px 0}}.hero[data-topology="text_led_field"]{{min-height:56svh}}.offers{{grid-template-columns:1fr}}.scene{{grid-template-columns:40px 1fr;min-height:48svh}}}}
+@media(max-width:340px){{.semantic-headline-unit,.semantic-body-unit{{display:inline-block;white-space:nowrap}}}}
 </style></head><body data-production-authority="composition_plan" data-plan-digest="{_esc(plan_digest(plan))}">
 <main><header><strong>Current-industry Production</strong><span>authoritative plan render</span></header>
 <section class="hero" data-topology="{_esc(topology["hero"])}" data-decision-job="{_esc(decision["primary_job"])}">
@@ -176,13 +226,13 @@ def run_authoritative_generation(raw: Mapping[str, Any], output_dir: str | Path)
         "legacy_profile_fallback": False,
         "human_visible_status": "PENDING_AOI_NOT_SELF_DECLARED",
     }
-    (output / "production_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    (output / "production_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"plan": plan, "directives": directives, "manifest": manifest, "output_dir": str(output)}
 
 
 __all__ = [
     "CURRENT_INDUSTRIES", "WIDTHS", "ProductionCutoverError",
     "derive_current_industry_authorship_input", "plan_current_industry_production",
-    "consume_current_industry_production", "render_authoritative_html",
-    "run_authoritative_generation",
+    "consume_current_industry_production", "semantic_headline_units", "semantic_body_units",
+    "render_authoritative_html", "run_authoritative_generation",
 ]
