@@ -1,0 +1,30 @@
+{
+  "schema_version": "issue109_stage_a_candidate_corrections_v1",
+  "reason": "Exact acquisition preflight replacement for unavailable/invalid candidate binaries before human visual-risk audit.",
+  "blocked_asset_ids": [
+    {
+      "asset_id": "pexels-35844836",
+      "reason": "ACQUISITION_FAILED",
+      "finding": "Candidate binary did not survive exact acquisition workflow; excluded from Stage A count."
+    }
+  ],
+  "replacement_assets": [
+    {
+      "asset_id": "pexels-18090355",
+      "source_id": "18090355",
+      "source_url": "https://www.pexels.com/photo/chairs-at-barbers-18090355/",
+      "binary_url": "https://images.pexels.com/photos/18090355/pexels-photo-18090355.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "creator": "Max Chen",
+      "content_class": "barber_interior_generic",
+      "industry_tags": ["hair_salon_barber"],
+      "business_category_tags": ["barber"],
+      "eligible_scene_intents": ["recognize", "choose", "understand", "trust", "compare", "act"],
+      "eligible_media_roles": ["hero", "interior_environment"],
+      "visual_tone_tags": ["classic", "interior", "professional"],
+      "material_quality_tags": ["barber_chair", "mirror", "space"],
+      "prohibited_uses": ["actual target-company barber shop", "actual practitioner/customer evidence", "brand endorsement"],
+      "source_page_review": "FREE_TO_USE_CONFIRMED_2026-09-26",
+      "binary_visual_review": "PENDING_EXACT_BINARY_ARTIFACT_REVIEW"
+    }
+  ]
+}
