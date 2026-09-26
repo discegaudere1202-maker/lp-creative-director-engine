@@ -1,8 +1,8 @@
-"""Shadow consumption boundary for authored composition plans.
+"""Guarded consumption boundary for authored CompositionPlans.
 
-Production routing remains unchanged until shadow validation is complete. This
-adapter proves that a renderer can consume a plan without re-selecting Family,
-profile, or topology from identity.
+Shadow mode remains available for regression. Production mode is explicit and
+fail-closed: it accepts only a complete frozen plan and never falls back to a
+legacy profile or re-infers authored form.
 """
 
 from __future__ import annotations
@@ -31,10 +31,10 @@ def consume_composition_plan(
     derived exclusively from the frozen authored plan and are safe to compare
     with accepted outputs before production routing is switched.
     """
-    if mode != "shadow":
-        raise MigrationGuardError(
-            "production routing is disabled until shadow validation passes"
-        )
+    if mode not in {"shadow", "production"}:
+        raise MigrationGuardError("unsupported composition-plan mode")
+    if mode == "production" and (plan.get("review_gate", {}).get("status") == "HUMAN_REVIEW_REQUIRED"):
+        raise MigrationGuardError("production plan requires human review before rendering")
     if not plan.get("family_frozen") or plan.get("fit_trace", {}).get("identity_used"):
         raise MigrationGuardError("composition plan is not migration-safe")
     assert_no_identity_routing(plan)
@@ -46,8 +46,11 @@ def consume_composition_plan(
     variation = deepcopy(dict(plan.get("variation_vector") or {}))
     if not topology or not variation:
         raise MigrationGuardError("authored topology and variation are required")
+    required_topology = {"hero", "core_decision", "trust_proof", "closing", "scene_order"}
+    if mode == "production" and not required_topology.issubset(topology):
+        raise MigrationGuardError("production plan is missing mandatory topology directives")
     return {
-        "mode": "shadow",
+        "mode": mode,
         "family_id": plan["family_id"],
         "family_version": plan["family_version"],
         "scene_intents": deepcopy(plan.get("scene_intents") or []),
@@ -60,11 +63,11 @@ def consume_composition_plan(
     }
 
 
-def migration_guard(plan: Mapping[str, Any]) -> dict[str, Any]:
-    """Emit auditable guards for the pre-production migration stage."""
-    directives = consume_composition_plan(plan, mode="shadow")
+def migration_guard(plan: Mapping[str, Any], *, mode: str = "shadow") -> dict[str, Any]:
+    """Emit auditable guards for shadow or guarded Production consumption."""
+    directives = consume_composition_plan(plan, mode=mode)
     return {
-        "status": "SHADOW_ONLY",
+        "status": "PRODUCTION_AUTHORITY" if mode == "production" else "SHADOW_ONLY",
         "family_frozen": directives["family_id"] == plan["family_id"],
         "identity_routing": False,
         "reference_lookup": False,

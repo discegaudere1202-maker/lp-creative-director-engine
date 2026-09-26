@@ -1,0 +1,38 @@
+name: Issue 99 Current-Industry Production Cutover
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+    paths:
+      - "src/lp_engine/**"
+      - "scripts/run_issue99_production_cutover.py"
+      - "tests/test_production_cutover.py"
+      - ".github/workflows/issue99-production-cutover.yml"
+      - "artifacts/issue97_riko/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production-cutover:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine
+        run: pip install -e .
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Contract tests
+        run: python -m unittest tests/test_production_cutover.py
+      - name: Generate Production matrix and browser evidence
+        run: python scripts/run_issue99_production_cutover.py --out artifacts/issue99_production_cutover
+      - name: Upload Production cutover artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue99-current-industry-production-cutover
+          path: artifacts/issue99_production_cutover/
