@@ -6,6 +6,7 @@ on:
     paths:
       - "data/visual_asset_library/providers/pexels_stage_a_completion_issue109_v1.json"
       - "data/visual_asset_library/providers/pexels_stage_a_issue109_corrections_v1.json"
+      - "data/visual_asset_library/providers/pexels_stage_a_issue109_sarah_return_v1.json"
       - "scripts/run_issue109_stage_a_inventory_completion.py"
       - "scripts/run_issue109_stage_a_inventory_completion_final.py"
       - "src/lp_engine/visual_asset_library.py"
