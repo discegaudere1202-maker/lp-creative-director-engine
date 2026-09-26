@@ -1,0 +1,47 @@
+{
+  "schema_version": "issue104_free_source_license_evidence_registry_v1",
+  "checked_at": "2026-09-26",
+  "records": [
+    {
+      "provider": "Pexels",
+      "official_source": "https://www.pexels.com/license/",
+      "secondary_official_source": "https://help.pexels.com/hc/en-us/articles/360042295214-Can-I-use-the-photos-and-videos-for-a-commercial-project",
+      "verified_summary": [
+        "Pexels states photos and videos are free for commercial use.",
+        "Attribution is not required under the Pexels license summary.",
+        "Modification is permitted.",
+        "The license prohibits implying endorsement by depicted people or brands and restricts standalone redistribution/sale."
+      ],
+      "production_implication": "Provider terms can satisfy the base copyright-license gate, but asset-level person/brand/trademark/evidence-boundary review remains mandatory."
+    },
+    {
+      "provider": "Unsplash",
+      "official_source": "https://help.unsplash.com/en/articles/2612315-can-i-use-unsplash-images-for-personal-or-commercial-projects",
+      "secondary_official_source": "https://help.unsplash.com/en/articles/2612329-releases-and-trademarks",
+      "verified_summary": [
+        "Unsplash states images are free for most commercial/personal projects and attribution is not required.",
+        "Unsplash explicitly distinguishes its copyright license from other rights affecting recognizable people, private property and trademarks.",
+        "Unsplash states it cannot guarantee the scope of releases for every uploaded image."
+      ],
+      "production_implication": "Identifiable-person/property/brand assets must not be auto-whitelisted solely from the provider license; conditional or human review is required when target use could imply endorsement or company identity."
+    },
+    {
+      "provider": "Pixabay",
+      "official_source": "https://pixabay.com/service/license-summary/",
+      "secondary_official_source": "https://pixabay.com/service/terms/",
+      "verified_summary": [
+        "Pixabay states Content may be used for free and may be modified subject to prohibited uses.",
+        "Attribution is generally not required.",
+        "Standalone redistribution is restricted and misleading/deceptive use is prohibited.",
+        "Pixabay notes that trademarks, personality/privacy, property and other rights may require separate consent and are the user's responsibility."
+      ],
+      "production_implication": "Base provider license is necessary but not sufficient for commercial Production approval; third-party rights and misleading-use gates remain mandatory."
+    }
+  ],
+  "cross_provider_conclusion": [
+    "all three providers can be considered free-first candidate sources under their current published terms",
+    "none should be treated as a universal asset whitelist",
+    "commercial website use can still be unsafe for a specific asset/use because depicted people, brands, property or misleading context can add separate rights/consent constraints",
+    "license evidence must be rechecked on trigger; this registry is not permanent legal clearance"
+  ]
+}
