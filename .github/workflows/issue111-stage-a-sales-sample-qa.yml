@@ -1,0 +1,46 @@
+name: Issue 111 Stage A Real-image Sales Sample QA
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "scripts/run_issue111_stage_a_sales_sample_qa.py"
+      - "scripts/run_issue111_stage_a_sales_sample_qa_final.py"
+      - "tests/test_issue111_stage_a_sales_sample.py"
+      - "tests/test_issue111_final_policy.py"
+      - "src/lp_engine/visual_asset_library.py"
+      - "src/lp_engine/visual_asset_production.py"
+      - "src/lp_engine/production_cutover.py"
+      - "data/visual_asset_library/providers/**"
+      - ".github/workflows/issue111-stage-a-sales-sample-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-a-real-image-sales-sample-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine
+        run: pip install -e .
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Contract and regression tests
+        run: python -m unittest tests/test_issue111_stage_a_sales_sample.py tests/test_issue111_final_policy.py tests/test_visual_asset_library.py tests/test_production_cutover.py
+      - name: Generate Stage A real-image sales sample evidence
+        run: python scripts/run_issue111_stage_a_sales_sample_qa_final.py --out artifacts/issue111_stage_a_sales_sample_qa
+      - name: Git whitespace check
+        if: always()
+        run: git diff --check
+      - name: Upload Issue 111 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue111-stage-a-real-image-sales-sample-qa
+          path: artifacts/issue111_stage_a_sales_sample_qa/
+          if-no-files-found: warn

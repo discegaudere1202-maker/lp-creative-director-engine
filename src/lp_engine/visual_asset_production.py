@@ -63,7 +63,12 @@ def render_asset_bound_authoritative_html(
             raise AssetBoundProductionError(f"SCENE_BINDING_CLOSE_MISSING:{scene_id}")
         rendered = rendered[:end] + f'<div class="asset-realization asset-realization--scene">{markup}</div>' + rendered[end:]
 
-    css = asset_binding_css() + ".asset-realization{min-width:0}.asset-realization--scene{grid-column:2}"
+    css = (
+        asset_binding_css()
+        + ".asset-realization{min-width:0}.asset-realization--scene{grid-column:2}"
+        + "@media(max-width:480px){footer{flex-direction:column;gap:8px;align-items:flex-start}"
+        + "footer span{display:block;max-width:100%;overflow-wrap:anywhere}}"
+    )
     rendered = rendered.replace("</style>", css + "</style>", 1)
     if plan.get("topology") != original_topology or plan.get("scene_intents") != original_scenes:
         raise AssetBoundProductionError("ASSET_LAYER_MUTATED_AUTHORSHIP")
