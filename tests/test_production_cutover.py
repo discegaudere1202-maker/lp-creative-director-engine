@@ -1,5 +1,8 @@
 import copy
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from lp_engine.production_cutover import (
     CURRENT_INDUSTRIES,
@@ -7,6 +10,8 @@ from lp_engine.production_cutover import (
     consume_current_industry_production,
     derive_current_industry_authorship_input,
     plan_current_industry_production,
+    render_authoritative_html,
+    run_authoritative_generation,
     semantic_body_units,
     semantic_headline_units,
 )
@@ -49,11 +54,37 @@ def fixture(category="beauty_cosmetics", job="choose", family="family-alpha", of
 class ProductionCutoverTest(unittest.TestCase):
     def test_320_semantic_headline_and_body_units(self):
         headline = semantic_headline_units("trust")
-        body = semantic_body_units("決めるための情報を整理します。")
+        body_text = "決めるための情報を整理します。"
+        body = semantic_body_units(body_text)
         self.assertEqual(headline, ("trustのための", "入口"))
         self.assertTrue(all(len(unit) > 1 for unit in headline))
-        self.assertTrue(all(unit.strip() != "す。" for unit in body))
-        self.assertTrue(all(unit.endswith(("。", "！", "？")) for unit in body))
+        self.assertEqual(body, ("決めるための情報を", "整理します。"))
+        self.assertEqual("".join(body), body_text)
+        self.assertTrue(all(unit.strip() not in {"す。", "ます。", "です。"} for unit in body))
+        self.assertTrue(all(len(unit.rstrip("。！？、").strip()) >= 4 for unit in body))
+
+        generalized = "料金について確認し、内容を比較してから決めます。"
+        generalized_units = semantic_body_units(generalized)
+        self.assertEqual("".join(generalized_units), generalized)
+        self.assertGreater(len(generalized_units), 1)
+        self.assertTrue(all(len(unit.rstrip("。！？、").strip()) >= 4 for unit in generalized_units))
+
+    def test_semantic_nowrap_is_scoped_to_320_gate(self):
+        plan = plan_current_industry_production(fixture(job="trust"))
+        directives = consume_current_industry_production(plan)
+        rendered = render_authoritative_html(plan, directives)
+        self.assertIn("@media(max-width:340px){.semantic-headline-unit,.semantic-body-unit{display:inline-block;white-space:nowrap}}", rendered)
+        mobile_rule = rendered.split("@media(max-width:767px)", 1)[1].split("@media(max-width:340px)", 1)[0]
+        self.assertNotIn("semantic-headline-unit", mobile_rule)
+        self.assertNotIn("semantic-body-unit", mobile_rule)
+
+    def test_generated_manifest_is_valid_json(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            result = run_authoritative_generation(fixture(job="trust"), tmp)
+            with Path(tmp, "production_manifest.json").open(encoding="utf-8") as handle:
+                manifest = json.load(handle)
+            self.assertEqual(manifest["production_authority"], "composition_plan")
+            self.assertEqual(result["manifest"], manifest)
 
     def test_supported_scopes_and_authority(self):
         for category in CURRENT_INDUSTRIES:
