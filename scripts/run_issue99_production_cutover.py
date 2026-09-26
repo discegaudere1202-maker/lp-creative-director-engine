@@ -107,6 +107,15 @@ def negative_cases() -> dict[str, dict[str, Any]]:
     return {"X1": x1, "X2": x2, "X3": (x3, x3_changed), "X4": (x4a, x4b), "X5": x5}
 
 
+def _signature(result: dict[str, Any]) -> str:
+    plan = result["plan"]
+    return json.dumps(
+        {"topology": plan["topology"], "variation_vector": plan["variation_vector"]},
+        ensure_ascii=False,
+        sort_keys=True,
+    )
+
+
 def main() -> int:
     import argparse
     from playwright.sync_api import sync_playwright
@@ -149,6 +158,13 @@ def main() -> int:
     except ProductionCutoverError as exc:
         negative_results["X5"] = {"expected": "MEDIA_RIGHTS_BLOCKED", "actual": str(exc)}
 
+    family_groups = (("B1", "B2", "B3"), ("H1", "H2", "H3"), ("P1", "P2", "P3"))
+    same_family_divergence_preserved = all(
+        len({_signature(case_results[case_id]) for case_id in group}) > 1
+        for group in family_groups
+    )
+    near_collision_review_preserved = bool(negative_results["X4"]["same_semantics"])
+
     screenshots: list[dict[str, Any]] = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
@@ -158,7 +174,54 @@ def main() -> int:
             for width in WIDTHS:
                 page.set_viewport_size({"width": width, "height": 900})
                 page.goto(html_path.as_uri(), wait_until="load")
-                overflow = bool(page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth"))
+                semantic_qa = page.evaluate(
+                    """
+                    () => {
+                      const selector = '.semantic-headline-unit,.semantic-body-unit';
+                      const nodes = [...document.querySelectorAll(selector)];
+                      const headline = [...document.querySelectorAll('.semantic-headline-unit')];
+                      const body = [...document.querySelectorAll('.semantic-body-unit')];
+                      const withinParent = (node) => {
+                        const rect = node.getBoundingClientRect();
+                        const parent = node.parentElement.getBoundingClientRect();
+                        return rect.left >= parent.left - 0.5 && rect.right <= parent.right + 0.5;
+                      };
+                      const oneJapanese = (text) => {
+                        const only = text.trim().match(/[\u3040-\u30ff\u3400-\u9fff々〆ヵヶ]/g) || [];
+                        return only.length === 1 && text.trim().length <= 2;
+                      };
+                      const shortTail = (text) => /^(?:す|ます|です|た|る|い|う|ん|て|で)[。！？]?$/.test(text.trim());
+                      const narrowNowrap = nodes.length > 0 && nodes.every(
+                        (node) => getComputedStyle(node).whiteSpace === 'nowrap'
+                      );
+                      return {
+                        narrow_nowrap_active: narrowNowrap,
+                        semantic_bounds_ok: nodes.every(withinParent),
+                        semantic_atomic: nodes.every((node) => node.getClientRects().length === 1),
+                        one_character_headline_tail: headline.some((node) => oneJapanese(node.textContent || '')),
+                        isolated_short_body_tail: body.some((node) => shortTail(node.textContent || '')),
+                        headline_units: headline.map((node) => node.textContent),
+                        body_units: body.map((node) => node.textContent),
+                      };
+                    }
+                    """
+                )
+                document_overflow = bool(page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth"))
+                semantic_clipping = not bool(semantic_qa["semantic_bounds_ok"])
+                overflow = document_overflow or semantic_clipping
+
+                if width == 320:
+                    if (
+                        not semantic_qa["narrow_nowrap_active"]
+                        or not semantic_qa["semantic_atomic"]
+                        or semantic_qa["one_character_headline_tail"]
+                        or semantic_qa["isolated_short_body_tail"]
+                        or semantic_clipping
+                    ):
+                        raise AssertionError(f"{case_id} 320px semantic text optical guard failed: {semantic_qa}")
+                elif width >= 360 and semantic_qa["narrow_nowrap_active"]:
+                    raise AssertionError(f"{case_id} {width}px narrow semantic rule leaked above the 320px gate")
+
                 target = out / "screenshots" / case_id
                 target.mkdir(parents=True, exist_ok=True)
                 shot = target / f"{width}.png"
@@ -168,12 +231,29 @@ def main() -> int:
                     "width": width,
                     "path": str(shot.relative_to(out)),
                     "overflow": overflow,
+                    "semantic_text_qa": semantic_qa,
                 })
             page.close()
         browser.close()
 
+    semantic_320_all_pass = all(
+        item["width"] != 320
+        or (
+            item["semantic_text_qa"]["narrow_nowrap_active"]
+            and item["semantic_text_qa"]["semantic_atomic"]
+            and item["semantic_text_qa"]["semantic_bounds_ok"]
+            and not item["semantic_text_qa"]["one_character_headline_tail"]
+            and not item["semantic_text_qa"]["isolated_short_body_tail"]
+        )
+        for item in screenshots
+    )
+    semantic_scope_360_plus_preserved = all(
+        item["width"] < 360 or not item["semantic_text_qa"]["narrow_nowrap_active"]
+        for item in screenshots
+    )
+
     manifest = {
-        "schema_version": "issue99_current_industry_production_evidence_v1",
+        "schema_version": "issue102_current_industry_production_semantic_regression_v1",
         "scope": ["beauty_cosmetics", "hair_salon_barber", "pilates_fitness"],
         "widths": list(WIDTHS),
         "positive_fixture_ids": list(cases),
@@ -181,6 +261,10 @@ def main() -> int:
         "screenshots": screenshots,
         "screenshot_count": len(screenshots),
         "all_screenshots_overflow_free": all(not item["overflow"] for item in screenshots),
+        "semantic_320_all_pass": semantic_320_all_pass,
+        "semantic_scope_360_plus_preserved": semantic_scope_360_plus_preserved,
+        "same_family_divergence_preserved": same_family_divergence_preserved,
+        "near_collision_review_preserved": near_collision_review_preserved,
         "composition_plan_authoritative": all(
             item["manifest"]["production_authority"] == "composition_plan"
             for item in case_results.values()
@@ -191,10 +275,18 @@ def main() -> int:
         "human_visible_status": "PENDING_AOI_NOT_SELF_DECLARED",
     }
     (out / "production_cutover_manifest.json").write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8"
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
-    return 0 if manifest["all_screenshots_overflow_free"] and manifest["composition_plan_authoritative"] else 1
+    required = (
+        manifest["all_screenshots_overflow_free"]
+        and manifest["semantic_320_all_pass"]
+        and manifest["semantic_scope_360_plus_preserved"]
+        and manifest["same_family_divergence_preserved"]
+        and manifest["near_collision_review_preserved"]
+        and manifest["composition_plan_authoritative"]
+    )
+    return 0 if required else 1
 
 
 if __name__ == "__main__":
