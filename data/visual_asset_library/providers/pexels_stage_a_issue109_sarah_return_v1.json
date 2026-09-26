@@ -1,0 +1,31 @@
+{
+  "schema_version": "issue109_sarah_return_corrections_v1",
+  "audit_stage": "SARAH_PM_RETURN_EXACT_BINARY_REVIEW",
+  "reason": "Sarah PM exact-binary RETURN correction. Remove the WAHL SENIOR trademark-bearing barber asset and replace it with a visually reviewed, rights-safe generic barber signifier while preserving the exact Stage A floor.",
+  "blocked_asset_ids": [
+    {
+      "asset_id": "pexels-13809242",
+      "reason": "MEDIA_TRADEMARK_REVIEW_REQUIRED",
+      "finding": "Exact downloaded binary visibly shows WAHL SENIOR branding on the clipper; excluded from Stage A rights-pass inventory."
+    }
+  ],
+  "replacement_assets": [
+    {
+      "asset_id": "pexels-30807437",
+      "source_id": "30807437",
+      "source_url": "https://www.pexels.com/photo/classic-barber-pole-with-red-white-and-blue-stripes-30807437/",
+      "binary_url": "https://images.pexels.com/photos/30807437/pexels-photo-30807437.jpeg?cs=srgb&dl=pexels-james-collington-2147687246-30807437.jpg&fm=jpg",
+      "creator": "James Collington",
+      "content_class": "barber_environment_detail_generic",
+      "industry_tags": ["hair_salon_barber"],
+      "business_category_tags": ["barber"],
+      "eligible_scene_intents": ["recognize", "choose", "understand", "trust", "compare", "act"],
+      "eligible_media_roles": ["hero", "lifestyle_context"],
+      "visual_tone_tags": ["classic", "clean", "barber", "detail"],
+      "material_quality_tags": ["barber_pole", "glass", "metal"],
+      "prohibited_uses": ["actual target-company storefront", "actual target-company signage", "actual branch evidence", "brand endorsement"],
+      "source_page_review": "FREE_TO_USE_CONFIRMED_2026-09-27",
+      "binary_visual_review": "HUMAN_PREFLIGHT_PASS_NO_VISIBLE_LOGO_TRADEMARK_PERSON_OR_BUSINESS_IDENTITY"
+    }
+  ]
+}
