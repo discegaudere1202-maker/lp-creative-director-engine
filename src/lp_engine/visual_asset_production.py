@@ -20,6 +20,37 @@ class AssetBoundProductionError(RuntimeError):
     pass
 
 
+# 320px requires headline meaning units to stay whole without clipping.  These
+# are public-copy semantic refinements only; they do not touch CompositionPlan.
+_MOBILE_SAFE_HERO_UNITS = {
+    "choose": ["違いが見える", "選びやすく", "なる。"],
+    "understand": ["はじめる前に", "流れを", "わかりやすく"],
+    "trust": ["任せる前に", "安心できる", "理由を。"],
+    "compare": ["比べるほど", "自分の基準が", "見えてくる。"],
+    "prepare": ["迷いを減らし", "気持ちよく", "はじめる。"],
+    "act": ["考えすぎる", "その前に", "次の一歩を", "軽く。"],
+}
+
+
+def _apply_mobile_headline_guard(plan: Mapping[str, Any], premium: dict[str, Any]) -> dict[str, Any]:
+    """Refine public headline units so every atomic unit fits the 320px canvas."""
+    job = str(plan["input"]["customer_decision_state"]["primary_job"])
+    units = _MOBILE_SAFE_HERO_UNITS.get(job)
+    if not units:
+        raise AssetBoundProductionError("PREMIUM_HEADLINE_SEMANTIC_UNITS_MISSING")
+    public = premium["PU1_public_copy"]
+    public["hero_headline_units"] = list(units)
+    public["trace"]["mobile_semantic_unit_guard"] = {
+        "minimum_width": 320,
+        "decision_job": job,
+        "units": list(units),
+        "source": "public_copy_semantic_refinement_only",
+        "composition_plan_mutated": False,
+    }
+    premium["PU2_hero_authority"]["authority_statement"] = "".join(units)
+    return premium
+
+
 def render_asset_bound_authoritative_html(
     plan: Mapping[str, Any],
     directives: Mapping[str, Any],
@@ -35,6 +66,7 @@ def render_asset_bound_authoritative_html(
     original_family = plan.get("family_id")
 
     premium = build_premium_uplift(plan, directives, asset_bindings)
+    premium = _apply_mobile_headline_guard(plan, premium)
     rendered = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
 
     if (
@@ -59,6 +91,7 @@ def run_asset_bound_generation(
     output = Path(output_dir)
 
     premium = build_premium_uplift(plan, directives, asset_bindings)
+    premium = _apply_mobile_headline_guard(plan, premium)
     html = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
     (output / "index.html").write_text(html, encoding="utf-8")
 
