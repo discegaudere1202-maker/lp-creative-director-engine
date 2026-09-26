@@ -1,0 +1,49 @@
+{
+  "schema_version": "issue106_sarah_visual_risk_corrections_v1",
+  "audit_stage": "SARAH_TECHNICAL_EVIDENCE_AUDIT",
+  "reason": "Actual downloaded binaries exposed visible brand/signage that provider-level metadata did not reveal. Block those exact asset ids before ingestion and replace them with independently safer candidates.",
+  "blocked_asset_ids": [
+    {
+      "asset_id": "pexels-16378448",
+      "reason": "MEDIA_TRADEMARK_REVIEW_REQUIRED",
+      "finding": "Visible SYAGI/product label text on exact downloaded cosmetic binary."
+    },
+    {
+      "asset_id": "pexels-7518728",
+      "reason": "MEDIA_TRADEMARK_REVIEW_REQUIRED",
+      "finding": "Visible Levi's signage on exact downloaded barbershop binary."
+    }
+  ],
+  "replacement_assets": [
+    {
+      "asset_id": "pexels-11741343",
+      "source_id": "11741343",
+      "source_url": "https://www.pexels.com/photo/blank-cosmetic-bottle-on-a-tray-11741343/",
+      "binary_url": "https://images.pexels.com/photos/11741343/pexels-photo-11741343.jpeg?auto=compress&dpr=1&h=750&w=1260",
+      "creator": "Andrzej Gdula",
+      "content_class": "product_packshot_generic",
+      "industry_tags": ["beauty_cosmetics"],
+      "business_category_tags": ["skincare_cosmetics_product"],
+      "eligible_scene_intents": ["recognize"],
+      "eligible_media_roles": ["hero"],
+      "visual_tone_tags": ["clean", "natural", "product_focus"],
+      "material_quality_tags": ["cosmetic_packaging", "unbranded_container"],
+      "prohibited_uses": ["actual target-company product", "efficacy proof", "brand endorsement"]
+    },
+    {
+      "asset_id": "pexels-19664872",
+      "source_id": "19664872",
+      "source_url": "https://www.pexels.com/photo/empty-seats-in-barbershop-19664872/",
+      "binary_url": "https://images.pexels.com/photos/19664872/pexels-photo-19664872/free-photo-of-empty-seats-in-barbershop.jpeg?auto=compress&dpr=1&h=750&w=1260",
+      "creator": "Kawê Rodrigues",
+      "content_class": "barber_interior_generic",
+      "industry_tags": ["hair_salon_barber"],
+      "business_category_tags": ["barber"],
+      "eligible_scene_intents": ["recognize"],
+      "eligible_media_roles": ["hero", "interior_environment"],
+      "visual_tone_tags": ["clean", "barber", "interior"],
+      "material_quality_tags": ["barber_chair", "mirror", "shop_detail"],
+      "prohibited_uses": ["actual target-company barber shop", "actual branch interior", "property endorsement"]
+    }
+  ]
+}
