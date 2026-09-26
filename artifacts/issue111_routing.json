@@ -1,0 +1,6 @@
+{
+  "rin_completion": "PENDING_QA",
+  "next": "SARAH_TECHNICAL_EVIDENCE_AUDIT",
+  "then": "AOI_REAL_IMAGE_SALES_SAMPLE_HUMAN_VISIBLE_REVIEW",
+  "merge_in_rin_task": false
+}
