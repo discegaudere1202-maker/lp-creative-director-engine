@@ -1,0 +1,21 @@
+{
+  "required_gates": [
+    "stage_a_inventory_62",
+    "four_category_floor_complete",
+    "sample_count_9",
+    "screenshot_count_81",
+    "family_topology_scene_order_preserved",
+    "all_selected_rights_pass",
+    "generic_illustrative_boundary_preserved",
+    "complete_binding_trace",
+    "all_images_loaded",
+    "all_overflow_free",
+    "semantic_320_hard_gate",
+    "render_trace_hash_joinable",
+    "crop_heuristic_pass",
+    "batch_hero_unique",
+    "batch_bundle_unique",
+    "same_category_candidate_pool_identity_invariant",
+    "company_specific_authored_divergence"
+  ]
+}
