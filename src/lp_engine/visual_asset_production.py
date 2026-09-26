@@ -20,7 +20,7 @@ class AssetBoundProductionError(RuntimeError):
     pass
 
 
-# 320px requires headline meaning units to stay whole without clipping.  These
+# 320px requires headline meaning units to stay whole without clipping. These
 # are public-copy semantic refinements only; they do not touch CompositionPlan.
 _MOBILE_SAFE_HERO_UNITS = {
     "choose": ["違いが見える", "選びやすく", "なる。"],
@@ -51,6 +51,17 @@ def _apply_mobile_headline_guard(plan: Mapping[str, Any], premium: dict[str, Any
     return premium
 
 
+def _apply_headline_optical_css_guard(rendered: str) -> str:
+    """Keep semantic units atomic at every width without oversized desktop type."""
+    css = (
+        ".premium-headline-unit{white-space:nowrap}"
+        "@media(min-width:431px){.premium-hero h1{font-size:clamp(46px,5.4vw,80px)}}"
+    )
+    if "</style>" not in rendered:
+        raise AssetBoundProductionError("PREMIUM_STYLE_ANCHOR_MISSING")
+    return rendered.replace("</style>", css + "</style>", 1)
+
+
 def render_asset_bound_authoritative_html(
     plan: Mapping[str, Any],
     directives: Mapping[str, Any],
@@ -68,6 +79,7 @@ def render_asset_bound_authoritative_html(
     premium = build_premium_uplift(plan, directives, asset_bindings)
     premium = _apply_mobile_headline_guard(plan, premium)
     rendered = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
+    rendered = _apply_headline_optical_css_guard(rendered)
 
     if (
         plan.get("family_id") != original_family
@@ -93,6 +105,7 @@ def run_asset_bound_generation(
     premium = build_premium_uplift(plan, directives, asset_bindings)
     premium = _apply_mobile_headline_guard(plan, premium)
     html = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
+    html = _apply_headline_optical_css_guard(html)
     (output / "index.html").write_text(html, encoding="utf-8")
 
     manifest_path = output / "production_manifest.json"
