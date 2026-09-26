@@ -1,0 +1,115 @@
+{
+  "schema_version": "issue104_minimum_current_industry_asset_inventory_matrix_v1",
+  "purpose": "Minimum rights-approved generic illustrative stock needed before Real-image Sales Sample QA may begin for a corresponding current-industry/category path. Counts are distinct approved binaries, not crop variants.",
+  "global_minimum_rules": [
+    "every required hero pool has at least 3 distinct rights-approved binaries",
+    "every required supporting role has at least 2 distinct rights-approved binaries unless explicitly marked one-off_optional",
+    "hero pools must contain at least two materially different subject/composition clusters",
+    "a count cannot be satisfied by multiple crops/exports of one original binary",
+    "at least one landscape-safe and one mobile-crop-safe candidate must exist for every hero pool",
+    "person-bearing pools require the person-rights/endorsement gate for each asset",
+    "inventory adequacy never changes Creative Family; inadequate roles fail closed or route to human review",
+    "Architecture-validation-only media does not count toward Production inventory"
+  ],
+  "matrix": [
+    {
+      "industry": "beauty_cosmetics",
+      "business_category": "skincare_cosmetics_product",
+      "required_role_counts": {"hero": 3, "process": 2, "tools_material_detail": 3, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 10,
+      "required_content_coverage": ["product_packshot_generic", "product_texture_generic", "application_detail_generic", "ingredient_material_generic", "vanity_lifestyle_generic"],
+      "forbidden_as_generic": ["actual product efficacy result", "actual company lab/factory", "actual staff/founder"]
+    },
+    {
+      "industry": "beauty_cosmetics",
+      "business_category": "beauty_treatment_esthetic",
+      "required_role_counts": {"hero": 3, "consultation": 2, "process": 3, "interior_environment": 2, "tools_material_detail": 2, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 14,
+      "required_content_coverage": ["consultation_generic", "treatment_hands_generic", "treatment_room_generic", "tools_detail_generic", "relaxed_lifestyle_generic"],
+      "forbidden_as_generic": ["actual treatment result", "actual practitioner credential", "actual customer testimonial"]
+    },
+    {
+      "industry": "beauty_cosmetics",
+      "business_category": "beauty_retail_consultation",
+      "required_role_counts": {"hero": 3, "consultation": 2, "interior_environment": 2, "tools_material_detail": 2, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 11,
+      "required_content_coverage": ["hands_product_choice_generic", "product_display_generic", "consultation_generic", "retail_environment_generic"],
+      "forbidden_as_generic": ["actual store", "actual staff", "actual efficacy result"]
+    },
+    {
+      "industry": "hair_salon_barber",
+      "business_category": "hair_salon",
+      "required_role_counts": {"hero": 3, "person_staff": 2, "consultation": 2, "process": 3, "interior_environment": 2, "result_finish": 2, "tools_material_detail": 2, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 18,
+      "required_content_coverage": ["stylist_consultation_generic", "cutting_process_generic", "color_process_generic", "salon_interior_generic", "tools_detail_generic", "hair_finish_generic"],
+      "forbidden_as_generic": ["actual stylist", "actual salon interior", "actual customer/result"]
+    },
+    {
+      "industry": "hair_salon_barber",
+      "business_category": "barber",
+      "required_role_counts": {"hero": 3, "person_staff": 2, "consultation": 2, "process": 3, "interior_environment": 2, "result_finish": 2, "tools_material_detail": 2, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 18,
+      "required_content_coverage": ["barber_consultation_generic", "cutting_process_generic", "shaving_process_generic", "barber_interior_generic", "tools_detail_generic", "hair_finish_generic"],
+      "forbidden_as_generic": ["actual barber", "actual shop", "actual customer/result"]
+    },
+    {
+      "industry": "hair_salon_barber",
+      "business_category": "head_spa_haircare",
+      "required_role_counts": {"hero": 3, "consultation": 2, "process": 3, "interior_environment": 2, "tools_material_detail": 2, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 14,
+      "required_content_coverage": ["consultation_generic", "headspa_process_generic", "wash_station_generic", "salon_interior_generic", "sensory_detail_generic"],
+      "forbidden_as_generic": ["actual treatment result", "actual practitioner", "medical/therapeutic efficacy"]
+    },
+    {
+      "industry": "pilates_fitness",
+      "business_category": "pilates_studio",
+      "required_role_counts": {"hero": 3, "person_staff": 2, "consultation": 2, "process": 3, "interior_environment": 2, "tools_material_detail": 2, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 16,
+      "required_content_coverage": ["instructor_consultation_generic", "reformer_training_generic", "mat_training_generic", "studio_interior_generic", "equipment_detail_generic", "movement_lifestyle_generic"],
+      "forbidden_as_generic": ["actual instructor", "actual studio", "body transformation result", "medical outcome"]
+    },
+    {
+      "industry": "pilates_fitness",
+      "business_category": "personal_training_fitness",
+      "required_role_counts": {"hero": 3, "person_staff": 2, "consultation": 2, "process": 3, "interior_environment": 2, "tools_material_detail": 2, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 16,
+      "required_content_coverage": ["trainer_consultation_generic", "one_to_one_training_generic", "gym_environment_generic", "equipment_detail_generic", "movement_lifestyle_generic"],
+      "forbidden_as_generic": ["actual trainer", "actual gym", "before/after transformation", "health outcome"]
+    },
+    {
+      "industry": "pilates_fitness",
+      "business_category": "small_group_fitness",
+      "required_role_counts": {"hero": 3, "process": 3, "interior_environment": 2, "tools_material_detail": 2, "lifestyle_context": 2},
+      "minimum_total_distinct_assets": 12,
+      "required_content_coverage": ["group_instruction_generic", "group_training_generic", "studio_environment_generic", "equipment_detail_generic", "movement_lifestyle_generic"],
+      "forbidden_as_generic": ["actual instructor", "actual members", "outcome/testimonial"]
+    }
+  ],
+  "minimum_total_if_all_nine_categories_are_enabled": 129,
+  "acquisition_stages": [
+    {
+      "stage": "A_CORE",
+      "categories": ["skincare_cosmetics_product", "hair_salon", "barber", "pilates_studio"],
+      "goal": "cover the dominant current-industry Production paths with non-repetitive hero/process/context pools"
+    },
+    {
+      "stage": "B_ADJACENT_CURRENT_SCOPE",
+      "categories": ["beauty_treatment_esthetic", "beauty_retail_consultation", "head_spa_haircare", "personal_training_fitness", "small_group_fitness"],
+      "goal": "complete current-scope category coverage without adding industries"
+    },
+    {
+      "stage": "C_BATCH_DIVERSITY_VALIDATION",
+      "goal": "generate multi-company batches, record asset usage overlap, inspect template smell, then calibrate reuse thresholds from evidence"
+    }
+  ],
+  "real_image_sales_sample_qa_start_gate": [
+    "target category inventory meets its role counts",
+    "100% selected assets pass rights/provenance gate",
+    "no selected generic asset is represented as company evidence",
+    "batch-level hero uniqueness gate passes",
+    "renderer provenance trace and binary hash manifest exist",
+    "9-width screenshot artifacts can be generated",
+    "Aoi can inspect actual selected visuals",
+    "this gate permits QA to start; it does not itself declare Sales Sample readiness"
+  ]
+}

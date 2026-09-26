@@ -1,0 +1,75 @@
+{
+  "schema_version": "issue104_rights_gate_contract_v1",
+  "gate_order": [
+    "source_identity",
+    "license_terms_present",
+    "commercial_use_permission",
+    "modification_crop_permission",
+    "attribution_contract",
+    "person_property_trademark_review",
+    "evidence_boundary",
+    "binary_integrity",
+    "freshness_recheck",
+    "production_eligibility"
+  ],
+  "production_pass_states": ["RIGHTS_PASS", "RIGHTS_PASS_WITH_RENDER_CONDITIONS"],
+  "fail_closed_states": {
+    "MEDIA_SOURCE_UNKNOWN": "provider/source id or stable source URL missing",
+    "MEDIA_LICENSE_UNKNOWN": "license status/terms cannot be verified",
+    "MEDIA_COMMERCIAL_USE_BLOCKED": "commercial use is prohibited or not established",
+    "MEDIA_MODIFICATION_BLOCKED": "required crop/retouch is outside verified permission",
+    "MEDIA_ATTRIBUTION_UNSATISFIED": "required attribution cannot be preserved in target placement",
+    "MEDIA_PERSON_RIGHTS_REVIEW_REQUIRED": "identifiable person creates unresolved release/endorsement/privacy risk",
+    "MEDIA_PROPERTY_RIGHTS_REVIEW_REQUIRED": "property/interior creates unresolved property/privacy risk",
+    "MEDIA_TRADEMARK_REVIEW_REQUIRED": "logo/brand/trademark is visible and commercial use is unsafe or unclear",
+    "MEDIA_EVIDENCE_BOUNDARY_MISMATCH": "illustrative asset is being used/captioned as factual company evidence",
+    "MEDIA_BINARY_CHANGED": "downloaded binary hash does not match approved record",
+    "MEDIA_RIGHTS_STALE": "recheck trigger fired or required terms snapshot is stale/unavailable",
+    "MEDIA_ROLE_UNSATISFIED": "no rights-safe asset remains for required role",
+    "HUMAN_REVIEW_REQUIRED": "rights are conditionally usable but cannot be resolved deterministically"
+  },
+  "hard_rules": [
+    "official-site visibility is never treated as reuse permission",
+    "unknown or insufficient rights fail closed",
+    "generic stock/generated imagery is illustrative by default",
+    "generic imagery must never be represented as actual company staff, customer, store, studio, salon, treatment result, training result, testimonial, qualification, or performance evidence",
+    "provider-level commercial license does not erase third-party person/property/trademark rights",
+    "asset scarcity never changes Creative Family or authored topology",
+    "rights failure may downgrade/remove a media realization only within the already-frozen Family/scene intent or require human review"
+  ],
+  "evidence_boundary_matrix": {
+    "ACTUAL_COMPANY_EVIDENCE": {
+      "may_support_fact_claims": true,
+      "requires": ["company_specific_provenance", "publish_rights_verified", "evidence_ledger_link"],
+      "allowed_labels": ["actual staff", "actual store/studio/salon", "actual product", "actual process", "actual result only when separately verified"]
+    },
+    "GENERIC_ILLUSTRATIVE_STOCK": {
+      "may_support_fact_claims": false,
+      "requires": ["provider_license_pass", "third_party_rights_review_as_applicable"],
+      "allowed_labels": ["illustrative context only"]
+    },
+    "PROJECT_OWNED_GENERATED_ILLUSTRATION": {
+      "may_support_fact_claims": false,
+      "requires": ["generation_provenance", "no_real_person_or_brand_impersonation", "visual_not_presented_as_actual_company_evidence"],
+      "allowed_labels": ["illustrative context only"]
+    },
+    "ARCHITECTURE_VALIDATION_ONLY": {
+      "may_support_fact_claims": false,
+      "production_sales_sample_eligible": false,
+      "allowed_labels": ["architecture validation only"]
+    }
+  },
+  "person_sensitivity_rules": [
+    "an identifiable person in generic stock may illustrate a generic consultation/process only when terms and third-party rights allow and copy/alt/placement do not imply that person works for or endorses the target company",
+    "customer-like people must not be paired with testimonial/result language unless they are verified company-specific evidence",
+    "health/beauty/fitness contexts require extra caution against implying medical, body-transformation, treatment-efficacy, or personal endorsement claims"
+  ],
+  "recheck_triggers": [
+    "provider terms changed",
+    "asset source page removed or materially changed",
+    "rights complaint/dispute recorded",
+    "binary hash changed",
+    "license or permission expiry reached",
+    "new target use introduces a previously unreviewed person/property/trademark condition"
+  ]
+}

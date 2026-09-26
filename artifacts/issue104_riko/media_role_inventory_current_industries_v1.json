@@ -1,0 +1,141 @@
+{
+  "schema_version": "issue104_current_industry_media_role_inventory_v1",
+  "role_policy": "Only roles appropriate to a business category may be requested. Generic stock is illustrative unless a separate company-evidence contract proves otherwise.",
+  "inventories": [
+    {
+      "industry": "beauty_cosmetics",
+      "business_category": "skincare_cosmetics_product",
+      "roles": {
+        "hero": {"required_content_classes": ["product_packshot_generic", "product_texture_generic"], "purpose": "category recognition / product world", "actual_company_evidence_required": false},
+        "person_staff": {"allowed": false, "reason": "generic model must not imply brand staff/founder"},
+        "consultation": {"allowed": false, "reason": "not a universal product-business scene"},
+        "process": {"required_content_classes": ["application_detail_generic"], "purpose": "use-context illustration", "actual_company_evidence_required": false},
+        "interior_environment": {"allowed": false, "reason": "store/lab imagery would easily imply an actual facility"},
+        "result_finish": {"allowed": false, "reason": "generic before/after or efficacy result is misleading without company/product proof"},
+        "tools_material_detail": {"required_content_classes": ["product_texture_generic", "ingredient_material_generic"], "purpose": "material/texture atmosphere", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "trust proof must be evidence-bound, not stock"},
+        "lifestyle_context": {"required_content_classes": ["vanity_lifestyle_generic"], "purpose": "illustrative use context", "actual_company_evidence_required": false}
+      }
+    },
+    {
+      "industry": "beauty_cosmetics",
+      "business_category": "beauty_treatment_esthetic",
+      "roles": {
+        "hero": {"required_content_classes": ["treatment_hands_generic", "treatment_room_generic"], "purpose": "service atmosphere", "actual_company_evidence_required": false},
+        "person_staff": {"required_content_classes": ["consultation_generic"], "purpose": "human warmth only", "actual_company_evidence_required": false, "must_label_as_generic": true},
+        "consultation": {"required_content_classes": ["consultation_generic"], "purpose": "first-visit context", "actual_company_evidence_required": false},
+        "process": {"required_content_classes": ["treatment_hands_generic"], "purpose": "generic treatment context", "actual_company_evidence_required": false},
+        "interior_environment": {"required_content_classes": ["treatment_room_generic"], "purpose": "generic environment", "actual_company_evidence_required": false},
+        "result_finish": {"allowed": false, "reason": "results require company-specific evidence"},
+        "tools_material_detail": {"required_content_classes": ["tools_detail_generic"], "purpose": "craft/context detail", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "qualifications/reviews/results require factual company evidence"},
+        "lifestyle_context": {"required_content_classes": ["relaxed_lifestyle_generic"], "purpose": "emotional context", "actual_company_evidence_required": false}
+      }
+    },
+    {
+      "industry": "beauty_cosmetics",
+      "business_category": "beauty_retail_consultation",
+      "roles": {
+        "hero": {"required_content_classes": ["hands_product_choice_generic", "product_display_generic"], "purpose": "choice context", "actual_company_evidence_required": false},
+        "person_staff": {"required_content_classes": ["consultation_generic"], "purpose": "generic advisor presence", "actual_company_evidence_required": false, "must_label_as_generic": true},
+        "consultation": {"required_content_classes": ["consultation_generic"], "purpose": "choice guidance context", "actual_company_evidence_required": false},
+        "process": {"allowed": false, "reason": "no universal process beyond consultation"},
+        "interior_environment": {"required_content_classes": ["retail_environment_generic"], "purpose": "generic retail atmosphere", "actual_company_evidence_required": false},
+        "result_finish": {"allowed": false, "reason": "generic result imagery can imply efficacy"},
+        "tools_material_detail": {"required_content_classes": ["product_display_generic"], "purpose": "merchandising detail", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "proof must use verified company evidence"},
+        "lifestyle_context": {"required_content_classes": ["hands_product_choice_generic"], "purpose": "selection context", "actual_company_evidence_required": false}
+      }
+    },
+    {
+      "industry": "hair_salon_barber",
+      "business_category": "hair_salon",
+      "roles": {
+        "hero": {"required_content_classes": ["stylist_consultation_generic", "cutting_process_generic", "salon_interior_generic"], "purpose": "visit/service recognition", "actual_company_evidence_required": false},
+        "person_staff": {"required_content_classes": ["stylist_consultation_generic"], "purpose": "generic stylist presence", "actual_company_evidence_required": false, "must_label_as_generic": true},
+        "consultation": {"required_content_classes": ["stylist_consultation_generic"], "purpose": "first-visit choice context", "actual_company_evidence_required": false},
+        "process": {"required_content_classes": ["cutting_process_generic", "color_process_generic"], "purpose": "service process illustration", "actual_company_evidence_required": false},
+        "interior_environment": {"required_content_classes": ["salon_interior_generic"], "purpose": "generic salon environment", "actual_company_evidence_required": false},
+        "result_finish": {"required_content_classes": ["hair_finish_generic"], "purpose": "style category illustration only", "actual_company_evidence_required": false, "prohibited_claim": "actual client/result"},
+        "tools_material_detail": {"required_content_classes": ["tools_detail_generic"], "purpose": "craft detail", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "staff identity, reviews, credentials and actual outcomes require company evidence"},
+        "lifestyle_context": {"required_content_classes": ["hair_finish_generic"], "purpose": "style/lifestyle context", "actual_company_evidence_required": false}
+      }
+    },
+    {
+      "industry": "hair_salon_barber",
+      "business_category": "barber",
+      "roles": {
+        "hero": {"required_content_classes": ["barber_consultation_generic", "cutting_process_generic", "barber_interior_generic"], "purpose": "barber service recognition", "actual_company_evidence_required": false},
+        "person_staff": {"required_content_classes": ["barber_consultation_generic"], "purpose": "generic barber presence", "actual_company_evidence_required": false, "must_label_as_generic": true},
+        "consultation": {"required_content_classes": ["barber_consultation_generic"], "purpose": "style/visit context", "actual_company_evidence_required": false},
+        "process": {"required_content_classes": ["cutting_process_generic", "shaving_process_generic"], "purpose": "generic process", "actual_company_evidence_required": false},
+        "interior_environment": {"required_content_classes": ["barber_interior_generic"], "purpose": "generic environment", "actual_company_evidence_required": false},
+        "result_finish": {"required_content_classes": ["hair_finish_generic"], "purpose": "style category illustration only", "actual_company_evidence_required": false, "prohibited_claim": "actual client/result"},
+        "tools_material_detail": {"required_content_classes": ["tools_detail_generic"], "purpose": "craft detail", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "trust claims require company evidence"},
+        "lifestyle_context": {"required_content_classes": ["hair_finish_generic"], "purpose": "style context", "actual_company_evidence_required": false}
+      }
+    },
+    {
+      "industry": "hair_salon_barber",
+      "business_category": "head_spa_haircare",
+      "roles": {
+        "hero": {"required_content_classes": ["headspa_process_generic", "salon_interior_generic"], "purpose": "service atmosphere", "actual_company_evidence_required": false},
+        "person_staff": {"required_content_classes": ["consultation_generic"], "purpose": "generic practitioner presence", "actual_company_evidence_required": false, "must_label_as_generic": true},
+        "consultation": {"required_content_classes": ["consultation_generic"], "purpose": "first-visit context", "actual_company_evidence_required": false},
+        "process": {"required_content_classes": ["headspa_process_generic", "wash_station_generic"], "purpose": "generic service process", "actual_company_evidence_required": false},
+        "interior_environment": {"required_content_classes": ["salon_interior_generic", "wash_station_generic"], "purpose": "generic environment", "actual_company_evidence_required": false},
+        "result_finish": {"allowed": false, "reason": "generic imagery must not imply efficacy or actual result"},
+        "tools_material_detail": {"required_content_classes": ["sensory_detail_generic"], "purpose": "sensory/context detail", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "proof requires factual evidence"},
+        "lifestyle_context": {"required_content_classes": ["sensory_detail_generic"], "purpose": "relaxation context", "actual_company_evidence_required": false}
+      }
+    },
+    {
+      "industry": "pilates_fitness",
+      "business_category": "pilates_studio",
+      "roles": {
+        "hero": {"required_content_classes": ["reformer_training_generic", "mat_training_generic", "studio_interior_generic"], "purpose": "studio/training recognition", "actual_company_evidence_required": false},
+        "person_staff": {"required_content_classes": ["instructor_consultation_generic"], "purpose": "generic instructor presence", "actual_company_evidence_required": false, "must_label_as_generic": true},
+        "consultation": {"required_content_classes": ["instructor_consultation_generic"], "purpose": "trial/goal discussion context", "actual_company_evidence_required": false},
+        "process": {"required_content_classes": ["reformer_training_generic", "mat_training_generic"], "purpose": "training process illustration", "actual_company_evidence_required": false},
+        "interior_environment": {"required_content_classes": ["studio_interior_generic"], "purpose": "generic studio environment", "actual_company_evidence_required": false},
+        "result_finish": {"allowed": false, "reason": "body transformation/medical outcome requires evidence"},
+        "tools_material_detail": {"required_content_classes": ["equipment_detail_generic"], "purpose": "equipment/context detail", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "credentials/results/testimonials require company evidence"},
+        "lifestyle_context": {"required_content_classes": ["movement_lifestyle_generic"], "purpose": "movement/lifestyle context", "actual_company_evidence_required": false}
+      }
+    },
+    {
+      "industry": "pilates_fitness",
+      "business_category": "personal_training_fitness",
+      "roles": {
+        "hero": {"required_content_classes": ["one_to_one_training_generic", "gym_environment_generic"], "purpose": "training context", "actual_company_evidence_required": false},
+        "person_staff": {"required_content_classes": ["trainer_consultation_generic"], "purpose": "generic trainer presence", "actual_company_evidence_required": false, "must_label_as_generic": true},
+        "consultation": {"required_content_classes": ["trainer_consultation_generic"], "purpose": "goal discussion context", "actual_company_evidence_required": false},
+        "process": {"required_content_classes": ["one_to_one_training_generic"], "purpose": "generic training process", "actual_company_evidence_required": false},
+        "interior_environment": {"required_content_classes": ["gym_environment_generic"], "purpose": "generic environment", "actual_company_evidence_required": false},
+        "result_finish": {"allowed": false, "reason": "transformation/result claims require company evidence and consent"},
+        "tools_material_detail": {"required_content_classes": ["equipment_detail_generic"], "purpose": "equipment detail", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "proof must remain evidence-bound"},
+        "lifestyle_context": {"required_content_classes": ["movement_lifestyle_generic"], "purpose": "fitness lifestyle context", "actual_company_evidence_required": false}
+      }
+    },
+    {
+      "industry": "pilates_fitness",
+      "business_category": "small_group_fitness",
+      "roles": {
+        "hero": {"required_content_classes": ["group_instruction_generic", "group_training_generic", "studio_environment_generic"], "purpose": "class context", "actual_company_evidence_required": false},
+        "person_staff": {"allowed": false, "reason": "generic individual must not imply a named instructor"},
+        "consultation": {"allowed": false, "reason": "not universal to group class acquisition"},
+        "process": {"required_content_classes": ["group_instruction_generic", "group_training_generic"], "purpose": "class process", "actual_company_evidence_required": false},
+        "interior_environment": {"required_content_classes": ["studio_environment_generic"], "purpose": "generic environment", "actual_company_evidence_required": false},
+        "result_finish": {"allowed": false, "reason": "outcomes require company evidence"},
+        "tools_material_detail": {"required_content_classes": ["equipment_detail_generic"], "purpose": "equipment detail", "actual_company_evidence_required": false},
+        "trust_proof_support": {"allowed": false, "reason": "proof requires factual evidence"},
+        "lifestyle_context": {"required_content_classes": ["movement_lifestyle_generic"], "purpose": "movement/community atmosphere", "actual_company_evidence_required": false}
+      }
+    }
+  ]
+}

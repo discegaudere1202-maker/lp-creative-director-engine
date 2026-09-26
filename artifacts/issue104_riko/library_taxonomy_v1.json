@@ -1,0 +1,67 @@
+{
+  "schema_version": "issue104_visual_asset_library_taxonomy_v1",
+  "scope": {
+    "industries": ["beauty_cosmetics", "hair_salon_barber", "pilates_fitness"],
+    "industry_expansion_allowed": false,
+    "category_role": "asset_pool_scope_only",
+    "category_must_not": ["select_creative_family", "select_topology", "select_layout", "select_renderer_profile", "select_scene_order"]
+  },
+  "hierarchy": ["industry", "business_category", "scene_intent", "media_role", "content_class", "candidate_asset"],
+  "business_categories": {
+    "beauty_cosmetics": [
+      {
+        "id": "skincare_cosmetics_product",
+        "description": "cosmetics/skincare product-led businesses",
+        "content_classes": ["product_packshot_generic", "product_texture_generic", "application_detail_generic", "vanity_lifestyle_generic", "ingredient_material_generic"]
+      },
+      {
+        "id": "beauty_treatment_esthetic",
+        "description": "esthetic/beauty treatment service context within the existing beauty scope",
+        "content_classes": ["consultation_generic", "treatment_hands_generic", "treatment_room_generic", "tools_detail_generic", "relaxed_lifestyle_generic"]
+      },
+      {
+        "id": "beauty_retail_consultation",
+        "description": "beauty retail/counter consultation context",
+        "content_classes": ["consultation_generic", "product_display_generic", "hands_product_choice_generic", "retail_environment_generic"]
+      }
+    ],
+    "hair_salon_barber": [
+      {
+        "id": "hair_salon",
+        "description": "hair salon service",
+        "content_classes": ["stylist_consultation_generic", "cutting_process_generic", "color_process_generic", "salon_interior_generic", "tools_detail_generic", "hair_finish_generic"]
+      },
+      {
+        "id": "barber",
+        "description": "barber service",
+        "content_classes": ["barber_consultation_generic", "cutting_process_generic", "shaving_process_generic", "barber_interior_generic", "tools_detail_generic", "hair_finish_generic"]
+      },
+      {
+        "id": "head_spa_haircare",
+        "description": "head-spa/hair-care service inside the current hair/beauty operating scope",
+        "content_classes": ["consultation_generic", "headspa_process_generic", "wash_station_generic", "salon_interior_generic", "sensory_detail_generic"]
+      }
+    ],
+    "pilates_fitness": [
+      {
+        "id": "pilates_studio",
+        "description": "mat/reformer Pilates studio",
+        "content_classes": ["instructor_consultation_generic", "reformer_training_generic", "mat_training_generic", "studio_interior_generic", "equipment_detail_generic", "movement_lifestyle_generic"]
+      },
+      {
+        "id": "personal_training_fitness",
+        "description": "one-to-one fitness/personal training within current fitness scope",
+        "content_classes": ["trainer_consultation_generic", "one_to_one_training_generic", "gym_environment_generic", "equipment_detail_generic", "movement_lifestyle_generic"]
+      },
+      {
+        "id": "small_group_fitness",
+        "description": "small-group fitness class within current fitness scope",
+        "content_classes": ["group_instruction_generic", "group_training_generic", "studio_environment_generic", "equipment_detail_generic", "movement_lifestyle_generic"]
+      }
+    ]
+  },
+  "scene_intents": ["recognize", "choose", "understand", "trust", "compare", "prepare", "act"],
+  "media_roles": ["hero", "person_staff", "consultation", "process", "interior_environment", "result_finish", "tools_material_detail", "trust_proof_support", "lifestyle_context"],
+  "candidate_pool_rule": "candidate pool is the intersection of current industry + compatible business category + requested media role/content conditions after Creative Family is frozen",
+  "fallback_rule": "an empty candidate pool yields MEDIA_ROLE_UNSATISFIED or HUMAN_REVIEW_REQUIRED; it never changes Creative Family/topology"
+}

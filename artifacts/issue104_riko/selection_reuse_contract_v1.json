@@ -1,0 +1,95 @@
+{
+  "schema_version": "issue104_asset_selection_reuse_contract_v1",
+  "selection_pipeline": [
+    "creative_family_already_frozen",
+    "scene_intent",
+    "media_role",
+    "required_content_conditions",
+    "current_industry_filter",
+    "business_category_candidate_pool",
+    "rights_gate",
+    "visual_fit_ranking",
+    "reuse_penalty",
+    "crop_placement_feasibility",
+    "deterministic_tiebreak",
+    "renderer_binding"
+  ],
+  "family_lock": {
+    "must_be_frozen_before_selection": true,
+    "asset_selection_may_change_family": false,
+    "asset_scarcity_may_change_family": false,
+    "category_may_select_topology": false
+  },
+  "required_content_conditions": [
+    "content_class compatible with requested media role",
+    "scene intent compatibility",
+    "orientation/aspect can satisfy target placement without destructive crop",
+    "people count/type compatible with scene intent",
+    "no prohibited misleading use",
+    "rights gate pass",
+    "evidence boundary compatible with surrounding copy"
+  ],
+  "visual_fit_ranking_order": [
+    "exact_content_class_match",
+    "scene_intent_match",
+    "role_match",
+    "orientation_crop_fit",
+    "visual_tone_fit_to_frozen_composition_plan",
+    "material_quality_fit",
+    "people_context_fit",
+    "reuse_penalty",
+    "asset_id_lexicographic_tiebreak"
+  ],
+  "determinism": {
+    "randomness_allowed": false,
+    "same_inputs_same_catalog_version_same_usage_ledger": "same_asset_selection",
+    "catalog_version_required_in_trace": true,
+    "usage_ledger_snapshot_required_in_trace": true
+  },
+  "anti_repetition_policy": {
+    "goal": "permit economically efficient reuse without producing skin-swap/template resemblance",
+    "hard_rules": [
+      "the same exact binary cannot occupy multiple dominant roles within one LP",
+      "within the same generation batch, hero/dominant assets must be unique across companies unless HUMAN_REVIEW_REQUIRED explicitly approves an exception",
+      "the same asset must not repeat with the same role + same crop fingerprint across adjacent/current production outputs",
+      "a company may not inherit another company's full media-role sequence as an asset bundle",
+      "reuse history is a ranking penalty, never a reason to switch Creative Family/topology",
+      "generic stock reuse must be visually redistributed through different role, crop, scale, composition, or omitted rather than forcing a repeated asset bundle"
+    ],
+    "soft_signals_for_ranking_penalty": [
+      "recent_same_role_use",
+      "recent_same_category_use",
+      "same_crop_fingerprint_use",
+      "same_asset_sequence_overlap",
+      "same_hero_plus_supporting_pair_overlap"
+    ],
+    "threshold_policy": "Do not invent a global numeric Template Resemblance threshold in this contract. Persist reuse metrics now; calibrate numeric limits from observed production batches and Aoi reviews."
+  },
+  "crop_contract": {
+    "renderer_may": ["apply approved crop focal point", "choose among pre-approved responsive crop variants", "respect subject-safe area"],
+    "renderer_must_not": ["crop away required subject", "create misleading before/after juxtaposition", "crop out rights/attribution markings when required", "turn generic context into apparent company evidence"]
+  },
+  "output_trace_required": [
+    "composition_plan_id",
+    "family_id",
+    "scene_id",
+    "media_role",
+    "content_conditions",
+    "candidate_pool_query",
+    "rejected_candidate_reasons",
+    "selected_asset_id",
+    "rights_gate_result",
+    "visual_fit_sort_keys",
+    "usage_ledger_penalty",
+    "crop_variant_id",
+    "catalog_version",
+    "binary_sha256"
+  ],
+  "failure_behavior": {
+    "no_rights_safe_candidate": "MEDIA_ROLE_UNSATISFIED",
+    "only_conditionally_safe_candidates": "HUMAN_REVIEW_REQUIRED",
+    "renderer_crop_impossible": "MEDIA_PLACEMENT_BLOCKED",
+    "asset_bundle_similarity_risk": "MEDIA_REUSE_REVIEW_REQUIRED",
+    "fallback_to_identity_or_family_profile": "PROHIBITED"
+  }
+}
