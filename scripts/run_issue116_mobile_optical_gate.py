@@ -1,8 +1,8 @@
-"""Issue #116 narrow-width optical hard gate.
+"""Issue #116 nine-width Hero optical hard gate.
 
-This gate exists because `overflow-x: clip` can hide a headline that is wider
-than its authored canvas while document-level overflow still reports false.
-It validates every public Hero meaning unit against its actual H1 and viewport.
+`overflow-x: clip` can hide a headline wider than its authored canvas while
+page-level overflow still reports false. This validates every public Hero
+meaning unit against the actual H1, Hero canvas, and viewport at all 9 widths.
 """
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ from typing import Any
 from playwright.sync_api import sync_playwright
 
 SAMPLES = ("SK1", "SK2", "SK3", "HS1", "HS2", "BR1", "BR2", "PI1", "PI2")
-WIDTHS = (320, 360, 375, 390, 430)
+WIDTHS = (320, 360, 375, 390, 430, 768, 1024, 1280, 1440)
 
 
 def main() -> int:
@@ -95,13 +95,13 @@ def main() -> int:
         browser.close()
 
     report = {
-        "schema_version": "issue116_mobile_optical_gate_v1",
+        "schema_version": "issue116_nine_width_hero_optical_gate_v1",
         "samples": list(SAMPLES),
         "widths": list(WIDTHS),
         "checks": len(rows),
         "failures": failures,
         "all_headline_meaning_units_atomic_and_visible": not failures,
-        "reason": "Checks bounding geometry directly so overflow-x:clip cannot mask semantic headline clipping.",
+        "reason": "Direct bounding geometry prevents overflow-x:clip from masking Hero semantic-unit clipping at any validation width.",
         "rows": rows,
     }
     out.parent.mkdir(parents=True, exist_ok=True)
