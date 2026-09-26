@@ -63,12 +63,13 @@ class AuthoredCompositionRuntimeTest(unittest.TestCase):
         self.assertTrue(directives["renderer_must_not_reinfer"])
         self.assertEqual(len(directives["responsive_authorship"]["widths"]), 9)
 
-    def test_migration_guard_is_fail_closed_for_production_mode(self):
+    def test_production_mode_consumes_complete_plan_authoritatively(self):
         plan = infer_authored_composition(fixture())
-        with self.assertRaises(MigrationGuardError):
-            consume_composition_plan(plan, mode="production")
-        guard = migration_guard(plan)
-        self.assertEqual(guard["status"], "SHADOW_ONLY")
+        directives = consume_composition_plan(plan, mode="production")
+        self.assertEqual(directives["mode"], "production")
+        self.assertEqual(directives["topology"], plan["topology"])
+        guard = migration_guard(plan, mode="production")
+        self.assertEqual(guard["status"], "PRODUCTION_AUTHORITY")
         self.assertFalse(guard["identity_routing"])
         self.assertFalse(guard["reference_lookup"])
         self.assertFalse(guard["random_variation"])
