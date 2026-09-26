@@ -7,6 +7,8 @@ from lp_engine.production_cutover import (
     consume_current_industry_production,
     derive_current_industry_authorship_input,
     plan_current_industry_production,
+    semantic_body_units,
+    semantic_headline_units,
 )
 
 
@@ -45,6 +47,14 @@ def fixture(category="beauty_cosmetics", job="choose", family="family-alpha", of
 
 
 class ProductionCutoverTest(unittest.TestCase):
+    def test_320_semantic_headline_and_body_units(self):
+        headline = semantic_headline_units("trust")
+        body = semantic_body_units("決めるための情報を整理します。")
+        self.assertEqual(headline, ("trustのための", "入口"))
+        self.assertTrue(all(len(unit) > 1 for unit in headline))
+        self.assertTrue(all(unit.strip() != "す。" for unit in body))
+        self.assertTrue(all(unit.endswith(("。", "！", "？")) for unit in body))
+
     def test_supported_scopes_and_authority(self):
         for category in CURRENT_INDUSTRIES:
             plan = plan_current_industry_production(fixture(category=category))
