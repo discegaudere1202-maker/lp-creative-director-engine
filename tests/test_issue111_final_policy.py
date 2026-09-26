@@ -22,6 +22,21 @@ class Issue111FinalPolicyTest(unittest.TestCase):
         self.assertFalse(final.crop_gate_passes(0.414))
         self.assertTrue(final.crop_gate_passes(0.415))
 
+    def test_source_dimension_precheck_rejects_extreme_portrait_and_keeps_two_thirds(self):
+        extreme = final.candidate_crop_fit({"source_dimensions": [1600, 2842]})
+        two_thirds = final.candidate_crop_fit({"source_dimensions": [1600, 2400]})
+        landscape = final.candidate_crop_fit({"source_dimensions": [1600, 1067]})
+        self.assertFalse(extreme["pass"])
+        self.assertEqual(extreme["reason"], "ISSUE111_CROP_FIT_PRECHECK_FAILED")
+        self.assertTrue(two_thirds["pass"])
+        self.assertTrue(landscape["pass"])
+        self.assertLess(extreme["minimum_raw_fraction"], two_thirds["minimum_raw_fraction"])
+
+    def test_missing_source_dimensions_fail_closed(self):
+        result = final.candidate_crop_fit({})
+        self.assertFalse(result["pass"])
+        self.assertEqual(result["reason"], "SOURCE_DIMENSIONS_MISSING")
+
 
 if __name__ == "__main__":
     unittest.main()
