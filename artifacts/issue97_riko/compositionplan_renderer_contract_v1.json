@@ -1,0 +1,69 @@
+{
+  "schema_version": "compositionplan_renderer_contract_v1",
+  "renderer_input_authority": "CompositionPlan",
+  "mandatory_directives": [
+    "family_id",
+    "family_version",
+    "family_frozen",
+    "ordered_scene_intents",
+    "hero_topology",
+    "core_decision_topology",
+    "trust_proof_topology",
+    "closing_cta_choreography",
+    "variation_vector",
+    "scene_media_roles",
+    "responsive_authorship_9_widths",
+    "feasibility_adaptations",
+    "blocked_claims",
+    "review_gate"
+  ],
+  "renderer_may_realize": [
+    "spacing_within_approved_token_ranges",
+    "crop_focal_point_inside_approved_media_role",
+    "non_semantic_decorative_placement",
+    "motion_duration_and_easing_within_selected_motion_role",
+    "browser_safe_typographic_fit_that_preserves_semantic_chunks"
+  ],
+  "renderer_must_not_reinfer": [
+    "creative_family",
+    "scene_order",
+    "decision_hierarchy",
+    "hero_type",
+    "trust_authority",
+    "cta_strategy",
+    "company_category_profile_mapping",
+    "new_factual_claims",
+    "media_as_company_proof",
+    "breakpoint_decision_hierarchy"
+  ],
+  "family_grammar_contract": {
+    "family_may_constrain": ["compatible_persuasion_grammar", "compatible_composition_grammar"],
+    "family_must_not_fix": ["hero", "scene_sequence", "density_rhythm", "cta", "responsive_silhouette", "renderer_profile"],
+    "same_family_requirement": "materially different Company Truth plus decision/evidence shape must be able to produce materially different plans"
+  },
+  "copy_contract": {
+    "headline_inputs": ["primary_decision_job", "decision_stage", "verified_offer_job", "supported_tension_or_differentiator", "scene_intent", "eligible_evidence_ids"],
+    "section_heading_inputs": ["scene_intent", "prior_decision_state", "next_decision_state", "scene_evidence", "topology_role"],
+    "cta_inputs": ["verified_action_destination", "decision_stage", "remaining_uncertainty", "closing_choreography"],
+    "claim_rule": "persuasive factual copy requires eligible evidence ids",
+    "line_rule": "semantic Japanese chunks are authored before render and preserved; isolated particles, noun fragments, and one-character headline/CTA tails are blocked"
+  },
+  "motion_contract": {
+    "selection_inputs": ["scene_intent", "decision_job", "interaction_need"],
+    "identity_inputs_forbidden": true,
+    "meaningful_roles": ["decision_sequence_reveal", "alternative_compare", "process_demonstration", "proof_detail_disclosure", "cta_state_clarification"],
+    "decorative_motion_cannot_establish_uniqueness": true
+  },
+  "responsive_contract": {
+    "widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+    "mobile_is_authored_not_shrunk": true,
+    "decision_hierarchy_preserved": true,
+    "320px_semantic_japanese_optical_gate": "HARD",
+    "checks_each_width": ["line_shape", "overflow", "clipping", "fixed_sticky_ui", "cta_visibility", "media_crop", "interaction_affordance"]
+  },
+  "capability_failure": {
+    "when": "renderer cannot realize a mandatory directive without changing decision semantics",
+    "state": "RENDER_CAPABILITY_BLOCKED",
+    "fallback_to_legacy_profile": false
+  }
+}

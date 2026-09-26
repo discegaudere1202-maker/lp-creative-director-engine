@@ -1,0 +1,123 @@
+{
+  "schema_version": "issue97_current_industry_completion_fixture_matrix_v1",
+  "architectural_completion_requires": [
+    "all_applicable_automated_gates_pass",
+    "expected_negative_fixtures_fail_closed",
+    "representative_positive_fixtures_receive_Aoi_HUMAN_VISIBLE_PASS",
+    "controlled_render_regression_lock_preserved"
+  ],
+  "positive_fixtures": [
+    {
+      "id": "B1",
+      "industry": "beauty_cosmetics",
+      "decision_variant": "choose",
+      "evidence_variant": "multiple_offers_strong_verified_product_evidence",
+      "must_prove": ["production_plan_consumed", "evidence_bound_copy", "no_category_topology_routing"]
+    },
+    {
+      "id": "B2",
+      "industry": "beauty_cosmetics",
+      "decision_variant": "trust_understand",
+      "evidence_variant": "sparse_proof_generic_or_generated_atmosphere_only",
+      "must_prove": ["transparent_unknowns", "media_not_misread_as_company_proof", "family_unchanged_by_asset_scarcity"]
+    },
+    {
+      "id": "B3",
+      "industry": "beauty_cosmetics",
+      "decision_variant": "same_family_counterpart",
+      "evidence_variant": "different_decision_and_evidence_shape",
+      "must_prove": ["same_family_visible_authored_divergence", "different_topology_or_decision_hierarchy_not_skin_swap"]
+    },
+    {
+      "id": "H1",
+      "industry": "hair_salon_barber",
+      "decision_variant": "first_visit_choose_prepare",
+      "evidence_variant": "verified_services_and_booking",
+      "must_prove": ["decision_first_composition", "verified_CTA", "semantic_copy"]
+    },
+    {
+      "id": "H2",
+      "industry": "hair_salon_barber",
+      "decision_variant": "trust",
+      "evidence_variant": "stylist_process_proof_medium_or_high_risk",
+      "must_prove": ["trust_before_action", "proof_distribution", "human_process_media_role"]
+    },
+    {
+      "id": "H3",
+      "industry": "hair_salon_barber",
+      "decision_variant": "feasibility_stress",
+      "evidence_variant": "sparse_media_or_missing_price",
+      "must_prove": ["execution_adapts", "family_does_not_mutate", "unsupported_price_not_invented"]
+    },
+    {
+      "id": "P1",
+      "industry": "pilates_fitness",
+      "decision_variant": "trial_act",
+      "evidence_variant": "verified_price_schedule_CTA",
+      "must_prove": ["action_path", "transactional_facts_evidence_bound", "9_widths"]
+    },
+    {
+      "id": "P2",
+      "industry": "pilates_fitness",
+      "decision_variant": "trust_prepare",
+      "evidence_variant": "instructor_process_evidence_high_risk",
+      "must_prove": ["trust_hierarchy", "responsive_authorship", "meaningful_motion_if_used"]
+    },
+    {
+      "id": "P3",
+      "industry": "pilates_fitness",
+      "decision_variant": "same_family_counterpart",
+      "evidence_variant": "accepted_optical_lock_regression",
+      "must_prove": ["same_family_divergence", "320px_no_isolated_one_character_or_particle", "Issue_96_lock"]
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "id": "X1",
+      "mutation": "contradictory_price_qualification_or_contact",
+      "expected": ["INPUT_CONTRADICTION_BLOCKED_or_HUMAN_REVIEW_REQUIRED", "no_positive_claim"]
+    },
+    {
+      "id": "X2",
+      "mutation": "identity_only_change_semantic_inputs_identical",
+      "expected": ["CompositionPlan_semantically_identical", "identity_not_in_inference_trace"]
+    },
+    {
+      "id": "X3",
+      "mutation": "category_label_change_with_authored_inputs_held_constant",
+      "expected": ["topology_unchanged", "only_asset_pool_scope_may_change"]
+    },
+    {
+      "id": "X4",
+      "mutation": "cross_family_near_collision",
+      "expected": ["HUMAN_REVIEW_REQUIRED", "no_forced_cosmetic_divergence"]
+    },
+    {
+      "id": "X5",
+      "mutation": "media_rights_unknown",
+      "expected": ["MEDIA_RIGHTS_BLOCKED_for_asset", "family_unchanged"]
+    }
+  ],
+  "automated_gates_each_positive": [
+    "deterministic_generation",
+    "no_identity_routing",
+    "family_frozen_before_feasibility",
+    "plan_consumed_by_renderer",
+    "evidence_provenance",
+    "semantic_copy_line_QA",
+    "9_width_browser_overflow_interaction_QA",
+    "320px_optical_gate",
+    "screenshot_manifest"
+  ],
+  "aoi_review_dimensions": [
+    "full_page_silhouette",
+    "decision_hierarchy",
+    "trust_proof_distribution",
+    "media_evidence_perception",
+    "CTA_choreography",
+    "meaningful_motion",
+    "mobile_authorship",
+    "template_resemblance"
+  ],
+  "not_claimed_by_completion": ["industry_expansion", "real_image_sales_sample_readiness", "one_million_yen_value"]
+}

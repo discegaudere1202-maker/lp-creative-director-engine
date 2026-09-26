@@ -1,0 +1,101 @@
+{
+  "schema_version": "issue97_production_routing_cutover_map_v1",
+  "baseline": "acb4678a7e844a40112e561a722b799a8677a601",
+  "scope": ["beauty_cosmetics", "hair_salon_barber", "pilates_fitness"],
+  "target_runtime_order": [
+    "verified_company_truth",
+    "customer_decision_state",
+    "creative_fit",
+    "family_inference_or_ambiguity_gate",
+    "family_frozen",
+    "compatible_grammar",
+    "composition_plan",
+    "production_feasibility",
+    "copy_media_motion_responsive_realization",
+    "renderer",
+    "automated_qa",
+    "screenshot_artifact",
+    "aoi_human_visible_review"
+  ],
+  "surfaces": [
+    {
+      "path": "src/lp_engine/authored_composition_contract.py",
+      "current_role": "generalized normalized input and CompositionPlan planner",
+      "target_role": "production planning authority",
+      "action": "PROMOTE",
+      "constraints": ["no identity routing", "family frozen before feasibility", "deterministic"]
+    },
+    {
+      "path": "src/lp_engine/authored_composition_runtime.py::consume_composition_plan",
+      "current_role": "shadow-only renderer directive adapter",
+      "target_role": "guarded production renderer directive boundary",
+      "action": "PROMOTE_AFTER_GATES",
+      "constraints": ["production mode requires complete plan", "renderer must not reinfer", "9 widths required"]
+    },
+    {
+      "path": "src/lp_engine/production_generation.py::run_generation",
+      "current_role": "existing Production generation and rendering orchestration",
+      "target_role": "consume CompositionPlan-derived composition as authoritative input",
+      "action": "REWIRE",
+      "constraints": ["legacy topology selection cannot override plan", "claims remain safety-gated"]
+    },
+    {
+      "path": "src/lp_engine/production_generation.py::_industry_visual_direction",
+      "current_role": "category-keyed visual/profile selection for field validation",
+      "target_role": "not a Production composition selector",
+      "action": "DEPRECATE_THEN_REMOVE_OR_REGRESSION_ISOLATE",
+      "constraints": ["category may scope asset candidates only", "must not choose Family/topology/profile"]
+    },
+    {
+      "path": "src/lp_engine/production_generation.py::_layout_profile",
+      "current_role": "goal/authority/category keyed form-profile selector",
+      "target_role": "not a Production authored-form selector",
+      "action": "DEPRECATE_THEN_REMOVE_OR_REGRESSION_ISOLATE",
+      "constraints": ["CompositionPlan owns Hero/core/trust/closing topology"]
+    },
+    {
+      "path": "src/lp_engine/controlled_production.py",
+      "current_role": "Nagi controlled reference adapter and grammar bridge",
+      "target_role": "test/regression fixture adapter only",
+      "action": "DEMOTE_TO_REGRESSION_ONLY",
+      "constraints": ["reference ids allowed only for fixtures/artifacts", "no runtime production import path"]
+    }
+  ],
+  "cutover_stages": [
+    {"stage": 0, "name": "freeze_controlled_regression", "production_public_output_changes": false},
+    {"stage": 1, "name": "normalized_current_industry_input_adapter", "production_public_output_changes": false},
+    {"stage": 2, "name": "shadow_composition_plan_for_production_inputs", "production_public_output_changes": false},
+    {"stage": 3, "name": "composition_plan_primary_production_input", "production_public_output_changes": true},
+    {"stage": 4, "name": "deactivate_legacy_composition_selection", "production_public_output_changes": true},
+    {"stage": 5, "name": "delete_unreachable_runtime_branches_after_matrix_pass", "production_public_output_changes": false}
+  ],
+  "rollback": {
+    "allowed": "deploy_prior_known_good_release",
+    "forbidden": "silent_per_request_fallback_to_identity_category_or_legacy_profile_routing",
+    "reason": "rollback must not reintroduce template routing inside the new architectural path"
+  },
+  "fail_closed_states": [
+    "INPUT_TRUTH_INSUFFICIENT",
+    "INPUT_CONTRADICTION_BLOCKED",
+    "DECISION_STATE_AMBIGUOUS",
+    "FAMILY_NOT_FROZEN",
+    "IDENTITY_ROUTING_DETECTED",
+    "PLAN_INCOMPLETE",
+    "UNSUPPORTED_GRAMMAR",
+    "FEASIBILITY_FAMILY_MUTATION",
+    "CLAIM_EVIDENCE_BLOCKED",
+    "MEDIA_RIGHTS_BLOCKED",
+    "RENDER_CAPABILITY_BLOCKED",
+    "RESPONSIVE_HARD_GATE_FAILED",
+    "TEMPLATE_COLLISION_REVIEW",
+    "HUMAN_REVIEW_REQUIRED"
+  ],
+  "regression_locks": [
+    "Issue_92_controlled_real_render",
+    "Issue_96_HUMAN_VISIBLE_PASS",
+    "same_family_visible_authored_divergence",
+    "cross_family_near_collision_review_behavior",
+    "all_9_widths",
+    "320px_semantic_japanese_optical_gate"
+  ]
+}
