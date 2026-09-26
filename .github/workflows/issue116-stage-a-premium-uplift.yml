@@ -9,6 +9,7 @@ on:
       - "src/lp_engine/visual_asset_library.py"
       - "src/lp_engine/production_cutover.py"
       - "scripts/run_issue116_premium_uplift.py"
+      - "scripts/run_issue116_mobile_optical_gate.py"
       - "scripts/run_issue111_stage_a_sales_sample_qa.py"
       - "scripts/run_issue111_stage_a_sales_sample_qa_final.py"
       - "tests/test_premium_authorship.py"
@@ -61,6 +62,11 @@ jobs:
           python scripts/run_issue116_premium_uplift.py \
             --baseline artifacts/issue111_baseline \
             --out artifacts/issue116_premium_uplift
+      - name: 320-430px semantic optical hard gate
+        run: |
+          python scripts/run_issue116_mobile_optical_gate.py \
+            --premium-root artifacts/issue116_premium_uplift/premium \
+            --out artifacts/issue116_premium_uplift/issue116_mobile_optical_gate.json
       - name: Git whitespace check
         if: always()
         run: git diff --check
