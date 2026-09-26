@@ -1,0 +1,52 @@
+{
+  "schema_version": "issue104_free_first_sourcing_policy_v1",
+  "policy": "Until the business demonstrates profitability, acquisition should prefer commercially usable free sources that pass the full rights gate. Paid sources may be introduced later when they materially improve fit, uniqueness, rights clarity, or coverage.",
+  "checked_at": "2026-09-26",
+  "free_source_candidates": [
+    {
+      "provider": "Pexels",
+      "terms_url": "https://www.pexels.com/license/",
+      "commercial_use_summary": "Provider states photos/videos are free for commercial use; attribution is not required; modification is permitted.",
+      "important_conditions": [
+        "do not imply endorsement by depicted people or brands",
+        "identifiable people/brands/trademarks may carry separate rights",
+        "standalone redistribution/sale is restricted"
+      ],
+      "library_policy": "eligible source provider; every asset still requires asset-level person/property/trademark/evidence-boundary review"
+    },
+    {
+      "provider": "Unsplash",
+      "terms_url": "https://unsplash.com/license",
+      "commercial_use_summary": "Unsplash states images may be used for most commercial projects without required attribution.",
+      "important_conditions": [
+        "copyright license is not blanket clearance of all depicted third-party rights",
+        "recognizable people/property/trademarks may require additional permission",
+        "Unsplash notes it cannot guarantee the scope of model/property releases for every image"
+      ],
+      "library_policy": "eligible source provider, but identifiable-person/property images default to conditional review unless the target use is clearly safe"
+    },
+    {
+      "provider": "Pixabay",
+      "terms_url": "https://pixabay.com/service/license-summary/",
+      "commercial_use_summary": "Pixabay Content License permits free use and modification subject to prohibited uses; attribution is not generally required.",
+      "important_conditions": [
+        "recognizable trademarks/logos/brands can restrict commercial use",
+        "content may carry additional personality/property/IP rights",
+        "misleading/deceptive use is prohibited",
+        "standalone redistribution is restricted"
+      ],
+      "library_policy": "eligible source provider; commercial-use status remains conditional on depicted-rights review"
+    }
+  ],
+  "provider_rule": "Provider inclusion never whitelists all provider assets. License terms are a first gate, not the final asset approval.",
+  "official_company_media_rule": "Official websites/social profiles are evidence sources, not free stock libraries. Do not ingest their binaries for reuse unless explicit reuse/publishing permission or company-provided rights are verified.",
+  "generated_media_rule": "Project-owned generated media may fill illustrative roles when generation provenance is stored and the image is not presented as real company staff/customer/store/result evidence.",
+  "paid_source_trigger": [
+    "free sources cannot satisfy a critical Media Role without repeated/template-like reuse",
+    "needed category/content class coverage remains materially weak",
+    "paid source offers materially clearer model/property release or usage rights",
+    "profitability/budget gate has been explicitly opened by PM"
+  ],
+  "paid_source_examples": ["PIXTA or equivalent licensed stock provider after PM budget gate"],
+  "not_in_scope": ["purchasing paid assets now", "industry expansion", "declaring any provider universally safe"]
+}
