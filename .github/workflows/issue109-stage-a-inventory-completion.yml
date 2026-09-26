@@ -5,7 +5,9 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "data/visual_asset_library/providers/pexels_stage_a_completion_issue109_v1.json"
+      - "data/visual_asset_library/providers/pexels_stage_a_issue109_corrections_v1.json"
       - "scripts/run_issue109_stage_a_inventory_completion.py"
+      - "scripts/run_issue109_stage_a_inventory_completion_final.py"
       - "src/lp_engine/visual_asset_library.py"
       - "src/lp_engine/visual_asset_production.py"
       - "src/lp_engine/production_cutover.py"
@@ -31,7 +33,7 @@ jobs:
       - name: Contract and regression tests
         run: python -m unittest tests/test_visual_asset_library.py tests/test_production_cutover.py
       - name: Generate Stage A 62-asset inventory evidence
-        run: python scripts/run_issue109_stage_a_inventory_completion.py --out artifacts/issue109_stage_a_inventory
+        run: python scripts/run_issue109_stage_a_inventory_completion_final.py --out artifacts/issue109_stage_a_inventory
       - name: Git whitespace check
         if: always()
         run: git diff --check
