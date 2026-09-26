@@ -33,19 +33,15 @@ Replacement assets were independently inspected before final evidence generation
 
 Both replacements were reacquired, hashed, re-run through the rights gate, rebound into Production, and regenerated across all 81 screenshots.
 
-## Final evidence
+## Evidence convention
 
-Final task HEAD: `4bfffa56e3434f382ba789878cb9d2fc8be4f598`
+Exact final HEAD / workflow run / artifact identifiers are recorded in PR #107 and Issue #106 completion comments so recording them does not mutate the Task branch after the final QA run.
 
-- Issue #106 workflow: `36227490421` — success.
-- LP Engine QA: `36227490429` — success.
-- PM-OPS-1 PR Event Realtime Contract: `36227490439` — success.
-- Issue #99 Production Cutover workflow: `36227490457` — skipped by scope/path filter; no failure.
-- Artifact ID: `10900359470`.
-- Artifact digest: `sha256:ab3f0bc7bab7b883a90023e8424e0ebebe36d3fc3b6777217537400bb32e0e15`.
-- Screenshots: `81 / 81`.
-- CompositionPlan / Family / topology / scene order preserved.
-- selected rights gate / image load / overflow / 320px semantic regression / renderer trace-hash join all pass.
+Validated gates include:
+
+- 81 / 81 screenshots;
+- CompositionPlan / Family / topology / scene order preserved;
+- selected rights gate / image load / overflow / 320px semantic regression / renderer trace-hash join pass.
 
 Actual Stage A inventory: `11 / 62`; remaining gap `51`.
 
