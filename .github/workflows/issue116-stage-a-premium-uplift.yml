@@ -1,0 +1,73 @@
+name: Issue 116 Stage A Premium Authorship Uplift
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/lp_engine/premium_authorship.py"
+      - "src/lp_engine/visual_asset_production.py"
+      - "src/lp_engine/visual_asset_library.py"
+      - "src/lp_engine/production_cutover.py"
+      - "scripts/run_issue116_premium_uplift.py"
+      - "scripts/run_issue111_stage_a_sales_sample_qa.py"
+      - "scripts/run_issue111_stage_a_sales_sample_qa_final.py"
+      - "tests/test_premium_authorship.py"
+      - "tests/test_issue111_stage_a_sales_sample.py"
+      - "tests/test_issue111_final_policy.py"
+      - "data/visual_asset_library/providers/**"
+      - ".github/workflows/issue116-stage-a-premium-uplift.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  stage-a-premium-authorship-uplift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install engine
+        run: pip install -e .
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Download accepted Issue 111 baseline artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p artifacts/issue111_baseline
+          curl -L --fail-with-body \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/10912860741/zip" \
+            -o /tmp/issue111-baseline.zip
+          unzip -q /tmp/issue111-baseline.zip -d artifacts/issue111_baseline
+          test -f artifacts/issue111_baseline/screenshots/SK1/320.png || find artifacts/issue111_baseline -path '*/screenshots/SK1/320.png' -print -quit | grep -q .
+      - name: Contract and regression tests
+        run: >-
+          python -m unittest
+          tests/test_premium_authorship.py
+          tests/test_issue111_stage_a_sales_sample.py
+          tests/test_issue111_final_policy.py
+          tests/test_visual_asset_library.py
+          tests/test_production_cutover.py
+      - name: Generate exact Stage A premium uplift evidence
+        run: |
+          mkdir -p artifacts/issue116_premium_uplift/premium_contact_sheets
+          python scripts/run_issue116_premium_uplift.py \
+            --baseline artifacts/issue111_baseline \
+            --out artifacts/issue116_premium_uplift
+      - name: Git whitespace check
+        if: always()
+        run: git diff --check
+      - name: Upload Issue 116 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue116-stage-a-premium-authorship-uplift
+          path: artifacts/issue116_premium_uplift/
+          if-no-files-found: warn
