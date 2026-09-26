@@ -1,0 +1,30 @@
+{
+  "schema_version": "issue114_minimum_premium_uplift_contract_v1",
+  "objective": "Raise current-industry Stage A from architecture-validation quality to a premium sales-sample candidate without expanding industries or redesigning Family taxonomy.",
+  "hard_locks": [
+    "preserve CompositionPlan authority and Family freeze",
+    "no asset-driven Family switching",
+    "no fabricated facts/testimonials/results/staff/store identity",
+    "preserve Issue #111 rights/provenance/reuse gates",
+    "preserve 320-1440 responsive and semantic-text regressions",
+    "do not map Family to a fixed layout/hero/css skin"
+  ],
+  "required_uplifts": [
+    {"id":"PU1","name":"Public Copy Transformation Layer","inputs":["company_truth","customer_decision_state","family_id","scene_intent","verified_evidence","offer_conditions"],"outputs":["public_headline","section_headline","support_copy","proof_copy","cta_microcopy"],"gates":["no_internal_intent_token_visible","no_generic_validation_sentence_on_sales_surface","all_factual_claims_evidence_bound"]},
+    {"id":"PU2","name":"Hero Authority Composer","inputs":["family_frozen","decision_job","verified_authority","media_story_roles"],"outputs":["hero_composition_intent","authority_statement","media_geometry","proof_or_context_adjacency"],"gates":["company_specific_reason_to_continue","no_family_to_fixed_hero_map"]},
+    {"id":"PU3","name":"Scene Dramaturgy Planner","outputs":["scene_weight","density_mode","canvas_width_mode","media_text_relationship","chapter_transition","proof_adjacency","mobile_recomposition"],"gates":["not_uniform_stack_across_all_scenes","same_family_can_materially_diverge"]},
+    {"id":"PU4","name":"Media Story Binder","outputs":["story_function","claim_adjacency","crop_intent","caption_mode","sequence_role","mobile_priority"],"gates":["illustrative_vs_evidence_boundary_visible","asset_not_decorative_only_when_scene_requires_proof"]},
+    {"id":"PU5","name":"Proof + CTA Choreographer","outputs":["objection_to_proof_map","pre_cta_reassurance","primary_cta","secondary_cta","cta_reentry_points"],"gates":["verified_destination_required","actionable_link_required_for_positive_sales_sample","no_footer_metadata_only_closing"]},
+    {"id":"PU6","name":"Premium Visual Voice Primitives","outputs":["type_relationship","measure","spacing_cadence","rule_treatment","image_geometry","surface_depth"],"gates":["shared_engine_allowed_but_identical_visible_expression_not_required","visual_voice_traceable_to_family_company_scene"]},
+    {"id":"PU7","name":"Meaningful Motion Contract","outputs":["motion_intent","trigger","affected_element","reduced_motion_fallback"],"gates":["motion_optional_but_if_used_must_explain_hierarchy_sequence_or_feedback","no_random_motion_uniqueness"]},
+    {"id":"PU8","name":"Mobile Premium Recomposition","outputs":["mobile_scene_order_constraints","media_priority","proof_proximity","cta_mode","text_measure"],"gates":["320_360_375_390_430_authored","no_orphan_semantic_units","not_desktop_stack_only"]}
+  ],
+  "minimum_scope": "Implement PU1-PU8 only for the existing current-industry Production path; do not expand industry taxonomy.",
+  "stop_conditions": [
+    "truth_or_evidence_contradiction",
+    "no_verified_CTA_destination_when_action_is_required",
+    "near_collision_unresolved",
+    "rights_or_provenance_blocked",
+    "renderer_cannot_honor_authored_composition_without_legacy_fallback"
+  ]
+}
