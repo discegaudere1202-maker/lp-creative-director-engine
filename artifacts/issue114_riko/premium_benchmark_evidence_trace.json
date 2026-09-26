@@ -1,0 +1,40 @@
+{
+  "schema_version": "issue114_premium_benchmark_evidence_trace_v1",
+  "sources": [
+    {
+      "path": "docs/BENCHMARK_BLIND_TOURNAMENT_v1.md",
+      "accepted_mechanisms_used": [
+        "Visual/Screenshot Worthiness as a benchmark lane",
+        "reference-grade visual system over generic template expression",
+        "hero-first visual hierarchy",
+        "large visual field + constrained copy + strong typography rhythm",
+        "trust blocks paired with visual proof",
+        "interaction/animation language",
+        "CTA progression"
+      ]
+    },
+    {
+      "path": "docs/ISSUE44_RIKO_PRODUCTION_ARCHITECTURE_RESEARCH_SYNTHESIS.md",
+      "accepted_mechanisms_used": [
+        "Family is decision/creative logic and not fixed section order",
+        "broad visual rhythm",
+        "authority or warmth before proof when the decision job requires it",
+        "comparison/guidance before CTA",
+        "re-closing trust near CTA",
+        "mobile must preserve persuasive visibility and relationships",
+        "template resemblance increases with repeated hierarchy, media placement, CTA rhythm, trust organization and density/spatial cadence"
+      ]
+    }
+  ],
+  "audit_mapping": [
+    {"stage_a_gap":"Hero authority","benchmark_mechanisms":["hero-first visual hierarchy","authority before proof"]},
+    {"stage_a_gap":"Uniform typography and density","benchmark_mechanisms":["strong typography rhythm","broad visual rhythm","density/spatial cadence"]},
+    {"stage_a_gap":"Weak media/story integration","benchmark_mechanisms":["trust paired with visual proof","media placement as template-resemblance driver"]},
+    {"stage_a_gap":"Weak proof choreography","benchmark_mechanisms":["authority/warmth before proof","re-closing trust near CTA"]},
+    {"stage_a_gap":"CTA metadata rather than choreography","benchmark_mechanisms":["guidance before CTA","CTA progression","re-closing trust near CTA"]},
+    {"stage_a_gap":"No meaningful motion","benchmark_mechanisms":["interaction/animation language","screenshot-worthy visual system"]},
+    {"stage_a_gap":"Mobile stack feel","benchmark_mechanisms":["mobile preserves persuasive visibility/relationship","responsive rigor"]},
+    {"stage_a_gap":"Cross-sample template smell","benchmark_mechanisms":["repeated hierarchy","same media placement","same CTA rhythm","same trust organization","same density/spatial cadence"]}
+  ],
+  "research_policy": "No new broad benchmark corpus was opened for Issue #114; accepted repository research is the comparison basis."
+}
