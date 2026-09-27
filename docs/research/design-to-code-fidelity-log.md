@@ -56,6 +56,9 @@ Evidence
 - Splitting an approved Master into section-level locked scenes reduced the perceived `HTML became a different design` problem.
 - Shun explicitly confirmed the section-sliced Master + Motion experiment was closer than previous implementations.
 - Moving one section at a time to real DOM is superior to converting the entire page in one pass because the exact quality-loss step remains observable.
+- Section transitions must have exactly one boundary owner. Hero and Concept must not each introduce independent separators.
+- Raster alpha masks traced from low-resolution references create stair-stepping and visible roughness when scaled. Curved boundaries should be implemented as vector/SVG Bézier geometry or equivalent resolution-independent masks.
+- When replacing only one section with DOM, the adjacent locked section must preserve all of its content; seam fixes must never crop away approved content.
 
 ## Known anti-patterns
 
@@ -73,6 +76,10 @@ Do not repeat these:
 - declaring Human Visible PASS from AI-only review
 - converting all sections before Shun inspects the first conversion
 - treating small visual discomfort as non-actionable noise
+- fixing a section seam by cropping away approved neighboring content
+- giving both adjacent sections separate boundary shapes
+- rasterizing a curved seam into a low-resolution alpha mask and scaling it up
+- inventing decorative microcopy or labels not required by the approved design
 
 ## Current section conversion rule
 
@@ -100,6 +107,11 @@ Every relevant Shun feedback must be recorded in Issue #135 with:
 - Reusable learning / anti-pattern
 
 Small details are not to be omitted.
+
+Operational guarantee:
+- Log the feedback before or together with the next artifact delivery.
+- Do not tell Shun `recorded` unless the GitHub comment / commit actually exists.
+- Each user-facing artifact response must state the exact GitHub Issue and comment/commit evidence.
 
 ## Current experiment history
 
@@ -147,15 +159,33 @@ Current technical conclusion:
 - do not continue stacking masks over a text-baked Hero image.
 - use a clean Hero photographic asset with no UI/text, then reconstruct typography and decoration in DOM/CSS using the Master solely as the coordinate/visual reference.
 
+### D2C-005 — Clean Hero asset + transition fidelity v4→v12
+
+Status: IN_PROGRESS / NOT APPROVED
+
+Shun feedback preserved:
+- unnecessary microcopy must not be added
+- seam / white transition must be intentional, not an implementation artifact
+- Concept top content must not disappear during seam correction
+- original Concept wave + newly invented Hero boundary created a double boundary
+- Hero and Concept boundary geometry must match
+- v10 still did not fix the transition
+- v11 boundary remained visually wrong and rough / jagged
+
+Reusable conclusions:
+- one boundary owner only; current owner is Concept
+- preserve Concept content below its original boundary
+- stop raster-alpha seam tracing
+- use vector/SVG Bézier clipping for curved section transitions
+- keep the new Hero extended under the Concept overlap so transparent/vector-clipped regions reveal actual Hero instead of white background
+
+Current implementation target:
+- `MELT_SKIN_hero_dom_fidelity_v12.html`
+- Concept boundary rendered with smooth SVG vector clip rather than raster alpha mask
+
 ## Next experiment
 
-D2C-005 should rebuild Hero from:
-
-- clean photo asset with no baked text or UI
-- measured Master coordinate system
-- real HTML navigation and copy
-- explicit font/color/tracking/leading targets
-- same-viewport screenshot comparison
+Continue D2C-005 until Shun confirms Hero→Concept transition quality. Do not move to Concept DOM conversion yet.
 
 Only after Shun confirms Hero fidelity should the project proceed to Concept DOM conversion.
 
