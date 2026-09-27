@@ -7,6 +7,7 @@ topology, scene order, decision logic, or evidence state.
 from __future__ import annotations
 
 from copy import deepcopy
+import html as html_lib
 import json
 from pathlib import Path
 from typing import Any, Mapping
@@ -31,6 +32,23 @@ _MOBILE_SAFE_HERO_UNITS = {
     "act": ["考えすぎる", "その前に", "次の一歩を", "軽く。"],
 }
 
+# Sarah PM RETURN / Aoi Human-visible QA: public display headings outside Hero
+# must also be authored as semantic chunks.  Each chunk is deliberately short
+# enough for the 320px canvas while keeping Japanese meaning units intact.
+# This is NOT a global nowrap rule: only explicitly authored chunks are atomic.
+_DISPLAY_HEADING_CHUNKS = {
+    "選ぶ前に、違いを見渡す。": ("選ぶ前に、", "違いを", "見渡す。"),
+    "まず、選ぶ基準を整える": ("まず、", "選ぶ基準を", "整える"),
+    "選択肢を、違いで見る": ("選択肢を、", "違いで", "見る"),
+    "体験の流れを、順番に": ("体験の流れを、", "順番に"),
+    "安心につながる情報を、近くに": ("安心につながる", "情報を、", "近くに"),
+    "比べるポイントを、ひと目で": ("比べる", "ポイントを、", "ひと目で"),
+    "はじめる前の不安を、小さくする": ("はじめる前の", "不安を、", "小さくする"),
+    "次の一歩は、ここから": ("次の一歩は、", "ここから"),
+    "必要な情報を、わかりやすく": ("必要な", "情報を、", "わかりやすく"),
+    "納得してから、次へ。": ("納得して", "から、", "次へ。"),
+}
+
 
 def _apply_mobile_headline_guard(plan: Mapping[str, Any], premium: dict[str, Any]) -> dict[str, Any]:
     """Refine public headline units so every atomic unit fits the 320px canvas."""
@@ -51,10 +69,45 @@ def _apply_mobile_headline_guard(plan: Mapping[str, Any], premium: dict[str, Any
     return premium
 
 
+def _semantic_heading_markup(chunks: tuple[str, ...]) -> str:
+    """Render authored semantic chunks with explicit break opportunities."""
+    rows = []
+    for index, chunk in enumerate(chunks):
+        rows.append(
+            f'<span class="premium-display-unit">{html_lib.escape(chunk, quote=True)}</span>'
+        )
+        if index < len(chunks) - 1:
+            rows.append("<wbr>")
+    return "".join(rows)
+
+
+def _apply_display_heading_semantic_guard(rendered: str) -> str:
+    """Protect all known public display headings without blanket nowrap."""
+    replaced = 0
+    for heading, chunks in _DISPLAY_HEADING_CHUNKS.items():
+        escaped = html_lib.escape(heading, quote=True)
+        old = f"<h2>{escaped}</h2>"
+        if old not in rendered:
+            continue
+        new = (
+            '<h2 data-semantic-heading="authored">'
+            f'{_semantic_heading_markup(chunks)}</h2>'
+        )
+        occurrences = rendered.count(old)
+        rendered = rendered.replace(old, new)
+        replaced += occurrences
+    # Every current Issue #116 page must expose at least the offer-guide and
+    # final CTA headings through this guard. Scene headings add further rows.
+    if replaced < 2:
+        raise AssetBoundProductionError("PREMIUM_DISPLAY_HEADING_GUARD_MISSING")
+    return rendered
+
+
 def _apply_headline_optical_css_guard(rendered: str) -> str:
-    """Keep semantic units atomic at every width without oversized desktop type."""
+    """Keep authored semantic units atomic without making whole headings nowrap."""
     css = (
-        ".premium-headline-unit{white-space:nowrap}"
+        ".premium-headline-unit,.premium-display-unit{white-space:nowrap}"
+        ".premium-display-unit{display:inline-block}"
         "@media(min-width:431px){.premium-hero h1{font-size:clamp(46px,5.4vw,80px)}}"
     )
     if "</style>" not in rendered:
@@ -79,6 +132,7 @@ def render_asset_bound_authoritative_html(
     premium = build_premium_uplift(plan, directives, asset_bindings)
     premium = _apply_mobile_headline_guard(plan, premium)
     rendered = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
+    rendered = _apply_display_heading_semantic_guard(rendered)
     rendered = _apply_headline_optical_css_guard(rendered)
 
     if (
@@ -104,7 +158,15 @@ def run_asset_bound_generation(
 
     premium = build_premium_uplift(plan, directives, asset_bindings)
     premium = _apply_mobile_headline_guard(plan, premium)
+    premium["PU1_public_copy"]["trace"]["display_heading_semantic_guard"] = {
+        "scope": "all_current_public_display_headings_and_final_cta",
+        "strategy": "authored_inline_chunks_with_explicit_break_opportunities",
+        "blanket_global_nowrap": False,
+        "protected_units": ["から", "次へ", "ここから", "違い", "情報", "ポイント"],
+        "composition_plan_mutated": False,
+    }
     html = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
+    html = _apply_display_heading_semantic_guard(html)
     html = _apply_headline_optical_css_guard(html)
     (output / "index.html").write_text(html, encoding="utf-8")
 
