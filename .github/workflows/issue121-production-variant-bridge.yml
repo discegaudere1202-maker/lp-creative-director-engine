@@ -63,6 +63,7 @@ jobs:
           tests/test_production_cutover.py
       - name: Generate Stage A direct-chain evidence
         run: |
+          mkdir -p artifacts/issue121_variant_bridge/stage_a/premium_contact_sheets
           python scripts/run_issue121_variant_bridge.py \
             --baseline artifacts/issue111_baseline \
             --out artifacts/issue121_variant_bridge
