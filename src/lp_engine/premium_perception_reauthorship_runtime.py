@@ -19,16 +19,14 @@ _BASE_APPLY = _base.apply_premium_perception_recovery
 def _preserve_legacy_binding_crop_safety(rendered: str) -> str:
     """Keep Issue #111 source-binding crop safety without weakening its gate.
 
-    The HS1 R2 desktop overlay deliberately narrows the hero card. Across the
-    intermediate desktop range, the legacy route hero's internal two-column
-    minimums can collapse its original rights-gated media track to zero width.
-    Recompose only that intermediate range to a one-column internal hero while
-    retaining the R2 outer overlap, material world, and page silhouette. Full
-    1440 desktop art direction and <=900 legacy mobile behavior stay separate.
+    Issue #132 is downstream of the accepted source-binding contract, so R2 may
+    change hierarchy but must not collapse a rights-gated source image to zero
+    geometry. Two narrow compatibility rules preserve that invariant while the
+    new authored media remains the perceptual authority.
     """
-    if 'data-r2-profile="salon_material_workbench"' not in rendered:
-        return rendered
-    css = r'''
+    css_parts: list[str] = []
+    if 'data-r2-profile="salon_material_workbench"' in rendered:
+        css_parts.append(r'''
 @media(min-width:901px) and (max-width:1360px){
  body[data-r2-profile="salon_material_workbench"] .r2-opening>.hero-route{
   grid-template-columns:1fr!important;
@@ -40,10 +38,46 @@ def _preserve_legacy_binding_crop_safety(rendered: str) -> str:
   width:100%!important;
  }
 }
-'''
+''')
+    if 'data-r2-profile="pilates_studio_action"' in rendered:
+        css_parts.append(r'''
+body[data-r2-profile="pilates_studio_action"] .r2-studio_path .service-field__media{
+ display:block!important;
+ width:clamp(112px,15vw,176px)!important;
+ max-width:32%!important;
+ margin:28px 0 0 auto!important;
+ opacity:.52!important;
+ filter:saturate(.68) contrast(.92)!important;
+}
+body[data-r2-profile="pilates_studio_action"] .r2-studio_path .service-field__media .production-asset{
+ width:100%!important;
+ margin:0!important;
+}
+body[data-r2-profile="pilates_studio_action"] .r2-studio_path .service-field__media .production-asset img{
+ display:block!important;
+ width:100%!important;
+ height:auto!important;
+ aspect-ratio:16/9!important;
+ object-fit:cover!important;
+}
+body[data-r2-profile="pilates_studio_action"] .r2-studio_path .service-field__media .production-asset figcaption{
+ font-size:8px!important;
+ line-height:1.2!important;
+ opacity:.72!important;
+}
+@media(max-width:700px){
+ body[data-r2-profile="pilates_studio_action"] .r2-studio_path .service-field__media{
+  width:118px!important;
+  max-width:38%!important;
+  margin:20px 0 0 auto!important;
+ }
+}
+''')
+    if not css_parts:
+        return rendered
     if "</style>" not in rendered:
         raise RuntimeError("ISSUE132_COMPAT_STYLE_ANCHOR_MISSING")
-    return rendered.replace("</style>", css + "</style>", 1)
+    return rendered.replace("</style>", "".join(css_parts) + "</style>", 1)
 
 
 def _apply_issue132_wrapper(
