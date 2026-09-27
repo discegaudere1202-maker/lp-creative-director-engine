@@ -85,23 +85,23 @@ def _apply_regression_render_compatibility(rendered: str) -> str:
 
     Issue #116 locked the public display-unit class shape and Issue #111 locked
     narrow-footer behavior. Issue #121 re-authors media geometry instead of
-    weakening the destructive-crop gate. Once the layout collapses below the
-    desktop grid, Route/body media moves to a crop-safe 4:3 presentation; the
-    narrower Hero variants retain their own explicit mobile ratios.
+    weakening the destructive-crop gate. Guided Route keeps its mechanism in
+    route hierarchy, so its supporting Hero media uses a crop-safe 4:3 frame at
+    every width. Evidence Anchor keeps a portrait-like 3:4 frame. Body media
+    recompose to 4:3 once the desktop layout collapses.
     """
     rendered = rendered.replace(
         'class="semantic-headline-unit premium-display-unit"',
         'class="premium-display-unit"',
     )
     compatibility_css = (
-        "@media(max-width:900px){"
         ".hero-route .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
+        ".hero-evidence .production-asset img{aspect-ratio:3/4!important;object-fit:cover}"
+        "@media(max-width:900px){"
         ".variant-scene .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
         "}"
         "@media(max-width:430px){"
         ".hero-recognition .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
-        ".hero-evidence .production-asset img{aspect-ratio:3/4!important;object-fit:cover}"
-        ".hero-route .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
         "}"
         "@media(max-width:480px){footer{flex-direction:column;gap:8px;align-items:flex-start}"
         "footer span{display:block;max-width:100%;overflow-wrap:anywhere}}"
