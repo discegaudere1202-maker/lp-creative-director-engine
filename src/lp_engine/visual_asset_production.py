@@ -81,25 +81,30 @@ def _assert_architecture_preserved(
 
 
 def _apply_regression_render_compatibility(rendered: str) -> str:
-    """Keep accepted non-authorial regression hooks without restoring old layout.
+    """Keep accepted safety hooks while preserving variant-owned authorship.
 
     Issue #116 locked the public display-unit class shape and Issue #111 locked
-    a narrow footer stacking rule.  They remain safety contracts, not visual
-    authorship.  The Production Variant bridge still owns all structural
-    page/scene/Hero geometry.
+    narrow-footer behavior.  Issue #121 additionally re-authors mobile media
+    geometry rather than weakening the destructive-crop gate: each Hero
+    mechanism receives an explicit safe mobile ratio and body media uses 4:3.
     """
     rendered = rendered.replace(
         'class="semantic-headline-unit premium-display-unit"',
         'class="premium-display-unit"',
     )
-    footer_guard = (
+    compatibility_css = (
+        "@media(max-width:430px){"
+        ".hero-recognition .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
+        ".hero-evidence .production-asset img{aspect-ratio:3/4!important;object-fit:cover}"
+        ".hero-route .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
+        ".variant-scene .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
+        "}"
         "@media(max-width:480px){footer{flex-direction:column;gap:8px;align-items:flex-start}"
         "footer span{display:block;max-width:100%;overflow-wrap:anywhere}}"
     )
     if "</style>" not in rendered:
         raise AssetBoundProductionError("VARIANT_STYLE_ANCHOR_MISSING")
-    if footer_guard not in rendered:
-        rendered = rendered.replace("</style>", footer_guard + "</style>", 1)
+    rendered = rendered.replace("</style>", compatibility_css + "</style>", 1)
     return rendered
 
 
