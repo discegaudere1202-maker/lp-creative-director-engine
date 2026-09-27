@@ -1,0 +1,28 @@
+name: Landscape Universe Scrape Test
+
+on:
+  push:
+    branches:
+      - task/landscape-universe-24070
+    paths:
+      - 'scripts/lead_universe/scrape_mlit_landscape_universe.py'
+      - '.github/workflows/landscape_universe_scrape_test.yml'
+  workflow_dispatch:
+
+jobs:
+  scrape-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4
+      - name: Scrape Yamagata landscape permits
+        run: python scripts/lead_universe/scrape_mlit_landscape_universe.py --out-dir artifacts/test_raw --prefectures 06 --delay 0.15
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: landscape-universe-scrape-test
+          path: artifacts/test_raw/
