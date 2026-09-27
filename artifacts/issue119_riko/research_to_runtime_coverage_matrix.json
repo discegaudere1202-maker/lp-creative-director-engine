@@ -1,0 +1,43 @@
+{
+  "issue": 119,
+  "schema_version": "issue119_research_to_runtime_coverage_v1",
+  "baseline_main": "81de8970bd25f9c1f44cca99a3430ea6654cc370",
+  "owner_reality": "画像品質は上がったが全体デザインは酷い",
+  "classification_order": ["RESEARCH_ONLY", "CONTRACT_ONLY", "RUNTIME_SELECTABLE", "PRODUCTION_VARIANT_IMPLEMENTED", "RENDERER_CONSUMED", "VISUALLY_VERIFIED"],
+  "summary": {
+    "research_exists": true,
+    "research_pattern_ids_reach_production_renderer": false,
+    "premium_module_variant_layer_exists": false,
+    "current_runtime_uses_generic_semantic_compression": true,
+    "current_renderer_uses_shared_page_skeleton": true,
+    "benchmark_mechanism_to_screenshot_trace_exists": false
+  },
+  "layers": [
+    {"layer":"Creative Family","research_evidence":"Issue #44 BW-F01..F08","current_status":"RUNTIME_SELECTABLE","runtime_evidence":"family is frozen in CompositionPlan and preserved through production authority","gap":"family identity is mostly provenance; it does not select research-derived visual variants","bridge_requirement":"family constrains compatible module patterns/variants but must never map directly to one layout"},
+    {"layer":"Hero","research_assets":["M-HERO-01","M-HERO-02","M-HERO-03"],"current_status":"CONTRACT_ONLY","runtime_analogue":["editorial_split","proof_led","choice_led","quiet_authority","action_led"],"gap":"runtime hero labels are not traceable implementations of benchmark patterns and share one hero DOM/CSS grammar","bridge_requirement":"implement distinct research-derived Hero Production Variants with explicit silhouette, grid, type, media and mobile behavior"},
+    {"layer":"Trust / Proof","research_assets":["M-TRUST-01","M-TRUST-02"],"current_status":"CONTRACT_ONLY","runtime_analogue":["proof-card","proof-boundary"],"gap":"generic proof treatment does not reproduce quiet-boundary-ledger or distributed-proof-thread mechanisms","bridge_requirement":"variant-specific proof placement, density, visual hierarchy and adjacency"},
+    {"layer":"Problem / Insight","research_assets":["M-PROBLEM-01"],"current_status":"CONTRACT_ONLY","runtime_analogue":["scene intent recognize/understand"],"gap":"scene semantics exist but no scene-based tension visual composition exists","bridge_requirement":"implement scene-based tension variant with media/copy staging"},
+    {"layer":"Story","research_assets":["M-STORY-01"],"current_status":"CONTRACT_ONLY","runtime_analogue":["generic premium-scene"],"gap":"causal sequence is reduced to chapter cards/sections","bridge_requirement":"causal chain variant with step relation, provenance media and mobile causal pacing"},
+    {"layer":"Service","research_assets":["M-SERVICE-01"],"current_status":"CONTRACT_ONLY","runtime_analogue":["premium-offers grid"],"gap":"current offer cards are equal repeated rectangles rather than intent-routed field","bridge_requirement":"route-first service variant with unequal hierarchy and intent entry points"},
+    {"layer":"Process","research_assets":["M-PROCESS-01"],"current_status":"CONTRACT_ONLY","runtime_analogue":["generic scene + proof"],"gap":"process-as-proof mechanism is not a dedicated visual sequence","bridge_requirement":"process variant with verified steps, image/process adjacency and evidence boundaries"},
+    {"layer":"Human / Staff","research_assets":["M-HUMAN-01"],"current_status":"CONTRACT_ONLY","runtime_analogue":["media role person"],"gap":"human media can be bound but relationship evidence has no authored scene grammar","bridge_requirement":"relationship-evidence variant gated by verified/consented human evidence"},
+    {"layer":"Gallery / Atmosphere","research_assets":["M-GALLERY-01"],"current_status":"CONTRACT_ONLY","runtime_analogue":["generic asset binding"],"gap":"atmosphere is inserted media, not a decision scene","bridge_requirement":"atmosphere variant with immersive geometry, sequencing and decision-context copy"},
+    {"layer":"Offer / Pricing","research_assets":["M-OFFER-01"],"current_status":"CONTRACT_ONLY","runtime_analogue":["premium-offers grid"],"gap":"commitment ladder is not visually represented","bridge_requirement":"commitment-step variant with verified terms and non-equal action hierarchy"},
+    {"layer":"CTA","research_assets":["M-CTA-01"],"current_status":"CONTRACT_ONLY","runtime_analogue":["cta-row","reentry_scene_ids"],"gap":"CTA exists but uses one pill vocabulary and is not a benchmark-derived scene variant","bridge_requirement":"state-specific CTA variants with pre-action reassurance, re-entry choreography and mobile action behavior"},
+    {"layer":"Ending / Footer","research_assets":["M-END-01","M-END-02"],"current_status":"CONTRACT_ONLY","runtime_analogue":["premium-closing","premium-footer"],"gap":"all pages resolve through the same dark closing panel grammar","bridge_requirement":"utility and emotional endings must have materially different composition and visual closure"},
+    {"layer":"Typography","research_assets":["Issue #44 typography hierarchy / authority findings"],"current_status":"RENDERER_CONSUMED","runtime_analogue":["serif_display_sans_body","compact_sans_display","large_sans_display"],"gap":"small generic voice enum controls the whole page; benchmark module-specific typographic behavior is lost","bridge_requirement":"variant-owned type hierarchy plus page-level art-direction spine"},
+    {"layer":"Spacing / Density","research_assets":["Issue #44 density/spatial cadence findings"],"current_status":"RENDERER_CONSUMED","runtime_analogue":["open","compact","structured_dense","proof_dense"],"gap":"few shared padding modes create repeated cadence","bridge_requirement":"variant-specific negative-space rhythm and transition rules coordinated at page level"},
+    {"layer":"Media Framing","research_assets":["Issue #44 media placement / gallery / proof adjacency findings"],"current_status":"RENDERER_CONSUMED","runtime_analogue":["4/5 hero","16/11 scene","4/3 mobile"],"gap":"global aspect ratios and border-radius grammar override mechanism-specific framing","bridge_requirement":"variant-owned crop, aspect, layering, caption and media/text interaction"},
+    {"layer":"Decorative / Material Language","research_assets":["Issue #44 premium material / visual hierarchy findings"],"current_status":"RESEARCH_ONLY","runtime_analogue":["paper/surface/accent/rule tokens"],"gap":"one quiet-paper aesthetic dominates irrespective of mechanism/company","bridge_requirement":"bounded variant material grammar; decorative behavior must serve mechanism, never random uniqueness"},
+    {"layer":"Motion","research_assets":["Issue #114 meaningful motion contract"],"current_status":"RENDERER_CONSUMED","runtime_analogue":["premium-reveal for hero/scenes"],"gap":"same reveal animation is applied broadly; motion does not express distinct mechanism","bridge_requirement":"variant-specific optional motion intent with reduced-motion equivalence"},
+    {"layer":"Mobile re-art-direction","research_assets":["Issue #44 mobile principles per pattern","Issue #114 mobile premium recomposition"],"current_status":"RENDERER_CONSUMED","runtime_analogue":["media first/after copy","stacked scene flow"],"gap":"mobile mostly reorders a shared DOM and collapses to one vertical grammar","bridge_requirement":"each production variant defines a real mobile transform preserving its persuasive mechanism"}
+  ],
+  "pattern_registry": [
+    {"pattern_id":"M-HERO-01","status":"CONTRACT_ONLY"},{"pattern_id":"M-HERO-02","status":"CONTRACT_ONLY"},{"pattern_id":"M-HERO-03","status":"CONTRACT_ONLY"},
+    {"pattern_id":"M-TRUST-01","status":"CONTRACT_ONLY"},{"pattern_id":"M-TRUST-02","status":"CONTRACT_ONLY"},{"pattern_id":"M-PROBLEM-01","status":"CONTRACT_ONLY"},
+    {"pattern_id":"M-STORY-01","status":"CONTRACT_ONLY"},{"pattern_id":"M-SERVICE-01","status":"CONTRACT_ONLY"},{"pattern_id":"M-PROCESS-01","status":"CONTRACT_ONLY"},
+    {"pattern_id":"M-HUMAN-01","status":"CONTRACT_ONLY"},{"pattern_id":"M-GALLERY-01","status":"CONTRACT_ONLY"},{"pattern_id":"M-OFFER-01","status":"CONTRACT_ONLY"},
+    {"pattern_id":"M-CTA-01","status":"CONTRACT_ONLY"},{"pattern_id":"M-END-01","status":"CONTRACT_ONLY"},{"pattern_id":"M-END-02","status":"CONTRACT_ONLY"}
+  ],
+  "acceptance_statement": "No Issue #44 module pattern is currently traceable from pattern_id through a dedicated Production Variant and renderer identity to screenshot verification. Any future VISUALLY_VERIFIED classification requires that complete chain."
+}
