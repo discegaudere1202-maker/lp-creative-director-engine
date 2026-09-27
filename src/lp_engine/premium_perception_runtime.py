@@ -1,15 +1,15 @@
 """Issue #129 integration adapter for legacy Issue #111 cardinality locks.
 
 Issue #111 intentionally audits the two *source binding placements* rendered by
-its historical Production surface.  Issue #129 reuses those same rights-gated
-sources in additional Media Narrative scenes.  Those authored reuses are not
-new bindings and must therefore not masquerade as additional legacy
+its historical Production surface. Issue #129 reuses those same rights-gated
+sources in additional Media Narrative scenes. Those authored reuses are not new
+bindings and must therefore not masquerade as additional legacy
 ``production-asset`` bindings.
 
 This adapter keeps the source/evidence data attributes and captions intact, but
-marks narrative reuses as ``ppr-production-asset``.  Issue #111 continues to
+marks narrative reuses as ``ppr-production-asset``. Issue #111 continues to
 inspect exactly the original binding placements; Issue #129 separately inspects
-all narrative placements at 81 widths.  No rights/evidence gate is weakened.
+all narrative placements at 81 widths. No rights/evidence gate is weakened.
 """
 from __future__ import annotations
 
@@ -17,6 +17,10 @@ from typing import Any, Mapping
 
 from . import premium_perception_recovery as _base
 from .visual_asset_library import render_asset_binding as _render_asset_binding
+
+
+_BASE_FIGURE = _base._narrative_figure
+_BASE_CSS = _base._css
 
 
 def _narrative_figure(binding: Mapping[str, Any], beat: Mapping[str, Any], index: int) -> str:
@@ -62,8 +66,10 @@ def _css() -> str:
     )
 
 
-_BASE_FIGURE = _base._narrative_figure
-_BASE_CSS = _base._css
+def install_runtime_adapter() -> None:
+    """Install the namespace adapter once for all normal package imports."""
+    _base._narrative_figure = _narrative_figure
+    _base._css = _css
 
 
 def apply_premium_perception_recovery(
@@ -73,17 +79,12 @@ def apply_premium_perception_recovery(
     whole_trace: Mapping[str, Any],
     asset_bindings: Mapping[str, Mapping[str, Any]],
 ):
-    old_figure = _base._narrative_figure
-    old_css = _base._css
-    _base._narrative_figure = _narrative_figure
-    _base._css = _css
-    try:
-        return _base.apply_premium_perception_recovery(
-            rendered, plan, ensemble, whole_trace, asset_bindings
-        )
-    finally:
-        _base._narrative_figure = old_figure
-        _base._css = old_css
+    # The adapter is normally installed from lp_engine.__init__. Calling this
+    # wrapper directly remains deterministic and idempotent.
+    install_runtime_adapter()
+    return _base.apply_premium_perception_recovery(
+        rendered, plan, ensemble, whole_trace, asset_bindings
+    )
 
 
-__all__ = ["apply_premium_perception_recovery"]
+__all__ = ["apply_premium_perception_recovery", "install_runtime_adapter"]
