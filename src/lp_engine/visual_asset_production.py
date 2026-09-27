@@ -89,6 +89,11 @@ def _apply_regression_render_compatibility(rendered: str) -> str:
     route hierarchy, so its supporting Hero media uses a crop-safe 4:3 frame at
     every width. Evidence Anchor keeps a portrait-like 3:4 frame. Body media
     recompose to 4:3 once the desktop layout collapses.
+
+    The mobile Hero guard is geometric rather than copy-specific: Recognition
+    and Guided Route keep their authored semantic chunks intact, but the type
+    scale and shrink-to-content unit boxes are constrained so every atomic unit
+    remains fully visible at the 320-430px hard-gate widths.
     """
     rendered = rendered.replace(
         'class="semantic-headline-unit premium-display-unit"',
@@ -102,6 +107,8 @@ def _apply_regression_render_compatibility(rendered: str) -> str:
         "}"
         "@media(max-width:430px){"
         ".hero-recognition .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
+        ".hero-recognition h1,.hero-route h1{font-size:clamp(34px,10.5vw,44px)!important;max-width:100%!important;min-width:0}"
+        ".hero-recognition .premium-headline-unit,.hero-route .premium-headline-unit{display:table!important;width:max-content;max-width:100%!important}"
         "}"
         "@media(max-width:480px){footer{flex-direction:column;gap:8px;align-items:flex-start}"
         "footer span{display:block;max-width:100%;overflow-wrap:anywhere}}"
