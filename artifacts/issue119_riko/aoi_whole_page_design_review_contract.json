@@ -1,0 +1,40 @@
+{
+  "issue":119,
+  "schema_version":"aoi_whole_page_design_review_contract_v1",
+  "highest_authority":"Shun owner-level Human Reality overrides internal technical PASS on visible design quality.",
+  "review_input_required":["actual full-page screenshots","selected research pattern manifest","selected Production Variant manifest","page art-direction spine","desktop/mobile evidence","rights/evidence trace"],
+  "review_dimensions":[
+    {"dimension":"benchmark_mechanism_fidelity","question":"Can the selected research mechanism be recognized in the rendered design without relying on metadata?"},
+    {"dimension":"art_direction_specificity","question":"Does this feel designed for this company and decision state, rather than like a generic premium skin?"},
+    {"dimension":"module_to_module_coherence","question":"Do hero, body modules, proof, CTA and ending form one intentional page rather than a component collage?"},
+    {"dimension":"typography_authority","question":"Does typography create hierarchy, tone and confidence appropriate to the mechanism/company?"},
+    {"dimension":"page_silhouette","question":"Does the full-page silhouette visibly differ where the selected mechanisms require it?"},
+    {"dimension":"spatial_rhythm","question":"Are density and negative space authored as a persuasive arc rather than repeated section padding?"},
+    {"dimension":"image_text_integration","question":"Do media geometry, crop, layering and text relationship advance persuasion instead of merely filling image slots?"},
+    {"dimension":"screenshot_worthy_authored_moments","question":"Are there memorable composed moments that justify premium design quality?"},
+    {"dimension":"template_resemblance","question":"Would a human reasonably describe this as the same template with swapped images/copy as another sample?"},
+    {"dimension":"desktop_mobile_art_direction","question":"Does mobile preserve/re-author the mechanism instead of simply stacking desktop DOM?"},
+    {"dimension":"overall_premium_impression","question":"Looking at the whole page as a customer/owner, does the design feel professionally art-directed and commercially credible?"}
+  ],
+  "allowed_results":["PASS","RETURN","CLIENT_EVIDENCE_DEPENDENT"],
+  "hard_return_conditions":[
+    "overall_premium_impression is RETURN",
+    "selected benchmark mechanism is not visibly realized",
+    "page feels like a shared template despite metadata differences",
+    "major modules are individually polished but incoherent as a page",
+    "typography/spacing/media framing are generic enough to erase company-specific art direction",
+    "desktop passes but mobile loses the selected mechanism",
+    "technical QA is green but human whole-page review is materially negative"
+  ],
+  "review_order":[
+    "Review 1440 and 390 full-page screenshots first without reading implementation metadata.",
+    "Record immediate whole-page impression and template resemblance.",
+    "Then inspect selected pattern/variant trace and judge mechanism fidelity.",
+    "Inspect remaining 9-width evidence for responsive art direction and regressions.",
+    "Compare same-Family pair and cross-Family pair to detect shared-renderer smell.",
+    "Return explicit scene/variant-level reasons; do not substitute numeric score for judgment."
+  ],
+  "forbidden_shortcuts":["PASS because no clipping/overflow","PASS because Family IDs differ","PASS because CompositionPlan digests differ","PASS because images are high quality","PASS because CSS class names/variant IDs differ","PASS because all automated tests are green"],
+  "owner_gate":"After Aoi/Sarah PASS, Shun review of actual HTML may still RETURN the design. Such a RETURN reopens the relevant design architecture claim and must not be rationalized away by prior internal PASS.",
+  "non_claim":"A PASS does not independently prove ¥1M market value; it proves the intended design mechanisms are visibly and coherently realized for the reviewed evidence set."
+}
