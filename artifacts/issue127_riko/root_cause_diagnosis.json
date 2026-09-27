@@ -1,0 +1,103 @@
+{
+  "schema_version": "issue127_root_cause_diagnosis_v1",
+  "issue": 127,
+  "highest_evidence": {
+    "type": "OWNER_VALUE_RETURN",
+    "value": "前のとほとんど変わってない、、画像も入ってないし",
+    "overrides": ["Issue #126 HUMAN_VISIBLE_PASS", "automated clone/signature PASS", "technical QA Green"]
+  },
+  "diagnosis_summary": "Issue #119/#124 repaired traceability and structural variant breadth but did not make premium perception the final runtime/QA authority. Production can now be structurally different while remaining perceptually sparse, restrained and visually related.",
+  "root_causes": [
+    {
+      "id": "RC-01",
+      "name": "Structural fidelity was mistaken for perceptual fidelity",
+      "evidence": [
+        "Issue #124 can vary continuation variants, clone signatures and silhouettes while Shun still reads the result as almost unchanged.",
+        "Issue #126 explicitly centered its PASS on resolved clone/skeleton divergence."
+      ],
+      "failure": "The renderer proves mechanism identity but not benchmark-level perceptual effect.",
+      "recovery": "Add metadata-blind perceptual mechanism acceptance for every selected variant and whole page."
+    },
+    {
+      "id": "RC-02",
+      "name": "Media remained an evidence/asset binding concern instead of a page-level art-direction medium",
+      "evidence": [
+        "Exactly 2 img elements in each of 9 owner HTML pages.",
+        "5-7 sections per page.",
+        "Most Page Spine continuation media_arc entries are copy_evidence_only after hero/local media."
+      ],
+      "failure": "Images can technically exist while feeling absent because they do not create sustained media rhythm, transitions, context or world-building.",
+      "recovery": "Introduce Media Narrative Plan with scene role, prominence intent, crop/layering, transition role and mobile re-art-direction; no arbitrary universal image count."
+    },
+    {
+      "id": "RC-03",
+      "name": "Page Art Direction Spine propagated semantics more strongly than public pixel grammar",
+      "evidence": [
+        "All pages reuse the same sans/serif variables and six animation declarations; only three stylesheet hashes occur across nine pages.",
+        "Contact-sheet comparison shows new body geometry but a retained restrained border/ledger/rail vocabulary and sparse media."
+      ],
+      "failure": "Spine coordinates what modules mean, but not enough of what the page feels like at first glance.",
+      "recovery": "Make the Spine pixel-authoritative for macro type relationship, media rhythm, density/contrast arc, material language, edge behavior, authored focal scenes and mobile transformation."
+    },
+    {
+      "id": "RC-04",
+      "name": "Benchmark qualities were compressed into Pattern IDs and continuation names",
+      "evidence": [
+        "Issue #44 deep annotations describe imagery dominating early, continuous editorial worlds, immersive material crops, sharply changing density and mobile editorial sequencing.",
+        "Issue #124 implements named route/evidence/compare continuations but does not reproduce those perceptual qualities consistently."
+      ],
+      "failure": "Pattern traceability survived, but sensory/editorial force was reduced to component geometry.",
+      "recovery": "Production Variant acceptance must carry visible benchmark qualities, not only mechanism names and DOM identities."
+    },
+    {
+      "id": "RC-05",
+      "name": "Aoi review optimized for cross-sample uniqueness before absolute quality",
+      "evidence": [
+        "Issue #126 PASS repeatedly cites clone groups being resolved, sample-to-sample differences and variant continuations.",
+        "A page can be different from another weak page and still not look premium."
+      ],
+      "failure": "Non-clone became a proxy for quality.",
+      "recovery": "Aoi v2 must judge each page blind and individually for premium gestalt before any cross-sample uniqueness check; failure cannot be rescued by divergence."
+    },
+    {
+      "id": "RC-06",
+      "name": "Rejected-baseline delta was not a hard human gate",
+      "evidence": [
+        "Shun's immediate reaction was '前のとほとんど変わってない'.",
+        "Issue #124 evidence proves differences but did not require a metadata-blind first-glance escape from the owner-rejected visual lineage."
+      ],
+      "failure": "Additional sections/classes can pass while the overall visual identity remains familiar.",
+      "recovery": "Add Rejected Baseline Delta Gate: current vs latest owner-rejected 1440/390 actual renders, judged on macro silhouette, type, media rhythm, material language and focal sequence."
+    },
+    {
+      "id": "RC-07",
+      "name": "Owner evidence integrity was not cryptographically closed",
+      "evidence": [
+        "Within Artifact 10929939766, current owner_html_bundle and nested issue121_base owner_html_bundle are byte-identical across all 9 cases, including production manifests."
+      ],
+      "failure": "The packaged baseline cannot independently prove before/after owner HTML and risks reviewer confusion about which HTML was actually judged.",
+      "recovery": "Bind render input HTML hash, screenshot hash, owner-delivery HTML hash and frozen baseline hash in one evidence manifest; fail if current and baseline provenance collide."
+    }
+  ],
+  "research_reality": {
+    "source": "Issue #44 300 Discovery / 100 Strong / 60 Deep research closure",
+    "benchmark_visible_qualities": [
+      "real media can dominate the early page and carry service expectation",
+      "editorial photography can form a continuous cultural/world-building authority, not a decorative slot",
+      "strong pages alternate immersive low-density scenes with denser practical/evidence scenes",
+      "material/ritual/detail crops can create sensory continuity",
+      "desktop grids should re-author into intentional mobile editorial sequences, not generic stacks",
+      "same-family distinctness depends heavily on hero silhouette, typography, media framing, whitespace rhythm, material grammar and screenshot-level gestalt"
+    ],
+    "production_gap": "These qualities exist in research evidence but are not yet runtime-hard acceptance conditions."
+  },
+  "not_the_solution": [
+    "arbitrary image count inflation",
+    "local CSS polish",
+    "new broad research from zero",
+    "random style variation",
+    "company-ID routing",
+    "weakening evidence/rights/truth locks",
+    "declaring premium because clone signatures diverge"
+  ]
+}
