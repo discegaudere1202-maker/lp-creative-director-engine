@@ -19,17 +19,17 @@ _BASE_APPLY = _base.apply_premium_perception_recovery
 def _preserve_legacy_binding_crop_safety(rendered: str) -> str:
     """Keep Issue #111 source-binding crop safety without weakening its gate.
 
-    The HS1 R2 desktop overlay deliberately narrows the hero card. Between the
-    legacy 900px mobile breakpoint and the full desktop layout that can collapse
-    the hero's first internal grid track to zero width, which makes the original
-    rights-gated source binding fail Issue #111's aspect-ratio visibility gate.
-    Recompose only that tablet/intermediate range to a one-column internal hero
-    while retaining the R2 outer overlap and page silhouette.
+    The HS1 R2 desktop overlay deliberately narrows the hero card. Across the
+    intermediate desktop range, the legacy route hero's internal two-column
+    minimums can collapse its original rights-gated media track to zero width.
+    Recompose only that intermediate range to a one-column internal hero while
+    retaining the R2 outer overlap, material world, and page silhouette. Full
+    1440 desktop art direction and <=900 legacy mobile behavior stay separate.
     """
     if 'data-r2-profile="salon_material_workbench"' not in rendered:
         return rendered
     css = r'''
-@media(min-width:901px) and (max-width:1150px){
+@media(min-width:901px) and (max-width:1360px){
  body[data-r2-profile="salon_material_workbench"] .r2-opening>.hero-route{
   grid-template-columns:1fr!important;
   grid-template-areas:"orientation" "routes" "media" "action"!important;
