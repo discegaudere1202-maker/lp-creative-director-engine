@@ -4,6 +4,8 @@
   "owner":"Riko",
   "status":"RESEARCH_SPEC_COMPLETE",
   "baseline_main":"81de8970bd25f9c1f44cca99a3430ea6654cc370",
+  "task_branch":"task/issue119-riko-research-to-production-recovery",
+  "pull_request":120,
   "owner_reality":"画像品質は上がったが全体デザインは酷い",
   "verdict":"SYSTEMIC_REDIRECT_REQUIRED_RESEARCH_TO_PRODUCTION_VARIANT_BRIDGE",
   "validated_pm_diagnosis":true,
