@@ -1,0 +1,35 @@
+name: National Free Source Discovery
+
+on:
+  push:
+    branches:
+      - automation/national-source-discovery
+    paths:
+      - 'scripts/national_free_source_discovery.py'
+      - '.github/workflows/national-free-source-discovery.yml'
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 lxml
+      - name: Run public-source discovery
+        run: python scripts/national_free_source_discovery.py
+      - name: Upload discovery artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: national-free-source-discovery
+          path: artifacts/national-source-discovery/
+          if-no-files-found: error
+          retention-days: 7
