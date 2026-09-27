@@ -2,18 +2,29 @@ name: Issue 129 Premium Perception Recovery
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - 'src/lp_engine/**'
       - 'tests/test_issue129_premium_perception_recovery.py'
+      - 'tests/test_issue124_whole_page_art_direction.py'
       - 'scripts/run_issue129_premium_perception_recovery.py'
+      - 'scripts/run_issue124_whole_page_art_direction.py'
+      - 'scripts/run_issue121_variant_bridge.py'
+      - 'scripts/run_issue116_premium_uplift.py'
+      - 'scripts/run_issue111_stage_a_sales_sample_qa.py'
+      - 'scripts/run_issue111_stage_a_sales_sample_qa_final.py'
       - 'artifacts/issue129_task_contract.json'
       - '.github/workflows/issue129-premium-perception-recovery.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   premium-perception-recovery:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,17 +35,58 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e . pytest pillow playwright
           python -m playwright install --with-deps chromium
+      - name: Download accepted Issue 111 baseline artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p artifacts/issue111_baseline
+          curl -L --fail-with-body \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/10912860741/zip" \
+            -o /tmp/issue111-baseline.zip
+          unzip -q /tmp/issue111-baseline.zip -d artifacts/issue111_baseline
+          test -f artifacts/issue111_baseline/screenshots/SK1/320.png || find artifacts/issue111_baseline -path '*/screenshots/SK1/320.png' -print -quit | grep -q .
+      - name: Download Shun-rejected Issue 124 artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p artifacts/issue124_shun_rejected
+          curl -L --fail-with-body \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/10929939766/zip" \
+            -o /tmp/issue124-rejected.zip
+          unzip -q /tmp/issue124-rejected.zip -d artifacts/issue124_shun_rejected
+          find artifacts/issue124_shun_rejected -path '*/owner_html_bundle/cases/SK1/index.html' -print -quit | grep -q .
+          find artifacts/issue124_shun_rejected -path '*/screenshots/SK1/390.png' -print -quit | grep -q .
       - name: Contract and regression tests
         run: |
-          pytest -q tests/test_issue129_premium_perception_recovery.py tests/test_issue124_whole_page_art_direction.py
-      - name: Generate Issue 129 Stage A recovery evidence
+          python -m unittest \
+            tests/test_issue129_premium_perception_recovery.py \
+            tests/test_issue124_whole_page_art_direction.py \
+            tests/test_issue121_production_variant_bridge.py \
+            tests/test_premium_authorship.py \
+            tests/test_issue111_stage_a_sales_sample.py \
+            tests/test_issue111_final_policy.py \
+            tests/test_visual_asset_library.py \
+            tests/test_production_cutover.py
+      - name: Generate Issue 129 exact Stage A recovery evidence
         run: |
-          python scripts/run_issue129_premium_perception_recovery.py --out artifacts/issue129_premium_perception_recovery
+          mkdir -p artifacts/issue129_premium_perception_recovery/issue124_base/issue121_base/stage_a/premium_contact_sheets
+          python scripts/run_issue129_premium_perception_recovery.py \
+            --baseline111 artifacts/issue111_baseline \
+            --rejected124 artifacts/issue124_shun_rejected \
+            --out artifacts/issue129_premium_perception_recovery
       - name: Git whitespace check
+        if: always()
         run: git diff --check
       - name: Upload Issue 129 evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: issue129-premium-perception-recovery
-          path: artifacts/issue129_premium_perception_recovery
-          if-no-files-found: error
+          path: artifacts/issue129_premium_perception_recovery/
+          if-no-files-found: warn
