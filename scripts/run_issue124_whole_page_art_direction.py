@@ -28,7 +28,11 @@ WIDTHS = (320, 360, 375, 390, 430, 768, 1024, 1280, 1440)
 MOBILE_WIDTHS = (320, 360, 375, 390, 430)
 CONTACT_WIDTHS = (390, 1440)
 HARD_CLONE_GROUPS = (("SK1", "HS1"), ("SK2", "HS2", "PI2"), ("SK3", "BR2"))
-REQUIRED_FAMILIES = {"recognition", "evidence", "route", "compare", "prepare", "act"}
+# Issue #124 requires these continuation families to exist in Production. The
+# frozen Stage A nine-case matrix naturally exercises five of them; it has no
+# standalone recognition decision case, so forcing one would be fixture routing.
+REQUIRED_IMPLEMENTED_FAMILIES = {"recognition", "evidence", "route", "compare", "prepare", "act"}
+EXPECTED_STAGE_A_FAMILIES = {"evidence", "route", "compare", "prepare", "act"}
 
 
 def _json(path: Path) -> Any:
@@ -272,6 +276,7 @@ def main() -> int:
     for width in CONTACT_WIDTHS: _contact_sheet(screenshots,width,out/"contact_sheets"/f"issue124_whole_page_{width}.jpg")
 
     continuation_families={row["continuation_family"] for row in pages.values()}
+    registry=registry_manifest(); implemented_families=set(registry.get("continuation_families") or [])
     spine_ok=all(set(row.get("spine_fields_propagated") or [])==set(SPINE_FIELDS) for row in pages.values())
     identity_ok=all(row.get("identity_routing")=={"company_id_used":False,"reference_id_used":False,"family_id_used_as_layout_lookup":False,"business_category_used_as_layout_lookup":False,"randomness_used":False} for row in pages.values())
     evidence_ok=all((row.get("evidence_boundary") or {}).get("illustrative_media_promoted_to_proof") is False and (row.get("evidence_boundary") or {}).get("new_factual_claims_introduced") is False for row in pages.values())
@@ -283,7 +288,8 @@ def main() -> int:
         "81_81_render_and_browser_whole_page_gate":browser["pass"] and browser["checks"]==81 and issue111_manifest["screenshot_count"]==81,
         "issue121_hero_and_direct_renderer_chain_preserved":hero_preserved and all(prior_gates.values()),
         "all_9_spine_fields_propagated_all_samples":spine_ok,
-        "required_continuation_families_exercised":REQUIRED_FAMILIES.issubset(continuation_families),
+        "required_continuation_families_implemented":REQUIRED_IMPLEMENTED_FAMILIES.issubset(implemented_families) and bool(registry.get("all_renderer_identities_implemented")),
+        "expected_stage_a_continuation_families_exercised":EXPECTED_STAGE_A_FAMILIES.issubset(continuation_families),
         "hard_cross_family_clone_groups_diverge_390_1440":clones["pass"],
         "compare_has_real_paired_contrast_mechanism":compare_ok,
         "cta_and_ending_not_one_shared_default_in_hard_clone_groups":cta_endings_distinct,
@@ -295,10 +301,10 @@ def main() -> int:
     }
 
     rights={"issue121_gates":prior_gates,"issue116_gates":issue116_manifest["gates"],"issue111":{"all_selected_rights_pass":issue111_manifest["all_selected_rights_pass"],"generic_illustrative_boundary":issue111_manifest["all_generic_illustrative_boundary_preserved"],"binding_traces_complete":issue111_manifest["all_binding_traces_complete"],"images_loaded":issue111_manifest["all_images_loaded"],"overflow_free":issue111_manifest["all_overflow_free"],"asset_scarcity_family_switch":issue111_manifest["asset_scarcity_family_switch"],"company_reference_identity_routing":issue111_manifest["company_reference_identity_routing"],"random_selection":issue111_manifest["random_selection"]}}
-    manifest={"schema_version":"issue124_stage_a_whole_page_art_direction_evidence_v1","issue":124,"starting_main":STARTING_MAIN,"samples":list(SAMPLES),"widths":list(WIDTHS),"screenshot_count":issue111_manifest["screenshot_count"],"continuation_variants":{c:pages[c]["continuation_variant_id"] for c in SAMPLES},"continuation_families_exercised":sorted(continuation_families),"gates":gates,"human_boundary":{"HUMAN_VISIBLE_PASS":"NOT_SELF_DECLARED_PENDING_AOI","final_premium_quality":"NOT_SELF_DECLARED","million_yen_value":"NOT_SELF_DECLARED","Shun_actual_HTML_approval":"NOT_SELF_DECLARED_PENDING_AOI_PASS"},"remaining_limitations":["Stage A uses synthetic QA truth and generic illustrative stock; actual-company staff/store/results/testimonials/credentials/prices still require verified client evidence.","Automated geometry/structure evidence is a prerequisite, not a substitute for Aoi whole-page human-visible review.","Shun actual HTML/value judgment remains after Aoi HUMAN_VISIBLE_PASS."]}
-    _write(out/"whole_page_continuation_registry.json",registry_manifest()); _write(out/"whole_page_spine_trace.json",pages); _write(out/"browser_81_whole_page_gate.json",browser); _write(out/"cross_family_clone_pair_report.json",clones); _write(out/"same_family_comparison.json",same_family); _write(out/"mobile_authored_transform_report.json",mobile); _write(out/"rights_evidence_regression.json",rights); _write(out/"issue124_manifest.json",manifest)
+    manifest={"schema_version":"issue124_stage_a_whole_page_art_direction_evidence_v2","issue":124,"starting_main":STARTING_MAIN,"samples":list(SAMPLES),"widths":list(WIDTHS),"screenshot_count":issue111_manifest["screenshot_count"],"continuation_variants":{c:pages[c]["continuation_variant_id"] for c in SAMPLES},"required_continuation_families_implemented":sorted(REQUIRED_IMPLEMENTED_FAMILIES),"continuation_families_exercised":sorted(continuation_families),"expected_stage_a_families":sorted(EXPECTED_STAGE_A_FAMILIES),"gates":gates,"human_boundary":{"HUMAN_VISIBLE_PASS":"NOT_SELF_DECLARED_PENDING_AOI","final_premium_quality":"NOT_SELF_DECLARED","million_yen_value":"NOT_SELF_DECLARED","Shun_actual_HTML_approval":"NOT_SELF_DECLARED_PENDING_AOI_PASS"},"remaining_limitations":["Stage A uses synthetic QA truth and generic illustrative stock; actual-company staff/store/results/testimonials/credentials/prices still require verified client evidence.","The frozen Stage A matrix has no standalone recognition decision case; recognition remains implemented and contract-tested without fixture-forcing a Stage A sample into that family.","Automated geometry/structure evidence is a prerequisite, not a substitute for Aoi whole-page human-visible review.","Shun actual HTML/value judgment remains after Aoi HUMAN_VISIBLE_PASS."]}
+    _write(out/"whole_page_continuation_registry.json",registry); _write(out/"whole_page_spine_trace.json",pages); _write(out/"browser_81_whole_page_gate.json",browser); _write(out/"cross_family_clone_pair_report.json",clones); _write(out/"same_family_comparison.json",same_family); _write(out/"mobile_authored_transform_report.json",mobile); _write(out/"rights_evidence_regression.json",rights); _write(out/"issue124_manifest.json",manifest)
     bundle=out/"owner_html_bundle"; shutil.rmtree(bundle,ignore_errors=True); shutil.copytree(premium_root/"cases",bundle/"cases"); cache=premium_root/"asset_cache"; shutil.copytree(cache,bundle/"asset_cache") if cache.exists() else None
-    print(json.dumps({"issue":124,"screenshots":manifest["screenshot_count"],"continuations":manifest["continuation_variants"],"clone_gate":clones["pass"],"mobile_gate":mobile["pass"],"gates":gates,"human_boundary":manifest["human_boundary"]},ensure_ascii=False,indent=2))
+    print(json.dumps({"issue":124,"screenshots":manifest["screenshot_count"],"continuations":manifest["continuation_variants"],"implemented_families":manifest["required_continuation_families_implemented"],"stage_a_families":manifest["continuation_families_exercised"],"clone_gate":clones["pass"],"mobile_gate":mobile["pass"],"gates":gates,"human_boundary":manifest["human_boundary"]},ensure_ascii=False,indent=2))
     return 0 if all(gates.values()) else 1
 
 
