@@ -1,0 +1,26 @@
+{
+  "issue":119,
+  "schema_version":"company_specific_variant_selection_contract_v1",
+  "selection_path":["Company Truth","Creative Fit","Family freeze","Decision Signature","compatible research patterns","compatible Production Variants","company-specific Variant Ensemble","topology/composition","feasibility adaptation","renderer","QA","human-visible review"],
+  "decision_signature_fields":["primary_job","decision_stage","risk_sensitivity","tensions","questions","offer_structure","proof_available","proof_gaps","human_relationship_relevance","local_relationship_relevance","sensory_experience_weight","craftsmanship_weight","category_education_need","choice_guidance_need","process_inspectability_need","commitment_shape","verified_cta_state"],
+  "hard_exclusions":["company_id","reference_name","fixture_id","file_name","random_seed","asset_quantity as Family selector","category -> fixed visual template","Family -> fixed variant set"],
+  "algorithm":[
+    {"step":1,"action":"Start from already frozen Creative Family and normalized Company Truth/Decision Signature."},
+    {"step":2,"action":"Load Issue #44 research patterns compatible with Family and decision conditions."},
+    {"step":3,"action":"Reject patterns/variants whose evidence, media or offer requirements are factually unavailable or whose incompatible conditions apply."},
+    {"step":4,"action":"Choose the pattern whose persuasive mechanism directly resolves the current scene's decision job. No numeric pseudo-score is required; explicit rule precedence and rationale are mandatory."},
+    {"step":5,"action":"Select a Production Variant implementing that pattern whose composition behavior matches the actual evidence/media/copy-density shape."},
+    {"step":6,"action":"Assemble a page-level Variant Ensemble under one Art Direction Spine. Reject combinations that are individually premium but visually incoherent together."},
+    {"step":7,"action":"Freeze pattern_ids + production_variant_ids before feasibility adaptation."},
+    {"step":8,"action":"Apply feasibility only inside allowed variant adaptation boundaries. If required evidence/media is absent, downgrade within the same persuasive job or return HUMAN_REVIEW_REQUIRED; never switch Family because assets are scarce."},
+    {"step":9,"action":"Emit selected and rejected alternatives with reasons for every scene."}
+  ],
+  "required_manifest_per_scene": ["scene_id","decision_job","family_id","source_pattern_ids","candidate_production_variant_ids","selected_production_variant_id","selection_reason","rejected_alternatives","company_inputs_used","decision_inputs_used","evidence_requirements","media_requirements","feasibility_adaptation","responsive_variant_transform"],
+  "page_level_coherence_gate": {
+    "required_fields":["primary_visual_thesis","silhouette_strategy","type_authority_strategy","density_arc","media_arc","material_language","contrast_strategy","closing_resolution"],
+    "return_conditions":["selected modules feel like unrelated premium components","all modules collapse to same card/section grammar","typography systems conflict","media geometry has no page-level rhythm","closing does not resolve opening/decision arc"]
+  },
+  "same_family_rule":"Two companies in the same Family may and often should select materially different module variants when their Decision Signature, evidence shape or company truth differs.",
+  "determinism_rule":"Equivalent normalized semantic inputs must yield equivalent candidate reasoning. Diversity comes from real input differences and compatible authored variants, not randomness.",
+  "ambiguity_rule":"If two materially different variants remain co-dominant after rule application and the difference affects whole-page art direction, return HUMAN_REVIEW_REQUIRED rather than arbitrarily choose."
+}
