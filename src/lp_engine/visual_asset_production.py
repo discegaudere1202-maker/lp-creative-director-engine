@@ -83,11 +83,7 @@ def _assert_architecture_preserved(
 
 
 def _apply_regression_render_compatibility(rendered: str) -> str:
-    """Keep accepted Issue #116/#111 visual safety hooks.
-
-    Issue #129 may add authored media scenes, but destructive-crop, semantic-unit
-    and narrow-footer protections remain hard constraints.
-    """
+    """Keep accepted Issue #116/#111 visual safety hooks."""
     rendered = rendered.replace(
         'class="semantic-headline-unit premium-display-unit"',
         'class="premium-display-unit"',
@@ -114,6 +110,43 @@ def _apply_regression_render_compatibility(rendered: str) -> str:
     return rendered
 
 
+def _empty_binding_regression_trace(whole_trace: Mapping[str, Any]) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    """Compatibility only for legacy unit tests that intentionally render with no media.
+
+    Real Issue #129 Stage A evidence always has rights-gated bindings and is hard-
+    gated separately.  This path prevents old semantic/footer unit tests from
+    becoming accidental media-feasibility tests.
+    """
+    media_plan = {
+        "schema_version": "issue129_media_narrative_plan_v1",
+        "status": "NOT_APPLIED_EMPTY_BINDINGS_REGRESSION_ONLY",
+        "beats": [],
+        "beat_count": 0,
+        "family_frozen": True,
+        "arbitrary_global_image_floor_used": False,
+        "illustrative_media_promoted_to_proof": False,
+    }
+    spine_v2 = {
+        "schema_version": "issue129_page_art_direction_spine_v2",
+        "status": "NOT_APPLIED_EMPTY_BINDINGS_REGRESSION_ONLY",
+        "family_frozen": True,
+        "composition_plan_mutated": False,
+    }
+    trace = {
+        "schema_version": "issue129_perceptual_variant_trace_v1",
+        "status": "NOT_APPLIED_EMPTY_BINDINGS_REGRESSION_ONLY",
+        "applied": False,
+        "continuation_family": whole_trace.get("continuation_family"),
+        "family_reopened": False,
+        "composition_plan_mutated": False,
+        "illustrative_media_promoted_to_proof": False,
+        "human_visible_premium_declared": False,
+        "aoi_v2_required": True,
+        "pixel_authority": "not_applicable_empty_binding_regression_only",
+    }
+    return media_plan, spine_v2, trace
+
+
 def _render_with_whole_page_spine(
     plan: Mapping[str, Any],
     directives: Mapping[str, Any],
@@ -126,9 +159,13 @@ def _render_with_whole_page_spine(
     rendered, whole_trace = apply_whole_page_art_direction(
         rendered, plan, ensemble, asset_bindings
     )
-    rendered, media_plan, spine_v2, perceptual_trace = apply_premium_perception_recovery(
-        rendered, plan, ensemble, whole_trace, asset_bindings
-    )
+    if asset_bindings:
+        rendered, media_plan, spine_v2, perceptual_trace = apply_premium_perception_recovery(
+            rendered, plan, ensemble, whole_trace, asset_bindings
+        )
+        perceptual_trace["applied"] = True
+    else:
+        media_plan, spine_v2, perceptual_trace = _empty_binding_regression_trace(whole_trace)
     bridge_trace["whole_page_art_direction"] = deepcopy(whole_trace)
     bridge_trace["premium_perception_recovery"] = deepcopy(perceptual_trace)
     rendered = _apply_regression_render_compatibility(rendered)
@@ -140,7 +177,7 @@ def render_asset_bound_authoritative_html(
     directives: Mapping[str, Any],
     asset_bindings: Mapping[str, Mapping[str, Any]],
 ) -> str:
-    """Render through Issue #121 + #124 + Issue #129 final pixel authority."""
+    """Render through Issue #121 + #124 and Issue #129 when media is bound."""
     if plan.get("production_authority") != "composition_plan":
         raise AssetBoundProductionError("COMPOSITION_PLAN_NOT_AUTHORITATIVE")
     if plan.get("input", {}).get("creative_family", {}).get("frozen") is not True:
@@ -178,7 +215,7 @@ def run_asset_bound_generation(
     *,
     asset_bindings: Mapping[str, Mapping[str, Any]],
 ) -> dict[str, Any]:
-    """Run authoritative generation through Issue #129 recovery surface."""
+    """Run authoritative generation through the Issue #129 recovery surface."""
     result = run_authoritative_generation(raw, output_dir)
     plan = result["plan"]
     directives = result["directives"]
@@ -242,13 +279,18 @@ def run_asset_bound_generation(
     manifest["perceptual_variant_trace"] = deepcopy(perceptual_trace)
     manifest["premium_perception_recovery"] = {
         "issue": 129,
+        "applied": bool(perceptual_trace.get("applied")),
         "owner_value_return_authority": True,
         "pixel_authority": perceptual_trace["pixel_authority"],
         "human_visible_premium_declared": False,
         "aoi_v2_required": True,
     }
-    manifest["final_visual_authority"] = "production_variant_dispatch_plus_spine_v2_media_narrative"
-    manifest["whole_page_art_direction_propagation"] = "issue124_plus_issue129"
+    manifest["final_visual_authority"] = (
+        "production_variant_dispatch_plus_spine_v2_media_narrative"
+        if perceptual_trace.get("applied")
+        else "production_variant_dispatch_issue129_not_applicable_no_media"
+    )
+    manifest["whole_page_art_direction_propagation"] = "issue124_plus_issue129_when_media_bound"
     manifest["legacy_generic_premium_renderer_final_authority"] = False
     manifest["silent_generic_variant_fallback"] = False
     manifest_path.write_text(
