@@ -1,0 +1,34 @@
+{
+  "issue":119,
+  "schema_version":"issue119_preserve_replace_deprecate_map_v1",
+  "preserve":[
+    {"component":"Creative Family freeze and selector boundary","reason":"Family taxonomy/fit logic is not the root cause."},
+    {"component":"authored_composition_contract normalized truth/decision/evidence input","reason":"Useful semantic authority before visual variant selection."},
+    {"component":"authored_composition_runtime migration guards","reason":"Prevents identity routing, Family mutation and incomplete production plans."},
+    {"component":"Visual Asset Library rights/provenance/reuse/binary integrity","reason":"Image safety and sourcing improved and must remain locked."},
+    {"component":"verified evidence / no fabricated proof rules","reason":"Premium design cannot be achieved by inventing evidence."},
+    {"component":"9-width responsive validation set","reason":"Existing 320..1440 regression coverage remains valuable."},
+    {"component":"plan digests and trace infrastructure","reason":"Extend trace rather than discard it."},
+    {"component":"reduced-motion and accessibility primitives","reason":"Non-authorial shared infrastructure may remain shared."}
+  ],
+  "replace":[
+    {"component":"render_premium_asset_bound_html as final visual authority","replacement":"page renderer that dispatches selected Production Variant implementations under Page Art Direction Spine","reason":"Current function serializes all pages through one shared skeleton."},
+    {"component":"global hero composition labels as final design variants","replacement":"research-derived Hero Production Variants linked to M-HERO-01/02/03","reason":"Current labels alter ratios/classes but do not faithfully implement benchmark mechanisms."},
+    {"component":"generic premium-scene markup","replacement":"module-type/variant-specific renderers","reason":"Repeated indexed chapter grammar erases research differences."},
+    {"component":"four-mode derive_visual_voice as page art direction","replacement":"Page Art Direction Spine + variant-owned type/spacing/media/material behavior","reason":"Current enum is too coarse and behaves like a skin."},
+    {"component":"shared hero/scene/mobile aspect ratios","replacement":"variant-owned media geometry and mobile transform","reason":"Global ratios flatten image/text integration."},
+    {"component":"shared premium-offers card grid","replacement":"M-SERVICE-01 intent-routed field and M-OFFER-01 commitment ladder variants where selected","reason":"Equal cards contradict research mechanisms."},
+    {"component":"shared proof-card/proof-boundary as universal proof expression","replacement":"M-TRUST-01/02 research-derived variants","reason":"Proof placement is a mechanism, not a generic card style."},
+    {"component":"universal dark premium-closing panel","replacement":"M-END-01 utility closure or M-END-02 emotional resolution variant","reason":"Current same ending strongly contributes to template smell."},
+    {"component":"Aoi defect-absence review","replacement":"whole-page benchmark/mechanism review contract","reason":"Technical PASS did not protect visible design quality."}
+  ],
+  "deprecate_from_production_authority":[
+    {"component":"HERO_HEADLINES/SCENE_HEADLINES/SCENE_SUPPORT as final public authorship source","future_role":"regression fixture or fallback research prototype only","reason":"Decision-job dictionaries produce one system voice across companies."},
+    {"component":"index-parity density decisions","future_role":"none for final art direction","reason":"Alternating compact/open by index is not company/mechanism authorship."},
+    {"component":"generic CHAPTER numbering across every scene","future_role":"only within variants whose mechanism explicitly calls for it","reason":"Current use creates repetitive information architecture aesthetics."},
+    {"component":"global premium-reveal on every hero/scene","future_role":"only variant-specific purposeful motion","reason":"Same animation is polish, not design authorship."},
+    {"component":"generic stack-only mobile fallback","future_role":"safety fallback only when mechanism-preserving transform explicitly permits it","reason":"Mobile should re-art-direct selected mechanism."},
+    {"component":"generic scene fallback for unknown Production Variant","future_role":"fail closed","reason":"Silent fallback would recreate the research/runtime gap."}
+  ],
+  "migration_rule":"Preserve semantic and safety authority upstream. Replace only the research-to-visible-design bridge and whole-page review gate. During migration, old renderer may remain as regression reference but must not be the final Production authority for scenes already covered by verified Production Variants."
+}
