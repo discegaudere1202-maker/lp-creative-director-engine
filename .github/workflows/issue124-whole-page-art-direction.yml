@@ -66,6 +66,7 @@ jobs:
           tests/test_production_cutover.py
       - name: Generate exact Stage A whole-page evidence
         run: |
+          mkdir -p artifacts/issue124_whole_page_art_direction/issue121_base/stage_a/premium_contact_sheets
           python scripts/run_issue124_whole_page_art_direction.py \
             --baseline artifacts/issue111_baseline \
             --out artifacts/issue124_whole_page_art_direction
