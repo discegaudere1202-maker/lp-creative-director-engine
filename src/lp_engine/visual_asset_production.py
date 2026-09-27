@@ -94,6 +94,8 @@ def _apply_regression_render_compatibility(rendered: str) -> str:
     compatibility_css = (
         ".hero-route .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
         ".hero-evidence .production-asset img{aspect-ratio:3/4!important;object-fit:cover}"
+        ".wp-evidence-salon-rail .wp-trust .trust-ledger__media img{aspect-ratio:16/9!important;object-fit:cover}"
+        ".wp-compare-paired-instrument .wp-compare .service-field__media img{aspect-ratio:16/9!important;object-fit:cover}"
         "@media(max-width:900px){"
         ".variant-scene .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
         "}"
