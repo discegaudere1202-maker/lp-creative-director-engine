@@ -1,0 +1,40 @@
+name: Issue 129 Premium Perception Recovery
+
+on:
+  pull_request:
+    paths:
+      - 'src/lp_engine/**'
+      - 'tests/test_issue129_premium_perception_recovery.py'
+      - 'scripts/run_issue129_premium_perception_recovery.py'
+      - 'artifacts/issue129_task_contract.json'
+      - '.github/workflows/issue129-premium-perception-recovery.yml'
+  workflow_dispatch:
+
+jobs:
+  premium-perception-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install engine
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest pillow playwright
+          python -m playwright install --with-deps chromium
+      - name: Contract and regression tests
+        run: |
+          pytest -q tests/test_issue129_premium_perception_recovery.py tests/test_issue124_whole_page_art_direction.py
+      - name: Generate Issue 129 Stage A recovery evidence
+        run: |
+          python scripts/run_issue129_premium_perception_recovery.py --out artifacts/issue129_premium_perception_recovery
+      - name: Git whitespace check
+        run: git diff --check
+      - name: Upload Issue 129 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue129-premium-perception-recovery
+          path: artifacts/issue129_premium_perception_recovery
+          if-no-files-found: error
