@@ -118,6 +118,17 @@ class Issue124WholePageArtDirectionTest(unittest.TestCase):
         }
         self.assertEqual(variants, {"WP-EVIDENCE-SPECIMEN-v1", "WP-EVIDENCE-SALON-RAIL-v1", "WP-EVIDENCE-OPEN-STUDIO-v1"})
 
+    def test_recognition_continuation_has_owned_desktop_and_mobile_composition(self):
+        plan, _, ensemble, html = build(fixture(job="understand", offers=1))
+        rendered, trace = apply_whole_page_art_direction(html, plan, ensemble, {})
+        self.assertEqual(trace["continuation_variant_id"], "WP-RECOGNITION-EDITORIAL-v1")
+        self.assertEqual(trace["continuation_family"], "recognition")
+        self.assertIn("wp-recognition-editorial", rendered)
+        self.assertIn("grid-template-columns:.82fr 1.18fr", rendered)
+        self.assertIn("margin-left:24vw", rendered)
+        self.assertIn("wp-recognition-editorial .wp-ending", rendered)
+        self.assertIn("wp-recognition-editorial .wp-body .service-route:nth-child(odd)", rendered)
+
     def test_compare_replaces_second_intent_route_with_real_paired_mechanism(self):
         plan, _, ensemble, html = build(fixture(job="compare", offers=2))
         bindings = {"choose": media_binding("product_packshot_generic", "portrait")}
