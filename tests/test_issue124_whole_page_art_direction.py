@@ -51,10 +51,7 @@ def media_binding(content_class="product_packshot_generic", posture="portrait"):
         "scene_id": "choose",
         "evidence_status": "GENERIC_ILLUSTRATIVE_ONLY",
         "rights_gate": "PASS",
-        "trace": {
-            "required_content_conditions": {"content_class": content_class},
-            "source_dimensions": dimensions,
-        },
+        "trace": {"required_content_conditions": {"content_class": content_class}, "source_dimensions": dimensions},
     }
 
 
@@ -89,23 +86,15 @@ class Issue124WholePageArtDirectionTest(unittest.TestCase):
         bindings = {"choose": media_binding("product_packshot_generic", "portrait")}
         plan1, _, ensemble1, _ = build(raw)
         trace1 = select_whole_page_continuation(plan1, ensemble1, bindings)
-
         changed = copy.deepcopy(raw)
         changed["company_id"] = "completely-different-company"
         changed["reference_id"] = "different-reference"
         changed["creative_family"]["family_id"] = "different-frozen-family"
-        changed["company_truth"]["category"] = truth("unrelated_category")
+        changed["company_truth"]["category"] = truth("hair_salon_barber")
         plan2, _, ensemble2, _ = build(changed)
         trace2 = select_whole_page_continuation(plan2, ensemble2, bindings)
-
         self.assertEqual(trace1["continuation_variant_id"], trace2["continuation_variant_id"])
-        self.assertEqual(trace1["identity_routing"], {
-            "company_id_used": False,
-            "reference_id_used": False,
-            "family_id_used_as_layout_lookup": False,
-            "business_category_used_as_layout_lookup": False,
-            "randomness_used": False,
-        })
+        self.assertEqual(trace1["identity_routing"], {"company_id_used": False, "reference_id_used": False, "family_id_used_as_layout_lookup": False, "business_category_used_as_layout_lookup": False, "randomness_used": False})
 
     def test_route_continuations_have_materially_different_selection_and_css(self):
         raw = fixture(job="choose", offers=3)
