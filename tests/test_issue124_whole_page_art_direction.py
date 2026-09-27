@@ -87,7 +87,7 @@ class Issue124WholePageArtDirectionTest(unittest.TestCase):
     def test_selection_never_uses_identity_family_or_category_as_layout_lookup(self):
         raw = fixture(job="choose", offers=3, family="family-alpha", category="beauty_cosmetics")
         bindings = {"choose": media_binding("product_packshot_generic", "portrait")}
-        plan1, _, ensemble1, _ = build(raw, bindings)
+        plan1, _, ensemble1, _ = build(raw)
         trace1 = select_whole_page_continuation(plan1, ensemble1, bindings)
 
         changed = copy.deepcopy(raw)
@@ -95,7 +95,7 @@ class Issue124WholePageArtDirectionTest(unittest.TestCase):
         changed["reference_id"] = "different-reference"
         changed["creative_family"]["family_id"] = "different-frozen-family"
         changed["company_truth"]["category"] = truth("unrelated_category")
-        plan2, _, ensemble2, _ = build(changed, bindings)
+        plan2, _, ensemble2, _ = build(changed)
         trace2 = select_whole_page_continuation(plan2, ensemble2, bindings)
 
         self.assertEqual(trace1["continuation_variant_id"], trace2["continuation_variant_id"])
