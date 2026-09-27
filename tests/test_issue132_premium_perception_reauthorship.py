@@ -122,6 +122,7 @@ class Issue132PremiumPerceptionReauthorshipTest(unittest.TestCase):
             self.assertIn(f'data-r2-profile="{profile}"', result)
             self.assertIn('data-r2-structural-reauthorship="true"', result)
             self.assertEqual(result.count('class="r2-chapter '), len(chapters))
+            main_markup = result[result.find("<main"):result.rfind("</main>")]
             for _, members in R2_PROFILES[variant][1]:
                 for slot in members:
                     marker = {
@@ -129,7 +130,7 @@ class Issue132PremiumPerceptionReauthorshipTest(unittest.TestCase):
                         "process": "process-sequence", "compare": "wp-compare", "body": "wp-body",
                         "trust": "wp-trust", "action": "wp-action-event", "cta": "wp-cta", "ending": "wp-ending",
                     }[slot]
-                    self.assertEqual(result.count(marker), 1)
+                    self.assertEqual(main_markup.count(marker), 1)
             self.assertIn("@media(max-width:700px)", result)
 
     def test_frozen_pass_variant_returns_owner_html_byte_identical(self):
