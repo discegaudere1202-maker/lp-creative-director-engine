@@ -1,0 +1,27 @@
+{
+  "issue":119,
+  "schema_version":"issue119_rin_implementation_plan_v1",
+  "goal":"Implement the missing research-to-runtime Premium Module Variant bridge for current industries without reopening Family selection, factual truth, rights or evidence locks.",
+  "implementation_order":[
+    {"priority":1,"workstream":"Production Variant Registry + Trace","why_first":"No later visual change is auditable unless selected pattern/variant/renderer identities survive to output.","deliverables":["production_variant_registry.py/json","variant selector interface","scene manifest trace","fail-closed unknown variant behavior"]},
+    {"priority":2,"workstream":"Replace shared Hero authority","why_first_visual":"Hero dominates first impression and currently all variants share one structural grammar.","deliverables":["PV-HERO-RECOGNITION-FIELD-v1","PV-HERO-EVIDENCE-ANCHOR-v1","PV-HERO-GUIDED-ROUTE-CANVAS-v1","desktop/mobile screenshot evidence"]},
+    {"priority":3,"workstream":"Page Art Direction Spine + Renderer dispatch","why":"Prevents premium modules from becoming an incoherent component collage and stops renderer normalization.","deliverables":["page spine compiler","variant renderer dispatch","shared primitive boundary","no generic premium-scene fallback"]},
+    {"priority":4,"workstream":"Typography / spatial rhythm / media geometry ownership","why":"Current shared type/spacing/media ratios create strongest whole-page template smell after Hero.","deliverables":["variant-owned hierarchy","negative-space rhythm","media crop/layering contracts","page-level density arc"]},
+    {"priority":5,"workstream":"Decision modules","why":"Body persuasion must visibly express research mechanisms rather than repeated indexed chapters.","deliverables":["Trust variants","Problem variant","Story variant","Service variant","Process variant","Human variant","Gallery variant","Offer variant"]},
+    {"priority":6,"workstream":"CTA + Ending variants","why":"Current pill CTA + universal dark close make different pages converge visually.","deliverables":["PV-CTA-STATE-SPECIFIC-EVENT-v1","PV-END-UTILITY-CLOSURE-v1","PV-END-EMOTIONAL-RESOLUTION-v1"]},
+    {"priority":7,"workstream":"Mechanism-specific mobile re-art-direction","why":"Current mobile mainly stacks shared DOM and can erase desktop authored differences.","deliverables":["per-variant transforms for 320/360/375/390/430","mechanism fidelity assertions","no stack-only fallback"]},
+    {"priority":8,"workstream":"Mechanism-specific motion","why":"Motion should clarify each mechanism, not reuse global reveal for uniqueness.","deliverables":["variant motion intents","reduced-motion equivalents","remove generic reveal where it has no persuasive role"]},
+    {"priority":9,"workstream":"Stage A regeneration + Whole-page evidence","why":"Architecture is not complete until actual output proves research fidelity.","deliverables":["same 9 Stage A samples","81 full-page screenshots","1440/390 contact sheets","pattern→variant→renderer→screenshot manifests","Aoi whole-page review bundle"]}
+  ],
+  "migration_constraints":[
+    "Keep CompositionPlan Family freeze and decision authority.",
+    "Keep Visual Asset Library rights/provenance and no-fake-evidence boundaries.",
+    "Do not route by company_id/reference_name/fixture_id.",
+    "Do not use random diversity as a substitute for authored selection.",
+    "Do not call a larger enum of wide/contained/split variants a completed bridge.",
+    "If a research mechanism requires structural/type/media/spatial differences, implement a real renderer variant.",
+    "No final premium or ¥1M self-declaration by implementation code."
+  ],
+  "first_acceptance_gate":"Three Hero variants must be visually distinguishable at 1440 and 390 based on their research mechanism while using the same safe Production path.",
+  "full_acceptance_gate":"All mapped Issue #44 patterns used by Stage A have traceable Production Variants, no shared-renderer fallback is active for selected scenes, 81 screenshots preserve rights/responsive locks, Aoi whole-page gate passes, and Shun reviews actual HTML before any sales-value conclusion."
+}
