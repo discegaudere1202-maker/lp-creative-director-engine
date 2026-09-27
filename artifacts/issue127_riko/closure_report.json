@@ -1,6 +1,7 @@
 {
   "schema_version": "issue127_closure_report_v1",
   "issue": 127,
+  "parent_issue": 126,
   "scope": "Research / Creative Direction / Architecture Recovery only",
   "status": "Riko scope complete; ready for Sarah architecture audit",
   "highest_human_reality": "前のとほとんど変わってない、、画像も入ってないし",
