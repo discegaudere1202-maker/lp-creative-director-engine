@@ -1,0 +1,72 @@
+{
+  "issue": 124,
+  "schema_version": "issue124_task_contract_v1",
+  "starting_main": "9b6d597b24675709f9853e837687450ce0912a53",
+  "trigger": {
+    "issue": 123,
+    "verdict": "9/9 RETURN",
+    "failure": "Hero differs but Trust/body/media/CTA/Ending/mobile converge into a shared Production skeleton"
+  },
+  "preserve": [
+    "Issue121 three Hero Production Variants and material distinction",
+    "research pattern -> Production Variant -> renderer -> screenshot direct trace",
+    "production_variant_dispatch final visual authority",
+    "fail-closed renderer dispatch",
+    "Family freeze",
+    "CompositionPlan semantic/decision authority",
+    "truth/evidence/rights boundaries",
+    "no fabricated proof",
+    "no company/reference identity routing",
+    "no Family/category fixed layout lookup",
+    "no randomness",
+    "asset scarcity never changes Family",
+    "320-1440 responsive protections",
+    "Japanese semantic line-break protections",
+    "accessibility/reduced motion"
+  ],
+  "required_spine_fields": [
+    "primary_visual_thesis",
+    "material_language",
+    "density_arc",
+    "media_arc",
+    "decision_job",
+    "silhouette_strategy",
+    "type_authority_strategy",
+    "contrast_strategy",
+    "closing_resolution"
+  ],
+  "required_continuation_families": ["recognition", "evidence", "route", "compare", "prepare", "act"],
+  "required_propagation_surfaces": ["body", "trust", "media", "cta", "ending", "mobile"],
+  "hard_clone_groups": [
+    ["SK1", "HS1"],
+    ["SK2", "HS2", "PI2"],
+    ["SK3", "BR2"]
+  ],
+  "compare_contract": {
+    "forbid_second_intent_route_as_comparison": true,
+    "required_mechanism": "paired_or_contrast_or_matrix_relation",
+    "must_have_authored_mobile_transform": true
+  },
+  "stage_a": {
+    "samples": ["SK1", "SK2", "SK3", "HS1", "HS2", "BR1", "BR2", "PI1", "PI2"],
+    "widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+    "screenshots_required": 81,
+    "mobile_checks_required": 45,
+    "contact_sheets": [390, 1440]
+  },
+  "automated_prerequisite_before_aoi": [
+    "Hero differences survive",
+    "middle-page silhouette does not normalize across hard clone groups",
+    "CTA/Ending do not share one visible default across hard clone groups",
+    "compare job renders a real compare mechanism",
+    "mobile preserves an authored body moment and authored closing behavior",
+    "PI1 Recognition Field receives deliberate mobile re-authorship"
+  ],
+  "human_boundary": {
+    "HUMAN_VISIBLE_PASS": "NOT_SELF_DECLARED",
+    "final_premium_quality": "NOT_SELF_DECLARED",
+    "million_yen_value": "NOT_SELF_DECLARED",
+    "Shun_approval": "NOT_SELF_DECLARED"
+  },
+  "routing": ["Rin", "Sarah technical/evidence audit", "Aoi repeat Issue119 whole-page review", "Shun actual HTML review after HUMAN_VISIBLE_PASS"]
+}
