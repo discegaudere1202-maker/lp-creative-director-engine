@@ -116,12 +116,12 @@ class Issue121VariantBridgeTest(unittest.TestCase):
         choose_html = build(fixture(job="choose", offers=3))[3]
         trust_html = build(fixture(job="trust", offers=1))[3]
         act_html = build(fixture(job="act", offers=2))[3]
-        self.assertIn("hero-route__routes", choose_html)
-        self.assertNotIn("hero-evidence__ledger", choose_html)
-        self.assertIn("hero-evidence__ledger", trust_html)
-        self.assertNotIn("hero-recognition__side-note", trust_html)
-        self.assertIn("hero-recognition__side-note", act_html)
-        self.assertNotIn("hero-route__routes", act_html)
+        self.assertIn('<section class="variant-hero hero-route premium-hero"', choose_html)
+        self.assertNotIn('<section class="variant-hero hero-evidence premium-hero"', choose_html)
+        self.assertIn('<section class="variant-hero hero-evidence premium-hero"', trust_html)
+        self.assertNotIn('<section class="variant-hero hero-recognition premium-hero"', trust_html)
+        self.assertIn('<section class="variant-hero hero-recognition premium-hero"', act_html)
+        self.assertNotIn('<section class="variant-hero hero-route premium-hero"', act_html)
 
     def test_selected_scene_trace_is_research_to_renderer_complete(self):
         _, _, ensemble, html, trace = build(fixture(job="choose", offers=3))
@@ -142,7 +142,7 @@ class Issue121VariantBridgeTest(unittest.TestCase):
         _, _, ensemble, html, _ = build(fixture(job="choose", offers=3))
         body_ids = {row["selected_production_variant_id"] for row in ensemble["scenes"]}
         self.assertIn("PV-SERVICE-INTENT-ROUTED-FIELD-v1", body_ids)
-        self.assertIn("service-field__routes", html)
+        self.assertIn('data-production-variant="PV-SERVICE-INTENT-ROUTED-FIELD-v1"', html)
         self.assertEqual(ensemble["cta"]["selected_production_variant_id"], "PV-CTA-STATE-SPECIFIC-EVENT-v1")
         self.assertIn("state-event-cta", html)
         self.assertEqual(ensemble["ending"]["selected_production_variant_id"], "PV-END-EMOTIONAL-RESOLUTION-v1")
@@ -152,14 +152,14 @@ class Issue121VariantBridgeTest(unittest.TestCase):
         _, _, ensemble, html, _ = build(fixture(job="trust", offers=1, persuasive=False))
         selected = [row["selected_production_variant_id"] for row in ensemble["scenes"]]
         self.assertIn("PV-TRUST-BOUNDARY-LEDGER-v1", selected)
-        self.assertIn("trust-ledger__table", html)
-        self.assertNotIn("proof-thread__node", html)
+        self.assertIn('data-production-variant="PV-TRUST-BOUNDARY-LEDGER-v1"', html)
+        self.assertNotIn('data-production-variant="PV-TRUST-DISTRIBUTED-PROOF-THREAD-v1"', html)
 
     def test_trust_with_persuasive_verified_fact_uses_distributed_proof(self):
         _, _, ensemble, html, _ = build(fixture(job="trust", offers=1, persuasive=True))
         selected = [row["selected_production_variant_id"] for row in ensemble["scenes"]]
         self.assertIn("PV-TRUST-DISTRIBUTED-PROOF-THREAD-v1", selected)
-        self.assertIn("proof-thread__node", html)
+        self.assertIn('data-production-variant="PV-TRUST-DISTRIBUTED-PROOF-THREAD-v1"', html)
 
     def test_verified_positive_cta_and_non_action_boundary(self):
         actionable = build(fixture(job="act", contact=True))[3]
