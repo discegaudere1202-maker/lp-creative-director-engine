@@ -1,0 +1,82 @@
+{
+  "schema_version": "issue127_rin_recovery_handoff_v1",
+  "task_title": "[Rin] Premium Perception Recovery｜Media Narrative + Pixel-authoritative Spine + Owner Evidence Integrity",
+  "source_issue": 127,
+  "implementation_order": [
+    {
+      "step": 1,
+      "name": "Owner evidence integrity first",
+      "requirements": [
+        "Generate owner_html_bundle from the exact final HTML used by the screenshot runner.",
+        "Record per-sample final_html_sha256 and per-width screenshot hashes.",
+        "Freeze rejected baseline independently; fail if baseline/current HTML provenance collides.",
+        "Produce direct 1440/390 no-overlay before/after sheets."
+      ]
+    },
+    {
+      "step": 2,
+      "name": "Media Narrative Plan layer",
+      "requirements": [
+        "Compile media roles after Family freeze and before rendering.",
+        "For every selected scene declare narrative/compositional role, prominence intent, evidence state, crop/layer, copy interaction, transition role, desktop/mobile behavior.",
+        "Do not set an arbitrary global image count; derive media breadth/prominence from selected research mechanism and Page Spine.",
+        "Fail closed for media-required mechanisms rather than degrade to incidental slots."
+      ]
+    },
+    {
+      "step": 3,
+      "name": "Page Art Direction Spine v2 as pixel authority",
+      "requirements": [
+        "Spine controls macro silhouette, typography relationship, media rhythm, density/whitespace/contrast arcs, material language, transition grammar, focal scene sequence, CTA cadence and ending.",
+        "Remove universal ledger/card/rail treatment as fallback premium skin.",
+        "Do not route by identity/category and do not randomize."
+      ]
+    },
+    {
+      "step": 4,
+      "name": "Perceptual Production Variant implementation",
+      "requirements": [
+        "Upgrade variants from structural renderer identities to perceptual behavior bundles.",
+        "Each variant owns composition, type hierarchy, media geometry/layering, space rhythm, material grammar, transition behavior and mobile re-art-direction.",
+        "Renderer cannot compress unsupported behavior into a shared generic section."
+      ]
+    },
+    {
+      "step": 5,
+      "name": "Authored focal scenes",
+      "requirements": [
+        "Compile explicit screenshot-worthy focal moments from the Page Spine.",
+        "At least the strongest moments must remain recognizable without copy/metadata explanation.",
+        "Do not satisfy this with decorative animation alone."
+      ]
+    },
+    {
+      "step": 6,
+      "name": "Stage A regenerate + evidence",
+      "requirements": [
+        "Regenerate the same 9 Stage A samples across 9 widths.",
+        "Aoi v2 starts with blind 1440/390 single-page and media gates.",
+        "Then compare each against latest Shun-rejected baseline before same/cross-family uniqueness.",
+        "Only after Aoi v2 PASS route actual HTML to Shun."
+      ]
+    }
+  ],
+  "do_not": [
+    "add arbitrary images until count looks larger",
+    "solve with isolated CSS polish",
+    "change Family because assets are scarce",
+    "fabricate evidence",
+    "reuse company/reference identity routing",
+    "declare premium from clone/signature divergence",
+    "reuse contaminated before/after owner HTML evidence"
+  ],
+  "required_new_runtime_artifacts": [
+    "media_narrative_plan.json",
+    "page_art_direction_spine_v2.json",
+    "perceptual_variant_trace.json",
+    "owner_delivery_integrity_manifest.json",
+    "rejected_baseline_delta_manifest.json",
+    "aoi_v2_review_bundle.json"
+  ],
+  "definition_of_done": "Actual owner-delivery pixels—not metadata—visibly demonstrate the intended benchmark mechanism, meaningful media presence and a clear departure from the rejected visual lineage while preserving truth/rights/family locks."
+}
