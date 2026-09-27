@@ -8,6 +8,7 @@ on:
       - 'tests/test_issue129_premium_perception_recovery.py'
       - 'tests/test_issue124_whole_page_art_direction.py'
       - 'scripts/run_issue129_premium_perception_recovery.py'
+      - 'scripts/run_issue129_premium_perception_recovery_ci.py'
       - 'scripts/run_issue124_whole_page_art_direction.py'
       - 'scripts/run_issue121_variant_bridge.py'
       - 'scripts/run_issue116_premium_uplift.py'
@@ -75,8 +76,7 @@ jobs:
             tests/test_production_cutover.py
       - name: Generate Issue 129 exact Stage A recovery evidence
         run: |
-          mkdir -p artifacts/issue129_premium_perception_recovery/issue124_base/issue121_base/stage_a/premium_contact_sheets
-          python scripts/run_issue129_premium_perception_recovery.py \
+          python scripts/run_issue129_premium_perception_recovery_ci.py \
             --baseline111 artifacts/issue111_baseline \
             --rejected124 artifacts/issue124_shun_rejected \
             --out artifacts/issue129_premium_perception_recovery
