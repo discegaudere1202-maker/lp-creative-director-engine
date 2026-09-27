@@ -62,11 +62,11 @@ jobs:
           python scripts/run_issue116_premium_uplift.py \
             --baseline artifacts/issue111_baseline \
             --out artifacts/issue116_premium_uplift
-      - name: 9-width Hero semantic optical hard gate
+      - name: 9-width public display-heading semantic optical hard gate
         run: |
           python scripts/run_issue116_mobile_optical_gate.py \
             --premium-root artifacts/issue116_premium_uplift/premium \
-            --out artifacts/issue116_premium_uplift/issue116_mobile_optical_gate.json
+            --out artifacts/issue116_premium_uplift/issue116_display_heading_optical_gate.json
       - name: Git whitespace check
         if: always()
         run: git diff --check
