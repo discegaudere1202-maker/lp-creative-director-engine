@@ -80,6 +80,29 @@ def _assert_architecture_preserved(
         raise AssetBoundProductionError("ASSET_OR_VARIANT_LAYER_MUTATED_AUTHORSHIP")
 
 
+def _apply_regression_render_compatibility(rendered: str) -> str:
+    """Keep accepted non-authorial regression hooks without restoring old layout.
+
+    Issue #116 locked the public display-unit class shape and Issue #111 locked
+    a narrow footer stacking rule.  They remain safety contracts, not visual
+    authorship.  The Production Variant bridge still owns all structural
+    page/scene/Hero geometry.
+    """
+    rendered = rendered.replace(
+        'class="semantic-headline-unit premium-display-unit"',
+        'class="premium-display-unit"',
+    )
+    footer_guard = (
+        "@media(max-width:480px){footer{flex-direction:column;gap:8px;align-items:flex-start}"
+        "footer span{display:block;max-width:100%;overflow-wrap:anywhere}}"
+    )
+    if "</style>" not in rendered:
+        raise AssetBoundProductionError("VARIANT_STYLE_ANCHOR_MISSING")
+    if footer_guard not in rendered:
+        rendered = rendered.replace("</style>", footer_guard + "</style>", 1)
+    return rendered
+
+
 def render_asset_bound_authoritative_html(
     plan: Mapping[str, Any],
     directives: Mapping[str, Any],
@@ -98,6 +121,7 @@ def render_asset_bound_authoritative_html(
     rendered, bridge_trace = render_variant_faithful_page(
         plan, directives, asset_bindings, ensemble
     )
+    rendered = _apply_regression_render_compatibility(rendered)
     if bridge_trace.get("renderer", {}).get("final_visual_authority") != "production_variant_dispatch":
         raise AssetBoundProductionError("VARIANT_RENDERER_NOT_FINAL_AUTHORITY")
     if bridge_trace.get("renderer", {}).get("silent_generic_fallback") is not False:
@@ -142,6 +166,7 @@ def run_asset_bound_generation(
     html, bridge_trace = render_variant_faithful_page(
         plan, directives, asset_bindings, ensemble
     )
+    html = _apply_regression_render_compatibility(html)
     (output / "index.html").write_text(html, encoding="utf-8")
 
     _assert_architecture_preserved(
