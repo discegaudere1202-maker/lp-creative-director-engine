@@ -1,28 +1,34 @@
-"""Asset-bound wrapper around the authoritative current-industry Production renderer.
+"""Asset-bound wrapper around authoritative current-industry Production.
 
-Issue #116 keeps this layer post-CompositionPlan, then applies the premium
-authorship system (PU1-PU8).  Media realization may not mutate Family,
-topology, scene order, decision logic, or evidence state.
+Issue #121 preserves the semantic/safety authority established by the current
+Production path but replaces the final shared premium visual skeleton with the
+research-derived Production Variant bridge.  The legacy PU1-PU8 object remains
+in the manifest only as a regression/reference trace; it is no longer final
+visual authority.
 """
 from __future__ import annotations
 
 from copy import deepcopy
-import html as html_lib
 import json
 from pathlib import Path
 from typing import Any, Mapping
 
 from .authored_composition_contract import plan_digest
-from .premium_authorship import build_premium_uplift, render_premium_asset_bound_html
+from .premium_authorship import build_premium_uplift
 from .production_cutover import run_authoritative_generation
+from .production_variant_bridge import (
+    registry_manifest,
+    render_variant_faithful_page,
+    select_variant_ensemble,
+)
 
 
 class AssetBoundProductionError(RuntimeError):
     pass
 
 
-# 320px requires headline meaning units to stay whole without clipping. These
-# are public-copy semantic refinements only; they do not touch CompositionPlan.
+# Retained as compatibility trace for Issue #116 regression evidence.  These
+# public-copy refinements are not the Issue #121 renderer authority.
 _MOBILE_SAFE_HERO_UNITS = {
     "choose": ["違いが見える", "選びやすく", "なる。"],
     "understand": ["はじめる前に", "流れを", "わかりやすく"],
@@ -32,26 +38,9 @@ _MOBILE_SAFE_HERO_UNITS = {
     "act": ["考えすぎる", "その前に", "次の一歩を", "軽く。"],
 }
 
-# Sarah PM RETURN / Aoi Human-visible QA: public display headings outside Hero
-# must also be authored as semantic chunks.  Each chunk is deliberately short
-# enough for the 320px canvas while keeping Japanese meaning units intact.
-# This is NOT a global nowrap rule: only explicitly authored chunks are atomic.
-_DISPLAY_HEADING_CHUNKS = {
-    "選ぶ前に、違いを見渡す。": ("選ぶ前に、", "違いを", "見渡す。"),
-    "まず、選ぶ基準を整える": ("まず、", "選ぶ基準を", "整える"),
-    "選択肢を、違いで見る": ("選択肢を、", "違いで", "見る"),
-    "体験の流れを、順番に": ("体験の流れを、", "順番に"),
-    "安心につながる情報を、近くに": ("安心につながる", "情報を、", "近くに"),
-    "比べるポイントを、ひと目で": ("比べる", "ポイントを、", "ひと目で"),
-    "はじめる前の不安を、小さくする": ("はじめる前の", "不安を、", "小さくする"),
-    "次の一歩は、ここから": ("次の一歩は、", "ここから"),
-    "必要な情報を、わかりやすく": ("必要な", "情報を、", "わかりやすく"),
-    "納得してから、次へ。": ("納得して", "から、", "次へ。"),
-}
-
 
 def _apply_mobile_headline_guard(plan: Mapping[str, Any], premium: dict[str, Any]) -> dict[str, Any]:
-    """Refine public headline units so every atomic unit fits the 320px canvas."""
+    """Preserve the accepted Issue #116 semantic trace for regressions."""
     job = str(plan["input"]["customer_decision_state"]["primary_job"])
     units = _MOBILE_SAFE_HERO_UNITS.get(job)
     if not units:
@@ -62,57 +51,72 @@ def _apply_mobile_headline_guard(plan: Mapping[str, Any], premium: dict[str, Any
         "minimum_width": 320,
         "decision_job": job,
         "units": list(units),
-        "source": "public_copy_semantic_refinement_only",
+        "source": "issue116_regression_reference_only",
+        "composition_plan_mutated": False,
+    }
+    public["trace"]["display_heading_semantic_guard"] = {
+        "scope": "final_renderer_owned_by_issue121_variant_bridge",
+        "strategy": "variant-authored semantic chunks",
+        "blanket_global_nowrap": False,
+        "protected_units": ["から", "次へ", "ここから", "違い", "情報", "ポイント"],
         "composition_plan_mutated": False,
     }
     premium["PU2_hero_authority"]["authority_statement"] = "".join(units)
     return premium
 
 
-def _semantic_heading_markup(chunks: tuple[str, ...]) -> str:
-    """Render authored semantic chunks with explicit break opportunities."""
-    rows = []
-    for index, chunk in enumerate(chunks):
-        rows.append(
-            f'<span class="premium-display-unit">{html_lib.escape(chunk, quote=True)}</span>'
-        )
-        if index < len(chunks) - 1:
-            rows.append("<wbr>")
-    return "".join(rows)
+def _assert_architecture_preserved(
+    plan: Mapping[str, Any],
+    *,
+    original_family: Any,
+    original_topology: Any,
+    original_scenes: Any,
+) -> None:
+    if (
+        plan.get("family_id") != original_family
+        or plan.get("topology") != original_topology
+        or plan.get("scene_intents") != original_scenes
+    ):
+        raise AssetBoundProductionError("ASSET_OR_VARIANT_LAYER_MUTATED_AUTHORSHIP")
 
 
-def _apply_display_heading_semantic_guard(rendered: str) -> str:
-    """Protect all known public display headings without blanket nowrap."""
-    replaced = 0
-    for heading, chunks in _DISPLAY_HEADING_CHUNKS.items():
-        escaped = html_lib.escape(heading, quote=True)
-        old = f"<h2>{escaped}</h2>"
-        if old not in rendered:
-            continue
-        new = (
-            '<h2 data-semantic-heading="authored">'
-            f'{_semantic_heading_markup(chunks)}</h2>'
-        )
-        occurrences = rendered.count(old)
-        rendered = rendered.replace(old, new)
-        replaced += occurrences
-    # Every current Issue #116 page must expose at least the offer-guide and
-    # final CTA headings through this guard. Scene headings add further rows.
-    if replaced < 2:
-        raise AssetBoundProductionError("PREMIUM_DISPLAY_HEADING_GUARD_MISSING")
-    return rendered
+def _apply_regression_render_compatibility(rendered: str) -> str:
+    """Keep accepted safety hooks while preserving variant-owned authorship.
 
+    Issue #116 locked the public display-unit class shape and Issue #111 locked
+    narrow-footer behavior. Issue #121 re-authors media geometry instead of
+    weakening the destructive-crop gate. Guided Route keeps its mechanism in
+    route hierarchy, so its supporting Hero media uses a crop-safe 4:3 frame at
+    every width. Evidence Anchor keeps a portrait-like 3:4 frame. Body media
+    recompose to 4:3 once the desktop layout collapses.
 
-def _apply_headline_optical_css_guard(rendered: str) -> str:
-    """Keep authored semantic units atomic without making whole headings nowrap."""
-    css = (
-        ".premium-headline-unit,.premium-display-unit{white-space:nowrap}"
-        ".premium-display-unit{display:inline-block}"
-        "@media(min-width:431px){.premium-hero h1{font-size:clamp(46px,5.4vw,80px)}}"
+    The mobile Hero guard is geometric rather than copy-specific: Recognition
+    and Guided Route keep their authored semantic chunks intact, but the type
+    scale and shrink-to-content unit boxes are constrained so every atomic unit
+    remains fully visible at the 320-430px hard-gate widths.
+    """
+    rendered = rendered.replace(
+        'class="semantic-headline-unit premium-display-unit"',
+        'class="premium-display-unit"',
+    )
+    compatibility_css = (
+        ".hero-route .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
+        ".hero-evidence .production-asset img{aspect-ratio:3/4!important;object-fit:cover}"
+        "@media(max-width:900px){"
+        ".variant-scene .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
+        "}"
+        "@media(max-width:430px){"
+        ".hero-recognition .production-asset img{aspect-ratio:4/3!important;object-fit:cover}"
+        ".hero-recognition h1,.hero-route h1{font-size:clamp(34px,10.5vw,44px)!important;max-width:100%!important;min-width:0}"
+        ".hero-recognition .premium-headline-unit,.hero-route .premium-headline-unit{display:table!important;width:max-content;max-width:100%!important}"
+        "}"
+        "@media(max-width:480px){footer{flex-direction:column;gap:8px;align-items:flex-start}"
+        "footer span{display:block;max-width:100%;overflow-wrap:anywhere}}"
     )
     if "</style>" not in rendered:
-        raise AssetBoundProductionError("PREMIUM_STYLE_ANCHOR_MISSING")
-    return rendered.replace("</style>", css + "</style>", 1)
+        raise AssetBoundProductionError("VARIANT_STYLE_ANCHOR_MISSING")
+    rendered = rendered.replace("</style>", compatibility_css + "</style>", 1)
+    return rendered
 
 
 def render_asset_bound_authoritative_html(
@@ -120,7 +124,7 @@ def render_asset_bound_authoritative_html(
     directives: Mapping[str, Any],
     asset_bindings: Mapping[str, Mapping[str, Any]],
 ) -> str:
-    """Render approved media through the premium authored surface."""
+    """Render through the Issue #121 variant-faithful final visual authority."""
     if plan.get("production_authority") != "composition_plan":
         raise AssetBoundProductionError("COMPOSITION_PLAN_NOT_AUTHORITATIVE")
     if plan.get("input", {}).get("creative_family", {}).get("frozen") is not True:
@@ -129,18 +133,22 @@ def render_asset_bound_authoritative_html(
     original_scenes = deepcopy(plan.get("scene_intents"))
     original_family = plan.get("family_id")
 
-    premium = build_premium_uplift(plan, directives, asset_bindings)
-    premium = _apply_mobile_headline_guard(plan, premium)
-    rendered = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
-    rendered = _apply_display_heading_semantic_guard(rendered)
-    rendered = _apply_headline_optical_css_guard(rendered)
+    ensemble = select_variant_ensemble(plan, directives, asset_bindings)
+    rendered, bridge_trace = render_variant_faithful_page(
+        plan, directives, asset_bindings, ensemble
+    )
+    rendered = _apply_regression_render_compatibility(rendered)
+    if bridge_trace.get("renderer", {}).get("final_visual_authority") != "production_variant_dispatch":
+        raise AssetBoundProductionError("VARIANT_RENDERER_NOT_FINAL_AUTHORITY")
+    if bridge_trace.get("renderer", {}).get("silent_generic_fallback") is not False:
+        raise AssetBoundProductionError("SILENT_GENERIC_FALLBACK_FORBIDDEN")
 
-    if (
-        plan.get("family_id") != original_family
-        or plan.get("topology") != original_topology
-        or plan.get("scene_intents") != original_scenes
-    ):
-        raise AssetBoundProductionError("ASSET_OR_PREMIUM_LAYER_MUTATED_AUTHORSHIP")
+    _assert_architecture_preserved(
+        plan,
+        original_family=original_family,
+        original_topology=original_topology,
+        original_scenes=original_scenes,
+    )
     return rendered
 
 
@@ -150,25 +158,39 @@ def run_asset_bound_generation(
     *,
     asset_bindings: Mapping[str, Mapping[str, Any]],
 ) -> dict[str, Any]:
-    """Run authoritative generation, then bind media and PU1-PU8 after Family freeze."""
+    """Run authoritative generation, then select/render research-derived variants."""
     result = run_authoritative_generation(raw, output_dir)
     plan = result["plan"]
     directives = result["directives"]
     output = Path(output_dir)
 
+    if plan.get("production_authority") != "composition_plan":
+        raise AssetBoundProductionError("COMPOSITION_PLAN_NOT_AUTHORITATIVE")
+    if plan.get("input", {}).get("creative_family", {}).get("frozen") is not True:
+        raise AssetBoundProductionError("FAMILY_NOT_FROZEN")
+
+    original_topology = deepcopy(plan.get("topology"))
+    original_scenes = deepcopy(plan.get("scene_intents"))
+    original_family = plan.get("family_id")
+
+    # Compatibility/reference trace only.  It is deliberately not rendered.
     premium = build_premium_uplift(plan, directives, asset_bindings)
     premium = _apply_mobile_headline_guard(plan, premium)
-    premium["PU1_public_copy"]["trace"]["display_heading_semantic_guard"] = {
-        "scope": "all_current_public_display_headings_and_final_cta",
-        "strategy": "authored_inline_chunks_with_explicit_break_opportunities",
-        "blanket_global_nowrap": False,
-        "protected_units": ["から", "次へ", "ここから", "違い", "情報", "ポイント"],
-        "composition_plan_mutated": False,
-    }
-    html = render_premium_asset_bound_html(plan, directives, asset_bindings, premium)
-    html = _apply_display_heading_semantic_guard(html)
-    html = _apply_headline_optical_css_guard(html)
+    premium["visual_authority"] = "REGRESSION_REFERENCE_ONLY_NOT_FINAL_RENDERER"
+
+    ensemble = select_variant_ensemble(plan, directives, asset_bindings)
+    html, bridge_trace = render_variant_faithful_page(
+        plan, directives, asset_bindings, ensemble
+    )
+    html = _apply_regression_render_compatibility(html)
     (output / "index.html").write_text(html, encoding="utf-8")
+
+    _assert_architecture_preserved(
+        plan,
+        original_family=original_family,
+        original_topology=original_topology,
+        original_scenes=original_scenes,
+    )
 
     manifest_path = output / "production_manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -194,12 +216,24 @@ def run_asset_bound_generation(
     manifest["premium_authorship"] = deepcopy(premium)
     manifest["premium_authorship"]["production_authority"] = "composition_plan"
     manifest["premium_authorship"]["architecture_mutation"] = False
-    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    manifest["research_to_production_bridge"] = deepcopy(bridge_trace)
+    manifest["production_variant_registry"] = registry_manifest()
+    manifest["final_visual_authority"] = "production_variant_dispatch"
+    manifest["legacy_generic_premium_renderer_final_authority"] = False
+    manifest["silent_generic_variant_fallback"] = False
+    manifest_path.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
 
     result["manifest"] = manifest
     result["asset_bindings"] = deepcopy(dict(asset_bindings))
     result["premium_uplift"] = deepcopy(premium)
+    result["variant_bridge"] = deepcopy(bridge_trace)
     return result
 
 
-__all__ = ["AssetBoundProductionError", "render_asset_bound_authoritative_html", "run_asset_bound_generation"]
+__all__ = [
+    "AssetBoundProductionError",
+    "render_asset_bound_authoritative_html",
+    "run_asset_bound_generation",
+]

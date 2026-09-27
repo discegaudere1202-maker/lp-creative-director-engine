@@ -1,0 +1,51 @@
+{
+  "issue": 121,
+  "schema_version": "issue121_task_contract_v1",
+  "starting_main": "1fdede758bb7f4710b2f4aee51df7e9309968ca0",
+  "required_chain": [
+    "research_pattern_id",
+    "production_variant_id",
+    "company_specific_selection",
+    "page_art_direction_spine",
+    "variant_faithful_renderer",
+    "screenshot_evidence"
+  ],
+  "hero_variants_required": [
+    "PV-HERO-RECOGNITION-FIELD-v1",
+    "PV-HERO-EVIDENCE-ANCHOR-v1",
+    "PV-HERO-GUIDED-ROUTE-CANVAS-v1"
+  ],
+  "renderer_cutover": "selected implemented Production Variants own structural DOM/CSS/mobile/motion behavior; generic premium-scene fallback is forbidden",
+  "fail_closed": [
+    "unknown_variant",
+    "missing_renderer_implementation_identity",
+    "missing_required_responsive_transform",
+    "missing_pattern_variant_trace"
+  ],
+  "stage_a": {
+    "samples": ["SK1", "SK2", "SK3", "HS1", "HS2", "BR1", "BR2", "PI1", "PI2"],
+    "widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+    "screenshots_required": 81,
+    "contact_sheets": [390, 1440]
+  },
+  "preserve": [
+    "Family freeze",
+    "CompositionPlan semantic authority",
+    "truth/evidence boundary",
+    "Visual Asset Library rights/provenance",
+    "no fabricated proof",
+    "no identity routing",
+    "no random diversity",
+    "asset scarcity never changes Family",
+    "current industries only",
+    "320-1440 responsive gates",
+    "Japanese semantic line-break gates",
+    "accessibility/reduced motion"
+  ],
+  "human_boundary": {
+    "HUMAN_VISIBLE_PASS": "NOT_SELF_DECLARED",
+    "final_premium_quality": "NOT_SELF_DECLARED",
+    "million_yen_value": "NOT_SELF_DECLARED",
+    "Shun_approval": "NOT_SELF_DECLARED"
+  }
+}
