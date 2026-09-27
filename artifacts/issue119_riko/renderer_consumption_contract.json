@@ -1,0 +1,33 @@
+{
+  "issue":119,
+  "schema_version":"research_derived_renderer_consumption_contract_v1",
+  "purpose":"Prevent the renderer from collapsing selected research-derived Production Variants back into one shared scene grammar.",
+  "required_renderer_inputs":["page_art_direction_spine","scene_variant_manifest","asset_bindings","evidence_bindings","responsive_transform_manifest"],
+  "scene_variant_manifest_required_fields":["scene_id","source_pattern_ids","production_variant_id","renderer_implementation_identity","selection_reason","responsive_variant_transform","evidence_media_binding"],
+  "renderer_authority_rules":[
+    "Renderer may realize the selected Production Variant; it may not re-infer Family, persuasive mechanism or alternative layout from category/company identity.",
+    "Unknown production_variant_id must fail closed; no fallback to generic premium-scene markup.",
+    "A variant implementation must own its structural DOM/CSS/interaction decisions where those decisions define the benchmark mechanism.",
+    "Shared primitives are limited to reset, accessibility, typography utilities, asset safety/provenance helpers, focus behavior, responsive safety and non-authorial infrastructure.",
+    "Shared primitives must not force identical hero split, card grid, indexed chapters, proof card, CTA pill, dark closing or global media aspect ratios across variants.",
+    "Responsive adaptation must call the selected variant's mobile transform; generic stack-only fallback is prohibited when it destroys mechanism fidelity.",
+    "The renderer must emit trace attributes or adjacent manifest references sufficient to identify pattern_id, production_variant_id and implementation identity for every rendered scene.",
+    "Variant implementation must preserve current rights/evidence/factual-truth locks and cannot fabricate missing proof to satisfy a design."
+  ],
+  "current_renderer_findings": {
+    "file":"src/lp_engine/premium_authorship.py",
+    "problematic_authority":"render_premium_asset_bound_html",
+    "shared_skeleton_examples":["premium-header","premium-hero","premium-offers","premium-scene","proof-card","cta-row","premium-closing","premium-footer"],
+    "shared_visual_defaults":["hero 4/5 media","scene 16/11 media","mobile 4/3 media","indexed CHAPTER sections","pill CTA vocabulary","dark closing panel","premium-reveal animation"],
+    "decision":"replace as final visual authority; retain only as regression/reference during migration"
+  },
+  "production_variant_interface": {
+    "compile":"compile_variant(variant_contract, scene_context, page_spine, evidence_bindings, asset_bindings) -> RenderableVariant",
+    "render":"render_variant(RenderableVariant) -> html/css/behavior + trace",
+    "mobile":"variant.mobile_transform(width, scene_context) -> responsive directives",
+    "acceptance":"variant acceptance cannot become PASS until screenshot evidence shows intended mechanism"
+  },
+  "page_renderer_rule":"The page renderer sequences already-selected RenderableVariants and enforces coherence from the Page Art Direction Spine. It must not normalize all variants into one HTML skeleton.",
+  "fail_closed_conditions":["unknown_variant","missing_renderer_implementation_identity","variant requires proof/media not available after allowed feasibility adaptation","responsive transform missing for required widths","pattern/variant trace missing","renderer output does not preserve selected implementation identity"],
+  "migration_compatibility":"CompositionPlan remains upstream authority for frozen Family/scene intent/topology. The Production Variant bridge adds visual mechanism fidelity; it does not reopen Family or factual truth."
+}
