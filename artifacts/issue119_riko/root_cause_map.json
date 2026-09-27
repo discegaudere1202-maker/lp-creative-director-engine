@@ -1,0 +1,38 @@
+{
+  "issue": 119,
+  "schema_version": "issue119_root_cause_map_v1",
+  "owner_reality": "画像品質は上がったが全体デザインは酷い",
+  "primary_diagnosis": "The benchmark research and module registry exist, but the Production path lacks a research-derived visual variant bridge. Rich planning semantics are compressed into generic labels and then rendered through a shared page skeleton, allowing internal architecture/QA to PASS while visible whole-page design remains generic.",
+  "causal_chain": [
+    "Issue #44 extracts benchmark mechanisms and assigns pattern_ids.",
+    "Later architecture freezes Family and creates semantic CompositionPlan fields.",
+    "authored_composition_contract compresses persuasion into small enums such as hero/core/trust/closing plus scene intents.",
+    "premium_authorship adds global decision-job copy dictionaries, generic hero labels, four visual voice modes and a small dramaturgy vocabulary.",
+    "render_premium_asset_bound_html serializes all pages through one shared DOM/CSS grammar with repeated header, hero, offer grid, indexed scenes, proof cards, CTA pills, dark closing panel and shared responsive collapse.",
+    "QA verifies safety, provenance, responsive cleanliness, plan preservation and some divergence, but does not require visual fidelity to selected benchmark mechanisms.",
+    "Aoi can therefore PASS defect absence and local authored differences without proving whole-page art-direction quality.",
+    "Shun's owner-level review correctly reveals the missing whole-page premium design gate."
+  ],
+  "root_causes": [
+    {"id":"RC1","severity":"BLOCKING","name":"Missing Research Pattern → Production Variant bridge","evidence":"Issue #44 pattern_ids exist, but production code does not select or consume those pattern_ids as real visual variants.","effect":"Research cannot materially control final visual design.","correction":"Introduce a Production-ready Premium Module Variant Library with direct source_pattern_ids and renderer implementation identities."},
+    {"id":"RC2","severity":"BLOCKING","name":"Semantic compression destroys benchmark mechanism fidelity","evidence":"CompositionPlan reduces broad mechanisms to hero/core/trust/closing and generic scene intents.","effect":"Different researched mechanisms can converge to the same runtime semantic token.","correction":"Keep semantic plan, but add a post-Family research-derived variant selection layer before rendering."},
+    {"id":"RC3","severity":"BLOCKING","name":"Shared renderer skeleton dominates page silhouette","evidence":"render_premium_asset_bound_html uses one premium-shell/header/hero/offer-grid/premium-scene/proof-card/CTA/dark-closing DOM and CSS grammar.","effect":"Topology differences are visually weaker than the shared skeleton.","correction":"Renderer must dispatch to variant-owned scene implementations and a page-level art-direction spine rather than one generic scene template."},
+    {"id":"RC4","severity":"HIGH","name":"Global visual voice enum is too coarse","evidence":"derive_visual_voice selects only calm/structured/forward/editorial and then changes limited type/measure/rule/image/accent tokens.","effect":"Art direction becomes a skin over the same composition.","correction":"Move typography, spatial rhythm, media geometry and material language into each Production Variant plus coherent page-level rules."},
+    {"id":"RC5","severity":"HIGH","name":"Public copy is decision-job templating, not company-specific editorial authorship","evidence":"HERO_HEADLINES, SCENE_HEADLINES and SCENE_SUPPORT are global dictionaries reused across companies.","effect":"Pages can differ structurally while still speaking with one system voice.","correction":"Variant selection must expose copy-density/role constraints; public copy must be generated from Company Truth + Decision Signature + selected mechanism, then evidence checked."},
+    {"id":"RC6","severity":"HIGH","name":"Media binding improved asset quality without changing composition authority","evidence":"Visual Asset Library binds rights-safe assets, but common aspect ratios and scene containers still control image behavior.","effect":"Better images sit inside mediocre shared layouts.","correction":"Variant owns crop, aspect, layering, edge behavior, caption/proof relationship and sequence role."},
+    {"id":"RC7","severity":"HIGH","name":"Mobile is responsive collapse, not mechanism-specific re-art-direction","evidence":"mobile behavior mostly changes media order, text measure and vertical stacking of the same DOM.","effect":"Desktop template smell persists on mobile.","correction":"Every Production Variant requires explicit mobile transform and screenshot acceptance evidence."},
+    {"id":"RC8","severity":"HIGH","name":"Motion is generic decoration rather than mechanism","evidence":"shared premium-reveal applies to hero and scenes irrespective of research pattern.","effect":"Motion adds polish but not authored differentiation.","correction":"Motion belongs to the variant only when it clarifies sequence, hierarchy, comparison or process."},
+    {"id":"RC9","severity":"BLOCKING","name":"QA optimized for defect absence and contract preservation","evidence":"Issue #111/#116 PASS established responsive/safety/provenance/plan locks and local visual checks, but no benchmark-pattern-to-screenshot fidelity gate existed.","effect":"A page can be valid, safe and technically differentiated while still looking poor.","correction":"Aoi whole-page gate must compare actual screenshots to selected research mechanisms and can RETURN on overall design failure even when all technical QA is green."},
+    {"id":"RC10","severity":"HIGH","name":"Issue #114 underestimated the architecture layer that needed replacement","evidence":"#114 correctly identified shared CSS/template smell but recommended minimal uplift rather than a real research-to-visual-variant bridge.","effect":"#116 improved symptoms while preserving the compression architecture.","correction":"Withdraw the 'minimal uplift is sufficient' assumption; preserve upstream contracts but redesign the visible variant/rendering bridge."},
+    {"id":"RC11","severity":"HIGH","name":"No per-variant screenshot acceptance artifact","evidence":"Current traces prove plan/media/QA status but do not prove a named benchmark mechanism is visually recognizable in the screenshot.","effect":"VISUALLY_VERIFIED can be claimed too loosely.","correction":"Variant acceptance requires benchmark mechanism notes + desktop/mobile reference expectations + generated screenshot review status."}
+  ],
+  "what_is_not_the_root_cause": [
+    "Creative Family taxonomy itself",
+    "image rights/provenance architecture",
+    "asset quality alone",
+    "lack of random variation",
+    "responsive overflow defects",
+    "a need to restart broad benchmark research from zero"
+  ],
+  "recovery_principle": "Preserve truth/Family/evidence/rights/CompositionPlan locks; replace the visual bridge that currently compresses research into generic tokens and one shared renderer grammar."
+}
