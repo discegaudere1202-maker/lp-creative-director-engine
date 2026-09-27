@@ -9,6 +9,7 @@ from lp_engine.premium_authorship import (
     render_premium_asset_bound_html,
 )
 from lp_engine.production_cutover import consume_current_industry_production, plan_current_industry_production
+from lp_engine.visual_asset_production import render_asset_bound_authoritative_html
 
 
 def truth(value, confidence="verified"):
@@ -211,6 +212,20 @@ class PremiumAuthorshipTest(unittest.TestCase):
         self.assertFalse(story["generic_stock_promoted_to_evidence"])
         self.assertEqual(story["claim_adjacency"], [])
         self.assertEqual(story["caption_mode"], "illustrative_explicit")
+
+    def test_asset_bound_renderer_authors_display_heading_semantic_chunks(self):
+        raw = fixture(job="choose", offers=3)
+        plan = plan_current_industry_production(raw)
+        directives = consume_current_industry_production(plan)
+        html = render_asset_bound_authoritative_html(plan, directives, {})
+        self.assertIn('data-semantic-heading="authored"', html)
+        self.assertIn('<span class="premium-display-unit">違いで</span>', html)
+        self.assertIn('<span class="premium-display-unit">ここから</span>', html)
+        self.assertIn('<span class="premium-display-unit">から、</span>', html)
+        self.assertIn('<span class="premium-display-unit">次へ。</span>', html)
+        self.assertIn('.premium-display-unit{display:inline-block}', html)
+        self.assertNotIn('.scene-copy h2{white-space:nowrap}', html)
+        self.assertNotIn('.premium-closing h2{white-space:nowrap}', html)
 
 
 if __name__ == "__main__":
