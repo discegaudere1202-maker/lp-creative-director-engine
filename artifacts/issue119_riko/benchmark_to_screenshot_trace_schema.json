@@ -1,0 +1,37 @@
+{
+  "issue":119,
+  "schema_version":"benchmark_to_screenshot_trace_v1",
+  "purpose":"Make every visible Production decision traceable from accepted research evidence to final screenshot verification.",
+  "page_trace_required_fields":["sample_id","company_truth_digest","decision_signature_digest","creative_family_id","family_version","family_frozen","page_art_direction_spine","composition_plan_digest","production_variant_set_digest","renderer_build_sha","screenshot_artifact_id"],
+  "scene_trace_required_fields":[
+    "scene_id",
+    "decision_job",
+    "source_research_refs",
+    "source_pattern_ids",
+    "candidate_production_variant_ids",
+    "selected_production_variant_id",
+    "selection_reason",
+    "rejected_alternatives",
+    "company_inputs_used",
+    "decision_inputs_used",
+    "evidence_bindings",
+    "media_bindings",
+    "feasibility_adaptation",
+    "renderer_implementation_identity",
+    "responsive_variant_transform",
+    "rendered_dom_identity",
+    "rendered_style_identity",
+    "screenshot_verification"
+  ],
+  "source_research_ref_shape":{"source":"Issue #44 or later accepted evidence","artifact_path":"repository path","pattern_id":"M-* when applicable","mechanism_excerpt":"short paraphrased mechanism rationale"},
+  "screenshot_verification_shape":{"width":"one of 320/360/375/390/430/768/1024/1280/1440","artifact_path":"full-page screenshot path","mechanism_fidelity":"PASS|RETURN|NOT_REVIEWED","whole_page_coherence":"PASS|RETURN|NOT_REVIEWED","reviewer":"Aoi/Sarah/Shun as applicable","notes":"human-visible reason"},
+  "hard_rules":[
+    "A scene cannot be classified VISUALLY_VERIFIED if screenshot_verification is NOT_REVIEWED.",
+    "A research pattern cannot be credited merely because a semantically similar generic runtime token exists.",
+    "Selected production_variant_id and renderer_implementation_identity must survive into final output trace.",
+    "Screenshot verification must inspect the actual rendered mechanism, not only JSON/DOM metadata.",
+    "Owner VALUE_RETURN overrides internal PASS for the corresponding whole-page quality claim."
+  ],
+  "page_evidence_bundle":["full-page screenshots at all 9 widths","desktop/mobile contact sheets","trace manifest","selected/rejected variant manifest","rights/provenance manifest","whole-page Aoi review","Shun HTML review when requested"],
+  "status_ladder":["RESEARCH_ONLY","CONTRACT_ONLY","RUNTIME_SELECTABLE","PRODUCTION_VARIANT_IMPLEMENTED","RENDERER_CONSUMED","VISUALLY_VERIFIED"]
+}
