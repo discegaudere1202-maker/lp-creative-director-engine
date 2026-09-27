@@ -285,11 +285,22 @@ def run_asset_bound_generation(
         "human_visible_premium_declared": False,
         "aoi_v2_required": True,
     }
-    manifest["final_visual_authority"] = (
-        "production_variant_dispatch_plus_spine_v2_media_narrative"
+    # Issue #121 remains the renderer authority. Issue #124/#129 are explicit
+    # downstream art-direction/pixel-authority layers rather than a replacement
+    # renderer identity. Keeping these namespaces separate preserves old
+    # evidence contracts without hiding the new final-pixel responsibility.
+    manifest["final_visual_authority"] = "production_variant_dispatch"
+    manifest["pixel_visual_authority"] = (
+        perceptual_trace["pixel_authority"]
         if perceptual_trace.get("applied")
-        else "production_variant_dispatch_issue129_not_applicable_no_media"
+        else "not_applicable_empty_binding_regression_only"
     )
+    manifest["authority_layers"] = {
+        "composition": "composition_plan",
+        "renderer": "production_variant_dispatch",
+        "whole_page_art_direction": "issue124",
+        "pixel_perception": manifest["pixel_visual_authority"],
+    }
     manifest["whole_page_art_direction_propagation"] = "issue124_plus_issue129_when_media_bound"
     manifest["legacy_generic_premium_renderer_final_authority"] = False
     manifest["silent_generic_variant_fallback"] = False
