@@ -1,0 +1,25 @@
+{
+  "issue":119,
+  "schema_version":"issue119_pattern_variant_mapping_v1",
+  "source_registry":"data/production_architecture/module_composition_registry_v1.json",
+  "mapping":[
+    {"pattern_id":"M-HERO-01","pattern_name":"Recognition-led Hero","production_variant_ids":["PV-HERO-RECOGNITION-FIELD-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-HERO-02","pattern_name":"Evidence-first Hero","production_variant_ids":["PV-HERO-EVIDENCE-ANCHOR-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-HERO-03","pattern_name":"Guided-choice Hero","production_variant_ids":["PV-HERO-GUIDED-ROUTE-CANVAS-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-TRUST-01","pattern_name":"Quiet Boundary Ledger","production_variant_ids":["PV-TRUST-BOUNDARY-LEDGER-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-TRUST-02","pattern_name":"Distributed Proof Thread","production_variant_ids":["PV-TRUST-DISTRIBUTED-PROOF-THREAD-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-PROBLEM-01","pattern_name":"Scene-based Tension Naming","production_variant_ids":["PV-PROBLEM-SCENE-TENSION-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-STORY-01","pattern_name":"Causal Business Story","production_variant_ids":["PV-STORY-CAUSAL-CHAIN-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-SERVICE-01","pattern_name":"Intent-routed Service Field","production_variant_ids":["PV-SERVICE-INTENT-ROUTED-FIELD-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-PROCESS-01","pattern_name":"Process-as-Proof Sequence","production_variant_ids":["PV-PROCESS-PROOF-SEQUENCE-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-HUMAN-01","pattern_name":"Relationship Evidence Scene","production_variant_ids":["PV-HUMAN-RELATIONSHIP-EVIDENCE-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-GALLERY-01","pattern_name":"Atmosphere as Decision Scene","production_variant_ids":["PV-GALLERY-ATMOSPHERE-DECISION-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-OFFER-01","pattern_name":"Commitment Ladder","production_variant_ids":["PV-OFFER-COMMITMENT-LADDER-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-CTA-01","pattern_name":"State-specific Next Event","production_variant_ids":["PV-CTA-STATE-SPECIFIC-EVENT-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-END-01","pattern_name":"Utility Closure","production_variant_ids":["PV-END-UTILITY-CLOSURE-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"},
+    {"pattern_id":"M-END-02","pattern_name":"Emotional Resolution","production_variant_ids":["PV-END-EMOTIONAL-RESOLUTION-v1"],"current_status":"CONTRACT_ONLY","target_status":"VISUALLY_VERIFIED"}
+  ],
+  "status_transition_rule":"CONTRACT_ONLY -> RUNTIME_SELECTABLE only after selector consumes pattern compatibility; -> PRODUCTION_VARIANT_IMPLEMENTED only after a real renderer implementation identity exists; -> RENDERER_CONSUMED only when final HTML records the selected variant; -> VISUALLY_VERIFIED only after screenshot review proves the intended mechanism is perceptible.",
+  "trace_rule":"Rendered scene manifest must preserve source pattern_id(s) and production_variant_id without replacing them with generic hero/density/width tokens.",
+  "expansion_rule":"One pattern may map to multiple variants when existing evidence demonstrates materially different compositions are required; variants must not be multiplied solely for random diversity."
+}
