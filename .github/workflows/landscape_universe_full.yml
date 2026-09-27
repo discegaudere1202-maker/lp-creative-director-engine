@@ -1,0 +1,40 @@
+name: Landscape Universe Full Build
+
+on:
+  push:
+    branches:
+      - task/landscape-universe-24070
+    paths:
+      - 'scripts/lead_universe/build_universe_v2.py'
+      - '.github/workflows/landscape_universe_full.yml'
+  workflow_dispatch:
+
+jobs:
+  build-universe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pandas openpyxl
+      - name: Scrape 47 prefectures
+        run: |
+          python scripts/lead_universe/scrape_mlit_landscape_universe.py \
+            --out-dir artifacts/landscape_universe/raw \
+            --delay 0.20
+      - name: Build deduped universe
+        run: |
+          python scripts/lead_universe/build_universe_v2.py \
+            --raw-dir artifacts/landscape_universe/raw \
+            --out-dir artifacts/landscape_universe/final \
+            --official-target 24070
+      - name: Upload universe artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: landscape-universe-live
+          path: artifacts/landscape_universe/
+          if-no-files-found: error
