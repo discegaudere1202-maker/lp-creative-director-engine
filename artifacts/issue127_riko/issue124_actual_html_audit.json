@@ -1,0 +1,63 @@
+{
+  "schema_version": "issue127_issue124_actual_html_audit_v1",
+  "issue": 127,
+  "owner_value_return": "前のとほとんど変わってない、、画像も入ってないし",
+  "source_artifact": {
+    "issue": 124,
+    "run_id": 36315439673,
+    "artifact_id": 10929939766,
+    "artifact_digest": "sha256:62ce44a57dbea58c7f27bfd63047d0a0d48e2f085cd6f0138a77217496fecb16",
+    "merged_main": "2fdf08266f9980c13005dec8048c5c5e350b5804",
+    "evidence_paths": [
+      "owner_html_bundle/cases/*/index.html",
+      "contact_sheets/issue124_whole_page_1440.jpg",
+      "contact_sheets/issue124_whole_page_390.jpg",
+      "issue121_base/contact_sheets/stage_a_variant_bridge_1440.jpg",
+      "issue121_base/contact_sheets/stage_a_variant_bridge_390.jpg",
+      "whole_page_spine_trace.json",
+      "issue124_manifest.json"
+    ]
+  },
+  "facts": {
+    "sample_count": 9,
+    "img_elements_total": 18,
+    "img_elements_per_page": {"min": 2, "max": 2, "all_pages_exactly": 2},
+    "sections_per_page": {"min": 5, "max": 7},
+    "img_per_section_range": [0.286, 0.4],
+    "all_images_use_same_outer_asset_wrapper": "production-asset",
+    "unique_style_hashes_across_9_pages": 3,
+    "all_pages_style_text_length_chars": 30481,
+    "all_pages_animation_declarations": 6,
+    "all_pages_font_family_declarations": ["var(--sans)", "var(--serif)"],
+    "media_arc_pattern": "Every Page Art Direction Spine begins with hero_dominant_context + local_media_if_bound; remaining continuation beats are predominantly copy_evidence_only.",
+    "owner_bundle_baseline_contamination": {
+      "finding": "Within the Issue #124 ZIP, owner_html_bundle/cases/<case>/index.html and issue121_base/owner_html_bundle/cases/<case>/index.html are byte-identical for all 9 cases; the paired production_manifest.json files are also byte-identical.",
+      "interpretation": "The nested owner-HTML baseline is not an independent pre-Issue124 comparison artifact. This invalidates that packaged HTML pair as proof of before/after change. It does NOT by itself prove that the merged renderer was old; the packaged current HTML contains Issue #124 wp-* classes.",
+      "required_recovery": "Future Shun-facing evidence must cryptographically bind final renderer input HTML, screenshot output, owner HTML bundle, and an independently frozen rejected baseline."
+    }
+  },
+  "cases": {
+    "BR1": {"img_count":2,"section_count":6,"text_chars":617,"style_sha256":"3b49ac48eb0e71b2650da5af3df693a99aff3c76121396aa115f09a84297e2c3","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only","copy_evidence_only"],"continuation":"WP-PREPARE-PROCESS-v1","img_per_section":0.333,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]},
+    "BR2": {"img_count":2,"section_count":7,"text_chars":739,"style_sha256":"041262d889d18cd221a3c1af09c60f68c70c21e0660ab9cc007384e5499336e7","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only","copy_evidence_only","copy_evidence_only"],"continuation":"WP-COMPARE-PAIRED-INSTRUMENT-v1","img_per_section":0.286,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]},
+    "HS1": {"img_count":2,"section_count":6,"text_chars":657,"style_sha256":"041262d889d18cd221a3c1af09c60f68c70c21e0660ab9cc007384e5499336e7","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only","copy_evidence_only"],"continuation":"WP-ROUTE-WORKBENCH-v1","img_per_section":0.333,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]},
+    "HS2": {"img_count":2,"section_count":5,"text_chars":590,"style_sha256":"d375ddd77e8287a0dccf824e584c6715114c4df814c1d0020f2ebbdcde01a012","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only"],"continuation":"WP-EVIDENCE-SALON-RAIL-v1","img_per_section":0.4,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]},
+    "PI1": {"img_count":2,"section_count":6,"text_chars":604,"style_sha256":"3b49ac48eb0e71b2650da5af3df693a99aff3c76121396aa115f09a84297e2c3","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only","copy_evidence_only"],"continuation":"WP-ACT-OPEN-FIELD-v1","img_per_section":0.333,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]},
+    "PI2": {"img_count":2,"section_count":5,"text_chars":596,"style_sha256":"d375ddd77e8287a0dccf824e584c6715114c4df814c1d0020f2ebbdcde01a012","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only"],"continuation":"WP-EVIDENCE-OPEN-STUDIO-v1","img_per_section":0.4,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]},
+    "SK1": {"img_count":2,"section_count":6,"text_chars":673,"style_sha256":"041262d889d18cd221a3c1af09c60f68c70c21e0660ab9cc007384e5499336e7","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only","copy_evidence_only"],"continuation":"WP-ROUTE-SPECIMEN-v1","img_per_section":0.333,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]},
+    "SK2": {"img_count":2,"section_count":5,"text_chars":590,"style_sha256":"d375ddd77e8287a0dccf824e584c6715114c4df814c1d0020f2ebbdcde01a012","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only"],"continuation":"WP-EVIDENCE-SPECIMEN-v1","img_per_section":0.4,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]},
+    "SK3": {"img_count":2,"section_count":7,"text_chars":730,"style_sha256":"041262d889d18cd221a3c1af09c60f68c70c21e0660ab9cc007384e5499336e7","media_arc":["hero_dominant_context","local_media_if_bound","copy_evidence_only","copy_evidence_only","copy_evidence_only"],"continuation":"WP-COMPARE-PAIRED-SPECIMEN-v1","img_per_section":0.286,"img_parent_class":"production-asset","animation_declaration_count":6,"style_chars":30481,"font_family_declarations":["var(--sans)","var(--serif)"]}
+  },
+  "perceptual_characterization": {
+    "media_density": "Sparse: only two image placements per page across five to seven sections. Asset existence therefore does not equal visible media presence.",
+    "image_prominence": "Some hero/body media can be large, but the page-level media rhythm stops after two placements and most continuation beats are copy/evidence-only.",
+    "visual_storytelling": "Media functions as isolated illustrative bindings rather than a sustained narrative sequence of world/context/process/detail/transition.",
+    "section_silhouette": "Issue #124 adds authored continuation families and longer body silhouettes versus Issue #121 screenshots, but the public visual grammar remains restrained and closely related.",
+    "typography": "The nine pages reuse the same two font-family variables and largely the same scale vocabulary; typography differentiates module structure more than brand/world authority.",
+    "whitespace_density": "Whitespace and density vary by continuation, but the dominant cadence remains calm bordered/inset information fields rather than benchmark-like shifts between immersive and informational scenes.",
+    "background_material_variation": "Dark/light and rule/inset changes exist, but material diversity remains narrow and often ledger/card/rail-like.",
+    "editorial_composition": "Structural asymmetry exists, yet image-led editorial sequencing is weak because only two media placements carry the entire page.",
+    "interaction_motion": "Six shared animation declarations exist per page; motion is light reveal/feedback and does not create major narrative transformation.",
+    "screenshot_worthy_moments": "Some continuation geometry is distinctive relative to sibling samples, but the pages lack enough high-impact authored focal scenes to escape the prior visual lineage at first glance."
+  },
+  "conclusion": "Issue #124 demonstrates structural divergence, not premium-perception recovery. Shun's 'ほとんど変わってない / 画像も入ってない' is consistent with both the sparse media facts and the retained public pixel grammar."
+}

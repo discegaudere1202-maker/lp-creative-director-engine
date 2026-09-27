@@ -1,0 +1,106 @@
+{
+  "schema_version": "issue127_premium_perception_recovery_contract_v1",
+  "status": "RIN_IMPLEMENTATION_CONTRACT_NOT_IMPLEMENTATION",
+  "authority_order": [
+    "Shun actual HTML/value return",
+    "metadata-blind whole-page human perception",
+    "benchmark-mechanism perceptual fidelity",
+    "structural/trace correctness",
+    "technical QA"
+  ],
+  "preserve": [
+    "Company Truth / Creative Fit separation",
+    "Family freeze before feasibility adaptation",
+    "Decision Signature and CompositionPlan authority",
+    "rights/provenance and generic-stock illustrative boundary",
+    "no fabricated staff/results/testimonials/credentials/prices",
+    "no company-ID/reference-name routing",
+    "no random diversity",
+    "responsive width QA and line-break gates",
+    "research pattern and Production Variant traceability"
+  ],
+  "replace_or_recover": [
+    "Spine as mostly semantic continuation coordinator -> Spine as pixel-authoritative perceptual art direction contract",
+    "media as optional asset binding -> media as planned narrative/compositional system",
+    "variant identity proven by renderer/DOM/CSS differences -> variant identity proven by metadata-blind screenshot perception",
+    "cross-sample non-clone as primary Human Reality success -> absolute page quality first",
+    "technical before/after evidence -> owner-delivery-integrity-bound before/after evidence"
+  ],
+  "page_art_direction_spine_v2_required_fields": [
+    "primary_visual_thesis", "macro_silhouette", "hero_authority", "typography_relationship",
+    "media_narrative_arc", "focal_scene_sequence", "density_arc", "whitespace_cadence",
+    "contrast_arc", "material_surface_language", "section_transition_grammar", "proof_rhythm",
+    "cta_cadence", "ending_resolution", "motion_intent", "desktop_composition", "mobile_re_art_direction"
+  ],
+  "media_reality_contract": {
+    "principle": "Do not prescribe an arbitrary universal image count. The selected benchmark-derived mechanism determines how much media is necessary and how prominent it must feel.",
+    "per_binding_required": [
+      "scene_id", "narrative_role", "compositional_role", "prominence_intent", "evidence_status",
+      "source/rights identity", "crop_geometry", "layering_behavior", "copy_interaction",
+      "transition_role", "desktop_behavior", "mobile_re_art_direction", "fallback_restriction"
+    ],
+    "allowed_prominence_intents": ["dominant", "co-dominant", "supporting", "none_by_design"],
+    "required_page_behavior": [
+      "Media must create an intentional page-level rhythm rather than stop after isolated hero/body slots.",
+      "Image-led/atmospheric benchmark mechanisms must visibly remain image-led in screenshots.",
+      "Process/story/human/gallery variants requiring media fail closed when their required visible mechanism cannot be represented truthfully.",
+      "Feasibility may select a compatible variant inside the frozen Family; it must never silently shrink an image-dependent mechanism into generic incidental media.",
+      "Generic stock may be compositionally strong only as clearly illustrative media; it cannot become company-specific evidence."
+    ],
+    "hard_return_conditions": [
+      "assets exist in the bundle but a normal reviewer reasonably perceives imagery as absent or incidental",
+      "media appears only as interchangeable bounded slots without narrative/compositional consequence",
+      "desktop mechanism depends on media but mobile removes its authority",
+      "selected research mechanism requires sensory/environment/process authority and screenshot shows primarily copy/cards instead"
+    ]
+  },
+  "section_authorship_contract": {
+    "rule": "Every major section must earn its composition from a decision job and the Page Spine. Authorship is not satisfied by a different class name, border, grid ratio or dark panel alone.",
+    "visible_requirements": [
+      "hierarchy and focal point", "meaningful type/media relationship", "negative-space intent",
+      "entry/exit transition to adjacent scenes", "material/background behavior tied to persuasion state",
+      "a reason the section could not be swapped unchanged into an unrelated page"
+    ]
+  },
+  "typography_material_spacing_contract": {
+    "typography": "Type must establish page-specific authority through scale relationship, voice, measure and contrast—not only shared serif/sans variables.",
+    "material": "Backgrounds, rules, borders, surfaces and decorative grammar must support the page's visual thesis; repeated ledger/card/rail treatment cannot be the universal premium skin.",
+    "spacing": "Spacing must form a deliberate rhythm arc with meaningful compression/expansion; uniform calm spacing is not automatically premium.",
+    "transition": "Section transitions must visibly change state when the persuasion arc changes state."
+  },
+  "authored_moment_contract": {
+    "definition": "A screenshot-worthy authored moment is a scene where typography, media, space, material and decision logic interact in a way that is immediately recognizable without metadata.",
+    "rule": "Each page must contain clear authored focal moments beyond utility cards/ledgers; exact count is not fixed globally and must follow benchmark mechanism and page arc.",
+    "failure": "If the strongest screenshot is explainable only by its copy or image asset while the composition remains generic, the moment does not qualify."
+  },
+  "desktop_mobile_contract": {
+    "desktop": "1440 must express the intended macro silhouette, media hierarchy and authored scene sequence.",
+    "mobile": "390 is independently art-directed. It may simplify but must preserve the mechanism's authority, media role, type hierarchy, state transitions and closing resolution.",
+    "hard_return": "Responsive survival/no overflow is insufficient if premium gestalt or media authority collapses on mobile."
+  },
+  "anti_template_contract": {
+    "absolute_quality_first": true,
+    "then_compare": ["latest Shun-rejected version", "same-Family sibling", "cross-Family sibling"],
+    "hard_return_if": [
+      "current page is first-glance materially tied to the rejected baseline in macro silhouette, typography, media rhythm, material grammar and focal sequence",
+      "different variants still share one dominant public pixel grammar",
+      "uniqueness comes mainly from copy/photo/color swap or added sections",
+      "same-family pages differ structurally but both still read as one design-system demo rather than authored LPs"
+    ],
+    "no_invented_numeric_threshold": true
+  },
+  "shun_facing_acceptance_evidence": {
+    "required": [
+      "actual owner-delivery HTML for each sample",
+      "1440 and 390 full-page screenshot generated from exactly that HTML",
+      "current HTML SHA-256 and screenshot artifact identity",
+      "independently frozen latest Shun-rejected baseline HTML/screenshot hashes",
+      "side-by-side before/after 1440 and 390 without metadata overlays",
+      "selected benchmark mechanism refs plus a plain-language statement of what should be visually perceptible",
+      "media narrative plan and actual rendered media-role trace",
+      "Aoi v2 verdict performed blind before metadata review"
+    ],
+    "integrity_gate": "If owner HTML, screenshot render input and baseline provenance cannot be proven distinct/correct, do not route to Shun."
+  },
+  "acceptance_statement": "The next implementation is complete only when benchmark qualities survive into actual owner-delivery pixels and Aoi v2 passes the blind absolute-quality gate. No internal component/trace/clone PASS can substitute."
+}

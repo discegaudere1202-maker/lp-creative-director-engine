@@ -1,0 +1,112 @@
+{
+  "schema_version": "issue127_aoi_human_reality_contract_v2",
+  "supersedes_for_issue124": ["Issue #126 HUMAN_VISIBLE_PASS"],
+  "highest_rule": "A layout can be different from another layout and still be a poor LP. Non-clone is necessary but never sufficient.",
+  "review_order": [
+    {
+      "stage": 0,
+      "name": "Delivery Integrity Gate",
+      "metadata_allowed": true,
+      "checks": [
+        "Confirm owner HTML SHA matches the exact HTML used to render review screenshots.",
+        "Confirm current and rejected-baseline provenance are independently frozen and not duplicated/contaminated.",
+        "Confirm referenced media files load in the owner bundle."
+      ],
+      "fail_action": "RETURN"
+    },
+    {
+      "stage": 1,
+      "name": "Blind Single-page Premium Gate",
+      "metadata_allowed": false,
+      "inputs": ["1440 full-page", "390 full-page"],
+      "question": "Without knowing variant IDs, research IDs or sibling pages: does this single page itself look intentionally art-directed and high-quality enough to advance to owner review?",
+      "must_judge": [
+        "first-impression authority", "macro silhouette", "hero authority", "typography authority",
+        "spatial rhythm", "section contrast", "material coherence", "visual storytelling", "closing quality"
+      ],
+      "fail_action": "RETURN_IMMEDIATE"
+    },
+    {
+      "stage": 2,
+      "name": "Media Reality Gate",
+      "metadata_allowed": false,
+      "question": "Are images unmistakably present as meaningful composition/storytelling, not merely technically present?",
+      "must_judge": [
+        "prominence", "continuity across page", "crop and scale", "image/text interaction",
+        "transition role", "sensory/context/process authority", "mobile preservation"
+      ],
+      "fail_action": "RETURN_IMMEDIATE"
+    },
+    {
+      "stage": 3,
+      "name": "Benchmark Perceptual Fidelity Gate",
+      "metadata_allowed": "research references only after blind note is locked",
+      "checks": [
+        "Compare the screenshot with the visible qualities promised by the selected benchmark mechanism.",
+        "Require perceptual effect, not Pattern ID or DOM trace."
+      ],
+      "fail_action": "RETURN"
+    },
+    {
+      "stage": 4,
+      "name": "Rejected Baseline Delta Gate",
+      "metadata_allowed": false,
+      "checks": [
+        "Compare current vs latest Shun-rejected 1440 and 390 side-by-side.",
+        "Judge macro silhouette, type relationship, media rhythm, density arc, material language, authored focal sequence and ending.",
+        "Added sections/classes do not count as sufficient change."
+      ],
+      "fail_action": "RETURN"
+    },
+    {
+      "stage": 5,
+      "name": "Mobile Independent Art-direction Gate",
+      "metadata_allowed": false,
+      "checks": [
+        "Judge 390 as its own composition.",
+        "Confirm media authority, type hierarchy, authored body moment and ending survive without generic stacking."
+      ],
+      "fail_action": "RETURN"
+    },
+    {
+      "stage": 6,
+      "name": "Cross-sample Template Risk Gate",
+      "metadata_allowed": false,
+      "checks": [
+        "Only after absolute quality passes, compare same-Family and cross-Family siblings.",
+        "Detect template swap / shared public pixel grammar."
+      ],
+      "fail_action": "RETURN"
+    },
+    {
+      "stage": 7,
+      "name": "Trace / Technical Corroboration",
+      "metadata_allowed": true,
+      "checks": ["Pattern/variant trace", "rights/evidence", "responsive/overflow", "renderer identity", "workflow QA"],
+      "rule": "These can corroborate a visual PASS but can never rescue a visual RETURN."
+    }
+  ],
+  "hard_return_examples": [
+    "images exist in HTML/ZIP but visually read as absent, incidental or decorative",
+    "page is structurally different from siblings but still looks generic or low-quality",
+    "current page looks materially close to the latest owner-rejected version",
+    "benchmark mechanism is documented but not visually recognizable",
+    "typography/spacing/media framing/material grammar are generic across supposedly distinct pages",
+    "only borders/cards/grid ratios/dark panels change while overall gestalt stays the same",
+    "desktop looks authored but 390 collapses to a generic stack",
+    "technical QA is Green but blind premium impression is poor",
+    "delivery artifact cannot prove current HTML and screenshot/baseline integrity"
+  ],
+  "prohibited_pass_reasons": [
+    "not a clone", "layout/signature differs", "variant IDs differ", "renderer identities differ",
+    "81 screenshots rendered", "no overflow/clipping", "assets exist in archive",
+    "family or CompositionPlan digest differs", "CSS classes differ", "automated QA Green"
+  ],
+  "allowed_results": ["PASS", "RETURN", "CLIENT_EVIDENCE_DEPENDENT"],
+  "client_evidence_dependent_rule": "Use only when truthful representation of a selected high-value mechanism genuinely requires client-owned staff/store/results/pricing/credentials evidence. Do not use it to excuse weak art direction that can be created safely with illustrative media.",
+  "batch_rule": "For Stage A quality validation, a sample that fails Stage 1 or Stage 2 blocks batch Human Reality PASS until corrected.",
+  "review_note_template": [
+    "blind_first_impression", "media_reality", "benchmark_effect_visible", "rejected_baseline_delta",
+    "desktop_mobile_authority", "template_risk", "technical_corroboration", "verdict_and_root_cause"
+  ]
+}
