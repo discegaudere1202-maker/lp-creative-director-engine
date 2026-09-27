@@ -1,0 +1,35 @@
+{
+  "schema_version": "issue129_task_contract_v1",
+  "task_issue": 129,
+  "task_key": "premium-perception-recovery",
+  "owner": "rin",
+  "review_owner": "sarah",
+  "source_issue": 127,
+  "highest_authority": "Shun VALUE_RETURN: 前のとほとんど変わってない、画像も入ってない",
+  "recovery_note": "No recoverable Issue #129 branch/commit/artifact existed on GitHub or Project/Library. Windows-local unpushed git state is not mounted in this execution environment, so restoration proceeds as a minimal delta from merged Issue #127 architecture and accepted Issue #124/#106 runtime rather than a broad rebuild.",
+  "implementation": [
+    "Page Art Direction Spine v2",
+    "Media Narrative Plan",
+    "perceptual Production surface",
+    "owner-delivery integrity gate",
+    "rejected-baseline delta evidence",
+    "Aoi v2 review bundle"
+  ],
+  "preserve": [
+    "Family freeze",
+    "CompositionPlan authority",
+    "truth/evidence/rights/provenance",
+    "no company/reference identity routing",
+    "no random diversity",
+    "no asset-scarcity Family switching",
+    "semantic Japanese line-break gates",
+    "accessibility and reduced motion"
+  ],
+  "human_boundary": {
+    "rin_may_declare_human_visible_pass": false,
+    "rin_may_declare_final_premium": false,
+    "rin_may_declare_yen_1m_value": false,
+    "shun_owner_html_review_required_after_aoi_v2": true
+  },
+  "status": "IN_IMPLEMENTATION"
+}
