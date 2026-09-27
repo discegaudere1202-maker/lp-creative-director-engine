@@ -1,0 +1,29 @@
+{
+  "schema_version": "issue127_closure_report_v1",
+  "issue": 127,
+  "scope": "Research / Creative Direction / Architecture Recovery only",
+  "status": "Riko scope complete; ready for Sarah architecture audit",
+  "highest_human_reality": "前のとほとんど変わってない、、画像も入ってないし",
+  "validated_findings": [
+    "Issue #124 is structurally more divergent than Issue #121 screenshots, but premium perception did not recover.",
+    "All 9 delivered HTMLs contain exactly 2 img elements; media is sparse relative to 5-7 section pages.",
+    "Most continuation media arcs become copy_evidence_only after hero/local media.",
+    "High-quality LP research emphasizes continuous media/editorial worlds, density changes, material crops and mobile re-authorship that are not yet hard runtime acceptance conditions.",
+    "Issue #126 HUMAN_VISIBLE_PASS was a false positive relative to Owner Value because cross-sample non-clone/resolution was treated too strongly.",
+    "The artifact's nested issue121_base owner HTML is duplicated with current owner HTML, so owner before/after HTML provenance is not independently auditable."
+  ],
+  "deliverables": [
+    "artifacts/issue127_riko/issue124_actual_html_audit.json",
+    "artifacts/issue127_riko/root_cause_diagnosis.json",
+    "artifacts/issue127_riko/premium_perception_recovery_contract.json",
+    "artifacts/issue127_riko/aoi_human_reality_contract_v2.json",
+    "artifacts/issue127_riko/rin_recovery_handoff.json",
+    "artifacts/issue127_riko/issue127_contract_check.json",
+    "artifacts/issue127_riko/closure_report.json",
+    "docs/ISSUE127_RIKO_PREMIUM_PERCEPTION_RECOVERY.md"
+  ],
+  "own_scope_check": "31/31 PASS",
+  "production_changes": 0,
+  "next_routing": "Sarah Architecture Audit -> Rin Premium Perception Recovery implementation -> regenerate same Stage A -> Aoi v2 blind whole-page/media review -> Shun actual HTML review",
+  "not_done": ["merge", "Issue close", "Production implementation", "premium/¥1M declaration"]
+}
