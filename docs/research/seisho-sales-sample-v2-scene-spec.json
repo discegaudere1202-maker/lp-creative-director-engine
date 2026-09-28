@@ -1,0 +1,126 @@
+{
+  "project": {
+    "id": "SEISHO-SALES-SAMPLE-V2",
+    "company": "株式会社清松",
+    "method": "Creative Strategy -> Visual Design -> Scene Spec -> Validation Image / HTML",
+    "status": "render-ready"
+  },
+  "truth": {
+    "name": "株式会社清松",
+    "representative": "松村 貞行",
+    "address": "兵庫県尼崎市水堂町4-18-14",
+    "phone": "06-6480-5658",
+    "email": "seishou8869@yahoo.co.jp",
+    "capital": "500万円",
+    "license": "兵庫県知事許可 第215042号",
+    "verified_scopes": [
+      "造園工事",
+      "土木工事",
+      "とび・土工工事",
+      "解体工事"
+    ]
+  },
+  "creative_strategy": {
+    "primary_promise": "景観づくりだけで終わらず、現場を整える力までまとめて相談できる。",
+    "emotional_goal": [
+      "任せやすい",
+      "相談しやすい",
+      "ちゃんとしていそう"
+    ],
+    "primary_authority": [
+      "TRUST",
+      "CRAFT"
+    ],
+    "secondary_authority": [
+      "PLACE",
+      "SYSTEM"
+    ]
+  },
+  "visual_direction": {
+    "name": "Grounded Landscape Editorial",
+    "palette": {
+      "ivory": "#F4F0E6",
+      "deep_green": "#1E3527",
+      "forest": "#365E43",
+      "moss": "#6E7F5F",
+      "sand": "#D9CDBA",
+      "soil": "#96703F",
+      "ink": "#1E241F"
+    },
+    "display_type": "editorial serif",
+    "body_type": "Japanese sans",
+    "image_language": "warm low-angle natural light, stone/plant/soil texture, regional worksite realism",
+    "boundary_system": "single-owner topographic bezier",
+    "motion_system": "quiet credible"
+  },
+  "asset_policy": {
+    "all_current_images": "GENERATED_MOOD_ONLY",
+    "must_not_label_as_actual_work": true,
+    "production_replace_with_actual_work": true
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "job": "Company understanding + primary action",
+      "layout": "full-bleed image with left editorial copy and floating proof card",
+      "boundary": {
+        "owner": "next",
+        "type": "svg_bezier",
+        "path": "M0,78 C220,138 430,150 685,126 C960,100 1205,76 1440,16 L1440,170 L0,170 Z"
+      },
+      "motion": [
+        "background parallax 10px",
+        "copy rise 20px",
+        "proof card delayed fade"
+      ]
+    },
+    {
+      "id": "truth",
+      "job": "Verified public facts + missing-evidence transparency",
+      "layout": "asymmetric 5/7 editorial split",
+      "motion": [
+        "row stagger"
+      ]
+    },
+    {
+      "id": "services",
+      "job": "Translate verified work categories into consultation value",
+      "layout": "four image cards + editorial statement",
+      "motion": [
+        "card stagger",
+        "image micro-scale"
+      ]
+    },
+    {
+      "id": "visual_language",
+      "job": "Show future proof-zone structure without fabricating portfolio",
+      "layout": "dark immersive collage",
+      "motion": [
+        "masked image reveal",
+        "subtle image drift"
+      ]
+    },
+    {
+      "id": "value",
+      "job": "Explain why the proposed LP sells trust better",
+      "layout": "three proof pillars",
+      "motion": [
+        "pillar stagger"
+      ]
+    },
+    {
+      "id": "company_contact",
+      "job": "Resolve identity and convert to phone/email action",
+      "layout": "split company ledger + contact panel",
+      "motion": [
+        "panel rise",
+        "button hover"
+      ]
+    }
+  ],
+  "responsive": {
+    "desktop": "1440 reference",
+    "tablet": "stack hero proof under copy; keep collage 2-col",
+    "mobile": "single-column; proof facts condensed; visual labels preserved; CTA full-width"
+  }
+}
