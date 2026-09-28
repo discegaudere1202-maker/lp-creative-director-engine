@@ -1,0 +1,133 @@
+{
+  "project": {
+    "id": "SEISHO-SALES-SAMPLE-V3",
+    "company": "株式会社清松",
+    "method": "Creative Strategy -> Art Direction -> Visual Scene Spec -> Validation Image -> HTML/Motion",
+    "status": "validation-image-ready",
+    "human_feedback_trigger": "v2 improved architecture but looked too simple/template-like for a premium custom LP"
+  },
+  "truth": {
+    "name": "株式会社清松",
+    "representative": "松村 貞行",
+    "address": "兵庫県尼崎市水堂町4-18-14",
+    "phone": "06-6480-5658",
+    "email": "seishou8869@yahoo.co.jp",
+    "capital": "500万円",
+    "license": "兵庫県知事許可 第215042号",
+    "verified_scopes": ["造園工事","土木工事","とび・土工工事","解体工事"],
+    "forbidden_unverified": ["施工実績数","口コミ","受賞","価格","無料見積方針","対応エリア断定"]
+  },
+  "creative_strategy": {
+    "primary_promise": "景観をつくる。地面から、暮らしまで整える。",
+    "positioning": "造園単体ではなく、造園・土木・とび土工・解体まで扱う地域の現場会社としての信頼感",
+    "primary_authority": ["CRAFT","GROUND","TRUST"],
+    "secondary_authority": ["PLACE","SYSTEM"],
+    "emotional_goal": ["静かな迫力","職人性","土地に根ざす安心感","相談しやすさ"],
+    "anti_template": [
+      "均一なカードグリッドを連続させない",
+      "各sectionを同じ白背景・同じ余白で流さない",
+      "Heroで汎用的な中央寄せコピーを使わない",
+      "造園=葉っぱ装飾という短絡を避ける",
+      "すべての写真を角丸カードに入れない"
+    ]
+  },
+  "visual_direction": {
+    "name": "TERRAIN / CRAFT EDITORIAL",
+    "one_sentence": "地層・石組・現場の線を編集グラフィックへ変換し、静かな造園写真と土木の力強さを一つの誌面体験にする。",
+    "design_principles": [
+      "asymmetric editorial composition",
+      "oversized vertical typography",
+      "topographic contour lines as structural graphics",
+      "full-bleed photography interrupted by hard editorial cuts",
+      "contrast between quiet ivory paper and near-black green fields",
+      "proof data treated as technical annotation, not cards",
+      "section rhythm alternates immersive / sparse / technical / immersive"
+    ],
+    "palette": {
+      "paper": "#F1EDE3",
+      "paper_warm": "#E5DDCD",
+      "ink": "#111711",
+      "forest_black": "#142018",
+      "deep_green": "#1E382A",
+      "moss": "#68745A",
+      "soil": "#9A7142",
+      "stone": "#B7B09F",
+      "chalk": "#F7F4EC"
+    },
+    "typography": {
+      "display": "high-contrast editorial serif",
+      "utility": "condensed grotesk / Japanese sans",
+      "hero_scale": "very large 96-132px desktop equivalent",
+      "line_break_rule": "2-3 semantic chunks, deliberate short-long rhythm",
+      "vertical_type": true
+    },
+    "geometry": {
+      "signature": "terrain-cut",
+      "hero_boundary": "diagonal/topographic cut with one large concave bend",
+      "section_rule": "each major scene has unique silhouette; no repeated rounded-card container system",
+      "proof_lines": "hairline rules + datum marks + coordinate-like labels"
+    },
+    "motion": {
+      "system_name": "ground-shift",
+      "hero": ["slow vertical photo drift","contour line draw","proof datum slide-in"],
+      "services": ["horizontal field-panel reveal","numbers anchor while media shifts"],
+      "craft": ["masked stone/craft imagery reveal","micro parallax between foreground and text"],
+      "contact": ["terrain line converges toward CTA","button magnetic hover subtle"],
+      "rules": ["no scroll-jacking","no decorative looping foliage","reduced-motion fallback"]
+    }
+  },
+  "scenes": [
+    {
+      "id": "hero",
+      "marketing_job": "会社の空気感と対応の広さを一撃で理解させる",
+      "composition": "full-bleed garden/worksite photo, oversized left-bottom serif headline, vertical SEISHO wordmark, technical proof strip crossing lower third",
+      "headline": "景観をつくる。\n地面から、暮らしまで整える。",
+      "subcopy": "兵庫県尼崎市。造園・土木・とび土工・解体まで。",
+      "media": "MOOD_ONLY; actual work replacement required",
+      "boundary": {"owner":"truth","type":"terrain-cut","path_id":"terrainA"}
+    },
+    {
+      "id": "truth",
+      "marketing_job": "公開確認できる会社情報を設計図の注釈のように見せる",
+      "composition": "large negative-space field + offset technical ledger + one oversized numeric/license fragment",
+      "no_card_grid": true
+    },
+    {
+      "id": "scope",
+      "marketing_job": "4業務を別々のカードで並べず、地面から上物までの仕事の連続性として見せる",
+      "composition": "four horizontal field bands with alternating media/text orientation and large 01-04 numerals",
+      "sequence": ["造園工事","土木工事","とび・土工工事","解体工事"]
+    },
+    {
+      "id": "craft_field",
+      "marketing_job": "造園と土木が共存する会社らしい素材感・手仕事・現場感を強く印象づける",
+      "composition": "dark immersive spread, irregular collage, stone/craft/civil crops, contour-line overlay, minimal copy",
+      "headline": "植える。組む。掘る。\n現場の輪郭を、最後まで。",
+      "asset_label": "MOOD IMAGE / PROPOSAL"
+    },
+    {
+      "id": "proposal_value",
+      "marketing_job": "営業サンプルとしての提案価値を説明しつつテンプレ感を出さない",
+      "composition": "three editorial statements placed on one continuous sheet, connected by a thin groundline rather than cards"
+    },
+    {
+      "id": "company_contact",
+      "marketing_job": "身元情報を解決して問い合わせへ",
+      "composition": "near-black contact field, giant phone numerals, company ledger inset as paper slip, vertical address annotation",
+      "cta_priority": ["電話","メール"]
+    }
+  ],
+  "responsive": {
+    "desktop": "1440 art-directed reference",
+    "tablet": "preserve asymmetry using 8-col grid; avoid plain stacking where possible",
+    "mobile": "recompose typography and media order; vertical wordmark becomes horizontal; scope bands remain distinct; CTA becomes fixed-width full button",
+    "hard_gate": "mobile must remain designed, not merely stacked desktop"
+  },
+  "validation_rules": {
+    "premium_bar": "must look custom art-directed and screenshot-worthy, not clean-template premium",
+    "must_compare_against_v2": true,
+    "must_keep_mood_labels": true,
+    "must_not_use_generated_images_as_actual_work": true,
+    "must_define_boundaries_before_html": true
+  }
+}
