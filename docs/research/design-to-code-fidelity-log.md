@@ -61,6 +61,8 @@ Evidence
 - When replacing only one section with DOM, the adjacent locked section must preserve all of its content; seam fixes must never crop away approved content.
 - For section-boundary recovery, do not trace a hand-drawn approximation. The boundary must be inferred from the actual image-content change across the full width.
 - For MELT SKIN Hero→Concept, the confirmed original boundary is the image-content seam separating Hero photography from Concept content; the straight Hero termination above it is incorrect, and the band between the two is unwanted.
+- **Method correction:** the boundary visualization that Shun approved was not produced by a raw pixel-edge algorithm. It was produced by visual/semantic interpretation of the supplied screenshot plus Shun's correction context, then rendered as an explanatory annotated image. The later Sobel/pixel-difference heatmap detects many unrelated texture edges and is not an acceptable standalone boundary detector.
+- Therefore, for stylized generated LPs, boundary recognition must combine semantic visual understanding of section ownership/composition with image evidence. Do not equate `strong pixel gradient` with `section boundary`.
 
 ## Known anti-patterns
 
@@ -83,6 +85,7 @@ Do not repeat these:
 - rasterizing a curved seam into a low-resolution alpha mask and scaling it up
 - inventing decorative microcopy or labels not required by the approved design
 - using Shun's hand-drawn correction line as production geometry instead of recovering the real image seam
+- treating every strong local pixel gradient / texture edge as a section-boundary candidate
 
 ## Current section conversion rule
 
@@ -179,26 +182,33 @@ Shun feedback preserved:
 Confirmed boundary interpretation — 2026-09-28:
 - Shun and Sarah explicitly aligned on the same boundary model.
 - `Hero bottom edge` = the straight termination line currently visible in the HTML; this is NOT the desired final boundary and should disappear.
-- `Concept original boundary` = the real image-content seam visible in the approved Concept image, recoverable from the actual pixel/content transition across the full width.
+- `Concept original boundary` = the real image-content seam visible in the approved Concept image.
 - The band between the straight Hero edge and the Concept original boundary is unwanted and must not exist in the final HTML.
-- On the right side, the true boundary runs higher than Sarah's earlier hand-traced blue approximation; the correct geometry follows the actual content seam, not Shun's green hand-drawn correction or Sarah's manual trace.
-- The same rule applies across the entire width, including the left side: derive the boundary from image difference/content change, not from a guessed curve.
+- On the right side, the true boundary runs higher than Sarah's earlier hand-traced blue approximation; Shun's green correction was a communication aid, not final production geometry.
+- The same semantic rule applies across the entire width, including the left side.
 - Shun confirmed: `認識は完全に合ったと思う`.
+
+Method audit — 2026-09-28:
+- The successful recognition/alignment image was created from semantic visual interpretation of the screenshot and prior feedback context, using an annotated image-generation step.
+- It was **not** the output of a deterministic pixel-difference / edge-extraction algorithm.
+- A later raw-gradient experiment turned many unrelated image details red; Shun correctly rejected it as a boundary detector.
+- Future boundary mapping should first reproduce the successful semantic visual-recognition method section-by-section, with Shun confirmation, and only use pixel analysis as supporting evidence rather than ground truth.
 
 Reusable conclusions:
 - one boundary owner only; current owner is Concept
 - preserve Concept content below its original boundary
 - stop raster-alpha seam tracing
-- stop manual hand-traced seam geometry
-- use the actual recovered Concept seam as the sole Hero→Concept boundary
+- stop manual guessed geometry as final production geometry
+- do not use raw edge magnitude alone as boundary detection
+- use human-aligned semantic section-boundary recognition, supported by image evidence
 - keep the new Hero extended behind that boundary so there is no white gap or third/middle image band
 
 Current implementation target:
-- next HTML must implement the confirmed seam model above before further DOM conversion.
+- next boundary-recognition artifact should reproduce the approved semantic-recognition approach before further HTML correction.
 
 ## Next experiment
 
-Continue D2C-005 using the confirmed full-width image-content seam as the sole Hero→Concept boundary. Do not move to Concept DOM conversion yet.
+Continue D2C-005 by re-establishing section boundaries through semantic visual recognition, one adjacent section pair at a time. Do not generate another full-page boundary map until each pair is individually Shun-confirmed.
 
 Only after Shun confirms Hero fidelity should the project proceed to Concept DOM conversion.
 
