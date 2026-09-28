@@ -59,6 +59,8 @@ Evidence
 - Section transitions must have exactly one boundary owner. Hero and Concept must not each introduce independent separators.
 - Raster alpha masks traced from low-resolution references create stair-stepping and visible roughness when scaled. Curved boundaries should be implemented as vector/SVG Bézier geometry or equivalent resolution-independent masks.
 - When replacing only one section with DOM, the adjacent locked section must preserve all of its content; seam fixes must never crop away approved content.
+- For section-boundary recovery, do not trace a hand-drawn approximation. The boundary must be inferred from the actual image-content change across the full width.
+- For MELT SKIN Hero→Concept, the confirmed original boundary is the image-content seam separating Hero photography from Concept content; the straight Hero termination above it is incorrect, and the band between the two is unwanted.
 
 ## Known anti-patterns
 
@@ -80,6 +82,7 @@ Do not repeat these:
 - giving both adjacent sections separate boundary shapes
 - rasterizing a curved seam into a low-resolution alpha mask and scaling it up
 - inventing decorative microcopy or labels not required by the approved design
+- using Shun's hand-drawn correction line as production geometry instead of recovering the real image seam
 
 ## Current section conversion rule
 
@@ -159,9 +162,9 @@ Current technical conclusion:
 - do not continue stacking masks over a text-baked Hero image.
 - use a clean Hero photographic asset with no UI/text, then reconstruct typography and decoration in DOM/CSS using the Master solely as the coordinate/visual reference.
 
-### D2C-005 — Clean Hero asset + transition fidelity v4→v12
+### D2C-005 — Clean Hero asset + transition fidelity v4→v20
 
-Status: IN_PROGRESS / NOT APPROVED
+Status: IN_PROGRESS / BOUNDARY INTERPRETATION CONFIRMED
 
 Shun feedback preserved:
 - unnecessary microcopy must not be added
@@ -171,21 +174,31 @@ Shun feedback preserved:
 - Hero and Concept boundary geometry must match
 - v10 still did not fix the transition
 - v11 boundary remained visually wrong and rough / jagged
+- several later iterations produced a straight Hero edge plus a second Concept edge, leaving an unwanted middle image band
+
+Confirmed boundary interpretation — 2026-09-28:
+- Shun and Sarah explicitly aligned on the same boundary model.
+- `Hero bottom edge` = the straight termination line currently visible in the HTML; this is NOT the desired final boundary and should disappear.
+- `Concept original boundary` = the real image-content seam visible in the approved Concept image, recoverable from the actual pixel/content transition across the full width.
+- The band between the straight Hero edge and the Concept original boundary is unwanted and must not exist in the final HTML.
+- On the right side, the true boundary runs higher than Sarah's earlier hand-traced blue approximation; the correct geometry follows the actual content seam, not Shun's green hand-drawn correction or Sarah's manual trace.
+- The same rule applies across the entire width, including the left side: derive the boundary from image difference/content change, not from a guessed curve.
+- Shun confirmed: `認識は完全に合ったと思う`.
 
 Reusable conclusions:
 - one boundary owner only; current owner is Concept
 - preserve Concept content below its original boundary
 - stop raster-alpha seam tracing
-- use vector/SVG Bézier clipping for curved section transitions
-- keep the new Hero extended under the Concept overlap so transparent/vector-clipped regions reveal actual Hero instead of white background
+- stop manual hand-traced seam geometry
+- use the actual recovered Concept seam as the sole Hero→Concept boundary
+- keep the new Hero extended behind that boundary so there is no white gap or third/middle image band
 
 Current implementation target:
-- `MELT_SKIN_hero_dom_fidelity_v12.html`
-- Concept boundary rendered with smooth SVG vector clip rather than raster alpha mask
+- next HTML must implement the confirmed seam model above before further DOM conversion.
 
 ## Next experiment
 
-Continue D2C-005 until Shun confirms Hero→Concept transition quality. Do not move to Concept DOM conversion yet.
+Continue D2C-005 using the confirmed full-width image-content seam as the sole Hero→Concept boundary. Do not move to Concept DOM conversion yet.
 
 Only after Shun confirms Hero fidelity should the project proceed to Concept DOM conversion.
 
