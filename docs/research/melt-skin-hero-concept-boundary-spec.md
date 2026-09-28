@@ -81,3 +81,7 @@ Shun confirmation:
 > 「おっけい！認識は完全に合ったと思う！」
 
 This spec is the locked interpretation to use for the next HTML implementation.
+
+## Persistence rule
+
+Any future Hero→Concept implementation that conflicts with this spec must be treated as a regression and returned, even if automated QA or AI review passes.
