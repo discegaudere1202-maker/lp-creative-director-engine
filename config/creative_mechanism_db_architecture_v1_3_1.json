@@ -1326,7 +1326,7 @@
       "profile_numeric_derivation_policy_locked",
       "evidence_archive_preflight_pass"
     ],
-    "collection_started": false,
+    "collection_started": true,
     "remaining_80_allowed": true,
     "authorized_scope": {
       "remaining_80": true,
