@@ -1,0 +1,292 @@
+{
+  "meta": {
+    "brand": "MELT SKIN",
+    "version": "scene-spec-v1",
+    "purpose": "premium-sales-sample",
+    "fictional_brand": true,
+    "architecture": "shared-scene-spec-parallel-render"
+  },
+  "creative_direction": {
+    "name": "Quiet Mineral Editorial",
+    "intent": "余白と光の気配、石・水・肌の質感を使い、静かな高級感と身体感覚を両立する。テンプレ的なカードUIではなく、雑誌的な構図と大きな面の切り替えで記憶に残す。",
+    "keywords": [
+      "quiet luxury",
+      "mineral",
+      "warm natural",
+      "editorial",
+      "tactile",
+      "Japanese restraint"
+    ],
+    "anti_patterns": [
+      "generic SaaS cards",
+      "symmetrical template rhythm",
+      "excessive gradients",
+      "decorative microcopy",
+      "fake clinical claims"
+    ]
+  },
+  "tokens": {
+    "colors": {
+      "paper": "#F3F0E8",
+      "paper2": "#E7E0D4",
+      "ink": "#24251F",
+      "muted": "#6A6B63",
+      "sage": "#7A877C",
+      "sage_dark": "#4D5B52",
+      "charcoal": "#1F211D",
+      "white": "#FCFBF7",
+      "line": "rgba(36,37,31,.18)"
+    },
+    "type": {
+      "display": "'Yu Mincho','Hiragino Mincho ProN','Hiragino Mincho Pro',serif",
+      "sans": "Arial,'Helvetica Neue',sans-serif"
+    },
+    "motion": {
+      "ease": "cubic-bezier(.22,1,.36,1)",
+      "slow": 1.2,
+      "medium": 0.8,
+      "fast": 0.45
+    }
+  },
+  "boundaries": {
+    "hero_to_concept": {
+      "viewBox": "0 0 1440 160",
+      "path": "M0,18 C220,4 360,28 540,48 C760,73 925,112 1110,99 C1260,89 1360,46 1440,30 L1440,160 L0,160 Z"
+    },
+    "concept_to_approach": {
+      "viewBox": "0 0 1440 140",
+      "path": "M0,70 C180,112 350,125 540,96 C720,68 790,14 1010,22 C1200,28 1325,72 1440,98 L1440,140 L0,140 Z"
+    },
+    "ingredients_to_product": {
+      "viewBox": "0 0 1440 150",
+      "path": "M0,118 C250,136 450,110 650,82 C880,50 1090,48 1440,8 L1440,150 L0,150 Z"
+    },
+    "story_to_voice": {
+      "viewBox": "0 0 1440 140",
+      "path": "M0,8 C290,32 370,92 670,108 C940,120 1120,82 1440,38 L1440,140 L0,140 Z"
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "split_hero",
+      "eyebrow": "01 / DAILY RITUAL",
+      "title": "肌がほどける。\n私に戻る。",
+      "body": "毎日のスキンケアを、肌のためだけの作業から、自分を整える静かな時間へ。",
+      "cta": "OUR PHILOSOPHY",
+      "media": "assets/hero.jpg",
+      "art": {
+        "media_ratio": 0.58,
+        "copy_offset": "left-low",
+        "oversized_word": "MELT",
+        "boundary_out": "hero_to_concept"
+      },
+      "motion": {
+        "copy": "stagger-up",
+        "media": "slow-zoom",
+        "accent": "parallax"
+      }
+    },
+    {
+      "id": "concept",
+      "type": "editorial_intro",
+      "label": "CONCEPT",
+      "title": "足すことより、\n肌が求めるものを\n見つめる。",
+      "body": "毎日使うものだから、複雑にしすぎない。MELT SKINは、肌と向き合う時間そのものを心地よく整えるためのスキンケアを目指します。情報に追われるのではなく、自分の肌を見て、触れて、必要なケアを選ぶ。その小さな習慣を大切にします。",
+      "media": "assets/about.jpg",
+      "art": {
+        "layout": "asymmetric-62-38",
+        "number": "01",
+        "boundary_out": "concept_to_approach"
+      },
+      "motion": {
+        "title": "line-reveal",
+        "media": "mask-reveal"
+      }
+    },
+    {
+      "id": "approach",
+      "type": "pillars",
+      "label": "APPROACH",
+      "title": "こんな日に、\n肌まで迷わせない。",
+      "intro": "MELT SKINが大切にするのは、使う人が迷わないこと、使う時間が心地いいこと、そして情報がまっすぐであること。",
+      "items": [
+        {
+          "n": "01",
+          "title": "選びやすく、\n続けやすく。",
+          "body": "たくさん並べることより、役割がわかること。毎日の中で迷いにくい、シンプルなケア設計を大切にします。"
+        },
+        {
+          "n": "02",
+          "title": "触れるたび、\n心までほどける。",
+          "body": "スキンケアは結果だけではなく、使う時間も含めて毎日の体験。テクスチャーや肌なじみまで、心地よさを考えます。"
+        },
+        {
+          "n": "03",
+          "title": "必要な情報を、\nまっすぐに。",
+          "body": "確認できることと、まだ確認が必要なことを曖昧にしない。肌に使うものだからこそ、納得して選べる情報設計を目指します。"
+        }
+      ],
+      "motion": {
+        "items": "stagger-up"
+      }
+    },
+    {
+      "id": "ingredients",
+      "type": "ingredient_orbit",
+      "label": "INGREDIENTS",
+      "title": "シンプルだからこそ、\nひとつずつ丁寧に。",
+      "body": "肌に触れるものを、わかりやすく伝えること。MELT SKINは、成分名を飾るのではなく、役割と使い方まで含めて理解できる体験を目指します。",
+      "items": [
+        {
+          "name": "WATER",
+          "jp": "水分設計",
+          "note": "肌に触れる最初の感覚を、軽やかに。"
+        },
+        {
+          "name": "LIPID",
+          "jp": "油分設計",
+          "note": "うるおいを守るための、必要なバランス。"
+        },
+        {
+          "name": "TOUCH",
+          "jp": "感触設計",
+          "note": "毎日続けたくなる、肌なじみと余韻。"
+        }
+      ],
+      "disclaimer": "※本ページは架空ブランドのデザインサンプルです。実商品の成分・効能を示すものではありません。",
+      "art": {
+        "boundary_out": "ingredients_to_product"
+      },
+      "motion": {
+        "orbit": "ambient",
+        "copy": "stagger-up"
+      }
+    },
+    {
+      "id": "product",
+      "type": "product_spotlight",
+      "label": "PRODUCT",
+      "title": "今日の肌に、\n迷わない選択を。",
+      "body": "日々の基本を整えるベーシックケアを中心に、朝と夜の肌に寄り添う2アイテムから。必要以上に増やさず、触れる順番までシンプルに。",
+      "media": "assets/product.jpg",
+      "products": [
+        {
+          "name": "MELT WATER",
+          "type": "BALANCING LOTION",
+          "size": "120 mL",
+          "price": "¥4,400"
+        },
+        {
+          "name": "MELT VEIL",
+          "type": "MOISTURE CREAM",
+          "size": "50 g",
+          "price": "¥5,500"
+        }
+      ],
+      "cta": "VIEW PRODUCTS",
+      "motion": {
+        "media": "slow-pan",
+        "products": "stagger-up"
+      }
+    },
+    {
+      "id": "ritual",
+      "type": "ritual_steps",
+      "label": "HOW TO",
+      "title": "朝も、夜も。\n肌を見ることから。",
+      "body": "決まった手順をこなすだけではなく、その日の肌に触れて必要なケアを選ぶ。毎日続けやすい、シンプルな3ステップを基本に考えます。",
+      "steps": [
+        {
+          "n": "01",
+          "title": "肌を整える",
+          "body": "手のひらで肌の状態を確かめる。急がず、今日の肌から始める。"
+        },
+        {
+          "n": "02",
+          "title": "うるおいを届ける",
+          "body": "MELT WATERを手のひらで包み込むように、顔全体へ。"
+        },
+        {
+          "n": "03",
+          "title": "うるおいを守る",
+          "body": "MELT VEILを薄く重ね、心地よいケアの余韻を残す。"
+        }
+      ],
+      "motion": {
+        "line": "draw",
+        "steps": "stagger-up"
+      }
+    },
+    {
+      "id": "story",
+      "type": "story_quote",
+      "label": "OUR STORY",
+      "title": "肌に触れる数分を、\n自分へ戻る時間に。",
+      "body": "朝、これから始まる一日の前に。夜、いろいろな役割から離れる前に。鏡の前の短い時間が、少しだけ静かになる。それもMELT SKINが届けたい価値のひとつです。",
+      "media": "assets/message.jpg",
+      "quote": "MAKE ROOM\nFOR YOU.",
+      "art": {
+        "boundary_out": "story_to_voice"
+      },
+      "motion": {
+        "media": "parallax",
+        "quote": "float"
+      }
+    },
+    {
+      "id": "voice",
+      "type": "voice_cards",
+      "label": "VOICE",
+      "title": "使う人の言葉が、\n次のMELT SKINをつくる。",
+      "intro": "以下は営業サンプル用の仮レビューです。実運用では確認済みのお客様レビューのみ掲載します。",
+      "items": [
+        {
+          "text": "ケアの時間そのものが、少し好きになった。",
+          "meta": "Sample Voice / 01"
+        },
+        {
+          "text": "迷わず続けられるシンプルさが心地いい。",
+          "meta": "Sample Voice / 02"
+        },
+        {
+          "text": "朝の肌に触れる時間が、前より丁寧になった。",
+          "meta": "Sample Voice / 03"
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "label": "FAQ",
+      "title": "選ぶ前に、\n知っておきたいこと。",
+      "items": [
+        {
+          "q": "どのアイテムから始めればいいですか？",
+          "a": "まずは毎日の基本となるローションとクリームの2ステップを想定しています。正式商品では、肌状態や目的に応じた選び方をわかりやすくご案内します。"
+        },
+        {
+          "q": "敏感な肌でも使えますか？",
+          "a": "肌質には個人差があります。実商品では、正式処方・試験情報が確定した段階で、確認済みの情報と使用上の注意を明記します。"
+        },
+        {
+          "q": "朝と夜で使い方は変わりますか？",
+          "a": "基本の順番は同じ想定ですが、季節や肌の状態に合わせて使用量を調整できる設計を想定しています。"
+        },
+        {
+          "q": "定期購入はありますか？",
+          "a": "本ページは架空ブランドの営業サンプルです。実案件では、販売条件・配送頻度・解約条件などを購入前にわかりやすく提示します。"
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "type": "final_cta",
+      "eyebrow": "MELT SKIN / DAILY RITUAL",
+      "title": "肌を通して、\n自分をもう少し\n好きになれるように。",
+      "body": "完璧な肌を約束するためではなく、毎日の自分と丁寧に付き合うきっかけをつくるために。",
+      "cta": "ONLINE STORE",
+      "sub": "MAKE ROOM FOR YOU."
+    }
+  ]
+}

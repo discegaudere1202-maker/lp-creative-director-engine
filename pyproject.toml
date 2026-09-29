@@ -7,7 +7,7 @@ name = "lp-creative-director-engine"
 version = "0.7.0"
 description = "Rule-driven creative direction and QA engine for premium LP automation."
 requires-python = ">=3.11"
-dependencies = ["playwright>=1.55", "Pillow>=10"]
+dependencies = ["playwright>=1.55", "Pillow>=10", "Jinja2>=3.1"]
 
 [project.scripts]
 lp-engine = "lp_engine.cli:main"
