@@ -1,0 +1,1488 @@
+{
+  "schema_version": "1.3.1",
+  "project": "Creative Mechanism Database",
+  "phase": "PHASE_2_1_1",
+  "status": "PHASE_2_1_1_ARCHIVE_AND_SCENE_TRAVERSAL_READY_FOR_PM_REVIEW",
+  "updated": "2026-09-29",
+  "source_of_truth": {
+    "issue": 143,
+    "review_comment_id": 5884607162,
+    "review_status": "CONDITIONAL_APPROVAL_V1_2_2_OPERABILITY_MICRO_FIX_REQUIRED"
+  },
+  "preserved_core_architecture": [
+    "Reference LP -> Scene Evidence -> Creative Mechanism -> Compatibility / Constraint -> Combination Recipe -> Scene Spec",
+    "mobile_recomposition",
+    "evidence_safety",
+    "saturation_stop"
+  ],
+  "entity_types": [
+    "reference_lp",
+    "scene_observation",
+    "creative_mechanism",
+    "compatibility_edge",
+    "recipe",
+    "creative_profile",
+    "evaluation",
+    "observed_performance_evidence",
+    "evidence_snapshot"
+  ],
+  "business_archetypes": [
+    "LOCAL_TRUST_SERVICE",
+    "HIGH_CONSIDERATION_HOME",
+    "PROFESSIONAL_ADVICE",
+    "MEDICAL_WELLNESS",
+    "BEAUTY_PERSONAL",
+    "B2B_TECHNICAL_SOLUTION",
+    "B2B_PRODUCT_MANUFACTURING",
+    "SAAS_WORKFLOW",
+    "D2C_PRODUCT",
+    "RETAIL_FOOD_HOSPITALITY",
+    "EDUCATION_COACHING",
+    "RECRUITING_EMPLOYER",
+    "PREMIUM_LUXURY",
+    "CULTURE_ENTERTAINMENT_CAMPAIGN",
+    "CORPORATE_BRAND",
+    "PUBLIC_SOCIAL"
+  ],
+  "archetype_sampling_allocation": [
+    {
+      "archetype_id": "LOCAL_TRUST_SERVICE",
+      "discovery_target": 220,
+      "strong_target": 90,
+      "deep_target": 44,
+      "lower_bound": 165,
+      "upper_bound": 286,
+      "rationale": "High-frequency local lead generation with strong transfer value across construction, home and place-based services.",
+      "saturation_stop_rule": "Stop below target after two consecutive batches add no new supported mechanism or conversion pattern; continue toward upper bound when new independent local-trust mechanisms recur."
+    },
+    {
+      "archetype_id": "HIGH_CONSIDERATION_HOME",
+      "discovery_target": 170,
+      "strong_target": 75,
+      "deep_target": 40,
+      "lower_bound": 128,
+      "upper_bound": 221,
+      "rationale": "Large decision size and objection density require broad proof, mobile and decision-sequence coverage.",
+      "saturation_stop_rule": "Stop when objection/proof combinations saturate across two industries; extend within upper bound for distinct financing, inspection or consultation flows."
+    },
+    {
+      "archetype_id": "PROFESSIONAL_ADVICE",
+      "discovery_target": 150,
+      "strong_target": 65,
+      "deep_target": 36,
+      "lower_bound": 113,
+      "upper_bound": 195,
+      "rationale": "Trust, authority and disclosure patterns recur across regulated and expert-led services.",
+      "saturation_stop_rule": "Stop when authority/proof/disclosure mechanisms repeat across three independent industries; extend for materially different decision-risk states."
+    },
+    {
+      "archetype_id": "MEDICAL_WELLNESS",
+      "discovery_target": 140,
+      "strong_target": 60,
+      "deep_target": 32,
+      "lower_bound": 105,
+      "upper_bound": 182,
+      "rationale": "Regulated claims, sensitive states and accessibility require deliberate coverage beyond market frequency.",
+      "saturation_stop_rule": "Do not stop before claim-safety and accessibility variants are observed across clinic, treatment and wellness contexts; then stop on mechanism saturation."
+    },
+    {
+      "archetype_id": "BEAUTY_PERSONAL",
+      "discovery_target": 110,
+      "strong_target": 45,
+      "deep_target": 24,
+      "lower_bound": 83,
+      "upper_bound": 143,
+      "rationale": "High visual diversity and before/after claim risk make this a distinct validation domain.",
+      "saturation_stop_rule": "Stop only after before/after, testimonial, appointment and claim-limitation patterns are covered; extend for new evidence-safe presentation mechanisms."
+    },
+    {
+      "archetype_id": "B2B_TECHNICAL_SOLUTION",
+      "discovery_target": 170,
+      "strong_target": 75,
+      "deep_target": 40,
+      "lower_bound": 128,
+      "upper_bound": 221,
+      "rationale": "Complex explanation, proof and technical authority patterns are central to LP automation.",
+      "saturation_stop_rule": "Stop when technical proof and explanation mechanisms recur across at least three industries; extend for new buyer committee or deployment states."
+    },
+    {
+      "archetype_id": "B2B_PRODUCT_MANUFACTURING",
+      "discovery_target": 130,
+      "strong_target": 50,
+      "deep_target": 26,
+      "lower_bound": 98,
+      "upper_bound": 169,
+      "rationale": "Specification-led products need document-heavy and product-proof coverage with low motion dependence.",
+      "saturation_stop_rule": "Stop after specification, application, compliance and inquiry paths are represented across independent suppliers; extend for novel product proof."
+    },
+    {
+      "archetype_id": "SAAS_WORKFLOW",
+      "discovery_target": 180,
+      "strong_target": 80,
+      "deep_target": 44,
+      "lower_bound": 135,
+      "upper_bound": 234,
+      "rationale": "High LP usage and varied trial, demo, signup and workflow explanation patterns.",
+      "saturation_stop_rule": "Stop when trial/demo/pricing/onboarding mechanisms saturate across distinct product categories; extend for materially different adoption friction."
+    },
+    {
+      "archetype_id": "D2C_PRODUCT",
+      "discovery_target": 180,
+      "strong_target": 80,
+      "deep_target": 44,
+      "lower_bound": 135,
+      "upper_bound": 234,
+      "rationale": "Direct purchase requires broad product proof, offer, merchandising and checkout-intent coverage.",
+      "saturation_stop_rule": "Stop when product proof, offer, social proof and purchase-friction mechanisms recur across categories; extend for new product risk states."
+    },
+    {
+      "archetype_id": "RETAIL_FOOD_HOSPITALITY",
+      "discovery_target": 140,
+      "strong_target": 60,
+      "deep_target": 32,
+      "lower_bound": 105,
+      "upper_bound": 182,
+      "rationale": "Place, menu/product presentation and reservation/order paths are common and visually diverse.",
+      "saturation_stop_rule": "Stop when reservation, ordering, place and menu mechanisms recur across independent venues; extend for new service-context patterns."
+    },
+    {
+      "archetype_id": "EDUCATION_COACHING",
+      "discovery_target": 110,
+      "strong_target": 45,
+      "deep_target": 24,
+      "lower_bound": 83,
+      "upper_bound": 143,
+      "rationale": "Trust, fit, outcomes and enrollment decisions require a dedicated consideration model.",
+      "saturation_stop_rule": "Stop when course, school, coaching and trial/enrollment patterns saturate; extend for new learner or guardian decision states."
+    },
+    {
+      "archetype_id": "RECRUITING_EMPLOYER",
+      "discovery_target": 100,
+      "strong_target": 40,
+      "deep_target": 20,
+      "lower_bound": 75,
+      "upper_bound": 130,
+      "rationale": "Two-sided persuasion and people evidence create mechanisms not represented by ordinary service LPs.",
+      "saturation_stop_rule": "Stop when candidate, employer, culture and role-proof mechanisms recur across sectors; extend for new audience asymmetries."
+    },
+    {
+      "archetype_id": "PREMIUM_LUXURY",
+      "discovery_target": 100,
+      "strong_target": 45,
+      "deep_target": 24,
+      "lower_bound": 75,
+      "upper_bound": 130,
+      "rationale": "Authority, scarcity, craft and restrained conversion patterns supply high-value creative combinations.",
+      "saturation_stop_rule": "Stop when premium proof, scarcity, appointment and editorial mechanisms recur across independent brands; extend for new authority bases."
+    },
+    {
+      "archetype_id": "CULTURE_ENTERTAINMENT_CAMPAIGN",
+      "discovery_target": 70,
+      "strong_target": 30,
+      "deep_target": 16,
+      "lower_bound": 53,
+      "upper_bound": 91,
+      "rationale": "Smaller conversion share but high mechanism diversity and transfer value for campaigns and launches.",
+      "saturation_stop_rule": "Stop when campaign, participation, release and editorial mechanisms saturate; extend only for a new interaction or participation model."
+    },
+    {
+      "archetype_id": "CORPORATE_BRAND",
+      "discovery_target": 80,
+      "strong_target": 30,
+      "deep_target": 18,
+      "lower_bound": 60,
+      "upper_bound": 104,
+      "rationale": "Brand-heavy references are needed for authority and narrative systems without allowing them to dominate conversion evidence.",
+      "saturation_stop_rule": "Stop when corporate narrative, capability proof and stakeholder navigation mechanisms recur across sectors; extend for new stakeholder structures."
+    },
+    {
+      "archetype_id": "PUBLIC_SOCIAL",
+      "discovery_target": 50,
+      "strong_target": 30,
+      "deep_target": 16,
+      "lower_bound": 38,
+      "upper_bound": 65,
+      "rationale": "Lower LP frequency but critical accessibility, public-trust and high-stakes communication coverage.",
+      "saturation_stop_rule": "Do not stop before accessibility-critical, multilingual, public-service and social-proof patterns are covered; then stop on mechanism saturation."
+    }
+  ],
+  "reference_pool_types": [
+    {
+      "pool_type": "CONVERSION_INDUSTRY",
+      "discovery_candidate_target": 2100,
+      "strong_target": 900,
+      "deep_target": 480,
+      "promotion_is_automatic": false,
+      "promotion_rule_ref": "promotion_rules_by_pool_type.CONVERSION_INDUSTRY",
+      "selection_rule": "Original or official evidence, observable conversion architecture, feasibility and mobile review required"
+    },
+    {
+      "pool_type": "CREATIVE_BENCHMARK",
+      "discovery_candidate_target": 500,
+      "strong_target": 300,
+      "deep_target": 120,
+      "promotion_is_automatic": false,
+      "promotion_rule_ref": "promotion_rules_by_pool_type.CREATIVE_BENCHMARK",
+      "selection_rule": "Creative mechanism and transfer job must be explicit; award status alone is insufficient"
+    }
+  ],
+  "sampling_totals": {
+    "reference_universe_discovery_candidates": 2600,
+    "strong_corpus": 1200,
+    "deep_annotation": 600,
+    "conversion_industry_candidates": 2100,
+    "creative_benchmark_candidates": 500,
+    "conversion_industry_strong": 900,
+    "creative_benchmark_strong": 300,
+    "conversion_industry_deep": 480,
+    "creative_benchmark_deep": 120
+  },
+  "industry_taxonomy": [
+    "CONSTRUCTION_HOME",
+    "LANDSCAPE_GARDEN",
+    "RENOVATION_REPAIR",
+    "DEMOLITION_INFRA",
+    "REAL_ESTATE",
+    "PROFESSIONAL_LEGAL_TAX_ACCOUNTING",
+    "CONSULTING_SUPPORT",
+    "MEDICAL_DENTAL_CLINIC",
+    "BEAUTY_SALON_BODYCARE",
+    "MANUFACTURING_MATERIALS",
+    "LOGISTICS_MAINTENANCE",
+    "IT_SAAS_DIGITAL",
+    "FINANCE_INSURANCE",
+    "RETAIL_D2C_CONSUMER",
+    "FOOD_RESTAURANT",
+    "HOTEL_TRAVEL",
+    "EDUCATION_SCHOOL",
+    "RECRUITMENT_HR",
+    "FASHION_LUXURY",
+    "AUTOMOTIVE_MOBILITY",
+    "ART_CULTURE",
+    "ENTERTAINMENT_MEDIA",
+    "PUBLIC_NONPROFIT",
+    "AGRICULTURE_FOOD_PRODUCER",
+    "OTHER"
+  ],
+  "evidence_authority_taxonomy": [
+    "PERSON",
+    "PLACE",
+    "MATERIAL",
+    "CRAFT",
+    "PRODUCT",
+    "DOCUMENT",
+    "PROOF",
+    "HERITAGE",
+    "COMMUNITY"
+  ],
+  "expression_driver_taxonomy": [
+    "EDITORIAL",
+    "MOVEMENT",
+    "PRECISION",
+    "TASTE",
+    "PLAY"
+  ],
+  "authority_rule": "Evidence Authority answers what makes the claim or visual credible. Expression Driver answers how attention, mood or reading behavior is shaped. They must be retrieved and scored separately.",
+  "mechanism_categories": [
+    "ENTRY",
+    "TYPE",
+    "COLOR_SURFACE",
+    "SPACE_LAYOUT",
+    "MEDIA",
+    "GEOMETRY",
+    "RHYTHM",
+    "MOTION",
+    "INTERACTION",
+    "PROOF",
+    "CONVERSION",
+    "NAVIGATION"
+  ],
+  "mechanism_record_required_fields": [
+    "mechanism_id",
+    "mechanism_name",
+    "category",
+    "subcategory",
+    "purpose",
+    "marketing_job",
+    "user_effect",
+    "best_for",
+    "avoid_when",
+    "best_scene",
+    "compatible_archetypes",
+    "evidence_authority",
+    "expression_driver",
+    "visual_impact",
+    "conversion_utility",
+    "automation_difficulty",
+    "html_implementation_difficulty",
+    "motion_dependency",
+    "responsive_risk",
+    "performance_risk",
+    "accessibility_risk",
+    "required_media",
+    "reference_lps",
+    "implementation_notes",
+    "combination_notes",
+    "anti_pattern",
+    "confidence",
+    "evidence_count",
+    "unique_lp_count",
+    "unique_brand_count",
+    "unique_agency_count",
+    "unique_campaign_count",
+    "evidence_requirement",
+    "mobile_recomposition_rule"
+  ],
+  "mechanism_promotion_policy": {
+    "candidate_to_supported": {
+      "independent_lp_min": 3,
+      "unique_brand_min": 3,
+      "unique_agency_min": 2,
+      "unique_campaign_min": 3,
+      "max_single_agency_share": 0.66,
+      "max_single_brand_family_share": 0.66,
+      "archetype_scope": "If only one archetype is supported, scope must be explicit"
+    },
+    "supported_to_canonical": {
+      "independent_lp_min": 5,
+      "unique_brand_min": 4,
+      "unique_agency_min": 3,
+      "unique_campaign_min": 4,
+      "archetype_min": 2,
+      "max_single_agency_share": 0.5,
+      "max_single_brand_family_share": 0.5,
+      "mobile_rule_required": true,
+      "compatibility_edge_required": true
+    },
+    "agency_or_brand_only_evidence_is_sufficient": false
+  },
+  "scoring": {
+    "score_direction": "HIGHER_IS_BETTER",
+    "raw_scale": {
+      "min": 0,
+      "max": 5,
+      "unknown": null
+    },
+    "normalization_formula": "normalized_category_score = SUM((raw_dimension_score / 5) * dimension_weight for OBSERVED applicable dimensions) / SUM(dimension_weight for OBSERVED applicable dimensions) * category_target_max; NOT_APPLICABLE dimensions are excluded; MISSING and NOT_OBSERVED dimensions are not silently converted to zero",
+    "overall_formula": "overall_score = SUM(applicable category scores) / SUM(target_max for applicable categories) * 100; a category with no applicable dimensions is excluded from the denominator",
+    "dimension_applicability": {
+      "allowed_values": [
+        "REQUIRED",
+        "OPTIONAL",
+        "NOT_APPLICABLE"
+      ],
+      "meaning": {
+        "REQUIRED": "The dimension is necessary for the selected pool, scene or evaluation purpose.",
+        "OPTIONAL": "The dimension may be absent without implying low quality; score it only when observed.",
+        "NOT_APPLICABLE": "The dimension has no legitimate job for this reference and is excluded from the score."
+      },
+      "observation_state": {
+        "allowed_values": [
+          "OBSERVED",
+          "MISSING",
+          "NOT_OBSERVED",
+          "NOT_APPLICABLE"
+        ],
+        "meaning": {
+          "OBSERVED": "The relevant scene or behavior was captured and can be scored.",
+          "MISSING": "The dimension is expected or required but the reference has no usable evidence or asset.",
+          "NOT_OBSERVED": "The observation was not completed yet; this is a HOLD state, not a quality score.",
+          "NOT_APPLICABLE": "The dimension is explicitly inapplicable and does not enter the denominator."
+        }
+      },
+      "missingness_policy": "MISSING on a hard-gate dimension fails promotion; NOT_OBSERVED creates HOLD; OPTIONAL missingness is recorded and cannot be treated as positive evidence; NOT_APPLICABLE is excluded.",
+      "motion_policy": "Motion and Interaction default to OPTIONAL. A static reference is not penalized for absence. If a Motion Mechanism Evidence record is asserted, Motion dimensions become REQUIRED for that evidence record and the pool-specific motion threshold applies."
+    },
+    "dimensions": {
+      "design": {
+        "target_max": 40,
+        "weights": {
+          "hero_originality": 4,
+          "typography": 4,
+          "layout_composition": 4,
+          "image_treatment": 4,
+          "visual_hierarchy": 4,
+          "section_rhythm": 4,
+          "section_boundary": 3,
+          "brand_distinctiveness": 4,
+          "screenshot_worthy_quality": 4,
+          "design_distinctiveness": 5
+        }
+      },
+      "conversion_architecture": {
+        "target_max": 30,
+        "weights": {
+          "proof_presentation": 5,
+          "cta_clarity": 4,
+          "navigation_utility": 3,
+          "conversion_clarity": 5,
+          "objection_coverage": 5,
+          "decision_size": 4,
+          "customer_state_fit": 4
+        },
+        "meaning": "Observable conversion design structure, not measured CVR or revenue performance"
+      },
+      "motion": {
+        "target_max": 15,
+        "weights": {
+          "motion_job": 4,
+          "interaction_legibility": 3,
+          "scroll_experience": 3,
+          "timing_rhythm": 3,
+          "reduced_motion_safety": 2
+        }
+      },
+      "implementation_feasibility": {
+        "target_max": 15,
+        "weights": {
+          "html_css_feasibility": 2,
+          "asset_availability": 2,
+          "mobile_quality": 4,
+          "responsive_recomposition": 3,
+          "performance_discipline": 2,
+          "accessibility_maintenance_safety": 2
+        }
+      }
+    },
+    "global_promotion_gate_removed": true,
+    "hard_gate_dimension_policy": "Only dimensions listed by the applicable pool promotion rule are hard gates; there is no global minimum_raw_dimension_score across every dimension.",
+    "design_distinctiveness_rule": {
+      "design_distinctiveness": "0 = generic / highly template-like, 5 = clearly authored and distinctive",
+      "template_resemblance_risk_derived": "5 - design_distinctiveness",
+      "risk_is_not_a_positive_score": true
+    }
+  },
+  "retrieval": {
+    "candidate_score_formula": "SUM(feature_score * feature_weight)",
+    "weights": {
+      "axis_similarity": 0.18,
+      "truth_tag_match": 0.14,
+      "buyer_state_fit": 0.12,
+      "marketing_job_fit": 0.12,
+      "evidence_authority_fit": 0.1,
+      "expression_driver_fit": 0.05,
+      "archetype_fit": 0.08,
+      "conversion_utility": 0.08,
+      "evidence_confidence": 0.06,
+      "implementation_fit": 0.07
+    },
+    "pipeline_order": [
+      "ELIGIBILITY_EVIDENCE_HARD_GATE",
+      "MECHANISM_CANDIDATE_SCORING",
+      "COMPATIBILITY_SOLVER",
+      "RECIPE_ASSEMBLY",
+      "DIVERSITY_NOVELTY_RERANKING",
+      "FINAL_THREE_RECIPE_OUTPUT"
+    ],
+    "hard_gates": [
+      "unsupported_claim_required",
+      "missing_original_or_official_evidence_for_strong",
+      "mobile_failure_for_mobile_critical_scene",
+      "pairwise_conflict",
+      "asset_not_available",
+      "accessibility_hard_failure",
+      "performance_budget_failure"
+    ],
+    "novelty_policy": {
+      "applies_after": "RECIPE_ASSEMBLY",
+      "reranks_only_eligible_recipes": true,
+      "cannot_override_hard_gate": true,
+      "cannot_override_conversion_fit": true,
+      "cannot_override_evidence_safety": true,
+      "novelty_is_not_a_style_label": true
+    }
+  },
+  "source_model": {
+    "discovery_source_class": [
+      "AWWWARDS",
+      "CSS_DESIGN_AWARDS",
+      "WEB_GRAND_PRIX",
+      "JAPANESE_WEB_GALLERY",
+      "GLOBAL_WEB_GALLERY",
+      "ORIGINAL_SITE_DIRECT",
+      "PRODUCTION_PORTFOLIO",
+      "MOTION_INTERACTION_SHOWCASE",
+      "CONVERSION_LP_GALLERY"
+    ],
+    "evidence_source_roles": [
+      "ORIGINAL_LIVE",
+      "OFFICIAL_BRAND",
+      "OFFICIAL_PRODUCT_OR_SERVICE",
+      "OFFICIAL_CONVERSION_PAGE",
+      "OFFICIAL_CASE_STUDY",
+      "PRODUCTION_CASE",
+      "AWARD_ENTRY",
+      "GALLERY_ENTRY",
+      "PUBLIC_STANDARD"
+    ],
+    "discovery_source_mix_targets": {
+      "ORIGINAL_SITE_DIRECT": 0.2,
+      "AWWWARDS": 0.15,
+      "CSS_DESIGN_AWARDS": 0.1,
+      "WEB_GRAND_PRIX": 0.1,
+      "JAPANESE_WEB_GALLERY": 0.1,
+      "GLOBAL_WEB_GALLERY": 0.1,
+      "PRODUCTION_PORTFOLIO": 0.1,
+      "MOTION_INTERACTION_SHOWCASE": 0.05,
+      "CONVERSION_LP_GALLERY": 0.1
+    },
+    "source_mix_applies_to": "DISCOVERY_BIAS_ONLY",
+    "strong_evidence_requirement": {
+      "discovery_source_is_irrelevant_to_promotion": true,
+      "required_any_evidence_source_roles": [
+        "ORIGINAL_LIVE",
+        "OFFICIAL_BRAND",
+        "OFFICIAL_PRODUCT_OR_SERVICE",
+        "OFFICIAL_CONVERSION_PAGE"
+      ],
+      "official_or_original_evidence_required": true,
+      "award_or_gallery_alone_is_insufficient": true
+    }
+  },
+  "conversion_architecture_policy": {
+    "display_name": "Conversion Architecture Quality",
+    "observable_dimensions": [
+      "cta_clarity",
+      "objection_coverage",
+      "decision_size",
+      "proof_presentation",
+      "customer_state_fit",
+      "conversion_clarity",
+      "navigation_utility"
+    ],
+    "forbidden_inference": [
+      "measured_cvr",
+      "revenue_lift",
+      "lead_increase",
+      "mechanism_caused_conversion"
+    ],
+    "observed_performance_evidence_entity": "observed_performance_evidence",
+    "performance_evidence_allowed_only_when": "Official case study or public measurement with source, metric, period, population and methodology is available"
+  },
+  "observed_performance_evidence_schema": {
+    "required_fields": [
+      "evidence_id",
+      "reference_id",
+      "metric",
+      "value",
+      "unit",
+      "measurement_period",
+      "population_or_sample",
+      "methodology",
+      "source_url",
+      "source_role",
+      "captured_at"
+    ],
+    "claim_rule": "Performance may be stored as reported evidence, never inferred from visual observation"
+  },
+  "creative_profile": {
+    "axis_value_range": [
+      0,
+      1
+    ],
+    "axis_value_rule": "Axis values require input evidence and a derivation rule. Missing evidence produces UNKNOWN, not a guessed low or high value.",
+    "numeric_derivation_policy": {
+      "policy_id": "PROFILE_AXIS_NUMERIC_V2",
+      "allowed_values": [
+        "UNKNOWN",
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "evidence_item_required_fields": [
+        "evidence_id",
+        "axis",
+        "axis_signal_value",
+        "relevance_level",
+        "directness_level",
+        "confidence_level",
+        "relevance",
+        "directness",
+        "confidence"
+      ],
+      "axis_signal_value_definition": "Axis direction and intensity, independent from Evidence Quality: 0 = clearly denies or indicates the opposite of the Axis; 0.25 = weak support; 0.50 = neutral or mixed; 0.75 = strong support; 1.00 = explicit and clear support.",
+      "axis_signal_value_allowed_values": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "evidence_quality_field_definition": "Evidence Quality describes how relevant, direct and reliable the item is. It does not describe Axis direction.",
+      "evidence_quality_numeric_range": [
+        0,
+        1
+      ],
+      "quality_level_mapping": {
+        "relevance_level_to_numeric": {
+          "DIRECT": 1.0,
+          "SUPPORTING": 0.75,
+          "CONTEXTUAL": 0.5,
+          "WEAK": 0.25,
+          "IRRELEVANT": 0.0
+        },
+        "directness_level_to_numeric": {
+          "EXPLICIT_OFFICIAL": 1.0,
+          "EXPLICIT_THIRD_PARTY": 0.75,
+          "SPECIFIC_IMPLICIT": 0.5,
+          "VISUAL_ONLY": 0.25,
+          "ABSENT": 0.0
+        },
+        "confidence_level_to_numeric": {
+          "E4": 1.0,
+          "E3": 0.9,
+          "E2": 0.75,
+          "E1": 0.4,
+          "E0": 0.1
+        }
+      },
+      "quality_level_fields": [
+        "relevance_level",
+        "directness_level",
+        "confidence_level"
+      ],
+      "derived_numeric_quality_fields": [
+        "relevance",
+        "directness",
+        "confidence"
+      ],
+      "raw_float_input_policy": "Raw Float input is forbidden for Evidence Quality. Derive relevance, directness and confidence only from the corresponding enum or Evidence Grade using quality_level_mapping.",
+      "quality_numeric_derivation_formula": "relevance = quality_level_mapping.relevance_level_to_numeric[relevance_level]; directness = quality_level_mapping.directness_level_to_numeric[directness_level]; confidence = quality_level_mapping.confidence_level_to_numeric[confidence_level]",
+      "evidence_weight_formula": "evidence_weight = relevance * directness * confidence",
+      "axis_score_raw_formula": "axis_score_raw = SUM(axis_signal_value * evidence_weight) / SUM(evidence_weight)",
+      "axis_score_quantization": "nearest(axis_score_raw, [0,0.25,0.50,0.75,1.00])",
+      "axis_output_fields": [
+        "axis_score_raw",
+        "axis_score",
+        "conflict_flag",
+        "conflict_resolved",
+        "confidence"
+      ],
+      "quantization_tie_rule": "Exact midpoint rounds to the lower allowed numeric value.",
+      "no_evidence_rule": "If there are no evidence items with evidence_weight > 0, output UNKNOWN. UNKNOWN is not numeric 0.",
+      "absence_rule": "Absence of a claim is not negative evidence and is not neutral evidence. Use a negative signal only when the source explicitly or materially indicates the opposite direction.",
+      "neutral_signal_rule": "axis_signal_value = 0.50 only when an observed Evidence item explicitly indicates a mixed, mid-market, moderate or balanced state. No claim, no authority available, no innovation claim, or an unobserved field produces UNKNOWN; these are absence and not neutral evidence.",
+      "conflict_rule": {
+        "conflict_flag_field": "conflict_flag",
+        "conflict_detection": "conflict_flag = true when at least one evidence item has axis_signal_value <= 0.25 and another distinct evidence item has axis_signal_value >= 0.75, and both have evidence_weight >= 0.25",
+        "aggregation": "Conflicting positive and negative items enter the same axis_score_raw weighted formula; do not discard either side or let Evidence Quality become Axis Signal.",
+        "confidence_downgrade": "When conflict_flag is true, output confidence LOW. If the conflict is resolved by a documented current official fact, retain the formula result, set conflict_resolved=true, and do not restore confidence above MEDIUM without a second independent supporting class.",
+        "case_rule": "Equal-quality positive 1.00 and negative 0.00 evidence produce raw 0.50, quantized 0.50, conflict_flag true and confidence LOW."
+      },
+      "signal_mappings": [
+        {
+          "axis": "TRUST",
+          "positive": [
+            {
+              "example": "official credential and verifiable third-party proof",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "generic trust language without proof",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially states no guarantee or anonymous/no-contact offer",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "CRAFT",
+          "positive": [
+            {
+              "example": "documented maker process, material choice and quality control",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "officially describes a standardized process as sufficient and craft as non-differentiating",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially describes an off-the-shelf service with no customization or craft involvement",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "PLACE",
+          "positive": [
+            {
+              "example": "specific place, local context or workshop materially shapes the offer",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "service area is stated but place does not affect the experience",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially positions the offer as location-independent and place-irrelevant",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "PREMIUM",
+          "positive": [
+            {
+              "example": "high price position, limited distribution and explicit premium positioning",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "mixed price/channel signals or mid-market positioning",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "low-price, mass-market or price-first positioning is explicit",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "ENERGY",
+          "positive": [
+            {
+              "example": "fast service pace, active events or continuous change is central",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "officially describes a steady, balanced service cadence",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially describes slow, contemplative delivery with no activity or urgency",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "TECHNICAL",
+          "positive": [
+            {
+              "example": "specifications, performance constraints and expert workflow drive the decision",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "some functional detail exists but technical complexity is not central",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially states no expertise is needed and technical complexity is irrelevant",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "WARMTH",
+          "positive": [
+            {
+              "example": "named people, care process and relational support are central",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "friendly tone without evidence of relational behavior",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "fully automated or intentionally impersonal service is explicit",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "INNOVATION",
+          "positive": [
+            {
+              "example": "new method, R&D or explicit category innovation with source evidence",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "officially describes a mature standard method with balanced improvement claims",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially emphasizes conventional, unchanged practice as a differentiator",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "HUMAN",
+          "positive": [
+            {
+              "example": "founder, staff or direct human interaction is essential to the offer",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "people are present but not central to delivery",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "self-service or no-human-contact delivery is explicit",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "AUTHORITY",
+          "positive": [
+            {
+              "example": "relevant qualification, institutional role or recognized proof supports the decision",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "officially describes standard credentials as adequate but not differentiating",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially disclaims expertise or positions the offer as non-authoritative",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "EDITORIAL",
+          "positive": [
+            {
+              "example": "complex story, multiple offers and chapter sequencing are necessary",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "moderate content can be understood with simple sequencing",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "single-purpose message requires no editorial selection or narrative structure",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "PLAY",
+          "positive": [
+            {
+              "example": "participation, surprise or game-like action is a real audience or campaign job",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "light interaction exists without a play-based purpose",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "strict operational use explicitly requires no playful behavior",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "PRECISION",
+          "positive": [
+            {
+              "example": "measurement, specification, repeatability and quality control affect the buyer decision",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "some process detail exists but accuracy is not central",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially positions the service as approximate or intentionally non-standardized",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "TRANSPARENCY",
+          "positive": [
+            {
+              "example": "price, scope, limitations, process and aftercare are concretely disclosed",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "some conditions are disclosed but key terms remain mixed",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "price or scope is intentionally hidden until after commitment",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "INTIMACY",
+          "positive": [
+            {
+              "example": "one-to-one, private or sensitive context requires personal understanding",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "ordinary service context with optional personal contact",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "mass self-service with no personal context is explicit",
+              "axis_signal_value": 0.0
+            }
+          ]
+        },
+        {
+          "axis": "URGENCY",
+          "positive": [
+            {
+              "example": "factual deadline, seasonality, capacity limit or risk of delay changes the decision",
+              "axis_signal_value": 1.0
+            }
+          ],
+          "neutral": [
+            {
+              "example": "timing exists but does not materially change the decision",
+              "axis_signal_value": 0.5
+            }
+          ],
+          "negative": [
+            {
+              "example": "officially states no deadline, always-open capacity and no rational reason to hurry",
+              "axis_signal_value": 0.0
+            }
+          ]
+        }
+      ],
+      "unknown_policy": "UNKNOWN is distinct from numeric 0. Use UNKNOWN when relevant evidence is absent, not observed, stale without a recency rule, or only irrelevant evidence exists."
+    },
+    "axes": [
+      {
+        "axis": "TRUST",
+        "evidence_candidates": [
+          "official_credentials",
+          "transparent_scope",
+          "named_contact",
+          "third_party_proof"
+        ],
+        "derivation_rule": "Increase only when independently verifiable trust signals are present and relevant to the buyer risk.",
+        "confidence_rule": "High requires two evidence classes; medium one direct class; otherwise low or UNKNOWN.",
+        "unknown_policy": "Do not invent trust claims.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "CRAFT",
+        "evidence_candidates": [
+          "process_detail",
+          "materials",
+          "tools",
+          "quality_control",
+          "maker_statement"
+        ],
+        "derivation_rule": "Increase when the business truth exposes repeatable skill, process or material decisions.",
+        "confidence_rule": "High requires direct process or material evidence.",
+        "unknown_policy": "Use UNKNOWN when craft is asserted but not shown.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "PLACE",
+        "evidence_candidates": [
+          "location",
+          "service_area",
+          "workshop",
+          "local_context",
+          "access"
+        ],
+        "derivation_rule": "Increase when place materially changes the service, trust or customer experience.",
+        "confidence_rule": "High requires official place evidence plus service relevance.",
+        "unknown_policy": "Do not infer locality from a Japanese address alone.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "PREMIUM",
+        "evidence_candidates": [
+          "price_position",
+          "customer_segment",
+          "channel",
+          "official_positioning",
+          "scarcity_or_selectivity"
+        ],
+        "derivation_rule": "Increase only when price, audience, channel or official positioning jointly support a premium posture.",
+        "confidence_rule": "High requires at least two direct evidence classes.",
+        "unknown_policy": "No luxury language from visual taste alone.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "ENERGY",
+        "evidence_candidates": [
+          "service_pace",
+          "brand_verbs",
+          "event_frequency",
+          "motion_or_activity_evidence"
+        ],
+        "derivation_rule": "Increase when the business truth indicates speed, activity, change or participation.",
+        "confidence_rule": "High requires observable behavior, not color preference.",
+        "unknown_policy": "Do not use energetic expression to compensate for missing business energy.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "TECHNICAL",
+        "evidence_candidates": [
+          "specification",
+          "system_description",
+          "workflow",
+          "qualification",
+          "performance_constraint"
+        ],
+        "derivation_rule": "Increase when technical complexity is a real buyer concern and is evidenced by documents or process.",
+        "confidence_rule": "High requires direct technical evidence.",
+        "unknown_policy": "Do not equate dark UI with technicality.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "WARMTH",
+        "evidence_candidates": [
+          "people",
+          "voice",
+          "care_process",
+          "customer_language",
+          "place"
+        ],
+        "derivation_rule": "Increase when human care or relational behavior is evidenced.",
+        "confidence_rule": "High requires people/process evidence.",
+        "unknown_policy": "Avoid generic friendly adjectives.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "INNOVATION",
+        "evidence_candidates": [
+          "new_method",
+          "new_category",
+          "R&D",
+          "technology_adoption",
+          "official_innovation_claim"
+        ],
+        "derivation_rule": "Increase only when a new method or category position is evidenced.",
+        "confidence_rule": "High requires specific official evidence.",
+        "unknown_policy": "No innovation claim from unusual visual design.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "HUMAN",
+        "evidence_candidates": [
+          "founder",
+          "staff",
+          "maker",
+          "customer_interaction",
+          "named_people"
+        ],
+        "derivation_rule": "Increase when named people or direct human interaction is central to the offer.",
+        "confidence_rule": "High requires official people evidence.",
+        "unknown_policy": "Do not use stock people as proof of human authority.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "AUTHORITY",
+        "evidence_candidates": [
+          "qualification",
+          "history",
+          "institutional_role",
+          "recognized_proof",
+          "published_knowledge"
+        ],
+        "derivation_rule": "Increase when the company has relevant, verifiable authority for the buyer decision.",
+        "confidence_rule": "High requires source-backed authority.",
+        "unknown_policy": "Never substitute award prestige for business authority.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "EDITORIAL",
+        "evidence_candidates": [
+          "complex_story",
+          "multiple_offers",
+          "point_of_view",
+          "content_depth",
+          "chapter_structure"
+        ],
+        "derivation_rule": "Increase when editing and sequencing are necessary to make the offer understood.",
+        "confidence_rule": "Based on information structure, not serif typography.",
+        "unknown_policy": "Use neutral structure when no editorial need exists.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "PLAY",
+        "evidence_candidates": [
+          "participation",
+          "game_like_action",
+          "surprise",
+          "audience_behavior",
+          "campaign_context"
+        ],
+        "derivation_rule": "Increase when play is consistent with the audience and conversion job.",
+        "confidence_rule": "High requires a real participation or campaign reason.",
+        "unknown_policy": "Do not add play to make a weak offer interesting.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "PRECISION",
+        "evidence_candidates": [
+          "measurement",
+          "spec",
+          "repeatability",
+          "grid_or_system_in_business",
+          "quality_control"
+        ],
+        "derivation_rule": "Increase when accuracy and repeatability are customer-relevant and evidenced.",
+        "confidence_rule": "High requires measurable or procedural evidence.",
+        "unknown_policy": "No precision inference from geometric decoration.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "TRANSPARENCY",
+        "evidence_candidates": [
+          "price",
+          "scope",
+          "process",
+          "limitations",
+          "contact_aftercare"
+        ],
+        "derivation_rule": "Increase when the business openly defines cost, scope, boundaries or next steps.",
+        "confidence_rule": "High requires at least two concrete disclosures.",
+        "unknown_policy": "Do not claim transparency when key conditions are unknown.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "INTIMACY",
+        "evidence_candidates": [
+          "private_context",
+          "one_to_one_service",
+          "sensitive_problem",
+          "small_scale_contact"
+        ],
+        "derivation_rule": "Increase when the buyer must feel personally understood or protected.",
+        "confidence_rule": "High requires actual service context.",
+        "unknown_policy": "Do not confuse small business size with intimacy.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      },
+      {
+        "axis": "URGENCY",
+        "evidence_candidates": [
+          "deadline",
+          "capacity",
+          "seasonality",
+          "risk_of_delay",
+          "campaign_period"
+        ],
+        "derivation_rule": "Increase only when a factual time condition changes the decision.",
+        "confidence_rule": "High requires dated or operational evidence.",
+        "unknown_policy": "No artificial scarcity or urgency.",
+        "numeric_derivation_policy": "PROFILE_AXIS_NUMERIC_V2"
+      }
+    ]
+  },
+  "evidence_grade": {
+    "allowed_values": [
+      "E0",
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "definitions": {
+      "E0": "Discovery pointer or thumbnail only",
+      "E1": "Award, gallery or portfolio description without original-page verification",
+      "E2": "Original or official live page verified",
+      "E3": "Original or official page plus desktop and mobile snapshot review",
+      "E4": "E3 plus multi-scene mechanism evidence and source-backed transfer note"
+    },
+    "forbidden_aliases": [
+      "M0",
+      "M1",
+      "M2",
+      "M3"
+    ]
+  },
+  "evidence_snapshot_schema": {
+    "required_fields": [
+      "captured_at",
+      "viewport",
+      "original_url",
+      "evidence_locator",
+      "screenshot_identifier",
+      "content_hash"
+    ],
+    "optional_fields": [
+      "archive_uri",
+      "page_title",
+      "http_status",
+      "rights_note",
+      "capture_tool_version"
+    ],
+    "hash_algorithm": "sha256"
+  },
+  "storage_policy": {
+    "git_repository_stores": [
+      "metadata",
+      "URL",
+      "locator",
+      "viewport",
+      "captured_at",
+      "content_hash",
+      "screenshot_identifier",
+      "archive_uri",
+      "rights_note"
+    ],
+    "git_repository_does_not_store": [
+      "bulk_screenshots",
+      "large_video_files",
+      "binary_capture_batches"
+    ],
+    "archive_location": "Versioned object storage bucket with immutable, content-addressed evidence objects; bounded CI artifacts are secondary transfer caches only",
+    "storage_backend": "S3-compatible versioned object storage with Object Lock/WORM retention for the evidence namespace; provider credentials and bucket name are configured outside the repository",
+    "retention": "24 months from captured_at for Pilot evidence, then renew or mark EXPIRED; Strong/Deep evidence is retained while the record is canonical or until rights/retention policy requires removal",
+    "archive_uri_format": "s3://<versioned-evidence-bucket>/evidence/<reference_id>/<captured_at>/<viewport>/<content_hash>.<ext>",
+    "content_addressed_key": "evidence/<reference_id>/<captured_at>/<viewport>/<content_hash>.<ext>",
+    "expiration_policy": "An expired or deleted object cannot be the sole evidence for E2-E4; downgrade the evidence record to HOLD/E1 as appropriate and surface it in the recapture queue.",
+    "re_capture_policy": "Re-capture when the URL changes, the object expires, the content hash changes, the page is materially redesigned, or evidence is needed for a promotion decision; preserve the old metadata and create a new captured_at/hash record.",
+    "ci_artifact_policy": "CI artifacts may cache a bounded export for <=90 days and must not be the only retained copy for Strong or Deep records.",
+    "reproducibility_rule": "A missing archive object changes evidence grade to HOLD; metadata is never treated as visual evidence by itself"
+  },
+  "pilot_coverage_matrix": {
+    "path": "data/creative_mechanism_phase1_2_pilot_coverage_matrix.csv",
+    "planned_records": 100,
+    "dimensions": [
+      "pool_type",
+      "business_archetype",
+      "industry",
+      "market_scope",
+      "discovery_source_class"
+    ],
+    "selection_priority": "architecture_validation_coverage_over_market_share_replication",
+    "collection_started": false
+  },
+  "phase2_gate": {
+    "pilot_allowed_only_after": "Phase 1.2.2 PM Approval",
+    "bulk_collection_allowed": false,
+    "required_before_pilot": [
+      "coverage_matrix_locked",
+      "validator_pass",
+      "source_roles_locked",
+      "evidence_snapshot_policy_locked",
+      "profile_numeric_derivation_policy_locked",
+      "evidence_archive_preflight_pass"
+    ],
+    "collection_started": false,
+    "remaining_80_allowed": false
+  },
+  "promotion_rules_by_pool_type": {
+    "CONVERSION_INDUSTRY": {
+      "required_category_thresholds": {
+        "design": 28,
+        "conversion_architecture": 20,
+        "implementation_feasibility": 9,
+        "overall": 70
+      },
+      "optional_category_thresholds": {
+        "motion": null
+      },
+      "hard_gate_dimensions": [
+        "conversion_architecture.cta_clarity",
+        "conversion_architecture.proof_presentation",
+        "implementation_feasibility.mobile_quality",
+        "implementation_feasibility.accessibility_maintenance_safety"
+      ],
+      "required_evidence": [
+        "original_or_official_evidence",
+        "mobile_observation",
+        "implementation_feasibility_observation"
+      ],
+      "motion_rule": {
+        "default_applicability": "OPTIONAL",
+        "motion_mechanism_evidence_threshold": 9,
+        "motion_threshold_applies_only_when": "reference_is_promoted_as_motion_mechanism_evidence"
+      },
+      "conversion_architecture_is_required": true,
+      "selection_emphasis": [
+        "conversion_architecture",
+        "evidence",
+        "mobile",
+        "implementation_feasibility",
+        "design"
+      ]
+    },
+    "CREATIVE_BENCHMARK": {
+      "required_category_thresholds": {
+        "design": 32,
+        "implementation_feasibility": 9,
+        "overall": 65
+      },
+      "optional_category_thresholds": {
+        "conversion_architecture": null,
+        "motion": null
+      },
+      "hard_gate_dimensions": [
+        "design.design_distinctiveness",
+        "implementation_feasibility.mobile_quality",
+        "implementation_feasibility.accessibility_maintenance_safety"
+      ],
+      "required_evidence": [
+        "original_or_official_evidence",
+        "mobile_observation",
+        "mechanism_clarity",
+        "transfer_job"
+      ],
+      "motion_rule": {
+        "default_applicability": "OPTIONAL",
+        "motion_mechanism_evidence_threshold": 9,
+        "motion_threshold_applies_only_when": "reference_is_promoted_as_motion_mechanism_evidence"
+      },
+      "conversion_architecture_is_required": false,
+      "conversion_architecture_storage": "Observe and store Conversion Architecture Quality when present, but do not apply a required category threshold for Creative Benchmark promotion.",
+      "selection_emphasis": [
+        "design_distinctiveness",
+        "mechanism_clarity",
+        "transfer_job",
+        "original_evidence",
+        "mobile",
+        "implementation_feasibility"
+      ]
+    }
+  },
+  "evidence_grounding_contract": {
+    "required_chain": [
+      "REFERENCE",
+      "EVIDENCE_SNAPSHOT",
+      "SCENE_OBSERVATION",
+      "MECHANISM_EVIDENCE",
+      "MECHANISM_CANDIDATE"
+    ],
+    "scene_source_state": "OBSERVED",
+    "mechanism_source_key": "source_scene_evidence_ids",
+    "derived_counts": [
+      "evidence_count",
+      "reference_count",
+      "unique_brand_count",
+      "unique_agency_count",
+      "unique_campaign_count"
+    ],
+    "unknown_independence_is_not_numeric": true,
+    "captured_viewports": [
+      1440,
+      390
+    ],
+    "storage_status": "DURABLE_VERIFIED_GOLD20",
+    "temporary_capture_blocks_strong": true,
+    "final_score_requires_snapshot_and_dimension_audit": true,
+    "regulated_claim_unit_required": [
+      "FINANCE_INSURANCE",
+      "MEDICAL_DENTAL_CLINIC",
+      "BEAUTY_SALON_BODYCARE"
+    ],
+    "accessibility_required": [
+      "PUBLIC_NONPROFIT",
+      "MEDICAL_DENTAL_CLINIC"
+    ],
+    "placeholder_only_fails": true
+  },
+  "archive_contract": {
+    "archive_id": "GOLD20-FULLPAGE-V1",
+    "backend": "CHATGPT_LIBRARY",
+    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+    "file_id": "file_000000005b588209a215e3daf141e7cd",
+    "version_number": 0,
+    "archive_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+    "entry_count": 230,
+    "locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+    "verify_before_use": true,
+    "loss_policy": "HOLD_FAIL_CLOSED",
+    "retention_policy": "Keep for at least 3 years after last mechanism use; review yearly, never replace this version; no backend retention guarantee is asserted.",
+    "recapture_policy": "If stale, inaccessible or content changed, keep original immutable ledger, recapture from original URL with new snapshot/version and re-review claims and scores.",
+    "invalidation_policy": "Changed page or mismatched hash invalidates downstream score, mechanism and promotion until new observed evidence is approved."
+  },
+  "fullpage_traversal_contract": {
+    "reference_ids": [
+      "P01-R01",
+      "P05-R04",
+      "P06-R02",
+      "P08-R02",
+      "P12-R01"
+    ],
+    "viewports": [
+      1440,
+      390
+    ],
+    "expected_semantic_jobs": [
+      "ENTRY",
+      "PROPOSITION_SOLUTION",
+      "SERVICE_PRODUCT",
+      "PROOF_TRUST",
+      "CONVERSION_CTA",
+      "CLOSING_NAVIGATION"
+    ],
+    "allowed_observation_states": [
+      "OBSERVED",
+      "MISSING",
+      "NOT_OBSERVED",
+      "NOT_APPLICABLE"
+    ],
+    "mechanism_source_state": "OBSERVED",
+    "static_capture_does_not_prove_motion_or_interaction": true,
+    "no_full_lp_numeric_score_from_entry_only": true,
+    "per_record_gate_file": "data/creative_mechanism_phase2_1_1_record_gates.jsonl"
+  }
+}

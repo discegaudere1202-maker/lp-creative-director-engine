@@ -35,7 +35,7 @@ def validate(root=ROOT, artifact=None):
     for r in refs:
         assert r["desktop_observation_status"] == r["mobile_observation_status"] == "OBSERVED"
         assert r["strong_hold_reject"] == "HOLD"
-        assert r["evidence_status"] == "TEMPORARY_CAPTURE"
+        assert r["evidence_status"] == "DURABLE_VERIFIED"
         assert r["score_audit_status"] == "EVIDENCE_BACKED_FINAL"
         assert r["final_url"].startswith("https://")
         assert len(json.loads(r["scene_evidence_ids"])) == 4
@@ -62,7 +62,7 @@ def validate(root=ROOT, artifact=None):
             assert m[key] == "UNKNOWN"
     for s in snaps:
         assert s["screenshot_identifier"] and len(s["content_hash"]) == 64
-        assert s["archive_locator"] == "TEMPORARY_CAPTURE:" + s["screenshot_identifier"]
+        assert s["archive_status"] == "DURABLE_VERIFIED" and s["archive_entry"] == "capture/" + s["screenshot_identifier"]
         if artifact:
             assert hashlib.sha256((artifact / s["screenshot_identifier"]).read_bytes()).hexdigest() == s["content_hash"]
     dims = cfg["scoring"]["dimensions"]
@@ -96,7 +96,7 @@ def validate(root=ROOT, artifact=None):
     assert not cfg["phase2_gate"]["remaining_80_allowed"] and not cfg["phase2_gate"]["bulk_collection_allowed"]
     assert cfg["evidence_grounding_contract"]["scene_source_state"] == "OBSERVED"
     return {"references":len(refs),"scenes":len(scenes),"snapshots":len(snaps),"candidates":len(mechs),
-            "claims":len(claims),"accessibility":len(access),"archive":"TEMPORARY_CAPTURE","final_scored":len(scores)}
+            "claims":len(claims),"accessibility":len(access),"archive":"DURABLE_VERIFIED","final_scored":len(scores)}
 
 if __name__ == "__main__":
     p=argparse.ArgumentParser(); p.add_argument("--artifact-root",type=Path)

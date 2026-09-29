@@ -1,0 +1,665 @@
+[
+  {
+    "reference_id": "P01-R01",
+    "viewport_label": "DESKTOP",
+    "scene_roles": [
+      "CLOSING_NAVIGATION",
+      "CONVERSION_CONTACT",
+      "ENTRY",
+      "PERSON_AUTHORITY",
+      "PROOF_NEWS",
+      "SERVICE_PRODUCT",
+      "TOPICS_TRUST"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "TOPICS_TRUST"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SERVICE_PRODUCT"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PROOF_NEWS",
+          "PERSON_AUTHORITY"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CONVERSION_CONTACT"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 7,
+    "observed_count": 7,
+    "page_coverage": [
+      0,
+      5922
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P01-R01",
+    "viewport_label": "MOBILE",
+    "scene_roles": [
+      "CLOSING_NAVIGATION",
+      "CONVERSION_CONTACT",
+      "ENTRY",
+      "PERSON_AUTHORITY",
+      "PROOF_NEWS",
+      "SERVICE_PRODUCT",
+      "TOPICS_TRUST"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "TOPICS_TRUST"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SERVICE_PRODUCT"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PROOF_NEWS",
+          "PERSON_AUTHORITY"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CONVERSION_CONTACT"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 7,
+    "observed_count": 7,
+    "page_coverage": [
+      0,
+      9703
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P05-R04",
+    "viewport_label": "DESKTOP",
+    "scene_roles": [
+      "CLOSING_NAVIGATION",
+      "ENTRY",
+      "NEWS",
+      "PRODUCT_OFFER",
+      "SERVICE_PRODUCT",
+      "SUPPORT_PROOF",
+      "TRUST_NOTICE"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PRODUCT_OFFER"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SERVICE_PRODUCT"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "TRUST_NOTICE",
+          "SUPPORT_PROOF"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PRODUCT_OFFER"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 7,
+    "observed_count": 7,
+    "page_coverage": [
+      0,
+      8126
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P05-R04",
+    "viewport_label": "MOBILE",
+    "scene_roles": [
+      "CLOSING_NAVIGATION",
+      "ENTRY",
+      "NEWS",
+      "PRODUCT_OFFER",
+      "SERVICE_PRODUCT",
+      "SUPPORT_PROOF",
+      "TRUST_NOTICE"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PRODUCT_OFFER"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SERVICE_PRODUCT"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "TRUST_NOTICE",
+          "SUPPORT_PROOF"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PRODUCT_OFFER"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 7,
+    "observed_count": 7,
+    "page_coverage": [
+      0,
+      13276
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P06-R02",
+    "viewport_label": "DESKTOP",
+    "scene_roles": [
+      "CLOSING_NAVIGATION",
+      "CONVERSION_CARE",
+      "ENTRY",
+      "HUMAN_PROOF",
+      "PROBLEM_GUIDANCE",
+      "SERVICE_PATHS",
+      "TRUST_INFORMATION"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PROBLEM_GUIDANCE"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SERVICE_PATHS"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "HUMAN_PROOF",
+          "TRUST_INFORMATION"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CONVERSION_CARE"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 7,
+    "observed_count": 7,
+    "page_coverage": [
+      0,
+      8025
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P06-R02",
+    "viewport_label": "MOBILE",
+    "scene_roles": [
+      "CLOSING_NAVIGATION",
+      "CONVERSION_CARE",
+      "ENTRY",
+      "HUMAN_PROOF",
+      "PROBLEM_GUIDANCE",
+      "SERVICE_PATHS",
+      "TRUST_INFORMATION"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PROBLEM_GUIDANCE"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SERVICE_PATHS"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "HUMAN_PROOF",
+          "TRUST_INFORMATION"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CONVERSION_CARE"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 7,
+    "observed_count": 7,
+    "page_coverage": [
+      0,
+      8345
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P08-R02",
+    "viewport_label": "DESKTOP",
+    "scene_roles": [
+      "CLOSING_NAVIGATION",
+      "CONVERSION_CTA",
+      "ENTRY_PRODUCT_UI",
+      "PRODUCT_WORKFLOW_A",
+      "PRODUCT_WORKFLOW_B",
+      "PROPOSITION",
+      "UPDATE_TRUST"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY_PRODUCT_UI"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PROPOSITION"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PRODUCT_WORKFLOW_A",
+          "PRODUCT_WORKFLOW_B"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "UPDATE_TRUST"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CONVERSION_CTA"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 7,
+    "observed_count": 7,
+    "page_coverage": [
+      0,
+      9960
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P08-R02",
+    "viewport_label": "MOBILE",
+    "scene_roles": [
+      "CLOSING_NAVIGATION",
+      "CONVERSION_CTA",
+      "ENTRY_PRODUCT_UI",
+      "PRODUCT_WORKFLOW_A",
+      "PRODUCT_WORKFLOW_B",
+      "PROPOSITION"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY_PRODUCT_UI"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PROPOSITION"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "PRODUCT_WORKFLOW_A",
+          "PRODUCT_WORKFLOW_B"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "NOT_APPLICABLE",
+        "scene_roles": [],
+        "reason": "No such semantic scene in captured page"
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CONVERSION_CTA"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 6,
+    "observed_count": 6,
+    "page_coverage": [
+      0,
+      5876
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P12-R01",
+    "viewport_label": "DESKTOP",
+    "scene_roles": [
+      "CASE_PROOF",
+      "CLOSING_NAVIGATION",
+      "ENTRY_CLIENT_PROOF",
+      "GUIDED_DECISION",
+      "INFRASTRUCTURE_TRUST",
+      "NEWS_PROOF",
+      "SOLUTION_PRODUCT",
+      "TECHNICAL_EXPLANATION"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY_CLIENT_PROOF"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SOLUTION_PRODUCT"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SOLUTION_PRODUCT",
+          "TECHNICAL_EXPLANATION"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "INFRASTRUCTURE_TRUST",
+          "CASE_PROOF"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "GUIDED_DECISION",
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      }
+    },
+    "scene_count": 8,
+    "observed_count": 8,
+    "page_coverage": [
+      0,
+      15199
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  },
+  {
+    "reference_id": "P12-R01",
+    "viewport_label": "MOBILE",
+    "scene_roles": [
+      "CASE_PROOF_A",
+      "CASE_PROOF_B",
+      "CLOSING_NAVIGATION",
+      "ENTRY_CLIENT_PROOF",
+      "INFRASTRUCTURE_TRUST",
+      "NEWS_PROOF",
+      "SOLUTION_PRODUCT",
+      "TECHNICAL_EXPLANATION"
+    ],
+    "semantic_coverage": {
+      "ENTRY": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "ENTRY_CLIENT_PROOF"
+        ],
+        "reason": null
+      },
+      "PROPOSITION_SOLUTION": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SOLUTION_PRODUCT"
+        ],
+        "reason": null
+      },
+      "SERVICE_PRODUCT": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "SOLUTION_PRODUCT",
+          "TECHNICAL_EXPLANATION"
+        ],
+        "reason": null
+      },
+      "PROOF_TRUST": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "INFRASTRUCTURE_TRUST",
+          "CASE_PROOF_A",
+          "CASE_PROOF_B"
+        ],
+        "reason": null
+      },
+      "CONVERSION_CTA": {
+        "state": "OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": null
+      },
+      "CLOSING_NAVIGATION": {
+        "state": "NOT_OBSERVED",
+        "scene_roles": [
+          "CLOSING_NAVIGATION"
+        ],
+        "reason": "Captured blank mobile tail"
+      }
+    },
+    "scene_count": 8,
+    "observed_count": 7,
+    "page_coverage": [
+      0,
+      20533
+    ],
+    "motion": "NOT_OBSERVED",
+    "interaction": "NOT_OBSERVED"
+  }
+]

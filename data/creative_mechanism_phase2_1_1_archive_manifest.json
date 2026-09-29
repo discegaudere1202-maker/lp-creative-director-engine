@@ -1,0 +1,16 @@
+{
+  "archive_id": "GOLD20-FULLPAGE-V1",
+  "backend": "CHATGPT_LIBRARY",
+  "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+  "file_id": "file_000000005b588209a215e3daf141e7cd",
+  "version_number": 0,
+  "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+  "archive_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+  "download_url": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+  "entry_count": 230,
+  "retention_policy": "Keep for at least 3 years after last mechanism use; review yearly, never replace this version; no backend retention guarantee is asserted.",
+  "verification_policy": "On ingestion and before promotion or reuse, pin file_id/version, materialize, verify container SHA-256 and each referenced entry SHA-256. Recheck monthly.",
+  "recapture_policy": "If stale, inaccessible or content changed, keep original immutable ledger, recapture from original URL with new snapshot/version and re-review claims and scores.",
+  "invalidation_policy": "Changed page or mismatched hash invalidates downstream score, mechanism and promotion until new observed evidence is approved.",
+  "archive_loss_policy": "Fail closed: set ARCHIVE_UNAVAILABLE and HOLD; never promote or rank from absent bytes."
+}
