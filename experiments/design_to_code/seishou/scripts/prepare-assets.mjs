@@ -8,12 +8,13 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const partsDir = path.join(root, 'reference', 'exact_master_crop.parts');
 const expectedPath = path.join(root, 'reference', 'expected_header_hero_trust_exact.png');
-const assetPath = path.join(root, 'assets', 'hero_clean_highres_v2.jpg');
 const manifestPath = path.join(root, 'reference', 'hero_asset_manifest_v2.json');
 
 const EXPECTED_RAW_RGB_SHA256 = '1a5104d22c63f003f2262f45300c31b021dd335754d042442ad94692a124649a';
 const TRANSPORT_WEBP_SHA256 = '2683a7de8dac36f8cd6f009f28a63a2f812a61b6cb5ff805ca758ef15a5587b4';
 const MASTER_SHA256 = 'cc879352445655f84f460dd41b9267d34bd1eafc3b984486b4b09e6d9c4a1bbc';
+const HERO_SOURCE_URL = 'https://images.pexels.com/photos/8134817/pexels-photo-8134817.jpeg?auto=compress&cs=tinysrgb&w=2400';
+const HERO_SOURCE_PAGE = 'https://www.pexels.com/photo/frontage-of-a-residential-house-with-garden-8134817/';
 
 const partFiles = fs.readdirSync(partsDir)
   .filter(name => name.startsWith('exact.webp.part') && name.endsWith('.b64part'))
@@ -31,57 +32,15 @@ if (decoded.info.width !== 786 || decoded.info.height !== 428 || decoded.info.ch
 const rawRgbSha = crypto.createHash('sha256').update(decoded.data).digest('hex');
 if (rawRgbSha !== EXPECTED_RAW_RGB_SHA256) throw new Error(`exact master pixel sha mismatch: ${rawRgbSha}`);
 await sharp(decoded.data, { raw: decoded.info }).png({ compressionLevel: 9 }).toFile(expectedPath);
+const expectedPngSha = crypto.createHash('sha256').update(fs.readFileSync(expectedPath)).digest('hex');
 
-const heroRaw = await sharp(expectedPath)
-  .extract({ left: 0, top: 41, width: 786, height: 290 })
-  .removeAlpha().raw().toBuffer({ resolveWithObject: true });
-const cleanSource = await sharp(expectedPath)
-  .extract({ left: 430, top: 41, width: 356, height: 290 })
-  .flop()
-  .resize({ width: 470, height: 290, fit: 'fill', kernel: sharp.kernel.lanczos3 })
-  .removeAlpha().raw().toBuffer({ resolveWithObject: true });
-
-const out = Buffer.from(heroRaw.data);
-const src = cleanSource.data;
-const channels = 3;
-for (let y = 0; y < 290; y++) {
-  for (let x = 0; x < 786; x++) {
-    const dstIndex = (y * 786 + x) * channels;
-    if (x < 470) {
-      const srcIndex = (y * 470 + Math.min(x, 469)) * channels;
-      for (let c = 0; c < channels; c++) out[dstIndex + c] = src[srcIndex + c];
-    }
-    if (x >= 360 && x <= 500) {
-      const t = (x - 360) / 140;
-      const srcIndex = (y * 470 + Math.min(x, 469)) * channels;
-      for (let c = 0; c < channels; c++) {
-        const synth = x < 470 ? src[srcIndex + c] : heroRaw.data[dstIndex + c];
-        out[dstIndex + c] = Math.round(synth * (1 - t) + heroRaw.data[dstIndex + c] * t);
-      }
-    }
-    const factor = 0.48 + 0.52 * Math.max(0, Math.min(1, (x - 10) / 560));
-    for (let c = 0; c < channels; c++) out[dstIndex + c] = Math.max(0, Math.min(255, Math.round(out[dstIndex + c] * factor)));
-  }
-}
-
-fs.mkdirSync(path.dirname(assetPath), { recursive: true });
-await sharp(out, { raw: { width: 786, height: 290, channels: 3 } })
-  .resize({ width: 2880, height: 1063, fit: 'fill', kernel: sharp.kernel.lanczos3 })
-  .sharpen({ sigma: 1.0, m1: 1.4, m2: 0.6 })
-  .jpeg({ quality: 92, chromaSubsampling: '4:4:4', progressive: true })
-  .toFile(assetPath);
-
-const asset = fs.readFileSync(assetPath);
-const assetMeta = await sharp(assetPath).metadata();
-const assetSha = crypto.createHash('sha256').update(asset).digest('hex');
-const expectedPng = fs.readFileSync(expectedPath);
-const expectedPngSha = crypto.createHash('sha256').update(expectedPng).digest('hex');
 const manifest = {
-  schema: 'issue139_seishou_hero_clean_asset_v2',
-  source_note: 'Derived from the exact Library Master hero photography strictly for the Design-to-Code fidelity experiment. Baked text/UI are absent in the delivered asset. It is a sample/illustrative visual and must never be represented as actual Seishou work.',
-  source_master_library_path: '/LP制作事業/Design-to-Code/Seishou/Seishou_PC_Master_v1.png',
-  source_master_sha256: MASTER_SHA256,
+  schema: 'issue139_seishou_hero_asset_v2',
+  boundary: 'Header + Hero + Trust strip only',
+  source_note: 'High-resolution clean stock photography is used only as a sample/illustrative hero visual. It is not Seishou work and must never be represented as an actual project.',
   expected_exact: {
+    source_master_library_path: '/LP制作事業/Design-to-Code/Seishou/Seishou_PC_Master_v1.png',
+    source_master_sha256: MASTER_SHA256,
     path: 'reference/expected_header_hero_trust_exact.png',
     width: 786,
     height: 428,
@@ -91,15 +50,14 @@ const manifest = {
     generated_png_sha256: expectedPngSha,
     transport: { format: 'WebP lossless', sha256: transportSha }
   },
-  clean_asset: {
-    path: 'assets/hero_clean_highres_v2.jpg',
-    width: assetMeta.width,
-    height: assetMeta.height,
-    format: 'JPEG',
-    quality: 92,
-    chroma_subsampling: '4:4:4',
-    sha256: assetSha,
-    size_bytes: asset.length
+  clean_hero: {
+    source: 'Pexels / Max Vakhtbovych',
+    source_page: HERO_SOURCE_PAGE,
+    render_url: HERO_SOURCE_URL,
+    source_dimensions: { width: 7360, height: 4912 },
+    render_request_width: 2400,
+    rights_note: 'Pexels page identifies this image as free to use. Used as sample/illustrative visual only.',
+    composition_note: 'Contemporary residence + landscaped garden + wood/stone materiality; selected to preserve photography-first force at 1440px without upscaling the 786px Master crop.'
   },
   usage: 'Header + Hero + Trust strip v2 only; no Problem/Need implementation.'
 };
