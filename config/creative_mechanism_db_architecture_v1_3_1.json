@@ -1,13 +1,13 @@
 {
   "schema_version": "1.3.1",
   "project": "Creative Mechanism Database",
-  "phase": "PHASE_2_1_1",
-  "status": "PHASE_2_1_1_ARCHIVE_AND_SCENE_TRAVERSAL_READY_FOR_PM_REVIEW",
+  "phase": "PHASE_2_2",
+  "status": "PHASE_2_2_100_REFERENCE_PILOT_IN_PROGRESS",
   "updated": "2026-09-29",
   "source_of_truth": {
     "issue": 143,
-    "review_comment_id": 5884607162,
-    "review_status": "CONDITIONAL_APPROVAL_V1_2_2_OPERABILITY_MICRO_FIX_REQUIRED"
+    "review_comment_id": 5888589418,
+    "review_status": "PASS_PHASE_2_1_1_REMAINING_80_AUTHORIZED_2600_HOLD"
   },
   "preserved_core_architecture": [
     "Reference LP -> Scene Evidence -> Creative Mechanism -> Compatibility / Constraint -> Combination Recipe -> Scene Spec",
@@ -1327,7 +1327,12 @@
       "evidence_archive_preflight_pass"
     ],
     "collection_started": false,
-    "remaining_80_allowed": false
+    "remaining_80_allowed": true,
+    "authorized_scope": {
+      "remaining_80": true,
+      "gold_15_backfill": true,
+      "reference_universe_2600": false
+    }
   },
   "promotion_rules_by_pool_type": {
     "CONVERSION_INDUSTRY": {

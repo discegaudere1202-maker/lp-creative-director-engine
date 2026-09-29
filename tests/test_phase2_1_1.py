@@ -14,6 +14,13 @@ class DurableTraversalTest(unittest.TestCase):
         self.assertEqual((result['gold'],result['archive_entries'],result['viewports']), (20,230,10))
         self.assertEqual((result['traversal_scenes'],result['observed_traversal_scenes']), (71,70))
 
+    def test_remaining80_authorized_bulk_still_held(self):
+        cfg=json.loads((ROOT/'config/creative_mechanism_db_architecture_v1_3_1.json').read_text())
+        self.assertEqual(cfg['source_of_truth']['review_comment_id'],5888589418)
+        self.assertTrue(cfg['phase2_gate']['remaining_80_allowed'])
+        self.assertFalse(cfg['phase2_gate']['bulk_collection_allowed'])
+        self.assertFalse(cfg['phase2_gate']['authorized_scope']['reference_universe_2600'])
+
     def fixture(self):
         t=tempfile.TemporaryDirectory();root=Path(t.name);(root/'data').mkdir();(root/'config').mkdir()
         for name in NAMES.values():shutil.copyfile(ROOT/'data'/name,root/'data'/name)

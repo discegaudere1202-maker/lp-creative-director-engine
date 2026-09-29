@@ -34,7 +34,9 @@ def validate(root=ROOT, archive_path=None):
  assert manifest['backend']=='CHATGPT_LIBRARY' and manifest['library_file_id'] in manifest['download_url']
  assert manifest['file_id'] and manifest['version_number']==0
  assert cfg['archive_contract']['archive_id']==manifest['archive_id']
- assert cfg['phase2_gate']['remaining_80_allowed'] is False and cfg['phase2_gate']['bulk_collection_allowed'] is False
+ assert cfg['source_of_truth']['review_comment_id']==5888589418
+ assert cfg['phase2_gate']['remaining_80_allowed'] is True and cfg['phase2_gate']['bulk_collection_allowed'] is False
+ assert cfg['phase2_gate']['authorized_scope']['reference_universe_2600'] is False
  index={x['archive_entry']:x['content_hash'] for x in data['index']}
  assert len(index)==230
  with ZipFile(archive_path) as z:
