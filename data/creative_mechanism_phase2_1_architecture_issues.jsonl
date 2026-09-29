@@ -1,0 +1,9 @@
+{"issue_id":"GOLD-ISSUE-01","type":"DURABLE_ARCHIVE","finding":"Screenshots have temporary GitHub Actions artifact retention; no durable object store.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-02","type":"DISCOVERY_TRACE","finding":"Some Phase2 discovery_source_url values are generic roots, not exact listing URLs.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-03","type":"CAPTURE_TARGET","finding":"Dior loaded country/language selector, not target brand LP.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-04","type":"RESPONSIVE_SUBJECT","finding":"Airbnb mobile captured category/footer state; do not assert accommodation hero transfer.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-05","type":"TEMPORAL_MOTION","finding":"Static screenshots and DOM video counts do not validate playback or motion quality.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-06","type":"ACCESSIBILITY_RUNTIME","finding":"Keyboard, focus, contrast and reduced-motion tests were not run.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-07","type":"CLAIM_TERMS","finding":"Finance/beauty/offer terms need source-specific verification beyond captured entry.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-08","type":"SCORING_AUDIT","finding":"Manual dimension-by-dimension Gold scoring was lost in workspace transition; final score blocked.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-09","type":"CROP_SELECTOR","finding":"Some hero crop selectors are header-only; viewport screenshot remains authoritative.","status":"OPEN_FOR_PM_REVIEW"}
