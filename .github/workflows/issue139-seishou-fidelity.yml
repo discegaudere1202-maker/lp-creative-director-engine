@@ -23,13 +23,13 @@ jobs:
       - name: Install Chromium
         working-directory: experiments/design_to_code/seishou
         run: npx playwright install --with-deps chromium
-      - name: Capture and compare
+      - name: Capture Hero Fidelity v3 evidence
         working-directory: experiments/design_to_code/seishou
         run: npm run evidence
       - name: Upload fidelity evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: issue139-seishou-header-hero-trust-v2
-          path: experiments/design_to_code/seishou/evidence/iteration_02/
+          name: issue139-seishou-hero-fidelity-v3
+          path: experiments/design_to_code/seishou/evidence/iteration_03/
           if-no-files-found: error
