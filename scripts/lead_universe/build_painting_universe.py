@@ -162,7 +162,7 @@ def main():
             'missing_address':sum(not str(r.get('address','')).strip() for r in unique),
             'missing_permit_no':sum(not str(r.get('permit_no','')).strip() for r in unique),
             'missing_source_url':sum(not str(r.get('source_url','')).strip() for r in unique),
-            'canonical_id_duplicates':len(unique)-len({r['canonical_entity_id'] for r in unique),
+            'canonical_id_duplicates':len(unique)-len({r['canonical_entity_id'] for r in unique}),
             'prefecture_coverage':len({r.get('prefecture_code') for r in unique if r.get('prefecture_code')})
         }
     }
