@@ -1,0 +1,163 @@
+{
+  "cases": [
+    {
+      "case_id": "RENDER-01",
+      "business": "local landscape service",
+      "profile": {
+        "TRUST": 0.75,
+        "CRAFT": 0.75,
+        "PLACE": 1.0,
+        "PREMIUM": "UNKNOWN",
+        "WARMTH": 0.5,
+        "PRECISION": 0.5
+      },
+      "truth_evidence": [
+        "Official portfolio shows completed garden environments.",
+        "Official company page identifies named designer and service regions."
+      ],
+      "retrieval_candidate_ids": [
+        "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01"
+      ],
+      "recipe": {
+        "entry_choice": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "combination_edges": "UNKNOWN",
+        "status": "HOLD_COMPATIBILITY_UNPROVEN"
+      },
+      "scene_spec": {
+        "scene_job": "ENTRY",
+        "content_slots": [
+          "eyebrow: service region",
+          "headline: buyer-facing garden outcome",
+          "support: consultation scope",
+          "primary_action: request a site consultation"
+        ],
+        "composition": "Use an original commissioned landscape image with a text-safe region; proposition aligns with desktop center and moves to a stable mobile lower-third. Keep a visible contrast layer as a separate CSS element.",
+        "media_requirements": [
+          "licensed landscape photograph, desktop-wide crop",
+          "mobile portrait crop with focal subject preserved"
+        ],
+        "responsive_rules": [
+          "1440: full-bleed environment with centered proposition",
+          "390: portrait crop; proposition stacked and constrained to 70% width",
+          "CTA moves below proposition if text-safe space is insufficient"
+        ],
+        "implementation": [
+          "DOM text and links",
+          "responsive image with source-specific crop",
+          "CSS contrast overlay"
+        ],
+        "prohibitions": [
+          "Do not reuse reference image, wordmark, copy or exact crop",
+          "Do not label this mechanism premium without company truth"
+        ]
+      },
+      "production_handoff_status": "NOT_READY: compatibility rule and real buyer-copy validation outstanding"
+    },
+    {
+      "case_id": "RENDER-02",
+      "business": "B2B workflow SaaS",
+      "profile": {
+        "TRUST": 0.75,
+        "TECHNICAL": 0.75,
+        "INNOVATION": 0.75,
+        "PRECISION": 1.0,
+        "EDITORIAL": 0.5,
+        "PLAY": 0.0
+      },
+      "truth_evidence": [
+        "Official product documentation identifies workflow state and integrations.",
+        "Official product UI captured as a static image."
+      ],
+      "retrieval_candidate_ids": [
+        "CM-VIS-PRODUCT-UI-STAGE-01"
+      ],
+      "recipe": {
+        "entry_choice": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "combination_edges": "Single mechanism; no unsupported cross-mechanism compatibility needed",
+        "status": "PROVISIONAL_SINGLE_MECHANISM"
+      },
+      "scene_spec": {
+        "scene_job": "ENTRY",
+        "content_slots": [
+          "headline: product job",
+          "support: workflow outcome",
+          "primary_action: start trial or request demo, selected from actual conversion goal"
+        ],
+        "composition": "Dark neutral canvas, left-aligned short proposition, contained original product UI image below or beside copy. Keep UI screenshot a supporting proof object, not a background texture.",
+        "media_requirements": [
+          "approved current product UI capture",
+          "mobile-specific legibility crop"
+        ],
+        "responsive_rules": [
+          "1440: text and contained UI share a centered max-width stage",
+          "390: copy first, UI below; crop to the one workflow that supports headline",
+          "CTA remains adjacent to proposition before UI image"
+        ],
+        "implementation": [
+          "HTML text and CTA",
+          "responsive UI image or separately built UI preview",
+          "solid CSS background"
+        ],
+        "prohibitions": [
+          "Do not represent the static preview as live or interactive",
+          "Do not reproduce Linear UI, logo or exact layout",
+          "Do not assert conversion lift"
+        ]
+      },
+      "production_handoff_status": "REVIEWABLE_SPEC; canonical promotion and toolchain integration not tested"
+    },
+    {
+      "case_id": "RENDER-03",
+      "business": "public information portal",
+      "profile": {
+        "TRUST": 1.0,
+        "AUTHORITY": 0.75,
+        "TRANSPARENCY": 0.75,
+        "PRECISION": 0.75,
+        "URGENCY": 0.25,
+        "WARMTH": 0.25
+      },
+      "truth_evidence": [
+        "Official portal publishes public notices and service search tasks.",
+        "Observed page displays grouped navigation and news."
+      ],
+      "retrieval_candidate_ids": [
+        "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+      ],
+      "recipe": {
+        "entry_choice": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "combination_edges": "Single mechanism; task priority still requires client/service validation",
+        "status": "CONDITIONAL"
+      },
+      "scene_spec": {
+        "scene_job": "ENTRY_AND_SERVICE_INDEX",
+        "content_slots": [
+          "institution name",
+          "primary service search",
+          "top three public tasks",
+          "latest notices",
+          "accessibility/language links"
+        ],
+        "composition": "Institutional nav band above a task-first content grid. Use task grouping based on validated service priorities; keep urgent and universal tasks visually explicit.",
+        "responsive_rules": [
+          "1440: feature notice beside task search and quick links",
+          "390: nav compresses; search and top tasks become first full-width groups; no hidden essential service behind hover"
+        ],
+        "implementation": [
+          "semantic header/nav/main landmarks",
+          "CSS Grid desktop to ordered single-column mobile",
+          "text-native notices and task links"
+        ],
+        "prohibitions": [
+          "Do not carry over source institution identity",
+          "Do not call accessibility PASS absent runtime keyboard/focus/contrast tests",
+          "Do not hide essential tasks solely in menus"
+        ]
+      },
+      "production_handoff_status": "CONDITIONAL_SPEC; accessibility acceptance test required"
+    }
+  ],
+  "pipeline_scope": "Calibration-only fixture. Does not claim repository production pipeline executed.",
+  "all_cases_production_ready": false
+}

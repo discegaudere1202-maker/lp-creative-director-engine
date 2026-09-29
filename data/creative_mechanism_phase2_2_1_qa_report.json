@@ -1,0 +1,32 @@
+{
+  "status": "BLOCKED_NOT_READY_FOR_PM_REVIEW",
+  "phase2600_allowed": false,
+  "aggregate": {
+    "attempted_reference_count": 100,
+    "usable_reference_count": 73,
+    "failed_reference_count": 27,
+    "desktop_durable_count": 73,
+    "mobile_durable_count": 73,
+    "both_viewports_durable_count": 73,
+    "snapshot_count": 444,
+    "durable_snapshot_count": 390,
+    "scene_count": 1240,
+    "OBSERVED": 906,
+    "NOT_OBSERVED": 334,
+    "NOT_APPLICABLE": 0,
+    "durable_scene_count": 906,
+    "claim_count": 59,
+    "candidate_count": 6,
+    "archive_entry_count": 1442,
+    "source_of_counts": "snapshots + fullpage coverage + scene ledger + claims + candidate ledger + archive index; master receives derived overlay only",
+    "phase2600_allowed": false
+  },
+  "gate_results": {
+    "aggregate_reconciliation": "PASS_FOR_DERIVED_OUTPUTS_OLD_ARTIFACTS_NOT_REGENERATED",
+    "usable_100": "FAIL",
+    "same_cell_replacements": "NOT_STARTED",
+    "atomic_candidate_review": "13_PROVISIONAL_VARIANTS",
+    "compatibility_validation": "NOT_PASSED_UNKNOWN_EDGES",
+    "production_renderability": "NOT_RUN"
+  }
+}

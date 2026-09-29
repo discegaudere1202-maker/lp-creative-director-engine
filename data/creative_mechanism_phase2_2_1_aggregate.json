@@ -1,0 +1,20 @@
+{
+  "attempted_reference_count": 100,
+  "usable_reference_count": 73,
+  "failed_reference_count": 27,
+  "desktop_durable_count": 73,
+  "mobile_durable_count": 73,
+  "both_viewports_durable_count": 73,
+  "snapshot_count": 444,
+  "durable_snapshot_count": 390,
+  "scene_count": 1240,
+  "OBSERVED": 906,
+  "NOT_OBSERVED": 334,
+  "NOT_APPLICABLE": 0,
+  "durable_scene_count": 906,
+  "claim_count": 59,
+  "candidate_count": 6,
+  "archive_entry_count": 1442,
+  "source_of_counts": "snapshots + fullpage coverage + scene ledger + claims + candidate ledger + archive index; master receives derived overlay only",
+  "phase2600_allowed": false
+}

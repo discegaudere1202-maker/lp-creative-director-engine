@@ -1,0 +1,31 @@
+{
+  "policy_id": "PHASE2_2_1_BOUNDED_NORMAL_BROWSER_RECOVERY_V1",
+  "scope": "Existing Phase 2.2 failed references and same-cell replacements only",
+  "max_retries_per_reference": 1,
+  "security": {
+    "bypass_forbidden": true,
+    "forbidden": ["CAPTCHA solving", "WAF bypass", "fingerprint changes", "proxy/network-path changes", "alternate protected routes", "credentialed access without explicit user authorization"]
+  },
+  "sequence": [
+    {"step": 1, "action": "resolve normal redirects and final canonical URL", "max_attempts": 1},
+    {"step": 2, "action": "fresh ordinary browser context; bounded navigation wait", "max_attempts": 1},
+    {"step": 3, "action": "wait for visible body and use normal lazy-load scrolling", "max_attempts": 1},
+    {"step": 4, "action": "capture full page; if renderer size fails, tiled or bounded-height segmented screenshot", "max_attempts": 1},
+    {"step": 5, "action": "verify 1440 desktop and 390 mobile images, hashes, archive members, and full-page scene ledger", "max_attempts": 1}
+  ],
+  "response_handling": {
+    "403": "STOP_AND_HOLD; do not infer WAF subtype without visible evidence; no bypass; same-cell replacement if unresolved",
+    "405": "STOP_AND_HOLD; response body not retained; do not probe alternate methods; same-cell replacement if unresolved",
+    "429": "SUBTYPE_UNKNOWN; at most one delayed ordinary retry only when visible response is not a challenge; otherwise stop and replace",
+    "404": "Check official canonical/redirect once; if not available, preserve failure and replace",
+    "502_5XX": "At most one ordinary retry in fresh context; then replace if unresolved",
+    "TIMEOUT": "At most one ordinary bounded retry; then replace if unresolved",
+    "HTTP2_PROTOCOL_ERROR": "At most one ordinary browser retry; no protocol/fingerprint/network evasion; then replace",
+    "HTTP200_NO_VISIBLE_BODY": "At most one ordinary wait and scroll retry; then replace",
+    "BROWSER_CRASH_OR_RENDER_SIZE": "Fresh ordinary context once; bounded tiled capture once; otherwise replace"
+  },
+  "replacement_cell_key": ["business_archetype", "industry", "market_scope", "discovery_source_class"],
+  "replacement_usable_gate": ["original_official_evidence", "desktop_1440_durable", "mobile_390_durable", "full_page_traversal", "observed_scene_evidence", "pinned_archive_member", "sha256_verified", "explicit_missingness"],
+  "unrecovered_reference_policy": "Keep original row and failure evidence; mark FAILED_UNRECOVERABLE; do not count as usable; do not delete or relabel as replacement.",
+  "phase2600_allowed": false
+}

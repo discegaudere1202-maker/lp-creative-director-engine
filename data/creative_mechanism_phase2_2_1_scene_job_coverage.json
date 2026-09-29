@@ -1,0 +1,102 @@
+{
+  "calibration_reference_count": 13,
+  "jobs": [
+    {
+      "scene_job": "ENTRY",
+      "observed_scene_count": 25,
+      "reference_ids": [
+        "P01-R01",
+        "P03-R04",
+        "P05-R04",
+        "P06-R02",
+        "P07-R02",
+        "P08-R02",
+        "P11-R01",
+        "P13-R04",
+        "P15-R01",
+        "P16-R03",
+        "P17-R01",
+        "P18-R01",
+        "P20-R01"
+      ]
+    },
+    {
+      "scene_job": "PROBLEM_PROPOSITION_SOLUTION",
+      "observed_scene_count": 15,
+      "reference_ids": [
+        "P06-R02",
+        "P08-R02",
+        "P11-R01",
+        "P15-R01",
+        "P16-R03",
+        "P17-R01"
+      ]
+    },
+    {
+      "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+      "observed_scene_count": 58,
+      "reference_ids": [
+        "P01-R01",
+        "P05-R04",
+        "P06-R02",
+        "P07-R02",
+        "P08-R02",
+        "P11-R01",
+        "P13-R04",
+        "P15-R01",
+        "P17-R01",
+        "P18-R01"
+      ]
+    },
+    {
+      "scene_job": "PROOF_TRUST",
+      "observed_scene_count": 27,
+      "reference_ids": [
+        "P01-R01",
+        "P03-R04",
+        "P05-R04",
+        "P06-R02",
+        "P08-R02",
+        "P11-R01",
+        "P13-R04"
+      ]
+    },
+    {
+      "scene_job": "CONVERSION_CTA",
+      "observed_scene_count": 45,
+      "reference_ids": [
+        "P01-R01",
+        "P03-R04",
+        "P06-R02",
+        "P07-R02",
+        "P08-R02",
+        "P11-R01",
+        "P13-R04",
+        "P15-R01",
+        "P16-R03",
+        "P17-R01",
+        "P18-R01",
+        "P20-R01"
+      ]
+    },
+    {
+      "scene_job": "CLOSING_FOOTER_NAVIGATION",
+      "observed_scene_count": 41,
+      "reference_ids": [
+        "P01-R01",
+        "P03-R04",
+        "P05-R04",
+        "P06-R02",
+        "P07-R02",
+        "P08-R02",
+        "P11-R01",
+        "P13-R04",
+        "P15-R01",
+        "P16-R03",
+        "P17-R01",
+        "P18-R01",
+        "P20-R01"
+      ]
+    }
+  ]
+}
