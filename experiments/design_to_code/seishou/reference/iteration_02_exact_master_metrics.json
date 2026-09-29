@@ -10,19 +10,21 @@
     "proxy_used": false
   },
   "pixelmatch": {
-    "engine": "Pixelmatch v7.1-compatible OKLab HyAB comparison",
+    "engine": "pixelmatch v7.1.0",
     "threshold": 0.1,
     "includeAA": true,
-    "mismatch_pixels": 189616,
+    "mismatch_pixels": 171205,
     "total_pixels": 336408,
-    "mismatch_ratio": 0.5636489025231267,
+    "mismatch_ratio": 0.5089207153218711,
     "interpretation": "Diagnostic only. Exact AI-rendered Master glyph pixels are intentionally not the clean-DOM typography target; photography force, crop, hierarchy, spacing and section boundaries require human-visible review."
   },
   "render_evidence": {
-    "workflow_run": 36519813132,
-    "artifact_id": 11012505679,
-    "artifact_digest": "sha256:e9c4f855164bb9877fb054e9b658ed1600788b01457d05ba4960f40a36d1c9cc",
-    "render_head": "f15b7964fee2ea51d784a999f9c2cc71db29d37a",
+    "workflow_run": 36522911929,
+    "artifact_id": 11013034989,
+    "artifact_digest": "sha256:e04ad401768781589b2013ccf26c5ca9595cd47dfd135fe038d5dea9490d89ce",
+    "render_head": "8bbea39c6a643940855ca2b6bc4211625403d25f",
+    "actual_786_sha256": "c89a84794b62f4695baab0a9ddadf3f8ff97c080b869a8528647d57d5d3f7246",
+    "actual_1440_sha256": "e18e0d192766211c3e98fdf1cf0a039bff2a2b510e55b03ac358f980b9dfb674",
     "actual_786": "generated",
     "actual_1440": "generated"
   },
@@ -33,6 +35,7 @@
     "source_dimensions": {"width": 7360, "height": 4912},
     "render_request_width": 2400,
     "master_derived_upscale_used": false,
+    "duplicate_background_redraw_used": false,
     "actual_work_claim": false,
     "label": "施工イメージ / サンプルビジュアル"
   },
@@ -40,5 +43,6 @@
     "iteration": "01",
     "artifact_id": 10964151830,
     "note": "v1 used a compressed proxy Expected and low-resolution Master-derived Hero; its mismatch ratio is not numerically comparable to this exact-Master v2 gate."
-  }
+  },
+  "evidence_boundary": "Exact pixelmatch is executed only in an environment where the locked Library Master is mounted. CI captures the deterministic 786/1440 actuals and records their hashes; it does not substitute a proxy Expected."
 }
