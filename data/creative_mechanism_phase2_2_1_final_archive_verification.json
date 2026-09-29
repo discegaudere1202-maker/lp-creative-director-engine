@@ -1,0 +1,13 @@
+{
+  "archive_container_count": 11,
+  "archive_index_entry_count": 1442,
+  "container_sha256_match_count": 11,
+  "container_sha256_mismatch_count": 0,
+  "archive_member_hash_match_count": 1442,
+  "archive_member_hash_mismatch_count": 0,
+  "missing_archive_members": 0,
+  "zip_integrity": "PASS",
+  "archive_registry_digest_sha256": "377c24f49213e1a76a78b912e8dc29c0911334827e6f32f594168890fc3cd6fe",
+  "digest_input": "SHA-256 of UTF-8 concatenation of lexically sorted archive_id + single space + container_sha256 + LF rows from pinned archive_registry.json",
+  "verification_status": "PASS"
+}
