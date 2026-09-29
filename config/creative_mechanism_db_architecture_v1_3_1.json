@@ -2,7 +2,7 @@
   "schema_version": "1.3.1",
   "project": "Creative Mechanism Database",
   "phase": "PHASE_2_2",
-  "status": "PHASE_2_2_100_REFERENCE_PILOT_IN_PROGRESS",
+  "status": "PHASE_2_2_100_REFERENCE_PILOT_READY_FOR_PM_REVIEW",
   "updated": "2026-09-29",
   "source_of_truth": {
     "issue": 143,
@@ -1489,5 +1489,17 @@
     "static_capture_does_not_prove_motion_or_interaction": true,
     "no_full_lp_numeric_score_from_entry_only": true,
     "per_record_gate_file": "data/creative_mechanism_phase2_1_1_record_gates.jsonl"
+  },
+  "phase2_2_completion": {
+    "status": "PHASE_2_2_100_REFERENCE_PILOT_READY_FOR_PM_REVIEW",
+    "review_requested_from_issue": 143,
+    "authorization_comment_id": 5888589418,
+    "reference_count": 100,
+    "fullpage_scene_count": 1240,
+    "desktop_mobile_durable_count": 73,
+    "capture_failure_reference_count": 27,
+    "mechanism_candidate_families": 6,
+    "supported_or_canonical_promotions": 0,
+    "bulk_2600_allowed": false
   }
 }
