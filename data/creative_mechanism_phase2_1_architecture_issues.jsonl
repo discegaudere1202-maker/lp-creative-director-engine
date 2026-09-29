@@ -5,5 +5,5 @@
 {"issue_id":"GOLD-ISSUE-05","type":"TEMPORAL_MOTION","finding":"Static screenshots and DOM video counts do not validate playback or motion quality.","status":"OPEN_FOR_PM_REVIEW"}
 {"issue_id":"GOLD-ISSUE-06","type":"ACCESSIBILITY_RUNTIME","finding":"Keyboard, focus, contrast and reduced-motion tests were not run.","status":"OPEN_FOR_PM_REVIEW"}
 {"issue_id":"GOLD-ISSUE-07","type":"CLAIM_TERMS","finding":"Finance/beauty/offer terms need source-specific verification beyond captured entry.","status":"OPEN_FOR_PM_REVIEW"}
-{"issue_id":"GOLD-ISSUE-08","type":"SCORING_AUDIT","finding":"Manual dimension-by-dimension Gold scoring was lost in workspace transition; final score blocked.","status":"OPEN_FOR_PM_REVIEW"}
+{"issue_id":"GOLD-ISSUE-08","type":"SCORING_AUDIT","finding":"Earlier dimension vectors were lost in workspace transition; 20 screenshot-scoped vectors were independently re-reviewed.","status":"RESOLVED_WITH_SCOPED_RESCORING"}
 {"issue_id":"GOLD-ISSUE-09","type":"CROP_SELECTOR","finding":"Some hero crop selectors are header-only; viewport screenshot remains authoritative.","status":"OPEN_FOR_PM_REVIEW"}

@@ -13,19 +13,22 @@ def lines(path):
 
 def validate(root=ROOT, artifact=None):
     d = root / "data"
-    refs = list(csv.DictReader((d / "creative_mechanism_phase2_1_gold_references.csv").open()))
+    with (d / "creative_mechanism_phase2_1_gold_references.csv").open(newline="", encoding="utf-8") as fh:
+        refs = list(csv.DictReader(fh))
     scenes = lines(d / "creative_mechanism_phase2_1_gold_scene_evidence.jsonl")
     snaps = lines(d / "creative_mechanism_phase2_1_gold_snapshots.jsonl")
     mechs = lines(d / "creative_mechanism_phase2_1_gold_mechanisms.jsonl")
+    scores = lines(d / "creative_mechanism_phase2_1_gold_scores.jsonl")
     claims = lines(d / "creative_mechanism_phase2_1_claim_evidence.jsonl")
     access = lines(d / "creative_mechanism_phase2_1_accessibility.jsonl")
     legacy = lines(d / "creative_mechanism_phase2_1_legacy_candidate_review.jsonl")
-    old = list(csv.DictReader((d / "creative_mechanism_phase2_pilot_references.csv").open()))
+    with (d / "creative_mechanism_phase2_pilot_references.csv").open(newline="", encoding="utf-8") as fh:
+        old = list(csv.DictReader(fh))
     cfg = json.loads((root / "config/creative_mechanism_db_architecture_v1_3.json").read_text())
     assert len(old) == 100 and len(refs) == 20 and len({r["slot_id"] for r in refs}) == 20
     assert {r["reference_id"] for r in refs} <= {r["reference_id"] for r in old}
     assert len(scenes) == 80 and len({s["scene_evidence_id"] for s in scenes}) == 80
-    assert len(snaps) == 118 and len(legacy) == 25
+    assert len(snaps) == 118 and len(legacy) == 25 and len(scores) == 20
     assert all(x["status"] == "PROVISIONAL_FROM_PHASE2" for x in legacy)
     by_scene = {s["scene_evidence_id"]: s for s in scenes}
     by_ref = {r["reference_id"]: r for r in refs}
@@ -33,7 +36,7 @@ def validate(root=ROOT, artifact=None):
         assert r["desktop_observation_status"] == r["mobile_observation_status"] == "OBSERVED"
         assert r["strong_hold_reject"] == "HOLD"
         assert r["evidence_status"] == "TEMPORARY_CAPTURE"
-        assert r["score_audit_status"] == "EVIDENCE_CAPTURED_RESCORING_REQUIRED"
+        assert r["score_audit_status"] == "EVIDENCE_BACKED_FINAL"
         assert r["final_url"].startswith("https://")
         assert len(json.loads(r["scene_evidence_ids"])) == 4
     for s in scenes:
@@ -62,6 +65,28 @@ def validate(root=ROOT, artifact=None):
         assert s["archive_locator"] == "TEMPORARY_CAPTURE:" + s["screenshot_identifier"]
         if artifact:
             assert hashlib.sha256((artifact / s["screenshot_identifier"]).read_bytes()).hexdigest() == s["content_hash"]
+    dims = cfg["scoring"]["dimensions"]
+    for score in scores:
+        assert score["reference_id"] in by_ref and score["score_audit_status"] == "EVIDENCE_BACKED_FINAL"
+        assert score["source_scene_evidence_ids"] and not score["promotion_allowed"]
+        assert all(by_scene[k]["observation_state"] == "OBSERVED" for k in score["source_scene_evidence_ids"])
+        assert by_ref[score["reference_id"]]["overall_normalized_score"] == str(score["overall_normalized_score"])
+        category_sum = 0
+        denominator = 0
+        for cat, block in dims.items():
+            raw = score["raw_dimension_scores"][cat]
+            assert all(k in block["weights"] and type(v) in (int,float) and 0 <= v <= 5 for k,v in raw.items())
+            assert set(raw).isdisjoint(score["missingness"][cat])
+            assert set(raw) | set(score["missingness"][cat]) == set(block["weights"])
+            if raw:
+                v = round(sum((rating/5)*block["weights"][key] for key,rating in raw.items()) /
+                          sum(block["weights"][key] for key in raw)*block["target_max"],4)
+                assert abs(v-score["category_scores"][cat]) < 0.00001
+                category_sum += v
+                denominator += block["target_max"]
+            else: assert score["category_scores"][cat] is None
+        assert denominator == score["normalization_denominator"]
+        assert abs(round(category_sum/denominator*100,4)-score["overall_normalized_score"]) < 0.00001
     for r in ("P05-R04","P06-R02","P17-R01"):
         assert any(c["reference_id"] == r for c in claims)
     for c in claims:
@@ -71,7 +96,7 @@ def validate(root=ROOT, artifact=None):
     assert not cfg["phase2_gate"]["remaining_80_allowed"] and not cfg["phase2_gate"]["bulk_collection_allowed"]
     assert cfg["evidence_grounding_contract"]["scene_source_state"] == "OBSERVED"
     return {"references":len(refs),"scenes":len(scenes),"snapshots":len(snaps),"candidates":len(mechs),
-            "claims":len(claims),"accessibility":len(access),"archive":"TEMPORARY_CAPTURE","final_scored":0}
+            "claims":len(claims),"accessibility":len(access),"archive":"TEMPORARY_CAPTURE","final_scored":len(scores)}
 
 if __name__ == "__main__":
     p=argparse.ArgumentParser(); p.add_argument("--artifact-root",type=Path)

@@ -1,6 +1,6 @@
 # Creative Mechanism DB — Evidence Grounding Contract v1.3
 
-Status: **EVIDENCE_RECOVERY_IN_PROGRESS**. Sarah PM Issue #143 comment #5885732952 is the review source. v1.2.2 taxonomy, sampling, pool types, retrieval weights and 100-reference Pilot remain unchanged.
+Status: **PHASE_2_1_GOLD_EVIDENCE_READY_FOR_PM_REVIEW**. Sarah PM Issue #143 comment #5885732952 is the review source. v1.2.2 taxonomy, sampling, pool types, retrieval weights and 100-reference Pilot remain unchanged.
 
 ## Trace contract
 
@@ -11,7 +11,7 @@ Status: **EVIDENCE_RECOVERY_IN_PROGRESS**. Sarah PM Issue #143 comment #58857329
 - A Scene stores a reference-specific locator, visible structure, observed facts, viewport, original/final URLs, screenshot ID, scene crop ID, hash and archive locator. A section with no additional scroll range is `NOT_APPLICABLE`.
 - Only `OBSERVED` Scenes with a visible Mechanism subject can be a candidate source. Static screenshots never prove animation, keyboard operability or real CVR.
 - `source_scene_evidence_ids[]` is the only source for `evidence_count`, reference count and evidence-backed brand count. Unknown agency/campaign independence remains `UNKNOWN`; candidates cannot be promoted to Supported or Canonical in this Pilot.
-- Original Pilot scores are `PROVISIONAL_UNAUDITED` for all 100 references and are excluded from ranking and promotion. The 20 Gold score audit remains blocked until dimension-level rescoring is recovered and reviewed.
+- Original Pilot scores are `PROVISIONAL_UNAUDITED` for all 100 references and are excluded from ranking and promotion. The 20 Gold references have separate `EVIDENCE_BACKED_FINAL` dimension vectors tied to captured Scene IDs. The score scope is the entry and first scrolled viewport: unobserved motion, deep conversion, performance and accessibility dimensions remain `NOT_OBSERVED` and are excluded by the v1.2.2 formula. These limited scores do not permit corpus ranking or Strong promotion.
 - `TEMPORARY_CAPTURE` is an actual GitHub Actions artifact locator; no S3 URI is invented. Expiry is 2026-10-29T08:19:47Z. This storage state blocks Strong promotion. Before further rollout, copy and verify screenshots into a durable archive with access and retention policy.
 
 ## Safety and missingness
@@ -20,4 +20,4 @@ Finance, medical, beauty and offer statements have scene-linked claim units; an 
 
 ## QA and phase gate
 
-Run `python scripts/build_phase2_1_gold.py --artifact-root <downloaded-artifact-directory>` then `python scripts/validate_phase2_1_gold.py --artifact-root <downloaded-artifact-directory>` and `python -m unittest discover -s tests -p test_phase2_1_gold.py -q`. All fields of the 100 Pilot and v1.2.2 config are retained. Remaining 80 and 2,600 Universe remain blocked pending PM review and complete Gold score/archive audit.
+Run `python scripts/build_phase2_1_gold.py --artifact-root <downloaded-artifact-directory>`, `python scripts/score_phase2_1_gold.py`, `python scripts/validate_phase2_1_gold.py --artifact-root <downloaded-artifact-directory>` and `python -m unittest discover -s tests -p test_phase2_1_gold.py -q`. All fields of the 100 Pilot and v1.2.2 config are retained. Remaining 80 and 2,600 Universe remain blocked pending PM review and durable archive.

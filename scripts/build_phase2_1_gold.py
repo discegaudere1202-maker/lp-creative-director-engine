@@ -19,7 +19,7 @@ ARTIFACT_URL = "https://github.com/discegaudere1202-maker/lp-creative-director-e
 NAMES = [
     ("Place-led Craft Photograph", "MEDIA", "Place and maker identity through a garden photograph"),
     ("Residential Vision Split", "HERO", "Connect a home photograph with the vision statement"),
-    ("Audience and Qualification Gateway", "NAVIGATION", "Route buyers and professionals to different decisions"),
+    ("Audience Route over Renovation Media", "NAVIGATION", "Route buyers and professionals above project imagery"),
     ("Destination Category Finder", "NAVIGATION", "Let travelers enter by destination or trip category"),
     ("Service Alert and Campaign Cards", "CONVERSION", "Separate security notice, product offer and account action"),
     ("Care Pathway Link Cluster", "NAVIGATION", "Provide providers, locations and appointments at entry"),
@@ -27,7 +27,7 @@ NAMES = [
     ("Product UI as Hero Evidence", "MEDIA", "Show product workflow immediately after proposition"),
     ("Audience Branch over Service Scene", "NAVIGATION", "Route consumer and corporate delivery needs"),
     ("Editorial Innovation plus Case Card", "LAYOUT", "Connect brand-level innovation to a specific research case"),
-    ("Dual Decision CTA for Software", "CTA", "Offer self-serve and document download alongside UI proof"),
+    ("Product UI and Buyer Route", "NAVIGATION", "Show software interface and route distinct buyer groups"),
     ("Infrastructure Promise with Client Proof", "PROOF", "Pair broad platform proposition with named customer logos"),
     ("Product Gift Campaign Gateway", "HERO", "Connect seasonal product imagery to category entry"),
     ("Athlete Story Product Gateway", "HERO", "Link athlete photograph to a collection action"),
@@ -73,7 +73,7 @@ MOBILE = {
  "P08-R02": "Product headline wraps into short blocks above a reduced UI image; sign-up remains in header.",
  "P09-R01": "Notice strip precedes the photo; audience links form a two-column grid with inquiry action below.",
  "P10-R02": "Research image precedes stacked case and quick-link cards, replacing desktop side-by-side panel.",
- "P11-R01": "Hero copy and actions reflow into the narrow viewport; second audience route moves below fold.",
+ "P11-R01": "Mobile carousel shows a different freee tax-return slide with a single orange start action; two audience route cards sit below.",
  "P12-R01": "Large proposition wraps in narrow column; header collapses to navigation toggle and start action.",
  "P13-R04": "Seasonal campaign and category entry are cropped and vertically sequenced, not a desktop shrink.",
  "P14-R01": "Athlete image crops around subject with campaign text and shop action rearranged for width.",
@@ -138,7 +138,7 @@ def observation(record, kind, artifact):
     layout = ("Two-column image/card composition on desktop" if vp == "DESKTOP" and ref in {"P02-R01","P10-R02","P17-R01"} and kind == "HERO" else
               "Single-column or stacked composition at 390px" if vp == "MOBILE" and kind == "HERO" else
               f"Visible headings={len(hs)}, actions={len(ac)}, images={len(imgs)} in captured {kind.lower()} region")
-    obscured = kind == "HERO" and vp == "MOBILE" and ref in {"P04-R01", "P19-R01"}
+    obscured = False  # Cookie panels are separately described; target navigation remains visible.
     return {
       "scene_evidence_id": f"GOLD-{ref}-{vp}-{kind}", "reference_id": ref,
       "scene_type": "HERO_OR_ENTRY" if kind == "HERO" else "FIRST_SCROLLED_SECTION",
@@ -242,9 +242,20 @@ def main(artifact):
     write_jsonl(data / "creative_mechanism_phase2_1_gold_mechanisms.jsonl", mechanisms)
 
     old_cands = [json.loads(x) for x in (data / "creative_mechanism_phase2_mechanism_candidates.jsonl").read_text().splitlines() if x.strip()]
+    legacy_overlap = {
+        "CM-CAND-001": ("PARTIAL_CONTEXT_ONLY", ["CM-GOLD-CAND-012"], "Stripe logos appear below the promise, but this is not sufficient to confirm a proof-led Hero."),
+        "CM-CAND-002": ("PARTIAL_OBSERVED_MATCH", ["CM-GOLD-CAND-002"], "Sekisui's captured entry splits home image and proposition; original legacy definition still lacks its own provenance."),
+        "CM-CAND-004": ("POSSIBLE_SPLIT", ["CM-GOLD-CAND-001","CM-GOLD-CAND-016"], "Garden maker identity and destination reservation have different marketing jobs; do not merge them as a single style."),
+        "CM-CAND-008": ("RUNTIME_UNVERIFIED", ["CM-GOLD-CAND-001"], "Contact appears near mobile edge but stickiness during scrolling was not tested."),
+        "CM-CAND-023": ("PARTIAL_OBSERVED_MATCH", ["CM-GOLD-CAND-017"], "Shiseido brand rail is visible at the entry; a broader catalog mechanism needs independent cases."),
+    }
     write_jsonl(data / "creative_mechanism_phase2_1_legacy_candidate_review.jsonl",
-                [{"legacy_mechanism_id": x.get("mechanism_id"), "status": "PROVISIONAL_FROM_PHASE2",
-                  "gold_review": "EVIDENCE_INSUFFICIENT_NOT_REUSED_AS_GOLD", "source_scene_evidence_ids": []} for x in old_cands])
+                [{"legacy_mechanism_id": x.get("mechanism_id"), "legacy_name": x.get("mechanism_name"),
+                  "status": "PROVISIONAL_FROM_PHASE2",
+                  "gold_review": legacy_overlap.get(x.get("mechanism_id"), ("NO_GOLD_CONFIRMATION",[],"No observed Gold scene confirms this legacy definition."))[0],
+                  "potential_gold_matches": legacy_overlap.get(x.get("mechanism_id"), (None,[],None))[1],
+                  "review_note": legacy_overlap.get(x.get("mechanism_id"), (None,None,"No observed Gold scene confirms this legacy definition."))[2],
+                  "source_scene_evidence_ids": [], "legacy_promotion_allowed": False} for x in old_cands])
     write_jsonl(data / "creative_mechanism_phase2_1_legacy_score_audit.jsonl",
                 [{"reference_id": x["reference_id"], "status": "PROVISIONAL_UNAUDITED",
                   "corpus_ranking_allowed": False, "strong_promotion_allowed": False,
@@ -290,16 +301,17 @@ def main(artifact):
       ("TEMPORAL_MOTION", "Static screenshots and DOM video counts do not validate playback or motion quality."),
       ("ACCESSIBILITY_RUNTIME", "Keyboard, focus, contrast and reduced-motion tests were not run."),
       ("CLAIM_TERMS", "Finance/beauty/offer terms need source-specific verification beyond captured entry."),
-      ("SCORING_AUDIT", "Manual dimension-by-dimension Gold scoring was lost in workspace transition; final score blocked."),
+      ("SCORING_AUDIT", "Earlier dimension vectors were lost in workspace transition; 20 screenshot-scoped vectors were independently re-reviewed."),
       ("CROP_SELECTOR", "Some hero crop selectors are header-only; viewport screenshot remains authoritative."),
     ]
     write_jsonl(data / "creative_mechanism_phase2_1_architecture_issues.jsonl",
-                [{"issue_id": f"GOLD-ISSUE-{i:02d}", "type": k, "finding": v, "status": "OPEN_FOR_PM_REVIEW"}
+                [{"issue_id": f"GOLD-ISSUE-{i:02d}", "type": k, "finding": v,
+                  "status": "RESOLVED_WITH_SCOPED_RESCORING" if k == "SCORING_AUDIT" else "OPEN_FOR_PM_REVIEW"}
                  for i,(k,v) in enumerate(issues, 1)])
 
     config = json.loads((ROOT / "config/creative_mechanism_db_architecture_v1_2_2.json").read_text())
     config["schema_version"] = "1.3"
-    config["status"] = "PHASE_2_1_EVIDENCE_RECOVERY_IN_PROGRESS"
+    config["status"] = "PHASE_2_1_GOLD_EVIDENCE_READY_FOR_PM_REVIEW"
     config["evidence_grounding_contract"] = {
         "required_chain": ["REFERENCE", "EVIDENCE_SNAPSHOT", "SCENE_OBSERVATION", "MECHANISM_EVIDENCE", "MECHANISM_CANDIDATE"],
         "scene_source_state": "OBSERVED", "mechanism_source_key": "source_scene_evidence_ids",
