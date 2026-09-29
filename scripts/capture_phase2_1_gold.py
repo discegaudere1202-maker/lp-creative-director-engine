@@ -110,6 +110,23 @@ def capture(out: Path) -> dict:
                                 record["hero_crop"] = {"identifier": crop.name, "content_hash": sha256(crop), "concrete_locator": "initial viewport (no visible h1)"}
                             record["capture_state"] = "CAPTURED"
                             record["screenshots"] = [{"screenshot_identifier": p.name, "content_hash": sha256(p), "archive_locator": "TEMPORARY_CAPTURE:" + p.name, "storage_state": "TEMPORARY_CAPTURE"} for p in (shot, full)]
+                            # Observe a second, actual in-browser scene after scrolling.
+                            # Full-page stitching alone does not validate lazy media/UI.
+                            page.evaluate("""() => window.scrollTo(0, Math.min(document.documentElement.scrollHeight - innerHeight, innerHeight))""")
+                            page.wait_for_timeout(700)
+                            scroll_y = page.evaluate("window.scrollY")
+                            if scroll_y > 0:
+                                section = out / f"{rid}__{label.lower()}__section.jpg"
+                                page.screenshot(path=str(section), type="jpeg", quality=75, full_page=False)
+                                record["section_capture"] = {
+                                    "observation_state": "OBSERVED", "scroll_y": scroll_y,
+                                    "captured_at": datetime.now(timezone.utc).isoformat(),
+                                    "facts": page_facts(page), "scene_crop_identifier": section.name,
+                                    "screenshot_identifier": section.name, "content_hash": sha256(section),
+                                    "archive_locator": "TEMPORARY_CAPTURE:" + section.name,
+                                }
+                            else:
+                                record["section_capture"] = {"observation_state": "NOT_APPLICABLE", "reason": "No vertical scroll range in captured page"}
                     except Exception as exc:
                         record.update({"final_url": page.url, "error": f"{type(exc).__name__}: {str(exc)[:350]}"})
                     finally:
