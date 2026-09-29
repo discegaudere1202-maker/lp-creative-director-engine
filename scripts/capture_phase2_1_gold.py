@@ -17,6 +17,11 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 VIEWPORTS = {"DESKTOP": (1440, 1000), "MOBILE": (390, 844)}
+CONSENT_ACTIONS = {
+    "P10-R02": ("Decline all",),
+    "P16-R03": ("Accept All Cookies",),
+    "P19-R01": ("Reject All",),
+}
 
 
 def sha256(path: Path) -> str:
@@ -65,6 +70,13 @@ def capture(out: Path) -> dict:
                     try:
                         response = page.goto(r["url"], wait_until="domcontentloaded", timeout=40000)
                         page.wait_for_timeout(1800)
+                        for consent_label in CONSENT_ACTIONS.get(rid, ()):
+                            button = page.get_by_text(consent_label, exact=True).first
+                            if button.count() and button.is_visible():
+                                button.click(timeout=5000)
+                                record["consent_action"] = consent_label
+                                page.wait_for_timeout(400)
+                                break
                         try:
                             facts = page_facts(page)
                         except Exception as first_error:
