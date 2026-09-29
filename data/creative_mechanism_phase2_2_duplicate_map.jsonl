@@ -1,0 +1,9 @@
+{"candidate_id":"CM-P22-CUSTOMER_CASE_PROOF","consolidated_family_id":"CM-P22-CUSTOMER_CASE_PROOF","dedupe_decision":"EXACT_RULE_FAMILY","evidence_count":6,"reference_count":3,"brand_count":3,"manual_visual_review_required":true}
+{"candidate_id":"CM-P22-MULTI_ITEM_SERVICE_CLUSTER","consolidated_family_id":"CM-P22-MULTI_ITEM_SERVICE_CLUSTER","dedupe_decision":"EXACT_RULE_FAMILY","evidence_count":15,"reference_count":8,"brand_count":8,"manual_visual_review_required":true}
+{"candidate_id":"CM-P22-MULTI_PATH_CTA","consolidated_family_id":"CM-P22-MULTI_PATH_CTA","dedupe_decision":"EXACT_RULE_FAMILY","evidence_count":54,"reference_count":26,"brand_count":26,"manual_visual_review_required":true}
+{"candidate_id":"CM-P22-PRICING_COMPARISON","consolidated_family_id":"CM-P22-PRICING_COMPARISON","dedupe_decision":"EXACT_RULE_FAMILY","evidence_count":4,"reference_count":2,"brand_count":2,"manual_visual_review_required":true}
+{"candidate_id":"CM-P22-QUESTION_ANSWER_CLUSTER","consolidated_family_id":"CM-P22-QUESTION_ANSWER_CLUSTER","dedupe_decision":"EXACT_RULE_FAMILY","evidence_count":2,"reference_count":1,"brand_count":1,"manual_visual_review_required":true}
+{"candidate_id":"CM-P22-TRUST_DISCLOSURE_LIST","consolidated_family_id":"CM-P22-TRUST_DISCLOSURE_LIST","dedupe_decision":"EXACT_RULE_FAMILY","evidence_count":17,"reference_count":9,"brand_count":9,"manual_visual_review_required":true}
+{"left":"CM-P22-CUSTOMER_CASE_PROOF","right":"CM-P22-QUESTION_ANSWER_CLUSTER","relation":"POSSIBLE_VARIANT_REVIEW","name_similarity":0.524,"auto_merge":false}
+{"left":"CM-P22-CUSTOMER_CASE_PROOF","right":"CM-P22-TRUST_DISCLOSURE_LIST","relation":"POSSIBLE_VARIANT_REVIEW","name_similarity":0.35,"auto_merge":false}
+{"left":"CM-P22-QUESTION_ANSWER_CLUSTER","right":"CM-P22-TRUST_DISCLOSURE_LIST","relation":"POSSIBLE_VARIANT_REVIEW","name_similarity":0.273,"auto_merge":false}
