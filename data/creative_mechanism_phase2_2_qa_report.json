@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "reference_count": 100,
+  "scene_count": 1240,
+  "scene_states": {
+    "OBSERVED": 906,
+    "NOT_OBSERVED": 334
+  },
+  "snapshot_count": 444,
+  "snapshot_durable_count": 390,
+  "scene_durable_count": 916,
+  "semantic_coverage_rows": 200,
+  "runtime_observation_rows": 200,
+  "archive_batch_count": 11,
+  "archive_index_entries": 1442,
+  "capture_failure_records": 54,
+  "claim_count": 59,
+  "risk_row_count": 1302,
+  "candidate_count": 6,
+  "exact_rule_family_count": 6,
+  "all_candidates_unpromoted": true,
+  "phase2600_allowed": false
+}
