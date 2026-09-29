@@ -19,14 +19,15 @@
     "interpretation": "Diagnostic only. Exact AI-rendered Master glyph pixels are intentionally not the clean-DOM typography target; photography force, crop, hierarchy, spacing and section boundaries require human-visible review."
   },
   "render_evidence": {
-    "workflow_run": 36522911929,
-    "artifact_id": 11013034989,
-    "artifact_digest": "sha256:e04ad401768781589b2013ccf26c5ca9595cd47dfd135fe038d5dea9490d89ce",
-    "render_head": "8bbea39c6a643940855ca2b6bc4211625403d25f",
+    "workflow_run": 36523120880,
+    "artifact_id": 11013224946,
+    "artifact_digest": "sha256:34bd3be73126070f8ddcf731470310e68cd5ab6bb262d7f367e645f4e8880072",
+    "render_head": "72921c0ece4d78c0c27c4c359db6e9e0e87ceb68",
     "actual_786_sha256": "c89a84794b62f4695baab0a9ddadf3f8ff97c080b869a8528647d57d5d3f7246",
     "actual_1440_sha256": "e18e0d192766211c3e98fdf1cf0a039bff2a2b510e55b03ac358f980b9dfb674",
     "actual_786": "generated",
-    "actual_1440": "generated"
+    "actual_1440": "generated",
+    "note": "Subsequent commits after render_head only document/record this same v2 evidence boundary and do not advance to another section."
   },
   "hero_v2": {
     "source": "Pexels / Max Vakhtbovych",
