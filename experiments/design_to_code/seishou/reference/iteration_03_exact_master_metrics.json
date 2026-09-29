@@ -18,13 +18,14 @@
     "scene_target": ["garden/foliage primary", "stone path/steps", "house entrance in right/back field", "tree foliage", "dappled light", "deep green + warm natural tone"]
   },
   "actions_evidence": {
-    "render_head": "bbeb102fa791a73eb9d631f033783234000c3450",
+    "evidence_capture_head": "bbeb102fa791a73eb9d631f033783234000c3450",
     "workflow_run": 36531463143,
     "artifact_id": 11016419104,
     "artifact_digest": "sha256:c571ef717ea2fcfbfb242f9719eef8a856b51e49f6c5dbeed94e2e3283c00fce",
     "actual_786_sha256": "9e508e453ceeb0667b8f68910dc25bdc600882cef62a4a551ddf45fa96d0eaf9",
     "actual_1440_sha256": "3d50c3a1af54200e3be0f113955131dc9641a4965113fc8902e508edf0091693",
-    "before_v2_1440_sha256": "e18e0d192766211c3e98fdf1cf0a039bff2a2b510e55b03ac358f980b9dfb674"
+    "before_v2_1440_sha256": "e18e0d192766211c3e98fdf1cf0a039bff2a2b510e55b03ac358f980b9dfb674",
+    "note": "Later documentation-only commits do not alter capture pixels; final same-pixel artifact is recorded in PR/Issue completion comments."
   },
   "exact_diff": {
     "engine_contract": "pixelmatch v7.1 threshold formula; images opaque RGBA, includeAA=true",
