@@ -41,6 +41,7 @@ def page_facts(page):
         headings:items('h1,h2,h3'),sections:items('main section,main article,section,article'),
         actions:items('a,button'),images:items('main img,img'),
         visible_text:clean(document.body?.innerText).slice(0,500),
+        main_actions:items('main a,main button'),
         has_main:!!document.querySelector('main'),
         video_count:document.querySelectorAll('video').length,
         prefers_reduced_motion:matchMedia('(prefers-reduced-motion: reduce)').matches};
@@ -66,19 +67,25 @@ def capture(out: Path) -> dict:
                         page.wait_for_timeout(1800)
                         facts = page_facts(page)
                         record.update({"final_url": page.url, "http_status": response.status if response else None, "facts": facts})
-                        if facts["inner_width"] != width or not (facts["headings"] or len(facts["visible_text"]) > 60):
-                            record["error"] = "Viewport mismatch or no visible page content"
+                        blocked = (response and response.status >= 400) or any(x in facts["title"].lower() for x in ("access denied", "forbidden", "error 403"))
+                        if blocked or facts["inner_width"] != width or not (facts["headings"] or len(facts["visible_text"]) > 60):
+                            record["error"] = "HTTP error / denied page, viewport mismatch, or no visible page content"
                         else:
                             shot = out / f"{rid}__{label.lower()}__viewport.jpg"
                             page.screenshot(path=str(shot), type="jpeg", quality=74, full_page=False)
                             full = out / f"{rid}__{label.lower()}__full.jpg"
                             page.screenshot(path=str(full), type="jpeg", quality=65, full_page=True, timeout=30000)
-                            # The crop is an actual captured h1/hero element, not an invented locator.
+                            # The crop is an actual captured h1-containing scene, not an invented locator.
                             hero = page.locator("h1").first
                             if hero.count() and hero.is_visible():
                                 crop = out / f"{rid}__{label.lower()}__hero_crop.png"
-                                hero.screenshot(path=str(crop), timeout=10000)
-                                record["hero_crop"] = {"identifier": crop.name, "content_hash": sha256(crop), "concrete_locator": "h1:first-of-type (first visible h1)"}
+                                scene = hero.locator("xpath=parent::*")
+                                scene.screenshot(path=str(crop), timeout=10000)
+                                record["hero_crop"] = {"identifier": crop.name, "content_hash": sha256(crop), "concrete_locator": "parent of first visible h1"}
+                            else:
+                                crop = out / f"{rid}__{label.lower()}__hero_crop.png"
+                                page.screenshot(path=str(crop), type="png", full_page=False)
+                                record["hero_crop"] = {"identifier": crop.name, "content_hash": sha256(crop), "concrete_locator": "initial viewport (no visible h1)"}
                             record["capture_state"] = "CAPTURED"
                             record["screenshots"] = [{"screenshot_identifier": p.name, "content_hash": sha256(p), "archive_locator": "TEMPORARY_CAPTURE:" + p.name, "storage_state": "TEMPORARY_CAPTURE"} for p in (shot, full)]
                     except Exception as exc:
