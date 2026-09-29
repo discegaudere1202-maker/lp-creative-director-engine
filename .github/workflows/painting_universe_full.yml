@@ -1,0 +1,41 @@
+name: Painting Universe Full Build
+
+on:
+  push:
+    branches:
+      - task/painting-universe-76657
+    paths:
+      - 'scripts/lead_universe/scrape_mlit_painting_universe.py'
+      - 'scripts/lead_universe/build_painting_universe.py'
+      - '.github/workflows/painting_universe_full.yml'
+  workflow_dispatch:
+
+jobs:
+  build-universe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pandas openpyxl
+      - name: Scrape 47 prefectures
+        run: |
+          python scripts/lead_universe/scrape_mlit_painting_universe.py \
+            --out-dir artifacts/painting_universe/raw \
+            --delay 0.20
+      - name: Build deduped universe
+        run: |
+          python scripts/lead_universe/build_painting_universe.py \
+            --raw-dir artifacts/painting_universe/raw \
+            --out-dir artifacts/painting_universe/final \
+            --official-target 76657
+      - name: Upload universe artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: painting-universe-live
+          path: artifacts/painting_universe/
+          if-no-files-found: error
