@@ -46,7 +46,7 @@ The Gold 20 numeric scores remain `CAPTURED_ENTRY_AND_FIRST_SCROLL_ONLY` even fo
 
 ## Per-record issues and gates
 
-The original `DISCOVERY_TRACE`, `CAPTURE_TARGET`, `RESPONSIVE_SUBJECT`, `TEMPORAL_MOTION`, `ACCESSIBILITY_RUNTIME`, `CLAIM_TERMS` and `CROP_SELECTOR` issues are retained. The 20×7 record-gate ledger records applicability and affected use; 31 entries are applicable. Dior's selector issue applies to P19, Airbnb/Stripe responsive-subject concerns to P04/P12, accessibility runtime to medical/public records, claims to relevant regulated and quantified cases. A selector-derived crop never substitutes for the archived viewport/full-page pixels. These are reference-specific holds, not a fabricated global PASS. All 20 Gold references remain HOLD pending PM review and any record-specific recapture or runtime review.
+The original `DISCOVERY_TRACE`, `CAPTURE_TARGET`, `RESPONSIVE_SUBJECT`, `TEMPORAL_MOTION`, `ACCESSIBILITY_RUNTIME`, `CLAIM_TERMS` and `CROP_SELECTOR` issues are retained. The 20×7 record-gate ledger records applicability and affected use; 31 entries are applicable. `this_issue_blocks_promotion=true` only when that issue applies; a NOT_APPLICABLE gate contributes no hold of its own. Dior's selector issue applies to P19, Airbnb/Stripe responsive-subject concerns to P04/P12, accessibility runtime to medical/public records, claims to relevant regulated and quantified cases. A selector-derived crop never substitutes for the archived viewport/full-page pixels. These are reference-specific holds, not a fabricated global PASS. All 20 Gold references remain HOLD because their full-LP numeric scores/runtime reviews are incomplete, independently of each per-record issue gate.
 
 ## QA and next decision
 

@@ -20,8 +20,9 @@ def build():
   for typ in KINDS:
    applicable,reason=rules[typ]
    rows.append({'reference_id':ref,'issue_type':typ,'applicability':'APPLICABLE' if applicable else 'NOT_APPLICABLE',
-                'gate_result':'HOLD_AFFECTED_USE' if applicable else 'NO_GLOBAL_BLOCK',
-                'reason':reason,'strong_promotion_allowed':False,'action':'Re-observe affected property before promotion' if applicable else 'Do not infer unobserved property'})
+                'gate_result':'HOLD_AFFECTED_USE' if applicable else 'NOT_APPLICABLE',
+                'reason':reason,'this_issue_blocks_promotion':bool(applicable),
+                'action':'Re-observe affected property before promotion' if applicable else 'No hold from this issue; other gates remain independent'})
  path=D/'creative_mechanism_phase2_1_1_record_gates.jsonl'
  path.write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in rows))
  print({'records':len(rows),'applicable':sum(x['applicability']=='APPLICABLE' for x in rows)})

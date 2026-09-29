@@ -100,7 +100,10 @@ def validate(root=ROOT, archive_path=None):
   expected={'DISCOVERY_TRACE','CAPTURE_TARGET','RESPONSIVE_SUBJECT','TEMPORAL_MOTION','ACCESSIBILITY_RUNTIME','CLAIM_TERMS','CROP_SELECTOR'}
   assert expected<=issue_types
   assert {(g['reference_id'],g['issue_type']) for g in data['gates']}=={(r['reference_id'],t) for r in refs for t in expected}
-  assert all(g['gate_result']!='PASS' and g['strong_promotion_allowed'] is False for g in data['gates'])
+  assert all((g['gate_result']=='HOLD_AFFECTED_USE' and g['this_issue_blocks_promotion'] is True)
+             if g['applicability']=='APPLICABLE' else
+             (g['gate_result']=='NOT_APPLICABLE' and g['this_issue_blocks_promotion'] is False)
+             for g in data['gates'])
   assert not any('TEMPORARY_CAPTURE' in x.get('archive_status','') for kind in ('snap','old','new') for x in data[kind])
   return {'pilot_preserved':len(pilot),'gold':len(refs),'snapshots':len(data['snap']),'archive_entries':len(index),
           'traversal_references':5,'viewports':len(coverage),'traversal_scenes':len(data['new']),

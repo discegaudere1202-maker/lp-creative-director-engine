@@ -41,7 +41,7 @@ class DurableTraversalTest(unittest.TestCase):
         self.mutate(NAMES['snap'],lambda rows:rows[0].update(archive_status='TEMPORARY_CAPTURE'))
 
     def test_per_record_gate_cannot_be_global_pass(self):
-        self.mutate(NAMES['gates'],lambda rows:rows[0].update(gate_result='PASS',strong_promotion_allowed=True))
+        self.mutate(NAMES['gates'],lambda rows:rows[0].update(gate_result='PASS',this_issue_blocks_promotion=False))
 
     def test_hash_fails(self):
         self.mutate(NAMES['snap'],lambda rows:rows[0].update(content_hash='0'*64))
