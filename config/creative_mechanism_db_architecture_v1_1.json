@@ -1,0 +1,417 @@
+{
+  "schema_version": "1.1.0",
+  "project": "Creative Mechanism Database",
+  "phase": "1.1",
+  "status": "ARCHITECTURE_READY_FOR_PM_REVIEW",
+  "updated": "2026-09-29",
+  "source_of_truth": {
+    "issue": 143,
+    "review_comment_id": 5883884960,
+    "review_status": "CONDITIONAL_APPROVAL_V1_1_REQUIRED"
+  },
+  "preserved_core_architecture": [
+    "Reference LP -> Scene Evidence -> Creative Mechanism -> Compatibility / Constraint -> Combination Recipe -> Scene Spec",
+    "mobile_recomposition",
+    "evidence_safety",
+    "saturation_stop"
+  ],
+  "entity_types": [
+    "reference_lp",
+    "scene_observation",
+    "creative_mechanism",
+    "compatibility_edge",
+    "recipe",
+    "creative_profile",
+    "evaluation",
+    "observed_performance_evidence",
+    "evidence_snapshot"
+  ],
+  "business_archetypes": [
+    "LOCAL_TRUST_SERVICE",
+    "HIGH_CONSIDERATION_HOME",
+    "PROFESSIONAL_ADVICE",
+    "MEDICAL_WELLNESS",
+    "BEAUTY_PERSONAL",
+    "B2B_TECHNICAL_SOLUTION",
+    "B2B_PRODUCT_MANUFACTURING",
+    "SAAS_WORKFLOW",
+    "D2C_PRODUCT",
+    "RETAIL_FOOD_HOSPITALITY",
+    "EDUCATION_COACHING",
+    "RECRUITING_EMPLOYER",
+    "PREMIUM_LUXURY",
+    "CULTURE_ENTERTAINMENT_CAMPAIGN",
+    "CORPORATE_BRAND",
+    "PUBLIC_SOCIAL"
+  ],
+  "reference_pool_types": [
+    {
+      "pool_type": "CONVERSION_INDUSTRY",
+      "discovery_candidate_target": 2100,
+      "strong_target": 900,
+      "deep_target": 480,
+      "promotion_is_automatic": false,
+      "selection_rule": "Original or official evidence, observable conversion architecture, feasibility and mobile review required"
+    },
+    {
+      "pool_type": "CREATIVE_BENCHMARK",
+      "discovery_candidate_target": 500,
+      "strong_target": 300,
+      "deep_target": 120,
+      "promotion_is_automatic": false,
+      "selection_rule": "Creative mechanism and transfer job must be explicit; award status alone is insufficient"
+    }
+  ],
+  "sampling_totals": {
+    "reference_universe_discovery_candidates": 2600,
+    "strong_corpus": 1200,
+    "deep_annotation": 600,
+    "conversion_industry_candidates": 2100,
+    "creative_benchmark_candidates": 500,
+    "conversion_industry_strong": 900,
+    "creative_benchmark_strong": 300,
+    "conversion_industry_deep": 480,
+    "creative_benchmark_deep": 120
+  },
+  "industry_taxonomy": [
+    "CONSTRUCTION_HOME",
+    "LANDSCAPE_GARDEN",
+    "RENOVATION_REPAIR",
+    "DEMOLITION_INFRA",
+    "REAL_ESTATE",
+    "PROFESSIONAL_LEGAL_TAX_ACCOUNTING",
+    "CONSULTING_SUPPORT",
+    "MEDICAL_DENTAL_CLINIC",
+    "BEAUTY_SALON_BODYCARE",
+    "MANUFACTURING_MATERIALS",
+    "LOGISTICS_MAINTENANCE",
+    "IT_SAAS_DIGITAL",
+    "FINANCE_INSURANCE",
+    "RETAIL_D2C_CONSUMER",
+    "FOOD_RESTAURANT",
+    "HOTEL_TRAVEL",
+    "EDUCATION_SCHOOL",
+    "RECRUITMENT_HR",
+    "FASHION_LUXURY",
+    "AUTOMOTIVE_MOBILITY",
+    "ART_CULTURE",
+    "ENTERTAINMENT_MEDIA",
+    "PUBLIC_NONPROFIT",
+    "AGRICULTURE_FOOD_PRODUCER",
+    "OTHER"
+  ],
+  "evidence_authority_taxonomy": [
+    "PERSON",
+    "PLACE",
+    "MATERIAL",
+    "CRAFT",
+    "PRODUCT",
+    "DOCUMENT",
+    "PROOF",
+    "HERITAGE",
+    "COMMUNITY"
+  ],
+  "expression_driver_taxonomy": [
+    "EDITORIAL",
+    "MOVEMENT",
+    "PRECISION",
+    "TASTE",
+    "PLAY"
+  ],
+  "authority_rule": "Evidence Authority answers what makes the claim or visual credible. Expression Driver answers how attention, mood or reading behavior is shaped. They must be retrieved and scored separately.",
+  "mechanism_categories": [
+    "ENTRY",
+    "TYPE",
+    "COLOR_SURFACE",
+    "SPACE_LAYOUT",
+    "MEDIA",
+    "GEOMETRY",
+    "RHYTHM",
+    "MOTION",
+    "INTERACTION",
+    "PROOF",
+    "CONVERSION",
+    "NAVIGATION"
+  ],
+  "mechanism_record_required_fields": [
+    "mechanism_id",
+    "mechanism_name",
+    "category",
+    "subcategory",
+    "purpose",
+    "marketing_job",
+    "user_effect",
+    "best_for",
+    "avoid_when",
+    "best_scene",
+    "compatible_archetypes",
+    "evidence_authority",
+    "expression_driver",
+    "visual_impact",
+    "conversion_utility",
+    "automation_difficulty",
+    "html_implementation_difficulty",
+    "motion_dependency",
+    "responsive_risk",
+    "performance_risk",
+    "accessibility_risk",
+    "required_media",
+    "reference_lps",
+    "implementation_notes",
+    "combination_notes",
+    "anti_pattern",
+    "confidence",
+    "evidence_count",
+    "unique_lp_count",
+    "unique_brand_count",
+    "unique_agency_count",
+    "unique_campaign_count",
+    "evidence_requirement",
+    "mobile_recomposition_rule"
+  ],
+  "mechanism_promotion_policy": {
+    "candidate_to_supported": {
+      "independent_lp_min": 3,
+      "unique_brand_min": 3,
+      "unique_agency_min": 2,
+      "unique_campaign_min": 3,
+      "max_single_agency_share": 0.66,
+      "max_single_brand_family_share": 0.66,
+      "archetype_scope": "If only one archetype is supported, scope must be explicit"
+    },
+    "supported_to_canonical": {
+      "independent_lp_min": 5,
+      "unique_brand_min": 4,
+      "unique_agency_min": 3,
+      "unique_campaign_min": 4,
+      "archetype_min": 2,
+      "max_single_agency_share": 0.50,
+      "max_single_brand_family_share": 0.50,
+      "mobile_rule_required": true,
+      "compatibility_edge_required": true
+    },
+    "agency_or_brand_only_evidence_is_sufficient": false
+  },
+  "scoring": {
+    "score_direction": "HIGHER_IS_BETTER",
+    "raw_scale": {"min": 0, "max": 5, "unknown": null},
+    "normalization_formula": "normalized_category_score = SUM((raw_dimension_score / 5) * dimension_weight)",
+    "overall_formula": "overall_score = design_score + conversion_architecture_score + motion_score + implementation_feasibility_score",
+    "dimensions": {
+      "design": {
+        "target_max": 40,
+        "weights": {
+          "hero_originality": 4,
+          "typography": 4,
+          "layout_composition": 4,
+          "image_treatment": 4,
+          "visual_hierarchy": 4,
+          "section_rhythm": 4,
+          "section_boundary": 3,
+          "brand_distinctiveness": 4,
+          "screenshot_worthy_quality": 4,
+          "design_distinctiveness": 5
+        }
+      },
+      "conversion_architecture": {
+        "target_max": 30,
+        "weights": {
+          "proof_presentation": 5,
+          "cta_clarity": 4,
+          "navigation_utility": 3,
+          "conversion_clarity": 5,
+          "objection_coverage": 5,
+          "decision_size": 4,
+          "customer_state_fit": 4
+        },
+        "meaning": "Observable conversion design structure, not measured CVR or revenue performance"
+      },
+      "motion": {
+        "target_max": 15,
+        "weights": {
+          "motion_job": 4,
+          "interaction_legibility": 3,
+          "scroll_experience": 3,
+          "timing_rhythm": 3,
+          "reduced_motion_safety": 2
+        }
+      },
+      "implementation_feasibility": {
+        "target_max": 15,
+        "weights": {
+          "html_css_feasibility": 2,
+          "asset_availability": 2,
+          "mobile_quality": 4,
+          "responsive_recomposition": 3,
+          "performance_discipline": 2,
+          "accessibility_maintenance_safety": 2
+        }
+      }
+    },
+    "strong_threshold": {
+      "design_min": 32,
+      "conversion_architecture_min": 20,
+      "motion_min": 9,
+      "implementation_feasibility_min": 9,
+      "overall_min": 70,
+      "minimum_raw_dimension_score": 2,
+      "original_or_official_evidence_required": true,
+      "production_core_mobile_grade_required": "E3"
+    },
+    "design_distinctiveness_rule": {
+      "design_distinctiveness": "0 = generic / highly template-like, 5 = clearly authored and distinctive",
+      "template_resemblance_risk_derived": "5 - design_distinctiveness",
+      "risk_is_not_a_positive_score": true
+    }
+  },
+  "retrieval": {
+    "candidate_score_formula": "SUM(feature_score * feature_weight)",
+    "weights": {
+      "axis_similarity": 0.18,
+      "truth_tag_match": 0.14,
+      "buyer_state_fit": 0.12,
+      "marketing_job_fit": 0.12,
+      "evidence_authority_fit": 0.10,
+      "expression_driver_fit": 0.05,
+      "archetype_fit": 0.08,
+      "conversion_utility": 0.08,
+      "evidence_confidence": 0.06,
+      "implementation_fit": 0.07
+    },
+    "pipeline_order": [
+      "ELIGIBILITY_EVIDENCE_HARD_GATE",
+      "MECHANISM_CANDIDATE_SCORING",
+      "COMPATIBILITY_SOLVER",
+      "RECIPE_ASSEMBLY",
+      "DIVERSITY_NOVELTY_RERANKING",
+      "FINAL_THREE_RECIPE_OUTPUT"
+    ],
+    "hard_gates": [
+      "unsupported_claim_required",
+      "missing_original_or_official_evidence_for_strong",
+      "mobile_failure_for_mobile_critical_scene",
+      "pairwise_conflict",
+      "asset_not_available",
+      "accessibility_hard_failure",
+      "performance_budget_failure"
+    ],
+    "novelty_policy": {
+      "applies_after": "RECIPE_ASSEMBLY",
+      "reranks_only_eligible_recipes": true,
+      "cannot_override_hard_gate": true,
+      "cannot_override_conversion_fit": true,
+      "cannot_override_evidence_safety": true,
+      "novelty_is_not_a_style_label": true
+    }
+  },
+  "source_model": {
+    "discovery_source_class": [
+      "AWWWARDS",
+      "CSS_DESIGN_AWARDS",
+      "WEB_GRAND_PRIX",
+      "JAPANESE_WEB_GALLERY",
+      "GLOBAL_WEB_GALLERY",
+      "ORIGINAL_SITE_DIRECT",
+      "PRODUCTION_PORTFOLIO",
+      "MOTION_INTERACTION_SHOWCASE",
+      "CONVERSION_LP_GALLERY"
+    ],
+    "evidence_source_roles": [
+      "ORIGINAL_LIVE",
+      "OFFICIAL_BRAND",
+      "OFFICIAL_PRODUCT_OR_SERVICE",
+      "OFFICIAL_CONVERSION_PAGE",
+      "OFFICIAL_CASE_STUDY",
+      "PRODUCTION_CASE",
+      "AWARD_ENTRY",
+      "GALLERY_ENTRY",
+      "PUBLIC_STANDARD"
+    ],
+    "discovery_source_mix_targets": {
+      "ORIGINAL_SITE_DIRECT": 0.20,
+      "AWWWARDS": 0.15,
+      "CSS_DESIGN_AWARDS": 0.10,
+      "WEB_GRAND_PRIX": 0.10,
+      "JAPANESE_WEB_GALLERY": 0.10,
+      "GLOBAL_WEB_GALLERY": 0.10,
+      "PRODUCTION_PORTFOLIO": 0.10,
+      "MOTION_INTERACTION_SHOWCASE": 0.05,
+      "CONVERSION_LP_GALLERY": 0.10
+    },
+    "source_mix_applies_to": "DISCOVERY_BIAS_ONLY",
+    "strong_evidence_requirement": {
+      "discovery_source_is_irrelevant_to_promotion": true,
+      "required_any_evidence_source_roles":["ORIGINAL_LIVE","OFFICIAL_BRAND","OFFICIAL_PRODUCT_OR_SERVICE","OFFICIAL_CONVERSION_PAGE"],
+      "official_or_original_evidence_required": true,
+      "award_or_gallery_alone_is_insufficient": true
+    }
+  },
+  "conversion_architecture_policy": {
+    "display_name": "Conversion Architecture Quality",
+    "observable_dimensions":["cta_clarity","objection_coverage","decision_size","proof_presentation","customer_state_fit","conversion_clarity","navigation_utility"],
+    "forbidden_inference":["measured_cvr","revenue_lift","lead_increase","mechanism_caused_conversion"],
+    "observed_performance_evidence_entity":"observed_performance_evidence",
+    "performance_evidence_allowed_only_when":"Official case study or public measurement with source, metric, period, population and methodology is available"
+  },
+  "observed_performance_evidence_schema": {
+    "required_fields":["evidence_id","reference_id","metric","value","unit","measurement_period","population_or_sample","methodology","source_url","source_role","captured_at"],
+    "claim_rule":"Performance may be stored as reported evidence, never inferred from visual observation"
+  },
+  "creative_profile": {
+    "axis_value_range":[0,1],
+    "axis_value_rule":"Axis values require input evidence and a derivation rule. Missing evidence produces UNKNOWN, not a guessed low or high value.",
+    "axes": [
+      {"axis":"TRUST","evidence_candidates":["official_credentials","transparent_scope","named_contact","third_party_proof"],"derivation_rule":"Increase only when independently verifiable trust signals are present and relevant to the buyer risk.","confidence_rule":"High requires two evidence classes; medium one direct class; otherwise low or UNKNOWN.","unknown_policy":"Do not invent trust claims."},
+      {"axis":"CRAFT","evidence_candidates":["process_detail","materials","tools","quality_control","maker_statement"],"derivation_rule":"Increase when the business truth exposes repeatable skill, process or material decisions.","confidence_rule":"High requires direct process or material evidence.","unknown_policy":"Use UNKNOWN when craft is asserted but not shown."},
+      {"axis":"PLACE","evidence_candidates":["location","service_area","workshop","local_context","access"],"derivation_rule":"Increase when place materially changes the service, trust or customer experience.","confidence_rule":"High requires official place evidence plus service relevance.","unknown_policy":"Do not infer locality from a Japanese address alone."},
+      {"axis":"PREMIUM","evidence_candidates":["price_position","customer_segment","channel","official_positioning","scarcity_or_selectivity"],"derivation_rule":"Increase only when price, audience, channel or official positioning jointly support a premium posture.","confidence_rule":"High requires at least two direct evidence classes.","unknown_policy":"No luxury language from visual taste alone."},
+      {"axis":"ENERGY","evidence_candidates":["service_pace","brand_verbs","event_frequency","motion_or_activity_evidence"],"derivation_rule":"Increase when the business truth indicates speed, activity, change or participation.","confidence_rule":"High requires observable behavior, not color preference.","unknown_policy":"Do not use energetic expression to compensate for missing business energy."},
+      {"axis":"TECHNICAL","evidence_candidates":["specification","system_description","workflow","qualification","performance_constraint"],"derivation_rule":"Increase when technical complexity is a real buyer concern and is evidenced by documents or process.","confidence_rule":"High requires direct technical evidence.","unknown_policy":"Do not equate dark UI with technicality."},
+      {"axis":"WARMTH","evidence_candidates":["people","voice","care_process","customer_language","place"],"derivation_rule":"Increase when human care or relational behavior is evidenced.","confidence_rule":"High requires people/process evidence.","unknown_policy":"Avoid generic friendly adjectives."},
+      {"axis":"INNOVATION","evidence_candidates":["new_method","new_category","R&D","technology_adoption","official_innovation_claim"],"derivation_rule":"Increase only when a new method or category position is evidenced.","confidence_rule":"High requires specific official evidence.","unknown_policy":"No innovation claim from unusual visual design."},
+      {"axis":"HUMAN","evidence_candidates":["founder","staff","maker","customer_interaction","named_people"],"derivation_rule":"Increase when named people or direct human interaction is central to the offer.","confidence_rule":"High requires official people evidence.","unknown_policy":"Do not use stock people as proof of human authority."},
+      {"axis":"AUTHORITY","evidence_candidates":["qualification","history","institutional_role","recognized_proof","published_knowledge"],"derivation_rule":"Increase when the company has relevant, verifiable authority for the buyer decision.","confidence_rule":"High requires source-backed authority.","unknown_policy":"Never substitute award prestige for business authority."},
+      {"axis":"EDITORIAL","evidence_candidates":["complex_story","multiple_offers","point_of_view","content_depth","chapter_structure"],"derivation_rule":"Increase when editing and sequencing are necessary to make the offer understood.","confidence_rule":"Based on information structure, not serif typography.","unknown_policy":"Use neutral structure when no editorial need exists."},
+      {"axis":"PLAY","evidence_candidates":["participation","game_like_action","surprise","audience_behavior","campaign_context"],"derivation_rule":"Increase when play is consistent with the audience and conversion job.","confidence_rule":"High requires a real participation or campaign reason.","unknown_policy":"Do not add play to make a weak offer interesting."},
+      {"axis":"PRECISION","evidence_candidates":["measurement","spec","repeatability","grid_or_system_in_business","quality_control"],"derivation_rule":"Increase when accuracy and repeatability are customer-relevant and evidenced.","confidence_rule":"High requires measurable or procedural evidence.","unknown_policy":"No precision inference from geometric decoration."},
+      {"axis":"TRANSPARENCY","evidence_candidates":["price","scope","process","limitations","contact_aftercare"],"derivation_rule":"Increase when the business openly defines cost, scope, boundaries or next steps.","confidence_rule":"High requires at least two concrete disclosures.","unknown_policy":"Do not claim transparency when key conditions are unknown."},
+      {"axis":"INTIMACY","evidence_candidates":["private_context","one_to_one_service","sensitive_problem","small_scale_contact"],"derivation_rule":"Increase when the buyer must feel personally understood or protected.","confidence_rule":"High requires actual service context.","unknown_policy":"Do not confuse small business size with intimacy."},
+      {"axis":"URGENCY","evidence_candidates":["deadline","capacity","seasonality","risk_of_delay","campaign_period"],"derivation_rule":"Increase only when a factual time condition changes the decision.","confidence_rule":"High requires dated or operational evidence.","unknown_policy":"No artificial scarcity or urgency."}
+    ]
+  },
+  "evidence_grade": {
+    "allowed_values":["E0","E1","E2","E3","E4"],
+    "definitions": {
+      "E0":"Discovery pointer or thumbnail only",
+      "E1":"Award, gallery or portfolio description without original-page verification",
+      "E2":"Original or official live page verified",
+      "E3":"Original or official page plus desktop and mobile snapshot review",
+      "E4":"E3 plus multi-scene mechanism evidence and source-backed transfer note"
+    },
+    "forbidden_aliases":["M0","M1","M2","M3"]
+  },
+  "evidence_snapshot_schema": {
+    "required_fields":["captured_at","viewport","original_url","evidence_locator","screenshot_identifier","content_hash"],
+    "optional_fields":["archive_uri","page_title","http_status","rights_note","capture_tool_version"],
+    "hash_algorithm":"sha256"
+  },
+  "storage_policy": {
+    "git_repository_stores":["metadata","URL","locator","viewport","captured_at","content_hash","screenshot_identifier","archive_uri","rights_note"],
+    "git_repository_does_not_store":["bulk_screenshots","large_video_files","binary_capture_batches"],
+    "archive_location":"External versioned evidence archive or bounded CI artifact storage, referenced by archive_uri",
+    "content_addressed_key":"evidence/<reference_id>/<captured_at>/<viewport>/<content_hash>.<ext>",
+    "reproducibility_rule":"A missing archive object changes evidence grade to HOLD; metadata is never treated as visual evidence by itself"
+  },
+  "pilot_coverage_matrix": {
+    "path":"data/creative_mechanism_phase1_1_pilot_coverage_matrix.csv",
+    "planned_records":100,
+    "dimensions":["pool_type","business_archetype","industry","market_scope","discovery_source_class"],
+    "selection_priority":"architecture_validation_coverage_over_market_share_replication",
+    "collection_started":false
+  },
+  "phase2_gate": {
+    "pilot_allowed_only_after":"PM review of v1.1",
+    "bulk_collection_allowed":false,
+    "required_before_pilot":["coverage_matrix_locked","validator_pass","source_roles_locked","evidence_snapshot_policy_locked","profile_derivation_rules_locked"]
+  }
+}
