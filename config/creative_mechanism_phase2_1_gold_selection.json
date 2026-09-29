@@ -4,13 +4,13 @@
     "P01-R01", "P02-R01", "P03-R04", "P04-R01", "P05-R04",
     "P06-R02", "P07-R01", "P08-R02", "P09-R01", "P10-R02",
     "P11-R01", "P12-R01", "P13-R04", "P14-R01", "P15-R04",
-    "P16-R02", "P17-R01", "P18-R01", "P19-R01", "P20-R01"
+    "P16-R03", "P17-R01", "P18-R01", "P19-R01", "P20-R01"
   ],
   "selection_notes": {
     "P03-R04": "Previous P03-R02 produced a title but no body; selected observed official alternative in same cell.",
     "P15-R04": "Previous P15-R02 produced a title but no body; selected observed official alternative in same cell.",
     "P13-R04": "P13-R01 failed both exact-viewport navigations with HTTP/2 protocol error; SABON was live-observed in the same cell.",
-    "P16-R02": "P16-R01 returned a 403 Access Denied page in both exact viewports; Hyatt was live-observed in the same cell.",
+    "P16-R03": "P16-R01 and P16-R02 returned 403/denied pages in exact viewport capture; Aman was live-observed in the same cell and is attempted once.",
     "P19-R01": "P19-R02 returned a 403 Access Denied page in both exact viewports; Dior was live-observed in the same cell and is attempted once."
   }
 }

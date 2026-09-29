@@ -65,7 +65,15 @@ def capture(out: Path) -> dict:
                     try:
                         response = page.goto(r["url"], wait_until="domcontentloaded", timeout=40000)
                         page.wait_for_timeout(1800)
-                        facts = page_facts(page)
+                        try:
+                            facts = page_facts(page)
+                        except Exception as first_error:
+                            # Locale redirects can replace the document immediately after DOMContentLoaded.
+                            # One ordinary re-observation only; do not retry access-denied pages.
+                            if "Execution context was destroyed" not in str(first_error):
+                                raise
+                            page.wait_for_load_state("domcontentloaded", timeout=15000)
+                            facts = page_facts(page)
                         record.update({"final_url": page.url, "http_status": response.status if response else None, "facts": facts})
                         blocked = (response and response.status >= 400) or any(x in facts["title"].lower() for x in ("access denied", "forbidden", "error 403"))
                         if blocked or facts["inner_width"] != width or not (facts["headings"] or len(facts["visible_text"]) > 60):
