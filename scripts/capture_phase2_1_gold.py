@@ -18,6 +18,8 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 VIEWPORTS = {"DESKTOP": (1440, 1000), "MOBILE": (390, 844)}
 CONSENT_ACTIONS = {
+    "P04-R01": ("必要なCookieのみ",),
+    "P09-R01": ("全て拒否",),
     "P10-R02": ("Decline all",),
     "P16-R03": ("Accept All Cookies",),
     "P19-R01": ("Reject All",),
