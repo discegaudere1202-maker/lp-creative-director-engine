@@ -8,7 +8,7 @@ import crypto from 'node:crypto';
 
 const here=path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(here,'..');
-const out=path.join(root,'evidence','iteration_02');
+const out=path.join(root,'evidence','iteration_03');
 const masterPath=process.env.SEISHOU_MASTER_PATH;
 if(!masterPath||!fs.existsSync(masterPath)) throw new Error('SEISHOU_MASTER_PATH must point to the exact Library Seishou_PC_Master_v1.png');
 const masterSha=crypto.createHash('sha256').update(fs.readFileSync(masterPath)).digest('hex');
@@ -34,10 +34,9 @@ const mismatchPixels=pixelmatch(expected.data,actual.data,diff.data,actual.width
 fs.writeFileSync(path.join(out,'diff_exact.png'),PNG.sync.write(diff));
 await sharp({create:{width:1572,height:428,channels:3,background:'#ffffff'}}).composite([{input:await sharp(expectedPath).png().toBuffer(),left:0,top:0},{input:await sharp(actualPath).png().toBuffer(),left:786,top:0}]).jpeg({quality:92}).toFile(path.join(out,'expected_vs_actual_786.jpg'));
 const capture=JSON.parse(fs.readFileSync(path.join(out,'capture.json'),'utf8'));
-const heroManifest=JSON.parse(fs.readFileSync(path.join(root,'reference','hero_asset_manifest_v2.json'),'utf8'));
+const heroManifest=JSON.parse(fs.readFileSync(path.join(root,'reference','hero_asset_manifest_v3.json'),'utf8'));
 const actual1440Meta=await sharp(actual1440Path).metadata();
 const total=actual.width*actual.height;
-const report={schema:'issue139_seishou_header_hero_trust_diff_v2',masterLibraryPath:'/LP制作事業/Design-to-Code/Seishou/Seishou_PC_Master_v1.png',masterSha256:masterSha,expected:{kind:'exact_lossless_master_crop',width:786,height:428,rawRgbSha256:expectedRawSha,proxyUsed:false},threshold,includeAA,mismatchPixels,mismatchRatio:mismatchPixels/total,viewport:{width:786,height:428},productionViewport:capture.productionViewport,productionScreenshot:{width:actual1440Meta.width,height:actual1440Meta.height},cleanHero:heroManifest.clean_hero,before:{iteration:'01',artifactId:10964151830,mismatchPixels:123662,mismatchRatio:0.3675953009440917,note:'v1 used compressed proxy Expected and low-resolution Master-derived Hero; numeric values are historical and not directly comparable to exact-Master v2.'},after:{iteration:'02',masterDerivedUpscaleUsed:false,duplicateBackgroundRedrawUsed:false,exactExpectedUsed:true},scope:'Header + Hero + Trust strip v2 only; no next section.',interpretation:'Exact Library Master 786x428 crop is the formal Expected. Mismatch is diagnostic only; AI-rendered Master glyph pixels are not clean-DOM typography targets.'};
-fs.writeFileSync(path.join(out,'comparison_exact.json'),JSON.stringify(report,null,2));
-fs.writeFileSync(path.join(out,'before_after_v2.json'),JSON.stringify({before:report.before,after:report.after},null,2));
+const report={schema:'issue139_seishou_header_hero_trust_diff_v3',masterLibraryPath:'/LP制作事業/Design-to-Code/Seishou/Seishou_PC_Master_v1.png',masterSha256:masterSha,expected:{kind:'exact_lossless_master_crop',width:786,height:428,rawRgbSha256:expectedRawSha,proxyUsed:false},threshold,includeAA,mismatchPixels,mismatchRatio:mismatchPixels/total,viewport:{width:786,height:428},productionViewport:capture.productionViewport,productionScreenshot:{width:actual1440Meta.width,height:actual1440Meta.height},cleanHero:heroManifest.clean_hero,before:{iteration:'02',artifactId:11013224946,mismatchPixels:171205,mismatchRatio:0.5089207153218711,failureReason:'Sharpness PASS, Creative Direction Fidelity FAIL: architecture-first.'},after:{iteration:'03',masterDerivedUpscaleUsed:false,exactExpectedUsed:true,landscapeFirst:true,sceneCues:['garden/foliage','stone path/steps','house entrance','tree foliage','dappled light'],nextSectionTouched:false},scope:'Hero Asset Fidelity v3 only; Header + Hero + Trust strip boundary retained; no next section.',interpretation:'Exact Library Master 786x428 crop is the formal Expected. Mismatch remains diagnostic; Human-visible review decides scene/composition fidelity and 1440px sales-sample quality.'};
+fs.writeFileSync(path.join(out,'comparison_exact_v3.json'),JSON.stringify(report,null,2));
 console.log(JSON.stringify(report,null,2));
