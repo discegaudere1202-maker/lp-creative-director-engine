@@ -11,7 +11,7 @@ const expectedPath = path.join(root, 'reference', 'expected_header_hero_trust_ex
 const manifestPath = path.join(root, 'reference', 'hero_asset_manifest_v2.json');
 
 const EXPECTED_RAW_RGB_SHA256 = '1a5104d22c63f003f2262f45300c31b021dd335754d042442ad94692a124649a';
-const TRANSPORT_WEBP_SHA256 = '7e787146c9d478b7ad28d98d67447c5a72f56972e5503cace848e1c1110903c1';
+const TRANSPORT_WEBP_SHA256 = '2683a7de8dac36f8cd6f009f28a63a2f812a61b6cb5ff805ca758ef15a5587b4';
 const MASTER_SHA256 = 'cc879352445655f84f460dd41b9267d34bd1eafc3b984486b4b09e6d9c4a1bbc';
 const HERO_SOURCE_URL = 'https://images.pexels.com/photos/8134817/pexels-photo-8134817.jpeg?auto=compress&cs=tinysrgb&w=2400';
 const HERO_SOURCE_PAGE = 'https://www.pexels.com/photo/frontage-of-a-residential-house-with-garden-8134817/';
@@ -20,8 +20,7 @@ const partFiles = fs.readdirSync(partsDir)
   .filter(name => name.startsWith('exact.webp.part') && name.endsWith('.b64part'))
   .sort();
 if (!partFiles.length) throw new Error('exact master lossless transport parts are missing');
-const b64 = partFiles.map(name => fs.readFileSync(path.join(partsDir, name), 'utf8').trim()).join('');
-const transport = Buffer.from(b64, 'base64');
+const transport = Buffer.concat(partFiles.map(name => Buffer.from(fs.readFileSync(path.join(partsDir, name), 'utf8').trim(), 'base64')));
 const transportSha = crypto.createHash('sha256').update(transport).digest('hex');
 if (transportSha !== TRANSPORT_WEBP_SHA256) throw new Error(`lossless transport sha mismatch: ${transportSha}`);
 
@@ -48,7 +47,7 @@ const manifest = {
     pixel_identity: 'exact RGB pixels from Master top crop',
     raw_rgb_sha256: rawRgbSha,
     generated_png_sha256: expectedPngSha,
-    transport: { format: 'WebP lossless', sha256: transportSha }
+    transport: { format: 'WebP lossless split binary transport', sha256: transportSha, decode: 'each base64 part individually, then binary concat' }
   },
   clean_hero: {
     source: 'Pexels / Max Vakhtbovych',
