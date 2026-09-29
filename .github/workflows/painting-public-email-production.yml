@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/painting-public-email-production.yml'
       - 'scripts/painting_public_email_production.py.gz.b64'
+      - 'scripts/patch_painting_production_runner.py'
   workflow_dispatch:
 
 permissions:
@@ -41,13 +42,17 @@ jobs:
           gh run download 36537307802 -n painting-universe-live -D universe_artifact
           find universe_artifact -maxdepth 3 -type f -print
 
-      - name: Decode production runner
+      - name: Retrieve and patch production runner
         run: |
+          curl -fsSL \
+            https://raw.githubusercontent.com/discegaudere1202-maker/lp-creative-director-engine/192fdb0714af5658dfca67b0535885c0e01c86ad/scripts/painting_public_email_production.py.gz.b64 \
+            -o /tmp/painting_runner.b64
           python - <<'PY'
           import base64, gzip, pathlib
-          src=pathlib.Path('scripts/painting_public_email_production.py.gz.b64').read_text().strip()
+          src = pathlib.Path('/tmp/painting_runner.b64').read_text().strip()
           pathlib.Path('painting_public_email_production.py').write_bytes(gzip.decompress(base64.b64decode(src)))
           PY
+          python scripts/patch_painting_production_runner.py
           python -m py_compile painting_public_email_production.py
 
       - name: Run free public email enrichment production
