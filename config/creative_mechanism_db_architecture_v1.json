@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Creative Mechanism Database",
+  "phase": 1,
+  "status": "ARCHITECTURE_READY_FOR_REVIEW",
+  "updated": "2026-09-29",
+  "principles": [
+    "references_are_evidence_not_templates",
+    "mechanisms_are_marketing_interventions_not_visual_labels",
+    "design_conversion_motion_feasibility_are_separate_scores",
+    "mobile_is_recomposition_not_scaling",
+    "evidence_safety_is_a_hard_gate",
+    "creative_benchmark_and_conversion_benchmark_are_separate_pools"
+  ],
+  "entity_types": [
+    "reference_lp",
+    "source_evidence",
+    "scene_observation",
+    "mechanism",
+    "compatibility_edge",
+    "recipe",
+    "creative_profile",
+    "scene_spec",
+    "evaluation",
+    "mobile_evidence"
+  ],
+  "id_patterns": {
+    "reference": "REF-<source>-<slug>",
+    "scene": "SCN-<reference>-<scene>",
+    "mechanism": "MECH-<layer>-<slug>",
+    "edge": "EDGE-<mechanism-a>-<mechanism-b>",
+    "recipe": "REC-<archetype>-<sequence>",
+    "profile": "PROF-<company-or-case>",
+    "scene_spec": "SPEC-<recipe>-<scene>"
+  },
+  "archetypes": [
+    {"id":"LOCAL_TRUST_SERVICE","universe":235,"strong":111,"deep":60,"primary_conversion":["phone","consultation","quote"]},
+    {"id":"HIGH_CONSIDERATION_HOME","universe":172,"strong":81,"deep":47,"primary_conversion":["visit","site_consultation","brochure"]},
+    {"id":"PROFESSIONAL_ADVICE","universe":135,"strong":64,"deep":34,"primary_conversion":["consultation","inquiry"]},
+    {"id":"MEDICAL_WELLNESS","universe":108,"strong":43,"deep":24,"primary_conversion":["appointment","consultation"]},
+    {"id":"BEAUTY_PERSONAL","universe":108,"strong":47,"deep":24,"primary_conversion":["counseling","booking"]},
+    {"id":"B2B_TECHNICAL_SOLUTION","universe":163,"strong":68,"deep":36,"primary_conversion":["inquiry","demo","download"]},
+    {"id":"B2B_PRODUCT_MANUFACTURING","universe":126,"strong":51,"deep":28,"primary_conversion":["quote","sample","meeting"]},
+    {"id":"SAAS_WORKFLOW","universe":135,"strong":60,"deep":33,"primary_conversion":["trial","demo","signup"]},
+    {"id":"D2C_PRODUCT","universe":153,"strong":64,"deep":31,"primary_conversion":["purchase","subscription"]},
+    {"id":"RETAIL_FOOD_HOSPITALITY","universe":144,"strong":60,"deep":29,"primary_conversion":["reservation","visit","purchase"]},
+    {"id":"EDUCATION_COACHING","universe":108,"strong":43,"deep":22,"primary_conversion":["trial","orientation","brochure"]},
+    {"id":"RECRUITING_EMPLOYER","universe":144,"strong":55,"deep":30,"primary_conversion":["apply","visit","entry"]},
+    {"id":"PREMIUM_LUXURY","universe":99,"strong":47,"deep":24,"primary_conversion":["visit","指名","purchase"]},
+    {"id":"CULTURE_ENTERTAINMENT_CAMPAIGN","universe":108,"strong":47,"deep":24,"primary_conversion":["participate","ticket","share"]},
+    {"id":"CORPORATE_BRAND","universe":108,"strong":38,"deep":22,"primary_conversion":["inquiry","explore"]},
+    {"id":"PUBLIC_SOCIAL","universe":54,"strong":21,"deep":12,"primary_conversion":["apply","participate","donate"]},
+    {"id":"CREATIVE_BENCHMARK_POOL","universe":300,"strong":300,"deep":120,"primary_conversion":["transfer_job"]}
+  ],
+  "industry_taxonomy": [
+    "CONSTRUCTION_HOME","LANDSCAPE_GARDEN","RENOVATION_REPAIR","DEMOLITION_INFRA","REAL_ESTATE","PROFESSIONAL_LEGAL_TAX_ACCOUNTING","CONSULTING_SUPPORT","MEDICAL_DENTAL_CLINIC","BEAUTY_SALON_BODYCARE","MANUFACTURING_MATERIALS","LOGISTICS_MAINTENANCE","IT_SAAS_DIGITAL","FINANCE_INSURANCE","RETAIL_D2C_CONSUMER","FOOD_RESTAURANT","HOTEL_TRAVEL","EDUCATION_SCHOOL","RECRUITMENT_HR","FASHION_LUXURY","AUTOMOTIVE_MOBILITY","ART_CULTURE","ENTERTAINMENT_MEDIA","PUBLIC_NONPROFIT","AGRICULTURE_FOOD_PRODUCER","OTHER"
+  ],
+  "creative_authority_taxonomy": [
+    "PERSON","PLACE","MATERIAL","CRAFT","PRODUCT","DOCUMENT","PROOF","EDITORIAL","MOVEMENT","PRECISION","HERITAGE","COMMUNITY","TASTE","PLAY"
+  ],
+  "mechanism_categories": [
+    {"id":"ENTRY","subcategories":["hero_composition","opening_proof","promise_reveal","customer_state"]},
+    {"id":"TYPE","subcategories":["scale","contrast","density","direction","kinetic_type"]},
+    {"id":"COLOR_SURFACE","subcategories":["palette","surface","contrast","accent_behavior"]},
+    {"id":"SPACE_LAYOUT","subcategories":["asymmetry","split","grid","layering","sticky_narrative","full_bleed"]},
+    {"id":"MEDIA","subcategories":["people","place","product","macro","document","collage"]},
+    {"id":"GEOMETRY","subcategories":["mask","frame","line","curve","modular_geometry"]},
+    {"id":"RHYTHM","subcategories":["pause","chapter","repetition","escalation","release"]},
+    {"id":"MOTION","subcategories":["reveal","parallax","transform","transition","reaction"]},
+    {"id":"INTERACTION","subcategories":["hover","drag","filter","cursor","progress","expand"]},
+    {"id":"PROOF","subcategories":["case","process","comparison","metric","source","qualification"]},
+    {"id":"CONVERSION","subcategories":["cta","permission","calculator","booking","contact","price"]},
+    {"id":"NAVIGATION","subcategories":["persistent","chapter","progress","utility","anchor"]}
+  ],
+  "mechanism_field_order": [
+    "mechanism_id","mechanism_name","category","subcategory","purpose","marketing_job","user_effect","best_for","avoid_when","best_scene","compatible_archetypes","visual_authority","visual_impact","conversion_utility","automation_difficulty","html_implementation_difficulty","motion_dependency","responsive_risk","performance_risk","accessibility_risk","required_media","reference_lps","implementation_notes","combination_notes","anti_pattern","confidence","evidence_count","evidence_requirement","mobile_recomposition_rule"
+  ],
+  "seed_mechanisms": [
+    {"mechanism_id":"MECH-entry-proof-led-hero","mechanism_name":"Proof-led Hero","category":"ENTRY","subcategory":"opening_proof","purpose":"promiseの直後に信頼根拠を置く","marketing_job":"最初の不信・比較不安を下げる","user_effect":["trust","orientation"],"visual_impact":4,"conversion_utility":5,"automation_difficulty":2,"html_implementation_difficulty":2,"motion_dependency":"low","responsive_risk":"low","performance_risk":"low","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"独立LP3件、Archetype2件"},
+    {"mechanism_id":"MECH-entry-split-situation-to-offer","mechanism_name":"Situation-to-offer split","category":"ENTRY","subcategory":"hero_composition","purpose":"顧客の現状と提供価値を左右で対応させる","marketing_job":"自分ごと化と提供内容の接続","user_effect":["recognition","comprehension"],"visual_impact":4,"conversion_utility":4,"automation_difficulty":2,"html_implementation_difficulty":2,"motion_dependency":"low","responsive_risk":"medium","performance_risk":"low","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"独立LP3件、mobile再構成1件"},
+    {"mechanism_id":"MECH-entry-customer-state-opening","mechanism_name":"Customer-state opening","category":"ENTRY","subcategory":"customer_state","purpose":"顧客が言いにくい現在地から始める","marketing_job":"問題認識と心理的安全性を作る","user_effect":["recognition","permission"],"visual_impact":3,"conversion_utility":5,"automation_difficulty":2,"html_implementation_difficulty":1,"motion_dependency":"low","responsive_risk":"low","performance_risk":"low","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"顧客状態の原文Evidence必須"},
+    {"mechanism_id":"MECH-type-oversized-meaning-unit","mechanism_name":"Oversized meaning unit","category":"TYPE","subcategory":"scale","purpose":"意味単位を大きくして優先順位を作る","marketing_job":"一文の理解速度と記憶を上げる","user_effect":["attention","memory"],"visual_impact":5,"conversion_utility":3,"automation_difficulty":2,"html_implementation_difficulty":2,"motion_dependency":"low","responsive_risk":"medium","performance_risk":"low","accessibility_risk":"medium","confidence":"candidate","evidence_count":0,"evidence_requirement":"独立LP3件、折返しQA"},
+    {"mechanism_id":"MECH-type-documentary-density","mechanism_name":"Documentary density","category":"TYPE","subcategory":"density","purpose":"仕様・根拠・情報量自体を視覚的信頼にする","marketing_job":"複雑な説明の不安を減らす","user_effect":["authority","comprehension"],"visual_impact":3,"conversion_utility":5,"automation_difficulty":2,"html_implementation_difficulty":2,"motion_dependency":"low","responsive_risk":"medium","performance_risk":"low","accessibility_risk":"medium","confidence":"candidate","evidence_count":0,"evidence_requirement":"Document / Proof authorityの独立LP3件"},
+    {"mechanism_id":"MECH-space-asymmetric-editorial","mechanism_name":"Asymmetric editorial","category":"SPACE_LAYOUT","subcategory":"asymmetry","purpose":"均等配置を崩し、編集上の順序を作る","marketing_job":"ブランド視点と視線の流れを作る","user_effect":["distinctiveness","discovery"],"visual_impact":5,"conversion_utility":2,"automation_difficulty":3,"html_implementation_difficulty":3,"motion_dependency":"low","responsive_risk":"high","performance_risk":"low","accessibility_risk":"medium","confidence":"candidate","evidence_count":0,"evidence_requirement":"異なるArchetype3件、mobile再構成"},
+    {"mechanism_id":"MECH-space-sticky-narrative","mechanism_name":"Sticky narrative","category":"SPACE_LAYOUT","subcategory":"sticky_narrative","purpose":"説明の一部を固定し、変化する情報を対置する","marketing_job":"工程・比較・機能の順序を保持する","user_effect":["comprehension","progress"],"visual_impact":4,"conversion_utility":4,"automation_difficulty":3,"html_implementation_difficulty":3,"motion_dependency":"medium","responsive_risk":"high","performance_risk":"medium","accessibility_risk":"medium","confidence":"candidate","evidence_count":0,"evidence_requirement":"Scroll jobの明示、mobile代替"},
+    {"mechanism_id":"MECH-media-person-in-place","mechanism_name":"Person in place","category":"MEDIA","subcategory":"people","purpose":"人物を場所・仕事・道具と一緒に見せる","marketing_job":"人柄と実在性を同時に伝える","user_effect":["trust","locality","warmth"],"visual_impact":4,"conversion_utility":5,"automation_difficulty":1,"html_implementation_difficulty":1,"motion_dependency":"low","responsive_risk":"low","performance_risk":"medium","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"人物・場所の公式素材、肖像利用確認"},
+    {"mechanism_id":"MECH-media-craft-macro","mechanism_name":"Craft macro","category":"MEDIA","subcategory":"macro","purpose":"素材・手元・仕上げを近接で見せる","marketing_job":"抽象的な技術を知覚可能なProofにする","user_effect":["quality","sensory_trust"],"visual_impact":5,"conversion_utility":4,"automation_difficulty":2,"html_implementation_difficulty":2,"motion_dependency":"low","responsive_risk":"medium","performance_risk":"medium","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"実素材の公式写真、誇張なし"},
+    {"mechanism_id":"MECH-proof-process-as-proof","mechanism_name":"Process as proof","category":"PROOF","subcategory":"process","purpose":"工程を結果の代わりに見せる","marketing_job":"成果を捏造せず、仕事の確かさを示す","user_effect":["trust","understanding"],"visual_impact":3,"conversion_utility":5,"automation_difficulty":2,"html_implementation_difficulty":2,"motion_dependency":"low","responsive_risk":"low","performance_risk":"low","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"実際の工程Evidence、未確認工程は禁止"},
+    {"mechanism_id":"MECH-proof-bounded-claim","mechanism_name":"Bounded claim","category":"PROOF","subcategory":"source","purpose":"できること・できないことの範囲を同時に示す","marketing_job":"期待値不一致と問い合わせ不安を下げる","user_effect":["confidence","risk_reduction"],"visual_impact":2,"conversion_utility":5,"automation_difficulty":1,"html_implementation_difficulty":1,"motion_dependency":"low","responsive_risk":"low","performance_risk":"low","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"Business owner confirmation"},
+    {"mechanism_id":"MECH-conversion-permission-to-verify","mechanism_name":"Permission to verify","category":"CONVERSION","subcategory":"permission","purpose":"相談・確認・比較だけでもよいと明示する","marketing_job":"接触前の心理的コストを下げる","user_effect":["safety","agency"],"visual_impact":2,"conversion_utility":5,"automation_difficulty":1,"html_implementation_difficulty":1,"motion_dependency":"low","responsive_risk":"low","performance_risk":"low","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"CTAの実態と対応範囲確認"},
+    {"mechanism_id":"MECH-conversion-next-known-outcome","mechanism_name":"Next-known-outcome","category":"CONVERSION","subcategory":"contact","purpose":"次の行動後に何が分かるかを明示する","marketing_job":"CTAの不確実性を小さくする","user_effect":["clarity","momentum"],"visual_impact":2,"conversion_utility":5,"automation_difficulty":1,"html_implementation_difficulty":1,"motion_dependency":"low","responsive_risk":"low","performance_risk":"low","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"実際の問い合わせ後の流れ確認"},
+    {"mechanism_id":"MECH-conversion-price-scope-transparency","mechanism_name":"Price-scope transparency","category":"CONVERSION","subcategory":"price","purpose":"価格だけでなく含まれる範囲と条件を見せる","marketing_job":"比較・予算・問い合わせ前の不安を減らす","user_effect":["trust","qualification"],"visual_impact":3,"conversion_utility":5,"automation_difficulty":1,"html_implementation_difficulty":1,"motion_dependency":"low","responsive_risk":"medium","performance_risk":"low","accessibility_risk":"low","confidence":"candidate","evidence_count":0,"evidence_requirement":"価格・条件の公式確認"},
+    {"mechanism_id":"MECH-motion-scroll-reveal-with-job","mechanism_name":"Job-bound scroll reveal","category":"MOTION","subcategory":"reveal","purpose":"順序とタイミングを制御する","marketing_job":"工程・比較・変化を一段ずつ理解させる","user_effect":["attention","comprehension"],"visual_impact":4,"conversion_utility":4,"automation_difficulty":3,"html_implementation_difficulty":3,"motion_dependency":"medium","responsive_risk":"medium","performance_risk":"medium","accessibility_risk":"medium","confidence":"candidate","evidence_count":0,"evidence_requirement":"Motion job、reduced-motion、mobile代替"}
+  ],
+  "compatibility_relations": ["SYNERGY","CONDITIONAL","CONFLICT","EXCLUSIVE","SUPPORTS"],
+  "compatibility_seed_edges": [
+    {"source":"MECH-type-editorial-contrast","target":"MECH-media-craft-macro","relation":"SYNERGY","role_rule":"PRIMARY_PLUS_SUPPORT","reason":"編集された言葉と手触りのProofが相互補強"},
+    {"source":"MECH-space-sticky-narrative","target":"MECH-proof-process-as-proof","relation":"SYNERGY","role_rule":"PRIMARY_PLUS_SUPPORT","reason":"順序と工程が一致"},
+    {"source":"MECH-motion-scroll-reveal-with-job","target":"MECH-proof-process-as-proof","relation":"SUPPORTS","role_rule":"SUPPORT_ONLY","reason":"Motionは工程理解を補助する"},
+    {"source":"MECH-type-oversized-meaning-unit","target":"MECH-type-documentary-density","relation":"CONDITIONAL","role_rule":"SCENE_ALTERNATE","reason":"Heroと詳細で役割分担"},
+    {"source":"MECH-conversion-permission-to-verify","target":"MECH-conversion-next-known-outcome","relation":"SYNERGY","role_rule":"PRIMARY_PLUS_SUPPORT","reason":"許可と次の結果が接続"},
+    {"source":"MECH-space-asymmetric-editorial","target":"MECH-motion-scroll-reveal-with-job","relation":"CONDITIONAL","role_rule":"SUPPORT_ONLY","reason":"mobile再構成と性能予算が必要"},
+    {"source":"MECH-type-kinetic-verb","target":"MECH-proof-bounded-claim","relation":"CONDITIONAL","role_rule":"PRIMARY_PLUS_SUPPORT","reason":"強いVerbの直後に範囲を示す"},
+    {"source":"MECH-space-sticky-narrative","target":"MECH-navigation-persistent-action","relation":"CONDITIONAL","role_rule":"PRIMARY_PLUS_SUPPORT","reason":"CTAを消さない設計が必要"},
+    {"source":"MECH-pop-sticker-ui","target":"MECH-type-editorial-contrast","relation":"CONFLICT","role_rule":"DO_NOT_MIX_AS_PRIMARY","reason":"温度と権威の信号が分裂"},
+    {"source":"MECH-motion-slow-parallax","target":"MECH-precision-technical-grid","relation":"CONFLICT","role_rule":"DO_NOT_MIX_AS_PRIMARY","reason":"速度感と精密制御が衝突"}
+  ],
+  "scoring": {
+    "scale": "0-5",
+    "design_dimensions":["hero_originality","typography","layout_composition","image_treatment","visual_hierarchy","section_rhythm","section_boundary","brand_distinctiveness","screenshot_worthy","template_resemblance_risk_inverse"],
+    "conversion_dimensions":["conversion_clarity","proof_presentation","cta_fit","decision_size","objection_coverage","navigation_utility"],
+    "motion_dimensions":["motion_job","timing_rhythm","interaction_legibility","reduced_motion_safety","performance_discipline"],
+    "feasibility_dimensions":["html_css_feasibility","asset_availability","responsive_recomposition","accessibility_risk_inverse","maintenance_performance_risk_inverse"],
+    "strong_threshold":{"design_total_min":32,"conversion_total_min":20,"implementation_total_min":9,"hard_dimension_min":2,"mobile_required_for_core":true},
+    "evidence_grades":{"E0":"gallery_thumbnail_or_secondary","E1":"award_or_portfolio_description","E2":"original_live_page","E3":"original_plus_desktop_and_390px_review","E4":"E3_plus_multi_scene_and_conversion_evidence"}
+  },
+  "creative_profile_axes":["TRUST","CRAFT","PLACE","PREMIUM","ENERGY","TECHNICAL","WARMTH","INNOVATION","HUMAN","AUTHORITY","EDITORIAL","PLAY","PRECISION","TRANSPARENCY","INTIMACY","URGENCY"],
+  "retrieval_weights":{"axis_similarity":0.18,"truth_tag_match":0.14,"buyer_state_fit":0.12,"marketing_job_fit":0.12,"authority_fit":0.10,"archetype_fit":0.08,"conversion_utility":0.08,"novelty":0.05,"evidence_confidence":0.06,"implementation_fit":0.07},
+  "retrieval_hard_gates":["unverified_claim_required","mobile_failure_for_mobile_critical_scene","pairwise_conflict","asset_not_available","accessibility_hard_failure","performance_budget_failure","template_resemblance_above_threshold"],
+  "source_mix_limits":{"original_brand_or_service":0.35,"japanese_award_gallery":0.15,"global_award_gallery":0.15,"production_portfolio":0.10,"motion_showcase":0.10,"conversion_lp_gallery":0.10,"public_accessibility_performance_docs":0.05},
+  "sampling_totals":{"reference_universe":2400,"conversion_benchmark":2100,"creative_benchmark":300,"strong_corpus":1200,"strong_conversion":900,"strong_creative":300,"deep_annotation":600,"deep_conversion":480,"deep_creative":120},
+  "phase2_passes":["sampling_lock","discovery","normalization_dedupe","live_observation","scoring","mechanism_mining","strong_deep_promotion","compatibility_recipe","production_dry_run","closure"]
+}

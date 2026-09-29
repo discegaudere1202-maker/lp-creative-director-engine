@@ -1,0 +1,23 @@
+source_id,source_class,reference_or_scope,url,evidence_role,observation,transferability_jp,phase1_status
+SRC-001,original_brand,SmartHR Product,https://smarthr.jp/,plain_language_and_information_architecture,customer_world_translation_and_clear_action,high,observed_existing_repo
+SRC-002,original_brand,kintone Product,https://kintone.cybozu.co.jp/,b2b_product_explanation,workflow_translation_with_ui_and_illustration,high,observed_existing_repo
+SRC-003,original_brand,Aki Design pricing,https://akidesign.site/service/,price_scope_transparency,price_and_scope_reduce_pre_contact_uncertainty,high,observed_existing_repo
+SRC-004,original_brand,Studio pricing,https://studio.design/ja/pricing,plan_comparison,feature_price_cta_relationship,high,observed_existing_repo
+SRC-005,original_brand,Jimdo homepage pack,https://www.jimdo.com/jp/homepage-pack/,scope_and_price,plan_scope_and_price_as_conversion_proof,high,observed_existing_repo
+SRC-006,original_brand,中村総合解体採用,https://nakasokaitai.co.jp/recruit,local_sme_trust,real_machinery_people_and_work_context,high,observed_existing_repo
+SRC-007,original_brand,マルヨシ自動車,https://maruyoshi-car.com/,local_trust_service,person_place_service_and_action,high,observed_existing_repo
+SRC-008,original_brand,株式会社ハーツ,https://hearts.co.jp/,person_place_material,real_people_and_regional_identity,high,observed_existing_repo
+SRC-009,original_brand,実家のこと。,https://jikkanokoto.com/,emotional_barrier,emotional_entry_to_information_understanding,high,observed_existing_repo
+SRC-010,original_brand,IMA,https://ima-inc.world/,brand_verb_motion,verb_and_motion_tied_to_brand_concept,medium,observed_existing_repo
+SRC-011,japanese_award,Web Grand Prix,https://award.dmi.jaa.or.jp/winner,domestic_award_discovery,b2b_b2c_public_award_categories,high,candidate_source
+SRC-012,japanese_award,Web Grand Prix 2025 corporate winners,https://award.dmi.jaa.or.jp/winner/gp13c,domestic_award_discovery,enterprise_b2b_b2c_and_information_quality,high,candidate_source
+SRC-013,global_award,Awwwards storytelling,https://www.awwwards.com/websites/storytelling/,storytelling_and_interaction_discovery,storytelling_scroll_interaction_and_category_vocabulary,medium,candidate_source
+SRC-014,global_award,CSS Design Awards,https://www.cssdesignawards.com/website-gallery/,creative_upper_bound,interaction_motion_and_visual_experimentation,medium,candidate_source
+SRC-015,production_portfolio,Goodpatch Studio Design Award report,https://goodpatch.com/news/2026-02_studio-design-award-2025,production_intent_and_award_context,award_context_for_japanese_sites,high,candidate_source
+SRC-016,production_portfolio,Studio experts works,https://studio.design/ja/experts/works/detail/nakasokaitai,production_case,local_sme_transfer_context,high,candidate_source
+SRC-017,motion_showcase,Crispwave Studio,https://crispwave.studio/,motion_job_and_performance,scroll_story_and_interaction_with_performance_claims,medium,candidate_source
+SRC-018,public_standard,W3C WCAG 2.2,https://www.w3.org/WAI/standards-guidelines/wcag/,accessibility_guardrail,perceivable_operable_understandable_robust,high,guardrail
+SRC-019,public_standard,Google mobile first indexing,https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing,mobile_guardrail,responsive_same_url_and_mobile_first_principle,high,guardrail
+SRC-020,public_standard,web.dev Core Web Vitals,https://web.dev/articles/vitals,performance_guardrail,LCP_INP_CLS_as_experience_metrics,high,guardrail
+SRC-021,existing_repo,benchmark_pool_v1,config/benchmark_pool_v1.json,existing_verified_benchmark_pool,existing domestic and international benchmark records,high,internal_ssot
+SRC-022,existing_repo,mobile_benchmark_verification_v1,config/mobile_benchmark_verification_v1.json,mobile_evidence,390px visual review and M3 status,high,internal_ssot
