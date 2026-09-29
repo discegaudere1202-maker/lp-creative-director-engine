@@ -44,7 +44,7 @@ const applyV2Hero = async page => {
     hero.style.backgroundPosition = 'center 50%';
     hero.style.backgroundSize = 'cover';
     hero.style.backgroundRepeat = 'no-repeat';
-  }, url);
+  }, v2Url);
   await page.waitForTimeout(800);
 };
 
