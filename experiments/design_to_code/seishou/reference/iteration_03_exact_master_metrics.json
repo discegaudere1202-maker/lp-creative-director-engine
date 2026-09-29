@@ -1,0 +1,47 @@
+{
+  "schema": "issue139_seishou_hero_asset_fidelity_v3_exact_master_metrics",
+  "scope": "Hero Asset Fidelity v3 only; Header + Hero + Trust strip boundary retained",
+  "next_section_touched": false,
+  "master": {
+    "library_path": "/LP制作事業/Design-to-Code/Seishou/Seishou_PC_Master_v1.png",
+    "master_sha256": "cc879352445655f84f460dd41b9267d34bd1eafc3b984486b4b09e6d9c4a1bbc",
+    "exact_crop": {"x": 0, "y": 0, "width": 786, "height": 428},
+    "crop_raw_rgb_sha256": "1a5104d22c63f003f2262f45300c31b021dd335754d042442ad94692a124649a",
+    "proxy_used": false
+  },
+  "hero_v3": {
+    "source": "Pexels / Aleksandr Poklad",
+    "source_page": "https://www.pexels.com/photo/charming-garden-pathway-leading-to-house-36742224/",
+    "served_dimensions": {"width": 2400, "height": 3600},
+    "mirrored_for_master_composition": true,
+    "object_position": "center 56%",
+    "scene_target": ["garden/foliage primary", "stone path/steps", "house entrance in right/back field", "tree foliage", "dappled light", "deep green + warm natural tone"]
+  },
+  "actions_evidence": {
+    "render_head": "bbeb102fa791a73eb9d631f033783234000c3450",
+    "workflow_run": 36531463143,
+    "artifact_id": 11016419104,
+    "artifact_digest": "sha256:c571ef717ea2fcfbfb242f9719eef8a856b51e49f6c5dbeed94e2e3283c00fce",
+    "actual_786_sha256": "9e508e453ceeb0667b8f68910dc25bdc600882cef62a4a551ddf45fa96d0eaf9",
+    "actual_1440_sha256": "3d50c3a1af54200e3be0f113955131dc9641a4965113fc8902e508edf0091693",
+    "before_v2_1440_sha256": "e18e0d192766211c3e98fdf1cf0a039bff2a2b510e55b03ac358f980b9dfb674"
+  },
+  "exact_diff": {
+    "engine_contract": "pixelmatch v7.1 threshold formula; images opaque RGBA, includeAA=true",
+    "threshold": 0.1,
+    "includeAA": true,
+    "mismatch_pixels": 147776,
+    "total_pixels": 336408,
+    "mismatch_ratio": 0.43927611709590736,
+    "v2_mismatch_pixels": 171205,
+    "v2_mismatch_ratio": 0.5089207153218711,
+    "delta_pixels_vs_v2": -23429,
+    "delta_ratio_vs_v2": -0.06964459822596374,
+    "interpretation": "Diagnostic only. Human-visible review remains authoritative for Master scene/composition fidelity and 1440px sales-sample quality."
+  },
+  "human_visible_observation": {
+    "v2_problem": "Architecture-first facade composition",
+    "v3_change": "Garden/foliage and stone path dominate; mirrored house entrance sits in the rear/right visual field; foliage light-shadow is materially closer to the Master landscape-first direction.",
+    "final_verdict_owner": "Saya/Shun; Rin does not self-declare Human Visible PASS"
+  }
+}
