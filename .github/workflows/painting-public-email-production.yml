@@ -1,0 +1,81 @@
+name: Painting Public Email Production
+
+on:
+  push:
+    branches:
+      - task/painting-universe-76657
+    paths:
+      - '.github/workflows/painting-public-email-production.yml'
+      - 'scripts/painting_public_email_production.py.gz.b64'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: task/painting-universe-76657
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 pdfplumber
+
+      - name: Download painting universe artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p universe_artifact
+          gh run download 36537307802 -n painting-universe-live -D universe_artifact
+          find universe_artifact -maxdepth 3 -type f -print
+
+      - name: Decode production runner
+        run: |
+          python - <<'PY'
+          import base64, gzip, pathlib
+          src=pathlib.Path('scripts/painting_public_email_production.py.gz.b64').read_text().strip()
+          pathlib.Path('painting_public_email_production.py').write_bytes(gzip.decompress(base64.b64decode(src)))
+          PY
+          python -m py_compile painting_public_email_production.py
+
+      - name: Run free public email enrichment production
+        env:
+          PAINTING_OUT: production_output
+        run: |
+          python painting_public_email_production.py | tee production.log
+
+      - name: Package output
+        if: always()
+        run: |
+          mkdir -p production_output
+          cp production.log production_output/production.log || true
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          out=Path('production_output')
+          with zipfile.ZipFile('painting_public_email_production_bundle.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(out.glob('*')):
+                  if p.is_file(): z.write(p,p.name)
+          PY
+
+      - name: Upload production artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: painting-public-email-production
+          path: |
+            production_output/
+            painting_public_email_production_bundle.zip
+          retention-days: 14
