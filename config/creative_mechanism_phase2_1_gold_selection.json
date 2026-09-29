@@ -1,0 +1,14 @@
+{
+  "selection_policy": "One existing Phase 2 pilot reference per P01-P20 cell; all had OBSERVED_LIVE_BROWSER in the pilot. Selection may only change to another existing reference in the same cell with documented reason.",
+  "reference_ids": [
+    "P01-R01", "P02-R01", "P03-R04", "P04-R01", "P05-R04",
+    "P06-R02", "P07-R01", "P08-R02", "P09-R01", "P10-R02",
+    "P11-R01", "P12-R01", "P13-R01", "P14-R01", "P15-R04",
+    "P16-R01", "P17-R01", "P18-R01", "P19-R02", "P20-R01"
+  ],
+  "selection_notes": {
+    "P03-R04": "Previous P03-R02 produced a title but no body; selected observed official alternative in same cell.",
+    "P15-R04": "Previous P15-R02 produced a title but no body; selected observed official alternative in same cell.",
+    "P19-R02": "Official CHANEL page exposed main content; P19-R01 presented only a locale selector."
+  }
+}
