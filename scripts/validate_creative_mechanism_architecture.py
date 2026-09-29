@@ -7,8 +7,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "config" / "creative_mechanism_db_architecture_v1_2_1.json"
+CONFIG = ROOT / "config" / "creative_mechanism_db_architecture_v1_2_2.json"
 PILOT_MATRIX = ROOT / "data" / "creative_mechanism_phase1_2_pilot_coverage_matrix.csv"
+PROCEDURE = ROOT / "docs" / "research" / "CREATIVE_MECHANISM_DB_PHASE2_PRODUCTION_PROCEDURE_v1_2_2.md"
 
 
 def validate_v1_1_compat(data: dict) -> list[str]:
@@ -224,7 +225,7 @@ def validate(data: dict) -> list[str]:
     issues = validate_v1_2_base(data)
     if data.get("schema_version") == "1.2.0":
         return issues
-    if data.get("schema_version") != "1.2.1":
+    if data.get("schema_version") not in {"1.2.1", "1.2.2"}:
         issues.append(f"unsupported architecture schema version: {data.get('schema_version')}")
         return issues
 
@@ -261,6 +262,41 @@ def validate(data: dict) -> list[str]:
     for axis in profile.get("axes", []):
         if axis.get("numeric_derivation_policy") != "PROFILE_AXIS_NUMERIC_V2":
             issues.append(f"axis does not reference v2 numeric policy: {axis.get('axis')}")
+
+    if data.get("schema_version") == "1.2.2":
+        quality_mapping = numeric.get("quality_level_mapping", {})
+        expected_mapping = {
+            "relevance_level_to_numeric": {"DIRECT":1.0,"SUPPORTING":0.75,"CONTEXTUAL":0.5,"WEAK":0.25,"IRRELEVANT":0.0},
+            "directness_level_to_numeric": {"EXPLICIT_OFFICIAL":1.0,"EXPLICIT_THIRD_PARTY":0.75,"SPECIFIC_IMPLICIT":0.5,"VISUAL_ONLY":0.25,"ABSENT":0.0},
+            "confidence_level_to_numeric": {"E4":1.0,"E3":0.9,"E2":0.75,"E1":0.4,"E0":0.1},
+        }
+        if quality_mapping != expected_mapping:
+            issues.append("v1.2.2 quality level mappings do not match the fixed enum/grade mapping")
+        if numeric.get("quality_level_fields") != ["relevance_level", "directness_level", "confidence_level"]:
+            issues.append("quality level fields are not fixed")
+        if numeric.get("derived_numeric_quality_fields") != ["relevance", "directness", "confidence"]:
+            issues.append("derived numeric quality fields are not fixed")
+        if "Raw Float input is forbidden" not in numeric.get("raw_float_input_policy", ""):
+            issues.append("raw float input policy is missing")
+        if "quality_level_mapping" not in numeric.get("quality_numeric_derivation_formula", ""):
+            issues.append("quality numeric derivation formula must use the fixed mapping")
+        if "not neutral evidence" not in numeric.get("neutral_signal_rule", ""):
+            issues.append("neutral signal rule must distinguish absence from explicit neutral evidence")
+        neutral_examples = [example.get("example", "").lower() for mapping in numeric.get("signal_mappings", []) for example in mapping.get("neutral", [])]
+        forbidden_absence_phrases = ("no claim", "no authority available", "no innovation claim")
+        for example in neutral_examples:
+            if any(phrase in example for phrase in forbidden_absence_phrases):
+                issues.append(f"neutral signal incorrectly uses absence wording: {example}")
+        phase2_gate = data.get("phase2_gate", {})
+        if phase2_gate.get("pilot_allowed_only_after") != "Phase 1.2.2 PM Approval":
+            issues.append("phase2_gate must require Phase 1.2.2 PM Approval")
+        if not PROCEDURE.exists():
+            issues.append("v1.2.2 Phase 2 Procedure is missing")
+        else:
+            procedure_text = PROCEDURE.read_text(encoding="utf-8")
+            for required_text in ("creative_mechanism_db_architecture_v1_2_2.json", "PROFILE_AXIS_NUMERIC_V2", "Phase 1.2.2 PM Approval"):
+                if required_text not in procedure_text:
+                    issues.append(f"Phase 2 Procedure missing current SSOT reference: {required_text}")
     return issues
 
 
