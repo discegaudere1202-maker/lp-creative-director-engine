@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "config" / "creative_mechanism_db_architecture_v1_2.json"
+CONFIG = ROOT / "config" / "creative_mechanism_db_architecture_v1_2_1.json"
 PILOT_MATRIX = ROOT / "data" / "creative_mechanism_phase1_2_pilot_coverage_matrix.csv"
 
 
@@ -37,7 +37,7 @@ def validate_v1_1_compat(data: dict) -> list[str]:
     return issues
 
 
-def validate(data: dict) -> list[str]:
+def validate_v1_2_base(data: dict) -> list[str]:
     if data.get("schema_version") == "1.1.0":
         return validate_v1_1_compat(data)
     issues: list[str] = []
@@ -214,6 +214,53 @@ def validate(data: dict) -> list[str]:
             issues.append(f"pilot risk cells missing: {sorted(missing_risk_cells)}")
     except Exception as exc:
         issues.append(f"pilot coverage matrix read error: {exc}")
+    return issues
+
+
+def validate(data: dict) -> list[str]:
+    """Validate v1.2.1 while retaining compatibility with preserved v1.1/v1.2 fixtures."""
+    if data.get("schema_version") == "1.1.0":
+        return validate_v1_1_compat(data)
+    issues = validate_v1_2_base(data)
+    if data.get("schema_version") == "1.2.0":
+        return issues
+    if data.get("schema_version") != "1.2.1":
+        issues.append(f"unsupported architecture schema version: {data.get('schema_version')}")
+        return issues
+
+    profile = data.get("creative_profile", {})
+    numeric = profile.get("numeric_derivation_policy", {})
+    if numeric.get("policy_id") != "PROFILE_AXIS_NUMERIC_V2":
+        issues.append("v1.2.1 numeric derivation policy must be PROFILE_AXIS_NUMERIC_V2")
+    required_item_fields = set(numeric.get("evidence_item_required_fields", []))
+    if not {"evidence_id", "axis", "axis_signal_value", "relevance", "directness", "confidence"}.issubset(required_item_fields):
+        issues.append("evidence item schema must separate axis_signal_value from quality fields")
+    if numeric.get("axis_signal_value_allowed_values") != [0, 0.25, 0.5, 0.75, 1.0]:
+        issues.append("axis_signal_value allowed values must be 0/0.25/0.50/0.75/1.00")
+    if numeric.get("evidence_weight_formula") != "evidence_weight = relevance * directness * confidence":
+        issues.append("evidence weight formula is not explicit")
+    if numeric.get("axis_score_raw_formula") != "axis_score_raw = SUM(axis_signal_value * evidence_weight) / SUM(evidence_weight)":
+        issues.append("axis score formula is not explicit")
+    if not {"axis_score_raw", "axis_score", "conflict_flag", "conflict_resolved", "confidence"}.issubset(set(numeric.get("axis_output_fields", []))):
+        issues.append("axis output must include score, conflict and confidence fields")
+    if numeric.get("no_evidence_rule", "").find("UNKNOWN") < 0:
+        issues.append("no-evidence rule must return UNKNOWN")
+    conflict = numeric.get("conflict_rule", {})
+    for field in ("conflict_flag_field", "conflict_detection", "aggregation", "confidence_downgrade", "case_rule"):
+        if not conflict.get(field):
+            issues.append(f"conflict rule missing {field}")
+    mappings = numeric.get("signal_mappings", [])
+    axis_names = {axis.get("axis") for axis in profile.get("axes", [])}
+    if len(mappings) != 16 or {mapping.get("axis") for mapping in mappings} != axis_names:
+        issues.append("signal mappings must cover all 16 Creative Profile axes")
+    for mapping in mappings:
+        for polarity in ("positive", "neutral", "negative"):
+            examples = mapping.get(polarity, [])
+            if not examples or any("axis_signal_value" not in example for example in examples):
+                issues.append(f"signal mapping missing {polarity}: {mapping.get('axis')}")
+    for axis in profile.get("axes", []):
+        if axis.get("numeric_derivation_policy") != "PROFILE_AXIS_NUMERIC_V2":
+            issues.append(f"axis does not reference v2 numeric policy: {axis.get('axis')}")
     return issues
 
 
