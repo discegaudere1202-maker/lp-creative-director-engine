@@ -30,6 +30,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: issue139-seishou-header-hero-trust
-          path: experiments/design_to_code/seishou/evidence/iteration_01/
+          name: issue139-seishou-header-hero-trust-v2
+          path: experiments/design_to_code/seishou/evidence/iteration_02/
           if-no-files-found: error
