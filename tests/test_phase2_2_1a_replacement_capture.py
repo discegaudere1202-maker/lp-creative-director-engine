@@ -1,5 +1,6 @@
 import csv, hashlib, json, tempfile, unittest
 from pathlib import Path
+import subprocess, sys
 from scripts.validate_phase2_2_1a_replacement import ValidationError, load_rows, validate
 from scripts.capture_phase2_2_1a_replacements import VIEWPORTS, verify_package
 
@@ -19,6 +20,9 @@ class ReplacementCaptureTests(unittest.TestCase):
         self.assertNotIn("REPL-TEST-001",ids)
 
     def test_smoke_is_explicitly_nonproduction(self): self.assertFalse(validate([SMOKE],"smoke")[0]["production_eligible"])
+    def test_smoke_json_cli_contract(self):
+        result=subprocess.run([sys.executable,"scripts/validate_phase2_2_1a_replacement.py","--mode","smoke","--input","data/phase2_2_1a_capture_smoke_target.json"],cwd=ROOT,capture_output=True,text=True)
+        self.assertEqual(result.returncode,0,result.stderr)
     def test_missing_metadata_rejected(self):
         row=production_row();row.pop("replacement_reason")
         with self.assertRaises(ValidationError): validate([row],"approved_batch")
