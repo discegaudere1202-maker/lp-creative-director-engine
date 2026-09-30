@@ -1,0 +1,54 @@
+:root{--green:#103f2b;--green2:#174e34;--gold:#b88a35;--ivory:#f6f3ec;--olive:#627128;--ink:#1f2922}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif}
+.fidelity-boundary{width:100%;overflow:hidden}
+.site-header{height:41px;background:#fff;display:grid;grid-template-columns:250px minmax(0,1fr) 238px;align-items:center;position:relative;z-index:4}
+.brand{height:100%;display:flex;align-items:center;padding-left:22px;text-decoration:none;color:#1b3325;gap:7px;white-space:nowrap}
+.brand-mark{width:25px;height:25px;fill:#12633d;color:#12633d;flex:0 0 auto}
+.brand-copy{display:flex;align-items:baseline;line-height:1;white-space:nowrap}
+.brand-small{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:7px;letter-spacing:.04em;margin-right:5px}
+.brand-copy strong{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:20px;font-weight:700;letter-spacing:.08em}
+.brand-sub{font-size:6px;color:#566158;margin-left:12px;letter-spacing:.05em}
+.global-nav{display:flex;align-items:center;justify-content:flex-end;gap:10px;height:100%;padding-right:8px;white-space:nowrap}
+.global-nav a{color:#314139;text-decoration:none;font-size:6.2px;font-weight:600;letter-spacing:.01em}
+.header-actions{height:100%;display:grid;grid-template-columns:126px 112px}
+.header-phone,.header-mail{display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff}
+.header-phone{background:#0b4a2f;gap:7px}
+.header-phone .icon{font-size:13px}
+.header-phone strong{font-size:13px;line-height:1;display:block;letter-spacing:.02em}
+.header-phone small{font-size:5px;display:block;margin-top:3px;opacity:.85}
+.header-mail{background:#b68b42;gap:7px;font-size:8px;letter-spacing:.04em}
+.header-mail .icon{font-size:12px}
+.hero{height:290px;position:relative;background:#102018;overflow:hidden}
+.hero-shade{display:block;position:absolute;inset:-2px;z-index:0;background-image:url('https://images.pexels.com/photos/36742224/pexels-photo-36742224.jpeg?auto=compress&cs=tinysrgb&w=2400');background-position:center 56%;background-size:cover;background-repeat:no-repeat;transform:scaleX(-1) scale(1.012);transform-origin:center;filter:saturate(.94) contrast(1.04) brightness(.94) sepia(.025)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,20,13,.91) 0%,rgba(5,25,17,.73) 34%,rgba(5,17,10,.20) 61%,rgba(0,0,0,.03) 100%);z-index:1;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.02) 68%,rgba(0,0,0,.14));z-index:1;pointer-events:none}
+.hero-content{position:relative;z-index:2;width:420px;padding:40px 0 0 45px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.24)}
+.eyebrow{font-size:6px;letter-spacing:.2em;margin:0 0 8px;color:#d7d8cb;opacity:.92}
+.hero h1{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-weight:500;font-size:33px;line-height:1.3;letter-spacing:.04em;margin:0 0 9px}
+.hero h1 span,.hero-lead span{display:block}
+.hero-lead{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:10px;line-height:1.75;letter-spacing:.025em;margin:0}
+.hero-actions{display:flex;margin-top:17px;height:44px}
+.hero-phone,.hero-mail{display:flex;align-items:center;text-decoration:none;color:#fff}
+.hero-phone{width:176px;background:#08723e;padding:0 13px;gap:9px}
+.hero-phone .icon{font-size:16px}
+.hero-phone strong{font-size:15px;display:block;line-height:1}
+.hero-phone small{display:block;font-size:5px;margin-top:4px}
+.hero-mail{width:194px;background:#b58b3f;padding:0 18px;gap:9px}
+.hero-mail .icon{font-size:14px}
+.hero-mail strong{font-size:8px;letter-spacing:.04em}
+.hero-mail .arrow{font-size:20px;margin-left:auto;font-family:serif}
+.sample-note{position:absolute;right:10px;bottom:7px;z-index:3;margin:0;font-size:5px;color:rgba(255,255,255,.76);letter-spacing:.08em}
+.trust-strip{height:97px;background:linear-gradient(90deg,#f4f3ee,#fff,#f3f2ec);display:grid;grid-template-columns:272px 244px 270px;padding:0}
+.trust-item{display:flex;align-items:center;gap:15px;position:relative}
+.trust-item:nth-child(1){padding-left:82px}.trust-item:nth-child(2){padding-left:38px}.trust-item:nth-child(3){padding-left:46px}
+.trust-item+.trust-item{border-left:1px solid #d9d8d1}
+.trust-item svg{width:35px;height:35px;flex:0 0 auto;fill:none;stroke:#647326;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.trust-item span{display:block;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:9px;color:#344036;margin-bottom:5px;letter-spacing:.04em}
+.trust-item strong{display:block;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:17px;line-height:1.1;font-weight:700;letter-spacing:.02em}
+.trust-item:last-child strong{font-size:12px;white-space:nowrap}
+@media(min-width:1000px){
+.site-header{height:72px;grid-template-columns:360px minmax(0,1fr) 390px}.brand{padding-left:44px;gap:11px}.brand-mark{width:39px;height:39px}.brand-small{font-size:10px}.brand-copy strong{font-size:31px}.brand-sub{font-size:8px;margin-left:18px}.global-nav{gap:18px;padding-right:22px}.global-nav a{font-size:10px}.header-actions{grid-template-columns:205px 185px}.header-phone strong{font-size:21px}.header-phone small{font-size:8px}.header-mail{font-size:12px}
+.hero{height:520px}.hero-shade{background-position:center 56%}.hero-content{width:760px;padding:74px 0 0 76px}.eyebrow{font-size:10px;margin-bottom:15px}.hero h1{font-size:61px;line-height:1.26;margin-bottom:18px}.hero-lead{font-size:16px;line-height:1.8}.hero-actions{height:72px;margin-top:28px}.hero-phone{width:286px;padding:0 22px;gap:14px}.hero-phone .icon{font-size:25px}.hero-phone strong{font-size:24px}.hero-phone small{font-size:8px}.hero-mail{width:315px;padding:0 28px;gap:14px}.hero-mail .icon{font-size:22px}.hero-mail strong{font-size:13px}.sample-note{font-size:8px;right:18px;bottom:12px}
+.trust-strip{height:154px;grid-template-columns:35% 31% 34%}.trust-item:nth-child(1),.trust-item:nth-child(2),.trust-item:nth-child(3){padding-left:7vw}.trust-item{gap:24px}.trust-item svg{width:54px;height:54px}.trust-item span{font-size:13px;margin-bottom:8px}.trust-item strong{font-size:26px}.trust-item:last-child strong{font-size:20px}
+}
