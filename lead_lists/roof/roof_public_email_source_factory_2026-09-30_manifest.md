@@ -10,10 +10,10 @@
 
 | Measure | Count |
 |---|---:|
-| Source Registry records | 25 |
-| Source families | 22 |
+| Source Registry records | 26 |
+| Source families | 23 |
 | All瓦連 prefecture index coverage | 47 / 47; 45 nonzero detail routes checked |
-| Local tile/roof route status | 12 EMAIL_SOURCE_FOUND; 5 CHECKED_NO_PUBLIC_EMAIL; 30 IN_PROGRESS |
+| Local tile/roof route status | 12 EMAIL_SOURCE_FOUND; 6 CHECKED_NO_PUBLIC_EMAIL; 29 IN_PROGRESS |
 | Sheet-metal route status | 3 EMAIL_SOURCE_FOUND; 1 CHECKED_NO_PUBLIC_EMAIL; 43 IN_PROGRESS |
 | National MLIT public directory | Reviewed; no public Email field |
 | Prefecture/municipal public-directory routes | Open in all 47 prefectures |
@@ -26,6 +26,8 @@
 | Partial Email-bearing source extractions | 1 |
 
 Ishikawa Prefectural Sheet Metal Cooperative is registered as `ISHIKAWA-BANKIN`. Its official association introduction reports approximately 160 member shops. Four individual contact pages have been checked: three publish an Email string; one displays only an Email contact label and was not made a Candidate. This source remains partial. 新生工業 is safely joined. 上出建築板金 and 林板金 remain JOIN_HOLD.
+
+The Kochi Prefectural Tile Roofing Association is registered as `KOCHI-KAWARAYANE`. Its official roster lists 24 businesses and publishes no Email field; one member profile was also checked and showed no Email. This local tile/roof route is recorded as `CHECKED_NO_PUBLIC_EMAIL`; no Candidate rows were added.
 
 ## Productive bulk sources checked
 
@@ -64,14 +66,14 @@ Ishikawa Prefectural Sheet Metal Cooperative is registered as `ISHIKAWA-BANKIN`.
 
 | File | Version |
 |---|---:|
-| `roof_public_email_source_registry.csv` | 7 |
-| `roof_public_email_candidates.csv` | 6 |
-| `roof_public_email_joined_candidates.csv` | 6 |
-| `roof_public_email_join_holds.csv` | 6 |
-| `roof_public_email_source_stats.json` | 7 |
-| `roof_public_email_source_registry.md` | 7 |
+| `roof_public_email_source_registry.csv` | 8 |
+| `roof_public_email_candidates.csv` | 7 |
+| `roof_public_email_joined_candidates.csv` | 7 |
+| `roof_public_email_join_holds.csv` | 7 |
+| `roof_public_email_source_stats.json` | 8 |
+| `roof_public_email_source_registry.md` | 8 |
 
-The stats JSON contains the 47-prefecture route ledger and explicitly records the Ishikawa extraction as partial.
+The stats JSON contains the 47-prefecture route ledger and explicitly records the Ishikawa extraction as partial and the Kochi local tile/roof route as checked with no public Email.
 
 ## Work not performed
 
