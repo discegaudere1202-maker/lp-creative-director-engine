@@ -1,0 +1,65 @@
+{
+  "status": "FAIL_CLOSED_NOT_READY_FOR_PM_REVIEW",
+  "required_success_status": "PHASE_2_2_1_CAPTURE_RECOVERY_READY_FOR_PM_REVIEW",
+  "phase2600_allowed": false,
+  "counts": {
+    "attempted_reference_count": 100,
+    "original_usable_count": 73,
+    "recovered_original_count": 0,
+    "unrecoverable_original_count": 0,
+    "unresolved_original_count": 27,
+    "same_cell_replacement_count": 0,
+    "replacement_attempt_count": 0,
+    "final_usable_reference_count": 73,
+    "desktop_1440_durable_count": 73,
+    "mobile_390_durable_count": 73,
+    "both_viewports_durable_count": 73,
+    "scene_evidence_count": 1240,
+    "OBSERVED": 906,
+    "NOT_OBSERVED": 334,
+    "NOT_APPLICABLE": 0,
+    "archive_container_count": 11,
+    "archive_member_count": 1442
+  },
+  "hard_gates": {
+    "final_usable_reference_count_100": false,
+    "desktop_1440_durable_count_100": false,
+    "mobile_390_durable_count_100": false,
+    "both_viewports_durable_count_100": false
+  },
+  "aggregate_invariant": {
+    "master_equals_matrix_equals_aggregate_equals_qa_equals_pm_summary": true,
+    "value_scope": "regenerated outputs from integrated builder at 73 usable references"
+  },
+  "durable_archive_verification": {
+    "container_sha256_match": "11/11",
+    "member_hash_match": "1442/1442",
+    "missing_members": 0,
+    "zip_integrity": "PASS",
+    "registry_digest_sha256": "377c24f49213e1a76a78b912e8dc29c0911334827e6f32f594168890fc3cd6fe"
+  },
+  "replacement_capture_smoke": {
+    "run_id": 36670569233,
+    "artifact_id": 11077991547,
+    "artifact_name": "phase2-2-1a-replacement-evidence-36670569233",
+    "artifact_digest": "sha256:65abe0cfece0a258a5429fc108778c1f24751b2a78200f68f9ea81e75125ff06",
+    "manifest_sha256": "7fbe84149cf10606d8ca6efd612a770c48c7c0a5d73ce9db41ed0e6900d949cb",
+    "retention_days": 30,
+    "durable_archive_ingested": false,
+    "production_reference_count": 0,
+    "classification": "SMOKE_ONLY_TEMPORARY_ACTIONS_ARTIFACT"
+  },
+  "replacement_cell_qa": "NOT_APPLICABLE_ZERO_PRODUCTION_CANDIDATES",
+  "validator": "PASS_INTERNAL_CONSISTENCY_ONLY",
+  "tests": {
+    "reconciliation": "3/3 PASS",
+    "replacement_capture_lane": "13/13 PASS"
+  },
+  "security_bypass_count": 0,
+  "unresolved_exceptions": [
+    "27 failed original references remain unresolved",
+    "No production same-cell replacement has been selected or attempted",
+    "Smoke evidence is temporary and not ingested into the Durable Archive",
+    "All four 100-reference Hard Gates remain unmet"
+  ]
+}
