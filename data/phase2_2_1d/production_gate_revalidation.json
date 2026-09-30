@@ -1,0 +1,84 @@
+{
+  "profiles": [
+    {
+      "failure_id": "P221D-LIVE-local-trust",
+      "category": "PRODUCTION_ELIGIBILITY_REJECT",
+      "profile_id": "local-trust",
+      "selected_mechanism_ids": [
+        "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+      ],
+      "input_sha256": "73ca724cd13ba3b57a0e0c933ca0ae9745ead76eabf9b186105820c714e6d7a1",
+      "observed_reason": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION",
+      "result": "FAIL_CLOSED_PASS",
+      "output_directory_created": false,
+      "render_executed": false,
+      "phase2600_allowed": false
+    },
+    {
+      "failure_id": "P221D-LIVE-b2b-technical",
+      "category": "PRODUCTION_ELIGIBILITY_REJECT",
+      "profile_id": "b2b-technical",
+      "selected_mechanism_ids": [
+        "CM-VIS-PRODUCT-UI-STAGE-01",
+        "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+      ],
+      "input_sha256": "601a28bf50a88178236fd9da63b54ea5c820bda3c504fde7f39ea5a98284e1f0",
+      "observed_reason": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION",
+      "result": "FAIL_CLOSED_PASS",
+      "output_directory_created": false,
+      "render_executed": false,
+      "phase2600_allowed": false
+    },
+    {
+      "failure_id": "P221D-LIVE-d2c-product",
+      "category": "PRODUCTION_ELIGIBILITY_REJECT",
+      "profile_id": "d2c-product",
+      "selected_mechanism_ids": [
+        "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01"
+      ],
+      "input_sha256": "a15a77fbfb1a4c77bbc5804646705d5fc8654691dc3ea275dee575462321c88e",
+      "observed_reason": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION",
+      "result": "FAIL_CLOSED_PASS",
+      "output_directory_created": false,
+      "render_executed": false,
+      "phase2600_allowed": false
+    },
+    {
+      "failure_id": "P221D-LIVE-premium-place",
+      "category": "PRODUCTION_ELIGIBILITY_REJECT",
+      "profile_id": "premium-place",
+      "selected_mechanism_ids": [
+        "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+      ],
+      "input_sha256": "953648add00cc79ad356a477909e3c5f9d8c34f8704bf0fd15d0ba94910b642e",
+      "observed_reason": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION",
+      "result": "FAIL_CLOSED_PASS",
+      "output_directory_created": false,
+      "render_executed": false,
+      "phase2600_allowed": false
+    },
+    {
+      "failure_id": "P221D-LIVE-public-information",
+      "category": "PRODUCTION_ELIGIBILITY_REJECT",
+      "profile_id": "public-information",
+      "selected_mechanism_ids": [
+        "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+      ],
+      "input_sha256": "e52a11161f0fb8ee4b8304772d497ed0004a2f33a9b2e5b35ba1b1c02a0b819c",
+      "observed_reason": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION",
+      "result": "FAIL_CLOSED_PASS",
+      "output_directory_created": false,
+      "render_executed": false,
+      "phase2600_allowed": false
+    }
+  ],
+  "blocked": 5,
+  "render_revalidation_required": 0,
+  "reason": "No eligibility changed. No changed-eligibility desktop/mobile render is asserted; five actual live routes fail before render.",
+  "prior_c_desktop_mobile": "8/8 historical PASS preserved and independently revalidated from saved pixels/records, not new browser runs",
+  "phase2600_allowed": false
+}

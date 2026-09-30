@@ -1,0 +1,42 @@
+{
+  "scope": "Engineering execution incidents preserved separately from the 68 research/gate/capture failure records; all resolved before final review.",
+  "phase2600_allowed": false,
+  "incidents": [
+    {
+      "incident": "Initial archive preparation assumed screenshot_identifier on every snapshot",
+      "observed_error": "KeyError: screenshot_identifier",
+      "resolution": "Use existing archive_entry when identifier is absent; all original member hashes subsequently verified",
+      "resolved": true
+    },
+    {
+      "incident": "Comparison sheet preparation assumed top-level page_y_range on every scene",
+      "observed_error": "KeyError: page_y_range",
+      "resolution": "Retain source scene identities and allow recorded scene ordering fallback; visual scope explicitly restricted",
+      "resolved": true
+    },
+    {
+      "incident": "Screening builder assumed snapshot_id for gold records",
+      "observed_error": "KeyError: snapshot_id",
+      "resolution": "Store actual archive member and SHA locator without inventing snapshot identifiers",
+      "resolved": true
+    },
+    {
+      "incident": "Python capture backend unavailable",
+      "observed_error": "ModuleNotFoundError: playwright",
+      "resolution": "Use installed Node Playwright Chromium backend; required-size network failures retained, no bypass",
+      "resolved": true
+    },
+    {
+      "incident": "Initial scoped runner loaded same-named script rather than Phase C test module",
+      "observed_error": "Coverage gap: 38 tests, Phase C group 0",
+      "resolution": "Load test modules by absolute file with explicit nonzero suite gate; rerun 64/64 PASS with 26 Phase C cases",
+      "resolved": true
+    },
+    {
+      "incident": "Final D validator invoked C validator against intentionally changed production gate code",
+      "observed_error": "AssertionError: OUTPUT_BYTES_CHANGED for src/lp_engine/production_eligibility.py only",
+      "resolution": "Keep original C manifests unchanged; verify exact additive D gate delta and all other C output hashes, run original C validator against isolated approved git archive, test current D code separately",
+      "resolved": true
+    }
+  ]
+}

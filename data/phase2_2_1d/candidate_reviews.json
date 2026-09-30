@@ -1,0 +1,2472 @@
+[
+  {
+    "candidate_id": "D-CORPUS-P01-R03-CM-VIS-ENVIRONMENTAL-HERO-01",
+    "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+    "reference_id": "P01-R03",
+    "official_url": "https://nnz-d.com/",
+    "domain": "nnz-d.com",
+    "page_family": "nnz-d.com/",
+    "brand": "中日本造園土木",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P01-R03-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P01-R03-MOBILE-SCENE-001"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:nnz-d.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Landscape/center overlay resembles entry"
+      },
+      "hierarchy": {
+        "status": "MATCH",
+        "observation": "Landscape dominates"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Centered light type resembles source"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Landscape establishes garden context"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "News and work grid follow a short hero, not source narrow lower news band"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Mobile source proposition not retained in the entry crop"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "No DOM/copy implementation validated"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Entry proposition"
+      }
+    },
+    "source_contract_sha256": "8deb04f37fa6f5d1ec14820992b78d2890e6ea9ea84c2a987724cb9ea71fed1d",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "reference_id": "P01-R03",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P01-R03-DESKTOP-SCENE-001"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "reference_id": "P01-R03",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P01-R03-MOBILE-SCENE-001"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P01-R04-CM-VIS-ENVIRONMENTAL-HERO-01",
+    "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+    "reference_id": "P01-R04",
+    "official_url": "https://www.takasho.co.jp/",
+    "domain": "www.takasho.co.jp",
+    "page_family": "www.takasho.co.jp/",
+    "brand": "タカショー",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P01-R04-DESKTOP-SCENE-001",
+      "P22-P01-R04-DESKTOP-SCENE-002",
+      "P22-P01-R04-DESKTOP-SCENE-003",
+      "P22-P01-R04-DESKTOP-SCENE-004",
+      "P22-P01-R04-DESKTOP-SCENE-005",
+      "P22-P01-R04-DESKTOP-SCENE-006",
+      "P22-P01-R04-DESKTOP-SCENE-007",
+      "P22-P01-R04-DESKTOP-SCENE-008",
+      "P22-P01-R04-DESKTOP-SCENE-009"
+    ],
+    "mobile_scene_ids": [
+      "P22-P01-R04-MOBILE-SCENE-001",
+      "P22-P01-R04-MOBILE-SCENE-002",
+      "P22-P01-R04-MOBILE-SCENE-003",
+      "P22-P01-R04-MOBILE-SCENE-004",
+      "P22-P01-R04-MOBILE-SCENE-005",
+      "P22-P01-R04-MOBILE-SCENE-006",
+      "P22-P01-R04-MOBILE-SCENE-007",
+      "P22-P01-R04-MOBILE-SCENE-008",
+      "P22-P01-R04-MOBILE-SCENE-009"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.takasho.co.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Broad photographic field"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Huge WIND/LIGHT display type dominates instead of restrained proposition"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Oversized decorative type"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Human lifestyle context, with landscape visible"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Extended campaign graphic and cookie/advert band precede separate news list"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Mobile preserves campaign display rather than centered source proposition/news"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Static capture does not establish DOM text boundary"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Entry campaign"
+      }
+    },
+    "source_contract_sha256": "8deb04f37fa6f5d1ec14820992b78d2890e6ea9ea84c2a987724cb9ea71fed1d",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "reference_id": "P01-R04",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P01-R04-DESKTOP-SCENE-001",
+          "P22-P01-R04-DESKTOP-SCENE-002",
+          "P22-P01-R04-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "reference_id": "P01-R04",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P01-R04-MOBILE-SCENE-001",
+          "P22-P01-R04-MOBILE-SCENE-002",
+          "P22-P01-R04-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P06-R04-CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "reference_id": "P06-R04",
+    "official_url": "https://www.massgeneralbrigham.org/",
+    "domain": "www.massgeneralbrigham.org",
+    "page_family": "www.massgeneralbrigham.org/",
+    "brand": "Mass General Brigham",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P06-R04-DESKTOP-SCENE-001",
+      "P22-P06-R04-DESKTOP-SCENE-002",
+      "P22-P06-R04-DESKTOP-SCENE-003",
+      "P22-P06-R04-DESKTOP-SCENE-004",
+      "P22-P06-R04-DESKTOP-SCENE-005",
+      "P22-P06-R04-DESKTOP-SCENE-006",
+      "P22-P06-R04-DESKTOP-SCENE-007"
+    ],
+    "mobile_scene_ids": [
+      "P22-P06-R04-MOBILE-SCENE-001",
+      "P22-P06-R04-MOBILE-SCENE-002",
+      "P22-P06-R04-MOBILE-SCENE-003",
+      "P22-P06-R04-MOBILE-SCENE-004",
+      "P22-P06-R04-MOBILE-SCENE-005",
+      "P22-P06-R04-MOBILE-SCENE-006",
+      "P22-P06-R04-MOBILE-SCENE-007"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.massgeneralbrigham.org/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Human photo and left copy but search overlay added"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Search occupies primary action tier, unlike three subordinate routes"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Large serif title versus compact bold sans title"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Human clinical context"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Search then three teal route cards; services follow"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Search and card actions stack rather than three simple hero route links"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Search implementation and accessible states not observed"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Clinical entry"
+      }
+    },
+    "source_contract_sha256": "46f593ae1fe8eb6f555b11661329a3d998aed17a105e8d7336eda1a4f829a071",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "reference_id": "P06-R04",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P06-R04-DESKTOP-SCENE-001",
+          "P22-P06-R04-DESKTOP-SCENE-002",
+          "P22-P06-R04-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "reference_id": "P06-R04",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P06-R04-MOBILE-SCENE-001",
+          "P22-P06-R04-MOBILE-SCENE-002",
+          "P22-P06-R04-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P06-R03-REP01-CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "reference_id": "P06-R03-REP01",
+    "official_url": "https://www.chuvision.com/",
+    "domain": "www.chuvision.com",
+    "page_family": "www.chuvision.com/",
+    "brand": "Chu Vision Institute",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P06-R03-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P06-R03-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P06-R03-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P06-R03-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.chuvision.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MISMATCH",
+        "observation": "Centered proposition on human photo"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Single contact action instead of three subordinate task routes"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Centered serif slogan"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Human/context photo"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Full photo then content, not compact route tier"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Centered slogan and bottom contact bar persist"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Source three-route DOM grammar not reproduced"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Clinical entry"
+      }
+    },
+    "source_contract_sha256": "46f593ae1fe8eb6f555b11661329a3d998aed17a105e8d7336eda1a4f829a071",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "reference_id": "P06-R03-REP01",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P06-R03-REP01-DESKTOP-VIEWPORT-SCENE",
+          "P221A-36677645592-P06-R03-REP01-DESKTOP-FULL_PAGE-SCENE"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "reference_id": "P06-R03-REP01",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P06-R03-REP01-MOBILE-VIEWPORT-SCENE",
+          "P221A-36677645592-P06-R03-REP01-MOBILE-FULL_PAGE-SCENE"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P08-R04-CM-VIS-PRODUCT-UI-STAGE-01",
+    "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+    "reference_id": "P08-R04",
+    "official_url": "https://slack.com/",
+    "domain": "slack.com",
+    "page_family": "slack.com/",
+    "brand": "Slack",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P08-R04-DESKTOP-SCENE-001",
+      "P22-P08-R04-DESKTOP-SCENE-002",
+      "P22-P08-R04-DESKTOP-SCENE-003",
+      "P22-P08-R04-DESKTOP-SCENE-004",
+      "P22-P08-R04-DESKTOP-SCENE-005",
+      "P22-P08-R04-DESKTOP-SCENE-006",
+      "P22-P08-R04-DESKTOP-SCENE-007"
+    ],
+    "mobile_scene_ids": [
+      "P22-P08-R04-MOBILE-SCENE-001",
+      "P22-P08-R04-MOBILE-SCENE-002",
+      "P22-P08-R04-MOBILE-SCENE-003",
+      "P22-P08-R04-MOBILE-SCENE-004",
+      "P22-P08-R04-MOBILE-SCENE-005",
+      "P22-P08-R04-MOBILE-SCENE-006",
+      "P22-P08-R04-MOBILE-SCENE-007",
+      "P22-P08-R04-MOBILE-SCENE-008",
+      "P22-P08-R04-MOBILE-SCENE-009",
+      "P22-P08-R04-MOBILE-SCENE-010"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:slack.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Contained UI below centered heading on white field"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Brand marks above UI, not subordinate lower strip"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Bold dark centered text"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "UI explains product"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Text/logos/UI order differs"
+      },
+      "responsive_behavior": {
+        "status": "PARTIAL",
+        "observation": "Mobile keeps text before narrow UI but different proof order"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Static reconstruction possible only as a different grammar"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Product entry"
+      }
+    },
+    "source_contract_sha256": "c4124db720edaa9ed1cd33db6709a3e8f176db4f82fdb891bcf4edc7dad45d62",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "reference_id": "P08-R04",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P08-R04-DESKTOP-SCENE-001",
+          "P22-P08-R04-DESKTOP-SCENE-002",
+          "P22-P08-R04-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "reference_id": "P08-R04",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P08-R04-MOBILE-SCENE-001",
+          "P22-P08-R04-MOBILE-SCENE-002",
+          "P22-P08-R04-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P12-R03-CM-VIS-PRODUCT-UI-STAGE-01",
+    "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+    "reference_id": "P12-R03",
+    "official_url": "https://www.framer.com/ja/",
+    "domain": "www.framer.com",
+    "page_family": "www.framer.com/ja",
+    "brand": "Framer",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P12-R03-DESKTOP-SCENE-001",
+      "P22-P12-R03-DESKTOP-SCENE-002",
+      "P22-P12-R03-DESKTOP-SCENE-003",
+      "P22-P12-R03-DESKTOP-SCENE-004",
+      "P22-P12-R03-DESKTOP-SCENE-005",
+      "P22-P12-R03-DESKTOP-SCENE-006",
+      "P22-P12-R03-DESKTOP-SCENE-007"
+    ],
+    "mobile_scene_ids": [
+      "P22-P12-R03-MOBILE-SCENE-001",
+      "P22-P12-R03-MOBILE-SCENE-002",
+      "P22-P12-R03-MOBILE-SCENE-003",
+      "P22-P12-R03-MOBILE-SCENE-004",
+      "P22-P12-R03-MOBILE-SCENE-005",
+      "P22-P12-R03-MOBILE-SCENE-006",
+      "P22-P12-R03-MOBILE-SCENE-007"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.framer.com/ja",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MATCH",
+        "observation": "Dark left text above large contained UI and lower customer marks"
+      },
+      "hierarchy": {
+        "status": "MATCH",
+        "observation": "CTA smaller than title and customer marks subordinate"
+      },
+      "typography": {
+        "status": "MATCH",
+        "observation": "White sans heading, short lines"
+      },
+      "media_role": {
+        "status": "PARTIAL",
+        "observation": "Prompt UI demo is product context; full interface proof equivalence not established"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Later examples are multiple feature panes; source focused workflow cadence unresolved"
+      },
+      "responsive_behavior": {
+        "status": "PARTIAL",
+        "observation": "Text/CTA above UI, but cropped prompt demo does not establish source UI legibility"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Still demo cannot establish a live mock or product screenshot contract"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Product entry"
+      }
+    },
+    "source_contract_sha256": "c4124db720edaa9ed1cd33db6709a3e8f176db4f82fdb891bcf4edc7dad45d62",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "reference_id": "P12-R03",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P12-R03-DESKTOP-SCENE-001",
+          "P22-P12-R03-DESKTOP-SCENE-002",
+          "P22-P12-R03-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "reference_id": "P12-R03",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P12-R03-MOBILE-SCENE-001",
+          "P22-P12-R03-MOBILE-SCENE-002",
+          "P22-P12-R03-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_MATCH_UNRESOLVED",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P13-R01-REP01-CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "reference_id": "P13-R01-REP01",
+    "official_url": "https://cohina.net/",
+    "domain": "cohina.net",
+    "page_family": "cohina.net/",
+    "brand": "COHINA",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P13-R01-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P13-R01-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P13-R01-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P13-R01-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:cohina.net/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Portrait campaign with neighbouring slides, not a self-contained asymmetric portrait/product/material collage"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Campaign copy centered on fashion photograph"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Serif caption rather than handwritten campaign layer"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Fashion editorial image, no same panel material/product juxtaposition established"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Adjacent partial slides and article thumbnails follow"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Mobile changes to a different single portrait composition"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Pagination/swipe/loop semantics untested"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Campaign entry"
+      }
+    },
+    "source_contract_sha256": "b277ccd954209857b23a8f59d57d78dc072bb44a39f29a7fd8bce6de8fa2d759",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P13-R01-REP01",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P13-R01-REP01-DESKTOP-VIEWPORT-SCENE",
+          "P221A-36677645592-P13-R01-REP01-DESKTOP-FULL_PAGE-SCENE"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P13-R01-REP01",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P13-R01-REP01-MOBILE-VIEWPORT-SCENE",
+          "P221A-36677645592-P13-R01-REP01-MOBILE-FULL_PAGE-SCENE"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P13-R02-REP01-CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "reference_id": "P13-R02-REP01",
+    "official_url": "https://www.felissimo.co.jp/",
+    "domain": "www.felissimo.co.jp",
+    "page_family": "www.felissimo.co.jp/",
+    "brand": "フェリシモ",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P13-R02-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P13-R02-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P13-R02-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P13-R02-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.felissimo.co.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Illustrated cutout collage in a neighbouring-slide strip"
+      },
+      "hierarchy": {
+        "status": "PARTIAL",
+        "observation": "Campaign copy and cutouts share focus"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Graphic campaign lettering resembles image-based copy only"
+      },
+      "media_role": {
+        "status": "PARTIAL",
+        "observation": "Fashion/campaign cutouts, no observed material/portrait/product triad"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Campaign strip then category rows"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Desktop and mobile show different campaigns; paired recomposition cannot be validated"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Carousel controls cannot be inferred"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Campaign entry"
+      }
+    },
+    "source_contract_sha256": "b277ccd954209857b23a8f59d57d78dc072bb44a39f29a7fd8bce6de8fa2d759",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P13-R02-REP01",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P13-R02-REP01-DESKTOP-VIEWPORT-SCENE",
+          "P221A-36677645592-P13-R02-REP01-DESKTOP-FULL_PAGE-SCENE"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P13-R02-REP01",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P13-R02-REP01-MOBILE-VIEWPORT-SCENE",
+          "P221A-36677645592-P13-R02-REP01-MOBILE-FULL_PAGE-SCENE"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P16-R01-REP01-CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "reference_id": "P16-R01-REP01",
+    "official_url": "https://www.ultimacollection.com/",
+    "domain": "www.ultimacollection.com",
+    "page_family": "www.ultimacollection.com/",
+    "brand": "Ultima Collection",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P16-R01-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P16-R01-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P16-R01-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P16-R01-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.ultimacollection.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Wide destination photograph with centered overlaid title"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Title placed on media, unlike source title/offer after media"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Centered restrained serif"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Destination context photograph"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Cookie overlay obscures next hierarchy; lower blocks only partially inspected"
+      },
+      "responsive_behavior": {
+        "status": "UNKNOWN",
+        "observation": "Portrait media visible but subsequent offer/card order not verified"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Playback control and static media implementation boundary not established"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Destination entry"
+      }
+    },
+    "source_contract_sha256": "f6a51dd8b3bec3dc131768eafff2271892d19efc6dd64f99e176985df506dfdc",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "reference_id": "P16-R01-REP01",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P16-R01-REP01-DESKTOP-VIEWPORT-SCENE",
+          "P221A-36677645592-P16-R01-REP01-DESKTOP-FULL_PAGE-SCENE"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "reference_id": "P16-R01-REP01",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P16-R01-REP01-MOBILE-VIEWPORT-SCENE",
+          "P221A-36677645592-P16-R01-REP01-MOBILE-FULL_PAGE-SCENE"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P16-R05-CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "reference_id": "P16-R05",
+    "official_url": "https://www.salterraresort.com/",
+    "domain": "www.salterraresort.com",
+    "page_family": "www.salterraresort.com/",
+    "brand": "Salterra Resort & Spa",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P16-R05-DESKTOP-SCENE-001",
+      "P22-P16-R05-DESKTOP-SCENE-002",
+      "P22-P16-R05-DESKTOP-SCENE-003",
+      "P22-P16-R05-DESKTOP-SCENE-004",
+      "P22-P16-R05-DESKTOP-SCENE-005",
+      "P22-P16-R05-DESKTOP-SCENE-006",
+      "P22-P16-R05-DESKTOP-SCENE-007",
+      "P22-P16-R05-DESKTOP-SCENE-008",
+      "P22-P16-R05-DESKTOP-SCENE-009",
+      "P22-P16-R05-DESKTOP-SCENE-010",
+      "P22-P16-R05-DESKTOP-SCENE-011",
+      "P22-P16-R05-DESKTOP-SCENE-012",
+      "P22-P16-R05-DESKTOP-SCENE-013",
+      "P22-P16-R05-DESKTOP-SCENE-014",
+      "P22-P16-R05-DESKTOP-SCENE-015",
+      "P22-P16-R05-DESKTOP-SCENE-016",
+      "P22-P16-R05-DESKTOP-SCENE-017",
+      "P22-P16-R05-DESKTOP-SCENE-018"
+    ],
+    "mobile_scene_ids": [
+      "P22-P16-R05-MOBILE-SCENE-001",
+      "P22-P16-R05-MOBILE-SCENE-002",
+      "P22-P16-R05-MOBILE-SCENE-003",
+      "P22-P16-R05-MOBILE-SCENE-004",
+      "P22-P16-R05-MOBILE-SCENE-005",
+      "P22-P16-R05-MOBILE-SCENE-006",
+      "P22-P16-R05-MOBILE-SCENE-007",
+      "P22-P16-R05-MOBILE-SCENE-008",
+      "P22-P16-R05-MOBILE-SCENE-009",
+      "P22-P16-R05-MOBILE-SCENE-010",
+      "P22-P16-R05-MOBILE-SCENE-011",
+      "P22-P16-R05-MOBILE-SCENE-012",
+      "P22-P16-R05-MOBILE-SCENE-013",
+      "P22-P16-R05-MOBILE-SCENE-014",
+      "P22-P16-R05-MOBILE-SCENE-015",
+      "P22-P16-R05-MOBILE-SCENE-016",
+      "P22-P16-R05-MOBILE-SCENE-017",
+      "P22-P16-R05-MOBILE-SCENE-018",
+      "P22-P16-R05-MOBILE-SCENE-019",
+      "P22-P16-R05-MOBILE-SCENE-020",
+      "P22-P16-R05-MOBILE-SCENE-021",
+      "P22-P16-R05-MOBILE-SCENE-022",
+      "P22-P16-R05-MOBILE-SCENE-023",
+      "P22-P16-R05-MOBILE-SCENE-024",
+      "P22-P16-R05-MOBILE-SCENE-025"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.salterraresort.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MATCH",
+        "observation": "Wide landscape with shallow centered brand nav"
+      },
+      "hierarchy": {
+        "status": "PARTIAL",
+        "observation": "Feature offer has larger alternating editorial role"
+      },
+      "typography": {
+        "status": "MATCH",
+        "observation": "Restrained serif offer copy"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Destination context"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Alternating large image/text offers rather than source narrow title plus destination cards"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Mobile introduces offer title before media, unlike source order"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Playback interaction untested"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Destination entry"
+      }
+    },
+    "source_contract_sha256": "f6a51dd8b3bec3dc131768eafff2271892d19efc6dd64f99e176985df506dfdc",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "reference_id": "P16-R05",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P16-R05-DESKTOP-SCENE-001",
+          "P22-P16-R05-DESKTOP-SCENE-002",
+          "P22-P16-R05-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "reference_id": "P16-R05",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P16-R05-MOBILE-SCENE-001",
+          "P22-P16-R05-MOBILE-SCENE-002",
+          "P22-P16-R05-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P18-R04-CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "reference_id": "P18-R04",
+    "official_url": "https://www.metro.tokyo.lg.jp/",
+    "domain": "www.metro.tokyo.lg.jp",
+    "page_family": "www.metro.tokyo.lg.jp/",
+    "brand": "東京都",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P18-R04-DESKTOP-SCENE-001",
+      "P22-P18-R04-DESKTOP-SCENE-002",
+      "P22-P18-R04-DESKTOP-SCENE-003",
+      "P22-P18-R04-DESKTOP-SCENE-004",
+      "P22-P18-R04-DESKTOP-SCENE-005",
+      "P22-P18-R04-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P18-R04-MOBILE-SCENE-001",
+      "P22-P18-R04-MOBILE-SCENE-002",
+      "P22-P18-R04-MOBILE-SCENE-003",
+      "P22-P18-R04-MOBILE-SCENE-004",
+      "P22-P18-R04-MOBILE-SCENE-005",
+      "P22-P18-R04-MOBILE-SCENE-006"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.metro.tokyo.lg.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Bounded municipal modules but first tier task-icon matrix"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Task icons and campaign tiles dominate instead of announcement/search/news asymmetry"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Compact institutional labels"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Campaign thumbnails and task icons"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Pickup carousel bands and recommended tiles follow"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Task matrix kept above news; not source first-tier task/search regrouping"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Only static geometry observed, disclosure semantics unknown"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Public service information"
+      }
+    },
+    "source_contract_sha256": "8e84adcc9d7de7fcf179e8b28ca9f26d4bdbf9d2fb4a56dae0a90ecdfb144101",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "reference_id": "P18-R04",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P18-R04-DESKTOP-SCENE-001",
+          "P22-P18-R04-DESKTOP-SCENE-002",
+          "P22-P18-R04-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "reference_id": "P18-R04",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P18-R04-MOBILE-SCENE-001",
+          "P22-P18-R04-MOBILE-SCENE-002",
+          "P22-P18-R04-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P09-R05-CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "reference_id": "P09-R05",
+    "official_url": "https://www.seino.co.jp/",
+    "domain": "www.seino.co.jp",
+    "page_family": "www.seino.co.jp/",
+    "brand": "西濃運輸",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P09-R05-DESKTOP-SCENE-001",
+      "P22-P09-R05-DESKTOP-SCENE-002",
+      "P22-P09-R05-DESKTOP-SCENE-003",
+      "P22-P09-R05-DESKTOP-SCENE-004",
+      "P22-P09-R05-DESKTOP-SCENE-005",
+      "P22-P09-R05-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P09-R05-MOBILE-SCENE-001",
+      "P22-P09-R05-MOBILE-SCENE-002",
+      "P22-P09-R05-MOBILE-SCENE-003",
+      "P22-P09-R05-MOBILE-SCENE-004",
+      "P22-P09-R05-MOBILE-SCENE-005",
+      "P22-P09-R05-MOBILE-SCENE-006",
+      "P22-P09-R05-MOBILE-SCENE-007"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.seino.co.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Large feature left, service grid right"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Feature dominates; search is a separate later row"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Corporate compact labels"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Logistics service and campaign imagery"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Search tools follow the first layer instead of integrated announcement/search/news modules"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Important notice then feature and service grid; search comes later"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Search inputs not exercised"
+      },
+      "scene_job": {
+        "status": "PARTIAL",
+        "observation": "Logistics customer tasks, public utility job equivalence partial"
+      }
+    },
+    "source_contract_sha256": "8e84adcc9d7de7fcf179e8b28ca9f26d4bdbf9d2fb4a56dae0a90ecdfb144101",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "reference_id": "P09-R05",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P09-R05-DESKTOP-SCENE-001",
+          "P22-P09-R05-DESKTOP-SCENE-002",
+          "P22-P09-R05-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "reference_id": "P09-R05",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P09-R05-MOBILE-SCENE-001",
+          "P22-P09-R05-MOBILE-SCENE-002",
+          "P22-P09-R05-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P03-R01-CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "reference_id": "P03-R01",
+    "official_url": "https://www.stylekoubou.com/",
+    "domain": "www.stylekoubou.com",
+    "page_family": "www.stylekoubou.com/",
+    "brand": "スタイル工房",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P03-R01-DESKTOP-SCENE-001",
+      "P22-P03-R01-DESKTOP-SCENE-002",
+      "P22-P03-R01-DESKTOP-SCENE-003",
+      "P22-P03-R01-DESKTOP-SCENE-004",
+      "P22-P03-R01-DESKTOP-SCENE-005"
+    ],
+    "mobile_scene_ids": [
+      "P22-P03-R01-MOBILE-SCENE-001",
+      "P22-P03-R01-MOBILE-SCENE-002",
+      "P22-P03-R01-MOBILE-SCENE-003",
+      "P22-P03-R01-MOBILE-SCENE-004",
+      "P22-P03-R01-MOBILE-SCENE-005",
+      "P22-P03-R01-MOBILE-SCENE-006",
+      "P22-P03-R01-MOBILE-SCENE-007",
+      "P22-P03-R01-MOBILE-SCENE-008",
+      "P22-P03-R01-MOBILE-SCENE-009"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.stylekoubou.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Wide interior photo with centered overlaid brand"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Three equal service bands, not source side proposition/two tasks/partner rail"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Thin centered line and service band lettering"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Actual interior context"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Service banners then works blocks, no partner rail tier"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Mobile brand photo and separate project/service bands change order"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Static DOM reproduction of source partner/task structure unsupported"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Renovation entry"
+      }
+    },
+    "source_contract_sha256": "3258b67b6c0907e0bfb48e8227debca619c94ec5d09ebbc541f0155e7b55381d",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "reference_id": "P03-R01",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P03-R01-DESKTOP-SCENE-001",
+          "P22-P03-R01-DESKTOP-SCENE-002",
+          "P22-P03-R01-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "reference_id": "P03-R01",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P03-R01-MOBILE-SCENE-001",
+          "P22-P03-R01-MOBILE-SCENE-002",
+          "P22-P03-R01-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P03-R03-CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "reference_id": "P03-R03",
+    "official_url": "https://www.mitsui-reform.com/",
+    "domain": "www.mitsui-reform.com",
+    "page_family": "www.mitsui-reform.com/",
+    "brand": "三井デザインテック",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P03-R03-DESKTOP-SCENE-001",
+      "P22-P03-R03-DESKTOP-SCENE-002",
+      "P22-P03-R03-DESKTOP-SCENE-003",
+      "P22-P03-R03-DESKTOP-SCENE-004",
+      "P22-P03-R03-DESKTOP-SCENE-005",
+      "P22-P03-R03-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P03-R03-MOBILE-SCENE-001",
+      "P22-P03-R03-MOBILE-SCENE-002",
+      "P22-P03-R03-MOBILE-SCENE-003",
+      "P22-P03-R03-MOBILE-SCENE-004",
+      "P22-P03-R03-MOBILE-SCENE-005",
+      "P22-P03-R03-MOBILE-SCENE-006"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.mitsui-reform.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Interior photo with lower-left title and small lower task actions"
+      },
+      "hierarchy": {
+        "status": "PARTIAL",
+        "observation": "Two actions visible but institutional tier/partner group missing"
+      },
+      "typography": {
+        "status": "MATCH",
+        "observation": "Restrained serif proposition"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Interior scene context"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Whitespace statement and WORKS follow rather than partner rail"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Two small actions persist but partner rail absent"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Source task/partner DOM containers not demonstrated"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Renovation entry"
+      }
+    },
+    "source_contract_sha256": "3258b67b6c0907e0bfb48e8227debca619c94ec5d09ebbc541f0155e7b55381d",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "reference_id": "P03-R03",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P03-R03-DESKTOP-SCENE-001",
+          "P22-P03-R03-DESKTOP-SCENE-002",
+          "P22-P03-R03-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "reference_id": "P03-R03",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P03-R03-MOBILE-SCENE-001",
+          "P22-P03-R03-MOBILE-SCENE-002",
+          "P22-P03-R03-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P05-R01-CM-VIS-FINANCE-RATE-PANEL-01",
+    "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+    "reference_id": "P05-R01",
+    "official_url": "https://www.jibunbank.co.jp/",
+    "domain": "www.jibunbank.co.jp",
+    "page_family": "www.jibunbank.co.jp/",
+    "brand": "auじぶん銀行",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P05-R01-DESKTOP-SCENE-001",
+      "P22-P05-R01-DESKTOP-SCENE-002",
+      "P22-P05-R01-DESKTOP-SCENE-003",
+      "P22-P05-R01-DESKTOP-SCENE-004",
+      "P22-P05-R01-DESKTOP-SCENE-005",
+      "P22-P05-R01-DESKTOP-SCENE-006",
+      "P22-P05-R01-DESKTOP-SCENE-007",
+      "P22-P05-R01-DESKTOP-SCENE-008",
+      "P22-P05-R01-DESKTOP-SCENE-009",
+      "P22-P05-R01-DESKTOP-SCENE-010",
+      "P22-P05-R01-DESKTOP-SCENE-011",
+      "P22-P05-R01-DESKTOP-SCENE-012",
+      "P22-P05-R01-DESKTOP-SCENE-013"
+    ],
+    "mobile_scene_ids": [
+      "P22-P05-R01-MOBILE-SCENE-001",
+      "P22-P05-R01-MOBILE-SCENE-002",
+      "P22-P05-R01-MOBILE-SCENE-003",
+      "P22-P05-R01-MOBILE-SCENE-004",
+      "P22-P05-R01-MOBILE-SCENE-005",
+      "P22-P05-R01-MOBILE-SCENE-006",
+      "P22-P05-R01-MOBILE-SCENE-007",
+      "P22-P05-R01-MOBILE-SCENE-008",
+      "P22-P05-R01-MOBILE-SCENE-009",
+      "P22-P05-R01-MOBILE-SCENE-010",
+      "P22-P05-R01-MOBILE-SCENE-011",
+      "P22-P05-R01-MOBILE-SCENE-012"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.jibunbank.co.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MISMATCH",
+        "observation": "Phone/app campaign first, numeric rates appear much later"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "App and login dominate, not numeric offer plus notice tier"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Mixed app copy and later numeric rates"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "UI marketing asset instead of geometric rate proposition"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Features interpose before rate grid; notice is not adjacent rate terms"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Later rate grid remains two-column at narrow width rather than source stacked cards"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Dated terms-to-offer association not validated"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Financial product information"
+      }
+    },
+    "source_contract_sha256": "e28897d77a23c0579f919455e9c1f9c78465223080a988b43bc7e343349ae5b1",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "reference_id": "P05-R01",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P05-R01-DESKTOP-SCENE-001",
+          "P22-P05-R01-DESKTOP-SCENE-002",
+          "P22-P05-R01-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "reference_id": "P05-R01",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P05-R01-MOBILE-SCENE-001",
+          "P22-P05-R01-MOBILE-SCENE-002",
+          "P22-P05-R01-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P05-R02-REP01-CM-VIS-FINANCE-RATE-PANEL-01",
+    "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+    "reference_id": "P05-R02-REP01",
+    "official_url": "https://www.sonylife.co.jp/",
+    "domain": "www.sonylife.co.jp",
+    "page_family": "www.sonylife.co.jp/",
+    "brand": "ソニー生命保険",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P05-R02-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P05-R02-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P05-R02-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P05-R02-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.sonylife.co.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MISMATCH",
+        "observation": "Text emergency notice followed by insurance services"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Emergency text dominates"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Institutional text, no large rate typography"
+      },
+      "media_role": {
+        "status": "MISMATCH",
+        "observation": "No rate/offer proof panel"
+      },
+      "spatial_behavior": {
+        "status": "UNKNOWN",
+        "observation": "Unrelated service sections"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "No source numeric card mobile recomposition"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Same Sony label cannot establish independence or rate implementation"
+      },
+      "scene_job": {
+        "status": "PARTIAL",
+        "observation": "Insurance assistance, not rate panel"
+      }
+    },
+    "source_contract_sha256": "e28897d77a23c0579f919455e9c1f9c78465223080a988b43bc7e343349ae5b1",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "reference_id": "P05-R02-REP01",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P05-R02-REP01-DESKTOP-VIEWPORT-SCENE",
+          "P221A-36677645592-P05-R02-REP01-DESKTOP-FULL_PAGE-SCENE"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "reference_id": "P05-R02-REP01",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P221A-36677645592-P05-R02-REP01-MOBILE-VIEWPORT-SCENE",
+          "P221A-36677645592-P05-R02-REP01-MOBILE-FULL_PAGE-SCENE"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P07-R03-CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "reference_id": "P07-R03",
+    "official_url": "https://www.keyence.co.jp/",
+    "domain": "www.keyence.co.jp",
+    "page_family": "www.keyence.co.jp/",
+    "brand": "キーエンス",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P07-R03-DESKTOP-SCENE-001",
+      "P22-P07-R03-DESKTOP-SCENE-002",
+      "P22-P07-R03-DESKTOP-SCENE-003",
+      "P22-P07-R03-DESKTOP-SCENE-004",
+      "P22-P07-R03-DESKTOP-SCENE-005",
+      "P22-P07-R03-DESKTOP-SCENE-006",
+      "P22-P07-R03-DESKTOP-SCENE-007"
+    ],
+    "mobile_scene_ids": [
+      "P22-P07-R03-MOBILE-SCENE-001",
+      "P22-P07-R03-MOBILE-SCENE-002",
+      "P22-P07-R03-MOBILE-SCENE-003",
+      "P22-P07-R03-MOBILE-SCENE-004",
+      "P22-P07-R03-MOBILE-SCENE-005",
+      "P22-P07-R03-MOBILE-SCENE-006"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.keyence.co.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Machine cutouts left and copy right rather than source left statement/right cutouts"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Product explanation dominates, lower product grid replaces category band"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Compact copy rather than strong three-line campaign"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Industrial product cutouts"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Catalog grid follows instead of four-icon dark category band"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Machine sits above title; source stacked campaign/category relationship differs"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Carousel operation not tested"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Industrial entry"
+      }
+    },
+    "source_contract_sha256": "53cd61f26f40f6b8008c5ca2f36d91d7e6eb15aa882ab31deace6ac47d699869",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P07-R03",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P07-R03-DESKTOP-SCENE-001",
+          "P22-P07-R03-DESKTOP-SCENE-002",
+          "P22-P07-R03-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P07-R03",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P07-R03-MOBILE-SCENE-001",
+          "P22-P07-R03-MOBILE-SCENE-002",
+          "P22-P07-R03-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P10-R05-CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "reference_id": "P10-R05",
+    "official_url": "https://www.rockwellautomation.com/en-us.html",
+    "domain": "www.rockwellautomation.com",
+    "page_family": "www.rockwellautomation.com/en-us.html",
+    "brand": "Rockwell Automation",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P10-R05-DESKTOP-SCENE-001",
+      "P22-P10-R05-DESKTOP-SCENE-002",
+      "P22-P10-R05-DESKTOP-SCENE-003",
+      "P22-P10-R05-DESKTOP-SCENE-004",
+      "P22-P10-R05-DESKTOP-SCENE-005"
+    ],
+    "mobile_scene_ids": [
+      "P22-P10-R05-MOBILE-SCENE-001",
+      "P22-P10-R05-MOBILE-SCENE-002",
+      "P22-P10-R05-MOBILE-SCENE-003",
+      "P22-P10-R05-MOBILE-SCENE-004",
+      "P22-P10-R05-MOBILE-SCENE-005"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.rockwellautomation.com/en-us.html",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Left title/right industrial image with category rail"
+      },
+      "hierarchy": {
+        "status": "PARTIAL",
+        "observation": "Similar campaign tier but category service rail is white/bordered"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Bold white sans, supporting copy"
+      },
+      "media_role": {
+        "status": "MISMATCH",
+        "observation": "Human worker context rather than machine cutout evidence"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Editorial content and chat/consent overlays below"
+      },
+      "responsive_behavior": {
+        "status": "PARTIAL",
+        "observation": "Narrow title/image crop visible, detailed category regrouping unresolved"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Slide, keyboard, motion state untested"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Industrial entry"
+      }
+    },
+    "source_contract_sha256": "53cd61f26f40f6b8008c5ca2f36d91d7e6eb15aa882ab31deace6ac47d699869",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P10-R05",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P10-R05-DESKTOP-SCENE-001",
+          "P22-P10-R05-DESKTOP-SCENE-002",
+          "P22-P10-R05-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P10-R05",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P10-R05-MOBILE-SCENE-001",
+          "P22-P10-R05-MOBILE-SCENE-002",
+          "P22-P10-R05-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P11-R02-CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "reference_id": "P11-R02",
+    "official_url": "https://biz.moneyforward.com/",
+    "domain": "biz.moneyforward.com",
+    "page_family": "biz.moneyforward.com/",
+    "brand": "マネーフォワード クラウド",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P11-R02-DESKTOP-SCENE-001",
+      "P22-P11-R02-DESKTOP-SCENE-002",
+      "P22-P11-R02-DESKTOP-SCENE-003",
+      "P22-P11-R02-DESKTOP-SCENE-004",
+      "P22-P11-R02-DESKTOP-SCENE-005",
+      "P22-P11-R02-DESKTOP-SCENE-006",
+      "P22-P11-R02-DESKTOP-SCENE-007",
+      "P22-P11-R02-DESKTOP-SCENE-008",
+      "P22-P11-R02-DESKTOP-SCENE-009",
+      "P22-P11-R02-DESKTOP-SCENE-010",
+      "P22-P11-R02-DESKTOP-SCENE-011",
+      "P22-P11-R02-DESKTOP-SCENE-012",
+      "P22-P11-R02-DESKTOP-SCENE-013",
+      "P22-P11-R02-DESKTOP-SCENE-014"
+    ],
+    "mobile_scene_ids": [
+      "P22-P11-R02-MOBILE-SCENE-001",
+      "P22-P11-R02-MOBILE-SCENE-002",
+      "P22-P11-R02-MOBILE-SCENE-003",
+      "P22-P11-R02-MOBILE-SCENE-004",
+      "P22-P11-R02-MOBILE-SCENE-005",
+      "P22-P11-R02-MOBILE-SCENE-006",
+      "P22-P11-R02-MOBILE-SCENE-007",
+      "P22-P11-R02-MOBILE-SCENE-008",
+      "P22-P11-R02-MOBILE-SCENE-009",
+      "P22-P11-R02-MOBILE-SCENE-010",
+      "P22-P11-R02-MOBILE-SCENE-011",
+      "P22-P11-R02-MOBILE-SCENE-012",
+      "P22-P11-R02-MOBILE-SCENE-013",
+      "P22-P11-R02-MOBILE-SCENE-014"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:biz.moneyforward.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "UI-backed proposition and two buttons in hero"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Buttons split download/contact intents, not two audiences"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Bold proposition"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Product UI context"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Separate audience section has three cards, not two equivalent source paths"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Two intent actions above three stacked audiences"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Audience identity/action containment cannot be mapped to source split"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Business audience conversion"
+      }
+    },
+    "source_contract_sha256": "13dc0c15cd07e27bc43a8fbdd9e3e54fd7ceb28aae5409199de25f1aea8227fd",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "reference_id": "P11-R02",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P11-R02-DESKTOP-SCENE-001",
+          "P22-P11-R02-DESKTOP-SCENE-002",
+          "P22-P11-R02-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "reference_id": "P11-R02",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P11-R02-MOBILE-SCENE-001",
+          "P22-P11-R02-MOBILE-SCENE-002",
+          "P22-P11-R02-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P11-R04-CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "reference_id": "P11-R04",
+    "official_url": "https://www.cybozu.com/jp/",
+    "domain": "www.cybozu.com",
+    "page_family": "www.cybozu.com/jp",
+    "brand": "サイボウズ",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P11-R04-DESKTOP-SCENE-001",
+      "P22-P11-R04-DESKTOP-SCENE-002",
+      "P22-P11-R04-DESKTOP-SCENE-003",
+      "P22-P11-R04-DESKTOP-SCENE-004"
+    ],
+    "mobile_scene_ids": [
+      "P22-P11-R04-MOBILE-SCENE-001",
+      "P22-P11-R04-MOBILE-SCENE-002",
+      "P22-P11-R04-MOBILE-SCENE-003",
+      "P22-P11-R04-MOBILE-SCENE-004"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.cybozu.com/jp",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MISMATCH",
+        "observation": "Three product/service groups, not paired audience cards"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Security/category selection instead of equivalent audience choices"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Compact sans labels"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Illustrated cloud and product logos"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Product explanations follow"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Three vertical product groups rather than two audience cards"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Action equivalence not established"
+      },
+      "scene_job": {
+        "status": "PARTIAL",
+        "observation": "Product selection; source two-audience conversion unconfirmed"
+      }
+    },
+    "source_contract_sha256": "13dc0c15cd07e27bc43a8fbdd9e3e54fd7ceb28aae5409199de25f1aea8227fd",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "reference_id": "P11-R04",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P11-R04-DESKTOP-SCENE-001",
+          "P22-P11-R04-DESKTOP-SCENE-002",
+          "P22-P11-R04-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "reference_id": "P11-R04",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P11-R04-MOBILE-SCENE-001",
+          "P22-P11-R04-MOBILE-SCENE-002",
+          "P22-P11-R04-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P15-R02-CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "reference_id": "P15-R02",
+    "official_url": "https://www.mos.jp/",
+    "domain": "www.mos.jp",
+    "page_family": "www.mos.jp/",
+    "brand": "モスバーガー",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P15-R02-DESKTOP-SCENE-001",
+      "P22-P15-R02-DESKTOP-SCENE-002",
+      "P22-P15-R02-DESKTOP-SCENE-003",
+      "P22-P15-R02-DESKTOP-SCENE-004",
+      "P22-P15-R02-DESKTOP-SCENE-005",
+      "P22-P15-R02-DESKTOP-SCENE-006",
+      "P22-P15-R02-DESKTOP-SCENE-007",
+      "P22-P15-R02-DESKTOP-SCENE-008"
+    ],
+    "mobile_scene_ids": [
+      "P22-P15-R02-MOBILE-SCENE-001",
+      "P22-P15-R02-MOBILE-SCENE-002",
+      "P22-P15-R02-MOBILE-SCENE-003",
+      "P22-P15-R02-MOBILE-SCENE-004",
+      "P22-P15-R02-MOBILE-SCENE-005",
+      "P22-P15-R02-MOBILE-SCENE-006",
+      "P22-P15-R02-MOBILE-SCENE-007",
+      "P22-P15-R02-MOBILE-SCENE-008",
+      "P22-P15-R02-MOBILE-SCENE-009"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.mos.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MISMATCH",
+        "observation": "One full campaign panel"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Single campaign dominates"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Graphic campaign copy"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Campaign food image"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Recommendation row and three campaign cards later"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "One campaign persists then recommendation grid"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Two separate campaign destinations not established"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Retail campaign entry"
+      }
+    },
+    "source_contract_sha256": "bb1c507d5850bed7747f05ae7c9778881540c36816ea77deae3ce688b12599dd",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "reference_id": "P15-R02",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P15-R02-DESKTOP-SCENE-001",
+          "P22-P15-R02-DESKTOP-SCENE-002",
+          "P22-P15-R02-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "reference_id": "P15-R02",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P15-R02-MOBILE-SCENE-001",
+          "P22-P15-R02-MOBILE-SCENE-002",
+          "P22-P15-R02-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P14-R05-REP02-CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "reference_id": "P14-R05-REP02",
+    "official_url": "https://www.maison-alaia.com/en-us/cat/latest-arrivals/",
+    "domain": "www.maison-alaia.com",
+    "page_family": "www.maison-alaia.com/en-us/cat/latest-arrivals",
+    "brand": "Maison Alaïa — Latest Arrivals",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P221A-36682051500-P14-R05-REP02-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36682051500-P14-R05-REP02-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36682051500-P14-R05-REP02-MOBILE-VIEWPORT-SCENE",
+      "P221A-36682051500-P14-R05-REP02-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.maison-alaia.com/en-us/cat/latest-arrivals",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Two equal fashion portraits inside one NEW IN feature"
+      },
+      "hierarchy": {
+        "status": "PARTIAL",
+        "observation": "One shared heading/collection rather than independent campaigns"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Single shared sans heading"
+      },
+      "media_role": {
+        "status": "MISMATCH",
+        "observation": "Collection fashion portraits, not two campaign offers"
+      },
+      "spatial_behavior": {
+        "status": "UNKNOWN",
+        "observation": "Single collection flow"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Paired portraits remain adjacent on mobile rather than two full-width campaigns"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Distinct campaign action regions not observed"
+      },
+      "scene_job": {
+        "status": "PARTIAL",
+        "observation": "Collection entry, not independently scoped campaign diptych"
+      }
+    },
+    "source_contract_sha256": "bb1c507d5850bed7747f05ae7c9778881540c36816ea77deae3ce688b12599dd",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "reference_id": "P14-R05-REP02",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P221A-36682051500-P14-R05-REP02-DESKTOP-VIEWPORT-SCENE",
+          "P221A-36682051500-P14-R05-REP02-DESKTOP-FULL_PAGE-SCENE"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "reference_id": "P14-R05-REP02",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P221A-36682051500-P14-R05-REP02-MOBILE-VIEWPORT-SCENE",
+          "P221A-36682051500-P14-R05-REP02-MOBILE-FULL_PAGE-SCENE"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P17-R04-CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "reference_id": "P17-R04",
+    "official_url": "https://albion.co.jp/site/albion/c/c10/",
+    "domain": "albion.co.jp",
+    "page_family": "albion.co.jp/site/albion/c/c10",
+    "brand": "ALBION",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P17-R04-DESKTOP-SCENE-001",
+      "P22-P17-R04-DESKTOP-SCENE-002",
+      "P22-P17-R04-DESKTOP-SCENE-003",
+      "P22-P17-R04-DESKTOP-SCENE-004",
+      "P22-P17-R04-DESKTOP-SCENE-005",
+      "P22-P17-R04-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P17-R04-MOBILE-SCENE-001",
+      "P22-P17-R04-MOBILE-SCENE-002",
+      "P22-P17-R04-MOBILE-SCENE-003",
+      "P22-P17-R04-MOBILE-SCENE-004",
+      "P22-P17-R04-MOBILE-SCENE-005",
+      "P22-P17-R04-MOBILE-SCENE-006",
+      "P22-P17-R04-MOBILE-SCENE-007"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:albion.co.jp/site/albion/c/c10",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MISMATCH",
+        "observation": "Top brand nav and wide product feature"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "No vertical multi-brand index alongside feature"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Small labels and image-based feature"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Product campaign"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Brand news and seasonal rows follow"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Nav remains separate, no index/feature regrouping"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Multiple brand index navigation boundary absent"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Beauty product entry"
+      }
+    },
+    "source_contract_sha256": "41ef618f2abca60050c93c6067f2d886531aa7c5e133369b33039c479dc6b4ca",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "reference_id": "P17-R04",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P17-R04-DESKTOP-SCENE-001",
+          "P22-P17-R04-DESKTOP-SCENE-002",
+          "P22-P17-R04-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "reference_id": "P17-R04",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P17-R04-MOBILE-SCENE-001",
+          "P22-P17-R04-MOBILE-SCENE-002",
+          "P22-P17-R04-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P17-R05-CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "reference_id": "P17-R05",
+    "official_url": "https://www.haba.co.jp/",
+    "domain": "www.haba.co.jp",
+    "page_family": "www.haba.co.jp/",
+    "brand": "HABA",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P17-R05-DESKTOP-SCENE-001",
+      "P22-P17-R05-DESKTOP-SCENE-002",
+      "P22-P17-R05-DESKTOP-SCENE-003",
+      "P22-P17-R05-DESKTOP-SCENE-004",
+      "P22-P17-R05-DESKTOP-SCENE-005",
+      "P22-P17-R05-DESKTOP-SCENE-006",
+      "P22-P17-R05-DESKTOP-SCENE-007",
+      "P22-P17-R05-DESKTOP-SCENE-008",
+      "P22-P17-R05-DESKTOP-SCENE-009",
+      "P22-P17-R05-DESKTOP-SCENE-010"
+    ],
+    "mobile_scene_ids": [
+      "P22-P17-R05-MOBILE-SCENE-001",
+      "P22-P17-R05-MOBILE-SCENE-002",
+      "P22-P17-R05-MOBILE-SCENE-003",
+      "P22-P17-R05-MOBILE-SCENE-004",
+      "P22-P17-R05-MOBILE-SCENE-005",
+      "P22-P17-R05-MOBILE-SCENE-006",
+      "P22-P17-R05-MOBILE-SCENE-007",
+      "P22-P17-R05-MOBILE-SCENE-008",
+      "P22-P17-R05-MOBILE-SCENE-009"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.haba.co.jp/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MISMATCH",
+        "observation": "Product image left with descriptive card right"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "No multi-brand index"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Feature title and price versus subordinate brand labels"
+      },
+      "media_role": {
+        "status": "MATCH",
+        "observation": "Product campaign"
+      },
+      "spatial_behavior": {
+        "status": "MISMATCH",
+        "observation": "Product offer rows follow"
+      },
+      "responsive_behavior": {
+        "status": "MISMATCH",
+        "observation": "Image then description, no brand group relocation"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Source index/feature navigation not reproduced"
+      },
+      "scene_job": {
+        "status": "MATCH",
+        "observation": "Beauty product entry"
+      }
+    },
+    "source_contract_sha256": "41ef618f2abca60050c93c6067f2d886531aa7c5e133369b33039c479dc6b4ca",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "reference_id": "P17-R05",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P17-R05-DESKTOP-SCENE-001",
+          "P22-P17-R05-DESKTOP-SCENE-002",
+          "P22-P17-R05-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "reference_id": "P17-R05",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P17-R05-MOBILE-SCENE-001",
+          "P22-P17-R05-MOBILE-SCENE-002",
+          "P22-P17-R05-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P20-R03-CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "reference_id": "P20-R03",
+    "official_url": "https://www.mori.art.museum/jp/",
+    "domain": "www.mori.art.museum",
+    "page_family": "www.mori.art.museum/jp",
+    "brand": "森美術館",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P20-R03-DESKTOP-SCENE-001",
+      "P22-P20-R03-DESKTOP-SCENE-002",
+      "P22-P20-R03-DESKTOP-SCENE-003",
+      "P22-P20-R03-DESKTOP-SCENE-004",
+      "P22-P20-R03-DESKTOP-SCENE-005",
+      "P22-P20-R03-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P20-R03-MOBILE-SCENE-001",
+      "P22-P20-R03-MOBILE-SCENE-002",
+      "P22-P20-R03-MOBILE-SCENE-003",
+      "P22-P20-R03-MOBILE-SCENE-004",
+      "P22-P20-R03-MOBILE-SCENE-005",
+      "P22-P20-R03-MOBILE-SCENE-006",
+      "P22-P20-R03-MOBILE-SCENE-007",
+      "P22-P20-R03-MOBILE-SCENE-008",
+      "P22-P20-R03-MOBILE-SCENE-009"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.mori.art.museum/jp",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "PARTIAL",
+        "observation": "Wide exhibition graphic with notices around it"
+      },
+      "hierarchy": {
+        "status": "PARTIAL",
+        "observation": "Exhibition title/date and museum brand compete with artwork"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Large image lettering, not small lower work label"
+      },
+      "media_role": {
+        "status": "MISMATCH",
+        "observation": "Exhibition promotion graphic rather than isolated work-context image"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Event/news bands and cards follow"
+      },
+      "responsive_behavior": {
+        "status": "PARTIAL",
+        "observation": "Graphic compresses and event detail band persists"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Work entry job and implementation not established"
+      },
+      "scene_job": {
+        "status": "MISMATCH",
+        "observation": "Explicit museum visit/exhibition tasks cannot be assigned to source UNCLASSIFIED"
+      }
+    },
+    "source_contract_sha256": "1386e457801e21614c276c699060168cb25204bba301ce6c406c154ce838f0ea",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "reference_id": "P20-R03",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P20-R03-DESKTOP-SCENE-001",
+          "P22-P20-R03-DESKTOP-SCENE-002",
+          "P22-P20-R03-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "reference_id": "P20-R03",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P20-R03-MOBILE-SCENE-001",
+          "P22-P20-R03-MOBILE-SCENE-002",
+          "P22-P20-R03-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  },
+  {
+    "candidate_id": "D-CORPUS-P20-R04-CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "reference_id": "P20-R04",
+    "official_url": "https://www.tokyoartbeat.com/",
+    "domain": "www.tokyoartbeat.com",
+    "page_family": "www.tokyoartbeat.com/",
+    "brand": "東京アートビート",
+    "parent_brand": "UNKNOWN",
+    "campaign_family": "UNKNOWN",
+    "agency": "UNKNOWN",
+    "production_company": "UNKNOWN",
+    "source_family": "UNKNOWN",
+    "discovery_source": "EXISTING_DURABLE_100_SCREENING",
+    "desktop_scene_ids": [
+      "P22-P20-R04-DESKTOP-SCENE-001",
+      "P22-P20-R04-DESKTOP-SCENE-002",
+      "P22-P20-R04-DESKTOP-SCENE-003",
+      "P22-P20-R04-DESKTOP-SCENE-004",
+      "P22-P20-R04-DESKTOP-SCENE-005",
+      "P22-P20-R04-DESKTOP-SCENE-006",
+      "P22-P20-R04-DESKTOP-SCENE-007",
+      "P22-P20-R04-DESKTOP-SCENE-008",
+      "P22-P20-R04-DESKTOP-SCENE-009",
+      "P22-P20-R04-DESKTOP-SCENE-010",
+      "P22-P20-R04-DESKTOP-SCENE-011"
+    ],
+    "mobile_scene_ids": [
+      "P22-P20-R04-MOBILE-SCENE-001",
+      "P22-P20-R04-MOBILE-SCENE-002",
+      "P22-P20-R04-MOBILE-SCENE-003",
+      "P22-P20-R04-MOBILE-SCENE-004",
+      "P22-P20-R04-MOBILE-SCENE-005",
+      "P22-P20-R04-MOBILE-SCENE-006",
+      "P22-P20-R04-MOBILE-SCENE-007",
+      "P22-P20-R04-MOBILE-SCENE-008",
+      "P22-P20-R04-MOBILE-SCENE-009",
+      "P22-P20-R04-MOBILE-SCENE-010",
+      "P22-P20-R04-MOBILE-SCENE-011",
+      "P22-P20-R04-MOBILE-SCENE-012"
+    ],
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.tokyoartbeat.com/",
+    "mechanism_match_basis": {
+      "composition": {
+        "status": "MISMATCH",
+        "observation": "Feature left and advertising/sidebar right"
+      },
+      "hierarchy": {
+        "status": "MISMATCH",
+        "observation": "Editorial feature plus ad, not dominant full-bleed artwork"
+      },
+      "typography": {
+        "status": "PARTIAL",
+        "observation": "Dense article title and controls"
+      },
+      "media_role": {
+        "status": "MISMATCH",
+        "observation": "Article/gallery thumbnail roles"
+      },
+      "spatial_behavior": {
+        "status": "PARTIAL",
+        "observation": "Editorial lists and ticket blocks follow"
+      },
+      "responsive_behavior": {
+        "status": "PARTIAL",
+        "observation": "Editorial feature/search/navigation retained"
+      },
+      "implementation_boundary": {
+        "status": "UNKNOWN",
+        "observation": "Work identity/scene semantics unobserved"
+      },
+      "scene_job": {
+        "status": "MISMATCH",
+        "observation": "Editorial discovery cannot resolve UNCLASSIFIED source job"
+      }
+    },
+    "source_contract_sha256": "1386e457801e21614c276c699060168cb25204bba301ce6c406c154ce838f0ea",
+    "inspection_records": [
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "reference_id": "P20-R04",
+        "viewport": "DESKTOP",
+        "visually_reviewed_scene_ids": [
+          "P22-P20-R04-DESKTOP-SCENE-001",
+          "P22-P20-R04-DESKTOP-SCENE-002",
+          "P22-P20-R04-DESKTOP-SCENE-003"
+        ]
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "reference_id": "P20-R04",
+        "viewport": "MOBILE",
+        "visually_reviewed_scene_ids": [
+          "P22-P20-R04-MOBILE-SCENE-001",
+          "P22-P20-R04-MOBILE-SCENE-002",
+          "P22-P20-R04-MOBILE-SCENE-003"
+        ]
+      }
+    ],
+    "inspection_scope": "Viewport pair and first three recorded scene images; long full-page thumbnails show overview only, not all pixel detail",
+    "independence_basis": "Brand label/domain differences provide no verified agency/campaign/source-family relationship",
+    "independence_status": "UNKNOWN",
+    "rejection_reason": "ATOMIC_CORE_MISMATCH",
+    "accept_as_independent_evidence": false
+  }
+]

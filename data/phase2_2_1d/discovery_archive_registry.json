@@ -1,0 +1,72 @@
+{
+  "archive_path": "artifacts/phase2_2_1d/discovery_failure_archive.zip",
+  "archive_locator": "GIT_REPOSITORY_PATH_PINNED_BY_FINAL_COMMIT_IN_ISSUE_143",
+  "container_sha256": "042e5caa95e8ce7f27d02b9dc224c868b20d1ff9c7d4bd786652136424e2280b",
+  "bytes": 882933,
+  "member_count": 5,
+  "members": [
+    {
+      "archive_member": "artifacts/phase2_2_1d/discovery_failures/D-RIJKS-01__cloud__1363-fullpage.jpg",
+      "sha256": "6225875ba39d7d94591eb09cc10e7a5614eb884b0ed4d25752e6a54f8e41e256",
+      "bytes": 346096,
+      "readback": "PASS"
+    },
+    {
+      "archive_member": "artifacts/phase2_2_1d/discovery_failures/D-ROTH-01__cloud__1363-fullpage.jpg",
+      "sha256": "73238cf597b03a721e8778e501849821f193039d7656e31e4672ba87e0207740",
+      "bytes": 597059,
+      "readback": "PASS"
+    },
+    {
+      "archive_member": "data/phase2_2_1d/targeted_capture_manifest.json",
+      "sha256": "e5e22b3c8f3c2ae2202f90d778f8a5ba2637c501b074f450c31e512c5104f7d4",
+      "bytes": 3173,
+      "readback": "PASS"
+    },
+    {
+      "archive_member": "data/phase2_2_1d/targeted_outcomes.json",
+      "sha256": "baafbfd37bbb38ff91691ccae6d66dbfb4a0b15b02ed302d73bf20b8bacefacf",
+      "bytes": 5172,
+      "readback": "PASS"
+    },
+    {
+      "archive_member": "data/phase2_2_1d/targeted_precapture.json",
+      "sha256": "44867254c3f1f7191556132438a0b1584484ca6f83b09067af44a15210ea02ed",
+      "bytes": 2747,
+      "readback": "PASS"
+    }
+  ],
+  "images": [
+    {
+      "reference_id": "D-ROTH-01",
+      "path": "artifacts/phase2_2_1d/discovery_failures/D-ROTH-01__cloud__1363-fullpage.jpg",
+      "sha256": "73238cf597b03a721e8778e501849821f193039d7656e31e4672ba87e0207740",
+      "dimensions": [
+        1348,
+        5352
+      ],
+      "capture_timestamp": "NOT_RECORDED_BY_CLOUD_SCREENSHOT_CALL_NOT_ADMISSIBLE",
+      "persisted_at": "2026-09-30T16:16:06.862700+00:00",
+      "evidence_role": "REJECTION_AND_CAPTURE_LIMITATION_ONLY",
+      "paired_1440_390_durable": "FAIL",
+      "accepted": false
+    },
+    {
+      "reference_id": "D-RIJKS-01",
+      "path": "artifacts/phase2_2_1d/discovery_failures/D-RIJKS-01__cloud__1363-fullpage.jpg",
+      "sha256": "6225875ba39d7d94591eb09cc10e7a5614eb884b0ed4d25752e6a54f8e41e256",
+      "dimensions": [
+        1363,
+        4175
+      ],
+      "capture_timestamp": "NOT_RECORDED_BY_CLOUD_SCREENSHOT_CALL_NOT_ADMISSIBLE",
+      "persisted_at": "2026-09-30T16:16:06.862401+00:00",
+      "evidence_role": "REJECTION_AND_CAPTURE_LIMITATION_ONLY",
+      "paired_1440_390_durable": "FAIL",
+      "accepted": false
+    }
+  ],
+  "result": "PASS_REJECTION_ARCHIVE_BYTES_ONLY",
+  "new_reference_admission_count": 0,
+  "phase2600_allowed": false
+}

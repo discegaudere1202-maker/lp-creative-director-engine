@@ -1,0 +1,21 @@
+{
+  "validator": "PASS",
+  "scope": "Structural, snapshot trace, immutable bytes, gate replay and preserved C regression; semantic observations await Sarah PM review",
+  "atomic_mechanism_count": 13,
+  "candidate_count": 28,
+  "candidate_rejects": 27,
+  "candidate_match_holds": 1,
+  "holds_released": 0,
+  "holds_remaining": 13,
+  "prior_failures_preserved": 40,
+  "phase_d_failures": 68,
+  "total_failures": 108,
+  "negative_tests_passed": 18,
+  "scoped_tests_passed": 66,
+  "evidence_trace_qa": "PASS",
+  "actual_original_corpus_archive_readback": "PASS_16_CONTAINERS_1414_MEMBERS",
+  "changed_eligibility_render_revalidation": "NOT_APPLICABLE_ZERO_ELIGIBILITY_CHANGES",
+  "prior_c_saved_browser_evidence_validator": "PASS_8_DESKTOP_8_MOBILE_HISTORICAL_NOT_NEW_RUNS",
+  "phase2600_allowed": false,
+  "status": "PHASE_2_2_1_INDEPENDENCE_ELIGIBILITY_READY_FOR_PM_REVIEW"
+}

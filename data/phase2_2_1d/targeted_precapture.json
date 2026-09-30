@@ -1,0 +1,41 @@
+{
+  "phase2600_allowed": false,
+  "scope": "Two official pages tied to two unresolved atomic mechanism gaps; no broad corpus expansion",
+  "recorded_before_capture": true,
+  "candidates": [
+    {
+      "candidate_id": "D-TARGET-ENV-01",
+      "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "reference_id": "D-ROTH-01",
+      "official_url": "https://www.roth-gaerten.ch/",
+      "source_family": "UNKNOWN_CURRENT_SNAPSHOT",
+      "brand_family": "Roth Gärten; parent UNKNOWN",
+      "campaign_family": "UNKNOWN",
+      "agency_production_attribution": "iCoderz self-reported development case; exact current design and campaign not yet bound",
+      "attribution_url": "https://www.icoderzsolutions.com/roth-garten-website-development.shtml",
+      "mechanism_match_hypothesis": "Garden photography first with concise service proposition may reproduce landscape-led entry grammar; centered overlay, lower news strip and mobile recomposition must be checked",
+      "independence_hypothesis": "Named Swiss garden client and named developer offer a testable second context, but baseline agency and both campaigns remain UNKNOWN; different domain is not proof",
+      "official_public_accessibility": "Public client URL linked by developer case; ordinary browser access pending",
+      "expected_scene_job": "ENTRY",
+      "capture_decision": "BOUNDED_HYPOTHESIS_TEST_ONLY",
+      "admission_decision": "PENDING_PIXEL_AND_FAMILY_VALIDATION"
+    },
+    {
+      "candidate_id": "D-TARGET-CULTURE-01",
+      "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+      "reference_id": "D-RIJKS-01",
+      "official_url": "https://www.rijksmuseum.nl/en",
+      "source_family": "Q42/Fabrique/Eidra case platform; exact current snapshot UNKNOWN",
+      "brand_family": "Rijksmuseum; parent UNKNOWN",
+      "campaign_family": "UNKNOWN_CURRENT_HOMEPAGE",
+      "agency_production_attribution": "Q42 identifies Fabrique design and Q42 technical realization for 2020 platform; not a current campaign credit",
+      "attribution_url": "https://www.q42.nl/en/work/rijks-website1",
+      "mechanism_match_hypothesis": "Primary case describes full-screen artwork imagery and viewport-specific crops; compact nav and lower work-label band require pixel comparison",
+      "independence_hypothesis": "A named museum production partnership may provide a different context from teamLab; baseline attribution and current campaign linkage are unresolved",
+      "official_public_accessibility": "Public official URL linked by Q42; ordinary browser access pending",
+      "expected_scene_job": "UNCLASSIFIED_COMPARISON_ONLY",
+      "capture_decision": "BOUNDED_HYPOTHESIS_TEST_ONLY",
+      "admission_decision": "ADAPTER_AND_SCENE_JOB_REMAIN_HOLD"
+    }
+  ]
+}

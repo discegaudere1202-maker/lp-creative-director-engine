@@ -151,6 +151,9 @@ def check_mechanism(contract, scene, context, *, mode):
         raise ValueError('UNSUPPORTED_SCENE_JOB')
     if not contract['evidence_scene_ids'] or not contract['evidence_reference_ids']:
         raise ValueError('EVIDENCE_TRACE_MISSING')
+    if mode == 'production':
+        from .independence_calibration import require_live_independence
+        require_live_independence(contract['mechanism_id'])
     if mode == 'production' and contract['evidence_independence_status'] != 'VERIFIED_INDEPENDENT':
         raise ValueError('INDEPENDENCE_INSUFFICIENT_LIVE_REJECT')
     if mode == 'production' and contract['production_eligibility'] not in ('ELIGIBLE', 'CONDITIONAL'):

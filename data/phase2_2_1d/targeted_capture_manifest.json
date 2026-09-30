@@ -1,0 +1,76 @@
+{
+  "started_at": "2026-09-30T16:00:36.545Z",
+  "precapture_sha256": "44867254c3f1f7191556132438a0b1584484ca6f83b09067af44a15210ea02ed",
+  "phase2600_allowed": false,
+  "records": [
+    {
+      "candidate_id": "D-TARGET-ENV-01",
+      "reference_id": "D-ROTH-01",
+      "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "source_url": "https://www.roth-gaerten.ch/",
+      "viewports": [
+        {
+          "viewport_label": "DESKTOP",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "captured_at": "2026-09-30T16:00:36.623Z",
+          "screenshots": [],
+          "motion_observation": "NOT_OBSERVED_STATIC_CAPTURE_ONLY",
+          "interaction_semantics": "NOT_TESTED",
+          "capture_state": "CAPTURE_FAILURE",
+          "failure_reason": "Error: page.goto: net::ERR_EMPTY_RESPONSE at https://www.roth-gaerten.ch/\nCall log:\n\u001b[2m  - navigating to \"https://www.roth-gaerten.ch/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        },
+        {
+          "viewport_label": "MOBILE",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "captured_at": "2026-09-30T16:00:36.654Z",
+          "screenshots": [],
+          "motion_observation": "NOT_OBSERVED_STATIC_CAPTURE_ONLY",
+          "interaction_semantics": "NOT_TESTED",
+          "capture_state": "CAPTURE_FAILURE",
+          "failure_reason": "Error: page.goto: net::ERR_EMPTY_RESPONSE at https://www.roth-gaerten.ch/\nCall log:\n\u001b[2m  - navigating to \"https://www.roth-gaerten.ch/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        }
+      ]
+    },
+    {
+      "candidate_id": "D-TARGET-CULTURE-01",
+      "reference_id": "D-RIJKS-01",
+      "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+      "source_url": "https://www.rijksmuseum.nl/en",
+      "viewports": [
+        {
+          "viewport_label": "DESKTOP",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "captured_at": "2026-09-30T16:00:36.686Z",
+          "screenshots": [],
+          "motion_observation": "NOT_OBSERVED_STATIC_CAPTURE_ONLY",
+          "interaction_semantics": "NOT_TESTED",
+          "capture_state": "CAPTURE_FAILURE",
+          "failure_reason": "Error: page.goto: net::ERR_EMPTY_RESPONSE at https://www.rijksmuseum.nl/en\nCall log:\n\u001b[2m  - navigating to \"https://www.rijksmuseum.nl/en\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        },
+        {
+          "viewport_label": "MOBILE",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "captured_at": "2026-09-30T16:00:36.714Z",
+          "screenshots": [],
+          "motion_observation": "NOT_OBSERVED_STATIC_CAPTURE_ONLY",
+          "interaction_semantics": "NOT_TESTED",
+          "capture_state": "CAPTURE_FAILURE",
+          "failure_reason": "Error: page.goto: net::ERR_EMPTY_RESPONSE at https://www.rijksmuseum.nl/en\nCall log:\n\u001b[2m  - navigating to \"https://www.rijksmuseum.nl/en\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-09-30T16:00:36.735Z"
+}

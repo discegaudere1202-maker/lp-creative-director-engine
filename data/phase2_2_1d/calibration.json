@@ -1,0 +1,629 @@
+[
+  {
+    "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P01-R03-CM-VIS-ENVIRONMENTAL-HERO-01",
+        "reference_id": "P01-R03",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "bf5bc82d43203c3cf2465f955b74f3696b8afddac6d53f2238b29875c2468b59",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P01-R04-CM-VIS-ENVIRONMENTAL-HERO-01",
+        "reference_id": "P01-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "4a442c26054d8038d85c20e122020588f7119649eac0c8306bd850c9156b20ce",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P06-R04-CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "reference_id": "P06-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "5ae5f6f60316040344e24f195b13a2a2954cbc3001270ea8d392adbcb1cbc9f1",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P06-R03-REP01-CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "reference_id": "P06-R03-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "3425a8c6dd8962efb08c7752e7390b9beee3969f4955681eab2fa95a2410c990",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P08-R04-CM-VIS-PRODUCT-UI-STAGE-01",
+        "reference_id": "P08-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "637d224b77082e3a9da733f333858930cbc1674e56bf084c7b3c76d6838a0c5b",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P12-R03-CM-VIS-PRODUCT-UI-STAGE-01",
+        "reference_id": "P12-R03",
+        "match_decision": "HOLD",
+        "reason": "ATOMIC_MATCH_UNRESOLVED",
+        "candidate_digest": "218d23408316d43f32b208bd05f6b162dc31c0579606fac54330fda867f30193",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P13-R01-REP01-CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P13-R01-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "1030c7c83ca4f3480540e847c3f6e8df82f96f2db98b47eda75b32e062e52c92",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P13-R02-REP01-CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P13-R02-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "9fc04a75a9c2ac4bbd9f61166838792d004f35f1f580d11a660a629809631976",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "HOLD",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "ADAPTER_HOLD",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P16-R01-REP01-CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "reference_id": "P16-R01-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "569c648c699ec5eff8215ad539e5aa46ca090861385978096aa8581880cd51c5",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P16-R05-CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "reference_id": "P16-R05",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "bc27ed0e911647331f54650dd129a598669888ba04a616f930054fc0bc206a45",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P18-R04-CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "reference_id": "P18-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "0e6354e4c8cbce49cba25da7a12934d5517c2e69d8982baee278a9f6484edc2d",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P09-R05-CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "reference_id": "P09-R05",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "03dbede0fe5c09a31221f1dcb8685889f16128d7e8a4650394c091e4916c24f4",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P03-R01-CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "reference_id": "P03-R01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "e70032adfde9a80dda5e10c2099b21b8636d3741c7a606cdd7b5d3fbd9d486bd",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P03-R03-CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "reference_id": "P03-R03",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "0abb2c88f4c238c67bfdef05f9712d1d76217a267fd70ebecf341b53d5a79cb6",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P05-R01-CM-VIS-FINANCE-RATE-PANEL-01",
+        "reference_id": "P05-R01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "5447f4be7d5c6e458109cc4aab1433b2fb23ef815e16f4b2bdf7f08696b76d3d",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P05-R02-REP01-CM-VIS-FINANCE-RATE-PANEL-01",
+        "reference_id": "P05-R02-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "fa9ac8c900f4a1e1ef38b1cd9cc22947e882ce6947165419133a8d9d81778ca7",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P07-R03-CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P07-R03",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "245855bfd7f3d36ac6be2a6cd3aded714df40b036282170fc064a146f02ca73f",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P10-R05-CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P10-R05",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "1a356facf0acd57ddd633a9aecfc44d36e94e10b0294ddfea426d6ee6bb8b1c1",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "HOLD",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "ADAPTER_HOLD",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P11-R02-CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "reference_id": "P11-R02",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "01104f3ab5347d7b382bd9dcc04c37ed715058d1941a23583256773baeacd7a8",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P11-R04-CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "reference_id": "P11-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "a08293e332a1e25f95f7be5257bf91d5f8795643f6bf2fa812e79643507f4c80",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P15-R02-CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "reference_id": "P15-R02",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "5370e593bb90a7ec7ee55c6a27c509e003661e0e757957a9e8cc6d6726089359",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P14-R05-REP02-CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "reference_id": "P14-R05-REP02",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "071cd00dcdb5b170ce5ff43136a5280c5d501cacb363a40f18809129da4dbb8c",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P17-R04-CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "reference_id": "P17-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "ea0ba1fddad79d9a26b09e27f1aaffaadbf2a312131894edcde1b757181d0481",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P17-R05-CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "reference_id": "P17-R05",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "d042a711dcf324a666048a40aa7e775d7ee3a396e251a1d63a19cf49683903ec",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P20-R03-CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "reference_id": "P20-R03",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "90c92c7890c4806953098f712f56b37ded52b53b72b560a6cf7bca31e0cf774c",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P20-R04-CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "reference_id": "P20-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "5f049948246a6b416bd87c764c9cd9e31119476c28b500dd26fc33a7eb93ba34",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "HOLD",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "ADAPTER_HOLD",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  }
+]

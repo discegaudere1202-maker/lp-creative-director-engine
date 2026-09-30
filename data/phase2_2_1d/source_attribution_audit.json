@@ -1,0 +1,126 @@
+{
+  "method": "Bounded public search per baseline mechanism and selected comparative primary sources; absence of a result is not proof of absence of a shared maker.",
+  "scope": "Current retrieval is not automatically bound to the pinned 2026-09-29 corpus snapshot. Historical and adjacent-product credits are retained as leads only.",
+  "phase2600_allowed": false,
+  "records": [
+    {
+      "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "reference_id": "P01-R01",
+      "official_url": "https://kaza-hana.jp/",
+      "query_scope": "kaza-hana/Ishihara website agency; garden website primary development case",
+      "primary_sources": ["https://www.icoderzsolutions.com/roth-garten-website-development.shtml", "https://www.roth-gaerten.ch/"],
+      "finding": "Developer identifies Roth garden website project. Baseline Ishihara maker and current Roth snapshot/campaign linkage are unresolved. Garden industry/domain difference does not prove independence.",
+      "agency_independence": "UNKNOWN",
+      "campaign_independence": "UNKNOWN",
+      "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "reference_id": "P06-R02",
+      "official_url": "https://my.clevelandclinic.org/",
+      "query_scope": "Cleveland Clinic website redesign agency; hospital human photo task-route entry",
+      "primary_sources": ["https://my.clevelandclinic.org/", "https://www.massgeneralbrigham.org/"],
+      "finding": "Official clinical pages identify organizations and tasks, not verified creators of the pinned hero/campaign. Mass General has search-led hierarchy; Chu Vision has centered single contact entry.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+      "reference_id": "P08-R02",
+      "official_url": "https://linear.app/",
+      "query_scope": "Linear marketing website maker; Framer homepage maker; dark UI stage official product pages",
+      "primary_sources": ["https://linear.app/now/how-we-redesigned-the-linear-ui", "https://www.framer.com/", "https://www.raycast.com/"],
+      "finding": "Linear article credits PRODUCT UI redesign, not marketing homepage. Framer official page describes agent product; its pinned dark entry is the strongest partial structural comparator, but media/proof boundary and mobile/cadence remain unresolved. Maker and campaign pair are UNKNOWN.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "reference_id": "P13-R04",
+      "official_url": "https://www.sabon.co.jp/",
+      "query_scope": "SABON EC renewal agency; cosmetic editorial portrait/collage campaign",
+      "primary_sources": ["https://roseaupensant.jp/portfolio/sabon", "https://www.lush.com/jp/ja"],
+      "finding": "Roseau Pensant reports renewal project direction with overseas development and partner agencies; unlisted developers/campaign producers and current snapshot linkage remain unknown. Lush retrieval does not establish matching paired carousel grammar. COHINA/Felissimo static captures cannot supply carousel interaction semantics.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "reference_id": "P16-R03",
+      "official_url": "https://www.aman.com/",
+      "query_scope": "Aman global website design and platform cases; destination cinematic entry",
+      "primary_sources": ["https://www.matterofform.com/work/aman", "https://www.nucleus.co.uk/case-studies/aman-website-design", "https://inviqa.com/case-studies/aman", "https://www.azds.com/projects/aman/"],
+      "finding": "Several platform/design/booking partners across different periods and scopes. Shared Aman property rollout must not inflate units. No exclusive current homepage producer/campaign binding established. Salterra mobile changes ordering; Ultima source order/control coverage unresolved.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "reference_id": "P18-R01",
+      "official_url": "https://www.mhlw.go.jp/",
+      "query_scope": "MHLW website renewal production; municipal task/search/news module pages",
+      "primary_sources": ["https://www.mhlw.go.jp/", "https://www.metro.tokyo.lg.jp/"],
+      "finding": "Past responsive renewal does not attribute current pinned module design. Tokyo and Seino reorder task/search/feature priorities differently. Government ownership alone does not prove shared or distinct template/production family.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "reference_id": "P03-R04",
+      "official_url": "https://www.renovation.or.jp/",
+      "query_scope": "Renovation association portal agency; property renovation portal case",
+      "primary_sources": ["https://www.renovation.or.jp/", "https://hikarina.co.jp/works/works_re.html"],
+      "finding": "A portal case alone does not bind to observed association hero or establish partner/task layout. Existing Stylekoubou/Mitsui captures lack the same partner-rail and task grouping. No verified maker/campaign independence pair.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+      "reference_id": "P05-R04",
+      "official_url": "https://sonybank.jp/",
+      "query_scope": "Sony Bank website renewal production; numeric offer/dated terms banking homepage",
+      "primary_sources": ["https://www.sony.com/ja/SonyInfo/design/stories/bank/", "https://sonybank.jp/corporate/disclosure/press/2024/1106-01.html", "https://www.evoworx.co.jp/works/suruga_renewal/"],
+      "finding": "Sony design story concerns card/app, not pinned homepage. Suruga case credits lower-page design/all-page coding and multiple partners; cannot attribute current rate panel. Existing au bank rates are a later separate two-column mobile grid; Sony Life is same name family risk and no rate grammar.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "reference_id": "P07-R02",
+      "official_url": "https://www.fanuc.co.jp/",
+      "query_scope": "FANUC homepage agency; industrial product campaign primary production cases",
+      "primary_sources": ["https://www.fanuc.co.jp/", "https://www.neoindex.co.jp/works/00260/"],
+      "finding": "Manufacturing case industry match does not establish left statement/right machine cutouts plus category band. Keyence uses opposite ordering and catalog grid; Rockwell uses human industrial context. No interaction/campaign/maker independence asserted.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "reference_id": "P11-R01",
+      "official_url": "https://www.freee.co.jp/",
+      "query_scope": "freee website agency and paired audience conversion paths",
+      "primary_sources": ["https://coosy.co.jp/work/freee_corp/", "https://www.freee.co.jp/"],
+      "finding": "Coosy corporate-site case is a different corporate page family, not the observed service homepage. Money Forward has two intent buttons plus THREE later audiences; Cybozu has product categories. No two-audience atomic equivalence or source pair verified.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "reference_id": "P15-R01",
+      "official_url": "https://www.starbucks.co.jp/",
+      "query_scope": "Starbucks homepage renewal agency and paired retail campaigns",
+      "primary_sources": ["https://stories.starbucks.co.jp/press/2022/pr2023-4752/"],
+      "finding": "Official 2022 renewal announcement establishes integrated purpose, not maker/campaign attribution of pinned 2026 tiles. MOS has one campaign; Alaia paired portraits belong to one NEW IN collection and stay adjacent on mobile. No independent diptych unit admitted.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "reference_id": "P17-R01",
+      "official_url": "https://www.shiseido.co.jp/",
+      "query_scope": "Shiseido homepage maker; cosmetics multi-brand index feature",
+      "primary_sources": ["https://www.shiseido.co.jp/", "https://www.kose.co.jp/"],
+      "finding": "Sub-brand list must not become independent brands; current campaign production remains unknown. KOSE retrieved structural coverage insufficient. Albion/HABA do not have the source side brand index and mobile index relocation.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    },
+    {
+      "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+      "reference_id": "P20-R01",
+      "official_url": "https://www.teamlab.art/",
+      "query_scope": "teamLab own art homepage attribution; museum full-screen artwork production cases",
+      "primary_sources": ["https://note.team-lab.com/n/nef9980b7cb7e", "https://www.q42.nl/en/work/rijks-website1"],
+      "finding": "teamLab solution case concerns Osaka arts university, not own artwork homepage. Q42/Fabrique describe 2020 Rijksmuseum image-first platform; current museum hierarchy/visit tasks and missing 390 capture cannot resolve original UNCLASSIFIED job. No adapter or motion inference.",
+      "agency_independence": "UNKNOWN", "campaign_independence": "UNKNOWN", "source_family_independence": "NOT_INDEPENDENT_ONE_ACCEPTED_UNIT_ONLY"
+    }
+  ]
+}

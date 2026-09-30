@@ -1,0 +1,4054 @@
+[
+  {
+    "reference_id": "P01-R01",
+    "official_url": "https://kaza-hana.jp/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P01-R01__desktop__viewport.jpg",
+        "sha256": "6af9de69398ee488bd74ed02256b3f78046196425407b7b0317f96a3d9076af3"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P01-R01__mobile__viewport.jpg",
+        "sha256": "faa5f492971b053a435acbc6bff3fc8ed7383db73dc8541a7bcbcce816d32360"
+      }
+    ],
+    "scene_record_count": 14
+  },
+  {
+    "reference_id": "P01-R02",
+    "official_url": "https://ueyakato.jp/gardens",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-02",
+        "archive_member": "capture/P01-R02__desktop__viewport.jpg",
+        "sha256": "78881d43cc76ba530d24d3174c14e54df8bdcf7f70d1ab6d61c1a64cf018ebc7"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-02",
+        "archive_member": "capture/P01-R02__mobile__viewport.jpg",
+        "sha256": "6065abaddd833215bfbd34bd2b5dd19edb657e6a6cb0a4fb0837e318f8c555de"
+      }
+    ],
+    "scene_record_count": 32
+  },
+  {
+    "reference_id": "P01-R03",
+    "official_url": "https://nnz-d.com/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-02",
+        "archive_member": "capture/P01-R03__desktop__viewport.jpg",
+        "sha256": "3934995c5b5bd210784b9405cec3d7ad1f6e8902942188057b8e65a0a4349b25"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-02",
+        "archive_member": "capture/P01-R03__mobile__viewport.jpg",
+        "sha256": "0ca14829d10a1ff94e9a53731288953b06be9a00a60b69e558aa70cc1e3aa772"
+      }
+    ],
+    "scene_record_count": 2
+  },
+  {
+    "reference_id": "P01-R04",
+    "official_url": "https://www.takasho.co.jp/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-02",
+        "archive_member": "capture/P01-R04__desktop__viewport.jpg",
+        "sha256": "56cf9688ab132e712a2acced9c69f82ca76c02b0586018fa41e9fd7b5800820a"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-02",
+        "archive_member": "capture/P01-R04__mobile__viewport.jpg",
+        "sha256": "9a170a36418e498b0c394a0f133b7108741612925fa401325cb61d57583cf2aa"
+      }
+    ],
+    "scene_record_count": 18
+  },
+  {
+    "reference_id": "P02-R01",
+    "official_url": "https://www.sekisuihouse.co.jp/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P02-R01__desktop__viewport.jpg",
+        "sha256": "0ac4c2087c188daacb3fde4f31e541323f8a67d93d7d926d2b27dee19d8b7442"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P02-R01__mobile__viewport.jpg",
+        "sha256": "a293ceb1d33507a2d90cc310892dfd324afcaceeceb035f579698bd5a506af6b"
+      }
+    ],
+    "scene_record_count": 14
+  },
+  {
+    "reference_id": "P02-R02",
+    "official_url": "https://www.lixil.co.jp/lineup/gate_fence/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-02",
+        "archive_member": "capture/P02-R02__desktop__viewport.jpg",
+        "sha256": "35e817c50d6474f942701cfec16744202927e46163c56184ff45191f64760113"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-02",
+        "archive_member": "capture/P02-R02__mobile__viewport.jpg",
+        "sha256": "42b508c6d33d68f49a9dad0b2e71e15eedb85261819d66f73a6f6154803441f4"
+      }
+    ],
+    "scene_record_count": 20
+  },
+  {
+    "reference_id": "P02-R04",
+    "official_url": "https://www.nihonhouse-hd.co.jp/lineup/example/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P02-R04__desktop__viewport.jpg",
+        "sha256": "785be3f8680056cd3f20c9f125fcb5c78f7e313b77711726af7e48f3ad900af9"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P02-R04__mobile__viewport.jpg",
+        "sha256": "24c3dfc6fb93d872ad9b023923991fc34154faa7ed8a3c8765c9a6ff2a0d0212"
+      }
+    ],
+    "scene_record_count": 2
+  },
+  {
+    "reference_id": "P02-R05",
+    "official_url": "https://sfc.jp/ie/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P02-R05__desktop__viewport.jpg",
+        "sha256": "399b85d2075930644d8a0ce4be17a7cf47053a0de5cd369406660abc91063b47"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P02-R05__mobile__viewport.jpg",
+        "sha256": "37d6cc5b2759f612b837094b4365336b2bdfbe68efda507528ce9c1f5cc3e4d4"
+      }
+    ],
+    "scene_record_count": 22
+  },
+  {
+    "reference_id": "P03-R01",
+    "official_url": "https://www.stylekoubou.com/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-RENOVATION-PORTAL-HERO-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P03-R01__desktop__viewport.jpg",
+        "sha256": "685cd8b233d7178de9db93ff3eba10c3b4030870b1d6cb43cd278c3a1a1a5f06"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P03-R01__mobile__viewport.jpg",
+        "sha256": "d6d29f01033c592f3bcd08f7ca11ad0b0347dfbdafb01ea8dbdd5d0c4dc981ff"
+      }
+    ],
+    "scene_record_count": 14
+  },
+  {
+    "reference_id": "P03-R02",
+    "official_url": "https://www.okuta.com/",
+    "contact_sheet_batch": 1,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P03-R02__desktop__viewport.jpg",
+        "sha256": "e1be2c6edafab96145525ddccb4daaefa0236944bb7a764b90a18acb1e6169a8"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P03-R02__mobile__viewport.jpg",
+        "sha256": "34d2bb453d3a4db3d15a9da1a50ec85ad80a8beff1e4dcf20c03ee49ab80299b"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P03-R03",
+    "official_url": "https://www.mitsui-reform.com/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-RENOVATION-PORTAL-HERO-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P03-R03__desktop__viewport.jpg",
+        "sha256": "33815779ba753ea57f82acfe7bb31d736950e852bfcb9cbd10c1d59274ef0f9e"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P03-R03__mobile__viewport.jpg",
+        "sha256": "6faf0379c25aee38fdf54aaf136c9f920b0647f87142facf72602bd644eda59b"
+      }
+    ],
+    "scene_record_count": 12
+  },
+  {
+    "reference_id": "P03-R04",
+    "official_url": "https://www.renovation.or.jp/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P03-R04__desktop__viewport.jpg",
+        "sha256": "9035ccb91044a3b86efc5189724f46d93be3c6bb996cd450841c25d6ea8bd7ce"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P03-R04__mobile__viewport.jpg",
+        "sha256": "48a1cdee5bd2c5f8d51d02d75288b88023bf31765f84112773591501b0695fa0"
+      }
+    ],
+    "scene_record_count": 10
+  },
+  {
+    "reference_id": "P03-R05",
+    "official_url": "https://www.hokushu.net/reform/works/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P03-R05__desktop__viewport.jpg",
+        "sha256": "2cd7d64876156b95d2d850daf8b3e393e2f761a45ae2ac7a8e87ca75486dafc4"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P03-R05__mobile__viewport.jpg",
+        "sha256": "b304f85a72176445561ecbd8c23dfe8ffa9dcf51db7b497f451e83092f4de5d7"
+      }
+    ],
+    "scene_record_count": 6
+  },
+  {
+    "reference_id": "P04-R01",
+    "official_url": "https://ja.airbnb.com/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P04-R01__desktop__viewport.jpg",
+        "sha256": "a8eb1ad1816aa2c1542d9e6f340f004ffedeb5abee9fc0d7c52683b651184296"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P04-R01__mobile__viewport.jpg",
+        "sha256": "2474efb4b48604b9d2d39ce467590d8692e7b6592b47342fe7e630a6f9ed260f"
+      }
+    ],
+    "scene_record_count": 2
+  },
+  {
+    "reference_id": "P04-R04",
+    "official_url": "https://www.compass.com/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P04-R04__desktop__viewport.jpg",
+        "sha256": "961e9e61cd5deb53420f3d652b196607fd93b023d58a967ec2573d800b66b196"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-03",
+        "archive_member": "capture/P04-R04__mobile__viewport.jpg",
+        "sha256": "809ef4cd92a4141685770be1bd797bdcd7f0b73a9321501453ec3bf624d74eb2"
+      }
+    ],
+    "scene_record_count": 10
+  },
+  {
+    "reference_id": "P04-R05",
+    "official_url": "https://www.knightfrank.com/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P04-R05__desktop__viewport.jpg",
+        "sha256": "b67e2c80b6837d5f0d0ccdf1305ca8637bc3d8796318e3195dbf67753a998f62"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P04-R05__mobile__viewport.jpg",
+        "sha256": "657570feacea4821ef0ce3693c51623e24391056dc4e2be61cf52e8cc8ff06d3"
+      }
+    ],
+    "scene_record_count": 12
+  },
+  {
+    "reference_id": "P05-R01",
+    "official_url": "https://www.jibunbank.co.jp/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-FINANCE-RATE-PANEL-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P05-R01__desktop__viewport.jpg",
+        "sha256": "e30f7e5d4644ced0f373fcc7ffd3c4eb9c3a6eff0f4b4e259274379cc788d5ef"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P05-R01__mobile__viewport.jpg",
+        "sha256": "974c6b8de5074eb273ee43e25172989f8accf3d4383a18025f0b289f668e110b"
+      }
+    ],
+    "scene_record_count": 25
+  },
+  {
+    "reference_id": "P05-R04",
+    "official_url": "https://sonybank.jp/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P05-R04__desktop__viewport.jpg",
+        "sha256": "8a15d8571bc823a17c12cf5a24d5efc5ed57d05e69e8bf0d972a194c8afbd0fb"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P05-R04__mobile__viewport.jpg",
+        "sha256": "ca094630162776ed878718b80b6f513aff1e3ed4f627c4c610c89d443efdf021"
+      }
+    ],
+    "scene_record_count": 14
+  },
+  {
+    "reference_id": "P06-R02",
+    "official_url": "https://my.clevelandclinic.org/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P06-R02__desktop__viewport.jpg",
+        "sha256": "efaea52d6fee7efefad3e4e13b0b466cfabf712958f6d30a070c6c64e3ba509b"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P06-R02__mobile__viewport.jpg",
+        "sha256": "d224672c0608864367bcd136bf69cc5cfd3f851fe6db2184b73c07fae13e955f"
+      }
+    ],
+    "scene_record_count": 14
+  },
+  {
+    "reference_id": "P06-R04",
+    "official_url": "https://www.massgeneralbrigham.org/",
+    "contact_sheet_batch": 2,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-CLINICAL-HUMAN-HERO-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P06-R04__desktop__viewport.jpg",
+        "sha256": "0266a94ed87805a0a8ed432fac6014ac6e5912a6728aee93ba55c7ad2713f316"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P06-R04__mobile__viewport.jpg",
+        "sha256": "0db77e9f8f4350781ac44ab999f4fd4865e067618262ef320feb23155a379ecf"
+      }
+    ],
+    "scene_record_count": 14
+  },
+  {
+    "reference_id": "P06-R05",
+    "official_url": "https://healthy.kaiserpermanente.org/",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P06-R05__desktop__viewport.jpg",
+        "sha256": "5215c529baa47fc33260267a635bb7321c97d8510459fbbfed7b643408f11bb2"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P06-R05__mobile__viewport.jpg",
+        "sha256": "8dc44b5c3ba725efb0e92cd96aa76b73a3c41be3cb0db6e4a343d8e41059cacb"
+      }
+    ],
+    "scene_record_count": 8
+  },
+  {
+    "reference_id": "P07-R01",
+    "official_url": "https://www.komatsu.jp/ja",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P07-R01__desktop__viewport.jpg",
+        "sha256": "9762193d29d48adc3d96e5b750c98c64bb4cde3713b33c3aeeae64552c3b4ac3"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P07-R01__mobile__viewport.jpg",
+        "sha256": "9cc941668804a29202df31c65c3dcfcc00bf516b4206e755cb35cc499fde41d4"
+      }
+    ],
+    "scene_record_count": 2
+  },
+  {
+    "reference_id": "P07-R02",
+    "official_url": "https://www.fanuc.co.jp/",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P07-R02__desktop__viewport.jpg",
+        "sha256": "a4a72aceb159e2deeac46a9f3c3236739588f47b047c54dad65a55d747dea7b0"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-04",
+        "archive_member": "capture/P07-R02__mobile__viewport.jpg",
+        "sha256": "c30a055b37b8c13a4282c9a70d28fbfa794882a64e99ed33e71f8a5a44a74ea9"
+      }
+    ],
+    "scene_record_count": 7
+  },
+  {
+    "reference_id": "P07-R03",
+    "official_url": "https://www.keyence.co.jp/",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P07-R03__desktop__viewport.jpg",
+        "sha256": "8a501319250db736b5477ab678d3c9ce527384594d8731c3c150d758ae868206"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P07-R03__mobile__viewport.jpg",
+        "sha256": "25c30ed5e5eca7033e67fb60ce71845430319ec9c9905a71d83436a75ddab7b5"
+      }
+    ],
+    "scene_record_count": 13
+  },
+  {
+    "reference_id": "P07-R05",
+    "official_url": "https://www.mitsubishielectric.co.jp/",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P07-R05__desktop__viewport.jpg",
+        "sha256": "7133ae64b0f846e97c93c591ace1c22142f02920c36d7ca0d5332d8cb2a2ccab"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P07-R05__mobile__viewport.jpg",
+        "sha256": "9c3a21e6e89aaaf7afebb6820ec4fc6d767c0aec1b85def693d7098ff08c1312"
+      }
+    ],
+    "scene_record_count": 9
+  },
+  {
+    "reference_id": "P08-R01",
+    "official_url": "https://www.notion.so/product",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P08-R01__desktop__viewport.jpg",
+        "sha256": "53fab3c7a211bcf2d0d0cf4a1d86cb53076b3296c1323db304b874982b2501ba"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P08-R01__mobile__viewport.jpg",
+        "sha256": "07666ccc37b2a48d8b5a667b3cb674382bc70593a1b6a7952ac74689e41216be"
+      }
+    ],
+    "scene_record_count": 11
+  },
+  {
+    "reference_id": "P08-R02",
+    "official_url": "https://linear.app/",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P08-R02__desktop__viewport.jpg",
+        "sha256": "b921ebc9febcd5d437fbc2b06ea827bd5fde767c91371fa406a07208b73356aa"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P08-R02__mobile__viewport.jpg",
+        "sha256": "4ab1b88482b1de213d6dc9f5485726b9fa2a169e1a70c66f4dc0c01315bf504a"
+      }
+    ],
+    "scene_record_count": 13
+  },
+  {
+    "reference_id": "P08-R03",
+    "official_url": "https://www.figma.com/",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P08-R03__desktop__viewport.jpg",
+        "sha256": "787bb96d7e16f3d304c7f4ee38c4165b116507347b5eb024ee2370b6da9150d5"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P08-R03__mobile__viewport.jpg",
+        "sha256": "cee07a4ed862dd192c27448f1211922b53fd0acbc6e6ab8a9f35e930a0b58be5"
+      }
+    ],
+    "scene_record_count": 23
+  },
+  {
+    "reference_id": "P08-R04",
+    "official_url": "https://slack.com/",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-PRODUCT-UI-STAGE-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P08-R04__desktop__viewport.jpg",
+        "sha256": "d6308da1b26730ca4f4b3dcef1935365bb4bd6e5e02e5d5804458131b4508759"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P08-R04__mobile__viewport.jpg",
+        "sha256": "549b5f90d1f61cb4867bcf4c8d4e910f8e7ca1927569f1fd354688deea7a0d83"
+      }
+    ],
+    "scene_record_count": 17
+  },
+  {
+    "reference_id": "P08-R05",
+    "official_url": "https://asana.com/",
+    "contact_sheet_batch": 3,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P08-R05__desktop__viewport.jpg",
+        "sha256": "17492e498f8dcf8c443ed6e33d65164cd3ce7891fa4024c254a183669f1d3448"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P08-R05__mobile__viewport.jpg",
+        "sha256": "489fd5b4b1009dea89b0858a9c1b1c22caffec1912f4099f0fa21a4ba86883ea"
+      }
+    ],
+    "scene_record_count": 14
+  },
+  {
+    "reference_id": "P09-R01",
+    "official_url": "https://www.kuronekoyamato.co.jp/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P09-R01__desktop__viewport.jpg",
+        "sha256": "741c66383f90034949a2f8a51fb6ee34cf9d0e195da1ac2dac13df6240e6a796"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P09-R01__mobile__viewport.jpg",
+        "sha256": "09b6771f353ef2d4d33d35e090a539bb4c1ad530a91b536e9bc5e17befdcc9b0"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P09-R02",
+    "official_url": "https://www.sagawa-exp.co.jp/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P09-R02__desktop__viewport.jpg",
+        "sha256": "bb28509bc22f6ba5d7124348c8d2a9518cb69be6761cccf2ad8956a89482e0af"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P09-R02__mobile__viewport.jpg",
+        "sha256": "a7d662423d2ede619cbc2b0e1a5dfe6d02a69dd8e30d870bdcaabe84413804ea"
+      }
+    ],
+    "scene_record_count": 6
+  },
+  {
+    "reference_id": "P09-R03",
+    "official_url": "https://www.nipponexpress.com/ja/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P09-R03__desktop__viewport.jpg",
+        "sha256": "a77e39849f59d241a8590e0d45195f4f8e7089e44bb2362ddd8457f8a43c5a3c"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P09-R03__mobile__viewport.jpg",
+        "sha256": "29f399c47677a88307f80f498dc83e4d9566a52c57b26a036a3193783342d9bd"
+      }
+    ],
+    "scene_record_count": 16
+  },
+  {
+    "reference_id": "P09-R04",
+    "official_url": "https://www.kwe.com/jp/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P09-R04__desktop__viewport.jpg",
+        "sha256": "5617b788a174b3926444cbea2b7677821119c3b77849008e4f895c8c3bf47cbb"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-05",
+        "archive_member": "capture/P09-R04__mobile__viewport.jpg",
+        "sha256": "6f74a08259765751a8af51b60eed309d174f1f63adda615c52cddfd4d09128fc"
+      }
+    ],
+    "scene_record_count": 5
+  },
+  {
+    "reference_id": "P09-R05",
+    "official_url": "https://www.seino.co.jp/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P09-R05__desktop__viewport.jpg",
+        "sha256": "335e3bd3fc8a7f7fbc78e908b92ca49f0482d77baaf3be7de0b2c2924026e1cb"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P09-R05__mobile__viewport.jpg",
+        "sha256": "0bc2fda8c74710af38365179d1b49693b71191692eefb02d1991bfaad19e8b08"
+      }
+    ],
+    "scene_record_count": 13
+  },
+  {
+    "reference_id": "P10-R02",
+    "official_url": "https://www.bosch.com/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P10-R02__desktop__viewport.jpg",
+        "sha256": "f1959c9cc88280e6d7fea465bc6cdf211d3067ac515bbbf68c92f0658c2b1a88"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P10-R02__mobile__viewport.jpg",
+        "sha256": "7d2c6b63990a47661623666c82aac1bb39aa17640485e20edda4817c8770deac"
+      }
+    ],
+    "scene_record_count": 12
+  },
+  {
+    "reference_id": "P10-R03",
+    "official_url": "https://www.se.com/ww/en/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P10-R03__desktop__viewport.jpg",
+        "sha256": "d81e03d5e4bb99a4c8fa712e4da72a0daffe4d17dc24b3dc3489883971dbd881"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P10-R03__mobile__viewport.jpg",
+        "sha256": "00562cbdc9bd7e069b0bdb6ac0a0f4bb65653543834394feb1a2646625bafb90"
+      }
+    ],
+    "scene_record_count": 8
+  },
+  {
+    "reference_id": "P10-R05",
+    "official_url": "https://www.rockwellautomation.com/en-us.html",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P10-R05__desktop__viewport.jpg",
+        "sha256": "c50d3b99972d5458779b518471124338bee8dee1980f3638c044a0ff4a01edab"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P10-R05__mobile__viewport.jpg",
+        "sha256": "5ee20b3f29b568fc9c5a43bd5e2f4c8e6629869ac4f30530e34ce95fb7b22e1d"
+      }
+    ],
+    "scene_record_count": 10
+  },
+  {
+    "reference_id": "P11-R01",
+    "official_url": "https://www.freee.co.jp/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P11-R01__desktop__viewport.jpg",
+        "sha256": "d28d32ae8550c14dc21d9ec88bef02663950c63e2cdbd649c22755c51806c5c9"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P11-R01__mobile__viewport.jpg",
+        "sha256": "ff81aee1b571a0b6b74dc34dbc9d4e96f6b870ae12075be8872a3705193faf13"
+      }
+    ],
+    "scene_record_count": 8
+  },
+  {
+    "reference_id": "P11-R02",
+    "official_url": "https://biz.moneyforward.com/",
+    "contact_sheet_batch": 4,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P11-R02__desktop__viewport.jpg",
+        "sha256": "126dda0613f13930a9b89b544e986a0f886d92c3cf755961bedc684f9018a6da"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P11-R02__mobile__viewport.jpg",
+        "sha256": "0f2fc554b501445fd00b3bbde1ef112fd5fb6cabcdf6cccf2dfef9d4850384e3"
+      }
+    ],
+    "scene_record_count": 28
+  },
+  {
+    "reference_id": "P11-R03",
+    "official_url": "https://go.chatwork.com/ja/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P11-R03__desktop__viewport.jpg",
+        "sha256": "2ff5aa95d7850ba344e4f9e606ccb60331ae8cf5f5804f50179df7d2482d9487"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P11-R03__mobile__viewport.jpg",
+        "sha256": "33f958c2ce1130efab5f13c1cefe44f6abe1260c93d8c3b6381968ebb8b0cd96"
+      }
+    ],
+    "scene_record_count": 17
+  },
+  {
+    "reference_id": "P11-R04",
+    "official_url": "https://www.cybozu.com/jp/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P11-R04__desktop__viewport.jpg",
+        "sha256": "eee7ac6b6587bd618d13fe97150a0c69e1752e886e29d107d59a1a4843798ef9"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P11-R04__mobile__viewport.jpg",
+        "sha256": "4f39a25c9c04634a516ba4855262cbb5e5aad6cd3fb465124687b1bbfb57cdbf"
+      }
+    ],
+    "scene_record_count": 8
+  },
+  {
+    "reference_id": "P11-R05",
+    "official_url": "https://jp.corp-sansan.com/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P11-R05__desktop__viewport.jpg",
+        "sha256": "31984261df825b00c44f7e7d26b743507eed959e438d6be0ad0e5cbfdb4c5c96"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P11-R05__mobile__viewport.jpg",
+        "sha256": "2dd2dd623a74e47a549ea0fa3caa107e2188109d9e8d461f545509941ba6d6ef"
+      }
+    ],
+    "scene_record_count": 10
+  },
+  {
+    "reference_id": "P12-R01",
+    "official_url": "https://stripe.com/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P12-R01__desktop__viewport.jpg",
+        "sha256": "0ea147f583b81136fe8871b0a52550e02d8f2820e6bb07eb97efb2553e878129"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P12-R01__mobile__viewport.jpg",
+        "sha256": "e52debc369a33360db95623713af334f942615236c416663551ccd2fd2e29c96"
+      }
+    ],
+    "scene_record_count": 16
+  },
+  {
+    "reference_id": "P12-R02",
+    "official_url": "https://webflow.com/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P12-R02__desktop__viewport.jpg",
+        "sha256": "5f37c3ed25a86e1fc339aa3757055a10a46097a86064a073646725e02c1e8e69"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-06",
+        "archive_member": "capture/P12-R02__mobile__viewport.jpg",
+        "sha256": "8d7e2b739ca31b618bb1142925e469ab81e760a271a4031edd7e74aabbf00665"
+      }
+    ],
+    "scene_record_count": 18
+  },
+  {
+    "reference_id": "P12-R03",
+    "official_url": "https://www.framer.com/ja/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-PRODUCT-UI-STAGE-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P12-R03__desktop__viewport.jpg",
+        "sha256": "cc91d885f9de0c0f7823102267bcddbe5efbba786953803e926fb69f97e0f321"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P12-R03__mobile__viewport.jpg",
+        "sha256": "99f12c48bf63b27dea35832cb49b4019882cc9fe8bcb610ba30bc66408325993"
+      }
+    ],
+    "scene_record_count": 14
+  },
+  {
+    "reference_id": "P12-R04",
+    "official_url": "https://vercel.com/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P12-R04__desktop__viewport.jpg",
+        "sha256": "624b660389b4de99b990c5e3b36adffccd1a5d01ffc3dabdd0e2f8942df111f5"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P12-R04__mobile__viewport.jpg",
+        "sha256": "044bdb52296ddc21f2cafa88a02c43f552287f26ce25a8cf6996a96990b9ea7a"
+      }
+    ],
+    "scene_record_count": 7
+  },
+  {
+    "reference_id": "P12-R05",
+    "official_url": "https://www.intercom.com/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P12-R05__desktop__viewport.jpg",
+        "sha256": "4175418363f24cc317b40c93f80c5294526a3bed9cc7da59fc48cee0c58ccbb0"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P12-R05__mobile__viewport.jpg",
+        "sha256": "1f8bf9afd47e183d8c59295b1d94c2c54bf7d6aa2bcb16165eef4bd1c8e40265"
+      }
+    ],
+    "scene_record_count": 16
+  },
+  {
+    "reference_id": "P13-R03",
+    "official_url": "https://www.loft.co.jp/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P13-R03__desktop__viewport.jpg",
+        "sha256": "e6f6aaebd8919d0523834ebadf2d5d5f5b231f148c512a57aa867a9a262499db"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P13-R03__mobile__viewport.jpg",
+        "sha256": "892f4589fa50ec9e5a22bf08aaaa9f5bb74bc0b012cd80dc7f9f9f9e3e41f54d"
+      }
+    ],
+    "scene_record_count": 8
+  },
+  {
+    "reference_id": "P13-R04",
+    "official_url": "https://www.sabon.co.jp/",
+    "contact_sheet_batch": 5,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P13-R04__desktop__viewport.jpg",
+        "sha256": "eb2ceb4b3c9fa530bcebebb419527d2a8f84dc2dc1cd317896ce0426ebebd755"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P13-R04__mobile__viewport.jpg",
+        "sha256": "6840190155dd1186c7935e23211658b8c004279c141b99bb79ef52c5d187e33c"
+      }
+    ],
+    "scene_record_count": 19
+  },
+  {
+    "reference_id": "P13-R05",
+    "official_url": "https://www.yakult.co.jp/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P13-R05__desktop__viewport.jpg",
+        "sha256": "f75890ef5076c327d49d73eb6a7abe4bd65d8806b77700998a6b21c71f2815be"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-07",
+        "archive_member": "capture/P13-R05__mobile__viewport.jpg",
+        "sha256": "b79fd7101c8a16bac3b20f72999ed757593e5afd308b9e2dbd44bbb2e8039011"
+      }
+    ],
+    "scene_record_count": 8
+  },
+  {
+    "reference_id": "P14-R01",
+    "official_url": "https://www.nike.com/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P14-R01__desktop__viewport.jpg",
+        "sha256": "44ffbc55282dc5a174acc10f8af890eb3d525adca608120c4195d34f9a15bf6b"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P14-R01__mobile__viewport.jpg",
+        "sha256": "b0cf9e81765605599c85aa3c5a8dc6912dcb9db673a177e104c9f1ad5dba6958"
+      }
+    ],
+    "scene_record_count": 11
+  },
+  {
+    "reference_id": "P15-R01",
+    "official_url": "https://www.starbucks.co.jp/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P15-R01__desktop__viewport.jpg",
+        "sha256": "280202264a3560c9c447a766cbcfb2240d4c57e9df2e4d4e6bcfc8d0448168e8"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P15-R01__mobile__viewport.jpg",
+        "sha256": "8cfd96c789aaf574ed65beef0d0cdacd49f4a49ab2202d213da33d327670015c"
+      }
+    ],
+    "scene_record_count": 9
+  },
+  {
+    "reference_id": "P15-R02",
+    "official_url": "https://www.mos.jp/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P15-R02__desktop__viewport.jpg",
+        "sha256": "7fafd41ccd5a12a7b0e312af587e69c2510a75f3d390eb3bb975eec5b91e26ce"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P15-R02__mobile__viewport.jpg",
+        "sha256": "1667340d61135853b36bc624a13748dae4aa86269ffafd07b35edc021e9351f5"
+      }
+    ],
+    "scene_record_count": 17
+  },
+  {
+    "reference_id": "P15-R03",
+    "official_url": "https://www.ippudo.com/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P15-R03__desktop__viewport.jpg",
+        "sha256": "d5f457abf4db80dc11172cddd197572224c725afb45e8f00fdb6167878cf0350"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P15-R03__mobile__viewport.jpg",
+        "sha256": "ac9001b1530f6eb3d8e661fb753035372766cd8b3c4ad8f9310e7962ed3e1eaa"
+      }
+    ],
+    "scene_record_count": 2
+  },
+  {
+    "reference_id": "P15-R04",
+    "official_url": "https://www.sukiya.jp/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P15-R04__desktop__viewport.jpg",
+        "sha256": "d790fe7e6869a92a09bb091a570b5401bfb43d12f5079c41c4a9fa93e1a0dfd6"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P15-R04__mobile__viewport.jpg",
+        "sha256": "e1317d3dc2836797121a309b2a66882a9f4baffd11f9ce938c7eb3b8103caa2f"
+      }
+    ],
+    "scene_record_count": 11
+  },
+  {
+    "reference_id": "P15-R05",
+    "official_url": "https://www.nakau.co.jp/jp/index.html",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P15-R05__desktop__viewport.jpg",
+        "sha256": "90e02e1267adc56c5bc271a05197231639a303a9327a195b6806f58da50a1739"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P15-R05__mobile__viewport.jpg",
+        "sha256": "388009c7a5992cf779a164661592533a0ee8dec5f6c17c7aecbc2c46f86a0c49"
+      }
+    ],
+    "scene_record_count": 2
+  },
+  {
+    "reference_id": "P16-R03",
+    "official_url": "https://www.aman.com/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P16-R03__desktop__viewport.jpg",
+        "sha256": "55835c5063dbb6f49e101a1a820c4935f6ea599ed03cfe5fccbd838ce9ff75a4"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P16-R03__mobile__viewport.jpg",
+        "sha256": "147b0cfe1f1d77dd70bf948b07154787cfeba5c62675024a95c86d6f0a16d39f"
+      }
+    ],
+    "scene_record_count": 9
+  },
+  {
+    "reference_id": "P16-R05",
+    "official_url": "https://www.salterraresort.com/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P16-R05__desktop__viewport.jpg",
+        "sha256": "5d1c8ffca0afcc586825b76db2817a4fbc83a0a8b8d5b20ee04d0bc55396ffc2"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P16-R05__mobile__viewport.jpg",
+        "sha256": "d0cc28e55a6781c27cb06b8b418d6498eb28cab379fe805caeb7f498dce97987"
+      }
+    ],
+    "scene_record_count": 43
+  },
+  {
+    "reference_id": "P17-R01",
+    "official_url": "https://www.shiseido.co.jp/",
+    "contact_sheet_batch": 6,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P17-R01__desktop__viewport.jpg",
+        "sha256": "557008ffef32afcc8043f9386835c2fa53960fb7a37378d6f6c2af4c0fc213e5"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P17-R01__mobile__viewport.jpg",
+        "sha256": "f2936df840173e259db022c52ce92488e0cfc6805fea5ee9cdf28b48237e7a10"
+      }
+    ],
+    "scene_record_count": 11
+  },
+  {
+    "reference_id": "P17-R02",
+    "official_url": "https://www.sk-ii.jp/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P17-R02__desktop__viewport.jpg",
+        "sha256": "d8ada1f5a31fbbe74dad6eac3091fcd372a6ec49d5e5a6bee084f092f4aef143"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-08",
+        "archive_member": "capture/P17-R02__mobile__viewport.jpg",
+        "sha256": "f95906c868e509e2cd2a56f548cfaf8e8cd807194780799779055f4328702b0e"
+      }
+    ],
+    "scene_record_count": 12
+  },
+  {
+    "reference_id": "P17-R04",
+    "official_url": "https://albion.co.jp/site/albion/c/c10/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P17-R04__desktop__viewport.jpg",
+        "sha256": "0715d7246d4ba09064dae699388c5e0d646d94f53082186a2930320474653cef"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P17-R04__mobile__viewport.jpg",
+        "sha256": "8b4d538d9b7141f41bf074953c4fc20a1e1aa1462eb247548bbe3c073c9db4cf"
+      }
+    ],
+    "scene_record_count": 13
+  },
+  {
+    "reference_id": "P17-R05",
+    "official_url": "https://www.haba.co.jp/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P17-R05__desktop__viewport.jpg",
+        "sha256": "e4e91f251fb98e592899a0fa754f5487628dee8f96f2e94a79a6538b98fb498e"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P17-R05__mobile__viewport.jpg",
+        "sha256": "5afa5ed8b920d625ce0b99f106f9cb1b04eec8c8a95e18b026f0a3d37e44a567"
+      }
+    ],
+    "scene_record_count": 19
+  },
+  {
+    "reference_id": "P18-R01",
+    "official_url": "https://www.mhlw.go.jp/index.html",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P18-R01__desktop__viewport.jpg",
+        "sha256": "d0fefb39ba8c8ca53457114eb6acdd6817f83ddf9b3774ea6685b3349f523ade"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P18-R01__mobile__viewport.jpg",
+        "sha256": "d25e1d1b49c000b67f0e2dcdf4b262b649a9debd7a9c43c510b6ce98cb10ca17"
+      }
+    ],
+    "scene_record_count": 8
+  },
+  {
+    "reference_id": "P18-R03",
+    "official_url": "https://www.jnto.go.jp/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P18-R03__desktop__viewport.jpg",
+        "sha256": "c57974edfaff456d6425f4c035adbfdde145e53f1173d63ecc9ca58c66504992"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P18-R03__mobile__viewport.jpg",
+        "sha256": "893519a10323762d791d307ad3c423005e79e0c7f4a894a98cd61ef24ec49588"
+      }
+    ],
+    "scene_record_count": 15
+  },
+  {
+    "reference_id": "P18-R04",
+    "official_url": "https://www.metro.tokyo.lg.jp/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P18-R04__desktop__viewport.jpg",
+        "sha256": "8989e85f55e010c8e83b20e301d559eef1c36566d9eb3695bd7d96af0638ba07"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P18-R04__mobile__viewport.jpg",
+        "sha256": "f9a7ac1c6f9228171e8938ffd24da29755ea4d80e95a87f25e14f7996d0a38a6"
+      }
+    ],
+    "scene_record_count": 12
+  },
+  {
+    "reference_id": "P18-R05",
+    "official_url": "https://www.jrc.or.jp/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P18-R05__desktop__viewport.jpg",
+        "sha256": "8cd6e6a0e194be4b570834391a77d766cec79d0d89b88b60128619460907afcc"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-09",
+        "archive_member": "capture/P18-R05__mobile__viewport.jpg",
+        "sha256": "5c410edf0c9abee272dd0dbd2b3df08bab4ddfa85f71be236d9d435013426f4b"
+      }
+    ],
+    "scene_record_count": 31
+  },
+  {
+    "reference_id": "P19-R01",
+    "official_url": "https://www.dior.com/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P19-R01__desktop__viewport.jpg",
+        "sha256": "9e3acca8d1b4083e0e05a3eca49bdec0904ccb08100e074d7752f220fe7e207b"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P19-R01__mobile__viewport.jpg",
+        "sha256": "7f34267bf60639cc15dd2057a8afeeff058fa4d735837c777975540fee12fef1"
+      }
+    ],
+    "scene_record_count": 2
+  },
+  {
+    "reference_id": "P20-R01",
+    "official_url": "https://www.teamlab.art/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P20-R01__desktop__viewport.jpg",
+        "sha256": "1f6eb9f4d0533c9ab67e03e154d8e91d7123dad15221192bd7fe6dbad42dad88"
+      },
+      {
+        "archive_id": "GOLD20-FULLPAGE-V1",
+        "archive_member": "capture/P20-R01__mobile__viewport.jpg",
+        "sha256": "50e8b8c3ab26be6de4e9d6c4a9e009fcf32d78bec1c7c4e801013cbb291f9afc"
+      }
+    ],
+    "scene_record_count": 8
+  },
+  {
+    "reference_id": "P20-R02",
+    "official_url": "https://www.ghibli-museum.jp/",
+    "contact_sheet_batch": 7,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-10",
+        "archive_member": "capture/P20-R02__desktop__viewport.jpg",
+        "sha256": "a032db6c1386340e162345750914e239241311d5d075f7a8296e5735d9b29a9b"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-10",
+        "archive_member": "capture/P20-R02__mobile__viewport.jpg",
+        "sha256": "dcaf844a85e8097992e5f09373af609f1dc81b2cdd64797af1803e7edf04909d"
+      }
+    ],
+    "scene_record_count": 2
+  },
+  {
+    "reference_id": "P20-R03",
+    "official_url": "https://www.mori.art.museum/jp/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-10",
+        "archive_member": "capture/P20-R03__desktop__viewport.jpg",
+        "sha256": "6de389cafa89defb3d3ae9a0384c9758301d1098a65883c98079458fae2df85b"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-10",
+        "archive_member": "capture/P20-R03__mobile__viewport.jpg",
+        "sha256": "b198c30c0116638aad7976a3794a6b592edbb68f5dae45dd7f0756b5c8087cff"
+      }
+    ],
+    "scene_record_count": 15
+  },
+  {
+    "reference_id": "P20-R04",
+    "official_url": "https://www.tokyoartbeat.com/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-10",
+        "archive_member": "capture/P20-R04__desktop__viewport.jpg",
+        "sha256": "8083cf9359fa084d91b2694e40c36bbab276e8c5a7da757c8e2f41dddbb30b96"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-10",
+        "archive_member": "capture/P20-R04__mobile__viewport.jpg",
+        "sha256": "5e83830e08b5f0d1485fb439b74499c06f270355b263e9cbb6c336a1de3d6b9f"
+      }
+    ],
+    "scene_record_count": 23
+  },
+  {
+    "reference_id": "P20-R05",
+    "official_url": "https://www.nmao.go.jp/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P22-EVIDENCE-10",
+        "archive_member": "capture/P20-R05__desktop__viewport.jpg",
+        "sha256": "a1b498762bf11e5109f68a5659db7c1e2b36e895cab6e8a5e7998f47e54386e5"
+      },
+      {
+        "archive_id": "P22-EVIDENCE-10",
+        "archive_member": "capture/P20-R05__mobile__viewport.jpg",
+        "sha256": "88d09d0cbca3ae405b33734be1c86982f39709c0f64fe285834c53187e298e97"
+      }
+    ],
+    "scene_record_count": 12
+  },
+  {
+    "reference_id": "P01-R05-REP01",
+    "official_url": "https://www.takenaka-teienryokka.com/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P01-R05-REP01__desktop__viewport.png",
+        "sha256": "d27b93acdd080e26fcf10ea7db9b57a1d7f09c60259626d78648d90f0aa7d2e2"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P01-R05-REP01__mobile__viewport.png",
+        "sha256": "1a1d89175a2608abfc4adc56817929ff8ca47227a9a29c9aaa2b4b551a133fd0"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P04-R03-REP01",
+    "official_url": "https://thebrooklyntower.com/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P04-R03-REP01__desktop__viewport.png",
+        "sha256": "ee67698bf037c4a167714c7a2528fb09e85052bfd1440f92236ffa5359c82c14"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P04-R03-REP01__mobile__viewport.png",
+        "sha256": "d2f02cd11ce98b6fa495c7e9196d98e7b386ee5b6537f56df89d9e0f17df04a2"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P05-R02-REP01",
+    "official_url": "https://www.sonylife.co.jp/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-FINANCE-RATE-PANEL-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P05-R02-REP01__desktop__viewport.png",
+        "sha256": "aba7485120587df13cf4ad2e9eb3d5947d00efb596622d00c709935543c10cd3"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P05-R02-REP01__mobile__viewport.png",
+        "sha256": "4339437883bfa383cf8fef5563fc5803e9014ef012e7bf2fd972df17763de6b6"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P05-R05-REP01",
+    "official_url": "https://www.tokiomarinehd.com/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P05-R05-REP01__desktop__viewport.png",
+        "sha256": "3fc9f74ee42cf4030806171cdd9b573390f31654aae12c13c1feccded003e32e"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P05-R05-REP01__mobile__viewport.png",
+        "sha256": "0c368694dfa4d54de4104c316b5c033fc3b1cbb33f35e286cd066b7ec190b46c"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P06-R01-REP01",
+    "official_url": "https://www.moxiecare.com/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P06-R01-REP01__desktop__viewport.png",
+        "sha256": "3c5b1e2f45575def14a78ed0f62bd460967fce65b06e805307fd02254932d22a"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P06-R01-REP01__mobile__viewport.png",
+        "sha256": "e41da93162f4f20cd90ee9e319463339305777311eb8cb56b56d080de82dd68a"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P06-R03-REP01",
+    "official_url": "https://www.chuvision.com/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-CLINICAL-HUMAN-HERO-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P06-R03-REP01__desktop__viewport.png",
+        "sha256": "72f92b79663934bbaceaf981b6b3435f81842579cd2596175afd16c78f9aee3b"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P06-R03-REP01__mobile__viewport.png",
+        "sha256": "8139cdbe6ade92ce2376ec0364ab9c3a9eeaf1addb40668e391521bdb43c0fe0"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P07-R04-REP01",
+    "official_url": "https://nihon-inka.net/",
+    "contact_sheet_batch": 8,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P07-R04-REP01__desktop__viewport.png",
+        "sha256": "f7d9828f95d9ccedfe00e938ed0597411db6bdbdbb7737c950824e3f78bf0f9a"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P07-R04-REP01__mobile__viewport.png",
+        "sha256": "bd0f889f93e2ab2cea897f041d02a270c50f1bca161ba48077044733b703744b"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P10-R01-REP01",
+    "official_url": "https://24ist.ru/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P10-R01-REP01__desktop__viewport.png",
+        "sha256": "d62e554a1505113ec344fb60ccad8d09714a05d8cecf4571241876def639f757"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P10-R01-REP01__mobile__viewport.png",
+        "sha256": "540a5f0d5cff6f2f8e90357aef37d6d1706e54606db92ede31eff41a084c33d1"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P13-R01-REP01",
+    "official_url": "https://cohina.net/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P13-R01-REP01__desktop__viewport.png",
+        "sha256": "e9e0c02c18aa114ae50f34058d769b29749c0afeb246763cfbfa553a4fb2b119"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P13-R01-REP01__mobile__viewport.png",
+        "sha256": "e22faaf1a1110debaedc97a0d38e3c6939fc2e44db7dfdb828610a88280a888a"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P13-R02-REP01",
+    "official_url": "https://www.felissimo.co.jp/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P13-R02-REP01__desktop__viewport.png",
+        "sha256": "693f2fb33cc4562cdde145516ddcc1618ca773e6b48b0936257b58d5cc88f954"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P13-R02-REP01__mobile__viewport.png",
+        "sha256": "0ade2ac4b5a48f2b3d306f2c4141fa57c8d73ad3b13dc730e6faa6286e75d62d"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P14-R03-REP01",
+    "official_url": "https://p448.com/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P14-R03-REP01__desktop__viewport.png",
+        "sha256": "dbefe93e0c085200e9977f73e0ac66d98d70bdf6644fbea9686d8bff12734c84"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P14-R03-REP01__mobile__viewport.png",
+        "sha256": "d6ac6dc95b88ed79c17fe17cc2e3169a294cbbc593bb807d707c7b924d2de800"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P14-R04-REP01",
+    "official_url": "https://fahertybrand.com/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P14-R04-REP01__desktop__viewport.png",
+        "sha256": "fa4d9d14ce477a197981dc7031b25e3911b101b94c11d26e25acd92e2eae74ac"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P14-R04-REP01__mobile__viewport.png",
+        "sha256": "6354c34a54eb5b4abadec80391bd02a7a43718895a100f96b541fc771aa0c174"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P16-R01-REP01",
+    "official_url": "https://www.ultimacollection.com/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P16-R01-REP01__desktop__viewport.png",
+        "sha256": "da198b22514d324f0cc3ad4fccf8c41185fa4497455e824041b87e67b9bcd07f"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P16-R01-REP01__mobile__viewport.png",
+        "sha256": "387b9974f1b0ce7afac17f4a268aeedf556f213b7bdbf80abfaa74187b72806d"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P18-R02-REP01",
+    "official_url": "https://kizuna-ikuei.or.jp/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P18-R02-REP01__desktop__viewport.png",
+        "sha256": "1c37435788480cb6c6971904613dc580ed4b9986b12fd404355370fb257c17ad"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P18-R02-REP01__mobile__viewport.png",
+        "sha256": "6b8b8739da0ded6bb2c830a506aec258af8dd9bb9fe8256e429dc7adf596dfd9"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P19-R02-REP01",
+    "official_url": "https://dukeanddexter.com/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P19-R02-REP01__desktop__viewport.png",
+        "sha256": "524471feb14a2727413bfc0c93440e9fcb57e41bf74a486fe7e989290295d574"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P19-R02-REP01__mobile__viewport.png",
+        "sha256": "e11ddef074d8766eb73479a47a272d5c060fe1e9fd3379f5101a8c0024a16391"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P19-R03-REP01",
+    "official_url": "https://www.temperleylondon.com/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P19-R03-REP01__desktop__viewport.png",
+        "sha256": "839353829f3aa14255f8acac34b56b1d65fb4c561e16fc37092a4600c1165674"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36677645592",
+        "archive_member": "P19-R03-REP01__mobile__viewport.png",
+        "sha256": "68f28ef0d294cf076fd917580fc6edd6d49140cfb38a13743bf07c7477f85ee3"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P02-R03-REP02",
+    "official_url": "https://shinka-masumi.jp/",
+    "contact_sheet_batch": 9,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36681036163",
+        "archive_member": "P02-R03-REP02__desktop__viewport.png",
+        "sha256": "b351bba88951c4157b52addb1ce43414df8fc5174c37f06a4de649812f8eecc1"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36681036163",
+        "archive_member": "P02-R03-REP02__mobile__viewport.png",
+        "sha256": "461606a01a8205ed64be28b668d65121a0bdcc57768056779d66d660227198b3"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P04-R02-REP02",
+    "official_url": "https://www.dittoresidential.com/",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36681036163",
+        "archive_member": "P04-R02-REP02__desktop__viewport.png",
+        "sha256": "44f66a00dd854e3c42d7f58399b197f6d4e04b80209d88b1a751ce36fe718d42"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36681036163",
+        "archive_member": "P04-R02-REP02__mobile__viewport.png",
+        "sha256": "ea8066c6e58a5923fbe46e89a8d21987c14db84bdc62e4d463ccc90bdf42518f"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P19-R04-REP02",
+    "official_url": "https://www.furlanmarri.com/",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36681036163",
+        "archive_member": "P19-R04-REP02__desktop__viewport.png",
+        "sha256": "bd85611e6a172eb50a01ccd02edf9fae014793b76eaf0937ec07cc9a3b3e789d"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36681036163",
+        "archive_member": "P19-R04-REP02__mobile__viewport.png",
+        "sha256": "cef05532445078ae1ed714bcdd663f66548bde42af4e56a33202664e5c76272d"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P19-R05-REP02",
+    "official_url": "https://castjewelry.com/",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36681036163",
+        "archive_member": "P19-R05-REP02__desktop__viewport.png",
+        "sha256": "c0246bbba4b00d23eba120961e43b1c0b9ede297295f8040d1f8bcc908a99936"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36681036163",
+        "archive_member": "P19-R05-REP02__mobile__viewport.png",
+        "sha256": "5eb648abdbdd96c9d5a18c102e70ec23c206c6bdefe0b1ebfc5b1aa6a028fd9a"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P05-R03-REP03",
+    "official_url": "https://www.daido-life.co.jp/join/c_keiei/lineup/",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36682051500",
+        "archive_member": "P05-R03-REP03__desktop__viewport.png",
+        "sha256": "29a6a17efabd3eea3478c898f8c88b8f8de40f07b24e7286be650b6cf1c8f684"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36682051500",
+        "archive_member": "P05-R03-REP03__mobile__viewport.png",
+        "sha256": "0efc657ca501b74e9b16e43a54a1a33ce7fc1ddce3c349c591b83d3f5a149a85"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P10-R04-REP03",
+    "official_url": "https://www.globalchains.ca/roller-chain-cx1013/",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36682051500",
+        "archive_member": "P10-R04-REP03__desktop__viewport.png",
+        "sha256": "81ae9ba5b5d9ec1d50aaecbf912c70813a148110e6c3cd946976f73d652ae3f5"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36682051500",
+        "archive_member": "P10-R04-REP03__mobile__viewport.png",
+        "sha256": "23c27e168c87c1065c81d20f8fe28de016745ea902686456941eddb65caf3150"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P14-R05-REP02",
+    "official_url": "https://www.maison-alaia.com/en-us/cat/latest-arrivals/",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01"
+    ],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36682051500",
+        "archive_member": "P14-R05-REP02__desktop__viewport.png",
+        "sha256": "30a5e2c600c91131d6347e4ce68454f8dc891a50b161631d978e9c49f0d95451"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36682051500",
+        "archive_member": "P14-R05-REP02__mobile__viewport.png",
+        "sha256": "ec6f9556469b6d1c7e95da5e224782a37c2ece8a5e0db4da29679b8149234003"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P16-R02-REP03",
+    "official_url": "https://www.tandjungsarihotel.com/bungalows",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36682051500",
+        "archive_member": "P16-R02-REP03__desktop__viewport.png",
+        "sha256": "b2af29c23168892af00b84912b91cad176cf314502a484b53d6b934e4d4f5543"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36682051500",
+        "archive_member": "P16-R02-REP03__mobile__viewport.png",
+        "sha256": "0a447ac130e5866c88f79a41143ceb11fce094ce647c0d9eea12a015550925a9"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P14-R02-REP04",
+    "official_url": "https://www.allbirds.com/products/mens-canvas-cruiser-deep-navy-stripes",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36687315667",
+        "archive_member": "P14-R02-REP04__desktop__viewport.png",
+        "sha256": "c8c428225bfd3a290841e3b87409f304985eb2d1f6dfeac33745ce9fcce1ee94"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36687315667",
+        "archive_member": "P14-R02-REP04__mobile__viewport.png",
+        "sha256": "5fbea1dacb9c6772ccbe86b212bd45d7584a646825563bc666eacefa852dd3bc"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P17-R03-REP03",
+    "official_url": "https://botanistofficial.com/about/",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36687315667",
+        "archive_member": "P17-R03-REP03__desktop__viewport.png",
+        "sha256": "689afd6b85e38ad3588cdff09a714d1379b5e7b50eea9704464e1e0947cfe169"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36687315667",
+        "archive_member": "P17-R03-REP03__mobile__viewport.png",
+        "sha256": "af2c9609c1823d5869f02ace4abe4afebc50ab623acad8f4b0c1633ae4b6a109"
+      }
+    ],
+    "scene_record_count": 4
+  },
+  {
+    "reference_id": "P16-R04-REP05",
+    "official_url": "https://www.vanderhotel.com/",
+    "contact_sheet_batch": 10,
+    "viewports_reviewed": [
+      "DESKTOP",
+      "MOBILE"
+    ],
+    "screening_scope": "ENTRY_VIEWPORT_VISUAL_AND_SCENE_METADATA; NOT_EXHAUSTIVE_PIXEL_REVIEW_OF_EVERY_FULL_PAGE",
+    "mechanisms_considered": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "CM-VIS-FINANCE-RATE-PANEL-01",
+      "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01"
+    ],
+    "detailed_comparison_mechanism_ids": [],
+    "screening_decision": "NO_AUTOMATIC_ADMISSION_FROM_STYLE_OR_ENTRY_SIMILARITY",
+    "snapshot_locators": [
+      {
+        "archive_id": "P221A-PRODUCTION-36688082056",
+        "archive_member": "P16-R04-REP05__desktop__viewport.png",
+        "sha256": "032c38270908d874b9087c63565c84fa8b56c4a338e1976053fbf13ae54deb81"
+      },
+      {
+        "archive_id": "P221A-PRODUCTION-36688082056",
+        "archive_member": "P16-R04-REP05__mobile__viewport.png",
+        "sha256": "94812bd75dc3f08f81224cdf4790f2ef6a901bc56602cc23080dec874b547d5e"
+      }
+    ],
+    "scene_record_count": 4
+  }
+]
