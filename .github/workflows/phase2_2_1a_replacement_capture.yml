@@ -38,11 +38,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ae598db0728b8b555a2eb3c6a26bb9f35e4308f0
+          ref: 1a462e5a7be35f833043a0771a5f179faa90e67b
           persist-credentials: false
       - name: Verify reviewed target and immutable input contract
         env:
-          APPROVED_TARGET_SHA: ae598db0728b8b555a2eb3c6a26bb9f35e4308f0
+          APPROVED_TARGET_SHA: 1a462e5a7be35f833043a0771a5f179faa90e67b
         run: |
           test "$(git rev-parse HEAD)" = "$APPROVED_TARGET_SHA"
           python - <<'PY'
@@ -54,7 +54,7 @@ jobs:
           assert os.environ["CAPTURE_MODE"] in ("smoke", "approved_batch")
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
               summary.write("## Reviewed capture target\n\n")
-              summary.write("Target branch: `phase2-2-1a/replacement-capture-lane`\n\n")
+              summary.write("Target branch: `phase2-2-1a/production-recovery-20260930`\n\n")
               summary.write("Target SHA: `" + os.environ["APPROVED_TARGET_SHA"] + "`\n\n")
               summary.write("Mode: `" + os.environ["CAPTURE_MODE"] + "`\n\n")
               summary.write("Production ledger: `data/phase2_2_1a_replacement_candidates.jsonl`\n\n")
