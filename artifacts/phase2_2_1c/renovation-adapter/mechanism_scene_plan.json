@@ -1,0 +1,84 @@
+{
+  "profile_id": "renovation-adapter",
+  "profile_sha256": "42165146a49c7d6ec723c772d57df660814211b3ebe326abb702ead078addf8b",
+  "recipe": {
+    "status": "SINGLE_MECHANISM_STATIC_ADAPTER_VALIDATION",
+    "mechanism_ids": [
+      "CM-VIS-RENOVATION-PORTAL-HERO-01"
+    ],
+    "edge_ids": [],
+    "scope": "SINGLE_SCENE"
+  },
+  "scenes": [
+    {
+      "scene_id": "renovation-adapter-scene-1",
+      "scene_job": "ENTRY",
+      "source_scene_job": "ENTRY",
+      "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "adapter": "renovation_portal_static",
+      "grammar": {
+        "composition_primitive": "Green institutional header above a photo-led horizontal hero; proposition and compact task buttons overlay one side; a shallow partner/logo rail anchors the next beat.",
+        "visual_hierarchy": "Short Japanese proposition over photography; task labels are compact; organization navigation uses small high-contrast labels.",
+        "typography_observation": "Short Japanese proposition over photography; task labels are compact; organization navigation uses small high-contrast labels.",
+        "media_observation": "Real renovation interior spans the hero; the crop leaves a text-safe margin; partner marks are secondary.",
+        "spatial_rhythm": "Wide media entry, short task band, then compact link/news groups.",
+        "responsive_recomposition": "Hero photo becomes vertically cropped; primary proposition/buttons remain grouped; logo rail follows as a separate narrow band.",
+        "implementation_boundary": "DOM: proposition, two task links, header and partner rail. Asset: authorized interior photo; partner logos as separate files. CSS: responsive crop and overlay, no image-embedded CTA.",
+        "misuse_constraints": [
+          "Task buttons must represent real user goals.",
+          "Use mobile crop with recognizable space and readable labels.",
+          "Partner marks need permission and must not be presented as customer proof without basis."
+        ]
+      },
+      "grammar_sha256": "de2f193ecdf2860fe490dd7e94ab2f3ef21363c81b05f04458dee53ff628facf",
+      "content": {
+        "scene_job": "ENTRY",
+        "eyebrow": "住まいと相談",
+        "headline": "相談と探し方を、一つの入口に。",
+        "headline_chunks": [
+          "相談と探し方を、",
+          "一つの入口に。"
+        ],
+        "body": "住まい画像はイメージです。相談と探し方を分け、架空の参加者ラベルを別の帯に示しています。",
+        "routes": [
+          {
+            "label": "相談を確認",
+            "destination": "renovation-consult",
+            "qualifier": "架空の検証用案内"
+          },
+          {
+            "label": "参加者を探す",
+            "destination": "partner-guide",
+            "qualifier": "架空の検証用案内"
+          }
+        ],
+        "assets": [
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/hero_home_finish.png",
+            "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+            "alt": "住まいのイメージ。実在する加盟施設・施工実績の証明ではありません。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing owned generated repository asset; controlled authored fixture only, not real subject/product/proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          }
+        ],
+        "partner_labels": [
+          "架空の参加者A",
+          "架空の参加者B",
+          "架空の参加者C"
+        ]
+      },
+      "heading_level": 1,
+      "evidence_reference_ids": [
+        "P03-R04"
+      ],
+      "evidence_scene_ids": [
+        "P22-P03-R04-DESKTOP-SCENE-001",
+        "P22-P03-R04-MOBILE-SCENE-001"
+      ]
+    }
+  ],
+  "customer_publication_allowed": false,
+  "phase2600_allowed": false
+}

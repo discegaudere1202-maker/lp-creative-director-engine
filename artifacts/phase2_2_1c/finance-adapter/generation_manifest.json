@@ -1,0 +1,125 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "p221c-finance-adapter",
+  "company_id": "finance-adapter",
+  "company_name": "finance-adapter 検証用",
+  "mode": "test",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "generation_iteration": 1,
+  "input_digest": "9f7f5324ce8c01be9a71cf887188f0c0e08c7bd4b029510b907dd1fa854e3405",
+  "input_references": {
+    "input_file": "inline_fixture",
+    "source_urls": []
+  },
+  "strategy_output": "creative_strategy.json",
+  "photo_role_map_output": "photo_role_map.json",
+  "asset_manifest_output": "asset_manifest.json",
+  "evidence_used": [],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "NOT_PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "creative_genome.json",
+    "narrative_architecture.json",
+    "premium_scene_plan.json",
+    "form_causality_manifest.json",
+    "information_architecture.json",
+    "copy.json",
+    "photo_role_map.json",
+    "asset_manifest.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "narrative_gates": {
+    "generic_heading_gate": {
+      "status": "PASS",
+      "violations": []
+    },
+    "narrative_distinctness_gate": {
+      "status": "PASS"
+    },
+    "renderer_grammar_diversity_gate": {
+      "status": "PASS",
+      "unique_grammars": 4
+    },
+    "emotional_continuity_gate": {
+      "status": "PASS"
+    },
+    "cta_delta_gate": {
+      "status": "PASS",
+      "cta_count": 3
+    },
+    "mobile_re_art_direction_gate": {
+      "status": "PASS"
+    }
+  },
+  "generated_at": "2026-09-30T12:02:08.335899+00:00",
+  "mechanism_rendering": {
+    "profile_id": "finance-adapter",
+    "scene_plan": "mechanism_scene_plan.json",
+    "recipe_status": "SINGLE_MECHANISM_STATIC_ADAPTER_VALIDATION",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "production_eligibility": {
+    "decisions": [
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "finance_rate_static",
+        "contract_sha256": "50490d1306a5f7c2f9056bffcb89b7cb01b6c0fde8cda62a95f8a5548e30e84a",
+        "independence_status": "NOT_INDEPENDENT"
+      }
+    ],
+    "mode": "test",
+    "profile_sha256": "2c6bd1bde379a4722264df5f24f48f949be74f6f10e062f4e76195d49c6e4af7",
+    "input_sha256": "bac2da92481fc263fe80df53e10907124d484daff396bd45631a8a0d3e0f1a28",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-finance-adapter-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {},
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "authorization_sha256": "40cdfd18bc5e6ca1c1423f2326ce83f189b34abaa99469869f7cbcb79974479c",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  }
+}

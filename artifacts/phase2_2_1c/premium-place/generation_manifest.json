@@ -1,0 +1,138 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "p221c-premium-place",
+  "company_id": "premium-place",
+  "company_name": "Premium / Place 検証用",
+  "mode": "test",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "generation_iteration": 1,
+  "input_digest": "905a9e26335517f8a630b8f97bd3c86c8402e61c14f73b214b87a68626aaa9c6",
+  "input_references": {
+    "input_file": "inline_fixture",
+    "source_urls": []
+  },
+  "strategy_output": "creative_strategy.json",
+  "photo_role_map_output": "photo_role_map.json",
+  "asset_manifest_output": "asset_manifest.json",
+  "evidence_used": [],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "NOT_PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "creative_genome.json",
+    "narrative_architecture.json",
+    "premium_scene_plan.json",
+    "form_causality_manifest.json",
+    "information_architecture.json",
+    "copy.json",
+    "photo_role_map.json",
+    "asset_manifest.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "narrative_gates": {
+    "generic_heading_gate": {
+      "status": "PASS",
+      "violations": []
+    },
+    "narrative_distinctness_gate": {
+      "status": "PASS"
+    },
+    "renderer_grammar_diversity_gate": {
+      "status": "PASS",
+      "unique_grammars": 4
+    },
+    "emotional_continuity_gate": {
+      "status": "PASS"
+    },
+    "cta_delta_gate": {
+      "status": "PASS",
+      "cta_count": 3
+    },
+    "mobile_re_art_direction_gate": {
+      "status": "PASS"
+    }
+  },
+  "generated_at": "2026-09-30T12:02:05.670805+00:00",
+  "mechanism_rendering": {
+    "profile_id": "premium-place",
+    "scene_plan": "mechanism_scene_plan.json",
+    "recipe_status": "CONDITIONALLY_ACCEPTED",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "production_eligibility": {
+    "decisions": [
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "cinematic",
+        "contract_sha256": "1fc96c73914037261a365462ec5dfa172fc6c33bb4d960d9adf5d1a8ffad8c6e",
+        "independence_status": "NOT_INDEPENDENT"
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "utility",
+        "contract_sha256": "6f6482bbf45958c3c83d616a663f3fd400308938a9fb6ba13186a98bddfee530",
+        "independence_status": "NOT_INDEPENDENT"
+      }
+    ],
+    "mode": "test",
+    "profile_sha256": "44c21aff195f36543267edd6ffd8d826a1d47c887f91a314184990d037405add",
+    "input_sha256": "953648add00cc79ad356a477909e3c5f9d8c34f8704bf0fd15d0ba94910b642e",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-premium-place-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/maylynn_paint/hero_home_finish.png": {
+          "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "authorization_sha256": "8b300debd79b1ec72b934237bc23408bffe1d90c95e8d1d0a6a0bbbf754837f3",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  }
+}

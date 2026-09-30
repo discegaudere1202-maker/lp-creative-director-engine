@@ -1,0 +1,7 @@
+{
+  "negative_cases": 21,
+  "pass": 21,
+  "fail": 0,
+  "infrastructure_failures_retained": 1,
+  "phase2600_allowed": false
+}

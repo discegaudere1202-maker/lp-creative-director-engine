@@ -1,0 +1,168 @@
+{
+  "schema": "production_eligibility_scene_plan_v1",
+  "base_plan": {
+    "profile_id": "clinical-adapter",
+    "profile_sha256": "2cb0c7e1f20e33e1614801cde7f2374be9ee66ff96611121486f3ff93448181d",
+    "recipe": {
+      "status": "SINGLE_MECHANISM_STATIC_ADAPTER_VALIDATION",
+      "mechanism_ids": [
+        "CM-VIS-CLINICAL-HUMAN-HERO-01"
+      ],
+      "edge_ids": [],
+      "scope": "SINGLE_SCENE"
+    },
+    "scenes": [
+      {
+        "scene_id": "clinical-adapter-scene-1",
+        "scene_job": "ENTRY",
+        "source_scene_job": "ENTRY",
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "adapter": "clinical_human_static",
+        "grammar": {
+          "composition_primitive": "Single photographic hero with darkened media field; left-aligned multiline proposition; three short route links grouped beneath; global utility/navigation bar remains above.",
+          "visual_hierarchy": "Large bold white headline with tight line width; route labels small and underlined; navigation stays compact and secondary.",
+          "typography_observation": "Large bold white headline with tight line width; route labels small and underlined; navigation stays compact and secondary.",
+          "media_observation": "Dimmed interior photograph across the hero, with a human subject/context visible; content overlay anchored left.",
+          "spatial_rhythm": "Hero followed by a generous white service band; strong contrast between media-led entry and informational body.",
+          "responsive_recomposition": "Headline wraps into a narrow column; service-route links become stacked; menu and appointment action stay available at top; image crop narrows while retaining subject/context.",
+          "implementation_boundary": "DOM: headline, route links, nav and appointment control. Asset: hero photo. CSS overlay layer separates headline from photo. Keep routes as real links/buttons; avoid raster text.",
+          "misuse_constraints": [
+            "Requires image region with stable low-detail contrast behind copy.",
+            "Urgent care routing must not be visually subordinated to the brand statement.",
+            "Medical outcome claims require claim-level source review and must not be inferred from the photo."
+          ]
+        },
+        "grammar_sha256": "2d0edc4beed49536908447058dcd8301a7d1433ea5f91e31b5e29fc406675fed",
+        "content": {
+          "scene_job": "ENTRY",
+          "eyebrow": "人物と相談の入口",
+          "headline": "必要な案内を、迷わず選ぶ。",
+          "headline_chunks": [
+            "必要な案内を、",
+            "迷わず選ぶ。"
+          ],
+          "body": "人物画像はイメージです。診療や医療効果を示すものではありません。三つの案内を分けて確認できます。",
+          "routes": [
+            {
+              "label": "優先案内（検証用）",
+              "destination": "priority-guide",
+              "qualifier": "架空の検証用案内"
+            },
+            {
+              "label": "相談案内",
+              "destination": "consult-guide",
+              "qualifier": "架空の検証用案内"
+            },
+            {
+              "label": "利用案内",
+              "destination": "access-guide",
+              "qualifier": "架空の検証用案内"
+            }
+          ],
+          "assets": [
+            {
+              "repository_path": "assets/photography/generated/nagi_no_mirai/welcome_human.png",
+              "sha256": "e6bde4b8a840581877350bec17ce04ec446c93682172a29799f94aff4b3b1225",
+              "alt": "人物のイメージ。実在の患者・医師・利用者や医療成果の証明ではありません。",
+              "owned_fixture": true,
+              "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+              "rights_basis": "Existing owned generated repository asset; controlled authored fixture only, not real subject/product/proof.",
+              "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+            }
+          ]
+        },
+        "heading_level": 1,
+        "evidence_reference_ids": [
+          "P06-R02"
+        ],
+        "evidence_scene_ids": [
+          "GOLD-P06-R02-DESKTOP-TRAV-01",
+          "GOLD-P06-R02-MOBILE-TRAV-01"
+        ]
+      }
+    ],
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "eligibility_gate": {
+    "decisions": [
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "clinical_human_static",
+        "contract_sha256": "be5d1dd2c6e4e7952f6ced6dc1ca620f2e85dc8e5ed843408f5ae93abe0b979f",
+        "independence_status": "NOT_INDEPENDENT"
+      }
+    ],
+    "mode": "test",
+    "profile_sha256": "2cb0c7e1f20e33e1614801cde7f2374be9ee66ff96611121486f3ff93448181d",
+    "input_sha256": "ae1a306a7280f3380141b8bebc480c6cc1b7845af6e51d057f550f607fc96bc1",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-clinical-adapter-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/nagi_no_mirai/welcome_human.png": {
+          "sha256": "e6bde4b8a840581877350bec17ce04ec446c93682172a29799f94aff4b3b1225",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "authorization_sha256": "3f7ddb50ab694183c1bcd4de9d627ec22819e11a490345a10186075f5def5cae",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "trace": {
+    "company_truth": "架空の相談案内。実際の診療・予約・緊急窓口ではありません。",
+    "buyer_state": "情報探索から条件確認へ",
+    "sales_story": "ENTRY",
+    "creative_profile": {
+      "basis": "Saved mechanism intent; static single-adapter fixture only."
+    },
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "selected": true,
+        "reason": "One saved source grammar, single-scene adapter experiment; no combination/generalization claim."
+      }
+    ],
+    "stages": [
+      "Company Truth",
+      "Buyer State",
+      "Sales Story",
+      "Creative Profile",
+      "Mechanism Retrieval",
+      "Eligibility Gate",
+      "Compatibility Solver",
+      "Combination Recipe",
+      "Scene Spec",
+      "Production Render"
+    ]
+  },
+  "customer_publication_allowed": false,
+  "phase2600_allowed": false
+}

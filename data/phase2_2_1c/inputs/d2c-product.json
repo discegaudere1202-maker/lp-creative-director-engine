@@ -1,0 +1,64 @@
+{
+  "company_id": "d2c-product",
+  "company": {
+    "company_name": "D2C / Product 検証用",
+    "industry": "D2C / Product",
+    "service_category": "D2C / Product",
+    "company_truth": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+    "business_model": "authored_test_fixture",
+    "location": "検証用",
+    "differentiators": [],
+    "contact_channels": {
+      "href": "#details"
+    }
+  },
+  "customer_state": {
+    "before": "選択肢の違いを把握したい",
+    "after": "カテゴリー比較から確認したい商品群の選択へ",
+    "barrier": "内容と手順を確認したい"
+  },
+  "conversion_goal": "inquiry",
+  "primary_objections": [],
+  "requested_claims": [],
+  "evidence_ledger": [],
+  "mechanism_validation_profile": "d2c-product",
+  "mechanism_calibration_experiment": false,
+  "mechanism_eligibility_context": {
+    "truth_evidence": [
+      "FIXTURE-d2c-product-TRUTH"
+    ],
+    "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+    "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+    "asset_rights": {
+      "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg": {
+        "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+        "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+      },
+      "assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg": {
+        "sha256": "9dffea3851e859aba2179f716ba95d46e34d48e0d9964b79e7c90924582e2ce4",
+        "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+      }
+    },
+    "requested_motion": "NONE",
+    "reduced_motion": "STATIC_EQUIVALENT",
+    "accessibility": {
+      "semantic_dom": true,
+      "meaning_unit_copy": true,
+      "keyboard_focus": true,
+      "text_contrast": true,
+      "text_alternatives": true,
+      "real_routes": true,
+      "no_raster_essential_copy": true
+    },
+    "implementation": {
+      "static_only": true,
+      "separate_semantic_containers": true,
+      "source_grammar_trace": true,
+      "mobile_recomposition": true,
+      "current_asset_hashes": true,
+      "no_inferred_claims": true
+    },
+    "fixture_only": true,
+    "phase2600_allowed": false
+  }
+}

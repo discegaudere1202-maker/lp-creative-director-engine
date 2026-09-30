@@ -1,0 +1,64 @@
+{
+  "schema_version": "production_generation_v1",
+  "company_id": "public-information",
+  "company_name": "Public / Information-heavy 検証用",
+  "industry": "Public / Information-heavy",
+  "service_category": "Public / Information-heavy",
+  "location": "検証用",
+  "business_model": "authored_test_fixture",
+  "company_truth": "初回利用と継続利用の案内、お知らせと手続き情報を持つ、架空の情報提供テストです。",
+  "differentiators": [],
+  "customer_state": {
+    "before": "必要な手続きを迷わず探したい",
+    "after": "情報探索から自身の利用区分の理解へ",
+    "barrier": "内容と手順を確認したい"
+  },
+  "conversion_goal": "inquiry",
+  "generation_iteration": 1,
+  "primary_objections": [],
+  "available_evidence": [],
+  "unavailable_evidence": [],
+  "hearing_required": [],
+  "visual_authority": [
+    "TYPOGRAPHY",
+    "WORLD",
+    "PLACE"
+  ],
+  "evidence_density": "LOW",
+  "industry_visual_family": "default",
+  "visual_scene": "calibration",
+  "layout_profile": "editorial_rail",
+  "field_validation_context": false,
+  "verified_strengths": [],
+  "evidence_utility": {
+    "TRUST": 0,
+    "CONVERSION": 0,
+    "VISUAL": 0,
+    "PROCESS": 0,
+    "IDENTITY": 0
+  },
+  "evidence_strategy": "premium_without_claim_inflation",
+  "source_references": [],
+  "contact_channels": {
+    "href": "#details"
+  },
+  "photo_replacement_readiness": {
+    "status": "UNSPECIFIED",
+    "proxy_role": "role_selected_photography_asset",
+    "replacement_targets": [
+      "実店舗・実現場・実商品・実人物写真"
+    ],
+    "layout_constraints": [
+      "同一役割の実写真を同じ比率へ差し替え可能",
+      "文字重なりなし",
+      "中央焦点を保持"
+    ],
+    "proof_role": "visual_context_only; not evidence of a real result or location",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only"
+  }
+}

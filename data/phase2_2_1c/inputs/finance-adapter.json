@@ -1,0 +1,55 @@
+{
+  "company_id": "finance-adapter",
+  "company": {
+    "company_name": "finance-adapter 検証用",
+    "industry": "finance-adapter",
+    "service_category": "finance-adapter",
+    "company_truth": "架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません。",
+    "business_model": "authored_test_fixture",
+    "location": "検証用",
+    "differentiators": [],
+    "contact_channels": {
+      "href": "#details"
+    }
+  },
+  "customer_state": {
+    "before": "案内の役割と条件を確認したい",
+    "after": "情報探索から条件確認へ",
+    "barrier": "条件を確認したい"
+  },
+  "conversion_goal": "inquiry",
+  "primary_objections": [],
+  "requested_claims": [],
+  "evidence_ledger": [],
+  "mechanism_validation_profile": "finance-adapter",
+  "mechanism_calibration_experiment": false,
+  "mechanism_eligibility_context": {
+    "truth_evidence": [
+      "FIXTURE-finance-adapter-TRUTH"
+    ],
+    "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+    "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+    "asset_rights": {},
+    "requested_motion": "NONE",
+    "reduced_motion": "STATIC_EQUIVALENT",
+    "accessibility": {
+      "semantic_dom": true,
+      "meaning_unit_copy": true,
+      "keyboard_focus": true,
+      "text_contrast": true,
+      "text_alternatives": true,
+      "real_routes": true,
+      "no_raster_essential_copy": true
+    },
+    "implementation": {
+      "static_only": true,
+      "separate_semantic_containers": true,
+      "source_grammar_trace": true,
+      "mobile_recomposition": true,
+      "current_asset_hashes": true,
+      "no_inferred_claims": true
+    },
+    "fixture_only": true,
+    "phase2600_allowed": false
+  }
+}

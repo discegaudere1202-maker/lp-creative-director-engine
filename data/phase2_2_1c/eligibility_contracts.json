@@ -1,0 +1,1723 @@
+[
+  {
+    "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "environment",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "One edge-to-edge landscape frame; centered brand/proposition overlay; fixed-height lower news strip follows the media; persistent compact top navigation.",
+      "visual_hierarchy": "Brand wordmark small; proposition centered at medium relative scale; thin white type over darker region; secondary text smaller; top nav compact.",
+      "typography_observation": "Brand wordmark small; proposition centered at medium relative scale; thin white type over darker region; secondary text smaller; top nav compact.",
+      "media_observation": "Wide garden photograph as the dominant canvas; crop preserves landscape and water as the focal field; overlaid text remains within the image; no asset-layer inference beyond observed render.",
+      "spatial_rhythm": "Large uninterrupted image scene followed by narrow information strip; surrounding viewport density low.",
+      "responsive_recomposition": "Hero changes to narrow portrait crop; proposition remains over media at smaller scale; compact header; news strip remains as next band.",
+      "implementation_boundary": "DOM: logo, proposition, navigation, news strip, links. Image asset: landscape photograph with responsive object-position variants. CSS: overlay and contrast gradient only if needed for verified contrast; no text baked into image.",
+      "misuse_constraints": [
+        "Requires licensed high-resolution environment photography with a quiet text-safe area.",
+        "Do not place text over busy focal details without an independently tested contrast treatment.",
+        "Short proposition copy preferred; mobile crop must preserve focal subject and text zone."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "4a1a47a2946bd26b5da3d9cfb1e2a07cc87cbde42b0f0b98259125db655aa1cc",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Hero changes to narrow portrait crop; proposition remains over media at smaller scale; compact header; news strip remains as next band.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Wide garden photograph as the dominant canvas; crop preserves landscape and water as the focal field; overlaid text remains within the image; no asset-layer inference beyond observed render.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Requires licensed high-resolution environment photography with a quiet text-safe area.",
+        "Do not place text over busy focal details without an independently tested contrast treatment.",
+        "Short proposition copy preferred; mobile crop must preserve focal subject and text zone."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Requires licensed high-resolution environment photography with a quiet text-safe area.",
+      "Do not place text over busy focal details without an independently tested contrast treatment.",
+      "Short proposition copy preferred; mobile crop must preserve focal subject and text zone.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P01-R01"
+    ],
+    "evidence_scene_ids": [
+      "GOLD-P01-R01-DESKTOP-TRAV-01",
+      "GOLD-P01-R01-MOBILE-TRAV-01"
+    ],
+    "evidence_grammar_sha256": "66bb6ebf482459321780ca67f3003ca5c162a4e5431721df6fd28a1e9f757b30",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "clinical_human_static",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "Single photographic hero with darkened media field; left-aligned multiline proposition; three short route links grouped beneath; global utility/navigation bar remains above.",
+      "visual_hierarchy": "Large bold white headline with tight line width; route labels small and underlined; navigation stays compact and secondary.",
+      "typography_observation": "Large bold white headline with tight line width; route labels small and underlined; navigation stays compact and secondary.",
+      "media_observation": "Dimmed interior photograph across the hero, with a human subject/context visible; content overlay anchored left.",
+      "spatial_rhythm": "Hero followed by a generous white service band; strong contrast between media-led entry and informational body.",
+      "responsive_recomposition": "Headline wraps into a narrow column; service-route links become stacked; menu and appointment action stay available at top; image crop narrows while retaining subject/context.",
+      "implementation_boundary": "DOM: headline, route links, nav and appointment control. Asset: hero photo. CSS overlay layer separates headline from photo. Keep routes as real links/buttons; avoid raster text.",
+      "misuse_constraints": [
+        "Requires image region with stable low-detail contrast behind copy.",
+        "Urgent care routing must not be visually subordinated to the brand statement.",
+        "Medical outcome claims require claim-level source review and must not be inferred from the photo."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "3e48d962024a6b2a0b997794017ba49882c72196b25932e4fec7fdbd3fe72051",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Headline wraps into a narrow column; service-route links become stacked; menu and appointment action stay available at top; image crop narrows while retaining subject/context.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Dimmed interior photograph across the hero, with a human subject/context visible; content overlay anchored left.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Requires image region with stable low-detail contrast behind copy.",
+        "Urgent care routing must not be visually subordinated to the brand statement.",
+        "Medical outcome claims require claim-level source review and must not be inferred from the photo."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Requires image region with stable low-detail contrast behind copy.",
+      "Urgent care routing must not be visually subordinated to the brand statement.",
+      "Medical outcome claims require claim-level source review and must not be inferred from the photo.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P06-R02"
+    ],
+    "evidence_scene_ids": [
+      "GOLD-P06-R02-DESKTOP-TRAV-01",
+      "GOLD-P06-R02-MOBILE-TRAV-01"
+    ],
+    "evidence_grammar_sha256": "2d0edc4beed49536908447058dcd8301a7d1433ea5f91e31b5e29fc406675fed",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "product_ui",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "Dark full-bleed section; short text block aligned left; large product UI capture sits below/in the same column and occupies most of the first viewport; customer marks form a narrow footer row.",
+      "visual_hierarchy": "White sans-serif heading; compact supporting sentence; CTA labels restrained; brand marks are small and subordinate.",
+      "typography_observation": "White sans-serif heading; compact supporting sentence; CTA labels restrained; brand marks are small and subordinate.",
+      "media_observation": "Product interface image is the hero proof asset, framed by dark field; crop is contained, not edge-to-edge photo.",
+      "spatial_rhythm": "Dense product proof in entry, followed by discrete workflow sections; each later section receives one focused UI view.",
+      "responsive_recomposition": "Text and CTA stack above the UI; interface remains legible as a contained image with reduced width; lower brand strip wraps/crops at viewport edge.",
+      "implementation_boundary": "DOM: heading, supporting copy, CTA, customer marks, semantic section. Asset: product UI screenshots as responsive images or live product mock only when separately implemented. Background: solid dark CSS. Do not imply the static screenshot is interactive.",
+      "misuse_constraints": [
+        "Needs actual product UI evidence and permission to display; avoid fabricated interface states.",
+        "Product screenshot text must stay legible at mobile size or be replaced by a purpose-built crop.",
+        "Static screenshot does not establish motion, hover, or interaction."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "f99f2081f2e6afe6eca1977254569e04f68c5227618a76e0b57a3ffcde334100",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Text and CTA stack above the UI; interface remains legible as a contained image with reduced width; lower brand strip wraps/crops at viewport edge.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Product interface image is the hero proof asset, framed by dark field; crop is contained, not edge-to-edge photo.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Needs actual product UI evidence and permission to display; avoid fabricated interface states.",
+        "Product screenshot text must stay legible at mobile size or be replaced by a purpose-built crop.",
+        "Static screenshot does not establish motion, hover, or interaction."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Needs actual product UI evidence and permission to display; avoid fabricated interface states.",
+      "Product screenshot text must stay legible at mobile size or be replaced by a purpose-built crop.",
+      "Static screenshot does not establish motion, hover, or interaction.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P08-R02"
+    ],
+    "evidence_scene_ids": [
+      "GOLD-P08-R02-DESKTOP-TRAV-01",
+      "GOLD-P08-R02-MOBILE-TRAV-01"
+    ],
+    "evidence_grammar_sha256": "c2895591d128772678b60526f7931b335e0c139d3cba08c3dfd6f1601847c1f6",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "HOLD",
+    "adapter_id": null,
+    "adapter_version": null,
+    "adapter_basis": {
+      "composition_primitive": "Broad contained campaign panel beneath a slim utility/nav row; portrait, product and material imagery form a single asymmetric collage; handwritten-style campaign copy overlays the image; pagination controls sit immediately below.",
+      "visual_hierarchy": "Navigation small and dense; campaign phrase larger, high-contrast, and treated as part of the art direction; text-image contrast shifts with the image composition.",
+      "typography_observation": "Navigation small and dense; campaign phrase larger, high-contrast, and treated as part of the art direction; text-image contrast shifts with the image composition.",
+      "media_observation": "Editorial portrait plus product close-up; layered/collage-like crop inside one campaign panel; image occupies most of the content width.",
+      "spatial_rhythm": "Slim commerce navigation, large campaign scene, compact slider controls, then product/category modules.",
+      "responsive_recomposition": "Desktop-wide campaign collapses to a tall portrait panel; image crop and visual balance shift; navigation becomes icon-led; pagination remains beneath the panel.",
+      "implementation_boundary": "DOM: utility/nav, campaign text as accessible HTML, carousel controls. Asset: composite campaign image or separate approved photographic layers. Background: campaign image. SVG only for controls if needed.",
+      "misuse_constraints": [
+        "If campaign copy is baked into a source image, provide equivalent accessible text and localize without raster edits.",
+        "Mobile crop must preserve product and portrait focal areas; do not merely scale the desktop banner.",
+        "Carousel operation and keyboard behavior were not tested; do not claim accessible interaction."
+      ]
+    },
+    "adapter_hold_reason": "Carousel operation, controls and keyboard semantics unobserved; a still panel would not implement the whole recorded mechanism.",
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "4cffa44ff6b82567a383c584438d2c6c403782657b338a1807e98eab20614187",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "HOLD",
+      "observed_source": true,
+      "recomposition": "Desktop-wide campaign collapses to a tall portrait panel; image crop and visual balance shift; navigation becomes icon-led; pagination remains beneath the panel.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "HOLD",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Editorial portrait plus product close-up; layered/collage-like crop inside one campaign panel; image occupies most of the content width.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "If campaign copy is baked into a source image, provide equivalent accessible text and localize without raster edits.",
+        "Mobile crop must preserve product and portrait focal areas; do not merely scale the desktop banner.",
+        "Carousel operation and keyboard behavior were not tested; do not claim accessible interaction."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "If campaign copy is baked into a source image, provide equivalent accessible text and localize without raster edits.",
+      "Mobile crop must preserve product and portrait focal areas; do not merely scale the desktop banner.",
+      "Carousel operation and keyboard behavior were not tested; do not claim accessible interaction.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED",
+      "ADAPTER_HOLD"
+    ],
+    "validation_permission": "NONE",
+    "evidence_reference_ids": [
+      "P13-R04"
+    ],
+    "evidence_scene_ids": [
+      "P22-P13-R04-DESKTOP-SCENE-001",
+      "P22-P13-R04-MOBILE-SCENE-001"
+    ],
+    "evidence_grammar_sha256": "c954d2107e7162fae57447f9656ea54510f1fd5be616e73788ad3d5291a9f707",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "cinematic",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "Minimal centered wordmark/navigation above a full-width cinematic landscape frame; after the media, a narrow title/offer block and vertically ordered destination cards.",
+      "visual_hierarchy": "Small restrained navigation; destination title is large and centered; offer descriptions are modest and short.",
+      "typography_observation": "Small restrained navigation; destination title is large and centered; offer descriptions are modest and short.",
+      "media_observation": "Large mountain landscape frame with visible playback controls in the captured still; subsequent destination cards use contained photography. Playback itself was not runtime-tested.",
+      "spatial_rhythm": "Large immersive media opening, then small quiet intro, then repeated destination modules separated by generous vertical space.",
+      "responsive_recomposition": "Media becomes a narrow vertical viewport crop; destination modules reflow to one column and retain generous spacing; header utility controls stay compact.",
+      "implementation_boundary": "DOM: title, copy, navigation and destination cards. Asset: video only if source and rights verified; provide poster/fallback image. Background: neutral warm canvas. Cards use separately cropped image assets.",
+      "misuse_constraints": [
+        "Requires distinctive place footage or photography and rights clearance.",
+        "Do not infer motion quality from player controls in a still image.",
+        "Keep a non-video fallback and avoid autoplay sound.",
+        "Short offer copy; destination labels must remain visible on narrow crop."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "579e8a1654b29bce935ee879953c434abe396b5b925cc51955a55e0138de799b",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Media becomes a narrow vertical viewport crop; destination modules reflow to one column and retain generous spacing; header utility controls stay compact.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Large mountain landscape frame with visible playback controls in the captured still; subsequent destination cards use contained photography. Playback itself was not runtime-tested.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Requires distinctive place footage or photography and rights clearance.",
+        "Do not infer motion quality from player controls in a still image.",
+        "Keep a non-video fallback and avoid autoplay sound.",
+        "Short offer copy; destination labels must remain visible on narrow crop."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Requires distinctive place footage or photography and rights clearance.",
+      "Do not infer motion quality from player controls in a still image.",
+      "Keep a non-video fallback and avoid autoplay sound.",
+      "Short offer copy; destination labels must remain visible on narrow crop.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P16-R03"
+    ],
+    "evidence_scene_ids": [
+      "P22-P16-R03-DESKTOP-SCENE-001",
+      "P22-P16-R03-MOBILE-SCENE-001"
+    ],
+    "evidence_grammar_sha256": "f62306c0d3af0b7c7bce7f7356f551c66a45731059baa44ddeb9c590aac929af",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "utility",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "Compact institutional header and primary blue navigation; below it, an asymmetric multi-column first layer with a large announcement/hero panel, search/task controls, news list, and supporting modules.",
+      "visual_hierarchy": "Small high-density navigation; task labels and news headlines use restrained hierarchy; blue bar separates primary navigation from content.",
+      "typography_observation": "Small high-density navigation; task labels and news headlines use restrained hierarchy; blue bar separates primary navigation from content.",
+      "media_observation": "Official announcement image in one bounded feature panel; secondary modules rely mostly on text and small visual tiles.",
+      "spatial_rhythm": "Dense, highly grouped utility modules; repeated horizontal rules/colored containers separate functions.",
+      "responsive_recomposition": "Primary nav compresses to compact top controls; multi-column groups stack vertically; search/task block moves near top; informational items retain boxed grouping.",
+      "implementation_boundary": "DOM: nav landmarks, search/links, announcement, lists, headings. CSS Grid for desktop; one-column DOM order matching task priority on mobile. Image assets remain decorative only where text duplicates content.",
+      "misuse_constraints": [
+        "Task priority must be supported by user research/official service obligations; do not copy source order blindly.",
+        "Dense layouts require responsive spacing, visible focus and legible line lengths.",
+        "Accessibility runtime was not tested; this record makes no accessibility pass claim."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "2c981c2296bd648c0c19f994573571d2c2c14adf582956856158f83c83f31dc6",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Primary nav compresses to compact top controls; multi-column groups stack vertically; search/task block moves near top; informational items retain boxed grouping.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Official announcement image in one bounded feature panel; secondary modules rely mostly on text and small visual tiles.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Task priority must be supported by user research/official service obligations; do not copy source order blindly.",
+        "Dense layouts require responsive spacing, visible focus and legible line lengths.",
+        "Accessibility runtime was not tested; this record makes no accessibility pass claim."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Task priority must be supported by user research/official service obligations; do not copy source order blindly.",
+      "Dense layouts require responsive spacing, visible focus and legible line lengths.",
+      "Accessibility runtime was not tested; this record makes no accessibility pass claim.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "SERVICE_PRODUCT_EXPLANATION"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P18-R01"
+    ],
+    "evidence_scene_ids": [
+      "P22-P18-R01-DESKTOP-SCENE-004",
+      "P22-P18-R01-MOBILE-SCENE-001"
+    ],
+    "evidence_grammar_sha256": "e1d7e7d84b11a7a583faa4c4d48669e4703777d3191ab011dc052b50cef4a83b",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "renovation_portal_static",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "Green institutional header above a photo-led horizontal hero; proposition and compact task buttons overlay one side; a shallow partner/logo rail anchors the next beat.",
+      "visual_hierarchy": "Short Japanese proposition over photography; task labels are compact; organization navigation uses small high-contrast labels.",
+      "typography_observation": "Short Japanese proposition over photography; task labels are compact; organization navigation uses small high-contrast labels.",
+      "media_observation": "Real renovation interior spans the hero; the crop leaves a text-safe margin; partner marks are secondary.",
+      "spatial_rhythm": "Wide media entry, short task band, then compact link/news groups.",
+      "responsive_recomposition": "Hero photo becomes vertically cropped; primary proposition/buttons remain grouped; logo rail follows as a separate narrow band.",
+      "implementation_boundary": "DOM: proposition, two task links, header and partner rail. Asset: authorized interior photo; partner logos as separate files. CSS: responsive crop and overlay, no image-embedded CTA.",
+      "misuse_constraints": [
+        "Task buttons must represent real user goals.",
+        "Use mobile crop with recognizable space and readable labels.",
+        "Partner marks need permission and must not be presented as customer proof without basis."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "2d2fde218684df0d9a6cff4a04b3fe07c883cef0f3c5308a5376330a6ccae87b",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Hero photo becomes vertically cropped; primary proposition/buttons remain grouped; logo rail follows as a separate narrow band.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Real renovation interior spans the hero; the crop leaves a text-safe margin; partner marks are secondary.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Task buttons must represent real user goals.",
+        "Use mobile crop with recognizable space and readable labels.",
+        "Partner marks need permission and must not be presented as customer proof without basis."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Task buttons must represent real user goals.",
+      "Use mobile crop with recognizable space and readable labels.",
+      "Partner marks need permission and must not be presented as customer proof without basis.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P03-R04"
+    ],
+    "evidence_scene_ids": [
+      "P22-P03-R04-DESKTOP-SCENE-001",
+      "P22-P03-R04-MOBILE-SCENE-001"
+    ],
+    "evidence_grammar_sha256": "de2f193ecdf2860fe490dd7e94ab2f3ef21363c81b05f04458dee53ff628facf",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "finance_rate_static",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "Cool mint geometric hero with centered product statement; a horizontal row of distinct numeric offer cards follows; a bordered notice panel separates terms from further navigation.",
+      "visual_hierarchy": "Centered short proposition; large numeric rates inside bounded cards; terms and dates smaller but still adjacent to the offer.",
+      "typography_observation": "Centered short proposition; large numeric rates inside bounded cards; terms and dates smaller but still adjacent to the offer.",
+      "media_observation": "No dominant lifestyle photograph in the observed crop; graphic color fields and compact product marks carry the entry.",
+      "spatial_rhythm": "Headline, number cards, bordered notice, then service routes; clear transition from offer to qualification information.",
+      "responsive_recomposition": "Offer cards stack or become a narrow sequential row; headline wraps; notice remains visible before secondary routes.",
+      "implementation_boundary": "DOM: headline, numeric values, qualifying copy, disclosure and links. CSS: grid cards and visible boundary; no values as raster images.",
+      "misuse_constraints": [
+        "Every rate, period and condition requires claim-unit source verification and expiry review.",
+        "Never separate terms from the offer by a large scroll distance.",
+        "Do not imply product suitability or returns from the visual arrangement."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "ea2e8e7aa11eefe6d6dcdfef59c15ae8484acf79a258b0623cbb6342971df251",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Offer cards stack or become a narrow sequential row; headline wraps; notice remains visible before secondary routes.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "No dominant lifestyle photograph in the observed crop; graphic color fields and compact product marks carry the entry.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Every rate, period and condition requires claim-unit source verification and expiry review.",
+        "Never separate terms from the offer by a large scroll distance.",
+        "Do not imply product suitability or returns from the visual arrangement."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Every rate, period and condition requires claim-unit source verification and expiry review.",
+      "Never separate terms from the offer by a large scroll distance.",
+      "Do not imply product suitability or returns from the visual arrangement.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "SERVICE_PRODUCT_EXPLANATION"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P05-R04"
+    ],
+    "evidence_scene_ids": [
+      "GOLD-P05-R04-DESKTOP-TRAV-02",
+      "GOLD-P05-R04-MOBILE-TRAV-02"
+    ],
+    "evidence_grammar_sha256": "cbc5d700f99af3c62c97ba1ece45e20236997d07f0a7d8ecffb484dbccfeb2ac",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "HOLD",
+    "adapter_id": null,
+    "adapter_version": null,
+    "adapter_basis": {
+      "composition_primitive": "Bright yellow full-width campaign field; left-aligned three-line proposition; product cut-outs occupy the right half; pagination sits at the lower edge; category links form the next dark band.",
+      "visual_hierarchy": "Bold black proposition in short lines; supporting claim remains smaller; carousel indicators are small.",
+      "typography_observation": "Bold black proposition in short lines; supporting claim remains smaller; carousel indicators are small.",
+      "media_observation": "Isolated machine/product cut-outs with clean edges on flat color; no environmental photo is needed in the entry.",
+      "spatial_rhythm": "One vivid product proposition, thin control strip, then a sharply separated product-category band.",
+      "responsive_recomposition": "Proposition and machine image become a vertically stacked slide; the category band follows immediately and icon labels stack/condense.",
+      "implementation_boundary": "DOM: heading and carousel controls; transparent product image assets; CSS background color; SVG only for arrows/icons.",
+      "misuse_constraints": [
+        "Product render needs clean transparent/consistent cut-outs and correct model identity.",
+        "Industrial performance language needs technical substantiation.",
+        "Do not claim carousel interaction unless runtime controls are tested."
+      ]
+    },
+    "adapter_hold_reason": "Carousel state/interaction unobserved; no substitute adapter or invented control behavior.",
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "917d669c8713d0c97b99461bda6e0702287853e841a876bfef609f69756315c0",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "HOLD",
+      "observed_source": true,
+      "recomposition": "Proposition and machine image become a vertically stacked slide; the category band follows immediately and icon labels stack/condense.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "HOLD",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Isolated machine/product cut-outs with clean edges on flat color; no environmental photo is needed in the entry.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Product render needs clean transparent/consistent cut-outs and correct model identity.",
+        "Industrial performance language needs technical substantiation.",
+        "Do not claim carousel interaction unless runtime controls are tested."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Product render needs clean transparent/consistent cut-outs and correct model identity.",
+      "Industrial performance language needs technical substantiation.",
+      "Do not claim carousel interaction unless runtime controls are tested.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED",
+      "ADAPTER_HOLD"
+    ],
+    "validation_permission": "NONE",
+    "evidence_reference_ids": [
+      "P07-R02"
+    ],
+    "evidence_scene_ids": [
+      "P22-P07-R02-DESKTOP-SCENE-001",
+      "P22-P07-R02-MOBILE-SCENE-001"
+    ],
+    "evidence_grammar_sha256": "0ed9bef87c426113d264f129d7eeb6c3255fbabccde3b886449c17bb3a032371",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "audience",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "Soft blue proposition area with product UI illustration; two equal-width audience cards sit as a paired row beneath; each card has its own action and short qualifier.",
+      "visual_hierarchy": "Headline centered/left in the hero; audience labels bold; supporting qualifiers compact; actions visually parallel.",
+      "typography_observation": "Headline centered/left in the hero; audience labels bold; supporting qualifiers compact; actions visually parallel.",
+      "media_observation": "Product UI illustration supports the proposition but does not dominate the route choice.",
+      "spatial_rhythm": "Hero/product view, paired choice panels, then supporting service modules.",
+      "responsive_recomposition": "Cards become vertically stacked with equal prominence; each action stays inside its own card; proposition precedes both.",
+      "implementation_boundary": "DOM: semantic choice cards, headings and buttons; product UI as responsive image; CSS grid collapses to one column.",
+      "misuse_constraints": [
+        "Only use two paths if the audience split is real and mutually understandable.",
+        "Do not make one path look like an unwanted default unless sales logic requires it.",
+        "UI image is not a substitute for product explanation."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "86b7ccfe8a2eedca7df5ff84fdc6e8999411db123e8839a0568b426b61f233f6",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Cards become vertically stacked with equal prominence; each action stays inside its own card; proposition precedes both.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Product UI illustration supports the proposition but does not dominate the route choice.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Only use two paths if the audience split is real and mutually understandable.",
+        "Do not make one path look like an unwanted default unless sales logic requires it.",
+        "UI image is not a substitute for product explanation."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Only use two paths if the audience split is real and mutually understandable.",
+      "Do not make one path look like an unwanted default unless sales logic requires it.",
+      "UI image is not a substitute for product explanation.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "CONVERSION_CTA"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P11-R01"
+    ],
+    "evidence_scene_ids": [
+      "P22-P11-R01-DESKTOP-SCENE-001",
+      "P22-P11-R01-MOBILE-SCENE-001"
+    ],
+    "evidence_grammar_sha256": "76fdc8e3d6b8477f3abc2455e07395381a7dbaeab2b914e07cf5f3972ce93d07",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "diptych",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "Two adjacent high-color campaign tiles with different image/copy compositions; equal visual area; global commerce header remains a shallow rail.",
+      "visual_hierarchy": "Campaign words are embedded in art direction at large scale; each tile uses a compact supporting line and separate offer label.",
+      "typography_observation": "Campaign words are embedded in art direction at large scale; each tile uses a compact supporting line and separate offer label.",
+      "media_observation": "Food/product photography is tightly cropped within each tile; visual color fields distinguish the campaigns.",
+      "spatial_rhythm": "Header then paired campaign panel, followed by a lower editorial/news module.",
+      "responsive_recomposition": "Diptych becomes a vertical sequence; each campaign gets a full-width image/copy block; the header compresses to icons.",
+      "implementation_boundary": "DOM: accessible campaign copy and links; independent images/crops per tile; CSS grid to stacked blocks; do not bake essential CTA text into images.",
+      "misuse_constraints": [
+        "Both offers need equal-weight copy and independent destinations.",
+        "Do not make a tiled banner unreadable at 390px; serve mobile-specific crops.",
+        "Dates/prices in campaign copy require current source data."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "bfb3279e1b8e625f04407f9fda5d310cca34c9d21bc6acde1d1c53f14f3ed19b",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "Diptych becomes a vertical sequence; each campaign gets a full-width image/copy block; the header compresses to icons.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Food/product photography is tightly cropped within each tile; visual color fields distinguish the campaigns.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Both offers need equal-weight copy and independent destinations.",
+        "Do not make a tiled banner unreadable at 390px; serve mobile-specific crops.",
+        "Dates/prices in campaign copy require current source data."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Both offers need equal-weight copy and independent destinations.",
+      "Do not make a tiled banner unreadable at 390px; serve mobile-specific crops.",
+      "Dates/prices in campaign copy require current source data.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P15-R01"
+    ],
+    "evidence_scene_ids": [
+      "P22-P15-R01-DESKTOP-SCENE-001",
+      "P22-P15-R01-MOBILE-SCENE-001"
+    ],
+    "evidence_grammar_sha256": "a8c6b8f671dbb05e78b1d6d0bf731a756f01dbea3844647140bdb75aae8ec321",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "IMPLEMENTED",
+    "adapter_id": "index_feature",
+    "adapter_version": "1.0.0",
+    "adapter_basis": {
+      "composition_primitive": "White canvas; narrow vertical brand list on the left; large campaign image/product panel on the right; small carousel pagination below the feature.",
+      "visual_hierarchy": "Brand names form a compact index; featured campaign statement overlays or sits within the large image; index stays secondary.",
+      "typography_observation": "Brand names form a compact index; featured campaign statement overlays or sits within the large image; index stays secondary.",
+      "media_observation": "Portrait/product campaign dominates the feature panel; brand marks are separate visual entries.",
+      "spatial_rhythm": "Index + feature pairing, then a horizontal brand/service roster.",
+      "responsive_recomposition": "The index relocates above or below the feature as a compact stacked/scrollable group; hero image becomes a portrait panel; navigation compresses.",
+      "implementation_boundary": "DOM: brand index and featured content; brand marks as image/SVG assets with text alternatives; feature as responsive campaign image with accessible equivalent copy.",
+      "misuse_constraints": [
+        "Sub-brand hierarchy and order must follow verified portfolio truth.",
+        "Before/after, efficacy and cosmetic claims require claim-level evidence; none inferred from image.",
+        "Do not present the subject as a customer testimonial without consent/evidence."
+      ]
+    },
+    "adapter_hold_reason": null,
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "8b26bc25265fbb913fe34b3d0c9cca707492b5c4b99f7aef18a0caa511b6e6f5",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "recomposition": "The index relocates above or below the feature as a compact stacked/scrollable group; hero image becomes a portrait panel; navigation compresses.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "STATIC_IMPLEMENTED",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Portrait/product campaign dominates the feature panel; brand marks are separate visual entries.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Sub-brand hierarchy and order must follow verified portfolio truth.",
+        "Before/after, efficacy and cosmetic claims require claim-level evidence; none inferred from image.",
+        "Do not present the subject as a customer testimonial without consent/evidence."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Sub-brand hierarchy and order must follow verified portfolio truth.",
+      "Before/after, efficacy and cosmetic claims require claim-level evidence; none inferred from image.",
+      "Do not present the subject as a customer testimonial without consent/evidence.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [
+      "ENTRY",
+      "PRODUCT_DISCOVERY"
+    ],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED"
+    ],
+    "validation_permission": "EXACT_REGISTERED_AUTHOR_OWNED_STATIC_FIXTURE_ONLY",
+    "evidence_reference_ids": [
+      "P17-R01"
+    ],
+    "evidence_scene_ids": [
+      "P22-P17-R01-DESKTOP-SCENE-001",
+      "P22-P17-R01-MOBILE-SCENE-001"
+    ],
+    "evidence_grammar_sha256": "2c44c140ca1147d1900e22254e77166543e94a2c61c6841d747e05cc24ccc6a7",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "current_status": "PROVISIONAL_VARIANT",
+    "evidence_maturity": "CANDIDATE",
+    "promotion_count": 0,
+    "adapter_status": "HOLD",
+    "adapter_id": null,
+    "adapter_version": null,
+    "adapter_basis": {
+      "composition_primitive": "Black, shallow global navigation above a tall edge-to-edge artwork image; a small explicit visit/action label sits inside the image near the lower edge.",
+      "visual_hierarchy": "Navigation labels are tiny, widely spaced and high contrast; work title/caption remains compact and anchored to the image.",
+      "typography_observation": "Navigation labels are tiny, widely spaced and high contrast; work title/caption remains compact and anchored to the image.",
+      "media_observation": "Artwork fills the viewport-width column with a portrait crop; focal texture is the primary hierarchy.",
+      "spatial_rhythm": "Minimal nav, one immersive work panel, then project sequence; content density is intentionally low.",
+      "responsive_recomposition": "Tall portrait crop is retained; title/action overlays move into a legible lower band; nav compresses to a short black utility row.",
+      "implementation_boundary": "DOM: accessible nav, title, caption and action. Asset: approved artwork photo/video frame; CSS black nav and overlay. Provide equivalent text and reduced-motion alternative if moving media is later used.",
+      "misuse_constraints": [
+        "Requires artwork/display rights and accurate title/creator attribution.",
+        "Image-only texture cannot carry essential navigation or copy.",
+        "No motion claim from static capture; if motion is used, separately test reduced-motion and performance."
+      ]
+    },
+    "adapter_hold_reason": "Saved Scene Job is UNCLASSIFIED; production job semantics cannot be inferred from artwork atmosphere.",
+    "evidence_independence_status": "NOT_INDEPENDENT",
+    "independence_record_digest": "a4e6a877914adf229dd481dfc2a38a7a72f80974df02892b312114368402b950",
+    "compatibility_requirement": {
+      "every_pair_requires_observed_scoped_edge": true,
+      "unknown_reject": true,
+      "incompatible_reject": true,
+      "conditional_requires_exact_profile_truth_asset_digest": true,
+      "single_mechanism_has_no_pair_edge_requirement": true
+    },
+    "mobile_support": {
+      "status": "HOLD",
+      "observed_source": true,
+      "recomposition": "Tall portrait crop is retained; title/action overlays move into a legible lower band; nav compresses to a short black utility row.",
+      "per_output_browser_qa_required": true
+    },
+    "desktop_support": {
+      "status": "HOLD",
+      "observed_source": true,
+      "per_output_browser_qa_required": true
+    },
+    "motion_support": "STATIC_ONLY",
+    "source_motion_state": "NOT_OBSERVED",
+    "reduced_motion_support": {
+      "status": "STATIC_EQUIVALENT_ONLY",
+      "per_output_pixel_comparison_required": true
+    },
+    "asset_requirement": {
+      "source_observation": "Artwork fills the viewport-width column with a portrait crop; focal texture is the primary hierarchy.",
+      "generated_visual_role": "VISUAL_CONTEXT_ONLY",
+      "generated_asset_can_supply_proof": false,
+      "current_hash_and_responsive_crop_required": true
+    },
+    "truth_requirement": {
+      "client_specific": true,
+      "claim_unit_evidence_required": true,
+      "proof_classes": [
+        "achievement",
+        "person",
+        "store",
+        "product",
+        "number",
+        "award",
+        "before_after",
+        "testimonial",
+        "current_ui",
+        "actual_photo"
+      ],
+      "source_constraints": [
+        "Requires artwork/display rights and accurate title/creator attribution.",
+        "Image-only texture cannot carry essential navigation or copy.",
+        "No motion claim from static capture; if motion is used, separately test reduced-motion and performance."
+      ],
+      "fixture_truth_is_not_client_evidence": true
+    },
+    "rights_requirement": {
+      "client_asset_clearance": true,
+      "purpose_and_subject_consent_required": true,
+      "reference_image_reuse_allowed": false,
+      "generated_visual_is_not_rights_clearance_for_depicted_real_subject": true
+    },
+    "accessibility_requirement": [
+      "semantic_dom",
+      "meaning_unit_copy",
+      "keyboard_focus",
+      "text_contrast",
+      "text_alternatives",
+      "real_routes",
+      "no_raster_essential_copy"
+    ],
+    "implementation_constraints": [
+      "static_only",
+      "separate_semantic_containers",
+      "source_grammar_trace",
+      "mobile_recomposition",
+      "current_asset_hashes",
+      "no_inferred_claims"
+    ],
+    "known_failure_modes": [
+      "Requires artwork/display rights and accurate title/creator attribution.",
+      "Image-only texture cannot carry essential navigation or copy.",
+      "No motion claim from static capture; if motion is used, separately test reduced-motion and performance.",
+      "Unimplemented/unclassified grammar",
+      "Unsupported combination",
+      "Unsupported mobile crop",
+      "Invented animation or source-family independence",
+      "Illustration presented as proof"
+    ],
+    "supported_scene_jobs": [],
+    "unsupported_scene_jobs": [
+      "ANY_UNREGISTERED_OR_UNOBSERVED_JOB"
+    ],
+    "production_eligibility": "HOLD",
+    "eligibility_reason": [
+      "ONE_INDEPENDENT_REFERENCE_UNIT_ONLY",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_REQUIRED",
+      "ADAPTER_HOLD"
+    ],
+    "validation_permission": "NONE",
+    "evidence_reference_ids": [
+      "P20-R01"
+    ],
+    "evidence_scene_ids": [
+      "P22-P20-R01-DESKTOP-SCENE-002",
+      "P22-P20-R01-MOBILE-SCENE-002"
+    ],
+    "evidence_grammar_sha256": "af71a5e135864b99e8f627a909a5aa54e8a030275aa87d6e9d4749d5b94aa687",
+    "phase2600_allowed": false
+  }
+]

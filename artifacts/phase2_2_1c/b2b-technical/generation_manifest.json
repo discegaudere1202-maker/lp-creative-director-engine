@@ -1,0 +1,133 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "p221c-b2b-technical",
+  "company_id": "b2b-technical",
+  "company_name": "B2B Technical / SaaS 検証用",
+  "mode": "test",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "generation_iteration": 1,
+  "input_digest": "0d43b7de515566358949edcd7c7d6ec0e21353b86a23f522d94727c87670e647",
+  "input_references": {
+    "input_file": "inline_fixture",
+    "source_urls": []
+  },
+  "strategy_output": "creative_strategy.json",
+  "photo_role_map_output": "photo_role_map.json",
+  "asset_manifest_output": "asset_manifest.json",
+  "evidence_used": [],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "NOT_PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "creative_genome.json",
+    "narrative_architecture.json",
+    "premium_scene_plan.json",
+    "form_causality_manifest.json",
+    "information_architecture.json",
+    "copy.json",
+    "photo_role_map.json",
+    "asset_manifest.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "narrative_gates": {
+    "generic_heading_gate": {
+      "status": "PASS",
+      "violations": []
+    },
+    "narrative_distinctness_gate": {
+      "status": "PASS"
+    },
+    "renderer_grammar_diversity_gate": {
+      "status": "PASS",
+      "unique_grammars": 4
+    },
+    "emotional_continuity_gate": {
+      "status": "PASS"
+    },
+    "cta_delta_gate": {
+      "status": "PASS",
+      "cta_count": 3
+    },
+    "mobile_re_art_direction_gate": {
+      "status": "PASS"
+    }
+  },
+  "generated_at": "2026-09-30T12:02:04.132111+00:00",
+  "mechanism_rendering": {
+    "profile_id": "b2b-technical",
+    "scene_plan": "mechanism_scene_plan.json",
+    "recipe_status": "CONDITIONALLY_ACCEPTED",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "production_eligibility": {
+    "decisions": [
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "product_ui",
+        "contract_sha256": "931f0989bfab935f531d994fefb8419462d7b3239c2e9d23230dc4c1437a4e2e",
+        "independence_status": "NOT_INDEPENDENT"
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "audience",
+        "contract_sha256": "738c72fd10b8fec6c5962beb843a0a80f9a3fd0d694058398ead26be44593206",
+        "independence_status": "NOT_INDEPENDENT"
+      }
+    ],
+    "mode": "test",
+    "profile_sha256": "f20c8d5945c1532404b3bc1d21849a66c8cd02c44ce61479bbed48cee4538213",
+    "input_sha256": "601a28bf50a88178236fd9da63b54ea5c820bda3c504fde7f39ea5a98284e1f0",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-b2b-technical-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {},
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "authorization_sha256": "1732ed029e1021e38dfeedf647f8378d75a032f6682556986fa2eee60a05d59d",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  }
+}

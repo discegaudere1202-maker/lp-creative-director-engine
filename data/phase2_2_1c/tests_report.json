@@ -1,0 +1,13 @@
+{
+  "run": 50,
+  "passed": 50,
+  "failed": 0,
+  "skipped": 0,
+  "groups": {
+    "test_phase2_2_1c": 26,
+    "test_phase2_2_1b": 18,
+    "test_production_generation": 6
+  },
+  "errors": [],
+  "phase2600_allowed": false
+}

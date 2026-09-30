@@ -1,0 +1,70 @@
+{
+  "status": "PHASE_2_2_1_PRODUCTION_ELIGIBILITY_READY_FOR_PM_REVIEW",
+  "validator": "PASS",
+  "atomic_mechanism_count": 13,
+  "adapter_implemented_count": 10,
+  "adapter_hold_count": 3,
+  "eligibility_counts": {
+    "ELIGIBLE": 0,
+    "CONDITIONAL": 0,
+    "HOLD": 13,
+    "INELIGIBLE": 0
+  },
+  "independence_counts": {
+    "VERIFIED_INDEPENDENT": 0,
+    "PARTIALLY_INDEPENDENT": 0,
+    "NOT_INDEPENDENT": 13,
+    "UNKNOWN": 0
+  },
+  "agency_independence_unknown_count": 13,
+  "campaign_independence_unknown_count": 13,
+  "production_solver_gate": "PASS_FAIL_CLOSED",
+  "multi_profile_test_count": 5,
+  "additional_single_adapter_test_count": 3,
+  "desktop_pass": 8,
+  "desktop_fail": 0,
+  "mobile_pass": 8,
+  "mobile_fail": 0,
+  "required_five_profile_desktop_pass": 5,
+  "required_five_profile_mobile_pass": 5,
+  "browser_page_executions": 72,
+  "scene_spec_count": 13,
+  "negative_tests": {
+    "negative_cases": 21,
+    "pass": 21,
+    "fail": 0,
+    "infrastructure_failures_retained": 1,
+    "phase2600_allowed": false
+  },
+  "failure_evidence_count_phase_b": 17,
+  "failure_evidence_count_phase_c": 23,
+  "failure_evidence_count_total": 40,
+  "promotion_count": 0,
+  "evidence_trace_qa": "PASS",
+  "phase_b_preservation": "PASS",
+  "tests": {
+    "run": 50,
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "groups": {
+      "test_phase2_2_1c": 26,
+      "test_phase2_2_1b": 18,
+      "test_production_generation": 6
+    },
+    "errors": [],
+    "phase2600_allowed": false
+  },
+  "actual_customer_output_approved_count": 0,
+  "unresolved_checkpoint_blockers": [],
+  "remaining_live_production_holds": [
+    "All 13 mechanisms have one independent reference unit only.",
+    "Agency/campaign/parent-brand relationships remain unverified; no cross-reference independence inferred.",
+    "Two carousel mechanisms and one unclassified Scene Job have adapter HOLD.",
+    "No client-specific truth/rights or unobserved motion is approved."
+  ],
+  "phase2600_allowed": false,
+  "source_commit": "17268b741ada3d2db7565806e7f86327eec1c3b9",
+  "branch": "phase2-2-1c/production-eligibility-20260930",
+  "pm_approval_comment": 5910542210
+}

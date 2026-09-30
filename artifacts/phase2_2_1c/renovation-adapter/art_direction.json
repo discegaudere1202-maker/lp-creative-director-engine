@@ -1,0 +1,132 @@
+{
+  "schema_version": "production_generation_v1",
+  "art_direction_concept": "架空の住まい相談・参加者検索案内。加盟関係や施工実績は主張しません。を、相談の入口をひらくの入口として見せる。",
+  "visual_mood": "quiet confidence with a working-surface sense of detail",
+  "visual_authority_priority": [
+    "TYPOGRAPHY",
+    "WORLD",
+    "PLACE"
+  ],
+  "color_logic": {
+    "ink": "#151515",
+    "accent": "#ba5e35",
+    "paper": "#f3efe7",
+    "reason": "TYPOGRAPHY is the first evidence-bearing authority."
+  },
+  "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+  "composition_logic": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
+  "photography_logic": "Role-driven photography is the primary visual authority; vector scenes are support only.",
+  "visual_scene": "calibration",
+  "visual_source": "photography_pipeline",
+  "photo_replacement_readiness": {
+    "status": "UNSPECIFIED",
+    "proxy_role": "role_selected_photography_asset",
+    "replacement_targets": [
+      "実店舗・実現場・実商品・実人物写真"
+    ],
+    "layout_constraints": [
+      "同一役割の実写真を同じ比率へ差し替え可能",
+      "文字重なりなし",
+      "中央焦点を保持"
+    ],
+    "proof_role": "visual_context_only; not evidence of a real result or location",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only"
+  },
+  "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+  "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+  "motion_logic": "reveal_the_next_question; one restrained reveal per section; no infinite or blocking animation.",
+  "forbidden_patterns": [
+    "rounded card wall",
+    "generic three-column grid",
+    "unsupported trust badge",
+    "stock person",
+    "marquee",
+    "parallax"
+  ],
+  "craft_catch": "A calibration line carries the customer from the current situation to the next contact point.",
+  "layout_profile": "editorial_rail",
+  "art_direction_dimensions": {
+    "macro_composition": "reading_rail",
+    "visual_density": "quiet_interruption",
+    "negative_space": "listening_space",
+    "surface": "calibrated_paper",
+    "section_transitions": "question_marks",
+    "rhythm": "ask_then_open",
+    "motion": "reveal_the_next_question",
+    "evidence_density": "LOW",
+    "visual_authority": "TYPOGRAPHY",
+    "crop_logic": "no client image dependency; abstract geometry carries the role"
+  },
+  "photo_role_map": {
+    "schema_version": "photo_role_map_v1",
+    "selection_mode": "role_driven_not_fixed_count",
+    "roles": [
+      {
+        "photo_role": "hero_context",
+        "visual_subject": "renovation-adapterの第一印象を伝える場面",
+        "business_purpose": "何の事業かを一瞬で理解させる",
+        "replacement_target": "同じ役割の実事業写真",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "visual_context_only",
+        "placement": "hero_dominant_image"
+      },
+      {
+        "photo_role": "mid_experience",
+        "visual_subject": "renovation-adapterを利用する体験の場面",
+        "business_purpose": "中盤で理解と感情を補強する",
+        "replacement_target": "同じ役割の実体験写真",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "experience_context_only",
+        "placement": "mid_frame_proof_experience"
+      },
+      {
+        "photo_role": "craft_detail",
+        "visual_subject": "手元・素材・道具などの細部",
+        "business_purpose": "仕事の具体性を伝える",
+        "replacement_target": "実作業・実商品ディテール",
+        "preferred_orientation": "portrait",
+        "crop_tolerance": "tight",
+        "people_distance": "close",
+        "proof_intent": "craft_context_only",
+        "placement": "craft_detail_image",
+        "secondary_placement": "quiet_chapter_image"
+      },
+      {
+        "photo_role": "trust_human",
+        "visual_subject": "相談・迎え入れ・人の気配",
+        "business_purpose": "CTA前の信頼を補強する",
+        "replacement_target": "実人物・実接客写真",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "human_context_only",
+        "placement": "quiet_chapter_image"
+      }
+    ],
+    "section_role_map": {
+      "hero_orientation": "hero_context",
+      "company_truth": "mid_experience",
+      "service_process": "craft_detail",
+      "next_step": "trust_human",
+      "cta_zone": "trust_human"
+    }
+  },
+  "asset_selection_policy": {
+    "priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only_not_primary_photography"
+  },
+  "vector_role": "supporting_only"
+}

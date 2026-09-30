@@ -1,0 +1,133 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "p221c-public-information",
+  "company_id": "public-information",
+  "company_name": "Public / Information-heavy 検証用",
+  "mode": "test",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "generation_iteration": 1,
+  "input_digest": "6d9207f51c007331a66cd2782fe10082539135d93ec360800bec7a94a77c50b0",
+  "input_references": {
+    "input_file": "inline_fixture",
+    "source_urls": []
+  },
+  "strategy_output": "creative_strategy.json",
+  "photo_role_map_output": "photo_role_map.json",
+  "asset_manifest_output": "asset_manifest.json",
+  "evidence_used": [],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "NOT_PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "creative_genome.json",
+    "narrative_architecture.json",
+    "premium_scene_plan.json",
+    "form_causality_manifest.json",
+    "information_architecture.json",
+    "copy.json",
+    "photo_role_map.json",
+    "asset_manifest.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "narrative_gates": {
+    "generic_heading_gate": {
+      "status": "PASS",
+      "violations": []
+    },
+    "narrative_distinctness_gate": {
+      "status": "PASS"
+    },
+    "renderer_grammar_diversity_gate": {
+      "status": "PASS",
+      "unique_grammars": 4
+    },
+    "emotional_continuity_gate": {
+      "status": "PASS"
+    },
+    "cta_delta_gate": {
+      "status": "PASS",
+      "cta_count": 3
+    },
+    "mobile_re_art_direction_gate": {
+      "status": "PASS"
+    }
+  },
+  "generated_at": "2026-09-30T12:02:06.374467+00:00",
+  "mechanism_rendering": {
+    "profile_id": "public-information",
+    "scene_plan": "mechanism_scene_plan.json",
+    "recipe_status": "CONDITIONALLY_ACCEPTED",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "production_eligibility": {
+    "decisions": [
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "utility",
+        "contract_sha256": "6f6482bbf45958c3c83d616a663f3fd400308938a9fb6ba13186a98bddfee530",
+        "independence_status": "NOT_INDEPENDENT"
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "audience",
+        "contract_sha256": "738c72fd10b8fec6c5962beb843a0a80f9a3fd0d694058398ead26be44593206",
+        "independence_status": "NOT_INDEPENDENT"
+      }
+    ],
+    "mode": "test",
+    "profile_sha256": "41fd52c17dcbcab4d6d68136f8f7013f8c87ef25bad725f06de10b2084dc15bc",
+    "input_sha256": "e52a11161f0fb8ee4b8304772d497ed0004a2f33a9b2e5b35ba1b1c02a0b819c",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-public-information-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {},
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "authorization_sha256": "88004cb945347e5380fafd0f9756c72af97d26a9d843a2b740a008b35a3aeafa",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  }
+}

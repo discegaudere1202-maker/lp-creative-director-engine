@@ -1326,6 +1326,9 @@ def _render_premium_html(spec: Mapping[str, Any]) -> str:
     return f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(company.get("company_name"))}</title><style>{style}</style></head><body class="profile-{esc(profile_id)}" data-public-semantic-profile="{esc(public_semantic_profile)}" data-ending-variant="{ending_variant}" style="{token_css}"><header class="topline"><span>{esc(company.get("company_name"))}</span><span>{esc(company.get("location"))}</span></header><main>{"".join(chunks)}{contact_details}</main><footer class="topline">{esc(company.get("company_name"))}</footer></body></html>'
 
 def render_html(spec: Mapping[str, Any]) -> str:
+    if "production_eligibility_plan" in spec:
+        from .production_eligibility import render_plan
+        return render_plan(spec["production_eligibility_plan"])
     if "mechanism_scene_plan" in spec:
         from .mechanism_runtime import render_scene_html
         return render_scene_html(spec["mechanism_scene_plan"])
@@ -1485,11 +1488,18 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
     render_spec["premium_human_translation"] = human_translation
     mechanism_profile = raw.get("mechanism_validation_profile")
     if mechanism_profile:
-        from .mechanism_runtime import plan_for_generation
-        render_spec["mechanism_scene_plan"] = plan_for_generation(
-            str(mechanism_profile), mode=mode,
-            calibration=raw.get("mechanism_calibration_experiment") is True,
-        )
+        if "mechanism_eligibility_context" in raw or mode == "production":
+            from .production_eligibility import build_plan
+            render_spec["production_eligibility_plan"] = build_plan(str(mechanism_profile), raw, mode=mode)
+            render_spec["mechanism_scene_plan"] = render_spec["production_eligibility_plan"]["base_plan"]
+        else:
+            # Immutable Phase B reproduction remains a test-only route. It
+            # cannot bypass the Phase C gate for live production.
+            from .mechanism_runtime import plan_for_generation
+            render_spec["mechanism_scene_plan"] = plan_for_generation(
+                str(mechanism_profile), mode=mode,
+                calibration=raw.get("mechanism_calibration_experiment") is True,
+            )
     generation_id = generation_id or f"gen-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}-{_input_digest(raw)[:8]}"
     output = Path(output_dir)
     output.mkdir(parents=True, exist_ok=True)
@@ -1517,6 +1527,8 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
         _write_json(output / f"{name}.json", value)
     if mechanism_profile:
         _write_json(output / "mechanism_scene_plan.json", render_spec["mechanism_scene_plan"])
+        if "production_eligibility_plan" in render_spec:
+            _write_json(output / "production_eligibility_plan.json", render_spec["production_eligibility_plan"])
     _write_json(output / "premium_human_translation.json", human_translation)
     html_path = output / "index.html"
     html_path.write_text(render_html(render_spec), encoding="utf-8")
@@ -1566,6 +1578,8 @@ def run_generation(raw: Mapping[str, Any], output_dir: str | Path, *, generation
             "customer_publication_allowed": False,
             "phase2600_allowed": False,
         }
+        if "production_eligibility_plan" in render_spec:
+            manifest["production_eligibility"] = render_spec["production_eligibility_plan"]["eligibility_gate"]
     _write_json(output / "generation_manifest.json", manifest)
     return GenerationResult(generation_id, str(output), mode == "production", safety, stages, manifest)
 

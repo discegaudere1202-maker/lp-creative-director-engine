@@ -1,0 +1,431 @@
+[
+  {
+    "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P01-R01",
+        "brand": "石原和幸デザイン研究所",
+        "brand_family": "石原和幸デザイン研究所",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "kaza-hana.jp",
+        "page_family": "kaza-hana.jp/",
+        "independent_evidence_unit": "REFERENCE-PAGE:kaza-hana.jp/",
+        "evidence_scene_ids": [
+          "GOLD-P01-R01-DESKTOP-TRAV-01",
+          "GOLD-P01-R01-MOBILE-TRAV-01"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P01-R01",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P06-R02",
+        "brand": "Cleveland Clinic",
+        "brand_family": "Cleveland Clinic",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "my.clevelandclinic.org",
+        "page_family": "my.clevelandclinic.org/",
+        "independent_evidence_unit": "REFERENCE-PAGE:my.clevelandclinic.org/",
+        "evidence_scene_ids": [
+          "GOLD-P06-R02-DESKTOP-TRAV-01",
+          "GOLD-P06-R02-MOBILE-TRAV-01"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P06-R02",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P08-R02",
+        "brand": "Linear",
+        "brand_family": "Linear",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "linear.app",
+        "page_family": "linear.app/",
+        "independent_evidence_unit": "REFERENCE-PAGE:linear.app/",
+        "evidence_scene_ids": [
+          "GOLD-P08-R02-DESKTOP-TRAV-01",
+          "GOLD-P08-R02-MOBILE-TRAV-01"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P08-R02",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P13-R04",
+        "brand": "SABON",
+        "brand_family": "SABON",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.sabon.co.jp",
+        "page_family": "www.sabon.co.jp/",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.sabon.co.jp/",
+        "evidence_scene_ids": [
+          "P22-P13-R04-DESKTOP-SCENE-001",
+          "P22-P13-R04-MOBILE-SCENE-001"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P13-R04",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P16-R03",
+        "brand": "Aman",
+        "brand_family": "Aman",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.aman.com",
+        "page_family": "www.aman.com/",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.aman.com/",
+        "evidence_scene_ids": [
+          "P22-P16-R03-DESKTOP-SCENE-001",
+          "P22-P16-R03-MOBILE-SCENE-001"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P16-R03",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P18-R01",
+        "brand": "厚生労働省",
+        "brand_family": "厚生労働省",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.mhlw.go.jp",
+        "page_family": "www.mhlw.go.jp/index.html",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.mhlw.go.jp/index.html",
+        "evidence_scene_ids": [
+          "P22-P18-R01-DESKTOP-SCENE-004",
+          "P22-P18-R01-MOBILE-SCENE-001"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P18-R01",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P03-R04",
+        "brand": "リノベーション協議会",
+        "brand_family": "リノベーション協議会",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.renovation.or.jp",
+        "page_family": "www.renovation.or.jp/",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.renovation.or.jp/",
+        "evidence_scene_ids": [
+          "P22-P03-R04-DESKTOP-SCENE-001",
+          "P22-P03-R04-MOBILE-SCENE-001"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P03-R04",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P05-R04",
+        "brand": "ソニー銀行",
+        "brand_family": "ソニー銀行",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "sonybank.jp",
+        "page_family": "sonybank.jp/",
+        "independent_evidence_unit": "REFERENCE-PAGE:sonybank.jp/",
+        "evidence_scene_ids": [
+          "GOLD-P05-R04-DESKTOP-TRAV-02",
+          "GOLD-P05-R04-MOBILE-TRAV-02"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P05-R04",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P07-R02",
+        "brand": "ファナック",
+        "brand_family": "ファナック",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.fanuc.co.jp",
+        "page_family": "www.fanuc.co.jp/",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.fanuc.co.jp/",
+        "evidence_scene_ids": [
+          "P22-P07-R02-DESKTOP-SCENE-001",
+          "P22-P07-R02-MOBILE-SCENE-001"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P07-R02",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P11-R01",
+        "brand": "freee",
+        "brand_family": "freee",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.freee.co.jp",
+        "page_family": "www.freee.co.jp/",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.freee.co.jp/",
+        "evidence_scene_ids": [
+          "P22-P11-R01-DESKTOP-SCENE-001",
+          "P22-P11-R01-MOBILE-SCENE-001"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P11-R01",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P15-R01",
+        "brand": "スターバックス",
+        "brand_family": "スターバックス",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.starbucks.co.jp",
+        "page_family": "www.starbucks.co.jp/",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.starbucks.co.jp/",
+        "evidence_scene_ids": [
+          "P22-P15-R01-DESKTOP-SCENE-001",
+          "P22-P15-R01-MOBILE-SCENE-001"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P15-R01",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P17-R01",
+        "brand": "資生堂",
+        "brand_family": "資生堂",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.shiseido.co.jp",
+        "page_family": "www.shiseido.co.jp/",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.shiseido.co.jp/",
+        "evidence_scene_ids": [
+          "P22-P17-R01-DESKTOP-SCENE-001",
+          "P22-P17-R01-MOBILE-SCENE-001"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P17-R01",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "status": "NOT_INDEPENDENT",
+    "reference_count": 1,
+    "independent_evidence_unit_count": 1,
+    "sources": [
+      {
+        "reference_id": "P20-R01",
+        "brand": "teamLab",
+        "brand_family": "teamLab",
+        "brand_family_relationship": "SAME_REFERENCE_BRAND",
+        "agency_production_source": "UNKNOWN",
+        "agency_status": "UNKNOWN",
+        "campaign_family": "UNKNOWN",
+        "campaign_status": "UNKNOWN",
+        "domain_family": "www.teamlab.art",
+        "page_family": "www.teamlab.art/",
+        "independent_evidence_unit": "REFERENCE-PAGE:www.teamlab.art/",
+        "evidence_scene_ids": [
+          "P22-P20-R01-DESKTOP-SCENE-002",
+          "P22-P20-R01-MOBILE-SCENE-002"
+        ],
+        "source_record": "data/phase2_2_1a_recovery/reference_master.csv#P20-R01",
+        "source_basis": "Official-brand reference metadata and byte-addressed scene records; gallery origin is NOT an agency credit."
+      }
+    ],
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "brand_family_independence": "NOT_INDEPENDENT",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "reason": "Desktop and mobile belong to one reference/page/brand unit. Cross-reference independence is not demonstrated.",
+    "phase2600_allowed": false
+  }
+]

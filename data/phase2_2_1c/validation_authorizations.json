@@ -1,0 +1,311 @@
+{
+  "local-trust": {
+    "profile_sha256": "56b50aff0d4ebe4eb6a7c4ceb96498d39fc77f53dd241d45bbdfd388703481dc",
+    "input_sha256": "73ca724cd13ba3b57a0e0c933ca0ae9745ead76eabf9b186105820c714e6d7a1",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-local-trust-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/maylynn_paint/hero_home_finish.png": {
+          "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "source": "Author-registered fictional test, not client truth/rights",
+    "allowed_mode": "test"
+  },
+  "b2b-technical": {
+    "profile_sha256": "f20c8d5945c1532404b3bc1d21849a66c8cd02c44ce61479bbed48cee4538213",
+    "input_sha256": "601a28bf50a88178236fd9da63b54ea5c820bda3c504fde7f39ea5a98284e1f0",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-b2b-technical-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {},
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "source": "Author-registered fictional test, not client truth/rights",
+    "allowed_mode": "test"
+  },
+  "d2c-product": {
+    "profile_sha256": "dccb82de206980be9228c2c6598fc57421a23aecb17aa9341f2a8037e34f197a",
+    "input_sha256": "a15a77fbfb1a4c77bbc5804646705d5fc8654691dc3ea275dee575462321c88e",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-d2c-product-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg": {
+          "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        },
+        "assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg": {
+          "sha256": "9dffea3851e859aba2179f716ba95d46e34d48e0d9964b79e7c90924582e2ce4",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "source": "Author-registered fictional test, not client truth/rights",
+    "allowed_mode": "test"
+  },
+  "premium-place": {
+    "profile_sha256": "44c21aff195f36543267edd6ffd8d826a1d47c887f91a314184990d037405add",
+    "input_sha256": "953648add00cc79ad356a477909e3c5f9d8c34f8704bf0fd15d0ba94910b642e",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-premium-place-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/maylynn_paint/hero_home_finish.png": {
+          "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "source": "Author-registered fictional test, not client truth/rights",
+    "allowed_mode": "test"
+  },
+  "public-information": {
+    "profile_sha256": "41fd52c17dcbcab4d6d68136f8f7013f8c87ef25bad725f06de10b2084dc15bc",
+    "input_sha256": "e52a11161f0fb8ee4b8304772d497ed0004a2f33a9b2e5b35ba1b1c02a0b819c",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-public-information-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {},
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "source": "Author-registered fictional test, not client truth/rights",
+    "allowed_mode": "test"
+  },
+  "clinical-adapter": {
+    "profile_sha256": "2cb0c7e1f20e33e1614801cde7f2374be9ee66ff96611121486f3ff93448181d",
+    "input_sha256": "ae1a306a7280f3380141b8bebc480c6cc1b7845af6e51d057f550f607fc96bc1",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-clinical-adapter-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/nagi_no_mirai/welcome_human.png": {
+          "sha256": "e6bde4b8a840581877350bec17ce04ec446c93682172a29799f94aff4b3b1225",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "source": "Author-registered fictional test, not client truth/rights",
+    "allowed_mode": "test"
+  },
+  "renovation-adapter": {
+    "profile_sha256": "42165146a49c7d6ec723c772d57df660814211b3ebe326abb702ead078addf8b",
+    "input_sha256": "5f2c8736868f8823bcb29a407b68f2b20d82c04599f448fbd41b4738cc854c77",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-renovation-adapter-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/maylynn_paint/hero_home_finish.png": {
+          "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "source": "Author-registered fictional test, not client truth/rights",
+    "allowed_mode": "test"
+  },
+  "finance-adapter": {
+    "profile_sha256": "2c6bd1bde379a4722264df5f24f48f949be74f6f10e062f4e76195d49c6e4af7",
+    "input_sha256": "bac2da92481fc263fe80df53e10907124d484daff396bd45631a8a0d3e0f1a28",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-finance-adapter-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {},
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "source": "Author-registered fictional test, not client truth/rights",
+    "allowed_mode": "test"
+  }
+}

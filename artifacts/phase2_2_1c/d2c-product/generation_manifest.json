@@ -1,0 +1,142 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "p221c-d2c-product",
+  "company_id": "d2c-product",
+  "company_name": "D2C / Product 検証用",
+  "mode": "test",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "generation_iteration": 1,
+  "input_digest": "71931c871700780e1507306b1e0c93e317b8d7dfd3553519dc2f2eeae6dd684c",
+  "input_references": {
+    "input_file": "inline_fixture",
+    "source_urls": []
+  },
+  "strategy_output": "creative_strategy.json",
+  "photo_role_map_output": "photo_role_map.json",
+  "asset_manifest_output": "asset_manifest.json",
+  "evidence_used": [],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "NOT_PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "creative_genome.json",
+    "narrative_architecture.json",
+    "premium_scene_plan.json",
+    "form_causality_manifest.json",
+    "information_architecture.json",
+    "copy.json",
+    "photo_role_map.json",
+    "asset_manifest.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "narrative_gates": {
+    "generic_heading_gate": {
+      "status": "PASS",
+      "violations": []
+    },
+    "narrative_distinctness_gate": {
+      "status": "PASS"
+    },
+    "renderer_grammar_diversity_gate": {
+      "status": "PASS",
+      "unique_grammars": 4
+    },
+    "emotional_continuity_gate": {
+      "status": "PASS"
+    },
+    "cta_delta_gate": {
+      "status": "PASS",
+      "cta_count": 3
+    },
+    "mobile_re_art_direction_gate": {
+      "status": "PASS"
+    }
+  },
+  "generated_at": "2026-09-30T12:02:04.904212+00:00",
+  "mechanism_rendering": {
+    "profile_id": "d2c-product",
+    "scene_plan": "mechanism_scene_plan.json",
+    "recipe_status": "CONDITIONALLY_ACCEPTED",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "production_eligibility": {
+    "decisions": [
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "diptych",
+        "contract_sha256": "8e6dc2f39f7b405768460ad525bdbf15e039baa7261c9b4877b54e4d09dedb7a",
+        "independence_status": "NOT_INDEPENDENT"
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "index_feature",
+        "contract_sha256": "ef44478769821b940a69b7e67c51024892cce955b23cafb5ce72b7addfe95cba",
+        "independence_status": "NOT_INDEPENDENT"
+      }
+    ],
+    "mode": "test",
+    "profile_sha256": "dccb82de206980be9228c2c6598fc57421a23aecb17aa9341f2a8037e34f197a",
+    "input_sha256": "a15a77fbfb1a4c77bbc5804646705d5fc8654691dc3ea275dee575462321c88e",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-d2c-product-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg": {
+          "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        },
+        "assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg": {
+          "sha256": "9dffea3851e859aba2179f716ba95d46e34d48e0d9964b79e7c90924582e2ce4",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "authorization_sha256": "08c14a7d47a410bfe425a079dcfff68e211bbd6a067dc028b8f5c7a2ea571775",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  }
+}

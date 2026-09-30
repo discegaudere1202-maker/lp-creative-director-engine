@@ -1,0 +1,165 @@
+{
+  "schema": "production_eligibility_scene_plan_v1",
+  "base_plan": {
+    "profile_id": "finance-adapter",
+    "profile_sha256": "2c6bd1bde379a4722264df5f24f48f949be74f6f10e062f4e76195d49c6e4af7",
+    "recipe": {
+      "status": "SINGLE_MECHANISM_STATIC_ADAPTER_VALIDATION",
+      "mechanism_ids": [
+        "CM-VIS-FINANCE-RATE-PANEL-01"
+      ],
+      "edge_ids": [],
+      "scope": "SINGLE_SCENE"
+    },
+    "scenes": [
+      {
+        "scene_id": "finance-adapter-scene-1",
+        "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "source_scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "adapter": "finance_rate_static",
+        "grammar": {
+          "composition_primitive": "Cool mint geometric hero with centered product statement; a horizontal row of distinct numeric offer cards follows; a bordered notice panel separates terms from further navigation.",
+          "visual_hierarchy": "Centered short proposition; large numeric rates inside bounded cards; terms and dates smaller but still adjacent to the offer.",
+          "typography_observation": "Centered short proposition; large numeric rates inside bounded cards; terms and dates smaller but still adjacent to the offer.",
+          "media_observation": "No dominant lifestyle photograph in the observed crop; graphic color fields and compact product marks carry the entry.",
+          "spatial_rhythm": "Headline, number cards, bordered notice, then service routes; clear transition from offer to qualification information.",
+          "responsive_recomposition": "Offer cards stack or become a narrow sequential row; headline wraps; notice remains visible before secondary routes.",
+          "implementation_boundary": "DOM: headline, numeric values, qualifying copy, disclosure and links. CSS: grid cards and visible boundary; no values as raster images.",
+          "misuse_constraints": [
+            "Every rate, period and condition requires claim-unit source verification and expiry review.",
+            "Never separate terms from the offer by a large scroll distance.",
+            "Do not imply product suitability or returns from the visual arrangement."
+          ]
+        },
+        "grammar_sha256": "cbc5d700f99af3c62c97ba1ece45e20236997d07f0a7d8ecffb484dbccfeb2ac",
+        "content": {
+          "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+          "eyebrow": "数値と条件の構造検証",
+          "headline": "検証値と条件を、同じ場所に。",
+          "headline_chunks": [
+            "検証値と条件を、",
+            "同じ場所に。"
+          ],
+          "body": "すべて架空のレイアウト検証値です。実在する金融商品や適用金利を表していません。",
+          "routes": [
+            {
+              "label": "検証条件を見る",
+              "destination": "test-conditions",
+              "qualifier": "架空の検証用案内"
+            },
+            {
+              "label": "案内を確認",
+              "destination": "test-guide",
+              "qualifier": "架空の検証用案内"
+            }
+          ],
+          "offers": [
+            {
+              "label": "架空の検証項目A",
+              "value": "0.0",
+              "qualifier": "単位なし・実在商品ではない検証値"
+            },
+            {
+              "label": "架空の検証項目B",
+              "value": "1.0",
+              "qualifier": "単位なし・実在商品ではない検証値"
+            },
+            {
+              "label": "架空の検証項目C",
+              "value": "2.0",
+              "qualifier": "単位なし・実在商品ではない検証値"
+            }
+          ],
+          "disclosure": "実在商品・金利・期間・収益の表示ではありません。実運用では各数値と条件の一次Evidence、更新期限、リスク説明を同一の判断領域に置く必要があります。"
+        },
+        "heading_level": 1,
+        "evidence_reference_ids": [
+          "P05-R04"
+        ],
+        "evidence_scene_ids": [
+          "GOLD-P05-R04-DESKTOP-TRAV-02",
+          "GOLD-P05-R04-MOBILE-TRAV-02"
+        ]
+      }
+    ],
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "eligibility_gate": {
+    "decisions": [
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "finance_rate_static",
+        "contract_sha256": "50490d1306a5f7c2f9056bffcb89b7cb01b6c0fde8cda62a95f8a5548e30e84a",
+        "independence_status": "NOT_INDEPENDENT"
+      }
+    ],
+    "mode": "test",
+    "profile_sha256": "2c6bd1bde379a4722264df5f24f48f949be74f6f10e062f4e76195d49c6e4af7",
+    "input_sha256": "bac2da92481fc263fe80df53e10907124d484daff396bd45631a8a0d3e0f1a28",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-finance-adapter-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {},
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "authorization_sha256": "40cdfd18bc5e6ca1c1423f2326ce83f189b34abaa99469869f7cbcb79974479c",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "trace": {
+    "company_truth": "架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません。",
+    "buyer_state": "情報探索から条件確認へ",
+    "sales_story": "SERVICE_PRODUCT_EXPLANATION",
+    "creative_profile": {
+      "basis": "Saved mechanism intent; static single-adapter fixture only."
+    },
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "selected": true,
+        "reason": "One saved source grammar, single-scene adapter experiment; no combination/generalization claim."
+      }
+    ],
+    "stages": [
+      "Company Truth",
+      "Buyer State",
+      "Sales Story",
+      "Creative Profile",
+      "Mechanism Retrieval",
+      "Eligibility Gate",
+      "Compatibility Solver",
+      "Combination Recipe",
+      "Scene Spec",
+      "Production Render"
+    ]
+  },
+  "customer_publication_allowed": false,
+  "phase2600_allowed": false
+}

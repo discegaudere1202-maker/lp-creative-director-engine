@@ -1,0 +1,60 @@
+{
+  "company_id": "clinical-adapter",
+  "company": {
+    "company_name": "clinical-adapter 検証用",
+    "industry": "clinical-adapter",
+    "service_category": "clinical-adapter",
+    "company_truth": "架空の相談案内。実際の診療・予約・緊急窓口ではありません。",
+    "business_model": "authored_test_fixture",
+    "location": "検証用",
+    "differentiators": [],
+    "contact_channels": {
+      "href": "#details"
+    }
+  },
+  "customer_state": {
+    "before": "案内の役割と条件を確認したい",
+    "after": "情報探索から条件確認へ",
+    "barrier": "条件を確認したい"
+  },
+  "conversion_goal": "inquiry",
+  "primary_objections": [],
+  "requested_claims": [],
+  "evidence_ledger": [],
+  "mechanism_validation_profile": "clinical-adapter",
+  "mechanism_calibration_experiment": false,
+  "mechanism_eligibility_context": {
+    "truth_evidence": [
+      "FIXTURE-clinical-adapter-TRUTH"
+    ],
+    "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+    "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+    "asset_rights": {
+      "assets/photography/generated/nagi_no_mirai/welcome_human.png": {
+        "sha256": "e6bde4b8a840581877350bec17ce04ec446c93682172a29799f94aff4b3b1225",
+        "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+      }
+    },
+    "requested_motion": "NONE",
+    "reduced_motion": "STATIC_EQUIVALENT",
+    "accessibility": {
+      "semantic_dom": true,
+      "meaning_unit_copy": true,
+      "keyboard_focus": true,
+      "text_contrast": true,
+      "text_alternatives": true,
+      "real_routes": true,
+      "no_raster_essential_copy": true
+    },
+    "implementation": {
+      "static_only": true,
+      "separate_semantic_containers": true,
+      "source_grammar_trace": true,
+      "mobile_recomposition": true,
+      "current_asset_hashes": true,
+      "no_inferred_claims": true
+    },
+    "fixture_only": true,
+    "phase2600_allowed": false
+  }
+}

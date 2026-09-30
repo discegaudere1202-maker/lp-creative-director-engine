@@ -1,0 +1,506 @@
+{
+  "schema": "production_eligibility_scene_plan_v1",
+  "base_plan": {
+    "schema": "evidence_scene_plan_v1",
+    "profile_id": "local-trust",
+    "profile_sha256": "56b50aff0d4ebe4eb6a7c4ceb96498d39fc77f53dd241d45bbdfd388703481dc",
+    "recipe": {
+      "mechanism_ids": [
+        "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+      ],
+      "edge_ids": [
+        "EXPERIMENT-local-trust"
+      ],
+      "scope": "ADJACENT_SCENES",
+      "profile_id": "local-trust",
+      "status": "CONDITIONALLY_ACCEPTED"
+    },
+    "scenes": [
+      {
+        "scene_id": "local-trust-scene-1",
+        "scene_job": "ENTRY",
+        "source_scene_job": "ENTRY",
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "adapter": "environment",
+        "grammar": {
+          "composition_primitive": "One edge-to-edge landscape frame; centered brand/proposition overlay; fixed-height lower news strip follows the media; persistent compact top navigation.",
+          "visual_hierarchy": "Brand wordmark small; proposition centered at medium relative scale; thin white type over darker region; secondary text smaller; top nav compact.",
+          "typography_observation": "Brand wordmark small; proposition centered at medium relative scale; thin white type over darker region; secondary text smaller; top nav compact.",
+          "media_observation": "Wide garden photograph as the dominant canvas; crop preserves landscape and water as the focal field; overlaid text remains within the image; no asset-layer inference beyond observed render.",
+          "spatial_rhythm": "Large uninterrupted image scene followed by narrow information strip; surrounding viewport density low.",
+          "responsive_recomposition": "Hero changes to narrow portrait crop; proposition remains over media at smaller scale; compact header; news strip remains as next band.",
+          "implementation_boundary": "DOM: logo, proposition, navigation, news strip, links. Image asset: landscape photograph with responsive object-position variants. CSS: overlay and contrast gradient only if needed for verified contrast; no text baked into image.",
+          "misuse_constraints": [
+            "Requires licensed high-resolution environment photography with a quiet text-safe area.",
+            "Do not place text over busy focal details without an independently tested contrast treatment.",
+            "Short proposition copy preferred; mobile crop must preserve focal subject and text zone."
+          ]
+        },
+        "grammar_sha256": "66bb6ebf482459321780ca67f3003ca5c162a4e5431721df6fd28a1e9f757b30",
+        "content": {
+          "scene_job": "ENTRY",
+          "eyebrow": "住まいと暮らし",
+          "headline": "住まいのことから、話を始める。",
+          "headline_chunks": [
+            "住まいのことから、",
+            "話を始める。"
+          ],
+          "body": "何を相談できるか、どのように進むか。順番に確認できる案内です。",
+          "routes": [
+            {
+              "label": "住まいの相談",
+              "destination": "home-consultation",
+              "qualifier": "住まいについて相談したい方"
+            },
+            {
+              "label": "作業の流れ",
+              "destination": "work-process",
+              "qualifier": "依頼前に手順を確認したい方"
+            }
+          ],
+          "assets": [
+            {
+              "repository_path": "assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+              "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+              "owned_fixture": true,
+              "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+              "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+              "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+            }
+          ],
+          "notice": "住宅画像はイメージです。施工実績や品質の証明ではありません。"
+        },
+        "heading_level": 1,
+        "evidence_reference_ids": [
+          "P01-R01"
+        ],
+        "evidence_scene_ids": [
+          "GOLD-P01-R01-DESKTOP-TRAV-01",
+          "GOLD-P01-R01-MOBILE-TRAV-01"
+        ],
+        "compatibility_edge_ids": [
+          "EXPERIMENT-local-trust"
+        ],
+        "responsive": {
+          "desktop": "grammar-specific composition",
+          "mobile": "Hero changes to narrow portrait crop; proposition remains over media at smaller scale; compact header; news strip remains as next band."
+        },
+        "motion": {
+          "mode": "NONE",
+          "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+          "reduced_motion": "STATIC_EQUIVALENT"
+        },
+        "authority": "PLACE",
+        "truth_trace": [
+          "FIXTURE-local-trust-TRUTH"
+        ]
+      },
+      {
+        "scene_id": "local-trust-scene-2",
+        "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "source_scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "adapter": "utility",
+        "grammar": {
+          "composition_primitive": "Compact institutional header and primary blue navigation; below it, an asymmetric multi-column first layer with a large announcement/hero panel, search/task controls, news list, and supporting modules.",
+          "visual_hierarchy": "Small high-density navigation; task labels and news headlines use restrained hierarchy; blue bar separates primary navigation from content.",
+          "typography_observation": "Small high-density navigation; task labels and news headlines use restrained hierarchy; blue bar separates primary navigation from content.",
+          "media_observation": "Official announcement image in one bounded feature panel; secondary modules rely mostly on text and small visual tiles.",
+          "spatial_rhythm": "Dense, highly grouped utility modules; repeated horizontal rules/colored containers separate functions.",
+          "responsive_recomposition": "Primary nav compresses to compact top controls; multi-column groups stack vertically; search/task block moves near top; informational items retain boxed grouping.",
+          "implementation_boundary": "DOM: nav landmarks, search/links, announcement, lists, headings. CSS Grid for desktop; one-column DOM order matching task priority on mobile. Image assets remain decorative only where text duplicates content.",
+          "misuse_constraints": [
+            "Task priority must be supported by user research/official service obligations; do not copy source order blindly.",
+            "Dense layouts require responsive spacing, visible focus and legible line lengths.",
+            "Accessibility runtime was not tested; this record makes no accessibility pass claim."
+          ]
+        },
+        "grammar_sha256": "e1d7e7d84b11a7a583faa4c4d48669e4703777d3191ab011dc052b50cef4a83b",
+        "content": {
+          "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+          "eyebrow": "相談前の確認",
+          "headline": "依頼の流れを、一つずつ。",
+          "headline_chunks": [
+            "依頼の流れを、",
+            "一つずつ。"
+          ],
+          "body": "相談と作業の案内を分けて、確認したい内容から進めます。",
+          "routes": [
+            {
+              "label": "住まいの相談",
+              "destination": "home-consultation",
+              "qualifier": "住まいについて相談したい方"
+            },
+            {
+              "label": "作業の流れ",
+              "destination": "work-process",
+              "qualifier": "依頼前に手順を確認したい方"
+            }
+          ],
+          "modules": [
+            {
+              "title": "相談内容",
+              "text": "現在気になっている場所を整理します。"
+            },
+            {
+              "title": "進め方",
+              "text": "検証用の案内から、手順を確認できます。"
+            },
+            {
+              "title": "確認事項",
+              "text": "料金や対応範囲は実運用前に確認が必要です。"
+            }
+          ]
+        },
+        "heading_level": 2,
+        "evidence_reference_ids": [
+          "P18-R01"
+        ],
+        "evidence_scene_ids": [
+          "P22-P18-R01-DESKTOP-SCENE-004",
+          "P22-P18-R01-MOBILE-SCENE-001"
+        ],
+        "compatibility_edge_ids": [
+          "EXPERIMENT-local-trust"
+        ],
+        "responsive": {
+          "desktop": "grammar-specific composition",
+          "mobile": "Primary nav compresses to compact top controls; multi-column groups stack vertically; search/task block moves near top; informational items retain boxed grouping."
+        },
+        "motion": {
+          "mode": "NONE",
+          "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+          "reduced_motion": "STATIC_EQUIVALENT"
+        },
+        "authority": "DOCUMENT",
+        "truth_trace": [
+          "FIXTURE-local-trust-TRUTH"
+        ]
+      }
+    ],
+    "trace": {
+      "company_truth": "住まいに関する相談と作業手順の案内を持つ、架空の検証用サービスです。",
+      "buyer_problem": "相談先と依頼手順を理解したい",
+      "buyer_state": "情報不足から具体的な相談項目の確認へ",
+      "sales_story": "ENTRY → SERVICE_PRODUCT_EXPLANATION",
+      "creative_profile": {
+        "axes": {
+          "TRUST": 0.9,
+          "WARMTH": 0.8,
+          "PLACE": 0.9,
+          "PRECISION": 0.4,
+          "DENSITY": 0.3
+        },
+        "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+      },
+      "retrieval": [
+        {
+          "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+          "authority_affinity": 0.9,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": true,
+          "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+        },
+        {
+          "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+          "authority_affinity": 0.8,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+          "authority_affinity": 0.4,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+          "authority_affinity": 0,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+          "authority_affinity": 0.9,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+          "authority_affinity": 0.4,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": true,
+          "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+        },
+        {
+          "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+          "authority_affinity": 0.9,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+          "authority_affinity": 0.4,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+          "authority_affinity": 0.4,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+          "authority_affinity": 0.4,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+          "authority_affinity": 0,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+          "authority_affinity": 0,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+          "authority_affinity": 0,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        }
+      ],
+      "truth_evidence_ids": [
+        "FIXTURE-local-trust-TRUTH"
+      ]
+    },
+    "phase2600_allowed": false,
+    "customer_publication_allowed": false
+  },
+  "eligibility_gate": {
+    "decisions": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "environment",
+        "contract_sha256": "842a49f3e63aafba2fbb7c12e44c867bf200d822b9b900758ce4901645313626",
+        "independence_status": "NOT_INDEPENDENT"
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "production_eligibility": "HOLD",
+        "decision": "ALLOW_REGISTERED_FIXTURE_TEST_ONLY",
+        "adapter_id": "utility",
+        "contract_sha256": "6f6482bbf45958c3c83d616a663f3fd400308938a9fb6ba13186a98bddfee530",
+        "independence_status": "NOT_INDEPENDENT"
+      }
+    ],
+    "mode": "test",
+    "profile_sha256": "56b50aff0d4ebe4eb6a7c4ceb96498d39fc77f53dd241d45bbdfd388703481dc",
+    "input_sha256": "73ca724cd13ba3b57a0e0c933ca0ae9745ead76eabf9b186105820c714e6d7a1",
+    "eligibility_context": {
+      "truth_evidence": [
+        "FIXTURE-local-trust-TRUTH"
+      ],
+      "truth_role": "AUTHOR_OWNED_TEST_FIXTURE",
+      "rights_scope": "AUTHOR_OWNED_FIXTURE_TEST_ONLY",
+      "asset_rights": {
+        "assets/photography/generated/maylynn_paint/hero_home_finish.png": {
+          "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+          "clearance": "AUTHOR_OWNED_FIXTURE_TEST_ONLY"
+        }
+      },
+      "requested_motion": "NONE",
+      "reduced_motion": "STATIC_EQUIVALENT",
+      "accessibility": {
+        "semantic_dom": true,
+        "meaning_unit_copy": true,
+        "keyboard_focus": true,
+        "text_contrast": true,
+        "text_alternatives": true,
+        "real_routes": true,
+        "no_raster_essential_copy": true
+      },
+      "implementation": {
+        "static_only": true,
+        "separate_semantic_containers": true,
+        "source_grammar_trace": true,
+        "mobile_recomposition": true,
+        "current_asset_hashes": true,
+        "no_inferred_claims": true
+      },
+      "fixture_only": true,
+      "phase2600_allowed": false
+    },
+    "authorization_sha256": "19a9a7edf4cc6963dcbbf2931a3655791d5a331748790a8b792dd367332e5879",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  },
+  "trace": {
+    "company_truth": "住まいに関する相談と作業手順の案内を持つ、架空の検証用サービスです。",
+    "buyer_state": "情報不足から具体的な相談項目の確認へ",
+    "sales_story": "ENTRY → SERVICE_PRODUCT_EXPLANATION",
+    "creative_profile": {
+      "axes": {
+        "TRUST": 0.9,
+        "WARMTH": 0.8,
+        "PLACE": 0.9,
+        "PRECISION": 0.4,
+        "DENSITY": 0.3
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0.8,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "stages": [
+      "Company Truth",
+      "Buyer State",
+      "Sales Story",
+      "Creative Profile",
+      "Mechanism Retrieval",
+      "Eligibility Gate",
+      "Compatibility Solver",
+      "Combination Recipe",
+      "Scene Spec",
+      "Production Render"
+    ]
+  },
+  "customer_publication_allowed": false,
+  "phase2600_allowed": false
+}

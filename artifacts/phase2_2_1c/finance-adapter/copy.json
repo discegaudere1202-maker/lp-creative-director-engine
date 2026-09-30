@@ -1,0 +1,339 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "finance-adapter 検証用",
+    "headline": "架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません。",
+    "headline_lines": [
+      "架空の数値パネ",
+      "ル構造の検証。",
+      "金融商品・利率",
+      "・収益",
+      "・適合性を",
+      "表示しません。"
+    ],
+    "semantic_text": {
+      "schema_version": "editorial_text_ir_v1",
+      "role": "hero_headline",
+      "text": "架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません。",
+      "semantic_chunks": [
+        "架空の数値パネ",
+        "ル構造の検証。",
+        "金融商品・利率・収益",
+        "・適合性を",
+        "表示しません。"
+      ],
+      "preferred_lines_desktop": [
+        "架空の数値パネ",
+        "ル構造の検証。",
+        "金融商品・利率・収益",
+        "・適合性を",
+        "表示しません。"
+      ],
+      "protected_phrases": [],
+      "paragraphs": [
+        "架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません。"
+      ],
+      "context": {
+        "subject": "finance-adapter",
+        "preferred_line_policy": "meaning_unit"
+      },
+      "repair_audit": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "violations": [
+            {
+              "type": "short_fragment_anywhere",
+              "line": 4,
+              "value": "・収益"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "status": "PASS",
+          "violations": []
+        }
+      ],
+      "repair_status": "PASS"
+    },
+    "supporting": "検証用でfinance-adapterを探している方へ。架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません。食卓へつながる風景を手がかりに、次の一歩を考えます。",
+    "supporting_semantic_text": {
+      "schema_version": "editorial_text_ir_v1",
+      "role": "lead",
+      "text": "検証用でfinance-adapterを探している方へ。架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません。食卓へつながる風景を手がかりに、次の一歩を考えます。",
+      "semantic_chunks": [
+        "検証用で",
+        "finance-adap",
+        "terを探している方へ。",
+        "架空の数値パネル構造の",
+        "検証。金融商品・利率",
+        "・収益・適合性を",
+        "表示しません。食卓へ",
+        "つながる風景を",
+        "手がかりに、次の一歩を",
+        "考えます。"
+      ],
+      "preferred_lines_desktop": [
+        "検証用で",
+        "finance-adap",
+        "terを探している方へ。",
+        "架空の数値パネル構造の",
+        "検証。金融商品・利率",
+        "・収益・適合性を",
+        "表示しません。食卓へ",
+        "つながる風景を",
+        "手がかりに、次の一歩を",
+        "考えます。"
+      ],
+      "protected_phrases": [],
+      "paragraphs": [
+        "検証用でfinance-adapterを探している方へ。架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません。食卓へつながる風景を手がかりに、次の一歩を考えます。"
+      ],
+      "context": {
+        "subject": "finance-adapter"
+      },
+      "repair_audit": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "violations": []
+        }
+      ],
+      "repair_status": "PASS"
+    },
+    "cta": "相談する",
+    "cta_semantic_text": {
+      "schema_version": "editorial_text_ir_v1",
+      "role": "cta",
+      "text": "相談する",
+      "semantic_chunks": [
+        "相談する"
+      ],
+      "preferred_lines_desktop": [
+        "相談する"
+      ],
+      "protected_phrases": [],
+      "paragraphs": [
+        "相談する"
+      ],
+      "context": {},
+      "repair_audit": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "violations": []
+        }
+      ],
+      "repair_status": "PASS"
+    },
+    "microcopy": "検証用｜食卓へつながる風景。"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "notice｜finance-adapter",
+      "headline_lines": [
+        "notice｜fina",
+        "nce-adapter"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "notice｜finance-adapter",
+        "semantic_chunks": [
+          "notice｜fina",
+          "nce-adapter"
+        ],
+        "preferred_lines_desktop": [
+          "notice｜fina",
+          "nce-adapter"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "notice｜finance-adapter"
+        ],
+        "context": {
+          "section_id": "opening"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "検証用の料理教室で、食材と手を動かす時間に出会います。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "understand",
+      "headline_lines": [
+        "understand"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "understand",
+        "semantic_chunks": [
+          "understand"
+        ],
+        "preferred_lines_desktop": [
+          "understand"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "understand"
+        ],
+        "context": {
+          "section_id": "truth"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "架空の数値パネル構造の検証。金融商品・利率・収益・適合性を表示しません",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "trust",
+      "headline_lines": [
+        "trust"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "trust",
+        "semantic_chunks": [
+          "trust"
+        ],
+        "preferred_lines_desktop": [
+          "trust"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "trust"
+        ],
+        "context": {
+          "section_id": "way_in"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "料理教室で食材を選び、料理の流れを一緒に学びます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "choose",
+      "headline_lines": [
+        "choose"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "choose",
+        "semantic_chunks": [
+          "choose"
+        ],
+        "preferred_lines_desktop": [
+          "choose"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "choose"
+        ],
+        "context": {
+          "section_id": "contact"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "手を動かし、火を入れる順序を確かめます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "act",
+      "headline_lines": [
+        "act"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "act",
+        "semantic_chunks": [
+          "act"
+        ],
+        "preferred_lines_desktop": [
+          "act"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "act"
+        ],
+        "context": {
+          "section_id": "close"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+      "evidence_claims": [],
+      "cta": "相談する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "rendered_browser_line_shape_with_semantic_ir",
+    "paragraph_architecture": "role_and_sentence_units_not_character_count",
+    "copy_naturalness_gate": "subject_object_context_naturalness_commercial_usefulness"
+  },
+  "process_steps": [
+    "状況を伝える",
+    "対応できることを確認する",
+    "次の案内を考える"
+  ],
+  "premium_scene_copy": {
+    "pattern": "profile_default",
+    "profile_id": "editorial_rail",
+    "ending_variant": "editorial_rail_closure",
+    "scenes": {}
+  },
+  "section_naming_gate": {
+    "status": "PASS",
+    "violations": []
+  }
+}
