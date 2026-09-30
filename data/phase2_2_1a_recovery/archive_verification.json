@@ -1,0 +1,98 @@
+[
+  {
+    "archive_id": "GOLD20-FULLPAGE-V1",
+    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+    "zip_integrity": "PASS",
+    "verified_member_count": 230
+  },
+  {
+    "archive_id": "P22-EVIDENCE-01",
+    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+    "zip_integrity": "PASS",
+    "verified_member_count": 134
+  },
+  {
+    "archive_id": "P22-EVIDENCE-02",
+    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+    "zip_integrity": "PASS",
+    "verified_member_count": 147
+  },
+  {
+    "archive_id": "P22-EVIDENCE-03",
+    "container_sha256": "8850dcf9f52cafe033698a1ec6fa51e249320698033ba98094e95894d6b0fe04",
+    "zip_integrity": "PASS",
+    "verified_member_count": 99
+  },
+  {
+    "archive_id": "P22-EVIDENCE-04",
+    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+    "zip_integrity": "PASS",
+    "verified_member_count": 87
+  },
+  {
+    "archive_id": "P22-EVIDENCE-05",
+    "container_sha256": "8adc6726bdd091c81270093bb2e79c83405116eccd63e5cbc8cd883b296f40d5",
+    "zip_integrity": "PASS",
+    "verified_member_count": 151
+  },
+  {
+    "archive_id": "P22-EVIDENCE-06",
+    "container_sha256": "ecba0888d53a3c5a4afb4f1953378393b3cab2853413588e7d590b18527e039f",
+    "zip_integrity": "PASS",
+    "verified_member_count": 145
+  },
+  {
+    "archive_id": "P22-EVIDENCE-07",
+    "container_sha256": "586da70ab3d727e6752e6c7aa9327007f0e5b6cd5c75e25db6205f91014301fb",
+    "zip_integrity": "PASS",
+    "verified_member_count": 74
+  },
+  {
+    "archive_id": "P22-EVIDENCE-08",
+    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+    "zip_integrity": "PASS",
+    "verified_member_count": 110
+  },
+  {
+    "archive_id": "P22-EVIDENCE-09",
+    "container_sha256": "73087214e390a824757a91bfd23ff715b79a485a92adf3272f73014b3c6ee08d",
+    "zip_integrity": "PASS",
+    "verified_member_count": 111
+  },
+  {
+    "archive_id": "P22-EVIDENCE-10",
+    "container_sha256": "5ce9607ade47b1b91fa973448b2542c288bad48206ea78fd6cb318bcaf74003d",
+    "zip_integrity": "PASS",
+    "verified_member_count": 69
+  },
+  {
+    "archive_id": "P221A-PRODUCTION-36677645592",
+    "container_sha256": "6d509d641753f03c81a15e405e82f9f7361264b10af6c2def50a0c2c32a1843d",
+    "zip_integrity": "PASS",
+    "verified_member_count": 94
+  },
+  {
+    "archive_id": "P221A-PRODUCTION-36681036163",
+    "container_sha256": "a41d16795c3b410237bd60c792d795c4745f68fe337f30e28818b22a7d7425b5",
+    "zip_integrity": "PASS",
+    "verified_member_count": 32
+  },
+  {
+    "archive_id": "P221A-PRODUCTION-36682051500",
+    "container_sha256": "82437ae5a6c1a4a342e8984fb1a2bfccd404da01442bcecdff7ecba60e085ddc",
+    "zip_integrity": "PASS",
+    "verified_member_count": 32
+  },
+  {
+    "archive_id": "P221A-PRODUCTION-36687315667",
+    "container_sha256": "a59e043fed60fcf28b931a511ce90918bfa7f7ba7ddee6f1e18d882cc3a34fe7",
+    "zip_integrity": "PASS",
+    "verified_member_count": 8
+  },
+  {
+    "archive_id": "P221A-PRODUCTION-36688082056",
+    "container_sha256": "08b30b10b8dd4a198e8da826db7499a6482c178d5c4f60192fb102e2b8d81a61",
+    "zip_integrity": "PASS",
+    "verified_member_count": 4
+  }
+]

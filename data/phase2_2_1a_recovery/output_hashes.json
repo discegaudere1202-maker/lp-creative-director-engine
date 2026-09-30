@@ -1,0 +1,15 @@
+{
+  "accepted_replacements.jsonl": "107a848eddcba11b8b6179ec584d975bf1840bdb3573eb359a288407cd9655aa",
+  "aggregate.json": "4f22a0113b89d68985cbbf6a757ed684975fc2482eb003514522ff0a42b28c43",
+  "archive_index.jsonl": "8192f54a7061a01e7b477e56a454aee880a0c3efcbf508659c1ceecce7903666",
+  "archive_registry.json": "c4b48b2359932d74dc923e16f54f59bcffd5baafe3b537dd1a750f5810104d58",
+  "archive_verification.json": "06d57f5fe6db32f8a5d824bd1672ed56346267a9314d66ef0e1d41f1a2e508dd",
+  "candidate_attempts.jsonl": "8ba0d9c871a8c3ecdfbd162d4beaa54be27caf9c16a356a759d0a371fb4a5f94",
+  "coverage_matrix.csv": "b79a734a50973baaf0ee07365957d1f00d838c9d0375e78e4f10229afff423af",
+  "failure_replacement_ledger.jsonl": "5742c4eb94d617b11aedf150b014db0061077f0ec5ed0f709adfbb1bf49380ba",
+  "pm_summary.json": "1afcc6c422a7455173a184d1a1f20e6e2f41e858798ad546fb5c4cdd27135822",
+  "qa_report.json": "1afcc6c422a7455173a184d1a1f20e6e2f41e858798ad546fb5c4cdd27135822",
+  "reference_master.csv": "2aa43a2eeeb820b93cb299baa9e1dd8786d50c7d6140db2db889492436dcb941",
+  "scene_evidence.jsonl": "2f1fd067be7f5ff4d1d9d453f5faad99f6614f020897c091aa7f137027cb8b15",
+  "snapshots.jsonl": "46a360c7120f847757bcb3af0e776cbf442bfab2243d1a0420779170f94b435d"
+}
