@@ -9,15 +9,15 @@
 
 | Measure | Count |
 |---|---:|
-| Source Registry records | 18 |
-| Source families | 15 |
+| Source Registry records | 19 |
+| Source families | 16 |
 | All瓦連 prefecture index coverage | 47 / 47 (45 show nonzero registered counts) |
 | Local prefectural source territories in registry | 13 |
-| Raw published-email rows before cross-source dedupe | 271 |
-| Public Email Candidates | 267 |
-| Unique normalized public emails | 267 |
-| Safe Universe matches | 128 |
-| JOIN_HOLD | 139 |
+| Raw published-email rows before cross-source dedupe | 345 |
+| Public Email Candidates | 331 |
+| Unique normalized public emails | 331 |
+| Safe Universe matches | 175 |
+| JOIN_HOLD | 156 |
 | Explicit toC source-text evidence rows | 8 |
 
 The 8 toC evidence rows are verbatim service-description text from Kumamoto member profiles. No HIGH / MEDIUM / LOW fit determination was made.
@@ -32,6 +32,7 @@ The 8 toC evidence rows are verbatim service-description text from Kumamoto memb
 - Miyazaki Central Tile Association, city-hosted 2026 roster: 14 businesses, 13 publish email.
 - Yamanashi Tile Contractors Federation: all 21 roster rows checked; 9 publish email rows, with one duplicate already represented by RWTA.
 - Yokohama Construction Association: 314 member rows checked; 94 carry the published building-work category whose scope includes roofing, and 80 of those publish mailto Email. Civil-work entries were excluded.
+- Shizuoka Prefecture Construction Association: all 110 results from its roof-permit search and individual detail pages checked; 74 detail pages publish Email, with 64 distinct Email strings.
 
 Additional no-email source directories were registered for the national All瓦連 index and association rosters in Fukuoka, Shiga, Aichi, Shizuoka, Fukui, and Gifu. Candidate discovery must continue nationally.
 
@@ -46,7 +47,7 @@ Additional no-email source directories were registered for the national All瓦�
 - Ambiguous joins: 0
 - Non-roof candidate rows: 0
 - Final toC classifications: 0
-- All candidates account for the 128 joined rows plus 139 JOIN_HOLD rows.
+- All candidates account for the 175 joined rows plus 156 JOIN_HOLD rows.
 
 ## Durable outputs
 
