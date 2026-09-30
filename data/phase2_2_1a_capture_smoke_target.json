@@ -1,0 +1,14 @@
+{
+  "record_kind": "SMOKE_ONLY",
+  "production_eligible": false,
+  "replacement_reference_id": "SMOKE-EXAMPLE-001",
+  "replaces_reference_id": "P01-R05",
+  "slot_id": "P01",
+  "business_archetype": "LOCAL_TRUST_SERVICE",
+  "industry": "LANDSCAPE_GARDEN",
+  "market_scope": "JP",
+  "discovery_source_class": "ORIGINAL_SITE_DIRECT",
+  "original_official_url": "https://example.com/",
+  "evidence_source_roles": ["ORIGINAL_LIVE"],
+  "replacement_reason": "Infrastructure smoke fixture only; not a selected replacement and must never enter production corpus."
+}
