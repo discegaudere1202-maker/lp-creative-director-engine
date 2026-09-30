@@ -9,18 +9,18 @@
 
 | Measure | Count |
 |---|---:|
-| Source Registry records | 17 |
-| Source families | 14 |
+| Source Registry records | 18 |
+| Source families | 15 |
 | All瓦連 prefecture index coverage | 47 / 47 (45 show nonzero registered counts) |
-| Local prefectural source territories in registry | 12 |
-| Raw published-email rows before cross-source dedupe | 191 |
-| Public Email Candidates | 187 |
-| Unique normalized public emails | 187 |
-| Safe Universe matches | 97 |
-| JOIN_HOLD | 90 |
+| Local prefectural source territories in registry | 13 |
+| Raw published-email rows before cross-source dedupe | 271 |
+| Public Email Candidates | 267 |
+| Unique normalized public emails | 267 |
+| Safe Universe matches | 128 |
+| JOIN_HOLD | 139 |
 | Explicit toC source-text evidence rows | 8 |
 
-The 8 toC evidence rows are verbatim service-description text from the Kumamoto member profiles. No HIGH / MEDIUM / LOW fit determination was made.
+The 8 toC evidence rows are verbatim service-description text from Kumamoto member profiles. No HIGH / MEDIUM / LOW fit determination was made.
 
 ## Productive bulk sources checked
 
@@ -31,6 +31,7 @@ The 8 toC evidence rows are verbatim service-description text from the Kumamoto 
 - Kumamoto Prefecture Tile Industry Cooperative: all 31 member profiles checked; 20 publish email.
 - Miyazaki Central Tile Association, city-hosted 2026 roster: 14 businesses, 13 publish email.
 - Yamanashi Tile Contractors Federation: all 21 roster rows checked; 9 publish email rows, with one duplicate already represented by RWTA.
+- Yokohama Construction Association: 314 member rows checked; 94 carry the published building-work category whose scope includes roofing, and 80 of those publish mailto Email. Civil-work entries were excluded.
 
 Additional no-email source directories were registered for the national All瓦連 index and association rosters in Fukuoka, Shiga, Aichi, Shizuoka, Fukui, and Gifu. Candidate discovery must continue nationally.
 
@@ -45,7 +46,7 @@ Additional no-email source directories were registered for the national All瓦�
 - Ambiguous joins: 0
 - Non-roof candidate rows: 0
 - Final toC classifications: 0
-- All candidates account for the 97 joined rows plus 90 JOIN_HOLD rows.
+- All candidates account for the 128 joined rows plus 139 JOIN_HOLD rows.
 
 ## Durable outputs
 
