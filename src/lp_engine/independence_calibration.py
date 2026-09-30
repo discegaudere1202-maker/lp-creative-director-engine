@@ -19,6 +19,7 @@ AXES = ('composition', 'hierarchy', 'typography', 'media_role', 'spatial_behavio
         'responsive_behavior', 'implementation_boundary', 'scene_job')
 FAMILIES = ('brand_family', 'campaign_family', 'agency', 'production_company',
             'source_family', 'template_family')
+DERIVATIVE_SOURCES = ('GALLERY_DUPLICATE', 'ARCHIVE_MIRROR', 'LOCALIZATION_ONLY')
 
 def read(name):
     return json.loads((DATA / name).read_text())
@@ -74,7 +75,7 @@ def pair_independence(left, right, relation=None, *, sources=None):
         return {'status':'NOT_INDEPENDENT', 'reason':'SAME_REFERENCE_OR_VIEWPORT_DUPLICATE', 'dimensions':{}}
     if left.get('page_family') == right.get('page_family'):
         return {'status':'NOT_INDEPENDENT', 'reason':'SAME_PAGE_OR_MIRROR_FAMILY', 'dimensions':{}}
-    if right.get('discovery_source') in ('GALLERY_DUPLICATE', 'ARCHIVE_MIRROR', 'LOCALIZATION_ONLY'):
+    if any(unit.get('discovery_source') in DERIVATIVE_SOURCES for unit in (left, right)):
         return {'status':'NOT_INDEPENDENT', 'reason':'DERIVATIVE_DISCOVERY_SOURCE', 'dimensions':{}}
     relation = relation if isinstance(relation, dict) else {}
     expected = sorted([left['independent_evidence_unit_id'], right['independent_evidence_unit_id']])
@@ -92,7 +93,7 @@ def pair_independence(left, right, relation=None, *, sources=None):
             canonical_units.append(sources.units.get(binding.source_record_id(unit), {}))
         except (ValueError, TypeError):
             canonical_units.append({})
-    if canonical_units[1].get('discovery_source') in ('GALLERY_DUPLICATE', 'ARCHIVE_MIRROR', 'LOCALIZATION_ONLY'):
+    if any(unit.get('discovery_source') in DERIVATIVE_SOURCES for unit in canonical_units):
         return {'status':'NOT_INDEPENDENT', 'reason':'DERIVATIVE_DISCOVERY_SOURCE', 'dimensions':{}}
     try:
         snapshots = [binding.evidence_snapshot(u, sources) for u in (left, right)]
@@ -137,14 +138,17 @@ def calibrate_units(units, relations, *, sources=None):
     if not units:
         return {'status':'UNKNOWN', 'distinct_reference_unit_count':0, 'pairs':[], 'reason':'NO_TRACEABLE_UNIT'}
     unique = {}
+    ambiguous = False
     for unit in units:
         identity = unit['independent_evidence_unit_id']
         if identity in unique and legacy.digest(unique[identity]) != legacy.digest(unit):
-            return {'status':'UNKNOWN', 'distinct_reference_unit_count':len(unique),
-                    'pairs':[], 'reason':'AMBIGUOUS_UNIT_SNAPSHOT_RECORD'}
+            ambiguous = True
         unique[identity] = unit
+    if ambiguous:
+        return {'status':'UNKNOWN', 'distinct_reference_unit_count':len(unique),
+                'pairs':[], 'reason':'AMBIGUOUS_UNIT_SNAPSHOT_RECORD'}
     pairs = []
-    for left, right in combinations(unique.values(), 2):
+    for left, right in combinations((unique[key] for key in sorted(unique)), 2):
         key = sorted([left['independent_evidence_unit_id'],right['independent_evidence_unit_id']])
         # Multiple reviews for the same subjects are ambiguous; do not choose
         # an arbitrary first relation that might hide a stale/conflicting one.

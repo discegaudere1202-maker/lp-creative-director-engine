@@ -1,0 +1,90 @@
+{
+  "validator_version": "PAIR_ORDER_FIX_V1",
+  "validator": "PASS",
+  "historical_preservation": {
+    "base_commit": "c6f135e2f229270f46d694b51f333a9830d89479",
+    "base_tracked_files": 3957,
+    "existing_modified_files": [
+      "src/lp_engine/independence_calibration.py"
+    ],
+    "all_other_published_base_files_unchanged": true,
+    "preserved_data_artifact_files": 3253,
+    "preserved_data_artifact_index_sha256": "168abf615fb016cdec5520056ec5a6d3aa9d5012621eef918650be91959ffb72",
+    "historical_106_tests": 106,
+    "historical_66_tests": 66,
+    "historical_candidate_count": 28,
+    "historical_failure_count": 108,
+    "previous_output_manifest_preserved": true,
+    "previous_manifest_verified_against_pinned_base": 20,
+    "previous_execution_source_hashes_verified_against_pinned_base": 11
+  },
+  "reused_structural_validator": "Snapshot Binding Fix structural checks; prior report not rewritten",
+  "live_holds": 13,
+  "promotion": 0,
+  "customer_production_approved": 0,
+  "phase2600_allowed": false,
+  "actual_live_gate_denials": [
+    {
+      "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    },
+    {
+      "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+      "actual_error": "INDEPENDENCE_INSUFFICIENT_LIVE_REJECT:PHASE_D_CALIBRATION"
+    }
+  ],
+  "source_record_bindings": 39,
+  "candidate_and_eligibility_outcomes_unchanged": true,
+  "current_test_execution_checked": true,
+  "current_manifest_checked": false,
+  "test_run": 270,
+  "derivative_matrix_cases": 120,
+  "execution_source_hashes": 30,
+  "original_corpus_archive_readback": "NOT_RERUN",
+  "fresh_desktop_mobile_render": "N/A_ZERO_ELIGIBILITY_CHANGES",
+  "status": "PHASE_2_2_1D_PAIR_ORDER_FIX_READY_FOR_PM_REVIEW"
+}

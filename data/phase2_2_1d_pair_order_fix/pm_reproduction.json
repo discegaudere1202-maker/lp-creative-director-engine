@@ -1,0 +1,49 @@
+{
+  "reviewed_commit": "c6f135e2f229270f46d694b51f333a9830d89479",
+  "reviewed_module_sha256": "21db0fad697fef00ce18c03c7c72c8f241d4824b6fab4766654e3fb612c592c4",
+  "cases": [
+    {
+      "derivative": "GALLERY_DUPLICATE",
+      "synthetic_only": true,
+      "trace_valid": true,
+      "match_decisions": [
+        "MATCH",
+        "MATCH"
+      ],
+      "pair_forward": "VERIFIED_INDEPENDENT",
+      "pair_reverse": "NOT_INDEPENDENT",
+      "set_forward": "VERIFIED_INDEPENDENT",
+      "set_reverse": "NOT_INDEPENDENT",
+      "reviewed_revision_safety_assertion_forward": "FAIL"
+    },
+    {
+      "derivative": "ARCHIVE_MIRROR",
+      "synthetic_only": true,
+      "trace_valid": true,
+      "match_decisions": [
+        "MATCH",
+        "MATCH"
+      ],
+      "pair_forward": "VERIFIED_INDEPENDENT",
+      "pair_reverse": "NOT_INDEPENDENT",
+      "set_forward": "VERIFIED_INDEPENDENT",
+      "set_reverse": "NOT_INDEPENDENT",
+      "reviewed_revision_safety_assertion_forward": "FAIL"
+    },
+    {
+      "derivative": "LOCALIZATION_ONLY",
+      "synthetic_only": true,
+      "trace_valid": true,
+      "match_decisions": [
+        "MATCH",
+        "MATCH"
+      ],
+      "pair_forward": "VERIFIED_INDEPENDENT",
+      "pair_reverse": "NOT_INDEPENDENT",
+      "set_forward": "VERIFIED_INDEPENDENT",
+      "set_reverse": "NOT_INDEPENDENT",
+      "reviewed_revision_safety_assertion_forward": "FAIL"
+    }
+  ],
+  "scope": "Exact c6 source and declared synthetic current capture/attribution only; no live production bypass"
+}

@@ -1,0 +1,13 @@
+{
+  "data/phase2_2_1d_pair_order_fix/legacy_negative_replay.json": "27193a2241ac4af104a8212bb954e676082465069815a1ae819524a47ed5597e",
+  "data/phase2_2_1d_pair_order_fix/order_invariance_report.json": "76176988b64b98a926b506bcc0d7d838952d0dd5dfea9ab8c7968329ae259c9e",
+  "data/phase2_2_1d_pair_order_fix/pm_reproduction.json": "793ed02cdd42b974b68a1ccc4e5f4e960ad22d155f1569b01c2a1994ff0f6b6a",
+  "data/phase2_2_1d_pair_order_fix/preservation_report.json": "9447a15b849f6cf3d33fc0e30d2dfc5e8ad9c881720457c9baa4d0fd1db81cd7",
+  "data/phase2_2_1d_pair_order_fix/tests_report.json": "0971239933bb2d5ceb7d746ede1ac530bf606a36f0f8c8ae3e8da5dbf8bfff76",
+  "data/phase2_2_1d_pair_order_fix/validator_report.json": "d736799f72e736dd3e7db2fb35b5ecad67cf4891e1a406bfcb86162bb76a2408",
+  "docs/PHASE2_2_1D_PAIR_ORDER_FIX_REPORT.md": "f93f4f77f553ad161015f2f581b971152e9eff116b3315a5c8e2f427697364f9",
+  "scripts/validate_phase2_2_1d_pair_order_fix.py": "6547f244aa35c73a7f556bf454c2ddd49a0ff3058703729390b807577daf9aff",
+  "scripts/verify_phase2_2_1d_pair_order_fix.py": "fddaca083cdfae569034972e08370be4ef9db030299627f2caee404eabebc9a3",
+  "src/lp_engine/independence_calibration.py": "e40c33fb4c53c32e1b66e9486b8ae66bc6b49a0e472d33949578e20fd5854c42",
+  "tests/test_phase2_2_1d_pair_order_fix.py": "40e660ad95244274cc281dbc723663633047a598ba5f0e3834ea1c6f837fb9ce"
+}

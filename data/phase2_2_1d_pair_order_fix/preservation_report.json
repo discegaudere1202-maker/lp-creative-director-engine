@@ -1,0 +1,17 @@
+{
+  "base_commit": "c6f135e2f229270f46d694b51f333a9830d89479",
+  "base_tracked_files": 3957,
+  "existing_modified_files": [
+    "src/lp_engine/independence_calibration.py"
+  ],
+  "all_other_published_base_files_unchanged": true,
+  "preserved_data_artifact_files": 3253,
+  "preserved_data_artifact_index_sha256": "168abf615fb016cdec5520056ec5a6d3aa9d5012621eef918650be91959ffb72",
+  "historical_106_tests": 106,
+  "historical_66_tests": 66,
+  "historical_candidate_count": 28,
+  "historical_failure_count": 108,
+  "previous_output_manifest_preserved": true,
+  "previous_manifest_verified_against_pinned_base": 20,
+  "previous_execution_source_hashes_verified_against_pinned_base": 11
+}
