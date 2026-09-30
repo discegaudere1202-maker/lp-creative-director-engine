@@ -1,0 +1,59 @@
+name: Roof Universe Full Build
+
+on:
+  push:
+    branches:
+      - task/roof-universe-58276
+    paths:
+      - 'scripts/lead_universe/scrape_mlit_roof_universe.py'
+      - 'scripts/lead_universe/build_roof_universe.py'
+      - '.github/workflows/roof_universe_full.yml'
+  workflow_dispatch:
+
+jobs:
+  build-universe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pandas
+      - name: Live selector Pilot then 47 prefectures x General/Special
+        run: |
+          python scripts/lead_universe/scrape_mlit_roof_universe.py \
+            --out-dir artifacts/roof_universe/raw \
+            --delay 0.12
+      - name: Build Permit Universe and Sales Entity Universe
+        run: |
+          python scripts/lead_universe/build_roof_universe.py \
+            --raw-dir artifacts/roof_universe/raw \
+            --out-dir artifacts/roof_universe/final \
+            --official-baseline 58276
+      - name: Package durable payload
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          base=Path('artifacts/roof_universe')
+          out=base/'roof_national_universe_production.zip'
+          with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED) as z:
+              for p in sorted((base/'final').rglob('*')):
+                  if p.is_file(): z.write(p,p.relative_to(base))
+              for name in ['selector_discovery.json','pilot_validation.json','search_summary.json']:
+                  p=base/'raw'/name
+                  if p.exists(): z.write(p,p.relative_to(base))
+              for p in sorted((base/'raw').glob('*.meta.json')):
+                  z.write(p,p.relative_to(base))
+          print(out)
+          PY
+      - name: Upload roof universe artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: roof-universe-live
+          path: artifacts/roof_universe/
+          if-no-files-found: error
+          retention-days: 90
