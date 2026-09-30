@@ -86,6 +86,14 @@ def pair_independence(left, right, relation=None, *, sources=None):
     # subjects are instead re-derived from the registered unit/capture tables.
     # Legacy assertions are never stamped with new subject digests here.
     sources = sources if sources is not None else evidence_sources()
+    canonical_units = []
+    for unit in (left, right):
+        try:
+            canonical_units.append(sources.units.get(binding.source_record_id(unit), {}))
+        except (ValueError, TypeError):
+            canonical_units.append({})
+    if canonical_units[1].get('discovery_source') in ('GALLERY_DUPLICATE', 'ARCHIVE_MIRROR', 'LOCALIZATION_ONLY'):
+        return {'status':'NOT_INDEPENDENT', 'reason':'DERIVATIVE_DISCOVERY_SOURCE', 'dimensions':{}}
     try:
         snapshots = [binding.evidence_snapshot(u, sources) for u in (left, right)]
         bindings = {s['unit_id']: s['evidence_snapshot_sha256'] for s in snapshots}
@@ -101,9 +109,14 @@ def pair_independence(left, right, relation=None, *, sources=None):
         # A known shared family already establishes dependence without a
         # negative-independence claim. Parent/source aliases must be resolved
         # to reviewed family IDs, never display names or inferred domains.
-        a = left.get('verified_family_ids', {}).get(family)
-        b = right.get('verified_family_ids', {}).get(family)
-        if a and b and set(a).intersection(b):
+        # Canonical known dependencies cannot disappear because a caller
+        # omits/changes its copy of family metadata. Caller-shared assertions
+        # remain conservative denials too; neither path grants independence.
+        a = set(left.get('verified_family_ids', {}).get(family, []))
+        a.update(canonical_units[0].get('verified_family_ids', {}).get(family, []))
+        b = set(right.get('verified_family_ids', {}).get(family, []))
+        b.update(canonical_units[1].get('verified_family_ids', {}).get(family, []))
+        if a.intersection(b):
             dimensions[family] = 'NOT_INDEPENDENT'
             continue
         if (state not in ('VERIFIED_INDEPENDENT', 'NOT_INDEPENDENT') or

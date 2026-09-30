@@ -116,5 +116,13 @@
   "citation_digest": "Digest of the entire canonical attribution evidence source record; changes require a new explicit review",
   "optional_metadata": "Only source fields actually present are copied. Missing historic snapshot_id is not fabricated; an unambiguous registered parent screenshot/hash/archive tuple is used where it is the existing identity.",
   "legacy_policy": "Contract-only flags, missing subjects/citations/reviewer, stale digests and wrong mappings are UNKNOWN. Known shared/duplicate families remain NOT_INDEPENDENT. No ledger regeneration writes or upgrades stored reviews.",
-  "semantic_boundary": "Hash/record binding validates the reviewed subject and citation identity, not the truth of a URL or reviewer statement; formal semantic review remains necessary"
+  "semantic_boundary": "Hash/record binding validates the reviewed subject and citation identity, not the truth of a URL or reviewer statement; formal semantic review remains necessary",
+  "additional_canonical_unit_consistency_fields": [
+    "desktop_scene_ids",
+    "mobile_scene_ids",
+    "source_contract_sha256",
+    "discovery_source",
+    "verified_family_ids"
+  ],
+  "canonical_family_denials": "Known shared family IDs and derivative discovery classes are read from registered unit records as well as conservative caller denials; a caller cannot hide them by omitting/changing its copy."
 }

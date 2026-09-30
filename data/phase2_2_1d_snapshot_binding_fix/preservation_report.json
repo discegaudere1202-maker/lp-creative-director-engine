@@ -10,7 +10,7 @@
   "edited_code_hashes": {
     "src/lp_engine/independence_calibration.py": {
       "before_sha256": "2c7b21ca3d9e02c2cde526470ce039305216d604935c195262534ca6223a6f5f",
-      "after_sha256": "ed57e9f76730abfa9815ad11f874ced81722edbaebff22ddf72ccf532eb54ed3"
+      "after_sha256": "21db0fad697fef00ce18c03c7c72c8f241d4824b6fab4766654e3fb612c592c4"
     },
     "tests/test_phase2_2_1d.py": {
       "before_sha256": "7f869a587dc82dbdb8fedae2d35c52fefd4b8435136c9753de62e57f5109b673",

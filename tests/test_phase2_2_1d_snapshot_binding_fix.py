@@ -168,6 +168,17 @@ class SnapshotBindingFixTest(unittest.TestCase):
         self.z['page_family']=self.a['page_family']
         self.assertEqual(self.verdict()['status'],'NOT_INDEPENDENT')
 
+    def test_canonical_shared_agency_denial_survives_caller_metadata_omission(self):
+        for unit in (self.a,self.z):
+            self.sources.units[b.source_record_id(unit)]['verified_family_ids']={'agency':['SYNTHETIC-SHARED']}
+        self.assertNotIn('verified_family_ids',self.a)
+        self.assertEqual(self.verdict()['status'],'NOT_INDEPENDENT')
+
+    def test_canonical_gallery_duplicate_cannot_be_hidden_by_caller(self):
+        self.sources.units[b.source_record_id(self.z)]['discovery_source']='GALLERY_DUPLICATE'
+        self.assertEqual(self.z['discovery_source'],'SYNTHETIC_TEST_ONLY')
+        self.assertEqual(self.verdict()['status'],'NOT_INDEPENDENT')
+
     def test_real_source_bindings_are_rederived_and_holds_preserved(self):
         sources=d.evidence_sources();records=list(sources.units.values())
         self.assertEqual(len(records),39)

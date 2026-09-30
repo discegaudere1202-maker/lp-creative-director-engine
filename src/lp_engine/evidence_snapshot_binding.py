@@ -152,7 +152,8 @@ def evidence_snapshot(unit, sources):
     identity = source_record_id(unit)
     canonical = sources.units.get(identity)
     require(canonical is not None, 'UNIT_SOURCE_RECORD_NOT_REGISTERED')
-    for field in UNIT_FIELDS + ('desktop_scene_ids', 'mobile_scene_ids', 'source_contract_sha256'):
+    for field in UNIT_FIELDS + ('desktop_scene_ids', 'mobile_scene_ids', 'source_contract_sha256',
+                               'discovery_source', 'verified_family_ids'):
         require(unit.get(field) == canonical.get(field), 'UNIT_SOURCE_RECORD_MISMATCH:' + field)
     reference_id = canonical.get('reference_id')
     reference = sources.references.get(reference_id, {})

@@ -28,7 +28,7 @@ Each family claim uses `SNAPSHOT_BOUND_FAMILY_ASSERTION_V1`, an assertion ID, fa
 
 Legacy `snapshot_contract_digests` assertions do not automatically migrate, even if their old VERIFIED flag is present. Stale/missing/wrongly mapped capture subjects or source citations make that family UNKNOWN. A partially verified pair retains UNKNOWN dimensions and stays ineligible; duplicate pages/reference units and known shared brand/campaign/agency/production/source/template families retain NOT_INDEPENDENT denials.
 
-A future explicit reviewer must inspect the current canonical subject and the source citation, then record a new reviewed claim for those exact digests. A digest does not prove semantic attribution. The fix verification command generates only the versioned derived ledger and binding index; it never stamps or rewrites assertions/citations. In the real correction records both new assertion/citation registries remain `[]`.
+A future explicit reviewer must inspect the current canonical subject and the source citation, then record a new reviewed claim for those exact digests. A digest does not prove semantic attribution. Known shared-family IDs and derivative discovery classes are also read from registered unit source records; caller omission cannot hide their denials. Caller discovery/family metadata must match its registered record for a positive binding. The fix verification command generates only the versioned derived ledger and binding index; it never stamps or rewrites assertions/citations. In the real correction records both new assertion/citation registries remain `[]`.
 
 ## Ledger and production integration
 
@@ -42,17 +42,17 @@ Synthetic integration tests exercise the actual derive → ledger comparison →
 
 | Group | Final execution |
 |---|---:|
-| New Snapshot Binding regression methods | 38 PASS |
+| New Snapshot Binding regression methods | 40 PASS |
 | Adapted D regression methods | 16 PASS |
 | C regression methods | 26 PASS |
 | B regression methods | 18 PASS |
 | Production generation regression methods | 6 PASS |
-| Total final run | 104 PASS / 0 FAIL / 0 skipped |
+| Total final run | 106 PASS / 0 FAIL / 0 skipped |
 | Separate replay of immutable historical negatives | 18 PASS / 0 FAIL |
 | New fix Validator | PASS |
 | Canonical binding/preservation QA | PASS |
 
-The final test source hashes and all 104 method outcomes are in `tests_report.json`. Development history records two executions of the 104-method suite, each 104 PASS / 0 FAIL / 0 skipped (208 method executions total). The historical 18 negative specimens were separately replayed in both cycles (36 replay executions total); their final replay report is 18/18. The first run preceded minor review/input guards and better outcome recording; the second validates the final source bytes. These engineering execution counts are not added to the 28 research candidates or historical Failure Evidence 108.
+The final test source hashes and all 106 method outcomes are in `tests_report.json`. Development history records three executions: 104 PASS, 104 PASS, and final 106 PASS, each 0 FAIL / 0 skipped (314 method executions total). The historical 18 negative specimens were separately replayed in all three cycles (54 replay executions total); their final replay report is 18/18. The first run preceded minor review/input guards and better outcome recording. The final run adds two regressions ensuring that callers cannot hide canonical shared-agency or gallery-duplicate metadata, and validates the final source bytes. These engineering execution counts are not added to the 28 research candidates or historical Failure Evidence 108.
 
 The exact old module was loaded from the reviewed Git object and the two PM mutations were freshly reproduced using declared synthetic records: old trace/match remained valid and old pair returned VERIFIED_INDEPENDENT. `pm_reproduction.json` accurately marks those OLD safety assertions FAIL. The new regression tests assert UNKNOWN for both cases and PASS. Synthetic timestamps/URLs/hashes are explicitly test declarations; no real capture/attribution was created.
 

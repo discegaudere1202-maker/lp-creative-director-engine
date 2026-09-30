@@ -1,5 +1,5 @@
 {
-  "new_regression_test_methods": 38,
+  "new_regression_test_methods": 40,
   "test_results": [
     {
       "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_ambiguous_assertions_not_arbitrarily_selected",
@@ -11,6 +11,14 @@
     },
     {
       "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_caller_scene_selection_not_in_canonical_unit_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_canonical_gallery_duplicate_cannot_be_hidden_by_caller",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_canonical_shared_agency_denial_survives_caller_metadata_omission",
       "result": "PASS"
     },
     {
