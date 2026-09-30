@@ -40,6 +40,15 @@ def ordinary_settle(page):
                 actions.append({'action':'VISIBLE_NON_BINDING_DISMISS','label_pattern':pattern})
                 page.wait_for_timeout(300)
                 break
+    # Reviewed ordinary newsletter dismissal, scoped to the observed official host/frame.
+    if re.match(r'^https://(?:www\.)?allbirds\.com/', page.url):
+        frames=page.locator('iframe#attentive_creative[title="Sign Up via Text for Offers"]')
+        if frames.count()==1:
+            dismiss=page.frame_locator('iframe#attentive_creative[title="Sign Up via Text for Offers"]').get_by_role('button',name='Dismiss this popup',exact=True)
+            if dismiss.is_visible():
+                dismiss.click(timeout=1500)
+                actions.append({'action':'VISIBLE_NON_BINDING_NEWSLETTER_DISMISS','host':'allbirds.com','frame':'attentive_creative','label':'Dismiss this popup'})
+                page.wait_for_timeout(300)
     page.wait_for_timeout(1500)
     return actions
 
