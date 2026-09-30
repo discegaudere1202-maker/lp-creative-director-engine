@@ -25,19 +25,40 @@ def facts(page):
       const nodes=[...document.querySelectorAll('h1,h2,h3,main section,main article,footer,nav,a,button')].slice(0,500).map((e,i)=>({i,tag:e.tagName.toLowerCase(),text:norm(e.innerText||e.getAttribute('aria-label')).slice(0,400),rect:rect(e)})).filter(x=>x.text);
       return {title:document.title,url:location.href,inner_width:innerWidth,scroll_width:document.documentElement.scrollWidth,scroll_height:document.documentElement.scrollHeight,visible_text:norm(document.body?.innerText).slice(0,3000),semantic_nodes:nodes,heading_count:document.querySelectorAll('h1,h2,h3').length,section_count:document.querySelectorAll('main section,main article,[data-section]').length,nav_count:document.querySelectorAll('nav').length,footer_present:!!document.querySelector('footer'),video_count:document.querySelectorAll('video').length}; }""")
 
+def ordinary_settle(page):
+    """Bounded wait and visible non-binding controls; never alter DOM/access controls."""
+    actions=[]
+    page.wait_for_timeout(3500)
+    if classify(None,None,facts(page)) is not None:return actions
+    for pattern in (r'^reject all$', r'^refuse all$', r'^decline$',
+                    r'^allow technical cookies$', r'^no thanks$', r'^close(?: (?:dialog|form|popup|modal))?$',
+                    r'^閉じる$', r'^必要なクッキーのみ許可$'):
+        buttons=page.get_by_role('button',name=re.compile(pattern,re.I))
+        for button in buttons.all()[:8]:
+            if button.is_visible():
+                button.click(timeout=1500)
+                actions.append({'action':'VISIBLE_NON_BINDING_DISMISS','label_pattern':pattern})
+                page.wait_for_timeout(300)
+                break
+    page.wait_for_timeout(1500)
+    return actions
+
 def traverse(page):
-    sampled=[]; y=0; previous=-1; steps=0
-    while steps<200:
-        height=page.evaluate("document.documentElement.scrollHeight")
-        if height>MAX_HEIGHT: break
-        page.evaluate("y=>window.scrollTo(0,y)",y);page.wait_for_timeout(120)
-        sampled.append({"scroll_y":y,"document_height":height})
-        step=max(500,int(page.evaluate("innerHeight")*.78)); previous=y; y=min(height,y+step);steps+=1
-        if y>=height or y==previous: break
-    page.evaluate("window.scrollTo(0,document.documentElement.scrollHeight)");page.wait_for_timeout(250)
-    final=page.evaluate("document.documentElement.scrollHeight");page.evaluate("window.scrollTo(0,0)");page.wait_for_timeout(120)
-    complete=final<=MAX_HEIGHT and bool(sampled) and y>=final
-    return {"state":"OBSERVED" if complete else "NOT_OBSERVED","scroll_samples":sampled,"final_height":final,"max_height_limit":MAX_HEIGHT,"complete_to_bottom":complete}
+    sampled=[]; target=0; complete=False; stable_bottom=0; previous=None
+    for _ in range(200):
+        page.evaluate("y=>window.scrollTo(0,y)",target);page.wait_for_timeout(350)
+        sample=page.evaluate("() => ({scroll_y:window.scrollY,document_height:document.documentElement.scrollHeight,viewport_height:innerHeight})")
+        sampled.append(sample); height=sample['document_height']
+        if height>MAX_HEIGHT:break
+        at_bottom=sample['scroll_y']+sample['viewport_height']>=height-2
+        stable_bottom=stable_bottom+1 if at_bottom and previous and height==previous['document_height'] else 0
+        if stable_bottom>=2:complete=True;break
+        if previous and not at_bottom and sample['scroll_y']==previous['scroll_y'] and target>sample['scroll_y']:break
+        target=min(height,sample['scroll_y']+max(500,int(sample['viewport_height']*.78)))
+        previous=sample
+    final=page.evaluate("document.documentElement.scrollHeight")
+    page.evaluate("window.scrollTo(0,0)");page.wait_for_timeout(500)
+    return {"state":"OBSERVED" if complete else "NOT_OBSERVED","scroll_samples":sampled,"final_height":final,"max_height_limit":MAX_HEIGHT,"complete_to_bottom":complete,'position_measurement':'ACTUAL_WINDOW_SCROLLY','stable_bottom_samples':stable_bottom}
 
 def save_screens(page,out:Path,rid:str,vp:str,stamp:str):
     facts0=facts(page); height=facts0["scroll_height"]
@@ -101,6 +122,13 @@ def capture_one(browser,row,out,mode,run_id,artifact_name,retention):
             elif pf["inner_width"]!=sz["width"] or (not pf["visible_text"] and not pf["heading_count"]):
                 entry.update({"failure_class":"VIEWPORT_OR_VISIBLE_BODY_INVALID","error":"Viewport mismatch or no visible page content"});failed=True
             else:
+                entry['ordinary_ui_actions']=ordinary_settle(page)
+                pf=facts(page);entry['page_facts']=pf
+                fc=classify(entry['http_status'],None,pf)
+                if fc:
+                    entry.update({'failure_class':fc,'error':fc});failed=True
+                    result['viewports'].append(entry)
+                    continue
                 entry["traversal_facts"]=traverse(page)
                 if entry["traversal_facts"]["state"]!="OBSERVED" or not entry["traversal_facts"]["complete_to_bottom"]:
                     entry.update({"failure_class":"FULL_PAGE_TRAVERSAL_FAILED","error":"No semantic page traversal evidence"});failed=True
