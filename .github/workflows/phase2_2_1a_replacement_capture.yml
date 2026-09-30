@@ -38,11 +38,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 5c91a7818d57accd5f22782f9643f05452e833d3
+          ref: 280f655ae8b635f0517db04dfe21dcef83c0ad95
           persist-credentials: false
       - name: Verify reviewed target and immutable input contract
         env:
-          APPROVED_TARGET_SHA: 5c91a7818d57accd5f22782f9643f05452e833d3
+          APPROVED_TARGET_SHA: 280f655ae8b635f0517db04dfe21dcef83c0ad95
         run: |
           test "$(git rev-parse HEAD)" = "$APPROVED_TARGET_SHA"
           python - <<'PY'
