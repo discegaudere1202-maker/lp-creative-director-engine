@@ -1,0 +1,15 @@
+{
+  "schema_id": "PHASE2_2_1A_REPLACEMENT_CAPTURE_INPUT_V1",
+  "production_candidate_fields": [
+    "replacement_reference_id", "replaces_reference_id", "slot_id",
+    "business_archetype", "industry", "market_scope",
+    "discovery_source_class", "original_official_url",
+    "evidence_source_roles", "replacement_reason"
+  ],
+  "same_cell_key": ["business_archetype", "industry", "market_scope", "discovery_source_class"],
+  "required_viewports": {"DESKTOP": {"width": 1440, "height": 1000}, "MOBILE": {"width": 390, "height": 844}},
+  "limits": {"max_retries_per_viewport": 1, "navigation_timeout_ms": 30000, "max_page_height_px": 30000, "scroll_step_ratio": 0.78},
+  "production_gate": ["original_official_evidence", "desktop_1440", "mobile_390", "full_page_traversal", "viewport_and_full_page_images", "sha256", "explicit_capture_state", "archive_ingestion_status"],
+  "security": {"captcha_bypass": false, "waf_bypass": false, "fingerprint_spoofing": false, "proxy_or_network_path_changes": false, "protected_route_discovery": false, "unauthorized_credentials": false, "security_challenge_bypass": false},
+  "phase2600_allowed": false
+}
