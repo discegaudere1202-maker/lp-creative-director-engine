@@ -1,0 +1,171 @@
+{
+  "new_regression_test_methods": 38,
+  "test_results": [
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_ambiguous_assertions_not_arbitrarily_selected",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_archive_locator_change_invalidates_review",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_caller_scene_selection_not_in_canonical_unit_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_capture_metadata_change_without_pixel_change_invalidates_review",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_changed_cited_source_record_invalidates_old_review_digest",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_citation_missing_from_source_registry",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_citation_subject_mapping_wrong_even_with_current_citation_digest",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_conflicting_unit_records_cannot_be_silently_deduplicated",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_contract_digest_is_separate_from_snapshot_digest",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_duplicate_reference_and_viewport_derivatives_remain_dependent",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_explicit_new_review_required_after_new_snapshot",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_forged_v2_ledger_summary_rejected_by_production",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_gallery_and_mirror_derivatives_remain_dependent",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_ledger_rederive_and_production_gate_positive_provenance_still_hold",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_ledger_regeneration_does_not_reapprove_changed_capture_assertion",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_legacy_contract_digest_assertions_are_not_migrated",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_missing_explicit_reviewer_not_verified_by_flag",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_missing_mobile_source_scene",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_missing_mobile_subject_mapping",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_missing_one_family_remains_unknown_dimension",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_old_image_hash_readback_no_longer_matches_scene",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_order_of_pair_does_not_change_unit_mapping",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_parent_snapshot_identity_change_invalidates_review",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_pm_reproduction_changed_pc_mobile_scene_selection",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_pm_reproduction_same_scene_ids_changed_registered_pixel_hash",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_real_source_bindings_are_rederived_and_holds_preserved",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_reference_page_identity_change_invalidates_review",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_same_mechanism_distinct_references_reviewed_control",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_same_page_family_remains_dependent",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_agency_denial_preserved",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_brand_family_denial_preserved",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_campaign_family_denial_preserved",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_production_company_denial_preserved",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_source_family_denial_preserved",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_template_family_denial_preserved",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_unit_digest_supplied_by_caller_is_ignored",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_unit_to_snapshot_mapping_swapped",
+      "result": "PASS"
+    },
+    {
+      "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_unregistered_unit_source_record_rejected",
+      "result": "PASS"
+    }
+  ],
+  "pm_findings_covered": [
+    "CHANGED_PC_MOBILE_SCENE_SELECTION",
+    "SAME_SCENE_IDS_CHANGED_REGISTERED_PIXEL_HASH"
+  ],
+  "result": "PASS",
+  "synthetic_tests_are_not_research_evidence": true,
+  "historical_candidates": 28,
+  "historical_failure_evidence": 108,
+  "new_research_candidates": 0,
+  "new_research_failure_records": 0,
+  "live_holds": 13,
+  "promotion": 0,
+  "customer_production_approved": 0,
+  "phase2600_allowed": false
+}

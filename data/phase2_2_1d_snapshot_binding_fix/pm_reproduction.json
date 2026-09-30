@@ -1,0 +1,27 @@
+{
+  "reviewed_commit": "4ae3f53be9cc48f13b22145f1e0a54e68b367c79",
+  "reviewed_module_sha256": "2c7b21ca3d9e02c2cde526470ce039305216d604935c195262534ca6223a6f5f",
+  "mutation_cases": [
+    {
+      "case": "NEW_PC_MOBILE_SCENE_IDS",
+      "same_mechanism_contract": true,
+      "positive_control": "VERIFIED_INDEPENDENT",
+      "trace_valid": true,
+      "match_decision": "MATCH",
+      "old_result": "VERIFIED_INDEPENDENT",
+      "old_safety_assertion": "FAIL",
+      "synthetic_only": true
+    },
+    {
+      "case": "SAME_SCENE_IDS_NEW_REGISTERED_HASH",
+      "same_mechanism_contract": true,
+      "positive_control": "VERIFIED_INDEPENDENT",
+      "trace_valid": true,
+      "match_decision": "MATCH",
+      "old_result": "VERIFIED_INDEPENDENT",
+      "old_safety_assertion": "FAIL",
+      "synthetic_only": true
+    }
+  ],
+  "scope": "Isolated exact old module / declared synthetic records; no capture or production bypass claimed"
+}

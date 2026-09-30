@@ -11,8 +11,10 @@ from pathlib import Path
 from itertools import combinations
 from urllib.parse import urlsplit
 from . import mechanism_runtime as legacy
+from . import evidence_snapshot_binding as binding
 
 DATA = legacy.ROOT / 'data/phase2_2_1d'
+FIX_DATA = binding.FIX_DATA
 AXES = ('composition', 'hierarchy', 'typography', 'media_role', 'spatial_behavior',
         'responsive_behavior', 'implementation_boundary', 'scene_job')
 FAMILIES = ('brand_family', 'campaign_family', 'agency', 'production_company',
@@ -20,6 +22,15 @@ FAMILIES = ('brand_family', 'campaign_family', 'agency', 'production_company',
 
 def read(name):
     return json.loads((DATA / name).read_text())
+
+def fix_read(name):
+    return json.loads((FIX_DATA / name).read_text())
+
+def evidence_sources(units=None, readback=None):
+    if units is None:
+        units = read('baseline_units.json') + read('candidate_reviews.json')
+    return binding.load_sources(units, readback or read('corpus_readback.json'),
+                                fix_read('attribution_evidence.json'))
 
 def trace_valid(unit, scenes, verified_members):
     """Both viewports must trace to hashed, verified scenes of THIS reference."""
@@ -29,11 +40,13 @@ def trace_valid(unit, scenes, verified_members):
             return False
         for sid in ids:
             s = scenes.get(sid)
-            if not s or s['reference_id'] != unit.get('reference_id') or s['viewport_label'] != label:
+            if (not s or s.get('scene_evidence_id') != sid or
+                s.get('reference_id') != unit.get('reference_id') or s.get('viewport_label') != label):
                 return False
             if s.get('observation_state') != 'OBSERVED' or s.get('archive_status') != 'DURABLE_VERIFIED':
                 return False
-            if verified_members.get((s['archive_id'], s['archive_entry'])) != s.get('content_hash'):
+            if (not binding.sha256_value(s.get('content_hash')) or not s.get('archive_entry') or
+                verified_members.get((s.get('archive_id'), s.get('archive_entry'))) != s['content_hash']):
                 return False
     return True
 
@@ -55,7 +68,7 @@ def match_decision(candidate, mechanism, scenes, verified_members):
         return 'HOLD', 'SOURCE_SCENE_JOB_UNCLASSIFIED'
     return 'MATCH', None
 
-def pair_independence(left, right, relation=None):
+def pair_independence(left, right, relation=None, *, sources=None):
     """A relation is a reviewed attribution assertion, not a URL heuristic."""
     if left.get('reference_id') == right.get('reference_id') or left.get('independent_evidence_unit_id') == right.get('independent_evidence_unit_id'):
         return {'status':'NOT_INDEPENDENT', 'reason':'SAME_REFERENCE_OR_VIEWPORT_DUPLICATE', 'dimensions':{}}
@@ -63,13 +76,27 @@ def pair_independence(left, right, relation=None):
         return {'status':'NOT_INDEPENDENT', 'reason':'SAME_PAGE_OR_MIRROR_FAMILY', 'dimensions':{}}
     if right.get('discovery_source') in ('GALLERY_DUPLICATE', 'ARCHIVE_MIRROR', 'LOCALIZATION_ONLY'):
         return {'status':'NOT_INDEPENDENT', 'reason':'DERIVATIVE_DISCOVERY_SOURCE', 'dimensions':{}}
-    relation = relation or {}
+    relation = relation if isinstance(relation, dict) else {}
     expected = sorted([left['independent_evidence_unit_id'], right['independent_evidence_unit_id']])
-    if sorted(relation.get('unit_ids', [])) != expected:
+    subject_ids = relation.get('unit_ids', [])
+    if (not isinstance(subject_ids, list) or len(subject_ids) != 2 or
+        not all(isinstance(identity, str) for identity in subject_ids) or sorted(subject_ids) != expected):
         relation = {}
+    # A contract digest is shared by same-mechanism references. Attribution
+    # subjects are instead re-derived from the registered unit/capture tables.
+    # Legacy assertions are never stamped with new subject digests here.
+    sources = sources if sources is not None else evidence_sources()
+    try:
+        snapshots = [binding.evidence_snapshot(u, sources) for u in (left, right)]
+        bindings = {s['unit_id']: s['evidence_snapshot_sha256'] for s in snapshots}
+    except (ValueError, KeyError, TypeError):
+        bindings = None
     dimensions = {}
     for family in FAMILIES:
-        claim = relation.get('dimensions', {}).get(family, {})
+        claims = relation.get('dimensions', {})
+        claim = claims.get(family, {}) if isinstance(claims, dict) else {}
+        if not isinstance(claim, dict):
+            claim = {}
         state = claim.get('status', 'UNKNOWN')
         # A known shared family already establishes dependence without a
         # negative-independence claim. Parent/source aliases must be resolved
@@ -79,10 +106,8 @@ def pair_independence(left, right, relation=None):
         if a and b and set(a).intersection(b):
             dimensions[family] = 'NOT_INDEPENDENT'
             continue
-        bound = claim.get('snapshot_contract_digests') == sorted([left.get('source_contract_sha256'), right.get('source_contract_sha256')])
         if (state not in ('VERIFIED_INDEPENDENT', 'NOT_INDEPENDENT') or
-            not claim.get('primary_source_urls') or not claim.get('basis') or
-            claim.get('snapshot_binding') != 'VERIFIED' or not bound):
+            bindings is None or not binding.assertion_bound(claim, family, bindings, sources)):
             state = 'UNKNOWN'
         dimensions[family] = state
     if 'NOT_INDEPENDENT' in dimensions.values():
@@ -95,15 +120,24 @@ def pair_independence(left, right, relation=None):
         state, reason = 'UNKNOWN', 'ATTRIBUTION_OR_CAMPAIGN_SNAPSHOT_BINDING_UNKNOWN'
     return {'status':state, 'reason':reason, 'dimensions':dimensions}
 
-def calibrate_units(units, relations):
+def calibrate_units(units, relations, *, sources=None):
     if not units:
         return {'status':'UNKNOWN', 'distinct_reference_unit_count':0, 'pairs':[], 'reason':'NO_TRACEABLE_UNIT'}
-    unique = {u['independent_evidence_unit_id']:u for u in units}
+    unique = {}
+    for unit in units:
+        identity = unit['independent_evidence_unit_id']
+        if identity in unique and legacy.digest(unique[identity]) != legacy.digest(unit):
+            return {'status':'UNKNOWN', 'distinct_reference_unit_count':len(unique),
+                    'pairs':[], 'reason':'AMBIGUOUS_UNIT_SNAPSHOT_RECORD'}
+        unique[identity] = unit
     pairs = []
     for left, right in combinations(unique.values(), 2):
         key = sorted([left['independent_evidence_unit_id'],right['independent_evidence_unit_id']])
-        relation = next((r for r in relations if sorted(r.get('unit_ids',[])) == key), None)
-        pairs.append({'unit_ids':key, **pair_independence(left,right,relation)})
+        # Multiple reviews for the same subjects are ambiguous; do not choose
+        # an arbitrary first relation that might hide a stale/conflicting one.
+        relations_for_pair = [r for r in relations if sorted(r.get('unit_ids',[])) == key]
+        relation = relations_for_pair[0] if len(relations_for_pair) == 1 else None
+        pairs.append({'unit_ids':key, **pair_independence(left,right,relation,sources=sources)})
     if len(unique) == 1:
         status = 'NOT_INDEPENDENT'
     elif all(p['status']=='NOT_INDEPENDENT' for p in pairs):
@@ -120,17 +154,20 @@ def calibrate_units(units, relations):
 def derive():
     from . import production_eligibility as gate
     mechanisms, _ = legacy.database()
-    scenes = {r['scene_evidence_id']:r for r in legacy.load_jsonl(legacy.ROOT / 'data/phase2_2_1a_recovery/scene_evidence.jsonl')}
     rb = read('corpus_readback.json')
     if rb.get('source_commit') != 'b3d4607277c3e13a24505e70b94bf3ec03b67362' or rb.get('phase2600_allowed') is not False:
         raise ValueError('CALIBRATION_CORPUS_TRACE_MISMATCH')
     verified = {(r['archive_id'],r['archive_member']):r['sha256'] for r in rb['members'] if r['result']=='PASS'}
     baseline = read('baseline_units.json'); candidates = read('candidate_reviews.json')
+    sources = evidence_sources(baseline + candidates, rb)
+    scenes = sources.scenes
     if {u['mechanism_id'] for u in baseline} != set(mechanisms) or len(baseline)!=13:
         raise ValueError('CALIBRATION_BASELINE_COVERAGE_MISMATCH')
     if len({c['candidate_id'] for c in candidates})!=len(candidates):
         raise ValueError('CALIBRATION_CANDIDATE_DUPLICATE')
-    relations = read('family_relations.json')
+    # Historical records remain immutable. Only separately stored, explicitly
+    # reviewed V1 assertions can establish a new snapshot-bound relation.
+    relations = read('family_relations.json') + fix_read('family_assertions.json')
     base_contracts = {c['mechanism_id']:c for c in gate.derive_contracts()}
     result=[]
     for mid,m in mechanisms.items():
@@ -147,7 +184,8 @@ def derive():
                 decisions.append({'candidate_id':c['candidate_id'],'reference_id':c['reference_id'],'match_decision':state,
                                   'reason':reason,'candidate_digest':legacy.digest(c),'independence_status':'UNKNOWN'})
                 if state=='MATCH':matched.append(c)
-        independence=calibrate_units(base+matched,relations)
+        snapshots = [binding.evidence_snapshot(u, sources) for u in base + matched]
+        independence=calibrate_units(base+matched,relations,sources=sources)
         # No new matching evidence is presently admitted. Recalculation is
         # explicit only for new matched evidence; copied C contract fields are
         # not silently promoted. Any future unlock also needs reviewed adapter
@@ -157,7 +195,9 @@ def derive():
         if independence['status']!='VERIFIED_INDEPENDENT':reasons.append('INDEPENDENCE_INSUFFICIENT')
         if c['adapter_status']=='HOLD':reasons.append('ADAPTER_HOLD')
         reasons.append('CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED')
-        result.append({'mechanism_id':mid,'existing_evidence_unit_count':1,'candidate_decisions':decisions,
+        result.append({'mechanism_id':mid,'snapshot_binding_schema':binding.SCHEMA,
+            'evidence_snapshot_bindings':snapshots,
+            'existing_evidence_unit_count':1,'candidate_decisions':decisions,
             'new_matching_reference_count':len(matched),'accepted_new_independent_evidence_count':0,
             'independence':independence,'agency_independence':'UNKNOWN','campaign_independence':'UNKNOWN',
             'source_family_independence':independence['status'],'adapter_status':c['adapter_status'],
@@ -169,7 +209,7 @@ def derive():
 
 def ledger():
     expected=derive()
-    if read('calibration.json')!=expected:
+    if fix_read('calibration.json')!=expected:
         raise ValueError('INDEPENDENCE_CALIBRATION_NOT_SOURCE_DERIVED')
     return {r['mechanism_id']:r for r in expected}
 

@@ -1,0 +1,341 @@
+{
+  "run": 18,
+  "passed": 18,
+  "failed": 0,
+  "records": [
+    {
+      "historical_failure_id": "P221D-NEG-001",
+      "historical_specimen_sha256": "c9db2391d5c564870704e04361c0053e2136167cab222bf1d370d745bce317c4",
+      "historical_expected": "NOT_INDEPENDENT",
+      "current_expected": "NOT_INDEPENDENT",
+      "actual": {
+        "status": "NOT_INDEPENDENT",
+        "reason": "SHARED_PRODUCTION_OR_BRAND_CAMPAIGN_TEMPLATE_FAMILY",
+        "dimensions": {
+          "brand_family": "NOT_INDEPENDENT",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-002",
+      "historical_specimen_sha256": "df4eb7f30fc3601ffe29eff7aed7ba2dd6684ed9d546df8e393e5807a4ebc5db",
+      "historical_expected": "NOT_INDEPENDENT",
+      "current_expected": "NOT_INDEPENDENT",
+      "actual": {
+        "status": "NOT_INDEPENDENT",
+        "reason": "SHARED_PRODUCTION_OR_BRAND_CAMPAIGN_TEMPLATE_FAMILY",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "NOT_INDEPENDENT",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-003",
+      "historical_specimen_sha256": "c4b3233f2d8bece721cbff6cf8feab12918b9ee1ee23d6a604cc79c8efefcdbb",
+      "historical_expected": "NOT_INDEPENDENT",
+      "current_expected": "NOT_INDEPENDENT",
+      "actual": {
+        "status": "NOT_INDEPENDENT",
+        "reason": "SHARED_PRODUCTION_OR_BRAND_CAMPAIGN_TEMPLATE_FAMILY",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "NOT_INDEPENDENT",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-004",
+      "historical_specimen_sha256": "d815420ced829928ed56ec8251599587056efb35e8dc37b360c3600b2c4eff91",
+      "historical_expected": "NOT_INDEPENDENT",
+      "current_expected": "NOT_INDEPENDENT",
+      "actual": {
+        "status": "NOT_INDEPENDENT",
+        "reason": "SHARED_PRODUCTION_OR_BRAND_CAMPAIGN_TEMPLATE_FAMILY",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "NOT_INDEPENDENT",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-005",
+      "historical_specimen_sha256": "d780808eb51146c7d6c516509ed945761080176684517ce51614e8c1c3d9af10",
+      "historical_expected": "NOT_INDEPENDENT",
+      "current_expected": "NOT_INDEPENDENT",
+      "actual": {
+        "status": "NOT_INDEPENDENT",
+        "reason": "SHARED_PRODUCTION_OR_BRAND_CAMPAIGN_TEMPLATE_FAMILY",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "NOT_INDEPENDENT"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-006",
+      "historical_specimen_sha256": "14bd7be0cd37477cf945175c5ca2b1ff455eb533792d1ca946c6350b8bbfe241",
+      "historical_expected": "NOT_INDEPENDENT",
+      "current_expected": "NOT_INDEPENDENT",
+      "actual": {
+        "status": "NOT_INDEPENDENT",
+        "reason": "SHARED_PRODUCTION_OR_BRAND_CAMPAIGN_TEMPLATE_FAMILY",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "NOT_INDEPENDENT",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-007",
+      "historical_specimen_sha256": "5f71d97c5f157e1e3b7e9a767b63acbce30cdc39be53c0e1640b6a176000dab6",
+      "historical_expected": "NOT_INDEPENDENT",
+      "current_expected": "NOT_INDEPENDENT",
+      "actual": {
+        "status": "NOT_INDEPENDENT",
+        "reason": "DERIVATIVE_DISCOVERY_SOURCE",
+        "dimensions": {}
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-008",
+      "historical_specimen_sha256": "868397feb44f8043506ca2cac907e81bfc7b4e79c4008b18572d4e610b8f6070",
+      "historical_expected": "NOT_INDEPENDENT",
+      "current_expected": "NOT_INDEPENDENT",
+      "actual": {
+        "status": "NOT_INDEPENDENT",
+        "reason": "SAME_REFERENCE_OR_VIEWPORT_DUPLICATE",
+        "dimensions": {}
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-009",
+      "historical_specimen_sha256": "3c4fcc96f9f987ef442b2d29bcbda2744bd7c6da645cff444d138e3c718746f6",
+      "historical_expected": "PARTIALLY_INDEPENDENT",
+      "current_expected": "UNKNOWN",
+      "actual": {
+        "status": "UNKNOWN",
+        "reason": "ATTRIBUTION_OR_CAMPAIGN_SNAPSHOT_BINDING_UNKNOWN",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-010",
+      "historical_specimen_sha256": "169a2594f8819dde3f829cd7ac46bbc601c33c9d4bfa3d05f46609fd382d1fa9",
+      "historical_expected": "PARTIALLY_INDEPENDENT",
+      "current_expected": "UNKNOWN",
+      "actual": {
+        "status": "UNKNOWN",
+        "reason": "ATTRIBUTION_OR_CAMPAIGN_SNAPSHOT_BINDING_UNKNOWN",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-011",
+      "historical_specimen_sha256": "bd0bbe0b30d54425a15855d04c270d10283111422f9eb8b1d84b48c847714351",
+      "historical_expected": "PARTIALLY_INDEPENDENT",
+      "current_expected": "UNKNOWN",
+      "actual": {
+        "status": "UNKNOWN",
+        "reason": "ATTRIBUTION_OR_CAMPAIGN_SNAPSHOT_BINDING_UNKNOWN",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-012",
+      "historical_specimen_sha256": "c785b61fe94b1348b6b6ee159e4a24f3fa9a796969937245fbcbc8087b50ea30",
+      "historical_expected": "UNKNOWN",
+      "current_expected": "UNKNOWN",
+      "actual": {
+        "status": "UNKNOWN",
+        "reason": "ATTRIBUTION_OR_CAMPAIGN_SNAPSHOT_BINDING_UNKNOWN",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-013",
+      "historical_specimen_sha256": "bc905a563609ee35902e794dba670121456ab481f70059cc158d8ebf333e715c",
+      "historical_expected": "UNKNOWN",
+      "current_expected": "UNKNOWN",
+      "actual": {
+        "status": "UNKNOWN",
+        "reason": "ATTRIBUTION_OR_CAMPAIGN_SNAPSHOT_BINDING_UNKNOWN",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-014",
+      "historical_specimen_sha256": "73beea850e128a12a045e2150d6b386351cae691c0e7d9745a2f36382b7064ec",
+      "historical_expected": "UNKNOWN",
+      "current_expected": "UNKNOWN",
+      "actual": {
+        "status": "UNKNOWN",
+        "reason": "ATTRIBUTION_OR_CAMPAIGN_SNAPSHOT_BINDING_UNKNOWN",
+        "dimensions": {
+          "brand_family": "UNKNOWN",
+          "campaign_family": "UNKNOWN",
+          "agency": "UNKNOWN",
+          "production_company": "UNKNOWN",
+          "source_family": "UNKNOWN",
+          "template_family": "UNKNOWN"
+        }
+      },
+      "passed": true,
+      "kind": "PAIR",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-015",
+      "historical_specimen_sha256": "682e18366eee0dfda9791f01227c6cf61425573dad431686b055e72767934fd3",
+      "historical_expected": "HOLD",
+      "current_expected": "HOLD",
+      "actual": {
+        "status": "HOLD",
+        "reason": "ATOMIC_MATCH_UNRESOLVED"
+      },
+      "passed": true,
+      "kind": "MATCH",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-016",
+      "historical_specimen_sha256": "698ea3bf4360e2f2453bfb003389fb107470aac5dc602c08b033d68f207d6914",
+      "historical_expected": "REJECT",
+      "current_expected": "REJECT",
+      "actual": {
+        "status": "REJECT",
+        "reason": "EVIDENCE_TRACE_MISSING"
+      },
+      "passed": true,
+      "kind": "MATCH",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-017",
+      "historical_specimen_sha256": "fb262f3424053436b242601e3190a5a5eefab6524d7de0a2478078034af5a86f",
+      "historical_expected": "REJECT",
+      "current_expected": "REJECT",
+      "actual": {
+        "status": "REJECT",
+        "reason": "MECHANISM_CONTRACT_TRACE_MISMATCH"
+      },
+      "passed": true,
+      "kind": "MATCH",
+      "engineering_replay_only": true
+    },
+    {
+      "historical_failure_id": "P221D-NEG-018",
+      "historical_specimen_sha256": "9cc482cdb0bc8f2e2995a5ea109a9c19143088cbc5feeb89f92c69b320098423",
+      "historical_expected": "REJECT",
+      "current_expected": "REJECT",
+      "actual": {
+        "status": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH"
+      },
+      "passed": true,
+      "kind": "MATCH",
+      "engineering_replay_only": true
+    }
+  ],
+  "historical_failure_count_unchanged": 108,
+  "phase2600_allowed": false
+}

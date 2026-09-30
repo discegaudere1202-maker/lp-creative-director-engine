@@ -1,0 +1,22 @@
+{
+  "base_commit": "4ae3f53be9cc48f13b22145f1e0a54e68b367c79",
+  "existing_modified_files": [
+    "src/lp_engine/independence_calibration.py",
+    "tests/test_phase2_2_1d.py"
+  ],
+  "all_other_base_files_unchanged": true,
+  "historical_evidence_files_preserved": 472,
+  "historical_evidence_sha256_index_digest": "2a78f9a21952806508338bfa287bcfa8431521b19f4d75fc233e9e8c3bd66c14",
+  "edited_code_hashes": {
+    "src/lp_engine/independence_calibration.py": {
+      "before_sha256": "2c7b21ca3d9e02c2cde526470ce039305216d604935c195262534ca6223a6f5f",
+      "after_sha256": "ed57e9f76730abfa9815ad11f874ced81722edbaebff22ddf72ccf532eb54ed3"
+    },
+    "tests/test_phase2_2_1d.py": {
+      "before_sha256": "7f869a587dc82dbdb8fedae2d35c52fefd4b8435136c9753de62e57f5109b673",
+      "after_sha256": "e5224911f4fb519b94365026147b956f9b6bd2fe1417a2b05f70f144b850f210"
+    }
+  },
+  "historical_failure_count": 108,
+  "historical_scoped_test_count": 66
+}

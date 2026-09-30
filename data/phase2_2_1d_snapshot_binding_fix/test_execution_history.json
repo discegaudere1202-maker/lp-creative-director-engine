@@ -1,0 +1,484 @@
+[
+  {
+    "run": 104,
+    "passed": 104,
+    "failed": 0,
+    "skipped": 0,
+    "groups": {
+      "test_phase2_2_1d_snapshot_binding_fix": 38,
+      "test_phase2_2_1d": 16,
+      "test_phase2_2_1c": 26,
+      "test_phase2_2_1b": 18,
+      "test_production_generation": 6
+    },
+    "errors": [],
+    "tested_source_sha256": {
+      "tests/test_phase2_2_1d_snapshot_binding_fix.py": "d17c45b1eb77562a8372129544ebae665fe58f48ccd2b3f79041e4e9701c3a00",
+      "tests/test_phase2_2_1d.py": "e5224911f4fb519b94365026147b956f9b6bd2fe1417a2b05f70f144b850f210",
+      "tests/test_phase2_2_1c.py": "951690c1f1c06f13936b4b39a76340bb8ce6d1f435c1eb94f2008befe835720c",
+      "tests/test_phase2_2_1b.py": "84dae2c6c825edab9e9419a9776052cdd53d5bee0fb3cf72e9bb56dbdad9850e",
+      "tests/test_production_generation.py": "2ca3c9b08fb2b5cd2c8dbb429fbb8cb618d977003263044e52eb82adbabbe3b9",
+      "src/lp_engine/independence_calibration.py": "ed57e9f76730abfa9815ad11f874ced81722edbaebff22ddf72ccf532eb54ed3",
+      "src/lp_engine/evidence_snapshot_binding.py": "8a7885c2855b2929b71777ef00b00f854d39e555d3aa1b758bfd8820e3780aba",
+      "src/lp_engine/production_eligibility.py": "2e2bed1c4cb01733020230bcd34c406c0209ddba9934cedec629277fd47e6e49",
+      "scripts/snapshot_binding_fix_fixtures.py": "8a2c4e4ff50cae46fbee488cc48249e42fcf20bf047152a2f823e5238ea424ae",
+      "scripts/validate_phase2_2_1d_snapshot_binding_fix.py": "1114ac64a8a7fc10ea4443747d0b50826b2fe641a99d91116b9121b5f4267baa",
+      "scripts/verify_phase2_2_1d_snapshot_binding_fix.py": "4635e2afcc637eedd5d122b80f8a88abe2d84936430405aba94bfc787fac274a"
+    },
+    "local_execution": true,
+    "historical_66_report_unchanged": true,
+    "phase2600_allowed": false,
+    "execution_id": "LOCAL_FIX_RUN_1",
+    "validator_result_after_run": "PASS"
+  },
+  {
+    "run": 104,
+    "passed": 104,
+    "failed": 0,
+    "skipped": 0,
+    "groups": {
+      "test_phase2_2_1d_snapshot_binding_fix": 38,
+      "test_phase2_2_1d": 16,
+      "test_phase2_2_1c": 26,
+      "test_phase2_2_1b": 18,
+      "test_production_generation": 6
+    },
+    "errors": [],
+    "execution_records": [
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_ambiguous_assertions_not_arbitrarily_selected",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_archive_locator_change_invalidates_review",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_caller_scene_selection_not_in_canonical_unit_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_capture_metadata_change_without_pixel_change_invalidates_review",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_changed_cited_source_record_invalidates_old_review_digest",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_citation_missing_from_source_registry",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_citation_subject_mapping_wrong_even_with_current_citation_digest",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_conflicting_unit_records_cannot_be_silently_deduplicated",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_contract_digest_is_separate_from_snapshot_digest",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_duplicate_reference_and_viewport_derivatives_remain_dependent",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_explicit_new_review_required_after_new_snapshot",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_forged_v2_ledger_summary_rejected_by_production",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_gallery_and_mirror_derivatives_remain_dependent",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_ledger_rederive_and_production_gate_positive_provenance_still_hold",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_ledger_regeneration_does_not_reapprove_changed_capture_assertion",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_legacy_contract_digest_assertions_are_not_migrated",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_missing_explicit_reviewer_not_verified_by_flag",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_missing_mobile_source_scene",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_missing_mobile_subject_mapping",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_missing_one_family_remains_unknown_dimension",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_old_image_hash_readback_no_longer_matches_scene",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_order_of_pair_does_not_change_unit_mapping",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_parent_snapshot_identity_change_invalidates_review",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_pm_reproduction_changed_pc_mobile_scene_selection",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_pm_reproduction_same_scene_ids_changed_registered_pixel_hash",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_real_source_bindings_are_rederived_and_holds_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_reference_page_identity_change_invalidates_review",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_same_mechanism_distinct_references_reviewed_control",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_same_page_family_remains_dependent",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_agency_denial_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_brand_family_denial_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_campaign_family_denial_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_production_company_denial_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_source_family_denial_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_shared_template_family_denial_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_unit_digest_supplied_by_caller_is_ignored",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_unit_to_snapshot_mapping_swapped",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d_snapshot_binding_fix.SnapshotBindingFixTest.test_unregistered_unit_source_record_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_all_five_actual_production_routes_block_before_output",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_changed_scene_reference_or_pixel_hash_invalidates_trace",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_forged_baseline_source_cannot_unlock",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_forged_summary_cannot_unlock",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_independent_validator_rejects_corrupt_discovery_archive",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_independent_validator_rejects_missing_discovery_pixel",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_match_cannot_be_a_score_or_an_independence_assertion",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_missing_calibration_fails_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_one_unit_never_independent",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_pairwise_source_family_links_cannot_hide_in_three_units",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_prior_evidence_bytes_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_real_all_13_holds_have_no_promotion",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_required_capture_failure_never_becomes_durable_match",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_required_negative_cases_fail_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_synthetic_positive_control_requires_every_bound_family_dimension",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1d.Phase221DTest.test_unregistered_fixture_permission_is_not_research_admission",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_13_source_derived_contracts_separate_maturity_and_eligibility",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_adapterless_mechanisms_fail_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_all_eight_generate_through_real_path_but_never_client_approved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_changed_company_truth_cannot_keep_registered_fixture_permission",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_conditional_missing_conditions_rejected_by_solver_after_gate",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_contract_and_independence_forgery_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_each_accessibility_constraint_fails_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_each_implementation_constraint_fails_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_evidence_trace_missing_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_generated_image_cannot_be_proof",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_incompatible_edge_rejected_by_solver",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_independent_validator_rejects_forged_final_mobile_pass",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_independent_validator_rejects_missing_phase_c_pixels",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_insufficient_independence_blocks_actual_live_generation_without_outputs",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_missing_context_cannot_bypass_gate_via_legacy_live_route",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_mobile_unsupported_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_motion_unknown_and_invented_animation_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_no_reference_pixels_required_for_specs",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_phase_b_17_failures_byte_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_reduced_motion_required",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_renderer_cannot_bypass_or_forge_eligibility_trace",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_rights_gap_blocks_generation_before_render",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_truth_gap_blocks_generation",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_two_viewports_cannot_be_independent_units",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_unclassified_scene_job_is_not_guessed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1c.Phase221CTest.test_unknown_edge_rejected_by_solver",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_actual_screenshot_loss_fails_independent_validator",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_asset_resolution_or_hash_loss_fails_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_conditional_pair_rejects_each_missing_condition",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_fixture_cannot_be_production_approved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_incompatible_pair_not_in_recipe",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_intermediate_width_failure_cannot_pass_pair_calibration",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_mobile_failure_not_hidden_by_desktop_pass",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_mock_only_check_set_is_insufficient",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_profile_digest_is_part_of_scoped_constraint",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_promotion_requires_all_evidence_dimensions",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_renderer_rejects_untraced_scene_plan",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_scene_spec_traces_every_grammar_and_scene",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_single_profile_cannot_pass_multi_profile_gate",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_spec_regenerates_with_all_reference_images_and_archives_inaccessible",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_unexecuted_production_or_browser_never_passes",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_unimplemented_mechanism_fails_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_unknown_pair_not_automatically_promoted",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_phase2_2_1b.Phase221BTest.test_unsupported_edge_cannot_become_compatible",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_production_generation.ProductionGenerationTest.test_malformed_evidence_fails_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_production_generation.ProductionGenerationTest.test_missing_required_objection_fails_closed",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_production_generation.ProductionGenerationTest.test_production_generation_runs_all_structured_stages",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_production_generation.ProductionGenerationTest.test_renderer_is_generic_for_another_company",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_production_generation.ProductionGenerationTest.test_research_mode_is_never_production_approved",
+        "result": "PASS"
+      },
+      {
+        "test": "snapshot_fix_test_production_generation.ProductionGenerationTest.test_third_party_research_evidence_does_not_reach_customer_output",
+        "result": "PASS"
+      }
+    ],
+    "executed_at_utc": "2026-09-30T20:07:30.459778+00:00",
+    "tested_source_sha256": {
+      "tests/test_phase2_2_1d_snapshot_binding_fix.py": "e4ae257074c539e409ba277358ee92021575f3ff5d2cfa1d6b79777ef8667a21",
+      "tests/test_phase2_2_1d.py": "e5224911f4fb519b94365026147b956f9b6bd2fe1417a2b05f70f144b850f210",
+      "tests/test_phase2_2_1c.py": "951690c1f1c06f13936b4b39a76340bb8ce6d1f435c1eb94f2008befe835720c",
+      "tests/test_phase2_2_1b.py": "84dae2c6c825edab9e9419a9776052cdd53d5bee0fb3cf72e9bb56dbdad9850e",
+      "tests/test_production_generation.py": "2ca3c9b08fb2b5cd2c8dbb429fbb8cb618d977003263044e52eb82adbabbe3b9",
+      "src/lp_engine/independence_calibration.py": "ed57e9f76730abfa9815ad11f874ced81722edbaebff22ddf72ccf532eb54ed3",
+      "src/lp_engine/evidence_snapshot_binding.py": "7ad4786f931d0130f324d0ad138aab94fd01fc2fbc7121949023181d2509ae61",
+      "src/lp_engine/production_eligibility.py": "2e2bed1c4cb01733020230bcd34c406c0209ddba9934cedec629277fd47e6e49",
+      "scripts/snapshot_binding_fix_fixtures.py": "8a2c4e4ff50cae46fbee488cc48249e42fcf20bf047152a2f823e5238ea424ae",
+      "scripts/validate_phase2_2_1d_snapshot_binding_fix.py": "1114ac64a8a7fc10ea4443747d0b50826b2fe641a99d91116b9121b5f4267baa",
+      "scripts/verify_phase2_2_1d_snapshot_binding_fix.py": "ec149d697d8676ebeeadeb52c28951c990a1372ba94e5fec50f03948aa7e97e4"
+    },
+    "local_execution": true,
+    "historical_66_report_unchanged": true,
+    "phase2600_allowed": false,
+    "execution_id": "LOCAL_FIX_RUN_2"
+  }
+]

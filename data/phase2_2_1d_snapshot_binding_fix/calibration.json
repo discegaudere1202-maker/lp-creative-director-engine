@@ -1,0 +1,3248 @@
+[
+  {
+    "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:kaza-hana.jp/",
+        "evidence_snapshot_sha256": "fb8dd84de6bd901e41c815aa17bb224449ebd6872c2a7f5ca667a5ec3a893cc0",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P01-R01",
+          "unit": {
+            "unit_id": "D-BASE-P01-R01",
+            "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+            "reference_id": "P01-R01",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:kaza-hana.jp/",
+            "official_url": "https://kaza-hana.jp/",
+            "page_family": "kaza-hana.jp/"
+          },
+          "reference": {
+            "reference_id": "P01-R01",
+            "canonical_url": "https://kaza-hana.jp/",
+            "url": "https://kaza-hana.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "GOLD-P01-R01-DESKTOP-TRAV-01",
+                    "reference_id": "P01-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 780
+                    },
+                    "page_y_range": [
+                      0,
+                      780
+                    ],
+                    "screenshot_identifier": "P01-R01__desktop__traversal_01_entry.jpg",
+                    "scene_crop_identifier": "P01-R01__desktop__traversal_01_entry.jpg",
+                    "parent_screenshot_identifier": "P01-R01__desktop__full.jpg",
+                    "content_hash": "f56e940d0a79f703914110b403fbbfa694681a50c7d7a32a2d1a113a544c4aac",
+                    "parent_content_hash": "57b19b01a603dd60017423dfd0070ba605f9c85ec5df4af2af503e6e3d15b4d0",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "traversal/P01-R01__desktop__traversal_01_entry.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:10.420939+00:00",
+                    "derived_at": "2026-09-29T10:27:22.439744+00:00",
+                    "original_url": "https://kaza-hana.jp/",
+                    "final_url": "https://kaza-hana.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "reference_id": "P01-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P01-R01__desktop__full.jpg",
+                    "content_hash": "57b19b01a603dd60017423dfd0070ba605f9c85ec5df4af2af503e6e3d15b4d0",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "capture/P01-R01__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:10.420939+00:00",
+                    "original_url": "https://kaza-hana.jp/",
+                    "final_url": "https://kaza-hana.jp/",
+                    "source_artifact": "https://github.com/discegaudere1202-maker/lp-creative-director-engine/actions/runs/36541693976/artifacts/11020298341",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "GOLD-P01-R01-MOBILE-TRAV-01",
+                    "reference_id": "P01-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 950
+                    },
+                    "page_y_range": [
+                      0,
+                      950
+                    ],
+                    "screenshot_identifier": "P01-R01__mobile__traversal_01_entry.jpg",
+                    "scene_crop_identifier": "P01-R01__mobile__traversal_01_entry.jpg",
+                    "parent_screenshot_identifier": "P01-R01__mobile__full.jpg",
+                    "content_hash": "70c4aa7203ef6f11c2cf6771e78eae5562294d642a4f5229dac1a7ca46195d32",
+                    "parent_content_hash": "9ee9a9ec954130e6397f1079e31ebf2dbb0a7e7d1c2a0f94182fa27cf834c52a",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "traversal/P01-R01__mobile__traversal_01_entry.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:14.605489+00:00",
+                    "derived_at": "2026-09-29T10:27:22.439744+00:00",
+                    "original_url": "https://kaza-hana.jp/",
+                    "final_url": "https://kaza-hana.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "reference_id": "P01-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P01-R01__mobile__full.jpg",
+                    "content_hash": "9ee9a9ec954130e6397f1079e31ebf2dbb0a7e7d1c2a0f94182fa27cf834c52a",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "capture/P01-R01__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:14.605489+00:00",
+                    "original_url": "https://kaza-hana.jp/",
+                    "final_url": "https://kaza-hana.jp/",
+                    "source_artifact": "https://github.com/discegaudere1202-maker/lp-creative-director-engine/actions/runs/36541693976/artifacts/11020298341",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P01-R03-CM-VIS-ENVIRONMENTAL-HERO-01",
+        "reference_id": "P01-R03",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "bf5bc82d43203c3cf2465f955b74f3696b8afddac6d53f2238b29875c2468b59",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P01-R04-CM-VIS-ENVIRONMENTAL-HERO-01",
+        "reference_id": "P01-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "4a442c26054d8038d85c20e122020588f7119649eac0c8306bd850c9156b20ce",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:my.clevelandclinic.org/",
+        "evidence_snapshot_sha256": "4f8a3c6b7d8de5c080d406ca1454fb2312711db235aeeb152af1f0916f2256cf",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P06-R02",
+          "unit": {
+            "unit_id": "D-BASE-P06-R02",
+            "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+            "reference_id": "P06-R02",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:my.clevelandclinic.org/",
+            "official_url": "https://my.clevelandclinic.org/",
+            "page_family": "my.clevelandclinic.org/"
+          },
+          "reference": {
+            "reference_id": "P06-R02",
+            "canonical_url": "https://my.clevelandclinic.org/",
+            "url": "https://my.clevelandclinic.org/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "GOLD-P06-R02-DESKTOP-TRAV-01",
+                    "reference_id": "P06-R02",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1100
+                    },
+                    "page_y_range": [
+                      0,
+                      1100
+                    ],
+                    "screenshot_identifier": "P06-R02__desktop__traversal_01_entry.jpg",
+                    "scene_crop_identifier": "P06-R02__desktop__traversal_01_entry.jpg",
+                    "parent_screenshot_identifier": "P06-R02__desktop__full.jpg",
+                    "content_hash": "2f488610d9df079e9ace5277654ee624cbf067d88d07fcd488aac5991bfad06d",
+                    "parent_content_hash": "cf5cfa172fabbf607ded96044f13bf558e49216debfea526ef91475d8d42d3ff",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "traversal/P06-R02__desktop__traversal_01_entry.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:54.720922+00:00",
+                    "derived_at": "2026-09-29T10:27:22.439744+00:00",
+                    "original_url": "https://my.clevelandclinic.org/",
+                    "final_url": "https://my.clevelandclinic.org/"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "reference_id": "P06-R02",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P06-R02__desktop__full.jpg",
+                    "content_hash": "cf5cfa172fabbf607ded96044f13bf558e49216debfea526ef91475d8d42d3ff",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "capture/P06-R02__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:54.720922+00:00",
+                    "original_url": "https://my.clevelandclinic.org/",
+                    "final_url": "https://my.clevelandclinic.org/",
+                    "source_artifact": "https://github.com/discegaudere1202-maker/lp-creative-director-engine/actions/runs/36541693976/artifacts/11020298341",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "GOLD-P06-R02-MOBILE-TRAV-01",
+                    "reference_id": "P06-R02",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 800
+                    },
+                    "page_y_range": [
+                      0,
+                      800
+                    ],
+                    "screenshot_identifier": "P06-R02__mobile__traversal_01_entry.jpg",
+                    "scene_crop_identifier": "P06-R02__mobile__traversal_01_entry.jpg",
+                    "parent_screenshot_identifier": "P06-R02__mobile__full.jpg",
+                    "content_hash": "7ad4a32e6808fc66a753efa87388b8cdccb7b582b3d8d5da3f92a94b02f69ca3",
+                    "parent_content_hash": "e3f39ce9032369cb99604ecbb1c7c28141fc56bae3467333c8278a468295b434",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "traversal/P06-R02__mobile__traversal_01_entry.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:58.685517+00:00",
+                    "derived_at": "2026-09-29T10:27:22.439744+00:00",
+                    "original_url": "https://my.clevelandclinic.org/",
+                    "final_url": "https://my.clevelandclinic.org/"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "reference_id": "P06-R02",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P06-R02__mobile__full.jpg",
+                    "content_hash": "e3f39ce9032369cb99604ecbb1c7c28141fc56bae3467333c8278a468295b434",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "capture/P06-R02__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:58.685517+00:00",
+                    "original_url": "https://my.clevelandclinic.org/",
+                    "final_url": "https://my.clevelandclinic.org/",
+                    "source_artifact": "https://github.com/discegaudere1202-maker/lp-creative-director-engine/actions/runs/36541693976/artifacts/11020298341",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P06-R04-CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "reference_id": "P06-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "5ae5f6f60316040344e24f195b13a2a2954cbc3001270ea8d392adbcb1cbc9f1",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P06-R03-REP01-CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "reference_id": "P06-R03-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "3425a8c6dd8962efb08c7752e7390b9beee3969f4955681eab2fa95a2410c990",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:linear.app/",
+        "evidence_snapshot_sha256": "6f36f8fede6718d639f9c601f03bd8738f8825079e72ea6dabd2c712636355f1",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P08-R02",
+          "unit": {
+            "unit_id": "D-BASE-P08-R02",
+            "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+            "reference_id": "P08-R02",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:linear.app/",
+            "official_url": "https://linear.app/",
+            "page_family": "linear.app/"
+          },
+          "reference": {
+            "reference_id": "P08-R02",
+            "canonical_url": "https://linear.app/",
+            "url": "https://linear.app/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "GOLD-P08-R02-DESKTOP-TRAV-01",
+                    "reference_id": "P08-R02",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1590
+                    },
+                    "page_y_range": [
+                      0,
+                      1590
+                    ],
+                    "screenshot_identifier": "P08-R02__desktop__traversal_01_entry_product_ui.jpg",
+                    "scene_crop_identifier": "P08-R02__desktop__traversal_01_entry_product_ui.jpg",
+                    "parent_screenshot_identifier": "P08-R02__desktop__full.jpg",
+                    "content_hash": "1d682b15478c098552044006b0b66ae2116a029c7190c088acd3ffa06a9071e7",
+                    "parent_content_hash": "aaf07ab2506bc8ac56172d60160a121bbfa087bb8dbaad5b819f28dec9d7594a",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "traversal/P08-R02__desktop__traversal_01_entry_product_ui.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:18:11.144312+00:00",
+                    "derived_at": "2026-09-29T10:27:22.439744+00:00",
+                    "original_url": "https://linear.app/",
+                    "final_url": "https://linear.app/"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "reference_id": "P08-R02",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P08-R02__desktop__full.jpg",
+                    "content_hash": "aaf07ab2506bc8ac56172d60160a121bbfa087bb8dbaad5b819f28dec9d7594a",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "capture/P08-R02__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:18:11.144312+00:00",
+                    "original_url": "https://linear.app/",
+                    "final_url": "https://linear.app/",
+                    "source_artifact": "https://github.com/discegaudere1202-maker/lp-creative-director-engine/actions/runs/36541693976/artifacts/11020298341",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "GOLD-P08-R02-MOBILE-TRAV-01",
+                    "reference_id": "P08-R02",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 1070
+                    },
+                    "page_y_range": [
+                      0,
+                      1070
+                    ],
+                    "screenshot_identifier": "P08-R02__mobile__traversal_01_entry_product_ui.jpg",
+                    "scene_crop_identifier": "P08-R02__mobile__traversal_01_entry_product_ui.jpg",
+                    "parent_screenshot_identifier": "P08-R02__mobile__full.jpg",
+                    "content_hash": "ec0e04f01631767aad34ad07faa9dc877b76e64d6a1c5ed175e8b6eb4bd07937",
+                    "parent_content_hash": "0ff23bf26a96cb13a2eda8c7635379ed26754076e4db11a74e262b45b2d2472a",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "traversal/P08-R02__mobile__traversal_01_entry_product_ui.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:18:14.962120+00:00",
+                    "derived_at": "2026-09-29T10:27:22.439744+00:00",
+                    "original_url": "https://linear.app/",
+                    "final_url": "https://linear.app/"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "reference_id": "P08-R02",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P08-R02__mobile__full.jpg",
+                    "content_hash": "0ff23bf26a96cb13a2eda8c7635379ed26754076e4db11a74e262b45b2d2472a",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "capture/P08-R02__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:18:14.962120+00:00",
+                    "original_url": "https://linear.app/",
+                    "final_url": "https://linear.app/",
+                    "source_artifact": "https://github.com/discegaudere1202-maker/lp-creative-director-engine/actions/runs/36541693976/artifacts/11020298341",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P08-R04-CM-VIS-PRODUCT-UI-STAGE-01",
+        "reference_id": "P08-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "637d224b77082e3a9da733f333858930cbc1674e56bf084c7b3c76d6838a0c5b",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P12-R03-CM-VIS-PRODUCT-UI-STAGE-01",
+        "reference_id": "P12-R03",
+        "match_decision": "HOLD",
+        "reason": "ATOMIC_MATCH_UNRESOLVED",
+        "candidate_digest": "218d23408316d43f32b208bd05f6b162dc31c0579606fac54330fda867f30193",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.sabon.co.jp/",
+        "evidence_snapshot_sha256": "fff650caa36af8339c1acfcbb4a3448d1aa5f3d0019866d30111e5594c1bcc7c",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P13-R04",
+          "unit": {
+            "unit_id": "D-BASE-P13-R04",
+            "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+            "reference_id": "P13-R04",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.sabon.co.jp/",
+            "official_url": "https://www.sabon.co.jp/",
+            "page_family": "www.sabon.co.jp/"
+          },
+          "reference": {
+            "reference_id": "P13-R04",
+            "canonical_url": "https://www.sabon.co.jp/",
+            "url": "https://www.sabon.co.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P13-R04-DESKTOP-SCENE-001",
+                    "reference_id": "P13-R04",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 6527
+                    },
+                    "screenshot_identifier": "P13-R04__desktop__scene_001.jpg",
+                    "scene_crop_identifier": "P13-R04__desktop__scene_001.jpg",
+                    "parent_screenshot_identifier": "P13-R04__desktop__full.jpg",
+                    "content_hash": "709a86f54a584e7fada6592ebd6860cb280c957ba43216e1caa0472f584197ec",
+                    "parent_content_hash": "4d0493f40e0f85b24ff32c03264632d715b46ba71284ec5502583a338c89935a",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "scene_crops/P13-R04__desktop__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:56:32.197422+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.sabon.co.jp/",
+                    "final_url": "https://sabon.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P13-R04-DESKTOP-full",
+                    "reference_id": "P13-R04",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P13-R04__desktop__full.jpg",
+                    "content_hash": "4d0493f40e0f85b24ff32c03264632d715b46ba71284ec5502583a338c89935a",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "capture/P13-R04__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:56:32.197422+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.sabon.co.jp/",
+                    "final_url": "https://sabon.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P13-R04-MOBILE-SCENE-001",
+                    "reference_id": "P13-R04",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 6583
+                    },
+                    "screenshot_identifier": "P13-R04__mobile__scene_001.jpg",
+                    "scene_crop_identifier": "P13-R04__mobile__scene_001.jpg",
+                    "parent_screenshot_identifier": "P13-R04__mobile__full.jpg",
+                    "content_hash": "9e3931495eb2ee710c27eb1fa2944916fe9728f0bfcfbba732081ee5fd34eb54",
+                    "parent_content_hash": "f162b655a842a4c6d27b6509c53a5fc7234d611c50ce63115cb8ea3475556645",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "scene_crops/P13-R04__mobile__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:56:43.461971+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.sabon.co.jp/",
+                    "final_url": "https://sabon.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P13-R04-MOBILE-full",
+                    "reference_id": "P13-R04",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P13-R04__mobile__full.jpg",
+                    "content_hash": "f162b655a842a4c6d27b6509c53a5fc7234d611c50ce63115cb8ea3475556645",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "capture/P13-R04__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:56:43.461971+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.sabon.co.jp/",
+                    "final_url": "https://sabon.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P13-R01-REP01-CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P13-R01-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "1030c7c83ca4f3480540e847c3f6e8df82f96f2db98b47eda75b32e062e52c92",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P13-R02-REP01-CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P13-R02-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "9fc04a75a9c2ac4bbd9f61166838792d004f35f1f580d11a660a629809631976",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "HOLD",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "ADAPTER_HOLD",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.aman.com/",
+        "evidence_snapshot_sha256": "b62c5036295cde877ab7be38d46c978b8bff30513ca4b090e8eaf07fd660aa6d",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P16-R03",
+          "unit": {
+            "unit_id": "D-BASE-P16-R03",
+            "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+            "reference_id": "P16-R03",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.aman.com/",
+            "official_url": "https://www.aman.com/",
+            "page_family": "www.aman.com/"
+          },
+          "reference": {
+            "reference_id": "P16-R03",
+            "canonical_url": "https://www.aman.com/",
+            "url": "https://www.aman.com/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P16-R03-DESKTOP-SCENE-001",
+                    "reference_id": "P16-R03",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 5870
+                    },
+                    "screenshot_identifier": "P16-R03__desktop__scene_001.jpg",
+                    "scene_crop_identifier": "P16-R03__desktop__scene_001.jpg",
+                    "parent_screenshot_identifier": "P16-R03__desktop__full.jpg",
+                    "content_hash": "82d5521d92c237bc1d682c8f1589b50ec2205e9b2f7d0bc8d753a1f784095403",
+                    "parent_content_hash": "e7737d2281f7a48a6c68db40b85d050226eb7d1a6a19193f68c8bee975c8257f",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "scene_crops/P16-R03__desktop__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:18.399949+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.aman.com/",
+                    "final_url": "https://www.aman.com/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P16-R03-DESKTOP-full",
+                    "reference_id": "P16-R03",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P16-R03__desktop__full.jpg",
+                    "content_hash": "e7737d2281f7a48a6c68db40b85d050226eb7d1a6a19193f68c8bee975c8257f",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "capture/P16-R03__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:18.399949+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.aman.com/",
+                    "final_url": "https://www.aman.com/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P16-R03-MOBILE-SCENE-001",
+                    "reference_id": "P16-R03",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 8258
+                    },
+                    "screenshot_identifier": "P16-R03__mobile__scene_001.jpg",
+                    "scene_crop_identifier": "P16-R03__mobile__scene_001.jpg",
+                    "parent_screenshot_identifier": "P16-R03__mobile__full.jpg",
+                    "content_hash": "21990280fa93dd6d496a67c050dd18766317c1f6ad578a0f4212577cf482a265",
+                    "parent_content_hash": "be1cd11805460f7066a30c723991a01ad33ff6298d7b9a29b6b008a7755b01d3",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "scene_crops/P16-R03__mobile__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:22.573636+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.aman.com/",
+                    "final_url": "https://www.aman.com/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P16-R03-MOBILE-full",
+                    "reference_id": "P16-R03",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P16-R03__mobile__full.jpg",
+                    "content_hash": "be1cd11805460f7066a30c723991a01ad33ff6298d7b9a29b6b008a7755b01d3",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "capture/P16-R03__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:22.573636+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.aman.com/",
+                    "final_url": "https://www.aman.com/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P16-R01-REP01-CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "reference_id": "P16-R01-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "569c648c699ec5eff8215ad539e5aa46ca090861385978096aa8581880cd51c5",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P16-R05-CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "reference_id": "P16-R05",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "bc27ed0e911647331f54650dd129a598669888ba04a616f930054fc0bc206a45",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.mhlw.go.jp/index.html",
+        "evidence_snapshot_sha256": "7a10da92da0b5f744ed359d3fc0130c9d9ad8227d72cc4b247199f35de6857d0",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P18-R01",
+          "unit": {
+            "unit_id": "D-BASE-P18-R01",
+            "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+            "reference_id": "P18-R01",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.mhlw.go.jp/index.html",
+            "official_url": "https://www.mhlw.go.jp/index.html",
+            "page_family": "www.mhlw.go.jp/index.html"
+          },
+          "reference": {
+            "reference_id": "P18-R01",
+            "canonical_url": "https://www.mhlw.go.jp/index.html",
+            "url": "https://www.mhlw.go.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P18-R01-DESKTOP-SCENE-004",
+                    "reference_id": "P18-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 3640
+                    },
+                    "screenshot_identifier": "P18-R01__desktop__scene_004.jpg",
+                    "scene_crop_identifier": "P18-R01__desktop__scene_004.jpg",
+                    "parent_screenshot_identifier": "P18-R01__desktop__full.jpg",
+                    "content_hash": "e86bae7d7786dbf076f84ebe95e50fa3cba7fbee7a96253368e6279b112de761",
+                    "parent_content_hash": "fc6b1937b9a6afe91c4bae0a575ccc1519a5f85b08b7c9d26bb4811a90575c0b",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "scene_crops/P18-R01__desktop__scene_004.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:34.895726+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.mhlw.go.jp/",
+                    "final_url": "https://www.mhlw.go.jp/index.html"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P18-R01-DESKTOP-full",
+                    "reference_id": "P18-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P18-R01__desktop__full.jpg",
+                    "content_hash": "fc6b1937b9a6afe91c4bae0a575ccc1519a5f85b08b7c9d26bb4811a90575c0b",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "capture/P18-R01__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:34.895726+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.mhlw.go.jp/",
+                    "final_url": "https://www.mhlw.go.jp/index.html",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P18-R01-MOBILE-SCENE-001",
+                    "reference_id": "P18-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 4258
+                    },
+                    "screenshot_identifier": "P18-R01__mobile__scene_001.jpg",
+                    "scene_crop_identifier": "P18-R01__mobile__scene_001.jpg",
+                    "parent_screenshot_identifier": "P18-R01__mobile__full.jpg",
+                    "content_hash": "83d815108e5172de7421fc1ae390c329d37db3715e063b5e3f613d2b0758bae8",
+                    "parent_content_hash": "df08a3f5c1616a189149307fb9783d60cb40085f2b2e3955a142fb1e714646a9",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "scene_crops/P18-R01__mobile__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:38.520707+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.mhlw.go.jp/",
+                    "final_url": "https://www.mhlw.go.jp/index.html"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P18-R01-MOBILE-full",
+                    "reference_id": "P18-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P18-R01__mobile__full.jpg",
+                    "content_hash": "df08a3f5c1616a189149307fb9783d60cb40085f2b2e3955a142fb1e714646a9",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "capture/P18-R01__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:38.520707+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.mhlw.go.jp/",
+                    "final_url": "https://www.mhlw.go.jp/index.html",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P18-R04-CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "reference_id": "P18-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "0e6354e4c8cbce49cba25da7a12934d5517c2e69d8982baee278a9f6484edc2d",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P09-R05-CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "reference_id": "P09-R05",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "03dbede0fe5c09a31221f1dcb8685889f16128d7e8a4650394c091e4916c24f4",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.renovation.or.jp/",
+        "evidence_snapshot_sha256": "b10e193579540989c2a652d19fb62c1eb3bcfcf154804b5e5ba2ac7bd65d47e9",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P03-R04",
+          "unit": {
+            "unit_id": "D-BASE-P03-R04",
+            "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+            "reference_id": "P03-R04",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.renovation.or.jp/",
+            "official_url": "https://www.renovation.or.jp/",
+            "page_family": "www.renovation.or.jp/"
+          },
+          "reference": {
+            "reference_id": "P03-R04",
+            "canonical_url": "https://www.renovation.or.jp/",
+            "url": "https://www.renovation.or.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P03-R04-DESKTOP-SCENE-001",
+                    "reference_id": "P03-R04",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 3972
+                    },
+                    "screenshot_identifier": "P03-R04__desktop__scene_001.jpg",
+                    "scene_crop_identifier": "P03-R04__desktop__scene_001.jpg",
+                    "parent_screenshot_identifier": "P03-R04__desktop__full.jpg",
+                    "content_hash": "29d7d89af209b7fc91c10f2bbc565bbfbe9f78942961dbefb26a3305fb6a7baa",
+                    "parent_content_hash": "f5a095b6b3feb88a0dba0d9a55af585c9c152a61fe732bbcd6fcc9881bad1cd6",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "scene_crops/P03-R04__desktop__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:55:34.943455+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.renovation.or.jp/",
+                    "final_url": "https://www.renovation.or.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P03-R04-DESKTOP-full",
+                    "reference_id": "P03-R04",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P03-R04__desktop__full.jpg",
+                    "content_hash": "f5a095b6b3feb88a0dba0d9a55af585c9c152a61fe732bbcd6fcc9881bad1cd6",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "capture/P03-R04__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:55:34.943455+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.renovation.or.jp/",
+                    "final_url": "https://www.renovation.or.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P03-R04-MOBILE-SCENE-001",
+                    "reference_id": "P03-R04",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 4517
+                    },
+                    "screenshot_identifier": "P03-R04__mobile__scene_001.jpg",
+                    "scene_crop_identifier": "P03-R04__mobile__scene_001.jpg",
+                    "parent_screenshot_identifier": "P03-R04__mobile__full.jpg",
+                    "content_hash": "ecf5ebdd1153b55c10735bf90411a679e658086157bcd706dad49a5c215b0e89",
+                    "parent_content_hash": "dd5df4e8bc07f435524e2a7a1e858d2948d4e54c7d1ed25d7f51b39cf170d456",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "scene_crops/P03-R04__mobile__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:55:39.618784+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.renovation.or.jp/",
+                    "final_url": "https://www.renovation.or.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P03-R04-MOBILE-full",
+                    "reference_id": "P03-R04",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P03-R04__mobile__full.jpg",
+                    "content_hash": "dd5df4e8bc07f435524e2a7a1e858d2948d4e54c7d1ed25d7f51b39cf170d456",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "capture/P03-R04__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:55:39.618784+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.renovation.or.jp/",
+                    "final_url": "https://www.renovation.or.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P03-R01-CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "reference_id": "P03-R01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "e70032adfde9a80dda5e10c2099b21b8636d3741c7a606cdd7b5d3fbd9d486bd",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P03-R03-CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "reference_id": "P03-R03",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "0abb2c88f4c238c67bfdef05f9712d1d76217a267fd70ebecf341b53d5a79cb6",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:sonybank.jp/",
+        "evidence_snapshot_sha256": "8e906aeb24bf43a9270fa2a7ad6757d56d0007c766cb4bc997d3563f016346fa",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P05-R04",
+          "unit": {
+            "unit_id": "D-BASE-P05-R04",
+            "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+            "reference_id": "P05-R04",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:sonybank.jp/",
+            "official_url": "https://sonybank.jp/",
+            "page_family": "sonybank.jp/"
+          },
+          "reference": {
+            "reference_id": "P05-R04",
+            "canonical_url": "https://sonybank.jp/",
+            "url": "https://sonybank.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "GOLD-P05-R04-DESKTOP-TRAV-02",
+                    "reference_id": "P05-R04",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 920
+                    },
+                    "page_y_range": [
+                      1200,
+                      2120
+                    ],
+                    "screenshot_identifier": "P05-R04__desktop__traversal_02_product_offer.jpg",
+                    "scene_crop_identifier": "P05-R04__desktop__traversal_02_product_offer.jpg",
+                    "parent_screenshot_identifier": "P05-R04__desktop__full.jpg",
+                    "content_hash": "50d189a7eb55d5678b44322385c396f0dd19dd36a00e0ab39b63b4afd61b313d",
+                    "parent_content_hash": "d349f475ad3d76085c181a84c282bd8613a55071b42722ae43860f7d473d9ea8",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "traversal/P05-R04__desktop__traversal_02_product_offer.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:44.229141+00:00",
+                    "derived_at": "2026-09-29T10:27:22.439744+00:00",
+                    "original_url": "https://sonybank.jp/",
+                    "final_url": "https://sonybank.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "reference_id": "P05-R04",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P05-R04__desktop__full.jpg",
+                    "content_hash": "d349f475ad3d76085c181a84c282bd8613a55071b42722ae43860f7d473d9ea8",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "capture/P05-R04__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:44.229141+00:00",
+                    "original_url": "https://sonybank.jp/",
+                    "final_url": "https://sonybank.jp/",
+                    "source_artifact": "https://github.com/discegaudere1202-maker/lp-creative-director-engine/actions/runs/36541693976/artifacts/11020298341",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "GOLD-P05-R04-MOBILE-TRAV-02",
+                    "reference_id": "P05-R04",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 1400
+                    },
+                    "page_y_range": [
+                      1050,
+                      2450
+                    ],
+                    "screenshot_identifier": "P05-R04__mobile__traversal_02_product_offer.jpg",
+                    "scene_crop_identifier": "P05-R04__mobile__traversal_02_product_offer.jpg",
+                    "parent_screenshot_identifier": "P05-R04__mobile__full.jpg",
+                    "content_hash": "c8ec136972b9b68619159d1f08bf1bc69c22bc10d9d9d1a402f9871d10fb3db6",
+                    "parent_content_hash": "9ebd6574ea48fddcc21c2768d38f31cb8d30d759b4774d5b47cdfdade0604a9f",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "traversal/P05-R04__mobile__traversal_02_product_offer.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:51.492170+00:00",
+                    "derived_at": "2026-09-29T10:27:22.439744+00:00",
+                    "original_url": "https://sonybank.jp/",
+                    "final_url": "https://sonybank.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "reference_id": "P05-R04",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P05-R04__mobile__full.jpg",
+                    "content_hash": "9ebd6574ea48fddcc21c2768d38f31cb8d30d759b4774d5b47cdfdade0604a9f",
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "archive_entry": "capture/P05-R04__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "archive_version_number": 0,
+                    "archive_container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "captured_at": "2026-09-29T08:17:51.492170+00:00",
+                    "original_url": "https://sonybank.jp/",
+                    "final_url": "https://sonybank.jp/",
+                    "source_artifact": "https://github.com/discegaudere1202-maker/lp-creative-director-engine/actions/runs/36541693976/artifacts/11020298341",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "GOLD20-FULLPAGE-V1",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_82b0e73d52fc8191a1bba85895a23ebe/download",
+                    "library_file_id": "libfile_82b0e73d52fc8191a1bba85895a23ebe",
+                    "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+                    "file_name": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip",
+                    "filename": "creative_mechanism_gold20_fullpage_v1_sha256-4929f73c.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P05-R01-CM-VIS-FINANCE-RATE-PANEL-01",
+        "reference_id": "P05-R01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "5447f4be7d5c6e458109cc4aab1433b2fb23ef815e16f4b2bdf7f08696b76d3d",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P05-R02-REP01-CM-VIS-FINANCE-RATE-PANEL-01",
+        "reference_id": "P05-R02-REP01",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "fa9ac8c900f4a1e1ef38b1cd9cc22947e882ce6947165419133a8d9d81778ca7",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.fanuc.co.jp/",
+        "evidence_snapshot_sha256": "b140985b197c5d7b62ade5104f8e28deff880c1fc7266c27de9dfa6215a2b120",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P07-R02",
+          "unit": {
+            "unit_id": "D-BASE-P07-R02",
+            "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+            "reference_id": "P07-R02",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.fanuc.co.jp/",
+            "official_url": "https://www.fanuc.co.jp/",
+            "page_family": "www.fanuc.co.jp/"
+          },
+          "reference": {
+            "reference_id": "P07-R02",
+            "canonical_url": "https://www.fanuc.co.jp/",
+            "url": "https://www.fanuc.co.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P07-R02-DESKTOP-SCENE-001",
+                    "reference_id": "P07-R02",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 3793
+                    },
+                    "screenshot_identifier": "P07-R02__desktop__scene_001.jpg",
+                    "scene_crop_identifier": "P07-R02__desktop__scene_001.jpg",
+                    "parent_screenshot_identifier": "P07-R02__desktop__full.jpg",
+                    "content_hash": "305b2272ce1cbaec5a3b6b30d37118ffd668f9d1cf72f1dc9afc845248b7c17a",
+                    "parent_content_hash": "cdcf678fd10d5da0ccd044fb7dbb007aa4890226584d0010559ffbae6b1bf261",
+                    "archive_id": "P22-EVIDENCE-04",
+                    "archive_entry": "scene_crops/P07-R02__desktop__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_654ee9ab5b0081918f02b4dc4c2dee8c/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_654ee9ab5b0081918f02b4dc4c2dee8c",
+                    "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+                    "version_id": "0",
+                    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+                    "captured_at": "2026-09-29T11:02:32.803945+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.fanuc.co.jp/",
+                    "final_url": "https://www.fanuc.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-04",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_654ee9ab5b0081918f02b4dc4c2dee8c/download",
+                    "library_file_id": "libfile_654ee9ab5b0081918f02b4dc4c2dee8c",
+                    "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+                    "file_name": "phase2_2_batch_04_sha256-420483d21c41.zip",
+                    "filename": "phase2_2_batch_04_sha256-420483d21c41.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P07-R02-DESKTOP-full",
+                    "reference_id": "P07-R02",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P07-R02__desktop__full.jpg",
+                    "content_hash": "cdcf678fd10d5da0ccd044fb7dbb007aa4890226584d0010559ffbae6b1bf261",
+                    "archive_id": "P22-EVIDENCE-04",
+                    "archive_entry": "capture/P07-R02__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_654ee9ab5b0081918f02b4dc4c2dee8c/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_654ee9ab5b0081918f02b4dc4c2dee8c",
+                    "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+                    "version_id": "0",
+                    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+                    "captured_at": "2026-09-29T11:02:32.803945+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.fanuc.co.jp/",
+                    "final_url": "https://www.fanuc.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-04",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_654ee9ab5b0081918f02b4dc4c2dee8c/download",
+                    "library_file_id": "libfile_654ee9ab5b0081918f02b4dc4c2dee8c",
+                    "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+                    "file_name": "phase2_2_batch_04_sha256-420483d21c41.zip",
+                    "filename": "phase2_2_batch_04_sha256-420483d21c41.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P07-R02-MOBILE-SCENE-001",
+                    "reference_id": "P07-R02",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 4694
+                    },
+                    "screenshot_identifier": "P07-R02__mobile__scene_001.jpg",
+                    "scene_crop_identifier": "P07-R02__mobile__scene_001.jpg",
+                    "parent_screenshot_identifier": "P07-R02__mobile__full.jpg",
+                    "content_hash": "f07b857e685d409b1609deb5c830cdfbcdf78dda60d188d5d94eff0b94b6b1f6",
+                    "parent_content_hash": "fc46ce179a7f1582f1aeb50186601d85641c7c79fd3c2f06e23ea787c84263aa",
+                    "archive_id": "P22-EVIDENCE-04",
+                    "archive_entry": "scene_crops/P07-R02__mobile__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_654ee9ab5b0081918f02b4dc4c2dee8c/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_654ee9ab5b0081918f02b4dc4c2dee8c",
+                    "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+                    "version_id": "0",
+                    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+                    "captured_at": "2026-09-29T11:02:40.095772+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.fanuc.co.jp/",
+                    "final_url": "https://www.fanuc.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-04",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_654ee9ab5b0081918f02b4dc4c2dee8c/download",
+                    "library_file_id": "libfile_654ee9ab5b0081918f02b4dc4c2dee8c",
+                    "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+                    "file_name": "phase2_2_batch_04_sha256-420483d21c41.zip",
+                    "filename": "phase2_2_batch_04_sha256-420483d21c41.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P07-R02-MOBILE-full",
+                    "reference_id": "P07-R02",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P07-R02__mobile__full.jpg",
+                    "content_hash": "fc46ce179a7f1582f1aeb50186601d85641c7c79fd3c2f06e23ea787c84263aa",
+                    "archive_id": "P22-EVIDENCE-04",
+                    "archive_entry": "capture/P07-R02__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_654ee9ab5b0081918f02b4dc4c2dee8c/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_654ee9ab5b0081918f02b4dc4c2dee8c",
+                    "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+                    "version_id": "0",
+                    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+                    "captured_at": "2026-09-29T11:02:40.095772+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.fanuc.co.jp/",
+                    "final_url": "https://www.fanuc.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-04",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_654ee9ab5b0081918f02b4dc4c2dee8c/download",
+                    "library_file_id": "libfile_654ee9ab5b0081918f02b4dc4c2dee8c",
+                    "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+                    "file_name": "phase2_2_batch_04_sha256-420483d21c41.zip",
+                    "filename": "phase2_2_batch_04_sha256-420483d21c41.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P07-R03-CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P07-R03",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "245855bfd7f3d36ac6be2a6cd3aded714df40b036282170fc064a146f02ca73f",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P10-R05-CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "reference_id": "P10-R05",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "1a356facf0acd57ddd633a9aecfc44d36e94e10b0294ddfea426d6ee6bb8b1c1",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "HOLD",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "ADAPTER_HOLD",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.freee.co.jp/",
+        "evidence_snapshot_sha256": "43495637c172f681867d39633135f728204872dc75e7d94ecadc7d197e8a8973",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P11-R01",
+          "unit": {
+            "unit_id": "D-BASE-P11-R01",
+            "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+            "reference_id": "P11-R01",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.freee.co.jp/",
+            "official_url": "https://www.freee.co.jp/",
+            "page_family": "www.freee.co.jp/"
+          },
+          "reference": {
+            "reference_id": "P11-R01",
+            "canonical_url": "https://www.freee.co.jp/",
+            "url": "https://www.freee.co.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P11-R01-DESKTOP-SCENE-001",
+                    "reference_id": "P11-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 7248
+                    },
+                    "screenshot_identifier": "P11-R01__desktop__scene_001.jpg",
+                    "scene_crop_identifier": "P11-R01__desktop__scene_001.jpg",
+                    "parent_screenshot_identifier": "P11-R01__desktop__full.jpg",
+                    "content_hash": "bbb5ec55cbdc3f00d0b5232b3e68d9a0e020a6029c0b04facc9d96d6fbfac6ed",
+                    "parent_content_hash": "c8f60de8b895b07e9a56193f8629d5ed151f5fe564fde80c7b854a4a9aca27c7",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "scene_crops/P11-R01__desktop__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:56:12.249475+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.freee.co.jp/",
+                    "final_url": "https://www.freee.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P11-R01-DESKTOP-full",
+                    "reference_id": "P11-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P11-R01__desktop__full.jpg",
+                    "content_hash": "c8f60de8b895b07e9a56193f8629d5ed151f5fe564fde80c7b854a4a9aca27c7",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "capture/P11-R01__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:56:12.249475+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.freee.co.jp/",
+                    "final_url": "https://www.freee.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P11-R01-MOBILE-SCENE-001",
+                    "reference_id": "P11-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 6553
+                    },
+                    "screenshot_identifier": "P11-R01__mobile__scene_001.jpg",
+                    "scene_crop_identifier": "P11-R01__mobile__scene_001.jpg",
+                    "parent_screenshot_identifier": "P11-R01__mobile__full.jpg",
+                    "content_hash": "2cb731322a05c8e67abc64209485fa7c7658f0409f66e11578d80262a74accd7",
+                    "parent_content_hash": "e0ca14959167990c51a7cff6e3b016745a2aaa6c9164d17ffd608516c97dd070",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "scene_crops/P11-R01__mobile__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:56:22.438861+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.freee.co.jp/",
+                    "final_url": "https://www.freee.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P11-R01-MOBILE-full",
+                    "reference_id": "P11-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P11-R01__mobile__full.jpg",
+                    "content_hash": "e0ca14959167990c51a7cff6e3b016745a2aaa6c9164d17ffd608516c97dd070",
+                    "archive_id": "P22-EVIDENCE-01",
+                    "archive_entry": "capture/P11-R01__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "captured_at": "2026-09-29T10:56:22.438861+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.freee.co.jp/",
+                    "final_url": "https://www.freee.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-01",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_1a6f2cb4aa0c8191a37e196e91b16096/download",
+                    "library_file_id": "libfile_1a6f2cb4aa0c8191a37e196e91b16096",
+                    "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+                    "file_name": "phase2_2_batch_01_sha256-7cf3cbd70747.zip",
+                    "filename": "phase2_2_batch_01_sha256-7cf3cbd70747.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P11-R02-CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "reference_id": "P11-R02",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "01104f3ab5347d7b382bd9dcc04c37ed715058d1941a23583256773baeacd7a8",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P11-R04-CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "reference_id": "P11-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "a08293e332a1e25f95f7be5257bf91d5f8795643f6bf2fa812e79643507f4c80",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.starbucks.co.jp/",
+        "evidence_snapshot_sha256": "d375863003e56d9850c808e2738646f8bb2069e9087066eaf47549ff82737fd2",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P15-R01",
+          "unit": {
+            "unit_id": "D-BASE-P15-R01",
+            "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+            "reference_id": "P15-R01",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.starbucks.co.jp/",
+            "official_url": "https://www.starbucks.co.jp/",
+            "page_family": "www.starbucks.co.jp/"
+          },
+          "reference": {
+            "reference_id": "P15-R01",
+            "canonical_url": "https://www.starbucks.co.jp/",
+            "url": "https://www.starbucks.co.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P15-R01-DESKTOP-SCENE-001",
+                    "reference_id": "P15-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 3974
+                    },
+                    "screenshot_identifier": "P15-R01__desktop__scene_001.jpg",
+                    "scene_crop_identifier": "P15-R01__desktop__scene_001.jpg",
+                    "parent_screenshot_identifier": "P15-R01__desktop__full.jpg",
+                    "content_hash": "305df3c43d4ad2f904995227008fdb1f38b83bb682a237b67cb740a568831509",
+                    "parent_content_hash": "57d2465c74b1647936e1b7e00fb9ddfd10b20c2760d3f90bb430253e7ad951c8",
+                    "archive_id": "P22-EVIDENCE-08",
+                    "archive_entry": "scene_crops/P15-R01__desktop__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_17454f9a43f4819190e3238929f7926c/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_17454f9a43f4819190e3238929f7926c",
+                    "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+                    "version_id": "0",
+                    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+                    "captured_at": "2026-09-29T11:08:11.655683+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.starbucks.co.jp/",
+                    "final_url": "https://www.starbucks.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-08",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_17454f9a43f4819190e3238929f7926c/download",
+                    "library_file_id": "libfile_17454f9a43f4819190e3238929f7926c",
+                    "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+                    "file_name": "phase2_2_batch_08_sha256-38fcfd3cc389.zip",
+                    "filename": "phase2_2_batch_08_sha256-38fcfd3cc389.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P15-R01-DESKTOP-full",
+                    "reference_id": "P15-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P15-R01__desktop__full.jpg",
+                    "content_hash": "57d2465c74b1647936e1b7e00fb9ddfd10b20c2760d3f90bb430253e7ad951c8",
+                    "archive_id": "P22-EVIDENCE-08",
+                    "archive_entry": "capture/P15-R01__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_17454f9a43f4819190e3238929f7926c/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_17454f9a43f4819190e3238929f7926c",
+                    "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+                    "version_id": "0",
+                    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+                    "captured_at": "2026-09-29T11:08:11.655683+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.starbucks.co.jp/",
+                    "final_url": "https://www.starbucks.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-08",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_17454f9a43f4819190e3238929f7926c/download",
+                    "library_file_id": "libfile_17454f9a43f4819190e3238929f7926c",
+                    "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+                    "file_name": "phase2_2_batch_08_sha256-38fcfd3cc389.zip",
+                    "filename": "phase2_2_batch_08_sha256-38fcfd3cc389.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P15-R01-MOBILE-SCENE-001",
+                    "reference_id": "P15-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 4738
+                    },
+                    "screenshot_identifier": "P15-R01__mobile__scene_001.jpg",
+                    "scene_crop_identifier": "P15-R01__mobile__scene_001.jpg",
+                    "parent_screenshot_identifier": "P15-R01__mobile__full.jpg",
+                    "content_hash": "a6ea914bc185c76bc9893586f3211a7adfb367eb7c35664fefa9de499fb234d9",
+                    "parent_content_hash": "e0a0514a884df9fccbcfed2e6192315a14bc6b488396b5f13d249988d50b06e9",
+                    "archive_id": "P22-EVIDENCE-08",
+                    "archive_entry": "scene_crops/P15-R01__mobile__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_17454f9a43f4819190e3238929f7926c/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_17454f9a43f4819190e3238929f7926c",
+                    "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+                    "version_id": "0",
+                    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+                    "captured_at": "2026-09-29T11:08:16.735695+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.starbucks.co.jp/",
+                    "final_url": "https://www.starbucks.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-08",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_17454f9a43f4819190e3238929f7926c/download",
+                    "library_file_id": "libfile_17454f9a43f4819190e3238929f7926c",
+                    "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+                    "file_name": "phase2_2_batch_08_sha256-38fcfd3cc389.zip",
+                    "filename": "phase2_2_batch_08_sha256-38fcfd3cc389.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P15-R01-MOBILE-full",
+                    "reference_id": "P15-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P15-R01__mobile__full.jpg",
+                    "content_hash": "e0a0514a884df9fccbcfed2e6192315a14bc6b488396b5f13d249988d50b06e9",
+                    "archive_id": "P22-EVIDENCE-08",
+                    "archive_entry": "capture/P15-R01__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_17454f9a43f4819190e3238929f7926c/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_17454f9a43f4819190e3238929f7926c",
+                    "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+                    "version_id": "0",
+                    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+                    "captured_at": "2026-09-29T11:08:16.735695+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.starbucks.co.jp/",
+                    "final_url": "https://www.starbucks.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-08",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_17454f9a43f4819190e3238929f7926c/download",
+                    "library_file_id": "libfile_17454f9a43f4819190e3238929f7926c",
+                    "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+                    "file_name": "phase2_2_batch_08_sha256-38fcfd3cc389.zip",
+                    "filename": "phase2_2_batch_08_sha256-38fcfd3cc389.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P15-R02-CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "reference_id": "P15-R02",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "5370e593bb90a7ec7ee55c6a27c509e003661e0e757957a9e8cc6d6726089359",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P14-R05-REP02-CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "reference_id": "P14-R05-REP02",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "071cd00dcdb5b170ce5ff43136a5280c5d501cacb363a40f18809129da4dbb8c",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.shiseido.co.jp/",
+        "evidence_snapshot_sha256": "0cba1986f327d1e8f84580aae284ed8f5fe972de2d825779ea6ca10142f34651",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P17-R01",
+          "unit": {
+            "unit_id": "D-BASE-P17-R01",
+            "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+            "reference_id": "P17-R01",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.shiseido.co.jp/",
+            "official_url": "https://www.shiseido.co.jp/",
+            "page_family": "www.shiseido.co.jp/"
+          },
+          "reference": {
+            "reference_id": "P17-R01",
+            "canonical_url": "https://www.shiseido.co.jp/",
+            "url": "https://www.shiseido.co.jp/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P17-R01-DESKTOP-SCENE-001",
+                    "reference_id": "P17-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 4332
+                    },
+                    "screenshot_identifier": "P17-R01__desktop__scene_001.jpg",
+                    "scene_crop_identifier": "P17-R01__desktop__scene_001.jpg",
+                    "parent_screenshot_identifier": "P17-R01__desktop__full.jpg",
+                    "content_hash": "9ee58d71517d0b59c2f17c641f3c8bb88f4799e28c62473687ec1f8455884e08",
+                    "parent_content_hash": "e08fefe62f3ae751a35cebe8d617e8de375f1fca56f28981442ef05be68c61f8",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "scene_crops/P17-R01__desktop__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:27.082909+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.shiseido.co.jp/",
+                    "final_url": "https://www.shiseido.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P17-R01-DESKTOP-full",
+                    "reference_id": "P17-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P17-R01__desktop__full.jpg",
+                    "content_hash": "e08fefe62f3ae751a35cebe8d617e8de375f1fca56f28981442ef05be68c61f8",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "capture/P17-R01__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:27.082909+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.shiseido.co.jp/",
+                    "final_url": "https://www.shiseido.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P17-R01-MOBILE-SCENE-001",
+                    "reference_id": "P17-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 5308
+                    },
+                    "screenshot_identifier": "P17-R01__mobile__scene_001.jpg",
+                    "scene_crop_identifier": "P17-R01__mobile__scene_001.jpg",
+                    "parent_screenshot_identifier": "P17-R01__mobile__full.jpg",
+                    "content_hash": "3599e627464f86eb36d7fc62198bf5e89c33b22df234a1c1dc296ae37f474347",
+                    "parent_content_hash": "1cf5a16b2b737ad86985403cc16c692e15e0640def800c3d077d0c777aaeee51",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "scene_crops/P17-R01__mobile__scene_001.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:31.288191+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.shiseido.co.jp/",
+                    "final_url": "https://www.shiseido.co.jp/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P17-R01-MOBILE-full",
+                    "reference_id": "P17-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P17-R01__mobile__full.jpg",
+                    "content_hash": "1cf5a16b2b737ad86985403cc16c692e15e0640def800c3d077d0c777aaeee51",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "capture/P17-R01__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:31.288191+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.shiseido.co.jp/",
+                    "final_url": "https://www.shiseido.co.jp/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P17-R04-CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "reference_id": "P17-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "ea0ba1fddad79d9a26b09e27f1aaffaadbf2a312131894edcde1b757181d0481",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P17-R05-CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "reference_id": "P17-R05",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "d042a711dcf324a666048a40aa7e775d7ee3a396e251a1d63a19cf49683903ec",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "IMPLEMENTED",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  },
+  {
+    "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "snapshot_binding_schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+    "evidence_snapshot_bindings": [
+      {
+        "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+        "unit_id": "REFERENCE-PAGE:www.teamlab.art/",
+        "evidence_snapshot_sha256": "34d2e7e92e007f12f5f62a51b71e156a40b235d6b2791ef47d2076e5e26686f3",
+        "snapshot": {
+          "schema": "REFERENCE_EVIDENCE_SNAPSHOT_V1",
+          "source_record_id": "D-BASE-P20-R01",
+          "unit": {
+            "unit_id": "D-BASE-P20-R01",
+            "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+            "reference_id": "P20-R01",
+            "independent_evidence_unit_id": "REFERENCE-PAGE:www.teamlab.art/",
+            "official_url": "https://www.teamlab.art/",
+            "page_family": "www.teamlab.art/"
+          },
+          "reference": {
+            "reference_id": "P20-R01",
+            "canonical_url": "https://www.teamlab.art/",
+            "url": "https://www.teamlab.art/",
+            "captured_at": "2026-09-29",
+            "record_origin": "ORIGINAL_PILOT_IMMUTABLE_SOURCE"
+          },
+          "viewports": {
+            "DESKTOP": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P20-R01-DESKTOP-SCENE-002",
+                    "reference_id": "P20-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 3880
+                    },
+                    "screenshot_identifier": "P20-R01__desktop__scene_002.jpg",
+                    "scene_crop_identifier": "P20-R01__desktop__scene_002.jpg",
+                    "parent_screenshot_identifier": "P20-R01__desktop__full.jpg",
+                    "content_hash": "b4b0719849dfd8d3666b8781880850bb145012cb87ff926f8b28e355bca047d8",
+                    "parent_content_hash": "ddb176030f17bcaa95a92412e51ae4d3214052413ec0f374a3799e73f479aaba",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "scene_crops/P20-R01__desktop__scene_002.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:48.038869+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.teamlab.art/",
+                    "final_url": "https://www.teamlab.art/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P20-R01-DESKTOP-full",
+                    "reference_id": "P20-R01",
+                    "viewport_label": "DESKTOP",
+                    "viewport": {
+                      "width": 1440,
+                      "height": 1000
+                    },
+                    "screenshot_identifier": "P20-R01__desktop__full.jpg",
+                    "content_hash": "ddb176030f17bcaa95a92412e51ae4d3214052413ec0f374a3799e73f479aaba",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "capture/P20-R01__desktop__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:48.038869+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.teamlab.art/",
+                    "final_url": "https://www.teamlab.art/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                }
+              }
+            ],
+            "MOBILE": [
+              {
+                "scene": {
+                  "capture": {
+                    "scene_evidence_id": "P22-P20-R01-MOBILE-SCENE-002",
+                    "reference_id": "P20-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 9282
+                    },
+                    "screenshot_identifier": "P20-R01__mobile__scene_002.jpg",
+                    "scene_crop_identifier": "P20-R01__mobile__scene_002.jpg",
+                    "parent_screenshot_identifier": "P20-R01__mobile__full.jpg",
+                    "content_hash": "d2378c7d04025c8fc8c737bde375536ede8ae92528f44a5a7bc571028fc10507",
+                    "parent_content_hash": "305a0efc9484cf750151b7fe89f16e2d5bcc2d4ae3478f00d87e87fd3519395f",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "scene_crops/P20-R01__mobile__scene_002.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:51.048682+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.teamlab.art/",
+                    "final_url": "https://www.teamlab.art/"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                },
+                "snapshot": {
+                  "capture": {
+                    "snapshot_id": "P22-SNAP-P20-R01-MOBILE-full",
+                    "reference_id": "P20-R01",
+                    "viewport_label": "MOBILE",
+                    "viewport": {
+                      "width": 390,
+                      "height": 844
+                    },
+                    "screenshot_identifier": "P20-R01__mobile__full.jpg",
+                    "content_hash": "305a0efc9484cf750151b7fe89f16e2d5bcc2d4ae3478f00d87e87fd3519395f",
+                    "archive_id": "P22-EVIDENCE-02",
+                    "archive_entry": "capture/P20-R01__mobile__full.jpg",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "captured_at": "2026-09-29T10:57:51.048682+00:00",
+                    "capture_run_id": "UNKNOWN_RUN",
+                    "original_url": "https://www.teamlab.art/",
+                    "final_url": "https://www.teamlab.art/",
+                    "source_artifact": "GitHub Actions temporary artifact; not primary archive",
+                    "storage_state": "DURABLE_VERIFIED"
+                  },
+                  "archive": {
+                    "archive_id": "P22-EVIDENCE-02",
+                    "backend": "CHATGPT_LIBRARY",
+                    "archive_status": "DURABLE_VERIFIED",
+                    "archive_locator": "https://chatgpt.com/api/library/files/libfile_0e471a2db5c881919f0df693b0b364a5/download",
+                    "library_file_id": "libfile_0e471a2db5c881919f0df693b0b364a5",
+                    "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+                    "version_id": "0",
+                    "version_number": 0,
+                    "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+                    "file_name": "phase2_2_batch_02_sha256-65715e19990d.zip",
+                    "filename": "phase2_2_batch_02_sha256-65715e19990d.zip"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "existing_evidence_unit_count": 1,
+    "candidate_decisions": [
+      {
+        "candidate_id": "D-CORPUS-P20-R03-CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "reference_id": "P20-R03",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "90c92c7890c4806953098f712f56b37ded52b53b72b560a6cf7bca31e0cf774c",
+        "independence_status": "UNKNOWN"
+      },
+      {
+        "candidate_id": "D-CORPUS-P20-R04-CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "reference_id": "P20-R04",
+        "match_decision": "REJECT",
+        "reason": "ATOMIC_CORE_MISMATCH",
+        "candidate_digest": "5f049948246a6b416bd87c764c9cd9e31119476c28b500dd26fc33a7eb93ba34",
+        "independence_status": "UNKNOWN"
+      }
+    ],
+    "new_matching_reference_count": 0,
+    "accepted_new_independent_evidence_count": 0,
+    "independence": {
+      "status": "NOT_INDEPENDENT",
+      "distinct_reference_unit_count": 1,
+      "pairs": [],
+      "reason": "ONE_APPROVED_REFERENCE_ONLY"
+    },
+    "agency_independence": "UNKNOWN",
+    "campaign_independence": "UNKNOWN",
+    "source_family_independence": "NOT_INDEPENDENT",
+    "adapter_status": "HOLD",
+    "previous_eligibility": "HOLD",
+    "new_eligibility": "HOLD",
+    "eligibility_recalculated": false,
+    "eligibility_change_reason": [
+      "NO_NEW_VALIDATED_ATOMIC_MATCH_AND_INDEPENDENT_UNIT",
+      "INDEPENDENCE_INSUFFICIENT",
+      "ADAPTER_HOLD",
+      "CLIENT_TRUTH_RIGHTS_AND_CURRENT_OUTPUT_QA_STILL_REQUIRED"
+    ],
+    "production_revalidation": "NOT_APPLICABLE_ELIGIBILITY_UNCHANGED",
+    "desktop_result": "NOT_RERUN_UNCHANGED",
+    "mobile_result": "NOT_RERUN_UNCHANGED",
+    "motion_support": "STATIC_ONLY",
+    "promotion_count": 0,
+    "phase2600_allowed": false
+  }
+]

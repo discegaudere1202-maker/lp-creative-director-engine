@@ -1,0 +1,772 @@
+[
+  {
+    "source_record_id": "D-BASE-P01-R01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:kaza-hana.jp/",
+    "reference_id": "P01-R01",
+    "desktop_scene_ids": [
+      "GOLD-P01-R01-DESKTOP-TRAV-01"
+    ],
+    "mobile_scene_ids": [
+      "GOLD-P01-R01-MOBILE-TRAV-01"
+    ],
+    "evidence_snapshot_sha256": "fb8dd84de6bd901e41c815aa17bb224449ebd6872c2a7f5ca667a5ec3a893cc0"
+  },
+  {
+    "source_record_id": "D-BASE-P06-R02",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:my.clevelandclinic.org/",
+    "reference_id": "P06-R02",
+    "desktop_scene_ids": [
+      "GOLD-P06-R02-DESKTOP-TRAV-01"
+    ],
+    "mobile_scene_ids": [
+      "GOLD-P06-R02-MOBILE-TRAV-01"
+    ],
+    "evidence_snapshot_sha256": "4f8a3c6b7d8de5c080d406ca1454fb2312711db235aeeb152af1f0916f2256cf"
+  },
+  {
+    "source_record_id": "D-BASE-P08-R02",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:linear.app/",
+    "reference_id": "P08-R02",
+    "desktop_scene_ids": [
+      "GOLD-P08-R02-DESKTOP-TRAV-01"
+    ],
+    "mobile_scene_ids": [
+      "GOLD-P08-R02-MOBILE-TRAV-01"
+    ],
+    "evidence_snapshot_sha256": "6f36f8fede6718d639f9c601f03bd8738f8825079e72ea6dabd2c712636355f1"
+  },
+  {
+    "source_record_id": "D-BASE-P13-R04",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.sabon.co.jp/",
+    "reference_id": "P13-R04",
+    "desktop_scene_ids": [
+      "P22-P13-R04-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P13-R04-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "fff650caa36af8339c1acfcbb4a3448d1aa5f3d0019866d30111e5594c1bcc7c"
+  },
+  {
+    "source_record_id": "D-BASE-P16-R03",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.aman.com/",
+    "reference_id": "P16-R03",
+    "desktop_scene_ids": [
+      "P22-P16-R03-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P16-R03-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "b62c5036295cde877ab7be38d46c978b8bff30513ca4b090e8eaf07fd660aa6d"
+  },
+  {
+    "source_record_id": "D-BASE-P18-R01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.mhlw.go.jp/index.html",
+    "reference_id": "P18-R01",
+    "desktop_scene_ids": [
+      "P22-P18-R01-DESKTOP-SCENE-004"
+    ],
+    "mobile_scene_ids": [
+      "P22-P18-R01-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "7a10da92da0b5f744ed359d3fc0130c9d9ad8227d72cc4b247199f35de6857d0"
+  },
+  {
+    "source_record_id": "D-BASE-P03-R04",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.renovation.or.jp/",
+    "reference_id": "P03-R04",
+    "desktop_scene_ids": [
+      "P22-P03-R04-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P03-R04-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "b10e193579540989c2a652d19fb62c1eb3bcfcf154804b5e5ba2ac7bd65d47e9"
+  },
+  {
+    "source_record_id": "D-BASE-P05-R04",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:sonybank.jp/",
+    "reference_id": "P05-R04",
+    "desktop_scene_ids": [
+      "GOLD-P05-R04-DESKTOP-TRAV-02"
+    ],
+    "mobile_scene_ids": [
+      "GOLD-P05-R04-MOBILE-TRAV-02"
+    ],
+    "evidence_snapshot_sha256": "8e906aeb24bf43a9270fa2a7ad6757d56d0007c766cb4bc997d3563f016346fa"
+  },
+  {
+    "source_record_id": "D-BASE-P07-R02",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.fanuc.co.jp/",
+    "reference_id": "P07-R02",
+    "desktop_scene_ids": [
+      "P22-P07-R02-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P07-R02-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "b140985b197c5d7b62ade5104f8e28deff880c1fc7266c27de9dfa6215a2b120"
+  },
+  {
+    "source_record_id": "D-BASE-P11-R01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.freee.co.jp/",
+    "reference_id": "P11-R01",
+    "desktop_scene_ids": [
+      "P22-P11-R01-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P11-R01-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "43495637c172f681867d39633135f728204872dc75e7d94ecadc7d197e8a8973"
+  },
+  {
+    "source_record_id": "D-BASE-P15-R01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.starbucks.co.jp/",
+    "reference_id": "P15-R01",
+    "desktop_scene_ids": [
+      "P22-P15-R01-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P15-R01-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "d375863003e56d9850c808e2738646f8bb2069e9087066eaf47549ff82737fd2"
+  },
+  {
+    "source_record_id": "D-BASE-P17-R01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.shiseido.co.jp/",
+    "reference_id": "P17-R01",
+    "desktop_scene_ids": [
+      "P22-P17-R01-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P17-R01-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "0cba1986f327d1e8f84580aae284ed8f5fe972de2d825779ea6ca10142f34651"
+  },
+  {
+    "source_record_id": "D-BASE-P20-R01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.teamlab.art/",
+    "reference_id": "P20-R01",
+    "desktop_scene_ids": [
+      "P22-P20-R01-DESKTOP-SCENE-002"
+    ],
+    "mobile_scene_ids": [
+      "P22-P20-R01-MOBILE-SCENE-002"
+    ],
+    "evidence_snapshot_sha256": "34d2e7e92e007f12f5f62a51b71e156a40b235d6b2791ef47d2076e5e26686f3"
+  },
+  {
+    "source_record_id": "D-CORPUS-P01-R03-CM-VIS-ENVIRONMENTAL-HERO-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:nnz-d.com/",
+    "reference_id": "P01-R03",
+    "desktop_scene_ids": [
+      "P22-P01-R03-DESKTOP-SCENE-001"
+    ],
+    "mobile_scene_ids": [
+      "P22-P01-R03-MOBILE-SCENE-001"
+    ],
+    "evidence_snapshot_sha256": "f0bc45697d32f189f10620acd848ac2f6d26cbf5c4d808101f5ba0542e86856a"
+  },
+  {
+    "source_record_id": "D-CORPUS-P01-R04-CM-VIS-ENVIRONMENTAL-HERO-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.takasho.co.jp/",
+    "reference_id": "P01-R04",
+    "desktop_scene_ids": [
+      "P22-P01-R04-DESKTOP-SCENE-001",
+      "P22-P01-R04-DESKTOP-SCENE-002",
+      "P22-P01-R04-DESKTOP-SCENE-003",
+      "P22-P01-R04-DESKTOP-SCENE-004",
+      "P22-P01-R04-DESKTOP-SCENE-005",
+      "P22-P01-R04-DESKTOP-SCENE-006",
+      "P22-P01-R04-DESKTOP-SCENE-007",
+      "P22-P01-R04-DESKTOP-SCENE-008",
+      "P22-P01-R04-DESKTOP-SCENE-009"
+    ],
+    "mobile_scene_ids": [
+      "P22-P01-R04-MOBILE-SCENE-001",
+      "P22-P01-R04-MOBILE-SCENE-002",
+      "P22-P01-R04-MOBILE-SCENE-003",
+      "P22-P01-R04-MOBILE-SCENE-004",
+      "P22-P01-R04-MOBILE-SCENE-005",
+      "P22-P01-R04-MOBILE-SCENE-006",
+      "P22-P01-R04-MOBILE-SCENE-007",
+      "P22-P01-R04-MOBILE-SCENE-008",
+      "P22-P01-R04-MOBILE-SCENE-009"
+    ],
+    "evidence_snapshot_sha256": "0e4603eecb728b237c83c053313566bac8cb5fe4faea3d86b6c9998bee4e5554"
+  },
+  {
+    "source_record_id": "D-CORPUS-P06-R04-CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.massgeneralbrigham.org/",
+    "reference_id": "P06-R04",
+    "desktop_scene_ids": [
+      "P22-P06-R04-DESKTOP-SCENE-001",
+      "P22-P06-R04-DESKTOP-SCENE-002",
+      "P22-P06-R04-DESKTOP-SCENE-003",
+      "P22-P06-R04-DESKTOP-SCENE-004",
+      "P22-P06-R04-DESKTOP-SCENE-005",
+      "P22-P06-R04-DESKTOP-SCENE-006",
+      "P22-P06-R04-DESKTOP-SCENE-007"
+    ],
+    "mobile_scene_ids": [
+      "P22-P06-R04-MOBILE-SCENE-001",
+      "P22-P06-R04-MOBILE-SCENE-002",
+      "P22-P06-R04-MOBILE-SCENE-003",
+      "P22-P06-R04-MOBILE-SCENE-004",
+      "P22-P06-R04-MOBILE-SCENE-005",
+      "P22-P06-R04-MOBILE-SCENE-006",
+      "P22-P06-R04-MOBILE-SCENE-007"
+    ],
+    "evidence_snapshot_sha256": "33fafe0483418861dcdfb850320566ed765cb7f1cbfff99b1dfe35f49c985e5a"
+  },
+  {
+    "source_record_id": "D-CORPUS-P06-R03-REP01-CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.chuvision.com/",
+    "reference_id": "P06-R03-REP01",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P06-R03-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P06-R03-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P06-R03-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P06-R03-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "evidence_snapshot_sha256": "03aeb3162e36dededa7407ecbf9afd6d3b498e0d29411df3543890025f84c968"
+  },
+  {
+    "source_record_id": "D-CORPUS-P08-R04-CM-VIS-PRODUCT-UI-STAGE-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:slack.com/",
+    "reference_id": "P08-R04",
+    "desktop_scene_ids": [
+      "P22-P08-R04-DESKTOP-SCENE-001",
+      "P22-P08-R04-DESKTOP-SCENE-002",
+      "P22-P08-R04-DESKTOP-SCENE-003",
+      "P22-P08-R04-DESKTOP-SCENE-004",
+      "P22-P08-R04-DESKTOP-SCENE-005",
+      "P22-P08-R04-DESKTOP-SCENE-006",
+      "P22-P08-R04-DESKTOP-SCENE-007"
+    ],
+    "mobile_scene_ids": [
+      "P22-P08-R04-MOBILE-SCENE-001",
+      "P22-P08-R04-MOBILE-SCENE-002",
+      "P22-P08-R04-MOBILE-SCENE-003",
+      "P22-P08-R04-MOBILE-SCENE-004",
+      "P22-P08-R04-MOBILE-SCENE-005",
+      "P22-P08-R04-MOBILE-SCENE-006",
+      "P22-P08-R04-MOBILE-SCENE-007",
+      "P22-P08-R04-MOBILE-SCENE-008",
+      "P22-P08-R04-MOBILE-SCENE-009",
+      "P22-P08-R04-MOBILE-SCENE-010"
+    ],
+    "evidence_snapshot_sha256": "cbd94786649f21ba9fd80e00e2c814f3c2bf6766f9f0d2de53b6c0e2ea8d7b9c"
+  },
+  {
+    "source_record_id": "D-CORPUS-P12-R03-CM-VIS-PRODUCT-UI-STAGE-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.framer.com/ja",
+    "reference_id": "P12-R03",
+    "desktop_scene_ids": [
+      "P22-P12-R03-DESKTOP-SCENE-001",
+      "P22-P12-R03-DESKTOP-SCENE-002",
+      "P22-P12-R03-DESKTOP-SCENE-003",
+      "P22-P12-R03-DESKTOP-SCENE-004",
+      "P22-P12-R03-DESKTOP-SCENE-005",
+      "P22-P12-R03-DESKTOP-SCENE-006",
+      "P22-P12-R03-DESKTOP-SCENE-007"
+    ],
+    "mobile_scene_ids": [
+      "P22-P12-R03-MOBILE-SCENE-001",
+      "P22-P12-R03-MOBILE-SCENE-002",
+      "P22-P12-R03-MOBILE-SCENE-003",
+      "P22-P12-R03-MOBILE-SCENE-004",
+      "P22-P12-R03-MOBILE-SCENE-005",
+      "P22-P12-R03-MOBILE-SCENE-006",
+      "P22-P12-R03-MOBILE-SCENE-007"
+    ],
+    "evidence_snapshot_sha256": "b8b6089feee93ee93430ad56ea8060cec8afb01c4b08690b7669f05c9eb06f86"
+  },
+  {
+    "source_record_id": "D-CORPUS-P13-R01-REP01-CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:cohina.net/",
+    "reference_id": "P13-R01-REP01",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P13-R01-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P13-R01-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P13-R01-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P13-R01-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "evidence_snapshot_sha256": "db4609f3b3ef4d7b790203144eceab56119f84214614bf254571228ba46949a5"
+  },
+  {
+    "source_record_id": "D-CORPUS-P13-R02-REP01-CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.felissimo.co.jp/",
+    "reference_id": "P13-R02-REP01",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P13-R02-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P13-R02-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P13-R02-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P13-R02-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "evidence_snapshot_sha256": "05703b412989a24b5c44f07aced331d8ba9982e10d0db0b9b2c260f8ccc36c72"
+  },
+  {
+    "source_record_id": "D-CORPUS-P16-R01-REP01-CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.ultimacollection.com/",
+    "reference_id": "P16-R01-REP01",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P16-R01-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P16-R01-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P16-R01-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P16-R01-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "evidence_snapshot_sha256": "bd522fc05765a18573c9dc161b7ff327e2d8898bd3054cc2de0b1ba5dc48e1a1"
+  },
+  {
+    "source_record_id": "D-CORPUS-P16-R05-CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.salterraresort.com/",
+    "reference_id": "P16-R05",
+    "desktop_scene_ids": [
+      "P22-P16-R05-DESKTOP-SCENE-001",
+      "P22-P16-R05-DESKTOP-SCENE-002",
+      "P22-P16-R05-DESKTOP-SCENE-003",
+      "P22-P16-R05-DESKTOP-SCENE-004",
+      "P22-P16-R05-DESKTOP-SCENE-005",
+      "P22-P16-R05-DESKTOP-SCENE-006",
+      "P22-P16-R05-DESKTOP-SCENE-007",
+      "P22-P16-R05-DESKTOP-SCENE-008",
+      "P22-P16-R05-DESKTOP-SCENE-009",
+      "P22-P16-R05-DESKTOP-SCENE-010",
+      "P22-P16-R05-DESKTOP-SCENE-011",
+      "P22-P16-R05-DESKTOP-SCENE-012",
+      "P22-P16-R05-DESKTOP-SCENE-013",
+      "P22-P16-R05-DESKTOP-SCENE-014",
+      "P22-P16-R05-DESKTOP-SCENE-015",
+      "P22-P16-R05-DESKTOP-SCENE-016",
+      "P22-P16-R05-DESKTOP-SCENE-017",
+      "P22-P16-R05-DESKTOP-SCENE-018"
+    ],
+    "mobile_scene_ids": [
+      "P22-P16-R05-MOBILE-SCENE-001",
+      "P22-P16-R05-MOBILE-SCENE-002",
+      "P22-P16-R05-MOBILE-SCENE-003",
+      "P22-P16-R05-MOBILE-SCENE-004",
+      "P22-P16-R05-MOBILE-SCENE-005",
+      "P22-P16-R05-MOBILE-SCENE-006",
+      "P22-P16-R05-MOBILE-SCENE-007",
+      "P22-P16-R05-MOBILE-SCENE-008",
+      "P22-P16-R05-MOBILE-SCENE-009",
+      "P22-P16-R05-MOBILE-SCENE-010",
+      "P22-P16-R05-MOBILE-SCENE-011",
+      "P22-P16-R05-MOBILE-SCENE-012",
+      "P22-P16-R05-MOBILE-SCENE-013",
+      "P22-P16-R05-MOBILE-SCENE-014",
+      "P22-P16-R05-MOBILE-SCENE-015",
+      "P22-P16-R05-MOBILE-SCENE-016",
+      "P22-P16-R05-MOBILE-SCENE-017",
+      "P22-P16-R05-MOBILE-SCENE-018",
+      "P22-P16-R05-MOBILE-SCENE-019",
+      "P22-P16-R05-MOBILE-SCENE-020",
+      "P22-P16-R05-MOBILE-SCENE-021",
+      "P22-P16-R05-MOBILE-SCENE-022",
+      "P22-P16-R05-MOBILE-SCENE-023",
+      "P22-P16-R05-MOBILE-SCENE-024",
+      "P22-P16-R05-MOBILE-SCENE-025"
+    ],
+    "evidence_snapshot_sha256": "ce43e1be65f0b491522ab68f5ff739e186219db9685546baf9d29024ad817021"
+  },
+  {
+    "source_record_id": "D-CORPUS-P18-R04-CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.metro.tokyo.lg.jp/",
+    "reference_id": "P18-R04",
+    "desktop_scene_ids": [
+      "P22-P18-R04-DESKTOP-SCENE-001",
+      "P22-P18-R04-DESKTOP-SCENE-002",
+      "P22-P18-R04-DESKTOP-SCENE-003",
+      "P22-P18-R04-DESKTOP-SCENE-004",
+      "P22-P18-R04-DESKTOP-SCENE-005",
+      "P22-P18-R04-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P18-R04-MOBILE-SCENE-001",
+      "P22-P18-R04-MOBILE-SCENE-002",
+      "P22-P18-R04-MOBILE-SCENE-003",
+      "P22-P18-R04-MOBILE-SCENE-004",
+      "P22-P18-R04-MOBILE-SCENE-005",
+      "P22-P18-R04-MOBILE-SCENE-006"
+    ],
+    "evidence_snapshot_sha256": "5fc5fba33599f9d31c7865fe65bf63e5168b43ee211494b8701fdc2ac0740b6b"
+  },
+  {
+    "source_record_id": "D-CORPUS-P09-R05-CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.seino.co.jp/",
+    "reference_id": "P09-R05",
+    "desktop_scene_ids": [
+      "P22-P09-R05-DESKTOP-SCENE-001",
+      "P22-P09-R05-DESKTOP-SCENE-002",
+      "P22-P09-R05-DESKTOP-SCENE-003",
+      "P22-P09-R05-DESKTOP-SCENE-004",
+      "P22-P09-R05-DESKTOP-SCENE-005",
+      "P22-P09-R05-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P09-R05-MOBILE-SCENE-001",
+      "P22-P09-R05-MOBILE-SCENE-002",
+      "P22-P09-R05-MOBILE-SCENE-003",
+      "P22-P09-R05-MOBILE-SCENE-004",
+      "P22-P09-R05-MOBILE-SCENE-005",
+      "P22-P09-R05-MOBILE-SCENE-006",
+      "P22-P09-R05-MOBILE-SCENE-007"
+    ],
+    "evidence_snapshot_sha256": "d255b158d39a78c88bd028f3c74ab849a44afb6f9e97d2e40fb2c2e669095042"
+  },
+  {
+    "source_record_id": "D-CORPUS-P03-R01-CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.stylekoubou.com/",
+    "reference_id": "P03-R01",
+    "desktop_scene_ids": [
+      "P22-P03-R01-DESKTOP-SCENE-001",
+      "P22-P03-R01-DESKTOP-SCENE-002",
+      "P22-P03-R01-DESKTOP-SCENE-003",
+      "P22-P03-R01-DESKTOP-SCENE-004",
+      "P22-P03-R01-DESKTOP-SCENE-005"
+    ],
+    "mobile_scene_ids": [
+      "P22-P03-R01-MOBILE-SCENE-001",
+      "P22-P03-R01-MOBILE-SCENE-002",
+      "P22-P03-R01-MOBILE-SCENE-003",
+      "P22-P03-R01-MOBILE-SCENE-004",
+      "P22-P03-R01-MOBILE-SCENE-005",
+      "P22-P03-R01-MOBILE-SCENE-006",
+      "P22-P03-R01-MOBILE-SCENE-007",
+      "P22-P03-R01-MOBILE-SCENE-008",
+      "P22-P03-R01-MOBILE-SCENE-009"
+    ],
+    "evidence_snapshot_sha256": "75fa8f90dde2881c6eba4c3264caa9352ba02ea858813242ae4f2c94710f3470"
+  },
+  {
+    "source_record_id": "D-CORPUS-P03-R03-CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.mitsui-reform.com/",
+    "reference_id": "P03-R03",
+    "desktop_scene_ids": [
+      "P22-P03-R03-DESKTOP-SCENE-001",
+      "P22-P03-R03-DESKTOP-SCENE-002",
+      "P22-P03-R03-DESKTOP-SCENE-003",
+      "P22-P03-R03-DESKTOP-SCENE-004",
+      "P22-P03-R03-DESKTOP-SCENE-005",
+      "P22-P03-R03-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P03-R03-MOBILE-SCENE-001",
+      "P22-P03-R03-MOBILE-SCENE-002",
+      "P22-P03-R03-MOBILE-SCENE-003",
+      "P22-P03-R03-MOBILE-SCENE-004",
+      "P22-P03-R03-MOBILE-SCENE-005",
+      "P22-P03-R03-MOBILE-SCENE-006"
+    ],
+    "evidence_snapshot_sha256": "127992cfb82efa5fa94cc3a67c844ec5c5085767086f131bb80fc42ee554421c"
+  },
+  {
+    "source_record_id": "D-CORPUS-P05-R01-CM-VIS-FINANCE-RATE-PANEL-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.jibunbank.co.jp/",
+    "reference_id": "P05-R01",
+    "desktop_scene_ids": [
+      "P22-P05-R01-DESKTOP-SCENE-001",
+      "P22-P05-R01-DESKTOP-SCENE-002",
+      "P22-P05-R01-DESKTOP-SCENE-003",
+      "P22-P05-R01-DESKTOP-SCENE-004",
+      "P22-P05-R01-DESKTOP-SCENE-005",
+      "P22-P05-R01-DESKTOP-SCENE-006",
+      "P22-P05-R01-DESKTOP-SCENE-007",
+      "P22-P05-R01-DESKTOP-SCENE-008",
+      "P22-P05-R01-DESKTOP-SCENE-009",
+      "P22-P05-R01-DESKTOP-SCENE-010",
+      "P22-P05-R01-DESKTOP-SCENE-011",
+      "P22-P05-R01-DESKTOP-SCENE-012",
+      "P22-P05-R01-DESKTOP-SCENE-013"
+    ],
+    "mobile_scene_ids": [
+      "P22-P05-R01-MOBILE-SCENE-001",
+      "P22-P05-R01-MOBILE-SCENE-002",
+      "P22-P05-R01-MOBILE-SCENE-003",
+      "P22-P05-R01-MOBILE-SCENE-004",
+      "P22-P05-R01-MOBILE-SCENE-005",
+      "P22-P05-R01-MOBILE-SCENE-006",
+      "P22-P05-R01-MOBILE-SCENE-007",
+      "P22-P05-R01-MOBILE-SCENE-008",
+      "P22-P05-R01-MOBILE-SCENE-009",
+      "P22-P05-R01-MOBILE-SCENE-010",
+      "P22-P05-R01-MOBILE-SCENE-011",
+      "P22-P05-R01-MOBILE-SCENE-012"
+    ],
+    "evidence_snapshot_sha256": "31bbdd719feee1a14d58d996d004caaf99da617993f9b79d3ffafb61f67f6b16"
+  },
+  {
+    "source_record_id": "D-CORPUS-P05-R02-REP01-CM-VIS-FINANCE-RATE-PANEL-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.sonylife.co.jp/",
+    "reference_id": "P05-R02-REP01",
+    "desktop_scene_ids": [
+      "P221A-36677645592-P05-R02-REP01-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36677645592-P05-R02-REP01-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36677645592-P05-R02-REP01-MOBILE-VIEWPORT-SCENE",
+      "P221A-36677645592-P05-R02-REP01-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "evidence_snapshot_sha256": "73399c5c69c3079bc81d88db10a955bfd66fa587ebd30949eb37870b8cc9b673"
+  },
+  {
+    "source_record_id": "D-CORPUS-P07-R03-CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.keyence.co.jp/",
+    "reference_id": "P07-R03",
+    "desktop_scene_ids": [
+      "P22-P07-R03-DESKTOP-SCENE-001",
+      "P22-P07-R03-DESKTOP-SCENE-002",
+      "P22-P07-R03-DESKTOP-SCENE-003",
+      "P22-P07-R03-DESKTOP-SCENE-004",
+      "P22-P07-R03-DESKTOP-SCENE-005",
+      "P22-P07-R03-DESKTOP-SCENE-006",
+      "P22-P07-R03-DESKTOP-SCENE-007"
+    ],
+    "mobile_scene_ids": [
+      "P22-P07-R03-MOBILE-SCENE-001",
+      "P22-P07-R03-MOBILE-SCENE-002",
+      "P22-P07-R03-MOBILE-SCENE-003",
+      "P22-P07-R03-MOBILE-SCENE-004",
+      "P22-P07-R03-MOBILE-SCENE-005",
+      "P22-P07-R03-MOBILE-SCENE-006"
+    ],
+    "evidence_snapshot_sha256": "cd2f5e6ef9edc02e66520643a73ce681c383b0111a9b6db4020093d565d6289a"
+  },
+  {
+    "source_record_id": "D-CORPUS-P10-R05-CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.rockwellautomation.com/en-us.html",
+    "reference_id": "P10-R05",
+    "desktop_scene_ids": [
+      "P22-P10-R05-DESKTOP-SCENE-001",
+      "P22-P10-R05-DESKTOP-SCENE-002",
+      "P22-P10-R05-DESKTOP-SCENE-003",
+      "P22-P10-R05-DESKTOP-SCENE-004",
+      "P22-P10-R05-DESKTOP-SCENE-005"
+    ],
+    "mobile_scene_ids": [
+      "P22-P10-R05-MOBILE-SCENE-001",
+      "P22-P10-R05-MOBILE-SCENE-002",
+      "P22-P10-R05-MOBILE-SCENE-003",
+      "P22-P10-R05-MOBILE-SCENE-004",
+      "P22-P10-R05-MOBILE-SCENE-005"
+    ],
+    "evidence_snapshot_sha256": "64dd3c758d06c4e7cd7b6e52879baebbd9bb049ebcda5424d3c0a6f953c3c71e"
+  },
+  {
+    "source_record_id": "D-CORPUS-P11-R02-CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:biz.moneyforward.com/",
+    "reference_id": "P11-R02",
+    "desktop_scene_ids": [
+      "P22-P11-R02-DESKTOP-SCENE-001",
+      "P22-P11-R02-DESKTOP-SCENE-002",
+      "P22-P11-R02-DESKTOP-SCENE-003",
+      "P22-P11-R02-DESKTOP-SCENE-004",
+      "P22-P11-R02-DESKTOP-SCENE-005",
+      "P22-P11-R02-DESKTOP-SCENE-006",
+      "P22-P11-R02-DESKTOP-SCENE-007",
+      "P22-P11-R02-DESKTOP-SCENE-008",
+      "P22-P11-R02-DESKTOP-SCENE-009",
+      "P22-P11-R02-DESKTOP-SCENE-010",
+      "P22-P11-R02-DESKTOP-SCENE-011",
+      "P22-P11-R02-DESKTOP-SCENE-012",
+      "P22-P11-R02-DESKTOP-SCENE-013",
+      "P22-P11-R02-DESKTOP-SCENE-014"
+    ],
+    "mobile_scene_ids": [
+      "P22-P11-R02-MOBILE-SCENE-001",
+      "P22-P11-R02-MOBILE-SCENE-002",
+      "P22-P11-R02-MOBILE-SCENE-003",
+      "P22-P11-R02-MOBILE-SCENE-004",
+      "P22-P11-R02-MOBILE-SCENE-005",
+      "P22-P11-R02-MOBILE-SCENE-006",
+      "P22-P11-R02-MOBILE-SCENE-007",
+      "P22-P11-R02-MOBILE-SCENE-008",
+      "P22-P11-R02-MOBILE-SCENE-009",
+      "P22-P11-R02-MOBILE-SCENE-010",
+      "P22-P11-R02-MOBILE-SCENE-011",
+      "P22-P11-R02-MOBILE-SCENE-012",
+      "P22-P11-R02-MOBILE-SCENE-013",
+      "P22-P11-R02-MOBILE-SCENE-014"
+    ],
+    "evidence_snapshot_sha256": "c65b758e2c0ad18604d986b3db2b1b3cc73c5566edee6e02162bb584eeb5505a"
+  },
+  {
+    "source_record_id": "D-CORPUS-P11-R04-CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.cybozu.com/jp",
+    "reference_id": "P11-R04",
+    "desktop_scene_ids": [
+      "P22-P11-R04-DESKTOP-SCENE-001",
+      "P22-P11-R04-DESKTOP-SCENE-002",
+      "P22-P11-R04-DESKTOP-SCENE-003",
+      "P22-P11-R04-DESKTOP-SCENE-004"
+    ],
+    "mobile_scene_ids": [
+      "P22-P11-R04-MOBILE-SCENE-001",
+      "P22-P11-R04-MOBILE-SCENE-002",
+      "P22-P11-R04-MOBILE-SCENE-003",
+      "P22-P11-R04-MOBILE-SCENE-004"
+    ],
+    "evidence_snapshot_sha256": "e9c6853bc8ff0b08e03f61f7eb8b0b45093ce7b00ffead8b61de2b20ad64c9ad"
+  },
+  {
+    "source_record_id": "D-CORPUS-P15-R02-CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.mos.jp/",
+    "reference_id": "P15-R02",
+    "desktop_scene_ids": [
+      "P22-P15-R02-DESKTOP-SCENE-001",
+      "P22-P15-R02-DESKTOP-SCENE-002",
+      "P22-P15-R02-DESKTOP-SCENE-003",
+      "P22-P15-R02-DESKTOP-SCENE-004",
+      "P22-P15-R02-DESKTOP-SCENE-005",
+      "P22-P15-R02-DESKTOP-SCENE-006",
+      "P22-P15-R02-DESKTOP-SCENE-007",
+      "P22-P15-R02-DESKTOP-SCENE-008"
+    ],
+    "mobile_scene_ids": [
+      "P22-P15-R02-MOBILE-SCENE-001",
+      "P22-P15-R02-MOBILE-SCENE-002",
+      "P22-P15-R02-MOBILE-SCENE-003",
+      "P22-P15-R02-MOBILE-SCENE-004",
+      "P22-P15-R02-MOBILE-SCENE-005",
+      "P22-P15-R02-MOBILE-SCENE-006",
+      "P22-P15-R02-MOBILE-SCENE-007",
+      "P22-P15-R02-MOBILE-SCENE-008",
+      "P22-P15-R02-MOBILE-SCENE-009"
+    ],
+    "evidence_snapshot_sha256": "e5bb832e879020152f5dcfe7e98f7871befcaba6b0fbff9975e3b72cf7ce41a6"
+  },
+  {
+    "source_record_id": "D-CORPUS-P14-R05-REP02-CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.maison-alaia.com/en-us/cat/latest-arrivals",
+    "reference_id": "P14-R05-REP02",
+    "desktop_scene_ids": [
+      "P221A-36682051500-P14-R05-REP02-DESKTOP-VIEWPORT-SCENE",
+      "P221A-36682051500-P14-R05-REP02-DESKTOP-FULL_PAGE-SCENE"
+    ],
+    "mobile_scene_ids": [
+      "P221A-36682051500-P14-R05-REP02-MOBILE-VIEWPORT-SCENE",
+      "P221A-36682051500-P14-R05-REP02-MOBILE-FULL_PAGE-SCENE"
+    ],
+    "evidence_snapshot_sha256": "8bc86b59acc1b259838aedd5f9bd0296a311abbeda0412edd193f6f373c1497f"
+  },
+  {
+    "source_record_id": "D-CORPUS-P17-R04-CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:albion.co.jp/site/albion/c/c10",
+    "reference_id": "P17-R04",
+    "desktop_scene_ids": [
+      "P22-P17-R04-DESKTOP-SCENE-001",
+      "P22-P17-R04-DESKTOP-SCENE-002",
+      "P22-P17-R04-DESKTOP-SCENE-003",
+      "P22-P17-R04-DESKTOP-SCENE-004",
+      "P22-P17-R04-DESKTOP-SCENE-005",
+      "P22-P17-R04-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P17-R04-MOBILE-SCENE-001",
+      "P22-P17-R04-MOBILE-SCENE-002",
+      "P22-P17-R04-MOBILE-SCENE-003",
+      "P22-P17-R04-MOBILE-SCENE-004",
+      "P22-P17-R04-MOBILE-SCENE-005",
+      "P22-P17-R04-MOBILE-SCENE-006",
+      "P22-P17-R04-MOBILE-SCENE-007"
+    ],
+    "evidence_snapshot_sha256": "1cd1f7774be6defff485b81fc87b855a03f47b02314cd6b113f4dade79c6fa33"
+  },
+  {
+    "source_record_id": "D-CORPUS-P17-R05-CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.haba.co.jp/",
+    "reference_id": "P17-R05",
+    "desktop_scene_ids": [
+      "P22-P17-R05-DESKTOP-SCENE-001",
+      "P22-P17-R05-DESKTOP-SCENE-002",
+      "P22-P17-R05-DESKTOP-SCENE-003",
+      "P22-P17-R05-DESKTOP-SCENE-004",
+      "P22-P17-R05-DESKTOP-SCENE-005",
+      "P22-P17-R05-DESKTOP-SCENE-006",
+      "P22-P17-R05-DESKTOP-SCENE-007",
+      "P22-P17-R05-DESKTOP-SCENE-008",
+      "P22-P17-R05-DESKTOP-SCENE-009",
+      "P22-P17-R05-DESKTOP-SCENE-010"
+    ],
+    "mobile_scene_ids": [
+      "P22-P17-R05-MOBILE-SCENE-001",
+      "P22-P17-R05-MOBILE-SCENE-002",
+      "P22-P17-R05-MOBILE-SCENE-003",
+      "P22-P17-R05-MOBILE-SCENE-004",
+      "P22-P17-R05-MOBILE-SCENE-005",
+      "P22-P17-R05-MOBILE-SCENE-006",
+      "P22-P17-R05-MOBILE-SCENE-007",
+      "P22-P17-R05-MOBILE-SCENE-008",
+      "P22-P17-R05-MOBILE-SCENE-009"
+    ],
+    "evidence_snapshot_sha256": "5f50ecbed21e4e428d9b9d5f9789443c37a96ec41c07058b2dd790135e817530"
+  },
+  {
+    "source_record_id": "D-CORPUS-P20-R03-CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.mori.art.museum/jp",
+    "reference_id": "P20-R03",
+    "desktop_scene_ids": [
+      "P22-P20-R03-DESKTOP-SCENE-001",
+      "P22-P20-R03-DESKTOP-SCENE-002",
+      "P22-P20-R03-DESKTOP-SCENE-003",
+      "P22-P20-R03-DESKTOP-SCENE-004",
+      "P22-P20-R03-DESKTOP-SCENE-005",
+      "P22-P20-R03-DESKTOP-SCENE-006"
+    ],
+    "mobile_scene_ids": [
+      "P22-P20-R03-MOBILE-SCENE-001",
+      "P22-P20-R03-MOBILE-SCENE-002",
+      "P22-P20-R03-MOBILE-SCENE-003",
+      "P22-P20-R03-MOBILE-SCENE-004",
+      "P22-P20-R03-MOBILE-SCENE-005",
+      "P22-P20-R03-MOBILE-SCENE-006",
+      "P22-P20-R03-MOBILE-SCENE-007",
+      "P22-P20-R03-MOBILE-SCENE-008",
+      "P22-P20-R03-MOBILE-SCENE-009"
+    ],
+    "evidence_snapshot_sha256": "5d315d9e1747bb6ce4bcb3cef31f8be164f2959f3e644fffb1aabae79c094f5c"
+  },
+  {
+    "source_record_id": "D-CORPUS-P20-R04-CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "independent_evidence_unit_id": "REFERENCE-PAGE:www.tokyoartbeat.com/",
+    "reference_id": "P20-R04",
+    "desktop_scene_ids": [
+      "P22-P20-R04-DESKTOP-SCENE-001",
+      "P22-P20-R04-DESKTOP-SCENE-002",
+      "P22-P20-R04-DESKTOP-SCENE-003",
+      "P22-P20-R04-DESKTOP-SCENE-004",
+      "P22-P20-R04-DESKTOP-SCENE-005",
+      "P22-P20-R04-DESKTOP-SCENE-006",
+      "P22-P20-R04-DESKTOP-SCENE-007",
+      "P22-P20-R04-DESKTOP-SCENE-008",
+      "P22-P20-R04-DESKTOP-SCENE-009",
+      "P22-P20-R04-DESKTOP-SCENE-010",
+      "P22-P20-R04-DESKTOP-SCENE-011"
+    ],
+    "mobile_scene_ids": [
+      "P22-P20-R04-MOBILE-SCENE-001",
+      "P22-P20-R04-MOBILE-SCENE-002",
+      "P22-P20-R04-MOBILE-SCENE-003",
+      "P22-P20-R04-MOBILE-SCENE-004",
+      "P22-P20-R04-MOBILE-SCENE-005",
+      "P22-P20-R04-MOBILE-SCENE-006",
+      "P22-P20-R04-MOBILE-SCENE-007",
+      "P22-P20-R04-MOBILE-SCENE-008",
+      "P22-P20-R04-MOBILE-SCENE-009",
+      "P22-P20-R04-MOBILE-SCENE-010",
+      "P22-P20-R04-MOBILE-SCENE-011",
+      "P22-P20-R04-MOBILE-SCENE-012"
+    ],
+    "evidence_snapshot_sha256": "ef81e3f1645681e869bc0c0edc68583226c9c576d02e3cf69a5ec07708bbcabc"
+  }
+]
