@@ -70,6 +70,8 @@ def validate(rows, mode="approved_batch"):
 def main():
     import argparse
     p=argparse.ArgumentParser();p.add_argument("--input",required=True,type=Path);p.add_argument("--mode",choices=["approved_batch","smoke"],required=True)
-    a=p.parse_args(); rows=validate(load_rows(a.input),a.mode); print(json.dumps({"validated_count":len(rows),"mode":a.mode,"phase2600_allowed":False}))
+    a=p.parse_args()
+    rows=[json.loads(a.input.read_text(encoding="utf-8"))] if a.mode=="smoke" and a.input.suffix==".json" else load_rows(a.input)
+    rows=validate(rows,a.mode); print(json.dumps({"validated_count":len(rows),"mode":a.mode,"phase2600_allowed":False}))
 
 if __name__=="__main__": main()
