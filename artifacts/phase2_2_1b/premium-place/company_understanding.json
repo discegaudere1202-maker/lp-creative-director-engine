@@ -1,0 +1,64 @@
+{
+  "schema_version": "production_generation_v1",
+  "company_id": "premium-place",
+  "company_name": "Premium / Place 検証用",
+  "industry": "Premium / Place",
+  "service_category": "Premium / Place",
+  "location": "検証用",
+  "business_model": "authored_test_fixture",
+  "company_truth": "静かな空間の紹介から訪問案内へ進む、架空の空間サービス検証です。画像はイメージです。",
+  "differentiators": [],
+  "customer_state": {
+    "before": "空間の雰囲気と利用方法を知りたい",
+    "after": "雰囲気の理解から利用情報の確認へ",
+    "barrier": "内容と手順を確認したい"
+  },
+  "conversion_goal": "inquiry",
+  "generation_iteration": 1,
+  "primary_objections": [],
+  "available_evidence": [],
+  "unavailable_evidence": [],
+  "hearing_required": [],
+  "visual_authority": [
+    "TYPOGRAPHY",
+    "WORLD",
+    "PLACE"
+  ],
+  "evidence_density": "LOW",
+  "industry_visual_family": "default",
+  "visual_scene": "calibration",
+  "layout_profile": "editorial_rail",
+  "field_validation_context": false,
+  "verified_strengths": [],
+  "evidence_utility": {
+    "TRUST": 0,
+    "CONVERSION": 0,
+    "VISUAL": 0,
+    "PROCESS": 0,
+    "IDENTITY": 0
+  },
+  "evidence_strategy": "premium_without_claim_inflation",
+  "source_references": [],
+  "contact_channels": {
+    "href": "#details"
+  },
+  "photo_replacement_readiness": {
+    "status": "UNSPECIFIED",
+    "proxy_role": "role_selected_photography_asset",
+    "replacement_targets": [
+      "実店舗・実現場・実商品・実人物写真"
+    ],
+    "layout_constraints": [
+      "同一役割の実写真を同じ比率へ差し替え可能",
+      "文字重なりなし",
+      "中央焦点を保持"
+    ],
+    "proof_role": "visual_context_only; not evidence of a real result or location",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_role": "supporting_only"
+  }
+}

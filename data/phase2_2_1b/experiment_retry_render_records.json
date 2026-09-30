@@ -1,0 +1,4785 @@
+[
+  {
+    "record_id": "RENDER-local-trust",
+    "pass_kind": "experiment-retry",
+    "profile_id": "local-trust",
+    "mechanism_ids": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+    ],
+    "browser_executed": true,
+    "production_path_executed": true,
+    "production_path": "run_generation(mode=test) -> render_html -> render_scene_html",
+    "customer_publication_allowed": false,
+    "profile_digest": "56b50aff0d4ebe4eb6a7c4ceb96498d39fc77f53dd241d45bbdfd388703481dc",
+    "scene_spec_sha256": "52193e788a062402a16b9db9bf2defdde1b9cfa888ccd47673b03e899ab1d413",
+    "html_sha256": "09860210b2ec4e74454208a098ee7f8f7de08279f926fcfd30420896c127e560",
+    "phase2600_allowed": false,
+    "desktop": {
+      "status": "PASS",
+      "width": 1440,
+      "height": 900,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "住まいのことから、話を始める。",
+            "size": 57.6,
+            "lineHeight": 72,
+            "level": 1,
+            "box": {
+              "x": 285,
+              "y": 307.5,
+              "w": 870,
+              "h": 71.984375
+            }
+          },
+          {
+            "text": "依頼の流れを、一つずつ。",
+            "size": 43.2,
+            "lineHeight": 60.48,
+            "level": 2,
+            "box": {
+              "x": 72,
+              "y": 890.5,
+              "w": 1100,
+              "h": 60.484375
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+            "loaded": true,
+            "fit": "cover",
+            "position": "50% 45%",
+            "box": {
+              "x": 0,
+              "y": 65,
+              "w": 1440,
+              "h": 640
+            },
+            "naturalWidth": 1586,
+            "naturalHeight": 992,
+            "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+            "proofRole": "illustrative-test-context"
+          }
+        ],
+        "grids": [
+          {
+            "class": "utility-grid",
+            "columns": 3,
+            "box": {
+              "x": 72,
+              "y": 1036.484375,
+              "w": 1296,
+              "h": 438
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 65,
+            "w": 1440,
+            "h": 701
+          },
+          {
+            "x": 0,
+            "y": 766,
+            "w": 1440,
+            "h": 781.484375
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 1440,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "task-search",
+          "before": 3,
+          "filtered": 0,
+          "restored": 3,
+          "pass": true
+        },
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/local-trust/desktop-experiment-retry-full.png",
+      "screenshot_sha256": "d034ddec3f62e7f56bc65e03f31215eb64aa3d1ed55185cce84fbd244caaed4a",
+      "reduced_screenshot": "artifacts/phase2_2_1b/local-trust/desktop-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "d034ddec3f62e7f56bc65e03f31215eb64aa3d1ed55185cce84fbd244caaed4a"
+    },
+    "mobile": {
+      "status": "PASS",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "住まいのことから、話を始める。",
+            "size": 30,
+            "lineHeight": 37.5,
+            "level": 1,
+            "box": {
+              "x": 24,
+              "y": 311.75,
+              "w": 342,
+              "h": 75
+            }
+          },
+          {
+            "text": "依頼の流れを、一つずつ。",
+            "size": 26,
+            "lineHeight": 36.4,
+            "level": 2,
+            "box": {
+              "x": 24,
+              "y": 926.5,
+              "w": 342,
+              "h": 36.390625
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+            "loaded": true,
+            "fit": "cover",
+            "position": "55% 45%",
+            "box": {
+              "x": 0,
+              "y": 125,
+              "w": 390,
+              "h": 620
+            },
+            "naturalWidth": 1586,
+            "naturalHeight": 992,
+            "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+            "proofRole": "illustrative-test-context"
+          }
+        ],
+        "grids": [
+          {
+            "class": "utility-grid",
+            "columns": 1,
+            "box": {
+              "x": 24,
+              "y": 1072.890625,
+              "w": 342,
+              "h": 897
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 125,
+            "w": 390,
+            "h": 709
+          },
+          {
+            "x": 0,
+            "y": 834,
+            "w": 390,
+            "h": 1176.890625
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 390,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "task-search",
+          "before": 3,
+          "filtered": 0,
+          "restored": 3,
+          "pass": true
+        },
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/local-trust/mobile-experiment-retry-full.png",
+      "screenshot_sha256": "b70433df93c64b5ac13d0356ac15c420c3d18de594e77c388ade77b715fef18a",
+      "reduced_screenshot": "artifacts/phase2_2_1b/local-trust/mobile-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "b70433df93c64b5ac13d0356ac15c420c3d18de594e77c388ade77b715fef18a"
+    },
+    "breakpoints": [
+      {
+        "width": 320,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "住まいのことから、話を始める。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 339.75,
+                "w": 272,
+                "h": 75
+              }
+            },
+            {
+              "text": "依頼の流れを、一つずつ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 954.5,
+                "w": 272,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "55% 45%",
+              "box": {
+                "x": 0,
+                "y": 153,
+                "w": 320,
+                "h": 620
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1137.28125,
+                "w": 272,
+                "h": 925
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 153,
+              "w": 320,
+              "h": 709
+            },
+            {
+              "x": 0,
+              "y": 862,
+              "w": 320,
+              "h": 1241.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 320,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 360,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "住まいのことから、話を始める。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 311.75,
+                "w": 312,
+                "h": 75
+              }
+            },
+            {
+              "text": "依頼の流れを、一つずつ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 926.5,
+                "w": 312,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "55% 45%",
+              "box": {
+                "x": 0,
+                "y": 125,
+                "w": 360,
+                "h": 620
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1072.890625,
+                "w": 312,
+                "h": 925
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 360,
+              "h": 709
+            },
+            {
+              "x": 0,
+              "y": 834,
+              "w": 360,
+              "h": 1204.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 360,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 375,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "住まいのことから、話を始める。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 311.75,
+                "w": 327,
+                "h": 75
+              }
+            },
+            {
+              "text": "依頼の流れを、一つずつ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 926.5,
+                "w": 327,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "55% 45%",
+              "box": {
+                "x": 0,
+                "y": 125,
+                "w": 375,
+                "h": 620
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1072.890625,
+                "w": 327,
+                "h": 925
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 375,
+              "h": 709
+            },
+            {
+              "x": 0,
+              "y": 834,
+              "w": 375,
+              "h": 1204.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 375,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 430,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "住まいのことから、話を始める。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 311.75,
+                "w": 382,
+                "h": 75
+              }
+            },
+            {
+              "text": "依頼の流れを、一つずつ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 926.5,
+                "w": 382,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "55% 45%",
+              "box": {
+                "x": 0,
+                "y": 125,
+                "w": 430,
+                "h": 620
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1072.890625,
+                "w": 382,
+                "h": 841
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 430,
+              "h": 709
+            },
+            {
+              "x": 0,
+              "y": 834,
+              "w": 430,
+              "h": 1120.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 430,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 768,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "住まいのことから、話を始める。",
+              "size": 30.72,
+              "lineHeight": 38.4,
+              "level": 1,
+              "box": {
+                "x": 106,
+                "y": 324.296875,
+                "w": 556,
+                "h": 38.390625
+              }
+            },
+            {
+              "text": "依頼の流れを、一つずつ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 890.5,
+                "w": 691.21875,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 0,
+                "y": 65,
+                "w": 768,
+                "h": 640
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 38.390625,
+                "y": 1012.390625,
+                "w": 691.21875,
+                "h": 494
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 768,
+              "h": 701
+            },
+            {
+              "x": 0,
+              "y": 766,
+              "w": 768,
+              "h": 813.390625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 768,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1024,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "住まいのことから、話を始める。",
+              "size": 40.96,
+              "lineHeight": 51.2,
+              "level": 1,
+              "box": {
+                "x": 204.5,
+                "y": 317.90625,
+                "w": 615,
+                "h": 51.1875
+              }
+            },
+            {
+              "text": "依頼の流れを、一つずつ。",
+              "size": 30.72,
+              "lineHeight": 43.008,
+              "level": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 890.5,
+                "w": 921.625,
+                "h": 43
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 0,
+                "y": 65,
+                "w": 1024,
+                "h": 640
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 51.1875,
+                "y": 1019,
+                "w": 921.625,
+                "h": 438
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1024,
+              "h": 701
+            },
+            {
+              "x": 0,
+              "y": 766,
+              "w": 1024,
+              "h": 764
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1024,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1280,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "住まいのことから、話を始める。",
+              "size": 51.2,
+              "lineHeight": 64,
+              "level": 1,
+              "box": {
+                "x": 257.5,
+                "y": 311.5,
+                "w": 765,
+                "h": 64
+              }
+            },
+            {
+              "text": "依頼の流れを、一つずつ。",
+              "size": 38.4,
+              "lineHeight": 53.76,
+              "level": 2,
+              "box": {
+                "x": 64,
+                "y": 890.5,
+                "w": 1100,
+                "h": 53.765625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 0,
+                "y": 65,
+                "w": 1280,
+                "h": 640
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 64,
+                "y": 1029.765625,
+                "w": 1152,
+                "h": 438
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1280,
+              "h": 701
+            },
+            {
+              "x": 0,
+              "y": 766,
+              "w": 1280,
+              "h": 774.765625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1280,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      }
+    ]
+  },
+  {
+    "record_id": "RENDER-b2b-technical",
+    "pass_kind": "experiment-retry",
+    "profile_id": "b2b-technical",
+    "mechanism_ids": [
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+    ],
+    "browser_executed": true,
+    "production_path_executed": true,
+    "production_path": "run_generation(mode=test) -> render_html -> render_scene_html",
+    "customer_publication_allowed": false,
+    "profile_digest": "f20c8d5945c1532404b3bc1d21849a66c8cd02c44ce61479bbed48cee4538213",
+    "scene_spec_sha256": "ee490eaf07dd9e44897b5665ad02e64c6af41f8a55818242defd74c59f471dbd",
+    "html_sha256": "4582523e9cb85550e3beb57a6be8a2d361ee518dff2c21560131008daec7c3c3",
+    "phase2600_allowed": false,
+    "desktop": {
+      "status": "PASS",
+      "width": 1440,
+      "height": 900,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "次の作業を、同じ画面で。",
+            "size": 57.6,
+            "lineHeight": 72,
+            "level": 1,
+            "box": {
+              "x": 72,
+              "y": 189.5,
+              "w": 1100,
+              "h": 71.984375
+            }
+          },
+          {
+            "text": "立場に合わせて、使い方を見る。",
+            "size": 43.2,
+            "lineHeight": 60.48,
+            "level": 2,
+            "box": {
+              "x": 72,
+              "y": 1077.484375,
+              "w": 1100,
+              "h": 60.484375
+            }
+          }
+        ],
+        "images": [],
+        "grids": [
+          {
+            "class": "audience-cards",
+            "columns": 2,
+            "box": {
+              "x": 72,
+              "y": 1223.46875,
+              "w": 1296,
+              "h": 233
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 65,
+            "w": 1440,
+            "h": 887.984375
+          },
+          {
+            "x": 0,
+            "y": 952.984375,
+            "w": 1440,
+            "h": 576.484375
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 1440,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "live-owned-product-filter",
+          "before": 3,
+          "filtered": 2,
+          "restored": 3,
+          "pass": true
+        },
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/b2b-technical/desktop-experiment-retry-full.png",
+      "screenshot_sha256": "c128839efe87ea7cca5b7996aa3ce846914f720bfcc3e38006e1ac66d109201c",
+      "reduced_screenshot": "artifacts/phase2_2_1b/b2b-technical/desktop-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "c128839efe87ea7cca5b7996aa3ce846914f720bfcc3e38006e1ac66d109201c"
+    },
+    "mobile": {
+      "status": "PASS",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "次の作業を、同じ画面で。",
+            "size": 30,
+            "lineHeight": 37.5,
+            "level": 1,
+            "box": {
+              "x": 24,
+              "y": 217.5,
+              "w": 342,
+              "h": 75
+            }
+          },
+          {
+            "text": "立場に合わせて、使い方を見る。",
+            "size": 26,
+            "lineHeight": 36.4,
+            "level": 2,
+            "box": {
+              "x": 24,
+              "y": 1059,
+              "w": 342,
+              "h": 72.78125
+            }
+          }
+        ],
+        "images": [],
+        "grids": [
+          {
+            "class": "audience-cards",
+            "columns": 1,
+            "box": {
+              "x": 24,
+              "y": 1241.78125,
+              "w": 342,
+              "h": 454
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 125,
+            "w": 390,
+            "h": 841.5
+          },
+          {
+            "x": 0,
+            "y": 966.5,
+            "w": 390,
+            "h": 770.28125
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 390,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "live-owned-product-filter",
+          "before": 3,
+          "filtered": 2,
+          "restored": 3,
+          "pass": true
+        },
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/b2b-technical/mobile-experiment-retry-full.png",
+      "screenshot_sha256": "525df313b8b80fe8b1d8db7ac97a1de919fb4e734367aeb8993fef0c88b3023a",
+      "reduced_screenshot": "artifacts/phase2_2_1b/b2b-technical/mobile-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "525df313b8b80fe8b1d8db7ac97a1de919fb4e734367aeb8993fef0c88b3023a"
+    },
+    "breakpoints": [
+      {
+        "width": 320,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "次の作業を、同じ画面で。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 245.5,
+                "w": 272,
+                "h": 75
+              }
+            },
+            {
+              "text": "立場に合わせて、使い方を見る。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1087,
+                "w": 272,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "audience-cards",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1269.78125,
+                "w": 272,
+                "h": 454
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 153,
+              "w": 320,
+              "h": 841.5
+            },
+            {
+              "x": 0,
+              "y": 994.5,
+              "w": 320,
+              "h": 770.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 320,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 360,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "次の作業を、同じ画面で。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 312,
+                "h": 75
+              }
+            },
+            {
+              "text": "立場に合わせて、使い方を見る。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1059,
+                "w": 312,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "audience-cards",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1241.78125,
+                "w": 312,
+                "h": 454
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 360,
+              "h": 841.5
+            },
+            {
+              "x": 0,
+              "y": 966.5,
+              "w": 360,
+              "h": 770.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 360,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 375,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "次の作業を、同じ画面で。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 327,
+                "h": 75
+              }
+            },
+            {
+              "text": "立場に合わせて、使い方を見る。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1059,
+                "w": 327,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "audience-cards",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1241.78125,
+                "w": 327,
+                "h": 454
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 375,
+              "h": 841.5
+            },
+            {
+              "x": 0,
+              "y": 966.5,
+              "w": 375,
+              "h": 770.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 375,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 430,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "次の作業を、同じ画面で。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 382,
+                "h": 37.5
+              }
+            },
+            {
+              "text": "立場に合わせて、使い方を見る。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1021.5,
+                "w": 382,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "audience-cards",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1204.28125,
+                "w": 382,
+                "h": 454
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 430,
+              "h": 804
+            },
+            {
+              "x": 0,
+              "y": 929,
+              "w": 430,
+              "h": 770.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 430,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 768,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "次の作業を、同じ画面で。",
+              "size": 30.72,
+              "lineHeight": 38.4,
+              "level": 1,
+              "box": {
+                "x": 38.390625,
+                "y": 189.5,
+                "w": 614.390625,
+                "h": 38.390625
+              }
+            },
+            {
+              "text": "立場に合わせて、使い方を見る。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 1043.890625,
+                "w": 691.21875,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "audience-cards",
+              "columns": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 1165.78125,
+                "w": 691.21875,
+                "h": 233
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 768,
+              "h": 854.390625
+            },
+            {
+              "x": 0,
+              "y": 919.390625,
+              "w": 768,
+              "h": 552.390625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 768,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1024,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "次の作業を、同じ画面で。",
+              "size": 40.96,
+              "lineHeight": 51.2,
+              "level": 1,
+              "box": {
+                "x": 51.1875,
+                "y": 189.5,
+                "w": 819.1875,
+                "h": 51.1875
+              }
+            },
+            {
+              "text": "立場に合わせて、使い方を見る。",
+              "size": 30.72,
+              "lineHeight": 43.008,
+              "level": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 1056.6875,
+                "w": 921.625,
+                "h": 43
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "audience-cards",
+              "columns": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 1185.1875,
+                "w": 921.625,
+                "h": 233
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1024,
+              "h": 867.1875
+            },
+            {
+              "x": 0,
+              "y": 932.1875,
+              "w": 1024,
+              "h": 559
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1024,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1280,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "次の作業を、同じ画面で。",
+              "size": 51.2,
+              "lineHeight": 64,
+              "level": 1,
+              "box": {
+                "x": 64,
+                "y": 189.5,
+                "w": 1024,
+                "h": 64
+              }
+            },
+            {
+              "text": "立場に合わせて、使い方を見る。",
+              "size": 38.4,
+              "lineHeight": 53.76,
+              "level": 2,
+              "box": {
+                "x": 64,
+                "y": 1069.5,
+                "w": 1100,
+                "h": 53.765625
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "audience-cards",
+              "columns": 2,
+              "box": {
+                "x": 64,
+                "y": 1208.765625,
+                "w": 1152,
+                "h": 233
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1280,
+              "h": 880
+            },
+            {
+              "x": 0,
+              "y": 945,
+              "w": 1280,
+              "h": 569.765625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1280,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      }
+    ]
+  },
+  {
+    "record_id": "RENDER-d2c-product",
+    "pass_kind": "experiment-retry",
+    "profile_id": "d2c-product",
+    "mechanism_ids": [
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01"
+    ],
+    "browser_executed": true,
+    "production_path_executed": true,
+    "production_path": "run_generation(mode=test) -> render_html -> render_scene_html",
+    "customer_publication_allowed": false,
+    "profile_digest": "dccb82de206980be9228c2c6598fc57421a23aecb17aa9341f2a8037e34f197a",
+    "scene_spec_sha256": "b353dd01dfdaf4830bd2a5cb3e37481229bc7984369b05ea0ed0ef53a48c305c",
+    "html_sha256": "f99f65d2b148e91741564a172fcba20624560069a76c1a8373847e9b0e33df4a",
+    "phase2600_allowed": false,
+    "desktop": {
+      "status": "PASS",
+      "width": 1440,
+      "height": 900,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "色から選ぶ。道具から選ぶ。",
+            "size": 57.6,
+            "lineHeight": 72,
+            "level": 1,
+            "box": {
+              "x": 72,
+              "y": 189.5,
+              "w": 1100,
+              "h": 71.984375
+            }
+          },
+          {
+            "text": "気になる選択肢を、順番に。",
+            "size": 43.2,
+            "lineHeight": 60.48,
+            "level": 2,
+            "box": {
+              "x": 72,
+              "y": 1097.484375,
+              "w": 1100,
+              "h": 60.484375
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+            "loaded": true,
+            "fit": "cover",
+            "position": "50% 45%",
+            "box": {
+              "x": 103,
+              "y": 377.984375,
+              "w": 572,
+              "h": 320
+            },
+            "naturalWidth": 1448,
+            "naturalHeight": 1086,
+            "alt": "色見本のイメージ。検証用画像です。",
+            "proofRole": "illustrative-test-context"
+          },
+          {
+            "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+            "loaded": true,
+            "fit": "cover",
+            "position": "50% 45%",
+            "box": {
+              "x": 765,
+              "y": 377.984375,
+              "w": 572,
+              "h": 320
+            },
+            "naturalWidth": 1448,
+            "naturalHeight": 1086,
+            "alt": "道具のイメージ。販売中の商品写真ではありません。",
+            "proofRole": "illustrative-test-context"
+          },
+          {
+            "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+            "loaded": true,
+            "fit": "cover",
+            "position": "50% 45%",
+            "box": {
+              "x": 426,
+              "y": 1243.46875,
+              "w": 942,
+              "h": 470
+            },
+            "naturalWidth": 1448,
+            "naturalHeight": 1086,
+            "alt": "色見本のイメージ。検証用画像です。",
+            "proofRole": "illustrative-test-context"
+          }
+        ],
+        "grids": [
+          {
+            "class": "diptych",
+            "columns": 2,
+            "box": {
+              "x": 72,
+              "y": 346.984375,
+              "w": 1296,
+              "h": 553
+            }
+          },
+          {
+            "class": "index-feature",
+            "columns": 2,
+            "box": {
+              "x": 72,
+              "y": 1243.46875,
+              "w": 1296,
+              "h": 530
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 65,
+            "w": 1440,
+            "h": 907.984375
+          },
+          {
+            "x": 0,
+            "y": 972.984375,
+            "w": 1440,
+            "h": 873.484375
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 1440,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/d2c-product/desktop-experiment-retry-full.png",
+      "screenshot_sha256": "b44a82700f1af9d54b1924ada2ed283bc86c21b2cce787b95ac5bc601fecf156",
+      "reduced_screenshot": "artifacts/phase2_2_1b/d2c-product/desktop-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "b44a82700f1af9d54b1924ada2ed283bc86c21b2cce787b95ac5bc601fecf156"
+    },
+    "mobile": {
+      "status": "PASS",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "色から選ぶ。道具から選ぶ。",
+            "size": 30,
+            "lineHeight": 37.5,
+            "level": 1,
+            "box": {
+              "x": 24,
+              "y": 217.5,
+              "w": 342,
+              "h": 75
+            }
+          },
+          {
+            "text": "気になる選択肢を、順番に。",
+            "size": 26,
+            "lineHeight": 36.4,
+            "level": 2,
+            "box": {
+              "x": 24,
+              "y": 1590,
+              "w": 342,
+              "h": 36.390625
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+            "loaded": true,
+            "fit": "cover",
+            "position": "50% 45%",
+            "box": {
+              "x": 47,
+              "y": 425.5,
+              "w": 296,
+              "h": 300
+            },
+            "naturalWidth": 1448,
+            "naturalHeight": 1086,
+            "alt": "色見本のイメージ。検証用画像です。",
+            "proofRole": "illustrative-test-context"
+          },
+          {
+            "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+            "loaded": true,
+            "fit": "cover",
+            "position": "50% 45%",
+            "box": {
+              "x": 47,
+              "y": 962.5,
+              "w": 296,
+              "h": 300
+            },
+            "naturalWidth": 1448,
+            "naturalHeight": 1086,
+            "alt": "道具のイメージ。販売中の商品写真ではありません。",
+            "proofRole": "illustrative-test-context"
+          },
+          {
+            "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+            "loaded": true,
+            "fit": "cover",
+            "position": "50% 45%",
+            "box": {
+              "x": 24,
+              "y": 1872.390625,
+              "w": 342,
+              "h": 380
+            },
+            "naturalWidth": 1448,
+            "naturalHeight": 1086,
+            "alt": "色見本のイメージ。検証用画像です。",
+            "proofRole": "illustrative-test-context"
+          }
+        ],
+        "grids": [
+          {
+            "class": "diptych",
+            "columns": 1,
+            "box": {
+              "x": 24,
+              "y": 402.5,
+              "w": 342,
+              "h": 1054
+            }
+          },
+          {
+            "class": "index-feature",
+            "columns": 1,
+            "box": {
+              "x": 24,
+              "y": 1736.390625,
+              "w": 342,
+              "h": 604
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 125,
+            "w": 390,
+            "h": 1372.5
+          },
+          {
+            "x": 0,
+            "y": 1497.5,
+            "w": 390,
+            "h": 883.890625
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 390,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/d2c-product/mobile-experiment-retry-full.png",
+      "screenshot_sha256": "189d51d128ffb6e078fed522bdc6648e6ff32beea58d6a4c6421ddcdd4215042",
+      "reduced_screenshot": "artifacts/phase2_2_1b/d2c-product/mobile-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "189d51d128ffb6e078fed522bdc6648e6ff32beea58d6a4c6421ddcdd4215042"
+    },
+    "breakpoints": [
+      {
+        "width": 320,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "色から選ぶ。道具から選ぶ。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 245.5,
+                "w": 272,
+                "h": 75
+              }
+            },
+            {
+              "text": "気になる選択肢を、順番に。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1618,
+                "w": 272,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 47,
+                "y": 453.5,
+                "w": 226,
+                "h": 300
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 47,
+                "y": 990.5,
+                "w": 226,
+                "h": 300
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "道具のイメージ。販売中の商品写真ではありません。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 24,
+                "y": 1936.78125,
+                "w": 272,
+                "h": 380
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "diptych",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 430.5,
+                "w": 272,
+                "h": 1054
+              }
+            },
+            {
+              "class": "index-feature",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1800.78125,
+                "w": 272,
+                "h": 632
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 153,
+              "w": 320,
+              "h": 1372.5
+            },
+            {
+              "x": 0,
+              "y": 1525.5,
+              "w": 320,
+              "h": 948.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 320,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 360,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "色から選ぶ。道具から選ぶ。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 312,
+                "h": 75
+              }
+            },
+            {
+              "text": "気になる選択肢を、順番に。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1590,
+                "w": 312,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 47,
+                "y": 425.5,
+                "w": 266,
+                "h": 300
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 47,
+                "y": 962.5,
+                "w": 266,
+                "h": 300
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "道具のイメージ。販売中の商品写真ではありません。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 24,
+                "y": 1908.78125,
+                "w": 312,
+                "h": 380
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "diptych",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 402.5,
+                "w": 312,
+                "h": 1054
+              }
+            },
+            {
+              "class": "index-feature",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1772.78125,
+                "w": 312,
+                "h": 604
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 360,
+              "h": 1372.5
+            },
+            {
+              "x": 0,
+              "y": 1497.5,
+              "w": 360,
+              "h": 920.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 360,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 375,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "色から選ぶ。道具から選ぶ。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 327,
+                "h": 75
+              }
+            },
+            {
+              "text": "気になる選択肢を、順番に。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1590,
+                "w": 327,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 47,
+                "y": 425.5,
+                "w": 281,
+                "h": 300
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 47,
+                "y": 962.5,
+                "w": 281,
+                "h": 300
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "道具のイメージ。販売中の商品写真ではありません。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 24,
+                "y": 1908.78125,
+                "w": 327,
+                "h": 380
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "diptych",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 402.5,
+                "w": 327,
+                "h": 1054
+              }
+            },
+            {
+              "class": "index-feature",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1772.78125,
+                "w": 327,
+                "h": 604
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 375,
+              "h": 1372.5
+            },
+            {
+              "x": 0,
+              "y": 1497.5,
+              "w": 375,
+              "h": 920.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 375,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 430,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "色から選ぶ。道具から選ぶ。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 382,
+                "h": 75
+              }
+            },
+            {
+              "text": "気になる選択肢を、順番に。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1562,
+                "w": 382,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 47,
+                "y": 397.5,
+                "w": 336,
+                "h": 300
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 47,
+                "y": 934.5,
+                "w": 336,
+                "h": 300
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "道具のイメージ。販売中の商品写真ではありません。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 24,
+                "y": 1844.390625,
+                "w": 382,
+                "h": 380
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "diptych",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 374.5,
+                "w": 382,
+                "h": 1054
+              }
+            },
+            {
+              "class": "index-feature",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1708.390625,
+                "w": 382,
+                "h": 604
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 430,
+              "h": 1344.5
+            },
+            {
+              "x": 0,
+              "y": 1469.5,
+              "w": 430,
+              "h": 883.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 430,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 768,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "色から選ぶ。道具から選ぶ。",
+              "size": 30.72,
+              "lineHeight": 38.4,
+              "level": 1,
+              "box": {
+                "x": 38.390625,
+                "y": 189.5,
+                "w": 614.390625,
+                "h": 38.390625
+              }
+            },
+            {
+              "text": "気になる選択肢を、順番に。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 1063.890625,
+                "w": 691.21875,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 69.390625,
+                "y": 344.390625,
+                "w": 269.609375,
+                "h": 320
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 429,
+                "y": 344.390625,
+                "w": 269.609375,
+                "h": 320
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "道具のイメージ。販売中の商品写真ではありません。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 241.1875,
+                "y": 1185.78125,
+                "w": 488.421875,
+                "h": 470
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "diptych",
+              "columns": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 313.390625,
+                "w": 691.21875,
+                "h": 553
+              }
+            },
+            {
+              "class": "index-feature",
+              "columns": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 1185.78125,
+                "w": 691.21875,
+                "h": 558
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 768,
+              "h": 874.390625
+            },
+            {
+              "x": 0,
+              "y": 939.390625,
+              "w": 768,
+              "h": 877.390625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 768,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1024,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "色から選ぶ。道具から選ぶ。",
+              "size": 40.96,
+              "lineHeight": 51.2,
+              "level": 1,
+              "box": {
+                "x": 51.1875,
+                "y": 189.5,
+                "w": 819.1875,
+                "h": 51.1875
+              }
+            },
+            {
+              "text": "気になる選択肢を、順番に。",
+              "size": 30.72,
+              "lineHeight": 43.008,
+              "level": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 1076.6875,
+                "w": 921.625,
+                "h": 43
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 82.1875,
+                "y": 357.1875,
+                "w": 384.8125,
+                "h": 320
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 557,
+                "y": 357.1875,
+                "w": 384.8125,
+                "h": 320
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "道具のイメージ。販売中の商品写真ではありません。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 311.59375,
+                "y": 1205.1875,
+                "w": 661.21875,
+                "h": 470
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "diptych",
+              "columns": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 326.1875,
+                "w": 921.625,
+                "h": 553
+              }
+            },
+            {
+              "class": "index-feature",
+              "columns": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 1205.1875,
+                "w": 921.625,
+                "h": 530
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1024,
+              "h": 887.1875
+            },
+            {
+              "x": 0,
+              "y": 952.1875,
+              "w": 1024,
+              "h": 856
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1024,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1280,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "色から選ぶ。道具から選ぶ。",
+              "size": 51.2,
+              "lineHeight": 64,
+              "level": 1,
+              "box": {
+                "x": 64,
+                "y": 189.5,
+                "w": 1024,
+                "h": 64
+              }
+            },
+            {
+              "text": "気になる選択肢を、順番に。",
+              "size": 38.4,
+              "lineHeight": 53.76,
+              "level": 2,
+              "box": {
+                "x": 64,
+                "y": 1089.5,
+                "w": 1100,
+                "h": 53.765625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 95,
+                "y": 370,
+                "w": 500,
+                "h": 320
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 685,
+                "y": 370,
+                "w": 500,
+                "h": 320
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "道具のイメージ。販売中の商品写真ではありません。",
+              "proofRole": "illustrative-test-context"
+            },
+            {
+              "src": "/assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 382,
+                "y": 1228.765625,
+                "w": 834,
+                "h": 470
+              },
+              "naturalWidth": 1448,
+              "naturalHeight": 1086,
+              "alt": "色見本のイメージ。検証用画像です。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "diptych",
+              "columns": 2,
+              "box": {
+                "x": 64,
+                "y": 339,
+                "w": 1152,
+                "h": 553
+              }
+            },
+            {
+              "class": "index-feature",
+              "columns": 2,
+              "box": {
+                "x": 64,
+                "y": 1228.765625,
+                "w": 1152,
+                "h": 530
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1280,
+              "h": 900
+            },
+            {
+              "x": 0,
+              "y": 965,
+              "w": 1280,
+              "h": 866.765625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1280,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      }
+    ]
+  },
+  {
+    "record_id": "RENDER-premium-place",
+    "pass_kind": "experiment-retry",
+    "profile_id": "premium-place",
+    "mechanism_ids": [
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+    ],
+    "browser_executed": true,
+    "production_path_executed": true,
+    "production_path": "run_generation(mode=test) -> render_html -> render_scene_html",
+    "customer_publication_allowed": false,
+    "profile_digest": "44c21aff195f36543267edd6ffd8d826a1d47c887f91a314184990d037405add",
+    "scene_spec_sha256": "69e6f5fa7e9c81907c3d5d55d14ea8d651d6ac23d326f95c6c73ab8b76481940",
+    "html_sha256": "4fefd22865cf00e9de336ff15d0b80999c92eebec0edc44789e6a55bfb58db28",
+    "phase2600_allowed": false,
+    "desktop": {
+      "status": "PASS",
+      "width": 1440,
+      "height": 900,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "空間から、時間を選ぶ。",
+            "size": 57.6,
+            "lineHeight": 72,
+            "level": 1,
+            "box": {
+              "x": 72,
+              "y": 707.5,
+              "w": 1100,
+              "h": 71.984375
+            }
+          },
+          {
+            "text": "訪れる前に、確認する。",
+            "size": 43.2,
+            "lineHeight": 60.48,
+            "level": 2,
+            "box": {
+              "x": 72,
+              "y": 1112.484375,
+              "w": 1100,
+              "h": 60.484375
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+            "loaded": true,
+            "fit": "cover",
+            "position": "50% 45%",
+            "box": {
+              "x": 0,
+              "y": 65,
+              "w": 1440,
+              "h": 560
+            },
+            "naturalWidth": 1586,
+            "naturalHeight": 992,
+            "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+            "proofRole": "illustrative-test-context"
+          }
+        ],
+        "grids": [
+          {
+            "class": "utility-grid",
+            "columns": 3,
+            "box": {
+              "x": 72,
+              "y": 1258.46875,
+              "w": 1296,
+              "h": 438
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 65,
+            "w": 1440,
+            "h": 922.984375
+          },
+          {
+            "x": 0,
+            "y": 987.984375,
+            "w": 1440,
+            "h": 781.484375
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 1440,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "task-search",
+          "before": 3,
+          "filtered": 0,
+          "restored": 3,
+          "pass": true
+        },
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/premium-place/desktop-experiment-retry-full.png",
+      "screenshot_sha256": "ba57c2b7df8d95988bda3544925f00e278e59a4ce168ce81f008473e586233e1",
+      "reduced_screenshot": "artifacts/phase2_2_1b/premium-place/desktop-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "ba57c2b7df8d95988bda3544925f00e278e59a4ce168ce81f008473e586233e1"
+    },
+    "mobile": {
+      "status": "PASS",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "空間から、時間を選ぶ。",
+            "size": 30,
+            "lineHeight": 37.5,
+            "level": 1,
+            "box": {
+              "x": 24,
+              "y": 695.5,
+              "w": 342,
+              "h": 37.5
+            }
+          },
+          {
+            "text": "訪れる前に、確認する。",
+            "size": 26,
+            "lineHeight": 36.4,
+            "level": 2,
+            "box": {
+              "x": 24,
+              "y": 1090.5,
+              "w": 342,
+              "h": 36.390625
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+            "loaded": true,
+            "fit": "cover",
+            "position": "58% 45%",
+            "box": {
+              "x": 0,
+              "y": 125,
+              "w": 390,
+              "h": 500
+            },
+            "naturalWidth": 1586,
+            "naturalHeight": 992,
+            "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+            "proofRole": "illustrative-test-context"
+          }
+        ],
+        "grids": [
+          {
+            "class": "utility-grid",
+            "columns": 1,
+            "box": {
+              "x": 24,
+              "y": 1236.890625,
+              "w": 342,
+              "h": 897
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 125,
+            "w": 390,
+            "h": 873
+          },
+          {
+            "x": 0,
+            "y": 998,
+            "w": 390,
+            "h": 1176.890625
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 390,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "task-search",
+          "before": 3,
+          "filtered": 0,
+          "restored": 3,
+          "pass": true
+        },
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/premium-place/mobile-experiment-retry-full.png",
+      "screenshot_sha256": "e990679d0a6e5789c01fe0f53c8a0637899bca407d44af0b8166dcbcb512bdbe",
+      "reduced_screenshot": "artifacts/phase2_2_1b/premium-place/mobile-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "e990679d0a6e5789c01fe0f53c8a0637899bca407d44af0b8166dcbcb512bdbe"
+    },
+    "breakpoints": [
+      {
+        "width": 320,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "空間から、時間を選ぶ。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 723.5,
+                "w": 272,
+                "h": 75
+              }
+            },
+            {
+              "text": "訪れる前に、確認する。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1184,
+                "w": 272,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "58% 45%",
+              "box": {
+                "x": 0,
+                "y": 153,
+                "w": 320,
+                "h": 500
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1366.78125,
+                "w": 272,
+                "h": 925
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 153,
+              "w": 320,
+              "h": 938.5
+            },
+            {
+              "x": 0,
+              "y": 1091.5,
+              "w": 320,
+              "h": 1241.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 320,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 360,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "空間から、時間を選ぶ。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 695.5,
+                "w": 312,
+                "h": 75
+              }
+            },
+            {
+              "text": "訪れる前に、確認する。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1128,
+                "w": 312,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "58% 45%",
+              "box": {
+                "x": 0,
+                "y": 125,
+                "w": 360,
+                "h": 500
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1274.390625,
+                "w": 312,
+                "h": 925
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 360,
+              "h": 910.5
+            },
+            {
+              "x": 0,
+              "y": 1035.5,
+              "w": 360,
+              "h": 1204.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 360,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 375,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "空間から、時間を選ぶ。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 695.5,
+                "w": 327,
+                "h": 75
+              }
+            },
+            {
+              "text": "訪れる前に、確認する。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1128,
+                "w": 327,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "58% 45%",
+              "box": {
+                "x": 0,
+                "y": 125,
+                "w": 375,
+                "h": 500
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1274.390625,
+                "w": 327,
+                "h": 897
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 375,
+              "h": 910.5
+            },
+            {
+              "x": 0,
+              "y": 1035.5,
+              "w": 375,
+              "h": 1176.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 375,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 430,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "空間から、時間を選ぶ。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 695.5,
+                "w": 382,
+                "h": 37.5
+              }
+            },
+            {
+              "text": "訪れる前に、確認する。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1090.5,
+                "w": 382,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "58% 45%",
+              "box": {
+                "x": 0,
+                "y": 125,
+                "w": 430,
+                "h": 500
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1236.890625,
+                "w": 382,
+                "h": 869
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 430,
+              "h": 873
+            },
+            {
+              "x": 0,
+              "y": 998,
+              "w": 430,
+              "h": 1148.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 430,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 768,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "空間から、時間を選ぶ。",
+              "size": 30.72,
+              "lineHeight": 38.4,
+              "level": 1,
+              "box": {
+                "x": 38.390625,
+                "y": 707.5,
+                "w": 614.390625,
+                "h": 38.390625
+              }
+            },
+            {
+              "text": "訪れる前に、確認する。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 1078.890625,
+                "w": 691.21875,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 0,
+                "y": 65,
+                "w": 768,
+                "h": 560
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 38.390625,
+                "y": 1200.78125,
+                "w": 691.21875,
+                "h": 522
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 768,
+              "h": 889.390625
+            },
+            {
+              "x": 0,
+              "y": 954.390625,
+              "w": 768,
+              "h": 841.390625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 768,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1024,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "空間から、時間を選ぶ。",
+              "size": 40.96,
+              "lineHeight": 51.2,
+              "level": 1,
+              "box": {
+                "x": 51.1875,
+                "y": 707.5,
+                "w": 819.1875,
+                "h": 51.1875
+              }
+            },
+            {
+              "text": "訪れる前に、確認する。",
+              "size": 30.72,
+              "lineHeight": 43.008,
+              "level": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 1091.6875,
+                "w": 921.625,
+                "h": 43
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 0,
+                "y": 65,
+                "w": 1024,
+                "h": 560
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 51.1875,
+                "y": 1220.1875,
+                "w": 921.625,
+                "h": 466
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1024,
+              "h": 902.1875
+            },
+            {
+              "x": 0,
+              "y": 967.1875,
+              "w": 1024,
+              "h": 792
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1024,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1280,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "空間から、時間を選ぶ。",
+              "size": 51.2,
+              "lineHeight": 64,
+              "level": 1,
+              "box": {
+                "x": 64,
+                "y": 707.5,
+                "w": 1024,
+                "h": 64
+              }
+            },
+            {
+              "text": "訪れる前に、確認する。",
+              "size": 38.4,
+              "lineHeight": 53.76,
+              "level": 2,
+              "box": {
+                "x": 64,
+                "y": 1104.5,
+                "w": 1100,
+                "h": 53.765625
+              }
+            }
+          ],
+          "images": [
+            {
+              "src": "/assets/photography/generated/maylynn_paint/hero_home_finish.png",
+              "loaded": true,
+              "fit": "cover",
+              "position": "50% 45%",
+              "box": {
+                "x": 0,
+                "y": 65,
+                "w": 1280,
+                "h": 560
+              },
+              "naturalWidth": 1586,
+              "naturalHeight": 992,
+              "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+              "proofRole": "illustrative-test-context"
+            }
+          ],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 64,
+                "y": 1243.765625,
+                "w": 1152,
+                "h": 438
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1280,
+              "h": 915
+            },
+            {
+              "x": 0,
+              "y": 980,
+              "w": 1280,
+              "h": 774.765625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1280,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      }
+    ]
+  },
+  {
+    "record_id": "RENDER-public-information",
+    "pass_kind": "experiment-retry",
+    "profile_id": "public-information",
+    "mechanism_ids": [
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+    ],
+    "browser_executed": true,
+    "production_path_executed": true,
+    "production_path": "run_generation(mode=test) -> render_html -> render_scene_html",
+    "customer_publication_allowed": false,
+    "profile_digest": "41fd52c17dcbcab4d6d68136f8f7013f8c87ef25bad725f06de10b2084dc15bc",
+    "scene_spec_sha256": "843d5c4ad7f785efc57a227f74f3d4018ade954fd57fd3f9b79b9eb72c67576c",
+    "html_sha256": "c0d3ebd3839d4cbd7119b571ddac785dbc9c289fc01d607d77abe268123d6bb3",
+    "phase2600_allowed": false,
+    "desktop": {
+      "status": "PASS",
+      "width": 1440,
+      "height": 900,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "必要な案内を、見つけやすく。",
+            "size": 57.6,
+            "lineHeight": 72,
+            "level": 1,
+            "box": {
+              "x": 72,
+              "y": 189.5,
+              "w": 1100,
+              "h": 71.984375
+            }
+          },
+          {
+            "text": "今の状況に合う入口へ。",
+            "size": 43.2,
+            "lineHeight": 60.48,
+            "level": 2,
+            "box": {
+              "x": 72,
+              "y": 954.484375,
+              "w": 1100,
+              "h": 60.484375
+            }
+          }
+        ],
+        "images": [],
+        "grids": [
+          {
+            "class": "utility-grid",
+            "columns": 3,
+            "box": {
+              "x": 72,
+              "y": 346.984375,
+              "w": 1296,
+              "h": 410
+            }
+          },
+          {
+            "class": "audience-cards",
+            "columns": 2,
+            "box": {
+              "x": 72,
+              "y": 1100.46875,
+              "w": 1296,
+              "h": 233
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 65,
+            "w": 1440,
+            "h": 764.984375
+          },
+          {
+            "x": 0,
+            "y": 829.984375,
+            "w": 1440,
+            "h": 576.484375
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 1440,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "task-search",
+          "before": 4,
+          "filtered": 0,
+          "restored": 4,
+          "pass": true
+        },
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/public-information/desktop-experiment-retry-full.png",
+      "screenshot_sha256": "3ef0f052a2d665c6b028665ad3bf06b9c712409eb0c1cbf1283724d874cb46f7",
+      "reduced_screenshot": "artifacts/phase2_2_1b/public-information/desktop-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "3ef0f052a2d665c6b028665ad3bf06b9c712409eb0c1cbf1283724d874cb46f7"
+    },
+    "mobile": {
+      "status": "PASS",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "dom_validity": true,
+        "asset_resolution": true,
+        "overflow": true,
+        "clipping": true,
+        "broken_layout": true,
+        "responsive_recomposition": true,
+        "media_crop": true,
+        "typography_hierarchy": true,
+        "section_boundary": true,
+        "motion_safety": true,
+        "reduced_motion": true,
+        "implementation_feasibility": true,
+        "evidence_safety": true
+      },
+      "metrics": {
+        "outside": [],
+        "clips": [],
+        "headings": [
+          {
+            "text": "必要な案内を、見つけやすく。",
+            "size": 30,
+            "lineHeight": 37.5,
+            "level": 1,
+            "box": {
+              "x": 24,
+              "y": 217.5,
+              "w": 342,
+              "h": 75
+            }
+          },
+          {
+            "text": "今の状況に合う入口へ。",
+            "size": 26,
+            "lineHeight": 36.4,
+            "level": 2,
+            "box": {
+              "x": 24,
+              "y": 1620,
+              "w": 342,
+              "h": 36.390625
+            }
+          }
+        ],
+        "images": [],
+        "grids": [
+          {
+            "class": "utility-grid",
+            "columns": 1,
+            "box": {
+              "x": 24,
+              "y": 402.5,
+              "w": 342,
+              "h": 1084
+            }
+          },
+          {
+            "class": "audience-cards",
+            "columns": 1,
+            "box": {
+              "x": 24,
+              "y": 1738.390625,
+              "w": 342,
+              "h": 454
+            }
+          }
+        ],
+        "sectionBoxes": [
+          {
+            "x": 0,
+            "y": 125,
+            "w": 390,
+            "h": 1402.5
+          },
+          {
+            "x": 0,
+            "y": 1527.5,
+            "w": 390,
+            "h": 705.890625
+          }
+        ],
+        "badLinks": [],
+        "scrollWidth": 390,
+        "fontReady": "loaded",
+        "activeAnimationCount": 0
+      },
+      "errors": [],
+      "requestFailures": [],
+      "interactions": [
+        {
+          "type": "task-search",
+          "before": 4,
+          "filtered": 0,
+          "restored": 4,
+          "pass": true
+        },
+        {
+          "type": "keyboard-focus",
+          "focused": "A",
+          "pass": true
+        }
+      ],
+      "screenshot": "artifacts/phase2_2_1b/public-information/mobile-experiment-retry-full.png",
+      "screenshot_sha256": "860609d10dcdb4a27f538b2c927fef55eea0db58ec4944cd1d35eef638b69784",
+      "reduced_screenshot": "artifacts/phase2_2_1b/public-information/mobile-experiment-retry-reduced.png",
+      "reduced_screenshot_sha256": "860609d10dcdb4a27f538b2c927fef55eea0db58ec4944cd1d35eef638b69784"
+    },
+    "breakpoints": [
+      {
+        "width": 320,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "必要な案内を、見つけやすく。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 245.5,
+                "w": 272,
+                "h": 75
+              }
+            },
+            {
+              "text": "今の状況に合う入口へ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1704,
+                "w": 272,
+                "h": 72.78125
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 430.5,
+                "w": 272,
+                "h": 1140
+              }
+            },
+            {
+              "class": "audience-cards",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1886.78125,
+                "w": 272,
+                "h": 454
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 153,
+              "w": 320,
+              "h": 1458.5
+            },
+            {
+              "x": 0,
+              "y": 1611.5,
+              "w": 320,
+              "h": 770.28125
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 320,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 360,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "必要な案内を、見つけやすく。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 312,
+                "h": 75
+              }
+            },
+            {
+              "text": "今の状況に合う入口へ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1620,
+                "w": 312,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 402.5,
+                "w": 312,
+                "h": 1084
+              }
+            },
+            {
+              "class": "audience-cards",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1766.390625,
+                "w": 312,
+                "h": 454
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 360,
+              "h": 1402.5
+            },
+            {
+              "x": 0,
+              "y": 1527.5,
+              "w": 360,
+              "h": 733.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 360,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 375,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "必要な案内を、見つけやすく。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 327,
+                "h": 75
+              }
+            },
+            {
+              "text": "今の状況に合う入口へ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1620,
+                "w": 327,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 402.5,
+                "w": 327,
+                "h": 1084
+              }
+            },
+            {
+              "class": "audience-cards",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1766.390625,
+                "w": 327,
+                "h": 454
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 375,
+              "h": 1402.5
+            },
+            {
+              "x": 0,
+              "y": 1527.5,
+              "w": 375,
+              "h": 733.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 375,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 430,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "必要な案内を、見つけやすく。",
+              "size": 30,
+              "lineHeight": 37.5,
+              "level": 1,
+              "box": {
+                "x": 24,
+                "y": 217.5,
+                "w": 382,
+                "h": 75
+              }
+            },
+            {
+              "text": "今の状況に合う入口へ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 24,
+                "y": 1620,
+                "w": 382,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 402.5,
+                "w": 382,
+                "h": 1084
+              }
+            },
+            {
+              "class": "audience-cards",
+              "columns": 1,
+              "box": {
+                "x": 24,
+                "y": 1738.390625,
+                "w": 382,
+                "h": 454
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 125,
+              "w": 430,
+              "h": 1402.5
+            },
+            {
+              "x": 0,
+              "y": 1527.5,
+              "w": 430,
+              "h": 705.890625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 430,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 768,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "必要な案内を、見つけやすく。",
+              "size": 30.72,
+              "lineHeight": 38.4,
+              "level": 1,
+              "box": {
+                "x": 38.390625,
+                "y": 189.5,
+                "w": 614.390625,
+                "h": 38.390625
+              }
+            },
+            {
+              "text": "今の状況に合う入口へ。",
+              "size": 26,
+              "lineHeight": 36.4,
+              "level": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 1065.890625,
+                "w": 691.21875,
+                "h": 36.390625
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 38.390625,
+                "y": 313.390625,
+                "w": 691.21875,
+                "h": 555
+              }
+            },
+            {
+              "class": "audience-cards",
+              "columns": 2,
+              "box": {
+                "x": 38.390625,
+                "y": 1187.78125,
+                "w": 691.21875,
+                "h": 233
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 768,
+              "h": 876.390625
+            },
+            {
+              "x": 0,
+              "y": 941.390625,
+              "w": 768,
+              "h": 552.390625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 768,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1024,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "必要な案内を、見つけやすく。",
+              "size": 40.96,
+              "lineHeight": 51.2,
+              "level": 1,
+              "box": {
+                "x": 51.1875,
+                "y": 189.5,
+                "w": 819.1875,
+                "h": 51.1875
+              }
+            },
+            {
+              "text": "今の状況に合う入口へ。",
+              "size": 30.72,
+              "lineHeight": 43.008,
+              "level": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 989.6875,
+                "w": 921.625,
+                "h": 43
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 51.1875,
+                "y": 326.1875,
+                "w": 921.625,
+                "h": 466
+              }
+            },
+            {
+              "class": "audience-cards",
+              "columns": 2,
+              "box": {
+                "x": 51.1875,
+                "y": 1118.1875,
+                "w": 921.625,
+                "h": 233
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1024,
+              "h": 800.1875
+            },
+            {
+              "x": 0,
+              "y": 865.1875,
+              "w": 1024,
+              "h": 559
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1024,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      },
+      {
+        "width": 1280,
+        "checks": {
+          "dom_validity": true,
+          "asset_resolution": true,
+          "overflow": true,
+          "clipping": true,
+          "broken_layout": true,
+          "responsive_recomposition": true,
+          "media_crop": true,
+          "typography_hierarchy": true,
+          "section_boundary": true,
+          "motion_safety": true,
+          "reduced_motion": false,
+          "implementation_feasibility": true,
+          "evidence_safety": true
+        },
+        "metrics": {
+          "outside": [],
+          "clips": [],
+          "headings": [
+            {
+              "text": "必要な案内を、見つけやすく。",
+              "size": 51.2,
+              "lineHeight": 64,
+              "level": 1,
+              "box": {
+                "x": 64,
+                "y": 189.5,
+                "w": 1024,
+                "h": 64
+              }
+            },
+            {
+              "text": "今の状況に合う入口へ。",
+              "size": 38.4,
+              "lineHeight": 53.76,
+              "level": 2,
+              "box": {
+                "x": 64,
+                "y": 946.5,
+                "w": 1100,
+                "h": 53.765625
+              }
+            }
+          ],
+          "images": [],
+          "grids": [
+            {
+              "class": "utility-grid",
+              "columns": 3,
+              "box": {
+                "x": 64,
+                "y": 339,
+                "w": 1152,
+                "h": 410
+              }
+            },
+            {
+              "class": "audience-cards",
+              "columns": 2,
+              "box": {
+                "x": 64,
+                "y": 1085.765625,
+                "w": 1152,
+                "h": 233
+              }
+            }
+          ],
+          "sectionBoxes": [
+            {
+              "x": 0,
+              "y": 65,
+              "w": 1280,
+              "h": 757
+            },
+            {
+              "x": 0,
+              "y": 822,
+              "w": 1280,
+              "h": 569.765625
+            }
+          ],
+          "badLinks": [],
+          "scrollWidth": 1280,
+          "fontReady": "loaded",
+          "activeAnimationCount": 0
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,306 @@
+{
+  "schema": "evidence_scene_plan_v1",
+  "profile_id": "d2c-product",
+  "profile_sha256": "989815072eab50388f2bf1abd068759a9e4fffd98240df87b5084e1994dad13b",
+  "recipe": {
+    "mechanism_ids": [
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01"
+    ],
+    "edge_ids": [
+      "EXPERIMENT-d2c-product"
+    ],
+    "scope": "ADJACENT_SCENES",
+    "profile_id": "d2c-product",
+    "status": "CONDITIONALLY_ACCEPTED"
+  },
+  "scenes": [
+    {
+      "scene_id": "d2c-product-scene-1",
+      "scene_job": "ENTRY",
+      "source_scene_job": "ENTRY",
+      "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "adapter": "diptych",
+      "grammar": {
+        "composition_primitive": "Two adjacent high-color campaign tiles with different image/copy compositions; equal visual area; global commerce header remains a shallow rail.",
+        "visual_hierarchy": "Campaign words are embedded in art direction at large scale; each tile uses a compact supporting line and separate offer label.",
+        "typography_observation": "Campaign words are embedded in art direction at large scale; each tile uses a compact supporting line and separate offer label.",
+        "media_observation": "Food/product photography is tightly cropped within each tile; visual color fields distinguish the campaigns.",
+        "spatial_rhythm": "Header then paired campaign panel, followed by a lower editorial/news module.",
+        "responsive_recomposition": "Diptych becomes a vertical sequence; each campaign gets a full-width image/copy block; the header compresses to icons.",
+        "implementation_boundary": "DOM: accessible campaign copy and links; independent images/crops per tile; CSS grid to stacked blocks; do not bake essential CTA text into images.",
+        "misuse_constraints": [
+          "Both offers need equal-weight copy and independent destinations.",
+          "Do not make a tiled banner unreadable at 390px; serve mobile-specific crops.",
+          "Dates/prices in campaign copy require current source data."
+        ]
+      },
+      "grammar_sha256": "a8c6b8f671dbb05e78b1d6d0bf731a756f01dbea3844647140bdb75aae8ec321",
+      "content": {
+        "scene_job": "ENTRY",
+        "eyebrow": "暮らしの選択",
+        "headline": "色から選ぶ。道具から選ぶ。",
+        "body": "二つの入口から、気になる内容を確認できます。",
+        "routes": [
+          {
+            "label": "色を選ぶ",
+            "destination": "color-guide",
+            "qualifier": "色の違いから考える方"
+          },
+          {
+            "label": "道具を選ぶ",
+            "destination": "tool-guide",
+            "qualifier": "使い方から考える方"
+          }
+        ],
+        "assets": [
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+            "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+            "alt": "色見本のイメージ。検証用画像です。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          },
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+            "sha256": "9dffea3851e859aba2179f716ba95d46e34d48e0d9964b79e7c90924582e2ce4",
+            "alt": "道具のイメージ。販売中の商品写真ではありません。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          }
+        ]
+      },
+      "heading_level": 1,
+      "evidence_reference_ids": [
+        "P15-R01"
+      ],
+      "evidence_scene_ids": [
+        "P22-P15-R01-DESKTOP-SCENE-001",
+        "P22-P15-R01-MOBILE-SCENE-001"
+      ],
+      "compatibility_edge_ids": [
+        "EXPERIMENT-d2c-product"
+      ],
+      "responsive": {
+        "desktop": "grammar-specific composition",
+        "mobile": "Diptych becomes a vertical sequence; each campaign gets a full-width image/copy block; the header compresses to icons."
+      },
+      "motion": {
+        "mode": "NONE",
+        "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+        "reduced_motion": "STATIC_EQUIVALENT"
+      },
+      "authority": "PRODUCT",
+      "truth_trace": [
+        "FIXTURE-d2c-product-TRUTH"
+      ]
+    },
+    {
+      "scene_id": "d2c-product-scene-2",
+      "scene_job": "PRODUCT_DISCOVERY",
+      "source_scene_job": "ENTRY",
+      "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "adapter": "index_feature",
+      "grammar": {
+        "composition_primitive": "White canvas; narrow vertical brand list on the left; large campaign image/product panel on the right; small carousel pagination below the feature.",
+        "visual_hierarchy": "Brand names form a compact index; featured campaign statement overlays or sits within the large image; index stays secondary.",
+        "typography_observation": "Brand names form a compact index; featured campaign statement overlays or sits within the large image; index stays secondary.",
+        "media_observation": "Portrait/product campaign dominates the feature panel; brand marks are separate visual entries.",
+        "spatial_rhythm": "Index + feature pairing, then a horizontal brand/service roster.",
+        "responsive_recomposition": "The index relocates above or below the feature as a compact stacked/scrollable group; hero image becomes a portrait panel; navigation compresses.",
+        "implementation_boundary": "DOM: brand index and featured content; brand marks as image/SVG assets with text alternatives; feature as responsive campaign image with accessible equivalent copy.",
+        "misuse_constraints": [
+          "Sub-brand hierarchy and order must follow verified portfolio truth.",
+          "Before/after, efficacy and cosmetic claims require claim-level evidence; none inferred from image.",
+          "Do not present the subject as a customer testimonial without consent/evidence."
+        ]
+      },
+      "grammar_sha256": "2c44c140ca1147d1900e22254e77166543e94a2c61c6841d747e05cc24ccc6a7",
+      "content": {
+        "scene_job": "PRODUCT_DISCOVERY",
+        "eyebrow": "カテゴリーの案内",
+        "headline": "気になる選択肢を、順番に。",
+        "body": "カテゴリー一覧と紹介画像を、役割を分けて並べています。",
+        "routes": [
+          {
+            "label": "色を選ぶ",
+            "destination": "color-guide",
+            "qualifier": "色の違いから考える方"
+          },
+          {
+            "label": "道具を選ぶ",
+            "destination": "tool-guide",
+            "qualifier": "使い方から考える方"
+          }
+        ],
+        "assets": [
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+            "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+            "alt": "色見本のイメージ。検証用画像です。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          }
+        ],
+        "notice": "すべて検証用のイメージです。現物・効果・販売条件を示すものではありません。"
+      },
+      "heading_level": 2,
+      "evidence_reference_ids": [
+        "P17-R01"
+      ],
+      "evidence_scene_ids": [
+        "P22-P17-R01-DESKTOP-SCENE-001",
+        "P22-P17-R01-MOBILE-SCENE-001"
+      ],
+      "compatibility_edge_ids": [
+        "EXPERIMENT-d2c-product"
+      ],
+      "responsive": {
+        "desktop": "grammar-specific composition",
+        "mobile": "The index relocates above or below the feature as a compact stacked/scrollable group; hero image becomes a portrait panel; navigation compresses."
+      },
+      "motion": {
+        "mode": "NONE",
+        "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+        "reduced_motion": "STATIC_EQUIVALENT"
+      },
+      "authority": "PRODUCT",
+      "truth_trace": [
+        "FIXTURE-d2c-product-TRUTH"
+      ]
+    }
+  ],
+  "trace": {
+    "company_truth": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+    "buyer_problem": "選択肢の違いを把握したい",
+    "buyer_state": "カテゴリー比較から確認したい商品群の選択へ",
+    "sales_story": "ENTRY → PRODUCT_DISCOVERY",
+    "creative_profile": {
+      "axes": {
+        "TASTE": 0.85,
+        "PLAY": 0.65,
+        "PRODUCT": 0.95,
+        "PRECISION": 0.5,
+        "DENSITY": 0.4
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0.85,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0.5,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0.5,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0.5,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "truth_evidence_ids": [
+      "FIXTURE-d2c-product-TRUTH"
+    ]
+  },
+  "phase2600_allowed": false,
+  "customer_publication_allowed": false
+}

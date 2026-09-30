@@ -1,0 +1,300 @@
+{
+  "schema": "evidence_scene_plan_v1",
+  "profile_id": "public-information",
+  "profile_sha256": "41fd52c17dcbcab4d6d68136f8f7013f8c87ef25bad725f06de10b2084dc15bc",
+  "recipe": {
+    "mechanism_ids": [
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+    ],
+    "edge_ids": [
+      "EXPERIMENT-public-information"
+    ],
+    "scope": "ADJACENT_SCENES",
+    "profile_id": "public-information",
+    "status": "CONDITIONALLY_ACCEPTED"
+  },
+  "scenes": [
+    {
+      "scene_id": "public-information-scene-1",
+      "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+      "source_scene_job": "SERVICE_PRODUCT_EXPLANATION",
+      "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "adapter": "utility",
+      "grammar": {
+        "composition_primitive": "Compact institutional header and primary blue navigation; below it, an asymmetric multi-column first layer with a large announcement/hero panel, search/task controls, news list, and supporting modules.",
+        "visual_hierarchy": "Small high-density navigation; task labels and news headlines use restrained hierarchy; blue bar separates primary navigation from content.",
+        "typography_observation": "Small high-density navigation; task labels and news headlines use restrained hierarchy; blue bar separates primary navigation from content.",
+        "media_observation": "Official announcement image in one bounded feature panel; secondary modules rely mostly on text and small visual tiles.",
+        "spatial_rhythm": "Dense, highly grouped utility modules; repeated horizontal rules/colored containers separate functions.",
+        "responsive_recomposition": "Primary nav compresses to compact top controls; multi-column groups stack vertically; search/task block moves near top; informational items retain boxed grouping.",
+        "implementation_boundary": "DOM: nav landmarks, search/links, announcement, lists, headings. CSS Grid for desktop; one-column DOM order matching task priority on mobile. Image assets remain decorative only where text duplicates content.",
+        "misuse_constraints": [
+          "Task priority must be supported by user research/official service obligations; do not copy source order blindly.",
+          "Dense layouts require responsive spacing, visible focus and legible line lengths.",
+          "Accessibility runtime was not tested; this record makes no accessibility pass claim."
+        ]
+      },
+      "grammar_sha256": "e1d7e7d84b11a7a583faa4c4d48669e4703777d3191ab011dc052b50cef4a83b",
+      "content": {
+        "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "eyebrow": "利用の情報",
+        "headline": "必要な案内を、見つけやすく。",
+        "headline_chunks": [
+          "必要な案内を、",
+          "見つけやすく。"
+        ],
+        "body": "お知らせと手続きをまとめています。キーワードから案内を絞り込めます。",
+        "routes": [
+          {
+            "label": "初めての利用",
+            "destination": "first-guide",
+            "qualifier": "必要な手続きを知りたい方"
+          },
+          {
+            "label": "継続の利用",
+            "destination": "return-guide",
+            "qualifier": "次の手続きを確認したい方"
+          }
+        ],
+        "modules": [
+          {
+            "title": "初めての方",
+            "text": "初回利用の手順を確認できます。"
+          },
+          {
+            "title": "継続利用の方",
+            "text": "次の手続きについて確認できます。"
+          },
+          {
+            "title": "お知らせ",
+            "text": "検証用データであり、公的制度の情報ではありません。"
+          },
+          {
+            "title": "必要な確認",
+            "text": "実際の制度・期限・申請要件は別途確認が必要です。"
+          }
+        ]
+      },
+      "heading_level": 1,
+      "evidence_reference_ids": [
+        "P18-R01"
+      ],
+      "evidence_scene_ids": [
+        "P22-P18-R01-DESKTOP-SCENE-004",
+        "P22-P18-R01-MOBILE-SCENE-001"
+      ],
+      "compatibility_edge_ids": [
+        "EXPERIMENT-public-information"
+      ],
+      "responsive": {
+        "desktop": "grammar-specific composition",
+        "mobile": "Primary nav compresses to compact top controls; multi-column groups stack vertically; search/task block moves near top; informational items retain boxed grouping."
+      },
+      "motion": {
+        "mode": "NONE",
+        "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+        "reduced_motion": "STATIC_EQUIVALENT"
+      },
+      "authority": "DOCUMENT",
+      "truth_trace": [
+        "FIXTURE-public-information-TRUTH"
+      ]
+    },
+    {
+      "scene_id": "public-information-scene-2",
+      "scene_job": "CONVERSION_CTA",
+      "source_scene_job": "CONVERSION_CTA",
+      "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "adapter": "audience",
+      "grammar": {
+        "composition_primitive": "Soft blue proposition area with product UI illustration; two equal-width audience cards sit as a paired row beneath; each card has its own action and short qualifier.",
+        "visual_hierarchy": "Headline centered/left in the hero; audience labels bold; supporting qualifiers compact; actions visually parallel.",
+        "typography_observation": "Headline centered/left in the hero; audience labels bold; supporting qualifiers compact; actions visually parallel.",
+        "media_observation": "Product UI illustration supports the proposition but does not dominate the route choice.",
+        "spatial_rhythm": "Hero/product view, paired choice panels, then supporting service modules.",
+        "responsive_recomposition": "Cards become vertically stacked with equal prominence; each action stays inside its own card; proposition precedes both.",
+        "implementation_boundary": "DOM: semantic choice cards, headings and buttons; product UI as responsive image; CSS grid collapses to one column.",
+        "misuse_constraints": [
+          "Only use two paths if the audience split is real and mutually understandable.",
+          "Do not make one path look like an unwanted default unless sales logic requires it.",
+          "UI image is not a substitute for product explanation."
+        ]
+      },
+      "grammar_sha256": "76fdc8e3d6b8477f3abc2455e07395381a7dbaeab2b914e07cf5f3972ce93d07",
+      "content": {
+        "scene_job": "CONVERSION_CTA",
+        "eyebrow": "利用区分から探す",
+        "headline": "今の状況に合う入口へ。",
+        "headline_chunks": [
+          "今の状況に合う",
+          "入口へ。"
+        ],
+        "body": "初回と継続の案内を同じ重さで示しています。",
+        "routes": [
+          {
+            "label": "初めての利用",
+            "destination": "first-guide",
+            "qualifier": "必要な手続きを知りたい方"
+          },
+          {
+            "label": "継続の利用",
+            "destination": "return-guide",
+            "qualifier": "次の手続きを確認したい方"
+          }
+        ]
+      },
+      "heading_level": 2,
+      "evidence_reference_ids": [
+        "P11-R01"
+      ],
+      "evidence_scene_ids": [
+        "P22-P11-R01-DESKTOP-SCENE-001",
+        "P22-P11-R01-MOBILE-SCENE-001"
+      ],
+      "compatibility_edge_ids": [
+        "EXPERIMENT-public-information"
+      ],
+      "responsive": {
+        "desktop": "grammar-specific composition",
+        "mobile": "Cards become vertically stacked with equal prominence; each action stays inside its own card; proposition precedes both."
+      },
+      "motion": {
+        "mode": "NONE",
+        "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+        "reduced_motion": "STATIC_EQUIVALENT"
+      },
+      "authority": "PERSON",
+      "truth_trace": [
+        "FIXTURE-public-information-TRUTH"
+      ]
+    }
+  ],
+  "trace": {
+    "company_truth": "初回利用と継続利用の案内、お知らせと手続き情報を持つ、架空の情報提供テストです。",
+    "buyer_problem": "必要な手続きを迷わず探したい",
+    "buyer_state": "情報探索から自身の利用区分の理解へ",
+    "sales_story": "SERVICE_PRODUCT_EXPLANATION → CONVERSION_CTA",
+    "creative_profile": {
+      "axes": {
+        "TRUST": 0.9,
+        "PRECISION": 0.9,
+        "INFORMATION": 0.95,
+        "PLAY": 0.05,
+        "DENSITY": 0.95
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0.05,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "truth_evidence_ids": [
+      "FIXTURE-public-information-TRUTH"
+    ]
+  },
+  "phase2600_allowed": false,
+  "customer_publication_allowed": false
+}

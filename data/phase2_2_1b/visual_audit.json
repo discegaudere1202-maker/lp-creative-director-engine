@@ -1,0 +1,102 @@
+[
+  {
+    "profile_id": "local-trust",
+    "viewport": "desktop",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/local-trust/desktop-accepted-full.png",
+    "sha256": "d034ddec3f62e7f56bc65e03f31215eb64aa3d1ed55185cce84fbd244caaed4a",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Environmental image remains behind a legible DOM proposition; utility grid stacks below.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "local-trust",
+    "viewport": "mobile",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/local-trust/mobile-accepted-full.png",
+    "sha256": "b70433df93c64b5ac13d0356ac15c420c3d18de594e77c388ade77b715fef18a",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Environmental image remains behind a legible DOM proposition; utility grid stacks below.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "b2b-technical",
+    "viewport": "desktop",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/b2b-technical/desktop-accepted-full.png",
+    "sha256": "c128839efe87ea7cca5b7996aa3ce846914f720bfcc3e38006e1ac66d109201c",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Owned app table remains readable; two audience cards stack with equal prominence; live filtering executed.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "b2b-technical",
+    "viewport": "mobile",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/b2b-technical/mobile-accepted-full.png",
+    "sha256": "525df313b8b80fe8b1d8db7ac97a1de919fb4e734367aeb8993fef0c88b3023a",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Owned app table remains readable; two audience cards stack with equal prominence; live filtering executed.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "d2c-product",
+    "viewport": "desktop",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/d2c-product/desktop-accepted-full.png",
+    "sha256": "b44a82700f1af9d54b1924ada2ed283bc86c21b2cce787b95ac5bc601fecf156",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Equal campaign tiles stay adjacent on desktop and stack on mobile; index rail relocates above the feature.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "d2c-product",
+    "viewport": "mobile",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/d2c-product/mobile-accepted-full.png",
+    "sha256": "189d51d128ffb6e078fed522bdc6648e6ff32beea58d6a4c6421ddcdd4215042",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Equal campaign tiles stay adjacent on desktop and stack on mobile; index rail relocates above the feature.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "premium-place",
+    "viewport": "desktop",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/premium-place/desktop-accepted-full.png",
+    "sha256": "ba57c2b7df8d95988bda3544925f00e278e59a4ce168ce81f008473e586233e1",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Audited environment crop remains recognizable; proposition is after the media; utility tasks are separate.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "premium-place",
+    "viewport": "mobile",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/premium-place/mobile-accepted-full.png",
+    "sha256": "e990679d0a6e5789c01fe0f53c8a0637899bca407d44af0b8166dcbcb512bdbe",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Audited environment crop remains recognizable; proposition is after the media; utility tasks are separate.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "public-information",
+    "viewport": "desktop",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/public-information/desktop-accepted-full.png",
+    "sha256": "3ef0f052a2d665c6b028665ad3bf06b9c712409eb0c1cbf1283724d874cb46f7",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Task search stays first, modules stack, two legitimate fixture routes remain distinct.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  },
+  {
+    "profile_id": "public-information",
+    "viewport": "mobile",
+    "review_method": "MIO_FINAL_PRODUCTION_SCREENSHOT_CONTACT_SHEET_AND_ASSET_GROUND_TRUTH_AUDIT",
+    "screenshot": "artifacts/phase2_2_1b/public-information/mobile-accepted-full.png",
+    "sha256": "860609d10dcdb4a27f538b2c927fef55eea0db58ec4944cd1d35eef638b69784",
+    "review": "PASS_FOR_SCOPED_GRAMMAR_TRANSFER",
+    "reason": "Task search stays first, modules stack, two legitimate fixture routes remain distinct.",
+    "limitation": "Structural renderability and crop/hierarchy check; not an art-direction quality score, sales proof or independent source-family evidence."
+  }
+]

@@ -1,0 +1,267 @@
+{
+  "base_commit": "cafbab3678c6ade4be9fdf4649df6280f5bf077d",
+  "archive_container_verified_count": 16,
+  "atomic_evidence": [
+    {
+      "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "scene_id": "GOLD-P01-R01-DESKTOP-TRAV-01",
+      "verified": true,
+      "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+      "member": "traversal/P01-R01__desktop__traversal_01_entry.jpg",
+      "member_sha256": "f56e940d0a79f703914110b403fbbfa694681a50c7d7a32a2d1a113a544c4aac",
+      "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "scene_id": "GOLD-P01-R01-MOBILE-TRAV-01",
+      "verified": true,
+      "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+      "member": "traversal/P01-R01__mobile__traversal_01_entry.jpg",
+      "member_sha256": "70c4aa7203ef6f11c2cf6771e78eae5562294d642a4f5229dac1a7ca46195d32",
+      "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "scene_id": "GOLD-P06-R02-DESKTOP-TRAV-01",
+      "verified": true,
+      "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+      "member": "traversal/P06-R02__desktop__traversal_01_entry.jpg",
+      "member_sha256": "2f488610d9df079e9ace5277654ee624cbf067d88d07fcd488aac5991bfad06d",
+      "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+      "scene_id": "GOLD-P06-R02-MOBILE-TRAV-01",
+      "verified": true,
+      "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+      "member": "traversal/P06-R02__mobile__traversal_01_entry.jpg",
+      "member_sha256": "7ad4a32e6808fc66a753efa87388b8cdccb7b582b3d8d5da3f92a94b02f69ca3",
+      "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+      "scene_id": "GOLD-P08-R02-DESKTOP-TRAV-01",
+      "verified": true,
+      "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+      "member": "traversal/P08-R02__desktop__traversal_01_entry_product_ui.jpg",
+      "member_sha256": "1d682b15478c098552044006b0b66ae2116a029c7190c088acd3ffa06a9071e7",
+      "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+      "scene_id": "GOLD-P08-R02-MOBILE-TRAV-01",
+      "verified": true,
+      "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+      "member": "traversal/P08-R02__mobile__traversal_01_entry_product_ui.jpg",
+      "member_sha256": "ec0e04f01631767aad34ad07faa9dc877b76e64d6a1c5ed175e8b6eb4bd07937",
+      "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "scene_id": "P22-P13-R04-DESKTOP-SCENE-001",
+      "verified": true,
+      "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+      "member": "scene_crops/P13-R04__desktop__scene_001.jpg",
+      "member_sha256": "709a86f54a584e7fada6592ebd6860cb280c957ba43216e1caa0472f584197ec",
+      "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+      "scene_id": "P22-P13-R04-MOBILE-SCENE-001",
+      "verified": true,
+      "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+      "member": "scene_crops/P13-R04__mobile__scene_001.jpg",
+      "member_sha256": "9e3931495eb2ee710c27eb1fa2944916fe9728f0bfcfbba732081ee5fd34eb54",
+      "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "scene_id": "P22-P16-R03-DESKTOP-SCENE-001",
+      "verified": true,
+      "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+      "member": "scene_crops/P16-R03__desktop__scene_001.jpg",
+      "member_sha256": "82d5521d92c237bc1d682c8f1589b50ec2205e9b2f7d0bc8d753a1f784095403",
+      "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "scene_id": "P22-P16-R03-MOBILE-SCENE-001",
+      "verified": true,
+      "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+      "member": "scene_crops/P16-R03__mobile__scene_001.jpg",
+      "member_sha256": "21990280fa93dd6d496a67c050dd18766317c1f6ad578a0f4212577cf482a265",
+      "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "scene_id": "P22-P18-R01-DESKTOP-SCENE-004",
+      "verified": true,
+      "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+      "member": "scene_crops/P18-R01__desktop__scene_004.jpg",
+      "member_sha256": "e86bae7d7786dbf076f84ebe95e50fa3cba7fbee7a96253368e6279b112de761",
+      "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "scene_id": "P22-P18-R01-MOBILE-SCENE-001",
+      "verified": true,
+      "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+      "member": "scene_crops/P18-R01__mobile__scene_001.jpg",
+      "member_sha256": "83d815108e5172de7421fc1ae390c329d37db3715e063b5e3f613d2b0758bae8",
+      "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "scene_id": "P22-P03-R04-DESKTOP-SCENE-001",
+      "verified": true,
+      "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+      "member": "scene_crops/P03-R04__desktop__scene_001.jpg",
+      "member_sha256": "29d7d89af209b7fc91c10f2bbc565bbfbe9f78942961dbefb26a3305fb6a7baa",
+      "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+      "scene_id": "P22-P03-R04-MOBILE-SCENE-001",
+      "verified": true,
+      "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+      "member": "scene_crops/P03-R04__mobile__scene_001.jpg",
+      "member_sha256": "ecf5ebdd1153b55c10735bf90411a679e658086157bcd706dad49a5c215b0e89",
+      "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+      "scene_id": "GOLD-P05-R04-DESKTOP-TRAV-02",
+      "verified": true,
+      "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+      "member": "traversal/P05-R04__desktop__traversal_02_product_offer.jpg",
+      "member_sha256": "50d189a7eb55d5678b44322385c396f0dd19dd36a00e0ab39b63b4afd61b313d",
+      "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+      "scene_id": "GOLD-P05-R04-MOBILE-TRAV-02",
+      "verified": true,
+      "container_sha256": "4929f73c81d7b8028ad986380ebeb789642a9800cd23685866355c5b41885028",
+      "member": "traversal/P05-R04__mobile__traversal_02_product_offer.jpg",
+      "member_sha256": "c8ec136972b9b68619159d1f08bf1bc69c22bc10d9d9d1a402f9871d10fb3db6",
+      "pinned_file_id": "file_000000005b588209a215e3daf141e7cd",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "scene_id": "P22-P07-R02-DESKTOP-SCENE-001",
+      "verified": true,
+      "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+      "member": "scene_crops/P07-R02__desktop__scene_001.jpg",
+      "member_sha256": "305b2272ce1cbaec5a3b6b30d37118ffd668f9d1cf72f1dc9afc845248b7c17a",
+      "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+      "scene_id": "P22-P07-R02-MOBILE-SCENE-001",
+      "verified": true,
+      "container_sha256": "420483d21c411ac601324bdbbd3061cea4e1469c5a63d67aacfa53328dc89157",
+      "member": "scene_crops/P07-R02__mobile__scene_001.jpg",
+      "member_sha256": "f07b857e685d409b1609deb5c830cdfbcdf78dda60d188d5d94eff0b94b6b1f6",
+      "pinned_file_id": "file_00000000cba08209a1acb363f60e0ed8",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "scene_id": "P22-P11-R01-DESKTOP-SCENE-001",
+      "verified": true,
+      "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+      "member": "scene_crops/P11-R01__desktop__scene_001.jpg",
+      "member_sha256": "bbb5ec55cbdc3f00d0b5232b3e68d9a0e020a6029c0b04facc9d96d6fbfac6ed",
+      "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "scene_id": "P22-P11-R01-MOBILE-SCENE-001",
+      "verified": true,
+      "container_sha256": "7cf3cbd70747d4a88cf6bdca5eb515d2cb5351a0b0e82ccb33bd59025560f642",
+      "member": "scene_crops/P11-R01__mobile__scene_001.jpg",
+      "member_sha256": "2cb731322a05c8e67abc64209485fa7c7658f0409f66e11578d80262a74accd7",
+      "pinned_file_id": "file_00000000cfb08209a6e5dac7181ea999",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "scene_id": "P22-P15-R01-DESKTOP-SCENE-001",
+      "verified": true,
+      "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+      "member": "scene_crops/P15-R01__desktop__scene_001.jpg",
+      "member_sha256": "305df3c43d4ad2f904995227008fdb1f38b83bb682a237b67cb740a568831509",
+      "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "scene_id": "P22-P15-R01-MOBILE-SCENE-001",
+      "verified": true,
+      "container_sha256": "38fcfd3cc38944a4248229875ef70efc95bac31c60e6cb41ac19e4542daed599",
+      "member": "scene_crops/P15-R01__mobile__scene_001.jpg",
+      "member_sha256": "a6ea914bc185c76bc9893586f3211a7adfb367eb7c35664fefa9de499fb234d9",
+      "pinned_file_id": "file_000000007f20820996209c1ba3371784",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "scene_id": "P22-P17-R01-DESKTOP-SCENE-001",
+      "verified": true,
+      "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+      "member": "scene_crops/P17-R01__desktop__scene_001.jpg",
+      "member_sha256": "9ee58d71517d0b59c2f17c641f3c8bb88f4799e28c62473687ec1f8455884e08",
+      "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+      "scene_id": "P22-P17-R01-MOBILE-SCENE-001",
+      "verified": true,
+      "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+      "member": "scene_crops/P17-R01__mobile__scene_001.jpg",
+      "member_sha256": "3599e627464f86eb36d7fc62198bf5e89c33b22df234a1c1dc296ae37f474347",
+      "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+      "scene_id": "P22-P20-R01-DESKTOP-SCENE-002",
+      "verified": true,
+      "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+      "member": "scene_crops/P20-R01__desktop__scene_002.jpg",
+      "member_sha256": "b4b0719849dfd8d3666b8781880850bb145012cb87ff926f8b28e355bca047d8",
+      "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+      "version": "0"
+    },
+    {
+      "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+      "scene_id": "P22-P20-R01-MOBILE-SCENE-002",
+      "verified": true,
+      "container_sha256": "65715e19990d7fa4b9ab900710c32df1f87fbe910e1ef9b19d0ab90ad327e3cd",
+      "member": "scene_crops/P20-R01__mobile__scene_002.jpg",
+      "member_sha256": "d2378c7d04025c8fc8c737bde375536ede8ae92528f44a5a7bc571028fc10507",
+      "pinned_file_id": "file_000000001b288209b062f49eacf6fb15",
+      "version": "0"
+    }
+  ],
+  "phase2600_allowed": false
+}

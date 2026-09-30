@@ -1,0 +1,93 @@
+[
+  {
+    "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  },
+  {
+    "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+    "status": "PROVISIONAL_VARIANT",
+    "promotion_state": "CANDIDATE",
+    "promotion_count": 0,
+    "source_family_independence": "UNKNOWN"
+  }
+]

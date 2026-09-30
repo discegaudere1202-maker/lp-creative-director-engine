@@ -1,0 +1,26 @@
+{
+  "company_id": "public-information",
+  "company": {
+    "company_name": "Public / Information-heavy 検証用",
+    "industry": "Public / Information-heavy",
+    "service_category": "Public / Information-heavy",
+    "company_truth": "初回利用と継続利用の案内、お知らせと手続き情報を持つ、架空の情報提供テストです。",
+    "business_model": "authored_test_fixture",
+    "location": "検証用",
+    "differentiators": [],
+    "contact_channels": {
+      "href": "#details"
+    }
+  },
+  "customer_state": {
+    "before": "必要な手続きを迷わず探したい",
+    "after": "情報探索から自身の利用区分の理解へ",
+    "barrier": "内容と手順を確認したい"
+  },
+  "conversion_goal": "inquiry",
+  "primary_objections": [],
+  "requested_claims": [],
+  "evidence_ledger": [],
+  "mechanism_validation_profile": "public-information",
+  "mechanism_calibration_experiment": false
+}

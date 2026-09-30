@@ -1,0 +1,300 @@
+{
+  "schema": "evidence_scene_plan_v1",
+  "profile_id": "premium-place",
+  "profile_sha256": "e32459585c3564aea36e57d70927d151d3f9758e09425f1d171292bb3b7a6c0b",
+  "recipe": {
+    "mechanism_ids": [
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+    ],
+    "edge_ids": [
+      "EXPERIMENT-premium-place"
+    ],
+    "scope": "ADJACENT_SCENES",
+    "profile_id": "premium-place",
+    "status": "CONDITIONALLY_ACCEPTED"
+  },
+  "scenes": [
+    {
+      "scene_id": "premium-place-scene-1",
+      "scene_job": "ENTRY",
+      "source_scene_job": "ENTRY",
+      "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "adapter": "cinematic",
+      "grammar": {
+        "composition_primitive": "Minimal centered wordmark/navigation above a full-width cinematic landscape frame; after the media, a narrow title/offer block and vertically ordered destination cards.",
+        "visual_hierarchy": "Small restrained navigation; destination title is large and centered; offer descriptions are modest and short.",
+        "typography_observation": "Small restrained navigation; destination title is large and centered; offer descriptions are modest and short.",
+        "media_observation": "Large mountain landscape frame with visible playback controls in the captured still; subsequent destination cards use contained photography. Playback itself was not runtime-tested.",
+        "spatial_rhythm": "Large immersive media opening, then small quiet intro, then repeated destination modules separated by generous vertical space.",
+        "responsive_recomposition": "Media becomes a narrow vertical viewport crop; destination modules reflow to one column and retain generous spacing; header utility controls stay compact.",
+        "implementation_boundary": "DOM: title, copy, navigation and destination cards. Asset: video only if source and rights verified; provide poster/fallback image. Background: neutral warm canvas. Cards use separately cropped image assets.",
+        "misuse_constraints": [
+          "Requires distinctive place footage or photography and rights clearance.",
+          "Do not infer motion quality from player controls in a still image.",
+          "Keep a non-video fallback and avoid autoplay sound.",
+          "Short offer copy; destination labels must remain visible on narrow crop."
+        ]
+      },
+      "grammar_sha256": "f62306c0d3af0b7c7bce7f7356f551c66a45731059baa44ddeb9c590aac929af",
+      "content": {
+        "scene_job": "ENTRY",
+        "eyebrow": "静かな時間",
+        "headline": "空間から、時間を選ぶ。",
+        "body": "まず雰囲気を確かめ、訪問の案内へ進めます。空間写真は検証用イメージです。",
+        "routes": [
+          {
+            "label": "空間を見る",
+            "destination": "space-guide",
+            "qualifier": "雰囲気を確かめたい方"
+          },
+          {
+            "label": "訪問を考える",
+            "destination": "visit-guide",
+            "qualifier": "利用の手順を確認したい方"
+          }
+        ],
+        "assets": [
+          {
+            "repository_path": "assets/photography/generated/nagi_no_mirai/hero_treatment_space.png",
+            "sha256": "39322532de1e831734d09a77e0bd74c779a73264c2ed830d822c273c1a1016ea",
+            "alt": "静かな室内のイメージ。実在施設の紹介ではありません。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          }
+        ]
+      },
+      "heading_level": 1,
+      "evidence_reference_ids": [
+        "P16-R03"
+      ],
+      "evidence_scene_ids": [
+        "P22-P16-R03-DESKTOP-SCENE-001",
+        "P22-P16-R03-MOBILE-SCENE-001"
+      ],
+      "compatibility_edge_ids": [
+        "EXPERIMENT-premium-place"
+      ],
+      "responsive": {
+        "desktop": "grammar-specific composition",
+        "mobile": "Media becomes a narrow vertical viewport crop; destination modules reflow to one column and retain generous spacing; header utility controls stay compact."
+      },
+      "motion": {
+        "mode": "NONE",
+        "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+        "reduced_motion": "STATIC_EQUIVALENT"
+      },
+      "authority": "PLACE",
+      "truth_trace": [
+        "FIXTURE-premium-place-TRUTH"
+      ]
+    },
+    {
+      "scene_id": "premium-place-scene-2",
+      "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+      "source_scene_job": "SERVICE_PRODUCT_EXPLANATION",
+      "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "adapter": "utility",
+      "grammar": {
+        "composition_primitive": "Compact institutional header and primary blue navigation; below it, an asymmetric multi-column first layer with a large announcement/hero panel, search/task controls, news list, and supporting modules.",
+        "visual_hierarchy": "Small high-density navigation; task labels and news headlines use restrained hierarchy; blue bar separates primary navigation from content.",
+        "typography_observation": "Small high-density navigation; task labels and news headlines use restrained hierarchy; blue bar separates primary navigation from content.",
+        "media_observation": "Official announcement image in one bounded feature panel; secondary modules rely mostly on text and small visual tiles.",
+        "spatial_rhythm": "Dense, highly grouped utility modules; repeated horizontal rules/colored containers separate functions.",
+        "responsive_recomposition": "Primary nav compresses to compact top controls; multi-column groups stack vertically; search/task block moves near top; informational items retain boxed grouping.",
+        "implementation_boundary": "DOM: nav landmarks, search/links, announcement, lists, headings. CSS Grid for desktop; one-column DOM order matching task priority on mobile. Image assets remain decorative only where text duplicates content.",
+        "misuse_constraints": [
+          "Task priority must be supported by user research/official service obligations; do not copy source order blindly.",
+          "Dense layouts require responsive spacing, visible focus and legible line lengths.",
+          "Accessibility runtime was not tested; this record makes no accessibility pass claim."
+        ]
+      },
+      "grammar_sha256": "e1d7e7d84b11a7a583faa4c4d48669e4703777d3191ab011dc052b50cef4a83b",
+      "content": {
+        "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "eyebrow": "利用の案内",
+        "headline": "訪れる前に、確認する。",
+        "body": "雰囲気と手順の案内を分けて、必要な情報を見つけられます。",
+        "routes": [
+          {
+            "label": "空間を見る",
+            "destination": "space-guide",
+            "qualifier": "雰囲気を確かめたい方"
+          },
+          {
+            "label": "訪問を考える",
+            "destination": "visit-guide",
+            "qualifier": "利用の手順を確認したい方"
+          }
+        ],
+        "modules": [
+          {
+            "title": "空間案内",
+            "text": "紹介画像は実在施設の証明ではありません。"
+          },
+          {
+            "title": "訪問の手順",
+            "text": "検証用の案内で流れを確認できます。"
+          },
+          {
+            "title": "利用条件",
+            "text": "営業日時・料金・予約条件は実運用時に確認が必要です。"
+          }
+        ]
+      },
+      "heading_level": 2,
+      "evidence_reference_ids": [
+        "P18-R01"
+      ],
+      "evidence_scene_ids": [
+        "P22-P18-R01-DESKTOP-SCENE-004",
+        "P22-P18-R01-MOBILE-SCENE-001"
+      ],
+      "compatibility_edge_ids": [
+        "EXPERIMENT-premium-place"
+      ],
+      "responsive": {
+        "desktop": "grammar-specific composition",
+        "mobile": "Primary nav compresses to compact top controls; multi-column groups stack vertically; search/task block moves near top; informational items retain boxed grouping."
+      },
+      "motion": {
+        "mode": "NONE",
+        "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+        "reduced_motion": "STATIC_EQUIVALENT"
+      },
+      "authority": "DOCUMENT",
+      "truth_trace": [
+        "FIXTURE-premium-place-TRUTH"
+      ]
+    }
+  ],
+  "trace": {
+    "company_truth": "静かな空間の紹介から訪問案内へ進む、架空の空間サービス検証です。画像はイメージです。",
+    "buyer_problem": "空間の雰囲気と利用方法を知りたい",
+    "buyer_state": "雰囲気の理解から利用情報の確認へ",
+    "sales_story": "ENTRY → SERVICE_PRODUCT_EXPLANATION",
+    "creative_profile": {
+      "axes": {
+        "PREMIUM": 0.95,
+        "PLACE": 0.95,
+        "EDITORIAL": 0.9,
+        "PLAY": 0.1,
+        "DENSITY": 0.2
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0.1,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "truth_evidence_ids": [
+      "FIXTURE-premium-place-TRUTH"
+    ]
+  },
+  "phase2600_allowed": false,
+  "customer_publication_allowed": false
+}

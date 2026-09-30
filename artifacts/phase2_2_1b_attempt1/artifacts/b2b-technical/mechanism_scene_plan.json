@@ -1,0 +1,291 @@
+{
+  "schema": "evidence_scene_plan_v1",
+  "profile_id": "b2b-technical",
+  "profile_sha256": "22e713c77517eb06ea02c8ea1149047552c8bbed03ee8999ad088e3da0a7afc1",
+  "recipe": {
+    "mechanism_ids": [
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+    ],
+    "edge_ids": [
+      "EXPERIMENT-b2b-technical"
+    ],
+    "scope": "ADJACENT_SCENES",
+    "profile_id": "b2b-technical",
+    "status": "CONDITIONALLY_ACCEPTED"
+  },
+  "scenes": [
+    {
+      "scene_id": "b2b-technical-scene-1",
+      "scene_job": "ENTRY",
+      "source_scene_job": "ENTRY",
+      "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+      "adapter": "product_ui",
+      "grammar": {
+        "composition_primitive": "Dark full-bleed section; short text block aligned left; large product UI capture sits below/in the same column and occupies most of the first viewport; customer marks form a narrow footer row.",
+        "visual_hierarchy": "White sans-serif heading; compact supporting sentence; CTA labels restrained; brand marks are small and subordinate.",
+        "typography_observation": "White sans-serif heading; compact supporting sentence; CTA labels restrained; brand marks are small and subordinate.",
+        "media_observation": "Product interface image is the hero proof asset, framed by dark field; crop is contained, not edge-to-edge photo.",
+        "spatial_rhythm": "Dense product proof in entry, followed by discrete workflow sections; each later section receives one focused UI view.",
+        "responsive_recomposition": "Text and CTA stack above the UI; interface remains legible as a contained image with reduced width; lower brand strip wraps/crops at viewport edge.",
+        "implementation_boundary": "DOM: heading, supporting copy, CTA, customer marks, semantic section. Asset: product UI screenshots as responsive images or live product mock only when separately implemented. Background: solid dark CSS. Do not imply the static screenshot is interactive.",
+        "misuse_constraints": [
+          "Needs actual product UI evidence and permission to display; avoid fabricated interface states.",
+          "Product screenshot text must stay legible at mobile size or be replaced by a purpose-built crop.",
+          "Static screenshot does not establish motion, hover, or interaction."
+        ]
+      },
+      "grammar_sha256": "c2895591d128772678b60526f7931b335e0c139d3cba08c3dfd6f1601847c1f6",
+      "content": {
+        "scene_job": "ENTRY",
+        "eyebrow": "案件の整理",
+        "headline": "次の作業を、同じ画面で。",
+        "body": "検証用アプリの一覧です。状態で絞り込み、確認待ちの案件を見られます。",
+        "routes": [
+          {
+            "label": "担当者向け",
+            "destination": "team-guide",
+            "qualifier": "日々の案件を整理する方"
+          },
+          {
+            "label": "管理者向け",
+            "destination": "admin-guide",
+            "qualifier": "チームの進捗を確認する方"
+          }
+        ],
+        "ui_rows": [
+          {
+            "name": "案件A",
+            "state": "確認待ち",
+            "next": "内容確認"
+          },
+          {
+            "name": "案件B",
+            "state": "作業中",
+            "next": "手順確認"
+          },
+          {
+            "name": "案件C",
+            "state": "確認待ち",
+            "next": "担当確認"
+          }
+        ]
+      },
+      "heading_level": 1,
+      "evidence_reference_ids": [
+        "P08-R02"
+      ],
+      "evidence_scene_ids": [
+        "GOLD-P08-R02-DESKTOP-TRAV-01",
+        "GOLD-P08-R02-MOBILE-TRAV-01"
+      ],
+      "compatibility_edge_ids": [
+        "EXPERIMENT-b2b-technical"
+      ],
+      "responsive": {
+        "desktop": "grammar-specific composition",
+        "mobile": "Text and CTA stack above the UI; interface remains legible as a contained image with reduced width; lower brand strip wraps/crops at viewport edge."
+      },
+      "motion": {
+        "mode": "NONE",
+        "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+        "reduced_motion": "STATIC_EQUIVALENT"
+      },
+      "authority": "PRODUCT",
+      "truth_trace": [
+        "FIXTURE-b2b-technical-TRUTH"
+      ]
+    },
+    {
+      "scene_id": "b2b-technical-scene-2",
+      "scene_job": "CONVERSION_CTA",
+      "source_scene_job": "CONVERSION_CTA",
+      "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+      "adapter": "audience",
+      "grammar": {
+        "composition_primitive": "Soft blue proposition area with product UI illustration; two equal-width audience cards sit as a paired row beneath; each card has its own action and short qualifier.",
+        "visual_hierarchy": "Headline centered/left in the hero; audience labels bold; supporting qualifiers compact; actions visually parallel.",
+        "typography_observation": "Headline centered/left in the hero; audience labels bold; supporting qualifiers compact; actions visually parallel.",
+        "media_observation": "Product UI illustration supports the proposition but does not dominate the route choice.",
+        "spatial_rhythm": "Hero/product view, paired choice panels, then supporting service modules.",
+        "responsive_recomposition": "Cards become vertically stacked with equal prominence; each action stays inside its own card; proposition precedes both.",
+        "implementation_boundary": "DOM: semantic choice cards, headings and buttons; product UI as responsive image; CSS grid collapses to one column.",
+        "misuse_constraints": [
+          "Only use two paths if the audience split is real and mutually understandable.",
+          "Do not make one path look like an unwanted default unless sales logic requires it.",
+          "UI image is not a substitute for product explanation."
+        ]
+      },
+      "grammar_sha256": "76fdc8e3d6b8477f3abc2455e07395381a7dbaeab2b914e07cf5f3972ce93d07",
+      "content": {
+        "scene_job": "CONVERSION_CTA",
+        "eyebrow": "役割別の入口",
+        "headline": "立場に合わせて、使い方を見る。",
+        "body": "日々の整理とチーム管理。二つの役割を同じ重さで案内します。",
+        "routes": [
+          {
+            "label": "担当者向け",
+            "destination": "team-guide",
+            "qualifier": "日々の案件を整理する方"
+          },
+          {
+            "label": "管理者向け",
+            "destination": "admin-guide",
+            "qualifier": "チームの進捗を確認する方"
+          }
+        ]
+      },
+      "heading_level": 2,
+      "evidence_reference_ids": [
+        "P11-R01"
+      ],
+      "evidence_scene_ids": [
+        "P22-P11-R01-DESKTOP-SCENE-001",
+        "P22-P11-R01-MOBILE-SCENE-001"
+      ],
+      "compatibility_edge_ids": [
+        "EXPERIMENT-b2b-technical"
+      ],
+      "responsive": {
+        "desktop": "grammar-specific composition",
+        "mobile": "Cards become vertically stacked with equal prominence; each action stays inside its own card; proposition precedes both."
+      },
+      "motion": {
+        "mode": "NONE",
+        "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+        "reduced_motion": "STATIC_EQUIVALENT"
+      },
+      "authority": "PERSON",
+      "truth_trace": [
+        "FIXTURE-b2b-technical-TRUTH"
+      ]
+    }
+  ],
+  "trace": {
+    "company_truth": "案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます。",
+    "buyer_problem": "案件の状態と次の作業を把握したい",
+    "buyer_state": "一覧確認から役割別の利用方法理解へ",
+    "sales_story": "ENTRY → CONVERSION_CTA",
+    "creative_profile": {
+      "axes": {
+        "TRUST": 0.7,
+        "TECHNICAL": 0.95,
+        "PRECISION": 0.95,
+        "WARMTH": 0.2,
+        "DENSITY": 0.7
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0.2,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "truth_evidence_ids": [
+      "FIXTURE-b2b-technical-TRUTH"
+    ]
+  },
+  "phase2600_allowed": false,
+  "customer_publication_allowed": false
+}

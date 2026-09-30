@@ -1,0 +1,22 @@
+{
+  "validator": "PASS",
+  "atomic_mechanism_count": 13,
+  "compatibility_edge_count": 83,
+  "compatibility_states": {
+    "UNKNOWN": 76,
+    "INCOMPATIBLE": 2,
+    "CONDITIONAL": 5
+  },
+  "multi_profile_count": 5,
+  "scene_spec_count": 10,
+  "production_path_executed_profile_count": 5,
+  "desktop_pass": 5,
+  "desktop_fail": 0,
+  "mobile_pass": 5,
+  "mobile_fail": 0,
+  "promotion_count": 0,
+  "evidence_trace_qa": "PASS",
+  "reference_screenshot_required_for_regeneration": false,
+  "actual_customer_output_approved_count": 0,
+  "phase2600_allowed": false
+}

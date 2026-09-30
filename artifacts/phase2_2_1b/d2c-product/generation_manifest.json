@@ -1,0 +1,78 @@
+{
+  "schema_version": "production_generation_v1",
+  "generation_id": "p221b-d2c-product",
+  "company_id": "d2c-product",
+  "company_name": "D2C / Product 検証用",
+  "mode": "test",
+  "engine_version": "0.1.0",
+  "renderer_version": "0.1.0",
+  "generation_iteration": 1,
+  "input_digest": "e2e61005ab9b940ffdc854a5730b49b80a35c157c53e697ada0cef0cd9b9b530",
+  "input_references": {
+    "input_file": "inline_fixture",
+    "source_urls": []
+  },
+  "strategy_output": "creative_strategy.json",
+  "photo_role_map_output": "photo_role_map.json",
+  "asset_manifest_output": "asset_manifest.json",
+  "evidence_used": [],
+  "hearing_required": [],
+  "blocked_claims": [],
+  "safety_status": "PASS",
+  "output_status": "NOT_PRODUCTION_APPROVED",
+  "renderer_output": [
+    "index.html"
+  ],
+  "stage_outputs": [
+    "company_understanding.json",
+    "creative_strategy.json",
+    "creative_genome.json",
+    "narrative_architecture.json",
+    "premium_scene_plan.json",
+    "form_causality_manifest.json",
+    "information_architecture.json",
+    "copy.json",
+    "photo_role_map.json",
+    "asset_manifest.json",
+    "art_direction.json",
+    "design_tokens.json",
+    "compositions.json",
+    "render_spec.json"
+  ],
+  "manual_intervention": [],
+  "presentation_hygiene": {
+    "status": "PASS",
+    "leaked_visible_internal_fields": []
+  },
+  "narrative_gates": {
+    "generic_heading_gate": {
+      "status": "PASS",
+      "violations": []
+    },
+    "narrative_distinctness_gate": {
+      "status": "PASS"
+    },
+    "renderer_grammar_diversity_gate": {
+      "status": "PASS",
+      "unique_grammars": 4
+    },
+    "emotional_continuity_gate": {
+      "status": "PASS"
+    },
+    "cta_delta_gate": {
+      "status": "PASS",
+      "cta_count": 3
+    },
+    "mobile_re_art_direction_gate": {
+      "status": "PASS"
+    }
+  },
+  "generated_at": "2026-09-30T09:45:30.913455+00:00",
+  "mechanism_rendering": {
+    "profile_id": "d2c-product",
+    "scene_plan": "mechanism_scene_plan.json",
+    "recipe_status": "CONDITIONALLY_ACCEPTED",
+    "customer_publication_allowed": false,
+    "phase2600_allowed": false
+  }
+}

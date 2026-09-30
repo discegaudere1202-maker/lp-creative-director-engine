@@ -1,0 +1,391 @@
+{
+  "schema_version": "production_generation_v1",
+  "hero": {
+    "eyebrow": "B2B Technical / SaaS 検証用",
+    "headline": "案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます。",
+    "headline_lines": [
+      "案件一覧と状態",
+      "フィルターを",
+      "実装した、",
+      "所有する検証用",
+      "アプリです。",
+      "担当者",
+      "・管理者の",
+      "案内を持ち",
+      "ます。"
+    ],
+    "semantic_text": {
+      "schema_version": "editorial_text_ir_v1",
+      "role": "hero_headline",
+      "text": "案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます。",
+      "semantic_chunks": [
+        "案件一覧と状態",
+        "フィルターを",
+        "実装した、",
+        "所有する検証用",
+        "アプリです。",
+        "担当者",
+        "・管理者の",
+        "案内を持ちます。"
+      ],
+      "preferred_lines_desktop": [
+        "案件一覧と状態",
+        "フィルターを",
+        "実装した、",
+        "所有する検証用",
+        "アプリです。",
+        "担当者",
+        "・管理者の",
+        "案内を持ちます。"
+      ],
+      "protected_phrases": [],
+      "paragraphs": [
+        "案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます。"
+      ],
+      "context": {
+        "subject": "B2B Technical / SaaS",
+        "preferred_line_policy": "meaning_unit"
+      },
+      "repair_audit": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "violations": [
+            {
+              "type": "short_fragment_anywhere",
+              "line": 9,
+              "value": "ます。"
+            },
+            {
+              "type": "extreme_last_line",
+              "line": 9,
+              "value": "ます。"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "status": "PASS",
+          "violations": []
+        }
+      ],
+      "repair_status": "PASS"
+    },
+    "supporting": "検証用でB2B Technical / SaaSを探している方へ。案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます。食卓へつながる風景を手がかりに、次の一歩を考えます。",
+    "supporting_semantic_text": {
+      "schema_version": "editorial_text_ir_v1",
+      "role": "lead",
+      "text": "検証用でB2B Technical / SaaSを探している方へ。案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます。食卓へつながる風景を手がかりに、次の一歩を考えます。",
+      "semantic_chunks": [
+        "検証用でB2B Technical / SaaSを",
+        "探している方へ。",
+        "案件一覧と状態フィルターを実装した、",
+        "所有する検証用アプリです",
+        "。担当者・管理者の案内を",
+        "持ちます。食卓へ",
+        "つながる風景を",
+        "手がかりに、次の一歩を考えます。"
+      ],
+      "preferred_lines_desktop": [
+        "検証用でB2B Technical / SaaSを",
+        "探している方へ。",
+        "案件一覧と状態フィルターを実装した、",
+        "所有する検証用アプリです",
+        "。担当者・管理者の案内を",
+        "持ちます。食卓へ",
+        "つながる風景を",
+        "手がかりに、次の一歩を考えます。"
+      ],
+      "protected_phrases": [],
+      "paragraphs": [
+        "検証用でB2B Technical / SaaSを探している方へ。案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます。食卓へつながる風景を手がかりに、次の一歩を考えます。"
+      ],
+      "context": {
+        "subject": "B2B Technical / SaaS"
+      },
+      "repair_audit": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "violations": [
+            {
+              "type": "opening_punctuation_line_start",
+              "line": 8,
+              "value": "。担当者・管理者の案内を"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "status": "FAIL",
+          "violations": [
+            {
+              "type": "opening_punctuation_line_start",
+              "line": 7,
+              "value": "。担当者・管理者の案内を"
+            }
+          ]
+        },
+        {
+          "attempt": 3,
+          "status": "FAIL",
+          "violations": [
+            {
+              "type": "opening_punctuation_line_start",
+              "line": 7,
+              "value": "。担当者・管理者の案内を"
+            }
+          ]
+        },
+        {
+          "attempt": 4,
+          "status": "FAIL",
+          "violations": [
+            {
+              "type": "opening_punctuation_line_start",
+              "line": 6,
+              "value": "。担当者・管理者の案内を"
+            }
+          ]
+        }
+      ],
+      "repair_status": "FAIL"
+    },
+    "cta": "相談する",
+    "cta_semantic_text": {
+      "schema_version": "editorial_text_ir_v1",
+      "role": "cta",
+      "text": "相談する",
+      "semantic_chunks": [
+        "相談する"
+      ],
+      "preferred_lines_desktop": [
+        "相談する"
+      ],
+      "protected_phrases": [],
+      "paragraphs": [
+        "相談する"
+      ],
+      "context": {},
+      "repair_audit": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "violations": []
+        }
+      ],
+      "repair_status": "PASS"
+    },
+    "microcopy": "検証用｜食卓へつながる風景。"
+  },
+  "sections": [
+    {
+      "section_id": "opening",
+      "headline": "notice｜B2B Technical / SaaS",
+      "headline_lines": [
+        "notice｜B2B ",
+        "Technical /",
+        "SaaS"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "notice｜B2B Technical / SaaS",
+        "semantic_chunks": [
+          "notice｜B2B",
+          "Technical /",
+          "SaaS"
+        ],
+        "preferred_lines_desktop": [
+          "notice｜B2B",
+          "Technical /",
+          "SaaS"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "notice｜B2B Technical / SaaS"
+        ],
+        "context": {
+          "section_id": "opening"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "検証用の料理教室で、食材と手を動かす時間に出会います。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "truth",
+      "headline": "understand",
+      "headline_lines": [
+        "understand"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "understand",
+        "semantic_chunks": [
+          "understand"
+        ],
+        "preferred_lines_desktop": [
+          "understand"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "understand"
+        ],
+        "context": {
+          "section_id": "truth"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "way_in",
+      "headline": "trust",
+      "headline_lines": [
+        "trust"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "trust",
+        "semantic_chunks": [
+          "trust"
+        ],
+        "preferred_lines_desktop": [
+          "trust"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "trust"
+        ],
+        "context": {
+          "section_id": "way_in"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "料理教室で食材を選び、料理の流れを一緒に学びます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "contact",
+      "headline": "choose",
+      "headline_lines": [
+        "choose"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "choose",
+        "semantic_chunks": [
+          "choose"
+        ],
+        "preferred_lines_desktop": [
+          "choose"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "choose"
+        ],
+        "context": {
+          "section_id": "contact"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "手を動かし、火を入れる順序を確かめます。",
+      "evidence_claims": [],
+      "cta": ""
+    },
+    {
+      "section_id": "close",
+      "headline": "act",
+      "headline_lines": [
+        "act"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "section_headline",
+        "text": "act",
+        "semantic_chunks": [
+          "act"
+        ],
+        "preferred_lines_desktop": [
+          "act"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "act"
+        ],
+        "context": {
+          "section_id": "close"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "body": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+      "evidence_claims": [],
+      "cta": "相談する"
+    }
+  ],
+  "global_constraints": {
+    "all_customer_facing_claims_require_evidence_id": true,
+    "unsupported_reassurance": "blocked",
+    "line_shape": "rendered_browser_line_shape_with_semantic_ir",
+    "paragraph_architecture": "role_and_sentence_units_not_character_count",
+    "copy_naturalness_gate": "subject_object_context_naturalness_commercial_usefulness"
+  },
+  "process_steps": [
+    "状況を伝える",
+    "対応できることを確認する",
+    "次の案内を考える"
+  ],
+  "premium_scene_copy": {
+    "pattern": "profile_default",
+    "profile_id": "editorial_rail",
+    "ending_variant": "editorial_rail_closure",
+    "scenes": {}
+  },
+  "section_naming_gate": {
+    "status": "PASS",
+    "violations": []
+  }
+}

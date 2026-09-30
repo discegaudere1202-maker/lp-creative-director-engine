@@ -1,0 +1,58 @@
+{
+  "schema_version": "photo_role_map_v1",
+  "selection_mode": "role_driven_not_fixed_count",
+  "roles": [
+    {
+      "photo_role": "hero_context",
+      "visual_subject": "Premium / Placeの第一印象を伝える場面",
+      "business_purpose": "何の事業かを一瞬で理解させる",
+      "replacement_target": "同じ役割の実事業写真",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "mid",
+      "proof_intent": "visual_context_only",
+      "placement": "hero_dominant_image"
+    },
+    {
+      "photo_role": "mid_experience",
+      "visual_subject": "Premium / Placeを利用する体験の場面",
+      "business_purpose": "中盤で理解と感情を補強する",
+      "replacement_target": "同じ役割の実体験写真",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "mid",
+      "proof_intent": "experience_context_only",
+      "placement": "mid_frame_proof_experience"
+    },
+    {
+      "photo_role": "craft_detail",
+      "visual_subject": "手元・素材・道具などの細部",
+      "business_purpose": "仕事の具体性を伝える",
+      "replacement_target": "実作業・実商品ディテール",
+      "preferred_orientation": "portrait",
+      "crop_tolerance": "tight",
+      "people_distance": "close",
+      "proof_intent": "craft_context_only",
+      "placement": "craft_detail_image",
+      "secondary_placement": "quiet_chapter_image"
+    },
+    {
+      "photo_role": "trust_human",
+      "visual_subject": "相談・迎え入れ・人の気配",
+      "business_purpose": "CTA前の信頼を補強する",
+      "replacement_target": "実人物・実接客写真",
+      "preferred_orientation": "landscape",
+      "crop_tolerance": "medium",
+      "people_distance": "mid",
+      "proof_intent": "human_context_only",
+      "placement": "quiet_chapter_image"
+    }
+  ],
+  "section_role_map": {
+    "hero_orientation": "hero_context",
+    "company_truth": "mid_experience",
+    "service_process": "craft_detail",
+    "next_step": "trust_human",
+    "cta_zone": "trust_human"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "company_id": "local-trust",
+  "company": {
+    "company_name": "Local Trust Service 検証用",
+    "industry": "Local Trust Service",
+    "service_category": "Local Trust Service",
+    "company_truth": "住まいに関する相談と作業手順の案内を持つ、架空の検証用サービスです。",
+    "business_model": "authored_test_fixture",
+    "location": "検証用",
+    "differentiators": [],
+    "contact_channels": {
+      "href": "#details"
+    }
+  },
+  "customer_state": {
+    "before": "相談先と依頼手順を理解したい",
+    "after": "情報不足から具体的な相談項目の確認へ",
+    "barrier": "内容と手順を確認したい"
+  },
+  "conversion_goal": "inquiry",
+  "primary_objections": [],
+  "requested_claims": [],
+  "evidence_ledger": [],
+  "mechanism_validation_profile": "local-trust",
+  "mechanism_calibration_experiment": false
+}

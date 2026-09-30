@@ -1,0 +1,2471 @@
+{
+  "schema_version": "production_generation_v1",
+  "company": {
+    "schema_version": "production_generation_v1",
+    "company_id": "d2c-product",
+    "company_name": "D2C / Product 検証用",
+    "industry": "D2C / Product",
+    "service_category": "D2C / Product",
+    "location": "検証用",
+    "business_model": "authored_test_fixture",
+    "company_truth": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+    "differentiators": [],
+    "customer_state": {
+      "before": "選択肢の違いを把握したい",
+      "after": "カテゴリー比較から確認したい商品群の選択へ",
+      "barrier": "内容と手順を確認したい"
+    },
+    "conversion_goal": "inquiry",
+    "generation_iteration": 1,
+    "primary_objections": [],
+    "available_evidence": [],
+    "unavailable_evidence": [],
+    "hearing_required": [],
+    "visual_authority": [
+      "TYPOGRAPHY",
+      "WORLD",
+      "PLACE"
+    ],
+    "evidence_density": "LOW",
+    "industry_visual_family": "default",
+    "visual_scene": "calibration",
+    "layout_profile": "editorial_rail",
+    "field_validation_context": false,
+    "verified_strengths": [],
+    "evidence_utility": {
+      "TRUST": 0,
+      "CONVERSION": 0,
+      "VISUAL": 0,
+      "PROCESS": 0,
+      "IDENTITY": 0
+    },
+    "evidence_strategy": "premium_without_claim_inflation",
+    "source_references": [],
+    "contact_channels": {
+      "href": "#details"
+    },
+    "photo_replacement_readiness": {
+      "status": "UNSPECIFIED",
+      "proxy_role": "role_selected_photography_asset",
+      "replacement_targets": [
+        "実店舗・実現場・実商品・実人物写真"
+      ],
+      "layout_constraints": [
+        "同一役割の実写真を同じ比率へ差し替え可能",
+        "文字重なりなし",
+        "中央焦点を保持"
+      ],
+      "proof_role": "visual_context_only; not evidence of a real result or location",
+      "source_priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only"
+    }
+  },
+  "strategy": {
+    "schema_version": "production_generation_v1",
+    "creative_problem": "選択肢の違いを把握したいを、相談の入口をひらくへ変える。",
+    "target_customer_state": {
+      "before": "選択肢の違いを把握したい",
+      "after": "カテゴリー比較から確認したい商品群の選択へ",
+      "barrier": "内容と手順を確認したい"
+    },
+    "desired_customer_transition": "カテゴリー比較から確認したい商品群の選択へ",
+    "core_message": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+    "big_idea": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。を、相談の入口をひらくの入口として見せる。",
+    "emotional_barrier": "内容と手順を確認したい",
+    "trust_strategy": {
+      "approved_proof": [],
+      "sequence": [
+        "Company Truth",
+        "Operational clarity",
+        "Action"
+      ],
+      "unsupported_claim_policy": "Use only Safety-approved evidence; do not generate reassurance from missing facts."
+    },
+    "conversion_strategy": {
+      "goal": "inquiry",
+      "cta_role": "permission_to_start",
+      "before_cta": "対象となる状況と確認できる入口を短く明示する",
+      "customer_hesitation": "内容と手順を確認したい",
+      "resolved_by_lp": "会社固有の入口・Process・連絡手段を一続きにする",
+      "why_act_now": "相談の入口をひらくを確認できる入口がここにある",
+      "after_click": "確認済みの連絡手段へ進み、未確認の対応約束は置かない",
+      "after_cta": "確認できる連絡手段だけを表示し、未確認の対応約束を置かない"
+    },
+    "form_causality": [
+      {
+        "company_truth": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+        "form_decision": "editorial_railの主構造を選び、情報の入口を一つの視線移動にまとめる。",
+        "customer_effect": "最初に何を理解すればよいか迷いにくい。"
+      },
+      {
+        "company_truth": "選択肢の違いを把握したい",
+        "form_decision": "Before Stateを最初の見出しとCTA前の説明へ再登場させる。",
+        "customer_effect": "自分の現在地から行動へ移れる。"
+      },
+      {
+        "company_truth": "内容と手順を確認したい",
+        "form_decision": "障壁に対応するEvidenceを、説明・Process・CTAの順で近接配置する。",
+        "customer_effect": "行動前の不確実さが具体的な確認事項へ変わる。"
+      },
+      {
+        "company_truth": "inquiry",
+        "form_decision": "Conversion Goalに合わせてCTAのタイミングと余白を決める。",
+        "customer_effect": "押す理由と次の動作が画面上でつながる。"
+      },
+      {
+        "company_truth": "LOW",
+        "form_decision": "LOW Evidenceでは主張を増やさず、余白・Type・Material abstractionでPeakをつくる。",
+        "customer_effect": "情報不足を誤認させず、見せ場の密度だけを高める。"
+      }
+    ],
+    "big_idea_gate": {
+      "company_specific": true,
+      "customer_relevant": true,
+      "visualizable": true,
+      "extendable": true,
+      "memorable": true
+    },
+    "visual_authority_priority": [
+      "TYPOGRAPHY",
+      "WORLD",
+      "PLACE"
+    ],
+    "layout_profile": "editorial_rail",
+    "evidence_density_signal": "LOW",
+    "quality_calibration": "baseline_generation",
+    "sparse_strategy": "premium_without_claim_inflation",
+    "premium_quality_strategy": {
+      "enabled": false,
+      "focus": [
+        "form_causality",
+        "conversion_confidence",
+        "quiet_chapters",
+        "mobile_peak"
+      ],
+      "not_a_template": true
+    },
+    "anti_template_notes": [
+      "No generic three-card grid as the primary composition.",
+      "No unsupported reassurance or invented metrics.",
+      "Peak screens are limited; quiet chapters carry orientation."
+    ],
+    "creative_genome": {
+      "schema_version": "creative_genome_v1",
+      "dominant_narrative": "discovery",
+      "emotional_tempo": "confident",
+      "visual_authority_priority": [
+        "TYPOGRAPHY",
+        "WORLD",
+        "PLACE"
+      ],
+      "composition_logic": [
+        "editorial_split",
+        "progressive_story",
+        "human_dialogue",
+        "asymmetric_editorial"
+      ],
+      "signature_moment": {
+        "section_role": "company_truth",
+        "reason": "Company Truthと主役のVisual Authorityが同じ画面で結び付く瞬間"
+      },
+      "screenshot_peak_plan": [
+        {
+          "section_role": "hero_orientation",
+          "visual_authority": "TYPOGRAPHY",
+          "composition": "editorial_split",
+          "reason": "最初の認識を決める"
+        },
+        {
+          "section_role": "company_truth",
+          "visual_authority": "WORLD",
+          "composition": "progressive_story",
+          "reason": "固有のTruthを記憶に残す"
+        },
+        {
+          "section_role": "service_process",
+          "visual_authority": "TYPOGRAPHY",
+          "composition": "human_dialogue",
+          "reason": "行動の順番を見せる"
+        }
+      ],
+      "cta_progression": [
+        {
+          "stage": "discovery",
+          "section_role": "hero_orientation",
+          "user_hesitation": "自分に関係する入口か分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "まず状況を見渡す",
+          "action_type": "anchor",
+          "label_strategy": "understand_before_contact",
+          "visible_label": "入口を見る",
+          "destination": "#way-in"
+        },
+        {
+          "stage": "reassurance",
+          "section_role": "company_truth",
+          "user_hesitation": "この会社へ相談してよいか迷う",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "会社固有の範囲を確かめる",
+          "action_type": "anchor",
+          "label_strategy": "verify_scope",
+          "visible_label": "内容を確かめる",
+          "destination": "#reassurance"
+        },
+        {
+          "stage": "action",
+          "section_role": "cta_zone",
+          "user_hesitation": "何を伝えればよいか分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "inquiryの確認へ進む",
+          "action_type": "conversion",
+          "label_strategy": "act_on_seen_evidence",
+          "visible_label": "相談を始める",
+          "destination": "#contact"
+        }
+      ],
+      "mobile_redirection": {
+        "hero_crop": "focus_primary_authority",
+        "visual_text_order": "authority_before_explanation",
+        "whitespace": "preserve_tempo_pause",
+        "section_density": "reduce_supporting_density",
+        "image_prominence": "promote_signature_moment",
+        "cta_timing": "after_reassurance"
+      },
+      "derivation": {
+        "source": "Company Truth + evidence types + conversion goal + visual authority",
+        "profile": "editorial_rail",
+        "evidence_types": [],
+        "deterministic": true
+      }
+    },
+    "narrative_architecture": {
+      "schema_version": "narrative_architecture_v1",
+      "narrative_family": "discovery",
+      "narrative_arc": [
+        {
+          "narrative_state": "notice",
+          "user_question": "いま知りたいことは何か",
+          "user_emotion": "curious",
+          "section_purpose": "ESTABLISH_CONTEXT",
+          "evidence_required": [],
+          "preferred_visual_authority": "TYPOGRAPHY",
+          "preferred_composition_grammar": "editorial_split",
+          "copy_density": "medium",
+          "cta_eligibility": "none"
+        },
+        {
+          "narrative_state": "understand",
+          "user_question": "何を知れば判断できるか",
+          "user_emotion": "attentive",
+          "section_purpose": "REDUCE_UNCERTAINTY",
+          "evidence_required": [],
+          "preferred_visual_authority": "WORLD",
+          "preferred_composition_grammar": "progressive_story",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "trust",
+          "user_question": "なぜここに相談するのか",
+          "user_emotion": "assured",
+          "section_purpose": "BUILD_TRUST",
+          "evidence_required": [],
+          "preferred_visual_authority": "PLACE",
+          "preferred_composition_grammar": "human_dialogue",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "choose",
+          "user_question": "自分の次をどう選ぶか",
+          "user_emotion": "certain",
+          "section_purpose": "SHOW_PROCESS",
+          "evidence_required": [],
+          "preferred_visual_authority": "TYPOGRAPHY",
+          "preferred_composition_grammar": "asymmetric_editorial",
+          "copy_density": "medium",
+          "cta_eligibility": "secondary"
+        },
+        {
+          "narrative_state": "act",
+          "user_question": "どこから始めるか",
+          "user_emotion": "ready",
+          "section_purpose": "ENABLE_ACTION",
+          "evidence_required": [],
+          "preferred_visual_authority": "WORLD",
+          "preferred_composition_grammar": "editorial_split",
+          "copy_density": "medium",
+          "cta_eligibility": "primary"
+        }
+      ],
+      "narrative_states": [
+        "notice",
+        "understand",
+        "trust",
+        "choose",
+        "act"
+      ],
+      "section_purposes": [
+        "ESTABLISH_CONTEXT",
+        "REDUCE_UNCERTAINTY",
+        "BUILD_TRUST",
+        "SHOW_PROCESS",
+        "ENABLE_ACTION"
+      ],
+      "transition_logic": [
+        "notice→understand",
+        "understand→trust",
+        "trust→choose",
+        "choose→act"
+      ],
+      "emotional_progression": [
+        "curious",
+        "attentive",
+        "assured",
+        "certain",
+        "ready"
+      ],
+      "visual_progression": [
+        "editorial_split",
+        "progressive_story",
+        "human_dialogue",
+        "asymmetric_editorial",
+        "editorial_split"
+      ],
+      "evidence_progression": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "cta_progression_mapping": [
+        {
+          "stage": "discovery",
+          "section_role": "hero_orientation",
+          "user_hesitation": "自分に関係する入口か分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "まず状況を見渡す",
+          "action_type": "anchor",
+          "label_strategy": "understand_before_contact",
+          "visible_label": "入口を見る",
+          "destination": "#way-in"
+        },
+        {
+          "stage": "reassurance",
+          "section_role": "company_truth",
+          "user_hesitation": "この会社へ相談してよいか迷う",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "会社固有の範囲を確かめる",
+          "action_type": "anchor",
+          "label_strategy": "verify_scope",
+          "visible_label": "内容を確かめる",
+          "destination": "#reassurance"
+        },
+        {
+          "stage": "action",
+          "section_role": "cta_zone",
+          "user_hesitation": "何を伝えればよいか分からない",
+          "evidence_already_seen": [],
+          "required_evidence": [],
+          "action_reason": "inquiryの確認へ進む",
+          "action_type": "conversion",
+          "label_strategy": "act_on_seen_evidence",
+          "visible_label": "相談を始める",
+          "destination": "#contact"
+        }
+      ],
+      "section_naming": [
+        "notice｜D2C / Product",
+        "understand",
+        "trust",
+        "choose",
+        "act"
+      ],
+      "mobile_redirection": {
+        "hero_crop": "focus_primary_authority",
+        "visual_text_order": "authority_before_explanation",
+        "whitespace": "preserve_tempo_pause",
+        "section_density": "reduce_supporting_density",
+        "image_prominence": "promote_signature_moment",
+        "cta_timing": "after_reassurance"
+      },
+      "derived_from": "Creative Genome + Company Truth + approved Evidence"
+    }
+  },
+  "ia": [
+    {
+      "section_id": "opening",
+      "section_role": "hero_orientation",
+      "customer_question": "ここは自分の状況を相談できる場所か？",
+      "key_message": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。を、相談の入口をひらくの入口として見せる。",
+      "layout_hint": "editorial_rail",
+      "evidence_used": [],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 5,
+      "cta_role": "orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "headline_first_then_single_action",
+      "composition_grammar": "editorial_split",
+      "genome_tempo": "confident",
+      "cta_stage": "discovery",
+      "order": 0
+    },
+    {
+      "section_id": "truth",
+      "section_role": "company_truth",
+      "customer_question": "なぜこの会社に相談するのか？",
+      "key_message": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+      "layout_hint": "入口をひらく",
+      "evidence_used": [],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 4,
+      "cta_role": "proof_orientation",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "stacked_proof_with_short_lines",
+      "composition_grammar": "progressive_story",
+      "genome_tempo": "confident",
+      "cta_stage": "reassurance",
+      "order": 1
+    },
+    {
+      "section_id": "way_in",
+      "section_role": "service_process",
+      "customer_question": "相談したら、何を伝えればよいか？",
+      "key_message": "次を考える。",
+      "layout_hint": "次を考える",
+      "evidence_used": [],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 3,
+      "cta_role": "clarity",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "vertical_steps_with_breathing_room",
+      "composition_grammar": "human_dialogue",
+      "genome_tempo": "confident",
+      "cta_stage": "",
+      "order": 2
+    },
+    {
+      "section_id": "contact",
+      "section_role": "next_step",
+      "customer_question": "問い合わせた後、まず何ができるか？",
+      "key_message": "最初の案内。",
+      "layout_hint": "最初の案内",
+      "evidence_used": [],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 4,
+      "cta_role": "action",
+      "quiet_or_peak": "quiet",
+      "mobile_behavior": "contact_details_before_button",
+      "composition_grammar": "asymmetric_editorial",
+      "genome_tempo": "confident",
+      "cta_stage": "",
+      "order": 3
+    },
+    {
+      "section_id": "close",
+      "section_role": "cta_zone",
+      "customer_question": "ここから何をすればよいか？",
+      "key_message": "相談の入口をひらく",
+      "layout_hint": "editorial_rail",
+      "evidence_used": [],
+      "visual_authority": "TYPOGRAPHY",
+      "emotional_intensity": 5,
+      "cta_role": "primary_conversion",
+      "quiet_or_peak": "peak",
+      "mobile_behavior": "sticky_safe_spacing_and_full_width_touch_target",
+      "composition_grammar": "editorial_split",
+      "genome_tempo": "confident",
+      "cta_stage": "action",
+      "order": 4
+    }
+  ],
+  "copy": {
+    "schema_version": "production_generation_v1",
+    "hero": {
+      "eyebrow": "D2C / Product 検証用",
+      "headline": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+      "headline_lines": [
+        "色と道具の",
+        "二つのカテゴリ",
+        "ーを案内する、",
+        "架空の商品選択",
+        "用テストです。",
+        "価格・効能",
+        "・在庫は主張し",
+        "ません。"
+      ],
+      "semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "hero_headline",
+        "text": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+        "semantic_chunks": [
+          "色と道具の",
+          "二つのカテゴリ",
+          "ーを案内する、",
+          "架空の商品選択",
+          "用テストです。",
+          "価格・効能",
+          "・在庫は主張し",
+          "ません。"
+        ],
+        "preferred_lines_desktop": [
+          "色と道具の",
+          "二つのカテゴリ",
+          "ーを案内する、",
+          "架空の商品選択",
+          "用テストです。",
+          "価格・効能",
+          "・在庫は主張し",
+          "ません。"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。"
+        ],
+        "context": {
+          "subject": "D2C / Product",
+          "preferred_line_policy": "meaning_unit"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "supporting": "検証用でD2C / Productを探している方へ。色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。食卓へつながる風景を手がかりに、次の一歩を考えます。",
+      "supporting_semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "lead",
+        "text": "検証用でD2C / Productを探している方へ。色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。食卓へつながる風景を手がかりに、次の一歩を考えます。",
+        "semantic_chunks": [
+          "検証用で",
+          "D2C / Produc",
+          "tを探している方へ。",
+          "色と道具の二つの",
+          "カテゴリーを案内する、",
+          "架空の商品選択用テストで",
+          "す。価格・効能",
+          "・在庫は主張しません。",
+          "食卓へつながる風景を",
+          "手がかりに、次の一歩を",
+          "考えます。"
+        ],
+        "preferred_lines_desktop": [
+          "検証用で",
+          "D2C / Produc",
+          "tを探している方へ。",
+          "色と道具の二つの",
+          "カテゴリーを案内する、",
+          "架空の商品選択用テストで",
+          "す。価格・効能",
+          "・在庫は主張しません。",
+          "食卓へつながる風景を",
+          "手がかりに、次の一歩を",
+          "考えます。"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "検証用でD2C / Productを探している方へ。色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。食卓へつながる風景を手がかりに、次の一歩を考えます。"
+        ],
+        "context": {
+          "subject": "D2C / Product"
+        },
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "cta": "相談する",
+      "cta_semantic_text": {
+        "schema_version": "editorial_text_ir_v1",
+        "role": "cta",
+        "text": "相談する",
+        "semantic_chunks": [
+          "相談する"
+        ],
+        "preferred_lines_desktop": [
+          "相談する"
+        ],
+        "protected_phrases": [],
+        "paragraphs": [
+          "相談する"
+        ],
+        "context": {},
+        "repair_audit": [
+          {
+            "attempt": 1,
+            "status": "PASS",
+            "violations": []
+          }
+        ],
+        "repair_status": "PASS"
+      },
+      "microcopy": "検証用｜食卓へつながる風景。"
+    },
+    "sections": [
+      {
+        "section_id": "opening",
+        "headline": "notice｜D2C / Product",
+        "headline_lines": [
+          "notice｜D2C ",
+          "/ Product"
+        ],
+        "semantic_text": {
+          "schema_version": "editorial_text_ir_v1",
+          "role": "section_headline",
+          "text": "notice｜D2C / Product",
+          "semantic_chunks": [
+            "notice｜D2C",
+            "/ Product"
+          ],
+          "preferred_lines_desktop": [
+            "notice｜D2C",
+            "/ Product"
+          ],
+          "protected_phrases": [],
+          "paragraphs": [
+            "notice｜D2C / Product"
+          ],
+          "context": {
+            "section_id": "opening"
+          },
+          "repair_audit": [
+            {
+              "attempt": 1,
+              "status": "PASS",
+              "violations": []
+            }
+          ],
+          "repair_status": "PASS"
+        },
+        "body": "検証用の料理教室で、食材と手を動かす時間に出会います。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "truth",
+        "headline": "understand",
+        "headline_lines": [
+          "understand"
+        ],
+        "semantic_text": {
+          "schema_version": "editorial_text_ir_v1",
+          "role": "section_headline",
+          "text": "understand",
+          "semantic_chunks": [
+            "understand"
+          ],
+          "preferred_lines_desktop": [
+            "understand"
+          ],
+          "protected_phrases": [],
+          "paragraphs": [
+            "understand"
+          ],
+          "context": {
+            "section_id": "truth"
+          },
+          "repair_audit": [
+            {
+              "attempt": 1,
+              "status": "PASS",
+              "violations": []
+            }
+          ],
+          "repair_status": "PASS"
+        },
+        "body": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "way_in",
+        "headline": "trust",
+        "headline_lines": [
+          "trust"
+        ],
+        "semantic_text": {
+          "schema_version": "editorial_text_ir_v1",
+          "role": "section_headline",
+          "text": "trust",
+          "semantic_chunks": [
+            "trust"
+          ],
+          "preferred_lines_desktop": [
+            "trust"
+          ],
+          "protected_phrases": [],
+          "paragraphs": [
+            "trust"
+          ],
+          "context": {
+            "section_id": "way_in"
+          },
+          "repair_audit": [
+            {
+              "attempt": 1,
+              "status": "PASS",
+              "violations": []
+            }
+          ],
+          "repair_status": "PASS"
+        },
+        "body": "料理教室で食材を選び、料理の流れを一緒に学びます。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "contact",
+        "headline": "choose",
+        "headline_lines": [
+          "choose"
+        ],
+        "semantic_text": {
+          "schema_version": "editorial_text_ir_v1",
+          "role": "section_headline",
+          "text": "choose",
+          "semantic_chunks": [
+            "choose"
+          ],
+          "preferred_lines_desktop": [
+            "choose"
+          ],
+          "protected_phrases": [],
+          "paragraphs": [
+            "choose"
+          ],
+          "context": {
+            "section_id": "contact"
+          },
+          "repair_audit": [
+            {
+              "attempt": 1,
+              "status": "PASS",
+              "violations": []
+            }
+          ],
+          "repair_status": "PASS"
+        },
+        "body": "手を動かし、火を入れる順序を確かめます。",
+        "evidence_claims": [],
+        "cta": ""
+      },
+      {
+        "section_id": "close",
+        "headline": "act",
+        "headline_lines": [
+          "act"
+        ],
+        "semantic_text": {
+          "schema_version": "editorial_text_ir_v1",
+          "role": "section_headline",
+          "text": "act",
+          "semantic_chunks": [
+            "act"
+          ],
+          "preferred_lines_desktop": [
+            "act"
+          ],
+          "protected_phrases": [],
+          "paragraphs": [
+            "act"
+          ],
+          "context": {
+            "section_id": "close"
+          },
+          "repair_audit": [
+            {
+              "attempt": 1,
+              "status": "PASS",
+              "violations": []
+            }
+          ],
+          "repair_status": "PASS"
+        },
+        "body": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+        "evidence_claims": [],
+        "cta": "相談する"
+      }
+    ],
+    "global_constraints": {
+      "all_customer_facing_claims_require_evidence_id": true,
+      "unsupported_reassurance": "blocked",
+      "line_shape": "rendered_browser_line_shape_with_semantic_ir",
+      "paragraph_architecture": "role_and_sentence_units_not_character_count",
+      "copy_naturalness_gate": "subject_object_context_naturalness_commercial_usefulness"
+    },
+    "process_steps": [
+      "状況を伝える",
+      "対応できることを確認する",
+      "次の案内を考える"
+    ],
+    "premium_scene_copy": {
+      "pattern": "profile_default",
+      "profile_id": "editorial_rail",
+      "ending_variant": "editorial_rail_closure",
+      "scenes": {}
+    },
+    "section_naming_gate": {
+      "status": "PASS",
+      "violations": []
+    }
+  },
+  "art_direction": {
+    "schema_version": "production_generation_v1",
+    "art_direction_concept": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。を、相談の入口をひらくの入口として見せる。",
+    "visual_mood": "quiet confidence with a working-surface sense of detail",
+    "visual_authority_priority": [
+      "TYPOGRAPHY",
+      "WORLD",
+      "PLACE"
+    ],
+    "color_logic": {
+      "ink": "#151515",
+      "accent": "#ba5e35",
+      "paper": "#f3efe7",
+      "reason": "TYPOGRAPHY is the first evidence-bearing authority."
+    },
+    "typography_logic": "Large meaning-unit headlines, compact labels, readable Japanese body text.",
+    "composition_logic": "A narrow reading rail interrupted by one evidence-bearing offset surface; peaks are separated by quiet chapters.",
+    "photography_logic": "Role-driven photography is the primary visual authority; vector scenes are support only.",
+    "visual_scene": "calibration",
+    "visual_source": "photography_pipeline",
+    "photo_replacement_readiness": {
+      "status": "UNSPECIFIED",
+      "proxy_role": "role_selected_photography_asset",
+      "replacement_targets": [
+        "実店舗・実現場・実商品・実人物写真"
+      ],
+      "layout_constraints": [
+        "同一役割の実写真を同じ比率へ差し替え可能",
+        "文字重なりなし",
+        "中央焦点を保持"
+      ],
+      "proof_role": "visual_context_only; not evidence of a real result or location",
+      "source_priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only"
+    },
+    "icon_logic": "No generic icon wall; use line markers tied to the process sequence.",
+    "texture_logic": "Subtle ruled-paper and calibration marks, never a decorative grain overlay.",
+    "motion_logic": "reveal_the_next_question; one restrained reveal per section; no infinite or blocking animation.",
+    "forbidden_patterns": [
+      "rounded card wall",
+      "generic three-column grid",
+      "unsupported trust badge",
+      "stock person",
+      "marquee",
+      "parallax"
+    ],
+    "craft_catch": "A calibration line carries the customer from the current situation to the next contact point.",
+    "layout_profile": "editorial_rail",
+    "art_direction_dimensions": {
+      "macro_composition": "reading_rail",
+      "visual_density": "quiet_interruption",
+      "negative_space": "listening_space",
+      "surface": "calibrated_paper",
+      "section_transitions": "question_marks",
+      "rhythm": "ask_then_open",
+      "motion": "reveal_the_next_question",
+      "evidence_density": "LOW",
+      "visual_authority": "TYPOGRAPHY",
+      "crop_logic": "no client image dependency; abstract geometry carries the role"
+    },
+    "photo_role_map": {
+      "schema_version": "photo_role_map_v1",
+      "selection_mode": "role_driven_not_fixed_count",
+      "roles": [
+        {
+          "photo_role": "hero_context",
+          "visual_subject": "D2C / Productの第一印象を伝える場面",
+          "business_purpose": "何の事業かを一瞬で理解させる",
+          "replacement_target": "同じ役割の実事業写真",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "mid",
+          "proof_intent": "visual_context_only",
+          "placement": "hero_dominant_image"
+        },
+        {
+          "photo_role": "mid_experience",
+          "visual_subject": "D2C / Productを利用する体験の場面",
+          "business_purpose": "中盤で理解と感情を補強する",
+          "replacement_target": "同じ役割の実体験写真",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "mid",
+          "proof_intent": "experience_context_only",
+          "placement": "mid_frame_proof_experience"
+        },
+        {
+          "photo_role": "craft_detail",
+          "visual_subject": "手元・素材・道具などの細部",
+          "business_purpose": "仕事の具体性を伝える",
+          "replacement_target": "実作業・実商品ディテール",
+          "preferred_orientation": "portrait",
+          "crop_tolerance": "tight",
+          "people_distance": "close",
+          "proof_intent": "craft_context_only",
+          "placement": "craft_detail_image",
+          "secondary_placement": "quiet_chapter_image"
+        },
+        {
+          "photo_role": "trust_human",
+          "visual_subject": "相談・迎え入れ・人の気配",
+          "business_purpose": "CTA前の信頼を補強する",
+          "replacement_target": "実人物・実接客写真",
+          "preferred_orientation": "landscape",
+          "crop_tolerance": "medium",
+          "people_distance": "mid",
+          "proof_intent": "human_context_only",
+          "placement": "quiet_chapter_image"
+        }
+      ],
+      "section_role_map": {
+        "hero_orientation": "hero_context",
+        "company_truth": "mid_experience",
+        "service_process": "craft_detail",
+        "next_step": "trust_human",
+        "cta_zone": "trust_human"
+      }
+    },
+    "asset_selection_policy": {
+      "priority": [
+        "free_stock",
+        "generated",
+        "vector"
+      ],
+      "vector_role": "supporting_only_not_primary_photography"
+    },
+    "vector_role": "supporting_only"
+  },
+  "design_tokens": {
+    "schema_version": "production_generation_v1",
+    "profile_id": "editorial_rail",
+    "colors": {
+      "ink": "#151515",
+      "accent": "#ba5e35",
+      "paper": "#f3efe7",
+      "muted": "#6D6B63",
+      "line": "rgba(32,33,30,.24)"
+    },
+    "typography": {
+      "display": "Arial, \"Helvetica Neue\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", sans-serif",
+      "body": "Arial, \"Helvetica Neue\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", sans-serif",
+      "display_weight": 680,
+      "body_weight": 430
+    },
+    "font_scale": {
+      "eyebrow": "0.72rem",
+      "body": "1rem",
+      "lead": "1.18rem",
+      "h2": "clamp(2rem, 3.6vw, 3.5rem)",
+      "hero": "clamp(3.25rem, 5.2vw, 4rem)",
+      "body_leading": "1.62"
+    },
+    "spacing": {
+      "unit": "8px",
+      "section": "clamp(4.5rem, 8vw, 7rem)",
+      "rail": "min(92vw, 1180px)",
+      "text": "min(90vw, 780px)",
+      "ending": "clamp(4.5rem, 8vw, 6rem)",
+      "mobile_section": "clamp(3rem, 12vw, 4.5rem)",
+      "mobile_padding": "clamp(3rem, 12vw, 4.5rem)"
+    },
+    "radius": {
+      "surface": "3px",
+      "button": "0px",
+      "media": "3px"
+    },
+    "borders": {
+      "hairline": "2px solid var(--line)",
+      "strong": "2px solid var(--ink)",
+      "width": "2px",
+      "edge_width": "2px"
+    },
+    "shadows": {
+      "surface": "6px 8px 0 rgba(158,132,89,.14)"
+    },
+    "container_widths": {
+      "rail": "min(90vw, 1180px)",
+      "text": "min(90vw, 720px)"
+    },
+    "rhythm": {
+      "peak_to_quiet": "1.5",
+      "quiet_to_peak": "1.15",
+      "section_gap": "clamp(4.5rem, 8vw, 7rem)",
+      "cadence": "compact measured"
+    },
+    "grid": "12-column field ledger",
+    "image_framing": {
+      "radius": "3px",
+      "fit": "cover",
+      "profile_behavior": "12-column field ledger",
+      "scene_columns": "minmax(0,.38fr) minmax(0,.62fr)",
+      "copy_surface": "#EFECE4"
+    },
+    "ending": {
+      "variant": "grounded_field_closure",
+      "padding": "clamp(4.5rem, 8vw, 6rem)",
+      "border_width": "2px"
+    },
+    "mobile": {
+      "hero": "clamp(2.25rem, 9vw, 2.75rem)",
+      "h2": "clamp(1.9rem, 8vw, 2.25rem)",
+      "section_gap": "clamp(3rem, 12vw, 4.5rem)",
+      "padding": "clamp(3rem, 12vw, 4.5rem)",
+      "identity": "compact measured"
+    },
+    "motion": {
+      "duration_ms": 520,
+      "easing": "cubic-bezier(.2,.7,.2,1)"
+    }
+  },
+  "compositions": [
+    {
+      "section_id": "opening",
+      "layout_type": "split_rail",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_calibration_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "headline",
+      "mobile_transformation": "headline_first_then_single_action",
+      "screenshot_peak": true,
+      "order": 0,
+      "layout_profile": "editorial_rail",
+      "section_role": "hero_orientation",
+      "photo_role": "hero_context",
+      "photo_placement": "hero_dominant_image",
+      "photo_asset_id": "",
+      "photo_source_type": "",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "truth",
+      "layout_type": "offset_evidence_surface",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_calibration_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "evidence",
+      "mobile_transformation": "stacked_proof_with_short_lines",
+      "screenshot_peak": true,
+      "order": 1,
+      "layout_profile": "editorial_rail",
+      "section_role": "company_truth",
+      "photo_role": "mid_experience",
+      "photo_placement": "mid_frame_proof_experience",
+      "photo_asset_id": "",
+      "photo_source_type": "",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "way_in",
+      "layout_type": "sequence_rail",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_calibration_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "rhythm",
+      "mobile_transformation": "vertical_steps_with_breathing_room",
+      "screenshot_peak": false,
+      "order": 2,
+      "layout_profile": "editorial_rail",
+      "section_role": "service_process",
+      "photo_role": "craft_detail",
+      "photo_placement": "craft_detail_image",
+      "photo_asset_id": "",
+      "photo_source_type": "",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "contact",
+      "layout_type": "contact_strip",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_calibration_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "medium",
+      "emphasis": "channel",
+      "mobile_transformation": "contact_details_before_button",
+      "screenshot_peak": false,
+      "order": 3,
+      "layout_profile": "editorial_rail",
+      "section_role": "next_step",
+      "photo_role": "trust_human",
+      "photo_placement": "quiet_chapter_image",
+      "photo_asset_id": "",
+      "photo_source_type": "",
+      "vector_role": "supporting_only"
+    },
+    {
+      "section_id": "close",
+      "layout_type": "closing_field",
+      "column_logic": "12-column reading rail; one dominant field and one supporting field.",
+      "alignment": "left",
+      "image_role": "generated_calibration_scene",
+      "photo_replacement_role": "same-role-approved-real-image",
+      "text_width": "min(90vw, 720px)",
+      "whitespace": "large",
+      "emphasis": "action",
+      "mobile_transformation": "sticky_safe_spacing_and_full_width_touch_target",
+      "screenshot_peak": true,
+      "order": 4,
+      "layout_profile": "editorial_rail",
+      "section_role": "cta_zone",
+      "photo_role": "trust_human",
+      "photo_placement": "pre_cta_trust_image",
+      "photo_asset_id": "",
+      "photo_source_type": "",
+      "vector_role": "supporting_only"
+    }
+  ],
+  "motion_spec": {
+    "kind": "section_reveal",
+    "duration_ms": 520,
+    "easing": "cubic-bezier(.2,.7,.2,1)",
+    "reduced_motion": "no_transform"
+  },
+  "approved_evidence_ids": [],
+  "production_output_status": "PRODUCTION_APPROVED",
+  "approved_evidence": [],
+  "photo_role_map": {
+    "schema_version": "photo_role_map_v1",
+    "selection_mode": "role_driven_not_fixed_count",
+    "roles": [
+      {
+        "photo_role": "hero_context",
+        "visual_subject": "D2C / Productの第一印象を伝える場面",
+        "business_purpose": "何の事業かを一瞬で理解させる",
+        "replacement_target": "同じ役割の実事業写真",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "visual_context_only",
+        "placement": "hero_dominant_image"
+      },
+      {
+        "photo_role": "mid_experience",
+        "visual_subject": "D2C / Productを利用する体験の場面",
+        "business_purpose": "中盤で理解と感情を補強する",
+        "replacement_target": "同じ役割の実体験写真",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "experience_context_only",
+        "placement": "mid_frame_proof_experience"
+      },
+      {
+        "photo_role": "craft_detail",
+        "visual_subject": "手元・素材・道具などの細部",
+        "business_purpose": "仕事の具体性を伝える",
+        "replacement_target": "実作業・実商品ディテール",
+        "preferred_orientation": "portrait",
+        "crop_tolerance": "tight",
+        "people_distance": "close",
+        "proof_intent": "craft_context_only",
+        "placement": "craft_detail_image",
+        "secondary_placement": "quiet_chapter_image"
+      },
+      {
+        "photo_role": "trust_human",
+        "visual_subject": "相談・迎え入れ・人の気配",
+        "business_purpose": "CTA前の信頼を補強する",
+        "replacement_target": "実人物・実接客写真",
+        "preferred_orientation": "landscape",
+        "crop_tolerance": "medium",
+        "people_distance": "mid",
+        "proof_intent": "human_context_only",
+        "placement": "quiet_chapter_image"
+      }
+    ],
+    "section_role_map": {
+      "hero_orientation": "hero_context",
+      "company_truth": "mid_experience",
+      "service_process": "craft_detail",
+      "next_step": "trust_human",
+      "cta_zone": "trust_human"
+    }
+  },
+  "asset_manifest": {
+    "schema_version": "photography_asset_manifest_v1",
+    "source_priority": [
+      "free_stock",
+      "generated",
+      "vector"
+    ],
+    "vector_policy": "supporting_only_not_primary_photography",
+    "assets": [],
+    "pending_roles": [
+      "hero_context",
+      "mid_experience",
+      "craft_detail",
+      "trust_human"
+    ]
+  },
+  "premium_scene_plan": {
+    "schema_version": "premium_scene_plan_v1",
+    "company": {
+      "company_id": "d2c-product",
+      "company_name": "D2C / Product 検証用"
+    },
+    "derivation_trace": {
+      "inputs": [
+        "Creative Genome",
+        "Narrative Architecture",
+        "Company Truth",
+        "Evidence",
+        "Photography Roles"
+      ],
+      "deterministic": true
+    },
+    "company_signature": [
+      {
+        "anchor": "Place",
+        "value": "検証用",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Process",
+        "value": "D2C / Product",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Philosophy",
+        "value": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      },
+      {
+        "anchor": "Audience tension",
+        "value": "内容と手順を確認したい",
+        "channels": [
+          "Copy Lexicon",
+          "Composition",
+          "Photography"
+        ]
+      }
+    ],
+    "scene_plan": [
+      {
+        "scene_id": "scene-01-notice",
+        "narrative_index": 0,
+        "narrative_state": "notice",
+        "entry_emotion": "curious",
+        "exit_emotion": "attentive",
+        "user_question": "いま知りたいことは何か",
+        "narrative_function": "ESTABLISH_CONTEXT",
+        "state_delta": {
+          "before": "いま知りたいことは何か",
+          "after": "attentiveへ進める"
+        },
+        "evidence_mode": "non_claim_expression",
+        "evidence_ids": [],
+        "visual_authority": "TYPE",
+        "focal_entity": "typography",
+        "expected_media": true,
+        "dominance_level": "standard",
+        "copy_intent": "ORIENT",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "editorial_split",
+          "topology": "layered",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "standard",
+          "type_scale": "editorial",
+          "spatial_relation": "overlap",
+          "asymmetry": "high",
+          "negative_space": "central",
+          "sequencing": "progressive",
+          "contrast_mode": "scale",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "discovery",
+        "photo_crop": "",
+        "desktop_art_direction": {
+          "topology": "layered",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "noticeをESTABLISH_CONTEXTへ翻訳"
+      },
+      {
+        "scene_id": "scene-02-understand",
+        "narrative_index": 1,
+        "narrative_state": "understand",
+        "entry_emotion": "attentive",
+        "exit_emotion": "assured",
+        "user_question": "何を知れば判断できるか",
+        "narrative_function": "REDUCE_UNCERTAINTY",
+        "state_delta": {
+          "before": "何を知れば判断できるか",
+          "after": "assuredへ進める"
+        },
+        "evidence_mode": "non_claim_expression",
+        "evidence_ids": [],
+        "visual_authority": "TYPE",
+        "focal_entity": "typography",
+        "expected_media": true,
+        "dominance_level": "standard",
+        "copy_intent": "GUIDE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "progressive_story",
+          "topology": "layered",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "standard",
+          "type_scale": "editorial",
+          "spatial_relation": "overlap",
+          "asymmetry": "high",
+          "negative_space": "central",
+          "sequencing": "progressive",
+          "contrast_mode": "scale",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "discovery",
+        "photo_crop": "",
+        "desktop_art_direction": {
+          "topology": "layered",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "understandをREDUCE_UNCERTAINTYへ翻訳"
+      },
+      {
+        "scene_id": "scene-03-trust",
+        "narrative_index": 2,
+        "narrative_state": "trust",
+        "entry_emotion": "assured",
+        "exit_emotion": "certain",
+        "user_question": "なぜここに相談するのか",
+        "narrative_function": "BUILD_TRUST",
+        "state_delta": {
+          "before": "なぜここに相談するのか",
+          "after": "certainへ進める"
+        },
+        "evidence_mode": "non_claim_expression",
+        "evidence_ids": [],
+        "visual_authority": "PERSON",
+        "focal_entity": "typography",
+        "expected_media": true,
+        "dominance_level": "dominant",
+        "copy_intent": "GUIDE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "human_dialogue",
+          "topology": "split",
+          "dominant_authority": "PERSON",
+          "focal_count": 2,
+          "media_scale": "dominant",
+          "type_scale": "editorial",
+          "spatial_relation": "floating",
+          "asymmetry": "medium",
+          "negative_space": "directional",
+          "sequencing": "simultaneous",
+          "contrast_mode": "chromatic",
+          "transition": "reveal"
+        },
+        "transition_in": "reveal",
+        "transition_out": "reveal",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "reassurance",
+        "photo_crop": "",
+        "desktop_art_direction": {
+          "topology": "split",
+          "focal_point": "center",
+          "media_scale": "dominant"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "directional",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "trustをBUILD_TRUSTへ翻訳"
+      },
+      {
+        "scene_id": "scene-04-choose",
+        "narrative_index": 3,
+        "narrative_state": "choose",
+        "entry_emotion": "certain",
+        "exit_emotion": "ready",
+        "user_question": "自分の次をどう選ぶか",
+        "narrative_function": "SHOW_PROCESS",
+        "state_delta": {
+          "before": "自分の次をどう選ぶか",
+          "after": "readyへ進める"
+        },
+        "evidence_mode": "non_claim_expression",
+        "evidence_ids": [],
+        "visual_authority": "TYPE",
+        "focal_entity": "typography",
+        "expected_media": true,
+        "dominance_level": "standard",
+        "copy_intent": "PROVE",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "asymmetric_editorial",
+          "topology": "layered",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "standard",
+          "type_scale": "editorial",
+          "spatial_relation": "overlap",
+          "asymmetry": "high",
+          "negative_space": "central",
+          "sequencing": "progressive",
+          "contrast_mode": "scale",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "reassurance",
+        "photo_crop": "",
+        "desktop_art_direction": {
+          "topology": "layered",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "deferred",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "chooseをSHOW_PROCESSへ翻訳"
+      },
+      {
+        "scene_id": "scene-05-act",
+        "narrative_index": 4,
+        "narrative_state": "act",
+        "entry_emotion": "ready",
+        "exit_emotion": "ready",
+        "user_question": "どこから始めるか",
+        "narrative_function": "ENABLE_ACTION",
+        "state_delta": {
+          "before": "どこから始めるか",
+          "after": "readyへ進める"
+        },
+        "evidence_mode": "non_claim_expression",
+        "evidence_ids": [],
+        "visual_authority": "TYPOGRAPHY",
+        "focal_entity": "typography",
+        "expected_media": false,
+        "dominance_level": "display",
+        "copy_intent": "CONVERT",
+        "copy_density": "medium",
+        "visual_grammar": {
+          "name": "editorial_split",
+          "topology": "layered",
+          "dominant_authority": "TYPE",
+          "focal_count": 2,
+          "media_scale": "none",
+          "type_scale": "display",
+          "spatial_relation": "overlap",
+          "asymmetry": "high",
+          "negative_space": "central",
+          "sequencing": "progressive",
+          "contrast_mode": "scale",
+          "transition": "dissolve"
+        },
+        "transition_in": "dissolve",
+        "transition_out": "dissolve",
+        "peak_role": "unranked",
+        "peak_candidate_reason": "ranked later from multi-axis candidate evaluation",
+        "cta_stage": "action",
+        "photo_crop": "",
+        "desktop_art_direction": {
+          "topology": "layered",
+          "focal_point": "center",
+          "media_scale": "standard"
+        },
+        "mobile_art_direction": {
+          "crop_strategy": "preserve_focal_entity",
+          "focal_point": "center",
+          "content_order": "copy_then_media",
+          "type_ratio": "0.8",
+          "whitespace": "central",
+          "supporting_content_compression": "moderate",
+          "CTA_timing": "after_scene",
+          "transform_mode": "RECOMPOSE"
+        },
+        "reuse_constraints": {
+          "same_role_only": true,
+          "no_cross_company": true
+        },
+        "creative_reason": "actをENABLE_ACTIONへ翻訳"
+      }
+    ],
+    "copy_plan": {
+      "claim_eligibility": [],
+      "omit_unverified": true
+    },
+    "device_plan": {
+      "desktop": "scene-specific foundation",
+      "mobile": "scene-specific foundation"
+    },
+    "reuse_plan": {
+      "policy": "same_role_only"
+    },
+    "qa_expectations": {
+      "gates": [
+        "narrative_order",
+        "state_delta",
+        "grammar_delta",
+        "authority_realization",
+        "claim_trace",
+        "cta_contract"
+      ]
+    },
+    "qa_gates": {
+      "narrative_scene_order_gate": "PASS",
+      "scene_state_delta_gate": "PASS",
+      "rendered_grammar_delta_gate": "PASS",
+      "consecutive_topology_repetition_gate": "PASS",
+      "visual_authority_realization_gate": "PASS",
+      "claim_traceability_gate": "PASS"
+    },
+    "human_translation_ref": "premium_human_translation_v1"
+  },
+  "premium_human_translation": {
+    "schema_version": "premium_human_translation_v1",
+    "signature_anchors": [
+      {
+        "anchor_id": "anchor-01-place",
+        "anchor_type": "PLACE",
+        "classification": "PLACE_FACT",
+        "primary": false,
+        "value": "検証用",
+        "source": "location",
+        "evidence_ids": [],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "the customer needs a reachable context",
+        "source_evidence": []
+      },
+      {
+        "anchor_id": "anchor-02-service",
+        "anchor_type": "SERVICE",
+        "classification": "SERVICE_FACT",
+        "primary": false,
+        "value": "D2C / Product",
+        "source": "service_category",
+        "evidence_ids": [],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "the customer needs to recognize the activity",
+        "source_evidence": []
+      },
+      {
+        "anchor_id": "anchor-03-truth",
+        "anchor_type": "TRUTH",
+        "classification": "COMPANY_SIGNATURE",
+        "primary": true,
+        "value": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません",
+        "source": "company_truth",
+        "evidence_ids": [],
+        "strength": 2,
+        "expression_channels": [
+          "COPY",
+          "VISUAL",
+          "PHOTOGRAPHY",
+          "PEAK",
+          "CTA"
+        ],
+        "generic_customer_state": false,
+        "creative_reason": "company truth must remain the source of meaning",
+        "source_evidence": []
+      }
+    ],
+    "copy_translation": {
+      "schema_version": "premium_copy_translation_ir_v1",
+      "expression_modes": [
+        "DIRECT_VALUE",
+        "CONCRETE_SCENE",
+        "PROCESS_MEANING",
+        "REASSURANCE",
+        "INVITATION",
+        "FACT_STRIP",
+        "OMISSION"
+      ],
+      "signature_anchor_ids": [
+        "anchor-01-place",
+        "anchor-02-service",
+        "anchor-03-truth"
+      ],
+      "scenes": [
+        {
+          "scene_id": "scene-01-notice",
+          "narrative_index": 0,
+          "truth_atoms": [],
+          "customer_relevance": "内容と手順を確認したい",
+          "tension": "選択肢の違いを把握したい",
+          "desired_after_state": "カテゴリー比較から確認したい商品群の選択へ",
+          "specificity": [
+            "D2C / Product",
+            "検証用",
+            "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません"
+          ],
+          "signature_anchor_ids": [],
+          "implication_type": "ORIENT",
+          "expression_mode": "DIRECT_VALUE",
+          "visual_dependency": "TYPE",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "notice｜D2C / Product",
+            "body": "検証用の料理教室で、食材と手を動かす時間に出会います。",
+            "microcopy": "検証用｜食卓へつながる風景。"
+          },
+          "definition": {
+            "text": "notice｜D2C / Product検証用の料理教室で、食材と手を動かす時間に出会います。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "ORIENT"
+        },
+        {
+          "scene_id": "scene-02-understand",
+          "narrative_index": 1,
+          "truth_atoms": [],
+          "customer_relevance": "内容と手順を確認したい",
+          "tension": "選択肢の違いを把握したい",
+          "desired_after_state": "カテゴリー比較から確認したい商品群の選択へ",
+          "specificity": [
+            "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません"
+          ],
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "TYPE",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "understand",
+            "body": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "understand色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません",
+            "score": 3,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": false,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-03-trust",
+          "narrative_index": 2,
+          "truth_atoms": [],
+          "customer_relevance": "内容と手順を確認したい",
+          "tension": "選択肢の違いを把握したい",
+          "desired_after_state": "カテゴリー比較から確認したい商品群の選択へ",
+          "specificity": [
+            "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません"
+          ],
+          "signature_anchor_ids": [],
+          "implication_type": "GUIDE",
+          "expression_mode": "REASSURANCE",
+          "visual_dependency": "PERSON",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "trust",
+            "body": "料理教室で食材を選び、料理の流れを一緒に学びます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "trust料理教室で食材を選び、料理の流れを一緒に学びます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "GUIDE"
+        },
+        {
+          "scene_id": "scene-04-choose",
+          "narrative_index": 3,
+          "truth_atoms": [],
+          "customer_relevance": "内容と手順を確認したい",
+          "tension": "選択肢の違いを把握したい",
+          "desired_after_state": "カテゴリー比較から確認したい商品群の選択へ",
+          "specificity": [
+            "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません"
+          ],
+          "signature_anchor_ids": [],
+          "implication_type": "PROVE",
+          "expression_mode": "PROCESS_MEANING",
+          "visual_dependency": "TYPE",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "choose",
+            "body": "手を動かし、火を入れる順序を確かめます。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "choose手を動かし、火を入れる順序を確かめます。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "PROVE"
+        },
+        {
+          "scene_id": "scene-05-act",
+          "narrative_index": 4,
+          "truth_atoms": [],
+          "customer_relevance": "内容と手順を確認したい",
+          "tension": "選択肢の違いを把握したい",
+          "desired_after_state": "カテゴリー比較から確認したい商品群の選択へ",
+          "specificity": [
+            "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません"
+          ],
+          "signature_anchor_ids": [],
+          "implication_type": "CONVERT",
+          "expression_mode": "INVITATION",
+          "visual_dependency": "TYPOGRAPHY",
+          "claim_trace_ids": [],
+          "outputs": {
+            "headline": "act",
+            "body": "できあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+            "microcopy": ""
+          },
+          "definition": {
+            "text": "actできあがる一皿を囲む時間へ、参加の一歩を踏み出します。",
+            "score": 2,
+            "generic_predicate": false,
+            "anchor_present": true,
+            "concrete_noun": true,
+            "customer_relevance": false,
+            "state_action": false,
+            "status": "PASS"
+          },
+          "copy_intent": "CONVERT"
+        }
+      ]
+    },
+    "cta_closure": {
+      "schema_version": "cta_action_closure_ir_v1",
+      "status": "PASS",
+      "closures": [
+        {
+          "cta_id": "cta-discovery",
+          "stage": "discovery",
+          "user_state_before": "選択肢の違いを把握したい",
+          "promise": "まず状況を見渡す",
+          "destination_type": "PAGE_SECTION",
+          "destination_id": "#way-in",
+          "href": "#way-in",
+          "semantic_payload": "入口を見る",
+          "actual_contact_datum_count": 0,
+          "actual_contact_data": [],
+          "verified_action": {
+            "verified": true,
+            "channel": "",
+            "href": "#details",
+            "verified_external_href": ""
+          },
+          "actionability": "ORIENTATION",
+          "fake_action": false,
+          "completion_state": "カテゴリー比較から確認したい商品群の選択へ",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-reassurance",
+          "stage": "reassurance",
+          "user_state_before": "選択肢の違いを把握したい",
+          "promise": "会社固有の範囲を確かめる",
+          "destination_type": "PROCESS_GUIDE",
+          "destination_id": "#reassurance",
+          "href": "#reassurance",
+          "semantic_payload": "内容を確かめる",
+          "actual_contact_datum_count": 0,
+          "actual_contact_data": [],
+          "verified_action": {
+            "verified": true,
+            "channel": "",
+            "href": "#details",
+            "verified_external_href": ""
+          },
+          "actionability": "ORIENTATION",
+          "fake_action": false,
+          "completion_state": "カテゴリー比較から確認したい商品群の選択へ",
+          "hard_violation": false,
+          "fallback_reason": ""
+        },
+        {
+          "cta_id": "cta-action",
+          "stage": "action",
+          "user_state_before": "選択肢の違いを把握したい",
+          "promise": "inquiryの確認へ進む",
+          "destination_type": "INFORMATIONAL_ONLY",
+          "destination_id": "#contact",
+          "href": "#contact",
+          "semantic_payload": "",
+          "actual_contact_datum_count": 0,
+          "actual_contact_data": [],
+          "verified_action": {
+            "verified": false,
+            "channel": "",
+            "href": "#details",
+            "verified_external_href": ""
+          },
+          "actionability": "QUIET_CONVERSION_END",
+          "fake_action": false,
+          "completion_state": "カテゴリー比較から確認したい商品群の選択へ",
+          "hard_violation": false,
+          "fallback_reason": "verified contact datum unavailable; quiet conversion end"
+        }
+      ],
+      "hard_violations": []
+    },
+    "photo_binding": {
+      "schema_version": "photography_causal_binding_v1",
+      "selection": "scene_demand_x_asset_profile",
+      "bindings": [
+        {
+          "scene_id": "scene-01-notice",
+          "photo_role": "typography",
+          "temporal_stage": "arrival",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        },
+        {
+          "scene_id": "scene-02-understand",
+          "photo_role": "typography",
+          "temporal_stage": "orientation",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        },
+        {
+          "scene_id": "scene-03-trust",
+          "photo_role": "typography",
+          "temporal_stage": "understanding",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        },
+        {
+          "scene_id": "scene-04-choose",
+          "photo_role": "typography",
+          "temporal_stage": "practice",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        },
+        {
+          "scene_id": "scene-05-act",
+          "photo_role": "typography",
+          "temporal_stage": "reassurance",
+          "compatibility_score": 1.0,
+          "status": "PASS",
+          "reason": "typography-led closure"
+        }
+      ],
+      "temporal_inversion_count": 0,
+      "semantic_mismatch_count": 0
+    },
+    "art_direction_token_profile": {
+      "type_voice": "measured",
+      "surface_language": "working_surface",
+      "edge_language": "datum",
+      "image_behavior": "inspect",
+      "spatial_language": "rail_then_offset",
+      "cta_language": "measured_invitation",
+      "decorative_grammar": "registration",
+      "rhythm_character": "inspect_then_release",
+      "motion_character": "trace_the_work",
+      "schema_version": "art_direction_token_profile_v2",
+      "profile_id": "editorial_rail",
+      "signature_anchors": [
+        "anchor-01-place",
+        "anchor-02-service",
+        "anchor-03-truth"
+      ],
+      "creative_reason": "bounded tokens derived from narrative profile and signature anchors",
+      "derivation": {
+        "layout_profile": "editorial_rail",
+        "anchor_types": [
+          "PLACE",
+          "SERVICE",
+          "TRUTH"
+        ],
+        "slug_dependency": false
+      }
+    },
+    "peak_candidates": {
+      "schema_version": "human_peak_candidates_v1",
+      "selection": "rendered_candidate_ranking",
+      "status": "FAIL",
+      "candidates": [
+        {
+          "peak_id": "peak-01-notice",
+          "scene_id": "scene-01-notice",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 0,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 1,
+            "visual_concentration": 1
+          },
+          "total": 7,
+          "eligible": false,
+          "forced_quiet_end": false,
+          "archetype": "evidence-led",
+          "signature_anchor_ids": [],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-02-understand",
+          "scene_id": "scene-02-understand",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 2,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 1,
+            "screenshot_independence": 1,
+            "visual_concentration": 1
+          },
+          "total": 9,
+          "eligible": false,
+          "forced_quiet_end": false,
+          "archetype": "evidence-led",
+          "signature_anchor_ids": [
+            "anchor-03-truth"
+          ],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-03-trust",
+          "scene_id": "scene-03-trust",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 0,
+            "content_payload": 1,
+            "perceptual_delta": 2,
+            "narrative_significance": 1,
+            "screenshot_independence": 1,
+            "visual_concentration": 2
+          },
+          "total": 9,
+          "eligible": false,
+          "forced_quiet_end": false,
+          "archetype": "evidence-led",
+          "signature_anchor_ids": [],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-04-choose",
+          "scene_id": "scene-04-choose",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 0,
+            "content_payload": 1,
+            "perceptual_delta": 2,
+            "narrative_significance": 2,
+            "screenshot_independence": 1,
+            "visual_concentration": 1
+          },
+          "total": 9,
+          "eligible": false,
+          "forced_quiet_end": false,
+          "archetype": "evidence-led",
+          "signature_anchor_ids": [],
+          "reason": "rendered content candidate ranking"
+        },
+        {
+          "peak_id": "peak-05-act",
+          "scene_id": "scene-05-act",
+          "score": {
+            "idea_clarity": 2,
+            "company_specificity": 0,
+            "content_payload": 1,
+            "perceptual_delta": 1,
+            "narrative_significance": 2,
+            "screenshot_independence": 1,
+            "visual_concentration": 2
+          },
+          "total": 9,
+          "eligible": false,
+          "forced_quiet_end": true,
+          "archetype": "evidence-led",
+          "signature_anchor_ids": [],
+          "reason": "rendered content candidate ranking"
+        }
+      ],
+      "selected": [],
+      "minimum": 2,
+      "maximum": 4
+    },
+    "human_peak_presentation": {
+      "schema_version": "human_peak_presentation_v1",
+      "status": "PASS",
+      "profile_id": "editorial_rail",
+      "selected": [],
+      "selected_count": 0,
+      "expected_count": 0,
+      "machine_peak_scoring_unchanged": true
+    },
+    "cross_modal_consistency": {
+      "status": "PASS",
+      "anchor_channel_count": {
+        "anchor-01-place": 5,
+        "anchor-02-service": 5,
+        "anchor-03-truth": 5
+      },
+      "channels": [
+        "COPY",
+        "CTA",
+        "PEAK",
+        "PHOTOGRAPHY",
+        "VISUAL"
+      ]
+    }
+  },
+  "mechanism_scene_plan": {
+    "schema": "evidence_scene_plan_v1",
+    "profile_id": "d2c-product",
+    "profile_sha256": "dccb82de206980be9228c2c6598fc57421a23aecb17aa9341f2a8037e34f197a",
+    "recipe": {
+      "mechanism_ids": [
+        "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01"
+      ],
+      "edge_ids": [
+        "EXPERIMENT-d2c-product"
+      ],
+      "scope": "ADJACENT_SCENES",
+      "profile_id": "d2c-product",
+      "status": "CONDITIONALLY_ACCEPTED"
+    },
+    "scenes": [
+      {
+        "scene_id": "d2c-product-scene-1",
+        "scene_job": "ENTRY",
+        "source_scene_job": "ENTRY",
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "adapter": "diptych",
+        "grammar": {
+          "composition_primitive": "Two adjacent high-color campaign tiles with different image/copy compositions; equal visual area; global commerce header remains a shallow rail.",
+          "visual_hierarchy": "Campaign words are embedded in art direction at large scale; each tile uses a compact supporting line and separate offer label.",
+          "typography_observation": "Campaign words are embedded in art direction at large scale; each tile uses a compact supporting line and separate offer label.",
+          "media_observation": "Food/product photography is tightly cropped within each tile; visual color fields distinguish the campaigns.",
+          "spatial_rhythm": "Header then paired campaign panel, followed by a lower editorial/news module.",
+          "responsive_recomposition": "Diptych becomes a vertical sequence; each campaign gets a full-width image/copy block; the header compresses to icons.",
+          "implementation_boundary": "DOM: accessible campaign copy and links; independent images/crops per tile; CSS grid to stacked blocks; do not bake essential CTA text into images.",
+          "misuse_constraints": [
+            "Both offers need equal-weight copy and independent destinations.",
+            "Do not make a tiled banner unreadable at 390px; serve mobile-specific crops.",
+            "Dates/prices in campaign copy require current source data."
+          ]
+        },
+        "grammar_sha256": "a8c6b8f671dbb05e78b1d6d0bf731a756f01dbea3844647140bdb75aae8ec321",
+        "content": {
+          "scene_job": "ENTRY",
+          "eyebrow": "暮らしの選択",
+          "headline": "色から選ぶ。道具から選ぶ。",
+          "headline_chunks": [
+            "色から選ぶ。",
+            "道具から選ぶ。"
+          ],
+          "body": "二つの入口から、気になる内容を確認できます。",
+          "routes": [
+            {
+              "label": "色を選ぶ",
+              "destination": "color-guide",
+              "qualifier": "色の違いから考える方"
+            },
+            {
+              "label": "道具を選ぶ",
+              "destination": "tool-guide",
+              "qualifier": "使い方から考える方"
+            }
+          ],
+          "assets": [
+            {
+              "repository_path": "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+              "alt": "色見本のイメージ。検証用画像です。",
+              "owned_fixture": true,
+              "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+              "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+              "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+            },
+            {
+              "repository_path": "assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+              "sha256": "9dffea3851e859aba2179f716ba95d46e34d48e0d9964b79e7c90924582e2ce4",
+              "alt": "道具のイメージ。販売中の商品写真ではありません。",
+              "owned_fixture": true,
+              "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+              "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+              "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+            }
+          ]
+        },
+        "heading_level": 1,
+        "evidence_reference_ids": [
+          "P15-R01"
+        ],
+        "evidence_scene_ids": [
+          "P22-P15-R01-DESKTOP-SCENE-001",
+          "P22-P15-R01-MOBILE-SCENE-001"
+        ],
+        "compatibility_edge_ids": [
+          "EXPERIMENT-d2c-product"
+        ],
+        "responsive": {
+          "desktop": "grammar-specific composition",
+          "mobile": "Diptych becomes a vertical sequence; each campaign gets a full-width image/copy block; the header compresses to icons."
+        },
+        "motion": {
+          "mode": "NONE",
+          "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+          "reduced_motion": "STATIC_EQUIVALENT"
+        },
+        "authority": "PRODUCT",
+        "truth_trace": [
+          "FIXTURE-d2c-product-TRUTH"
+        ]
+      },
+      {
+        "scene_id": "d2c-product-scene-2",
+        "scene_job": "PRODUCT_DISCOVERY",
+        "source_scene_job": "ENTRY",
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "adapter": "index_feature",
+        "grammar": {
+          "composition_primitive": "White canvas; narrow vertical brand list on the left; large campaign image/product panel on the right; small carousel pagination below the feature.",
+          "visual_hierarchy": "Brand names form a compact index; featured campaign statement overlays or sits within the large image; index stays secondary.",
+          "typography_observation": "Brand names form a compact index; featured campaign statement overlays or sits within the large image; index stays secondary.",
+          "media_observation": "Portrait/product campaign dominates the feature panel; brand marks are separate visual entries.",
+          "spatial_rhythm": "Index + feature pairing, then a horizontal brand/service roster.",
+          "responsive_recomposition": "The index relocates above or below the feature as a compact stacked/scrollable group; hero image becomes a portrait panel; navigation compresses.",
+          "implementation_boundary": "DOM: brand index and featured content; brand marks as image/SVG assets with text alternatives; feature as responsive campaign image with accessible equivalent copy.",
+          "misuse_constraints": [
+            "Sub-brand hierarchy and order must follow verified portfolio truth.",
+            "Before/after, efficacy and cosmetic claims require claim-level evidence; none inferred from image.",
+            "Do not present the subject as a customer testimonial without consent/evidence."
+          ]
+        },
+        "grammar_sha256": "2c44c140ca1147d1900e22254e77166543e94a2c61c6841d747e05cc24ccc6a7",
+        "content": {
+          "scene_job": "PRODUCT_DISCOVERY",
+          "eyebrow": "カテゴリーの案内",
+          "headline": "気になる選択肢を、順番に。",
+          "headline_chunks": [
+            "気になる選択肢を、",
+            "順番に。"
+          ],
+          "body": "カテゴリー一覧と紹介画像を、役割を分けて並べています。",
+          "routes": [
+            {
+              "label": "色を選ぶ",
+              "destination": "color-guide",
+              "qualifier": "色の違いから考える方"
+            },
+            {
+              "label": "道具を選ぶ",
+              "destination": "tool-guide",
+              "qualifier": "使い方から考える方"
+            }
+          ],
+          "assets": [
+            {
+              "repository_path": "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+              "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+              "alt": "色見本のイメージ。検証用画像です。",
+              "owned_fixture": true,
+              "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+              "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+              "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+            }
+          ],
+          "notice": "すべて検証用のイメージです。現物・効果・販売条件を示すものではありません。"
+        },
+        "heading_level": 2,
+        "evidence_reference_ids": [
+          "P17-R01"
+        ],
+        "evidence_scene_ids": [
+          "P22-P17-R01-DESKTOP-SCENE-001",
+          "P22-P17-R01-MOBILE-SCENE-001"
+        ],
+        "compatibility_edge_ids": [
+          "EXPERIMENT-d2c-product"
+        ],
+        "responsive": {
+          "desktop": "grammar-specific composition",
+          "mobile": "The index relocates above or below the feature as a compact stacked/scrollable group; hero image becomes a portrait panel; navigation compresses."
+        },
+        "motion": {
+          "mode": "NONE",
+          "reason": "NOT_OBSERVED_STATIC_EVIDENCE",
+          "reduced_motion": "STATIC_EQUIVALENT"
+        },
+        "authority": "PRODUCT",
+        "truth_trace": [
+          "FIXTURE-d2c-product-TRUTH"
+        ]
+      }
+    ],
+    "trace": {
+      "company_truth": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+      "buyer_problem": "選択肢の違いを把握したい",
+      "buyer_state": "カテゴリー比較から確認したい商品群の選択へ",
+      "sales_story": "ENTRY → PRODUCT_DISCOVERY",
+      "creative_profile": {
+        "axes": {
+          "TASTE": 0.85,
+          "PLAY": 0.65,
+          "PRODUCT": 0.95,
+          "PRECISION": 0.5,
+          "DENSITY": 0.4
+        },
+        "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+      },
+      "retrieval": [
+        {
+          "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+          "authority_affinity": 0,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+          "authority_affinity": 0,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+          "authority_affinity": 0.95,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+          "authority_affinity": 0.95,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+          "authority_affinity": 0.85,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+          "authority_affinity": 0.5,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+          "authority_affinity": 0,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+          "authority_affinity": 0.5,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+          "authority_affinity": 0.95,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+          "authority_affinity": 0.5,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        },
+        {
+          "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+          "authority_affinity": 0.95,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": true,
+          "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+        },
+        {
+          "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+          "authority_affinity": 0.95,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": true,
+          "selected": true,
+          "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+        },
+        {
+          "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+          "authority_affinity": 0,
+          "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+          "implemented_adapter": false,
+          "selected": false,
+          "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+        }
+      ],
+      "truth_evidence_ids": [
+        "FIXTURE-d2c-product-TRUTH"
+      ]
+    },
+    "phase2600_allowed": false,
+    "customer_publication_allowed": false
+  }
+}

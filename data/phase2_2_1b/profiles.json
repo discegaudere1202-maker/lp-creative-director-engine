@@ -1,0 +1,1065 @@
+[
+  {
+    "profile_id": "local-trust",
+    "name": "Local Trust Service",
+    "company_truth": "住まいに関する相談と作業手順の案内を持つ、架空の検証用サービスです。",
+    "buyer_problem": "相談先と依頼手順を理解したい",
+    "buyer_state": "情報不足から具体的な相談項目の確認へ",
+    "sales_story": "ENTRY → SERVICE_PRODUCT_EXPLANATION",
+    "creative_profile": {
+      "axes": {
+        "TRUST": 0.9,
+        "WARMTH": 0.8,
+        "PLACE": 0.9,
+        "PRECISION": 0.4,
+        "DENSITY": 0.3
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "truth_evidence_ids": [
+      "FIXTURE-local-trust-TRUTH"
+    ],
+    "truth_status": "AUTHOR_OWNED_TEST_FIXTURE_NOT_REAL_CLIENT",
+    "selected_mechanism_ids": [
+      "CM-VIS-ENVIRONMENTAL-HERO-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+    ],
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0.8,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0.4,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "combination_scope": "ADJACENT_SCENES",
+    "conditions": {
+      "motion_none": true,
+      "truthful_routes": true,
+      "mobile_recompose": true,
+      "semantic_type": true,
+      "owned_assets": true,
+      "separate_scenes": true
+    },
+    "scene_content": [
+      {
+        "scene_job": "ENTRY",
+        "eyebrow": "住まいと暮らし",
+        "headline": "住まいのことから、話を始める。",
+        "headline_chunks": [
+          "住まいのことから、",
+          "話を始める。"
+        ],
+        "body": "何を相談できるか、どのように進むか。順番に確認できる案内です。",
+        "routes": [
+          {
+            "label": "住まいの相談",
+            "destination": "home-consultation",
+            "qualifier": "住まいについて相談したい方"
+          },
+          {
+            "label": "作業の流れ",
+            "destination": "work-process",
+            "qualifier": "依頼前に手順を確認したい方"
+          }
+        ],
+        "assets": [
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/hero_home_finish.png",
+            "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+            "alt": "住宅外観のイメージ。検証用画像であり施工実績ではありません。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          }
+        ],
+        "notice": "住宅画像はイメージです。施工実績や品質の証明ではありません。"
+      },
+      {
+        "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "eyebrow": "相談前の確認",
+        "headline": "依頼の流れを、一つずつ。",
+        "headline_chunks": [
+          "依頼の流れを、",
+          "一つずつ。"
+        ],
+        "body": "相談と作業の案内を分けて、確認したい内容から進めます。",
+        "routes": [
+          {
+            "label": "住まいの相談",
+            "destination": "home-consultation",
+            "qualifier": "住まいについて相談したい方"
+          },
+          {
+            "label": "作業の流れ",
+            "destination": "work-process",
+            "qualifier": "依頼前に手順を確認したい方"
+          }
+        ],
+        "modules": [
+          {
+            "title": "相談内容",
+            "text": "現在気になっている場所を整理します。"
+          },
+          {
+            "title": "進め方",
+            "text": "検証用の案内から、手順を確認できます。"
+          },
+          {
+            "title": "確認事項",
+            "text": "料金や対応範囲は実運用前に確認が必要です。"
+          }
+        ]
+      }
+    ],
+    "motion": "NONE",
+    "phase2600_allowed": false
+  },
+  {
+    "profile_id": "b2b-technical",
+    "name": "B2B Technical / SaaS",
+    "company_truth": "案件一覧と状態フィルターを実装した、所有する検証用アプリです。担当者・管理者の案内を持ちます。",
+    "buyer_problem": "案件の状態と次の作業を把握したい",
+    "buyer_state": "一覧確認から役割別の利用方法理解へ",
+    "sales_story": "ENTRY → CONVERSION_CTA",
+    "creative_profile": {
+      "axes": {
+        "TRUST": 0.7,
+        "TECHNICAL": 0.95,
+        "PRECISION": 0.95,
+        "WARMTH": 0.2,
+        "DENSITY": 0.7
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "truth_evidence_ids": [
+      "FIXTURE-b2b-technical-TRUTH"
+    ],
+    "truth_status": "AUTHOR_OWNED_TEST_FIXTURE_NOT_REAL_CLIENT",
+    "selected_mechanism_ids": [
+      "CM-VIS-PRODUCT-UI-STAGE-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+    ],
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0.2,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "combination_scope": "ADJACENT_SCENES",
+    "conditions": {
+      "motion_none": true,
+      "truthful_routes": true,
+      "mobile_recompose": true,
+      "semantic_type": true,
+      "owned_assets": true,
+      "separate_scenes": true
+    },
+    "scene_content": [
+      {
+        "scene_job": "ENTRY",
+        "eyebrow": "案件の整理",
+        "headline": "次の作業を、同じ画面で。",
+        "headline_chunks": [
+          "次の作業を、",
+          "同じ画面で。"
+        ],
+        "body": "検証用アプリの一覧です。状態で絞り込み、確認待ちの案件を見られます。",
+        "routes": [
+          {
+            "label": "担当者向け",
+            "destination": "team-guide",
+            "qualifier": "日々の案件を整理する方"
+          },
+          {
+            "label": "管理者向け",
+            "destination": "admin-guide",
+            "qualifier": "チームの進捗を確認する方"
+          }
+        ],
+        "ui_rows": [
+          {
+            "name": "案件A",
+            "state": "確認待ち",
+            "next": "内容確認"
+          },
+          {
+            "name": "案件B",
+            "state": "作業中",
+            "next": "手順確認"
+          },
+          {
+            "name": "案件C",
+            "state": "確認待ち",
+            "next": "担当確認"
+          }
+        ]
+      },
+      {
+        "scene_job": "CONVERSION_CTA",
+        "eyebrow": "役割別の入口",
+        "headline": "立場に合わせて、使い方を見る。",
+        "headline_chunks": [
+          "立場に合わせて、",
+          "使い方を見る。"
+        ],
+        "body": "日々の整理とチーム管理。二つの役割を同じ重さで案内します。",
+        "routes": [
+          {
+            "label": "担当者向け",
+            "destination": "team-guide",
+            "qualifier": "日々の案件を整理する方"
+          },
+          {
+            "label": "管理者向け",
+            "destination": "admin-guide",
+            "qualifier": "チームの進捗を確認する方"
+          }
+        ]
+      }
+    ],
+    "motion": "NONE",
+    "phase2600_allowed": false
+  },
+  {
+    "profile_id": "d2c-product",
+    "name": "D2C / Product",
+    "company_truth": "色と道具の二つのカテゴリーを案内する、架空の商品選択用テストです。価格・効能・在庫は主張しません。",
+    "buyer_problem": "選択肢の違いを把握したい",
+    "buyer_state": "カテゴリー比較から確認したい商品群の選択へ",
+    "sales_story": "ENTRY → PRODUCT_DISCOVERY",
+    "creative_profile": {
+      "axes": {
+        "TASTE": 0.85,
+        "PLAY": 0.65,
+        "PRODUCT": 0.95,
+        "PRECISION": 0.5,
+        "DENSITY": 0.4
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "truth_evidence_ids": [
+      "FIXTURE-d2c-product-TRUTH"
+    ],
+    "truth_status": "AUTHOR_OWNED_TEST_FIXTURE_NOT_REAL_CLIENT",
+    "selected_mechanism_ids": [
+      "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+      "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01"
+    ],
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0.85,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0.5,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0.5,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0.5,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "combination_scope": "ADJACENT_SCENES",
+    "conditions": {
+      "motion_none": true,
+      "truthful_routes": true,
+      "mobile_recompose": true,
+      "semantic_type": true,
+      "owned_assets": true,
+      "separate_scenes": true
+    },
+    "scene_content": [
+      {
+        "scene_job": "ENTRY",
+        "eyebrow": "暮らしの選択",
+        "headline": "色から選ぶ。道具から選ぶ。",
+        "headline_chunks": [
+          "色から選ぶ。",
+          "道具から選ぶ。"
+        ],
+        "body": "二つの入口から、気になる内容を確認できます。",
+        "routes": [
+          {
+            "label": "色を選ぶ",
+            "destination": "color-guide",
+            "qualifier": "色の違いから考える方"
+          },
+          {
+            "label": "道具を選ぶ",
+            "destination": "tool-guide",
+            "qualifier": "使い方から考える方"
+          }
+        ],
+        "assets": [
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+            "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+            "alt": "色見本のイメージ。検証用画像です。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          },
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/round2e/a15_paint_tools_tray.jpg",
+            "sha256": "9dffea3851e859aba2179f716ba95d46e34d48e0d9964b79e7c90924582e2ce4",
+            "alt": "道具のイメージ。販売中の商品写真ではありません。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          }
+        ]
+      },
+      {
+        "scene_job": "PRODUCT_DISCOVERY",
+        "eyebrow": "カテゴリーの案内",
+        "headline": "気になる選択肢を、順番に。",
+        "headline_chunks": [
+          "気になる選択肢を、",
+          "順番に。"
+        ],
+        "body": "カテゴリー一覧と紹介画像を、役割を分けて並べています。",
+        "routes": [
+          {
+            "label": "色を選ぶ",
+            "destination": "color-guide",
+            "qualifier": "色の違いから考える方"
+          },
+          {
+            "label": "道具を選ぶ",
+            "destination": "tool-guide",
+            "qualifier": "使い方から考える方"
+          }
+        ],
+        "assets": [
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/round2e/a13_paint_color_fan.jpg",
+            "sha256": "1c18cf22b85adef2b92c67facc18f55c6db68a3084ac5aff1899806807c7c194",
+            "alt": "色見本のイメージ。検証用画像です。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          }
+        ],
+        "notice": "すべて検証用のイメージです。現物・効果・販売条件を示すものではありません。"
+      }
+    ],
+    "motion": "NONE",
+    "phase2600_allowed": false
+  },
+  {
+    "profile_id": "premium-place",
+    "name": "Premium / Place",
+    "company_truth": "静かな空間の紹介から訪問案内へ進む、架空の空間サービス検証です。画像はイメージです。",
+    "buyer_problem": "空間の雰囲気と利用方法を知りたい",
+    "buyer_state": "雰囲気の理解から利用情報の確認へ",
+    "sales_story": "ENTRY → SERVICE_PRODUCT_EXPLANATION",
+    "creative_profile": {
+      "axes": {
+        "PREMIUM": 0.95,
+        "PLACE": 0.95,
+        "EDITORIAL": 0.9,
+        "PLAY": 0.1,
+        "DENSITY": 0.2
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "truth_evidence_ids": [
+      "FIXTURE-premium-place-TRUTH"
+    ],
+    "truth_status": "AUTHOR_OWNED_TEST_FIXTURE_NOT_REAL_CLIENT",
+    "selected_mechanism_ids": [
+      "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01"
+    ],
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0.95,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0.1,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "combination_scope": "ADJACENT_SCENES",
+    "conditions": {
+      "motion_none": true,
+      "truthful_routes": true,
+      "mobile_recompose": true,
+      "semantic_type": true,
+      "owned_assets": true,
+      "separate_scenes": true
+    },
+    "scene_content": [
+      {
+        "scene_job": "ENTRY",
+        "eyebrow": "静かな時間",
+        "headline": "空間から、時間を選ぶ。",
+        "headline_chunks": [
+          "空間から、",
+          "時間を選ぶ。"
+        ],
+        "body": "まず雰囲気を確かめ、訪問の案内へ進めます。空間写真は検証用イメージです。",
+        "routes": [
+          {
+            "label": "空間を見る",
+            "destination": "space-guide",
+            "qualifier": "雰囲気を確かめたい方"
+          },
+          {
+            "label": "訪問を考える",
+            "destination": "visit-guide",
+            "qualifier": "利用の手順を確認したい方"
+          }
+        ],
+        "assets": [
+          {
+            "repository_path": "assets/photography/generated/maylynn_paint/hero_home_finish.png",
+            "sha256": "774505bf207a5e2359f5c5a480398a1d980c3e471ccf60497436d28f09a12d02",
+            "alt": "住宅と周囲の空間のイメージ。実在施設の紹介ではありません。",
+            "owned_fixture": true,
+            "evidence_role": "ILLUSTRATIVE_TEST_CONTEXT",
+            "rights_basis": "Existing repository generated visual; used solely for owned test fixture, never claimed as actual place/product/customer proof.",
+            "publication_clearance": "NOT_ASSESSED_FOR_ANY_EXTERNAL_CUSTOMER"
+          }
+        ]
+      },
+      {
+        "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "eyebrow": "利用の案内",
+        "headline": "訪れる前に、確認する。",
+        "headline_chunks": [
+          "訪れる前に、",
+          "確認する。"
+        ],
+        "body": "雰囲気と手順の案内を分けて、必要な情報を見つけられます。",
+        "routes": [
+          {
+            "label": "空間を見る",
+            "destination": "space-guide",
+            "qualifier": "雰囲気を確かめたい方"
+          },
+          {
+            "label": "訪問を考える",
+            "destination": "visit-guide",
+            "qualifier": "利用の手順を確認したい方"
+          }
+        ],
+        "modules": [
+          {
+            "title": "空間案内",
+            "text": "紹介画像は実在施設の証明ではありません。"
+          },
+          {
+            "title": "訪問の手順",
+            "text": "検証用の案内で流れを確認できます。"
+          },
+          {
+            "title": "利用条件",
+            "text": "営業日時・料金・予約条件は実運用時に確認が必要です。"
+          }
+        ]
+      }
+    ],
+    "motion": "NONE",
+    "phase2600_allowed": false
+  },
+  {
+    "profile_id": "public-information",
+    "name": "Public / Information-heavy",
+    "company_truth": "初回利用と継続利用の案内、お知らせと手続き情報を持つ、架空の情報提供テストです。",
+    "buyer_problem": "必要な手続きを迷わず探したい",
+    "buyer_state": "情報探索から自身の利用区分の理解へ",
+    "sales_story": "SERVICE_PRODUCT_EXPLANATION → CONVERSION_CTA",
+    "creative_profile": {
+      "axes": {
+        "TRUST": 0.9,
+        "PRECISION": 0.9,
+        "INFORMATION": 0.95,
+        "PLAY": 0.05,
+        "DENSITY": 0.95
+      },
+      "basis": "Buyer decision and service/content role; asset availability is a separate implementation gate."
+    },
+    "truth_evidence_ids": [
+      "FIXTURE-public-information-TRUTH"
+    ],
+    "truth_status": "AUTHOR_OWNED_TEST_FIXTURE_NOT_REAL_CLIENT",
+    "selected_mechanism_ids": [
+      "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+      "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01"
+    ],
+    "retrieval": [
+      {
+        "mechanism_id": "CM-VIS-ENVIRONMENTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CLINICAL-HUMAN-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PRODUCT-UI-STAGE-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-EDITORIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CINEMATIC-DESTINATION-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-PUBLIC-UTILITY-MODULE-GRID-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RENOVATION-PORTAL-HERO-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-FINANCE-RATE-PANEL-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-INDUSTRIAL-PRODUCT-CAROUSEL-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-SaaS-AUDIENCE-PATH-SPLIT-01",
+        "authority_affinity": 0.9,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": true,
+        "selection_reason": "Saved composition has the required media/content role; scoped experiment, no unsupported compatibility verdict."
+      },
+      {
+        "mechanism_id": "CM-VIS-RETAIL-CAMPAIGN-TILE-DIPTYCH-01",
+        "authority_affinity": 0.05,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-BEAUTY-BRAND-INDEX-FEATURE-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": true,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      },
+      {
+        "mechanism_id": "CM-VIS-CULTURE-FULLBLEED-WORK-ENTRY-01",
+        "authority_affinity": 0,
+        "evidence_state": "PROVISIONAL_SINGLE_REFERENCE",
+        "implemented_adapter": false,
+        "selected": false,
+        "selection_reason": "Alternative retained; not selected for this fixture's scene jobs."
+      }
+    ],
+    "combination_scope": "ADJACENT_SCENES",
+    "conditions": {
+      "motion_none": true,
+      "truthful_routes": true,
+      "mobile_recompose": true,
+      "semantic_type": true,
+      "owned_assets": true,
+      "separate_scenes": true
+    },
+    "scene_content": [
+      {
+        "scene_job": "SERVICE_PRODUCT_EXPLANATION",
+        "eyebrow": "利用の情報",
+        "headline": "必要な案内を、見つけやすく。",
+        "headline_chunks": [
+          "必要な案内を、",
+          "見つけやすく。"
+        ],
+        "body": "お知らせと手続きをまとめています。キーワードから案内を絞り込めます。",
+        "routes": [
+          {
+            "label": "初めての利用",
+            "destination": "first-guide",
+            "qualifier": "必要な手続きを知りたい方"
+          },
+          {
+            "label": "継続の利用",
+            "destination": "return-guide",
+            "qualifier": "次の手続きを確認したい方"
+          }
+        ],
+        "modules": [
+          {
+            "title": "初めての方",
+            "text": "初回利用の手順を確認できます。"
+          },
+          {
+            "title": "継続利用の方",
+            "text": "次の手続きについて確認できます。"
+          },
+          {
+            "title": "お知らせ",
+            "text": "検証用データであり、公的制度の情報ではありません。"
+          },
+          {
+            "title": "必要な確認",
+            "text": "実際の制度・期限・申請要件は別途確認が必要です。"
+          }
+        ]
+      },
+      {
+        "scene_job": "CONVERSION_CTA",
+        "eyebrow": "利用区分から探す",
+        "headline": "今の状況に合う入口へ。",
+        "headline_chunks": [
+          "今の状況に合う",
+          "入口へ。"
+        ],
+        "body": "初回と継続の案内を同じ重さで示しています。",
+        "routes": [
+          {
+            "label": "初めての利用",
+            "destination": "first-guide",
+            "qualifier": "必要な手続きを知りたい方"
+          },
+          {
+            "label": "継続の利用",
+            "destination": "return-guide",
+            "qualifier": "次の手続きを確認したい方"
+          }
+        ]
+      }
+    ],
+    "motion": "NONE",
+    "phase2600_allowed": false
+  }
+]

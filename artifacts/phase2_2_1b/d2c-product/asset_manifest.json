@@ -1,0 +1,16 @@
+{
+  "schema_version": "photography_asset_manifest_v1",
+  "source_priority": [
+    "free_stock",
+    "generated",
+    "vector"
+  ],
+  "vector_policy": "supporting_only_not_primary_photography",
+  "assets": [],
+  "pending_roles": [
+    "hero_context",
+    "mid_experience",
+    "craft_detail",
+    "trust_human"
+  ]
+}

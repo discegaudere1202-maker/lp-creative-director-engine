@@ -1,0 +1,45 @@
+{
+  "validator": "PASS",
+  "atomic_mechanism_count": 13,
+  "compatibility_edge_count": 83,
+  "compatibility_states": {
+    "UNKNOWN": 76,
+    "INCOMPATIBLE": 2,
+    "CONDITIONAL": 5
+  },
+  "multi_profile_count": 5,
+  "scene_spec_count": 10,
+  "production_path_executed_profile_count": 5,
+  "desktop_pass": 5,
+  "desktop_fail": 0,
+  "mobile_pass": 5,
+  "mobile_fail": 0,
+  "promotion_count": 0,
+  "evidence_trace_qa": "PASS",
+  "reference_screenshot_required_for_regeneration": false,
+  "actual_customer_output_approved_count": 0,
+  "phase2600_allowed": false,
+  "failure_evidence_count": 17,
+  "failure_evidence_breakdown": {
+    "qa_probe_state_mismatch": 10,
+    "responsive_failure": 2,
+    "media_role_audit": 1,
+    "solver_rejection": 4
+  },
+  "compatible_count": 0,
+  "tests": {
+    "fail_closed": 18,
+    "production_generation_regression": 6,
+    "total_pass": 24
+  },
+  "supported_adapter_count": 7,
+  "unimplemented_provisional_adapter_count": 6,
+  "unresolved_blockers_for_selected_fixtures": [],
+  "general_customer_production_limitations": [
+    "Authored fixtures run through actual production code in test mode, never customer approved.",
+    "Conditional compatibility applies only to exact registered profile/truth/asset digests and ADJACENT_SCENES.",
+    "Other scopes remain UNKNOWN; real-client authority/rights/current UI and business claims require client-specific evidence.",
+    "Motion was not observed in corpus; static rendering only; source-family independence remains UNKNOWN."
+  ],
+  "status": "PHASE_2_2_1_COMPATIBILITY_RENDERABILITY_READY_FOR_PM_REVIEW"
+}
