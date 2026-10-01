@@ -64,7 +64,7 @@ def measure(page):
       const headings=[...document.querySelectorAll('h1,h2,h3')].filter(e=>!concealed(e)).map(e=>{
         const lines=new Map(),walk=document.createTreeWalker(e,NodeFilter.SHOW_TEXT),range=document.createRange();let n;
         while(n=walk.nextNode())for(let i=0;i<n.length;i++){
-          const ch=n.textContent[i];if(/\s/.test(ch))continue;
+          const ch=n.textContent[i];if(/[\r\n\t]/.test(ch))continue;
           range.setStart(n,i);range.setEnd(n,i+1);const r=range.getBoundingClientRect();if(r.width<.1||r.height<.1)continue;
           const key=Math.round(r.top/2)*2;lines.set(key,(lines.get(key)||'')+ch);
         }

@@ -45,7 +45,7 @@ jobs:
       - name: Build fixed mock fixture and verify semantic revision bytes
         run: |
           python -m lp_engine.d2c.engine fixtures/d2c_melt_skin/production_input.json --out artifacts/issue135/dist | tee artifacts/issue135/logs/build.log
-          echo 'ed7aef6a670c58ea0b31864069d0841039e8b51e9e2142a0fd68155f177da527  artifacts/issue135/dist/index.html' | sha256sum -c -
+          echo '8de8c0005623c2b2f40d76cdfa8bf9210c1c837e8724ec26f6187d54125b9ba3  artifacts/issue135/dist/index.html' | sha256sum -c -
           python - <<'PY'
           import hashlib,json,pathlib
           root=pathlib.Path('artifacts/issue135')
@@ -53,6 +53,12 @@ jobs:
           expected='0a88382d292a8304097eca5fcecfb8e13291daa4bac393fda8ea6fcbc8335831'
           assert hashlib.sha256(inp.read_bytes()).hexdigest()==expected
           manifest=json.loads((root/'dist/production_manifest.json').read_text())
+          original_assets={
+              'assets/about.jpg':'8b15c2a0df3ae13c44bf320e367b3bc6e5737d03ff353c44fcf2a2bab443416d',
+              'assets/hero.jpg':'9afd7dafb234f9b6ffed802e7976b6c49fc187e886c2ceedc7cd0fc6969c2a91',
+              'assets/message.jpg':'172d5ec79652bf826eca6d8990a83c6b8e47eb54e984e3afb782bbeba7e64ca5',
+              'assets/product.jpg':'b59bc013bcc2a909056b4629b625c6c91a5be2ccec8eb086df3506610f0c06dd'}
+          assert {asset['path']:asset['sha256'] for asset in manifest['assets']}==original_assets
           for asset in manifest['assets']:
               assert hashlib.sha256((root/'dist'/asset['path']).read_bytes()).hexdigest()==asset['sha256']
           (root/'logs/provenance.json').write_text(json.dumps({'fixture_sha256':expected,'html_sha256':manifest['html_sha256'],
