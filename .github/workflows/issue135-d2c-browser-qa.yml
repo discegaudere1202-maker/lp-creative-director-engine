@@ -1,0 +1,84 @@
+name: Issue 135 D2C browser-only QA
+
+on:
+  push:
+    branches:
+      - task/issue135-browser-visual-diff-20261001
+    paths:
+      - .github/workflows/issue135-d2c-browser-qa.yml
+      - src/lp_engine/d2c/browser_visual_qa.py
+      - src/lp_engine/d2c/visual_diff.py
+      - tests/test_d2c_browser_path.py
+      - tests/test_d2c_visual_diff.py
+      - docs/research/issue135-browser-visual-diff-harness.md
+
+permissions:
+  contents: read
+
+concurrency:
+  group: issue135-d2c-browser-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  browser-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install fixed project and official Chromium
+        run: |
+          python -m pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Unit checks
+        run: |
+          mkdir -p artifacts/issue135/logs
+          python -m unittest discover -s tests -p 'test_d2c_*.py' 2>&1 | tee artifacts/issue135/logs/unit-tests.log
+      - name: Build fixed mock fixture and verify original HTML bytes
+        run: |
+          python -m lp_engine.d2c.engine fixtures/d2c_melt_skin/production_input.json --out artifacts/issue135/dist | tee artifacts/issue135/logs/build.log
+          echo '4c4a5384d518cc7a9a2b14556bdad45959701a5de0f29ebf777683428de5c6ce  artifacts/issue135/dist/index.html' | sha256sum -c -
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('artifacts/issue135')
+          inp=pathlib.Path('fixtures/d2c_melt_skin/production_input.json')
+          expected='b66a282397d892756e65a8d198e6eec639cbd8fb3396f4ccec0d392ff45bb05d'
+          assert hashlib.sha256(inp.read_bytes()).hexdigest()==expected
+          manifest=json.loads((root/'dist/production_manifest.json').read_text())
+          for asset in manifest['assets']:
+              assert hashlib.sha256((root/'dist'/asset['path']).read_bytes()).hexdigest()==asset['sha256']
+          (root/'logs/provenance.json').write_text(json.dumps({'fixture_sha256':expected,'html_sha256':manifest['html_sha256'],'commit':'${{ github.sha }}'},indent=2))
+          PY
+      - name: Browser-only nine-width measurement
+        id: browser
+        continue-on-error: true
+        run: |
+          python -m lp_engine.d2c.browser_visual_qa \
+            --dist artifacts/issue135/dist \
+            --out artifacts/issue135/evidence 2>&1 | tee artifacts/issue135/logs/browser.log
+      - name: Publish scoped evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue135-d2c-browser-${{ github.run_id }}
+          path: artifacts/issue135/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Enforce measured browser gate after evidence upload
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,pathlib,sys
+          p=pathlib.Path('artifacts/issue135/evidence/browser_qa.json')
+          if not p.is_file():
+              sys.exit('BROWSER_EVIDENCE_MISSING')
+          qa=json.loads(p.read_text())
+          widths=qa.get('width_results',{})
+          measured=[w for w,r in widths.items() if r.get('status')=='MEASURED']
+          print(json.dumps({'browser_gate':qa['browser_gate'],'measured_widths':measured,'visual_diff':qa['visual_diff'],'blockers':qa['blockers']}))
+          if len(measured)!=9 or qa['browser_gate']!='PASS':
+              sys.exit('BROWSER_QA_NOT_PASS')
+          PY
