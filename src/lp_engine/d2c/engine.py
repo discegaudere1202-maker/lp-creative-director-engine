@@ -59,13 +59,17 @@ def validate(data, base):
             if isinstance(value,str) and ('<' in value or '>' in value): finding('HTML_IN_COPY',scene=sid)
             if isinstance(value,str) and re.search(r'(?:^|\n)\s*(?:は|が|を|に|へ|と|で|も|の|て|や|か)\s*(?:\n|$)',value): finding('ISOLATED_PARTICLE',scene=sid)
         if 'semantic_lines' in s:
-            lines=s['semantic_lines']; authored=s.get('title','').split('\n')
-            if (not isinstance(lines,list) or len(lines)!=len(authored)
+            lines=s['semantic_lines']; authored=s.get('title','').replace('\n','')
+            if (not isinstance(lines,list) or not lines
                 or any(not isinstance(line,list) or not line or
                        any(not isinstance(chunk,str) or not chunk or '\n' in chunk for chunk in line)
                        for line in lines)
-                or any(''.join(line)!=original for line,original in zip(lines,authored))):
+                or ''.join(chunk for line in lines for chunk in line)!=authored):
                 finding('SEMANTIC_HEADLINE_COPY_MISMATCH',scene=sid)
+        for join in s.get('semantic_joins',[]):
+            if (not isinstance(join,dict) or not all(isinstance(join.get(k),str) and join[k] for k in ('left','right'))
+                or join['left']+join['right'] not in s.get('title','').replace('\n','')):
+                finding('INVALID_SEMANTIC_JOIN',scene=sid)
         media=s.get('media_slot')
         if media:
             src=media.get('src','')

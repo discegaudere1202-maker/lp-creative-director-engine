@@ -53,7 +53,7 @@ class SemanticHeadlineTest(TestCase):
         for scene in data['scene_spec']:
             if scene['id'] in ORIGINAL_HEADLINES:
                 self.assertEqual(scene['title'], ORIGINAL_HEADLINES[scene['id']])
-                self.assertEqual([''.join(line) for line in scene['semantic_lines']], scene['title'].split('\n'))
+                self.assertEqual(''.join(chunk for line in scene['semantic_lines'] for chunk in line), scene['title'].replace('\n',''))
         with TemporaryDirectory() as directory:
             dist = Path(directory) / 'dist'
             build(FIXTURE, dist)
@@ -62,7 +62,17 @@ class SemanticHeadlineTest(TestCase):
             parsed.feed(html)
             self.assertEqual(parsed.headlines,
                              {scene: title.replace('\n', '') for scene, title in ORIGINAL_HEADLINES.items()})
-            self.assertEqual(html.count('class="headline-chunk"'), 37)
+            self.assertEqual(html.count('class="headline-chunk"'), 35)
+
+    def test_authored_line_breaks_can_move_but_codepoints_cannot(self):
+        data = json.loads(FIXTURE.read_text())
+        for scene in data['scene_spec']:
+            if scene['id'] in ('concept','voice'):
+                self.assertNotEqual([''.join(line) for line in scene['semantic_lines']], scene['title'].split('\n'))
+        self.assertNotIn('SEMANTIC_HEADLINE_COPY_MISMATCH', [f['code'] for f in validate(data, FIXTURE.parent)])
+        scene = next(s for s in data['scene_spec'] if s['id'] == 'voice')
+        scene['semantic_lines'][-1][-1] = scene['semantic_lines'][-1][-1].replace('MELT SKIN', 'MELTSKIN')
+        self.assertIn('SEMANTIC_HEADLINE_COPY_MISMATCH', [f['code'] for f in validate(data, FIXTURE.parent)])
 
     def test_invalid_chunk_must_block_generation(self):
         data = json.loads(FIXTURE.read_text())

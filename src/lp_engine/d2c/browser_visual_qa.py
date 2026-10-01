@@ -21,6 +21,12 @@ def line_break_risks(headings):
     risks=[]
     for heading in headings:
         lines=heading['lines']
+        for join in heading.get('semantic_joins',[]):
+            phrase=join['left']+join['right']
+            if any(join['right'] in line for line in lines) and not any(phrase in line for line in lines):
+                risks.append({'scene':heading['scene'],'tag':heading['tag'],
+                              'heading_index':heading.get('heading_index'),'lines':lines,
+                              'required_phrase':phrase,'reason':'SEMANTIC_JOIN_BROKEN'})
         for index,line in enumerate(lines):
             if re.fullmatch(r'[\u3040-\u30ff\u3400-\u9fff]{1,2}[、。]?',line.strip()):
                 risks.append({'scene':heading['scene'],'tag':heading['tag'],
@@ -61,7 +67,7 @@ def measure(page):
       const textNodes=[...document.querySelectorAll('h1,h2,h3,p,a:not(.cta-solid),button,.cta-solid span')];
       const intentionalHidden=textNodes.filter(concealed).map(e=>({text:e.textContent.trim().slice(0,80),tag:e.tagName}));
       const textClips=textNodes.filter(e=>!concealed(e)).filter(e=>{const r=e.getBoundingClientRect();return e.scrollWidth>e.clientWidth+2||e.scrollHeight>e.clientHeight+2||r.width<1||fullyClipped(e)}).slice(0,30).map(e=>({text:e.textContent.trim().slice(0,80),box:rect(e)}));
-      const headings=[...document.querySelectorAll('h1,h2,h3')].filter(e=>!concealed(e)).map(e=>{
+      const headings=[...document.querySelectorAll('h1,h2,h3')].filter(e=>!concealed(e)).map((e,heading_index)=>{
         const lines=new Map(),walk=document.createTreeWalker(e,NodeFilter.SHOW_TEXT),range=document.createRange();let n;
         while(n=walk.nextNode())for(let i=0;i<n.length;i++){
           const ch=n.textContent[i];if(/[\r\n\t]/.test(ch))continue;
@@ -72,7 +78,8 @@ def measure(page):
         const split_chunks=[...e.querySelectorAll('.headline-chunk')].filter(chunk=>{
           const r=document.createRange();r.selectNodeContents(chunk);return r.getClientRects().length>1;
         }).map(chunk=>chunk.textContent);
-        return {scene:e.closest('section')?.id,tag:e.tagName,lines:visual,split_chunks};
+        return {heading_index,scene:e.closest('section')?.id,tag:e.tagName,lines:visual,split_chunks,
+          semantic_joins:JSON.parse(e.dataset.semanticJoins||'[]')};
       });
       const images=[...document.images].map(e=>({src:e.getAttribute('src'),complete:e.complete,naturalWidth:e.naturalWidth,naturalHeight:e.naturalHeight,box:rect(e)}));
       const links=[...document.querySelectorAll('a[href]')].filter(e=>e.hash&&e.origin===location.origin&&!document.getElementById(decodeURIComponent(e.hash.slice(1)))).map(e=>e.getAttribute('href'));
@@ -227,6 +234,9 @@ def run(dist: Path, reference: Path | None, out: Path, browser_executable: Path 
         actual_server.shutdown();actual_server.server_close()
         if ref_server:ref_server.shutdown();ref_server.server_close()
         (out/'browser_qa.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+        (out/'headline_lines.json').write_text(json.dumps({width:[{'heading_index':h['heading_index'],
+            'scene':h['scene'],'tag':h['tag'],'lines':h['lines']} for h in result.get('actual',{}).get('headings',[])]
+            for width,result in report['width_results'].items()},ensure_ascii=False,indent=2))
         qa_path=dist/'qa_report.json'
         qa=json.loads(qa_path.read_text());qa['browser_gate']=report['browser_gate'];qa['visual_diff']=report['visual_diff'];qa['human_visible_quality']='PENDING_SHUN_REVIEW';qa['browser_evidence']=str(out/'browser_qa.json')
         qa_path.write_text(json.dumps(qa,ensure_ascii=False,indent=2))

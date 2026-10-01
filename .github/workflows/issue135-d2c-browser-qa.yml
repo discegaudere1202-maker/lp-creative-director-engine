@@ -45,12 +45,12 @@ jobs:
       - name: Build fixed mock fixture and verify semantic revision bytes
         run: |
           python -m lp_engine.d2c.engine fixtures/d2c_melt_skin/production_input.json --out artifacts/issue135/dist | tee artifacts/issue135/logs/build.log
-          echo 'f299bc7c041e084e41078dfbfb41ffaa95fa4499373fd0bc714c1ff864bfa9c0  artifacts/issue135/dist/index.html' | sha256sum -c -
+          echo '3990e736ab9908ac07b0d678636d6fcf7cefa13b77aed6ca81d12705f1f1d9cf  artifacts/issue135/dist/index.html' | sha256sum -c -
           python - <<'PY'
           import hashlib,json,pathlib
           root=pathlib.Path('artifacts/issue135')
           inp=pathlib.Path('fixtures/d2c_melt_skin/production_input.json')
-          expected='0a88382d292a8304097eca5fcecfb8e13291daa4bac393fda8ea6fcbc8335831'
+          expected='a1b9cef82e2c802923c4388b23439c9177cda21822cb09cc0ec5e4cfcd2a1a1c1'
           assert hashlib.sha256(inp.read_bytes()).hexdigest()==expected
           manifest=json.loads((root/'dist/production_manifest.json').read_text())
           original_assets={
@@ -62,7 +62,7 @@ jobs:
           for asset in manifest['assets']:
               assert hashlib.sha256((root/'dist'/asset['path']).read_bytes()).hexdigest()==asset['sha256']
           (root/'logs/provenance.json').write_text(json.dumps({'fixture_sha256':expected,'html_sha256':manifest['html_sha256'],
-              'before_html_sha256':'4c4a5384d518cc7a9a2b14556bdad45959701a5de0f29ebf777683428de5c6ce',
+              'before_html_sha256':'f299bc7c041e084e41078dfbfb41ffaa95fa4499373fd0bc714c1ff864bfa9c0',
               'commit':'${{ github.sha }}'},indent=2))
           PY
       - name: Browser-only nine-width measurement
@@ -91,7 +91,8 @@ jobs:
           qa=json.loads(p.read_text())
           widths=qa.get('width_results',{})
           measured=[w for w,r in widths.items() if r.get('status')=='MEASURED']
+          headings={w:len(r.get('actual',{}).get('headings',[])) for w,r in widths.items()}
           print(json.dumps({'browser_gate':qa['browser_gate'],'measured_widths':measured,'visual_diff':qa['visual_diff'],'blockers':qa['blockers']}))
-          if len(measured)!=9 or qa['browser_gate']!='PASS':
+          if len(measured)!=9 or qa['browser_gate']!='PASS' or any(n!=16 for n in headings.values()):
               sys.exit('BROWSER_QA_NOT_PASS')
           PY

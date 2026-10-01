@@ -37,6 +37,16 @@ class BrowserPathTest(TestCase):
         self.assertEqual(line_break_risks([{'scene':'faq','tag':'H2','lines':['知っておきたい','こと。']}])[0]['reason'],
                          'SHORT_ISOLATED_LINE')
 
+    def test_declared_semantic_join_is_checked_against_actual_visual_lines(self):
+        for scene, left, right, bad, good in (
+            ('concept','ものを','見つめる。',['肌が求めるものを','見つめる。'],['肌が求める','ものを見つめる。']),
+            ('voice','SKINを','つくる。',['次のMELT SKINを','つくる。'],['言葉が、次の','MELT SKINをつくる。'])):
+            heading={'scene':scene,'tag':'H2','semantic_joins':[{'left':left,'right':right}],
+                     'split_chunks':[],'lines':bad}
+            self.assertIn('SEMANTIC_JOIN_BROKEN',[r['reason'] for r in line_break_risks([heading])])
+            heading['lines']=good
+            self.assertEqual(line_break_risks([heading]),[])
+
     def test_absent_reference_does_not_prevent_browser_launch_path(self):
         with TemporaryDirectory() as directory:
             root=Path(directory);dist=fixture(root)

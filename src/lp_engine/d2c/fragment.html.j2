@@ -18,7 +18,7 @@
 {% elif s.type == 'editorial_intro' %}
 <section class="section concept" id="{{s.id}}" data-scene-id="{{s.scene_id}}" data-motion-job="{{s.motion_job}}" data-mobile-transform="{{s.mobile_transformation.mode}}" style="{{scene_style(s)}}">{{ boundary_in(s) | safe }}
   <div class="concept-grid">
-    <div><div class="concept-number reveal">{{s.art.number}} / {{s.label}}</div><h2 class="reveal" data-delay="1">{{semantic_headline(s)}}</h2></div>
+    <div><div class="concept-number reveal">{{s.art.number}} / {{s.label}}</div><h2 class="reveal" data-delay="1" data-semantic-joins="{{s.semantic_joins | tojson | forceescape}}">{{semantic_headline(s)}}</h2></div>
     <div class="concept-copy"><p class="reveal">{{s.body}}</p><div class="concept-media reveal" data-delay="1"><img src="{{s.media}}" alt="{{ brand }} concept"></div></div>
   </div>
   
@@ -36,7 +36,7 @@
 {% elif s.type == 'story_quote' %}
 <section class="section story" id="{{s.id}}" data-scene-id="{{s.scene_id}}" data-motion-job="{{s.motion_job}}" data-mobile-transform="{{s.mobile_transformation.mode}}" style="{{scene_style(s)}}">{{ boundary_in(s) | safe }}<div class="story-grid"><div class="story-media reveal" data-parallax=".08"><img src="{{s.media}}" alt="{{ brand }} story"></div><div class="story-copy"><div class="label reveal">{{s.label}}</div><h2 class="reveal" data-delay="1">{{semantic_headline(s)}}</h2><p class="reveal" data-delay="2">{{s.body}}</p><div class="story-quote reveal" data-delay="3">{{s.quote}}</div></div></div></section>
 {% elif s.type == 'voice_cards' %}
-<section class="section voice" id="{{s.id}}" data-scene-id="{{s.scene_id}}" data-motion-job="{{s.motion_job}}" data-mobile-transform="{{s.mobile_transformation.mode}}" style="{{scene_style(s)}}">{{ boundary_in(s) | safe }}<div class="voice-head"><div><div class="label reveal">{{s.label}}</div><h2 class="reveal" data-delay="1">{{semantic_headline(s)}}</h2></div><p class="voice-intro reveal">{{s.intro}}</p></div><div class="voice-list">{% for v in s['items'] %}<article class="voice-item reveal"><blockquote>「{{v.text}}」</blockquote><div class="voice-meta">{{v.meta}}</div></article>{% endfor %}</div></section>
+<section class="section voice" id="{{s.id}}" data-scene-id="{{s.scene_id}}" data-motion-job="{{s.motion_job}}" data-mobile-transform="{{s.mobile_transformation.mode}}" style="{{scene_style(s)}}">{{ boundary_in(s) | safe }}<div class="voice-head"><div><div class="label reveal">{{s.label}}</div><h2 class="reveal" data-delay="1" data-semantic-joins="{{s.semantic_joins | tojson | forceescape}}">{{semantic_headline(s)}}</h2></div><p class="voice-intro reveal">{{s.intro}}</p></div><div class="voice-list">{% for v in s['items'] %}<article class="voice-item reveal"><blockquote>「{{v.text}}」</blockquote><div class="voice-meta">{{v.meta}}</div></article>{% endfor %}</div></section>
 {% elif s.type == 'faq' %}
 <section class="section faq" id="{{s.id}}" data-scene-id="{{s.scene_id}}" data-motion-job="{{s.motion_job}}" data-mobile-transform="{{s.mobile_transformation.mode}}" style="{{scene_style(s)}}">{{ boundary_in(s) | safe }}<div class="faq-grid"><div><div class="label reveal">{{s.label}}</div><h2 class="reveal" data-delay="1">{{semantic_headline(s)}}</h2></div><div class="faq-list reveal">{% for f in s['items'] %}<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>{{f.q}}</span><span>＋</span></button><div class="faq-a"><div><p>{{f.a}}</p></div></div></div>{% endfor %}</div></div></section>
 {% elif s.type == 'final_cta' %}
