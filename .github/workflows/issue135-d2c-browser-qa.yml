@@ -50,7 +50,7 @@ jobs:
           import hashlib,json,pathlib
           root=pathlib.Path('artifacts/issue135')
           inp=pathlib.Path('fixtures/d2c_melt_skin/production_input.json')
-          expected='a1b9cef82e2c802923c4388b23439c9177cda21822cb09cc0ec5e4cfcd2a1a1c1'
+          expected='a1b9cef82e2c802923c4388b23439c9177cda21822cb09cc0ec5e4cfcd2a1a1c'
           assert hashlib.sha256(inp.read_bytes()).hexdigest()==expected
           manifest=json.loads((root/'dist/production_manifest.json').read_text())
           original_assets={
