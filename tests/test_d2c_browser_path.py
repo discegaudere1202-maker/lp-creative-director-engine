@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
-from lp_engine.d2c.browser_visual_qa import first_visible_interactive, run
+from lp_engine.d2c.browser_visual_qa import first_visible_interactive, line_break_risks, run
 
 
 def fixture(root):
@@ -25,6 +25,16 @@ def fake_runtime():
 
 
 class BrowserPathTest(TestCase):
+    def test_intermediate_orphan_and_chunk_split_are_detected(self):
+        headings=[{'scene':'ingredients','tag':'H2','lines':['シンプルだからこ','そ、','ひとつずつ丁寧','に。'],'split_chunks':[]},
+                  {'scene':'story','tag':'H2','lines':['肌に触れる数分','を、','自分へ戻る時間に。'],'split_chunks':[]},
+                  {'scene':'final','tag':'H2','lines':['肌を通して、','自分をもう少し','好きになれる','ように。'],'split_chunks':[]}]
+        risks=line_break_risks(headings)
+        self.assertEqual([(r['scene'],r['line_index'],r['line']) for r in risks],
+                         [('ingredients',1,'そ、'),('ingredients',3,'に。'),('story',1,'を、')])
+        headings[2]['split_chunks']=['好きになれる']
+        self.assertEqual(line_break_risks(headings)[-1]['reason'],'SEMANTIC_CHUNK_SPLIT')
+
     def test_absent_reference_does_not_prevent_browser_launch_path(self):
         with TemporaryDirectory() as directory:
             root=Path(directory);dist=fixture(root)

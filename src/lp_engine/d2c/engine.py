@@ -58,6 +58,14 @@ def validate(data, base):
         for value in s.get('copy_blocks',{}).values():
             if isinstance(value,str) and ('<' in value or '>' in value): finding('HTML_IN_COPY',scene=sid)
             if isinstance(value,str) and re.search(r'(?:^|\n)\s*(?:は|が|を|に|へ|と|で|も|の|て|や|か)\s*(?:\n|$)',value): finding('ISOLATED_PARTICLE',scene=sid)
+        if 'semantic_lines' in s:
+            lines=s['semantic_lines']; authored=s.get('title','').split('\n')
+            if (not isinstance(lines,list) or len(lines)!=len(authored)
+                or any(not isinstance(line,list) or not line or
+                       any(not isinstance(chunk,str) or not chunk or '\n' in chunk for chunk in line)
+                       for line in lines)
+                or any(''.join(line)!=original for line,original in zip(lines,authored))):
+                finding('SEMANTIC_HEADLINE_COPY_MISMATCH',scene=sid)
         media=s.get('media_slot')
         if media:
             src=media.get('src','')

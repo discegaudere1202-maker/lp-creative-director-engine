@@ -324,7 +324,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -350,7 +350,17 @@
       },
       "scene_tokens": {
         "background": "charcoal"
-      }
+      },
+      "semantic_lines": [
+        [
+          "シンプル",
+          "だからこそ、"
+        ],
+        [
+          "ひとつずつ",
+          "丁寧に。"
+        ]
+      ]
     },
     {
       "id": "product",
@@ -405,7 +415,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -437,7 +447,16 @@
       },
       "scene_tokens": {
         "background": "white"
-      }
+      },
+      "semantic_lines": [
+        [
+          "今日の肌に、"
+        ],
+        [
+          "迷わない",
+          "選択を。"
+        ]
+      ]
     },
     {
       "id": "ritual",
@@ -554,7 +573,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -581,7 +600,17 @@
       },
       "scene_tokens": {
         "background": "paper"
-      }
+      },
+      "semantic_lines": [
+        [
+          "肌に触れる",
+          "数分を、"
+        ],
+        [
+          "自分へ戻る",
+          "時間に。"
+        ]
+      ]
     },
     {
       "id": "voice",
@@ -775,7 +804,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -801,7 +830,20 @@
       },
       "scene_tokens": {
         "background": "charcoal"
-      }
+      },
+      "semantic_lines": [
+        [
+          "肌を通して、"
+        ],
+        [
+          "自分を",
+          "もう少し"
+        ],
+        [
+          "好きになれる",
+          "ように。"
+        ]
+      ]
     }
   ],
   "copy": {

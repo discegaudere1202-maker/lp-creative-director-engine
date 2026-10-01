@@ -2,6 +2,8 @@
 /* Scene tokens override the inherited visual grammar without changing other scenes. */
 .section{background:var(--scene-bg);color:var(--scene-ink);isolation:isolate}
 .section h1,.section h2{font-size:var(--heading-size);line-height:var(--heading-leading);letter-spacing:var(--heading-tracking);max-width:var(--heading-width)}
+.headline-line{display:block}
+.headline-chunk{display:inline-block;white-space:nowrap}
 .section img{object-position:var(--media-position,50% 50%)}
 .boundary-in{position:absolute;z-index:2;left:0;right:0;top:calc(-1 * var(--boundary-height,100px) + 1px);height:var(--boundary-height,100px);pointer-events:none}
 .boundary-in svg{width:100%;height:100%;display:block}

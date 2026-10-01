@@ -8,8 +8,13 @@ on:
       - .github/workflows/issue135-d2c-browser-qa.yml
       - src/lp_engine/d2c/browser_visual_qa.py
       - src/lp_engine/d2c/visual_diff.py
+      - src/lp_engine/d2c/engine.py
+      - src/lp_engine/d2c/fragment.html.j2
+      - src/lp_engine/d2c/hardening.css
+      - fixtures/d2c_melt_skin/production_input.json
       - tests/test_d2c_browser_path.py
       - tests/test_d2c_visual_diff.py
+      - tests/test_d2c_semantic_linebreak.py
       - docs/research/issue135-browser-visual-diff-harness.md
 
 permissions:
@@ -37,20 +42,22 @@ jobs:
         run: |
           mkdir -p artifacts/issue135/logs
           python -m unittest discover -s tests -p 'test_d2c_*.py' 2>&1 | tee artifacts/issue135/logs/unit-tests.log
-      - name: Build fixed mock fixture and verify original HTML bytes
+      - name: Build fixed mock fixture and verify semantic revision bytes
         run: |
           python -m lp_engine.d2c.engine fixtures/d2c_melt_skin/production_input.json --out artifacts/issue135/dist | tee artifacts/issue135/logs/build.log
-          echo '4c4a5384d518cc7a9a2b14556bdad45959701a5de0f29ebf777683428de5c6ce  artifacts/issue135/dist/index.html' | sha256sum -c -
+          echo '32fc652ee73ee88c27658bb3d765cdd573b5c111aee834b977c8e4b0ebc9e046  artifacts/issue135/dist/index.html' | sha256sum -c -
           python - <<'PY'
           import hashlib,json,pathlib
           root=pathlib.Path('artifacts/issue135')
           inp=pathlib.Path('fixtures/d2c_melt_skin/production_input.json')
-          expected='b66a282397d892756e65a8d198e6eec639cbd8fb3396f4ccec0d392ff45bb05d'
+          expected='6f4347f1c814c5bd7f4cb06a8322eb6eaa34c3774eca6d2d355b7fad93566436'
           assert hashlib.sha256(inp.read_bytes()).hexdigest()==expected
           manifest=json.loads((root/'dist/production_manifest.json').read_text())
           for asset in manifest['assets']:
               assert hashlib.sha256((root/'dist'/asset['path']).read_bytes()).hexdigest()==asset['sha256']
-          (root/'logs/provenance.json').write_text(json.dumps({'fixture_sha256':expected,'html_sha256':manifest['html_sha256'],'commit':'${{ github.sha }}'},indent=2))
+          (root/'logs/provenance.json').write_text(json.dumps({'fixture_sha256':expected,'html_sha256':manifest['html_sha256'],
+              'before_html_sha256':'4c4a5384d518cc7a9a2b14556bdad45959701a5de0f29ebf777683428de5c6ce',
+              'commit':'${{ github.sha }}'},indent=2))
           PY
       - name: Browser-only nine-width measurement
         id: browser

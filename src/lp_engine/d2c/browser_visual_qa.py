@@ -5,6 +5,7 @@ import argparse
 import functools
 import importlib.metadata
 import json
+import re
 import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -13,6 +14,21 @@ from .visual_diff import compare, sha
 
 WIDTHS = (320, 360, 375, 390, 430, 768, 1024, 1280, 1440)
 HEIGHTS = {390: 844, 1440: 900}
+
+
+def line_break_risks(headings):
+    """Classify every rendered heading line, including intermediate orphan lines."""
+    risks=[]
+    for heading in headings:
+        lines=heading['lines']
+        for index,line in enumerate(lines):
+            if re.fullmatch(r'[\u3040-\u309f][、。]?',line.strip()):
+                risks.append({'scene':heading['scene'],'tag':heading['tag'],
+                              'line_index':index,'line':line,'lines':lines,'reason':'ISOLATED_KANA'})
+        for chunk in heading.get('split_chunks',[]):
+            risks.append({'scene':heading['scene'],'tag':heading['tag'],
+                          'chunk':chunk,'lines':lines,'reason':'SEMANTIC_CHUNK_SPLIT'})
+    return risks
 
 
 def server(directory: Path):
@@ -45,21 +61,24 @@ def measure(page):
       const textNodes=[...document.querySelectorAll('h1,h2,h3,p,a:not(.cta-solid),button,.cta-solid span')];
       const intentionalHidden=textNodes.filter(concealed).map(e=>({text:e.textContent.trim().slice(0,80),tag:e.tagName}));
       const textClips=textNodes.filter(e=>!concealed(e)).filter(e=>{const r=e.getBoundingClientRect();return e.scrollWidth>e.clientWidth+2||e.scrollHeight>e.clientHeight+2||r.width<1||fullyClipped(e)}).slice(0,30).map(e=>({text:e.textContent.trim().slice(0,80),box:rect(e)}));
-      const lineBreakRisks=[...document.querySelectorAll('h1,h2,h3')].filter(e=>!concealed(e)).flatMap(e=>{
+      const headings=[...document.querySelectorAll('h1,h2,h3')].filter(e=>!concealed(e)).map(e=>{
         const lines=new Map(),walk=document.createTreeWalker(e,NodeFilter.SHOW_TEXT),range=document.createRange();let n;
         while(n=walk.nextNode())for(let i=0;i<n.length;i++){
           const ch=n.textContent[i];if(/\s/.test(ch))continue;
           range.setStart(n,i);range.setEnd(n,i+1);const r=range.getBoundingClientRect();if(r.width<.1||r.height<.1)continue;
           const key=Math.round(r.top/2)*2;lines.set(key,(lines.get(key)||'')+ch);
         }
-        const visual=[...lines.entries()].sort((a,b)=>a[0]-b[0]).map(x=>x[1]);const last=visual.at(-1)||'';
-        return /^(?:は|が|を|に|へ|と|で|も|の|や|か|て|に。|を。|で。|が。)$/.test(last)?[{scene:e.closest('section')?.id,tag:e.tagName,last_line:last,lines:visual}]:[];
+        const visual=[...lines.entries()].sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+        const split_chunks=[...e.querySelectorAll('.headline-chunk')].filter(chunk=>{
+          const r=document.createRange();r.selectNodeContents(chunk);return r.getClientRects().length>1;
+        }).map(chunk=>chunk.textContent);
+        return {scene:e.closest('section')?.id,tag:e.tagName,lines:visual,split_chunks};
       });
       const images=[...document.images].map(e=>({src:e.getAttribute('src'),complete:e.complete,naturalWidth:e.naturalWidth,naturalHeight:e.naturalHeight,box:rect(e)}));
       const links=[...document.querySelectorAll('a[href]')].filter(e=>e.hash&&e.origin===location.origin&&!document.getElementById(decodeURIComponent(e.hash.slice(1)))).map(e=>e.getAttribute('href'));
       const overlaps=scenes.slice(1).filter((s,i)=>scenes[i].box.bottom > s.box.y+2).map(s=>s.id);
       const boundaryOwners=scenes.filter(s=>s.boundaryCount>1).map(s=>s.id);
-      return {width:W,scrollWidth:d.scrollWidth,bodyWidth:document.body.scrollWidth,scenes,overlaps,boundaryOwners,overflow,textClips,intentionalHidden,lineBreakRisks,images,brokenAnchors:links,faqButtons:[...document.querySelectorAll('.faq-q')].length,
+      return {width:W,scrollWidth:d.scrollWidth,bodyWidth:document.body.scrollWidth,scenes,overlaps,boundaryOwners,overflow,textClips,intentionalHidden,headings,images,brokenAnchors:links,faqButtons:[...document.querySelectorAll('.faq-q')].length,
         fontStatus:document.fonts.status,animation:getComputedStyle(document.querySelector('.hero-media img')).animationName};
     }""")
 
@@ -93,6 +112,7 @@ def capture(browser, url, width, height, output, *, reduced=True, scenes=False):
         capture_style='.skip-link:not(:focus){visibility:hidden!important}'
         page.screenshot(path=str(output/'full.png'),full_page=True,animations='disabled',style=capture_style)
         metrics=measure(page)
+        metrics['lineBreakRisks']=line_break_risks(metrics['headings'])
         metrics.update({'console_errors':errors,'http_errors':failed,'screenshot_sha256':sha(output/'full.png')})
         faq=page.locator('.faq-q').first
         if faq.count():
