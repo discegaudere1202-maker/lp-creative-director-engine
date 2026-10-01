@@ -51,7 +51,7 @@ class BrowserPathTest(TestCase):
             manager,_,_=fake_runtime()
             def capture(_,__,width,*args,**kwargs):
                 if width==320:raise RuntimeError('synthetic layout capture failure')
-                return {'scrollWidth':width,'overflow':[],'textClips':[],'console_errors':[],
+                return {'scrollWidth':width,'overflow':[],'textClips':[],'lineBreakRisks':[],'console_errors':[],
                         'http_errors':[],'brokenAnchors':[],'overlaps':[],'boundaryOwners':[],
                         'faq_keyboard_expands':True,'navigation_reached_target':True,
                         'images':[],'scenes':[{'id':'hero'}],'animation':'none'}

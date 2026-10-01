@@ -25,11 +25,12 @@ def server(directory: Path):
 
 
 def measure(page):
-    return page.evaluate("""() => {
+    return page.evaluate(r"""() => {
       const d=document.documentElement, W=innerWidth;
       const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom}};
       const hidden=e=>{for(let n=e;n&&n.nodeType===1;n=n.parentElement){const c=getComputedStyle(n);if(n.hidden||c.display==='none'||c.visibility==='hidden'||c.visibility==='collapse')return true}return false};
-      const concealed=e=>hidden(e)||!!(e.closest('.faq-a')&&e.closest('.faq-item:not(.open)'));
+      const concealed=e=>hidden(e)||!!(e.closest('.faq-a')&&e.closest('.faq-item:not(.open)'))||!!(e.matches('.skip-link')&&!e.matches(':focus'));
+      const croppedMedia=e=>e.tagName==='IMG'&&!![...document.querySelectorAll('.hero-media,.concept-media,.product-media,.story-media')].find(p=>p.contains(e)&&['hidden','clip'].includes(getComputedStyle(p).overflowX)&&p.getBoundingClientRect().left>=-1&&p.getBoundingClientRect().right<=W+1);
       const fullyClipped=e=>{
         const r=e.getBoundingClientRect();let left=r.left,right=r.right,top=r.top,bottom=r.bottom;
         for(let n=e.parentElement;n;n=n.parentElement){const c=getComputedStyle(n);
@@ -40,15 +41,25 @@ def measure(page):
         return false;
       };
       const scenes=[...document.querySelectorAll('section.section')].map(e=>({id:e.id,box:rect(e),boundaryCount:e.querySelectorAll('.boundary-in').length}));
-      const overflow=[...document.body.querySelectorAll('*')].filter(e=>{const r=e.getBoundingClientRect();return !hidden(e)&&r.width>0&&(r.right>W+1||r.left< -1)&&!e.closest('.hero-ghost')}).slice(0,30).map(e=>({tag:e.tagName,cls:e.className?.baseVal||e.className,id:e.id,box:rect(e)}));
-      const textNodes=[...document.querySelectorAll('h1,h2,h3,p,a,button')];
+      const overflow=[...document.body.querySelectorAll('*')].filter(e=>{const r=e.getBoundingClientRect();return !hidden(e)&&!croppedMedia(e)&&r.width>0&&(r.right>W+1||r.left< -1)&&!e.closest('.hero-ghost')}).slice(0,30).map(e=>({tag:e.tagName,cls:e.className?.baseVal||e.className,id:e.id,box:rect(e)}));
+      const textNodes=[...document.querySelectorAll('h1,h2,h3,p,a:not(.cta-solid),button,.cta-solid span')];
       const intentionalHidden=textNodes.filter(concealed).map(e=>({text:e.textContent.trim().slice(0,80),tag:e.tagName}));
       const textClips=textNodes.filter(e=>!concealed(e)).filter(e=>{const r=e.getBoundingClientRect();return e.scrollWidth>e.clientWidth+2||e.scrollHeight>e.clientHeight+2||r.width<1||fullyClipped(e)}).slice(0,30).map(e=>({text:e.textContent.trim().slice(0,80),box:rect(e)}));
+      const lineBreakRisks=[...document.querySelectorAll('h1,h2,h3')].filter(e=>!concealed(e)).flatMap(e=>{
+        const lines=new Map(),walk=document.createTreeWalker(e,NodeFilter.SHOW_TEXT),range=document.createRange();let n;
+        while(n=walk.nextNode())for(let i=0;i<n.length;i++){
+          const ch=n.textContent[i];if(/\s/.test(ch))continue;
+          range.setStart(n,i);range.setEnd(n,i+1);const r=range.getBoundingClientRect();if(r.width<.1||r.height<.1)continue;
+          const key=Math.round(r.top/2)*2;lines.set(key,(lines.get(key)||'')+ch);
+        }
+        const visual=[...lines.entries()].sort((a,b)=>a[0]-b[0]).map(x=>x[1]);const last=visual.at(-1)||'';
+        return /^(?:は|が|を|に|へ|と|で|も|の|や|か|て|に。|を。|で。|が。)$/.test(last)?[{scene:e.closest('section')?.id,tag:e.tagName,last_line:last,lines:visual}]:[];
+      });
       const images=[...document.images].map(e=>({src:e.getAttribute('src'),complete:e.complete,naturalWidth:e.naturalWidth,naturalHeight:e.naturalHeight,box:rect(e)}));
       const links=[...document.querySelectorAll('a[href]')].filter(e=>e.hash&&e.origin===location.origin&&!document.getElementById(decodeURIComponent(e.hash.slice(1)))).map(e=>e.getAttribute('href'));
       const overlaps=scenes.slice(1).filter((s,i)=>scenes[i].box.bottom > s.box.y+2).map(s=>s.id);
       const boundaryOwners=scenes.filter(s=>s.boundaryCount>1).map(s=>s.id);
-      return {width:W,scrollWidth:d.scrollWidth,bodyWidth:document.body.scrollWidth,scenes,overlaps,boundaryOwners,overflow,textClips,intentionalHidden,images,brokenAnchors:links,faqButtons:[...document.querySelectorAll('.faq-q')].length,
+      return {width:W,scrollWidth:d.scrollWidth,bodyWidth:document.body.scrollWidth,scenes,overlaps,boundaryOwners,overflow,textClips,intentionalHidden,lineBreakRisks,images,brokenAnchors:links,faqButtons:[...document.querySelectorAll('.faq-q')].length,
         fontStatus:document.fonts.status,animation:getComputedStyle(document.querySelector('.hero-media img')).animationName};
     }""")
 
@@ -79,7 +90,8 @@ def capture(browser, url, width, height, output, *, reduced=True, scenes=False):
         page.on('response',lambda response: failed.append(f'{response.status} {response.url}') if response.status>=400 else None)
         page.goto(url,wait_until='networkidle',timeout=30000);settled(page)
         output.mkdir(parents=True,exist_ok=True)
-        page.screenshot(path=str(output/'full.png'),full_page=True,animations='disabled')
+        capture_style='.skip-link:not(:focus){visibility:hidden!important}'
+        page.screenshot(path=str(output/'full.png'),full_page=True,animations='disabled',style=capture_style)
         metrics=measure(page)
         metrics.update({'console_errors':errors,'http_errors':failed,'screenshot_sha256':sha(output/'full.png')})
         faq=page.locator('.faq-q').first
@@ -94,7 +106,7 @@ def capture(browser, url, width, height, output, *, reduced=True, scenes=False):
         if scenes:
             scene_dir=output/'scenes';scene_dir.mkdir(exist_ok=True)
             for s in page.locator('section.section').all():
-                s.screenshot(path=str(scene_dir/(s.get_attribute('id')+'.png')),animations='disabled')
+                s.screenshot(path=str(scene_dir/(s.get_attribute('id')+'.png')),animations='disabled',style=capture_style)
         return metrics
     finally:context.close()
 
@@ -158,6 +170,7 @@ def run(dist: Path, reference: Path | None, out: Path, browser_executable: Path 
                 result['actual']=actual
                 if actual['scrollWidth']>width+1 or actual['overflow']:result['findings'].append('HORIZONTAL_OVERFLOW')
                 if actual['textClips']:result['findings'].append('TEXT_CLIPPING')
+                if actual['lineBreakRisks']:result['findings'].append('LINE_BREAK_VIOLATION')
                 if actual['console_errors'] or actual['http_errors']:result['findings'].append('BROWSER_ERROR')
                 if actual['brokenAnchors']:result['findings'].append('BROKEN_ANCHOR')
                 if actual['overlaps']:result['findings'].append('SECTION_OVERLAP')
