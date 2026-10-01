@@ -22,9 +22,9 @@ def line_break_risks(headings):
     for heading in headings:
         lines=heading['lines']
         for index,line in enumerate(lines):
-            if re.fullmatch(r'[\u3040-\u309f][、。]?',line.strip()):
+            if re.fullmatch(r'[\u3040-\u30ff\u3400-\u9fff]{1,2}[、。]?',line.strip()):
                 risks.append({'scene':heading['scene'],'tag':heading['tag'],
-                              'line_index':index,'line':line,'lines':lines,'reason':'ISOLATED_KANA'})
+                              'line_index':index,'line':line,'lines':lines,'reason':'SHORT_ISOLATED_LINE'})
         for chunk in heading.get('split_chunks',[]):
             risks.append({'scene':heading['scene'],'tag':heading['tag'],
                           'chunk':chunk,'lines':lines,'reason':'SEMANTIC_CHUNK_SPLIT'})

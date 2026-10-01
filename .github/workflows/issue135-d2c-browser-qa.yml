@@ -45,12 +45,12 @@ jobs:
       - name: Build fixed mock fixture and verify semantic revision bytes
         run: |
           python -m lp_engine.d2c.engine fixtures/d2c_melt_skin/production_input.json --out artifacts/issue135/dist | tee artifacts/issue135/logs/build.log
-          echo '32fc652ee73ee88c27658bb3d765cdd573b5c111aee834b977c8e4b0ebc9e046  artifacts/issue135/dist/index.html' | sha256sum -c -
+          echo 'ed7aef6a670c58ea0b31864069d0841039e8b51e9e2142a0fd68155f177da527  artifacts/issue135/dist/index.html' | sha256sum -c -
           python - <<'PY'
           import hashlib,json,pathlib
           root=pathlib.Path('artifacts/issue135')
           inp=pathlib.Path('fixtures/d2c_melt_skin/production_input.json')
-          expected='6f4347f1c814c5bd7f4cb06a8322eb6eaa34c3774eca6d2d355b7fad93566436'
+          expected='0a88382d292a8304097eca5fcecfb8e13291daa4bac393fda8ea6fcbc8335831'
           assert hashlib.sha256(inp.read_bytes()).hexdigest()==expected
           manifest=json.loads((root/'dist/production_manifest.json').read_text())
           for asset in manifest['assets']:

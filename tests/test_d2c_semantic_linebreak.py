@@ -10,6 +10,12 @@ from lp_engine.d2c.engine import build, validate
 
 FIXTURE = Path(__file__).resolve().parents[1] / 'fixtures/d2c_melt_skin/production_input.json'
 ORIGINAL_HEADLINES = {
+    'hero': '肌がほどける。\n私に戻る。',
+    'concept': '足すことより、\n肌が求めるものを\n見つめる。',
+    'approach': 'こんな日に、\n肌まで迷わせない。',
+    'ritual': '朝も、夜も。\n肌を見ることから。',
+    'voice': '使う人の言葉が、\n次のMELT SKINをつくる。',
+    'faq': '選ぶ前に、\n知っておきたいこと。',
     'ingredients': 'シンプルだからこそ、\nひとつずつ丁寧に。',
     'product': '今日の肌に、\n迷わない選択を。',
     'story': '肌に触れる数分を、\n自分へ戻る時間に。',
@@ -28,12 +34,12 @@ class HeadlineParser(HTMLParser):
         attrs = dict(attrs)
         if tag == 'section':
             self.scene = attrs.get('id')
-        if tag == 'h2' and self.scene in ORIGINAL_HEADLINES:
+        if tag in ('h1', 'h2') and self.scene in ORIGINAL_HEADLINES:
             self.heading = True
             self.headlines[self.scene] = ''
 
     def handle_endtag(self, tag):
-        if tag == 'h2':
+        if tag in ('h1', 'h2'):
             self.heading = False
 
     def handle_data(self, data):
@@ -56,7 +62,7 @@ class SemanticHeadlineTest(TestCase):
             parsed.feed(html)
             self.assertEqual(parsed.headlines,
                              {scene: title.replace('\n', '') for scene, title in ORIGINAL_HEADLINES.items()})
-            self.assertEqual(html.count('class="headline-chunk"'), 16)
+            self.assertEqual(html.count('class="headline-chunk"'), 37)
 
     def test_invalid_chunk_must_block_generation(self):
         data = json.loads(FIXTURE.read_text())

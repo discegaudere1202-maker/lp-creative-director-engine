@@ -34,6 +34,8 @@ class BrowserPathTest(TestCase):
                          [('ingredients',1,'そ、'),('ingredients',3,'に。'),('story',1,'を、')])
         headings[2]['split_chunks']=['好きになれる']
         self.assertEqual(line_break_risks(headings)[-1]['reason'],'SEMANTIC_CHUNK_SPLIT')
+        self.assertEqual(line_break_risks([{'scene':'faq','tag':'H2','lines':['知っておきたい','こと。']}])[0]['reason'],
+                         'SHORT_ISOLATED_LINE')
 
     def test_absent_reference_does_not_prevent_browser_launch_path(self):
         with TemporaryDirectory() as directory:

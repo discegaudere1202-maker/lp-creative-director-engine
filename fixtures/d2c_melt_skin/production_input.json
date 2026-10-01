@@ -88,7 +88,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -113,7 +113,17 @@
       },
       "scene_tokens": {
         "background": "paper2"
-      }
+      },
+      "semantic_lines": [
+        [
+          "肌が",
+          "ほどける。"
+        ],
+        [
+          "私に",
+          "戻る。"
+        ]
+      ]
     },
     {
       "id": "concept",
@@ -155,7 +165,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -188,7 +198,19 @@
       },
       "scene_tokens": {
         "background": "white"
-      }
+      },
+      "semantic_lines": [
+        [
+          "足すことより、"
+        ],
+        [
+          "肌が",
+          "求めるものを"
+        ],
+        [
+          "見つめる。"
+        ]
+      ]
     },
     {
       "id": "approach",
@@ -237,7 +259,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -270,7 +292,16 @@
       },
       "scene_tokens": {
         "background": "paper"
-      }
+      },
+      "semantic_lines": [
+        [
+          "こんな日に、"
+        ],
+        [
+          "肌まで",
+          "迷わせない。"
+        ]
+      ]
     },
     {
       "id": "ingredients",
@@ -506,7 +537,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -532,7 +563,16 @@
       },
       "scene_tokens": {
         "background": "paper2"
-      }
+      },
+      "semantic_lines": [
+        [
+          "朝も、夜も。"
+        ],
+        [
+          "肌を見る",
+          "ことから。"
+        ]
+      ]
     },
     {
       "id": "story",
@@ -653,7 +693,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -699,7 +739,17 @@
       },
       "scene_tokens": {
         "background": "white"
-      }
+      },
+      "semantic_lines": [
+        [
+          "使う人の",
+          "言葉が、"
+        ],
+        [
+          "次のMELT SKINを",
+          "つくる。"
+        ]
+      ]
     },
     {
       "id": "faq",
@@ -745,7 +795,7 @@
         "font_size": "clamp(38px,5vw,72px)",
         "line_height": 1.34,
         "letter_spacing": "-.02em",
-        "text_width": "20ch",
+        "text_width": "12em",
         "line_break": "semantic-authored",
         "alignment": "start",
         "color": "ink",
@@ -770,7 +820,16 @@
       },
       "scene_tokens": {
         "background": "paper"
-      }
+      },
+      "semantic_lines": [
+        [
+          "選ぶ前に、"
+        ],
+        [
+          "知っておきたい",
+          "こと。"
+        ]
+      ]
     },
     {
       "id": "final",
