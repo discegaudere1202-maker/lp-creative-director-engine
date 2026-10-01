@@ -20,6 +20,11 @@
   .hero{grid-template-columns:48% 52%}
   .hero h1{font-size:clamp(52px,5vw,72px)}
 }
+@media(min-width:901px){
+  .faq-grid{row-gap:64px}
+  .faq-grid>div:first-child{grid-column:1/-1}
+  .faq-list{grid-column:2}
+}
 @media(max-width:1100px){
   .nav a:not(.nav-cta){display:none}
   .hero{display:flex;flex-direction:column}
