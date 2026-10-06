@@ -1,0 +1,148 @@
+{
+  "manifest_version": "1.0",
+  "case_id": "nagi-no-mirai",
+  "task_issue": 14,
+  "baseline": {
+    "head_sha": "7d2d071cbbaa427922bc22a509a3cd3f5ce12c64",
+    "pr_number": 12,
+    "workflow_run": 35889186035,
+    "artifact_id": 10763863010,
+    "artifact_name": "round3n-nagi-visual-continuity-7d2d071cbbaa427922bc22a509a3cd3f5ce12c64",
+    "artifact_digest": "sha256:29d39e62a3a93a7b1c7bbb98747c7927ca53e57b3fb8c7accb9933b7e5137a30",
+    "screenshots": [
+      {
+        "path": "desktop/full_1440.png",
+        "kind": "DESKTOP_FULL",
+        "viewport": 1440
+      },
+      {
+        "path": "mobile/full_390.png",
+        "kind": "MOBILE_FULL",
+        "viewport": 390
+      },
+      {
+        "path": "scene_captures/",
+        "kind": "SCENE_CAPTURE",
+        "viewport": null
+      },
+      {
+        "path": "comparison/f3_vs_round3n_1440.png",
+        "kind": "COMPARISON",
+        "viewport": 1440
+      }
+    ],
+    "copy_snapshot": "scripts/run_round3k_r_nagi_architecture.py@7d2d071cbbaa427922bc22a509a3cd3f5ce12c64",
+    "evidence_state": "FROZEN_LOW_EVIDENCE_NAGI",
+    "viewports": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440]
+  },
+  "preserve_ledger": [
+    {
+      "preserve_id": "NAGI-P-HARD-001",
+      "scope": "case-wide",
+      "layer": "SAFETY",
+      "level": "HARD",
+      "preserve_type": "EVIDENCE_BOUNDARY",
+      "description": "Do not fabricate Nagi staff, customers, premises, treatment/class evidence, prices, durations, reviews, qualifications, outcomes or Healing effects.",
+      "comparison_method": "evidence/safety semantic diff against frozen TruthSet and rendered copy/media",
+      "status": "ACTIVE"
+    },
+    {
+      "preserve_id": "NAGI-P-HARD-002",
+      "scope": "conversion",
+      "layer": "CONVERSION",
+      "level": "HARD",
+      "preserve_type": "BEHAVIOR",
+      "description": "Official Instagram @happyfuture_02 remains the verified public contact/reservation route; no stronger unsupported commitment is invented.",
+      "comparison_method": "link target + rendered CTA/copy verification",
+      "status": "ACTIVE"
+    },
+    {
+      "preserve_id": "NAGI-P-HARD-003",
+      "scope": "all viewports",
+      "layer": "QUALITY",
+      "level": "HARD",
+      "preserve_type": "PRINCIPLE",
+      "description": "Japanese semantic line composition and responsive technical floor must remain valid without overflow, truncation or isolated semantic fragments.",
+      "comparison_method": "9-width rendered QA + semantic line review",
+      "status": "ACTIVE"
+    },
+    {
+      "preserve_id": "NAGI-P-MAT-001",
+      "scope": "S1-S8",
+      "layer": "DESIGN",
+      "level": "MATERIAL",
+      "preserve_type": "PRINCIPLE",
+      "description": "Meaningful scene differentiation remains visible across orientation, self-identification, desire, learning, ambiguity, trust, action and ending jobs.",
+      "comparison_method": "blind full-page and scene-by-scene baseline comparison",
+      "status": "ACTIVE"
+    },
+    {
+      "preserve_id": "NAGI-P-MAT-002",
+      "scope": "S3-S4",
+      "layer": "MEDIA",
+      "level": "MATERIAL",
+      "preserve_type": "PRINCIPLE",
+      "description": "Representative media remains visibly integrated through scale/crop/field relationship and remains non-evidentiary rather than becoming stock-card inserts or fake Nagi proof.",
+      "comparison_method": "S3/S4 before-after crops + evidence-role review",
+      "status": "ACTIVE"
+    },
+    {
+      "preserve_id": "NAGI-P-MAT-003",
+      "scope": "S6",
+      "layer": "DESIGN",
+      "level": "MATERIAL",
+      "preserve_type": "PRINCIPLE",
+      "description": "S6 retains a material trust/information-authority rhythm shift. Exact dark pixels are not sacred, but the full-page authority break must remain.",
+      "comparison_method": "full-page rhythm + S6 viewport comparison",
+      "status": "ACTIVE"
+    },
+    {
+      "preserve_id": "NAGI-P-MAT-004",
+      "scope": "S7-S8",
+      "layer": "DESIGN",
+      "level": "MATERIAL",
+      "preserve_type": "PRINCIPLE",
+      "description": "Late page remains authored and decision-led; it must not collapse into generic FAQ/information storage plus CTA box/footer.",
+      "comparison_method": "late-page baseline/candidate full-page crop review",
+      "status": "ACTIVE"
+    },
+    {
+      "preserve_id": "NAGI-P-MAT-005",
+      "scope": "mobile",
+      "layer": "RESPONSIVE",
+      "level": "MATERIAL",
+      "preserve_type": "PRINCIPLE",
+      "description": "Mobile remains same-thesis but separately resolved; it must not become a mechanical desktop stack or lose scene/media/CTA authority.",
+      "comparison_method": "320/375/390 full-page and representative scene comparison",
+      "status": "ACTIVE"
+    }
+  ],
+  "intentional_change_ledger": [],
+  "regression_matrix_requirements": {
+    "classifications": [
+      "INTENTIONAL_CHANGE",
+      "PRESERVED",
+      "INCIDENTAL_CHANGE",
+      "REGRESSION"
+    ],
+    "responsive_viewports": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+    "incidental_change_default": "RETURN_UNTIL_CLASSIFIED"
+  },
+  "quality_gain_loss_ledger": [],
+  "rejected_signatures": [
+    "global giant-Gothic heading behavior as default authorship",
+    "repeated tiny English/serial labels as a page-wide signature",
+    "repeated diagonal clip-path as an automatic premium device",
+    "automatic tilted translucent planes on every scene",
+    "fine-rule ornament without scene-specific reason",
+    "pale-green/deep-green alternation as primary authorship",
+    "forced nowrap plus aggressive mobile type shrinking",
+    "uniform viewport-height pacing across scene jobs"
+  ],
+  "release_policy": {
+    "hard_loss": "FAIL",
+    "material_loss": "FAIL_UNLESS_EXPLICITLY_REOPENED",
+    "incidental_change": "RETURN_UNTIL_CLASSIFIED",
+    "overall_gain_override": false
+  }
+}
