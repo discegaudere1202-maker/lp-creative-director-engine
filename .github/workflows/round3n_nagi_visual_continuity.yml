@@ -1,0 +1,30 @@
+name: Round 3N Nagi Visual Continuity Restoration
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/run_round3n_nagi_visual_continuity.py'
+      - 'tests/test_round3n_nagi_visual_continuity.py'
+      - '.github/workflows/round3n_nagi_visual_continuity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright pytest
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/run_round3n_nagi_visual_continuity.py
+      - run: pytest -q tests/test_round3n_nagi_visual_continuity.py
+      - run: git diff --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: round3n-nagi-visual-continuity-${{ github.sha }}
+          path: artifacts/round3n_nagi_visual_continuity
