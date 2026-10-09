@@ -15,6 +15,7 @@ from typing import Any, Mapping
 from .batch import BatchInput, BatchRegistry, run_batch
 from .production_generation import run_generation
 from .browser_qa import run_browser_qa_sync
+from .quality_state import normalize_check, normalize_quality
 
 SALES_STATUSES = ("SALES_READY","SALES_HOLD","SALES_BLOCKED","SALES_EXCLUDED")
 WIDTHS = [320,360,375,390,430,768,1024,1280,1440]
@@ -88,8 +89,10 @@ def web_gate_decision(c: SalesCandidate) -> str:
 
 def contact_readiness(c: SalesCandidate) -> dict[str,Any]:
     route = c.contact_route if c.contact_route in {"Instagram DM","phone","email","LINE","contact form"} else ""
-    return {"status":"READY" if route and c.contact_verified else "HOLD",
-            "routes":[{"route":route,"identifier":c.instagram if route=="Instagram DM" else c.phone,
+    identifier = c.email if route=="email" else (c.instagram if route=="Instagram DM" else c.phone)
+    ready = bool(route and c.contact_verified and (route!="email" or identifier.strip()))
+    return {"status":"READY" if ready else "HOLD",
+            "routes":[{"route":route,"identifier":identifier,
                        "source":c.source,"verified":c.contact_verified,"last_checked":c.research_timestamp}] if route else [],
             "inferred":False}
 
@@ -122,25 +125,33 @@ def process_candidate(c: SalesCandidate, out: Path) -> dict[str,Any]:
     if errors or gate!="PASS" or not c.sales_production_ready:
         status="SALES_EXCLUDED" if gate=="EXCLUDE" or c.master_status=="除外" else "SALES_HOLD"
         (out/"sales_block.json").write_text(json.dumps({"status":status,"reasons":errors or [c.exclusion_reason or "not production ready"]},ensure_ascii=False,indent=2),encoding="utf-8")
-        return {"state":"BLOCKED" if status=="SALES_EXCLUDED" else "HOLD","generation_id":"","sales_status":status,"safety":{"status":"NOT_RUN","bypass":False,"rights_bypass":False},"qa":{"status":"NOT_RUN"},"quality":{"premium_gate":"NOT_RUN","sales_status":status}}
+        return {"state":"BLOCKED" if status=="SALES_EXCLUDED" else "HOLD","generation_id":"","sales_status":status,"safety":{"status":"NOT_RUN","bypass":False,"rights_bypass":False},"qa":{"status":"NOT_RUN"},"quality":normalize_quality({"premium_gate":"NOT_RUN","sales_status":status})}
     research=build_research(c); inp=build_input(c,research)
     (out/"research.json").write_text(json.dumps(research,ensure_ascii=False,indent=2),encoding="utf-8")
     (out/"production_input.json").write_text(json.dumps(inp,ensure_ascii=False,indent=2),encoding="utf-8")
     result=run_generation(inp,str(out/"generation"),mode="research",generation_id="generation_"+c.sales_candidate_id)
-    safety=result.safety_report; browser=_browser(Path(result.output_dir)/"index.html",out)
+    safety=result.safety_report; browser=normalize_check(_browser(Path(result.output_dir)/"index.html",out))
     pngs=sorted((out/"browser").rglob("*.png")); peaks=[]
     for i,p in enumerate(pngs[:4],1):
         target=out/f"peak-{i:02d}.png"; target.write_bytes(p.read_bytes()); peaks.append(target.name)
     contact=contact_readiness(c)
-    premium="PASS" if safety.get("safety_status")=="PASS" and browser["status"]=="PASS" else "HOLD"
-    sales="SALES_READY" if premium=="PASS" and contact["status"]=="READY" else "SALES_HOLD"
+    # Generation and browser checks do not produce a visual quality review.
+    # Keep that result unassessed instead of synthesizing ten 4.0 scores.
+    quality=normalize_quality({"axes":{},"layout_profile":result.stage_outputs.get("creative_strategy",{}).get("layout_profile","editorial_rail"),"peak_count":len(peaks)})
+    premium=quality["premium_gate"]
+    sales="SALES_READY" if safety.get("safety_status")=="PASS" and browser["status"]=="PASS" and premium=="PASS" and contact["status"]=="READY" else "SALES_HOLD"
+    quality["sales_status"]=sales
+    reasons=[]
+    if safety.get("safety_status")!="PASS": reasons.append("safety check not passed")
+    if browser["status"]!="PASS": reasons.append("browser QA not passed")
+    if premium!="PASS": reasons.append("visual quality not run" if premium=="NOT_RUN" else "visual quality not passed")
+    if contact["status"]!="READY": reasons.append("contact readiness hold")
     qa={"status":browser["status"],"browser":browser}
-    manifest={"schema_version":"sales_package_manifest_v1","candidate_id":c.sales_candidate_id,"company_id":c.sales_candidate_id,"project_id":"project_sales_"+slug(c.sales_candidate_id),"generation_id":result.generation_id,"web_gate":c.web_gate,"sales_readiness":sales,"premium_gate":premium,"screenshot_paths":["browser/desktop.png","browser/mobile.png"]+peaks,"preview":{"preview_id":"preview_"+c.sales_candidate_id,"mode":"LOCAL_PREVIEW","status":"PRIVATE_ONLY","public_deploy":False},"contact_routes":contact,"evidence_status":safety.get("safety_status"),"hearing_gaps":research["hearing_gaps"],"created_at":now(),"external_sales_execution":0,"external_production_publish":0,"manual_lp_edit":0}
-    for name,payload in {"evidence.json":{"sales_candidate_id":c.sales_candidate_id,"items":research["facts"],"safety":safety},"qa.json":qa,"contact.json":contact,"sales_readiness.json":{"status":sales,"premium_gate":premium,"reasons":[] if sales=="SALES_READY" else ["contact or quality hold"]},"hearing_plan.json":{"sales_candidate_id":c.sales_candidate_id,"gaps":research["hearing_gaps"]},"sales_draft.json":{"status":"DRAFT_READY","sent":False,"channel":c.contact_route,"company":c.company_name,"message":"公開情報をもとに、御社向けのLPサンプルを作成しました。ご確認いただける範囲でご案内します。"}}.items():
+    manifest={"schema_version":"sales_package_manifest_v1","candidate_id":c.sales_candidate_id,"company_id":c.sales_candidate_id,"project_id":"project_sales_"+slug(c.sales_candidate_id),"generation_id":result.generation_id,"web_gate":c.web_gate,"sales_readiness":sales,"premium_gate":premium,"screenshot_paths":[p.relative_to(out).as_posix() for p in pngs]+peaks,"preview":{"preview_id":"preview_"+c.sales_candidate_id,"mode":"LOCAL_PREVIEW","status":"PRIVATE_ONLY","public_deploy":False},"contact_routes":contact,"evidence_status":safety.get("safety_status"),"hearing_gaps":research["hearing_gaps"],"created_at":now(),"external_sales_execution":0,"external_production_publish":0,"manual_lp_edit":0}
+    for name,payload in {"evidence.json":{"sales_candidate_id":c.sales_candidate_id,"items":research["facts"],"safety":safety},"qa.json":qa,"contact.json":contact,"sales_readiness.json":{"status":sales,"premium_gate":premium,"reasons":reasons},"hearing_plan.json":{"sales_candidate_id":c.sales_candidate_id,"gaps":research["hearing_gaps"]},"sales_draft.json":{"status":"DRAFT_READY","sent":False,"channel":c.contact_route,"company":c.company_name,"message":"公開情報をもとに、御社向けのLPサンプルを作成しました。ご確認いただける範囲でご案内します。"}}.items():
         (out/name).write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
     (out/"manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
-    axes={axis:4.0 for axis in AXES}
-    return {"state":"COMPLETED" if sales=="SALES_READY" else "HOLD","sales_status":sales,"generation_id":result.generation_id,"artifact_id":"artifact_"+c.sales_candidate_id,"safety":{"status":safety.get("safety_status"),"bypass":False,"rights_bypass":False},"qa":qa,"quality":{"axes":axes,"premium_score":4.0,"premium_gate":premium,"sales_status":sales,"layout_profile":result.stage_outputs.get("creative_strategy",{}).get("layout_profile","editorial_rail"),"peak_count":len(peaks)},"sales_package":manifest}
+    return {"state":"COMPLETED" if sales=="SALES_READY" else "HOLD","sales_status":sales,"generation_id":result.generation_id,"artifact_id":"artifact_"+c.sales_candidate_id,"safety":normalize_check({"status":safety.get("safety_status"),"bypass":False,"rights_bypass":False}),"qa":qa,"quality":quality,"sales_package":manifest}
 
 def dedupe(candidates):
     seen=set(); out=[]

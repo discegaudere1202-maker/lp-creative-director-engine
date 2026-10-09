@@ -18,6 +18,7 @@ from typing import Any, Callable, Mapping
 from uuid import uuid4
 
 from .editorial_quality import EDITORIAL_GATES
+from .quality_state import normalize_check, normalize_quality, summarize_quality
 
 BATCH_STATES = ("QUEUED", "RUNNING", "COMPLETED", "HOLD", "BLOCKED", "FAILED", "RETRY_PENDING", "CANCELLED")
 FAILURE_TYPES = ("INPUT_ERROR", "RESEARCH_ERROR", "SAFETY_BLOCK", "RIGHTS_BLOCK", "GENERATION_ERROR", "RENDER_ERROR", "QA_ERROR", "BROWSER_ERROR", "REGISTRY_ERROR", "UNKNOWN")
@@ -99,7 +100,7 @@ class BatchManifest:
     state: str = "QUEUED"
     start_time: str | None = None
     end_time: str | None = None
-    success_count: int = 0
+    success_count: int = 0  # Explicit work completion; not a count of quality passes.
     hold_count: int = 0
     blocked_count: int = 0
     failed_count: int = 0
@@ -155,8 +156,8 @@ class BatchRegistry:
         counts = {state: sum(x.state == state for x in self.items.values()) for state in BATCH_STATES}
         return {"batch_id": self.manifest.batch_id, "counts": counts, "items": {k: asdict(v) for k, v in self.items.items()}}
 
-Processor = Callable[[BatchInput, Path], Mapping[str, Any]]
-BrowserQA = Callable[[BatchInput, Path], Mapping[str, Any]]
+Processor = Callable[[BatchInput, Path], Mapping[str, Any] | None]
+BrowserQA = Callable[[BatchInput, Path], Mapping[str, Any] | None]
 
 def _validate(inputs: list[BatchInput], batch_id: str, requested: int) -> None:
     if not inputs or len(inputs) != requested: raise InvalidBatch("requested count and inputs differ")
@@ -177,22 +178,27 @@ def run_batch(*, batch_id: str, inputs: list[BatchInput], registry: BatchRegistr
         item.state = "RUNNING"; item.project_id = f"project_{inp.batch_id}_{inp.company_id}"; item.output_dir = str(registry.root / inp.item_id); registry.checkpoint(item)
         while True:
             try:
-                result = dict(processor(inp, Path(item.output_dir)))
+                raw_result = processor(inp, Path(item.output_dir))
+                result = dict(raw_result) if raw_result is not None else {}
                 item.generation_id = str(result.get("generation_id", _id("generation"))); item.artifact_id = str(result.get("artifact_id", _id("artifact")))
-                item.safety = dict(result.get("safety", {"status": "PASS"})); item.qa = dict(result.get("qa", {"status": "PASS"})); item.quality = dict(result.get("quality", {}))
-                item.state = str(result.get("state", "COMPLETED")); item.failure_type = None; item.error = None
+                item.safety = normalize_check(result.get("safety")); item.qa = normalize_check(result.get("qa")); item.quality = normalize_quality(result.get("quality"))
+                # Work completion is an explicit processor result, not a default
+                # and not a substitute for the separately recorded quality gate.
+                reported_state = result.get("state")
+                item.state = reported_state if reported_state in BATCH_STATES else "HOLD"
+                item.failure_type = result.get("failure_type"); item.error = result.get("error")
                 if result.get("quality_contract") is not None or item.qa.get("editorial_contract") is not None:
                     contract_check = validate_publish_ready(result.get("quality_contract") or item.qa.get("editorial_contract"))
                     item.qa["editorial_contract"] = contract_check
-                    if contract_check["status"] != "PASS":
+                    if contract_check["status"] != "PASS" and item.state not in {"BLOCKED", "FAILED", "CANCELLED"}:
                         item.state = "HOLD"; item.failure_type = "QA_ERROR"; item.error = "editorial quality contract failed"
                 if browser_qa:
-                    item.qa["browser"] = dict(browser_qa(inp, Path(item.output_dir)))
-                    item.qa["browser"]["status"] = item.qa["browser"].get("status", "PASS")
-                    if item.qa["browser"]["status"] != "PASS":
+                    item.qa["browser"] = normalize_check(browser_qa(inp, Path(item.output_dir)))
+                    if item.qa["browser"]["status"] != "PASS" and item.state not in {"BLOCKED", "FAILED", "CANCELLED"}:
                         item.state = "HOLD"
-                        item.failure_type = "BROWSER_ERROR"
-                        item.error = "browser QA failed"
+                        if item.qa["browser"]["status"] != "NOT_RUN":
+                            item.failure_type = "BROWSER_ERROR"
+                            item.error = "browser QA did not pass"
                 registry.checkpoint(item); return item
             except TransientBatchError as exc:
                 item.retry_count += 1; item.retry_audit.append({"reason": str(exc), "failure_type": exc.failure_type, "retry_count": item.retry_count, "at": _now()}); manifest.retry_count += 1
@@ -214,13 +220,13 @@ def run_batch(*, batch_id: str, inputs: list[BatchInput], registry: BatchRegistr
     manifest.success_count = counts["COMPLETED"]; manifest.hold_count = counts["HOLD"]; manifest.blocked_count = counts["BLOCKED"]; manifest.failed_count = counts["FAILED"]
     incomplete = counts["QUEUED"] + counts["RUNNING"] + counts["RETRY_PENDING"]
     manifest.state = "RUNNING" if incomplete else ("FAILED" if manifest.failed_count else ("HOLD" if manifest.hold_count or manifest.blocked_count else "COMPLETED")); manifest.end_time = None if incomplete else _now()
-    manifest.browser_qa_count = sum(bool(x.qa.get("browser")) for x in registry.items.values()); registry._save(); return manifest
+    manifest.browser_qa_count = sum((x.qa.get("browser") or {}).get("status") not in (None, "", "NOT_RUN", "NOT_EVALUATED") for x in registry.items.values()); registry._save(); return manifest
 
 def aggregate_quality(registry: BatchRegistry) -> dict[str, Any]:
+    """Summarize recorded quality independently of operational completion."""
     completed = [x for x in registry.items.values() if x.state == "COMPLETED"]
-    scores = [float(x.quality.get("premium_score", 0)) for x in completed if "premium_score" in x.quality]
     profiles: dict[str, int] = {}; evidence: dict[str, int] = {}
     for x in completed:
         profiles[str(x.quality.get("layout_profile", "unknown"))] = profiles.get(str(x.quality.get("layout_profile", "unknown")), 0) + 1
         key = str(registry.inputs[x.item_id].evidence_density); evidence[key] = evidence.get(key, 0) + 1
-    return {"total": len(registry.items), "completed": len(completed), "hold": sum(x.state == "HOLD" for x in registry.items.values()), "blocked": sum(x.state == "BLOCKED" for x in registry.items.values()), "failed": sum(x.state == "FAILED" for x in registry.items.values()), "average_premium_score": sum(scores) / len(scores) if scores else 0, "premium_pass_rate": sum(s >= 4.0 for s in scores) / len(scores) if scores else 0, "design_profiles": profiles, "evidence_density": evidence, "browser_qa": sum(bool(x.qa.get("browser", {}).get("status") == "PASS") for x in registry.items.values())}
+    return {"total": len(registry.items), "completed": len(completed), "hold": sum(x.state == "HOLD" for x in registry.items.values()), "blocked": sum(x.state == "BLOCKED" for x in registry.items.values()), "failed": sum(x.state == "FAILED" for x in registry.items.values()), **summarize_quality(x.quality for x in registry.items.values()), "design_profiles": profiles, "evidence_density": evidence, "browser_qa": sum(bool((x.qa.get("browser") or {}).get("status") == "PASS") for x in registry.items.values())}
